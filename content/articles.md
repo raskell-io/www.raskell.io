@@ -1,5 +1,5 @@
 ---
 title: Articles
-subtitle: Posts, tutorials, snippets, musings, and everything else.
+subtitle: Let's fill the web with some more mind noise.
 layout: "archives"
 ---
