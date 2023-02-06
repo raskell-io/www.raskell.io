@@ -1,1 +1,1 @@
-This is Raffael's own web space where he writes about tech, open-source and his life as a developer. I write down whatever background noise my mind is producing so I can focus more when I need to.
+Hi, my name is Raffael and this my own web space where I write about tech, the web, open-source, and my life as a software engineer. I write down whatever background noise my mind is producing so I can be more focused when I need to.
