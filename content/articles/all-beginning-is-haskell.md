@@ -66,13 +66,19 @@ This example demonstrates the basic principles of the lambda calculus, where fun
 
 ## One Type System to rule them all
 
-ML (Meta Language) is considered a precursor to Haskell because it is a functional programming language that shares many of the same concepts and ideas. Like Haskell, ML is strongly typed and supports type inference, pattern matching, and higher-order functions.
+ML (Meta Language) is considered a precursor to Haskell because it is a functional programming language that shares many of the same concepts and ideas. Like Haskell, ML is strongly typed and supports type inference, pattern matching, and higher-order functions. ML was developed in the 1970s by Robin Milner and others as a tool for writing software that could reason about mathematical objects and proofs. It was initially designed as a metalanguage for describing programming languages, but quickly evolved into a full-fledged programming language in its own right.
 
-ML was developed in the 1970s by Robin Milner and others as a tool for writing software that could reason about mathematical objects and proofs. It was initially designed as a metalanguage for describing programming languages, but quickly evolved into a full-fledged programming language in its own right.
+One of the key features of ML that influenced the development of Haskell is its support for algebraic data types. Algebraic data types allow programmers to define complex data structures by combining simpler types in various ways, using constructs like sums, products, and variants. This allows for a high degree of expressiveness and modularity in programming. Haskell also inherits many other features from ML, such as its focus on purity, immutability, and higher-order functions. ML also introduced the concept of type inference, which allows type information to be inferred automatically from the code, reducing the need for explicit type annotations.
 
-One of the key features of ML that influenced the development of Haskell is its support for algebraic data types. Algebraic data types allow programmers to define complex data structures by combining simpler types in various ways, using constructs like sums, products, and variants. This allows for a high degree of expressiveness and modularity in programming.
+Haskell's type system is based on the Hindley-Milner type system, which was first introduced in the ML programming language in the 1970s. The Hindley-Milner type system is a type inference algorithm that can deduce the types of expressions in a program without the need for explicit type annotations. In Haskell, the Hindley-Milner type system has been extended and refined to include additional features such as type classes, higher-kinded types, and generalized algebraic data types. These extensions make Haskell's type system more expressive and flexible than the original Hindley-Milner type system in ML.
 
-Haskell also inherits many other features from ML, such as its focus on purity, immutability, and higher-order functions. ML also introduced the concept of type inference, which allows type information to be inferred automatically from the code, reducing the need for explicit type annotations.
+Type classes are a key feature of Haskell's type system that allow programmers to define common behavior for a set of types. For example, the Eq type class defines the notion of equality for a given type, while the Ord type class defines the notion of order. Type classes provide a powerful mechanism for creating modular and reusable code.
+
+Higher-kinded types are another extension to Haskell's type system that allow for more complex and abstract types. In essence, higher-kinded types are types that take other types as arguments, allowing for a greater degree of generality and abstraction in programming.
+
+Generalized algebraic data types (GADTs) are a further refinement of algebraic data types that allow for more precise control over the types of data in a program. GADTs allow programmers to specify more specific constraints on the types of data that can be manipulated, leading to more robust and maintainable code.
+
+Haskell's type system builds on the foundations laid by the Hindley-Milner type system in ML, but extends and refines it to include additional features that make Haskell's type system more expressive and flexible. By providing a powerful and expressive type system, Haskell makes it easier for programmers to write correct and maintainable code.
 
 ## ELI5: What is Haskell again?
 
