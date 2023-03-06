@@ -12,9 +12,13 @@ katex: true
 
 ![all-beginning-is-haskell.png](all-beginning-is-haskell.png)
 
-## Mathematical purity
+## The beauty of mathematics
 
-As someone who always was drawn to the beauty of mathematics, I was naturally curious about Haskell due to its roots in mathematical theory. Haskell was created by a group of researchers who were interested in creating a language that was as pure as possible. The language was designed to be purely functional, meaning that all computations are performed through the evaluation of functions. This approach allows Haskell programs to be more concise and easier to reason about than programs written in imperative languages like Java or C++. As a language that emphasizes purity and immutability, Haskell is particularly well-suited to applications in mathematics, data analysis, and other areas where correctness and maintainability are critical.
+Mathematics is often considered beautiful because it provides a way to describe and understand the world in a way that is precise, elegant, and abstract. Mathematics can be seen as a language that allows us to describe complex phenomena and patterns in a way that is independent of the particular objects or situations involved. This abstract quality of mathematics is what makes it so powerful and beautiful.
+
+Mathematics can also be considered beautiful because of its ability to reveal unexpected connections and relationships between seemingly disparate areas of study. By using the language of mathematics to describe complex phenomena, we are able to identify deep and fundamental connections between seemingly unrelated areas of study, revealing the underlying structure and order in the natural world.
+
+As someone who always was drawn by this type of mathematical beauty, I also was naturally drawn to Haskell due to its roots in mathematical theory since the first time I read about Haskell. Haskell was created by a group of researchers who were interested in creating a language that was as pure as possible. The language was designed to be purely functional, meaning that all computations are performed through the evaluation of functions. This approach allows Haskell programs to be more concise and easier to reason about than programs written in imperative languages like Java or C++. As a language that emphasizes purity and immutability, Haskell is particularly well-suited to applications in mathematics, data analysis, and other areas where correctness and maintainability are critical.
 
 In addition to its mathematical roots, Haskell's focus on purity and immutability also appealed to me as a programmer. As someone who has worked on projects with large codebases, I understand the importance of maintainability and the challenges that can arise when code is difficult to reason about or modify. By focusing on pure functions and immutability, Haskell reduces the potential for bugs and makes it easier to modify code without introducing new problems.
 
