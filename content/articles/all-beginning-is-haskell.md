@@ -33,7 +33,47 @@ Haskell's focus on purity and immutability is closely related to the lambda calc
 
 Haskell also incorporates many features from other functional programming languages like ML and Lisp, as well as concepts from category theory and other branches of mathematics. The language's sophisticated type system, which includes type inference, type classes, and higher-kinded types, is one of its most distinctive and powerful features.
 
-## What is Haskell?
+## The Lambda is the new Alpha
+
+Haskell is closely related to the lambda calculus, which is a mathematical notation system for expressing computation. The lambda calculus was developed in the early 20th century by mathematician Alonzo Church as a way to formalize the notion of computability.
+
+The lambda calculus consists of three basic elements: variables, functions, and applications. Variables represent values, functions represent computations, and applications represent the act of applying a function to an argument. For example, the function f(x) = x + 1 could be represented in the lambda calculus as the expression (λx.x + 1).
+
+Haskell was developed in the late 1980s by a group of researchers, including Simon Peyton Jones, Philip Wadler, and others, who were interested in creating a purely functional programming language that was inspired by the lambda calculus. As mentioned above, they named the language after Haskell Curry as a tribute to his contributions to mathematical logic.
+
+Like the lambda calculus, Haskell is based on the principles of functional programming, which emphasize the use of pure functions and immutable data structures. In Haskell, functions are first-class citizens that can be passed around and composed just like any other data type. This allows Haskell programmers to create powerful abstractions and write code that is more modular and reusable than in imperative languages like C++ or Java.
+
+Haskell's type system is also inspired by the lambda calculus, and includes features like type inference, type classes, and higher-kinded types. This allows Haskell programmers to write code that is both statically typed and expressive, reducing the potential for errors while still allowing for elegant and concise code.
+
+Here's an example of a lambda calculus expression that represents the addition of two numbers:
+
+$$ (λx.λy.x + y) $$
+
+In this expression, λx represents a function that takes an input x, and λy represents a function that takes an input y. The expression x + y represents the sum of x and y.
+
+To use this expression to add two numbers, we apply it to two arguments:
+
+$$ (λx.λy.x + y) 3 4 $$
+
+In this case, the expression is applied to the arguments 3 and 4, resulting in the following computation:
+
+$$ (λy.3 + y) 4 $$
+
+In this expression, the function λx has been replaced with the value 3, resulting in a new function that takes an input y and adds it to 3. This function is then applied to the argument 4, resulting in the value 7.
+
+This example demonstrates the basic principles of the lambda calculus, where functions are used to represent computations and can be composed and applied in a way that is similar to arithmetic operations. These principles form the basis of functional programming, and have been influential in the development of languages like Haskell, which was designed to be closely aligned with the lambda calculus.
+
+## One Type System to rule them all
+
+ML (Meta Language) is considered a precursor to Haskell because it is a functional programming language that shares many of the same concepts and ideas. Like Haskell, ML is strongly typed and supports type inference, pattern matching, and higher-order functions.
+
+ML was developed in the 1970s by Robin Milner and others as a tool for writing software that could reason about mathematical objects and proofs. It was initially designed as a metalanguage for describing programming languages, but quickly evolved into a full-fledged programming language in its own right.
+
+One of the key features of ML that influenced the development of Haskell is its support for algebraic data types. Algebraic data types allow programmers to define complex data structures by combining simpler types in various ways, using constructs like sums, products, and variants. This allows for a high degree of expressiveness and modularity in programming.
+
+Haskell also inherits many other features from ML, such as its focus on purity, immutability, and higher-order functions. ML also introduced the concept of type inference, which allows type information to be inferred automatically from the code, reducing the need for explicit type annotations.
+
+## ELI5: What is Haskell again?
 
 Haskell is a functional programming language that was first developed in the late 1980s. It is named after the logician Haskell Curry and is designed to be purely functional, meaning that all computations are performed through the evaluation of functions. This approach allows Haskell programs to be more concise and easier to reason about than programs written in imperative languages like Java or C++.
 
@@ -54,7 +94,7 @@ main = putStrLn "Hello, world!"
 
 This program defines a main function that prints the string "Hello, world!" to the console. The :: operator is used to specify the type of the main function, which in this case is IO (). The IO type represents actions that interact with the outside world, like reading from or writing to files.
 
-## Pure functions and easy refactoring
+## From pure functions to easy refactoring
 
 One of the key benefits of Haskell's functional programming paradigm is that it makes it easy to write pure functions. A pure function is one that has no side effects and always returns the same result given the same input. This property makes pure functions easy to reason about and test.
 
@@ -88,13 +128,54 @@ The memoize function takes a function and returns a memoized version of it. This
 
 Note that we didn't need to change any of the code that calls the factorial function. This is because the function's type signature didn't change, and its behavior is still the same. This is an example of how easy refactoring can be in Haskell. By focusing on pure functions and immutability, Haskell makes it easy to modify code without introducing bugs or breaking existing functionality.
 
+## Purity as a design goal
+
+Pure functions are functions that have no side effects and always return the same result given the same input. In other words, a pure function's output only depends on its input, and it doesn't modify any external state or perform any I/O operations.
+
+This property is desirable for several reasons. First, pure functions are easier to reason about and test. Because they have no side effects, they always produce the same output given the same input, which makes them predictable and easier to verify. This can be especially important in mathematical or scientific contexts where correctness is critical.
+
+Second, pure functions can be composed more easily than impure functions. Because pure functions have no side effects, they can be combined or nested in any order without affecting the final result. This makes it easier to write modular and reusable code that can be composed from smaller building blocks.
+
+Third, pure functions can be more efficient than impure functions in certain contexts. Because pure functions are referentially transparent, meaning that their results depend only on their inputs, they can be memoized or cached to improve performance. This can be especially useful in recursive algorithms or in situations where expensive computations need to be repeated many times.
+
+The concept of pure functions is closely related to mathematical theory, particularly the notion of functions in mathematical analysis.
+
+In mathematics, a function is a mapping between two sets, where each element of the first set is associated with a unique element of the second set. For example, the function f(x) = x^2 is a mapping from the set of real numbers to the set of non-negative real numbers. Given any real number x, the function f(x) returns the square of that number.
+
+Functions in mathematics are often defined in terms of their inputs and outputs, without reference to any external state or context. This is similar to the concept of pure functions in programming, which have no side effects and depend only on their input parameters.
+
+The concept of referential transparency, which is central to the idea of pure functions in programming, also has a mathematical counterpart. In mathematical analysis, a function is said to be referentially transparent if it can be replaced by its value without changing the outcome of any other computations. For example, the function f(x) = x + 1 is referentially transparent, because it can be replaced by its value without affecting the outcome of any other computations.
+
+The use of pure functions in programming can be seen as an extension of these mathematical concepts to the realm of software engineering. By designing programs in terms of pure functions, we can create software systems that are easier to reason about and test, more modular and reusable, and more efficient in certain contexts. This can lead to more robust and maintainable software systems that are better suited to the demands of modern computing.
+
+## The side-effects of functional purity
+
+The concepts of immutability, statelessness, higher-order functions, and lazy evaluation are closely related to the idea of pure functions in programming and are highly prominent in the advantages of a programming language like Haskell. By embracing these concepts, we can create software systems that are more robust, efficient, and maintainable.
+
+- **Immutability**: Immutability is the concept of not modifying data once it has been created. Immutable data structures are often used in functional programming, because they can make it easier to reason about the behavior of a program. In Haskell, many of the built-in data structures are immutable, including lists, tuples, and sets.
+
+- **Statelessness**: Statelessness refers to the concept of not maintaining any internal state between function calls. In other words, a stateless function depends only on its input parameters and has no side effects. Stateless functions are often used in functional programming, because they can make it easier to reason about the behavior of a program.
+
+- **Higher-order functions**: Higher-order functions are functions that take other functions as input parameters or return functions as output. Higher-order functions are often used in functional programming to create powerful abstractions and compose smaller functions into larger ones.
+
+- **Lazy evaluation**: Lazy evaluation is the concept of delaying the evaluation of an expression until it is actually needed. In Haskell, expressions are evaluated only when their values are required to compute the final result of a program. This can lead to more efficient code, because expressions that are not needed are never evaluated.
+
+All of these concepts are closely related to pure functions, because they help enforce the properties of purity and immutability. By using immutable data structures and stateless functions, we can reduce the potential for side effects and create code that is more predictable and easier to reason about. Higher-order functions and lazy evaluation can also lead to more efficient and maintainable code by creating powerful abstractions and reducing the amount of unnecessary computation.
+
 ## Why everyone should learn a Haskell for a great good
 
 One of the benefits of learning Haskell is that it can help you develop a deeper understanding of programming concepts like recursion, higher-order functions, and lazy evaluation. Haskell's focus on purity and immutability can also help you develop good programming habits that can be applied to other languages.
 
 However, despite its many advantages, Haskell is not as commonly used as other programming languages like Java or Python. This is due in part to its steep learning curve and the fact that it is less widely taught in universities and other educational institutions. Haskell also has a smaller community of developers than some other languages, which can make it harder to find resources and support.
 
-Despite these challenges, there are many reasons to learn and use Haskell. For example, Haskell's focus on purity and immutability can lead to more robust and maintainable code. The language's type system can also catch many errors at compile time, reducing the potential for bugs. In addition, Haskell's focus on functional programming can help you develop good programming habits that can be applied to other languages.
+Despite these challenges, there are many reasons to learn and use Haskell. For example, Haskell's focus on purity and immutability can lead to more robust and maintainable code. The language's type system can also catch many errors at compile time, reducing the potential for bugs. In addition, Haskell's focus on functional programming can help you develop good programming habits that can be applied to other languages. Here are some of the reasons why it is worthwhile to learn Haskell:
+
+- Learning Haskell can help you develop a deeper understanding of programming concepts like recursion, higher-order functions, and lazy evaluation. Haskell's focus on purity and immutability can also help you develop good programming habits that can be applied to other languages.
+- Haskell's sophisticated type system can catch many errors at compile time, reducing the potential for bugs. This can lead to more robust and maintainable code.
+- Haskell's focus on purity and immutability can lead to more elegant and concise code that is easier to reason about and test.
+- Haskell is a powerful tool for data analysis, machine learning, and other computational tasks that involve complex algorithms and mathematical models.
+- Haskell is used in industry by companies like Facebook, Google, and Standard Chartered Bank. Learning Haskell can therefore enhance your employability and give you access to interesting job opportunities.
+- Haskell has a small but passionate community of developers who are constantly pushing the boundaries of what is possible with functional programming. This community can provide a valuable source of support and inspiration as you learn and grow as a programmer.
 
 ## Conclusion
 
