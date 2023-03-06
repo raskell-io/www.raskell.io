@@ -47,17 +47,17 @@ Haskell's type system is also inspired by the lambda calculus, and includes feat
 
 Here's an example of a lambda calculus expression that represents the addition of two numbers:
 
-$$ (λx.λy.x + y) $$
+$ (λx.λy.x + y) $
 
 In this expression, λx represents a function that takes an input x, and λy represents a function that takes an input y. The expression x + y represents the sum of x and y.
 
 To use this expression to add two numbers, we apply it to two arguments:
 
-$$ (λx.λy.x + y) 3 4 $$
+$ (λx.λy.x + y) 3 4 $
 
 In this case, the expression is applied to the arguments 3 and 4, resulting in the following computation:
 
-$$ (λy.3 + y) 4 $$
+$ (λy.3 + y) 4 $
 
 In this expression, the function λx has been replaced with the value 3, resulting in a new function that takes an input y and adds it to 3. This function is then applied to the argument 4, resulting in the value 7.
 
