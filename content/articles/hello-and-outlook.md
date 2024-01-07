@@ -13,7 +13,7 @@ categories:
 
 ## Hello world
 
-Welcome to my tech blog! My name is Raffael Schneider and I am excited to share my rumings about the state of tech, open-source, and the life as a software developer with you.
+Welcome to my tech blog! My name is Raffael and I am excited to share my rumings about the state of tech, open-source, and the life as a software developer with you.
 
 In this first post, I wanted to introduce myself and explain what you can expect to find on this blog. I have been working in the tech industry for several years, and I have experience with a variety of technologies, programming languages, and operating systems. I have a strong interest in open-source software and the principles of open collaboration and sharing that underpin it. Also, I have a passion for tech hardware and the funtional restoration of discarded equipment. The freedom to express oneself with technology to make the world a more comfortable place is a strong focus of mine.
 
