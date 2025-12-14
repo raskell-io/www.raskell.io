@@ -1,0 +1,242 @@
+/* Post */
+
+header {
+    padding: 1.5rem 0;
+
+    h1 {
+        font-size: 2rem;
+        display: inline-block;
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+
+    u {
+        display: inline-block;
+        text-decoration: none;
+        padding: 0.4rem 0;
+    }
+}
+
+.article-header {
+    padding-top: 2rem;
+    margin-bottom: 0.5rem;
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .thumb {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 1.8rem;
+        margin: 0;
+    }
+
+    .description {
+        font-size: 1.2rem;
+        color: var(--light-font-color);
+        font-weight: 300;
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+}
+
+.post-meta {
+    margin-top: 1rem;
+    padding: 0;
+    color: var(--light-font-color);
+    font-size: 0.9rem;
+
+    a {
+        color: var(--font-color);
+        border-width: 0;
+    }
+
+    time {
+        margin-top: 0.2rem;
+        font-size: 0.9rem;
+    }
+
+    .meta-line {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+
+        .author {
+            font-weight: 600;
+        }
+
+        .separator {
+            opacity: 0.5;
+        }
+
+        .reading-time {
+            font-family:
+                "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.85rem;
+        }
+    }
+
+    .article-taxonomies {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .series-badge {
+        font-size: 0.85rem;
+        font-weight: 600;
+
+        a {
+            text-decoration: none;
+            color: var(--link-color);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.article-post {
+    margin-bottom: 2rem;
+    font-family: var(--article-font-family);
+
+    img {
+        border-radius: 5px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    a {
+        box-shadow: 0px -2px 0px var(--accent-secondary) inset;
+        transition: all 0.3s ease;
+
+        &:hover {
+            box-shadow: 0px -10px 0px var(--accent-secondary) inset;
+        }
+    }
+
+    code {
+        overflow-x: auto;
+    }
+
+    @for $i from 1 through 6 {
+        h#{$i} {
+            position: relative;
+
+            .anchor {
+                position: absolute;
+                left: -2.5rem;
+                top: 50%;
+                transform: translateY(-50%);
+                color: var(--accent-primary);
+                font-weight: 600;
+                text-decoration: none;
+                opacity: 0;
+                transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+                padding: 0.25rem 0.5rem;
+                border-radius: 6px;
+                font-size: 0.9em;
+
+                &::before {
+                    content: "#";
+                }
+
+                &:hover {
+                    background: var(--light-background);
+                    opacity: 1 !important;
+                }
+            }
+
+            &:hover {
+                .anchor {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+    .highlight {
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .article-post {
+        margin-bottom: 3rem;
+    }
+
+    .article-post h1,
+    .article-post h2,
+    .article-post h3,
+    .article-post h4,
+    .article-post h5 {
+        padding-top: 1rem;
+    }
+
+    .post-meta {
+        margin-top: 0.5rem;
+        padding: 0.5rem 0;
+    }
+
+    header h1 {
+        font-size: 3rem;
+        margin-top: 2rem;
+    }
+
+    header u {
+        background: linear-gradient(transparent 85%, #bac8ff 0);
+    }
+
+    .article-header {
+        padding-top: 3rem;
+
+        h1 {
+            padding-top: 0;
+            font-size: 2.5rem;
+        }
+
+        .thumb {
+            flex-direction: row;
+        }
+
+        .description {
+            font-size: 1.8rem;
+            line-height: 1.5;
+        }
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .article-header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+.post-thumbnail {
+    display: block !important;
+    width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+}

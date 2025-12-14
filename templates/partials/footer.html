@@ -1,0 +1,10 @@
+<footer class="footer flex">
+    <section class="container">
+        <nav class="footer-links">
+            {% if config.generate_feeds %}
+            <a href="{{ get_url(path="rss.xml") }}">RSS</a>
+            {% endif %}
+        </nav>
+    </section>
+    <script src="{{ get_url(path="app.js") }}"></script>
+</footer>

@@ -1,24 +1,64 @@
-# raskell.io | Raffael's Tech Blog
+# raskell.io
 
-Hi, my name is Raffael and this my own web space where I write about tech, the web, open-source, and my life as a software engineer. I write down whatever background noise my mind is producing so I can be more focused when I need to.
+Personal tech blog powered by Zola and managed with mise.
 
-**Link to the website:** [🔗 Raskell](https://raskell.io/)
+## Prerequisites
 
-## Project Structure
+- [mise](https://mise.jdx.dev/) - Development tool version manager and task runner
 
-The site is built using Hugo, a powerful and fast static site generator. The Cyberparadism website is structured as follows:
+## Quick Start
 
-- `content/`: Contains all the markdown files which make up the content of the site. This includes most content such as blog posts and other written materials.
-- `static/`: This directory hosts all static content like images, CSS files, or other static files.
-- `layouts/`: Holds the HTML templates that define the structure of different types of pages on the site.
-- `data/`: Stores configuration files and other data files used by the site.
-- `themes/`: Contains the Hugo theme used for the site. Customizations to the theme are also located here.
-- `config.yaml`: The main configuration file for the Hugo site. This file contains global settings for the website.
+1. Install mise if you haven't already:
+   ```bash
+   curl https://mise.run | sh
+   ```
 
-## Reporting Issues
+2. Setup the project (downloads fonts and converts images):
+   ```bash
+   mise run setup
+   ```
 
-If you encounter any issues or have suggestions for improvements, please file an issue in this repository's Issue Tracker.
+3. Start the development server:
+   ```bash
+   mise run serve
+   ```
 
-## License
+4. Visit http://127.0.0.1:1025
 
-[MIT](https://github.com/raskell-io/raskell-io.github.io/blob/main/LICENSE)
+## Available Tasks
+
+Run `mise tasks` to see all available tasks:
+
+- `mise run serve` - Start development server
+- `mise run build` - Build for production
+- `mise run setup` - Download fonts and convert images
+- `mise run download-fonts` - Download Geist fonts
+- `mise run convert-images` - Convert images to AVIF format
+- `mise run new <slug>` - Create a new article
+- `mise run clean` - Remove the public directory
+
+## Image Conversion
+
+The project automatically converts images to AVIF format for better performance. This requires ImageMagick or ffmpeg:
+
+```bash
+# macOS
+brew install imagemagick
+
+# Linux
+apt-get install imagemagick
+```
+
+Images are served using the `<picture>` element with AVIF format and PNG/JPG fallbacks.
+
+## Fonts
+
+The project uses Geist fonts from Vercel, automatically downloaded via mise tasks. No npm dependencies required.
+
+## Tech Stack
+
+- **Static Site Generator**: [Zola](https://www.getzola.org/)
+- **Typography**: Geist & Geist Mono (variable fonts)
+- **Color Theme**: Catppuccin (Latte for light, Mocha for dark)
+- **Task Runner**: [mise](https://mise.jdx.dev/)
+- **Image Format**: AVIF with fallbacks

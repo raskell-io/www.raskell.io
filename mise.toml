@@ -1,0 +1,48 @@
+[tools]
+zola = "0.19"
+
+[env]
+_.file = ".env"
+
+[tasks.serve]
+description = "Start the Zola development server"
+run = "zola serve"
+
+[tasks.build]
+description = "Build the site for production"
+run = "zola build"
+
+[tasks.check]
+description = "Check the site for errors without building"
+run = "zola check"
+
+[tasks.new]
+description = "Create a new article"
+run = """
+#!/usr/bin/env bash
+if [ -z "$1" ]; then
+  echo "Usage: mise run new <article-slug>"
+  exit 1
+fi
+SLUG="$1"
+DATE=$(date +%Y-%m-%d)
+FILE="content/articles/${SLUG}.md"
+cat > "$FILE" << ARTICLE
++++
+title = ""
+date = ${DATE}
+description = ""
+[taxonomies]
+tags = []
+categories = []
+[extra]
+author = "Raffael"
++++
+
+ARTICLE
+echo "Created $FILE"
+"""
+
+[tasks.clean]
+description = "Remove the public directory"
+run = "rm -rf public"

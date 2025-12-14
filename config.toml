@@ -1,0 +1,53 @@
+base_url = "https://raskell.io"
+title = "Raskell"
+description = "Writing about platform automation, edge systems, applied security, and open standards. Building automation-first platforms that survive production reality."
+default_language = "en"
+# theme = ""
+compile_sass = true
+minify_html = true
+generate_feeds = true
+feed_filenames = ["rss.xml"]
+build_search_index = true
+
+taxonomies = [
+    { name = "tags", feed = true },
+    { name = "categories", feed = true },
+    { name = "series", feed = true },
+]
+
+[markdown]
+highlight_code = true
+highlight_theme = "nord"
+smart_punctuation = true
+render_emoji = false
+external_links_target_blank = true
+external_links_no_follow = false
+external_links_no_referrer = false
+insert_anchor_links = "left"
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+
+[search]
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+
+[extra]
+site_name = "Raskell | Tech web space curated by Raffael"
+author = "Raffael"
+favicon = "raskell-mascot.png"
+logo = "raskell-mascot.png"
+color_scheme_toggle = true
+default_color_scheme = "auto"
+max_category_to_show = 10
+enable_footnotes = true
+comments_enabled = false
+
+[extra.social]
+github = "https://github.com/raffaelschneider"
+linkedin = "https://ch.linkedin.com/in/raffael-e-schneider"
+twitter = "https://twitter.com/raskelll"

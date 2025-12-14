@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="{{ config.default_language }}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="dark">
+
+    {% block title %}
+    <title>{% if page.title %}{{ page.title }} | {% elif section.title %}{{ section.title }} | {% endif %}{{ config.title }}</title>
+    {% endblock title %}
+
+    {% if config.generate_feeds %}
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml") }}">
+    {% endif %}
+
+    <meta property="og:site_name" content="{{ config.extra.site_name }}" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% elif section.title %}{{ section.title }} | {% endif %}{{ config.title }}"/>
+    <meta itemprop="name" content="{% if page.title %}{{ page.title }} | {% elif section.title %}{{ section.title }} | {% endif %}{{ config.title }}" />
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% elif section.title %}{{ section.title }} | {% endif %}{{ config.title }}" />
+    <meta name="application-name" content="{% if page.title %}{{ page.title }} | {% elif section.title %}{{ section.title }} | {% endif %}{{ config.title }}" />
+
+    <meta name="twitter:card" content="summary"/>
+
+    {% set description = config.description %}
+    {% if page.description %}
+        {% set description = page.description %}
+    {% elif section.description %}
+        {% set description = section.description %}
+    {% endif %}
+
+    <meta name="description" content="{{ description }}" />
+    <meta name="twitter:description" content="{{ description }}"/>
+    <meta itemprop="description" content="{{ description }}"/>
+    <meta property="og:description" content="{{ description }}" />
+
+    {% if page %}
+    <meta property="og:type" content="article" />
+    <meta property="article:author" content="{{ page.extra.author | default(value=config.extra.author) }}" />
+    <meta property="article:published_time" content="{{ page.date }}" />
+    {% endif %}
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ get_url(path=config.extra.favicon) }}" />
+    <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
+
+    <script>
+        (function() {
+            const colorSchemeKey = 'ThemeColorScheme';
+            const defaultScheme = '{{ config.extra.default_color_scheme | default(value="auto") }}';
+            {% if config.extra.color_scheme_toggle %}
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, defaultScheme);
+            }
+            {% else %}
+            localStorage.setItem(colorSchemeKey, defaultScheme);
+            {% endif %}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            const colorSchemeKey = 'ThemeColorScheme';
+            const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+            const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+            if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+                document.documentElement.dataset.userColorScheme = 'dark';
+            } else {
+                document.documentElement.dataset.userColorScheme = 'light';
+            }
+        })();
+    </script>
+</head>
+
+<body class="dark">
+    {% include "partials/header.html" %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    {% include "partials/footer.html" %}
+    <script src="{{ get_url(path="anchors.js") }}"></script>
+    <script src="{{ get_url(path="copy-code.js") }}"></script>
+    <script src="{{ get_url(path="scroll-to-top.js") }}"></script>
+</body>
+</html>

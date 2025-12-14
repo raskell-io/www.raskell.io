@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+#MISE description="Create favicon and logo from mascot image"
+
+set -euo pipefail
+
+MASCOT="static/raskell-mascot.png"
+FAVICON="static/favicon.ico"
+LOGO_AVIF="static/logo.avif"
+
+echo "🎨 Creating branding assets from mascot..."
+
+# Check if mascot exists
+if [[ ! -f "${MASCOT}" ]]; then
+    echo "❌ Mascot file not found: ${MASCOT}"
+    exit 1
+fi
+
+# Check for ImageMagick
+if ! command -v magick &> /dev/null && ! command -v convert &> /dev/null; then
+    echo "⚠️  ImageMagick not found!"
+    echo ""
+    echo "Please install ImageMagick to generate branding assets:"
+    echo "  macOS:  brew install imagemagick"
+    echo "  Linux:  apt-get install imagemagick"
+    echo ""
+    echo "Skipping branding generation (will use PNG directly)..."
+    exit 0
+fi
+
+# Determine which command to use
+if command -v magick &> /dev/null; then
+    CONVERT_CMD="magick"
+else
+    CONVERT_CMD="convert"
+fi
+
+# Create favicon.ico (16x16, 32x32, 48x48 multi-resolution)
+echo "  🔄 Creating favicon.ico..."
+"${CONVERT_CMD}" "${MASCOT}" -resize 256x256 \
+    \( -clone 0 -resize 16x16 \) \
+    \( -clone 0 -resize 32x32 \) \
+    \( -clone 0 -resize 48x48 \) \
+    -delete 0 -alpha on -colors 256 "${FAVICON}"
+echo "  ✅ Created ${FAVICON}"
+
+# Create logo.avif (optimized for header display)
+echo "  🔄 Creating logo.avif..."
+"${CONVERT_CMD}" "${MASCOT}" -resize 64x64 -quality 90 "${LOGO_AVIF}"
+echo "  ✅ Created ${LOGO_AVIF}"
+
+echo "✨ Branding assets created successfully!"

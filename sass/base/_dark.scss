@@ -1,0 +1,125 @@
+// Catppuccin Mocha (Dark theme)
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-mode: dark;
+    }
+
+    :root:not([data-user-color-scheme]) {
+        // Catppuccin Mocha colors
+        --ctp-rosewater: #f5e0dc;
+        --ctp-flamingo: #f2cdcd;
+        --ctp-pink: #f5c2e7;
+        --ctp-mauve: #cba6f7;
+        --ctp-red: #f38ba8;
+        --ctp-maroon: #eba0ac;
+        --ctp-peach: #fab387;
+        --ctp-yellow: #f9e2af;
+        --ctp-green: #a6e3a1;
+        --ctp-teal: #94e2d5;
+        --ctp-sky: #89dceb;
+        --ctp-sapphire: #74c7ec;
+        --ctp-blue: #89b4fa;
+        --ctp-lavender: #b4befe;
+        --ctp-text: #cdd6f4;
+        --ctp-subtext1: #bac2de;
+        --ctp-subtext0: #a6adc8;
+        --ctp-overlay2: #9399b2;
+        --ctp-overlay1: #7f849c;
+        --ctp-overlay0: #6c7086;
+        --ctp-surface2: #585b70;
+        --ctp-surface1: #45475a;
+        --ctp-surface0: #313244;
+        --ctp-base: #1e1e2e;
+        --ctp-mantle: #181825;
+        --ctp-crust: #11111b;
+
+        // Theme mappings
+        --h1-color: var(--ctp-text);
+        --font-color: var(--ctp-text);
+        --heading-color: var(--ctp-lavender);
+        --dark-font-color: var(--ctp-text);
+        --background: var(--ctp-base);
+        --medium-font-color: var(--ctp-subtext1);
+        --light-font-color: var(--ctp-subtext0);
+        --light-background: var(--ctp-mantle);
+        --light-background-hover: var(--ctp-surface0);
+        --code-background-color: var(--ctp-mantle);
+        --border: var(--ctp-surface0);
+        --link-color: var(--ctp-sapphire);
+        --link-color-darker: var(--ctp-blue);
+        --link-hover-color: var(--ctp-mauve);
+        --navbar-color: var(--ctp-base);
+        --blockquote: var(--ctp-mantle);
+        --blockquote-left: var(--ctp-mauve);
+        --transparent-text: var(--ctp-overlay1);
+        --transparent-bg: var(--ctp-surface0);
+        --light-transparent-bg: var(--ctp-surface1);
+        --input-color: var(--ctp-text);
+
+        // Accent colors
+        --accent-primary: var(--ctp-mauve);
+        --accent-secondary: var(--ctp-teal);
+        --accent-tertiary: var(--ctp-peach);
+        --accent-success: var(--ctp-green);
+    }
+}
+
+[data-user-color-scheme="dark"] {
+    // Catppuccin Mocha colors
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+    --ctp-text: #cdd6f4;
+    --ctp-subtext1: #bac2de;
+    --ctp-subtext0: #a6adc8;
+    --ctp-overlay2: #9399b2;
+    --ctp-overlay1: #7f849c;
+    --ctp-overlay0: #6c7086;
+    --ctp-surface2: #585b70;
+    --ctp-surface1: #45475a;
+    --ctp-surface0: #313244;
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+
+    // Theme mappings
+    --h1-color: var(--ctp-text);
+    --font-color: var(--ctp-text);
+    --heading-color: var(--ctp-lavender);
+    --dark-font-color: var(--ctp-text);
+    --background: var(--ctp-base);
+    --medium-font-color: var(--ctp-subtext1);
+    --light-font-color: var(--ctp-subtext0);
+    --light-background: var(--ctp-mantle);
+    --light-background-hover: var(--ctp-surface0);
+    --code-background-color: var(--ctp-mantle);
+    --border: var(--ctp-surface0);
+    --link-color: var(--ctp-sapphire);
+    --link-color-darker: var(--ctp-blue);
+    --link-hover-color: var(--ctp-mauve);
+    --navbar-color: var(--ctp-base);
+    --blockquote: var(--ctp-mantle);
+    --blockquote-left: var(--ctp-mauve);
+    --transparent-text: var(--ctp-overlay1);
+    --transparent-bg: var(--ctp-surface0);
+    --light-transparent-bg: var(--ctp-surface1);
+    --input-color: var(--ctp-text);
+
+    // Accent colors
+    --accent-primary: var(--ctp-mauve);
+    --accent-secondary: var(--ctp-teal);
+    --accent-tertiary: var(--ctp-peach);
+    --accent-success: var(--ctp-green);
+}

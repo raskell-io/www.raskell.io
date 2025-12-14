@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+    <div class="container">
+        <h1>{{ taxonomy.name | title }}: {{ term.name }}</h1>
+        <p class="subtitle">
+            <span class="count">{{ term.pages | length }}</span> post{% if term.pages | length != 1 %}s{% endif %} tagged with "{{ term.name }}".
+        </p>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div class="posts">
+            {% for page in term.pages %}
+            <div class="post">
+                <a href="{{ page.permalink }}">
+                    <div class="post-row">
+                        <time>{{ page.date | date(format="%b %d") }}</time>
+                        <h3>{{ page.title }}</h3>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

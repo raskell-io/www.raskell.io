@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#MISE description="Setup project (download fonts, convert images, create branding)"
+
+set -euo pipefail
+
+echo "🚀 Setting up project..."
+echo ""
+
+# Download fonts
+mise run download-fonts
+
+echo ""
+
+# Create branding assets (favicon and logo)
+echo "Creating branding assets..."
+if mise run create-branding; then
+    echo "Branding created successfully"
+else
+    echo "⚠️  Branding creation skipped (ImageMagick not installed)"
+fi
+
+echo ""
+
+# Convert images to AVIF
+mise run convert-images
+
+echo ""
+echo "✨ Setup complete!"
+echo ""
+echo "Next steps:"
+echo "  - Run 'mise run serve' to start the development server"
+echo "  - Run 'mise run build' to build for production"

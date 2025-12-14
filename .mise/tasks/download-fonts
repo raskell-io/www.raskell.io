@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#MISE description="Download Geist fonts from GitHub"
+
+set -euo pipefail
+
+FONTS_DIR="static/fonts"
+GEIST_VERSION="1.4.0"
+GEIST_URL="https://github.com/vercel/geist-font/releases/download/${GEIST_VERSION}"
+
+# Create fonts directory
+mkdir -p "${FONTS_DIR}"
+
+echo "📥 Downloading Geist fonts..."
+
+# Download Geist Sans Variable
+echo "  → Geist Sans Variable..."
+curl -sL "${GEIST_URL}/Geist-Variable.woff2" -o "${FONTS_DIR}/Geist-Variable.woff2"
+
+# Download Geist Mono Variable
+echo "  → Geist Mono Variable..."
+curl -sL "${GEIST_URL}/GeistMono-Variable.woff2" -o "${FONTS_DIR}/GeistMono-Variable.woff2"
+
+echo "✅ Fonts downloaded successfully to ${FONTS_DIR}/"

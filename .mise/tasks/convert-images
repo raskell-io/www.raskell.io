@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+#MISE description="Convert images to AVIF format"
+
+set -euo pipefail
+
+STATIC_DIR="static"
+
+echo "🖼️  Converting images to AVIF format..."
+
+# Find all PNG and JPG images in static directory
+find "${STATIC_DIR}" -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) | while read -r img; do
+    # Get the base name without extension
+    base="${img%.*}"
+    avif="${base}.avif"
+
+    # Skip if AVIF already exists and is newer than source
+    if [[ -f "${avif}" ]] && [[ "${avif}" -nt "${img}" ]]; then
+        echo "  ⏭️  Skipping ${img} (already converted)"
+        continue
+    fi
+
+    echo "  🔄 Converting ${img}..."
+
+    # Convert to AVIF using ImageMagick (if available) or ffmpeg
+    if command -v magick &> /dev/null; then
+        magick "${img}" -quality 85 "${avif}"
+    elif command -v convert &> /dev/null; then
+        convert "${img}" -quality 85 "${avif}"
+    elif command -v ffmpeg &> /dev/null; then
+        ffmpeg -i "${img}" -c:v libaom-av1 -crf 30 -y "${avif}" 2>/dev/null
+    else
+        echo "  ⚠️  No image conversion tool found!"
+        echo ""
+        echo "Please install one of the following:"
+        echo "  - ImageMagick: brew install imagemagick"
+        echo "  - ffmpeg: brew install ffmpeg"
+        echo ""
+        echo "Skipping image conversion..."
+        exit 0
+    fi
+
+    echo "  ✅ Created ${avif}"
+done
+
+echo "✨ Image conversion complete!"

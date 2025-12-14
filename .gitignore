@@ -1,2 +1,19 @@
+# Zola build output
 public/
-resources/_gen/
+
+# mise
+.mise.local.toml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp

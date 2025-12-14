@@ -1,0 +1,200 @@
+// Homepage sections
+
+.hero {
+    margin: 3rem 0;
+    padding-bottom: 2.5rem;
+    border-bottom: none;
+
+    p {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+        color: var(--font-color);
+        max-width: 800px;
+        font-weight: 400;
+
+        &:first-of-type {
+            font-weight: 600;
+            color: var(--heading-color);
+        }
+
+        &:last-of-type {
+            font-size: 1.05rem;
+        }
+    }
+
+    .hero-meta {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: flex-start;
+
+        .speaking-badge {
+            font-size: 0.95rem;
+            color: var(--font-color);
+            margin: 0;
+
+            strong {
+                color: var(--accent-primary);
+                font-weight: 600;
+            }
+        }
+
+        .bio-social {
+            display: flex;
+            gap: 1rem;
+
+            a {
+                color: var(--font-color);
+                transition: all 0.2s ease;
+                opacity: 0.8;
+
+                &:hover {
+                    color: var(--accent-primary);
+                    opacity: 1;
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+}
+
+.view-all-link {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--accent-primary);
+    background: var(--light-background);
+    border-radius: 999px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        background: var(--accent-primary);
+        color: var(--background);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(136, 57, 239, 0.15);
+    }
+}
+
+.projects-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    padding: 2rem;
+    border: none;
+    border-radius: 16px;
+    background: var(--light-background);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    h3 {
+        margin: 0 0 0.75rem 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--heading-color);
+    }
+
+    p {
+        margin: 0 0 1rem 0;
+        font-size: 0.95rem;
+        color: var(--font-color);
+        line-height: 1.7;
+        opacity: 0.9;
+    }
+
+    .status {
+        display: inline-block;
+        font-size: 0.75rem;
+        padding: 0.35rem 0.85rem;
+        background: var(--accent-primary);
+        color: var(--background);
+        border-radius: 999px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+    }
+
+    a {
+        font-size: 0.875rem;
+        text-decoration: none;
+        color: var(--accent-primary);
+        font-weight: 500;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.post-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: var(--light-background);
+    border: none;
+    border-radius: 999px;
+    color: var(--font-color);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.85;
+
+    &:hover {
+        background: var(--accent-primary);
+        color: var(--background);
+        opacity: 1;
+        transform: translateY(-1px);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .hero {
+        margin: 4rem 0 3rem;
+
+        p {
+            font-size: 1.4rem;
+
+            &:last-of-type {
+                font-size: 1.1rem;
+            }
+        }
+
+        .hero-meta {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+
+            .speaking-badge {
+                font-size: 1rem;
+            }
+
+            .bio-social {
+                gap: 1.5rem;
+            }
+        }
+    }
+}

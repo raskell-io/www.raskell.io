@@ -1,16 +1,13 @@
----
-title: "Disk space maintenance on Void Linux"
-author: "Raffael"
-date: "2024-05-01"
-description: "What to do when disk space is full after not paying attention after many months if not years of using Void Linux."
-tags:
-- linux
-categories:
-- code
-katex: true
----
++++
+title = "Disk space maintenance on Void Linux"
+date = 2024-05-01
+description = "What to do when disk space is full after not paying attention after many months if not years of using Void Linux."
 
-![void-disk-usage.png](void-disk-usage.png)
+[extra]
+author = "Raffael"
+katex = true
+image = "void-disk-usage.png"
++++
 
 ## Monday morning surprise
 
@@ -18,7 +15,7 @@ As I spent most time doing stuff with my computer rather than configuring my bel
 
 I checked my disk usage out of curiosity if the 250GB solid-state disk would be enough. And there came the surprise:
 
-```
+```shell
 $ df -H
 Filesystem      Size  Used Avail Use% Mounted on
 devtmpfs        8.4G     0  8.4G   0% /dev
@@ -42,7 +39,7 @@ After a quick Brave search, I ended up finding what I was looking for. Some kind
 
 All the knowledge I was lacking was to be found with the man page of `xbps-remove`.
 
-```
+```shell
 # xbps-remove -yO
 ```
 
@@ -50,7 +47,7 @@ The [man page](https://man.voidlinux.org/xbps-remove.1#O,) of `xbps-remove` tell
 
 ### 2. Removing orphaned packages
 
-```
+```shell
 # xbps-remove -yo
 ```
 
@@ -60,7 +57,7 @@ Here the same [man page](https://man.voidlinux.org/xbps-remove.1#o,) tells us th
 
 This one is interesting. While I knew about the circumstance that the people behind Void had developed their own package management ecosystem, I hadn't fully realized there were other utilities that came along with the upstream Void installation which were there for me to manage my beloved OS. So, apparently, one of these is a [shell script](https://github.com/void-linux/void-packages/blob/master/srcpkgs/base-files/files/vkpurge) name `vkpurge`, I must assume as a short name for `Void's Kernel purging` tool. I like this type of naming heavily implying its functionality.
 
-```
+```shell
 # vkpurge rm all
 ```
 
@@ -70,7 +67,7 @@ It performed as expected. Old kernel files (and modules?) were indeed purged and
 
 I couldn't be happier.
 
-```
+```shell
 $ df -H
 Filesystem      Size  Used Avail Use% Mounted on
 ...
@@ -88,4 +85,4 @@ Now back to my Monday morning.
 
 ---
 
-[1]: Painting in header image is "Seaside" by Aleksandr Deyneka
+[^1]: Painting in header image is "Seaside" by Aleksandr Deyneka

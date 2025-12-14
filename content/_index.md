@@ -1,1 +1,11 @@
-Hi, my name is Raffael and this my own web space where I write about tech, the web, open-source, and my life as a software engineer. I write down whatever background noise my mind is producing so I can be more focused when I need to.
++++
+title = "Home"
++++
+
+Hi, I’m Raffael.
+
+I build automation-first platforms and edge systems that survive production reality.
+
+Writing about platform automation, edge infrastructure, applied security, and open standards.
+
+When I wander off, it is usually into tooling and DevEx, or a stack I think is simply good (many come to my mind). This is a low-noise corner of the internet. Take what’s useful.

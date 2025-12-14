@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#MISE description="Check and install required tools"
+
+set -euo pipefail
+
+echo "🔧 Checking required tools..."
+
+# Check for image conversion tools
+if ! command -v magick &> /dev/null && ! command -v convert &> /dev/null && ! command -v ffmpeg &> /dev/null; then
+    echo "⚠️  No image conversion tool found!"
+    echo ""
+    echo "Please install one of the following:"
+    echo "  - ImageMagick: brew install imagemagick"
+    echo "  - ffmpeg: brew install ffmpeg"
+    exit 1
+fi
+
+if command -v magick &> /dev/null; then
+    echo "✅ ImageMagick (magick) found"
+elif command -v convert &> /dev/null; then
+    echo "✅ ImageMagick (convert) found"
+elif command -v ffmpeg &> /dev/null; then
+    echo "✅ ffmpeg found"
+fi
+
+echo "✨ All required tools are available!"

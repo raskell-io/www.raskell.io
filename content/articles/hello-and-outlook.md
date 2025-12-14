@@ -1,15 +1,16 @@
----
-title: "Hello and outlook"
-author: "Raffael"
-date: "2022-09-20"
-description: "The very first article on Raskell and an outlook of what topics are up ahead to be posted in the near future."
-tags:
-- raskell
-categories:
-- meta
----
++++
+title = "Hello and outlook"
+date = 2022-09-20
+description = "The very first article on Raskell and an outlook of what topics are up ahead to be posted in the near future."
 
-![hello-world.png](hello-world.png)
+[taxonomies]
+tags = ["raskell"]
+categories = ["meta"]
+
+[extra]
+author = "Raffael"
+image = "hello-world.png"
++++
 
 ## Hello world
 

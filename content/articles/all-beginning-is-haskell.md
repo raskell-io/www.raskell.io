@@ -1,16 +1,13 @@
----
-title: "All beginning is Haskell"
-author: "Raffael"
-date: "2023-03-06"
-description: "All beginning is Haskell"
-tags:
-- haskell
-categories:
-- code
-katex: true
----
++++
+title = "All beginning is Haskell"
+date = 2023-03-06
+description = "All beginning is Haskell"
 
-![all-beginning-is-haskell.png](all-beginning-is-haskell.png)
+[extra]
+author = "Raffael"
+katex = true
+image = "all-beginning-is-haskell.png"
++++
 
 ## The beauty of mathematics
 

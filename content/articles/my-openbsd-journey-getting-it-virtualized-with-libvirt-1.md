@@ -1,15 +1,12 @@
----
-title: "My OpenBSD journey: Getting it virtualized with libvirt (1)"
-author: "Raffael"
-date: "2023-02-06"
-description: "My OpenBSD journey: Getting it virtualized with libvirt (1)"
-tags:
-- openbsd, virtualization
-categories:
-- foss
----
++++
+title = "My OpenBSD journey: Getting it virtualized with libvirt (1)"
+date = 2023-02-06
+description = "My OpenBSD journey: Getting it virtualized with libvirt (1)"
 
-![openbsd-libvirt.png](openbsd-libvirt.png)
+[extra]
+author = "Raffael"
+image = "openbsd-libvirt.png"
++++
 
 ## Void Linux as my daily driver
 

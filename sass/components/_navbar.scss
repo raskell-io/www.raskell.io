@@ -1,0 +1,274 @@
+/* Navbar */
+
+main {
+    margin-top: 50px;
+}
+
+@media screen and (min-width: 800px) {
+    main {
+        margin-top: 0;
+    }
+}
+
+.emoji {
+    margin: 0 0.4rem 0 0.1rem;
+}
+
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--navbar-color);
+    z-index: 2;
+    padding: 0.5rem;
+
+    .flex {
+        justify-content: space-between;
+    }
+
+    a {
+        border-radius: 0.35rem;
+        margin: 0 0.05rem;
+        color: rgba(255, 255, 255, 0.65);
+        font-weight: 400;
+        font-size: 0.85rem;
+        border: 1px solid transparent;
+        padding: 0 0.3rem;
+        background: transparent;
+
+        &:first-of-type {
+            margin-left: -1rem;
+        }
+
+        .emoji {
+            display: none;
+        }
+
+        &.brand {
+            font-weight: 500;
+            color: white;
+            white-space: nowrap;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            line-height: 1;
+            background: transparent;
+
+            .emoji {
+                display: inline-block !important;
+            }
+
+            .brand-logo {
+                height: 28px;
+                width: 28px;
+                border-radius: 6px;
+                object-fit: contain;
+            }
+
+            .brand-text {
+                font-weight: 600;
+                letter-spacing: -0.01em;
+            }
+        }
+    }
+
+    button {
+        font-size: 1rem;
+        margin-right: -1rem;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .navbar a {
+        font-size: 0.95rem;
+        padding: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .emoji {
+        margin: 0 0.5rem 0 0.1rem;
+    }
+
+    .navbar {
+        position: static;
+        padding: 1.5rem 0;
+        background: transparent;
+        box-shadow: none;
+
+        .flex {
+            justify-content: space-between;
+        }
+
+        a {
+            padding: 0.75rem 1.25rem;
+            margin: 0 0.25rem;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--font-color);
+
+            &:first-of-type {
+                margin-left: -1.5rem;
+            }
+
+            &:hover {
+                background: var(--light-background);
+                color: var(--dark-font-color);
+            }
+
+            &[aria-current="page"] {
+                background: var(--light-background);
+                border-bottom: 2px solid var(--accent-primary);
+                color: var(--dark-font-color);
+            }
+
+            &.brand {
+                font-size: 1.3rem;
+                margin-right: 3rem;
+                border: none;
+                background: transparent !important;
+                color: var(--dark-font-color);
+
+                &:hover {
+                    background: var(--light-background) !important;
+                }
+
+                .brand-logo {
+                    height: 32px;
+                    width: 32px;
+                }
+
+                .brand-text {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    #dark-mode-button:hover {
+        background: var(--light-background);
+    }
+}
+
+@media print {
+    .navbar {
+        display: none;
+    }
+}
+
+/* Theme Toggle Button - Animal Crossing Style */
+#dark-mode-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    background: var(--light-background);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.05),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+        transform: scale(1.05);
+        border-color: var(--accent-primary);
+        box-shadow:
+            0 4px 12px rgba(0, 0, 0, 0.1),
+            inset 0 -2px 4px rgba(0, 0, 0, 0.05),
+            0 0 0 4px rgba(136, 57, 239, 0.1);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow:
+            0 4px 12px rgba(0, 0, 0, 0.1),
+            0 0 0 4px rgba(136, 57, 239, 0.2);
+    }
+
+    .theme-toggle-inner {
+        position: relative;
+        width: 20px;
+        height: 20px;
+    }
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+
+    .sun-icon {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+        color: #fbbf24;
+    }
+
+    .moon-icon {
+        opacity: 0;
+        transform: rotate(180deg) scale(0);
+        color: #818cf8;
+    }
+}
+
+/* Dark mode state */
+[data-user-color-scheme="dark"] #dark-mode-button {
+    background: var(--light-background);
+
+    .sun-icon {
+        opacity: 0;
+        transform: rotate(-180deg) scale(0);
+    }
+
+    .moon-icon {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+/* Sparkle animation on click */
+@keyframes sparkle {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+#dark-mode-button.transitioning {
+    animation: sparkle 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@media screen and (min-width: 800px) {
+    #dark-mode-button {
+        width: 52px;
+        height: 52px;
+
+        .theme-toggle-inner {
+            width: 22px;
+            height: 22px;
+        }
+
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+    }
+}
