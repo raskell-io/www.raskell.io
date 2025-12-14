@@ -101,34 +101,6 @@ class ThemeColorScheme {
   }
 }
 
-// Copy Button for Code Blocks
-function renderCopyButton() {
-  const codeBlocks = document.querySelectorAll("pre");
-
-  codeBlocks.forEach((block) => {
-    if (!block.querySelector(".copy-button")) {
-      const button = document.createElement("button");
-      button.className = "copy-button";
-      button.textContent = "Copy";
-
-      button.addEventListener("click", () => {
-        const code = block.querySelector("code");
-        const text = code.textContent;
-
-        navigator.clipboard.writeText(text).then(() => {
-          button.textContent = "Copied!";
-          setTimeout(() => {
-            button.textContent = "Copy";
-          }, 2000);
-        });
-      });
-
-      block.style.position = "relative";
-      block.appendChild(button);
-    }
-  });
-}
-
 // Footnotes Enhancement
 function renderFootnotes() {
   const footnoteRefs = document.querySelectorAll('sup[id^="fnref"]');
@@ -151,7 +123,6 @@ function renderFootnotes() {
 window.addEventListener("load", () => {
   setTimeout(() => {
     new ThemeColorScheme(document.getElementById("dark-mode-button"));
-    renderCopyButton();
     renderFootnotes();
   }, 0);
 });
