@@ -9,7 +9,7 @@ categories = ["field-notes"]
 
 [extra]
 author = "Raffael"
-image = "mise-ate-make.png"
+image = "mise-ate-make.avif"
 +++
 
 ## The problem with project setup

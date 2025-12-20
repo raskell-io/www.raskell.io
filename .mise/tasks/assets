@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+#MISE description="Process all assets (images, fonts, etc.)"
+
+set -euo pipefail
+
+echo "🏗️  Running asset pipeline..."
+
+# Convert images from source to optimized formats
+echo ""
+echo "1️⃣  Converting images..."
+mise run convert-images
+
+# Download fonts if needed
+echo ""
+echo "2️⃣  Processing fonts..."
+if [[ -f ".mise/tasks/download-fonts" ]]; then
+    mise run download-fonts
+else
+    echo "  ⏭️  No font processing task found, skipping..."
+fi
+
+# Create branding assets if needed
+echo ""
+echo "3️⃣  Processing branding..."
+if [[ -f ".mise/tasks/create-branding" ]]; then
+    mise run create-branding
+else
+    echo "  ⏭️  No branding processing task found, skipping..."
+fi
+
+echo ""
+echo "✨ Asset pipeline complete!"
+
+# Show a summary of processed files
+echo ""
+echo "📊 Asset Summary:"
+echo "  Source images: $(find static/src -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) | wc -l | tr -d ' ')"
+echo "  AVIF images:   $(find static -maxdepth 1 -name "*.avif" | wc -l | tr -d ' ')"
+echo ""
+echo "💡 Next steps:"
+echo "  - Run 'mise run build' to build your site"
+echo "  - Run 'mise run serve' to preview locally"

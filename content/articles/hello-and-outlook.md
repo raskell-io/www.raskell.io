@@ -9,7 +9,7 @@ categories = ["meta"]
 
 [extra]
 author = "Raffael"
-image = "hello-world.png"
+image = "hello-world.avif"
 +++
 
 ## Hello world

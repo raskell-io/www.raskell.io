@@ -5,7 +5,7 @@ description = "My OpenBSD journey: Getting it virtualized with libvirt (1)"
 
 [extra]
 author = "Raffael"
-image = "openbsd-libvirt.png"
+image = "openbsd-libvirt.avif"
 +++
 
 ## Void Linux as my daily driver

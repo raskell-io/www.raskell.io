@@ -1,33 +1,53 @@
 #!/usr/bin/env bash
-#MISE description="Convert images to AVIF format"
+#MISE description="Convert source images from static/src to AVIF format in static/"
 
 set -euo pipefail
 
-STATIC_DIR="static"
+SRC_DIR="static/src"
+DEST_DIR="static"
 
-echo "🖼️  Converting images to AVIF format..."
+echo "🖼️  Converting images from ${SRC_DIR} to AVIF format..."
 
-# Find all PNG and JPG images in static directory
-find "${STATIC_DIR}" -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) | while read -r img; do
+# Check if source directory exists
+if [[ ! -d "${SRC_DIR}" ]]; then
+    echo "  ⚠️  Source directory ${SRC_DIR} does not exist!"
+    echo "  📁 Please create ${SRC_DIR} and place your source images there."
+    exit 0
+fi
+
+# Create destination directory if it doesn't exist
+mkdir -p "${DEST_DIR}"
+
+# Find all PNG and JPG images in source directory
+find "${SRC_DIR}" -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) | while read -r src_img; do
+    # Get the relative path from src directory
+    rel_path="${src_img#${SRC_DIR}/}"
+
     # Get the base name without extension
-    base="${img%.*}"
-    avif="${base}.avif"
+    base_name="${rel_path%.*}"
+
+    # Construct destination paths
+    dest_avif="${DEST_DIR}/${base_name}.avif"
+    dest_dir=$(dirname "${dest_avif}")
+
+    # Create destination subdirectory if needed
+    mkdir -p "${dest_dir}"
 
     # Skip if AVIF already exists and is newer than source
-    if [[ -f "${avif}" ]] && [[ "${avif}" -nt "${img}" ]]; then
-        echo "  ⏭️  Skipping ${img} (already converted)"
+    if [[ -f "${dest_avif}" ]] && [[ "${dest_avif}" -nt "${src_img}" ]]; then
+        echo "  ⏭️  Skipping ${src_img} (already converted)"
         continue
     fi
 
-    echo "  🔄 Converting ${img}..."
+    echo "  🔄 Converting ${src_img} -> ${dest_avif}..."
 
-    # Convert to AVIF using ImageMagick (if available) or ffmpeg
+    # Convert to AVIF using available tools
     if command -v magick &> /dev/null; then
-        magick "${img}" -quality 85 "${avif}"
+        magick "${src_img}" -quality 85 "${dest_avif}"
     elif command -v convert &> /dev/null; then
-        convert "${img}" -quality 85 "${avif}"
+        convert "${src_img}" -quality 85 "${dest_avif}"
     elif command -v ffmpeg &> /dev/null; then
-        ffmpeg -i "${img}" -c:v libaom-av1 -crf 30 -y "${avif}" 2>/dev/null
+        ffmpeg -i "${src_img}" -c:v libaom-av1 -crf 30 -y "${dest_avif}" 2>/dev/null
     else
         echo "  ⚠️  No image conversion tool found!"
         echo ""
@@ -36,10 +56,32 @@ find "${STATIC_DIR}" -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg"
         echo "  - ffmpeg: brew install ffmpeg"
         echo ""
         echo "Skipping image conversion..."
-        exit 0
+        exit 1
     fi
 
-    echo "  ✅ Created ${avif}"
+    if [[ -f "${dest_avif}" ]]; then
+        echo "  ✅ Created ${dest_avif}"
+
+        # Show size comparison
+        src_size=$(stat -f%z "${src_img}" 2>/dev/null || stat -c%s "${src_img}" 2>/dev/null || echo "unknown")
+        dest_size=$(stat -f%z "${dest_avif}" 2>/dev/null || stat -c%s "${dest_avif}" 2>/dev/null || echo "unknown")
+
+        if [[ "${src_size}" != "unknown" ]] && [[ "${dest_size}" != "unknown" ]]; then
+            reduction=$((100 - (dest_size * 100 / src_size)))
+            echo "  📊 Size: ${src_size} bytes -> ${dest_size} bytes (${reduction}% reduction)"
+        fi
+    else
+        echo "  ❌ Failed to create ${dest_avif}"
+    fi
 done
 
 echo "✨ Image conversion complete!"
+echo ""
+echo "💡 To use AVIF images in your templates, reference them like:"
+echo "   <img src=\"/image-name.avif\" alt=\"description\">"
+echo ""
+echo "🔧 For better browser compatibility, consider using <picture> elements:"
+echo "   <picture>"
+echo "     <source srcset=\"/image-name.avif\" type=\"image/avif\">"
+echo "     <img src=\"/image-name.png\" alt=\"description\">"
+echo "   </picture>"

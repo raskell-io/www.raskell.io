@@ -10,7 +10,10 @@ run = "zola serve"
 
 [tasks.build]
 description = "Build the site for production"
-run = "zola build"
+run = [
+  "mise run assets",
+  "zola build"
+]
 
 [tasks.check]
 description = "Check the site for errors without building"
@@ -43,6 +46,17 @@ ARTICLE
 echo "Created $FILE"
 """
 
+[tasks.assets]
+description = "Process all assets (images, fonts, etc.)"
+run = "mise run assets"
+
+[tasks.convert-images]
+description = "Convert source images from static/src to AVIF format"
+run = "mise run convert-images"
+
 [tasks.clean]
-description = "Remove the public directory"
-run = "rm -rf public"
+description = "Remove the public directory and converted assets"
+run = [
+  "rm -rf public",
+  "find static -name '*.avif' -type f -delete"
+]

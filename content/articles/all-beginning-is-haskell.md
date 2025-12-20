@@ -6,7 +6,7 @@ description = "All beginning is Haskell"
 [extra]
 author = "Raffael"
 katex = true
-image = "all-beginning-is-haskell.png"
+image = "all-beginning-is-haskell.avif"
 +++
 
 ## The beauty of mathematics
