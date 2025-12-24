@@ -7,21 +7,35 @@ template = "static-page.html"
 
 Enabling untapped computing power through distributed infrastructure orchestration. A platform for coordinating and utilizing distributed compute resources efficiently.
 
-**Status:** In active development
+**Status:** In development (not yet published)
 
 ---
 
-## Pingora-based Reverse Proxy
+## Sentinel
 
-Modern, high-performance reverse proxy built on Cloudflare's Pingora library. Designed as a production-ready alternative to Nginx and HAProxy with better performance characteristics and operational simplicity.
+A security-first reverse proxy built to guard the free web. Built on Cloudflare's Pingora library, Sentinel is designed as a production-ready alternative to Nginx and HAProxy with better performance characteristics and operational simplicity.
 
 **Key features:**
 - Built on Pingora's async Rust foundation
+- Security-first design
 - High-performance edge routing
-- Simplified configuration
 - Production-grade reliability
 
 **Status:** In active development
+
+[GitHub](https://github.com/raskell-io/sentinel)
+
+---
+
+## Learn You the Web
+
+A friendly guide to how the web actually works. For Real This Time.
+
+An e-book that explains the web's core technologies — HTTP, DNS, TLS, and the protocols that hold it all together — without the hand-waving or oversimplification.
+
+**Status:** In progress
+
+[Read online](https://raskell-io.github.io/learn-you-the-web/) · [GitHub](https://github.com/raskell-io/learn-you-the-web)
 
 ---
 
