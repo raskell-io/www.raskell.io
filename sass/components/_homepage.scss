@@ -17,10 +17,6 @@
             font-weight: 600;
             color: var(--heading-color);
         }
-
-        &:last-of-type {
-            font-size: 1.05rem;
-        }
     }
 
     .hero-meta {
@@ -176,10 +172,6 @@
 
         p {
             font-size: 1.4rem;
-
-            &:last-of-type {
-                font-size: 1.1rem;
-            }
         }
 
         .hero-meta {
