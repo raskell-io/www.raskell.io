@@ -1,6 +1,6 @@
 // Color Scheme Toggle
 class ThemeColorScheme {
-  constructor(toggleEl) {
+  constructor(toggleElements) {
     this.localStorageKey = "ThemeColorScheme";
     this.currentScheme = this.getSavedScheme();
     this.systemPreferScheme = window.matchMedia("(prefers-color-scheme: dark)")
@@ -11,8 +11,11 @@ class ThemeColorScheme {
     this.bindMatchMedia();
     this.dispatchEvent(document.documentElement.dataset.userColorScheme);
 
-    if (toggleEl) {
-      this.bindClick(toggleEl);
+    // Bind click handlers to all toggle elements
+    if (toggleElements) {
+      toggleElements.forEach((el) => {
+        if (el) this.bindClick(el);
+      });
     }
 
     if (document.body.style.transition == "") {
@@ -101,6 +104,72 @@ class ThemeColorScheme {
   }
 }
 
+// Mobile Menu
+class MobileMenu {
+  constructor() {
+    this.menuButton = document.getElementById("mobile-menu-button");
+    this.menuOverlay = document.getElementById("mobile-menu-overlay");
+    this.isOpen = false;
+
+    if (this.menuButton && this.menuOverlay) {
+      this.init();
+    }
+  }
+
+  init() {
+    // Toggle menu on button click
+    this.menuButton.addEventListener("click", () => {
+      this.toggle();
+    });
+
+    // Close menu when clicking on a link
+    const menuLinks = this.menuOverlay.querySelectorAll("a");
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        this.close();
+      });
+    });
+
+    // Close menu on escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && this.isOpen) {
+        this.close();
+      }
+    });
+
+    // Close menu when resizing to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 800 && this.isOpen) {
+        this.close();
+      }
+    });
+  }
+
+  toggle() {
+    if (this.isOpen) {
+      this.close();
+    } else {
+      this.open();
+    }
+  }
+
+  open() {
+    this.isOpen = true;
+    this.menuButton.setAttribute("aria-expanded", "true");
+    this.menuButton.setAttribute("aria-label", "Close menu");
+    this.menuOverlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  close() {
+    this.isOpen = false;
+    this.menuButton.setAttribute("aria-expanded", "false");
+    this.menuButton.setAttribute("aria-label", "Open menu");
+    this.menuOverlay.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+}
+
 // Footnotes Enhancement
 function renderFootnotes() {
   const footnoteRefs = document.querySelectorAll('sup[id^="fnref"]');
@@ -122,7 +191,14 @@ function renderFootnotes() {
 // Initialize on load
 window.addEventListener("load", () => {
   setTimeout(() => {
-    new ThemeColorScheme(document.getElementById("dark-mode-button"));
+    // Get all theme toggle buttons (desktop and mobile)
+    const themeButtons = [
+      document.getElementById("dark-mode-button"),
+      document.getElementById("dark-mode-button-mobile"),
+    ].filter(Boolean);
+
+    new ThemeColorScheme(themeButtons);
+    new MobileMenu();
     renderFootnotes();
   }, 0);
 });
