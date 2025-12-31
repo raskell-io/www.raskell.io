@@ -126,6 +126,10 @@
             const colorSchemeItem = localStorage.getItem(colorSchemeKey);
             const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
+            // Set theme setting (light/dark/auto)
+            document.documentElement.dataset.themeSetting = colorSchemeItem || 'auto';
+
+            // Set effective theme (light/dark)
             if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
                 document.documentElement.dataset.userColorScheme = 'dark';
             } else {
@@ -238,5 +242,11 @@
 
     <script src="{{ get_url(path='anchors.js') | safe }}"></script>
     <script src="{{ get_url(path='scroll-to-top.js') | safe }}"></script>
+
+    {% if config.build_search_index %}
+    <script src="{{ get_url(path='elasticlunr.min.js') | safe }}"></script>
+    <script src="{{ get_url(path='search_index.en.js') | safe }}"></script>
+    <script src="{{ get_url(path='search.js') | safe }}"></script>
+    {% endif %}
 </body>
 </html>

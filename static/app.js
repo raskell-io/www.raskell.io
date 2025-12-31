@@ -1,110 +1,102 @@
-// Color Scheme Toggle
-class ThemeColorScheme {
-  constructor(toggleElements) {
-    this.localStorageKey = "ThemeColorScheme";
-    this.currentScheme = this.getSavedScheme();
-    this.systemPreferScheme = window.matchMedia("(prefers-color-scheme: dark)")
-      .matches
-      ? "dark"
-      : "light";
+// =============================================================================
+// Theme Toggle - 3-way (light/dark/auto)
+// =============================================================================
 
-    this.bindMatchMedia();
-    this.dispatchEvent(document.documentElement.dataset.userColorScheme);
+(function() {
+  'use strict';
 
-    // Bind click handlers to all toggle elements
-    if (toggleElements) {
-      toggleElements.forEach((el) => {
-        if (el) this.bindClick(el);
-      });
-    }
+  const STORAGE_KEY = 'ThemeColorScheme';
+  const THEMES = ['light', 'dark', 'auto'];
 
-    if (document.body.style.transition == "") {
-      document.body.style.setProperty(
-        "transition",
-        "background-color .3s ease",
-      );
+  function getStoredTheme() {
+    try {
+      return localStorage.getItem(STORAGE_KEY) || 'auto';
+    } catch (e) {
+      return 'auto';
     }
   }
 
-  saveScheme() {
-    localStorage.setItem(this.localStorageKey, this.currentScheme);
+  function getSystemTheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
-  bindClick(toggleEl) {
-    toggleEl.addEventListener("click", (e) => {
-      // Add sparkle animation
-      toggleEl.classList.add("transitioning");
-      setTimeout(() => {
-        toggleEl.classList.remove("transitioning");
-      }, 600);
-
-      if (this.isDark()) {
-        this.currentScheme = "light";
-      } else {
-        this.currentScheme = "dark";
-      }
-
-      this.setBodyClass();
-
-      if (this.currentScheme == this.systemPreferScheme) {
-        this.currentScheme = "auto";
-      }
-
-      this.saveScheme();
-    });
+  function getEffectiveTheme(stored) {
+    if (stored === 'auto') {
+      return getSystemTheme();
+    }
+    return stored;
   }
 
-  isDark() {
-    return (
-      this.currentScheme == "dark" ||
-      (this.currentScheme == "auto" && this.systemPreferScheme == "dark")
-    );
-  }
+  function applyTheme(theme) {
+    const effective = getEffectiveTheme(theme);
+    document.documentElement.setAttribute('data-user-color-scheme', effective);
+    document.documentElement.setAttribute('data-theme-setting', theme);
 
-  dispatchEvent(colorScheme) {
-    const event = new CustomEvent("onColorSchemeChange", {
-      detail: colorScheme,
-    });
+    // Dispatch event for other components
+    const event = new CustomEvent('onColorSchemeChange', { detail: effective });
     window.dispatchEvent(event);
   }
 
-  setBodyClass() {
-    if (this.isDark()) {
-      document.documentElement.dataset.userColorScheme = "dark";
-    } else {
-      document.documentElement.dataset.userColorScheme = "light";
+  function saveTheme(theme) {
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch (e) {
+      // Storage not available
     }
-
-    this.dispatchEvent(document.documentElement.dataset.userColorScheme);
   }
 
-  getSavedScheme() {
-    const savedScheme = localStorage.getItem(this.localStorageKey);
-    if (
-      savedScheme == "light" ||
-      savedScheme == "dark" ||
-      savedScheme == "auto"
-    ) {
-      return savedScheme;
-    }
-    return "auto";
+  function cycleTheme() {
+    const current = getStoredTheme();
+    const currentIndex = THEMES.indexOf(current);
+    const nextIndex = (currentIndex + 1) % THEMES.length;
+    return THEMES[nextIndex];
   }
 
-  bindMatchMedia() {
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (e) => {
-        if (e.matches) {
-          this.systemPreferScheme = "dark";
-        } else {
-          this.systemPreferScheme = "light";
-        }
-        this.setBodyClass();
+  function initThemeToggle() {
+    // Apply initial theme immediately
+    const stored = getStoredTheme();
+    applyTheme(stored);
+
+    // Set up toggle buttons
+    document.querySelectorAll('.theme-toggle').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Cycle to next theme
+        const newTheme = cycleTheme();
+        saveTheme(newTheme);
+        applyTheme(newTheme);
+
+        // Add animation class
+        button.classList.add('animating');
+        setTimeout(() => button.classList.remove('animating'), 500);
       });
-  }
-}
+    });
 
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      const stored = getStoredTheme();
+      if (stored === 'auto') {
+        applyTheme('auto');
+      }
+    });
+  }
+
+  // Apply theme immediately (before DOM ready) to prevent flash
+  applyTheme(getStoredTheme());
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeToggle);
+  } else {
+    initThemeToggle();
+  }
+})();
+
+// =============================================================================
 // Mobile Menu
+// =============================================================================
+
 class MobileMenu {
   constructor() {
     this.menuButton = document.getElementById("mobile-menu-button");
@@ -117,27 +109,19 @@ class MobileMenu {
   }
 
   init() {
-    // Toggle menu on button click
-    this.menuButton.addEventListener("click", () => {
-      this.toggle();
-    });
+    this.menuButton.addEventListener("click", () => this.toggle());
 
-    // Close menu when clicking on a link
     const menuLinks = this.menuOverlay.querySelectorAll("a");
     menuLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        this.close();
-      });
+      link.addEventListener("click", () => this.close());
     });
 
-    // Close menu on escape key
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && this.isOpen) {
         this.close();
       }
     });
 
-    // Close menu when resizing to desktop
     window.addEventListener("resize", () => {
       if (window.innerWidth >= 800 && this.isOpen) {
         this.close();
@@ -146,11 +130,7 @@ class MobileMenu {
   }
 
   toggle() {
-    if (this.isOpen) {
-      this.close();
-    } else {
-      this.open();
-    }
+    this.isOpen ? this.close() : this.open();
   }
 
   open() {
@@ -170,7 +150,10 @@ class MobileMenu {
   }
 }
 
+// =============================================================================
 // Footnotes Enhancement
+// =============================================================================
+
 function renderFootnotes() {
   const footnoteRefs = document.querySelectorAll('sup[id^="fnref"]');
 
@@ -191,13 +174,6 @@ function renderFootnotes() {
 // Initialize on load
 window.addEventListener("load", () => {
   setTimeout(() => {
-    // Get all theme toggle buttons (desktop and mobile)
-    const themeButtons = [
-      document.getElementById("dark-mode-button"),
-      document.getElementById("dark-mode-button-mobile"),
-    ].filter(Boolean);
-
-    new ThemeColorScheme(themeButtons);
     new MobileMenu();
     renderFootnotes();
   }, 0);
