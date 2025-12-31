@@ -2,7 +2,6 @@
 title = "Looking back on 2025"
 date = 2025-12-31
 description = "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself."
-draft = true
 
 [taxonomies]
 tags = ["ai-for-ops", "edge-systems", "oss"]
