@@ -41,7 +41,42 @@ A command-line diagnostic tool that evaluates web edge infrastructure health. Na
 
 **Status:** In active development
 
-[GitHub](https://github.com/raskell-io/sango)
+[Website](https://sango.raskell.io) · [GitHub](https://github.com/raskell-io/sango)
+
+---
+
+## Kurumi
+
+A local-first second brain. Your ideas, everywhere, offline. Named after the Japanese word for walnut — because it looks like a brain.
+
+**Key features:**
+- Wikilinks and backlinks for connecting thoughts
+- Graph visualization of note relationships
+- Full-text search and hashtag filtering
+- Completely offline-first with optional sync via Automerge CRDTs
+- Progressive Web App (PWA) support
+- No vendor lock-in — your data stays yours
+
+**Status:** In active development
+
+[GitHub](https://github.com/raskell-io/kurumi)
+
+---
+
+## Terrarium
+
+A societal simulation engine where LLM-powered agents form emergent civilizations. A societal petri dish — create worlds with rules, populate them with autonomous agents powered by language models, and observe what develops organically.
+
+**Key features:**
+- Agents with personality traits, beliefs, survival needs, and memories
+- Seven core actions (move, gather, eat, rest, speak, give, attack)
+- Event-sourced logging with perfect replay capability
+- Dwarf Fortress-inspired terminal viewer
+- Beliefs over facts — property exists only as subjective conviction
+
+**Status:** In active development
+
+[GitHub](https://github.com/raskell-io/terrarium)
 
 ---
 
