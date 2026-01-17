@@ -19,10 +19,6 @@ Applied security is just one arena of that. It is systems under pressure with ad
 - Applied security: reduce noise, keep humans effective, ship pragmatic controls
 - Open standards: sustainable solutions over vendor lock-in
 
-## Some threads I keep pulling on
-
-- Making Pingora a open source alternative to established reverse proxies like Nginx, HAProxy, and what not.
-
 ## Speaking
 
 **RSAC 2026** — *Self-Learning WAF: Using Generative AI to Tame ModSecurity False Positives* (NCS-W01)
