@@ -5,9 +5,9 @@ template = "static-page.html"
 
 ## Flagship and serious builds
 
-### Sentinel
+### Sentinel: Guard the Free Web
 
-A security-first reverse proxy built to guard the free web based on Cloudflare's Pingora framework.
+A security-first reverse proxy based on Cloudflare's Pingora framework.
 
 **Key features:**
 - Built on Pingora's async Rust foundation
@@ -124,7 +124,7 @@ Rust/Bevy PWA for training robotic agents.
 
 ---
 
-### Paw & Claw: Woodland Wars
+### Paw & Claw
 
 HD-2D-stylized turn-based tactics game (spiritual successor to Nintendo's Advance Wars) built with Rust/Bevy.
 
