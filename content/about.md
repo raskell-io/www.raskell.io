@@ -22,12 +22,12 @@ Applied security is just one arena of that. It is systems under pressure with ad
 ## Speaking
 
 **RSAC 2026**<br>
-*Self-Learning WAF: Using Generative AI to Tame ModSecurity False Positives*<br>
+*[Self-Learning WAF: Using Generative AI to Tame ModSecurity False Positives](https://path.rsaconference.com/flow/rsac/us26/FullAgenda/page/catalog/session/1753946922633001YdMq)*<br>
 Session NCS-W01<br>
 Wednesday, March 25, 2026<br>
 8:30–9:20 AM PDT
 
-[Full details →](/speaking)
+[More about speaking →](/speaking)
 
 ## Contact
 
