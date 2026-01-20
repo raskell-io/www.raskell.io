@@ -28,6 +28,8 @@ Wednesday, March 25, 2026 · 8:30–9:20 AM PDT
 
 ## Contact
 
-- X: [@raskelll](https://twitter.com/raskelll)
-- LinkedIn: [raffael-e-schneider](https://ch.linkedin.com/in/raffael-e-schneider)
-- GitHub: [raffaelschneider](https://github.com/raffaelschneider)
+<p class="contact-links">
+<a href="https://twitter.com/raskelll"><i data-lucide="twitter"></i> @raskelll</a>
+<a href="https://ch.linkedin.com/in/raffael-e-schneider"><i data-lucide="linkedin"></i> raffael-e-schneider</a>
+<a href="https://github.com/raffaelschneider"><i data-lucide="github"></i> raffaelschneider</a>
+</p>

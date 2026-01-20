@@ -94,3 +94,30 @@
         }
     }
 }
+
+/* Contact links with icons */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .contact-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem 1.5rem;
+    }
+}
