@@ -23,21 +23,21 @@ A security-first reverse proxy based on Cloudflare's Pingora framework.
 
 ### hx
 
-Extremely fast Haskell package + project manager built in Rust.
+Extremely fast Haskell package and project manager built in Rust. Designed to replace the fragmented Haskell tooling ecosystem with a single, cohesive tool that handles dependencies, builds, and project scaffolding with sub-second response times.
 
 **Status:** In active development
 
-[GitHub](https://github.com/raskell-io/hx)
+[Website](https://hx.raskell.io) · [GitHub](https://github.com/raskell-io/hx)
 
 ---
 
 ### bhc
 
-The Basel Haskell Compiler. Next-gen compiler + runtime: predictable performance, structured concurrency, tensor-native numeric pipeline.
+The Basel Haskell Compiler. A next-generation Haskell compiler and runtime targeting predictable, low-latency performance. Features structured concurrency primitives, a tensor-native numeric pipeline for ML workloads, and a runtime designed for systems where GC pauses are unacceptable.
 
 **Status:** In active development
 
-[GitHub](https://github.com/raskell-io/bhc)
+[Website](https://bhc.raskell.io) · [GitHub](https://github.com/raskell-io/bhc)
 
 ---
 
