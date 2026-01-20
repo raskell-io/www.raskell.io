@@ -16,14 +16,16 @@ taxonomies = [
 ]
 
 [markdown]
-highlight_code = true
-highlight_theme = "nord"
 smart_punctuation = true
 render_emoji = false
 external_links_target_blank = true
 external_links_no_follow = false
 external_links_no_referrer = false
 insert_anchor_links = "left"
+
+[markdown.highlighting]
+enabled = true
+theme = "nord"
 
 [slugify]
 paths = "on"

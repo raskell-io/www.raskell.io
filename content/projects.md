@@ -17,7 +17,7 @@ A security-first reverse proxy based on Cloudflare's Pingora framework.
 
 **Status:** In active development
 
-[Website](https://sentinel.raskell.io) · [Docs](https://sentinel.raskell.io/docs/) · [GitHub](https://github.com/raskell-io/sentinel)
+<p class="project-links"><a href="https://sentinel.raskell.io"><i data-lucide="globe"></i> Website</a> · <a href="https://sentinel.raskell.io/docs/"><i data-lucide="book-open"></i> Docs</a> · <a href="https://github.com/raskell-io/sentinel"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -27,7 +27,7 @@ Extremely fast Haskell package and project manager built in Rust. Designed to re
 
 **Status:** In active development
 
-[Website](https://hx.raskell.io) · [GitHub](https://github.com/raskell-io/hx)
+<p class="project-links"><a href="https://hx.raskell.io"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/raskell-io/hx"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -37,7 +37,7 @@ The Basel Haskell Compiler. A next-generation Haskell compiler and runtime targe
 
 **Status:** In active development
 
-[Website](https://bhc.raskell.io) · [GitHub](https://github.com/raskell-io/bhc)
+<p class="project-links"><a href="https://bhc.raskell.io"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/raskell-io/bhc"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -47,7 +47,7 @@ The Virtual Company OS. Agentic enterprise orchestrator: DAG workflows, event so
 
 **Status:** In active development
 
-[GitHub](https://github.com/raskell-io/shiioo)
+<p class="project-links"><a href="https://github.com/raskell-io/shiioo"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -57,7 +57,7 @@ Compute, closer to you. A new kind of infrastructure is forming. Islands of powe
 
 **Status:** In development (not yet published)
 
-[Website](https://archipelag-io.github.io/website/)
+<p class="project-links"><a href="https://archipelag-io.github.io/website/"><i data-lucide="globe"></i> Website</a></p>
 
 ---
 
@@ -73,7 +73,7 @@ A command-line diagnostic tool that evaluates web edge infrastructure health. Na
 
 **Status:** In active development
 
-[Website](https://sango.raskell.io) · [GitHub](https://github.com/raskell-io/sango)
+<p class="project-links"><a href="https://sango.raskell.io"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/raskell-io/sango"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -89,7 +89,7 @@ A traffic replay tool designed to understand edge and WAF behavior. Named after 
 
 **Status:** In active development
 
-[GitHub](https://github.com/raskell-io/ushio)
+<p class="project-links"><a href="https://github.com/raskell-io/ushio"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -110,7 +110,7 @@ A societal simulation engine where LLM-powered agents form emergent civilization
 
 **Status:** In active development
 
-[GitHub](https://github.com/raskell-io/terrarium)
+<p class="project-links"><a href="https://github.com/raskell-io/terrarium"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -120,7 +120,7 @@ Rust/Bevy PWA for training robotic agents.
 
 **Status:** Very early
 
-[GitHub](https://github.com/raskell-io/robogym)
+<p class="project-links"><a href="https://github.com/raskell-io/robogym"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -130,7 +130,7 @@ HD-2D-stylized turn-based tactics game (spiritual successor to Nintendo's Advanc
 
 **Status:** In active development
 
-[GitHub](https://github.com/raskell-io/paw-and-claw)
+<p class="project-links"><a href="https://github.com/raskell-io/paw-and-claw"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -148,7 +148,7 @@ A local-first second brain. Your ideas, everywhere, offline. Named after the Jap
 
 **Status:** In active development
 
-[GitHub](https://github.com/raskell-io/kurumi)
+<p class="project-links"><a href="https://github.com/raskell-io/kurumi"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -160,4 +160,4 @@ An e-book that explains the web's core technologies — HTTP, DNS, TLS, and the 
 
 **Status:** In progress
 
-[Read online](https://learn-you-the-web.raskell.io) · [GitHub](https://github.com/raskell-io/learn-you-the-web)
+<p class="project-links"><a href="https://learn-you-the-web.raskell.io"><i data-lucide="book-open"></i> Read online</a> · <a href="https://github.com/raskell-io/learn-you-the-web"><i data-lucide="github"></i> GitHub</a></p>

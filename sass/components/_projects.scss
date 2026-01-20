@@ -56,3 +56,23 @@
         }
     }
 }
+
+/* Project links with icons */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-top: 0.75rem;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+    }
+}
