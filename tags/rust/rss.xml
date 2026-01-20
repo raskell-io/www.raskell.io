@@ -28,33 +28,33 @@
 &lt;li&gt;&lt;code&gt;.env.example&lt;&#x2F;code&gt; that nobody updates&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Here’s what it looks like now:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# .mise.toml
-&lt;&#x2F;span&gt;&lt;span&gt;[tools]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;ruby &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;3.2.1&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;node &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;20.11.0&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;python &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;3.12&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;test]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;bundle exec rspec &amp;amp;&amp;amp; npm test&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Run all tests&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;deploy]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;kubectl apply -f k8s&#x2F;&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;depends &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;test&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;build&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;[env]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;DATABASE_URL &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;postgresql:&#x2F;&#x2F;localhost&#x2F;myapp_dev&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;RAILS_ENV &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;development&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# .mise.toml
+[tools]
+ruby = &amp;quot;3.2.1&amp;quot;
+node = &amp;quot;20.11.0&amp;quot;
+python = &amp;quot;3.12&amp;quot;
+
+[tasks.test]
+run = &amp;quot;bundle exec rspec &amp;amp;&amp;amp; npm test&amp;quot;
+description = &amp;quot;Run all tests&amp;quot;
+
+[tasks.deploy]
+run = &amp;quot;kubectl apply -f k8s&amp;#x2F;&amp;quot;
+depends = [&amp;quot;test&amp;quot;, &amp;quot;build&amp;quot;]
+
+[env]
+DATABASE_URL = &amp;quot;postgresql:&amp;#x2F;&amp;#x2F;localhost&amp;#x2F;myapp_dev&amp;quot;
+RAILS_ENV = &amp;quot;development&amp;quot;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;One file. Everything works.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-fuzzy-matching-that-actually-works&quot;&gt;The fuzzy matching that actually works&lt;&#x2F;h2&gt;
 &lt;p&gt;This is where mise gets interesting. You don’t need exact command names.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run test     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# runs the test task
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run tset     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# still runs test (typo forgiven)
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run tst      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# yep, runs test
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run deploy   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# runs deploy task
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run dply     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# runs deploy
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ mise run test     # runs the test task
+$ mise run tset     # still runs test (typo forgiven)
+$ mise run tst      # yep, runs test
+$ mise run deploy   # runs deploy task
+$ mise run dply     # runs deploy
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The fuzzy matching is smart. It weighs:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Character position (earlier matches score higher)&lt;&#x2F;li&gt;
@@ -64,54 +64,54 @@
 &lt;p&gt;I tested this with 30+ tasks in one project. It still found the right one 90% of the time with 3-4 characters.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;tasks-live-where-they-should&quot;&gt;Tasks live where they should&lt;&#x2F;h2&gt;
 &lt;p&gt;Instead of polluting the root with &lt;code&gt;scripts&#x2F;&lt;&#x2F;code&gt;, mise looks in &lt;code&gt;.mise&#x2F;tasks&#x2F;&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;.mise&#x2F;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;└──&lt;&#x2F;span&gt;&lt;span&gt; tasks&#x2F;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;├──&lt;&#x2F;span&gt;&lt;span&gt; db-reset.sh
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;├──&lt;&#x2F;span&gt;&lt;span&gt; cache-clear.sh
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;└──&lt;&#x2F;span&gt;&lt;span&gt; logs-tail.sh
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;.mise&amp;#x2F;
+└── tasks&amp;#x2F;
+    ├── db-reset.sh
+    ├── cache-clear.sh
+    └── logs-tail.sh
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Any executable in there becomes a task. No registration. No config.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run db-reset    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# runs .mise&#x2F;tasks&#x2F;db-reset.sh
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run cache       &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# fuzzy matches to cache-clear.sh
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ mise run db-reset    # runs .mise&amp;#x2F;tasks&amp;#x2F;db-reset.sh
+$ mise run cache       # fuzzy matches to cache-clear.sh
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Shell scripts stay shell scripts. But now they’re discoverable:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise tasks
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;cache-clear&lt;&#x2F;span&gt;&lt;span&gt;   Clear all caches
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;db-reset&lt;&#x2F;span&gt;&lt;span&gt;      Reset database to clean state  
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;logs-tail&lt;&#x2F;span&gt;&lt;span&gt;     Tail production logs
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;test&lt;&#x2F;span&gt;&lt;span&gt;          Run all tests
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;deploy&lt;&#x2F;span&gt;&lt;span&gt;        Deploy to production
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ mise tasks
+cache-clear   Clear all caches
+db-reset      Reset database to clean state  
+logs-tail     Tail production logs
+test          Run all tests
+deploy        Deploy to production
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h2 id=&quot;the-encryption-bit-that-matters&quot;&gt;The encryption bit that matters&lt;&#x2F;h2&gt;
 &lt;p&gt;mise includes age encryption support. Not bolted on. Built in.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# .mise.toml
-&lt;&#x2F;span&gt;&lt;span&gt;[env]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;DATABASE_URL &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;postgresql:&#x2F;&#x2F;localhost&#x2F;dev&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;API_KEY &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;age:SECRET_ENCRYPTED_STRING&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# .mise.toml
+[env]
+DATABASE_URL = &amp;quot;postgresql:&amp;#x2F;&amp;#x2F;localhost&amp;#x2F;dev&amp;quot;
+API_KEY = &amp;quot;age:SECRET_ENCRYPTED_STRING&amp;quot;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Set it up once:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise decrypt .mise.toml
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Enter&lt;&#x2F;span&gt;&lt;span&gt; passphrase: 
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; export API_KEY=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;actual-secret-key&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise encrypt .mise.toml
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ mise decrypt .mise.toml
+Enter passphrase: 
+$ export API_KEY=&amp;quot;actual-secret-key&amp;quot;
+$ mise encrypt .mise.toml
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Your secrets are in the repo but encrypted. CI&#x2F;CD gets the age key. Developers get the age key. Random GitHub scrapers get nothing.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;integration-with-zed&quot;&gt;Integration with Zed&lt;&#x2F;h2&gt;
 &lt;p&gt;This is where it gets smooth. In Zed, I set up task shortcuts:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;json&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-json &quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;&#x2F;&#x2F; .zed&#x2F;tasks.json
-&lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;tasks&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;test&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;command&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;mise run test&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cwd&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;$WORKSPACE_ROOT&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;deploy&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;command&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;mise run deploy&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cwd&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;$WORKSPACE_ROOT&amp;quot;  
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;  }
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;json&quot; class=&quot;language-json &quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&amp;#x2F;&amp;#x2F; .zed&amp;#x2F;tasks.json
+{
+  &amp;quot;tasks&amp;quot;: {
+    &amp;quot;test&amp;quot;: {
+      &amp;quot;command&amp;quot;: &amp;quot;mise run test&amp;quot;,
+      &amp;quot;cwd&amp;quot;: &amp;quot;$WORKSPACE_ROOT&amp;quot;
+    },
+    &amp;quot;deploy&amp;quot;: {
+      &amp;quot;command&amp;quot;: &amp;quot;mise run deploy&amp;quot;,
+      &amp;quot;cwd&amp;quot;: &amp;quot;$WORKSPACE_ROOT&amp;quot;  
+    }
+  }
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Now &lt;code&gt;cmd-shift-t&lt;&#x2F;code&gt; opens the task picker. Type “te”, hit enter. Tests run. The AI assistant sees the output inline. Fixes the code. Reruns the test. No context switching.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;what-breaks&quot;&gt;What breaks&lt;&#x2F;h2&gt;
 &lt;p&gt;mise isn’t perfect. Here’s what I hit:&lt;&#x2F;p&gt;

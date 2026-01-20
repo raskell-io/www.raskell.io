@@ -59,33 +59,33 @@
 &lt;li&gt;&lt;code&gt;.env.example&lt;&#x2F;code&gt; that nobody updates&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Here’s what it looks like now:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# .mise.toml
-&lt;&#x2F;span&gt;&lt;span&gt;[tools]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;ruby &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;3.2.1&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;node &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;20.11.0&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;python &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;3.12&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;test]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;bundle exec rspec &amp;amp;&amp;amp; npm test&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Run all tests&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;deploy]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;kubectl apply -f k8s&#x2F;&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;depends &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;test&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;build&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;[env]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;DATABASE_URL &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;postgresql:&#x2F;&#x2F;localhost&#x2F;myapp_dev&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;RAILS_ENV &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;development&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# .mise.toml
+[tools]
+ruby = &amp;quot;3.2.1&amp;quot;
+node = &amp;quot;20.11.0&amp;quot;
+python = &amp;quot;3.12&amp;quot;
+
+[tasks.test]
+run = &amp;quot;bundle exec rspec &amp;amp;&amp;amp; npm test&amp;quot;
+description = &amp;quot;Run all tests&amp;quot;
+
+[tasks.deploy]
+run = &amp;quot;kubectl apply -f k8s&amp;#x2F;&amp;quot;
+depends = [&amp;quot;test&amp;quot;, &amp;quot;build&amp;quot;]
+
+[env]
+DATABASE_URL = &amp;quot;postgresql:&amp;#x2F;&amp;#x2F;localhost&amp;#x2F;myapp_dev&amp;quot;
+RAILS_ENV = &amp;quot;development&amp;quot;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;One file. Everything works.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-fuzzy-matching-that-actually-works&quot;&gt;The fuzzy matching that actually works&lt;&#x2F;h2&gt;
 &lt;p&gt;This is where mise gets interesting. You don’t need exact command names.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run test     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# runs the test task
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run tset     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# still runs test (typo forgiven)
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run tst      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# yep, runs test
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run deploy   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# runs deploy task
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run dply     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# runs deploy
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ mise run test     # runs the test task
+$ mise run tset     # still runs test (typo forgiven)
+$ mise run tst      # yep, runs test
+$ mise run deploy   # runs deploy task
+$ mise run dply     # runs deploy
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The fuzzy matching is smart. It weighs:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Character position (earlier matches score higher)&lt;&#x2F;li&gt;
@@ -95,54 +95,54 @@
 &lt;p&gt;I tested this with 30+ tasks in one project. It still found the right one 90% of the time with 3-4 characters.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;tasks-live-where-they-should&quot;&gt;Tasks live where they should&lt;&#x2F;h2&gt;
 &lt;p&gt;Instead of polluting the root with &lt;code&gt;scripts&#x2F;&lt;&#x2F;code&gt;, mise looks in &lt;code&gt;.mise&#x2F;tasks&#x2F;&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;.mise&#x2F;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;└──&lt;&#x2F;span&gt;&lt;span&gt; tasks&#x2F;
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;├──&lt;&#x2F;span&gt;&lt;span&gt; db-reset.sh
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;├──&lt;&#x2F;span&gt;&lt;span&gt; cache-clear.sh
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;└──&lt;&#x2F;span&gt;&lt;span&gt; logs-tail.sh
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;.mise&amp;#x2F;
+└── tasks&amp;#x2F;
+    ├── db-reset.sh
+    ├── cache-clear.sh
+    └── logs-tail.sh
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Any executable in there becomes a task. No registration. No config.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run db-reset    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# runs .mise&#x2F;tasks&#x2F;db-reset.sh
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise run cache       &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# fuzzy matches to cache-clear.sh
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ mise run db-reset    # runs .mise&amp;#x2F;tasks&amp;#x2F;db-reset.sh
+$ mise run cache       # fuzzy matches to cache-clear.sh
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Shell scripts stay shell scripts. But now they’re discoverable:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise tasks
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;cache-clear&lt;&#x2F;span&gt;&lt;span&gt;   Clear all caches
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;db-reset&lt;&#x2F;span&gt;&lt;span&gt;      Reset database to clean state  
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;logs-tail&lt;&#x2F;span&gt;&lt;span&gt;     Tail production logs
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;test&lt;&#x2F;span&gt;&lt;span&gt;          Run all tests
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;deploy&lt;&#x2F;span&gt;&lt;span&gt;        Deploy to production
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ mise tasks
+cache-clear   Clear all caches
+db-reset      Reset database to clean state  
+logs-tail     Tail production logs
+test          Run all tests
+deploy        Deploy to production
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h2 id=&quot;the-encryption-bit-that-matters&quot;&gt;The encryption bit that matters&lt;&#x2F;h2&gt;
 &lt;p&gt;mise includes age encryption support. Not bolted on. Built in.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# .mise.toml
-&lt;&#x2F;span&gt;&lt;span&gt;[env]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;DATABASE_URL &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;postgresql:&#x2F;&#x2F;localhost&#x2F;dev&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;API_KEY &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;age:SECRET_ENCRYPTED_STRING&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# .mise.toml
+[env]
+DATABASE_URL = &amp;quot;postgresql:&amp;#x2F;&amp;#x2F;localhost&amp;#x2F;dev&amp;quot;
+API_KEY = &amp;quot;age:SECRET_ENCRYPTED_STRING&amp;quot;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Set it up once:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise decrypt .mise.toml
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Enter&lt;&#x2F;span&gt;&lt;span&gt; passphrase: 
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; export API_KEY=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;actual-secret-key&amp;quot;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; mise encrypt .mise.toml
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ mise decrypt .mise.toml
+Enter passphrase: 
+$ export API_KEY=&amp;quot;actual-secret-key&amp;quot;
+$ mise encrypt .mise.toml
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Your secrets are in the repo but encrypted. CI&#x2F;CD gets the age key. Developers get the age key. Random GitHub scrapers get nothing.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;integration-with-zed&quot;&gt;Integration with Zed&lt;&#x2F;h2&gt;
 &lt;p&gt;This is where it gets smooth. In Zed, I set up task shortcuts:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;json&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-json &quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;&#x2F;&#x2F; .zed&#x2F;tasks.json
-&lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;tasks&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;test&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;command&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;mise run test&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cwd&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;$WORKSPACE_ROOT&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;    }&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;deploy&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;command&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;mise run deploy&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,
-&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cwd&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;$WORKSPACE_ROOT&amp;quot;  
-&lt;&#x2F;span&gt;&lt;span&gt;    }
-&lt;&#x2F;span&gt;&lt;span&gt;  }
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;json&quot; class=&quot;language-json &quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&amp;#x2F;&amp;#x2F; .zed&amp;#x2F;tasks.json
+{
+  &amp;quot;tasks&amp;quot;: {
+    &amp;quot;test&amp;quot;: {
+      &amp;quot;command&amp;quot;: &amp;quot;mise run test&amp;quot;,
+      &amp;quot;cwd&amp;quot;: &amp;quot;$WORKSPACE_ROOT&amp;quot;
+    },
+    &amp;quot;deploy&amp;quot;: {
+      &amp;quot;command&amp;quot;: &amp;quot;mise run deploy&amp;quot;,
+      &amp;quot;cwd&amp;quot;: &amp;quot;$WORKSPACE_ROOT&amp;quot;  
+    }
+  }
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Now &lt;code&gt;cmd-shift-t&lt;&#x2F;code&gt; opens the task picker. Type “te”, hit enter. Tests run. The AI assistant sees the output inline. Fixes the code. Reruns the test. No context switching.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;what-breaks&quot;&gt;What breaks&lt;&#x2F;h2&gt;
 &lt;p&gt;mise isn’t perfect. Here’s what I hit:&lt;&#x2F;p&gt;
@@ -201,43 +201,43 @@
           <description xml:base="https://raskell.io/articles/disk-space-void-linux-maintenance/">&lt;h2 id=&quot;monday-morning-surprise&quot;&gt;Monday morning surprise&lt;&#x2F;h2&gt;
 &lt;p&gt;As I spent most time doing stuff with my computer rather than configuring my beloved Linux distribution, Void Linux, I have developed the tendency to not really bother about Void at all until something crucial becomes unusable. After almost two years of having switched from Arch to Void, I have actually never encountered any major problem and felt I had made the right decision.&lt;&#x2F;p&gt;
 &lt;p&gt;I checked my disk usage out of curiosity if the 250GB solid-state disk would be enough. And there came the surprise:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;shell&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span&gt;$ df -H
-&lt;&#x2F;span&gt;&lt;span&gt;Filesystem      Size  Used Avail Use% Mounted on
-&lt;&#x2F;span&gt;&lt;span&gt;devtmpfs        8.4G     0  8.4G   0% &#x2F;dev
-&lt;&#x2F;span&gt;&lt;span&gt;tmpfs           8.4G  1.9M  8.4G   1% &#x2F;dev&#x2F;shm
-&lt;&#x2F;span&gt;&lt;span&gt;tmpfs           8.4G  1.4M  8.4G   1% &#x2F;run
-&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;dev&#x2F;nvme0n1p3  138G  117G   21G  85% &#x2F;
-&lt;&#x2F;span&gt;&lt;span&gt;efivarfs        158k   85k   69k  56% &#x2F;sys&#x2F;firmware&#x2F;efi&#x2F;efivars
-&lt;&#x2F;span&gt;&lt;span&gt;cgroup          8.4G     0  8.4G   0% &#x2F;sys&#x2F;fs&#x2F;cgroup
-&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;dev&#x2F;nvme0n1p4  366G   34G  332G  10% &#x2F;home
-&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;dev&#x2F;nvme0n1p1  536M  152k  536M   1% &#x2F;boot&#x2F;efi
-&lt;&#x2F;span&gt;&lt;span&gt;tmpfs           8.4G   25k  8.4G   1% &#x2F;tmp
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;$ df -H
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        8.4G     0  8.4G   0% &amp;#x2F;dev
+tmpfs           8.4G  1.9M  8.4G   1% &amp;#x2F;dev&amp;#x2F;shm
+tmpfs           8.4G  1.4M  8.4G   1% &amp;#x2F;run
+&amp;#x2F;dev&amp;#x2F;nvme0n1p3  138G  117G   21G  85% &amp;#x2F;
+efivarfs        158k   85k   69k  56% &amp;#x2F;sys&amp;#x2F;firmware&amp;#x2F;efi&amp;#x2F;efivars
+cgroup          8.4G     0  8.4G   0% &amp;#x2F;sys&amp;#x2F;fs&amp;#x2F;cgroup
+&amp;#x2F;dev&amp;#x2F;nvme0n1p4  366G   34G  332G  10% &amp;#x2F;home
+&amp;#x2F;dev&amp;#x2F;nvme0n1p1  536M  152k  536M   1% &amp;#x2F;boot&amp;#x2F;efi
+tmpfs           8.4G   25k  8.4G   1% &amp;#x2F;tmp
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;My root partition was full, way too full in my opinion. Did I miss something? Is Void not what I was looking for after all? I don’t enjoy baby sitting my OS &lt;em&gt;du jour&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-painless-solution&quot;&gt;The painless solution&lt;&#x2F;h2&gt;
 &lt;p&gt;After a quick Brave search, I ended up finding what I was looking for. Some kind fellow software engineer from China didn’t shy away to make a blog post about his journey when he faced the very same problem. Out of annoyance of having to deal with that, I copy-pasted as quickly as possible, not minding what kind of side-effects I might run into, these three commands.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;1-cleaning-the-package-cache&quot;&gt;1. Cleaning the package cache&lt;&#x2F;h3&gt;
 &lt;p&gt;All the knowledge I was lacking was to be found with the man page of &lt;code&gt;xbps-remove&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;shell&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span&gt;# xbps-remove -yO
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;# xbps-remove -yO
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;man.voidlinux.org&#x2F;xbps-remove.1#O,&quot;&gt;man page&lt;&#x2F;a&gt; of &lt;code&gt;xbps-remove&lt;&#x2F;code&gt; tells us the &lt;code&gt;-O&lt;&#x2F;code&gt; parameter takes care of &lt;em&gt;cleaning the cache directory removing obsolete binary packages.&lt;&#x2F;em&gt; Obsolete binary packages? Good riddance! I was surprised this to learn that solely this step freed up almost half of my used root partition disk space.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;2-removing-orphaned-packages&quot;&gt;2. Removing orphaned packages&lt;&#x2F;h3&gt;
-&lt;pre data-lang=&quot;shell&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span&gt;# xbps-remove -yo
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;# xbps-remove -yo
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Here the same &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;man.voidlinux.org&#x2F;xbps-remove.1#o,&quot;&gt;man page&lt;&#x2F;a&gt; tells us that the &lt;code&gt;-o&lt;&#x2F;code&gt; parameter takes care of &lt;em&gt;removing installed package orphans that were installed automatically (as dependencies) and are not currently dependencies of any installed package.&lt;&#x2F;em&gt; As before, good riddance!&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;3-purging-old-unused-kernels&quot;&gt;3. Purging old, unused kernels&lt;&#x2F;h3&gt;
 &lt;p&gt;This one is interesting. While I knew about the circumstance that the people behind Void had developed their own package management ecosystem, I hadn’t fully realized there were other utilities that came along with the upstream Void installation which were there for me to manage my beloved OS. So, apparently, one of these is a &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;void-linux&#x2F;void-packages&#x2F;blob&#x2F;master&#x2F;srcpkgs&#x2F;base-files&#x2F;files&#x2F;vkpurge&quot;&gt;shell script&lt;&#x2F;a&gt; name &lt;code&gt;vkpurge&lt;&#x2F;code&gt;, I must assume as a short name for &lt;code&gt;Void&#x27;s Kernel purging&lt;&#x2F;code&gt; tool. I like this type of naming heavily implying its functionality.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;shell&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span&gt;# vkpurge rm all
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;# vkpurge rm all
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;It performed as expected. Old kernel files (and modules?) were indeed purged and freed up even more disk space. I should add that this step is optional as it is always useful to have some old kernels at hand when things hit the fan (which for me, they haven’t in a very, very long time).&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;result&quot;&gt;Result&lt;&#x2F;h2&gt;
 &lt;p&gt;I couldn’t be happier.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;shell&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span&gt;$ df -H
-&lt;&#x2F;span&gt;&lt;span&gt;Filesystem      Size  Used Avail Use% Mounted on
-&lt;&#x2F;span&gt;&lt;span&gt;...
-&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;dev&#x2F;nvme0n1p3  138G   45G   93G  33% &#x2F;
-&lt;&#x2F;span&gt;&lt;span&gt;...
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;$ df -H
+Filesystem      Size  Used Avail Use% Mounted on
+...
+&amp;#x2F;dev&amp;#x2F;nvme0n1p3  138G   45G   93G  33% &amp;#x2F;
+...
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h2 id=&quot;renewal-of-faith&quot;&gt;Renewal of faith&lt;&#x2F;h2&gt;
 &lt;p&gt;Overall, why am I even writing this if some other fellow engineer already figured this out? Simply, because I would therefore be able to explain why I have enjoyed my journey with Void as my go-to Linux distribution. It keeps things simple. Some well-documented utilities. As simple that a simple Brave search suffices to find the answer to my problems.&lt;&#x2F;p&gt;
 &lt;p&gt;This very aspect of Void is worthwhile highlighing. I remember more arcane Linux distributions that had me in their grip in figuring things out. Many Googles searches were necessary and even more trial and errors attempts to get simple things fixed.&lt;&#x2F;p&gt;
@@ -295,29 +295,29 @@
 &lt;h2 id=&quot;getting-started-with-haskell&quot;&gt;Getting started with Haskell&lt;&#x2F;h2&gt;
 &lt;p&gt;To get started with Haskell, you’ll need to install the GHC compiler and an editor or IDE that supports Haskell development. Once you have these tools set up, you can start writing Haskell code!&lt;&#x2F;p&gt;
 &lt;p&gt;Let’s start with a simple “Hello, world!” program:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;haskell&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;main &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: IO &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fbcbb;&quot;&gt;()
-&lt;&#x2F;span&gt;&lt;span&gt;main &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; putStrLn &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Hello, world!&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;haskell&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;main :: IO ()
+main = putStrLn &amp;quot;Hello, world!&amp;quot;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;This program defines a main function that prints the string “Hello, world!” to the console. The :: operator is used to specify the type of the main function, which in this case is IO (). The IO type represents actions that interact with the outside world, like reading from or writing to files.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;from-pure-functions-to-easy-refactoring&quot;&gt;From pure functions to easy refactoring&lt;&#x2F;h2&gt;
 &lt;p&gt;One of the key benefits of Haskell’s functional programming paradigm is that it makes it easy to write pure functions. A pure function is one that has no side effects and always returns the same result given the same input. This property makes pure functions easy to reason about and test.&lt;&#x2F;p&gt;
 &lt;p&gt;Let’s look at an example. Suppose we have a function that calculates the factorial of a number:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;haskell&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;factorial &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: Integer -&amp;gt; Integer
-&lt;&#x2F;span&gt;&lt;span&gt;factorial n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; product [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;..&lt;&#x2F;span&gt;&lt;span&gt;n]
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;haskell&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;factorial :: Integer -&amp;gt; Integer
+factorial n = product [1..n]
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;This function takes an Integer and returns its factorial. We can use it like this:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;haskell&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; factorial &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;5
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;120
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;haskell&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;&amp;gt; factorial 5
+120
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Now suppose we want to optimize this function by memoizing the results. We can do this easily by using Haskell’s memoize function:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;haskell&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;Data.Function.Memoize (&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;memoize&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;factorial &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: Integer -&amp;gt; Integer
-&lt;&#x2F;span&gt;&lt;span&gt;factorial &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; memoize go
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;where
-&lt;&#x2F;span&gt;&lt;span&gt;    go &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;1
-&lt;&#x2F;span&gt;&lt;span&gt;    go n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; n * factorial (n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;- &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;haskell&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;import Data.Function.Memoize (memoize)
+
+factorial :: Integer -&amp;gt; Integer
+factorial = memoize go
+  where
+    go 0 = 1
+    go n = n * factorial (n - 1)
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The memoize function takes a function and returns a memoized version of it. This means that the function’s results are cached for future calls with the same arguments, improving performance.&lt;&#x2F;p&gt;
 &lt;p&gt;Note that we didn’t need to change any of the code that calls the factorial function. This is because the function’s type signature didn’t change, and its behavior is still the same. This is an example of how easy refactoring can be in Haskell. By focusing on pure functions and immutability, Haskell makes it easy to modify code without introducing bugs or breaking existing functionality.&lt;&#x2F;p&gt;
 &lt;p&gt;The absence of side effects and the use of pure functions can greatly aid in reasoning about code. By eliminating side effects and enforcing purity, it becomes much easier to reason about the behavior of a program and to understand its logic.&lt;&#x2F;p&gt;
@@ -373,19 +373,19 @@
 &lt;p&gt;In the case of the IO monad, the monadic structure allows the input&#x2F;output operations to be performed in a predictable and composable way. The IO monad provides functions like &amp;gt;&amp;gt;= (pronounced “bind”) and &amp;gt;&amp;gt; (pronounced “then”) that allow input&#x2F;output operations to be sequenced and composed in a way that ensures their order of execution is well-defined.&lt;&#x2F;p&gt;
 &lt;p&gt;Similarly, the State monad provides a way to model stateful computations in a pure way. The State monad allows a function to compute a new state value based on an existing state value, without modifying the existing state value. This allows the state to be propagated through a series of function calls in a predictable and composable way.&lt;&#x2F;p&gt;
 &lt;p&gt;Monads are therefore a fundamental concept in Haskell and are used to encapsulate effects, such as input&#x2F;output or state changes, in a purely functional way. Let’s take a look at a simple example that demonstrates the use of a monad in Haskell:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;haskell&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;Control.Monad.State
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;-- Define a function that uses the State monad to keep track of a counter
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: State Int Int
-&lt;&#x2F;span&gt;&lt;span&gt;count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;= do
-&lt;&#x2F;span&gt;&lt;span&gt;  n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;&amp;lt;-&lt;&#x2F;span&gt;&lt;span&gt; get
-&lt;&#x2F;span&gt;&lt;span&gt;  put (n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;)
-&lt;&#x2F;span&gt;&lt;span&gt;  return n
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;-- Use the count function to increment a counter and retrieve its value
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;result &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: Int
-&lt;&#x2F;span&gt;&lt;span&gt;result &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; evalState count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;0
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;haskell&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;import Control.Monad.State
+
+-- Define a function that uses the State monad to keep track of a counter
+count :: State Int Int
+count = do
+  n &amp;lt;- get
+  put (n + 1)
+  return n
+
+-- Use the count function to increment a counter and retrieve its value
+result :: Int
+result = evalState count 0
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;In this example, we use the State monad to keep track of a counter. The State monad encapsulates stateful computations in a purely functional way, allowing us to write code that has side effects while still adhering to Haskell’s purity and immutability.&lt;&#x2F;p&gt;
 &lt;p&gt;The count function uses the State monad to read the current value of the counter, increment it by 1, and return its original value. This is achieved using the get, put, and return functions provided by the State monad.&lt;&#x2F;p&gt;
 &lt;p&gt;The result variable uses the evalState function to run the count function with an initial state of 0. This results in the counter being incremented by 1 and its value being returned, which is then assigned to the result variable.&lt;&#x2F;p&gt;
@@ -468,52 +468,52 @@ The monad structure is used in mathematics to describe a wide range of mathemati
 &lt;&#x2F;ol&gt;
 &lt;h3 id=&quot;step-by-step-guide&quot;&gt;Step-by-step guide&lt;&#x2F;h3&gt;
 &lt;p&gt;Let’s first install the &lt;code&gt;libvirt&lt;&#x2F;code&gt; package and some related packages which we need in order to connect via VNC. The VNC will provide us with the possibility to use the graphical interface of the running OpenBSD instance.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo xbps-install -S dbus qemu libvirt virt-manager virt-viewer tigervnc
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ sudo xbps-install -S dbus qemu libvirt virt-manager virt-viewer tigervnc
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Now, we need to add our user, in my case &lt;code&gt;raskell&lt;&#x2F;code&gt;, to the &lt;code&gt;libvirt&lt;&#x2F;code&gt; group which got simultanously created with the installation of libvirt.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo usermod -aG libvirt raskell
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ sudo usermod -aG libvirt raskell
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;OpenBSD features a release cycle of six months. We would need to update our system every six month to keep up with the latest packages. During a given release, only security and bug fix patches are applied to the curated packages maintained by pkg_add. Therefore, in February 2023, we’re using the &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;72.html&quot;&gt;OpenBSD 7.2&lt;&#x2F;a&gt; release version. As I’m living in Switzerland, I chose to pull the iso image from a Swiss mirror, in this case from &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&#x2F;7.2&#x2F;&quot;&gt;&lt;code&gt;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; (check what mirror is closest to you to get the best download rate).&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# cd &#x2F;var&#x2F;lib&#x2F;libvirt&#x2F;boot&#x2F;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# sudo wget https:&#x2F;&#x2F;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&#x2F;7.2&#x2F;amd64&#x2F;install72.iso
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;--2023-01-12&lt;&#x2F;span&gt;&lt;span&gt; 20:48:15--  https:&#x2F;&#x2F;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&#x2F;7.2&#x2F;amd64&#x2F;install72.iso
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Resolving&lt;&#x2F;span&gt;&lt;span&gt; mirror.ungleich.ch (mirror.ungleich.ch)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;...&lt;&#x2F;span&gt;&lt;span&gt; 2a0a:e5c0:2:2:400:c8ff:fe68:bef3, 185.203.114.135
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Connecting&lt;&#x2F;span&gt;&lt;span&gt; to mirror.ungleich.ch (mirror.ungleich.ch)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;2a0a:e5c0:2:2:400:c8ff:fe68:bef3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;:443...&lt;&#x2F;span&gt;&lt;span&gt; connected.
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;HTTP&lt;&#x2F;span&gt;&lt;span&gt; request sent, awaiting response... 200 OK
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Length:&lt;&#x2F;span&gt;&lt;span&gt; 583352320 (556M) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;[application&#x2F;octet-stream]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Saving&lt;&#x2F;span&gt;&lt;span&gt; to: ‘install72.iso.1’
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;install72.iso.1&lt;&#x2F;span&gt;&lt;span&gt;                      100&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;%[&lt;&#x2F;span&gt;&lt;span&gt;====================================================================&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span&gt; 556.33M  7.11MB&#x2F;s    in 77s     
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;2023-01-12&lt;&#x2F;span&gt;&lt;span&gt; 20:49:33 (7.19 MB&#x2F;s) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; ‘install72.iso.1’ saved &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span&gt;583352320&#x2F;583352320&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span&gt; wget https:&#x2F;&#x2F;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&#x2F;7.2&#x2F;amd64&#x2F;SHA256
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;--2023-01-12&lt;&#x2F;span&gt;&lt;span&gt; 20:47:38--  https:&#x2F;&#x2F;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&#x2F;7.2&#x2F;amd64&#x2F;SHA256
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Resolving&lt;&#x2F;span&gt;&lt;span&gt; mirror.ungleich.ch (mirror.ungleich.ch)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;...&lt;&#x2F;span&gt;&lt;span&gt; 2a0a:e5c0:2:2:400:c8ff:fe68:bef3, 185.203.114.135
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Connecting&lt;&#x2F;span&gt;&lt;span&gt; to mirror.ungleich.ch (mirror.ungleich.ch)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;2a0a:e5c0:2:2:400:c8ff:fe68:bef3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;:443...&lt;&#x2F;span&gt;&lt;span&gt; connected.
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;HTTP&lt;&#x2F;span&gt;&lt;span&gt; request sent, awaiting response... 200 OK
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Length:&lt;&#x2F;span&gt;&lt;span&gt; 1992 (1.9K) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;[application&#x2F;octet-stream]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Saving&lt;&#x2F;span&gt;&lt;span&gt; to: ‘SHA256.1’
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;SHA256.1&lt;&#x2F;span&gt;&lt;span&gt;                             100&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;%[&lt;&#x2F;span&gt;&lt;span&gt;====================================================================&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span&gt;   1.95K  --.-KB&#x2F;s    in 0s      
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;2023-01-12&lt;&#x2F;span&gt;&lt;span&gt; 20:47:39 (742 MB&#x2F;s) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; ‘SHA256.1’ saved &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span&gt;1992&#x2F;1992&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;]
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# grep install63.iso SHA256 &amp;gt; &#x2F;tmp&#x2F;x
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# sha256sum -c &#x2F;tmp&#x2F;x
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# rm &#x2F;tmp&#x2F;x
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# cd &amp;#x2F;var&amp;#x2F;lib&amp;#x2F;libvirt&amp;#x2F;boot&amp;#x2F;
+# sudo wget https:&amp;#x2F;&amp;#x2F;mirror.ungleich.ch&amp;#x2F;pub&amp;#x2F;OpenBSD&amp;#x2F;7.2&amp;#x2F;amd64&amp;#x2F;install72.iso
+--2023-01-12 20:48:15--  https:&amp;#x2F;&amp;#x2F;mirror.ungleich.ch&amp;#x2F;pub&amp;#x2F;OpenBSD&amp;#x2F;7.2&amp;#x2F;amd64&amp;#x2F;install72.iso
+Resolving mirror.ungleich.ch (mirror.ungleich.ch)... 2a0a:e5c0:2:2:400:c8ff:fe68:bef3, 185.203.114.135
+Connecting to mirror.ungleich.ch (mirror.ungleich.ch)|2a0a:e5c0:2:2:400:c8ff:fe68:bef3|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 583352320 (556M) [application&amp;#x2F;octet-stream]
+Saving to: ‘install72.iso.1’
+
+install72.iso.1                      100%[====================================================================&amp;gt;] 556.33M  7.11MB&amp;#x2F;s    in 77s     
+
+2023-01-12 20:49:33 (7.19 MB&amp;#x2F;s) - ‘install72.iso.1’ saved [583352320&amp;#x2F;583352320]
+sudo wget https:&amp;#x2F;&amp;#x2F;mirror.ungleich.ch&amp;#x2F;pub&amp;#x2F;OpenBSD&amp;#x2F;7.2&amp;#x2F;amd64&amp;#x2F;SHA256
+--2023-01-12 20:47:38--  https:&amp;#x2F;&amp;#x2F;mirror.ungleich.ch&amp;#x2F;pub&amp;#x2F;OpenBSD&amp;#x2F;7.2&amp;#x2F;amd64&amp;#x2F;SHA256
+Resolving mirror.ungleich.ch (mirror.ungleich.ch)... 2a0a:e5c0:2:2:400:c8ff:fe68:bef3, 185.203.114.135
+Connecting to mirror.ungleich.ch (mirror.ungleich.ch)|2a0a:e5c0:2:2:400:c8ff:fe68:bef3|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1992 (1.9K) [application&amp;#x2F;octet-stream]
+Saving to: ‘SHA256.1’
+
+SHA256.1                             100%[====================================================================&amp;gt;]   1.95K  --.-KB&amp;#x2F;s    in 0s      
+
+2023-01-12 20:47:39 (742 MB&amp;#x2F;s) - ‘SHA256.1’ saved [1992&amp;#x2F;1992]
+# grep install63.iso SHA256 &amp;gt; &amp;#x2F;tmp&amp;#x2F;x
+# sha256sum -c &amp;#x2F;tmp&amp;#x2F;x
+# rm &amp;#x2F;tmp&amp;#x2F;x
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Before we can start the virtualization server and get running our OpenBSD instance, we need to define the configuraiton on how to virtualize and ultimately boot the system with. This is done with &lt;code&gt;virt-install&lt;&#x2F;code&gt;. Noteworthy here is that we &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.qemu.org&#x2F;&quot;&gt;QEMU&lt;&#x2F;a&gt; as our emulation solution of choice, we allocate up to 4GB of RAM and 4 CPU cores to the machine.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo virt-install &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span&gt;      --name&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;openbsd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span&gt;      --virt-type&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;qemu &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span&gt;      --memory&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;2048,maxmemory=4096 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span&gt;      --vcpus&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;2,maxvcpus=4 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span&gt;      --cpu host &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span&gt;      --os-variant&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;openbsd7.0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span&gt;      --cdrom&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;var&#x2F;lib&#x2F;libvirt&#x2F;boot&#x2F;install72.iso &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span&gt;      --network&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;bridge=virbr0,model=virtio &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span&gt;      --graphics&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;vnc &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
-&lt;&#x2F;span&gt;&lt;span&gt;      --disk path=&#x2F;var&#x2F;lib&#x2F;libvirt&#x2F;images&#x2F;openbsd.qcow2,size=40,bus=virtio,format=qcow2
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ sudo virt-install \
+      --name=openbsd \
+      --virt-type=qemu \
+      --memory=2048,maxmemory=4096 \
+      --vcpus=2,maxvcpus=4 \
+      --cpu host \
+      --os-variant=openbsd7.0 \
+      --cdrom=&amp;#x2F;var&amp;#x2F;lib&amp;#x2F;libvirt&amp;#x2F;boot&amp;#x2F;install72.iso \
+      --network=bridge=virbr0,model=virtio \
+      --graphics=vnc \
+      --disk path=&amp;#x2F;var&amp;#x2F;lib&amp;#x2F;libvirt&amp;#x2F;images&amp;#x2F;openbsd.qcow2,size=40,bus=virtio,format=qcow2
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Once, it is up and running, we can use a vnc solution to connect to the running machine. In this case, I chose &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.libvirt.org&#x2F;manpages&#x2F;virsh.html&quot;&gt;virsh&lt;&#x2F;a&gt; to do the job. virsh is a command-line interface tool for managing virtualization environments created with libvirt. It allows us to manage virtual machines, storage pools, and network interfaces, as well as other virtualization components, from the command line.&lt;&#x2F;p&gt;
 &lt;p&gt;To establish a VNC connection with a running libvirt virtualized OpenBSD instance, you can use the following steps:&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -523,14 +523,14 @@ The monad structure is used in mathematics to describe a wide range of mathemati
 &lt;li&gt;Authenticate to the VNC server: You may need to enter a password to authenticate to the VNC server. The password is set when the virtual machine is created in libvirt.&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;p&gt;With these steps, you can establish a VNC connection with a running libvirt virtualized OpenBSD instance and interact with the virtual machine’s graphical user interface.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; virsh dumpxml openbsd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;grep&lt;&#x2F;span&gt;&lt;span&gt; vnc
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;graphics type&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;#39;vnc&amp;#39; &lt;&#x2F;span&gt;&lt;span&gt;port&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;#39;5900&amp;#39; &lt;&#x2F;span&gt;&lt;span&gt;autoport&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;#39;yes&amp;#39; &lt;&#x2F;span&gt;&lt;span&gt;listen&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;#39;127.0.0.1&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;&amp;gt;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ virsh dumpxml openbsd | grep vnc
+&amp;lt;graphics type=&amp;#x27;vnc&amp;#x27; port=&amp;#x27;5900&amp;#x27; autoport=&amp;#x27;yes&amp;#x27; listen=&amp;#x27;127.0.0.1&amp;#x27;&amp;gt;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Like I did, most of you would like to interact with a graphical interface such as with X11. For that, we yet another tool, a so-called VNC viewer. A very simple implementation of such a vnc viewer is &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;tigervnc.org&#x2F;&quot;&gt;tigervnc&lt;&#x2F;a&gt; (simply install it with &lt;code&gt;$ sudo xbps-install -S tigervnc&lt;&#x2F;code&gt;).&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo virsh --connect
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;qemu:&#x2F;&#x2F;&#x2F;system&lt;&#x2F;span&gt;&lt;span&gt; start openbsd
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Domain &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;#39;openbsd&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; started
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ sudo virsh --connect
+qemu:&amp;#x2F;&amp;#x2F;&amp;#x2F;system start openbsd
+Domain &amp;#x27;openbsd&amp;#x27; started
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;{tbc}&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
 &lt;ul&gt;
