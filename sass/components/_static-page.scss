@@ -95,6 +95,21 @@
     }
 }
 
+/* Session link with icon */
+.session-link {
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+    }
+}
+
 /* Contact links with icons */
 .contact-links {
     display: flex;

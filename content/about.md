@@ -27,6 +27,8 @@ Session NCS-W01<br>
 Wednesday, March 25, 2026<br>
 8:30–9:20 AM PDT
 
+<p class="session-link"><a href="https://path.rsaconference.com/flow/rsac/us26/FullAgenda/page/catalog/session/1753946922633001YdMq"><i data-lucide="external-link"></i> View session on RSAC website</a></p>
+
 [More about speaking →](/speaking)
 
 ## Contact
