@@ -5,19 +5,50 @@ template = "static-page.html"
 
 ## Flagship and serious builds
 
-### Sentinel: Guard the Free Web
+### Zentinel: Guard the Free Web
 
-A security-first reverse proxy based on Cloudflare's Pingora framework.
+A secure, high-performance reverse proxy with programmable security agents, built on Cloudflare's Pingora framework. Formerly Sentinel — now its own org with a full ecosystem: 20+ security agents, SDKs in 7 languages (Rust, Python, TypeScript, Go, Kotlin, Haskell, Elixir), a pure Rust ModSecurity reimplementation, a fleet management control plane, and a benchmarking framework.
 
 **Key features:**
-- Built on Pingora's async Rust foundation
-- Security-first design
-- High-performance edge routing
-- Production-grade reliability
+- Programmable agent architecture for security, routing, and observability
+- Pure Rust ModSecurity engine with OWASP CRS compatibility
+- Agent SDKs for extending in any language
+- Control plane for fleet management (Elixir/Phoenix)
+- Config converter from nginx, Apache, HAProxy, Traefik, Caddy, Envoy
 
 **Status:** In active development
 
-<p class="project-links"><a href="https://sentinel.raskell.io"><i data-lucide="globe"></i> Website</a> · <a href="https://sentinel.raskell.io/docs/"><i data-lucide="book-open"></i> Docs</a> · <a href="https://github.com/raskell-io/sentinel"><i data-lucide="github"></i> GitHub</a></p>
+<p class="project-links"><a href="https://zentinelproxy.io"><i data-lucide="globe"></i> Website</a> · <a href="https://zentinelproxy.io/docs/"><i data-lucide="book-open"></i> Docs</a> · <a href="https://github.com/zentinelproxy/zentinel"><i data-lucide="github"></i> GitHub</a></p>
+
+---
+
+### Archipelago
+
+Distributed compute, locally powered. A platform for running workloads on edge infrastructure — from GPU nodes to mobile devices. Coordinator app (Phoenix/Elixir), Rust node agents, mobile host agents (iOS/Android), WASM microjobs, and official SDKs (Python, TypeScript).
+
+**Status:** In active development
+
+<p class="project-links"><a href="https://archipelag-io.github.io/website/"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/archipelag-io"><i data-lucide="github"></i> GitHub</a></p>
+
+---
+
+### Cyanea
+
+Bioinformatics platform built with Phoenix/Elixir and Rust NIFs. Building tools to accelerate genomic research through fast, collaborative data infrastructure.
+
+**Status:** In active development
+
+<p class="project-links"><a href="https://github.com/cyanea-bio/cyanea"><i data-lucide="github"></i> GitHub</a></p>
+
+---
+
+### Conflux
+
+Schema-aware config state coordination. Multiple writers, deterministic merge, git milestones. A CRDT document engine with pluggable storage backends (SQLite, PostgreSQL, DynamoDB).
+
+**Status:** In active development
+
+<p class="project-links"><a href="https://github.com/raskell-io/conflux"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -27,7 +58,7 @@ Extremely fast Haskell package and project manager built in Rust. Designed to re
 
 **Status:** In active development
 
-<p class="project-links"><a href="https://hx.raskell.io"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/raskell-io/hx"><i data-lucide="github"></i> GitHub</a></p>
+<p class="project-links"><a href="https://hx.arcanist.sh"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/arcanist-sh/hx"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -37,27 +68,17 @@ The Basel Haskell Compiler. A next-generation Haskell compiler and runtime targe
 
 **Status:** In active development
 
-<p class="project-links"><a href="https://bhc.raskell.io"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/raskell-io/bhc"><i data-lucide="github"></i> GitHub</a></p>
+<p class="project-links"><a href="https://bhc.arcanist.sh"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/arcanist-sh/bhc"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
 ### Shiioo (CO)
 
-The Virtual Company OS. Agentic enterprise orchestrator: DAG workflows, event sourcing, MCP tools.
+The Virtual Company OS. Agentic enterprise orchestrator: DAG workflows, event sourcing, MCP tools, categorized skill registry with git import.
 
 **Status:** In active development
 
 <p class="project-links"><a href="https://github.com/raskell-io/shiioo"><i data-lucide="github"></i> GitHub</a></p>
-
----
-
-### Archipelago
-
-Compute, closer to you. A new kind of infrastructure is forming. Islands of power, connected by currents of data.
-
-**Status:** In development (not yet published)
-
-<p class="project-links"><a href="https://archipelag-io.github.io/website/"><i data-lucide="globe"></i> Website</a></p>
 
 ---
 
@@ -93,6 +114,16 @@ A traffic replay tool designed to understand edge and WAF behavior. Named after 
 
 ---
 
+### Die Zukunft
+
+Eine Neue Schweizer Partei. A Swiss political movement with a digital-first governance platform, evidence-based research pipeline, and multilateral presence.
+
+**Status:** In active development
+
+<p class="project-links"><a href="https://die-zukunft.ch"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/zukunft-ch"><i data-lucide="github"></i> GitHub</a></p>
+
+---
+
 ## Labs / passion projects
 
 These are exploratory. Some will become serious. Some will stay fun.
@@ -111,6 +142,16 @@ A societal simulation engine where LLM-powered agents form emergent civilization
 **Status:** In active development
 
 <p class="project-links"><a href="https://github.com/raskell-io/terrarium"><i data-lucide="github"></i> GitHub</a></p>
+
+---
+
+### Driftscape
+
+Ambient soundscape platform — composable, location-aware, AI-powered background music.
+
+**Status:** In active development
+
+<p class="project-links"><a href="https://github.com/raskell-io/driftscape"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -149,6 +190,16 @@ A local-first second brain. Your ideas, everywhere, offline. Named after the Jap
 **Status:** In active development
 
 <p class="project-links"><a href="https://github.com/raskell-io/kurumi"><i data-lucide="github"></i> GitHub</a></p>
+
+---
+
+### Awesomeify
+
+Index GitHub repos and generate static awesome-list sites.
+
+**Status:** In active development
+
+<p class="project-links"><a href="https://github.com/raskell-io/awesomeify"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
