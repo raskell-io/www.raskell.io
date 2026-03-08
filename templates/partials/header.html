@@ -10,10 +10,10 @@
                 </a>
             </div>
             <nav class="flex nav-links" role="navigation" aria-label="Main navigation">
-                <a href="{{ get_url(path='@/articles/_index.md') }}">Articles</a>
-                <a href="{{ get_url(path='@/projects.md') }}">Projects</a>
-                <a href="{{ get_url(path='@/speaking.md') }}">Speaking</a>
-                <a href="{{ get_url(path='@/about.md') }}">About</a>
+                <a href="{{ get_url(path='@/articles/_index.md') }}"{% if current_url and current_url is containing("/articles") %} aria-current="page"{% endif %}>Articles</a>
+                <a href="{{ get_url(path='@/projects.md') }}"{% if current_url and current_url is containing("/projects") %} aria-current="page"{% endif %}>Projects</a>
+                <a href="{{ get_url(path='@/speaking.md') }}"{% if current_url and current_url is containing("/speaking") %} aria-current="page"{% endif %}>Speaking</a>
+                <a href="{{ get_url(path='@/about.md') }}"{% if current_url and current_url is containing("/about") %} aria-current="page"{% endif %}>About</a>
                 {% if config.build_search_index %}
                 <button class="search-toggle" type="button" aria-label="Search" title="Search (/)">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -70,10 +70,10 @@
 
 <div id="mobile-menu-overlay" class="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true">
     <nav class="mobile-menu-content" role="navigation" aria-label="Mobile navigation">
-        <a href="{{ get_url(path='@/articles/_index.md') }}">Articles</a>
-        <a href="{{ get_url(path='@/projects.md') }}">Projects</a>
-        <a href="{{ get_url(path='@/speaking.md') }}">Speaking</a>
-        <a href="{{ get_url(path='@/about.md') }}">About</a>
+        <a href="{{ get_url(path='@/articles/_index.md') }}"{% if current_url and current_url is containing("/articles") %} aria-current="page"{% endif %}>Articles</a>
+        <a href="{{ get_url(path='@/projects.md') }}"{% if current_url and current_url is containing("/projects") %} aria-current="page"{% endif %}>Projects</a>
+        <a href="{{ get_url(path='@/speaking.md') }}"{% if current_url and current_url is containing("/speaking") %} aria-current="page"{% endif %}>Speaking</a>
+        <a href="{{ get_url(path='@/about.md') }}"{% if current_url and current_url is containing("/about") %} aria-current="page"{% endif %}>About</a>
         {% if config.build_search_index %}
         <button class="search-toggle mobile-search-toggle" type="button" aria-label="Search">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

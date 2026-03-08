@@ -118,6 +118,10 @@
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="dns-prefetch" href="https://unpkg.com">
 
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="{{ get_url(path='fonts/Geist-Variable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ get_url(path='fonts/GeistMono-Variable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
@@ -200,7 +204,7 @@
             }
             {% if page %},
             {
-                "@type": "Article",
+                "@type": "BlogPosting",
                 "@id": "{{ current_url | safe }}/#article",
                 "headline": "{{ page.title }}",
                 "description": "{{ page.description | default(value=config.description) }}",
@@ -217,7 +221,17 @@
                     "@id": "{{ config.base_url | safe }}/#person"
                 },
                 "publisher": {
-                    "@id": "{{ config.base_url | safe }}/#person"
+                    "@type": "Organization",
+                    "name": "{{ config.title }}",
+                    "url": "{{ config.base_url | safe }}",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "{{ get_url(path='icon-192.png') | safe }}"
+                    }
+                },
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": [".article-header h1", ".article-post p:first-of-type"]
                 }
                 {% if page.date %},
                 "datePublished": "{{ page.date | date(format='%Y-%m-%dT%H:%M:%S') }}+00:00"

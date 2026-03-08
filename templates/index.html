@@ -41,7 +41,7 @@
             <div class="post">
                 <a href="{{ page.permalink }}">
                     <div class="post-row">
-                        <time>{{ page.date | date(format="%Y-%m-%d") }}</time>
+                        <time datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%Y-%m-%d") }}</time>
                         <h3>{{ page.title }}</h3>
                     </div>
                 </a>

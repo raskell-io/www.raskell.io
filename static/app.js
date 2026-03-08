@@ -58,7 +58,12 @@
     applyTheme(stored);
 
     // Set up toggle buttons
+    // Set initial aria-label with current theme
+    const initialTheme = getStoredTheme();
+    const themeLabels = { light: 'Light theme active, switch to dark', dark: 'Dark theme active, switch to auto', auto: 'Auto theme active, switch to light' };
     document.querySelectorAll('.theme-toggle').forEach(button => {
+      button.setAttribute('aria-label', themeLabels[initialTheme] || 'Toggle color theme');
+
       button.addEventListener('click', (e) => {
         e.preventDefault();
 
@@ -66,6 +71,9 @@
         const newTheme = cycleTheme();
         saveTheme(newTheme);
         applyTheme(newTheme);
+
+        // Update aria-label with new state
+        button.setAttribute('aria-label', themeLabels[newTheme] || 'Toggle color theme');
 
         // Add animation class
         button.classList.add('animating');

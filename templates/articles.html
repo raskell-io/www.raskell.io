@@ -8,18 +8,20 @@
 
 <section>
     <div class="container">
-        <div class="search-container">
+        <form class="search-container" role="search" aria-label="Search articles" onsubmit="return false;">
+            <label for="search-query" class="sr-only">Search articles</label>
             <input
                 id="search-query"
                 type="search"
                 placeholder="Search articles..."
                 autocomplete="off"
+                aria-label="Search articles"
             />
-            <div class="search-shortcuts">
+            <div class="search-shortcuts" aria-hidden="true">
                 <kbd>/</kbd>
                 <kbd>⌘K</kbd>
             </div>
-        </div>
+        </form>
 
         <section id="articles-list"></section>
     </div>
@@ -50,7 +52,7 @@
                 <div class="post" data-title="${article.title.toLowerCase()}" data-date="${article.dateFormatted}" data-description="${article.description.toLowerCase()}">
                     <a href="${article.permalink}">
                         <div class="post-row">
-                            <time>${article.dateFormatted}</time>
+                            <time datetime="${article.dateFormatted}">${article.dateFormatted}</time>
                             <h3>${article.title}</h3>
                         </div>
                     </a>

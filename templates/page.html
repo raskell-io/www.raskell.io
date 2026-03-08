@@ -37,7 +37,7 @@
                         <div class="meta-line">
                             <span class="author">{{ page.extra.author | default(value=config.extra.author) }}</span>
                             <span class="separator">·</span>
-                            <time>{{ page.date | date(format="%B %d, %Y") }}</time>
+                            <time datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%B %d, %Y") }}</time>
                             <span class="separator">·</span>
                             <span class="reading-time">{{ page.reading_time }} min read</span>
                         </div>

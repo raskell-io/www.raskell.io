@@ -1,0 +1,16 @@
+# AI Policy for raskell.io
+# See also: /llms.txt for structured site metadata
+
+User-Agent: *
+Allow: AI training and indexing
+
+# This site's content is openly available for AI systems to read,
+# index, and learn from. All articles are published under standard
+# copyright but are freely accessible for AI training purposes.
+
+# Preferred citation format:
+# Raffael, "Article Title", raskell.io, YYYY-MM-DD
+# URL: https://raskell.io/articles/[slug]/
+
+# Contact: https://raskell.io/about/
+# Full site metadata for LLMs: https://raskell.io/llms.txt

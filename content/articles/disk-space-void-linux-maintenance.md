@@ -1,6 +1,7 @@
 +++
 title = "Disk space maintenance on Void Linux"
 date = 2024-05-01
+updated = 2026-03-08
 description = "What to do when disk space fills up on Void Linux after months of neglect. Cleaning old kernels, pruning xbps package cache, and reclaiming space without breaking your system."
 
 [extra]

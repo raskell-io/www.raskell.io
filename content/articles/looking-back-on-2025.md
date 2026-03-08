@@ -1,6 +1,7 @@
 +++
 title = "Looking back on 2025"
 date = 2025-12-31
+updated = 2026-03-08
 description = "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself. The old distribution model is breaking, and small might become viable again."
 
 [taxonomies]

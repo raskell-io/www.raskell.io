@@ -1,6 +1,7 @@
 +++
 title = "My OpenBSD journey: Getting it virtualized with libvirt (1)"
 date = 2023-02-06
+updated = 2026-03-08
 description = "A step-by-step guide to running OpenBSD in a libvirt virtual machine on Void Linux, without needing VirtualBox or VMWare. Part 1 of my OpenBSD journey."
 
 [extra]
