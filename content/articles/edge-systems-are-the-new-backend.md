@@ -10,6 +10,7 @@ series = ["deep-dives"]
 
 [extra]
 author = "Raffael"
+image = "edge-systems-are-the-new-backend.avif"
 +++
 
 A request arrives at your system. In the next 50 milliseconds, before any application code runs, this happens: TLS termination, route matching, WAF inspection against 285 detection rules, JWT validation, rate limit evaluation, request body validation against a JSON schema, and trace context generation. The request either dies at the edge or arrives at your backend pre-authenticated, pre-validated, and pre-authorized.
