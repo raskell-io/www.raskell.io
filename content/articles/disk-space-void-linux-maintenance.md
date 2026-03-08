@@ -7,6 +7,7 @@ description = "What to do when disk space is full after not paying attention aft
 author = "Raffael"
 katex = true
 image = "void-disk-usage.avif"
+og_image = "void-disk-usage.png"
 +++
 
 ## Monday morning surprise

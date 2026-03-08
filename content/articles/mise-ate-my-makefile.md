@@ -10,6 +10,7 @@ categories = ["field-notes"]
 [extra]
 author = "Raffael"
 image = "mise-ate-make.avif"
+og_image = "mise-ate-make.png"
 +++
 
 ## The problem with project setup

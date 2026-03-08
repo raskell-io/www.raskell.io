@@ -10,6 +10,7 @@ categories = ["meta"]
 [extra]
 author = "Raffael"
 image = "hello-world.avif"
+og_image = "hello-world.png"
 +++
 
 ## Hello world
