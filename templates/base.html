@@ -202,8 +202,8 @@
                 "dateModified": "{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S') }}+00:00"
                 {% endif %}
             }
-            {% if page %},
-            {
+            {% if page and page.extra.image %}
+            ,{
                 "@type": "BlogPosting",
                 "@id": "{{ current_url | safe }}/#article",
                 "headline": "{{ page.title }}",
@@ -245,7 +245,9 @@
                 {% if page.word_count %},
                 "wordCount": {{ page.word_count }}
                 {% endif %}
-                {% if page.extra.image %},
+                {% if page.extra.og_image %},
+                "image": "{{ get_url(path=page.extra.og_image) | safe }}"
+                {% elif page.extra.image %},
                 "image": "{{ get_url(path=page.extra.image) | safe }}"
                 {% endif %}
             }
