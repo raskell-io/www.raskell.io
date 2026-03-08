@@ -197,7 +197,12 @@ What this enables:
 - **Image and video processing** in the browser. No upload to a server, no round trip, no privacy concern. The pixels never leave the device.
 - **Document parsing and transformation.** PDF rendering, spreadsheet computation, file format conversion. Libraries compiled to WASM and running client-side.
 - **Cryptographic operations.** End-to-end encryption where the server never sees plaintext. Key derivation, signing, verification, all in the browser.
+- **Compute offloading from the backend.** This is the one that changes how you think about server sizing.
 - **Full relational databases in the browser.** This is the one that changes architectures.
+
+I build on this pattern directly. [Cyanea](https://cyanea.bio), a bioinformatics platform, uses WASM to offload computation from the backend to the client's browser. Sequence analysis, structure visualization, dataset filtering, these are CPU-intensive operations that traditionally require beefy server infrastructure. Instead, the computation runs right there on the researcher's device. The backend stays thin: it stores datasets and coordinates collaboration, but the heavy lifting happens in the browser. This means I can run the platform on a modest server and still deliver real computational capability, because the "compute fleet" is the users' own machines.
+
+[Archipelag](https://archipelag.io) takes the same idea in a different direction. It is a distributed compute platform where users contribute their browser's idle compute power via WASM. The workloads compile to WASM modules, ship to participating browsers, execute in the sandbox, and return results. The browser is not just a client consuming a service, it is a compute node in a distributed system. The WASM sandbox is what makes this safe: untrusted code runs in a constrained environment with no access to the host file system, network, or memory beyond what is explicitly granted.
 
 SQLite compiled to WASM (via projects like sql.js, wa-sqlite, or the official SQLite WASM build) gives the browser a real relational database. Not a key-value store. Not IndexedDB's awkward object store API. Actual SQL with joins, indexes, transactions, and triggers. Backed by the Origin Private File System (OPFS) for persistence, it survives page reloads and browser restarts.
 
@@ -216,6 +221,8 @@ WebGPU landed in Chrome in 2023, in Firefox and Safari shortly after, and it cha
 The immediate application is ML inference. Run a language model, an image classifier, or a recommendation engine on the user's GPU. No server call, no API cost per token, no latency. The model weights download once (cached by the browser) and run locally. Privacy by default, because the data never leaves the device.
 
 This is not theoretical. Stable Diffusion generates images in the browser via WebGPU. Small language models (Phi-2, Gemma 2B, Llama 3.2 1B) run at usable speeds on consumer hardware. MediaPipe runs pose detection, face tracking, and hand gesture recognition in real time. The trajectory is clear: models get smaller through distillation and quantization, consumer GPUs get faster, and the gap between "cloud inference" and "local inference" narrows every quarter.
+
+Both Cyanea and Archipelag use WebGPU alongside WASM. In Cyanea, WebGPU accelerates molecular visualization and large-scale dataset operations, the kind of parallel computation that bioinformatics demands but that would be prohibitively expensive to run server-side for every user session. In Archipelag, WebGPU-capable nodes can take on GPU-accelerated workloads from the compute pool, turning a user's idle GPU into a productive resource. The combination of WASM for general compute and WebGPU for parallel workloads gives the browser a compute profile that would have required dedicated server hardware five years ago.
 
 But inference is not the only use case. WebGPU handles any parallel computation: physics simulations for games, signal processing for audio applications, particle systems for data visualization, and large-scale matrix operations. Anything you would reach for CUDA or Metal for on native can now run in the browser. The compute budget of the client just increased by orders of magnitude.
 
@@ -288,6 +295,33 @@ Consider the spectrum of what "backend" looks like now:
 **Static sites.** This site is an example. raskell.io is built with Zola. Markdown files compile to HTML at build time and deploy to edge CDN nodes. No application server. No database. No runtime process. The "backend" is a git repository and a CI pipeline. Content lives as files. Serving happens at the edge. The total monthly infrastructure cost is the price of a domain name.
 
 This is not limited to blogs. Documentation sites, marketing pages, product landing pages, e-commerce storefronts with pre-rendered product pages. Any content that changes at author-time rather than request-time can be static. The headless CMS (Contentful, Sanity, Strapi, or just a git repo) publishes content. The static site generator builds HTML. The CDN serves it. The "backend" runs at build time, not at request time.
+
+I take this further than most. All of my projects are CDN-first, even the ones with dedicated backends. The principle: if the backend goes down, the user should still see something useful. The static layer is the safety net.
+
+[Kurumi](https://github.com/raskell-io/kurumi), a local-first second brain app, is the purest expression of this. It is a Progressive Web App served entirely from CDN edge nodes with Service Workers handling offline capability. There is no backend server. Notes sync between devices through CRDTs when connectivity exists, but the app works fully offline. The entire "infrastructure" is a static deployment and an optional sync relay.
+
+But the CDN-first pattern also applies to applications that have real backends. Cyanea has a Phoenix/Elixir backend that manages datasets, user accounts, and collaboration. But the public-facing surface, the landing pages, category pages, trending spaces and protocols and datasets, is statically generated. The backend exports JSON snapshots of its database objects on a timed interval. A static site generator picks up those snapshots and rebuilds the public pages: what labs are active, which protocols are trending, which datasets were recently published. The result is a set of HTML pages sitting on a CDN that stay current without depending on the backend being up at the moment a visitor arrives.
+
+```
+┌──────────────────┐     JSON export      ┌──────────────┐
+│  Cyanea Backend  │ ──── (interval) ────> │  Static Site  │
+│  (Phoenix/BEAM)  │                       │  Generator    │
+│                  │                       │  (Zola)       │
+│  - datasets      │                       │               │
+│  - protocols     │                       │  → CDN edge   │
+│  - labs          │                       │    nodes      │
+│  - spaces        │                       │               │
+└──────────────────┘                       └──────────────┘
+         │                                        │
+         │ dynamic app                    static pages
+         ▼                                        ▼
+   app.cyanea.bio                          cyanea.bio
+   (logged-in users,                  (public, always up,
+    real-time features)                fast, no backend
+                                       dependency)
+```
+
+This is a genuinely resilient architecture. The backend can be down for maintenance, mid-deploy, or experiencing load, and the public site keeps serving. The static pages are never stale by more than one generation interval. For a site where "trending this week" is sufficient freshness, that interval can be hours. The CDN handles traffic spikes that would overwhelm a backend. The backend handles the dynamic work that requires real-time data.
 
 **Thin persistence APIs.** For applications with dynamic data, the backend shrinks to a database with an API in front of it. Accept writes, serve reads, enforce schema constraints. GraphQL or REST over Postgres. No rendering. No business logic beyond data integrity. The API exists so that clients and edge workers have somewhere to store and retrieve state.
 
@@ -396,6 +430,6 @@ Every year, this accelerates. Models get smaller and run on consumer GPUs. WASM 
 
 The backend will not disappear. Data needs to live somewhere durable, and cross-device sync needs a relay. Coordination problems need a central authority. Batch processing needs access to the full dataset. But the backend's role is narrowing to exactly these things. It is becoming infrastructure, not application. Plumbing, not logic.
 
-I find myself building systems where the most interesting engineering happens at the boundaries. A reverse proxy that inspects 912K requests per second through 285 WAF rules, authenticates with sub-millisecond latency, and routes with crash-isolated agents. A client that owns its data through CRDTs, syncs when it feels like it, and runs inference on the local GPU. Between them, a database. Necessary and boring.
+I find myself building systems where the most interesting engineering happens at the boundaries. A reverse proxy ([Zentinel](https://zentinelproxy.io)) that inspects 912K requests per second through 285 WAF rules, authenticates with sub-millisecond latency, and routes with crash-isolated agents. A bioinformatics platform ([Cyanea](https://cyanea.bio)) where the browser runs the computation and the backend exports JSON for statically generated pages. A distributed compute platform ([Archipelag](https://archipelag.io)) where users' browsers are the compute fleet via WASM and WebGPU. A note-taking app ([Kurumi](https://github.com/raskell-io/kurumi)) that works fully offline with CRDTs and never touches a server for reads. Between all of them, a database, a sync relay, or just a CDN. Necessary and boring.
 
 The backend is not dead. It is just not where the interesting work happens anymore.
