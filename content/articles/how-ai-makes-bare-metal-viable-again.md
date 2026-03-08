@@ -11,6 +11,7 @@ series = ["deep-dives"]
 [extra]
 author = "Raffael"
 image = "how-ai-makes-bare-metal-viable-again.avif"
+og_image = "how-ai-makes-bare-metal-viable-again.png"
 +++
 
 I was paying over two hundred dollars a month to run two apps that had zero paying users.
