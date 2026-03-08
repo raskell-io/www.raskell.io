@@ -1,7 +1,7 @@
 +++
 title = "Looking back on 2025"
 date = 2025-12-31
-description = "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself."
+description = "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself. The old distribution model is breaking, and small might become viable again."
 
 [taxonomies]
 tags = ["ai-for-ops", "edge-systems", "oss"]

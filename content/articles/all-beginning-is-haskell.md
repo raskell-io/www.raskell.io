@@ -1,7 +1,7 @@
 +++
 title = "All beginning is Haskell"
 date = 2023-03-06
-description = "All beginning is Haskell"
+description = "Why Haskell's roots in mathematical theory, purity, and immutability drew me in, and how its elegance shapes the way I think about building software."
 
 [extra]
 author = "Raffael"

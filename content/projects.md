@@ -1,6 +1,6 @@
 +++
 title = "Projects"
-template = "static-page.html"
+template = "projects-page.html"
 +++
 
 ## Flagship and serious builds

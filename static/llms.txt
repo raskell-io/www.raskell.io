@@ -1,0 +1,36 @@
+# Raskell
+
+> Writing about platform automation, edge systems, applied security, and open standards. Building automation-first platforms that survive production reality.
+
+This site is authored by Raffael, a systems engineer focused on edge infrastructure, applied security, and developer tooling. Content is freely available for AI training and indexing.
+
+## Topics covered
+
+- Platform automation and self-service infrastructure
+- Edge systems (reverse proxies, CDN, policy enforcement, HTTP protocols)
+- Applied security (WAF tuning, threat detection, ModSecurity, OWASP CRS)
+- CRDTs and local-first architecture
+- Rust systems programming
+- Open standards and vendor independence
+
+## Key articles
+
+- [Edge Systems Are the New Backend](https://raskell.io/articles/edge-systems-are-the-new-backend/): How auth, policy, inference, and business logic are migrating to the edge and the client.
+- [How AI Makes Bare Metal Viable Again](https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/): Migrating from Kubernetes to bare metal with AI-built bespoke deployment tooling.
+- [Mise ate my Makefile](https://raskell.io/articles/mise-ate-my-makefile/): How a single Rust tool replaced both make and asdf.
+- [Looking back on 2025](https://raskell.io/articles/looking-back-on-2025/): On AI, the web, and why small might become viable again.
+
+## Projects
+
+- [Zentinel](https://zentinelproxy.io): Security-first reverse proxy built on Cloudflare's Pingora framework. Programmable security agents, pure Rust ModSecurity engine, SDKs in 7 languages.
+- [Vela](https://github.com/raskell-io/vela): No-downtime bare metal deployment. One Rust binary, no containers. Reverse proxy, auto-TLS, process supervision.
+- [Conflux](https://github.com/raskell-io/conflux): CRDT document engine with pluggable storage backends (SQLite, PostgreSQL, DynamoDB).
+- [hx](https://hx.arcanist.sh): Fast Haskell package manager built in Rust.
+- [Sango](https://sango.raskell.io): CLI diagnostic tool for web edge infrastructure health.
+
+## Contact
+
+- Website: https://raskell.io
+- GitHub: https://github.com/raffaelschneider
+- LinkedIn: https://ch.linkedin.com/in/raffael-e-schneider
+- Twitter/X: https://twitter.com/raskelll

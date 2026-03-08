@@ -1,9 +1,23 @@
 {% extends "base.html" %}
 
+{% block title %}
+<title>404 Not Found | {{ config.title }}</title>
+{% endblock title %}
+
 {% block content %}
 <div class="container">
-    <main>
-        <h1>404 NOT FOUND</h1>
-    </main>
+    <article class="static-page">
+        <header class="page-header">
+            <h1>404 Not Found</h1>
+        </header>
+        <div class="page-content">
+            <p>The page you are looking for does not exist or has been moved.</p>
+            <ul>
+                <li><a href="/">Go to the homepage</a></li>
+                <li><a href="/articles/">Browse all articles</a></li>
+                <li><a href="/projects/">View projects</a></li>
+            </ul>
+        </div>
+    </article>
 </div>
 {% endblock content %}

@@ -1,6 +1,6 @@
 +++
 title = "Speaking"
-template = "static-page.html"
+template = "speaking-page.html"
 +++
 
 ## Talks

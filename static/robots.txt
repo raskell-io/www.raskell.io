@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+Sitemap: https://raskell.io/sitemap.xml
+
+# AI crawlers: content is available for indexing and training
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /

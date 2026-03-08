@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block jsonld_breadcrumb %}
+            ,{
+                "@type": "BreadcrumbList",
+                "@id": "{{ current_url | safe }}/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "{{ config.base_url | safe }}"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "{{ page.title }}"
+                    }
+                ]
+            }
+{% endblock jsonld_breadcrumb %}
+
+{% block head %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "SoftwareApplication",
+                "name": "Zentinel",
+                "description": "A secure, high-performance reverse proxy with programmable security agents, built on Cloudflare's Pingora framework.",
+                "url": "https://zentinelproxy.io",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "Linux",
+                "author": {
+                    "@type": "Person",
+                    "name": "{{ config.extra.author }}",
+                    "url": "{{ config.base_url | safe }}"
+                },
+                "codeRepository": "https://github.com/zentinelproxy/zentinel",
+                "programmingLanguage": "Rust",
+                "license": "https://opensource.org/licenses/MIT"
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Vela",
+                "description": "No-downtime app deployment on bare metal. One binary, no containers. Reverse proxy, auto-TLS, process supervision, zero-downtime deploys.",
+                "url": "https://github.com/raskell-io/vela",
+                "applicationCategory": "DeveloperApplication",
+                "operatingSystem": "Linux, macOS",
+                "author": {
+                    "@type": "Person",
+                    "name": "{{ config.extra.author }}",
+                    "url": "{{ config.base_url | safe }}"
+                },
+                "codeRepository": "https://github.com/raskell-io/vela",
+                "programmingLanguage": "Rust",
+                "license": "https://opensource.org/licenses/MIT"
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Conflux",
+                "description": "Schema-aware config state coordination with CRDTs. Multiple writers, deterministic merge, git milestones. Pluggable storage backends.",
+                "url": "https://github.com/raskell-io/conflux",
+                "applicationCategory": "DeveloperApplication",
+                "author": {
+                    "@type": "Person",
+                    "name": "{{ config.extra.author }}",
+                    "url": "{{ config.base_url | safe }}"
+                },
+                "codeRepository": "https://github.com/raskell-io/conflux",
+                "programmingLanguage": "Rust"
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "hx",
+                "description": "Extremely fast Haskell package and project manager built in Rust. Sub-second response times for dependency management, builds, and project scaffolding.",
+                "url": "https://hx.arcanist.sh",
+                "applicationCategory": "DeveloperApplication",
+                "author": {
+                    "@type": "Person",
+                    "name": "{{ config.extra.author }}",
+                    "url": "{{ config.base_url | safe }}"
+                },
+                "codeRepository": "https://github.com/arcanist-sh/hx",
+                "programmingLanguage": "Rust"
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Sango",
+                "description": "A command-line diagnostic tool that evaluates web edge infrastructure health. TLS analysis, HTTP protocol detection, security header evaluation.",
+                "url": "https://sango.raskell.io",
+                "applicationCategory": "DeveloperApplication",
+                "author": {
+                    "@type": "Person",
+                    "name": "{{ config.extra.author }}",
+                    "url": "{{ config.base_url | safe }}"
+                },
+                "codeRepository": "https://github.com/raskell-io/sango",
+                "programmingLanguage": "Rust"
+            }
+        ]
+    }
+    </script>
+{% endblock head %}
+
+{% block content %}
+<div class="container">
+    <article class="static-page">
+        <header class="page-header">
+            <h1>{{ page.title }}</h1>
+        </header>
+
+        <div class="page-content">
+            {{ page.content | safe }}
+        </div>
+    </article>
+</div>
+{% endblock content %}
