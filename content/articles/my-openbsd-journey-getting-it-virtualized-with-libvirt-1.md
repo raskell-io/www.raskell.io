@@ -4,6 +4,10 @@ date = 2023-02-06
 updated = 2026-03-08
 description = "A step-by-step guide to running OpenBSD in a libvirt virtual machine on Void Linux, without needing VirtualBox or VMWare. Part 1 of my OpenBSD journey."
 
+[taxonomies]
+tags = ["linux-bsd"]
+categories = ["field-notes"]
+
 [extra]
 author = "Raffael"
 image = "openbsd-libvirt.avif"
@@ -35,7 +39,7 @@ What is different:
 
 - License: Void Linux is licensed under the MIT License, while OpenBSD is licensed under the ISC License.
 - Philosophy: OpenBSD prioritizes security and privacy, while Void Linux prioritizes simplicity and modularity.
-- Package Management: Void Linux uses a binary package manager (XBPS), while OpenBSD uses a source-based package manager (pkg_add).
+- Package Management: Void Linux uses the XBPS binary package manager, while OpenBSD uses pkg_add (also binary). OpenBSD additionally has a ports system for building from source.
 - Package Repository: Void Linux has a large and diverse repository, while OpenBSD has a smaller and more curated repository.
 - Init System: Void Linux uses runit as its init system, while OpenBSD uses rc. None uses the infamous systemd init system.
 
@@ -147,8 +151,6 @@ $ sudo virsh --connect
 qemu:///system start openbsd
 Domain 'openbsd' started
 ```
-
-{tbc}
 
 ## References and further reading
 
