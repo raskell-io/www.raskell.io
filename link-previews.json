@@ -1,0 +1,270 @@
+{
+  "https://zentinelproxy.io": {
+    "title": "Zentinel",
+    "description": "A security-first reverse proxy built on Cloudflare's Pingora framework. Crash-isolated agents for WAF, auth, rate limiting, and more."
+  },
+  "https://archipelag.io": {
+    "title": "Archipelag",
+    "description": "Distributed compute platform where users contribute browser idle compute power via WebAssembly and WebGPU."
+  },
+  "https://cyanea.bio": {
+    "title": "Cyanea",
+    "description": "Bioinformatics platform built with Phoenix/Elixir and Rust NIFs. Client-side compute via WebAssembly and WebGPU."
+  },
+  "https://github.com/raskell-io/conflux": {
+    "title": "Conflux",
+    "description": "Schema-aware CRDT engine in Rust. Multiple writers, deterministic merge, hybrid logical clocks."
+  },
+  "https://github.com/raskell-io/vela": {
+    "title": "Vela",
+    "description": "No-downtime app deployment on bare metal. One Rust binary. No containers. Built-in reverse proxy with auto-TLS."
+  },
+  "https://github.com/raskell-io/shiioo": {
+    "title": "Shiioo",
+    "description": "Virtual Company OS: agentic enterprise orchestrator with DAG workflows, event sourcing, and MCP tools."
+  },
+  "https://github.com/raskell-io/sango": {
+    "title": "Sango",
+    "description": "Operator-grade edge diagnostics CLI. TLS analysis, HTTP/3 probing, security header evaluation, WAF signals."
+  },
+  "https://github.com/raskell-io/ushio": {
+    "title": "Ushio",
+    "description": "Deterministic edge traffic replay for understanding WAF and proxy behavior in staging vs production."
+  },
+  "https://github.com/raskell-io/kurumi": {
+    "title": "Kurumi",
+    "description": "A local-first second brain. Offline-capable PWA with CRDT sync. Your ideas, everywhere."
+  },
+  "https://github.com/raskell-io/refrakt": {
+    "title": "Refrakt",
+    "description": "A convention-first web framework for Gleam. Batteries included, opinions welcome."
+  },
+  "https://github.com/raskell-io/terrarium": {
+    "title": "Terrarium",
+    "description": "Societal simulation engine where LLM-powered agents form emergent civilizations through beliefs-over-facts."
+  },
+  "https://github.com/raskell-io/mise-hx": {
+    "title": "mise-hx",
+    "description": "mise plugin for hx, the fast Haskell toolchain CLI."
+  },
+  "https://github.com/raskell-io/www.raskell.io": {
+    "title": "raskell.io source",
+    "description": "Source code for this site. Built with Zola, styled with Catppuccin, deployed to CDN edge nodes."
+  },
+  "https://github.com/cloudflare/pingora": {
+    "title": "Pingora",
+    "description": "Cloudflare's Rust framework for building fast, reliable, and programmable network services."
+  },
+  "https://github.com/jdx/mise": {
+    "title": "mise",
+    "description": "Polyglot dev tool version manager and task runner. One TOML file, one binary. Written in Rust."
+  },
+  "https://mise.jdx.dev": {
+    "title": "mise documentation",
+    "description": "Official documentation for mise, the polyglot dev tool manager and task runner."
+  },
+  "https://mise.jdx.dev/": {
+    "title": "mise documentation",
+    "description": "Official documentation for mise, the polyglot dev tool manager and task runner."
+  },
+  "https://fly.io": {
+    "title": "Fly.io",
+    "description": "Deploy app servers close to your users. Global edge hosting with managed databases and built-in scaling."
+  },
+  "https://www.hetzner.com/sb/": {
+    "title": "Hetzner Server Auction",
+    "description": "Refurbished dedicated servers at steep discounts. Real hardware, fixed monthly pricing, no surprises."
+  },
+  "https://www.nomadproject.io/": {
+    "title": "HashiCorp Nomad",
+    "description": "Simple and flexible workload orchestrator. Single binary, minimal configuration, no opinions about networking."
+  },
+  "https://opentofu.org/": {
+    "title": "OpenTofu",
+    "description": "Community-driven fork of Terraform. Open-source infrastructure as code under the Linux Foundation."
+  },
+  "https://letsencrypt.org/": {
+    "title": "Let's Encrypt",
+    "description": "Free, automated, and open certificate authority. TLS certificates for everyone."
+  },
+  "https://nats.io/": {
+    "title": "NATS",
+    "description": "Cloud-native messaging system. Lightweight, high-performance, and designed for distributed systems."
+  },
+  "https://hyper.rs/": {
+    "title": "hyper",
+    "description": "A fast and correct HTTP implementation for Rust. Powers many Rust web frameworks and proxies."
+  },
+  "https://www.phoenixframework.org/": {
+    "title": "Phoenix Framework",
+    "description": "Elixir web framework for building rich, interactive apps. Real-time features via LiveView and channels."
+  },
+  "https://www.erlang.org/": {
+    "title": "Erlang/OTP",
+    "description": "The BEAM virtual machine and OTP framework. Built for fault-tolerant, distributed, soft real-time systems."
+  },
+  "https://www.rust-lang.org/": {
+    "title": "Rust",
+    "description": "A language for reliable and efficient software. Memory safety without garbage collection."
+  },
+  "https://workers.cloudflare.com/": {
+    "title": "Cloudflare Workers",
+    "description": "Run JavaScript, TypeScript, and Wasm at the edge. V8 isolates with sub-millisecond cold starts in 300+ locations."
+  },
+  "https://deno.com/deploy": {
+    "title": "Deno Deploy",
+    "description": "Serverless platform for JavaScript and TypeScript. Built on the Deno runtime, deployed globally."
+  },
+  "https://www.fastly.com/products/edge-compute": {
+    "title": "Fastly Compute",
+    "description": "Wasm-based serverless compute at the edge. Compile from Rust, Go, or JavaScript to WebAssembly."
+  },
+  "https://webassembly.org/": {
+    "title": "WebAssembly",
+    "description": "Portable binary instruction format for a stack-based virtual machine. Near-native performance in the browser."
+  },
+  "https://wasi.dev/": {
+    "title": "WASI",
+    "description": "WebAssembly System Interface. Run Wasm outside the browser with controlled access to system resources."
+  },
+  "https://www.w3.org/TR/webgpu/": {
+    "title": "WebGPU Specification",
+    "description": "W3C standard for GPU compute and rendering in the browser. General-purpose GPU access from JavaScript."
+  },
+  "https://sqlite.org/wasm": {
+    "title": "SQLite Wasm",
+    "description": "Official SQLite build targeting WebAssembly. Full relational database running in the browser."
+  },
+  "https://sql.js.org/": {
+    "title": "sql.js",
+    "description": "SQLite compiled to JavaScript via Emscripten. Run SQL queries entirely in the browser."
+  },
+  "https://automerge.org/": {
+    "title": "Automerge",
+    "description": "CRDT library for building collaborative, local-first applications. Automatic conflict resolution."
+  },
+  "https://yjs.dev/": {
+    "title": "Yjs",
+    "description": "High-performance CRDT framework for shared editing and local-first applications on the web."
+  },
+  "https://www.inkandswitch.com/local-first/": {
+    "title": "Local-first software",
+    "description": "Ink and Switch research paper on building software that works offline-first with real-time collaboration."
+  },
+  "https://turso.tech/": {
+    "title": "Turso",
+    "description": "SQLite-compatible database with edge replicas. Low-latency reads from locations close to your users."
+  },
+  "https://neon.tech/": {
+    "title": "Neon",
+    "description": "Serverless PostgreSQL with branching, autoscaling, and instant provisioning."
+  },
+  "https://github.com/superfly/litefs": {
+    "title": "LiteFS",
+    "description": "FUSE-based file system for replicating SQLite databases across a cluster of machines. Built by Fly.io."
+  },
+  "https://supabase.com/": {
+    "title": "Supabase",
+    "description": "Open-source Firebase alternative. PostgreSQL database with auth, storage, and real-time subscriptions."
+  },
+  "https://www.cockroachlabs.com/": {
+    "title": "CockroachDB",
+    "description": "Distributed SQL database designed for global scale. Survives data center failures with strong consistency."
+  },
+  "https://asdf-vm.com/": {
+    "title": "asdf",
+    "description": "Extendable version manager for multiple language runtimes. One tool, many plugins, one .tool-versions file."
+  },
+  "https://nixos.org/": {
+    "title": "Nix",
+    "description": "Reproducible builds and declarative system configuration. Functional package management for Linux and macOS."
+  },
+  "https://www.gnu.org/software/make/": {
+    "title": "GNU Make",
+    "description": "Build automation tool that generates executables from source code by reading Makefiles."
+  },
+  "https://toml.io/": {
+    "title": "TOML",
+    "description": "A configuration file format that is easy to read and write. Used by Cargo, mise, and many Rust tools."
+  },
+  "https://direnv.net/": {
+    "title": "direnv",
+    "description": "Automatic shell environment switcher. Loads and unloads environment variables based on your current directory."
+  },
+  "https://www.haskell.org/": {
+    "title": "Haskell",
+    "description": "A purely functional programming language with a strong type system, lazy evaluation, and type inference."
+  },
+  "https://www.haskell.org/ghc/": {
+    "title": "GHC",
+    "description": "The Glasgow Haskell Compiler. The most widely used Haskell compiler, with advanced type system features."
+  },
+  "https://learnyouahaskell.com/": {
+    "title": "Learn You a Haskell for Great Good!",
+    "description": "An approachable, illustrated guide to learning Haskell. Free to read online."
+  },
+  "https://book.realworldhaskell.org/": {
+    "title": "Real World Haskell",
+    "description": "A practical guide to using Haskell for real-world programming tasks. Free to read online."
+  },
+  "https://docs.haskellstack.org/": {
+    "title": "Haskell Stack",
+    "description": "Cross-platform build tool for Haskell with curated package sets and reproducible builds."
+  },
+  "https://www.haskell.org/cabal/": {
+    "title": "Cabal",
+    "description": "Haskell's build system and package infrastructure. Manages dependencies and builds Haskell projects."
+  },
+  "https://www.getzola.org/": {
+    "title": "Zola",
+    "description": "A fast static site generator in a single binary. Built in Rust, no dependencies, built-in Sass compilation."
+  },
+  "https://voidlinux.org/": {
+    "title": "Void Linux",
+    "description": "An independent Linux distribution using the XBPS package manager and runit init system."
+  },
+  "https://www.openbsd.org/": {
+    "title": "OpenBSD",
+    "description": "A free, multi-platform BSD-based operating system emphasizing security, correctness, and code quality."
+  },
+  "https://libvirt.org/": {
+    "title": "libvirt",
+    "description": "Toolkit to manage virtualization platforms including KVM, QEMU, and Xen. Single API, many hypervisors."
+  },
+  "https://www.qemu.org/": {
+    "title": "QEMU",
+    "description": "Open-source machine emulator and virtualizer. Emulates full systems or just user-space applications."
+  },
+  "https://tigervnc.org/": {
+    "title": "TigerVNC",
+    "description": "High-performance VNC implementation for remote desktop access. Open source, cross-platform."
+  },
+  "https://www.openssh.com/": {
+    "title": "OpenSSH",
+    "description": "The premier connectivity tool for remote login with SSH. Originated from the OpenBSD project."
+  },
+  "https://indieweb.org/": {
+    "title": "IndieWeb",
+    "description": "A people-focused alternative to the corporate web. Own your content, connect through open standards."
+  },
+  "https://github.com/anthropics/claude-code": {
+    "title": "Claude Code",
+    "description": "Anthropic's agentic coding tool. AI pair programming in the terminal."
+  },
+  "https://www.w3.org/People/Berners-Lee/": {
+    "title": "Tim Berners-Lee",
+    "description": "Inventor of the World Wide Web. Director of the W3C and advocate for an open, decentralized internet."
+  },
+  "https://developers.google.com/mediapipe": {
+    "title": "MediaPipe",
+    "description": "Google's framework for on-device ML. Pose detection, face tracking, and hand gesture recognition in the browser."
+  },
+  "https://why-openbsd.rocks/": {
+    "title": "Why OpenBSD Rocks",
+    "description": "A curated collection of innovations and features that originated from the OpenBSD project."
+  },
+  "https://vercel.com/docs/functions/edge-functions": {
+    "title": "Vercel Edge Functions",
+    "description": "Run server-side code at the edge, close to your users. Integrated with Next.js and the Vercel platform."
+  }
+}
