@@ -280,6 +280,32 @@ jetstream = true
 &lt;p&gt;The thing I keep coming back to: the cloud was never selling compute. It was selling convenience. And convenience used to require a company with thousands of engineers to build platforms that abstracted away the hard parts. Now, a developer with a clear idea of what they need and an AI that can write systems code can build a fit-for-purpose operational layer in a weekend.&lt;&#x2F;p&gt;
 &lt;p&gt;That does not make the cloud irrelevant. It makes the cloud optional for a much larger class of workloads than it was before.&lt;&#x2F;p&gt;
 &lt;p&gt;Buy a server. Build your tools. Ship your product. The infrastructure should be boring. With AI, it finally can be.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;tools-and-platforms&quot;&gt;Tools and platforms&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;vela&quot;&gt;Vela&lt;&#x2F;a&gt; - The bare-metal deployment tool built in this article&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.hetzner.com&#x2F;sb&#x2F;&quot;&gt;Hetzner Server Auction&lt;&#x2F;a&gt; - Refurbished dedicated servers at steep discounts&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;fly.io&quot;&gt;fly.io&lt;&#x2F;a&gt; - The managed platform I migrated from&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.nomadproject.io&#x2F;&quot;&gt;Nomad&lt;&#x2F;a&gt; - HashiCorp’s minimal workload orchestrator&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;opentofu.org&#x2F;&quot;&gt;OpenTofu&lt;&#x2F;a&gt; - Community fork of Terraform after the BSL relicense&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;cloudflare&#x2F;pingora&quot;&gt;Pingora&lt;&#x2F;a&gt; - Cloudflare’s Rust framework for building programmable proxies&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;hyper.rs&#x2F;&quot;&gt;hyper&lt;&#x2F;a&gt; - Rust HTTP library powering Vela’s reverse proxy&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;letsencrypt.org&#x2F;&quot;&gt;Let’s Encrypt&lt;&#x2F;a&gt; - Free TLS certificates, automated via ACME in Vela&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nats.io&#x2F;&quot;&gt;NATS&lt;&#x2F;a&gt; - Lightweight messaging system used by Archipelag&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;frameworks-and-runtimes&quot;&gt;Frameworks and runtimes&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.phoenixframework.org&#x2F;&quot;&gt;Phoenix Framework&lt;&#x2F;a&gt; - Elixir web framework powering both apps&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.erlang.org&#x2F;&quot;&gt;Erlang&#x2F;OTP&lt;&#x2F;a&gt; - The BEAM virtual machine that runs Phoenix and Elixir&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.rust-lang.org&#x2F;&quot;&gt;Rust&lt;&#x2F;a&gt; - Systems language Vela and Zentinel are written in&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;projects-referenced&quot;&gt;Projects referenced&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Security-first reverse proxy built on Pingora&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&quot;&gt;Archipelag&lt;&#x2F;a&gt; - Distributed compute platform&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cyanea.bio&quot;&gt;Cyanea&lt;&#x2F;a&gt; - Bioinformatics platform&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;anthropics&#x2F;claude-code&quot;&gt;Claude Code&lt;&#x2F;a&gt; - AI coding tool used to build Vela&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
       <item>
@@ -311,6 +337,16 @@ jetstream = true
 &lt;p&gt;This site is part of that bet. Static content, no tracking, no platform dependencies. The tools I’m working on (Zentinel, Sango, Ushio) are all about making edge infrastructure more accessible, making it easier to build and operate systems that are distributed and independent.&lt;&#x2F;p&gt;
 &lt;p&gt;2025 was the year AI started breaking the old model. I don’t know exactly what grows in its place. But floating in that Okinawan water, watching the reef do what reefs do, I got a sense of what healthy systems look like. Diverse. Interconnected. Resilient. Not optimized for any single metric, but somehow working anyway.&lt;&#x2F;p&gt;
 &lt;p&gt;That’s what I’m betting on.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.w3.org&#x2F;People&#x2F;Berners-Lee&#x2F;&quot;&gt;Tim Berners-Lee&lt;&#x2F;a&gt; - Creator of the World Wide Web and author of “This is for everyone”&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Enshittification&quot;&gt;Enshittification&lt;&#x2F;a&gt; - Cory Doctorow’s term for the pattern of platform decay&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;indieweb.org&#x2F;&quot;&gt;IndieWeb&lt;&#x2F;a&gt; - Community building the independent web with open standards&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; - Static site generator used to build this site&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Security-first reverse proxy for the open web&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;sango&quot;&gt;Sango&lt;&#x2F;a&gt; - Edge diagnostics CLI for TLS, HTTP, and security header analysis&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;ushio&quot;&gt;Ushio&lt;&#x2F;a&gt; - Deterministic edge traffic replay tool&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
     </channel>

@@ -58,6 +58,14 @@ Filesystem      Size  Used Avail Use% Mounted on
 &lt;p&gt;Overall, why am I even writing this if some other fellow engineer already figured this out? Simply, because I would therefore be able to explain why I have enjoyed my journey with Void as my go-to Linux distribution. It keeps things simple. Some well-documented utilities. As simple that a simple Brave search suffices to find the answer to my problems.&lt;&#x2F;p&gt;
 &lt;p&gt;This very aspect of Void is worthwhile highlighing. I remember more arcane Linux distributions that had me in their grip in figuring things out. Many Googles searches were necessary and even more trial and errors attempts to get simple things fixed.&lt;&#x2F;p&gt;
 &lt;p&gt;Now back to my Monday morning.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt; - Official project site&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.voidlinux.org&#x2F;xbps&#x2F;index.html&quot;&gt;Void Linux Handbook: XBPS&lt;&#x2F;a&gt; - Official documentation for the XBPS package manager&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;man.voidlinux.org&#x2F;xbps-remove.1&quot;&gt;xbps-remove(1) man page&lt;&#x2F;a&gt; - Manual page for package removal and cache cleaning&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;void-linux&#x2F;void-packages&#x2F;blob&#x2F;master&#x2F;srcpkgs&#x2F;base-files&#x2F;files&#x2F;vkpurge&quot;&gt;vkpurge source&lt;&#x2F;a&gt; - Shell script for purging old kernels on Void Linux&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.voidlinux.org&#x2F;about&#x2F;faq.html&quot;&gt;Void Linux FAQ&lt;&#x2F;a&gt; - Common questions about running and maintaining Void&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 &lt;hr &#x2F;&gt;
 &lt;div class=&quot;footnote-definition&quot; id=&quot;1&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;1&lt;&#x2F;sup&gt;
 &lt;p&gt;Painting in header image is “Seaside” by Aleksandr Deyneka&lt;&#x2F;p&gt;
@@ -178,10 +186,34 @@ qemu:&amp;#x2F;&amp;#x2F;&amp;#x2F;system start openbsd
 Domain &amp;#x27;openbsd&amp;#x27; started
 &lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;openbsd&quot;&gt;OpenBSD&lt;&#x2F;h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;voidlinux&#x2F;comments&#x2F;ghwvv5&#x2F;guide_how_to_setup_qemukvm_emulation_on_void_linux&#x2F;&quot;&gt;[Guide] how to setup QEMU&#x2F;KVM emulation on void linux | &#x2F;r&#x2F;voidlinux&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.cyberciti.biz&#x2F;faq&#x2F;kvmvirtualization-virt-install-openbsd-unix-guest&#x2F;&quot;&gt;KVM virt-install: Install OpenBSD As Guest Operating System&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.skreutz.com&#x2F;posts&#x2F;autoinstall-openbsd-on-qemu&#x2F;&quot;&gt;Auto-install OpenBSD on QEMU | skreutz.com&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt; - Official project site&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;faq&#x2F;&quot;&gt;OpenBSD FAQ&lt;&#x2F;a&gt; - Comprehensive installation and usage guide&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;why-openbsd.rocks&#x2F;&quot;&gt;Why OpenBSD Rocks&lt;&#x2F;a&gt; - Collection of OpenBSD innovations and features&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openssh.com&#x2F;&quot;&gt;OpenSSH&lt;&#x2F;a&gt; - The SSH suite that originated from the OpenBSD project&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Theo_de_Raadt&quot;&gt;Theo de Raadt&lt;&#x2F;a&gt; - OpenBSD founder and lead developer&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;man.openbsd.org&#x2F;pledge.2&quot;&gt;pledge(2)&lt;&#x2F;a&gt; - OpenBSD’s system call for restricting process capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;man.openbsd.org&#x2F;unveil.2&quot;&gt;unveil(2)&lt;&#x2F;a&gt; - OpenBSD’s system call for restricting filesystem visibility&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;void-linux&quot;&gt;Void Linux&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt; - Official project site&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.voidlinux.org&#x2F;&quot;&gt;Void Linux Handbook&lt;&#x2F;a&gt; - Official documentation&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.voidlinux.org&#x2F;xbps&#x2F;index.html&quot;&gt;XBPS package manager&lt;&#x2F;a&gt; - Void’s binary package management system&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;virtualization&quot;&gt;Virtualization&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;libvirt.org&#x2F;&quot;&gt;libvirt&lt;&#x2F;a&gt; - Virtualization management library and API&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.qemu.org&#x2F;&quot;&gt;QEMU&lt;&#x2F;a&gt; - Open-source machine emulator and virtualizer&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.libvirt.org&#x2F;manpages&#x2F;virsh.html&quot;&gt;virsh(1)&lt;&#x2F;a&gt; - Command-line interface for managing libvirt guests&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;tigervnc.org&#x2F;&quot;&gt;TigerVNC&lt;&#x2F;a&gt; - VNC implementation for remote desktop access&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;guides&quot;&gt;Guides&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;voidlinux&#x2F;comments&#x2F;ghwvv5&#x2F;guide_how_to_setup_qemukvm_emulation_on_void_linux&#x2F;&quot;&gt;[Guide] How to setup QEMU&#x2F;KVM emulation on Void Linux&lt;&#x2F;a&gt; - Community guide on r&#x2F;voidlinux&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.cyberciti.biz&#x2F;faq&#x2F;kvmvirtualization-virt-install-openbsd-unix-guest&#x2F;&quot;&gt;KVM virt-install: Install OpenBSD as Guest Operating System&lt;&#x2F;a&gt; - Step-by-step KVM installation guide&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.skreutz.com&#x2F;posts&#x2F;autoinstall-openbsd-on-qemu&#x2F;&quot;&gt;Auto-install OpenBSD on QEMU&lt;&#x2F;a&gt; - Automated OpenBSD installation on QEMU&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </description>
       </item>

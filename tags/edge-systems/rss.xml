@@ -294,6 +294,52 @@ agent &amp;quot;rate-limit&amp;quot; {
 &lt;p&gt;The backend will not disappear. Data needs to live somewhere durable, and cross-device sync needs a relay. Coordination problems need a central authority. Batch processing needs access to the full dataset. But the backend’s role is narrowing to exactly these things. It is becoming infrastructure, not application. Plumbing, not logic.&lt;&#x2F;p&gt;
 &lt;p&gt;I find myself building systems where the most interesting engineering happens at the boundaries. A reverse proxy (&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt;) that inspects 912K requests per second through 285 WAF rules, authenticates with sub-millisecond latency, and routes with crash-isolated agents. A bioinformatics platform (&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cyanea.bio&quot;&gt;Cyanea&lt;&#x2F;a&gt;) where the browser runs the computation and the backend exports JSON for statically generated pages. A distributed compute platform (&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&quot;&gt;Archipelag&lt;&#x2F;a&gt;) where users’ browsers are the compute fleet via WASM and WebGPU. A note-taking app (&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;kurumi&quot;&gt;Kurumi&lt;&#x2F;a&gt;) that works fully offline with CRDTs and never touches a server for reads. Between all of them, a database, a sync relay, or just a CDN. Necessary and boring.&lt;&#x2F;p&gt;
 &lt;p&gt;The backend is not dead. It is just not where the interesting work happens anymore.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;edge-platforms-and-proxies&quot;&gt;Edge platforms and proxies&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;workers.cloudflare.com&#x2F;&quot;&gt;Cloudflare Workers&lt;&#x2F;a&gt; - V8 isolate-based edge compute&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;deno.com&#x2F;deploy&quot;&gt;Deno Deploy&lt;&#x2F;a&gt; - Edge runtime built on the Deno JavaScript runtime&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.fastly.com&#x2F;products&#x2F;edge-compute&quot;&gt;Fastly Compute&lt;&#x2F;a&gt; - Wasm-based edge compute platform&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;vercel.com&#x2F;docs&#x2F;functions&#x2F;edge-functions&quot;&gt;Vercel Edge Functions&lt;&#x2F;a&gt; - Edge compute integrated with Next.js&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;fly.io&quot;&gt;fly.io&lt;&#x2F;a&gt; - Container-based edge deployment platform&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;cloudflare&#x2F;pingora&quot;&gt;Pingora&lt;&#x2F;a&gt; - Cloudflare’s Rust framework for programmable proxies&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Security-first reverse proxy with crash-isolated agents&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;client-side-compute&quot;&gt;Client-side compute&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;webassembly.org&#x2F;&quot;&gt;WebAssembly&lt;&#x2F;a&gt; - Portable binary instruction format for the web&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wasi.dev&#x2F;&quot;&gt;WASI&lt;&#x2F;a&gt; - WebAssembly System Interface for running Wasm outside the browser&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.w3.org&#x2F;TR&#x2F;webgpu&#x2F;&quot;&gt;WebGPU specification&lt;&#x2F;a&gt; - W3C standard for GPU compute in the browser&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;developers.google.com&#x2F;mediapipe&quot;&gt;MediaPipe&lt;&#x2F;a&gt; - ML inference framework running client-side via Wasm and WebGPU&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;sqlite.org&#x2F;wasm&quot;&gt;SQLite Wasm&lt;&#x2F;a&gt; - Official SQLite build targeting WebAssembly&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;sql.js.org&#x2F;&quot;&gt;sql.js&lt;&#x2F;a&gt; - SQLite compiled to Wasm via Emscripten&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;File_System_API&#x2F;Origin_private_file_system&quot;&gt;Origin Private File System&lt;&#x2F;a&gt; - MDN reference for persistent browser storage&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Service_Worker_API&quot;&gt;Service Worker API&lt;&#x2F;a&gt; - MDN reference for offline-capable web apps&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Web_Workers_API&quot;&gt;Web Workers API&lt;&#x2F;a&gt; - MDN reference for background threads in the browser&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;crdts-and-local-first&quot;&gt;CRDTs and local-first&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=x7drE24geUw&quot;&gt;CRDTs: The Hard Parts&lt;&#x2F;a&gt; - Martin Kleppmann’s talk on practical CRDT challenges&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.inkandswitch.com&#x2F;local-first&#x2F;&quot;&gt;Local-first software&lt;&#x2F;a&gt; - Ink and Switch research paper on local-first architectures&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;automerge.org&#x2F;&quot;&gt;Automerge&lt;&#x2F;a&gt; - CRDT library for collaborative applications&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;yjs.dev&#x2F;&quot;&gt;Yjs&lt;&#x2F;a&gt; - High-performance CRDT framework for the web&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;hal.inria.fr&#x2F;inria-00555588&#x2F;document&quot;&gt;A comprehensive study of CRDTs&lt;&#x2F;a&gt; - Shapiro et al., the foundational survey paper&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;databases-at-the-edge&quot;&gt;Databases at the edge&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;turso.tech&#x2F;&quot;&gt;Turso&lt;&#x2F;a&gt; - SQLite-compatible database with edge replicas&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;neon.tech&#x2F;&quot;&gt;Neon&lt;&#x2F;a&gt; - Serverless PostgreSQL with branching&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;superfly&#x2F;litefs&quot;&gt;LiteFS&lt;&#x2F;a&gt; - Distributed SQLite replication by Fly.io&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.cockroachlabs.com&#x2F;&quot;&gt;CockroachDB&lt;&#x2F;a&gt; - Distributed SQL database designed for multi-region&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;supabase.com&#x2F;&quot;&gt;Supabase&lt;&#x2F;a&gt; - Open-source Firebase alternative built on PostgreSQL&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;projects-referenced&quot;&gt;Projects referenced&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cyanea.bio&quot;&gt;Cyanea&lt;&#x2F;a&gt; - Bioinformatics platform using Wasm and WebGPU for client-side compute&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&quot;&gt;Archipelag&lt;&#x2F;a&gt; - Distributed compute platform with browser-based Wasm nodes&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;kurumi&quot;&gt;Kurumi&lt;&#x2F;a&gt; - Local-first second brain app with CRDT sync&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;conflux&quot;&gt;Conflux&lt;&#x2F;a&gt; - Schema-aware CRDT engine for deterministic merge&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
       <item>
@@ -325,6 +371,16 @@ agent &amp;quot;rate-limit&amp;quot; {
 &lt;p&gt;This site is part of that bet. Static content, no tracking, no platform dependencies. The tools I’m working on (Zentinel, Sango, Ushio) are all about making edge infrastructure more accessible, making it easier to build and operate systems that are distributed and independent.&lt;&#x2F;p&gt;
 &lt;p&gt;2025 was the year AI started breaking the old model. I don’t know exactly what grows in its place. But floating in that Okinawan water, watching the reef do what reefs do, I got a sense of what healthy systems look like. Diverse. Interconnected. Resilient. Not optimized for any single metric, but somehow working anyway.&lt;&#x2F;p&gt;
 &lt;p&gt;That’s what I’m betting on.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.w3.org&#x2F;People&#x2F;Berners-Lee&#x2F;&quot;&gt;Tim Berners-Lee&lt;&#x2F;a&gt; - Creator of the World Wide Web and author of “This is for everyone”&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Enshittification&quot;&gt;Enshittification&lt;&#x2F;a&gt; - Cory Doctorow’s term for the pattern of platform decay&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;indieweb.org&#x2F;&quot;&gt;IndieWeb&lt;&#x2F;a&gt; - Community building the independent web with open standards&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; - Static site generator used to build this site&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Security-first reverse proxy for the open web&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;sango&quot;&gt;Sango&lt;&#x2F;a&gt; - Edge diagnostics CLI for TLS, HTTP, and security header analysis&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;ushio&quot;&gt;Ushio&lt;&#x2F;a&gt; - Deterministic edge traffic replay tool&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
     </channel>

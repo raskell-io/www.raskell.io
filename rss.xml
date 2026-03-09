@@ -280,6 +280,32 @@ jetstream = true
 &lt;p&gt;The thing I keep coming back to: the cloud was never selling compute. It was selling convenience. And convenience used to require a company with thousands of engineers to build platforms that abstracted away the hard parts. Now, a developer with a clear idea of what they need and an AI that can write systems code can build a fit-for-purpose operational layer in a weekend.&lt;&#x2F;p&gt;
 &lt;p&gt;That does not make the cloud irrelevant. It makes the cloud optional for a much larger class of workloads than it was before.&lt;&#x2F;p&gt;
 &lt;p&gt;Buy a server. Build your tools. Ship your product. The infrastructure should be boring. With AI, it finally can be.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;tools-and-platforms&quot;&gt;Tools and platforms&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;vela&quot;&gt;Vela&lt;&#x2F;a&gt; - The bare-metal deployment tool built in this article&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.hetzner.com&#x2F;sb&#x2F;&quot;&gt;Hetzner Server Auction&lt;&#x2F;a&gt; - Refurbished dedicated servers at steep discounts&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;fly.io&quot;&gt;fly.io&lt;&#x2F;a&gt; - The managed platform I migrated from&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.nomadproject.io&#x2F;&quot;&gt;Nomad&lt;&#x2F;a&gt; - HashiCorp’s minimal workload orchestrator&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;opentofu.org&#x2F;&quot;&gt;OpenTofu&lt;&#x2F;a&gt; - Community fork of Terraform after the BSL relicense&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;cloudflare&#x2F;pingora&quot;&gt;Pingora&lt;&#x2F;a&gt; - Cloudflare’s Rust framework for building programmable proxies&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;hyper.rs&#x2F;&quot;&gt;hyper&lt;&#x2F;a&gt; - Rust HTTP library powering Vela’s reverse proxy&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;letsencrypt.org&#x2F;&quot;&gt;Let’s Encrypt&lt;&#x2F;a&gt; - Free TLS certificates, automated via ACME in Vela&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nats.io&#x2F;&quot;&gt;NATS&lt;&#x2F;a&gt; - Lightweight messaging system used by Archipelag&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;frameworks-and-runtimes&quot;&gt;Frameworks and runtimes&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.phoenixframework.org&#x2F;&quot;&gt;Phoenix Framework&lt;&#x2F;a&gt; - Elixir web framework powering both apps&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.erlang.org&#x2F;&quot;&gt;Erlang&#x2F;OTP&lt;&#x2F;a&gt; - The BEAM virtual machine that runs Phoenix and Elixir&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.rust-lang.org&#x2F;&quot;&gt;Rust&lt;&#x2F;a&gt; - Systems language Vela and Zentinel are written in&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;projects-referenced&quot;&gt;Projects referenced&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Security-first reverse proxy built on Pingora&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&quot;&gt;Archipelag&lt;&#x2F;a&gt; - Distributed compute platform&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cyanea.bio&quot;&gt;Cyanea&lt;&#x2F;a&gt; - Bioinformatics platform&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;anthropics&#x2F;claude-code&quot;&gt;Claude Code&lt;&#x2F;a&gt; - AI coding tool used to build Vela&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
       <item>
@@ -568,6 +594,52 @@ agent &amp;quot;rate-limit&amp;quot; {
 &lt;p&gt;The backend will not disappear. Data needs to live somewhere durable, and cross-device sync needs a relay. Coordination problems need a central authority. Batch processing needs access to the full dataset. But the backend’s role is narrowing to exactly these things. It is becoming infrastructure, not application. Plumbing, not logic.&lt;&#x2F;p&gt;
 &lt;p&gt;I find myself building systems where the most interesting engineering happens at the boundaries. A reverse proxy (&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt;) that inspects 912K requests per second through 285 WAF rules, authenticates with sub-millisecond latency, and routes with crash-isolated agents. A bioinformatics platform (&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cyanea.bio&quot;&gt;Cyanea&lt;&#x2F;a&gt;) where the browser runs the computation and the backend exports JSON for statically generated pages. A distributed compute platform (&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&quot;&gt;Archipelag&lt;&#x2F;a&gt;) where users’ browsers are the compute fleet via WASM and WebGPU. A note-taking app (&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;kurumi&quot;&gt;Kurumi&lt;&#x2F;a&gt;) that works fully offline with CRDTs and never touches a server for reads. Between all of them, a database, a sync relay, or just a CDN. Necessary and boring.&lt;&#x2F;p&gt;
 &lt;p&gt;The backend is not dead. It is just not where the interesting work happens anymore.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;edge-platforms-and-proxies&quot;&gt;Edge platforms and proxies&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;workers.cloudflare.com&#x2F;&quot;&gt;Cloudflare Workers&lt;&#x2F;a&gt; - V8 isolate-based edge compute&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;deno.com&#x2F;deploy&quot;&gt;Deno Deploy&lt;&#x2F;a&gt; - Edge runtime built on the Deno JavaScript runtime&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.fastly.com&#x2F;products&#x2F;edge-compute&quot;&gt;Fastly Compute&lt;&#x2F;a&gt; - Wasm-based edge compute platform&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;vercel.com&#x2F;docs&#x2F;functions&#x2F;edge-functions&quot;&gt;Vercel Edge Functions&lt;&#x2F;a&gt; - Edge compute integrated with Next.js&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;fly.io&quot;&gt;fly.io&lt;&#x2F;a&gt; - Container-based edge deployment platform&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;cloudflare&#x2F;pingora&quot;&gt;Pingora&lt;&#x2F;a&gt; - Cloudflare’s Rust framework for programmable proxies&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Security-first reverse proxy with crash-isolated agents&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;client-side-compute&quot;&gt;Client-side compute&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;webassembly.org&#x2F;&quot;&gt;WebAssembly&lt;&#x2F;a&gt; - Portable binary instruction format for the web&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wasi.dev&#x2F;&quot;&gt;WASI&lt;&#x2F;a&gt; - WebAssembly System Interface for running Wasm outside the browser&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.w3.org&#x2F;TR&#x2F;webgpu&#x2F;&quot;&gt;WebGPU specification&lt;&#x2F;a&gt; - W3C standard for GPU compute in the browser&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;developers.google.com&#x2F;mediapipe&quot;&gt;MediaPipe&lt;&#x2F;a&gt; - ML inference framework running client-side via Wasm and WebGPU&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;sqlite.org&#x2F;wasm&quot;&gt;SQLite Wasm&lt;&#x2F;a&gt; - Official SQLite build targeting WebAssembly&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;sql.js.org&#x2F;&quot;&gt;sql.js&lt;&#x2F;a&gt; - SQLite compiled to Wasm via Emscripten&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;File_System_API&#x2F;Origin_private_file_system&quot;&gt;Origin Private File System&lt;&#x2F;a&gt; - MDN reference for persistent browser storage&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Service_Worker_API&quot;&gt;Service Worker API&lt;&#x2F;a&gt; - MDN reference for offline-capable web apps&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;API&#x2F;Web_Workers_API&quot;&gt;Web Workers API&lt;&#x2F;a&gt; - MDN reference for background threads in the browser&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;crdts-and-local-first&quot;&gt;CRDTs and local-first&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=x7drE24geUw&quot;&gt;CRDTs: The Hard Parts&lt;&#x2F;a&gt; - Martin Kleppmann’s talk on practical CRDT challenges&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.inkandswitch.com&#x2F;local-first&#x2F;&quot;&gt;Local-first software&lt;&#x2F;a&gt; - Ink and Switch research paper on local-first architectures&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;automerge.org&#x2F;&quot;&gt;Automerge&lt;&#x2F;a&gt; - CRDT library for collaborative applications&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;yjs.dev&#x2F;&quot;&gt;Yjs&lt;&#x2F;a&gt; - High-performance CRDT framework for the web&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;hal.inria.fr&#x2F;inria-00555588&#x2F;document&quot;&gt;A comprehensive study of CRDTs&lt;&#x2F;a&gt; - Shapiro et al., the foundational survey paper&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;databases-at-the-edge&quot;&gt;Databases at the edge&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;turso.tech&#x2F;&quot;&gt;Turso&lt;&#x2F;a&gt; - SQLite-compatible database with edge replicas&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;neon.tech&#x2F;&quot;&gt;Neon&lt;&#x2F;a&gt; - Serverless PostgreSQL with branching&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;superfly&#x2F;litefs&quot;&gt;LiteFS&lt;&#x2F;a&gt; - Distributed SQLite replication by Fly.io&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.cockroachlabs.com&#x2F;&quot;&gt;CockroachDB&lt;&#x2F;a&gt; - Distributed SQL database designed for multi-region&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;supabase.com&#x2F;&quot;&gt;Supabase&lt;&#x2F;a&gt; - Open-source Firebase alternative built on PostgreSQL&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;projects-referenced&quot;&gt;Projects referenced&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cyanea.bio&quot;&gt;Cyanea&lt;&#x2F;a&gt; - Bioinformatics platform using Wasm and WebGPU for client-side compute&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&quot;&gt;Archipelag&lt;&#x2F;a&gt; - Distributed compute platform with browser-based Wasm nodes&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;kurumi&quot;&gt;Kurumi&lt;&#x2F;a&gt; - Local-first second brain app with CRDT sync&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;conflux&quot;&gt;Conflux&lt;&#x2F;a&gt; - Schema-aware CRDT engine for deterministic merge&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
       <item>
@@ -599,6 +671,16 @@ agent &amp;quot;rate-limit&amp;quot; {
 &lt;p&gt;This site is part of that bet. Static content, no tracking, no platform dependencies. The tools I’m working on (Zentinel, Sango, Ushio) are all about making edge infrastructure more accessible, making it easier to build and operate systems that are distributed and independent.&lt;&#x2F;p&gt;
 &lt;p&gt;2025 was the year AI started breaking the old model. I don’t know exactly what grows in its place. But floating in that Okinawan water, watching the reef do what reefs do, I got a sense of what healthy systems look like. Diverse. Interconnected. Resilient. Not optimized for any single metric, but somehow working anyway.&lt;&#x2F;p&gt;
 &lt;p&gt;That’s what I’m betting on.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.w3.org&#x2F;People&#x2F;Berners-Lee&#x2F;&quot;&gt;Tim Berners-Lee&lt;&#x2F;a&gt; - Creator of the World Wide Web and author of “This is for everyone”&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Enshittification&quot;&gt;Enshittification&lt;&#x2F;a&gt; - Cory Doctorow’s term for the pattern of platform decay&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;indieweb.org&#x2F;&quot;&gt;IndieWeb&lt;&#x2F;a&gt; - Community building the independent web with open standards&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; - Static site generator used to build this site&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Security-first reverse proxy for the open web&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;sango&quot;&gt;Sango&lt;&#x2F;a&gt; - Edge diagnostics CLI for TLS, HTTP, and security header analysis&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;ushio&quot;&gt;Ushio&lt;&#x2F;a&gt; - Deterministic edge traffic replay tool&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
       <item>
@@ -759,6 +841,18 @@ run = &amp;quot;cargo run -p shiioo-server&amp;quot;
 &lt;p&gt;The compound effect is what matters. Forty repositories, four organizations, six languages, one pattern. Clone, install, run. No guessing which build system this particular project uses. No debugging a Makefile that works on Linux but breaks on macOS. No explaining to a contributor that they need asdf plus three plugins plus direnv plus GNU make before they can run the tests.&lt;&#x2F;p&gt;
 &lt;p&gt;Every new project starts with a &lt;code&gt;mise.toml&lt;&#x2F;code&gt;. Setup takes two commands instead of a page of instructions. Contributors do not message me asking how to run things. They run &lt;code&gt;mise tasks&lt;&#x2F;code&gt; and figure it out.&lt;&#x2F;p&gt;
 &lt;p&gt;That is the tool working.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mise.jdx.dev&#x2F;&quot;&gt;mise&lt;&#x2F;a&gt; - Official documentation and installation guide&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jdx&#x2F;mise&quot;&gt;mise source code&lt;&#x2F;a&gt; - GitHub repository and issue tracker&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;asdf-vm.com&#x2F;&quot;&gt;asdf&lt;&#x2F;a&gt; - The version manager mise was originally inspired by&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nixos.org&#x2F;&quot;&gt;Nix&lt;&#x2F;a&gt; - Reproducible builds and development environments&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;make&#x2F;&quot;&gt;GNU Make&lt;&#x2F;a&gt; - The build tool mise replaces for task automation&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;toml.io&#x2F;&quot;&gt;TOML specification&lt;&#x2F;a&gt; - The configuration format mise uses&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;direnv.net&#x2F;&quot;&gt;direnv&lt;&#x2F;a&gt; - Environment variable manager that mise’s &lt;code&gt;[env]&lt;&#x2F;code&gt; section replaces&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;Shiioo&lt;&#x2F;a&gt; - Real-world mise configuration referenced in this article&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;mise-hx&quot;&gt;mise-hx&lt;&#x2F;a&gt; - Example of a custom mise plugin (for the hx Haskell toolchain)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
       <item>
@@ -811,6 +905,14 @@ Filesystem      Size  Used Avail Use% Mounted on
 &lt;p&gt;Overall, why am I even writing this if some other fellow engineer already figured this out? Simply, because I would therefore be able to explain why I have enjoyed my journey with Void as my go-to Linux distribution. It keeps things simple. Some well-documented utilities. As simple that a simple Brave search suffices to find the answer to my problems.&lt;&#x2F;p&gt;
 &lt;p&gt;This very aspect of Void is worthwhile highlighing. I remember more arcane Linux distributions that had me in their grip in figuring things out. Many Googles searches were necessary and even more trial and errors attempts to get simple things fixed.&lt;&#x2F;p&gt;
 &lt;p&gt;Now back to my Monday morning.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt; - Official project site&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.voidlinux.org&#x2F;xbps&#x2F;index.html&quot;&gt;Void Linux Handbook: XBPS&lt;&#x2F;a&gt; - Official documentation for the XBPS package manager&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;man.voidlinux.org&#x2F;xbps-remove.1&quot;&gt;xbps-remove(1) man page&lt;&#x2F;a&gt; - Manual page for package removal and cache cleaning&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;void-linux&#x2F;void-packages&#x2F;blob&#x2F;master&#x2F;srcpkgs&#x2F;base-files&#x2F;files&#x2F;vkpurge&quot;&gt;vkpurge source&lt;&#x2F;a&gt; - Shell script for purging old kernels on Void Linux&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.voidlinux.org&#x2F;about&#x2F;faq.html&quot;&gt;Void Linux FAQ&lt;&#x2F;a&gt; - Common questions about running and maintaining Void&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 &lt;hr &#x2F;&gt;
 &lt;div class=&quot;footnote-definition&quot; id=&quot;1&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;1&lt;&#x2F;sup&gt;
 &lt;p&gt;Painting in header image is “Seaside” by Aleksandr Deyneka&lt;&#x2F;p&gt;
@@ -876,6 +978,41 @@ lookupUser uid = do
 &lt;p&gt;The name is a portmanteau. Raffael plus Haskell. I chose it because Haskell is where my engineering thinking started to take its current shape. Not the first language I learned, but the first one that changed how I think about all the others.&lt;&#x2F;p&gt;
 &lt;p&gt;I do not believe you need to write Haskell to benefit from Haskell. But I believe that learning it, really learning it, not just reading about monads but building something real with algebraic data types and type classes and higher-order functions, will make you a better engineer in whatever language you actually use.&lt;&#x2F;p&gt;
 &lt;p&gt;All beginning is Haskell. The rest is implementation.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;learning-haskell&quot;&gt;Learning Haskell&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;&quot;&gt;Haskell Language&lt;&#x2F;a&gt; - Official site with documentation and community links&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;learnyouahaskell.com&#x2F;&quot;&gt;Learn You a Haskell for Great Good!&lt;&#x2F;a&gt; - Approachable illustrated introduction&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;book.realworldhaskell.org&#x2F;&quot;&gt;Real World Haskell&lt;&#x2F;a&gt; - Practical Haskell for production use&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;&quot;&gt;Haskell Wiki&lt;&#x2F;a&gt; - Community-maintained reference and tutorials&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;Typeclassopedia&quot;&gt;Typeclassopedia&lt;&#x2F;a&gt; - Comprehensive guide to Haskell’s type class hierarchy&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;type-systems-and-theory&quot;&gt;Type systems and theory&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Haskell_Curry&quot;&gt;Haskell Curry&lt;&#x2F;a&gt; - The logician the language is named after&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Lambda_calculus&quot;&gt;Lambda calculus&lt;&#x2F;a&gt; - Alonzo Church’s formal system underlying Haskell&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hindley%E2%80%93Milner_type_system&quot;&gt;Hindley-Milner type system&lt;&#x2F;a&gt; - The type inference algorithm at the core of Haskell and ML&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;blog.janestreet.com&#x2F;effective-ml-revisited&#x2F;&quot;&gt;Making illegal states unrepresentable&lt;&#x2F;a&gt; - Yaron Minsky’s influential talk on using types for correctness&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;Algebraic_data_type&quot;&gt;Algebraic data types&lt;&#x2F;a&gt; - Haskell wiki reference on sum and product types&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;monads-and-effects&quot;&gt;Monads and effects&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;homepages.inf.ed.ac.uk&#x2F;wadler&#x2F;papers&#x2F;marktoberdorf&#x2F;baastad.pdf&quot;&gt;Philip Wadler, “Monads for functional programming”&lt;&#x2F;a&gt; - The foundational paper on monads in programming&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;All_About_Monads&quot;&gt;All About Monads&lt;&#x2F;a&gt; - Haskell wiki guide to monadic programming&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;haskell-tooling&quot;&gt;Haskell tooling&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;ghc&#x2F;&quot;&gt;GHC&lt;&#x2F;a&gt; - The Glasgow Haskell Compiler&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;cabal&#x2F;&quot;&gt;Cabal&lt;&#x2F;a&gt; - Haskell’s build and package system&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.haskellstack.org&#x2F;&quot;&gt;Stack&lt;&#x2F;a&gt; - Alternative build tool with curated package sets&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;mise-hx&quot;&gt;mise-hx&lt;&#x2F;a&gt; - mise plugin for the hx Haskell toolchain CLI&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;projects-referenced&quot;&gt;Projects referenced&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;conflux&quot;&gt;Conflux&lt;&#x2F;a&gt; - CRDT engine using algebraic data types for merge semantics&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Reverse proxy with monoid-based decision merging&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;Shiioo&lt;&#x2F;a&gt; - Agentic orchestrator using event-sourced state folds&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
       <item>
@@ -992,10 +1129,34 @@ qemu:&amp;#x2F;&amp;#x2F;&amp;#x2F;system start openbsd
 Domain &amp;#x27;openbsd&amp;#x27; started
 &lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;openbsd&quot;&gt;OpenBSD&lt;&#x2F;h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;voidlinux&#x2F;comments&#x2F;ghwvv5&#x2F;guide_how_to_setup_qemukvm_emulation_on_void_linux&#x2F;&quot;&gt;[Guide] how to setup QEMU&#x2F;KVM emulation on void linux | &#x2F;r&#x2F;voidlinux&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.cyberciti.biz&#x2F;faq&#x2F;kvmvirtualization-virt-install-openbsd-unix-guest&#x2F;&quot;&gt;KVM virt-install: Install OpenBSD As Guest Operating System&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.skreutz.com&#x2F;posts&#x2F;autoinstall-openbsd-on-qemu&#x2F;&quot;&gt;Auto-install OpenBSD on QEMU | skreutz.com&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt; - Official project site&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;faq&#x2F;&quot;&gt;OpenBSD FAQ&lt;&#x2F;a&gt; - Comprehensive installation and usage guide&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;why-openbsd.rocks&#x2F;&quot;&gt;Why OpenBSD Rocks&lt;&#x2F;a&gt; - Collection of OpenBSD innovations and features&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openssh.com&#x2F;&quot;&gt;OpenSSH&lt;&#x2F;a&gt; - The SSH suite that originated from the OpenBSD project&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Theo_de_Raadt&quot;&gt;Theo de Raadt&lt;&#x2F;a&gt; - OpenBSD founder and lead developer&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;man.openbsd.org&#x2F;pledge.2&quot;&gt;pledge(2)&lt;&#x2F;a&gt; - OpenBSD’s system call for restricting process capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;man.openbsd.org&#x2F;unveil.2&quot;&gt;unveil(2)&lt;&#x2F;a&gt; - OpenBSD’s system call for restricting filesystem visibility&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;void-linux&quot;&gt;Void Linux&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt; - Official project site&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.voidlinux.org&#x2F;&quot;&gt;Void Linux Handbook&lt;&#x2F;a&gt; - Official documentation&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.voidlinux.org&#x2F;xbps&#x2F;index.html&quot;&gt;XBPS package manager&lt;&#x2F;a&gt; - Void’s binary package management system&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;virtualization&quot;&gt;Virtualization&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;libvirt.org&#x2F;&quot;&gt;libvirt&lt;&#x2F;a&gt; - Virtualization management library and API&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.qemu.org&#x2F;&quot;&gt;QEMU&lt;&#x2F;a&gt; - Open-source machine emulator and virtualizer&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.libvirt.org&#x2F;manpages&#x2F;virsh.html&quot;&gt;virsh(1)&lt;&#x2F;a&gt; - Command-line interface for managing libvirt guests&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;tigervnc.org&#x2F;&quot;&gt;TigerVNC&lt;&#x2F;a&gt; - VNC implementation for remote desktop access&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;guides&quot;&gt;Guides&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;voidlinux&#x2F;comments&#x2F;ghwvv5&#x2F;guide_how_to_setup_qemukvm_emulation_on_void_linux&#x2F;&quot;&gt;[Guide] How to setup QEMU&#x2F;KVM emulation on Void Linux&lt;&#x2F;a&gt; - Community guide on r&#x2F;voidlinux&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.cyberciti.biz&#x2F;faq&#x2F;kvmvirtualization-virt-install-openbsd-unix-guest&#x2F;&quot;&gt;KVM virt-install: Install OpenBSD as Guest Operating System&lt;&#x2F;a&gt; - Step-by-step KVM installation guide&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.skreutz.com&#x2F;posts&#x2F;autoinstall-openbsd-on-qemu&#x2F;&quot;&gt;Auto-install OpenBSD on QEMU&lt;&#x2F;a&gt; - Automated OpenBSD installation on QEMU&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </description>
       </item>
@@ -1020,6 +1181,12 @@ Domain &amp;#x27;openbsd&amp;#x27; started
 &lt;p&gt;I believe that technology has the power to change the world, and I am excited to be a small part of that change. I hope that this blog will serve as a valuable resource for anyone interested in technology, open-source, Linux, OpenBSD, and programming. I will be posting new content on a regular basis, so be sure to check back often.&lt;&#x2F;p&gt;
 &lt;p&gt;In my next post, I will dive into a specific topic and share my knowledge and experience. I want to make sure that my readers will learn something new every time they visit my blog.&lt;&#x2F;p&gt;
 &lt;p&gt;Thank you for visiting, and I look forward to connecting with you on social media or in real life.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt; - My Linux distribution of choice at the time of writing&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt; - The security-focused BSD operating system&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;www.raskell.io&quot;&gt;raskell.io source&lt;&#x2F;a&gt; - This site’s source code&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
     </channel>

@@ -37,6 +37,16 @@
 &lt;p&gt;This site is part of that bet. Static content, no tracking, no platform dependencies. The tools I’m working on (Zentinel, Sango, Ushio) are all about making edge infrastructure more accessible, making it easier to build and operate systems that are distributed and independent.&lt;&#x2F;p&gt;
 &lt;p&gt;2025 was the year AI started breaking the old model. I don’t know exactly what grows in its place. But floating in that Okinawan water, watching the reef do what reefs do, I got a sense of what healthy systems look like. Diverse. Interconnected. Resilient. Not optimized for any single metric, but somehow working anyway.&lt;&#x2F;p&gt;
 &lt;p&gt;That’s what I’m betting on.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.w3.org&#x2F;People&#x2F;Berners-Lee&#x2F;&quot;&gt;Tim Berners-Lee&lt;&#x2F;a&gt; - Creator of the World Wide Web and author of “This is for everyone”&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Enshittification&quot;&gt;Enshittification&lt;&#x2F;a&gt; - Cory Doctorow’s term for the pattern of platform decay&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;indieweb.org&#x2F;&quot;&gt;IndieWeb&lt;&#x2F;a&gt; - Community building the independent web with open standards&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; - Static site generator used to build this site&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Security-first reverse proxy for the open web&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;sango&quot;&gt;Sango&lt;&#x2F;a&gt; - Edge diagnostics CLI for TLS, HTTP, and security header analysis&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;ushio&quot;&gt;Ushio&lt;&#x2F;a&gt; - Deterministic edge traffic replay tool&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
       <item>
@@ -197,6 +207,18 @@ run = &amp;quot;cargo run -p shiioo-server&amp;quot;
 &lt;p&gt;The compound effect is what matters. Forty repositories, four organizations, six languages, one pattern. Clone, install, run. No guessing which build system this particular project uses. No debugging a Makefile that works on Linux but breaks on macOS. No explaining to a contributor that they need asdf plus three plugins plus direnv plus GNU make before they can run the tests.&lt;&#x2F;p&gt;
 &lt;p&gt;Every new project starts with a &lt;code&gt;mise.toml&lt;&#x2F;code&gt;. Setup takes two commands instead of a page of instructions. Contributors do not message me asking how to run things. They run &lt;code&gt;mise tasks&lt;&#x2F;code&gt; and figure it out.&lt;&#x2F;p&gt;
 &lt;p&gt;That is the tool working.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mise.jdx.dev&#x2F;&quot;&gt;mise&lt;&#x2F;a&gt; - Official documentation and installation guide&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jdx&#x2F;mise&quot;&gt;mise source code&lt;&#x2F;a&gt; - GitHub repository and issue tracker&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;asdf-vm.com&#x2F;&quot;&gt;asdf&lt;&#x2F;a&gt; - The version manager mise was originally inspired by&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nixos.org&#x2F;&quot;&gt;Nix&lt;&#x2F;a&gt; - Reproducible builds and development environments&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;make&#x2F;&quot;&gt;GNU Make&lt;&#x2F;a&gt; - The build tool mise replaces for task automation&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;toml.io&#x2F;&quot;&gt;TOML specification&lt;&#x2F;a&gt; - The configuration format mise uses&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;direnv.net&#x2F;&quot;&gt;direnv&lt;&#x2F;a&gt; - Environment variable manager that mise’s &lt;code&gt;[env]&lt;&#x2F;code&gt; section replaces&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;Shiioo&lt;&#x2F;a&gt; - Real-world mise configuration referenced in this article&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;mise-hx&quot;&gt;mise-hx&lt;&#x2F;a&gt; - Example of a custom mise plugin (for the hx Haskell toolchain)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
       <item>
@@ -258,6 +280,41 @@ lookupUser uid = do
 &lt;p&gt;The name is a portmanteau. Raffael plus Haskell. I chose it because Haskell is where my engineering thinking started to take its current shape. Not the first language I learned, but the first one that changed how I think about all the others.&lt;&#x2F;p&gt;
 &lt;p&gt;I do not believe you need to write Haskell to benefit from Haskell. But I believe that learning it, really learning it, not just reading about monads but building something real with algebraic data types and type classes and higher-order functions, will make you a better engineer in whatever language you actually use.&lt;&#x2F;p&gt;
 &lt;p&gt;All beginning is Haskell. The rest is implementation.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;learning-haskell&quot;&gt;Learning Haskell&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;&quot;&gt;Haskell Language&lt;&#x2F;a&gt; - Official site with documentation and community links&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;learnyouahaskell.com&#x2F;&quot;&gt;Learn You a Haskell for Great Good!&lt;&#x2F;a&gt; - Approachable illustrated introduction&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;book.realworldhaskell.org&#x2F;&quot;&gt;Real World Haskell&lt;&#x2F;a&gt; - Practical Haskell for production use&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;&quot;&gt;Haskell Wiki&lt;&#x2F;a&gt; - Community-maintained reference and tutorials&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;Typeclassopedia&quot;&gt;Typeclassopedia&lt;&#x2F;a&gt; - Comprehensive guide to Haskell’s type class hierarchy&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;type-systems-and-theory&quot;&gt;Type systems and theory&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Haskell_Curry&quot;&gt;Haskell Curry&lt;&#x2F;a&gt; - The logician the language is named after&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Lambda_calculus&quot;&gt;Lambda calculus&lt;&#x2F;a&gt; - Alonzo Church’s formal system underlying Haskell&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hindley%E2%80%93Milner_type_system&quot;&gt;Hindley-Milner type system&lt;&#x2F;a&gt; - The type inference algorithm at the core of Haskell and ML&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;blog.janestreet.com&#x2F;effective-ml-revisited&#x2F;&quot;&gt;Making illegal states unrepresentable&lt;&#x2F;a&gt; - Yaron Minsky’s influential talk on using types for correctness&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;Algebraic_data_type&quot;&gt;Algebraic data types&lt;&#x2F;a&gt; - Haskell wiki reference on sum and product types&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;monads-and-effects&quot;&gt;Monads and effects&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;homepages.inf.ed.ac.uk&#x2F;wadler&#x2F;papers&#x2F;marktoberdorf&#x2F;baastad.pdf&quot;&gt;Philip Wadler, “Monads for functional programming”&lt;&#x2F;a&gt; - The foundational paper on monads in programming&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;All_About_Monads&quot;&gt;All About Monads&lt;&#x2F;a&gt; - Haskell wiki guide to monadic programming&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;haskell-tooling&quot;&gt;Haskell tooling&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;ghc&#x2F;&quot;&gt;GHC&lt;&#x2F;a&gt; - The Glasgow Haskell Compiler&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;cabal&#x2F;&quot;&gt;Cabal&lt;&#x2F;a&gt; - Haskell’s build and package system&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.haskellstack.org&#x2F;&quot;&gt;Stack&lt;&#x2F;a&gt; - Alternative build tool with curated package sets&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;mise-hx&quot;&gt;mise-hx&lt;&#x2F;a&gt; - mise plugin for the hx Haskell toolchain CLI&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;projects-referenced&quot;&gt;Projects referenced&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;conflux&quot;&gt;Conflux&lt;&#x2F;a&gt; - CRDT engine using algebraic data types for merge semantics&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Reverse proxy with monoid-based decision merging&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;Shiioo&lt;&#x2F;a&gt; - Agentic orchestrator using event-sourced state folds&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
     </channel>

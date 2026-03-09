@@ -166,6 +166,18 @@ run = &amp;quot;cargo run -p shiioo-server&amp;quot;
 &lt;p&gt;The compound effect is what matters. Forty repositories, four organizations, six languages, one pattern. Clone, install, run. No guessing which build system this particular project uses. No debugging a Makefile that works on Linux but breaks on macOS. No explaining to a contributor that they need asdf plus three plugins plus direnv plus GNU make before they can run the tests.&lt;&#x2F;p&gt;
 &lt;p&gt;Every new project starts with a &lt;code&gt;mise.toml&lt;&#x2F;code&gt;. Setup takes two commands instead of a page of instructions. Contributors do not message me asking how to run things. They run &lt;code&gt;mise tasks&lt;&#x2F;code&gt; and figure it out.&lt;&#x2F;p&gt;
 &lt;p&gt;That is the tool working.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mise.jdx.dev&#x2F;&quot;&gt;mise&lt;&#x2F;a&gt; - Official documentation and installation guide&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jdx&#x2F;mise&quot;&gt;mise source code&lt;&#x2F;a&gt; - GitHub repository and issue tracker&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;asdf-vm.com&#x2F;&quot;&gt;asdf&lt;&#x2F;a&gt; - The version manager mise was originally inspired by&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nixos.org&#x2F;&quot;&gt;Nix&lt;&#x2F;a&gt; - Reproducible builds and development environments&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;make&#x2F;&quot;&gt;GNU Make&lt;&#x2F;a&gt; - The build tool mise replaces for task automation&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;toml.io&#x2F;&quot;&gt;TOML specification&lt;&#x2F;a&gt; - The configuration format mise uses&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;direnv.net&#x2F;&quot;&gt;direnv&lt;&#x2F;a&gt; - Environment variable manager that mise’s &lt;code&gt;[env]&lt;&#x2F;code&gt; section replaces&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;Shiioo&lt;&#x2F;a&gt; - Real-world mise configuration referenced in this article&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;mise-hx&quot;&gt;mise-hx&lt;&#x2F;a&gt; - Example of a custom mise plugin (for the hx Haskell toolchain)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
     </channel>
