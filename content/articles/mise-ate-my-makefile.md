@@ -1,11 +1,12 @@
 +++
 title = "Mise ate my Makefile"
 date = 2025-12-14
-description = "How a single Rust tool replaced both make and asdf in my projects, bringing fuzzy matching, encryption, and actual sanity to task running."
+updated = 2026-03-09
+description = "I maintain projects across four GitHub orgs in Rust, Elixir, Gleam, and TypeScript. Mise replaced Make, asdf, and a pile of shell scripts with a single TOML file per project. Here is why it stuck."
 
 [taxonomies]
-tags = ["oss", "rust", "dev-ex"]
-categories = ["field-notes"]
+tags = ["oss", "platform-automation"]
+categories = ["reviews"]
 
 [extra]
 author = "Raffael"
@@ -13,188 +14,210 @@ image = "mise-ate-make.avif"
 og_image = "mise-ate-make.png"
 +++
 
-## The problem with project setup
+I maintain around forty repositories across four GitHub organizations. [Zentinel](https://zentinelproxy.io) alone accounts for over thirty: the core proxy, a Rust SDK, and a growing collection of agents for WAF inspection, auth, rate limiting, GraphQL security, and a dozen other edge concerns. [Archipelag](https://archipelag.io) spans an Elixir coordinator, a Rust node agent, Python and TypeScript SDKs, mobile agents in Kotlin and Swift, and infrastructure-as-code repos. [Cyanea](https://cyanea.bio) is Elixir with Rust NIFs and a separate Rust bioinformatics library. Then there are the standalone tools: [Conflux](https://github.com/raskell-io/conflux) (Rust CRDT engine), [Sango](https://github.com/raskell-io/sango) (Rust edge diagnostics CLI), [Shiioo](https://github.com/raskell-io/shiioo) (Rust agentic orchestrator), [Vela](https://github.com/raskell-io/vela) (Rust bare-metal deployment), [Refrakt](https://github.com/raskell-io/refrakt) (Gleam web framework), [Kurumi](https://github.com/raskell-io/kurumi) (Svelte local-first app), and this site you are reading (Zola).
 
-Every project starts the same. You need Ruby 3.2.1 but have 2.7. You need Node 20 but have 18. Someone wrote a Makefile that assumes GNU make but you're on BSD. The `scripts/` folder has 47 shell scripts and nobody remembers what half of them do.
+The languages span Rust, Elixir, Gleam, Python, TypeScript, Kotlin, Swift, and whatever shell scripts accumulated over the years. Every project needs a toolchain. Most need task automation. All of them need to be approachable for a contributor who clones the repo for the first time.
 
-I found mise. It fixed all of this.
+The Makefile approach was breaking down. So was everything else I tried.
 
-## What mise actually is
+## What was failing
 
-mise started as a Rust rewrite of asdf. Then it absorbed make's job too. Now it's the one tool I install on every machine.
+The standard setup for most of my Rust projects was a Makefile with targets for `build`, `test`, `clippy`, `fmt`, and `release`. Simple enough for one repo. The problem surfaces when you maintain thirty of them.
 
-Here's what my typical project setup looked like before:
-- `.ruby-version` for rbenv
-- `.nvmrc` for node
-- `Makefile` with 20 targets
-- `scripts/` with random shell scripts
-- `.env.example` that nobody updates
+GNU Make and BSD Make disagree on syntax in ways that cause silent failures. A Makefile that works on my Linux CI runner breaks on a contributor's macOS laptop because of a conditional or a shell invocation difference. The fix is always "use GNU make," but that means documenting it, adding a check, and fielding issues from people who forget.
 
-Here's what it looks like now:
+Worse, Makefiles cannot declare tool dependencies. A Rust project needs a specific Rust version, maybe `protoc` for gRPC, maybe `cargo-watch` for development convenience. The Makefile assumes these tools exist. When they do not, the developer gets a cryptic error five minutes into their first build.
+
+So projects accumulated scaffolding:
+
+```
+.rust-version
+.tool-versions
+Makefile
+scripts/setup.sh
+scripts/ci.sh
+scripts/release.sh
+.envrc
+```
+
+Six files to express what amounts to: "this project uses Rust 1.83, needs protoc, and has five things you can run." Multiply that by forty repos and you have a maintenance surface that nobody wants to touch. The `scripts/` folder in particular had a way of growing silently. Someone adds a helper. Someone else copies it from another project with modifications. Six months later you have three slightly different versions of the same release script across three orgs.
+
+The Elixir projects had it worse. Elixir needs Erlang/OTP at a specific version, then Elixir itself at a matching version, then Node for asset compilation in Phoenix, then possibly Rust for NIFs (Cyanea compiles Rust bioinformatics code into the BEAM release). Four tool dependencies before you write a line of application code. `asdf` handled the version management, but slowly and without task automation, so you still needed a Makefile on top.
+
+## Why not Nix
+
+I gave Nix a serious try. The promise is appealing: declare your entire development environment in a single file, get reproducible builds, never worry about system state. The Nix shell concept is genuinely elegant.
+
+In practice, the cost was too high for my use case. Nix's learning curve is steep even for experienced engineers. The language is its own thing. The documentation assumes you already understand the Nix store model. When something breaks, the error messages point at derivation hashes, not at the thing you actually did wrong.
+
+The bigger issue was onboarding. If a contributor wants to fix a typo in a Zentinel agent's README, asking them to install Nix and understand flakes is a non-starter. The tool that manages your development environment should not itself become a project you have to learn. Nix solves a harder problem than I have. I do not need bit-for-bit reproducible builds across machines. I need "install Rust 1.83 and run the tests."
+
+## Why not asdf
+
+asdf was my default for years. It handled the version management problem well enough. The plugin system meant I could manage Rust, Elixir, Erlang, Node, and Python versions with a single `.tool-versions` file.
+
+Three things pushed me away.
+
+First, speed. asdf is shell scripts. Every invocation pays the cost of sourcing plugins, resolving versions, and shimming binaries. On a fast machine you barely notice. On CI, where you run `asdf install` in a fresh environment, the overhead adds up. Mise is a compiled Rust binary. It is meaningfully faster at both installation and version resolution.
+
+Second, no task automation. asdf manages tool versions. That is all it does. You still need Make or a scripts folder for project tasks. That means two tools, two configuration surfaces, two things to document.
+
+Third, plugin quality varied. The core plugins for Node and Ruby were solid. Plugins for less mainstream tools could be stale, broken, or missing. Mise started as an asdf-compatible rewrite and inherited the plugin ecosystem, but its built-in backends for common tools (Rust, Node, Python, Go, Erlang, Elixir) are faster and more reliable than shelling out to plugins.
+
+## What mise actually does
+
+[Mise](https://mise.jdx.dev/) is a single Rust binary that combines tool version management and task running into one configuration file per project. It does asdf's job and Make's job in a single tool.
+
+Here is this site's configuration. The entire thing:
 
 ```toml
-# .mise.toml
+# mise.toml (raskell.io)
 [tools]
-ruby = "3.2.1"
-node = "20.11.0"
-python = "3.12"
+zola = "0.19"
+
+[env]
+_.file = ".env"
+
+[tasks.serve]
+description = "Start the Zola development server"
+run = "zola serve"
+
+[tasks.build]
+description = "Build the site for production"
+run = "zola build"
+
+[tasks.check]
+description = "Check the site for errors without building"
+run = "zola check"
+
+[tasks.new]
+description = "Create a new article"
+run = """
+#!/usr/bin/env bash
+if [ -z "$1" ]; then
+  echo "Usage: mise run new <article-slug>"
+  exit 1
+fi
+SLUG="$1"
+DATE=$(date +%Y-%m-%d)
+FILE="content/articles/${SLUG}.md"
+cat > "$FILE" << ARTICLE
++++
+title = ""
+date = ${DATE}
+description = ""
+[taxonomies]
+tags = []
+categories = []
+[extra]
+author = "Raffael"
++++
+ARTICLE
+echo "Created $FILE"
+"""
+```
+
+One file. Declares the tool (Zola 0.19), loads environment variables, and defines every task a contributor needs. `mise install` sets up the toolchain. `mise tasks` shows what is available. `mise run serve` starts the dev server. No Makefile. No scripts folder. No documentation page explaining how to get Zola at the right version.
+
+For a Rust project like [Shiioo](https://github.com/raskell-io/shiioo) (the agentic orchestrator), the configuration is larger but follows the same pattern:
+
+```toml
+# .mise.toml (shiioo)
+[tools]
+rust = "latest"
+
+[env]
+RUST_LOG = "info"
+RUST_BACKTRACE = "1"
+_.path = ["./target/release", "./target/debug"]
+
+[tasks.build]
+description = "Build all crates in release mode"
+run = "cargo build --release"
 
 [tasks.test]
-run = "bundle exec rspec && npm test"
 description = "Run all tests"
+run = "cargo test"
 
-[tasks.deploy]
-run = "kubectl apply -f k8s/"
-depends = ["test", "build"]
+[tasks.clippy]
+description = "Run clippy lints"
+run = "cargo clippy --all-targets -- -D warnings"
 
-[env]
-DATABASE_URL = "postgresql://localhost/myapp_dev"
-RAILS_ENV = "development"
+[tasks.fmt]
+description = "Format code with rustfmt"
+run = "cargo fmt --all"
+
+[tasks.ci]
+description = "CI pipeline: format check, clippy, test"
+depends = ["fmt-check", "clippy", "test"]
+
+[tasks.dev]
+description = "Full development build and run"
+depends = ["fmt", "check", "test"]
+run = "cargo run -p shiioo-server"
 ```
 
-One file. Everything works.
+The `depends` key is where mise replaces the one thing Make was genuinely good at: task dependency ordering. `mise run ci` runs format checking, then clippy, then tests, in sequence. If clippy fails, tests do not run. It is not as expressive as Make's file-based dependency graph, but for project automation tasks (as opposed to build tasks, which cargo or mix handle), it covers what I actually need.
 
-## The fuzzy matching that actually works
+For a multi-language project like Cyanea, the value is even clearer. The Elixir app needs Erlang, Elixir, Node, and Rust. One `[tools]` section pins all four. One `mise install` gets a contributor from zero to a working environment. Without mise, that setup involved installing asdf, adding four plugins, running `asdf install`, then installing direnv for environment variables, then reading the Makefile to figure out how to run things. With mise, it is two commands: `mise install` and `mise run dev`.
 
-This is where mise gets interesting. You don't need exact command names.
+## The cross-project pattern
 
-```bash
-$ mise run test     # runs the test task
-$ mise run tset     # still runs test (typo forgiven)
-$ mise run tst      # yep, runs test
-$ mise run deploy   # runs deploy task
-$ mise run dply     # runs deploy
-```
+The real payoff is not in any single project. It is the consistency across all of them.
 
-The fuzzy matching is smart. It weighs:
-- Character position (earlier matches score higher)
-- Consecutive matches
-- Word boundaries
+Every repo in every org follows the same contract:
 
-I tested this with 30+ tasks in one project. It still found the right one 90% of the time with 3-4 characters.
+1. Clone the repo
+2. Run `mise install`
+3. Run `mise tasks` to see what is available
+4. Run `mise run dev` or `mise run test`
 
-## Tasks live where they should
+That is it. Whether the project is a Rust reverse proxy with thirty modules, an Elixir Phoenix application with LiveView and a NATS integration, a Gleam web framework, or a static site built with Zola, the entry point is identical. The person cloning the repo does not need to know which build system the project uses internally. They do not need to read a CONTRIBUTING.md to find out whether it is `make test` or `cargo test` or `mix test`. It is always `mise run test`.
 
-Instead of polluting the root with `scripts/`, mise looks in `.mise/tasks/`:
+This matters more than it sounds. When you maintain projects across four orgs and multiple languages, the cognitive overhead per context switch is the actual bottleneck. I work on Zentinel (Rust) in the morning, switch to Archipelag (Elixir) after lunch, then fix something on this site (Zola) in the evening. Without a consistent interface, each switch means recalling which project uses which conventions. With mise, the interface is always the same. The implementation behind `mise run test` differs (cargo, mix, zola check), but I do not care about that. I type the same command and the right thing happens.
 
-```bash
-.mise/
-└── tasks/
-    ├── db-reset.sh
-    ├── cache-clear.sh
-    └── logs-tail.sh
-```
+For new contributors, the effect is more pronounced. Zentinel's agent ecosystem has over twenty Rust repos. A contributor who submits a PR to the WAF agent and then wants to help with the auth agent does not need to learn a new setup process. Same structure, same task names, same workflow. The consistency compounds.
 
-Any executable in there becomes a task. No registration. No config.
+## What mise handles that Make does not
 
-```bash
-$ mise run db-reset    # runs .mise/tasks/db-reset.sh
-$ mise run cache       # fuzzy matches to cache-clear.sh
-```
+**Environment variables.** Mise loads environment from the config file or from `.env` files, scoped to the project directory. When I `cd` into a project, the right environment is active. When I leave, it deactivates. No direnv, no `.envrc`, no `source .env` in every shell session.
 
-Shell scripts stay shell scripts. But now they're discoverable:
+**Tool installation.** `mise install` in a fresh clone gets every tool the project needs at the exact specified version. Make cannot do this. Make assumes the tools exist. That assumption breaks on new machines, in CI, and for every new contributor.
 
-```bash
-$ mise tasks
-cache-clear   Clear all caches
-db-reset      Reset database to clean state  
-logs-tail     Tail production logs
-test          Run all tests
-deploy        Deploy to production
-```
+**Task discovery.** `mise tasks` lists every available task with its description. Make has `make help` patterns, but those are conventions, not built-in features. With mise, discoverability is the default.
 
-## The encryption bit that matters
-
-mise includes age encryption support. Not bolted on. Built in.
-
-```toml
-# .mise.toml
-[env]
-DATABASE_URL = "postgresql://localhost/dev"
-API_KEY = "age:SECRET_ENCRYPTED_STRING"
-```
-
-Set it up once:
-```bash
-$ mise decrypt .mise.toml
-Enter passphrase: 
-$ export API_KEY="actual-secret-key"
-$ mise encrypt .mise.toml
-```
-
-Your secrets are in the repo but encrypted. CI/CD gets the age key. Developers get the age key. Random GitHub scrapers get nothing.
-
-## Integration with Zed
-
-This is where it gets smooth. In Zed, I set up task shortcuts:
-
-```json
-// .zed/tasks.json
-{
-  "tasks": {
-    "test": {
-      "command": "mise run test",
-      "cwd": "$WORKSPACE_ROOT"
-    },
-    "deploy": {
-      "command": "mise run deploy",
-      "cwd": "$WORKSPACE_ROOT"  
-    }
-  }
-}
-```
-
-Now `cmd-shift-t` opens the task picker. Type "te", hit enter. Tests run. The AI assistant sees the output inline. Fixes the code. Reruns the test. No context switching.
+**File-based tasks.** Any executable file in `.mise/tasks/` becomes a task automatically. No registration, no config entry needed. For tasks that outgrow a one-liner in TOML but do not warrant a standalone script in `scripts/`, this is the right middle ground. The task is discoverable through `mise tasks` but lives as a normal shell script you can test independently.
 
 ## What breaks
 
-mise isn't perfect. Here's what I hit:
+Mise is not perfect. Honest assessment after running it across forty repos:
 
-1. **Windows support**: Works through WSL. Native is rough.
-2. **Legacy tools**: Some older ruby/node versions don't install clean. Same issue asdf has.
-3. **Task dependencies**: Can't do dynamic dependencies like make. Tasks depend on fixed task names.
-4. **Fuzzy matching confusion**: With tasks named `deploy-staging` and `deploy-production`, typing `deploy` might pick wrong. Be specific or rename.
+**Dynamic dependencies.** Make can express "rebuild this if that file changed." Mise tasks are imperative: they run or they do not. If you need file-level dependency tracking, you still need a build system (cargo, mix, webpack). Mise orchestrates tasks. It does not replace the build tool.
 
-## The tradeoffs
+**Ecosystem maturity.** Mise is younger than Make and asdf. The documentation is good but not exhaustive. Some features (like hooks and watch mode) are recent additions. The pace of development is fast, which means features arrive quickly but occasionally change between minor versions.
 
-What I gained:
-- One tool instead of 4 (asdf, direnv, make, scripts)
-- Fuzzy matching saves 100s of keystrokes daily
-- New devs get running in 2 commands: `mise install` and `mise run setup`
-- Secrets management that doesn't suck
-- Task discovery that actually works
+**Team familiarity.** Make is universal. Every engineer has encountered a Makefile. Mise is still relatively unknown. Introducing it to a team requires a short pitch, but the pitch is easy: "it is Make plus asdf in one tool, configured in TOML."
 
-What I paid:
-- Another tool to install (but it replaces 4)
-- TOML syntax (not everyone's favorite)
-- Rewriting Makefiles (took an afternoon per project)
-- Teaching the team new patterns (took a week)
+**Complex shell tasks.** When a task grows beyond a few lines, the inline TOML string syntax gets awkward. The workaround is file-based tasks in `.mise/tasks/`, which works well but means the task definition lives in two places (TOML for metadata and task list, shell file for implementation).
 
-## Migration pattern
+## The migration
 
-If you're moving an existing project:
+If you are moving an existing project, here is the approach I settled on after migrating across all four orgs:
 
-1. Install mise: `curl https://mise.jdx.dev/install.sh | sh`
-2. Import existing tool versions: `mise install`
-3. Move one make target at a time to mise tasks
-4. Move scripts to `.mise/tasks/` gradually
-5. Add encryption last (less disruption)
+1. Add a `mise.toml` (or `.mise.toml`) at the project root. Start with just `[tools]` to declare the required versions.
+2. Move the most-used Make targets to `[tasks]` one at a time. Keep the Makefile around until everything is ported.
+3. Add `[env]` entries to replace `.envrc` or `.env.example` files.
+4. Move standalone scripts from `scripts/` to `.mise/tasks/` as file-based tasks.
+5. Delete the Makefile last.
 
-Start with the most-used tasks. Leave the weird legacy stuff in make until later.
-
-## What I'd do differently
-
-After migrating 12 projects:
-
-- Start with `.mise.toml`, not `.mise/config.yaml`. TOML is cleaner for this.
-- Put all tasks in `.mise/tasks/` as shell scripts first. Move to inline tasks only when needed.
-- Name tasks with clear prefixes: `db-reset`, `cache-clear`, `test-unit`. Makes fuzzy matching more predictable.
-- Document the age key setup immediately. People forget.
+Do not try to migrate everything at once. Start with the three tasks developers use daily (usually `dev`, `test`, and `build`). The rest can move incrementally. I also settled on a few naming conventions that help across projects: use clear verb-noun prefixes like `db-reset`, `cache-clear`, `test-unit`. Consistent naming makes task discovery predictable even before you run `mise tasks`.
 
 ## The bottom line
 
-mise replaced my entire project automation stack. The Rust rewrite isn't just faster. It's more thoughtful. Fuzzy matching, encrypted env vars, task discovery. These aren't features. They're fixes for real pain.
+Mise is not a revolutionary tool. It does not do anything that was previously impossible. You could always install the right Rust version, write a Makefile, set up direnv, and maintain a scripts folder. What mise does is collapse all of that into a single file that is readable, portable, and consistent.
 
-Every new project starts with `.mise.toml` now. Setup takes 5 minutes instead of an hour. New developers don't message me asking how to run tests. They just run `mise tasks` and figure it out.
+The compound effect is what matters. Forty repositories, four organizations, six languages, one pattern. Clone, install, run. No guessing which build system this particular project uses. No debugging a Makefile that works on Linux but breaks on macOS. No explaining to a contributor that they need asdf plus three plugins plus direnv plus GNU make before they can run the tests.
 
-That's the tool working.
+Every new project starts with a `mise.toml`. Setup takes two commands instead of a page of instructions. Contributors do not message me asking how to run things. They run `mise tasks` and figure it out.
+
+That is the tool working.
