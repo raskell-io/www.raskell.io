@@ -7,7 +7,7 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Mon, 09 Mar 2026 00:00:00 +0000</lastBuildDate>
       <item>
           <title>How AI Makes Bare Metal Viable Again</title>
           <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
@@ -607,151 +607,158 @@ agent &amp;quot;rate-limit&amp;quot; {
           <author>Unknown</author>
           <link>https://raskell.io/articles/mise-ate-my-makefile/</link>
           <guid>https://raskell.io/articles/mise-ate-my-makefile/</guid>
-          <description xml:base="https://raskell.io/articles/mise-ate-my-makefile/">&lt;h2 id=&quot;the-problem-with-project-setup&quot;&gt;The problem with project setup&lt;&#x2F;h2&gt;
-&lt;p&gt;Every project starts the same. You need Ruby 3.2.1 but have 2.7. You need Node 20 but have 18. Someone wrote a Makefile that assumes GNU make but you’re on BSD. The &lt;code&gt;scripts&#x2F;&lt;&#x2F;code&gt; folder has 47 shell scripts and nobody remembers what half of them do.&lt;&#x2F;p&gt;
-&lt;p&gt;I found mise. It fixed all of this.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;what-mise-actually-is&quot;&gt;What mise actually is&lt;&#x2F;h2&gt;
-&lt;p&gt;mise started as a Rust rewrite of asdf. Then it absorbed make’s job too. Now it’s the one tool I install on every machine.&lt;&#x2F;p&gt;
-&lt;p&gt;Here’s what my typical project setup looked like before:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;.ruby-version&lt;&#x2F;code&gt; for rbenv&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;.nvmrc&lt;&#x2F;code&gt; for node&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;Makefile&lt;&#x2F;code&gt; with 20 targets&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;scripts&#x2F;&lt;&#x2F;code&gt; with random shell scripts&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;.env.example&lt;&#x2F;code&gt; that nobody updates&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;Here’s what it looks like now:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# .mise.toml
+          <description xml:base="https://raskell.io/articles/mise-ate-my-makefile/">&lt;p&gt;I maintain around forty repositories across four GitHub organizations. &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; alone accounts for over thirty: the core proxy, a Rust SDK, and a growing collection of agents for WAF inspection, auth, rate limiting, GraphQL security, and a dozen other edge concerns. &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&quot;&gt;Archipelag&lt;&#x2F;a&gt; spans an Elixir coordinator, a Rust node agent, Python and TypeScript SDKs, mobile agents in Kotlin and Swift, and infrastructure-as-code repos. &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cyanea.bio&quot;&gt;Cyanea&lt;&#x2F;a&gt; is Elixir with Rust NIFs and a separate Rust bioinformatics library. Then there are the standalone tools: &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;conflux&quot;&gt;Conflux&lt;&#x2F;a&gt; (Rust CRDT engine), &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;sango&quot;&gt;Sango&lt;&#x2F;a&gt; (Rust edge diagnostics CLI), &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;Shiioo&lt;&#x2F;a&gt; (Rust agentic orchestrator), &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;vela&quot;&gt;Vela&lt;&#x2F;a&gt; (Rust bare-metal deployment), &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;refrakt&quot;&gt;Refrakt&lt;&#x2F;a&gt; (Gleam web framework), &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;kurumi&quot;&gt;Kurumi&lt;&#x2F;a&gt; (Svelte local-first app), and this site you are reading (Zola).&lt;&#x2F;p&gt;
+&lt;p&gt;The languages span Rust, Elixir, Gleam, Python, TypeScript, Kotlin, Swift, and whatever shell scripts accumulated over the years. Every project needs a toolchain. Most need task automation. All of them need to be approachable for a contributor who clones the repo for the first time.&lt;&#x2F;p&gt;
+&lt;p&gt;The Makefile approach was breaking down. So was everything else I tried.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-was-failing&quot;&gt;What was failing&lt;&#x2F;h2&gt;
+&lt;p&gt;The standard setup for most of my Rust projects was a Makefile with targets for &lt;code&gt;build&lt;&#x2F;code&gt;, &lt;code&gt;test&lt;&#x2F;code&gt;, &lt;code&gt;clippy&lt;&#x2F;code&gt;, &lt;code&gt;fmt&lt;&#x2F;code&gt;, and &lt;code&gt;release&lt;&#x2F;code&gt;. Simple enough for one repo. The problem surfaces when you maintain thirty of them.&lt;&#x2F;p&gt;
+&lt;p&gt;GNU Make and BSD Make disagree on syntax in ways that cause silent failures. A Makefile that works on my Linux CI runner breaks on a contributor’s macOS laptop because of a conditional or a shell invocation difference. The fix is always “use GNU make,” but that means documenting it, adding a check, and fielding issues from people who forget.&lt;&#x2F;p&gt;
+&lt;p&gt;Worse, Makefiles cannot declare tool dependencies. A Rust project needs a specific Rust version, maybe &lt;code&gt;protoc&lt;&#x2F;code&gt; for gRPC, maybe &lt;code&gt;cargo-watch&lt;&#x2F;code&gt; for development convenience. The Makefile assumes these tools exist. When they do not, the developer gets a cryptic error five minutes into their first build.&lt;&#x2F;p&gt;
+&lt;p&gt;So projects accumulated scaffolding:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;.rust-version
+.tool-versions
+Makefile
+scripts&amp;#x2F;setup.sh
+scripts&amp;#x2F;ci.sh
+scripts&amp;#x2F;release.sh
+.envrc
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Six files to express what amounts to: “this project uses Rust 1.83, needs protoc, and has five things you can run.” Multiply that by forty repos and you have a maintenance surface that nobody wants to touch. The &lt;code&gt;scripts&#x2F;&lt;&#x2F;code&gt; folder in particular had a way of growing silently. Someone adds a helper. Someone else copies it from another project with modifications. Six months later you have three slightly different versions of the same release script across three orgs.&lt;&#x2F;p&gt;
+&lt;p&gt;The Elixir projects had it worse. Elixir needs Erlang&#x2F;OTP at a specific version, then Elixir itself at a matching version, then Node for asset compilation in Phoenix, then possibly Rust for NIFs (Cyanea compiles Rust bioinformatics code into the BEAM release). Four tool dependencies before you write a line of application code. &lt;code&gt;asdf&lt;&#x2F;code&gt; handled the version management, but slowly and without task automation, so you still needed a Makefile on top.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-not-nix&quot;&gt;Why not Nix&lt;&#x2F;h2&gt;
+&lt;p&gt;I gave Nix a serious try. The promise is appealing: declare your entire development environment in a single file, get reproducible builds, never worry about system state. The Nix shell concept is genuinely elegant.&lt;&#x2F;p&gt;
+&lt;p&gt;In practice, the cost was too high for my use case. Nix’s learning curve is steep even for experienced engineers. The language is its own thing. The documentation assumes you already understand the Nix store model. When something breaks, the error messages point at derivation hashes, not at the thing you actually did wrong.&lt;&#x2F;p&gt;
+&lt;p&gt;The bigger issue was onboarding. If a contributor wants to fix a typo in a Zentinel agent’s README, asking them to install Nix and understand flakes is a non-starter. The tool that manages your development environment should not itself become a project you have to learn. Nix solves a harder problem than I have. I do not need bit-for-bit reproducible builds across machines. I need “install Rust 1.83 and run the tests.”&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-not-asdf&quot;&gt;Why not asdf&lt;&#x2F;h2&gt;
+&lt;p&gt;asdf was my default for years. It handled the version management problem well enough. The plugin system meant I could manage Rust, Elixir, Erlang, Node, and Python versions with a single &lt;code&gt;.tool-versions&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
+&lt;p&gt;Three things pushed me away.&lt;&#x2F;p&gt;
+&lt;p&gt;First, speed. asdf is shell scripts. Every invocation pays the cost of sourcing plugins, resolving versions, and shimming binaries. On a fast machine you barely notice. On CI, where you run &lt;code&gt;asdf install&lt;&#x2F;code&gt; in a fresh environment, the overhead adds up. Mise is a compiled Rust binary. It is meaningfully faster at both installation and version resolution.&lt;&#x2F;p&gt;
+&lt;p&gt;Second, no task automation. asdf manages tool versions. That is all it does. You still need Make or a scripts folder for project tasks. That means two tools, two configuration surfaces, two things to document.&lt;&#x2F;p&gt;
+&lt;p&gt;Third, plugin quality varied. The core plugins for Node and Ruby were solid. Plugins for less mainstream tools could be stale, broken, or missing. Mise started as an asdf-compatible rewrite and inherited the plugin ecosystem, but its built-in backends for common tools (Rust, Node, Python, Go, Erlang, Elixir) are faster and more reliable than shelling out to plugins.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-mise-actually-does&quot;&gt;What mise actually does&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mise.jdx.dev&#x2F;&quot;&gt;Mise&lt;&#x2F;a&gt; is a single Rust binary that combines tool version management and task running into one configuration file per project. It does asdf’s job and Make’s job in a single tool.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is this site’s configuration. The entire thing:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# mise.toml (raskell.io)
 [tools]
-ruby = &amp;quot;3.2.1&amp;quot;
-node = &amp;quot;20.11.0&amp;quot;
-python = &amp;quot;3.12&amp;quot;
+zola = &amp;quot;0.19&amp;quot;
+
+[env]
+_.file = &amp;quot;.env&amp;quot;
+
+[tasks.serve]
+description = &amp;quot;Start the Zola development server&amp;quot;
+run = &amp;quot;zola serve&amp;quot;
+
+[tasks.build]
+description = &amp;quot;Build the site for production&amp;quot;
+run = &amp;quot;zola build&amp;quot;
+
+[tasks.check]
+description = &amp;quot;Check the site for errors without building&amp;quot;
+run = &amp;quot;zola check&amp;quot;
+
+[tasks.new]
+description = &amp;quot;Create a new article&amp;quot;
+run = &amp;quot;&amp;quot;&amp;quot;
+#!&amp;#x2F;usr&amp;#x2F;bin&amp;#x2F;env bash
+if [ -z &amp;quot;$1&amp;quot; ]; then
+  echo &amp;quot;Usage: mise run new &amp;lt;article-slug&amp;gt;&amp;quot;
+  exit 1
+fi
+SLUG=&amp;quot;$1&amp;quot;
+DATE=$(date +%Y-%m-%d)
+FILE=&amp;quot;content&amp;#x2F;articles&amp;#x2F;${SLUG}.md&amp;quot;
+cat &amp;gt; &amp;quot;$FILE&amp;quot; &amp;lt;&amp;lt; ARTICLE
++++
+title = &amp;quot;&amp;quot;
+date = ${DATE}
+description = &amp;quot;&amp;quot;
+[taxonomies]
+tags = []
+categories = []
+[extra]
+author = &amp;quot;Raffael&amp;quot;
++++
+ARTICLE
+echo &amp;quot;Created $FILE&amp;quot;
+&amp;quot;&amp;quot;&amp;quot;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;One file. Declares the tool (Zola 0.19), loads environment variables, and defines every task a contributor needs. &lt;code&gt;mise install&lt;&#x2F;code&gt; sets up the toolchain. &lt;code&gt;mise tasks&lt;&#x2F;code&gt; shows what is available. &lt;code&gt;mise run serve&lt;&#x2F;code&gt; starts the dev server. No Makefile. No scripts folder. No documentation page explaining how to get Zola at the right version.&lt;&#x2F;p&gt;
+&lt;p&gt;For a Rust project like &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;Shiioo&lt;&#x2F;a&gt; (the agentic orchestrator), the configuration is larger but follows the same pattern:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# .mise.toml (shiioo)
+[tools]
+rust = &amp;quot;latest&amp;quot;
+
+[env]
+RUST_LOG = &amp;quot;info&amp;quot;
+RUST_BACKTRACE = &amp;quot;1&amp;quot;
+_.path = [&amp;quot;.&amp;#x2F;target&amp;#x2F;release&amp;quot;, &amp;quot;.&amp;#x2F;target&amp;#x2F;debug&amp;quot;]
+
+[tasks.build]
+description = &amp;quot;Build all crates in release mode&amp;quot;
+run = &amp;quot;cargo build --release&amp;quot;
 
 [tasks.test]
-run = &amp;quot;bundle exec rspec &amp;amp;&amp;amp; npm test&amp;quot;
 description = &amp;quot;Run all tests&amp;quot;
+run = &amp;quot;cargo test&amp;quot;
 
-[tasks.deploy]
-run = &amp;quot;kubectl apply -f k8s&amp;#x2F;&amp;quot;
-depends = [&amp;quot;test&amp;quot;, &amp;quot;build&amp;quot;]
+[tasks.clippy]
+description = &amp;quot;Run clippy lints&amp;quot;
+run = &amp;quot;cargo clippy --all-targets -- -D warnings&amp;quot;
 
-[env]
-DATABASE_URL = &amp;quot;postgresql:&amp;#x2F;&amp;#x2F;localhost&amp;#x2F;myapp_dev&amp;quot;
-RAILS_ENV = &amp;quot;development&amp;quot;
+[tasks.fmt]
+description = &amp;quot;Format code with rustfmt&amp;quot;
+run = &amp;quot;cargo fmt --all&amp;quot;
+
+[tasks.ci]
+description = &amp;quot;CI pipeline: format check, clippy, test&amp;quot;
+depends = [&amp;quot;fmt-check&amp;quot;, &amp;quot;clippy&amp;quot;, &amp;quot;test&amp;quot;]
+
+[tasks.dev]
+description = &amp;quot;Full development build and run&amp;quot;
+depends = [&amp;quot;fmt&amp;quot;, &amp;quot;check&amp;quot;, &amp;quot;test&amp;quot;]
+run = &amp;quot;cargo run -p shiioo-server&amp;quot;
 &lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;One file. Everything works.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;the-fuzzy-matching-that-actually-works&quot;&gt;The fuzzy matching that actually works&lt;&#x2F;h2&gt;
-&lt;p&gt;This is where mise gets interesting. You don’t need exact command names.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ mise run test     # runs the test task
-$ mise run tset     # still runs test (typo forgiven)
-$ mise run tst      # yep, runs test
-$ mise run deploy   # runs deploy task
-$ mise run dply     # runs deploy
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;The fuzzy matching is smart. It weighs:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;Character position (earlier matches score higher)&lt;&#x2F;li&gt;
-&lt;li&gt;Consecutive matches&lt;&#x2F;li&gt;
-&lt;li&gt;Word boundaries&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;I tested this with 30+ tasks in one project. It still found the right one 90% of the time with 3-4 characters.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;tasks-live-where-they-should&quot;&gt;Tasks live where they should&lt;&#x2F;h2&gt;
-&lt;p&gt;Instead of polluting the root with &lt;code&gt;scripts&#x2F;&lt;&#x2F;code&gt;, mise looks in &lt;code&gt;.mise&#x2F;tasks&#x2F;&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;.mise&amp;#x2F;
-└── tasks&amp;#x2F;
-    ├── db-reset.sh
-    ├── cache-clear.sh
-    └── logs-tail.sh
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Any executable in there becomes a task. No registration. No config.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ mise run db-reset    # runs .mise&amp;#x2F;tasks&amp;#x2F;db-reset.sh
-$ mise run cache       # fuzzy matches to cache-clear.sh
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Shell scripts stay shell scripts. But now they’re discoverable:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ mise tasks
-cache-clear   Clear all caches
-db-reset      Reset database to clean state  
-logs-tail     Tail production logs
-test          Run all tests
-deploy        Deploy to production
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h2 id=&quot;the-encryption-bit-that-matters&quot;&gt;The encryption bit that matters&lt;&#x2F;h2&gt;
-&lt;p&gt;mise includes age encryption support. Not bolted on. Built in.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# .mise.toml
-[env]
-DATABASE_URL = &amp;quot;postgresql:&amp;#x2F;&amp;#x2F;localhost&amp;#x2F;dev&amp;quot;
-API_KEY = &amp;quot;age:SECRET_ENCRYPTED_STRING&amp;quot;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Set it up once:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ mise decrypt .mise.toml
-Enter passphrase: 
-$ export API_KEY=&amp;quot;actual-secret-key&amp;quot;
-$ mise encrypt .mise.toml
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Your secrets are in the repo but encrypted. CI&#x2F;CD gets the age key. Developers get the age key. Random GitHub scrapers get nothing.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;integration-with-zed&quot;&gt;Integration with Zed&lt;&#x2F;h2&gt;
-&lt;p&gt;This is where it gets smooth. In Zed, I set up task shortcuts:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;json&quot; class=&quot;language-json &quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&amp;#x2F;&amp;#x2F; .zed&amp;#x2F;tasks.json
-{
-  &amp;quot;tasks&amp;quot;: {
-    &amp;quot;test&amp;quot;: {
-      &amp;quot;command&amp;quot;: &amp;quot;mise run test&amp;quot;,
-      &amp;quot;cwd&amp;quot;: &amp;quot;$WORKSPACE_ROOT&amp;quot;
-    },
-    &amp;quot;deploy&amp;quot;: {
-      &amp;quot;command&amp;quot;: &amp;quot;mise run deploy&amp;quot;,
-      &amp;quot;cwd&amp;quot;: &amp;quot;$WORKSPACE_ROOT&amp;quot;  
-    }
-  }
-}
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Now &lt;code&gt;cmd-shift-t&lt;&#x2F;code&gt; opens the task picker. Type “te”, hit enter. Tests run. The AI assistant sees the output inline. Fixes the code. Reruns the test. No context switching.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;code&gt;depends&lt;&#x2F;code&gt; key is where mise replaces the one thing Make was genuinely good at: task dependency ordering. &lt;code&gt;mise run ci&lt;&#x2F;code&gt; runs format checking, then clippy, then tests, in sequence. If clippy fails, tests do not run. It is not as expressive as Make’s file-based dependency graph, but for project automation tasks (as opposed to build tasks, which cargo or mix handle), it covers what I actually need.&lt;&#x2F;p&gt;
+&lt;p&gt;For a multi-language project like Cyanea, the value is even clearer. The Elixir app needs Erlang, Elixir, Node, and Rust. One &lt;code&gt;[tools]&lt;&#x2F;code&gt; section pins all four. One &lt;code&gt;mise install&lt;&#x2F;code&gt; gets a contributor from zero to a working environment. Without mise, that setup involved installing asdf, adding four plugins, running &lt;code&gt;asdf install&lt;&#x2F;code&gt;, then installing direnv for environment variables, then reading the Makefile to figure out how to run things. With mise, it is two commands: &lt;code&gt;mise install&lt;&#x2F;code&gt; and &lt;code&gt;mise run dev&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-cross-project-pattern&quot;&gt;The cross-project pattern&lt;&#x2F;h2&gt;
+&lt;p&gt;The real payoff is not in any single project. It is the consistency across all of them.&lt;&#x2F;p&gt;
+&lt;p&gt;Every repo in every org follows the same contract:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Clone the repo&lt;&#x2F;li&gt;
+&lt;li&gt;Run &lt;code&gt;mise install&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Run &lt;code&gt;mise tasks&lt;&#x2F;code&gt; to see what is available&lt;&#x2F;li&gt;
+&lt;li&gt;Run &lt;code&gt;mise run dev&lt;&#x2F;code&gt; or &lt;code&gt;mise run test&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;That is it. Whether the project is a Rust reverse proxy with thirty modules, an Elixir Phoenix application with LiveView and a NATS integration, a Gleam web framework, or a static site built with Zola, the entry point is identical. The person cloning the repo does not need to know which build system the project uses internally. They do not need to read a CONTRIBUTING.md to find out whether it is &lt;code&gt;make test&lt;&#x2F;code&gt; or &lt;code&gt;cargo test&lt;&#x2F;code&gt; or &lt;code&gt;mix test&lt;&#x2F;code&gt;. It is always &lt;code&gt;mise run test&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;This matters more than it sounds. When you maintain projects across four orgs and multiple languages, the cognitive overhead per context switch is the actual bottleneck. I work on Zentinel (Rust) in the morning, switch to Archipelag (Elixir) after lunch, then fix something on this site (Zola) in the evening. Without a consistent interface, each switch means recalling which project uses which conventions. With mise, the interface is always the same. The implementation behind &lt;code&gt;mise run test&lt;&#x2F;code&gt; differs (cargo, mix, zola check), but I do not care about that. I type the same command and the right thing happens.&lt;&#x2F;p&gt;
+&lt;p&gt;For new contributors, the effect is more pronounced. Zentinel’s agent ecosystem has over twenty Rust repos. A contributor who submits a PR to the WAF agent and then wants to help with the auth agent does not need to learn a new setup process. Same structure, same task names, same workflow. The consistency compounds.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-mise-handles-that-make-does-not&quot;&gt;What mise handles that Make does not&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Environment variables.&lt;&#x2F;strong&gt; Mise loads environment from the config file or from &lt;code&gt;.env&lt;&#x2F;code&gt; files, scoped to the project directory. When I &lt;code&gt;cd&lt;&#x2F;code&gt; into a project, the right environment is active. When I leave, it deactivates. No direnv, no &lt;code&gt;.envrc&lt;&#x2F;code&gt;, no &lt;code&gt;source .env&lt;&#x2F;code&gt; in every shell session.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Tool installation.&lt;&#x2F;strong&gt; &lt;code&gt;mise install&lt;&#x2F;code&gt; in a fresh clone gets every tool the project needs at the exact specified version. Make cannot do this. Make assumes the tools exist. That assumption breaks on new machines, in CI, and for every new contributor.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Task discovery.&lt;&#x2F;strong&gt; &lt;code&gt;mise tasks&lt;&#x2F;code&gt; lists every available task with its description. Make has &lt;code&gt;make help&lt;&#x2F;code&gt; patterns, but those are conventions, not built-in features. With mise, discoverability is the default.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;File-based tasks.&lt;&#x2F;strong&gt; Any executable file in &lt;code&gt;.mise&#x2F;tasks&#x2F;&lt;&#x2F;code&gt; becomes a task automatically. No registration, no config entry needed. For tasks that outgrow a one-liner in TOML but do not warrant a standalone script in &lt;code&gt;scripts&#x2F;&lt;&#x2F;code&gt;, this is the right middle ground. The task is discoverable through &lt;code&gt;mise tasks&lt;&#x2F;code&gt; but lives as a normal shell script you can test independently.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;what-breaks&quot;&gt;What breaks&lt;&#x2F;h2&gt;
-&lt;p&gt;mise isn’t perfect. Here’s what I hit:&lt;&#x2F;p&gt;
+&lt;p&gt;Mise is not perfect. Honest assessment after running it across forty repos:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Dynamic dependencies.&lt;&#x2F;strong&gt; Make can express “rebuild this if that file changed.” Mise tasks are imperative: they run or they do not. If you need file-level dependency tracking, you still need a build system (cargo, mix, webpack). Mise orchestrates tasks. It does not replace the build tool.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Ecosystem maturity.&lt;&#x2F;strong&gt; Mise is younger than Make and asdf. The documentation is good but not exhaustive. Some features (like hooks and watch mode) are recent additions. The pace of development is fast, which means features arrive quickly but occasionally change between minor versions.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Team familiarity.&lt;&#x2F;strong&gt; Make is universal. Every engineer has encountered a Makefile. Mise is still relatively unknown. Introducing it to a team requires a short pitch, but the pitch is easy: “it is Make plus asdf in one tool, configured in TOML.”&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Complex shell tasks.&lt;&#x2F;strong&gt; When a task grows beyond a few lines, the inline TOML string syntax gets awkward. The workaround is file-based tasks in &lt;code&gt;.mise&#x2F;tasks&#x2F;&lt;&#x2F;code&gt;, which works well but means the task definition lives in two places (TOML for metadata and task list, shell file for implementation).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-migration&quot;&gt;The migration&lt;&#x2F;h2&gt;
+&lt;p&gt;If you are moving an existing project, here is the approach I settled on after migrating across all four orgs:&lt;&#x2F;p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Windows support&lt;&#x2F;strong&gt;: Works through WSL. Native is rough.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Legacy tools&lt;&#x2F;strong&gt;: Some older ruby&#x2F;node versions don’t install clean. Same issue asdf has.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Task dependencies&lt;&#x2F;strong&gt;: Can’t do dynamic dependencies like make. Tasks depend on fixed task names.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Fuzzy matching confusion&lt;&#x2F;strong&gt;: With tasks named &lt;code&gt;deploy-staging&lt;&#x2F;code&gt; and &lt;code&gt;deploy-production&lt;&#x2F;code&gt;, typing &lt;code&gt;deploy&lt;&#x2F;code&gt; might pick wrong. Be specific or rename.&lt;&#x2F;li&gt;
+&lt;li&gt;Add a &lt;code&gt;mise.toml&lt;&#x2F;code&gt; (or &lt;code&gt;.mise.toml&lt;&#x2F;code&gt;) at the project root. Start with just &lt;code&gt;[tools]&lt;&#x2F;code&gt; to declare the required versions.&lt;&#x2F;li&gt;
+&lt;li&gt;Move the most-used Make targets to &lt;code&gt;[tasks]&lt;&#x2F;code&gt; one at a time. Keep the Makefile around until everything is ported.&lt;&#x2F;li&gt;
+&lt;li&gt;Add &lt;code&gt;[env]&lt;&#x2F;code&gt; entries to replace &lt;code&gt;.envrc&lt;&#x2F;code&gt; or &lt;code&gt;.env.example&lt;&#x2F;code&gt; files.&lt;&#x2F;li&gt;
+&lt;li&gt;Move standalone scripts from &lt;code&gt;scripts&#x2F;&lt;&#x2F;code&gt; to &lt;code&gt;.mise&#x2F;tasks&#x2F;&lt;&#x2F;code&gt; as file-based tasks.&lt;&#x2F;li&gt;
+&lt;li&gt;Delete the Makefile last.&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
-&lt;h2 id=&quot;the-tradeoffs&quot;&gt;The tradeoffs&lt;&#x2F;h2&gt;
-&lt;p&gt;What I gained:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;One tool instead of 4 (asdf, direnv, make, scripts)&lt;&#x2F;li&gt;
-&lt;li&gt;Fuzzy matching saves 100s of keystrokes daily&lt;&#x2F;li&gt;
-&lt;li&gt;New devs get running in 2 commands: &lt;code&gt;mise install&lt;&#x2F;code&gt; and &lt;code&gt;mise run setup&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;Secrets management that doesn’t suck&lt;&#x2F;li&gt;
-&lt;li&gt;Task discovery that actually works&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;What I paid:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;Another tool to install (but it replaces 4)&lt;&#x2F;li&gt;
-&lt;li&gt;TOML syntax (not everyone’s favorite)&lt;&#x2F;li&gt;
-&lt;li&gt;Rewriting Makefiles (took an afternoon per project)&lt;&#x2F;li&gt;
-&lt;li&gt;Teaching the team new patterns (took a week)&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;h2 id=&quot;migration-pattern&quot;&gt;Migration pattern&lt;&#x2F;h2&gt;
-&lt;p&gt;If you’re moving an existing project:&lt;&#x2F;p&gt;
-&lt;ol&gt;
-&lt;li&gt;Install mise: &lt;code&gt;curl https:&#x2F;&#x2F;mise.jdx.dev&#x2F;install.sh | sh&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;Import existing tool versions: &lt;code&gt;mise install&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;Move one make target at a time to mise tasks&lt;&#x2F;li&gt;
-&lt;li&gt;Move scripts to &lt;code&gt;.mise&#x2F;tasks&#x2F;&lt;&#x2F;code&gt; gradually&lt;&#x2F;li&gt;
-&lt;li&gt;Add encryption last (less disruption)&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;p&gt;Start with the most-used tasks. Leave the weird legacy stuff in make until later.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;what-i-d-do-differently&quot;&gt;What I’d do differently&lt;&#x2F;h2&gt;
-&lt;p&gt;After migrating 12 projects:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;Start with &lt;code&gt;.mise.toml&lt;&#x2F;code&gt;, not &lt;code&gt;.mise&#x2F;config.yaml&lt;&#x2F;code&gt;. TOML is cleaner for this.&lt;&#x2F;li&gt;
-&lt;li&gt;Put all tasks in &lt;code&gt;.mise&#x2F;tasks&#x2F;&lt;&#x2F;code&gt; as shell scripts first. Move to inline tasks only when needed.&lt;&#x2F;li&gt;
-&lt;li&gt;Name tasks with clear prefixes: &lt;code&gt;db-reset&lt;&#x2F;code&gt;, &lt;code&gt;cache-clear&lt;&#x2F;code&gt;, &lt;code&gt;test-unit&lt;&#x2F;code&gt;. Makes fuzzy matching more predictable.&lt;&#x2F;li&gt;
-&lt;li&gt;Document the age key setup immediately. People forget.&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
+&lt;p&gt;Do not try to migrate everything at once. Start with the three tasks developers use daily (usually &lt;code&gt;dev&lt;&#x2F;code&gt;, &lt;code&gt;test&lt;&#x2F;code&gt;, and &lt;code&gt;build&lt;&#x2F;code&gt;). The rest can move incrementally. I also settled on a few naming conventions that help across projects: use clear verb-noun prefixes like &lt;code&gt;db-reset&lt;&#x2F;code&gt;, &lt;code&gt;cache-clear&lt;&#x2F;code&gt;, &lt;code&gt;test-unit&lt;&#x2F;code&gt;. Consistent naming makes task discovery predictable even before you run &lt;code&gt;mise tasks&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-bottom-line&quot;&gt;The bottom line&lt;&#x2F;h2&gt;
-&lt;p&gt;mise replaced my entire project automation stack. The Rust rewrite isn’t just faster. It’s more thoughtful. Fuzzy matching, encrypted env vars, task discovery. These aren’t features. They’re fixes for real pain.&lt;&#x2F;p&gt;
-&lt;p&gt;Every new project starts with &lt;code&gt;.mise.toml&lt;&#x2F;code&gt; now. Setup takes 5 minutes instead of an hour. New developers don’t message me asking how to run tests. They just run &lt;code&gt;mise tasks&lt;&#x2F;code&gt; and figure it out.&lt;&#x2F;p&gt;
-&lt;p&gt;That’s the tool working.&lt;&#x2F;p&gt;
+&lt;p&gt;Mise is not a revolutionary tool. It does not do anything that was previously impossible. You could always install the right Rust version, write a Makefile, set up direnv, and maintain a scripts folder. What mise does is collapse all of that into a single file that is readable, portable, and consistent.&lt;&#x2F;p&gt;
+&lt;p&gt;The compound effect is what matters. Forty repositories, four organizations, six languages, one pattern. Clone, install, run. No guessing which build system this particular project uses. No debugging a Makefile that works on Linux but breaks on macOS. No explaining to a contributor that they need asdf plus three plugins plus direnv plus GNU make before they can run the tests.&lt;&#x2F;p&gt;
+&lt;p&gt;Every new project starts with a &lt;code&gt;mise.toml&lt;&#x2F;code&gt;. Setup takes two commands instead of a page of instructions. Contributors do not message me asking how to run things. They run &lt;code&gt;mise tasks&lt;&#x2F;code&gt; and figure it out.&lt;&#x2F;p&gt;
+&lt;p&gt;That is the tool working.&lt;&#x2F;p&gt;
 </description>
       </item>
       <item>
