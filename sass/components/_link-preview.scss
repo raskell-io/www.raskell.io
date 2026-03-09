@@ -1,0 +1,263 @@
+// =============================================================================
+// Link Preview — External link tooltips and mobile bottom sheet
+// =============================================================================
+
+// External link indicator
+.external-link {
+  &::after {
+    content: '\2197';
+    font-size: 0.6em;
+    opacity: 0.4;
+    margin-left: 0.15em;
+    vertical-align: super;
+    line-height: 1;
+    transition: opacity 0.15s ease;
+  }
+
+  &:hover::after {
+    opacity: 0.7;
+  }
+}
+
+// Override article-post link styles for the visit button inside preview
+.link-preview a.link-preview__visit {
+  box-shadow: none !important;
+
+  &:hover {
+    box-shadow: none !important;
+  }
+}
+
+// ---- Mobile overlay / backdrop ----
+
+.link-preview-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 9998;
+  opacity: 0;
+  transition: opacity 0.25s ease, background 0.25s ease;
+  -webkit-backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
+
+  &.active {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.35);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+}
+
+// ---- Tooltip card ----
+
+.link-preview {
+  position: absolute;
+  z-index: 9999;
+  max-width: 360px;
+  width: max-content;
+  min-width: 260px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: auto;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.link-preview--above {
+    transform: translateY(-8px);
+
+    &.active {
+      transform: translateY(0);
+    }
+  }
+
+  // ---- Image ----
+
+  &__image {
+    width: 100%;
+    max-height: 160px;
+    overflow: hidden;
+    background: var(--light-background);
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  // ---- Body ----
+
+  &__body {
+    padding: 0.9rem 1.1rem;
+  }
+
+  &__domain {
+    font-family: var(--code-font-family);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--accent-secondary);
+    margin-bottom: 0.3rem;
+    text-transform: lowercase;
+    letter-spacing: 0.01em;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--font-color);
+    line-height: 1.35;
+    margin-bottom: 0.25rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__desc {
+    font-size: 0.8rem;
+    color: var(--light-font-color);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  // ---- Visit button ----
+
+  &__visit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.65rem 1.1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--link-color) !important;
+    border-top: 1px solid var(--border);
+    text-decoration: none !important;
+    transition: background 0.15s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--light-background);
+    }
+
+    &::after {
+      // Override external-link indicator inside the button
+      display: none !important;
+    }
+  }
+
+  &__arrow {
+    font-size: 1.05em;
+    line-height: 1;
+  }
+
+  // ---- Close button ----
+
+  &__close {
+    position: absolute;
+    top: 0.65rem;
+    right: 0.65rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--light-background);
+    color: var(--font-color);
+    font-size: 1.15rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    z-index: 1;
+    line-height: 1;
+    padding: 0;
+
+    &:hover {
+      background: var(--light-background-hover);
+    }
+  }
+
+  // Show close button on mobile layout
+  &--mobile &__close {
+    display: flex;
+  }
+
+  // ---- Mobile bottom sheet ----
+
+  &--mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    width: 100%;
+    min-width: unset;
+    border-radius: 20px 20px 0 0;
+    border-bottom: none;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+    max-height: 75vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow:
+      0 -4px 24px rgba(0, 0, 0, 0.12),
+      0 -2px 8px rgba(0, 0, 0, 0.06);
+
+    &.active {
+      transform: translateY(0);
+    }
+
+    // Drag handle indicator
+    &::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--border);
+      margin: 0.75rem auto 0;
+    }
+
+    .link-preview__image {
+      max-height: 200px;
+      margin-top: 0.5rem;
+    }
+
+    .link-preview__body {
+      padding: 1rem 1.25rem;
+      padding-right: 3.25rem;
+    }
+
+    .link-preview__title {
+      font-size: 1.05rem;
+    }
+
+    .link-preview__desc {
+      font-size: 0.85rem;
+      -webkit-line-clamp: 5;
+    }
+
+    .link-preview__visit {
+      padding: 0.9rem 1.25rem;
+      font-size: 0.95rem;
+      // Safe area for phones with home indicator
+      padding-bottom: calc(0.9rem + env(safe-area-inset-bottom, 0px));
+    }
+  }
+}
