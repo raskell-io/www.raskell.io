@@ -34,3 +34,9 @@ I believe that technology has the power to change the world, and I am excited to
 In my next post, I will dive into a specific topic and share my knowledge and experience. I want to make sure that my readers will learn something new every time they visit my blog.
 
 Thank you for visiting, and I look forward to connecting with you on social media or in real life.
+
+## References
+
+- [Void Linux](https://voidlinux.org/) - My Linux distribution of choice at the time of writing
+- [OpenBSD](https://www.openbsd.org/) - The security-focused BSD operating system
+- [raskell.io source](https://github.com/raskell-io/www.raskell.io) - This site's source code

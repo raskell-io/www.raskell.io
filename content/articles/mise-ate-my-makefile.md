@@ -221,3 +221,15 @@ The compound effect is what matters. Forty repositories, four organizations, six
 Every new project starts with a `mise.toml`. Setup takes two commands instead of a page of instructions. Contributors do not message me asking how to run things. They run `mise tasks` and figure it out.
 
 That is the tool working.
+
+## References and further reading
+
+- [mise](https://mise.jdx.dev/) - Official documentation and installation guide
+- [mise source code](https://github.com/jdx/mise) - GitHub repository and issue tracker
+- [asdf](https://asdf-vm.com/) - The version manager mise was originally inspired by
+- [Nix](https://nixos.org/) - Reproducible builds and development environments
+- [GNU Make](https://www.gnu.org/software/make/) - The build tool mise replaces for task automation
+- [TOML specification](https://toml.io/) - The configuration format mise uses
+- [direnv](https://direnv.net/) - Environment variable manager that mise's `[env]` section replaces
+- [Shiioo](https://github.com/raskell-io/shiioo) - Real-world mise configuration referenced in this article
+- [mise-hx](https://github.com/raskell-io/mise-hx) - Example of a custom mise plugin (for the hx Haskell toolchain)

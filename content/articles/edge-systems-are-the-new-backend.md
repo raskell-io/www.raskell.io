@@ -433,3 +433,45 @@ The backend will not disappear. Data needs to live somewhere durable, and cross-
 I find myself building systems where the most interesting engineering happens at the boundaries. A reverse proxy ([Zentinel](https://zentinelproxy.io)) that inspects 912K requests per second through 285 WAF rules, authenticates with sub-millisecond latency, and routes with crash-isolated agents. A bioinformatics platform ([Cyanea](https://cyanea.bio)) where the browser runs the computation and the backend exports JSON for statically generated pages. A distributed compute platform ([Archipelag](https://archipelag.io)) where users' browsers are the compute fleet via WASM and WebGPU. A note-taking app ([Kurumi](https://github.com/raskell-io/kurumi)) that works fully offline with CRDTs and never touches a server for reads. Between all of them, a database, a sync relay, or just a CDN. Necessary and boring.
 
 The backend is not dead. It is just not where the interesting work happens anymore.
+
+## References and further reading
+
+### Edge platforms and proxies
+- [Cloudflare Workers](https://workers.cloudflare.com/) - V8 isolate-based edge compute
+- [Deno Deploy](https://deno.com/deploy) - Edge runtime built on the Deno JavaScript runtime
+- [Fastly Compute](https://www.fastly.com/products/edge-compute) - Wasm-based edge compute platform
+- [Vercel Edge Functions](https://vercel.com/docs/functions/edge-functions) - Edge compute integrated with Next.js
+- [fly.io](https://fly.io) - Container-based edge deployment platform
+- [Pingora](https://github.com/cloudflare/pingora) - Cloudflare's Rust framework for programmable proxies
+- [Zentinel](https://zentinelproxy.io) - Security-first reverse proxy with crash-isolated agents
+
+### Client-side compute
+- [WebAssembly](https://webassembly.org/) - Portable binary instruction format for the web
+- [WASI](https://wasi.dev/) - WebAssembly System Interface for running Wasm outside the browser
+- [WebGPU specification](https://www.w3.org/TR/webgpu/) - W3C standard for GPU compute in the browser
+- [MediaPipe](https://developers.google.com/mediapipe) - ML inference framework running client-side via Wasm and WebGPU
+- [SQLite Wasm](https://sqlite.org/wasm) - Official SQLite build targeting WebAssembly
+- [sql.js](https://sql.js.org/) - SQLite compiled to Wasm via Emscripten
+- [Origin Private File System](https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system) - MDN reference for persistent browser storage
+- [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) - MDN reference for offline-capable web apps
+- [Web Workers API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) - MDN reference for background threads in the browser
+
+### CRDTs and local-first
+- [CRDTs: The Hard Parts](https://www.youtube.com/watch?v=x7drE24geUw) - Martin Kleppmann's talk on practical CRDT challenges
+- [Local-first software](https://www.inkandswitch.com/local-first/) - Ink and Switch research paper on local-first architectures
+- [Automerge](https://automerge.org/) - CRDT library for collaborative applications
+- [Yjs](https://yjs.dev/) - High-performance CRDT framework for the web
+- [A comprehensive study of CRDTs](https://hal.inria.fr/inria-00555588/document) - Shapiro et al., the foundational survey paper
+
+### Databases at the edge
+- [Turso](https://turso.tech/) - SQLite-compatible database with edge replicas
+- [Neon](https://neon.tech/) - Serverless PostgreSQL with branching
+- [LiteFS](https://github.com/superfly/litefs) - Distributed SQLite replication by Fly.io
+- [CockroachDB](https://www.cockroachlabs.com/) - Distributed SQL database designed for multi-region
+- [Supabase](https://supabase.com/) - Open-source Firebase alternative built on PostgreSQL
+
+### Projects referenced
+- [Cyanea](https://cyanea.bio) - Bioinformatics platform using Wasm and WebGPU for client-side compute
+- [Archipelag](https://archipelag.io) - Distributed compute platform with browser-based Wasm nodes
+- [Kurumi](https://github.com/raskell-io/kurumi) - Local-first second brain app with CRDT sync
+- [Conflux](https://github.com/raskell-io/conflux) - Schema-aware CRDT engine for deterministic merge

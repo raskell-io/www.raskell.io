@@ -59,3 +59,13 @@ This site is part of that bet. Static content, no tracking, no platform dependen
 2025 was the year AI started breaking the old model. I don't know exactly what grows in its place. But floating in that Okinawan water, watching the reef do what reefs do, I got a sense of what healthy systems look like. Diverse. Interconnected. Resilient. Not optimized for any single metric, but somehow working anyway.
 
 That's what I'm betting on.
+
+## References and further reading
+
+- [Tim Berners-Lee](https://www.w3.org/People/Berners-Lee/) - Creator of the World Wide Web and author of "This is for everyone"
+- [Enshittification](https://en.wikipedia.org/wiki/Enshittification) - Cory Doctorow's term for the pattern of platform decay
+- [IndieWeb](https://indieweb.org/) - Community building the independent web with open standards
+- [Zola](https://www.getzola.org/) - Static site generator used to build this site
+- [Zentinel](https://zentinelproxy.io) - Security-first reverse proxy for the open web
+- [Sango](https://github.com/raskell-io/sango) - Edge diagnostics CLI for TLS, HTTP, and security header analysis
+- [Ushio](https://github.com/raskell-io/ushio) - Deterministic edge traffic replay tool

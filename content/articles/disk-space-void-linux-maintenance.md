@@ -88,6 +88,14 @@ This very aspect of Void is worthwhile highlighing. I remember more arcane Linux
 
 Now back to my Monday morning.
 
+## References and further reading
+
+- [Void Linux](https://voidlinux.org/) - Official project site
+- [Void Linux Handbook: XBPS](https://docs.voidlinux.org/xbps/index.html) - Official documentation for the XBPS package manager
+- [xbps-remove(1) man page](https://man.voidlinux.org/xbps-remove.1) - Manual page for package removal and cache cleaning
+- [vkpurge source](https://github.com/void-linux/void-packages/blob/master/srcpkgs/base-files/files/vkpurge) - Shell script for purging old kernels on Void Linux
+- [Void Linux FAQ](https://docs.voidlinux.org/about/faq.html) - Common questions about running and maintaining Void
+
 ---
 
 [^1]: Painting in header image is "Seaside" by Aleksandr Deyneka

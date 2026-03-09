@@ -403,3 +403,27 @@ The thing I keep coming back to: the cloud was never selling compute. It was sel
 That does not make the cloud irrelevant. It makes the cloud optional for a much larger class of workloads than it was before.
 
 Buy a server. Build your tools. Ship your product. The infrastructure should be boring. With AI, it finally can be.
+
+## References and further reading
+
+### Tools and platforms
+- [Vela](https://github.com/raskell-io/vela) - The bare-metal deployment tool built in this article
+- [Hetzner Server Auction](https://www.hetzner.com/sb/) - Refurbished dedicated servers at steep discounts
+- [fly.io](https://fly.io) - The managed platform I migrated from
+- [Nomad](https://www.nomadproject.io/) - HashiCorp's minimal workload orchestrator
+- [OpenTofu](https://opentofu.org/) - Community fork of Terraform after the BSL relicense
+- [Pingora](https://github.com/cloudflare/pingora) - Cloudflare's Rust framework for building programmable proxies
+- [hyper](https://hyper.rs/) - Rust HTTP library powering Vela's reverse proxy
+- [Let's Encrypt](https://letsencrypt.org/) - Free TLS certificates, automated via ACME in Vela
+- [NATS](https://nats.io/) - Lightweight messaging system used by Archipelag
+
+### Frameworks and runtimes
+- [Phoenix Framework](https://www.phoenixframework.org/) - Elixir web framework powering both apps
+- [Erlang/OTP](https://www.erlang.org/) - The BEAM virtual machine that runs Phoenix and Elixir
+- [Rust](https://www.rust-lang.org/) - Systems language Vela and Zentinel are written in
+
+### Projects referenced
+- [Zentinel](https://zentinelproxy.io) - Security-first reverse proxy built on Pingora
+- [Archipelag](https://archipelag.io) - Distributed compute platform
+- [Cyanea](https://cyanea.bio) - Bioinformatics platform
+- [Claude Code](https://github.com/anthropics/claude-code) - AI coding tool used to build Vela

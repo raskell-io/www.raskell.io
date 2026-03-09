@@ -154,6 +154,27 @@ Domain 'openbsd' started
 
 ## References and further reading
 
-- [[Guide] how to setup QEMU/KVM emulation on void linux | /r/voidlinux](https://www.reddit.com/r/voidlinux/comments/ghwvv5/guide_how_to_setup_qemukvm_emulation_on_void_linux/)
-- [KVM virt-install: Install OpenBSD As Guest Operating System](https://www.cyberciti.biz/faq/kvmvirtualization-virt-install-openbsd-unix-guest/)
-- [Auto-install OpenBSD on QEMU | skreutz.com](https://www.skreutz.com/posts/autoinstall-openbsd-on-qemu/)
+### OpenBSD
+- [OpenBSD](https://www.openbsd.org/) - Official project site
+- [OpenBSD FAQ](https://www.openbsd.org/faq/) - Comprehensive installation and usage guide
+- [Why OpenBSD Rocks](https://why-openbsd.rocks/) - Collection of OpenBSD innovations and features
+- [OpenSSH](https://www.openssh.com/) - The SSH suite that originated from the OpenBSD project
+- [Theo de Raadt](https://en.wikipedia.org/wiki/Theo_de_Raadt) - OpenBSD founder and lead developer
+- [pledge(2)](https://man.openbsd.org/pledge.2) - OpenBSD's system call for restricting process capabilities
+- [unveil(2)](https://man.openbsd.org/unveil.2) - OpenBSD's system call for restricting filesystem visibility
+
+### Void Linux
+- [Void Linux](https://voidlinux.org/) - Official project site
+- [Void Linux Handbook](https://docs.voidlinux.org/) - Official documentation
+- [XBPS package manager](https://docs.voidlinux.org/xbps/index.html) - Void's binary package management system
+
+### Virtualization
+- [libvirt](https://libvirt.org/) - Virtualization management library and API
+- [QEMU](https://www.qemu.org/) - Open-source machine emulator and virtualizer
+- [virsh(1)](https://www.libvirt.org/manpages/virsh.html) - Command-line interface for managing libvirt guests
+- [TigerVNC](https://tigervnc.org/) - VNC implementation for remote desktop access
+
+### Guides
+- [[Guide] How to setup QEMU/KVM emulation on Void Linux](https://www.reddit.com/r/voidlinux/comments/ghwvv5/guide_how_to_setup_qemukvm_emulation_on_void_linux/) - Community guide on r/voidlinux
+- [KVM virt-install: Install OpenBSD as Guest Operating System](https://www.cyberciti.biz/faq/kvmvirtualization-virt-install-openbsd-unix-guest/) - Step-by-step KVM installation guide
+- [Auto-install OpenBSD on QEMU](https://www.skreutz.com/posts/autoinstall-openbsd-on-qemu/) - Automated OpenBSD installation on QEMU

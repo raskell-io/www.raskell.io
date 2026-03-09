@@ -111,3 +111,34 @@ The name is a portmanteau. Raffael plus Haskell. I chose it because Haskell is w
 I do not believe you need to write Haskell to benefit from Haskell. But I believe that learning it, really learning it, not just reading about monads but building something real with algebraic data types and type classes and higher-order functions, will make you a better engineer in whatever language you actually use.
 
 All beginning is Haskell. The rest is implementation.
+
+## References and further reading
+
+### Learning Haskell
+- [Haskell Language](https://www.haskell.org/) - Official site with documentation and community links
+- [Learn You a Haskell for Great Good!](https://learnyouahaskell.com/) - Approachable illustrated introduction
+- [Real World Haskell](https://book.realworldhaskell.org/) - Practical Haskell for production use
+- [Haskell Wiki](https://wiki.haskell.org/) - Community-maintained reference and tutorials
+- [Typeclassopedia](https://wiki.haskell.org/Typeclassopedia) - Comprehensive guide to Haskell's type class hierarchy
+
+### Type systems and theory
+- [Haskell Curry](https://en.wikipedia.org/wiki/Haskell_Curry) - The logician the language is named after
+- [Lambda calculus](https://en.wikipedia.org/wiki/Lambda_calculus) - Alonzo Church's formal system underlying Haskell
+- [Hindley-Milner type system](https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system) - The type inference algorithm at the core of Haskell and ML
+- [Making illegal states unrepresentable](https://blog.janestreet.com/effective-ml-revisited/) - Yaron Minsky's influential talk on using types for correctness
+- [Algebraic data types](https://wiki.haskell.org/Algebraic_data_type) - Haskell wiki reference on sum and product types
+
+### Monads and effects
+- [Philip Wadler, "Monads for functional programming"](https://homepages.inf.ed.ac.uk/wadler/papers/marktoberdorf/baastad.pdf) - The foundational paper on monads in programming
+- [All About Monads](https://wiki.haskell.org/All_About_Monads) - Haskell wiki guide to monadic programming
+
+### Haskell tooling
+- [GHC](https://www.haskell.org/ghc/) - The Glasgow Haskell Compiler
+- [Cabal](https://www.haskell.org/cabal/) - Haskell's build and package system
+- [Stack](https://docs.haskellstack.org/) - Alternative build tool with curated package sets
+- [mise-hx](https://github.com/raskell-io/mise-hx) - mise plugin for the hx Haskell toolchain CLI
+
+### Projects referenced
+- [Conflux](https://github.com/raskell-io/conflux) - CRDT engine using algebraic data types for merge semantics
+- [Zentinel](https://zentinelproxy.io) - Reverse proxy with monoid-based decision merging
+- [Shiioo](https://github.com/raskell-io/shiioo) - Agentic orchestrator using event-sourced state folds
