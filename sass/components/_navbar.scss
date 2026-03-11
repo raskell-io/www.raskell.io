@@ -129,9 +129,9 @@ main {
             }
 
             &[aria-current="page"] {
-                background: var(--light-background);
-                border-color: var(--border);
-                color: var(--accent-primary);
+                background: var(--accent-primary);
+                border-color: var(--accent-primary);
+                color: var(--background);
                 font-weight: 600;
             }
 
@@ -284,8 +284,8 @@ main {
         }
 
         &[aria-current="page"] {
-            background: var(--light-background);
-            color: var(--accent-primary);
+            background: var(--accent-primary);
+            color: var(--background);
             font-weight: 600;
         }
     }
