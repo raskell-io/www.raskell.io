@@ -43,13 +43,20 @@
 
             a {
                 color: var(--font-color);
-                transition: all 0.2s ease;
+                transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
                 opacity: 0.8;
+                padding: 0.4rem;
+                border-radius: 50%;
 
                 &:hover {
                     color: var(--accent-primary);
                     opacity: 1;
-                    transform: translateY(-2px);
+                    transform: translateY(-2px) scale(1.1);
+                    background: var(--light-background);
+                }
+
+                &:active {
+                    transform: scale(0.92);
                 }
             }
         }
@@ -65,13 +72,18 @@
     color: var(--accent-primary);
     background: var(--light-background);
     border-radius: 999px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     &:hover {
         background: var(--accent-primary);
         color: var(--background);
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(136, 57, 239, 0.15);
+    }
+
+    &:active {
+        transform: translateY(0) scale(0.97);
+        box-shadow: none;
     }
 }
 
@@ -90,14 +102,20 @@
 
 .project-card {
     padding: 2rem;
-    border: none;
-    border-radius: 16px;
+    border: 1px solid transparent;
+    border-radius: 20px;
     background: var(--light-background);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        border-color: var(--border);
+    }
+
+    &:active {
+        transform: translateY(0) scale(0.99);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     h3 {
@@ -155,14 +173,20 @@
     border-radius: 999px;
     color: var(--font-color);
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     opacity: 0.85;
 
     &:hover {
         background: var(--accent-primary);
         color: var(--background);
         opacity: 1;
-        transform: translateY(-1px);
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(136, 57, 239, 0.12);
+    }
+
+    &:active {
+        transform: translateY(0) scale(0.95);
+        box-shadow: none;
     }
 }
 
