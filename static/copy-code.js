@@ -1,7 +1,7 @@
 // Add copy buttons and anchors to code blocks
 document.addEventListener("DOMContentLoaded", function () {
   const codeBlocks = document.querySelectorAll(
-    'pre[class*="language-"], .highlight > .chroma',
+    'pre[class*="language-"], pre.giallo, .highlight > .chroma',
   );
 
   let codeBlockCounter = 0;

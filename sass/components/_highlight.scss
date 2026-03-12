@@ -31,65 +31,45 @@ pre > code {
 pre[class*="language-"],
 pre.giallo,
 .highlight > .chroma {
-    margin: 0 0 2rem;
-    border-radius: 12px;
+    margin: 2.5rem 0 3rem;
+    border-radius: 20px;
     overflow: visible;
     box-shadow:
-        0 0 0 1px rgba(255, 255, 255, 0.06),
         0 10px 15px -3px rgba(0, 0, 0, 0.3),
         0 4px 6px -2px rgba(0, 0, 0, 0.2);
     position: relative;
     background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
-    border: 1px solid rgba(203, 166, 247, 0.1);
+    border: none;
 
     &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(203, 166, 247, 0.3) 50%,
-            transparent 100%
-        );
-        border-radius: 12px 12px 0 0;
-    }
-
-    &:hover .copy-code-button {
-        opacity: 1;
+        display: none;
     }
 
     code {
-        padding: 60px 24px 24px;
+        padding: 32px 24px 24px;
         overflow-x: auto;
         display: block;
         line-height: 1.7;
-        border-radius: 12px;
+        border-radius: 20px;
     }
 
     code[data-lang]::before {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 14px 24px;
-        height: 48px;
-        font-size: 0.7rem;
+        top: -12px;
+        left: 16px;
+        padding: 5px 14px;
+        font-size: 0.75rem;
         line-height: 1.5;
         font-weight: 600;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.04em;
         text-transform: uppercase;
-        color: rgba(137, 180, 250, 0.9);
-        background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(10px);
+        color: #1e1e2e;
+        background: var(--accent-secondary);
+        border: 3px solid #1e1e2e;
         content: attr(data-lang);
-        font-family: var(--code-font-family);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 12px 12px 0 0;
-        display: flex;
+        font-family: var(--font-family);
+        border-radius: 999px;
+        display: inline-flex;
         align-items: center;
     }
 
@@ -348,19 +328,19 @@ pre.giallo,
 /* Copy Code Button */
 .copy-code-button {
     position: absolute;
-    top: 10px;
+    top: -12px;
     right: 16px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 6px;
-    padding: 6px 10px;
-    color: rgba(205, 214, 244, 0.8);
+    background: var(--accent-secondary);
+    border: 3px solid #1e1e2e;
+    border-radius: 999px;
+    padding: 5px 14px;
+    color: #1e1e2e;
     cursor: pointer;
-    font-size: 0.7rem;
-    font-weight: 500;
-    font-family: var(--code-font-family);
-    opacity: 0;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: var(--font-family);
+    opacity: 1;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     backdrop-filter: blur(8px);
     display: flex;
     align-items: center;
@@ -370,9 +350,8 @@ pre.giallo,
     letter-spacing: 0.05em;
 
     &:hover {
-        background: rgba(255, 255, 255, 0.12);
-        border-color: rgba(203, 166, 247, 0.5);
-        color: #cdd6f4;
+        background: var(--accent-primary);
+        color: #1e1e2e;
         transform: translateY(-1px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
@@ -382,9 +361,8 @@ pre.giallo,
     }
 
     &.copied {
-        background: rgba(166, 227, 161, 0.15);
-        border-color: rgba(166, 227, 161, 0.5);
-        color: #a6e3a1;
+        background: #a6e3a1;
+        color: #1e1e2e;
 
         svg {
             animation: checkmark 0.3s ease-in-out;

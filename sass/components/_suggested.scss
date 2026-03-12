@@ -9,40 +9,38 @@
     margin-top: 3rem;
 
     span {
-        font-weight: 400;
+        font-weight: 500;
         display: block;
         font-size: 0.85rem;
-        color: var(--transparent-text);
+        color: var(--background);
+        opacity: 0.8;
         margin-bottom: 0.5rem;
     }
 
     strong {
         display: block;
         margin-top: 0.25rem;
-        color: var(--heading-color);
+        color: var(--background);
         font-weight: 600;
     }
 
     a {
-        background: none;
+        background: var(--accent-primary);
         margin: 0.5rem 1rem;
         border-bottom: none;
         transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
         padding: 1.5rem;
         border-radius: 16px;
-        background: var(--light-background);
-        border: 1px solid var(--border);
-        color: var(--font-color);
+        border: none;
+        color: var(--background);
         text-decoration: none;
 
         &:hover {
             transform: translateY(-2px);
-            background: var(--light-background-hover);
-            border-color: var(--link-color);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 6px 20px rgba(136, 57, 239, 0.25);
 
             strong {
-                color: var(--link-color);
+                color: var(--background);
             }
         }
 
