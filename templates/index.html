@@ -9,7 +9,20 @@
 
         {# Speaking & Social - moved to top #}
         <div class="hero-meta">
-            <p class="speaking-badge"><a href="/speaking"><strong>RSAC 2026 speaker</strong> · Available for technical talks and consulting</a></p>
+            <p class="speaking-badge">
+                <span class="acnh-ping" aria-hidden="true">
+                    <svg class="acnh-bloom" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="22" r="20" fill="currentColor"/>
+                        <circle cx="76" cy="38" r="20" fill="currentColor"/>
+                        <circle cx="68" cy="68" r="20" fill="currentColor"/>
+                        <circle cx="32" cy="68" r="20" fill="currentColor"/>
+                        <circle cx="24" cy="38" r="20" fill="currentColor"/>
+                        <circle cx="50" cy="50" r="18" fill="currentColor"/>
+                    </svg>
+                    <span class="acnh-ping__mark">!</span>
+                </span>
+                <a href="/speaking"><strong>RSAC 2026 speaker</strong> · Available for technical talks and consulting</a>
+            </p>
             <div class="bio-social">
                 {% if config.extra.social.github %}
                 <a href="{{ config.extra.social.github }}" target="_blank" rel="noreferrer" title="github" aria-label="github">

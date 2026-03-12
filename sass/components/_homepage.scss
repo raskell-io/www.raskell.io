@@ -30,10 +30,61 @@
             font-size: 0.95rem;
             color: var(--font-color);
             margin: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
 
             strong {
                 color: var(--accent-primary);
                 font-weight: 600;
+            }
+        }
+
+        .acnh-ping {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            animation: acnh-bob 4s ease-in-out infinite;
+
+            .acnh-bloom {
+                position: absolute;
+                inset: -4px;
+                width: calc(100% + 8px);
+                height: calc(100% + 8px);
+                color: #f9e2af;
+            }
+
+            &__mark {
+                position: relative;
+                z-index: 1;
+                color: #1e1e2e;
+                font-weight: 800;
+                font-size: 1.4rem;
+                font-family: var(--font-family);
+                line-height: 1;
+            }
+        }
+
+        @keyframes acnh-bob {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            15% {
+                transform: translateY(-6px);
+            }
+            30% {
+                transform: translateY(0);
+            }
+            42% {
+                transform: translateY(-3px);
+            }
+            55% {
+                transform: translateY(0);
             }
         }
 
@@ -190,6 +241,12 @@
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .acnh-ping {
+        animation: none;
+    }
+}
+
 @media screen and (min-width: 800px) {
     .hero {
         margin: 4rem 0 3rem;
@@ -206,6 +263,7 @@
 
             .speaking-badge {
                 font-size: 1rem;
+                margin-left: -38px;
             }
 
             .bio-social {
