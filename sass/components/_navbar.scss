@@ -101,6 +101,12 @@ main {
         .nav-links {
             display: flex;
             align-items: center;
+            gap: 0.35rem;
+
+            .search-toggle,
+            .theme-toggle {
+                margin-left: 0.25rem;
+            }
         }
 
         a {
