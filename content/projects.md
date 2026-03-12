@@ -3,24 +3,7 @@ title = "Projects"
 template = "projects-page.html"
 +++
 
-## Flagship and serious builds
-
-### Zentinel: Guard the Free Web
-
-A secure, high-performance reverse proxy with programmable security agents, built on Cloudflare's Pingora framework. Formerly Sentinel — now its own org with a full ecosystem: 20+ security agents, SDKs in 7 languages (Rust, Python, TypeScript, Go, Kotlin, Haskell, Elixir), a pure Rust ModSecurity reimplementation, a fleet management control plane, and a benchmarking framework.
-
-**Key features:**
-- Programmable agent architecture for security, routing, and observability
-- Pure Rust ModSecurity engine with OWASP CRS compatibility
-- Agent SDKs for extending in any language
-- Control plane for fleet management (Elixir/Phoenix)
-- Config converter from nginx, Apache, HAProxy, Traefik, Caddy, Envoy
-
-**Status:** In active development
-
-<p class="project-links"><a href="https://zentinelproxy.io"><i data-lucide="globe"></i> Website</a> · <a href="https://zentinelproxy.io/docs/"><i data-lucide="book-open"></i> Docs</a> · <a href="https://github.com/zentinelproxy/zentinel"><i data-lucide="github"></i> GitHub</a></p>
-
----
+## Ventures
 
 ### Archipelago
 
@@ -39,6 +22,25 @@ Bioinformatics platform built with Phoenix/Elixir and Rust NIFs. Building tools 
 **Status:** In active development
 
 <p class="project-links"><a href="https://github.com/cyanea-bio/cyanea"><i data-lucide="github"></i> GitHub</a></p>
+
+---
+
+## Flagship and serious builds
+
+### Zentinel: Guard the Free Web
+
+A secure, high-performance reverse proxy with programmable security agents, built on Cloudflare's Pingora framework. Formerly Sentinel — now its own org with a full ecosystem: 20+ security agents, SDKs in 7 languages (Rust, Python, TypeScript, Go, Kotlin, Haskell, Elixir), a pure Rust ModSecurity reimplementation, a fleet management control plane, and a benchmarking framework.
+
+**Key features:**
+- Programmable agent architecture for security, routing, and observability
+- Pure Rust ModSecurity engine with OWASP CRS compatibility
+- Agent SDKs for extending in any language
+- Control plane for fleet management (Elixir/Phoenix)
+- Config converter from nginx, Apache, HAProxy, Traefik, Caddy, Envoy
+
+**Status:** In active development
+
+<p class="project-links"><a href="https://zentinelproxy.io"><i data-lucide="globe"></i> Website</a> · <a href="https://zentinelproxy.io/docs/"><i data-lucide="book-open"></i> Docs</a> · <a href="https://github.com/zentinelproxy/zentinel"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
