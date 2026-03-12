@@ -5,6 +5,8 @@ template = "projects-page.html"
 
 ## Ventures
 
+Projects on a path to becoming real companies. Real users, real revenue potential, real stakes.
+
 ### Archipelago
 
 Distributed compute, locally powered. A platform for running workloads on edge infrastructure — from GPU nodes to mobile devices. Coordinator app (Phoenix/Elixir), Rust node agents, mobile host agents (iOS/Android), WASM microjobs, and official SDKs (Python, TypeScript).
@@ -26,6 +28,8 @@ Bioinformatics platform built with Phoenix/Elixir and Rust NIFs. Building tools 
 ---
 
 ## Flagship and serious builds
+
+Infrastructure, tooling, and systems I maintain with production intent. These solve real problems I hit repeatedly.
 
 ### Zentinel: Guard the Free Web
 
@@ -128,7 +132,7 @@ Eine Neue Schweizer Partei. A Swiss political movement with a digital-first gove
 
 ## Labs / passion projects
 
-These are exploratory. Some will become serious. Some will stay fun.
+Exploratory builds, side quests, and things I work on because they are interesting. Some will graduate to flagship. Some will stay fun forever. No pressure either way.
 
 ### Terrarium
 
