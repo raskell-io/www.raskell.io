@@ -7,23 +7,27 @@ template = "projects-page.html"
 
 Projects on a path to becoming real companies. Real users, real revenue potential, real stakes.
 
-### Archipelago
+### Archipelag.io <span class="status-badge status-badge--live">Live</span>
 
-Distributed compute, locally powered. A platform for running workloads on edge infrastructure — from GPU nodes to mobile devices. Coordinator app (Phoenix/Elixir), Rust node agents, mobile host agents (iOS/Android), WASM microjobs, and official SDKs (Python, TypeScript).
+Decentralized AI compute platform. Run AI workloads on a network of community-operated GPU hosts — fast, fair, and local. Jobs route to nearby hosts for lower latency, data stays in your region for compliance, and hosts earn directly for the compute they provide. No cloud provider markups.
 
-**Status:** In active development
-
-<p class="project-links"><a href="https://archipelag-io.github.io/website/"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/archipelag-io"><i data-lucide="github"></i> GitHub</a></p>
+<p class="project-links"><a href="https://archipelag.io"><i data-lucide="globe"></i> Website</a> <a href="https://github.com/archipelag-io"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### Cyanea
+### Cyanea <span class="status-badge status-badge--live">Live</span>
 
-Bioinformatics platform built with Phoenix/Elixir and Rust NIFs. Building tools to accelerate genomic research through fast, collaborative data infrastructure.
+The open community for life science research. Share datasets, protocols, and experiments with version control and citation tracking. Rust-powered analysis stack with browser-based WASM tools, multi-format support (FASTA, FASTQ, VCF, CSV), and full provenance tracking. Open-source, self-hostable, federation-ready.
 
-**Status:** In active development
+<p class="project-links"><a href="https://cyanea.bio"><i data-lucide="globe"></i> Website</a> <a href="https://github.com/cyanea-bio"><i data-lucide="github"></i> GitHub</a></p>
 
-<p class="project-links"><a href="https://github.com/cyanea-bio/cyanea"><i data-lucide="github"></i> GitHub</a></p>
+---
+
+### Arcanist <span class="status-badge status-badge--dev">In active development</span>
+
+High-performance Haskell tooling, built in Rust. Home of **hx** (a unified Haskell package manager with managed toolchains and 5.6x faster cold builds) and **bhc** (an alternative Haskell compiler with runtime profiles, WebAssembly support, and tensor-native numerics). Modern workflows, no ecosystem fragmentation.
+
+<p class="project-links"><a href="https://arcanist.sh"><i data-lucide="globe"></i> Website</a> <a href="https://github.com/arcanist-sh"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -31,102 +35,75 @@ Bioinformatics platform built with Phoenix/Elixir and Rust NIFs. Building tools 
 
 Infrastructure, tooling, and systems I maintain with production intent. These solve real problems I hit repeatedly.
 
-### Zentinel: Guard the Free Web
+### Zentinel <span class="status-badge status-badge--stable">Stable</span>
 
-A secure, high-performance reverse proxy with programmable security agents, built on Cloudflare's Pingora framework. Formerly Sentinel — now its own org with a full ecosystem: 20+ security agents, SDKs in 7 languages (Rust, Python, TypeScript, Go, Kotlin, Haskell, Elixir), a pure Rust ModSecurity reimplementation, a fleet management control plane, and a benchmarking framework.
+Guardian of the Free Web. A security-first reverse proxy built on Cloudflare's Pingora framework. Memory-safe by default, explicit configuration over hidden defaults, and an isolated agent architecture for extensibility without compromising proxy stability. 20+ security agents, SDKs in 7 languages, a pure Rust ModSecurity reimplementation, and a fleet management control plane.
 
-**Key features:**
-- Programmable agent architecture for security, routing, and observability
-- Pure Rust ModSecurity engine with OWASP CRS compatibility
-- Agent SDKs for extending in any language
-- Control plane for fleet management (Elixir/Phoenix)
-- Config converter from nginx, Apache, HAProxy, Traefik, Caddy, Envoy
-
-**Status:** In active development
-
-<p class="project-links"><a href="https://zentinelproxy.io"><i data-lucide="globe"></i> Website</a> · <a href="https://zentinelproxy.io/docs/"><i data-lucide="book-open"></i> Docs</a> · <a href="https://github.com/zentinelproxy/zentinel"><i data-lucide="github"></i> GitHub</a></p>
+<p class="project-links"><a href="https://zentinelproxy.io"><i data-lucide="globe"></i> Website</a> <a href="https://zentinelproxy.io/docs/"><i data-lucide="book-open"></i> Docs</a> <a href="https://github.com/zentinelproxy/zentinel"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### Conflux
+### Conflux <span class="status-badge status-badge--dev">In active development</span>
 
 Schema-aware config state coordination. Multiple writers, deterministic merge, git milestones. A CRDT document engine with pluggable storage backends (SQLite, PostgreSQL, DynamoDB).
-
-**Status:** In active development
 
 <p class="project-links"><a href="https://github.com/raskell-io/conflux"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### hx
+### hx <span class="status-badge status-badge--dev">In active development</span>
 
-Extremely fast Haskell package and project manager built in Rust. Designed to replace the fragmented Haskell tooling ecosystem with a single, cohesive tool that handles dependencies, builds, and project scaffolding with sub-second response times.
+An extremely fast Haskell package and project manager, written in Rust. Unified build, test, run, format, and lint with managed toolchains and sub-second response times. Designed to replace the fragmented Haskell tooling ecosystem with a single, cohesive tool.
 
-**Status:** In active development
-
-<p class="project-links"><a href="https://hx.arcanist.sh"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/arcanist-sh/hx"><i data-lucide="github"></i> GitHub</a></p>
+<p class="project-links"><a href="https://hx.arcanist.sh"><i data-lucide="globe"></i> Website</a> <a href="https://github.com/arcanist-sh/hx"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### bhc
+### bhc <span class="status-badge status-badge--dev">In active development</span>
 
-The Basel Haskell Compiler. A next-generation Haskell compiler and runtime targeting predictable, low-latency performance. Features structured concurrency primitives, a tensor-native numeric pipeline for ML workloads, and a runtime designed for systems where GC pauses are unacceptable.
+The Basel Haskell Compiler. A next-generation Haskell compiler and runtime targeting predictable, low-latency performance. Structured concurrency primitives, a tensor-native numeric pipeline for ML workloads, and a runtime designed for systems where GC pauses are unacceptable.
 
-**Status:** In active development
-
-<p class="project-links"><a href="https://bhc.arcanist.sh"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/arcanist-sh/bhc"><i data-lucide="github"></i> GitHub</a></p>
+<p class="project-links"><a href="https://bhc.arcanist.sh"><i data-lucide="globe"></i> Website</a> <a href="https://github.com/arcanist-sh/bhc"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### Shiioo (CO)
+### Shiioo (CO) <span class="status-badge status-badge--dev">In active development</span>
 
-The Virtual Company OS. Agentic enterprise orchestrator: DAG workflows, event sourcing, MCP tools, categorized skill registry with git import.
-
-**Status:** In active development
+The Virtual Company OS. Agentic enterprise orchestrator with DAG workflows, event sourcing, MCP tools, and a categorized skill registry with git import.
 
 <p class="project-links"><a href="https://github.com/raskell-io/shiioo"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### Sango
+### Sango <span class="status-badge status-badge--dev">In active development</span>
 
-A command-line diagnostic tool that evaluates web edge infrastructure health. Named after coral, symbolizing how the tool monitors edge systems like coral guards a reef ecosystem.
+Edge diagnostics for the modern web. An operator-grade CLI that performs comprehensive endpoint analysis in a single command — TLS inspection, HTTP protocol detection (HTTP/1.1, HTTP/2, HTTP/3), security headers, latency measurements, and technology stack identification.
 
-**Key features:**
-- TLS analysis (certificate chain, cipher suites, ALPN)
-- HTTP/1.1, HTTP/2, and HTTP/3 protocol detection
-- Security header evaluation (HSTS, CSP, COOP/COEP)
-- Performance metrics with threshold-based alerts
-
-**Status:** In active development
-
-<p class="project-links"><a href="https://sango.raskell.io"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/raskell-io/sango"><i data-lucide="github"></i> GitHub</a></p>
+<p class="project-links"><a href="https://sango.raskell.io"><i data-lucide="globe"></i> Website</a> <a href="https://github.com/raskell-io/sango"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### Ushio
+### Ushio <span class="status-badge status-badge--dev">In active development</span>
 
-A traffic replay tool designed to understand edge and WAF behavior. Named after the Japanese word for "tide," reflecting how the tool replays captured traffic deterministically across environments.
-
-**Key features:**
-- HAR file support for traffic capture
-- URL rewriting for staging/production comparison
-- Header mutation and cookie stripping
-- WAF detection and behavioral diff
-
-**Status:** In active development
+Deterministic edge traffic replay for understanding WAF and proxy behavior. Capture traffic as HAR files, rewrite URLs for staging/production comparison, mutate headers, strip cookies, and diff WAF responses across environments.
 
 <p class="project-links"><a href="https://github.com/raskell-io/ushio"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### Die Zukunft
+### Vela <span class="status-badge status-badge--dev">In active development</span>
 
-Eine Neue Schweizer Partei. A Swiss political movement with a digital-first governance platform, evidence-based research pipeline, and multilateral presence.
+No-downtime app deployment on bare metal. One binary. No containers. A self-hosted PaaS alternative to Heroku, Fly.io, Coolify, and Kamal — built in Rust with zero-downtime deploys and a built-in reverse proxy.
 
-**Status:** In active development
+<p class="project-links"><a href="https://github.com/raskell-io/vela"><i data-lucide="github"></i> GitHub</a></p>
 
-<p class="project-links"><a href="https://die-zukunft.ch"><i data-lucide="globe"></i> Website</a> · <a href="https://github.com/zukunft-ch"><i data-lucide="github"></i> GitHub</a></p>
+---
+
+### Refrakt <span class="status-badge status-badge--dev">In active development</span>
+
+A convention-first web framework for Gleam. Productive like Phoenix, explicit like Gleam, composable with Wisp and Lustre. Full-stack code generation, CRUD scaffolding, and a batteries-included developer experience on the BEAM.
+
+<p class="project-links"><a href="https://github.com/raskell-io/refrakt"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
@@ -134,87 +111,56 @@ Eine Neue Schweizer Partei. A Swiss political movement with a digital-first gove
 
 Exploratory builds, side quests, and things I work on because they are interesting. Some will graduate to flagship. Some will stay fun forever. No pressure either way.
 
-### Terrarium
+### Terrarium <span class="status-badge status-badge--dev">In active development</span>
 
-A societal simulation engine where LLM-powered agents form emergent civilizations. A societal petri dish — create worlds with rules, populate them with autonomous agents powered by language models, and observe what develops organically.
-
-**Key features:**
-- Agents with personality traits, beliefs, survival needs, and memories
-- Seven core actions (move, gather, eat, rest, speak, give, attack)
-- Event-sourced logging with perfect replay capability
-- Dwarf Fortress-inspired terminal viewer
-- Beliefs over facts — property exists only as subjective conviction
-
-**Status:** In active development
+A societal simulation engine where LLM-powered agents form emergent civilizations. Create worlds with rules, populate them with autonomous agents, and observe what develops organically. Beliefs over facts — property exists only as subjective conviction.
 
 <p class="project-links"><a href="https://github.com/raskell-io/terrarium"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### Driftscape
+### Driftscape <span class="status-badge status-badge--dev">In active development</span>
 
 Ambient soundscape platform — composable, location-aware, AI-powered background music.
-
-**Status:** In active development
 
 <p class="project-links"><a href="https://github.com/raskell-io/driftscape"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### robogym
+### robogym <span class="status-badge status-badge--early">Very early</span>
 
-Rust/Bevy PWA for training robotic agents.
-
-**Status:** Very early
+Rust/Bevy PWA for training robotic agents. Democratizing robotics through browser-based simulation.
 
 <p class="project-links"><a href="https://github.com/raskell-io/robogym"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### Paw & Claw
+### Paw & Claw <span class="status-badge status-badge--dev">In active development</span>
 
-HD-2D-stylized turn-based tactics game (spiritual successor to Nintendo's Advance Wars) built with Rust/Bevy.
-
-**Status:** In active development
+Woodland Wars. A turn-based tactics game featuring animal factions battling for territory — HD-2D-stylized, spiritual successor to Advance Wars, built with Rust/Bevy.
 
 <p class="project-links"><a href="https://github.com/raskell-io/paw-and-claw"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### Kurumi
+### Kurumi <span class="status-badge status-badge--dev">In active development</span>
 
-A local-first second brain. Your ideas, everywhere, offline. Named after the Japanese word for walnut — because it looks like a brain.
-
-**Key features:**
-- Wikilinks and backlinks for connecting thoughts
-- Graph visualization of note relationships
-- Full-text search and hashtag filtering
-- Completely offline-first with optional sync via Automerge CRDTs
-- Progressive Web App (PWA) support
-- No vendor lock-in — your data stays yours
-
-**Status:** In active development
+A local-first second brain. Your ideas, everywhere, offline. Wikilinks, backlinks, graph visualization, full-text search — completely offline-first with optional sync via Automerge CRDTs. No vendor lock-in.
 
 <p class="project-links"><a href="https://github.com/raskell-io/kurumi"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### Awesomeify
+### Awesomeify <span class="status-badge status-badge--dev">In active development</span>
 
 Index GitHub repos and generate static awesome-list sites.
-
-**Status:** In active development
 
 <p class="project-links"><a href="https://github.com/raskell-io/awesomeify"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
-### Learn You the Web
+### Learn You the Web <span class="status-badge status-badge--dev">In progress</span>
 
-A friendly guide to how the web actually works. For Real This Time.
+A friendly guide to how the web actually works. For Real This Time. HTTP, DNS, TLS, and the protocols that hold it all together — without the hand-waving or oversimplification.
 
-An e-book that explains the web's core technologies — HTTP, DNS, TLS, and the protocols that hold it all together — without the hand-waving or oversimplification.
-
-**Status:** In progress
-
-<p class="project-links"><a href="https://learn-you-the-web.raskell.io"><i data-lucide="book-open"></i> Read online</a> · <a href="https://github.com/raskell-io/learn-you-the-web"><i data-lucide="github"></i> GitHub</a></p>
+<p class="project-links"><a href="https://learn-you-the-web.raskell.io"><i data-lucide="book-open"></i> Read online</a> <a href="https://github.com/raskell-io/learn-you-the-web"><i data-lucide="github"></i> GitHub</a></p>
