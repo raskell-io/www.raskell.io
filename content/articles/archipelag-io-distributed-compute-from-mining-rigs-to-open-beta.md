@@ -1,7 +1,7 @@
 +++
 title = "Archipelag.io Is in Open Beta: Here's Why I Built It"
 date = 2026-03-13
-description = "The eight-year journey from watching Ethereum miners sacrifice their gaming PCs to building a decentralized compute network that just entered open beta. Architecture, conviction, and the long road from whitepaper to production."
+description = "The ten-year journey from watching Ethereum miners sacrifice their gaming PCs to building a decentralized compute network that just entered open beta. Architecture, conviction, and the long road from whitepaper to production."
 
 [taxonomies]
 tags = ["platform-automation", "edge-systems", "oss"]
@@ -14,7 +14,7 @@ image = "archipelag-io-open-beta.avif"
 og_image = "archipelag-io-open-beta.png"
 +++
 
-There is an abandoned factory building in Glarus, a small town wedged between mountains in eastern Switzerland. In 2018, the building was loud. Not machinery-loud, fan-loud. Rows of bare motherboards bolted to open-air frames, each bristling with GPUs and daisy-chained power supplies. The air tasted like warm dust and ozone. Cables ran everywhere, held in place by zip ties and optimism. This was an Ethereum mining operation, and I was standing in the middle of it, watching people I knew convert their gaming rigs, hardware they loved, into money-printing machines.
+There is an abandoned factory building in Glarus, a small town wedged between mountains in eastern Switzerland. In 2016, the building was loud. Not machinery-loud, fan-loud. Rows of bare motherboards bolted to open-air frames, each bristling with GPUs and daisy-chained power supplies. The air tasted like warm dust and ozone. Cables ran everywhere, held in place by zip ties and optimism. This was an Ethereum mining operation, and I was standing in the middle of it, watching people I knew convert their gaming rigs, hardware they loved, into money-printing machines.
 
 I was there because Vitalik Buterin had decided to visit. He had flown in on a private jet to Geneva, driven up in a black limousine with tinted windows, and walked into this dusty, chaotic space to see what Swiss miners were building. It was surreal. The creator of Ethereum, stepping over power cables in an industrial ruin, nodding at rack after rack of GPUs humming away at proof-of-work hashes. I do not think he was impressed by the elegance of the setup. Nobody was. But something about that scene stuck with me.
 
@@ -22,7 +22,7 @@ People were willing to sacrifice their gaming entertainment, their *leisure hard
 
 I had skin in the game too. I invested (gambled, honestly) in crypto during that era. I watched the charts, rode the swings, felt the dopamine spikes and the stomach-drops. The financial side was wild and ultimately unsustainable for most people. But the *infrastructure* side, the part where ordinary humans turned their homes into compute nodes and got paid for it: that part was real, and that part stayed with me long after the crypto hype faded and the rigs went quiet.
 
-This is the story of how that factory visit turned into [Archipelag.io](https://archipelag.io), a distributed compute network that entered open beta today. It has been eight years of thinking, two years of building, and a lot of being wrong about the right things at the wrong time.
+This is the story of how that factory visit turned into [Archipelag.io](https://archipelag.io), a distributed compute network that entered open beta today. It has been ten years of thinking, one year of building, and a lot of being wrong about the right things at the wrong time.
 
 <!-- more -->
 
@@ -237,11 +237,11 @@ The beta exists precisely because we have a list of things we do not know and ca
 
 These are not rhetorical questions. If you join the beta and encounter friction, weirdness, or broken things, we want to hear about it. GitHub issues and direct email both work.
 
-## The long road: 2018 to 2026
+## The long road: 2016 to 2026
 
 This project did not happen in a straight line.
 
-**2018**: I am standing in a factory in Glarus, watching Vitalik Buterin inspect mining rigs. The idea plants itself: people will run infrastructure at home for the right incentive.
+**2016**: I am standing in a factory in Glarus, watching Vitalik Buterin inspect mining rigs. The idea plants itself: people will run infrastructure at home for the right incentive.
 
 **2019 to 2021**: The idea percolates. I think about it in the shower, on trains, during boring meetings. I sketch architectures on napkins. I prototype bits in Elixir. I convince myself WASM will make it possible to run workloads on any device. I do not build anything real because the demand signal is not there; people are mining crypto, not running general compute.
 
@@ -255,7 +255,7 @@ This project did not happen in a straight line.
 
 **March 13, 2026**: Open beta. You are here.
 
-Eight years from idea to open beta is a long time. I am not going to pretend it was a master plan executed flawlessly. It was an idea that would not die, shaped by technological shifts I did not predict, refined by being wrong about specifics while being (I think) right about the direction. The path from "people will share compute for the right incentive" to "here is a working distributed inference network" was not straight, but it got here.
+Ten years from idea to open beta is a long time. I am not going to pretend it was a master plan executed flawlessly. It was an idea that would not die, shaped by technological shifts I did not predict, refined by being wrong about specifics while being (I think) right about the direction. The path from "people will share compute for the right incentive" to "here is a working distributed inference network" was not straight, but it got here.
 
 ## Why I am proud of this
 
@@ -265,7 +265,7 @@ I am proud of it because the architecture reflects real convictions, not hype. E
 
 I am proud of it because the trust model is honest. We do not pretend that hosts are trustworthy. We do not pretend that workloads are safe. We sandbox everything, verify everything, and build reputation over time. The security model assumes adversarial conditions because distributed networks *are* adversarial conditions.
 
-And I am proud of it because the bet, the one I made in 2018 standing in a dusty factory watching people run compute infrastructure from their homes, turned out to be right. Not in the way I originally imagined. Not for the use case I first predicted. But the fundamental insight, that there is an ocean of idle compute in the world and that a well-designed network can put it to work, that part was right. It just took eight years, a GPU revolution, and the humility to throw away the parts I got wrong.
+And I am proud of it because the bet, the one I made in 2016 standing in a dusty factory watching people run compute infrastructure from their homes, turned out to be right. Not in the way I originally imagined. Not for the use case I first predicted. But the fundamental insight, that there is an ocean of idle compute in the world and that a well-designed network can put it to work, that part was right. It just took ten years, a GPU revolution, and the humility to throw away the parts I got wrong.
 
 ## What comes next
 
