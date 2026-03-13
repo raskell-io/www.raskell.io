@@ -7,7 +7,20 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/platform-automation/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Mon, 09 Mar 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Archipelag.io Is in Open Beta: Here&#x27;s Why I Built It</title>
+          <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/archipelag-distributed-compute-from-mining-rigs-to-open-beta/</link>
+          <guid>https://raskell.io/articles/archipelag-distributed-compute-from-mining-rigs-to-open-beta/</guid>
+          <description xml:base="https://raskell.io/articles/archipelag-distributed-compute-from-mining-rigs-to-open-beta/">&lt;p&gt;There is an abandoned factory building in Glarus, a small town wedged between mountains in eastern Switzerland. In 2018, the building was loud. Not machinery-loud, fan-loud. Rows of bare motherboards bolted to open-air frames, each bristling with GPUs and daisy-chained power supplies. The air tasted like warm dust and ozone. Cables ran everywhere, held in place by zip ties and optimism. This was an Ethereum mining operation, and I was standing in the middle of it, watching people I knew convert their gaming rigs, hardware they loved, into money-printing machines.&lt;&#x2F;p&gt;
+&lt;p&gt;I was there because Vitalik Buterin had decided to visit. He had flown in on a private jet to Geneva, driven up in a black limousine with tinted windows, and walked into this dusty, chaotic space to see what Swiss miners were building. It was surreal. The creator of Ethereum, stepping over power cables in an industrial ruin, nodding at rack after rack of GPUs humming away at proof-of-work hashes. I do not think he was impressed by the elegance of the setup. Nobody was. But something about that scene stuck with me.&lt;&#x2F;p&gt;
+&lt;p&gt;People were willing to sacrifice their gaming entertainment, their &lt;em&gt;leisure hardware&lt;&#x2F;em&gt;, to chase the dream of sovereign financial independence using fundamentally nerdy equipment: PCs, internet connections, blockchain protocols, and GPU graphics cards. They were converting consumer-grade technology into economic infrastructure, and they were doing it themselves. No data center leases. No vendor contracts. No permission from anyone. Just people, hardware, and a protocol that made it worth their while.&lt;&#x2F;p&gt;
+&lt;p&gt;I had skin in the game too. I invested (gambled, honestly) in crypto during that era. I watched the charts, rode the swings, felt the dopamine spikes and the stomach-drops. The financial side was wild and ultimately unsustainable for most people. But the &lt;em&gt;infrastructure&lt;&#x2F;em&gt; side, the part where ordinary humans turned their homes into compute nodes and got paid for it: that part was real, and that part stayed with me long after the crypto hype faded and the rigs went quiet.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the story of how that factory visit turned into &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&quot;&gt;Archipelag.io&lt;&#x2F;a&gt;, a distributed compute network that entered open beta today. It has been eight years of thinking, two years of building, and a lot of being wrong about the right things at the wrong time.&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>How AI Makes Bare Metal Viable Again</title>
           <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
