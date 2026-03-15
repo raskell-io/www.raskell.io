@@ -27,7 +27,7 @@ The open community for life science research. Share datasets, protocols, and exp
 
 Human continuity platform for preserving presence across generations. Humankind. helps people build a living archive of voice, stories, memories, values, and relational warmth so the texture of a person remains accessible long after distance, aging, or death would otherwise erase it. Consent-first, privacy by default, and explicit about the difference between recorded truth, reconstruction, and inference.
 
-<p class="project-links"><a href="https://humankind.plus"><i data-lucide="globe"></i> Website</a> <a href="https://github.com/humandkind-plus"><i data-lucide="github"></i> GitHub</a></p>
+<p class="project-links"><a href="https://humankind.plus"><i data-lucide="globe"></i> Website</a> <a href="https://github.com/humankind-plus"><i data-lucide="github"></i> GitHub</a></p>
 
 ---
 
