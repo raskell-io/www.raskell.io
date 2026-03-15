@@ -23,6 +23,14 @@ The open community for life science research. Share datasets, protocols, and exp
 
 ---
 
+### Humankind. <span class="status-badge status-badge--dev">In active development</span>
+
+Human continuity platform for preserving presence across generations. Humankind. helps people build a living archive of voice, stories, memories, values, and relational warmth so the texture of a person remains accessible long after distance, aging, or death would otherwise erase it. Consent-first, privacy by default, and explicit about the difference between recorded truth, reconstruction, and inference.
+
+<p class="project-links"><a href="https://humankind.plus"><i data-lucide="globe"></i> Website</a> <a href="https://github.com/humandkind-plus"><i data-lucide="github"></i> GitHub</a></p>
+
+---
+
 ### Arcanist <span class="status-badge status-badge--dev">In active development</span>
 
 High-performance Haskell tooling, built in Rust. Home of **hx** (a unified Haskell package manager with managed toolchains and 5.6x faster cold builds) and **bhc** (an alternative Haskell compiler with runtime profiles, WebAssembly support, and tensor-native numerics). Modern workflows, no ecosystem fragmentation.
