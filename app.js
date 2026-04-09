@@ -179,10 +179,59 @@ function renderFootnotes() {
   });
 }
 
+// =============================================================================
+// Scroll-aware Navbar (hide on scroll down, show on scroll up)
+// =============================================================================
+
+class ScrollNavbar {
+  constructor() {
+    this.navbar = document.querySelector('.navbar');
+    if (!this.navbar) return;
+
+    this.lastScrollY = window.scrollY;
+    this.scrollThreshold = 10; // ignore tiny movements
+    this.ticking = false;
+
+    window.addEventListener('scroll', () => this.onScroll(), { passive: true });
+    this.update(); // set initial state
+  }
+
+  onScroll() {
+    if (!this.ticking) {
+      requestAnimationFrame(() => {
+        this.update();
+        this.ticking = false;
+      });
+      this.ticking = true;
+    }
+  }
+
+  update() {
+    const currentY = window.scrollY;
+    const delta = currentY - this.lastScrollY;
+
+    // Add/remove scrolled state (for background)
+    this.navbar.classList.toggle('navbar--scrolled', currentY > 20);
+
+    // Only toggle visibility after passing the threshold
+    if (Math.abs(delta) > this.scrollThreshold) {
+      if (delta > 0 && currentY > 80) {
+        // Scrolling down & past the navbar height — hide
+        this.navbar.classList.add('navbar--hidden');
+      } else {
+        // Scrolling up — show
+        this.navbar.classList.remove('navbar--hidden');
+      }
+      this.lastScrollY = currentY;
+    }
+  }
+}
+
 // Initialize on load
 window.addEventListener("load", () => {
   setTimeout(() => {
     new MobileMenu();
+    new ScrollNavbar();
     renderFootnotes();
   }, 0);
 });
