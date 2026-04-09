@@ -6,7 +6,7 @@ main {
 
 @media screen and (min-width: 800px) {
     main {
-        margin-top: 0;
+        margin-top: 0; /* sticky navbar doesn't need margin offset */
     }
 }
 
@@ -22,6 +22,14 @@ main {
     background: var(--navbar-color);
     z-index: 10;
     padding: 0.75rem 0.5rem;
+    transform: translateY(0);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+
+    &.navbar--hidden {
+        transform: translateY(-100%);
+    }
 
     .flex {
         justify-content: space-between;
@@ -90,10 +98,17 @@ main {
     }
 
     .navbar {
-        position: static;
+        position: sticky;
+        top: 0;
         padding: 1.5rem 0;
         background: transparent;
         box-shadow: none;
+
+        &.navbar--scrolled {
+            background: var(--navbar-color);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            padding: 0.75rem 0;
+        }
 
         .flex {
             justify-content: space-between;
@@ -555,6 +570,7 @@ main {
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
+    .navbar,
     .navbar a,
     .mobile-menu-button,
     .theme-toggle,
