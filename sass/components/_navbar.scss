@@ -22,14 +22,7 @@ main {
     background: var(--navbar-color);
     z-index: 10;
     padding: 0.75rem 0.5rem;
-    transform: translateY(0);
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-                background 0.3s ease,
-                box-shadow 0.3s ease;
-
-    &.navbar--hidden {
-        transform: translateY(-100%);
-    }
+    will-change: transform;
 
     .flex {
         justify-content: space-between;

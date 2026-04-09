@@ -188,12 +188,14 @@ class ScrollNavbar {
     this.navbar = document.querySelector('.navbar');
     if (!this.navbar) return;
 
+    this.navbarHeight = this.navbar.offsetHeight;
     this.lastScrollY = window.scrollY;
-    this.scrollThreshold = 10; // ignore tiny movements
+    this.translateY = 0;
+    this.revealing = false;
     this.ticking = false;
+    this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     window.addEventListener('scroll', () => this.onScroll(), { passive: true });
-    this.update(); // set initial state
   }
 
   onScroll() {
@@ -210,20 +212,34 @@ class ScrollNavbar {
     const currentY = window.scrollY;
     const delta = currentY - this.lastScrollY;
 
-    // Add/remove scrolled state (for background)
-    this.navbar.classList.toggle('navbar--scrolled', currentY > 20);
-
-    // Only toggle visibility after passing the threshold
-    if (Math.abs(delta) > this.scrollThreshold) {
-      if (delta > 0 && currentY > 80) {
-        // Scrolling down & past the navbar height — hide
-        this.navbar.classList.add('navbar--hidden');
-      } else {
-        // Scrolling up — show
-        this.navbar.classList.remove('navbar--hidden');
+    if (delta > 0) {
+      // Scrolling down — push navbar up 1:1 with scroll (no transition)
+      this.revealing = false;
+      this.translateY = Math.max(-this.navbarHeight, this.translateY - delta);
+      this.navbar.style.transition = 'none';
+      this.navbar.style.transform = `translateY(${this.translateY}px)`;
+    } else if (delta < 0 && currentY > this.navbarHeight) {
+      // Scrolling up, past the navbar — smooth slide in
+      if (!this.revealing) {
+        this.revealing = true;
+        this.navbar.style.transition = this.reducedMotion
+          ? 'none'
+          : 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)';
       }
-      this.lastScrollY = currentY;
+      this.translateY = 0;
+      this.navbar.style.transform = 'translateY(0)';
+    } else if (currentY <= this.navbarHeight) {
+      // At the top — reset
+      this.revealing = false;
+      this.translateY = 0;
+      this.navbar.style.transition = 'none';
+      this.navbar.style.transform = 'translateY(0)';
     }
+
+    // Background when navbar is visible and page is scrolled
+    this.navbar.classList.toggle('navbar--scrolled', this.translateY === 0 && currentY > 20);
+
+    this.lastScrollY = currentY;
   }
 }
 
