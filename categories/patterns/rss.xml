@@ -84,23 +84,22 @@ routes {
 &lt;p&gt;If your Lua WAF script enters an infinite loop in nginx, the nginx worker is stuck. If your Wasm filter in Envoy allocates too much memory, the Envoy process pays for it. A slow SPOE agent in HAProxy backs pressure into the proxy’s request handling. I have been on the receiving end of all three patterns, and they all end the same way: you are awake at 3 AM trying to figure out why your entire proxy fleet is degraded because one security module is having a bad day.&lt;&#x2F;p&gt;
 &lt;p&gt;This is the classic shared-fate problem. When everything runs in one process, everything fails together. A slow WAF does not just slow down WAF-protected routes. It consumes worker resources that affect all routes. A memory leak in an auth filter does not just take down auth. It takes down the process.&lt;&#x2F;p&gt;
 &lt;p&gt;The answer I kept coming back to was process isolation. Not as a compromise or a workaround, but as the foundational design principle. Security and policy logic should live in separate processes, each with its own memory, its own concurrency limits, and its own circuit breaker.&lt;&#x2F;p&gt;
-&lt;pre&gt;&lt;code&gt;                 ┌─────────────────────┐
-                 │   Proxy Core        │
-                 │   (Rust &amp;#x2F; Pingora)  │
-                 └──────────┬──────────┘
-                            │
-              ┌─────────────┼─────────────┐
-              │             │             │
-     ┌────────▼───────┐ ┌──▼──────────┐ ┌▼───────────────┐
-     │  WAF Agent     │ │ Auth Agent  │ │ Custom Agent   │
-     │  semaphore: 100│ │ semaphore:50│ │ semaphore: 25  │
-     │  timeout: 50ms │ │ timeout:30ms│ │ timeout: 200ms │
-     │  fail: closed  │ │ fail: closed│ │ fail: open     │
-     └────────────────┘ └─────────────┘ └────────────────┘
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Zentinel agent isolation&quot;&gt;┌─────────────────────┐
+             │   Proxy Core        │
+             │   (Rust &amp;#x2F; Pingora)  │
+             └──────────┬──────────┘
+                        │
+          ┌─────────────┼─────────────┐
+          │             │             │
+ ┌────────▼───────┐ ┌──▼──────────┐ ┌▼───────────────┐
+ │  WAF Agent     │ │ Auth Agent  │ │ Custom Agent   │
+ │  semaphore: 100│ │ semaphore:50│ │ semaphore: 25  │
+ │  timeout: 50ms │ │ timeout:30ms│ │ timeout: 200ms │
+ │  fail: closed  │ │ fail: closed│ │ fail: open     │
+ └────────────────┘ └─────────────┘ └────────────────┘
 
-     Each agent: own process, own memory, own circuit breaker.
-     Slow WAF ≠ slow auth. Crashed agent ≠ crashed proxy.
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+ Each agent: own process, own memory, own circuit breaker.
+ Slow WAF ≠ slow auth. Crashed agent ≠ crashed proxy.&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;If the WAF agent gets slow, the WAF agent’s semaphore fills up. The auth agent keeps running on its own semaphore. The proxy core keeps routing. Nobody shares a failure domain unless you explicitly configure them to.&lt;&#x2F;p&gt;
 &lt;p&gt;This is not just about crash isolation, though that matters. The deeper point is queue isolation. In a shared-process model, a slow filter creates backpressure that affects all traffic. With process isolation, a slow agent only affects the routes that use it, and only up to the concurrency limit you configured. The blast radius is bounded and declared. You can look at the config and know the worst case.&lt;&#x2F;p&gt;
 &lt;p&gt;The agents communicate over Unix domain sockets or gRPC, and they can be written in any language. There are SDKs for Rust, Go, Python, TypeScript, Elixir, Kotlin, and Haskell. The protocol is simple: 4-byte length, 1-byte type, JSON or MessagePack payload.&lt;&#x2F;p&gt;
