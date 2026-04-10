@@ -119,24 +119,24 @@ This is the classic shared-fate problem. When everything runs in one process, ev
 
 The answer I kept coming back to was process isolation. Not as a compromise or a workaround, but as the foundational design principle. Security and policy logic should live in separate processes, each with its own memory, its own concurrency limits, and its own circuit breaker.
 
-```
-                 ┌─────────────────────┐
-                 │   Proxy Core        │
-                 │   (Rust / Pingora)  │
-                 └──────────┬──────────┘
-                            │
-              ┌─────────────┼─────────────┐
-              │             │             │
-     ┌────────▼───────┐ ┌──▼──────────┐ ┌▼───────────────┐
-     │  WAF Agent     │ │ Auth Agent  │ │ Custom Agent   │
-     │  semaphore: 100│ │ semaphore:50│ │ semaphore: 25  │
-     │  timeout: 50ms │ │ timeout:30ms│ │ timeout: 200ms │
-     │  fail: closed  │ │ fail: closed│ │ fail: open     │
-     └────────────────┘ └─────────────┘ └────────────────┘
+{% diagram(title="Zentinel agent isolation") %}
+             ┌─────────────────────┐
+             │   Proxy Core        │
+             │   (Rust / Pingora)  │
+             └──────────┬──────────┘
+                        │
+          ┌─────────────┼─────────────┐
+          │             │             │
+ ┌────────▼───────┐ ┌──▼──────────┐ ┌▼───────────────┐
+ │  WAF Agent     │ │ Auth Agent  │ │ Custom Agent   │
+ │  semaphore: 100│ │ semaphore:50│ │ semaphore: 25  │
+ │  timeout: 50ms │ │ timeout:30ms│ │ timeout: 200ms │
+ │  fail: closed  │ │ fail: closed│ │ fail: open     │
+ └────────────────┘ └─────────────┘ └────────────────┘
 
-     Each agent: own process, own memory, own circuit breaker.
-     Slow WAF ≠ slow auth. Crashed agent ≠ crashed proxy.
-```
+ Each agent: own process, own memory, own circuit breaker.
+ Slow WAF ≠ slow auth. Crashed agent ≠ crashed proxy.
+{% end %}
 
 If the WAF agent gets slow, the WAF agent's semaphore fills up. The auth agent keeps running on its own semaphore. The proxy core keeps routing. Nobody shares a failure domain unless you explicitly configure them to.
 

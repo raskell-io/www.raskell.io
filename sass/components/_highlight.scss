@@ -54,23 +54,44 @@ pre.giallo,
     }
 
     code[data-lang]::before {
+        display: none;
+    }
+
+    .code-lang-label {
         position: absolute;
         top: -12px;
         left: 16px;
         padding: 5px 14px;
         font-size: 0.75rem;
-        line-height: 1.5;
+        line-height: 1;
         font-weight: 600;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.05em;
         text-transform: uppercase;
         color: #1e1e2e;
         background: var(--accent-secondary);
         border: 3px solid #1e1e2e;
-        content: attr(data-lang);
         font-family: var(--font-family);
         border-radius: 999px;
         display: inline-flex;
         align-items: center;
+        gap: 5px;
+        height: 22px;
+        z-index: 10;
+
+        svg {
+            width: 12px;
+            height: 12px;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    }
+
+    &.diagram code {
+        font-family: 'Cascadia Mono Diagram', var(--code-font-family);
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        font-size: 0.95rem;
     }
 
     table {
@@ -348,6 +369,7 @@ pre.giallo,
     z-index: 10;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    height: 22px;
 
     &:hover {
         background: var(--accent-primary);

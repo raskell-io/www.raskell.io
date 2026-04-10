@@ -26,6 +26,7 @@ insert_anchor_links = "none"
 [markdown.highlighting]
 enabled = true
 theme = "nord"
+extra_syntaxes_and_themes = ["syntaxes"]
 
 [slugify]
 paths = "on"

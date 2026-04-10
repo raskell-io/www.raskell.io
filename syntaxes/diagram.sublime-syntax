@@ -1,0 +1,10 @@
+%YAML 1.2
+---
+name: Diagram
+scope: source.diagram
+file_extensions:
+  - diagram
+contexts:
+  main:
+    - match: '^.*$'
+      scope: text.plain

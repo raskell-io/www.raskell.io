@@ -1,0 +1,24 @@
+%YAML 1.2
+---
+name: Vera
+scope: source.vera
+file_extensions:
+  - vera
+contexts:
+  main:
+    - match: '\b(public|private|fn|data|requires|ensures|effects|pure|match|if|else|let|in|return|import|from|async|await)\b'
+      scope: keyword.control.vera
+    - match: '\b(Int|String|Bool|Float|List|Maybe|Result|Void|Json|Html|Markdown)\b'
+      scope: storage.type.vera
+    - match: '@[A-Z][a-zA-Z]*\.\w+'
+      scope: variable.parameter.vera
+    - match: '@[A-Z][a-zA-Z]*'
+      scope: variable.parameter.vera
+    - match: '"[^"]*"'
+      scope: string.quoted.double.vera
+    - match: '//.*$'
+      scope: comment.line.vera
+    - match: '\b\d+(\.\d+)?\b'
+      scope: constant.numeric.vera
+    - match: '[{}()\[\]]'
+      scope: punctuation.vera
