@@ -9,6 +9,8 @@ categories = ["patterns"]
 
 [extra]
 author = "Raffael"
+image = "what-programming-languages-become-when-ai-writes-the-code.avif"
+og_image = "what-programming-languages-become-when-ai-writes-the-code.png"
 +++
 
 This morning I was standing at my desk, drinking watered-down instant coffee, doing what I do every morning after triaging the high-alert emails and notifications: thirty minutes of HackerNews. It is a ritual I time-box and never skip. I go to the office every day, and whether I am at that desk or at my home desk, the morning is the same. Coffee, posture, front page.
