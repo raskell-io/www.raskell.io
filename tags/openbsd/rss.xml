@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Raskell - openbsd</title>
+      <link>https://raskell.io</link>
+      <description>Writing about platform automation, edge systems, applied security, and open standards. Building automation-first platforms that survive production reality.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://raskell.io/tags/openbsd/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>My OpenBSD journey: Getting it virtualized with libvirt (1)</title>
+          <pubDate>Mon, 06 Feb 2023 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/</link>
+          <guid>https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/</guid>
+          <description xml:base="https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/">&lt;h2 id=&quot;void-linux-as-my-daily-driver&quot;&gt;Void Linux as my daily driver&lt;&#x2F;h2&gt;
+&lt;p&gt;Around six months ago, I decided to ditch my long in the tooth Arch-based setup on my belovest Thinkpad X1 Carbon. I’ve been very loyal over the years, and almost came to belive that Arch will be a constant in my adult life. While I kept up with upcoming technologies, I somehow lost track of the ever so diversifying landscape of Linux distributions. It took me a while of constantly coming across a generically named reference to what seemed to be yet another Linux distribution. That outwardly generic sounding name, &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt;, kept poking my curiosity by supposedly feeling like Arch Linux in the old days, while sharing some substantial DNA with the BSD operating systems. Yet, that’s another story I might tell another day, but to remain brief, the BSDs, in particular the infamous OpenBSD with its quite infamous lead developer Theo De Raadt, always were what I considered the endgame. The holy grail of Unix operating systems, so did I think over the decades, FreeBSD, NetBSD and OpenBSD, have always been on my personal radar and I felt I had to earn the intellectual capacity to be able to properly put them at use one day. Last year, when I made the (almost painless) switch from Arch Linux to Void Linux, the simplicity and especially the barebone experience of Void reignited the fascination and the admiration I always had for the BSD operating systems and their philosophy.&lt;&#x2F;p&gt;
+&lt;p&gt;While I could write (and definitely will in the near future) about how my journey onto Void Linux and how it has been so far, I preferred to write down, in some like diary, and document every step on how one can approach and ultimately use &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt; in 2023. Big disclaimer, I’ve yet to install OpenBSD on some baremetal server I ordered some days ago, but dabbled around in the meantime with OS-level virtualization in order to get it running. That’s what brings me to &lt;em&gt;libvirt&lt;&#x2F;em&gt; and my surprise to learn that I wouldn’t need some full-fledged virtualization solution like the ones offered by VirtualBox or VMWare to efficiently run a virtualized OpenBSD machine. So, ok, let’s recap, so far we got the following bill of materials:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Void Linux as the host system&lt;&#x2F;li&gt;
+&lt;li&gt;OpenBSD to be virtualized on that host system&lt;&#x2F;li&gt;
+&lt;li&gt;libvirt as the glue that makes virtualization feel like black magic&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;from-void-to-openbsd&quot;&gt;From Void to OpenBSD&lt;&#x2F;h3&gt;
+&lt;p&gt;Before I tell you more about the history of how things went down while setting up OpenBSD, let me give you some basic notions about both Void Linux, being one out of many Linux distributions for the sake of simplicity representing them all as it ended up being my distribution of choice, and OpenBSD. As already mentioned earlier, Void Linux and OpenBSD are both Unix-like operating systems, but they feature enough differences to make them noteworthy. Here are a few similarities and differences between the two:&lt;&#x2F;p&gt;
+&lt;p&gt;What is similar:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Both are free and open-source operating systems.&lt;&#x2F;li&gt;
+&lt;li&gt;Both use a package manager for software management. Void Linux uses XBPS, while OpenBSD uses pkg_add.&lt;&#x2F;li&gt;
+&lt;li&gt;Both prioritize security and stability in their development and design.&lt;&#x2F;li&gt;
+&lt;li&gt;Both feature a version control based package repository, meaning that changes in build definition are managed by pull requests from users.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;What is different:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;License: Void Linux is licensed under the MIT License, while OpenBSD is licensed under the ISC License.&lt;&#x2F;li&gt;
+&lt;li&gt;Philosophy: OpenBSD prioritizes security and privacy, while Void Linux prioritizes simplicity and modularity.&lt;&#x2F;li&gt;
+&lt;li&gt;Package Management: Void Linux uses the XBPS binary package manager, while OpenBSD uses pkg_add (also binary). OpenBSD additionally has a ports system for building from source.&lt;&#x2F;li&gt;
+&lt;li&gt;Package Repository: Void Linux has a large and diverse repository, while OpenBSD has a smaller and more curated repository.&lt;&#x2F;li&gt;
+&lt;li&gt;Init System: Void Linux uses runit as its init system, while OpenBSD uses rc. None uses the infamous systemd init system.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;what-is-openbsd-in-a-nutshell&quot;&gt;What is OpenBSD in a nutshell&lt;&#x2F;h2&gt;
+&lt;p&gt;OpenBSD is a free and open-source operating system that focuses on security, standardization, and robustness. It is based on the Berkeley Software Distribution (BSD) Unix operating system and is developed by a global community of volunteers. OpenBSD aims to provide a secure platform for both personal and enterprise use by implementing strong security features, including access control mechanisms, encryption, and auditing.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Theo_de_Raadt&quot;&gt;Theo de Raadt&lt;&#x2F;a&gt; is the founder and lead developer of OpenBSD. His main objective with OpenBSD is to create a secure operating system that is free from backdoors, vulnerabilities, and other security weaknesses. He is committed to auditing the source code of the operating system and third-party software included with it, to identify and remove any potential security risks. De Raadt is also dedicated to improving the overall quality of the codebase and ensuring compatibility with a wide range of hardware and software.&lt;&#x2F;p&gt;
+&lt;p&gt;What makes OpenBSD really special and stand out is that is developed a suite of tools that got adopted by other OSs like Linux, macOS or even Windows. One of the most famous instances of such adoption is the now de facto standard openssh suite. It actually emerged from within the development circle of the OpenBSD project. OpenBSD also implemented a wide range of OS features that are by now considered staples among other OSs, things like Linux-based OS-level containerization done via the means of cgroups, something that OpenBSD already pioneered and solved with a different spin many years before Linux with pledge and unveil. Go check out &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;why-openbsd.rocks&#x2F;fact&#x2F;freezero&#x2F;&quot;&gt;Why OpenBSD rocks&lt;&#x2F;a&gt; to get a feel what makes OpenBSD so unique and interesting.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;virtualization-with-libvirt&quot;&gt;Virtualization with libvirt&lt;&#x2F;h3&gt;
+&lt;p&gt;So now, let’s get back to our virtualization endeavour where we would like to virtualize OpenBSD on a Void Linux installation. If you happen to be using another Linux distribution, most of the individual steps would be very similar. That brings me to the next technology we should explain a bit more here, and that is libvirt.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;libvirt.org&#x2F;&quot;&gt;libvirt&lt;&#x2F;a&gt; is an open-source virtualization management library that provides a simple and unified API for managing virtualization technologies, including KVM, QEMU, Xen, and others. It aims to simplify the process of creating, managing, and migrating virtual machines, storage, and networks, and to make it easier for administrators to manage virtual environments.&lt;&#x2F;p&gt;
+&lt;p&gt;To virtualize an operating system like OpenBSD with libvirt, you need to follow these steps:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install libvirt and the virtualization technology you want to use, such as KVM.&lt;&#x2F;li&gt;
+&lt;li&gt;Download the OpenBSD iso file and place it in a location accessible by libvirt.&lt;&#x2F;li&gt;
+&lt;li&gt;Create a new virtual machine in libvirt with the OpenBSD ISO as the installation media. This can be done through the command line or using a graphical user interface such as virt-manager.&lt;&#x2F;li&gt;
+&lt;li&gt;Configure the virtual machine, including the amount of memory, CPU, and disk space, to meet the requirements of OpenBSD.&lt;&#x2F;li&gt;
+&lt;li&gt;Start the virtual machine and install OpenBSD as you would on a physical machine.&lt;&#x2F;li&gt;
+&lt;li&gt;Once the installation is complete, you can configure the virtual network, storage, and other settings as required.&lt;&#x2F;li&gt;
+&lt;li&gt;Finally, you can use the libvirt API or the command line to manage and control the virtual machine, including starting, stopping, migrating, and snapshotting.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;step-by-step-guide&quot;&gt;Step-by-step guide&lt;&#x2F;h3&gt;
+&lt;p&gt;Let’s first install the &lt;code&gt;libvirt&lt;&#x2F;code&gt; package and some related packages which we need in order to connect via VNC. The VNC will provide us with the possibility to use the graphical interface of the running OpenBSD instance.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ sudo xbps-install -S dbus qemu libvirt virt-manager virt-viewer tigervnc
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Now, we need to add our user, in my case &lt;code&gt;raskell&lt;&#x2F;code&gt;, to the &lt;code&gt;libvirt&lt;&#x2F;code&gt; group which got simultanously created with the installation of libvirt.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ sudo usermod -aG libvirt raskell
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;OpenBSD features a release cycle of six months. We would need to update our system every six month to keep up with the latest packages. During a given release, only security and bug fix patches are applied to the curated packages maintained by pkg_add. Therefore, in February 2023, we’re using the &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;72.html&quot;&gt;OpenBSD 7.2&lt;&#x2F;a&gt; release version. As I’m living in Switzerland, I chose to pull the iso image from a Swiss mirror, in this case from &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&#x2F;7.2&#x2F;&quot;&gt;&lt;code&gt;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; (check what mirror is closest to you to get the best download rate).&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# cd &amp;#x2F;var&amp;#x2F;lib&amp;#x2F;libvirt&amp;#x2F;boot&amp;#x2F;
+# sudo wget https:&amp;#x2F;&amp;#x2F;mirror.ungleich.ch&amp;#x2F;pub&amp;#x2F;OpenBSD&amp;#x2F;7.2&amp;#x2F;amd64&amp;#x2F;install72.iso
+--2023-01-12 20:48:15--  https:&amp;#x2F;&amp;#x2F;mirror.ungleich.ch&amp;#x2F;pub&amp;#x2F;OpenBSD&amp;#x2F;7.2&amp;#x2F;amd64&amp;#x2F;install72.iso
+Resolving mirror.ungleich.ch (mirror.ungleich.ch)... 2a0a:e5c0:2:2:400:c8ff:fe68:bef3, 185.203.114.135
+Connecting to mirror.ungleich.ch (mirror.ungleich.ch)|2a0a:e5c0:2:2:400:c8ff:fe68:bef3|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 583352320 (556M) [application&amp;#x2F;octet-stream]
+Saving to: ‘install72.iso.1’
+
+install72.iso.1                      100%[====================================================================&amp;gt;] 556.33M  7.11MB&amp;#x2F;s    in 77s     
+
+2023-01-12 20:49:33 (7.19 MB&amp;#x2F;s) - ‘install72.iso.1’ saved [583352320&amp;#x2F;583352320]
+sudo wget https:&amp;#x2F;&amp;#x2F;mirror.ungleich.ch&amp;#x2F;pub&amp;#x2F;OpenBSD&amp;#x2F;7.2&amp;#x2F;amd64&amp;#x2F;SHA256
+--2023-01-12 20:47:38--  https:&amp;#x2F;&amp;#x2F;mirror.ungleich.ch&amp;#x2F;pub&amp;#x2F;OpenBSD&amp;#x2F;7.2&amp;#x2F;amd64&amp;#x2F;SHA256
+Resolving mirror.ungleich.ch (mirror.ungleich.ch)... 2a0a:e5c0:2:2:400:c8ff:fe68:bef3, 185.203.114.135
+Connecting to mirror.ungleich.ch (mirror.ungleich.ch)|2a0a:e5c0:2:2:400:c8ff:fe68:bef3|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1992 (1.9K) [application&amp;#x2F;octet-stream]
+Saving to: ‘SHA256.1’
+
+SHA256.1                             100%[====================================================================&amp;gt;]   1.95K  --.-KB&amp;#x2F;s    in 0s      
+
+2023-01-12 20:47:39 (742 MB&amp;#x2F;s) - ‘SHA256.1’ saved [1992&amp;#x2F;1992]
+# grep install63.iso SHA256 &amp;gt; &amp;#x2F;tmp&amp;#x2F;x
+# sha256sum -c &amp;#x2F;tmp&amp;#x2F;x
+# rm &amp;#x2F;tmp&amp;#x2F;x
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Before we can start the virtualization server and get running our OpenBSD instance, we need to define the configuraiton on how to virtualize and ultimately boot the system with. This is done with &lt;code&gt;virt-install&lt;&#x2F;code&gt;. Noteworthy here is that we &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.qemu.org&#x2F;&quot;&gt;QEMU&lt;&#x2F;a&gt; as our emulation solution of choice, we allocate up to 4GB of RAM and 4 CPU cores to the machine.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ sudo virt-install \
+      --name=openbsd \
+      --virt-type=qemu \
+      --memory=2048,maxmemory=4096 \
+      --vcpus=2,maxvcpus=4 \
+      --cpu host \
+      --os-variant=openbsd7.0 \
+      --cdrom=&amp;#x2F;var&amp;#x2F;lib&amp;#x2F;libvirt&amp;#x2F;boot&amp;#x2F;install72.iso \
+      --network=bridge=virbr0,model=virtio \
+      --graphics=vnc \
+      --disk path=&amp;#x2F;var&amp;#x2F;lib&amp;#x2F;libvirt&amp;#x2F;images&amp;#x2F;openbsd.qcow2,size=40,bus=virtio,format=qcow2
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Once, it is up and running, we can use a vnc solution to connect to the running machine. In this case, I chose &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.libvirt.org&#x2F;manpages&#x2F;virsh.html&quot;&gt;virsh&lt;&#x2F;a&gt; to do the job. virsh is a command-line interface tool for managing virtualization environments created with libvirt. It allows us to manage virtual machines, storage pools, and network interfaces, as well as other virtualization components, from the command line.&lt;&#x2F;p&gt;
+&lt;p&gt;To establish a VNC connection with a running libvirt virtualized OpenBSD instance, you can use the following steps:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Start the virtual machine in libvirt: You can start the virtual machine using the virsh command &lt;strong&gt;&lt;code&gt;virsh start &amp;lt;vm-name&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;, where &lt;strong&gt;&lt;code&gt;&amp;lt;vm-name&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt; is the name of the virtual machine you want to start.&lt;&#x2F;li&gt;
+&lt;li&gt;Find the VNC display: Once the virtual machine is running, you can find the VNC display number for the virtual machine using the virsh command &lt;strong&gt;&lt;code&gt;virsh vncdisplay &amp;lt;vm-name&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Connect to the VNC display: You can connect to the VNC display using a VNC client, such as &lt;strong&gt;&lt;code&gt;vncviewer&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;, and specify the IP address of the host running the virtual machine and the VNC display number. For example, if the host’s IP address is &lt;strong&gt;&lt;code&gt;192.168.0.100&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt; and the VNC display number is &lt;strong&gt;&lt;code&gt;:0&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;, the command to connect would be &lt;strong&gt;&lt;code&gt;vncviewer 192.168.0.100:0&lt;&#x2F;code&gt;&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Authenticate to the VNC server: You may need to enter a password to authenticate to the VNC server. The password is set when the virtual machine is created in libvirt.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;With these steps, you can establish a VNC connection with a running libvirt virtualized OpenBSD instance and interact with the virtual machine’s graphical user interface.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ virsh dumpxml openbsd | grep vnc
+&amp;lt;graphics type=&amp;#x27;vnc&amp;#x27; port=&amp;#x27;5900&amp;#x27; autoport=&amp;#x27;yes&amp;#x27; listen=&amp;#x27;127.0.0.1&amp;#x27;&amp;gt;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Like I did, most of you would like to interact with a graphical interface such as with X11. For that, we yet another tool, a so-called VNC viewer. A very simple implementation of such a vnc viewer is &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;tigervnc.org&#x2F;&quot;&gt;tigervnc&lt;&#x2F;a&gt; (simply install it with &lt;code&gt;$ sudo xbps-install -S tigervnc&lt;&#x2F;code&gt;).&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ sudo virsh --connect
+qemu:&amp;#x2F;&amp;#x2F;&amp;#x2F;system start openbsd
+Domain &amp;#x27;openbsd&amp;#x27; started
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;openbsd&quot;&gt;OpenBSD&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt; - Official project site&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;faq&#x2F;&quot;&gt;OpenBSD FAQ&lt;&#x2F;a&gt; - Comprehensive installation and usage guide&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;why-openbsd.rocks&#x2F;&quot;&gt;Why OpenBSD Rocks&lt;&#x2F;a&gt; - Collection of OpenBSD innovations and features&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openssh.com&#x2F;&quot;&gt;OpenSSH&lt;&#x2F;a&gt; - The SSH suite that originated from the OpenBSD project&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Theo_de_Raadt&quot;&gt;Theo de Raadt&lt;&#x2F;a&gt; - OpenBSD founder and lead developer&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;man.openbsd.org&#x2F;pledge.2&quot;&gt;pledge(2)&lt;&#x2F;a&gt; - OpenBSD’s system call for restricting process capabilities&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;man.openbsd.org&#x2F;unveil.2&quot;&gt;unveil(2)&lt;&#x2F;a&gt; - OpenBSD’s system call for restricting filesystem visibility&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;void-linux&quot;&gt;Void Linux&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt; - Official project site&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.voidlinux.org&#x2F;&quot;&gt;Void Linux Handbook&lt;&#x2F;a&gt; - Official documentation&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.voidlinux.org&#x2F;xbps&#x2F;index.html&quot;&gt;XBPS package manager&lt;&#x2F;a&gt; - Void’s binary package management system&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;virtualization&quot;&gt;Virtualization&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;libvirt.org&#x2F;&quot;&gt;libvirt&lt;&#x2F;a&gt; - Virtualization management library and API&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.qemu.org&#x2F;&quot;&gt;QEMU&lt;&#x2F;a&gt; - Open-source machine emulator and virtualizer&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.libvirt.org&#x2F;manpages&#x2F;virsh.html&quot;&gt;virsh(1)&lt;&#x2F;a&gt; - Command-line interface for managing libvirt guests&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;tigervnc.org&#x2F;&quot;&gt;TigerVNC&lt;&#x2F;a&gt; - VNC implementation for remote desktop access&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;guides&quot;&gt;Guides&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;voidlinux&#x2F;comments&#x2F;ghwvv5&#x2F;guide_how_to_setup_qemukvm_emulation_on_void_linux&#x2F;&quot;&gt;[Guide] How to setup QEMU&#x2F;KVM emulation on Void Linux&lt;&#x2F;a&gt; - Community guide on r&#x2F;voidlinux&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.cyberciti.biz&#x2F;faq&#x2F;kvmvirtualization-virt-install-openbsd-unix-guest&#x2F;&quot;&gt;KVM virt-install: Install OpenBSD as Guest Operating System&lt;&#x2F;a&gt; - Step-by-step KVM installation guide&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.skreutz.com&#x2F;posts&#x2F;autoinstall-openbsd-on-qemu&#x2F;&quot;&gt;Auto-install OpenBSD on QEMU&lt;&#x2F;a&gt; - Automated OpenBSD installation on QEMU&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
+    </channel>
+</rss>
