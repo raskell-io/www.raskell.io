@@ -7,7 +7,192 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/oss/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Sun, 22 Mar 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Sat, 11 Apr 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>The Last Programming Language Might Not Be for Humans</title>
+          <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/</link>
+          <guid>https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/</guid>
+          <description xml:base="https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/">&lt;p&gt;This morning I was standing at my desk, drinking watered-down instant coffee, doing what I do every morning after triaging the high-alert emails and notifications: thirty minutes of HackerNews. It is a ritual I time-box and never skip. I go to the office every day, and whether I am at that desk or at my home desk, the morning is the same. Coffee, posture, front page.&lt;&#x2F;p&gt;
+&lt;p&gt;HackerNews remains one of the best ways to keep a finger on the pulse of the Bay Area, of tech, of science, of whatever intellectually stimulating thought surfaced overnight. I follow a handful of curated newsletters too, but I have noticed over the years that HN covers most of their content anyway if you know how to filter high signal from low signal. I could write something about a different link every single day. Most mornings I resist. This morning I did not.&lt;&#x2F;p&gt;
+&lt;p&gt;A link caught my eye. &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;veralang.dev&#x2F;&quot;&gt;Vera&lt;&#x2F;a&gt;, a new programming language “designed for machines to write, not humans.” Statically typed, purely functional, compiles to WebAssembly, uses Microsoft’s Z3 solver for contract verification. It has a ferret mascot. I like animal mascots for tech projects. Ferris the crab for Rust, the gopher for Go, the Shisa guardian dog for &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&#x2F;&quot;&gt;Zentinel&lt;&#x2F;a&gt;. The ferret is a good choice.&lt;&#x2F;p&gt;
+&lt;p&gt;But the mascot is not why I stopped scrolling. I stopped because somebody had built the thing I had been thinking about since Christmas.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-christmas-realization&quot;&gt;The Christmas realization&lt;&#x2F;h2&gt;
+&lt;p&gt;I had been a paying Claude Code subscriber since May 2025, when Anthropic first launched it. The CLI orientation made sense to me immediately, even though the early rate limits and model quality left me wanting more. By December 2025, I had upgraded to the Max subscription, I was on vacation, and Anthropic had made the daily limits generous that month. I was burning through every idea I had accumulated over the years. Some were good. Some were terrible. All of them were finally testable in a way they had not been before, because I could pair-program with a model that kept up. I wrote about that shift more fully in &lt;a href=&quot;&#x2F;articles&#x2F;how-i-work-these-days&#x2F;&quot;&gt;How I Work These Days&lt;&#x2F;a&gt;, the short version being that late 2025 was when the relationship between ambition and execution fundamentally changed for me. The dam broke. Ideas that had been sitting in notebooks for years started becoming real software in days.&lt;&#x2F;p&gt;
+&lt;p&gt;It was during one of those late-night sessions, deep in a Claude Code conversation about compiler design, that a thought crystallized. I had been building &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;hx&#x2F;&quot;&gt;hx&lt;&#x2F;a&gt; and thinking about how AI would change the way people write Haskell, when I realized the question was bigger than Haskell. Agent-assisted software development is approaching a point where the output language itself, the intermediate layer we use to express how information should be processed, is going to change fundamentally.&lt;&#x2F;p&gt;
+&lt;p&gt;This is not an abstract observation. Programming languages have always been shaped by who writes them. Assembly was shaped by hardware engineers who thought in registers and opcodes. C was shaped by systems programmers who needed portable abstractions over memory. Python was shaped by people who wanted to get things done without fighting the syntax. COBOL was shaped by business analysts who wanted code that read like English. Every language carries the fingerprints of its intended author. If AI becomes the primary author of code, it follows that the language should adapt to that new author’s strengths and weaknesses.&lt;&#x2F;p&gt;
+&lt;p&gt;I kept coming back to three concrete possibilities. Three ways the intermediate layer could evolve. Not competing visions, exactly. More like three points on a timeline.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;make-the-language-explicit-enough-for-machines&quot;&gt;Make the language explicit enough for machines&lt;&#x2F;h2&gt;
+&lt;p&gt;Anyone who has spent real time with coding agents has seen the failure mode. You ask an LLM to write a Python function. The output looks plausible. It passes linting. The variable names are reasonable. The structure follows common patterns. Then it fails at runtime because of a subtle implicit behavior the model did not track. A default mutable argument that gets shared across calls. A generator that gets silently exhausted on second iteration. A method that returns &lt;code&gt;None&lt;&#x2F;code&gt; instead of raising an exception because some library author decided that was more “Pythonic.” The model was not wrong about the algorithm. It was wrong about the language’s hidden behaviors.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the problem Vera is trying to solve, and the first approach I had been contemplating. Take the simplicity and explicitness of Go, push it further, and design a language where every instruction, every method, every design pattern is as unambiguous as possible. No implicit behaviors. No naming ambiguity. No style choices. One canonical way to write everything, so that an LLM does not have to waste inference tokens reasoning about which of seventeen valid approaches to take.&lt;&#x2F;p&gt;
+&lt;p&gt;The language would need excellent compiler diagnostics. Not just “type mismatch on line 47,” but structured feedback that a model can parse, understand, and act on immediately. Rust and Elixir already do this well for humans. Do it even better, and do it for machines.&lt;&#x2F;p&gt;
+&lt;p&gt;The pipeline looks like this:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Explicit language feedback loop&quot;&gt;+-------+     prompt      +-------+    explicit     +-----------+
+| Human | -------------&amp;gt;  |  LLM  | -------------&amp;gt;  | Verifying |
++-------+                 +-------+    source       | Compiler  |
+                             ^                      +-----------+
+                             |                           |
+                             |   structured error        |
+                             |   + suggested fix         |
+                             +---------------------------+
+                                                         |
+                                                    verified
+                                                         |
+                                                         v
+                                                  [correct program]&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The key insight is the feedback loop. The compiler does not just reject bad code. It explains what is wrong in terms the model can act on, with a concrete fix suggestion. The model re-generates. The compiler re-checks. You converge on correct code through iteration, and the tightness of that loop depends on how unambiguous the language is and how actionable the errors are.&lt;&#x2F;p&gt;
+&lt;p&gt;Vera is exactly this idea, executed with conviction. Here is what a function looks like:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot;&gt;&lt;code data-lang=&quot;vera&quot;&gt;public fn safe_divide(@Int, @Int -&amp;gt; @Int)
+  requires(@Int.1 != 0)
+  ensures(@Int.result == @Int.0 &amp;#x2F; @Int.1)
+  effects(pure)
+{
+  @Int.0 &amp;#x2F; @Int.1
+}&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;No variable names at all. Parameters are referenced by type and positional index using De Bruijn slot notation. &lt;code&gt;@Int.0&lt;&#x2F;code&gt; is the most recently bound integer, &lt;code&gt;@Int.1&lt;&#x2F;code&gt; is the one before that. Every function must declare its preconditions (&lt;code&gt;requires&lt;&#x2F;code&gt;), postconditions (&lt;code&gt;ensures&lt;&#x2F;code&gt;), and side effects (&lt;code&gt;effects&lt;&#x2F;code&gt;). The compiler verifies contracts statically using Z3 where possible and falls back to runtime checks for what it cannot decide at compile time.&lt;&#x2F;p&gt;
+&lt;p&gt;The design principle is sharp: the model does not need to be right, it needs to be checkable. The language constrains the space of valid programs so tightly that the compiler catches mistakes before execution and explains them in natural language. Division by zero is not a runtime exception. It is a contract violation caught during compilation.&lt;&#x2F;p&gt;
+&lt;p&gt;Think of it like this. Traditional languages are an open field. You can walk in any direction, and you might end up somewhere useful or you might walk off a cliff. Vera is a guided path with guardrails. You can only go certain directions, and every time you try to step off the path, a sign tells you exactly where to step instead. An LLM on an open field will wander. An LLM on a guided path will converge.&lt;&#x2F;p&gt;
+&lt;p&gt;The early benchmark results are interesting, if mixed. Kimi K2.5 apparently writes perfect Vera code, scoring 100% on VeraBench and beating its own Python and TypeScript scores. Other models do not fare as well. Claude Opus 4 scores 88% in Vera versus 96% in Python. The Vera team is honest about this variance, which I appreciate. The &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47696263&quot;&gt;HackerNews discussion&lt;&#x2F;a&gt; was thin, twelve points and three skeptical comments, which tells you how early this conversation still is. The broader developer community has not engaged with this idea seriously yet. That will change.&lt;&#x2F;p&gt;
+&lt;p&gt;But there is something that bothers me about optimizing the language for how machines iterate on solutions. Look at the pipeline diagram again. The LLM is still generating step-by-step instructions. It is still describing HOW to do things, just with the ambiguity stripped out and the contracts made explicit. The machine still reasons through the process sequentially. You have reduced the noise in the feedback loop, but you have not changed the nature of the signal. The model is still writing recipes. They are just more precise recipes.&lt;&#x2F;p&gt;
+&lt;p&gt;What if you stopped writing recipes entirely?&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;describe-what-not-how&quot;&gt;Describe what, not how&lt;&#x2F;h2&gt;
+&lt;p&gt;The second idea starts from a different premise. Instead of making procedural code easier for AI to write correctly, change what you ask the AI to express.&lt;&#x2F;p&gt;
+&lt;p&gt;Let me make this concrete. Say you need to find the ten most recent server errors in a log. Here is how you would describe that process in a procedural language:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;python&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;errors = []
+for entry in log_entries:
+    if entry.status &amp;gt;= 500:
+        errors.append({
+            &amp;quot;time&amp;quot;: entry.timestamp,
+            &amp;quot;path&amp;quot;: entry.path,
+            &amp;quot;code&amp;quot;: entry.status
+        })
+errors.sort(key=lambda e: e[&amp;quot;time&amp;quot;], reverse=True)
+return errors[:10]
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You are telling the machine: create an empty list. Walk through each entry. Check a condition. If it matches, build a dictionary and append it. Then sort the accumulated list by a key. Then take the first ten elements. Every step is an instruction. The machine has to track the mutable list, the iteration state, the sort, the slice. And if you get any step wrong, the others might still succeed, producing output that looks correct but is subtly broken. A missing &lt;code&gt;reverse=True&lt;&#x2F;code&gt; and you silently get the oldest errors instead of the most recent.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is the same thing in Haskell:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;haskell&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;recentErrors :: [LogEntry] -&amp;gt; [ErrorSummary]
+recentErrors =
+    take 10
+  . sortBy (flip compare `on` time)
+  . map toSummary
+  . filter isServerError
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Read it bottom to top: filter server errors, transform each into a summary, sort by time descending, take ten. There is no mutable accumulator. No loop variable. No intermediate state. You are not describing a process. You are describing a relationship between the input and the output. The function says what the result IS, not how to compute it step by step.&lt;&#x2F;p&gt;
+&lt;p&gt;The type signature at the top, &lt;code&gt;[LogEntry] -&amp;gt; [ErrorSummary]&lt;&#x2F;code&gt;, is a contract the compiler enforces. If &lt;code&gt;toSummary&lt;&#x2F;code&gt; returns the wrong type, if &lt;code&gt;isServerError&lt;&#x2F;code&gt; does not take a &lt;code&gt;LogEntry&lt;&#x2F;code&gt;, if you accidentally compose functions in an order that does not type-check, the compiler rejects the program before it runs. Not with a vague “object has no attribute” at runtime. With a precise type error at compile time that tells you exactly which piece does not fit.&lt;&#x2F;p&gt;
+&lt;p&gt;This distinction matters enormously for AI. Think about what an LLM actually has to track in each case:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Procedural vs declarative complexity&quot;&gt;Procedural (Vera, Python, Go)          Declarative (Haskell)
+================================       ================================
+- mutable variables and their          - input type
+  current state at each step           - output type
+- loop iteration progress              - which transformations to compose
+- conditional branching outcomes       - whether types align
+- order of side effects
+- implicit language behaviors
+- names and what they refer to&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The procedural model asks the AI to simulate execution in its head. The declarative model asks the AI to describe a transformation and let the compiler verify it. One plays to an LLM’s weakness (tracking state across many steps). The other plays to its strength (recognizing and generating patterns that satisfy formal constraints).&lt;&#x2F;p&gt;
+&lt;p&gt;The pipeline changes fundamentally:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Type-driven proof pipeline&quot;&gt;+-------+     prompt      +-------+   type sigs      +-----------+
+| Human | -------------&amp;gt;  |  LLM  | -------------&amp;gt;    | Compiler  |
++-------+                 +-------+   pure exprs      +-----------+
+                                                           |
+                                                      types align?
+                                                        &amp;#x2F;      \
+                                                      yes       no
+                                                      |          |
+                                                      v          v
+                                              [proven correct]  [precise type error:
+                                                                 &amp;quot;Expected LogEntry,
+                                                                  got String at ...]&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;No feedback loop needed in the happy path. If the types align, the program is correct by construction for the properties the type system tracks. The compiler is not iterating with the model. It is checking a proof.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the approach I bet on. It is the reason this blog exists.&lt;&#x2F;p&gt;
+&lt;p&gt;Raskell, the name behind this site, is a portmanteau of Rascal (as in raccoon, which is my mascot) and Haskell. The language I have loved for years because of how elegantly it describes things close to mathematical proofs. QEDs, not TODOs. When you write a well-typed Haskell function, you are not just writing code. You are writing a proof that a certain transformation is valid, and the compiler is the proof checker.&lt;&#x2F;p&gt;
+&lt;p&gt;But loving Haskell and shipping Haskell in production are different experiences, and the gap between them is mostly tooling. The ecosystem is fragmented in a way that has frustrated people for over a decade. &lt;code&gt;cabal&lt;&#x2F;code&gt;, &lt;code&gt;stack&lt;&#x2F;code&gt;, &lt;code&gt;ghcup&lt;&#x2F;code&gt;. Three tools that do overlapping jobs with different opinions about how dependencies should work. If you come from Python, imagine if &lt;code&gt;pip&lt;&#x2F;code&gt;, &lt;code&gt;poetry&lt;&#x2F;code&gt;, and &lt;code&gt;pyenv&lt;&#x2F;code&gt; were all developed independently, with different lockfile formats, different resolver algorithms, and occasional incompatibilities. That was Haskell. Build times were slow. Error messages ranged from helpful to cryptic. The runtime assumed one performance profile fits every use case. If you wanted Haskell for edge functions, for embedded systems, for GPU-accelerated numerics, you spent as much time fighting the toolchain as writing the actual code.&lt;&#x2F;p&gt;
+&lt;p&gt;The language was right. The surrounding infrastructure was not.&lt;&#x2F;p&gt;
+&lt;p&gt;So I started building &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&quot;&gt;arcanist.sh&lt;&#x2F;a&gt;, taking the same approach that &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;astral.sh&quot;&gt;astral.sh&lt;&#x2F;a&gt; brought to Python tooling. When astral.sh released &lt;code&gt;uv&lt;&#x2F;code&gt; and &lt;code&gt;ruff&lt;&#x2F;code&gt;, it showed that you could take a mature ecosystem with entrenched tooling, rebuild the developer experience from scratch in Rust, and make everything dramatically faster and more coherent. I wanted to do the same for Haskell. arcanist.sh houses two projects.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;hx&#x2F;&quot;&gt;hx&lt;&#x2F;a&gt; is a fast, opinionated, next-gen toolchain for Haskell, built in Rust. One tool that replaces the fragmented stack. Managed compiler versions pinned per-project. Deterministic TOML lockfiles with fingerprint verification. 5.6x faster cold builds than cabal. 7.8x faster incremental rebuilds.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;curl -fsSL https:&amp;#x2F;&amp;#x2F;arcanist.sh&amp;#x2F;install.sh | sh
+hx new my-app &amp;amp;&amp;amp; cd my-app
+hx run
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;No ghcup. No stack. No cabal-install. Just &lt;code&gt;hx&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;bhc&#x2F;&quot;&gt;BHC&lt;&#x2F;a&gt;, the Basel Haskell Compiler, goes further. It is a clean-slate Haskell compiler written in Rust, not a GHC fork, targeting the Haskell 2026 Platform specification. It uses LLVM for native code generation and offers six runtime profiles that you select at compile time:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Profile&lt;&#x2F;th&gt;&lt;th&gt;Designed for&lt;&#x2F;th&gt;&lt;th&gt;Key trait&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;default&lt;&#x2F;td&gt;&lt;td&gt;General applications&lt;&#x2F;td&gt;&lt;td&gt;Lazy evaluation, GC-managed, GHC-compatible semantics&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;server&lt;&#x2F;td&gt;&lt;td&gt;Backend services&lt;&#x2F;td&gt;&lt;td&gt;Structured concurrency, automatic cancellation, observability hooks&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;numeric&lt;&#x2F;td&gt;&lt;td&gt;ML and scientific compute&lt;&#x2F;td&gt;&lt;td&gt;Strict numerics, tensor lowering, SIMD, GPU backends (CUDA&#x2F;ROCm)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;edge&lt;&#x2F;td&gt;&lt;td&gt;WASM and CDN workers&lt;&#x2F;td&gt;&lt;td&gt;Minimal footprint, direct WASM emission without LLVM&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;realtime&lt;&#x2F;td&gt;&lt;td&gt;Games, audio, robotics&lt;&#x2F;td&gt;&lt;td&gt;Bounded GC pauses under 1ms, arena allocation&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;embedded&lt;&#x2F;td&gt;&lt;td&gt;Bare metal, microcontrollers&lt;&#x2F;td&gt;&lt;td&gt;No GC at all, static allocation, targets like ARM Cortex-M&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;The same Haskell source, different runtime contracts depending on what you are building. Your security policy engine compiles with the server profile and gets structured concurrency with tracing. Your tensor pipeline compiles with the numeric profile and gets GPU acceleration. Your edge function compiles to WASM and runs on Cloudflare Workers. Same language. Same type safety. Different performance envelopes.&lt;&#x2F;p&gt;
+&lt;p&gt;The conviction behind this work is specific. When AI writes the code, the language that survives is not the one optimized for procedural explicitness. It is the one that brings consistency and purity by describing what something is, not how to compute it. AI is extraordinarily good at generating expressions that satisfy formal constraints. And source code that reads like a proof can survive time. It can survive maintainer burnout. It can survive the fact that three years from now, nobody remembers why a function was written the way it was. The types remember. The proof is self-documenting in a way that procedural code never is, because the types encode the intent.&lt;&#x2F;p&gt;
+&lt;p&gt;Vera and arcanist.sh accept the same premise: the intermediate layer is changing. They disagree about which direction it should change in. Vera optimizes for reducing errors in the generation loop. Valuable. But hx and BHC optimize for making the generated code correct by construction, because the language itself constrains what valid programs look like at a structural level.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;skip-the-language-entirely&quot;&gt;Skip the language entirely&lt;&#x2F;h2&gt;
+&lt;p&gt;The third possibility is the one I think about late at night and do not have a concrete project for. Not yet. It is also the one I find most fascinating and most unsettling.&lt;&#x2F;p&gt;
+&lt;p&gt;What if AI stops writing source code at all?&lt;&#x2F;p&gt;
+&lt;p&gt;To understand why this is plausible, it helps to look at what source code actually is. It is not the final product. It never was. Source code is a set of instructions that a compiler transforms into machine code. Machine code is what the hardware executes. Source code exists because humans needed an abstraction layer between their intentions and the silicon. We think in concepts like “sort this list” or “reject unauthorized requests.” The CPU thinks in register moves, memory loads, and conditional jumps. Source code bridges that gap.&lt;&#x2F;p&gt;
+&lt;p&gt;But that bridge was built for human authors. If the author is no longer human, the bridge serves a different purpose. It becomes an audit trail. A way for humans to read and verify what the AI produced. Not an authoring medium, but a transparency layer.&lt;&#x2F;p&gt;
+&lt;p&gt;I see this playing out in two distinct phases.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;phase-one-ai-targets-existing-machine-code&quot;&gt;Phase one: AI targets existing machine code&lt;&#x2F;h3&gt;
+&lt;p&gt;The first phase is closer than most people think, and it is conceptually straightforward. We already train models on source code. What happens when we also train them extensively on compiled artifacts? On binaries, object files, intermediate representations, the actual output of compilers?&lt;&#x2F;p&gt;
+&lt;p&gt;Consider what a compiler does. It takes source code and transforms it into machine instructions following well-defined, deterministic rules. There is a mapping between source patterns and output patterns. A &lt;code&gt;for&lt;&#x2F;code&gt; loop in C becomes a specific sequence of compare, branch, and increment instructions on x86. A function call follows a specific calling convention. Memory allocation follows specific system call patterns. These mappings are learnable. They are patterns, and pattern recognition is exactly what LLMs excel at.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Skipping the source layer&quot;&gt;Today:
+human intent → prompt → LLM → source code → compiler → x86&amp;#x2F;ARM → CPU
+
+Phase one:
+human intent → prompt → LLM → x86&amp;#x2F;ARM directly → CPU
+                                (trained on source +
+                                 compiled artifact pairs)&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;In this phase, the model skips the source code layer and generates machine code directly. Not by “compiling” in the traditional sense. By having learned the patterns well enough to produce valid executables from intent descriptions. The way a fluent translator does not parse grammar rules consciously but produces correct sentences from meaning directly.&lt;&#x2F;p&gt;
+&lt;p&gt;This sounds radical until you remember that we already trust compilers we do not read the output of. When was the last time you inspected the assembly output of &lt;code&gt;gcc -O3&lt;&#x2F;code&gt; to verify it correctly compiled your C program? You trust the compiler. You test the behavior of the resulting binary. You do not audit the intermediate representation. If an AI can produce binaries that pass the same behavioral tests, the practical difference between “AI-generated machine code” and “compiler-generated machine code” becomes a question of trust calibration, not fundamental possibility.&lt;&#x2F;p&gt;
+&lt;p&gt;The analogy I keep returning to is aviation. Early pilots flew by hand and understood every mechanical system in the aircraft. Fly-by-wire changed that. The pilot communicates intent (climb, turn, maintain altitude). The computer translates that into control surface movements. The pilot does not manually adjust ailerons and elevators for every gust of wind. They trust the system. They verify outcomes (altitude, heading, airspeed), not intermediate steps. Phase one of post-language programming is fly-by-wire for software.&lt;&#x2F;p&gt;
+&lt;p&gt;If this sounds speculative, consider what happened this week. Anthropic announced &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.anthropic.com&#x2F;glasswing&quot;&gt;Project Glasswing&lt;&#x2F;a&gt;, a coalition including AWS, Apple, Google, Microsoft, NVIDIA, CrowdStrike, Palo Alto Networks, the Linux Foundation, and others, formed to secure the world’s most critical software using AI. Dario Amodei, Anthropic’s CEO, put it plainly:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“AI models have reached a level of coding capability where they can surpass all but the most skilled humans at finding and exploiting software vulnerabilities.”&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The proof point he offered: “For OpenBSD, we found a bug that’s been present for 27 years.”&lt;&#x2F;p&gt;
+&lt;p&gt;Think about what that means. OpenBSD is one of the most carefully audited codebases in the world. Decades of security-focused human review by some of the most meticulous systems programmers alive. And an AI model found something that every human reviewer missed for twenty-seven years. If AI can understand existing code deeply enough to find vulnerabilities that humans cannot, it can understand code deeply enough to generate it without human-readable source as an intermediate step. The question is no longer whether AI comprehends code at a structural level. That question was answered this week. The question is what it does with that comprehension next.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;phase-two-a-new-kind-of-machine&quot;&gt;Phase two: a new kind of machine&lt;&#x2F;h3&gt;
+&lt;p&gt;The second phase is further out and more speculative. But I think it is where things ultimately go.&lt;&#x2F;p&gt;
+&lt;p&gt;If AI is generating code for machines to execute and no human needs to read it, there is no reason that code needs to target instruction sets designed for human comprehension. x86 and ARM were designed with the assumption that someone, at least occasionally, would look at the instructions. They have mnemonics. They follow conventions that make disassembly feasible. They are organized into instructions that map, loosely, to operations humans understand.&lt;&#x2F;p&gt;
+&lt;p&gt;But what if the execution target was designed from scratch for AI-generated code? A virtual machine or runtime that consumes a new kind of bytecode. Not optimized for human readability. Not optimized for hand-authored assembly. Optimized purely for execution density and machine generation.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;AI-native execution target&quot;&gt;Phase two:
+human intent → prompt → AI → dense symbolic bytecode → AI-native VM
+                               (opaque to humans,         |
+                                optimized for machine     v
+                                generation + execution)  [result]&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;I keep thinking about information density. Chinese characters encode meaning in individual symbols that carry far more semantic weight than Latin alphabet words. A single character can represent a concept that takes an entire English phrase to express. When a system is designed for readers who can process dense symbols natively, the representation compresses. It becomes more efficient at the cost of being less accessible to readers who were not part of the design audience.&lt;&#x2F;p&gt;
+&lt;p&gt;AI-native bytecode could follow the same principle. Each instruction could encode complex composite operations that would take dozens of conventional instructions to express. The bytecode would be dense in ways that make current machine code look verbose. Entirely opaque when decompiled or analyzed. Not obfuscated on purpose. Just natively incomprehensible to human cognition, the same way a trained neural network’s weights are incomprehensible even though they encode real, functional knowledge.&lt;&#x2F;p&gt;
+&lt;p&gt;The virtual machine running this bytecode would itself be a different kind of system. Not a stack machine or a register machine in the traditional sense. Possibly something closer to a dataflow engine, where the bytecode describes transformation graphs rather than sequential instructions. Think of it as the difference between giving someone turn-by-turn driving directions (go north, turn left, continue for two miles) versus handing them a map with the destination marked. The bytecode is the map. The VM figures out the route.&lt;&#x2F;p&gt;
+&lt;p&gt;I want to be honest about where we are. We are not at phase one. Not in April 2026. Current models still need the intermediate layer. They produce better code when they can reason through it step by step. They benefit from type systems and contracts and explicit error messages. The first and second approaches are not just viable, they are necessary right now.&lt;&#x2F;p&gt;
+&lt;p&gt;But the trajectory is visible. Models are getting better at generating correct programs with every generation. Formal verification is becoming more practical. Hardware is getting cheaper. The gap between “prompt that describes intent” and “correct executable output” is shrinking. Phase one will arrive when models trained on enough source-plus-binary pairs can reliably produce correct executables. Phase two will arrive when someone asks: if the model is already generating the binary, why are we targeting an instruction set that was designed for a species that is no longer doing the writing?&lt;&#x2F;p&gt;
+&lt;p&gt;At some point the intermediate layer becomes optional. And optional things, given enough time, become vestigial.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-this-means&quot;&gt;What this means&lt;&#x2F;h2&gt;
+&lt;p&gt;I do not think these three approaches are in competition. They are three points on a timeline, and the timeline is the story of the intermediate layer contracting.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;The intermediate layer timeline&quot;&gt;Near term          Medium term           Long term
+(now)              (2-5 years)           (5-15 years)
+
+Explicit           Declarative           Post-language
+languages          languages             (AI-native targets)
+(Vera)             (Haskell + BHC)
+
+Reduce noise  --&amp;gt;  Change the signal --&amp;gt; Remove the layer
+in the loop        entirely              entirely
+
+HOW, but           WHAT, verified        Intent to
+unambiguous        by types              execution&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;In the near term, explicit languages like Vera make AI-generated code more reliable by constraining the generation space and providing machine-readable diagnostics. This is useful today. If you are building an AI coding pipeline right now and need to ship next quarter, this approach works.&lt;&#x2F;p&gt;
+&lt;p&gt;In the medium term, declarative languages like Haskell, especially with modern tooling and modern runtimes, make AI-generated code correct by construction. The type system does the heavy verification work at a fundamental level. The code that survives is the code that describes invariants, not procedures. This is the era I am building for with arcanist.sh.&lt;&#x2F;p&gt;
+&lt;p&gt;In the long term, the language disappears. First into existing machine code generated directly by AI. Then into new execution formats designed for AI generation from the ground up. The intermediate layer that has defined software engineering for seventy years becomes an implementation detail.&lt;&#x2F;p&gt;
+&lt;p&gt;That last possibility makes some people uncomfortable. It made me uncomfortable when I first thought about it in December. It means that the craft of programming as we know it, the fluency in syntax, the mastery of idioms, the instinct for an elegant implementation, becomes less like a core skill and more like knowing how to operate a manual lathe. Valuable in the right context. Still needed for the hard cases. But no longer the primary way most software gets built.&lt;&#x2F;p&gt;
+&lt;p&gt;This has happened before. There was a time when every programmer understood assembly. Then C abstracted it away, and most programmers stopped reading machine code. Then Python and JavaScript abstracted C away, and most programmers stopped thinking about memory management. Each time, the previous layer did not disappear. It became the domain of specialists who maintained the infrastructure everyone else stood on. The same thing will happen to source code. It will not vanish. It will specialize.&lt;&#x2F;p&gt;
+&lt;p&gt;I still write code every day. I still think in types. I am still building hx and BHC because I believe the medium-term future is both real and long, and Haskell’s strengths are exactly what that future demands. Pure functions, strong types, provable correctness. These are not luxuries in a world where AI writes the implementation. They are the load-bearing structure. But I do it with one eye on the horizon, knowing that the intermediate layer I am investing in is exactly that. Intermediate.&lt;&#x2F;p&gt;
+&lt;p&gt;The person who built Vera saw the same thing I saw, probably around the same time. They chose the first approach. I chose the second. Somebody, eventually, will build the third. And then we will all need to figure out what we mean by “programming” when nobody writes programs anymore.&lt;&#x2F;p&gt;
+&lt;p&gt;I am already curious about the answer.&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>What Zentinel Is Really Optimizing For</title>
           <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
