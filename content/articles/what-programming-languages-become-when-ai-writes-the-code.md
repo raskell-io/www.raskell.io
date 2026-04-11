@@ -19,7 +19,7 @@ HackerNews remains one of the best ways to keep a finger on the pulse of the Bay
 
 A link caught my eye. [Vera](https://veralang.dev/), a new programming language "designed for machines to write, not humans." Statically typed, purely functional, compiles to WebAssembly, uses Microsoft's Z3 solver for contract verification. It has a ferret mascot. I like animal mascots for tech projects. Ferris the crab for Rust, the gopher for Go, the Shisa guardian dog for [Zentinel](https://zentinelproxy.io/). The ferret is a good choice.
 
-But the mascot is not why I stopped scrolling. I stopped because somebody had built the thing I had been thinking about since Christmas.
+But the mascot is not why I stopped scrolling. I stopped because somebody else had arrived at the same conclusion I had reached back in December: that conventional programming languages are not adapted to the capabilities of this new technology, and that something has to change.
 
 ## The Christmas realization
 
@@ -27,7 +27,25 @@ I had been a paying Claude Code subscriber since May 2025, when Anthropic first 
 
 It was during one of those late-night sessions, deep in a Claude Code conversation about compiler design, that a thought crystallized. I had been building [hx](https://arcanist.sh/hx/) and thinking about how AI would change the way people write Haskell, when I realized the question was bigger than Haskell. Agent-assisted software development is approaching a point where the output language itself, the intermediate layer we use to express how information should be processed, is going to change fundamentally.
 
-This is not an abstract observation. Programming languages have always been shaped by who writes them. Assembly was shaped by hardware engineers who thought in registers and opcodes. C was shaped by systems programmers who needed portable abstractions over memory. Python was shaped by people who wanted to get things done without fighting the syntax. COBOL was shaped by business analysts who wanted code that read like English. Every language carries the fingerprints of its intended author. If AI becomes the primary author of code, it follows that the language should adapt to that new author's strengths and weaknesses.
+This is not an abstract observation. The history of software is a history of abstraction layers accumulating, each one letting the next generation of programmers ignore what the previous generation had to master.
+
+It started with machine code. Raw opcodes, different for every CPU architecture. If you wanted to write software, you memorized instruction sets and wrote them by hand. People published thick reference manuals, and there were engineers who could hold entire instruction set architectures in their heads. Some of them are still around, and some of them still swear by that methodology.
+
+Then assemblers gave those opcodes human-readable names. `MOV AX, BX` instead of `89 D8`. You were still writing for a specific architecture, still thinking in registers, but now you could read what you wrote. The first abstraction was not a new capability. It was legibility.
+
+Then C arrived and gave us a portable abstraction over hardware. You stopped thinking in registers and started thinking in functions and pointers. C compiled down to architecture-specific assembly, but you did not have to care which architecture. One language, many targets. The reference manuals shifted from instruction sets to language specifications.
+
+Then interpreters and virtual machines added another layer. The JVM, Python, Perl. You stopped thinking about memory layout and started thinking about objects, iterators, garbage collection. The abstraction was thicker, the feedback loop was faster, and the audience expanded from hardware engineers to anyone who could write a script.
+
+Then IDEs changed how you interacted with the language itself. Syntax highlighting, autocomplete, integrated debuggers, refactoring tools. You stopped holding the entire API surface in your head because the editor held it for you. The language did not change, but the cognitive cost of using it dropped. IntelliSense was not a language feature. It was an abstraction over the programmer's memory.
+
+Then the internet changed how code moved. Open source repositories, package managers, shared libraries. You stopped writing everything from scratch and started composing from parts other people had built. The reference material moved from printed books to web documentation, wikis, tutorials.
+
+Then StackOverflow changed how people learned. Instead of reading manuals cover to cover, you searched for the specific problem you had and found someone who had already solved it. The knowledge layer itself became an abstraction. You did not need to understand the full system. You needed to find the right answer and adapt it to your context. StackOverflow never compiled a line of code, but it was an intermediate layer between human confusion and working software, and it was arguably more important to the average developer's productivity than any language feature shipped in the same decade.
+
+And now StackOverflow is receding. Not because the answers got worse. Because the next abstraction layer arrived. AI coding agents do what StackOverflow did, finding known solutions to known problems, but they also do what StackOverflow never could: synthesize novel solutions, hold project context across files, and generate working code from intent descriptions. The pattern is the same as every previous transition. Each layer makes the previous one less essential, not by replacing it but by absorbing it into a higher-level abstraction.
+
+Programming languages have always been shaped by who writes them. Assembly was shaped by hardware engineers who thought in registers and opcodes. C was shaped by systems programmers who needed portable abstractions over memory. Python was shaped by people who wanted to get things done without fighting the syntax. COBOL was shaped by business analysts who wanted code that read like English. Every language carries the fingerprints of its intended author. If AI becomes the primary author of code, it follows that the language should adapt to that new author's strengths and weaknesses. This is not a break from the pattern. It is the pattern, doing what it has always done.
 
 I kept coming back to three concrete possibilities. Three ways the intermediate layer could evolve. Not competing visions, exactly. More like three points on a timeline.
 
