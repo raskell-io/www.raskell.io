@@ -7,7 +7,7 @@ template = "projects-page.html"
 
 Projects on a path to becoming real companies. Real users, real revenue potential, real stakes.
 
-### Archipelag.io <span class="status-badge status-badge--live">Live</span>
+### <img src="/brands/archipelag.svg" alt="" class="project-icon"> Archipelag.io <span class="status-badge status-badge--live">Live</span>
 
 Decentralized AI compute platform. Run AI workloads on a network of community-operated GPU hosts — fast, fair, and local. Jobs route to nearby hosts for lower latency, data stays in your region for compliance, and hosts earn directly for the compute they provide. No cloud provider markups.
 
@@ -15,7 +15,7 @@ Decentralized AI compute platform. Run AI workloads on a network of community-op
 
 ---
 
-### Cyanea <span class="status-badge status-badge--live">Live</span>
+### <img src="/brands/cyanea.png" alt="" class="project-icon"> Cyanea <span class="status-badge status-badge--live">Live</span>
 
 The open community for life science research. Share datasets, protocols, and experiments with version control and citation tracking. Rust-powered analysis stack with browser-based WASM tools, multi-format support (FASTA, FASTQ, VCF, CSV), and full provenance tracking. Open-source, self-hostable, federation-ready.
 
@@ -43,7 +43,7 @@ High-performance Haskell tooling, built in Rust. Home of **hx** (a unified Haske
 
 Infrastructure, tooling, and systems I maintain with production intent. These solve real problems I hit repeatedly.
 
-### Zentinel <span class="status-badge status-badge--stable">Stable</span>
+### <img src="/brands/zentinel.png" alt="" class="project-icon"> Zentinel <span class="status-badge status-badge--stable">Stable</span>
 
 Guardian of the Free Web. A security-first reverse proxy built on Cloudflare's Pingora framework. Memory-safe by default, explicit configuration over hidden defaults, and an isolated agent architecture for extensibility without compromising proxy stability. 20+ security agents, SDKs in 7 languages, a pure Rust ModSecurity reimplementation, and a fleet management control plane.
 
@@ -83,7 +83,7 @@ The Virtual Company OS. Agentic enterprise orchestrator with DAG workflows, even
 
 ---
 
-### Sango <span class="status-badge status-badge--dev">In active development</span>
+### <img src="/brands/sango.svg" alt="" class="project-icon"> Sango <span class="status-badge status-badge--dev">In active development</span>
 
 Edge diagnostics for the modern web. An operator-grade CLI that performs comprehensive endpoint analysis in a single command — TLS inspection, HTTP protocol detection (HTTP/1.1, HTTP/2, HTTP/3), security headers, latency measurements, and technology stack identification.
 
