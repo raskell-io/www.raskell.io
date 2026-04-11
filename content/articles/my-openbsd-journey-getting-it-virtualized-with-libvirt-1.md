@@ -5,7 +5,7 @@ updated = 2026-03-08
 description = "A step-by-step guide to running OpenBSD in a libvirt virtual machine on Void Linux, without needing VirtualBox or VMWare. Part 1 of my OpenBSD journey."
 
 [taxonomies]
-tags = ["linux-bsd"]
+tags = ["openbsd", "linux"]
 categories = ["field-notes"]
 
 [extra]

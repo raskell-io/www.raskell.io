@@ -5,7 +5,7 @@ updated = 2026-03-08
 description = "Auth, policy, inference, and business logic are migrating to the edge and the client. The traditional backend is becoming a persistence layer. Here is what that architecture looks like."
 
 [taxonomies]
-tags = ["edge-systems", "platform-automation"]
+tags = ["edge-systems", "platform-automation", "rust", "pingora"]
 categories = ["deep-dives"]
 series = ["deep-dives"]
 

@@ -5,7 +5,7 @@ updated = 2026-03-09
 description = "How Haskell shaped the way I think about building systems, and why I am still building Haskell tooling years after writing my first monad."
 
 [taxonomies]
-tags = ["oss"]
+tags = ["oss", "haskell"]
 categories = ["deep-dives"]
 
 [extra]

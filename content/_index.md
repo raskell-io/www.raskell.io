@@ -2,10 +2,8 @@
 title = "Home"
 +++
 
-Hi, I'm Raffael.
+Hi, I am Raffael.
 
-Systems that keep working when reality shows up.
+Engineer and builder. Automation-first. Building at the intersection of systems, security, and AI.
 
-This site is my workshop — where I write about platform automation, edge infrastructure, applied security, and open standards. Languages and AI are tools; they serve humans, not the other way around.
-
-When I wander off, it is usually into tooling and DevEx, or a stack I think is simply good. This is a low-noise corner of the internet. Take what's useful.
+Writing about platform automation, edge infrastructure, applied security, and AI-assisted engineering. Languages and models are tools. They serve humans, not the other way around.

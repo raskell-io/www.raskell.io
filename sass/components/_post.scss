@@ -240,3 +240,132 @@ header {
     margin: 1.5rem 0;
     border-radius: 16px;
 }
+
+// Table of contents
+.toc {
+    margin-bottom: 2rem;
+    max-width: 800px;
+
+    details {
+        background: var(--light-background);
+        border-radius: 16px;
+        padding: 1rem 1.5rem;
+
+        &[open] summary {
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    summary {
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--heading-color);
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        &::before {
+            content: "▸";
+            transition: transform 0.2s ease;
+        }
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+
+    details[open] summary::before {
+        transform: rotate(90deg);
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+
+        ul {
+            padding-left: 1.25rem;
+        }
+    }
+
+    li {
+        margin-bottom: 0.25rem;
+    }
+
+    a {
+        font-size: 0.9rem;
+        color: var(--font-color);
+        text-decoration: none;
+        opacity: 0.8;
+        transition: opacity 0.15s ease;
+
+        &:hover {
+            opacity: 1;
+            color: var(--accent-primary);
+        }
+    }
+}
+
+// Related articles
+.related-articles {
+    margin-top: 3.5rem;
+
+    h2 {
+        display: inline-block;
+        background: var(--accent-secondary);
+        color: var(--background);
+        padding: 0.5rem 1.25rem;
+        border-radius: 12px;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.related-articles__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.related-articles__card {
+    display: block;
+    padding: 1.25rem;
+    background: var(--light-background);
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--font-color);
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        text-decoration: none;
+    }
+
+    &:active {
+        transform: translateY(0) scale(0.99);
+        box-shadow: none;
+    }
+
+    h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--heading-color);
+    }
+
+    p {
+        margin: 0;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        opacity: 0.8;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .related-articles__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

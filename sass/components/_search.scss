@@ -56,47 +56,85 @@
     display: none;
 }
 
+.facets {
+    margin-bottom: 2rem;
+}
+
+.facet-group {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+.facet-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--light-font-color);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+    padding-top: 0.35rem;
+    min-width: 2.5rem;
+}
+
 .filter-container {
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 1.5rem;
     flex-wrap: wrap;
+    gap: 0.3rem;
 }
 
 .filter-item {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.75rem;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
     background: var(--light-background);
+    border: 1px solid transparent;
     border-radius: 999px;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 500;
+    font-family: var(--code-font-family);
     cursor: pointer;
+    color: var(--font-color);
     transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     &:hover {
-        background: var(--accent-primary);
-        color: var(--background);
+        background: var(--light-background-hover);
         transform: translateY(-1px);
-        box-shadow: 0 2px 8px rgba(136, 57, 239, 0.12);
     }
 
     &:active {
         transform: translateY(0) scale(0.95);
-        box-shadow: none;
-    }
-
-    &:last-of-type {
-        margin-right: 0;
     }
 
     &.active {
         background: var(--accent-primary);
         color: var(--background);
+        border-color: var(--accent-primary);
 
         &:hover {
             opacity: 0.9;
         }
+    }
+}
+
+.active-filters {
+    margin-top: 0.5rem;
+}
+
+.clear-filters {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--light-font-color);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    &:hover {
+        border-color: var(--ctp-red);
+        color: var(--ctp-red);
     }
 }
 

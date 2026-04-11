@@ -2,7 +2,6 @@
 <header>
     <div class="container">
         <h1>{{ section.title }}</h1>
-        <p class="subtitle">{{ section.extra.subtitle }}</p>
     </div>
 </header>
 
@@ -23,12 +22,25 @@
             </div>
         </form>
 
+        <div class="facets" role="group" aria-label="Filter articles">
+            <div class="facet-group">
+                <span class="facet-label">Tags</span>
+                <div id="tag-filters" class="filter-container"></div>
+            </div>
+            <div class="facet-group">
+                <span class="facet-label">Date</span>
+                <div id="date-filters" class="filter-container"></div>
+            </div>
+            <div id="active-filters" class="active-filters" hidden>
+                <button id="clear-filters" class="clear-filters" type="button">Clear all filters</button>
+            </div>
+        </div>
+
         <section id="articles-list"></section>
     </div>
 </section>
 
 <script>
-    // Render articles with yyyy-mm-dd prefix
     const articlesList = document.getElementById('articles-list');
     const articles = [
         {% for page in section.pages %}
@@ -37,86 +49,136 @@
             permalink: {{ page.permalink | json_encode | safe }},
             date: {{ page.date | json_encode | safe }},
             dateFormatted: {{ page.date | date(format="%Y-%m-%d") | json_encode | safe }},
-            description: {{ page.description | default(value="") | json_encode | safe }}
+            month: {{ page.date | date(format="%Y-%m") | json_encode | safe }},
+            monthLabel: {{ page.date | date(format="%b %Y") | json_encode | safe }},
+            description: {{ page.description | default(value="") | json_encode | safe }},
+            tags: [{% if page.taxonomies.tags %}{% for tag in page.taxonomies.tags %}{{ tag | json_encode | safe }}{% if not loop.last %},{% endif %}{% endfor %}{% endif %}]
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ];
 
-    function renderArticles(articlesToRender) {
-        // Sort by date descending
-        const sorted = [...articlesToRender].sort((a, b) => new Date(b.date) - new Date(a.date));
+    // State
+    const state = { query: '', tags: new Set(), months: new Set() };
+
+    // Build facet options from article data
+    const allTags = [...new Set(articles.flatMap(a => a.tags))].sort();
+    const allMonths = [...new Set(articles.map(a => a.month))].sort().reverse();
+    const monthLabels = {};
+    articles.forEach(a => { monthLabels[a.month] = a.monthLabel; });
+
+    function renderFacets() {
+        const tagContainer = document.getElementById('tag-filters');
+        tagContainer.innerHTML = allTags.map(tag =>
+            `<button type="button" class="filter-item${state.tags.has(tag) ? ' active' : ''}" data-tag="${tag}">${tag}</button>`
+        ).join('');
+
+        const dateContainer = document.getElementById('date-filters');
+        dateContainer.innerHTML = allMonths.map(month =>
+            `<button type="button" class="filter-item${state.months.has(month) ? ' active' : ''}" data-month="${month}">${monthLabels[month]}</button>`
+        ).join('');
+
+        const activeFilters = document.getElementById('active-filters');
+        activeFilters.hidden = state.tags.size === 0 && state.months.size === 0;
+    }
+
+    function applyFilters() {
+        const posts = articlesList.querySelectorAll('.post');
+        posts.forEach((post, i) => {
+            const article = sortedArticles[i];
+            if (!article) return;
+
+            const matchesQuery = state.query.length === 0 || [
+                article.title.toLowerCase(),
+                article.dateFormatted,
+                article.description.toLowerCase()
+            ].join(' ').includes(state.query);
+
+            const matchesTags = state.tags.size === 0 ||
+                [...state.tags].every(t => article.tags.includes(t));
+
+            const matchesMonth = state.months.size === 0 ||
+                state.months.has(article.month);
+
+            post.style.display = (matchesQuery && matchesTags && matchesMonth) ? '' : 'none';
+        });
+    }
+
+    // Sorted articles reference for filter matching
+    let sortedArticles = [];
+
+    function renderArticles() {
+        sortedArticles = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date));
 
         let html = '<div class="posts">';
-        sorted.forEach(article => {
+        sortedArticles.forEach(article => {
+            const tagsHtml = article.tags.length > 0
+                ? `<div class="post-tags-inline">${article.tags.slice(0, 3).map(t => `<span class="tag-pill">${t}</span>`).join('')}</div>`
+                : '';
             html += `
                 <div class="post" data-title="${article.title.toLowerCase()}" data-date="${article.dateFormatted}" data-description="${article.description.toLowerCase()}">
                     <a href="${article.permalink}">
                         <div class="post-row">
                             <time datetime="${article.dateFormatted}">${article.dateFormatted}</time>
-                            <h3>${article.title}</h3>
+                            <div class="post-row__content">
+                                <h3>${article.title}</h3>
+                                ${tagsHtml}
+                            </div>
                         </div>
                     </a>
                 </div>
             `;
         });
         html += '</div>';
-
         articlesList.innerHTML = html;
     }
 
-    renderArticles(articles);
-</script>
+    renderArticles();
+    renderFacets();
 
-<script>
-    const searchInput = document.getElementById("search-query");
+    // Facet click handlers (event delegation)
+    document.querySelector('.facets').addEventListener('click', function(e) {
+        const btn = e.target.closest('.filter-item');
+        if (!btn) return;
 
-    // Simple search filtering
-    searchInput.addEventListener("input", function () {
-        const query = this.value.trim().toLowerCase();
-        const posts = articlesList.querySelectorAll(".post");
-
-        if (query.length === 0) {
-            // Show all posts
-            posts.forEach((post) => (post.style.display = ""));
-            return;
+        if (btn.dataset.tag) {
+            state.tags.has(btn.dataset.tag) ? state.tags.delete(btn.dataset.tag) : state.tags.add(btn.dataset.tag);
+        } else if (btn.dataset.month) {
+            state.months.has(btn.dataset.month) ? state.months.delete(btn.dataset.month) : state.months.add(btn.dataset.month);
         }
+        renderFacets();
+        applyFilters();
+    });
 
-        // Filter posts by title, date, or description
-        posts.forEach((post) => {
-            const title = post.getAttribute("data-title") || "";
-            const date = post.getAttribute("data-date") || "";
-            const description = post.getAttribute("data-description") || "";
+    document.getElementById('clear-filters').addEventListener('click', function() {
+        state.tags.clear();
+        state.months.clear();
+        renderFacets();
+        applyFilters();
+    });
 
-            const searchText = `${title} ${date} ${description}`;
-
-            if (searchText.includes(query)) {
-                post.style.display = "";
-            } else {
-                post.style.display = "none";
-            }
-        });
+    // Search input
+    const searchInput = document.getElementById("search-query");
+    searchInput.addEventListener("input", function () {
+        state.query = this.value.trim().toLowerCase();
+        applyFilters();
     });
 
     // Keyboard shortcuts
     document.addEventListener("keydown", function (e) {
-        // Cmd+K or Ctrl+K
         if ((e.ctrlKey || e.metaKey) && e.key === "k") {
             e.preventDefault();
             searchInput.focus();
             searchInput.select();
-        }
-        // Forward slash (/) when not in an input
-        else if (
+        } else if (
             e.key === "/" &&
             !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)
         ) {
             e.preventDefault();
             searchInput.focus();
-        }
-        // Escape to clear search
-        else if (e.key === "Escape" && document.activeElement === searchInput) {
+        } else if (e.key === "Escape" && document.activeElement === searchInput) {
             searchInput.value = "";
-            searchInput.dispatchEvent(new Event("input"));
+            state.query = '';
+            applyFilters();
             searchInput.blur();
         }
     });

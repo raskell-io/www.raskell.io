@@ -5,7 +5,7 @@ draft = true
 description = "Haskell's language is excellent. Its tooling is not. hx is a fast, opinionated Haskell toolchain built in Rust, following the same playbook that astral.sh used to modernize Python."
 
 [taxonomies]
-tags = ["oss", "platform-automation"]
+tags = ["oss", "platform-automation", "rust", "haskell"]
 categories = ["patterns"]
 
 [extra]

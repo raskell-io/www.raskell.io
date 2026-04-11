@@ -7,17 +7,7 @@
             {{ section.content | safe }}
         </div>
 
-        {# Speaking & Social - moved to top #}
         <div class="hero-meta">
-            <p class="speaking-badge">
-                <span class="acnh-ping" aria-hidden="true">
-                    <svg class="acnh-bloom" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M50,6 Q53.8,7.1 55.4,8.7 Q57,10.3 58.2,12.6 Q59.4,14.9 60.1,17.6 Q60.8,20.3 61.1,22.9 Q61.4,25.5 61.7,27.4 Q62,29.2 63.8,28.5 Q65.5,27.9 67.9,26.9 Q70.3,25.8 73,25.1 Q75.7,24.3 78.3,24.2 Q80.9,24.1 83.1,24.7 Q85.3,25.3 86.7,26.6 Q88.1,28 88.5,29.9 Q89,31.8 88.5,34 Q87.9,36.2 86.5,38.4 Q85.1,40.6 83.1,42.5 Q81.1,44.5 79,46 Q76.9,47.6 75.5,48.8 Q74,50 75.5,51.2 Q76.9,52.4 79,54 Q81.1,55.5 83.1,57.5 Q85.1,59.4 86.5,61.6 Q87.9,63.8 88.5,66 Q89,68.2 88.5,70.1 Q88.1,72 86.7,73.3 Q85.3,74.7 83.1,75.3 Q80.9,75.9 78.3,75.8 Q75.7,75.7 73,75 Q70.3,74.2 67.9,73.2 Q65.5,72.1 63.8,71.4 Q62,70.8 61.7,72.7 Q61.4,74.5 61.1,77.1 Q60.8,79.7 60.1,82.4 Q59.4,85.1 58.2,87.4 Q57,89.7 55.4,91.3 Q53.8,92.9 51.9,93.5 Q50,94 48.1,93.5 Q46.2,92.9 44.6,91.3 Q43,89.7 41.8,87.4 Q40.6,85.1 39.9,82.4 Q39.2,79.7 38.9,77.1 Q38.6,74.5 38.3,72.7 Q38,70.8 36.2,71.4 Q34.5,72.1 32.1,73.2 Q29.7,74.2 27,75 Q24.3,75.7 21.7,75.8 Q19.1,75.9 16.9,75.3 Q14.7,74.7 13.3,73.3 Q11.9,72 11.4,70.1 Q11,68.2 11.6,66 Q12.1,63.8 13.5,61.6 Q14.9,59.4 16.9,57.5 Q18.9,55.5 21,54 Q23.1,52.4 24.6,51.2 Q26,50 24.6,48.8 Q23.1,47.6 21,46 Q18.9,44.5 16.9,42.5 Q14.9,40.6 13.5,38.4 Q12.1,36.2 11.6,34 Q11,31.8 11.4,29.9 Q11.9,28 13.3,26.6 Q14.7,25.3 16.9,24.7 Q19.1,24.1 21.7,24.2 Q24.3,24.3 27,25.1 Q29.7,25.8 32.1,26.9 Q34.5,27.9 36.2,28.5 Q38,29.2 38.3,27.4 Q38.6,25.5 38.9,22.9 Q39.2,20.3 39.9,17.6 Q40.6,14.9 41.8,12.6 Q43,10.3 44.6,8.7 Q46.2,7.1 48.1,6.5 Q50,6 51.9,6.5Z" fill="currentColor"/>
-                    </svg>
-                    <span class="acnh-ping__mark">!</span>
-                </span>
-                <a href="/speaking"><strong>RSAC 2026 speaker</strong> · Available for technical talks and consulting</a>
-            </p>
             <div class="bio-social">
                 {% if config.extra.social.github %}
                 <a href="{{ config.extra.social.github }}" target="_blank" rel="noreferrer" title="github" aria-label="github">
@@ -39,24 +29,112 @@
     </section>
 </div>
 
-{# Articles - prominent #}
+{# Start here - curated entry points #}
+<div class="container">
+    <section class="home-section">
+        <h2>Start here</h2>
+        <div class="start-here-grid">
+            <a href="/articles/edge-systems-are-the-new-backend/" class="start-here-card">
+                <h3>Edge Systems Are the New Backend</h3>
+                <p>Auth, policy, and business logic are migrating to the edge. The traditional backend is becoming a persistence layer.</p>
+            </a>
+            <a href="/articles/how-ai-makes-bare-metal-viable-again/" class="start-here-card">
+                <h3>How AI Makes Bare Metal Viable Again</h3>
+                <p>I migrated from Kubernetes to a single Hetzner box. The missing piece was not the hardware.</p>
+            </a>
+            <a href="/articles/what-programming-languages-become-when-ai-writes-the-code/" class="start-here-card">
+                <h3>The Last Programming Language Might Not Be for Humans</h3>
+                <p>Three futures for the intermediate layer between human intent and machine execution.</p>
+            </a>
+        </div>
+        <a class="view-all-link" href="/start-here/">See all recommendations →</a>
+    </section>
+</div>
+
+{# Selected writing #}
 {% set articles_section = get_section(path="articles/_index.md") %}
 <div class="container">
-    <section>
-        <h2>Writing</h2>
+    <section class="home-section">
+        <h2>Selected writing</h2>
         <div class="posts">
-            {% for page in articles_section.pages | slice(end=10) %}
+            {% for page in articles_section.pages | slice(end=6) %}
             <div class="post">
                 <a href="{{ page.permalink }}">
                     <div class="post-row">
                         <time datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%Y-%m-%d") }}</time>
-                        <h3>{{ page.title }}</h3>
+                        <div class="post-row__content">
+                            <h3>{{ page.title }}</h3>
+                            {% if page.taxonomies.tags %}
+                            <div class="post-tags-inline">
+                                {% for tag in page.taxonomies.tags | slice(end=3) %}
+                                <span class="tag-pill">{{ tag }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
                     </div>
                 </a>
             </div>
             {% endfor %}
         </div>
         <a class="view-all-link" href="{{ get_url(path="@/articles/_index.md") }}">View all articles →</a>
+    </section>
+</div>
+
+{# Projects - featured #}
+<div class="container">
+    <section class="home-section">
+        <h2>Projects</h2>
+        <div class="home-projects-grid">
+            <div class="project-card">
+                <h3>Zentinel</h3>
+                <p>Security-first reverse proxy built on Pingora. Memory-safe, explicit configuration, isolated agent architecture.</p>
+                <div class="project-card__links">
+                    <a href="https://zentinelproxy.io" target="_blank" rel="noreferrer">Website</a>
+                    <a href="https://github.com/zentinelproxy/zentinel" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Archipelag.io</h3>
+                <p>Decentralized AI compute platform. Run workloads on community-operated GPU hosts. Fast, fair, and local.</p>
+                <div class="project-card__links">
+                    <a href="https://archipelag.io" target="_blank" rel="noreferrer">Website</a>
+                    <a href="https://github.com/archipelag-io" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Cyanea</h3>
+                <p>Open community for life science research. Share datasets, protocols, and experiments with version control and citation tracking.</p>
+                <div class="project-card__links">
+                    <a href="https://cyanea.bio" target="_blank" rel="noreferrer">Website</a>
+                    <a href="https://github.com/cyanea-bio" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Arcanist.sh</h3>
+                <p>High-performance Haskell tooling, built in Rust. Home of hx (package manager) and bhc (compiler with GC-free runtime profiles).</p>
+                <div class="project-card__links">
+                    <a href="https://arcanist.sh" target="_blank" rel="noreferrer">Website</a>
+                    <a href="https://github.com/arcanist-sh" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+        <a class="view-all-link" href="/projects/">View all projects →</a>
+    </section>
+</div>
+
+{# Speaking #}
+<div class="container">
+    <section class="home-section">
+        <h2>Speaking</h2>
+        <div class="home-speaking">
+            <div class="speaking-card">
+                <div class="speaking-card__event">RSAC 2026</div>
+                <h3>Self-Learning WAF: Using Generative AI to Tame ModSecurity False Positives</h3>
+                <p>How generative AI can classify WAF false positives, a practical pipeline for automated rule generation, and lessons from production.</p>
+                <a href="/speaking/">Details and availability →</a>
+            </div>
+        </div>
     </section>
 </div>
 

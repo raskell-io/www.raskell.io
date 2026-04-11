@@ -3,33 +3,36 @@ title = "About"
 template = "static-page.html"
 +++
 
-Hi, I'm Raffael. I live in Basel and I build automation-first platforms and edge/web ingress systems that survive production reality.
+Hi, I am Raffael. I live in Basel and I build automation-first platforms and edge systems at the intersection of security and AI.
 
 **raskell** = rascal × Haskell × Raffael (tanuki mascot included).
 
-Tech that serves humans — boring by default, precise when required.
+Tech that serves humans. Boring by default, precise when required.
 
-I like hard problems. The kind where latency, reliability, risk, and people all collide.
-Applied security is just one arena of that. It is systems under pressure with adversarial inputs and questionable signal-to-noise.
+I like hard problems. The kind where latency, reliability, risk, and people all collide. Applied security is just one arena of that. It is systems under pressure with adversarial inputs and questionable signal-to-noise.
 
-## What I do (most days)
+## What I do
 
 - Platform automation: workflows, guardrails, self-service, operability
 - Edge systems: reverse proxies, policy, observability, safe change
 - Applied security: reduce noise, keep humans effective, ship pragmatic controls
+- AI-assisted engineering: agentic workflows, model-driven tooling, ops automation
 - Open standards: sustainable solutions over vendor lock-in
+
+## Projects
+
+I run several open-source ventures and flagship builds. The main ones:
+
+- [Zentinel](https://zentinelproxy.io) — security-first reverse proxy on Pingora
+- [Archipelag.io](https://archipelag.io) — decentralized AI compute platform
+- [Cyanea](https://cyanea.bio) — open community for life science research
+- [Arcanist.sh](https://arcanist.sh) — high-performance Haskell tooling in Rust
+
+[All projects →](/projects)
 
 ## Speaking
 
-**RSAC 2026**<br>
-*[Self-Learning WAF: Using Generative AI to Tame ModSecurity False Positives](https://path.rsaconference.com/flow/rsac/us26/FullAgenda/page/catalog/session/1753946922633001YdMq)*<br>
-Session NCS-W01<br>
-Wednesday, March 25, 2026<br>
-8:30–9:20 AM PDT
-
-<p class="session-link"><a href="https://path.rsaconference.com/flow/rsac/us26/FullAgenda/page/catalog/session/1753946922633001YdMq"><i data-lucide="external-link"></i> View session on RSAC website</a></p>
-
-[More about speaking →](/speaking)
+[More about speaking and availability →](/speaking)
 
 ## Contact
 

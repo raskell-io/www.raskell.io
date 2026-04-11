@@ -5,7 +5,7 @@ draft = true
 description = "If AI stops writing source code and generates machine code directly, the next question is: why are we still running operating systems designed for humans typing instructions? The answer might be an inference-native OS where the GPU is the primary execution engine."
 
 [taxonomies]
-tags = ["ai-for-ops", "oss", "edge-systems"]
+tags = ["ai-for-ops", "oss", "edge-systems", "haskell"]
 categories = ["deep-dives"]
 
 [extra]

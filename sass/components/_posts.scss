@@ -17,6 +17,12 @@
     h3 {
         flex: 1;
     }
+
+    .post-row__content {
+        h3 {
+            flex: none;
+        }
+    }
 }
 
 .posts .post:last-of-type a {

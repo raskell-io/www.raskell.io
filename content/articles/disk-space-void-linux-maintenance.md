@@ -5,7 +5,7 @@ updated = 2026-03-08
 description = "What to do when disk space fills up on Void Linux after months of neglect. Cleaning old kernels, pruning xbps package cache, and reclaiming space without breaking your system."
 
 [taxonomies]
-tags = ["linux-bsd"]
+tags = ["linux"]
 categories = ["field-notes"]
 
 [extra]

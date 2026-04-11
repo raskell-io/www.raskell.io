@@ -66,10 +66,68 @@
         </header>
     </article>
 
+    {% if page.toc and page.toc | length > 1 %}
+    <nav class="toc" aria-label="Table of contents">
+        <details open>
+            <summary>Table of contents</summary>
+            <ul>
+                {% for h in page.toc %}
+                <li>
+                    <a href="{{ h.permalink }}">{{ h.title }}</a>
+                    {% if h.children %}
+                    <ul>
+                        {% for child in h.children %}
+                        <li><a href="{{ child.permalink }}">{{ child.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </details>
+    </nav>
+    {% endif %}
+
     <div class="article-post">
         {{ page.content | safe }}
     </div>
 </div>
+
+{# Related articles based on shared tags #}
+{% if page.taxonomies.tags %}
+{% set articles_section = get_section(path="articles/_index.md") %}
+{% set_global related = [] %}
+{% for other in articles_section.pages %}
+    {% if other.permalink != page.permalink and related | length < 3 %}
+        {% if other.taxonomies.tags %}
+            {% set_global has_match = false %}
+            {% for tag in page.taxonomies.tags %}
+                {% if other.taxonomies.tags is containing(tag) %}
+                    {% set_global has_match = true %}
+                {% endif %}
+            {% endfor %}
+            {% if has_match %}
+                {% set_global related = related | concat(with=other) %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+{% if related | length > 0 %}
+<div class="container">
+    <section class="related-articles">
+        <h2>Related articles</h2>
+        <div class="related-articles__grid">
+            {% for rel in related %}
+            <a href="{{ rel.permalink }}" class="related-articles__card">
+                <h3>{{ rel.title }}</h3>
+                <p>{{ rel.description }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endif %}
+{% endif %}
 
 <div class="container">
     <nav class="flex container suggested">
