@@ -31,7 +31,7 @@ Human continuity platform for preserving presence across generations. Humankind.
 
 ---
 
-### Arcanist <span class="status-badge status-badge--dev">In active development</span>
+### <img src="/brands/arcanist.svg" alt="" class="project-icon"> Arcanist <span class="status-badge status-badge--dev">In active development</span>
 
 High-performance Haskell tooling, built in Rust. Home of **hx** (a unified Haskell package manager with managed toolchains and 5.6x faster cold builds) and **bhc** (an alternative Haskell compiler with runtime profiles, WebAssembly support, and tensor-native numerics). Modern workflows, no ecosystem fragmentation.
 
