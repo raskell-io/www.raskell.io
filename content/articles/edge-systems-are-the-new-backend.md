@@ -2,7 +2,7 @@
 title = "Edge Systems Are the New Backend"
 date = 2026-02-11
 updated = 2026-03-08
-description = "Auth, policy, inference, and business logic are migrating to the edge and the client. The traditional backend is becoming a persistence layer. Here is what that architecture looks like."
+description = "Auth, policy, and business logic are migrating to the edge. The traditional backend is becoming a persistence layer."
 
 [taxonomies]
 tags = ["edge-systems", "platform-automation", "rust", "pingora"]

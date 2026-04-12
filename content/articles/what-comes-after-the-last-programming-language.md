@@ -2,7 +2,7 @@
 title = "What Comes After the Last Programming Language"
 date = 2026-04-25
 draft = true
-description = "If AI stops writing source code and generates machine code directly, the next question is: why are we still running operating systems designed for humans typing instructions? The answer might be an inference-native OS where the GPU is the primary execution engine."
+description = "If AI generates machine code directly, why are we still running operating systems designed for humans? The answer might be an inference-native OS."
 
 [taxonomies]
 tags = ["ai-for-ops", "oss", "edge-systems", "haskell"]

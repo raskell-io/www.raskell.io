@@ -1,0 +1,114 @@
+// Print styles
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    // Hide non-content elements
+    .navbar,
+    .footer,
+    .search-overlay,
+    .mobile-menu-overlay,
+    .scroll-to-top,
+    .suggested,
+    .related-articles,
+    .toc,
+    .bio-social,
+    .hero-meta,
+    .home-section,
+    .view-all-link,
+    .speaking-badge,
+    .skip-link {
+        display: none !important;
+    }
+
+    // Typography
+    h1 { font-size: 24pt; }
+    h2 { font-size: 18pt; padding: 0 !important; }
+    h3 { font-size: 14pt; }
+
+    h1, h2, h3, h4 {
+        page-break-after: avoid;
+        orphans: 3;
+        widows: 3;
+    }
+
+    p, li {
+        orphans: 3;
+        widows: 3;
+    }
+
+    // Show link URLs after links in article content
+    .article-post a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        font-weight: normal;
+        word-break: break-all;
+    }
+
+    // Do not show URL for anchor links or internal fragment links
+    .article-post a[href^="#"]::after,
+    .article-post a[href^="javascript"]::after {
+        content: "";
+    }
+
+    // Images
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    // Code blocks
+    pre {
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    code {
+        font-size: 10pt;
+    }
+
+    // Blockquotes
+    blockquote {
+        border-left: 3px solid #000;
+        margin-left: 0;
+        padding-left: 1rem;
+    }
+
+    // Tables
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+    }
+
+    // Page breaks
+    article {
+        page-break-before: avoid;
+    }
+
+    // Remove main margin since navbar is hidden
+    main {
+        margin-top: 0 !important;
+    }
+}

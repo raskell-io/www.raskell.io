@@ -133,9 +133,9 @@ a {
         }
 
         &.secondary {
-            border: 2px solid #edf2ff;
-            background: #edf2ff;
-            color: #3b5bdb;
+            border: 2px solid var(--light-background);
+            background: var(--light-background);
+            color: var(--link-color);
         }
 
         &:hover, &.secondary:hover {

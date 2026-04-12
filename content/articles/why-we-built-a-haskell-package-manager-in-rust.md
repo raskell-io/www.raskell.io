@@ -2,7 +2,7 @@
 title = "Why We Built a Haskell Package Manager in Rust"
 date = 2026-04-18
 draft = true
-description = "Haskell's language is excellent. Its tooling is not. hx is a fast, opinionated Haskell toolchain built in Rust, following the same playbook that astral.sh used to modernize Python."
+description = "hx is a fast, opinionated Haskell toolchain built in Rust, following the playbook astral.sh used to modernize Python."
 
 [taxonomies]
 tags = ["oss", "platform-automation", "rust", "haskell"]

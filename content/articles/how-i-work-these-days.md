@@ -2,7 +2,7 @@
 title = "How I Work These Days"
 date = 2026-03-15
 updated = 2026-03-15
-description = "From Kaggle and Hugging Face in 2020 to coding agents in late 2025, this is the shift that changed how I build, how I work, and why my daily routine now feels like the one I had been waiting for."
+description = "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right."
 
 [taxonomies]
 tags = ["ai-for-ops", "oss", "platform-automation"]

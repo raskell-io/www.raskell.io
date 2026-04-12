@@ -1,7 +1,7 @@
 +++
 title = "Notes from RSAC 2026"
 date = 2026-04-09
-description = "Third time at RSA Conference, first time as a speaker. What I saw on the floor, what I heard from four former NSA directors, and what I am still processing two weeks and a West Coast road trip later."
+description = "Third time at RSA Conference, first time as a speaker. What I saw, what I heard, and what I am still processing."
 
 [taxonomies]
 tags = ["applied-security", "ai-for-ops"]

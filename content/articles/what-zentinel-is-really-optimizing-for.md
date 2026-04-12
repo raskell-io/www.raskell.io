@@ -1,7 +1,7 @@
 +++
 title = "What Zentinel Is Really Optimizing For"
 date = 2026-03-22
-description = "Every major proxy was a product of its time. HAProxy for load balancing, Nginx for web serving, Envoy for service mesh. Zentinel is a product of this time: a post-agentic reverse proxy built for safety, operability, and the operator's ability to sleep."
+description = "Every major proxy was a product of its time. Zentinel is built for this one: safety, operability, and the operator's ability to sleep."
 
 [taxonomies]
 tags = ["edge-systems", "applied-security", "oss", "reliability", "platform-automation", "rust", "pingora"]

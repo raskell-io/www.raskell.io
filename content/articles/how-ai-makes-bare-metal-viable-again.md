@@ -2,7 +2,7 @@
 title = "How AI Makes Bare Metal Viable Again"
 date = 2026-03-08
 updated = 2026-03-08
-description = "I migrated two production apps from Kubernetes to fly.io to a single Hetzner box. The missing piece was not the hardware. It was having an AI that could build bespoke deployment tooling in hours instead of months."
+description = "I migrated two production apps from Kubernetes to a single Hetzner box. The missing piece was not the hardware."
 
 [taxonomies]
 tags = ["platform-automation", "ai-for-ops", "rust", "elixir"]

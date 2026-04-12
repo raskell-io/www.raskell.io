@@ -1,10 +1,11 @@
 +++
 title = "Hello and outlook"
 date = 2022-09-20
-description = "The very first article on Raskell and an outlook of what topics are up ahead to be posted in the near future."
+updated = 2026-04-12
+description = "The first post on raskell.io. What this site is for and what I planned to write about."
 
 [taxonomies]
-tags = []
+tags = ["oss", "linux"]
 categories = ["meta"]
 
 [extra]
@@ -15,28 +16,23 @@ og_image = "hello-world.png"
 
 ## Hello world
 
-Welcome to my tech blog! My name is Raffael and I am excited to share my musings about the state of tech, open-source, and the life as a software developer with you.
+This is the first post on raskell.io. My name is Raffael. I build software, mostly in the space of platform automation, edge infrastructure, and applied security. I also have a long-running interest in open-source software, operating systems, and the kind of hardware you find in recycling bins and give a second life to.
 
-In this first post, I wanted to introduce myself and explain what you can expect to find on this blog. I have been working in the tech industry for several years, and I have experience with a variety of technologies, programming languages, and operating systems. I have a strong interest in open-source software and the principles of open collaboration and sharing that underpin it. Also, I have a passion for tech hardware and the functional restoration of discarded equipment. The freedom to express oneself with technology to make the world a more comfortable place is a strong focus of mine.
+This site exists to document real work and share patterns that other engineers can use. Not thought leadership. Not personal branding. Just notes from the workshop.
 
-## Outlook
+## What to expect
 
-On this blog, I will be covering a wide range of topics related to technology in general, open-source, operating systems, programming, and tech hardware. Some of the things you can expect to find include:
+At the time of writing, I planned to cover:
 
-- My dabblings into new and bleeding-edge technologies in general
-- My experience in using Linux, BSDs, and embedded operating systems
-- Exploration of new and exciting open-source projects
-- Discussion of the latest technology trends and innovations
-- Personal musings and insights into the tech industry
+- Linux and BSD systems, particularly [Void Linux](https://voidlinux.org/) and [OpenBSD](https://www.openbsd.org/)
+- Open-source tooling and infrastructure
+- Platform automation and operability
+- Whatever hard problem I happened to be stuck on
 
-I believe that technology has the power to change the world, and I am excited to be a small part of that change. I hope that this blog will serve as a valuable resource for anyone interested in technology, open-source, Linux, OpenBSD, and programming. I will be posting new content on a regular basis, so be sure to check back often.
-
-In my next post, I will dive into a specific topic and share my knowledge and experience. I want to make sure that my readers will learn something new every time they visit my blog.
-
-Thank you for visiting, and I look forward to connecting with you on social media or in real life.
+Looking back from 2026, the scope grew to include edge systems, AI-assisted engineering, and a few deep dives I did not expect to write. The thread that held it together was always the same: systems under pressure, and the tools that keep them running.
 
 ## References
 
-- [Void Linux](https://voidlinux.org/) - My Linux distribution of choice at the time of writing
-- [OpenBSD](https://www.openbsd.org/) - The security-focused BSD operating system
-- [raskell.io source](https://github.com/raskell-io/www.raskell.io) - This site's source code
+- [Void Linux](https://voidlinux.org/)
+- [OpenBSD](https://www.openbsd.org/)
+- [raskell.io source](https://github.com/raskell-io/www.raskell.io)

@@ -1,7 +1,7 @@
 +++
 title = "The Last Programming Language Might Not Be for Humans"
 date = 2026-04-11
-description = "Someone built a programming language designed for LLMs to write. I had the same idea in December. Here are three futures for the intermediate layer between human intent and machine execution, and why I bet on Haskell."
+description = "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell."
 
 [taxonomies]
 tags = ["ai-for-ops", "oss", "haskell"]

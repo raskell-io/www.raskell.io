@@ -1,7 +1,7 @@
 +++
 title = "Archipelag.io Is in Open Beta: Here's Why I Built It"
 date = 2026-03-13
-description = "The ten-year journey from watching Ethereum miners sacrifice their gaming PCs to building a decentralized compute network that just entered open beta. Architecture, conviction, and the long road from whitepaper to production."
+description = "From watching Ethereum miners in 2016 to building a decentralized compute network in open beta. Architecture, conviction, and the long road."
 
 [taxonomies]
 tags = ["platform-automation", "edge-systems", "oss", "elixir", "rust"]

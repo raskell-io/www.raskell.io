@@ -2,7 +2,7 @@
 title = "Mise ate my Makefile"
 date = 2025-12-14
 updated = 2026-03-09
-description = "I maintain projects across four GitHub orgs in Rust, Elixir, Gleam, and TypeScript. Mise replaced Make, asdf, and a pile of shell scripts with a single TOML file per project. Here is why it stuck."
+description = "Mise replaced Make, asdf, and a pile of shell scripts with a single TOML file per project. Here is why it stuck."
 
 [taxonomies]
 tags = ["oss", "platform-automation", "rust", "elixir", "gleam", "typescript"]

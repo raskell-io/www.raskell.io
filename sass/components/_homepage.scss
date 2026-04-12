@@ -98,13 +98,13 @@
                 inset: -4px;
                 width: calc(100% + 8px);
                 height: calc(100% + 8px);
-                color: #f9e2af;
+                color: var(--ctp-yellow);
             }
 
             &__mark {
                 position: relative;
                 z-index: 1;
-                color: #1e1e2e;
+                color: var(--ctp-base);
                 font-weight: 800;
                 font-size: 1.4rem;
                 font-family: var(--font-family);

@@ -114,16 +114,9 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ get_url(path='style.css') | safe }}">
 
-    <!-- Preconnect to external origins -->
-    <link rel="preconnect" href="https://unpkg.com" crossorigin>
-    <link rel="dns-prefetch" href="https://unpkg.com">
-
     <!-- Preload critical fonts -->
     <link rel="preload" href="{{ get_url(path='fonts/Geist-Variable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="{{ get_url(path='fonts/GeistMono-Variable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
     <!-- Theme detection script - runs before paint to prevent FOUC -->
     <script>
@@ -278,7 +271,7 @@
     <script src="{{ get_url(path='copy-code.js') | safe }}"></script>
     <script src="{{ get_url(path='code-lang-labels.js') | safe }}"></script>
     <script src="{{ get_url(path='section-spy.js') | safe }}"></script>
-    <script>lucide.createIcons();</script>
+    <script src="{{ get_url(path='icons.js') | safe }}"></script>
 
     {% if config.build_search_index %}
     <script src="{{ get_url(path='elasticlunr.min.js') | safe }}"></script>
