@@ -7,7 +7,7 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/categories/meta/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Sun, 12 Apr 2026 00:00:00 +0000</lastBuildDate>
       <item>
           <title>How I Work These Days</title>
           <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
@@ -81,25 +81,22 @@
           <link>https://raskell.io/articles/hello-and-outlook/</link>
           <guid>https://raskell.io/articles/hello-and-outlook/</guid>
           <description xml:base="https://raskell.io/articles/hello-and-outlook/">&lt;h2 id=&quot;hello-world&quot;&gt;Hello world&lt;&#x2F;h2&gt;
-&lt;p&gt;Welcome to my tech blog! My name is Raffael and I am excited to share my musings about the state of tech, open-source, and the life as a software developer with you.&lt;&#x2F;p&gt;
-&lt;p&gt;In this first post, I wanted to introduce myself and explain what you can expect to find on this blog. I have been working in the tech industry for several years, and I have experience with a variety of technologies, programming languages, and operating systems. I have a strong interest in open-source software and the principles of open collaboration and sharing that underpin it. Also, I have a passion for tech hardware and the functional restoration of discarded equipment. The freedom to express oneself with technology to make the world a more comfortable place is a strong focus of mine.&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;outlook&quot;&gt;Outlook&lt;&#x2F;h2&gt;
-&lt;p&gt;On this blog, I will be covering a wide range of topics related to technology in general, open-source, operating systems, programming, and tech hardware. Some of the things you can expect to find include:&lt;&#x2F;p&gt;
+&lt;p&gt;This is the first post on raskell.io. My name is Raffael. I build software, mostly in the space of platform automation, edge infrastructure, and applied security. I also have a long-running interest in open-source software, operating systems, and the kind of hardware you find in recycling bins and give a second life to.&lt;&#x2F;p&gt;
+&lt;p&gt;This site exists to document real work and share patterns that other engineers can use. Not thought leadership. Not personal branding. Just notes from the workshop.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-to-expect&quot;&gt;What to expect&lt;&#x2F;h2&gt;
+&lt;p&gt;At the time of writing, I planned to cover:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;My dabblings into new and bleeding-edge technologies in general&lt;&#x2F;li&gt;
-&lt;li&gt;My experience in using Linux, BSDs, and embedded operating systems&lt;&#x2F;li&gt;
-&lt;li&gt;Exploration of new and exciting open-source projects&lt;&#x2F;li&gt;
-&lt;li&gt;Discussion of the latest technology trends and innovations&lt;&#x2F;li&gt;
-&lt;li&gt;Personal musings and insights into the tech industry&lt;&#x2F;li&gt;
+&lt;li&gt;Linux and BSD systems, particularly &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt; and &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Open-source tooling and infrastructure&lt;&#x2F;li&gt;
+&lt;li&gt;Platform automation and operability&lt;&#x2F;li&gt;
+&lt;li&gt;Whatever hard problem I happened to be stuck on&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;I believe that technology has the power to change the world, and I am excited to be a small part of that change. I hope that this blog will serve as a valuable resource for anyone interested in technology, open-source, Linux, OpenBSD, and programming. I will be posting new content on a regular basis, so be sure to check back often.&lt;&#x2F;p&gt;
-&lt;p&gt;In my next post, I will dive into a specific topic and share my knowledge and experience. I want to make sure that my readers will learn something new every time they visit my blog.&lt;&#x2F;p&gt;
-&lt;p&gt;Thank you for visiting, and I look forward to connecting with you on social media or in real life.&lt;&#x2F;p&gt;
+&lt;p&gt;Looking back from 2026, the scope grew to include edge systems, AI-assisted engineering, and a few deep dives I did not expect to write. The thread that held it together was always the same: systems under pressure, and the tools that keep them running.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt; - My Linux distribution of choice at the time of writing&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt; - The security-focused BSD operating system&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;www.raskell.io&quot;&gt;raskell.io source&lt;&#x2F;a&gt; - This site’s source code&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;www.raskell.io&quot;&gt;raskell.io source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </description>
       </item>

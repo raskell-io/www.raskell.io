@@ -7,7 +7,7 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/linux/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Sun, 08 Mar 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Sun, 12 Apr 2026 00:00:00 +0000</lastBuildDate>
       <item>
           <title>Disk space maintenance on Void Linux</title>
           <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
@@ -214,6 +214,32 @@ Domain &amp;#x27;openbsd&amp;#x27; started
 &lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;voidlinux&#x2F;comments&#x2F;ghwvv5&#x2F;guide_how_to_setup_qemukvm_emulation_on_void_linux&#x2F;&quot;&gt;[Guide] How to setup QEMU&#x2F;KVM emulation on Void Linux&lt;&#x2F;a&gt; - Community guide on r&#x2F;voidlinux&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.cyberciti.biz&#x2F;faq&#x2F;kvmvirtualization-virt-install-openbsd-unix-guest&#x2F;&quot;&gt;KVM virt-install: Install OpenBSD as Guest Operating System&lt;&#x2F;a&gt; - Step-by-step KVM installation guide&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.skreutz.com&#x2F;posts&#x2F;autoinstall-openbsd-on-qemu&#x2F;&quot;&gt;Auto-install OpenBSD on QEMU&lt;&#x2F;a&gt; - Automated OpenBSD installation on QEMU&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
+      <item>
+          <title>Hello and outlook</title>
+          <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/hello-and-outlook/</link>
+          <guid>https://raskell.io/articles/hello-and-outlook/</guid>
+          <description xml:base="https://raskell.io/articles/hello-and-outlook/">&lt;h2 id=&quot;hello-world&quot;&gt;Hello world&lt;&#x2F;h2&gt;
+&lt;p&gt;This is the first post on raskell.io. My name is Raffael. I build software, mostly in the space of platform automation, edge infrastructure, and applied security. I also have a long-running interest in open-source software, operating systems, and the kind of hardware you find in recycling bins and give a second life to.&lt;&#x2F;p&gt;
+&lt;p&gt;This site exists to document real work and share patterns that other engineers can use. Not thought leadership. Not personal branding. Just notes from the workshop.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-to-expect&quot;&gt;What to expect&lt;&#x2F;h2&gt;
+&lt;p&gt;At the time of writing, I planned to cover:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux and BSD systems, particularly &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt; and &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Open-source tooling and infrastructure&lt;&#x2F;li&gt;
+&lt;li&gt;Platform automation and operability&lt;&#x2F;li&gt;
+&lt;li&gt;Whatever hard problem I happened to be stuck on&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Looking back from 2026, the scope grew to include edge systems, AI-assisted engineering, and a few deep dives I did not expect to write. The thread that held it together was always the same: systems under pressure, and the tools that keep them running.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;www.raskell.io&quot;&gt;raskell.io source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </description>
       </item>
