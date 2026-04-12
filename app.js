@@ -195,7 +195,15 @@ class ScrollNavbar {
     this.ticking = false;
     this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    // Re-measure after layout settles (safe area insets may load late)
+    requestAnimationFrame(() => {
+      this.navbarHeight = this.navbar.offsetHeight;
+    });
+
     window.addEventListener('scroll', () => this.onScroll(), { passive: true });
+    window.addEventListener('resize', () => {
+      this.navbarHeight = this.navbar.offsetHeight;
+    });
   }
 
   onScroll() {
