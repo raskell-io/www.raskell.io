@@ -294,7 +294,7 @@ The vision behind [arcanist.sh](https://arcanist.sh) is that Haskell's ideas des
 
 The tooling is not separate from the thesis. The tooling IS the thesis.
 
-## Honesty
+## The Bet, What If I am Wrong
 
 I want to be direct about something. This is a gamble.
 
