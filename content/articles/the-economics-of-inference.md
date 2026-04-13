@@ -1,5 +1,5 @@
 +++
-title = "Inference Is the Fifth Utility"
+title = "The Economics of Inference"
 date = 2026-04-20
 draft = true
 description = "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas."
