@@ -308,29 +308,12 @@ Consider a mid-size engineering organization. Two hundred engineers. They spend,
 
 Now replace even a fraction of that coordination layer with agents. Not the engineers themselves. The coordination between them. An agentic squad lead that triages incoming tickets, assigns them based on skill match, checks for conflicts with in-flight work, and only escalates to a human lead when the decision genuinely requires human judgment. An agentic project manager that tracks dependencies across teams, flags blockers before they become crises, and generates status updates from actual commit history instead of asking twelve people to fill out a spreadsheet.
 
-{% diagram(title="Operationalizing agentic employees in enterprise") %}
-Today                                    Near future
-=====                                    ===========
-
-Human eng --- Human lead --- VP          Human eng --- Agent lead --- Human VP
-Human eng /                              Human eng /
-Human eng --- Human lead /               Agent eng --- Agent lead /
-Human eng /                              Agent eng /
-
-Coordination: all human,                 Coordination: mostly agents,
-  expensive, slow, lossy                   cheap, fast, auditable
-
-Status updates: asked for weekly         Status updates: generated from
-  (often stale by the time                 event logs (always current)
-   they reach leadership)
-
-Conflict detection: someone              Conflict detection: automatic,
-  notices during code review               flagged before work begins
-  (after the work is done)
-
-Escalation: informal, depends            Escalation: structured, policy-
-  on who knows whom                        driven, with full context
-{% end %}
+|                      | Today                                                        | Near future                                                  |
+|----------------------|--------------------------------------------------------------|--------------------------------------------------------------|
+| **Coordination**     | All human, expensive, slow, lossy                            | Mostly agents, cheap, fast, auditable                        |
+| **Status updates**   | Asked for weekly (often stale by the time they reach leadership) | Generated from event logs (always current)                   |
+| **Conflict detection** | Someone notices during code review (after the work is done)  | Automatic, flagged before work begins                        |
+| **Escalation**       | Informal, depends on who knows whom                          | Structured, policy-driven, with full context                 |
 
 The organizations that will benefit most are not the ones with the best AI models. They are the ones that treat agent orchestration as an organizational design problem. That means defining clear scopes of authority, building escalation paths that preserve context, implementing approval gates that match their governance requirements, and maintaining audit trails that satisfy compliance. These are not engineering problems. They are operations problems. And most companies already have people who know how to solve them. They are called managers.
 
