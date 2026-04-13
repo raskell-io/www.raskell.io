@@ -1,7 +1,6 @@
 +++
 title = "Why We Built a Haskell Package Manager in Rust"
-date = 2026-04-18
-draft = true
+date = 2026-04-13
 description = "hx is a fast, opinionated Haskell toolchain built in Rust, following the playbook astral.sh used to modernize Python."
 
 [taxonomies]
@@ -10,6 +9,8 @@ categories = ["patterns"]
 
 [extra]
 author = "Raffael"
+image = "why-we-build-hx.avif"
+og_image = "why-we-build-hx.png"
 +++
 
 Why would anyone invest serious engineering effort into Haskell tooling in 2026? Haskell is a niche language. It has been a niche language for thirty years. Most companies do not use it. Most developers have never written a line of it. If you are going to pour months of work into building a package manager and toolchain from scratch, in Rust no less, the obvious question is: why not just use Rust?
