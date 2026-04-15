@@ -15,7 +15,7 @@ og_image = "why-we-build-hx.png"
 
 Why would anyone invest serious engineering effort into Haskell tooling in 2026? Haskell is a niche language. It has been a niche language for thirty years. Most companies do not use it. Most developers have never written a line of it. If you are going to pour months of work into building a package manager and toolchain from scratch, in Rust no less, the obvious question is: why not just use Rust?
 
-Here is the answer, and it is the same answer I gave in [The Last Programming Language Might Not Be for Humans](/articles/what-programming-languages-become-when-ai-writes-the-code/): the way we write software is changing. AI is becoming the primary author of code, and the languages that will matter most in that future are not the ones optimized for human typing speed. They are the ones optimized for formal correctness, composability, and provability. Haskell is not niche in that framing. It is early.
+The answer is the same one I gave in [The Last Programming Language Might Not Be for Humans](/articles/what-programming-languages-become-when-ai-writes-the-code/): the way we write software is changing. AI is becoming the primary author of code, and the languages that will matter most in that future are not the ones optimized for human typing speed. They are the ones optimized for formal correctness, composability, and provability. Haskell is not niche in that framing. It is early.
 
 I have [written before](/articles/all-beginning-is-haskell/) about why Haskell shaped the way I think. The short version: Haskell teaches you to think about programs as compositions of well-typed transformations, and that discipline makes you better at everything else. I still believe this. I write most of my production software in Rust, but I think in Haskell.
 
@@ -23,11 +23,11 @@ The problem was never the language. The problem was everything around it.
 
 ## The state of Haskell tooling
 
-If you want to start a Haskell project today, here is what you do. First you install ghcup, which manages GHC (the compiler), Cabal (the build tool), Stack (a different build tool), and HLS (the language server). Then you decide whether to use Cabal or Stack, which is a decision that has split the Haskell community for over a decade and which nobody has fully resolved. Then you configure your project, using either a `.cabal` file (a custom format that predates TOML, YAML, and JSON as configuration languages) or a `stack.yaml` plus a `.cabal` file (because Stack still needs Cabal files underneath). Then you wait for GHC to compile your dependencies, which takes long enough that you start questioning your life choices.
+If you want to start a Haskell project today, you install ghcup, which manages GHC (the compiler), Cabal (the build tool), Stack (a different build tool), and HLS (the language server). Then you decide whether to use Cabal or Stack, which is a decision that has split the Haskell community for over a decade and which nobody has fully resolved. Then you configure your project, using either a `.cabal` file (a custom format that predates TOML, YAML, and JSON as configuration languages) or a `stack.yaml` plus a `.cabal` file (because Stack still needs Cabal files underneath). Then you wait for GHC to compile your dependencies, which takes long enough that you start questioning your life choices.
 
-I am not exaggerating for effect. This is the actual experience. I have introduced Haskell to teams and watched the enthusiasm drain from people's faces during the toolchain setup. Not because the language was hard. Because the first thirty minutes were spent fighting `ghcup`, `cabal update`, resolver mismatches, and cryptic build errors that had nothing to do with the code they wanted to write.
+I have introduced Haskell to teams and watched the enthusiasm drain from people's faces during the toolchain setup. Not because the language was hard, but because the first thirty minutes were spent fighting `ghcup`, `cabal update`, resolver mismatches, and cryptic build errors that had nothing to do with the code they wanted to write.
 
-Here is what a typical first encounter looks like. You want to write a small HTTP server in Haskell. You install ghcup. You install GHC 9.8.2. You run `cabal init`. You get a `.cabal` file with a dozen fields, most of which you do not understand yet. You add `warp` as a dependency. You run `cabal build`. GHC starts compiling `warp` and its transitive dependencies: `http-types`, `bytestring`, `text`, `network`, `streaming-commons`, `vault`, `wai`, and about forty others. This takes four to six minutes on a modern machine. The first time. Every time you switch GHC versions or clean your cache, you pay that cost again.
+A typical first encounter: you want to write a small HTTP server. You install ghcup, install GHC 9.8.2, run `cabal init`, and get a `.cabal` file with a dozen fields you do not understand yet. You add `warp` as a dependency and run `cabal build`. GHC starts compiling `warp` and its transitive dependencies: `http-types`, `bytestring`, `text`, `network`, `streaming-commons`, `vault`, `wai`, and about forty others. Four to six minutes on a modern machine. Every time you switch GHC versions or clean your cache, you pay that cost again.
 
 Now compare this with Rust. You run `cargo new my-server`. You add `axum` to `Cargo.toml`. You run `cargo build`. It compiles. The first build is not instant either, but `cargo` does not ask you which of two incompatible build tools you prefer, does not require a separate tool to manage the compiler, and does not present you with a configuration format from 2005.
 
@@ -35,17 +35,15 @@ Or Python. `uv init my-server`. `uv add fastapi`. `uv run`. Done. The entire dep
 
 Every major language ecosystem has converged on the same answer: one tool that handles project creation, dependency management, building, testing, and publishing. Haskell has three tools that each do part of the job, disagree about how dependencies should work, and require a fourth tool to manage the compiler itself.
 
-This is not a new complaint. People have been talking about Haskell's tooling problem for years. The difference is that someone finally decided to do something about it the way [astral.sh](https://astral.sh) did for Python: rewrite the developer experience from scratch, in Rust, and make everything dramatically faster.
-
-That someone was me.
+People have been talking about Haskell's tooling problem for years. I decided to do something about it the way [astral.sh](https://astral.sh) did for Python: rewrite the developer experience from scratch, in Rust, and make everything dramatically faster.
 
 ## The astral.sh playbook
 
-When Astral released `uv` and `ruff`, it proved something important. You can take a mature ecosystem with deeply entrenched tooling, rebuild the developer experience in Rust, and people will switch. Not because the old tools were broken. Because the new ones were fast enough and coherent enough that the switching cost paid for itself immediately.
+When Astral released `uv` and `ruff`, it proved something important. You can take a mature ecosystem with deeply entrenched tooling, rebuild the developer experience in Rust, and people will switch, because the new tools were fast enough and coherent enough that the switching cost paid for itself immediately.
 
-Python's tooling situation before `uv` was remarkably similar to Haskell's. You had `pip`, `pip-tools`, `pipenv`, `poetry`, `conda`, `virtualenv`, `venv`, `pyenv`. Each solved part of the problem. Each had opinions that conflicted with the others. Setting up a Python project from scratch meant choosing a stack of tools, hoping they worked together, and accepting that your lockfile format depended on which combination you picked. Sound familiar?
+Python's tooling situation before `uv` was remarkably similar to Haskell's. `pip`, `pip-tools`, `pipenv`, `poetry`, `conda`, `virtualenv`, `venv`, `pyenv`. Each solved part of the problem. Each had opinions that conflicted with the others. Setting up a Python project from scratch meant choosing a stack of tools, hoping they worked together, and accepting that your lockfile format depended on which combination you picked.
 
-Astral looked at that landscape and did not try to fix any single tool. They rewrote the experience. `uv` is a single Rust binary that does what `pip`, `pip-tools`, `virtualenv`, and `pyenv` did, but 10-100x faster and with a coherent interface. `ruff` is a single Rust binary that does what `flake8`, `isort`, `pycodestyle`, and `pyflakes` did, but 100x faster. The Python community did not switch because they were told to. They switched because the tools were obviously better the first time they used them.
+Astral did not try to fix any single tool. They rewrote the experience. `uv` is a single Rust binary that does what `pip`, `pip-tools`, `virtualenv`, and `pyenv` did, but 10-100x faster and with a coherent interface. `ruff` is a single Rust binary that does what `flake8`, `isort`, `pycodestyle`, and `pyflakes` did, but 100x faster. The Python community switched because the tools were obviously better the first time they used them.
 
 The playbook has three steps:
 
@@ -57,7 +55,7 @@ This approach is pragmatic in a way that matters. You do not need to rebuild the
 
 ## Why Rust
 
-The choice to build hx in Rust is not tribalism. It is a direct response to a structural problem.
+The choice to build hx in Rust is a direct response to a structural problem.
 
 Haskell's existing tooling is written in Haskell. This creates a bootstrap problem. To build the build tool, you need the compiler. To install the compiler, you need the compiler manager. To build the compiler manager, you need a compiler. The dependency chain is circular, and every link in it is slow to compile.
 
@@ -65,7 +63,7 @@ Think about what this means in practice. You are a new developer. You want to tr
 
 GHC's runtime system adds initialization overhead to every invocation. When you type `cabal build`, the first 45 milliseconds are spent starting the GHC runtime before Cabal even begins to think about your project. Stack is worse at 89 milliseconds. These numbers sound small until you are running commands in a tight development loop, hitting save and expecting the build to start instantly. Or in CI, where the build tool is invoked hundreds of times across a pipeline and those milliseconds compound into minutes.
 
-hx starts in 12 milliseconds. Not because Rust is magic. Because a native binary without a garbage-collected runtime does not need to initialize one. The tool should not have the same dependencies as the thing it manages.
+hx starts in 12 milliseconds. A native binary without a garbage-collected runtime does not need to initialize one. The tool should not have the same dependencies as the thing it manages.
 
 ```shell
 hx build    # 12ms startup + build time
@@ -260,7 +258,7 @@ I built hx because I needed it. But the timing is not accidental.
 
 In [The Last Programming Language Might Not Be for Humans](/articles/what-programming-languages-become-when-ai-writes-the-code/), I laid out three futures for programming languages as AI becomes the primary author of code. The first future is explicit languages designed to minimize LLM errors through tight feedback loops. The second is declarative languages where code describes what something is rather than how to compute it, and the type system acts as a proof checker. The third is no language at all, where AI generates machine code directly.
 
-I bet on the second future. Here is why.
+I bet on the second future.
 
 When an LLM writes imperative code, it has to track mutable state across dozens of lines, reason about the order of side effects, and hold implicit language behaviors in context. When it writes Haskell, it expresses a relationship between inputs and outputs, and the compiler verifies that the relationship is consistent. The model does not need to simulate execution step by step. It needs to generate an expression that satisfies type constraints. This is what LLMs are good at. Pattern recognition. Constraint satisfaction. Formal structure.
 
@@ -270,9 +268,9 @@ This matters even more when you think about code that has to survive time. Proce
 
 But none of that matters if nobody can set up a Haskell project without losing thirty minutes to toolchain configuration. The language's virtues are locked behind a tooling wall. You can have the most expressive type system in production use, the most rigorous correctness guarantees, the best theoretical fit for agent-assisted development, and it means nothing if a developer's first experience is fighting `ghcup` for half an hour. First impressions are permanent, and Haskell's first impression has been "powerful but painful" for too long.
 
-If Haskell is going to be relevant in a world where AI writes most of the code, the experience of using Haskell has to be as fast and frictionless as the experience of using Rust or Python. Not comparable. Equal. That is what hx is for. Not to make Haskell slightly more convenient. To remove the tooling objection entirely, so the conversation can be about the language's actual strengths instead of its ecosystem's historical baggage.
+If Haskell is going to be relevant in a world where AI writes most of the code, the experience of using Haskell has to be as fast and frictionless as the experience of using Rust or Python. Not comparable. Equal. That is what hx is for. To remove the tooling objection entirely, so the conversation can be about the language's actual strengths instead of its ecosystem's historical baggage.
 
-And hx is just the first step. [BHC](https://arcanist.sh/bhc/), the Basel Haskell Compiler, goes further. GHC is a remarkable piece of engineering, but it was designed for a world where Haskell ran on desktops and servers with one performance profile. BHC is a clean-slate Haskell compiler, also written in Rust, offering six runtime profiles for different deployment targets:
+hx is the first step. [BHC](https://arcanist.sh/bhc/), the Basel Haskell Compiler, goes further. GHC is a remarkable piece of engineering, but it was designed for a world where Haskell ran on desktops and servers with one performance profile. BHC is a clean-slate Haskell compiler, also written in Rust, offering six runtime profiles for different deployment targets:
 
 - **Server**: structured concurrency with automatic cancellation, observability hooks, deadline-aware scheduling
 - **Numeric**: strict-by-default in hot paths, tensor lowering, SIMD auto-vectorization, GPU backends for CUDA and ROCm
@@ -296,15 +294,15 @@ The tooling is not separate from the thesis. The tooling IS the thesis.
 
 ## The Bet, What If I am Wrong
 
-I want to be direct about something. This is a gamble.
+This is a gamble.
 
-I do not know whether Haskell will go through a revival. Nobody does. Nobody knows how AI-assisted development will actually evolve, which languages will matter in five years, or whether the thesis I outlined in the previous post will hold up against what reality delivers. I have a conviction, not a crystal ball.
+I do not know whether Haskell will go through a revival. Nobody knows how AI-assisted development will actually evolve, which languages will matter in five years, or whether the thesis I outlined in the previous post will hold up against what reality delivers. I have a conviction, not a crystal ball.
 
 I spent months building hx and BHC. Months of my own time, and to be perfectly blunt, a significant number of Anthropic's Claude tokens. I pair-programmed most of this with Claude Code on my Max subscription, and that is not a footnote. It is part of the story. The tools I am building for AI-assisted Haskell development were themselves built using AI-assisted development. If that sounds circular, it is. The thesis tested itself during its own construction.
 
 But I could be wrong. Haskell could remain niche forever. The AI era could favor a language nobody has thought of yet. The intermediate layer might not evolve the way I expect. The industry might double down on Python and TypeScript for agent-assisted workflows and never look back. These are all plausible outcomes.
 
-What I can do is build toward what I believe in and put the work out in the open. If I am right, Haskell gets the tooling it always deserved, and the language is ready when the moment arrives. If I am wrong, the ideas in hx and BHC, fast Rust-based tooling, deterministic lockfiles, multiple runtime profiles, structured error messages, are valuable regardless. Good infrastructure design does not expire just because the language it serves does not win the popularity contest.
+So I build toward what I believe in and put the work out in the open. If I am right, Haskell gets the tooling it always deserved, and the language is ready when the moment arrives. If I am wrong, the ideas in hx and BHC, fast Rust-based tooling, deterministic lockfiles, multiple runtime profiles, structured error messages, are valuable regardless. Good infrastructure design does not expire just because the language it serves does not win the popularity contest.
 
 And honestly, even on the unlikely side, I would rather have tried and been wrong than watched from the sidelines while the most elegant language I have ever used slowly faded because nobody bothered to fix the parts that were not the language.
 
