@@ -1,6 +1,6 @@
 +++
 title = "What Sixteen AI Agents Taught Me About Management"
-date = 2026-04-20
+date = 2026-04-16
 draft = true
 description = "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway."
 
@@ -10,6 +10,8 @@ categories = ["patterns"]
 
 [extra]
 author = "Raffael"
+image = "what-sixteen-ai-agents-taught-me-about-management.avif"
+og_image = "what-sixteen-ai-agents-taught-me-about-management.png"
 +++
 
 Over the 2025 Christmas holidays I had sixteen AI agents running in parallel across four macOS workspaces. Each workspace held four Ghostty terminal panes, each pane running its own Claude Code instance, each instance working on a different piece of a different project. I was on Anthropic's 20x Max subscription, and during the holiday period the token limits were generous enough that I could burn through context at a rate I had never attempted before.
