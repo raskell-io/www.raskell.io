@@ -34,7 +34,7 @@ That is, by definition, a CRDT.
 
 ## What a CRDT actually is
 
-If you have read the Wikipedia article, you know the acronym: Conflict-free Replicated Data Type. If you have read the Shapiro et al. paper, you know the formal definition: a data type equipped with a merge function that is associative, commutative, and idempotent. If you have read neither, here is the intuition.
+If you have read the Wikipedia article, you know the acronym: Conflict-free Replicated Data Type. If you have read the Shapiro et al. paper, you know the formal definition: a data type equipped with a merge function that is associative, commutative, and idempotent. If you have read neither, the intuition is simple.
 
 Imagine two people editing a shared document on two different laptops with no internet connection. They each make changes. When they reconnect, their changes need to combine into a single document without either person's work being lost, and without a central server deciding who "wins."
 
@@ -48,7 +48,7 @@ The three properties of the merge function are what make this work:
 
 These properties mean you can relay operations through any number of intermediate nodes, in any order, with any amount of duplication, and every replica will converge. No coordination protocol. No consensus algorithm. No leader election. The math handles it.
 
-This sounds too good to be true. It is not too good to be true. But it is more complicated than it sounds.
+The catch is in the details.
 
 ## Conflux
 
@@ -66,7 +66,7 @@ The field types determine how concurrent edits merge:
 
 Each field carries a hybrid logical clock (HLC) timestamp. When two replicas sync, the merge function walks the entity map, compares timestamps and CRDT types, and produces a deterministic result. The output is the same regardless of which replica syncs first or how many times they sync.
 
-This is the clean version. The version you would find in a paper or a conference talk. The version that fits on a slide. Now let me tell you what actually happens when you build this.
+This is the clean version. The version that fits on a slide. What actually happens when you build this is less tidy.
 
 ## Clock drift is not a theoretical concern
 
@@ -136,7 +136,7 @@ Conflux uses a two-phase compaction protocol. First, every active replica report
 
 This works when all replicas are reachable. When a replica goes permanently offline, the minimum watermark never advances, and storage grows indefinitely. The practical solution is a replica expiry timeout. If a replica has not synced within a configurable window (default: 30 days), it is assumed dead and excluded from the watermark calculation. If it comes back after that window, it must perform a full state transfer rather than an incremental sync.
 
-This is not elegant. It is a policy decision that trades correctness for practicality. The pure CRDT model says "all replicas eventually converge, no matter how long they are offline." The production system says "if you disappear for 30 days, you rejoin from scratch." I have not found a way to avoid this tradeoff.
+A policy decision that trades correctness for practicality. The pure CRDT model says "all replicas eventually converge, no matter how long they are offline." The production system says "if you disappear for 30 days, you rejoin from scratch." I have not found a way to avoid this tradeoff.
 
 The storage numbers, for context: a Conflux document with 500 entities, each with 10 fields, averaging 4 operations per field per sync epoch, consumes about 2.4 MB of operation history. After compaction, it drops to about 180 KB (just the current values plus metadata). The 13x reduction is why compaction matters. Without it, a busy document would consume hundreds of megabytes within a few months.
 

@@ -16,7 +16,7 @@ In the [previous article](/articles/what-sixteen-ai-agents-taught-me-about-manag
 
 At the time, I framed this as a budget problem. My consumer subscription could not sustain the overhead of agent-to-agent communication. An enterprise with API access and a real budget would not have the same constraint. That framing was correct, but it was also too small.
 
-What I was actually experiencing, at the scale of one person and sixteen terminal panes, was something much larger. I was experiencing inference as a utility. Not as a software feature. Not as an API call. As a consumed physical resource, the same way I consume electricity when I turn on a light and water when I open a tap.
+What I was actually experiencing, at the scale of one person and sixteen terminal panes, was something much larger. I was experiencing inference as a utility. A consumed physical resource, the same way I consume electricity when I turn on a light and water when I open a tap.
 
 That framing changes everything about how you think about the economics of AI.
 
@@ -34,7 +34,7 @@ It requires massive physical infrastructure. The data centers running frontier m
 
 It is metered and priced per unit. Every major inference provider charges per token. Input tokens, output tokens, sometimes with different rates for different capability tiers. The billing model is already a utility billing model. You pay for what you consume.
 
-Its supply chain is subject to geography and geopolitics. This is where it gets interesting.
+Its supply chain is subject to geography and geopolitics.
 
 ## Chips, data, talent, energy
 
@@ -103,7 +103,7 @@ The implications branch in several directions.
 
 ## The meter is the message
 
-Here is the thing that keeps coming back to me. When I ran out of tokens over Christmas, my first reaction was frustration. My second reaction was to think about the architecture differently, to design for token efficiency, to route cheap communication through cheaper models. But my third reaction, the one that has stayed with me longest, was recognition.
+When I ran out of tokens over Christmas, my first reaction was frustration. My second reaction was to think about the architecture differently, to design for token efficiency, to route cheap communication through cheaper models. But my third reaction, the one that has stayed with me longest, was recognition.
 
 I recognized the shape of the problem. It was not a new shape. It was the shape of every utility constraint I have ever encountered. The shape of "the infrastructure is the bottleneck." The shape of "the resource is finite and metered and you need to think about your consumption." The shape of "the supply chain is geopolitical."
 

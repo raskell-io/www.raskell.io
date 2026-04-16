@@ -1,7 +1,6 @@
 +++
 title = "What Sixteen AI Agents Taught Me About Management"
 date = 2026-04-16
-draft = true
 description = "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway."
 
 [taxonomies]
@@ -179,7 +178,7 @@ I was the CEO. Not in some metaphorical sense. In the literal operational sense 
 
 ## It worked
 
-I am not going to oversell this. shiioo was rough. The UI was a REPL with seven built-in commands. The web dashboard was basic. The documentation was incomplete.
+shiioo was rough. The UI was a REPL with seven built-in commands. The web dashboard was basic. The documentation was incomplete.
 
 But the model worked. I bootstrapped multiple projects using this setup over the holidays. Agents would pick up tasks, work within their scope, coordinate through the reporting structure, and escalate when they hit ambiguity. The squad lead agents were particularly effective because they had enough context about their team's work to resolve most conflicts without involving me.
 
@@ -189,7 +188,7 @@ For a week, I was running a virtual company. And the virtual company was shippin
 
 ## Then the tokens ran out
 
-Here is the part nobody talks about when they discuss agent orchestration: the economics.
+Nobody talks about this part when they discuss agent orchestration: the economics.
 
 During the Christmas holiday period, Anthropic's 20x Max subscription was unusually generous with token limits. I do not know the exact numbers, but the allowance was noticeably higher than usual. I was burning through it.
 
@@ -222,7 +221,7 @@ When the holiday period ended and the token limits returned to normal, shiioo be
 
 ## The management lesson
 
-Here is what I find genuinely interesting about this experience. Every problem I encountered was a management problem that real companies have solved, or at least learned to live with.
+Every problem I encountered was a management problem that real companies have solved, or at least learned to live with.
 
 The coordination problem: sixteen independent workers producing inconsistent output. Solved the same way companies solve it. Hierarchy, defined roles, communication channels.
 
@@ -304,7 +303,7 @@ I ran my virtual company for a week across personal projects. It was an experime
 
 This is not a distant future. Companies are already deploying AI agents for customer support, code review, compliance checks, and data pipeline management. What most of them have not done yet is think about what happens when those agents need to coordinate. When the support agent needs to escalate to the engineering agent. When the compliance agent needs to block a deployment the CI agent is trying to push. When three agents working on the same codebase need to not step on each other.
 
-The companies that figure this out first will have a structural advantage that compounds. Here is why.
+The companies that figure this out first will have a structural advantage that compounds.
 
 Consider a mid-size engineering organization. Two hundred engineers. They spend, conservatively, 30% of their time on coordination. Standups, planning meetings, Slack threads, code review discussions, design document feedback loops, incident response coordination. That is sixty full-time-equivalent salaries spent on people talking to each other about work rather than doing it. Nobody questions this cost because it has always been the cost of building software with humans.
 
@@ -327,7 +326,7 @@ The companies that start experimenting now, even crudely, even with something as
 
 ## Where this goes
 
-I still believe the virtual company model is the right abstraction for large-scale agent orchestration. Not because it is clever. Because it solves the same coordination problems that human organizations solve, using the same structural patterns that have been refined over decades of organizational theory.
+I still believe the virtual company model is the right abstraction for large-scale agent orchestration. It solves the same coordination problems that human organizations solve, using the same structural patterns that have been refined over decades of organizational theory.
 
 The technology is ready. The architectures are straightforward. The missing piece is the economics. When frontier model inference costs drop by another order of magnitude, and they will, the token overhead of agent-to-agent communication stops being prohibitive. When that happens, the question will not be "should we orchestrate agents in a hierarchy" but "what does the org chart look like."
 
