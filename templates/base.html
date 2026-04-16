@@ -114,6 +114,10 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ get_url(path='style.css') | safe }}">
 
+    <!-- DNS prefetch for external domains -->
+    <link rel="dns-prefetch" href="https://github.com">
+    <link rel="dns-prefetch" href="https://schema.org">
+
     <!-- Preload critical fonts -->
     <link rel="preload" href="{{ get_url(path='fonts/Geist-Variable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="{{ get_url(path='fonts/GeistMono-Variable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>

@@ -11,12 +11,20 @@ This site is authored by Raffael, a systems engineer focused on edge infrastruct
 - Applied security (WAF tuning, threat detection, ModSecurity, OWASP CRS)
 - CRDTs and local-first architecture
 - Rust systems programming
+- Haskell tooling and compiler design
+- AI agent orchestration and the economics of inference
 - Open standards and vendor independence
 
 ## Key articles
 
+- [What Sixteen AI Agents Taught Me About Management](https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/): Running sixteen AI agents as a virtual company. Coordination, hierarchy, escalation, and why the hard problem is management, not technology.
+- [Why We Built a Haskell Package Manager in Rust](https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/): hx replaces cabal + stack + ghcup with a single fast Rust binary. The astral.sh playbook applied to Haskell.
+- [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/): Three futures for programming languages as AI becomes the primary author of code.
+- [Notes from RSAC 2026](https://raskell.io/articles/notes-from-rsac-2026/): Observations from RSA Conference 2026. Agentic security, the four factors of national AI power, and what the vendors are actually building.
+- [What Zentinel Is Really Optimizing For](https://raskell.io/articles/what-zentinel-is-really-optimizing-for/): The design philosophy behind a security-first reverse proxy built on Pingora.
 - [Edge Systems Are the New Backend](https://raskell.io/articles/edge-systems-are-the-new-backend/): How auth, policy, inference, and business logic are migrating to the edge and the client.
 - [How AI Makes Bare Metal Viable Again](https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/): Migrating from Kubernetes to bare metal with AI-built bespoke deployment tooling.
+- [How I Work These Days](https://raskell.io/articles/how-i-work-these-days/): A systems engineer's daily workflow with AI agents, terminal multiplexing, and Rust tooling.
 - [Mise ate my Makefile](https://raskell.io/articles/mise-ate-my-makefile/): How a single Rust tool replaced both make and asdf.
 - [Looking back on 2025](https://raskell.io/articles/looking-back-on-2025/): On AI, the web, and why small might become viable again.
 
