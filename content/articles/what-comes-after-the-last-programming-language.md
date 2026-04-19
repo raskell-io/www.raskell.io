@@ -1,7 +1,6 @@
 +++
 title = "What Comes After the Last Programming Language"
-date = 2026-04-25
-draft = true
+date = 2026-04-19
 description = "If AI generates machine code directly, why are we still running operating systems designed for humans? The answer might be an inference-native OS."
 
 [taxonomies]
@@ -10,6 +9,8 @@ categories = ["deep-dives"]
 
 [extra]
 author = "Raffael"
+image = "what-comes-after-the-last-programming-language.avif"
+og_image = "what-comes-after-the-last-programming-language.png"
 +++
 
 In [The Last Programming Language Might Not Be for Humans](/articles/what-programming-languages-become-when-ai-writes-the-code/), I described three futures for programming languages as AI becomes the primary author of code. Explicit languages for machines. Declarative languages where types are proofs. And ultimately, no language at all, where AI generates machine code directly and the intermediate layer disappears.
