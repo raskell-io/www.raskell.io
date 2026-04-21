@@ -1,7 +1,6 @@
 +++
 title = "The Economics of Inference"
-date = 2026-04-20
-draft = true
+date = 2026-04-22
 description = "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas."
 
 [taxonomies]
@@ -10,6 +9,8 @@ categories = ["patterns"]
 
 [extra]
 author = "Raffael"
+image = "the-economics-of-inference.avif"
+og_image = "the-economics-of-inference.png"
 +++
 
 In the [previous article](/articles/what-sixteen-ai-agents-taught-me-about-management/), I described running sixteen AI agents as a virtual company over Christmas 2025. The architecture worked. The coordination model worked. What did not work was the economics. My token budget evaporated in days, not because the agents were unproductive, but because every act of coordination, every status update, every escalation consumed a metered resource that I could not replenish fast enough.
