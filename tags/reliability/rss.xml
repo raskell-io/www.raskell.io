@@ -7,7 +7,115 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/reliability/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Sun, 22 Mar 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Mon, 27 Apr 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Traffic Replay as a Security Primitive</title>
+          <pubDate>Mon, 27 Apr 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/traffic-replay-as-a-security-primitive/</link>
+          <guid>https://raskell.io/articles/traffic-replay-as-a-security-primitive/</guid>
+          <description xml:base="https://raskell.io/articles/traffic-replay-as-a-security-primitive/">&lt;p&gt;If you have ever tuned a WAF rule, you know the cycle. A rule triggers on legitimate traffic. You get paged. You look at the logs, which tell you the rule ID and the request path but not enough to reproduce what happened. You loosen the rule based on your best guess. You deploy. You wait. Next week, you get paged again, either because the rule is still too aggressive or because you loosened it too far and now something is getting through.&lt;&#x2F;p&gt;
+&lt;p&gt;The problem is not the WAF. The problem is that you are tuning a stateful, context-dependent system without the ability to reproduce the inputs that caused the behavior you are trying to change. You are debugging blind.&lt;&#x2F;p&gt;
+&lt;p&gt;This is not unique to WAFs. Every edge system that makes decisions about traffic, proxies, rate limiters, auth gateways, bot detectors, suffers from the same structural issue: the traffic that triggered the behavior is gone. It existed for the duration of the request, it was logged incompletely, and now you are making changes based on a partial reconstruction of what happened.&lt;&#x2F;p&gt;
+&lt;p&gt;Traffic replay solves this. Not as a testing tool. As a security primitive.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-replay-actually-means&quot;&gt;What replay actually means&lt;&#x2F;h2&gt;
+&lt;p&gt;Traffic replay, in the sense I mean it here, is not load testing. It is not generating synthetic traffic that looks like production. It is capturing real requests as they happened, in order, with their headers and bodies intact, and re-executing them against a target environment deterministically.&lt;&#x2F;p&gt;
+&lt;p&gt;The distinction matters. Load testing answers “can this system handle the volume?” Replay answers “will this system make the same decisions about the same traffic?” One is about throughput. The other is about behavior.&lt;&#x2F;p&gt;
+&lt;p&gt;A replayed request hits the same WAF rules, the same rate limits, the same routing logic as the original. If the original was blocked, you can see whether the replay is also blocked, and if not, exactly what changed. If you modify a rule and replay the same traffic, you get a direct comparison: old behavior versus new behavior, same inputs, different configuration.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the primitive that WAF tuning has always been missing. Not better logs. Not more dashboards. The ability to say “here is the exact traffic that caused the problem, and here is what happens when I change the rule.”&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-capture-problem&quot;&gt;The capture problem&lt;&#x2F;h2&gt;
+&lt;p&gt;The first obstacle is getting the traffic into a replayable format. Production traffic is ephemeral. It arrives, gets processed, and disappears. Logs capture metadata: timestamps, status codes, paths, maybe some headers. They do not capture the full request as a replayable artifact.&lt;&#x2F;p&gt;
+&lt;p&gt;There are two practical approaches.&lt;&#x2F;p&gt;
+&lt;p&gt;The first is capturing at the browser. Every modern browser can export a session as a HAR (HTTP Archive) file. This gives you the complete request and response for every HTTP transaction in a session: method, URL, headers, body, timing. When a user reports “this request was blocked,” you can ask them for a HAR export. You now have the exact traffic, not a description of it.&lt;&#x2F;p&gt;
+&lt;p&gt;The second is capturing at the proxy. If your reverse proxy or load balancer can mirror traffic to a capture endpoint, you get production-representative traffic without depending on user cooperation. This is more complex to set up but gives you continuous coverage rather than incident-by-incident captures.&lt;&#x2F;p&gt;
+&lt;p&gt;Either way, the result is the same: a sequence of HTTP requests that can be replayed faithfully.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;replay-is-not-as-simple-as-resending&quot;&gt;Replay is not as simple as resending&lt;&#x2F;h2&gt;
+&lt;p&gt;There are subtleties that make naive replay useless.&lt;&#x2F;p&gt;
+&lt;p&gt;The obvious one is URLs. If you captured traffic hitting &lt;code&gt;production.example.com&lt;&#x2F;code&gt; and want to replay it against &lt;code&gt;staging.example.com&lt;&#x2F;code&gt;, you need to rewrite the host. But you also need to rewrite any absolute URLs in headers like &lt;code&gt;Origin&lt;&#x2F;code&gt; and &lt;code&gt;Referer&lt;&#x2F;code&gt;, and potentially in request bodies for APIs that include callback URLs.&lt;&#x2F;p&gt;
+&lt;p&gt;Then there are cookies. A replayed request with production session cookies will either fail authentication on staging (different session store) or, worse, succeed against a production session you did not intend to touch. Cookie stripping is not optional. It is a safety requirement.&lt;&#x2F;p&gt;
+&lt;p&gt;Headers need mutation too. You might need to inject an authorization token for the staging environment, or add a header that tells the WAF “this is a replay, do not count it toward rate limits.” You might need to strip headers that identify the original client IP to avoid polluting analytics.&lt;&#x2F;p&gt;
+&lt;p&gt;And ordering matters. If request B depends on state created by request A (a login followed by an authenticated action), replaying them in parallel or out of order produces meaningless results. Deterministic replay means sequential, in capture order, by default.&lt;&#x2F;p&gt;
+&lt;p&gt;None of this is algorithmically hard. But getting it wrong in any of these dimensions produces results that are misleading rather than useful. A replay tool that does not handle URL rewriting, cookie stripping, header mutation, and ordering is a footgun, not a primitive.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-diff-is-the-point&quot;&gt;The diff is the point&lt;&#x2F;h2&gt;
+&lt;p&gt;Replay alone is useful. Replay with behavioral diffing is what changes the WAF tuning workflow.&lt;&#x2F;p&gt;
+&lt;p&gt;The pattern works like this. You have a set of captured traffic. You replay it against environment A (say, production with the current WAF rules) and save the results. You replay the same traffic against environment B (staging with the proposed rule change) and save those results. Then you diff.&lt;&#x2F;p&gt;
+&lt;p&gt;The diff is not a text diff. It is a behavioral diff. For each request in the capture, you compare:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Status codes&lt;&#x2F;strong&gt;: did the same request get a 200 in one environment and a 403 in the other?&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;WAF decisions&lt;&#x2F;strong&gt;: did the WAF block in one and allow in the other? Which rule ID? What score?&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Security headers&lt;&#x2F;strong&gt;: did CSP, HSTS, or X-Frame-Options change between environments?&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Response characteristics&lt;&#x2F;strong&gt;: same content type? Same cache behavior?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre&gt;&lt;code&gt;Request: GET &amp;#x2F;api&amp;#x2F;v2&amp;#x2F;users?search=&amp;lt;script&amp;gt;alert(1)&amp;lt;&amp;#x2F;script&amp;gt;
+
+Production (current rules):
+  Status: 403
+  x-waf-action: block
+  x-waf-rule: 941100
+
+Staging (proposed rules):
+  Status: 200
+  x-waf-action: pass
+  x-waf-rule: (none)
+
+⚠ WAF regression: XSS payload now passes
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This changes the WAF tuning conversation entirely. Instead of “I think loosening rule 941100 is safe,” you have “I replayed 2,000 captured requests against the proposed rule change. Three requests that were previously blocked are now allowed. Here they are. Two are false positives that should pass. One is an XSS payload that should not.”&lt;&#x2F;p&gt;
+&lt;p&gt;That is not a guess. That is evidence.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-this-is-a-security-primitive&quot;&gt;Why this is a security primitive&lt;&#x2F;h2&gt;
+&lt;p&gt;I use the word “primitive” deliberately. A primitive is a building block that other things compose on top of. Deterministic replay with behavioral diffing is a primitive because it enables patterns that are otherwise impractical:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Safe WAF rule iteration.&lt;&#x2F;strong&gt; Change a rule, replay traffic, inspect the behavioral diff, deploy with confidence. The feedback loop goes from “deploy and hope” to “verify, then deploy.” This is the most immediate use case, and the one that solves the 3 AM pager problem.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Environment drift detection.&lt;&#x2F;strong&gt; Replay the same traffic against staging and production on a regular schedule. When the behaviors diverge, you know something changed that should not have. This catches configuration drift, certificate mismatches, and routing differences before they become incidents.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Regression testing for edge config.&lt;&#x2F;strong&gt; Every change to your proxy, WAF, or rate limiter configuration gets a replay run before deployment. The diff tells you exactly what changed in observable behavior. This is the edge infrastructure equivalent of a unit test suite, except instead of testing code you are testing policy.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Incident reproduction.&lt;&#x2F;strong&gt; When a user reports a block, capture the traffic, replay it, confirm the block, and then iterate on the fix in staging without affecting production. The time from “user report” to “verified fix” drops from hours to minutes.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Compliance evidence.&lt;&#x2F;strong&gt; When an auditor asks “how do you know your WAF rules are working?”, you can show them replay runs with behavioral diffs that demonstrate which rules triggered on which traffic patterns. Not “we have a WAF configured.” Verifiable behavioral evidence.&lt;&#x2F;p&gt;
+&lt;p&gt;Each of these patterns exists in some ad-hoc form at organizations that invest heavily in security tooling. What they lack is a common primitive that makes them systematic.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-exists-today&quot;&gt;What exists today&lt;&#x2F;h2&gt;
+&lt;p&gt;There is no shortage of tools that touch parts of this problem. The gap is in how they compose.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Manual security testing platforms.&lt;&#x2F;strong&gt; &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;portswigger.net&#x2F;burp&quot;&gt;Burp Suite&lt;&#x2F;a&gt; is the standard. Its Repeater lets you capture a request and resend it with modifications, which is replay in the most literal sense. &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.zaproxy.org&#x2F;&quot;&gt;OWASP ZAP&lt;&#x2F;a&gt; provides similar capabilities as open source. Both are excellent for manual pen-testing: an engineer investigates a specific request, tweaks parameters, observes the response. What they do not do is automated, batch-level behavioral comparison across environments. You can replay one request in Burp and inspect the result. You cannot replay two thousand requests against staging and production and get a structured diff of every WAF decision that changed. The workflow is manual and investigative, not systematic and CI-integrated.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Traffic capture and replay tools.&lt;&#x2F;strong&gt; &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;goreplay.org&#x2F;&quot;&gt;GoReplay&lt;&#x2F;a&gt; (gor) captures live HTTP traffic and replays it against another environment. It is the closest existing tool to what I am describing, and it is good at what it does: mirroring production traffic to a staging environment for load and correctness testing. &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mitmproxy.org&#x2F;&quot;&gt;mitmproxy&lt;&#x2F;a&gt; can intercept, record, and replay HTTP flows with full scriptability. &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;tcpreplay.appneta.com&#x2F;&quot;&gt;tcpreplay&lt;&#x2F;a&gt; operates at the TCP level for network-layer replay. The limitation across all of these is that they are replay tools, not behavioral analysis tools. They send the traffic. What happens next, comparing WAF decisions, diffing security headers, detecting regressions, is left to you.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Desktop proxies.&lt;&#x2F;strong&gt; &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.charlesproxy.com&#x2F;&quot;&gt;Charles Proxy&lt;&#x2F;a&gt; and &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.telerik.com&#x2F;fiddler&quot;&gt;Fiddler&lt;&#x2F;a&gt; capture and replay HTTP traffic with rich GUIs. They are useful for development debugging but are desktop applications, not CLI tools. They do not integrate into CI&#x2F;CD pipelines or produce machine-readable behavioral diffs.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Load testing tools.&lt;&#x2F;strong&gt; &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;k6.io&#x2F;&quot;&gt;k6&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;locust.io&#x2F;&quot;&gt;Locust&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;gatling.io&#x2F;&quot;&gt;Gatling&lt;&#x2F;a&gt;. These can replay captured traffic at volume, but they measure performance, not policy behavior. They answer “can the system handle the load?” not “did the WAF make the same decision?”&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;WAF testing frameworks.&lt;&#x2F;strong&gt; &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;coreruleset&#x2F;ftw&quot;&gt;ftw&lt;&#x2F;a&gt; (Framework for Testing WAFs) is the OWASP project for validating Core Rule Set behavior. It uses synthetic payloads designed to trigger specific rules. &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;projectdiscovery&#x2F;nuclei&quot;&gt;Nuclei&lt;&#x2F;a&gt; is a template-based vulnerability scanner that sends crafted requests and checks responses. Both are valuable for validating that your WAF blocks known-bad patterns. Neither replays real captured traffic, which means neither can tell you whether a rule change affects the legitimate traffic that your actual users send.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;API testing tools.&lt;&#x2F;strong&gt; &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;hurl.dev&#x2F;&quot;&gt;Hurl&lt;&#x2F;a&gt; can chain HTTP requests with assertions, which is close to sequential replay with verification. &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;curl.se&#x2F;&quot;&gt;curl&lt;&#x2F;a&gt; can resend individual requests. Both are useful building blocks but do not provide the capture-replay-diff workflow as a single primitive.&lt;&#x2F;p&gt;
+&lt;p&gt;The pattern across all of these is the same. Each tool handles one or two steps well: capture, or replay, or analysis. No single tool captures real traffic, replays it deterministically with URL rewriting and cookie stripping, and then produces a structured behavioral diff across WAF decisions, security headers, and status codes. The pieces exist. The composition does not.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the gap that &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;ushio&quot;&gt;Ushio&lt;&#x2F;a&gt; fills.&lt;&#x2F;p&gt;
+&lt;p&gt;Ushio is a Rust CLI that does three things. It converts HAR files into a replayable capture format. It replays captures against one or more targets with URL rewriting, header mutation, and cookie stripping. And it diffs two replay results to identify behavioral changes in status codes, WAF decisions, and security headers.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# Convert a browser HAR export to ushio format
+ushio convert session.har -o capture.json
+
+# Replay against staging with auth header, strip cookies
+ushio replay capture.json \
+  -t https:&amp;#x2F;&amp;#x2F;staging.example.com \
+  --header &amp;quot;Authorization:Bearer $TOKEN&amp;quot; \
+  --strip-cookies \
+  -o staging.json
+
+# Replay against production
+ushio replay capture.json \
+  -t https:&amp;#x2F;&amp;#x2F;prod.example.com \
+  --strip-cookies \
+  -o prod.json
+
+# Diff the results
+ushio diff staging.json prod.json --only-diff
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The output is either pretty-printed for human review or JSON for pipeline integration. Exit code 0 means no behavioral differences. Exit code 1 means differences were found. This makes it composable with CI&#x2F;CD: run a replay diff on every edge config change, fail the pipeline if behavior regresses.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-changes-when-you-have-this&quot;&gt;What changes when you have this&lt;&#x2F;h2&gt;
+&lt;p&gt;The shift is from reactive to proactive. Without replay, you discover WAF problems when users report them or when the pager goes off. With replay, you discover them before deployment. The feedback loop compresses from incident-driven to change-driven.&lt;&#x2F;p&gt;
+&lt;p&gt;But the deeper shift is epistemic. Without replay, WAF tuning is a matter of judgment and experience. You read the rule, you read the logs, you make a call. With replay, it is a matter of evidence. You replay the traffic, you observe the behavior, you make a decision based on what actually happened.&lt;&#x2F;p&gt;
+&lt;p&gt;I do not think this replaces judgment. You still need to decide whether a particular request that is now being allowed is acceptable. But the decision is grounded in concrete behavior rather than reconstruction from incomplete logs. The security engineer’s job changes from “guess what the WAF will do” to “observe what the WAF does and decide if that is correct.”&lt;&#x2F;p&gt;
+&lt;p&gt;Every edge system that makes decisions about traffic should be testable with real traffic. WAFs, rate limiters, bot detectors, auth gateways. If you cannot replay traffic and diff the behavior, you cannot systematically verify that the system does what you think it does. That is not a tooling problem. That is a visibility problem. And it is solvable.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;ushio&quot;&gt;Ushio&lt;&#x2F;a&gt; - Deterministic edge traffic replay tool&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zentinelproxy&#x2F;zentinel&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Security-first reverse proxy with structured WAF decision logging&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;www.softwareishard.com&#x2F;blog&#x2F;har-12-spec&#x2F;&quot;&gt;HAR 1.2 specification&lt;&#x2F;a&gt; - The HTTP Archive format&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;&#x2F;articles&#x2F;what-zentinel-is-really-optimizing-for&#x2F;&quot;&gt;What Zentinel Is Really Optimizing For&lt;&#x2F;a&gt; - The operator-first proxy design philosophy&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;&#x2F;articles&#x2F;notes-from-rsac-2026&#x2F;&quot;&gt;Notes from RSAC 2026&lt;&#x2F;a&gt; - Where the applied security thread connects to industry context&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
       <item>
           <title>What Zentinel Is Really Optimizing For</title>
           <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
