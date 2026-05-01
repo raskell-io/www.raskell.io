@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Raskell - metrics</title>
+      <link>https://raskell.io</link>
+      <description>Writing about platform automation, edge systems, applied security, and open standards. Building automation-first platforms that survive production reality.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://raskell.io/tags/metrics/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Fri, 01 May 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Patents Per Capita Is a Vanity Metric</title>
+          <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/</link>
+          <guid>https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/</guid>
+          <description xml:base="https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/">&lt;p&gt;It is the first of May, Labour Day. A holiday explicitly about work, which makes it a good day to ask whether the work that gets counted is the work that actually matters.&lt;&#x2F;p&gt;
+&lt;p&gt;Earlier this week I posted on LinkedIn about how Swiss innovation rankings tend to be illustrated with photos of Zurich, even though Basel produces a meaningful share of what those rankings reward. It performed better than most of my other shares there. Some of the feedback agreed. Some pushed back. Almost all of it stayed inside the same frame the rankings themselves set: which Swiss city deserves credit for the score. That is not the question I find interesting. The question I find interesting is what the score is measuring in the first place, and whether it is the score we should be optimising for. The LinkedIn format is not the right place to work that out. A long-form post on a Labour Day morning is.&lt;&#x2F;p&gt;
+&lt;p&gt;Switzerland topped the Global Innovation Index in 2025 for the fifteenth year in a row. The index is published annually by the World Intellectual Property Organization, the United Nations agency that administers the international patent system, and it ranks roughly 140 economies on how innovative they are. The 2025 press release went out in September. The country celebrated. Zurich’s skyline got photographed again. Roche and Novartis, the two Basel-headquartered pharmaceutical giants, were name-checked. ETH Zurich and EPFL, the country’s two federal technical universities, got their nods. The framing was the usual one: small country, outsized output, durable lead.&lt;&#x2F;p&gt;
+&lt;p&gt;I am Swiss. I am from Basel. I build infrastructure for a living, which means I spend a lot of time staring at dashboards that report how systems are performing in production. A number that sits at the top of a leaderboard for fifteen consecutive years should make any engineer who watches dashboards suspicious before it makes them proud. The metrics that look the smoothest the longest are usually the ones telling you the least about what is happening right now.&lt;&#x2F;p&gt;
+&lt;p&gt;This post is about why “most innovative country” is a vanity metric: a number that is real, and countable, and correlated with success, but that should not be the thing you optimise for. The Global Innovation Index measures yesterday extremely well. It does not measure today, and it tells you almost nothing about tomorrow.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
