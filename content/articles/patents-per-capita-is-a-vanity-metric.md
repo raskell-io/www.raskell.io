@@ -1,7 +1,6 @@
 +++
 title = "Patents Per Capita Is a Vanity Metric"
 date = 2026-05-01
-draft = true
 description = "Switzerland tops the Global Innovation Index for the fifteenth year running. As an engineer, that should make you suspicious of the metric, not proud of the country."
 
 [taxonomies]
