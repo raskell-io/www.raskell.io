@@ -245,7 +245,7 @@ class ScrollNavbar {
     }
 
     // Background when navbar is visible and page is scrolled
-    this.navbar.classList.toggle('navbar--scrolled', this.translateY === 0 && currentY > 20);
+    this.navbar.classList.toggle('navbar--scrolled', this.translateY === 0 && currentY > 0);
 
     this.lastScrollY = currentY;
   }
