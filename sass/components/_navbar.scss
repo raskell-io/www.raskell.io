@@ -97,6 +97,10 @@ main {
         padding: 1.5rem 0;
         background: transparent;
         box-shadow: none;
+        transition:
+            background-color 0.2s ease-out,
+            box-shadow 0.2s ease-out,
+            padding 0.2s ease-out;
 
         &.navbar--scrolled {
             background: var(--navbar-color);
