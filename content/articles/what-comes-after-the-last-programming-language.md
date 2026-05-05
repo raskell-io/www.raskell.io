@@ -11,6 +11,11 @@ categories = ["deep-dives"]
 author = "Raffael"
 image = "what-comes-after-the-last-programming-language.avif"
 og_image = "what-comes-after-the-last-programming-language.png"
+related = [
+    "what-programming-languages-become-when-ai-writes-the-code",
+    "semantic-artifacts-and-meaning-engines",
+    "how-ai-makes-bare-metal-viable-again",
+]
 +++
 
 In [The Last Programming Language Might Not Be for Humans](/articles/what-programming-languages-become-when-ai-writes-the-code/), I described three futures for programming languages as AI becomes the primary author of code. Explicit languages for machines. Declarative languages where types are proofs. And ultimately, no language at all, where AI generates machine code directly and the intermediate layer disappears.
