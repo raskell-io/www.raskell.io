@@ -93,10 +93,18 @@
     </div>
 </div>
 
-{# Related articles based on shared tags #}
-{% if page.taxonomies.tags %}
-{% set articles_section = get_section(path="articles/_index.md") %}
+{# Related articles: manual override via page.extra.related (list of slugs), else tag-based fallback. Missing slugs (e.g. drafts) are silently skipped. #}
 {% set_global related = [] %}
+{% set articles_section = get_section(path="articles/_index.md") %}
+{% if page.extra.related %}
+    {% for slug in page.extra.related %}
+        {% for other in articles_section.pages %}
+            {% if other.slug == slug %}
+                {% set_global related = related | concat(with=other) %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% elif page.taxonomies.tags %}
 {% for other in articles_section.pages %}
     {% if other.permalink != page.permalink and related | length < 3 %}
         {% if other.taxonomies.tags %}
@@ -112,6 +120,7 @@
         {% endif %}
     {% endif %}
 {% endfor %}
+{% endif %}
 {% if related | length > 0 %}
 <div class="container">
     <section class="related-articles">
@@ -126,7 +135,6 @@
         </div>
     </section>
 </div>
-{% endif %}
 {% endif %}
 
 <div class="container">
