@@ -1,8 +1,7 @@
 +++
 title = "Semantic Artifacts and Meaning Engines"
-date = 2026-05-05
-draft = true
-description = "The third entry in a trilogy. If AI writes the code and the operating system bends around inference, the artifact itself is what changes next. Source files become a rendering. Meaning becomes the unit of authority."
+date = 2026-05-07
+description = "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target."
 
 [taxonomies]
 tags = ["ai-for-ops", "oss", "haskell", "reliability"]
