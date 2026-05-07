@@ -1,5 +1,5 @@
 +++
-title = "Semantic Artifacts and Meaning Engines"
+title = "Source Code Is the New Assembly"
 date = 2026-05-07
 description = "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target."
 
