@@ -343,6 +343,18 @@ I do not know which domains move first. My best guess is the domains that alread
 
 I do not know how long the migration takes. My only confident claim about timing is that it does not arrive by deleting today's stacks. It arrives by moving semantics upward, year by year, until the artifact most teams care about is no longer a tree of source files.
 
+## Closing
+
+We called them programming languages because we thought we were speaking to machines. In reality, we were translating ourselves into a form machines could tolerate. The notation was a compromise between what we could write and what they could lower.
+
+Now that machines can understand us more directly, the question is not how to write better code. The question is how to think in systems that can be executed. The artifact we author should preserve meaning, not perform it. The runtime should keep that meaning intact, not erase it during translation.
+
+Code does not disappear in this story. It drops a layer. It becomes implementation detail, escape hatch, optimization substrate, foreign-function boundary. Important. Powerful. Not primary.
+
+The trilogy ends here, in the same place each transition in computing has ended. The previous artifact survives, demoted, while a higher layer takes over the work of authority. Source code joins assembly in the long list of things that used to be the thing and now are something we lower to.
+
+The interesting work, for the rest of this decade, is at the layer above. That is where I am spending mine.
+
 ## Further reading
 
 The systems already pointing at parts of this future, grouped by the dimension each one gets right.
@@ -379,15 +391,3 @@ The systems already pointing at parts of this future, grouped by the dimension e
 
 - [Accord Project](https://accordproject.org/) for contracts as text plus data model plus logic
 - [Common Domain Model](https://cdm.finos.org/) for financial products and lifecycle events as machine-readable, machine-executable objects
-
-## Closing
-
-We called them programming languages because we thought we were speaking to machines. In reality, we were translating ourselves into a form machines could tolerate. The notation was a compromise between what we could write and what they could lower.
-
-Now that machines can understand us more directly, the question is not how to write better code. The question is how to think in systems that can be executed. The artifact we author should preserve meaning, not perform it. The runtime should keep that meaning intact, not erase it during translation.
-
-Code does not disappear in this story. It drops a layer. It becomes implementation detail, escape hatch, optimization substrate, foreign-function boundary. Important. Powerful. Not primary.
-
-The trilogy ends here, in the same place each transition in computing has ended. The previous artifact survives, demoted, while a higher layer takes over the work of authority. Source code joins assembly in the long list of things that used to be the thing and now are something we lower to.
-
-The interesting work, for the rest of this decade, is at the layer above. That is where I am spending mine.
