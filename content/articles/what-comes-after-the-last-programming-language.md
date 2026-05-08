@@ -4,7 +4,7 @@ date = 2026-04-19
 description = "If AI generates machine code directly, why are we still running operating systems designed for humans? The answer might be an inference-native OS."
 
 [taxonomies]
-tags = ["ai-for-ops", "edge-systems", "haskell", "coconutos"]
+tags = ["ai-engineering", "programming-languages", "edge-systems", "haskell", "coconutos"]
 categories = ["deep-dives"]
 
 [extra]

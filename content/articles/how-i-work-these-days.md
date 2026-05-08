@@ -5,7 +5,7 @@ updated = 2026-03-15
 description = "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right."
 
 [taxonomies]
-tags = ["ai-for-ops", "platform-automation"]
+tags = ["ai-engineering", "platform-automation"]
 categories = ["meta"]
 
 [extra]
