@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Raskell - programming-languages</title>
+      <link>https://raskell.io</link>
+      <description>Writing about platform automation, edge systems, applied security, and open standards. Building automation-first platforms that survive production reality.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://raskell.io/tags/programming-languages/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Source Code Is the New Assembly</title>
+          <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/semantic-artifacts-and-meaning-engines/</link>
+          <guid>https://raskell.io/articles/semantic-artifacts-and-meaning-engines/</guid>
+          <description xml:base="https://raskell.io/articles/semantic-artifacts-and-meaning-engines/">&lt;p&gt;In &lt;a href=&quot;&#x2F;articles&#x2F;what-programming-languages-become-when-ai-writes-the-code&#x2F;&quot;&gt;The Last Programming Language Might Not Be for Humans&lt;&#x2F;a&gt;, I argued that if AI becomes the primary author of code, the source language has to bend around that author. In &lt;a href=&quot;&#x2F;articles&#x2F;what-comes-after-the-last-programming-language&#x2F;&quot;&gt;What Comes After the Last Programming Language&lt;&#x2F;a&gt;, I extended the argument one layer down: even the operating system still assumes a human is writing CPU-centric instruction streams, and that assumption has an expiration date.&lt;&#x2F;p&gt;
+&lt;p&gt;I left the deepest move for last on purpose.&lt;&#x2F;p&gt;
+&lt;p&gt;If languages are bending and operating systems are bending, it is because something more fundamental is bending. The unit of software is changing. The thing we treat as authoritative, version, review, ship, replay, and audit, is on its way to becoming something other than a tree of source files.&lt;&#x2F;p&gt;
+&lt;p&gt;I want to make that move explicitly. This is the post where I plant the flag.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-i-am-actually-claiming&quot;&gt;What I am actually claiming&lt;&#x2F;h2&gt;
+&lt;p&gt;The clearest way I can put it is this: programming languages were never the destination. They were a writing system for an era when humans had to author the syntax. They survived because humans were the bottleneck, and the machine had to be addressed through a human-legible medium. That arrangement is starting to come apart.&lt;&#x2F;p&gt;
+&lt;p&gt;Once generation is cheap, syntax is not the scarce resource anymore. The scarce resource is semantic stability. What I want is not a better language for models to type. I want an artifact that preserves meaning across generation, verification, lowering, execution, audit, and replay.&lt;&#x2F;p&gt;
+&lt;p&gt;I will call that thing a &lt;strong&gt;semantic artifact&lt;&#x2F;strong&gt;, and I will call the machine around it a &lt;strong&gt;meaning engine&lt;&#x2F;strong&gt;. Both terms exist in adjacent literatures already. I am using them deliberately, not as branding.&lt;&#x2F;p&gt;
+&lt;p&gt;A semantic artifact is the new unit of software. The meaning engine is what compilers and runtimes become when they accept those units. Source code does not vanish in this picture. It demotes. It survives the way assembly survives today: indispensable, specialized, and no longer the layer most people author.&lt;&#x2F;p&gt;
+&lt;p&gt;That is the full claim. The rest of this post is the case for it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;programming-languages-were-always-writing-systems&quot;&gt;Programming languages were always writing systems&lt;&#x2F;h2&gt;
+&lt;p&gt;There is a reflex in our field to treat programming languages as if they were a category unto themselves. They are not. They are a specialized branch of writing.&lt;&#x2F;p&gt;
+&lt;p&gt;Writing, in linguistics, is a technology for making language visible and durable. It is a system of conventional marks that encodes linguistic structure in a persistent medium. It is not thought itself. It is not even speech. It is a representation that allows institutions, tools, and machines to act on language across time and space.&lt;&#x2F;p&gt;
+&lt;p&gt;Programming languages fit this definition without strain. They are notation systems that encode executable intent in marks a compiler can consume. Like every writing system, they were shaped by the dominant author and the dominant medium of their era.&lt;&#x2F;p&gt;
+&lt;p&gt;Assembly is the closest thing we have to a logographic system for computation. Each opcode points at one specific machine action. There is no abstraction between the symbol and the execution. C is structured prose for systems work, designed when the author was a competent human engineer and the target was a single-CPU machine with byte-addressable memory. Python is a writing system tuned for readability and velocity, designed for an author who would rather get to the point than negotiate with the type system. Haskell pushes in the other direction, toward formal logic notation, where the writing system itself encodes proof obligations.&lt;&#x2F;p&gt;
+&lt;p&gt;Every one of these languages is a compromise between precision and expressiveness. None of them was final. Each was tuned to what humans could reasonably author and what compilers could reasonably lower.&lt;&#x2F;p&gt;
+&lt;p&gt;Once you see this clearly, the historical contingency becomes obvious. Source code is not sacred. It is a notation layer that won because humans had to write something, and machines had to lower something. It became the universal artifact of software because the author was human and the medium was text. Change the author, and the universal artifact has no reason to stay text.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the same observation &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.unison-lang.org&#x2F;&quot;&gt;Unison&lt;&#x2F;a&gt; has been making in production for years, just from a different angle. Unison stores definitions by the hash of their structured form, not by filename. Text is a view, not the artifact. The system has not gone post-code. It has gone post-text, while keeping code as the underlying object. That is a useful first step, and it is much more than a curiosity. It is a working proof that the source file is not load-bearing in the way our tools pretend it is.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;code-is-a-lossy-compression-of-intent&quot;&gt;Code is a lossy compression of intent&lt;&#x2F;h2&gt;
+&lt;p&gt;The thing programmers do, when we write code, is compression. We take a high-dimensional, contextual, often-ambiguous understanding of what the system should do, and we squeeze it into a rigid, linear, explicit sequence of statements that a compiler will accept.&lt;&#x2F;p&gt;
+&lt;p&gt;The compiler then performs a different compression, from our notation down to machine code. By the time the binary runs, several lossy passes have happened. Assumptions live in our heads or in a README. Side effects live implicitly in function calls. The reasons we made certain decisions live in commit messages, ticket systems, or, more often, nowhere. The artifact that runs is missing most of the meaning that produced it.&lt;&#x2F;p&gt;
+&lt;p&gt;We know this is lossy because we spend enormous effort patching the loss. We write tests to recover behavioral intent. We write documentation to recover design intent. We write architecture decision records to recover historical intent. We write runbooks to recover operational intent. We sprinkle assertions to recover invariants we could not express in the type system. We add observability to recover what the running program is actually doing because the source did not say.&lt;&#x2F;p&gt;
+&lt;p&gt;Programming, in this view, is manual compression of intent into executable form. It worked because the human author could hold the uncompressed version in their head while typing the compressed version. It also worked because the compressed version was good enough to ship and the uncompressed version did not have to survive review.&lt;&#x2F;p&gt;
+&lt;p&gt;AI changes the economics of that compression. Generation gets cheap. Expansion from a few sentences to thousands of lines of code is no longer the hard part. What gets relatively more expensive is the part that was always implicit: deciding which version is correct, which assumptions are still valid, which constraints must hold, which environments will give the same result, which side effects are allowed.&lt;&#x2F;p&gt;
+&lt;p&gt;In a world with cheap generation, the uncompressed version is what we should be authoring. Not the compressed one.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-a-semantic-artifact-actually-is&quot;&gt;What a semantic artifact actually is&lt;&#x2F;h2&gt;
+&lt;p&gt;A semantic artifact is not a fancier source file. It is not “code with metadata.” It is a different kind of object, with different properties, and the difference matters.&lt;&#x2F;p&gt;
+&lt;p&gt;A semantic artifact is &lt;strong&gt;intent-first&lt;&#x2F;strong&gt;. It says what must hold, not how. It can carry “how” as one of several lowerings, but the upper layer is the obligation, not the implementation.&lt;&#x2F;p&gt;
+&lt;p&gt;It is &lt;strong&gt;structured&lt;&#x2F;strong&gt;. It is a typed graph of entities, constraints, transformations, effects, evidence, and provenance. Text is one rendering. JSON is another. A diagram is another. None of them is the artifact.&lt;&#x2F;p&gt;
+&lt;p&gt;It is &lt;strong&gt;content-addressed&lt;&#x2F;strong&gt;. Identity is structural, derived from the artifact itself, not from a filename or a path. Two artifacts with the same meaning have the same identity. This is the lesson Unison teaches and the lesson the rest of the industry has not fully absorbed.&lt;&#x2F;p&gt;
+&lt;p&gt;It is &lt;strong&gt;explicit about effects&lt;&#x2F;strong&gt;. Reads, writes, time, randomness, network, ledger postings, model inference, file system access, are all declared. Effects are part of the type, not lurking inside a function body. Koka and Vera both make this argument from the language side. A semantic artifact takes the same idea seriously enough to make it part of the artifact identity.&lt;&#x2F;p&gt;
+&lt;p&gt;It is &lt;strong&gt;verifiable&lt;&#x2F;strong&gt;. It carries obligations: properties that must hold, invariants that must be preserved, preconditions on inputs, postconditions on outputs. Some of these are dischargeable by SMT solvers. Some need proof kernels. Some can only be enforced at runtime. The artifact records which is which, and what evidence exists for each.&lt;&#x2F;p&gt;
+&lt;p&gt;It is &lt;strong&gt;reproducible&lt;&#x2F;strong&gt;. It declares its environment with enough precision that a meaning engine somewhere else, or the same meaning engine a year later, can replay it and get the same outputs. Wasm with the deterministic profile, Nix-pinned environments, content-addressed inputs, deterministic schedulers, this is the substrate that makes reproducibility a property rather than a hope.&lt;&#x2F;p&gt;
+&lt;p&gt;It is &lt;strong&gt;explainable&lt;&#x2F;strong&gt;. Execution emits a provenance graph. What ran, on what data, in what environment, with what assumptions, against what obligations, with what residual uncertainty. The provenance is part of the output, not a log file someone deletes after a week.&lt;&#x2F;p&gt;
+&lt;p&gt;The thing to notice about that list is that none of these properties is exotic. Every one of them already exists in some production system today. What does not exist yet is the synthesis. We treat them as add-ons around code. The argument I am making is that they are not add-ons. They are the artifact, and code is one rendering of it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-meaning-engine&quot;&gt;The meaning engine&lt;&#x2F;h2&gt;
+&lt;p&gt;If the artifact changes, the machine around it has to change too. Compilers were built for source text. Runtimes were built for binaries. Neither was built for typed, verifiable, provenance-rich semantic objects.&lt;&#x2F;p&gt;
+&lt;p&gt;The meaning engine is what fills that gap. I am using the term as a placeholder for a category, not for a single product. A meaning engine accepts a semantic artifact and:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Elaborates&lt;&#x2F;strong&gt; it. Resolves references, links schemas, grounds entities, checks types and effects.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Verifies&lt;&#x2F;strong&gt; it. Discharges obligations against the right backend. Type checks first. SMT for decidable arithmetic and structural constraints. Proof kernels for the residual cases that need full mathematical certainty. Runtime contracts for the cases nothing else can decide.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Plans&lt;&#x2F;strong&gt; execution. Picks an environment. Pins a target. Chooses where to run, on what hardware, with what capability set.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Lowers&lt;&#x2F;strong&gt; to code. Wasm, native CPU, GPU kernels, distributed dataflow graphs, whatever the planner decided. Code becomes an output, not an input.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Executes&lt;&#x2F;strong&gt; deterministically. Capability-bounded, replayable, audited.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Explains&lt;&#x2F;strong&gt;. Emits a provenance graph alongside the result. Says what assumptions held, what proofs passed, what tests ran, what fell back to runtime checks, what remained uncertain.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;The interesting reframing is the compiler itself. The old job of a compiler was to translate one notation into another. The job of a meaning engine is to materialize meaning into execution and to keep meaning intact across that materialization. Translation becomes a sub-task. The primary task is preservation.&lt;&#x2F;p&gt;
+&lt;p&gt;The semantic intermediate representation is where this lives or dies. I do not think the answer is “use LLVM IR with more comments.” LLVM IR is too low. It is already shaped around the mechanics of execution. We need a layer above it that carries domain meaning, obligations, and effects with first-class status.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mlir.llvm.org&#x2F;&quot;&gt;MLIR&lt;&#x2F;a&gt; is the most relevant existing infrastructure for this. It treats multi-level structure as the design center: dialects, regions, operations, progressive lowering. A meaning engine could plausibly use an MLIR-style dialect stack with a semantic dialect at the top and execution dialects at the bottom. That is an implementation question, not a thesis question, and I want to keep the two separate.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-scientific-experiment-as-an-executable-artifact&quot;&gt;A scientific experiment as an executable artifact&lt;&#x2F;h2&gt;
+&lt;p&gt;Abstract claims about new artifacts age badly. The argument has to survive contact with concrete domains. The first place I would point is science.&lt;&#x2F;p&gt;
+&lt;p&gt;Take a differential expression analysis from RNA sequencing. Today, the artifact that runs is some combination of: a Snakemake or Nextflow workflow, a Conda environment file, a few R scripts, a Jupyter notebook with the figure-generation logic, a README that explains how to run it, and a PDF describing the methods for the eventual paper. The “program” is spread across all of these, and the relationships between them are mostly informal.&lt;&#x2F;p&gt;
+&lt;p&gt;People have been trying to fix this. The &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.commonwl.org&#x2F;&quot;&gt;Common Workflow Language&lt;&#x2F;a&gt; standardizes the workflow part. &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.researchobject.org&#x2F;ro-crate&#x2F;&quot;&gt;RO-Crate&lt;&#x2F;a&gt; packages methods, data, outputs, and identifiers together. &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.w3.org&#x2F;TR&#x2F;prov-o&#x2F;&quot;&gt;PROV-O&lt;&#x2F;a&gt; gives you a vocabulary for entities, activities, and agents. These are real progress, and they show that the field has been edging toward semantic artifacts for years. What is still missing is a single authoritative object that also carries assumptions, allowed environments, correctness obligations, and execution traces in one verifiable form.&lt;&#x2F;p&gt;
+&lt;p&gt;A semantic artifact for the same analysis would look more like this:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;artifact RNASeqDiffExp.v3
+  inputs {
+    reads: FASTQ[]
+    reference: GenomeRef
+    alpha: Real where 0 &amp;lt; alpha &amp;lt;= 1.0
+  }
+  assumptions {
+    sha256(reference) == &amp;quot;9f8c1a...&amp;quot;
+    paired_end(reads)
+    same_instrument(reads)
+  }
+  outputs {
+    counts: CountTable
+    figures: FigureSet
+  }
+  effects {
+    fs.read(&amp;quot;reads&amp;#x2F;&amp;quot;, &amp;quot;reference&amp;#x2F;&amp;quot;)
+    fs.write(&amp;quot;results&amp;#x2F;&amp;quot;)
+    cpu.simd
+    gpu.optional
+  }
+  obligations {
+    deterministic_target = &amp;quot;wasm32-wasi&amp;quot;
+    environment = &amp;quot;nix:sha256-7m...&amp;quot;
+    p_adj_threshold(counts) &amp;lt;= alpha
+  }
+  plan {
+    trim -&amp;gt; align -&amp;gt; quantify -&amp;gt; diffexp -&amp;gt; render
+  }
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The syntax above is illustrative. The shape is the point.&lt;&#x2F;p&gt;
+&lt;p&gt;What this artifact gives you that a workflow file plus a README does not: a reviewer can inspect the assumptions directly. A lab can replay the artifact against the pinned environment and reproduce the figures byte for byte. An auditor can ask whether GPU execution changed numerical behavior and get a defensible answer. A future model can propose an optimization, and the meaning engine can reject the optimization automatically if it weakens any obligation. The provenance graph it emits is the methods section of the paper, machine-checkable, not a paragraph somebody wrote at midnight before submission.&lt;&#x2F;p&gt;
+&lt;p&gt;The artifact does not have to make every claim machine-decidable. It only has to make explicit which claims are decided how. That is already a significant improvement over the current state, where most of those distinctions live in tribal knowledge.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-contract-as-an-executable-artifact&quot;&gt;A contract as an executable artifact&lt;&#x2F;h2&gt;
+&lt;p&gt;The second domain I would point to is the one where words and computation already overlap uncomfortably: legal and financial agreements.&lt;&#x2F;p&gt;
+&lt;p&gt;There is real prior art here. The &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;accordproject.org&#x2F;&quot;&gt;Accord Project&lt;&#x2F;a&gt; models contracts as text plus a data model plus executable logic. The &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cdm.finos.org&#x2F;&quot;&gt;Common Domain Model&lt;&#x2F;a&gt; treats financial products and lifecycle events as machine-readable, machine-executable domain objects. Smart contracts, in their actual industrial form rather than the crypto-bro form, have been heading in this direction for a decade.&lt;&#x2F;p&gt;
+&lt;p&gt;The honest statement is that legal language will never be fully decidable. Many clauses are intentionally ambiguous. Many require human judgment. That is not a bug. It is how the institution works.&lt;&#x2F;p&gt;
+&lt;p&gt;But a semantic artifact does not require full decidability. It requires that the boundaries between decidable and undecidable be explicit. Some clauses become parameters. Some clauses become executable logic. Some clauses remain text with cross-references into the structured part. The artifact records which is which.&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;contract FixedRateLoan.v1
+  parties { lender, borrower }
+  terms {
+    principal: Money where principal &amp;gt; 0
+    rateAPR: Percent where 0 &amp;lt;= rateAPR &amp;lt;= 0.25
+    termMonths: Nat where termMonths &amp;gt; 0
+  }
+  preconditions {
+    kyc_clear(borrower)
+    sanctions_clear(borrower)
+  }
+  obligations {
+    monthly_payment(m) = amortize(principal, rateAPR, termMonths, m)
+    total_paid = principal + total_interest(principal, rateAPR, termMonths)
+  }
+  effects {
+    ledger.post
+    notice.send
+    archive.write
+  }
+  evidence {
+    jurisdiction = &amp;quot;CH&amp;quot;
+    execution_target = &amp;quot;wasm-ledger&amp;quot;
+    text_reference = &amp;quot;Loan_2026_03_15.pdf#sha256:4b2a...&amp;quot;
+  }
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;A loan agreement, in this form, is verifiable in the parts that should be verifiable, executable in the parts that should be executable, and traceable back to the natural-language contract for the parts that are not either. A bank can check on every payment that the obligations still hold. An auditor can ask why a specific posting happened and get a provenance graph that points back to the artifact and the inputs. A regulator can require a class of contracts to demonstrate certain invariants without reading every contract by hand.&lt;&#x2F;p&gt;
+&lt;p&gt;This is a much more serious model of “smart software” than the casual conflation of code with policy that the smart-contract era encouraged. The point is not that every rule becomes automatic. The point is that the system can tell you, without ambiguity, which rules it can enforce, which rules it can only check, and which rules a human still has to interpret.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-current-systems-already-get-right&quot;&gt;What current systems already get right&lt;&#x2F;h2&gt;
+&lt;p&gt;I want to be careful here, because the easy mistake is to write this kind of essay as if nothing existing matters and everything has to be invented from scratch. That is wrong. Most of the pieces of a meaning engine already exist. They are scattered across systems that solved one face of the problem each. The synthesis is what is missing.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;veralang.dev&#x2F;&quot;&gt;Vera&lt;&#x2F;a&gt; optimizes for the generation loop. It makes syntax canonical, contracts mandatory, effects explicit, verification part of the normal compilation pipeline, and Wasm the default execution target. It is, in my framing, the best current example of “language designed for machine authorship.” It is not yet a meaning engine because the source text remains the artifact of authority. But the discipline it imposes on the artifact is exactly the discipline a semantic artifact needs.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;bhc-lang&quot;&gt;BHC&lt;&#x2F;a&gt; (the bridge Haskell compiler I have written about elsewhere) optimizes for the typed substrate and the deployment surface. Multi-stage IRs, a Core layer that survives across lowerings, profile-specific runtime contracts, multiple backends from native to Wasm to GPU. It treats semantic preservation across lowering as a first-class goal, which is the exact discipline a meaning engine needs at the lowering layer. It is still source-language-centered, by design. That is its scope.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;dafny.org&#x2F;&quot;&gt;Dafny&lt;&#x2F;a&gt; and &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;lean-lang.org&#x2F;&quot;&gt;Lean&lt;&#x2F;a&gt; push hardest toward proof-bearing semantics. Dafny puts specifications inside the language and uses SMT to discharge them. Lean has a minimal trusted kernel and builds proof automation on top. They show what the upper bound of “verified meaning” looks like in practice. They are not yet the substrate for cross-domain artifacts, deterministic deployment, and provenance packaging, but they set the standard for what the verification layer of a meaning engine should aspire to.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;koka-lang.github.io&#x2F;koka&#x2F;doc&#x2F;index.html&quot;&gt;Koka&lt;&#x2F;a&gt; and similar effect-typed languages show that you can keep effect information at the type level without giving up performance. Effects in the type signature, not just in the function body. That is the model the artifact needs at the meaning layer.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mlir.llvm.org&#x2F;&quot;&gt;MLIR&lt;&#x2F;a&gt; shows that a multi-level dialect stack is a workable architecture for keeping high-level structure across lowering. A semantic IR sitting above MLIR-style dialects is a plausible engineering path.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;webassembly.org&#x2F;&quot;&gt;Wasm&lt;&#x2F;a&gt; and &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wasi.dev&#x2F;&quot;&gt;WASI&lt;&#x2F;a&gt;, with the recent &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;WebAssembly&#x2F;proposals&quot;&gt;deterministic profile&lt;&#x2F;a&gt; work and tooling like &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.wasmtime.dev&#x2F;&quot;&gt;Wasmtime’s determinism guide&lt;&#x2F;a&gt;, give us a portable, sandboxed, increasingly deterministic execution target. This is the substrate that makes “replay this artifact and get byte-identical outputs” feasible without operating-system heroics.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nix.dev&#x2F;&quot;&gt;Nix&lt;&#x2F;a&gt; gives us declarative, reproducible, isolated environments. The pinning story is mature. The integration story is still rough. But the building block is real.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.w3.org&#x2F;TR&#x2F;prov-o&#x2F;&quot;&gt;PROV-O&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.researchobject.org&#x2F;ro-crate&#x2F;&quot;&gt;RO-Crate&lt;&#x2F;a&gt;, and &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.commonwl.org&#x2F;&quot;&gt;CWL&lt;&#x2F;a&gt; give us standards for provenance, packaging, and portable workflows, particularly in the scientific domain. They are evidence that “explainability as a structural property of the artifact” is not science fiction. It is the way some communities already work.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.unison-lang.org&#x2F;&quot;&gt;Unison&lt;&#x2F;a&gt; gives us content-addressed, structured code identity. This is the lesson the rest of us still have not fully internalized: identity should not depend on filenames or formatting.&lt;&#x2F;p&gt;
+&lt;p&gt;If I were to draw the comparison shortly: Vera optimizes the generation loop. BHC optimizes the typed substrate. Dafny and Lean optimize formal truth. Wasm and Nix optimize deterministic deployment. PROV and RO-Crate optimize provenance. Unison optimizes structural identity. None of them is the future on its own. The future is the synthesis.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;from-compilers-to-meaning-engines&quot;&gt;From compilers to meaning engines&lt;&#x2F;h2&gt;
+&lt;p&gt;The reframing I find most useful is to put the old pipeline next to the new one and look at what changes.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;From compiler to meaning engine&quot;&gt;Old pipeline
+============
+
+  source code  -&amp;gt;  compile  -&amp;gt;  binary  -&amp;gt;  run
+
+
+New pipeline
+============
+
+  intent
+    |
+    v
+  elaborate   ---&amp;gt;  semantic artifact
+    |                (typed, content-addressed,
+    |                 effects explicit)
+    v
+  verify      ---&amp;gt;  obligation graph
+    |                (proved | tested | runtime)
+    v
+  plan        ---&amp;gt;  execution plan
+    |                (env pinned, target chosen,
+    |                 capabilities bounded)
+    v
+  lower       ---&amp;gt;  Wasm | native | GPU | distributed
+    |
+    v
+  execute     ---&amp;gt;  results
+    |
+    v
+  explain     ---&amp;gt;  provenance graph&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Every stage matters, and every stage has explicit outputs. Elaboration produces a fully grounded semantic artifact. Verification produces a graph of discharged and residual obligations. Planning produces a deterministic execution plan with a pinned environment and a capability set. Lowering produces target-specific code as one of several possible outputs. Execution produces results plus a provenance graph. Explanation reads the provenance graph and answers questions about why the system did what it did.&lt;&#x2F;p&gt;
+&lt;p&gt;The execution trace becomes a first-class output, not a side effect. Today, a stack trace exists because something went wrong. In a meaning engine, an execution trace exists because something happened, and the system promises to be able to reconstruct it later.&lt;&#x2F;p&gt;
+&lt;p&gt;The compiler does not disappear. It moves. It becomes one stage of a larger pipeline, and the pipeline is what people interact with.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-this-is-bigger-than-programming&quot;&gt;Why this is bigger than programming&lt;&#x2F;h2&gt;
+&lt;p&gt;I want to zoom out for one section, because the trilogy has been quietly building toward a claim that is not really about programming languages at all.&lt;&#x2F;p&gt;
+&lt;p&gt;Writing systems have changed several times. Oral tradition gave way to written records. Manuscripts gave way to print. Print gave way to digital text. Each transition expanded the scale and durability of what humans could record, distribute, and act on collectively. Each transition reshaped institutions in ways that took decades to settle.&lt;&#x2F;p&gt;
+&lt;p&gt;We are in the early phase of another transition. We are moving from systems that &lt;strong&gt;record&lt;&#x2F;strong&gt; knowledge to systems that &lt;strong&gt;execute&lt;&#x2F;strong&gt; knowledge. A scientific paper is a record. A semantic artifact for a scientific experiment is an execution. A legal contract is a record. A semantic artifact for a financial product is an execution. An infrastructure runbook is a record. A semantic artifact for the same operational behavior is an execution.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the civilizational layer of the argument, and I am stating it deliberately even though it is uncomfortable. The shift from text-as-record to text-as-execution will be at least as large as the shift from manuscript to print. It will not be the same as previous transitions, because it is happening on infrastructure we built and partially understand, not on infrastructure that emerged organically over centuries. But the order of magnitude is similar.&lt;&#x2F;p&gt;
+&lt;p&gt;If that framing is even half right, “what programming language should we use” is a small question. The big question is what kinds of institutions we are willing to build on top of artifacts that are themselves executable.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-role-of-humans&quot;&gt;The role of humans&lt;&#x2F;h2&gt;
+&lt;p&gt;If we do not write code, what do we do? This is a fair question, and I want to answer it directly rather than dodge it.&lt;&#x2F;p&gt;
+&lt;p&gt;We define constraints. We shape intent. We evaluate outcomes. We design systems of meaning. We argue about which obligations matter and which assumptions are reasonable. We negotiate the boundaries between automated and human-decided parts of an artifact. We decide which evidence is acceptable and which is not.&lt;&#x2F;p&gt;
+&lt;p&gt;This is a different job. It is closer to architecture than to authorship. The unit of work is the obligation, not the function.&lt;&#x2F;p&gt;
+&lt;p&gt;For people who like writing code, this is going to feel like a loss. I understand. I like writing code too. But the historical pattern is clear. Each abstraction layer demoted the layer below it from “primary skill” to “specialized skill.” Assembly programming did not disappear when C arrived. It became the thing a small number of people did when it really mattered, in compilers, in kernels, in performance-critical hot paths. The same is going to happen one layer up. Most people will stop authoring code as the primary artifact. Some people will keep doing it, where it really matters, and they will be more important to the field, not less.&lt;&#x2F;p&gt;
+&lt;p&gt;The work that gets more interesting, in this picture, is the work of building meaning engines themselves. The substrate is wide open. There is room for many designs. The decade ahead is going to look more like the early compiler era than like the late framework era. That is a good time to be working on infrastructure.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;implications-for-builders-right-now&quot;&gt;Implications for builders right now&lt;&#x2F;h2&gt;
+&lt;p&gt;The migration is staged. The way I think about the timeline:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Migration roadmap&quot;&gt;Near term              Medium term            Long term
+(now)                  (2-3 years)            (3-10 years)
+
+Semantic           -&amp;gt;  Artifact core      -&amp;gt;  Multi-target
+sidecars                                      lowering
+
+- specs beside         - content-             - Wasm&amp;#x2F;WASI first
+  the code               addressed            - native CPU
+- pinned envs            identity             - GPU kernels
+  (Nix)                - typed effects        - distributed DAGs
+- provenance           - obligation
+  (PROV-O)               graphs              Artifact-first
+- deterministic        - graded                domains
+  replay (Wasm)          verification       - science
+                                            - contracts
+Improve auditability   Make the artifact    - infra policy
+without abandoning     the review surface   - audit&amp;#x2F;compliance
+the current stack&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;I do not want to leave this post in the air. The trilogy has been escalating, and each step has been more speculative than the last. This post is the most speculative of the three. It is fair to ask what any of this implies for what we should be doing in 2026, not in 2036.&lt;&#x2F;p&gt;
+&lt;p&gt;A few things I think are already actionable.&lt;&#x2F;p&gt;
+&lt;p&gt;Take semantic sidecars seriously. If you are shipping software in any regulated or critical domain, you can already start writing artifact manifests that bind your code to its assumptions, its allowed effects, its pinned environment, its provenance, and its replay instructions. You do not need a new compiler to do this. You need discipline and a few tools that already exist. Nix and Wasm are good starting points. PROV-O is a usable vocabulary. The investment compounds.&lt;&#x2F;p&gt;
+&lt;p&gt;Treat reproducibility as a property, not a hope. If you cannot replay your artifact deterministically, you do not have a semantic artifact. You have a hope. Wasm with the deterministic profile, Nix-pinned environments, content-addressed inputs, and deterministic schedulers are the building blocks. The cost of getting there is real but bounded, and the gains in audit, debugging, and incident response are immediate.&lt;&#x2F;p&gt;
+&lt;p&gt;Make effects explicit. You do not need a new language to do this. You can do it with discipline in the language you already use. Module boundaries that separate pure from effectful code are not exotic, they are just unfashionable in some communities. The discipline is what matters. The syntax is downstream.&lt;&#x2F;p&gt;
+&lt;p&gt;Stop treating proof and test and observation as the same thing. They are not. A proven property, a tested property, and an observed property carry different weights. A meaning engine has to keep them separate. You can start keeping them separate yourself, in code review and in design review, today.&lt;&#x2F;p&gt;
+&lt;p&gt;Invest in IRs more than in syntax. The next decade of leverage is in the layer above LLVM IR and below user-facing source. If you are building tools for software development, this is where the interesting work is. The tooling that wins will preserve more meaning than today’s compiler stacks do.&lt;&#x2F;p&gt;
+&lt;p&gt;If you build infrastructure, the heuristic is simple. Anywhere your team is currently relying on “shell scripts plus a README plus a notebook plus a PDF plus tribal knowledge” to encode a process, that is a candidate for a semantic artifact. Pick one such process, and try to model it as an artifact instead of as a pile.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;open-questions-i-do-not-pretend-to-have-settled&quot;&gt;Open questions I do not pretend to have settled&lt;&#x2F;h2&gt;
+&lt;p&gt;I am stating the thesis confidently, but I want to be honest about what I do not know.&lt;&#x2F;p&gt;
+&lt;p&gt;I do not know the exact shape of the semantic IR. I have a bias toward an MLIR-style dialect stack with a semantic dialect at the top, augmented with effect typing, content-addressed identity, and explicit obligations. A content-addressed term graph in the Unison style is a credible alternative. A two-part design with a logical core plus an executable planning layer is another. The winning design is probably hybrid. I would rather present the question honestly than fake an answer.&lt;&#x2F;p&gt;
+&lt;p&gt;I do not know how much proof to demand before execution. Too much proof and the system is unusable. Too little and the artifact loses its claim to authority. Vera’s split between static proof and runtime fallback is realistic. Lean’s kernel model is the strongest, and the slowest. The right answer is graded, not absolute, and it will probably depend on the domain.&lt;&#x2F;p&gt;
+&lt;p&gt;I do not know how distributed execution fits in. Wasm gives us a portable substrate. WASI gives us a capability model. Content addressing gives us identity. None of these solves scheduling, data locality, and semantic replay across clusters. That is an implementation frontier, not a hole in the thesis, but it is a frontier and I want to flag it as one.&lt;&#x2F;p&gt;
+&lt;p&gt;I do not know which domains move first. My best guess is the domains that already pay most of the cost of ambiguity today: scientific workflows, regulated finance, compliance and audit, infrastructure policy, and certain parts of public-sector procurement. Domains where the gap between “what we wrote” and “what we ran” is currently catastrophic when something goes wrong. I would not be surprised if those domains develop their own meaning engines first, and a general-purpose substrate emerges as the synthesis a few years later.&lt;&#x2F;p&gt;
+&lt;p&gt;I do not know how long the migration takes. My only confident claim about timing is that it does not arrive by deleting today’s stacks. It arrives by moving semantics upward, year by year, until the artifact most teams care about is no longer a tree of source files.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;closing&quot;&gt;Closing&lt;&#x2F;h2&gt;
+&lt;p&gt;We called them programming languages because we thought we were speaking to machines. In reality, we were translating ourselves into a form machines could tolerate. The notation was a compromise between what we could write and what they could lower.&lt;&#x2F;p&gt;
+&lt;p&gt;Now that machines can understand us more directly, the question is not how to write better code. The question is how to think in systems that can be executed. The artifact we author should preserve meaning, not perform it. The runtime should keep that meaning intact, not erase it during translation.&lt;&#x2F;p&gt;
+&lt;p&gt;Code does not disappear in this story. It drops a layer. It becomes implementation detail, escape hatch, optimization substrate, foreign-function boundary. Important. Powerful. Not primary.&lt;&#x2F;p&gt;
+&lt;p&gt;The trilogy ends here, in the same place each transition in computing has ended. The previous artifact survives, demoted, while a higher layer takes over the work of authority. Source code joins assembly in the long list of things that used to be the thing and now are something we lower to.&lt;&#x2F;p&gt;
+&lt;p&gt;The interesting work, for the rest of this decade, is at the layer above. That is where I am spending mine.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;further-reading&quot;&gt;Further reading&lt;&#x2F;h2&gt;
+&lt;p&gt;The systems already pointing at parts of this future, grouped by the dimension each one gets right.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Semantic IRs and structural identity.&lt;&#x2F;strong&gt; The argument that artifact identity should not depend on filenames, and that compiler stacks should preserve high-level structure across lowering, already has working precedent.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mlir.llvm.org&#x2F;&quot;&gt;MLIR&lt;&#x2F;a&gt; for multi-level dialect stacks&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.unison-lang.org&#x2F;&quot;&gt;Unison&lt;&#x2F;a&gt; for content-addressed code&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Verification.&lt;&#x2F;strong&gt; What it looks like to push specifications and proofs into the artifact, with three different bets on how strict the proof obligation should be.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;dafny.org&#x2F;&quot;&gt;Dafny&lt;&#x2F;a&gt; for specs in the language, SMT-backed&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;lean-lang.org&#x2F;&quot;&gt;Lean&lt;&#x2F;a&gt; for a minimal trusted kernel and proofs as terms&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;veralang.dev&#x2F;&quot;&gt;Vera&lt;&#x2F;a&gt; for Z3 on decidable cases and runtime fallback for the rest&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Typed effects.&lt;&#x2F;strong&gt; The case for putting side effects into the type rather than hiding them in the function body.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;koka-lang.github.io&#x2F;koka&#x2F;doc&#x2F;index.html&quot;&gt;Koka&lt;&#x2F;a&gt; for row-polymorphic effects with handlers&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;veralang.dev&#x2F;&quot;&gt;Vera&lt;&#x2F;a&gt; for mandatory effect declarations on every function&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Reproducible execution.&lt;&#x2F;strong&gt; What “the same artifact runs the same way somewhere else, a year later” actually requires in production.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;webassembly.org&#x2F;&quot;&gt;WebAssembly&lt;&#x2F;a&gt; and &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wasi.dev&#x2F;&quot;&gt;WASI&lt;&#x2F;a&gt; for portable, sandboxed, increasingly deterministic execution&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.wasmtime.dev&#x2F;&quot;&gt;Wasmtime determinism guide&lt;&#x2F;a&gt; for the concrete steps to byte-identical replay&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nix.dev&#x2F;&quot;&gt;Nix&lt;&#x2F;a&gt; for declarative, isolated, pinned environments&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Provenance and packaging.&lt;&#x2F;strong&gt; The vocabulary for explaining what ran, on what data, in what environment, with what evidence.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.w3.org&#x2F;TR&#x2F;prov-o&#x2F;&quot;&gt;PROV-O&lt;&#x2F;a&gt; for entities, activities, and agents&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.researchobject.org&#x2F;ro-crate&#x2F;&quot;&gt;RO-Crate&lt;&#x2F;a&gt; for artifact bundles with methods, data, and identifiers&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.commonwl.org&#x2F;&quot;&gt;Common Workflow Language&lt;&#x2F;a&gt; for portable, vendor-neutral workflows&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Domain artifacts.&lt;&#x2F;strong&gt; The honest evidence that “software artifact” is too narrow a category for what comes next.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;accordproject.org&#x2F;&quot;&gt;Accord Project&lt;&#x2F;a&gt; for contracts as text plus data model plus logic&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cdm.finos.org&#x2F;&quot;&gt;Common Domain Model&lt;&#x2F;a&gt; for financial products and lifecycle events as machine-readable, machine-executable objects&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
+      <item>
+          <title>What Comes After the Last Programming Language</title>
+          <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/what-comes-after-the-last-programming-language/</link>
+          <guid>https://raskell.io/articles/what-comes-after-the-last-programming-language/</guid>
+          <description xml:base="https://raskell.io/articles/what-comes-after-the-last-programming-language/">&lt;p&gt;In &lt;a href=&quot;&#x2F;articles&#x2F;what-programming-languages-become-when-ai-writes-the-code&#x2F;&quot;&gt;The Last Programming Language Might Not Be for Humans&lt;&#x2F;a&gt;, I described three futures for programming languages as AI becomes the primary author of code. Explicit languages for machines. Declarative languages where types are proofs. And ultimately, no language at all, where AI generates machine code directly and the intermediate layer disappears.&lt;&#x2F;p&gt;
+&lt;p&gt;I left something out. There is a fourth possibility, and it goes deeper than the language.&lt;&#x2F;p&gt;
+&lt;p&gt;What happens to the operating system?&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-operating-system-was-designed-for-typists&quot;&gt;The operating system was designed for typists&lt;&#x2F;h2&gt;
+&lt;p&gt;Every operating system in production today, Linux, Windows, macOS, the BSDs, was built on the same foundational assumption: a human writes a program, the program is compiled into a sequence of CPU instructions, and the OS manages the execution of those instructions. Processes. Threads. System calls. Virtual memory. File descriptors. Schedulers. These abstractions exist because the fundamental unit of work is a sequence of CPU operations authored by a human programmer.&lt;&#x2F;p&gt;
+&lt;p&gt;This is not an exaggeration. Look at the POSIX specification. &lt;code&gt;fork()&lt;&#x2F;code&gt; creates a copy of the calling process. &lt;code&gt;exec()&lt;&#x2F;code&gt; replaces the current process image with a new program. &lt;code&gt;read()&lt;&#x2F;code&gt; and &lt;code&gt;write()&lt;&#x2F;code&gt; move bytes between a process and a file descriptor. &lt;code&gt;mmap()&lt;&#x2F;code&gt; maps a file into the process’s virtual address space. Every one of these primitives assumes a CPU-centric, sequential execution model where a process is a container for a stream of instructions that the CPU executes one at a time (or a few at a time, with threads).&lt;&#x2F;p&gt;
+&lt;p&gt;This made sense for sixty years. Dennis Ritchie and Ken Thompson designed Unix in 1969 around the PDP-7, a machine with a single CPU and 18-bit words. The abstractions they chose, processes, pipes, files as byte streams, were elegant reflections of what the hardware could do. Those abstractions survived because they generalized well. When CPUs got faster, processes got faster. When CPUs got more cores, threads mapped naturally onto them. When networks arrived, sockets extended the file descriptor model. The operating system grew, but the foundational unit of work never changed: a sequence of CPU instructions, managed by a scheduler, isolated by virtual memory.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-the-gpu-became-an-accidental-general-purpose-computer&quot;&gt;How the GPU became an accidental general-purpose computer&lt;&#x2F;h2&gt;
+&lt;p&gt;The GPU was never meant to be here. Its entire history is a sequence of coincidences.&lt;&#x2F;p&gt;
+&lt;p&gt;In the early 1990s, GPUs existed to draw triangles. Silicon Graphics made specialized hardware for 3D rendering, and the rest of the industry followed. NVIDIA’s GeForce 256, released in 1999, was marketed as the world’s first “GPU,” a term NVIDIA invented. Its job was to take vertices and textures from a CPU program, transform them, and rasterize them to a framebuffer. It was a peripheral. A display adapter with math capabilities.&lt;&#x2F;p&gt;
+&lt;p&gt;Then game developers started abusing the hardware. Shader programs, originally designed for lighting and surface effects, turned out to be tiny parallel programs that could do arbitrary computation. By the mid-2000s, researchers at Stanford and elsewhere realized you could encode general-purpose math problems as texture operations: matrix multiplications as pixel shaders, fluid simulations as render passes. It was a hack. The GPU did not know it was doing science. It thought it was rendering a really weird image.&lt;&#x2F;p&gt;
+&lt;p&gt;NVIDIA saw the opportunity and released CUDA in 2007, giving the GPU a proper programming model for general-purpose computation. But the architecture of the system did not change. CUDA was a userspace library. The GPU driver ran outside the kernel. The operating system still treated the GPU as a display device. The OS scheduled CPU processes and managed CPU memory. The GPU scheduled its own work and managed its own memory, through CUDA, through the driver, outside the OS’s view.&lt;&#x2F;p&gt;
+&lt;p&gt;Then came cryptocurrency mining. Bitcoin miners discovered that GPUs were vastly more efficient than CPUs for SHA-256 hashing, because the algorithm is embarrassingly parallel and the GPU has thousands of cores. This was the first mass-market workload where the GPU did the economically valuable work and the CPU was just overhead. Mining rigs were machines where the CPU was an afterthought, a cheap Celeron whose only job was to feed work to a rack of GPUs. But the operating system running on that Celeron was still Linux, still managing the GPU through CUDA, still treating it as a peripheral.&lt;&#x2F;p&gt;
+&lt;p&gt;Then came machine learning. First training (AlexNet in 2012, the moment deep learning became real), then inference. Each transition was coincidental. Nobody designed GPUs to be good at neural network training. They just happened to have the right characteristics: massive parallelism, high memory bandwidth, and a programming model that could express matrix multiplications. The workloads found the hardware. The hardware did not seek the workloads.&lt;&#x2F;p&gt;
+&lt;p&gt;And so we arrived at 2026 with the most important compute workload in a generation, AI inference, running on hardware that was originally designed to render Quake, managed by drivers that bypass the operating system, scheduled by a proprietary runtime that the kernel cannot see or control. The GPU is the most important processor in the machine, and the OS does not know what it is doing.&lt;&#x2F;p&gt;
+&lt;p&gt;Nearly twenty years after CUDA, we are still using that model. The workloads have changed beyond recognition. The software stack has not.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-cpus-and-gpus-actually-differ&quot;&gt;How CPUs and GPUs actually differ&lt;&#x2F;h2&gt;
+&lt;p&gt;To understand why this matters, it helps to understand how CPUs and GPUs compute differently. Not at the marketing level. At the architectural level.&lt;&#x2F;p&gt;
+&lt;p&gt;A CPU is designed for latency. It has a small number of powerful cores (8 to 128 on a modern server chip), each with deep pipelines, branch predictors, out-of-order execution engines, and large caches. Each core is optimized to execute a single thread of instructions as fast as possible. When your program says “if this, then that,” the CPU predicts which branch you will take and starts executing it before it knows the answer. When your program accesses memory, the CPU has three levels of cache to hide the latency of going to DRAM. The entire design optimizes for one thing: getting through a single sequence of instructions with minimal delay.&lt;&#x2F;p&gt;
+&lt;p&gt;A GPU is designed for throughput. It has thousands of small cores (16,384 CUDA cores on an H100), each simple, each capable of executing one instruction per clock, grouped into blocks that execute the same instruction on different data simultaneously. There is no branch predictor because all threads in a warp (a group of 32) execute the same instruction at the same time. If your program has a branch, both paths execute and the unwanted results are discarded. There is very little cache because the design assumes you are streaming through large data sets, not randomly accessing small ones. The entire design optimizes for one thing: doing the same operation on as many data points as possible simultaneously.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;CPU vs GPU architecture&quot;&gt;CPU (latency-optimized)                 GPU (throughput-optimized)
+========================                ============================
+
++---------+  +---------+               +--+--+--+--+--+--+--+--+--+
+| Core 0  |  | Core 1  |  ...  8-128   |  |  |  |  |  |  |  |  |  |
+| complex |  | complex |  cores        |  |  |  |  |  |  |  |  |  |
+| OoO exec|  | OoO exec|               |  |  |  |  |  |  |  |  |  |
+| branch  |  | branch  |               |  SM  |  |  SM  |  |  SM  |
+| predict |  | predict |               |  |  |  |  |  |  |  |  |  |
++---------+  +---------+               |  |  |  |  |  |  |  |  |  |
+     |            |                     +--+--+--+--+--+--+--+--+--+
++----+----+  +----+----+                      thousands of cores
+| L1  32K |  | L1  32K |                      simple, in-order
++---------+  +---------+                      same instruction,
++----+------------+----+                      different data
+|     L2  ~1 MB        |
++-----------------------+               +---------------------------+
+|     L3  ~32 MB        |               |     HBM  ~80 GB          |
++-----------------------+               |     ~3 TB&amp;#x2F;s bandwidth    |
+|     DRAM  ~512 GB     |               +---------------------------+
+|     ~100 GB&amp;#x2F;s         |
++-----------------------+               One instruction, 16384 data
+                                        points at once
+One instruction at a time,
+very fast&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This difference is why matrix multiplication, the core operation in neural network inference, runs three orders of magnitude faster on a GPU. A matrix multiply is thousands of multiply-and-add operations on independent data points. The CPU executes them one at a time (or a few at a time with SIMD), fast but serial. The GPU executes thousands simultaneously, each on its own core. The CPU finishes one row while the GPU finishes the whole matrix.&lt;&#x2F;p&gt;
+&lt;p&gt;For traditional software, CPU architecture is perfect. A web server parses HTTP requests (branchy, sequential), queries a database (latency-sensitive, cache-friendly), and formats a response (string operations, unpredictable access patterns). Each request is different. Each code path branches differently. The CPU’s branch predictor, out-of-order execution, and deep cache hierarchy are exactly right.&lt;&#x2F;p&gt;
+&lt;p&gt;For inference, GPU architecture is perfect. Each layer of a transformer is a dense matrix multiplication followed by an element-wise nonlinearity. Every token in the batch gets the same operations applied to the same weights. There are almost no branches. The data is enormous and streaming. The GPU’s thousands of simple cores and high-bandwidth memory are exactly right.&lt;&#x2F;p&gt;
+&lt;p&gt;The problem is that we run both workloads on an operating system that only understands the first kind.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-gpu-is-becoming-the-computer&quot;&gt;The GPU is becoming the computer&lt;&#x2F;h2&gt;
+&lt;p&gt;When you run inference on a large language model, the GPU is not assisting the CPU. The GPU is doing the work. The CPU’s role is orchestration: loading weights, managing memory, feeding tokens, collecting output. The actual computation, the matrix multiplications that turn a prompt into a response, happens on the GPU. For a 70-billion-parameter model, the GPU does billions of floating-point operations per token. The CPU does bookkeeping.&lt;&#x2F;p&gt;
+&lt;p&gt;The numbers make this concrete. An NVIDIA H100 delivers roughly 1,979 teraflops of FP8 compute. The CPU it is paired with, typically an AMD EPYC or Intel Xeon, delivers maybe 2-3 teraflops of FP32. The GPU has three orders of magnitude more compute throughput for the operations that matter in inference. When a request arrives at an inference endpoint, the CPU spends microseconds parsing HTTP and tokenizing text. The GPU spends milliseconds doing the actual thinking. The ratio of useful work is not close.&lt;&#x2F;p&gt;
+&lt;p&gt;This inversion has happened gradually enough that we have not fully reckoned with it. We still run inference workloads on Linux. We still manage GPU memory through CUDA driver calls from userspace processes. We still treat the GPU as a device the OS mediates access to, the same way it mediates access to a disk or a network card.&lt;&#x2F;p&gt;
+&lt;p&gt;But a disk does not run your business logic. A network card does not make decisions. The GPU increasingly does both. When an AI agent decides whether to approve a transaction, route a request, or generate a response, the decision happens on the GPU. The CPU is the secretary. The GPU is the executive.&lt;&#x2F;p&gt;
+&lt;p&gt;If the executive is making the decisions, why is the secretary’s office designed for the secretary?&lt;&#x2F;p&gt;
+&lt;p&gt;This is not merely an aesthetic complaint. The mismatch has practical consequences. GPU memory management is manual and error-prone. Context switches between GPU workloads are expensive because the OS has no concept of GPU process state. Scheduling is done by the CUDA driver, not by the kernel, which means the OS cannot enforce fairness or priority between GPU workloads the way it enforces them between CPU processes. And isolation, the most critical property for multi-tenant inference, depends entirely on userspace software that the OS does not control or verify.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-an-inference-native-os-would-look-like&quot;&gt;What an inference-native OS would look like&lt;&#x2F;h2&gt;
+&lt;p&gt;Imagine an operating system where inference is the fundamental compute primitive. Not a syscall you invoke. Not a library you link. The basic unit of work.&lt;&#x2F;p&gt;
+&lt;p&gt;In a traditional OS, the primitive is a process: an isolated address space running a sequence of CPU instructions with access to file descriptors, network sockets, and memory. The scheduler gives each process time on the CPU. The kernel mediates access to shared resources.&lt;&#x2F;p&gt;
+&lt;p&gt;In an inference-native OS, the primitive would be a shard: an isolated execution context with dedicated GPU resources, its own VRAM partition, its own compute units, its own inference pipeline. The scheduler does not give shards time on the CPU. It gives them capacity on the GPU. The kernel does not mediate file descriptors. It mediates model weights, token streams, and attention contexts.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Traditional OS vs inference-native OS&quot;&gt;Traditional OS                          Inference-native OS
+=================                       ====================
+
+Process A  Process B  Process C         Shard A    Shard B    Shard C
+   |          |          |                 |          |          |
+   v          v          v                 v          v          v
++-------------------------------+    +-------------------------------+
+|     CPU scheduler             |    |     GPU scheduler             |
+|     (time-slicing)            |    |     (capacity-slicing)        |
++-------------------------------+    +-------------------------------+
+   |          |          |                 |          |          |
+   v          v          v                 v          v          v
++------+  +------+  +------+        +--------+  +--------+  +--------+
+| Core | | Core | | Core  |        | CU     | | CU      | | CU     |
+| 0    | | 1    | | 2     |        | slice  | | slice   | | slice  |
++------+  +------+  +------+        +--------+  +--------+  +--------+
+                                          |          |          |
+   GPU is a peripheral                    v          v          v
+   called via ioctl&amp;#x2F;CUDA              +-------------------------------+
+                                      |     VRAM partitions           |
+                                      |     (isolated per shard)      |
+                                      +-------------------------------+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The analogy that keeps coming back to me is mainframes and timesharing. In the 1960s, computers were batch-processing machines. You submitted a job, waited, got results. Then Multics and later Unix introduced timesharing: multiple users, each with the illusion of having the whole machine, isolated from each other by the OS. The transition was not just a performance improvement. It was a conceptual shift in what the machine was for. It went from “a machine that runs one job at a time” to “a machine that runs many jobs concurrently, safely isolated.”&lt;&#x2F;p&gt;
+&lt;p&gt;We need the same transition for GPUs. Right now, GPU computing is in its batch-processing era. One workload gets the GPU (or a partition of it, managed by CUDA MPS or MIG), and isolation is an afterthought bolted on by the driver. The inference-native equivalent of timesharing would be an OS that treats GPU capacity the way Unix treats CPU time: a shared resource, securely partitioned, with each tenant unable to see or affect the others.&lt;&#x2F;p&gt;
+&lt;p&gt;The isolation model is the critical piece. In a traditional OS, processes are isolated by virtual memory on the CPU side. Two processes cannot read each other’s RAM because the page tables prevent it. The MMU (Memory Management Unit) enforces this in hardware. It is not a software convention. It is a physical guarantee.&lt;&#x2F;p&gt;
+&lt;p&gt;But GPU memory is a different story. In most systems, GPU memory isolation depends on the CUDA driver, which runs in userspace. NVIDIA’s MIG (Multi-Instance GPU) provides hardware partitioning on some GPU models, but it is coarse-grained (up to 7 instances on an A100) and not available on consumer hardware. A vulnerability in the driver, or in any process with GPU access, can potentially read VRAM belonging to another workload. For inference workloads handling sensitive data, this is not acceptable.&lt;&#x2F;p&gt;
+&lt;p&gt;Hardware-level isolation is the answer. Intel VT-d IOMMU can enforce DMA translation boundaries so that each GPU partition’s VRAM is physically inaccessible to other partitions. Not software-isolated. Hardware-isolated. The same level of guarantee that CPU virtual memory provides, but for GPU resources. The technology exists. It is used in server virtualization today for PCIe passthrough. The question is whether an OS can be built that uses it as a first-class isolation primitive for inference workloads, not as a virtualization feature.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;coconutos&quot;&gt;coconutOS&lt;&#x2F;h2&gt;
+&lt;p&gt;This is not purely theoretical. I have been building a proof of concept.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;coconut-os&#x2F;coconutOS&quot;&gt;coconutOS&lt;&#x2F;a&gt; is a capability-based microkernel written in Rust, engineered specifically for GPU-isolated AI inference. It boots on x86-64 hardware via UEFI, and its entire architecture is designed around the idea that the GPU is the primary execution engine.&lt;&#x2F;p&gt;
+&lt;p&gt;The choice of a microkernel is deliberate, and it carries historical baggage worth addressing.&lt;&#x2F;p&gt;
+&lt;p&gt;The microkernel idea goes back to the 1980s. Andrew Tanenbaum, the computer scientist at Vrije Universiteit Amsterdam, built &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.minix3.org&#x2F;&quot;&gt;Minix&lt;&#x2F;a&gt; as a teaching OS based on the principle that the kernel should do as little as possible: manage memory, schedule tasks, pass messages. Everything else, file systems, drivers, network stacks, runs in userspace as separate processes. If a driver crashes, the kernel restarts it. The system keeps running.&lt;&#x2F;p&gt;
+&lt;p&gt;Tanenbaum and Linus Torvalds had a famous debate about this in 1992 on the comp.os.minix newsgroup. Torvalds argued that monolithic kernels were faster and more practical. Tanenbaum argued that microkernels were more reliable and that “Linux is obsolete.” Torvalds won the practical argument. Linux became the dominant OS precisely because a monolithic kernel is simpler to build and faster to run when all your workloads are CPU-centric. Putting the file system and drivers in kernel space avoids the overhead of message passing between userspace processes.&lt;&#x2F;p&gt;
+&lt;p&gt;But Tanenbaum’s argument was about fault isolation, and fault isolation becomes more important as the consequences of failure increase. When the failure is “the file server process crashes and is restarted in 50 milliseconds,” a monolithic kernel’s performance advantage wins. When the failure is “a GPU driver bug in kernel space lets one tenant’s inference workload read another tenant’s medical records from VRAM,” the calculus changes.&lt;&#x2F;p&gt;
+&lt;p&gt;In a monolithic kernel like Linux, the GPU driver runs in kernel space with full access to system memory. A bug in the NVIDIA driver (and there have been many: &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nvidia.custhelp.com&#x2F;app&#x2F;answers&#x2F;detail&#x2F;a_id&#x2F;5551&quot;&gt;CVE-2024-0090&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nvidia.custhelp.com&#x2F;app&#x2F;answers&#x2F;detail&#x2F;a_id&#x2F;5551&quot;&gt;CVE-2024-0092&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nvidia.custhelp.com&#x2F;app&#x2F;answers&#x2F;detail&#x2F;a_id&#x2F;5491&quot;&gt;CVE-2023-31018&lt;&#x2F;a&gt; to name a few from recent years) can compromise the entire system. In a microkernel, the GPU HAL runs as an isolated shard in userspace. A bug in the HAL crashes that shard. The kernel survives. Other shards survive. The failure domain is contained.&lt;&#x2F;p&gt;
+&lt;p&gt;Tanenbaum was right about the principle. He was just early about the workload that would make it matter. GPU-isolated inference is that workload. The performance overhead of microkernel message passing is irrelevant when the actual work happens on the GPU and the kernel’s job is orchestration, not computation. The CPU side is the control plane. The GPU side is the data plane. A microkernel is the right architecture for a control plane.&lt;&#x2F;p&gt;
+&lt;p&gt;The core abstractions:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Shards, not processes.&lt;&#x2F;strong&gt; Each shard is an isolated address space with its own page tables, running in ring 3. But unlike a traditional process, a shard’s primary resource is not CPU time. It is GPU capacity. A shard gets a partition of VRAM, a slice of compute units, and a dedicated HAL (Hardware Abstraction Layer) shard that manages its access to the GPU. The HAL shard itself is unprivileged. It communicates with the kernel through the same capability-based IPC that every other shard uses. There is no “root” equivalent for GPU access.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Capabilities, not permissions.&lt;&#x2F;strong&gt; Access control is capability-based, inspired by systems like &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;sel4.systems&#x2F;&quot;&gt;seL4&lt;&#x2F;a&gt; and the research that came out of the University of Cambridge’s Computer Laboratory. Each shard holds unforgeable capability tokens that grant access to specific resources: VRAM regions, IPC channels, filesystem paths, GPU compute slices. Capabilities can be granted, revoked, restricted, and inspected. There are no ambient permissions. A shard cannot access anything it does not hold a capability for. This is fundamentally different from Unix permissions, where a root process can access everything. In coconutOS, there is no root. There are only capabilities.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;GPU ASLR.&lt;&#x2F;strong&gt; Each shard’s VRAM and MMIO virtual addresses are randomized. Even if an attacker finds a vulnerability in one shard, they cannot predict where another shard’s GPU memory is mapped. CPU-side ASLR has been standard since the mid-2000s. The insight is that the same principle applies to GPU resources, and that without it, a GPU memory disclosure vulnerability in one workload can be used to locate and read another workload’s model weights or inference state.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Pledge and unveil for GPUs.&lt;&#x2F;strong&gt; This is one of the design choices I am most attached to, because it comes directly from my years of admiring OpenBSD. Theo de Raadt’s &lt;code&gt;pledge(2)&lt;&#x2F;code&gt; and &lt;code&gt;unveil(2)&lt;&#x2F;code&gt; syscalls are among the most elegant security primitives ever designed. A process calls &lt;code&gt;pledge(&quot;stdio rpath&quot;)&lt;&#x2F;code&gt; and permanently gives up the ability to do anything except read files and use standard I&#x2F;O. It cannot escalate back. The promise is irreversible.&lt;&#x2F;p&gt;
+&lt;p&gt;coconutOS applies the same idea to GPU resources. &lt;code&gt;pledge_gpu&lt;&#x2F;code&gt; lets a shard declare that it will only do inference, not training. Once pledged, it cannot allocate new VRAM beyond its partition, cannot modify model weights, cannot access raw compute dispatch. &lt;code&gt;unveil_vram&lt;&#x2F;code&gt; lets a shard lock its VRAM view to a specific region. Other regions become physically invisible through the IOMMU. A compromised inference shard cannot undo its own containment because the kernel enforces the pledge at the hardware level.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;The inference stack.&lt;&#x2F;strong&gt; The proof of concept runs a transformer forward pass end-to-end: RMSNorm, multi-head attention with rotary position embeddings (RoPE), SiLU feed-forward networks, softmax. It is based on Andrej Karpathy’s &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;karpathy&#x2F;llama2.c&quot;&gt;llama2.c&lt;&#x2F;a&gt;, adapted to run as a shard with GPU isolation. The kernel preserves FPU and SSE state across preemption using FXSAVE&#x2F;FXRSTOR, so inference math is not corrupted by context switches. This is a detail that matters: if the scheduler preempts a shard mid-matrix-multiply and does not preserve the floating-point register state, the results will be silently wrong. Traditional OSes handle this for CPU processes. coconutOS handles it for GPU inference shards.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-this-matters&quot;&gt;Why this matters&lt;&#x2F;h2&gt;
+&lt;p&gt;You might look at coconutOS and think: this is an interesting research project, but nobody is going to replace Linux for AI workloads. And you might be right. Linux is entrenched. CUDA is entrenched. The entire AI infrastructure stack, from PyTorch to vLLM to Triton Inference Server, is built on top of assumptions that coconutOS challenges.&lt;&#x2F;p&gt;
+&lt;p&gt;But consider the trajectory.&lt;&#x2F;p&gt;
+&lt;p&gt;Five years ago, AI inference was a batch job you ran on a cluster. You uploaded data, kicked off a job, came back later for results. The security model was simple: whoever had SSH access to the machine had access to the GPU. Isolation was a non-issue because there was only one workload.&lt;&#x2F;p&gt;
+&lt;p&gt;Today, inference is a real-time service. Companies like Anthropic, OpenAI, and Google serve billions of inference requests per day. Multiple customers share the same GPU hardware. The workloads process sensitive data: medical records, financial transactions, legal documents, personal conversations. The security and isolation requirements have changed fundamentally, but the OS layer has not changed at all. We are running safety-critical, multi-tenant inference workloads on an operating system that was designed in 1991 for running file servers and web servers.&lt;&#x2F;p&gt;
+&lt;p&gt;The gap between what we are doing on GPUs and how we manage GPU access is widening. Right now, GPU multi-tenancy in the cloud means trusting the CUDA driver and the hypervisor to keep workloads separated. NVIDIA’s MIG helps, but it is only available on data center GPUs (A100, H100), offers coarse-grained partitioning (7 instances maximum), and still relies on the CUDA driver for memory management within each partition. For most use cases, this is fine. For financial services, healthcare, defense, and any context where inference handles regulated data, “trusting the driver” is not a compliance-grade answer.&lt;&#x2F;p&gt;
+&lt;p&gt;The analogy is virtualization. Before Xen and KVM, server multi-tenancy meant trusting the host OS to isolate users. It worked until it did not. Hardware virtualization (VT-x) gave us actual isolation guarantees enforced by the CPU. The cloud was built on those guarantees. We need the same thing for GPUs. Hardware-level isolation, enforced by the kernel, with capability-based access control and monotonic privilege restriction, is where this has to go. Whether it looks like coconutOS or like a set of patches to Linux or like NVIDIA building isolation into their next GPU architecture is an implementation question. The architectural direction is not optional.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-four-futures-updated&quot;&gt;The four futures, updated&lt;&#x2F;h2&gt;
+&lt;p&gt;Looking back at the original post, the timeline extends further than I initially described:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;The full timeline&quot;&gt;Near term        Medium term       Long term         Far horizon
+(now)            (2-5 years)       (5-15 years)      (10-20 years)
+
+Explicit         Declarative       Post-language     Inference-native
+languages        languages         (AI-native        operating systems
+(Vera)           (Haskell + BHC)   targets)
+
+Reduce noise --&amp;gt; Change the   --&amp;gt;  Remove the   --&amp;gt;  Redesign the
+in the loop      signal            layer             machine
+
+HOW, but         WHAT, verified    Intent to         Intent to
+unambiguous      by types          execution         inference&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The first three futures are about the intermediate layer between human intent and machine execution. The fourth future is about the machine itself. If the primary workload is inference, the machine should be designed for inference. Not adapted. Not extended. Designed.&lt;&#x2F;p&gt;
+&lt;p&gt;Each transition in this timeline follows the same pattern that has repeated throughout the history of computing. When a new type of workload becomes dominant, the infrastructure eventually reshapes itself around that workload. Mainframes were redesigned for timesharing when interactive use became the dominant workload. Server hardware was redesigned for virtualization when multi-tenancy became the dominant workload. Network infrastructure was redesigned for packet switching when interactive data became more important than circuit-switched voice. The question is never whether the infrastructure will adapt. It is how long the transition takes and what it looks like on the other side.&lt;&#x2F;p&gt;
+&lt;p&gt;This is admittedly the furthest out of the four possibilities. We are even further from inference-native operating systems than we are from AI generating machine code directly. The hardware support is early. The software stack is embryonic. coconutOS boots and runs a transformer forward pass, which is a start, but it is a long way from something you would deploy in production.&lt;&#x2F;p&gt;
+&lt;p&gt;But the same was true of virtual memory when MIT’s Project MAC implemented it in 1961. It took decades for hardware support to mature, for operating systems to build on it, for the abstraction to become invisible. Today, every program you run uses virtual memory and nobody thinks about it. The same was true of containerization when Google started using cgroups internally in 2006. Docker did not arrive until 2013. Kubernetes until 2014. The gap between “research prototype” and “runs the world” is real, but so is the trajectory.&lt;&#x2F;p&gt;
+&lt;p&gt;The workloads are catching up. The hardware is catching up. The question is whether we build the OS to match, or whether we keep running inference on an operating system that thinks the CPU is in charge.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;honest-assessment&quot;&gt;Honest assessment&lt;&#x2F;h2&gt;
+&lt;p&gt;I do not know if inference-native operating systems will happen in this form. I do not know if the microkernel approach is right, or if the better path is extending Linux with GPU isolation primitives (the way cgroups extended Linux for containers, the way KVM extended Linux for virtualization). I do not know if hardware vendors will build the IOMMU support that makes per-shard GPU isolation practical at scale, or if NVIDIA will solve this problem at the driver level before anyone needs a new OS.&lt;&#x2F;p&gt;
+&lt;p&gt;There are smart people working on adjacent problems. Google’s TPU architecture has custom scheduling and isolation built into the hardware. AMD’s ROCm is exploring open-source alternatives to CUDA’s closed driver model. Intel’s GPU roadmap includes hardware virtualization features. Any of these paths could make coconutOS’s approach unnecessary by solving the isolation problem at a different layer.&lt;&#x2F;p&gt;
+&lt;p&gt;What I do know is that running inference workloads on operating systems designed for sequential CPU programs is an impedance mismatch that will become less tolerable as inference becomes more critical. Something will change. coconutOS is my attempt to explore what that something might look like, with real code that boots on real hardware and runs a real transformer.&lt;&#x2F;p&gt;
+&lt;p&gt;The code is open source, ISC-licensed, and very much a work in progress. If you are thinking about similar problems, I want to hear from you.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;coconut-os&#x2F;coconutOS&quot;&gt;github.com&#x2F;coconut-os&#x2F;coconutOS&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Why We Built a Haskell Package Manager in Rust</title>
+          <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/</link>
+          <guid>https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/</guid>
+          <description xml:base="https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/">&lt;p&gt;Why would anyone invest serious engineering effort into Haskell tooling in 2026? Haskell is a niche language. It has been a niche language for thirty years. Most companies do not use it. Most developers have never written a line of it. If you are going to pour months of work into building a package manager and toolchain from scratch, in Rust no less, the obvious question is: why not just use Rust?&lt;&#x2F;p&gt;
+&lt;p&gt;The answer is the same one I gave in &lt;a href=&quot;&#x2F;articles&#x2F;what-programming-languages-become-when-ai-writes-the-code&#x2F;&quot;&gt;The Last Programming Language Might Not Be for Humans&lt;&#x2F;a&gt;: the way we write software is changing. AI is becoming the primary author of code, and the languages that will matter most in that future are not the ones optimized for human typing speed. They are the ones optimized for formal correctness, composability, and provability. Haskell is not niche in that framing. It is early.&lt;&#x2F;p&gt;
+&lt;p&gt;I have &lt;a href=&quot;&#x2F;articles&#x2F;all-beginning-is-haskell&#x2F;&quot;&gt;written before&lt;&#x2F;a&gt; about why Haskell shaped the way I think. The short version: Haskell teaches you to think about programs as compositions of well-typed transformations, and that discipline makes you better at everything else. I still believe this. I write most of my production software in Rust, but I think in Haskell.&lt;&#x2F;p&gt;
+&lt;p&gt;The problem was never the language. The problem was everything around it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-state-of-haskell-tooling&quot;&gt;The state of Haskell tooling&lt;&#x2F;h2&gt;
+&lt;p&gt;If you want to start a Haskell project today, you install ghcup, which manages GHC (the compiler), Cabal (the build tool), Stack (a different build tool), and HLS (the language server). Then you decide whether to use Cabal or Stack, which is a decision that has split the Haskell community for over a decade and which nobody has fully resolved. Then you configure your project, using either a &lt;code&gt;.cabal&lt;&#x2F;code&gt; file (a custom format that predates TOML, YAML, and JSON as configuration languages) or a &lt;code&gt;stack.yaml&lt;&#x2F;code&gt; plus a &lt;code&gt;.cabal&lt;&#x2F;code&gt; file (because Stack still needs Cabal files underneath). Then you wait for GHC to compile your dependencies, which takes long enough that you start questioning your life choices.&lt;&#x2F;p&gt;
+&lt;p&gt;I have introduced Haskell to teams and watched the enthusiasm drain from people’s faces during the toolchain setup. Not because the language was hard, but because the first thirty minutes were spent fighting &lt;code&gt;ghcup&lt;&#x2F;code&gt;, &lt;code&gt;cabal update&lt;&#x2F;code&gt;, resolver mismatches, and cryptic build errors that had nothing to do with the code they wanted to write.&lt;&#x2F;p&gt;
+&lt;p&gt;A typical first encounter: you want to write a small HTTP server. You install ghcup, install GHC 9.8.2, run &lt;code&gt;cabal init&lt;&#x2F;code&gt;, and get a &lt;code&gt;.cabal&lt;&#x2F;code&gt; file with a dozen fields you do not understand yet. You add &lt;code&gt;warp&lt;&#x2F;code&gt; as a dependency and run &lt;code&gt;cabal build&lt;&#x2F;code&gt;. GHC starts compiling &lt;code&gt;warp&lt;&#x2F;code&gt; and its transitive dependencies: &lt;code&gt;http-types&lt;&#x2F;code&gt;, &lt;code&gt;bytestring&lt;&#x2F;code&gt;, &lt;code&gt;text&lt;&#x2F;code&gt;, &lt;code&gt;network&lt;&#x2F;code&gt;, &lt;code&gt;streaming-commons&lt;&#x2F;code&gt;, &lt;code&gt;vault&lt;&#x2F;code&gt;, &lt;code&gt;wai&lt;&#x2F;code&gt;, and about forty others. Four to six minutes on a modern machine. Every time you switch GHC versions or clean your cache, you pay that cost again.&lt;&#x2F;p&gt;
+&lt;p&gt;Now compare this with Rust. You run &lt;code&gt;cargo new my-server&lt;&#x2F;code&gt;. You add &lt;code&gt;axum&lt;&#x2F;code&gt; to &lt;code&gt;Cargo.toml&lt;&#x2F;code&gt;. You run &lt;code&gt;cargo build&lt;&#x2F;code&gt;. It compiles. The first build is not instant either, but &lt;code&gt;cargo&lt;&#x2F;code&gt; does not ask you which of two incompatible build tools you prefer, does not require a separate tool to manage the compiler, and does not present you with a configuration format from 2005.&lt;&#x2F;p&gt;
+&lt;p&gt;Or Python. &lt;code&gt;uv init my-server&lt;&#x2F;code&gt;. &lt;code&gt;uv add fastapi&lt;&#x2F;code&gt;. &lt;code&gt;uv run&lt;&#x2F;code&gt;. Done. The entire dependency resolution and installation takes less than a second because &lt;code&gt;uv&lt;&#x2F;code&gt; resolves and installs in parallel, in Rust, without spawning Python.&lt;&#x2F;p&gt;
+&lt;p&gt;Every major language ecosystem has converged on the same answer: one tool that handles project creation, dependency management, building, testing, and publishing. Haskell has three tools that each do part of the job, disagree about how dependencies should work, and require a fourth tool to manage the compiler itself.&lt;&#x2F;p&gt;
+&lt;p&gt;People have been talking about Haskell’s tooling problem for years. I decided to do something about it the way &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;astral.sh&quot;&gt;astral.sh&lt;&#x2F;a&gt; did for Python: rewrite the developer experience from scratch, in Rust, and make everything dramatically faster.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-astral-sh-playbook&quot;&gt;The astral.sh playbook&lt;&#x2F;h2&gt;
+&lt;p&gt;When Astral released &lt;code&gt;uv&lt;&#x2F;code&gt; and &lt;code&gt;ruff&lt;&#x2F;code&gt;, it proved something important. You can take a mature ecosystem with deeply entrenched tooling, rebuild the developer experience in Rust, and people will switch, because the new tools were fast enough and coherent enough that the switching cost paid for itself immediately.&lt;&#x2F;p&gt;
+&lt;p&gt;Python’s tooling situation before &lt;code&gt;uv&lt;&#x2F;code&gt; was remarkably similar to Haskell’s. &lt;code&gt;pip&lt;&#x2F;code&gt;, &lt;code&gt;pip-tools&lt;&#x2F;code&gt;, &lt;code&gt;pipenv&lt;&#x2F;code&gt;, &lt;code&gt;poetry&lt;&#x2F;code&gt;, &lt;code&gt;conda&lt;&#x2F;code&gt;, &lt;code&gt;virtualenv&lt;&#x2F;code&gt;, &lt;code&gt;venv&lt;&#x2F;code&gt;, &lt;code&gt;pyenv&lt;&#x2F;code&gt;. Each solved part of the problem. Each had opinions that conflicted with the others. Setting up a Python project from scratch meant choosing a stack of tools, hoping they worked together, and accepting that your lockfile format depended on which combination you picked.&lt;&#x2F;p&gt;
+&lt;p&gt;Astral did not try to fix any single tool. They rewrote the experience. &lt;code&gt;uv&lt;&#x2F;code&gt; is a single Rust binary that does what &lt;code&gt;pip&lt;&#x2F;code&gt;, &lt;code&gt;pip-tools&lt;&#x2F;code&gt;, &lt;code&gt;virtualenv&lt;&#x2F;code&gt;, and &lt;code&gt;pyenv&lt;&#x2F;code&gt; did, but 10-100x faster and with a coherent interface. &lt;code&gt;ruff&lt;&#x2F;code&gt; is a single Rust binary that does what &lt;code&gt;flake8&lt;&#x2F;code&gt;, &lt;code&gt;isort&lt;&#x2F;code&gt;, &lt;code&gt;pycodestyle&lt;&#x2F;code&gt;, and &lt;code&gt;pyflakes&lt;&#x2F;code&gt; did, but 100x faster. The Python community switched because the tools were obviously better the first time they used them.&lt;&#x2F;p&gt;
+&lt;p&gt;The playbook has three steps:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Wrap first.&lt;&#x2F;strong&gt; Use the existing tools under the hood rather than reimplementing everything. &lt;code&gt;uv&lt;&#x2F;code&gt; wraps pip’s package index and resolver logic. hx wraps GHC and Cabal.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Tame second.&lt;&#x2F;strong&gt; Add better error messages, faster startup, unified configuration, and workflows that make sense. This is where most of the user-facing value lives.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Replace last.&lt;&#x2F;strong&gt; Only replace underlying components when you have to. For hx, that meant building a native build mode that bypasses Cabal entirely for simple projects, and a native dependency resolver in Rust that is 24x faster than Cabal’s constraint solver.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;This approach is pragmatic in a way that matters. You do not need to rebuild the world to improve the experience. You need to rebuild the surface. The parts that people touch every day.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-rust&quot;&gt;Why Rust&lt;&#x2F;h2&gt;
+&lt;p&gt;The choice to build hx in Rust is a direct response to a structural problem.&lt;&#x2F;p&gt;
+&lt;p&gt;Haskell’s existing tooling is written in Haskell. This creates a bootstrap problem. To build the build tool, you need the compiler. To install the compiler, you need the compiler manager. To build the compiler manager, you need a compiler. The dependency chain is circular, and every link in it is slow to compile.&lt;&#x2F;p&gt;
+&lt;p&gt;Think about what this means in practice. You are a new developer. You want to try Haskell. You download ghcup. ghcup is a shell script that downloads a pre-built GHC binary, but it also installs Cabal, which is itself a Haskell binary compiled with GHC. If the pre-built binary does not exist for your platform, you need GHC to build Cabal, but you need Cabal to set up GHC. The bootstrap documentation exists because the bootstrap problem exists, and it exists because the tools are written in the language they manage.&lt;&#x2F;p&gt;
+&lt;p&gt;GHC’s runtime system adds initialization overhead to every invocation. When you type &lt;code&gt;cabal build&lt;&#x2F;code&gt;, the first 45 milliseconds are spent starting the GHC runtime before Cabal even begins to think about your project. Stack is worse at 89 milliseconds. These numbers sound small until you are running commands in a tight development loop, hitting save and expecting the build to start instantly. Or in CI, where the build tool is invoked hundreds of times across a pipeline and those milliseconds compound into minutes.&lt;&#x2F;p&gt;
+&lt;p&gt;hx starts in 12 milliseconds. A native binary without a garbage-collected runtime does not need to initialize one. The tool should not have the same dependencies as the thing it manages.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;hx build    # 12ms startup + build time
+cabal build # 45ms startup + build time
+stack build # 89ms startup + build time
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Memory tells the same story:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Tool&lt;&#x2F;th&gt;&lt;th&gt;Startup memory&lt;&#x2F;th&gt;&lt;th&gt;Build memory (simple project)&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;hx&lt;&#x2F;td&gt;&lt;td&gt;8 MB&lt;&#x2F;td&gt;&lt;td&gt;45 MB&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;cabal&lt;&#x2F;td&gt;&lt;td&gt;45 MB&lt;&#x2F;td&gt;&lt;td&gt;250 MB&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;stack&lt;&#x2F;td&gt;&lt;td&gt;85 MB&lt;&#x2F;td&gt;&lt;td&gt;320 MB&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;For a tool you invoke constantly, this matters. Especially on CI runners with constrained memory, or on a laptop where you have four terminal panes open with different projects.&lt;&#x2F;p&gt;
+&lt;p&gt;The Rust decision also solves the distribution problem. A Rust binary is a single static executable that cross-compiles trivially. No runtime dependencies. No “install GHC first so you can install the tool that installs GHC.” &lt;code&gt;curl | sh&lt;&#x2F;code&gt; and you are running. hx is available via the install script, Cargo, aqua, winget on Windows, and Homebrew. Every distribution channel ships a self-contained binary.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-hx-actually-does&quot;&gt;What hx actually does&lt;&#x2F;h2&gt;
+&lt;p&gt;hx replaces the &lt;code&gt;cabal + stack + ghcup + fourmolu + hlint&lt;&#x2F;code&gt; workflow with a single binary:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;curl -fsSL https:&amp;#x2F;&amp;#x2F;arcanist.sh&amp;#x2F;hx&amp;#x2F;install.sh | sh
+hx new my-app &amp;amp;&amp;amp; cd my-app
+hx run
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;No ghcup. No stack. No cabal-install. One tool, one configuration file, one lockfile format.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;configuration&quot;&gt;Configuration&lt;&#x2F;h3&gt;
+&lt;p&gt;The configuration is &lt;code&gt;hx.toml&lt;&#x2F;code&gt;. Not a &lt;code&gt;.cabal&lt;&#x2F;code&gt; file with its custom syntax that nobody can parse without a library. Not a &lt;code&gt;stack.yaml&lt;&#x2F;code&gt; with YAML indentation traps. TOML, the same format that Rust (&lt;code&gt;Cargo.toml&lt;&#x2F;code&gt;), Python (&lt;code&gt;pyproject.toml&lt;&#x2F;code&gt;), and most modern tools have converged on.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;[project]
+name = &amp;quot;my-app&amp;quot;
+kind = &amp;quot;bin&amp;quot;
+
+[toolchain]
+ghc = &amp;quot;9.8.2&amp;quot;
+
+[build]
+optimization = 2
+warnings = true
+
+[format]
+formatter = &amp;quot;fourmolu&amp;quot;
+
+[lint]
+hlint = true
+
+[hooks]
+pre-build = &amp;quot;scripts&amp;#x2F;generate-version.sh&amp;quot;
+post-test = &amp;quot;scripts&amp;#x2F;notify.sh&amp;quot;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Everything in one file. The toolchain version is pinned per-project, so different projects can use different GHC versions without conflict. When you run &lt;code&gt;hx build&lt;&#x2F;code&gt; in a project pinned to GHC 9.8.2 and another pinned to 9.6.4, hx switches automatically. No &lt;code&gt;ghcup set&lt;&#x2F;code&gt; commands. No global state.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;lockfiles&quot;&gt;Lockfiles&lt;&#x2F;h3&gt;
+&lt;p&gt;The lockfile is also TOML. Every dependency is pinned with a sha256 fingerprint:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;version = 1
+ghc = &amp;quot;9.8.2&amp;quot;
+created_at = &amp;quot;2026-01-16T00:00:00Z&amp;quot;
+
+[[package]]
+name = &amp;quot;aeson&amp;quot;
+version = &amp;quot;2.2.1.0&amp;quot;
+sha256 = &amp;quot;a5a5b8a...&amp;quot;
+deps = [&amp;quot;base&amp;quot;, &amp;quot;text&amp;quot;, &amp;quot;bytestring&amp;quot;]
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;hx lock --check&lt;&#x2F;code&gt; in CI fails if the lockfile is stale. This is deterministic by default. Not “deterministic if you remember to run &lt;code&gt;cabal freeze&lt;&#x2F;code&gt; and commit the freeze file and hope nobody ran &lt;code&gt;cabal update&lt;&#x2F;code&gt; on a different machine.” Deterministic the way &lt;code&gt;cargo&lt;&#x2F;code&gt; and &lt;code&gt;uv&lt;&#x2F;code&gt; are deterministic. Automatically. Every time.&lt;&#x2F;p&gt;
+&lt;p&gt;If you are coming from Stack, you might say “Stack already has lockfiles.” It does. Stack’s approach is to pin to a Stackage snapshot, which gives you a curated set of packages known to work together. This is a valid approach, but it means your dependency versions are dictated by what the Stackage maintainers decided to include in that snapshot. If you need a newer version of a package that is not in the current LTS, you start adding &lt;code&gt;extra-deps&lt;&#x2F;code&gt;, and your reproducibility guarantees become more complex. hx resolves from Hackage directly, pins every version, and verifies checksums. You control exactly what you get.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;native-builds&quot;&gt;Native builds&lt;&#x2F;h3&gt;
+&lt;p&gt;For simple projects with only &lt;code&gt;base&lt;&#x2F;code&gt; dependencies, hx has a native build mode that bypasses Cabal entirely. It constructs the module graph itself and invokes GHC directly:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Operation&lt;&#x2F;th&gt;&lt;th&gt;hx native&lt;&#x2F;th&gt;&lt;th&gt;hx (cabal backend)&lt;&#x2F;th&gt;&lt;th&gt;cabal&lt;&#x2F;th&gt;&lt;th&gt;stack&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Cold build&lt;&#x2F;td&gt;&lt;td&gt;0.48s&lt;&#x2F;td&gt;&lt;td&gt;2.52s&lt;&#x2F;td&gt;&lt;td&gt;2.68s&lt;&#x2F;td&gt;&lt;td&gt;3.2s&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Incremental&lt;&#x2F;td&gt;&lt;td&gt;0.05s&lt;&#x2F;td&gt;&lt;td&gt;0.35s&lt;&#x2F;td&gt;&lt;td&gt;0.39s&lt;&#x2F;td&gt;&lt;td&gt;0.52s&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Single file change&lt;&#x2F;td&gt;&lt;td&gt;0.31s&lt;&#x2F;td&gt;&lt;td&gt;1.42s&lt;&#x2F;td&gt;&lt;td&gt;1.42s&lt;&#x2F;td&gt;&lt;td&gt;1.8s&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;5.6x faster cold builds. 7.8x faster incremental builds. The difference comes from eliminating Cabal’s package database queries, build plan calculation, and job scheduling overhead.&lt;&#x2F;p&gt;
+&lt;p&gt;Where does the time go in a normal Cabal build? Roughly: runtime initialization (45ms), reading the package database (80-120ms), computing the build plan (200-400ms depending on dependency count), checking file timestamps through the Cabal build system (100-200ms), and only then invoking GHC. hx native mode skips all of that. It reads file timestamps directly, constructs a minimal module graph, and calls GHC with exactly the flags needed. For projects with external dependencies, hx falls back to the Cabal backend transparently. You do not have to think about it.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;dependency-resolution&quot;&gt;Dependency resolution&lt;&#x2F;h3&gt;
+&lt;p&gt;hx includes a native dependency resolver written in Rust. The &lt;code&gt;hx-solver&lt;&#x2F;code&gt; crate implements constraint resolution using the same algorithm as Cabal’s solver, but without the overhead of GHC’s runtime:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Direct dependencies&lt;&#x2F;th&gt;&lt;th&gt;hx&lt;&#x2F;th&gt;&lt;th&gt;cabal&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;10 packages&lt;&#x2F;td&gt;&lt;td&gt;5ms&lt;&#x2F;td&gt;&lt;td&gt;120ms&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;20 packages&lt;&#x2F;td&gt;&lt;td&gt;18ms&lt;&#x2F;td&gt;&lt;td&gt;450ms&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;50 packages&lt;&#x2F;td&gt;&lt;td&gt;85ms&lt;&#x2F;td&gt;&lt;td&gt;2.8s&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;100 packages&lt;&#x2F;td&gt;&lt;td&gt;320ms&lt;&#x2F;td&gt;&lt;td&gt;12.5s&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;At 100 dependencies, hx resolves in 320 milliseconds. Cabal takes 12.5 seconds. In a real-world test with 20 direct dependencies and their transitive closure, hx resolved in 1.2 seconds versus 8.5 seconds for &lt;code&gt;cabal freeze&lt;&#x2F;code&gt;. Stack’s resolver is faster at 0.8 seconds because Stackage snapshots are pre-computed, but you trade resolution speed for version flexibility.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;error-messages&quot;&gt;Error messages&lt;&#x2F;h3&gt;
+&lt;p&gt;Haskell’s reputation for cryptic error messages is partly deserved and partly a tooling problem. GHC type errors can be daunting, but build tool errors are often worse because they mix configuration issues with compilation issues in unhelpful ways. “Could not resolve dependencies” from Cabal tells you almost nothing about which constraint is blocking resolution or what you could change to fix it.&lt;&#x2F;p&gt;
+&lt;p&gt;hx uses structured error codes with actionable suggestions:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;E0012: Package &amp;#x27;aeson&amp;#x27; not found in local index
+
+  The package index may be outdated.
+  Run: hx index update
+
+  Or add the package explicitly:
+  Run: hx add aeson
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre&gt;&lt;code&gt;E0020: GHC version mismatch
+
+  Project requires GHC 9.8.2 but 9.6.4 is active.
+  Run: hx toolchain install 9.8.2
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Every error has a code, a human-readable explanation, and a concrete command to fix it. &lt;code&gt;hx doctor&lt;&#x2F;code&gt; runs a comprehensive diagnostic of your entire environment, checking GHC, Cabal, HLS, PATH configuration, and project setup, reporting exactly what is wrong and how to fix each issue.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;everything-else&quot;&gt;Everything else&lt;&#x2F;h3&gt;
+&lt;p&gt;hx bundles the rest of the development workflow too. &lt;code&gt;hx fmt&lt;&#x2F;code&gt; wraps fourmolu for formatting. &lt;code&gt;hx lint&lt;&#x2F;code&gt; wraps hlint. &lt;code&gt;hx coverage --html --open&lt;&#x2F;code&gt; generates an HTML coverage report and opens it in your browser. &lt;code&gt;hx doc --open&lt;&#x2F;code&gt; builds Haddock documentation and serves it locally. &lt;code&gt;hx watch&lt;&#x2F;code&gt; detects file changes in 15 milliseconds (versus 180ms for &lt;code&gt;stack --file-watch&lt;&#x2F;code&gt;) and triggers rebuilds or test runs. &lt;code&gt;hx profile --heap&lt;&#x2F;code&gt; generates heap profiles for memory analysis.&lt;&#x2F;p&gt;
+&lt;p&gt;The goal is that you should never need to leave hx to do something with your Haskell project. Not because hx reimplements everything, but because it wraps the best existing tools with a consistent interface and fast orchestration.&lt;&#x2F;p&gt;
+&lt;p&gt;There is also a plugin system using Steel, a Scheme dialect, for custom build lifecycle hooks:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;scheme&quot; class=&quot;language-scheme &quot;&gt;&lt;code class=&quot;language-scheme&quot; data-lang=&quot;scheme&quot;&gt;;; .hx&amp;#x2F;plugins&amp;#x2F;check-todos.scm
+(define (on-build-success project)
+  (when (file-exists? &amp;quot;TODO.md&amp;quot;)
+    (warn &amp;quot;Do not forget to update TODO.md&amp;quot;)))
+
+(register-hook &amp;#x27;post-build on-build-success)
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Plugins live in &lt;code&gt;.hx&#x2F;plugins&#x2F;&lt;&#x2F;code&gt; and time out after a configurable interval so a misbehaving script cannot stall your build. They hook into pre-build, post-build, pre-test, post-test, and other lifecycle events. Lightweight enough that you can add project-specific automation without maintaining a separate build script.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;migration&quot;&gt;Migration&lt;&#x2F;h3&gt;
+&lt;p&gt;If you have an existing project, hx can import it:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;hx init --from-cabal   # Import from an existing .cabal project
+hx init --from-stack   # Import from a Stack project
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;It reads your existing configuration, generates &lt;code&gt;hx.toml&lt;&#x2F;code&gt;, creates a lockfile, and you are running. The &lt;code&gt;.cabal&lt;&#x2F;code&gt; file is preserved for compatibility. hx reads it for package metadata and dependency specifications, but the build configuration and toolchain management move to &lt;code&gt;hx.toml&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-architecture&quot;&gt;The architecture&lt;&#x2F;h2&gt;
+&lt;p&gt;hx is structured as a Rust workspace with 14 crates:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;hx workspace architecture&quot;&gt;hx-cli
+                            |
+              +-------------+-------------+
+              |             |             |
+          hx-core       hx-config      hx-ui
+              |             |
+    +---------+---------+   |
+    |         |         |   |
+hx-cabal  hx-solver  hx-lock
+    |         |
+hx-cache  hx-toolchain
+    |
+hx-doctor
+
+Separate concerns: hx-plugins, hx-lsp, hx-warnings, hx-telemetry&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Each crate has a single responsibility. &lt;code&gt;hx-solver&lt;&#x2F;code&gt; knows how to resolve dependencies but nothing about building. &lt;code&gt;hx-cabal&lt;&#x2F;code&gt; knows how to invoke Cabal but nothing about configuration. &lt;code&gt;hx-toolchain&lt;&#x2F;code&gt; manages GHC installations but nothing about lockfiles. This separation means you can test the resolver without setting up a build environment, and you can change the build backend without touching the resolver.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;code&gt;hx-lsp&lt;&#x2F;code&gt; crate is worth calling out. It provides language server protocol support, which means hx can manage HLS (Haskell Language Server) versions matched to your project’s GHC version. When your project uses GHC 9.8.2, hx ensures HLS is compatible. No more “HLS crashed because it was compiled with a different GHC than your project uses.” This is a problem that has frustrated Haskell developers for years, and it is entirely a tooling coordination problem.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-bigger-picture&quot;&gt;The bigger picture&lt;&#x2F;h2&gt;
+&lt;p&gt;I built hx because I needed it. But the timing is not accidental.&lt;&#x2F;p&gt;
+&lt;p&gt;In &lt;a href=&quot;&#x2F;articles&#x2F;what-programming-languages-become-when-ai-writes-the-code&#x2F;&quot;&gt;The Last Programming Language Might Not Be for Humans&lt;&#x2F;a&gt;, I laid out three futures for programming languages as AI becomes the primary author of code. The first future is explicit languages designed to minimize LLM errors through tight feedback loops. The second is declarative languages where code describes what something is rather than how to compute it, and the type system acts as a proof checker. The third is no language at all, where AI generates machine code directly.&lt;&#x2F;p&gt;
+&lt;p&gt;I bet on the second future.&lt;&#x2F;p&gt;
+&lt;p&gt;When an LLM writes imperative code, it has to track mutable state across dozens of lines, reason about the order of side effects, and hold implicit language behaviors in context. When it writes Haskell, it expresses a relationship between inputs and outputs, and the compiler verifies that the relationship is consistent. The model does not need to simulate execution step by step. It needs to generate an expression that satisfies type constraints. This is what LLMs are good at. Pattern recognition. Constraint satisfaction. Formal structure.&lt;&#x2F;p&gt;
+&lt;p&gt;Consider what happens when an AI generates a Haskell function with a wrong type. The compiler does not produce a vague runtime error three layers deep in a call stack. It produces a precise, localized type error at compile time: “Expected &lt;code&gt;[LogEntry] -&amp;gt; [ErrorSummary]&lt;&#x2F;code&gt;, got &lt;code&gt;[LogEntry] -&amp;gt; [LogEntry]&lt;&#x2F;code&gt;.” The model reads this, adjusts, and re-generates. The feedback loop is tight, but unlike the explicit-language approach, the tightness comes from the type system itself, not from bolted-on contracts. The correctness guarantees are structural, not ceremonial.&lt;&#x2F;p&gt;
+&lt;p&gt;This matters even more when you think about code that has to survive time. Procedural code decays. Three years from now, nobody remembers why a function mutates a global variable on line 47. The variable name made sense to whoever wrote it. The mutation order made sense in the context of the original design. But context evaporates. Types do not. A function signature that says &lt;code&gt;Request -&amp;gt; Policy -&amp;gt; Decision&lt;&#x2F;code&gt; is self-documenting in a way that no amount of comments on imperative code can match. The proof is in the types, and the types are checked by the compiler, not by human memory.&lt;&#x2F;p&gt;
+&lt;p&gt;But none of that matters if nobody can set up a Haskell project without losing thirty minutes to toolchain configuration. The language’s virtues are locked behind a tooling wall. You can have the most expressive type system in production use, the most rigorous correctness guarantees, the best theoretical fit for agent-assisted development, and it means nothing if a developer’s first experience is fighting &lt;code&gt;ghcup&lt;&#x2F;code&gt; for half an hour. First impressions are permanent, and Haskell’s first impression has been “powerful but painful” for too long.&lt;&#x2F;p&gt;
+&lt;p&gt;If Haskell is going to be relevant in a world where AI writes most of the code, the experience of using Haskell has to be as fast and frictionless as the experience of using Rust or Python. Not comparable. Equal. That is what hx is for. To remove the tooling objection entirely, so the conversation can be about the language’s actual strengths instead of its ecosystem’s historical baggage.&lt;&#x2F;p&gt;
+&lt;p&gt;hx is the first step. &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;bhc&#x2F;&quot;&gt;BHC&lt;&#x2F;a&gt;, the Basel Haskell Compiler, goes further. GHC is a remarkable piece of engineering, but it was designed for a world where Haskell ran on desktops and servers with one performance profile. BHC is a clean-slate Haskell compiler, also written in Rust, offering six runtime profiles for different deployment targets:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Server&lt;&#x2F;strong&gt;: structured concurrency with automatic cancellation, observability hooks, deadline-aware scheduling&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Numeric&lt;&#x2F;strong&gt;: strict-by-default in hot paths, tensor lowering, SIMD auto-vectorization, GPU backends for CUDA and ROCm&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Edge&lt;&#x2F;strong&gt;: minimal runtime footprint, direct WASM emission, designed for Cloudflare Workers and Fastly Compute&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Realtime&lt;&#x2F;strong&gt;: bounded GC pauses under 1 millisecond, arena allocation, designed for games and audio processing&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Embedded&lt;&#x2F;strong&gt;: no GC at all, static allocation, bare-metal targets like ARM Cortex-M&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Same language. Same type safety. Different performance contracts depending on what you are building. Your security policy engine compiles with the server profile. Your tensor pipeline compiles with the numeric profile and runs on a GPU. Your edge function compiles to WASM. You do not change your source code. You change the compiler flag.&lt;&#x2F;p&gt;
+&lt;p&gt;hx already supports BHC as an alternative backend:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;hx build --compiler=bhc --profile=server
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;One flag. Same project. Different runtime.&lt;&#x2F;p&gt;
+&lt;p&gt;The vision behind &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&quot;&gt;arcanist.sh&lt;&#x2F;a&gt; is that Haskell’s ideas deserve infrastructure that matches their ambition. The language has always been decades ahead of its tooling. hx closes the gap on the developer experience side. BHC closes it on the runtime side. Together, they make the case that Haskell is not a language for academics and hobbyists. It is a language for the era we are entering, where correctness is not a luxury, it is the load-bearing structure of software that AI writes and humans verify.&lt;&#x2F;p&gt;
+&lt;p&gt;The tooling is not separate from the thesis. The tooling IS the thesis.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-bet-what-if-i-am-wrong&quot;&gt;The Bet, What If I am Wrong&lt;&#x2F;h2&gt;
+&lt;p&gt;This is a gamble.&lt;&#x2F;p&gt;
+&lt;p&gt;I do not know whether Haskell will go through a revival. Nobody knows how AI-assisted development will actually evolve, which languages will matter in five years, or whether the thesis I outlined in the previous post will hold up against what reality delivers. I have a conviction, not a crystal ball.&lt;&#x2F;p&gt;
+&lt;p&gt;I spent months building hx and BHC. Months of my own time, and to be perfectly blunt, a significant number of Anthropic’s Claude tokens. I pair-programmed most of this with Claude Code on my Max subscription, and that is not a footnote. It is part of the story. The tools I am building for AI-assisted Haskell development were themselves built using AI-assisted development. If that sounds circular, it is. The thesis tested itself during its own construction.&lt;&#x2F;p&gt;
+&lt;p&gt;But I could be wrong. Haskell could remain niche forever. The AI era could favor a language nobody has thought of yet. The intermediate layer might not evolve the way I expect. The industry might double down on Python and TypeScript for agent-assisted workflows and never look back. These are all plausible outcomes.&lt;&#x2F;p&gt;
+&lt;p&gt;So I build toward what I believe in and put the work out in the open. If I am right, Haskell gets the tooling it always deserved, and the language is ready when the moment arrives. If I am wrong, the ideas in hx and BHC, fast Rust-based tooling, deterministic lockfiles, multiple runtime profiles, structured error messages, are valuable regardless. Good infrastructure design does not expire just because the language it serves does not win the popularity contest.&lt;&#x2F;p&gt;
+&lt;p&gt;And honestly, even on the unlikely side, I would rather have tried and been wrong than watched from the sidelines while the most elegant language I have ever used slowly faded because nobody bothered to fix the parts that were not the language.&lt;&#x2F;p&gt;
+&lt;p&gt;At least I have tried.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;try-it&quot;&gt;Try it&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;curl -fsSL https:&amp;#x2F;&amp;#x2F;arcanist.sh&amp;#x2F;hx&amp;#x2F;install.sh | sh
+hx new my-app &amp;amp;&amp;amp; cd my-app
+hx run
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Then try &lt;code&gt;hx doctor&lt;&#x2F;code&gt;, &lt;code&gt;hx fmt&lt;&#x2F;code&gt;, &lt;code&gt;hx test --watch&lt;&#x2F;code&gt;. See how it feels when the tooling gets out of your way.&lt;&#x2F;p&gt;
+&lt;p&gt;hx is MIT-licensed and open source. If you have opinions about Haskell tooling, I want to hear them.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>The Last Programming Language Might Not Be for Humans</title>
+          <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/</link>
+          <guid>https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/</guid>
+          <description xml:base="https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/">&lt;p&gt;This morning I was standing at my desk, drinking watered-down instant coffee, doing what I do every morning after triaging the high-alert emails and notifications: thirty minutes of HackerNews. It is a ritual I time-box and never skip. I go to the office every day, and whether I am at that desk or at my home desk, the morning is the same. Coffee, posture, front page.&lt;&#x2F;p&gt;
+&lt;p&gt;HackerNews remains one of the best ways to keep a finger on the pulse of the Bay Area, of tech, of science, of whatever intellectually stimulating thought surfaced overnight. I follow a handful of curated newsletters too, but I have noticed over the years that HN covers most of their content anyway if you know how to filter high signal from low signal. I could write something about a different link every single day. Most mornings I resist. This morning I did not.&lt;&#x2F;p&gt;
+&lt;p&gt;A link caught my eye. &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;veralang.dev&#x2F;&quot;&gt;Vera&lt;&#x2F;a&gt;, a new programming language “designed for machines to write, not humans.” Statically typed, purely functional, compiles to WebAssembly, uses Microsoft’s Z3 solver for contract verification. It has a ferret mascot. I like animal mascots for tech projects. Ferris the crab for Rust, the gopher for Go, the Shisa guardian dog for &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&#x2F;&quot;&gt;Zentinel&lt;&#x2F;a&gt;. The ferret is a good choice.&lt;&#x2F;p&gt;
+&lt;p&gt;But the mascot is not why I stopped scrolling. I stopped because somebody else had arrived at the same conclusion I had reached back in December: that conventional programming languages are not adapted to the capabilities of this new technology, and that something has to change.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-christmas-realization&quot;&gt;The Christmas realization&lt;&#x2F;h2&gt;
+&lt;p&gt;I had been a paying Claude Code subscriber since May 2025, when Anthropic first launched it. The CLI orientation made sense to me immediately, even though the early rate limits and model quality left me wanting more. By December 2025, I had upgraded to the Max subscription, I was on vacation, and Anthropic had made the daily limits generous that month. I was burning through every idea I had accumulated over the years. Some were good. Some were terrible. All of them were finally testable in a way they had not been before, because I could pair-program with a model that kept up. I wrote about that shift more fully in &lt;a href=&quot;&#x2F;articles&#x2F;how-i-work-these-days&#x2F;&quot;&gt;How I Work These Days&lt;&#x2F;a&gt;, the short version being that late 2025 was when the relationship between ambition and execution fundamentally changed for me. The dam broke. Ideas that had been sitting in notebooks for years started becoming real software in days.&lt;&#x2F;p&gt;
+&lt;p&gt;It was during one of those late-night sessions, deep in a Claude Code conversation about compiler design, that a thought crystallized. I had been building &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;hx&#x2F;&quot;&gt;hx&lt;&#x2F;a&gt; and thinking about how AI would change the way people write Haskell, when I realized the question was bigger than Haskell. Agent-assisted software development is approaching a point where the output language itself, the intermediate layer we use to express how information should be processed, is going to change fundamentally.&lt;&#x2F;p&gt;
+&lt;p&gt;This is not an abstract observation. The history of software is a history of abstraction layers accumulating, each one letting the next generation of programmers ignore what the previous generation had to master.&lt;&#x2F;p&gt;
+&lt;p&gt;It started with machine code. Raw opcodes, different for every CPU architecture. If you wanted to write software, you memorized instruction sets and wrote them by hand. People published thick reference manuals, and there were engineers who could hold entire instruction set architectures in their heads. Some of them are still around, and some of them still swear by that methodology.&lt;&#x2F;p&gt;
+&lt;p&gt;Then assemblers gave those opcodes human-readable names. &lt;code&gt;MOV AX, BX&lt;&#x2F;code&gt; instead of &lt;code&gt;89 D8&lt;&#x2F;code&gt;. You were still writing for a specific architecture, still thinking in registers, but now you could read what you wrote. The first abstraction was not a new capability. It was legibility.&lt;&#x2F;p&gt;
+&lt;p&gt;Then C arrived and gave us a portable abstraction over hardware. You stopped thinking in registers and started thinking in functions and pointers. C compiled down to architecture-specific assembly, but you did not have to care which architecture. One language, many targets. The reference manuals shifted from instruction sets to language specifications.&lt;&#x2F;p&gt;
+&lt;p&gt;Then interpreters and virtual machines added another layer. The JVM, Python, Perl. You stopped thinking about memory layout and started thinking about objects, iterators, garbage collection. The abstraction was thicker, the feedback loop was faster, and the audience expanded from hardware engineers to anyone who could write a script.&lt;&#x2F;p&gt;
+&lt;p&gt;Then IDEs changed how you interacted with the language itself. Syntax highlighting, autocomplete, integrated debuggers, refactoring tools. You stopped holding the entire API surface in your head because the editor held it for you. The language did not change, but the cognitive cost of using it dropped. IntelliSense was not a language feature. It was an abstraction over the programmer’s memory.&lt;&#x2F;p&gt;
+&lt;p&gt;Then the internet changed how code moved. Open source repositories, package managers, shared libraries. You stopped writing everything from scratch and started composing from parts other people had built. The reference material moved from printed books to web documentation, wikis, tutorials.&lt;&#x2F;p&gt;
+&lt;p&gt;Then StackOverflow changed how people learned. Instead of reading manuals cover to cover, you searched for the specific problem you had and found someone who had already solved it. The knowledge layer itself became an abstraction. You did not need to understand the full system. You needed to find the right answer and adapt it to your context. StackOverflow never compiled a line of code, but it was an intermediate layer between human confusion and working software, and it was arguably more important to the average developer’s productivity than any language feature shipped in the same decade.&lt;&#x2F;p&gt;
+&lt;p&gt;And now StackOverflow is receding. Not because the answers got worse. Because the next abstraction layer arrived. AI coding agents do what StackOverflow did, finding known solutions to known problems, but they also do what StackOverflow never could: synthesize novel solutions, hold project context across files, and generate working code from intent descriptions. The pattern is the same as every previous transition. Each layer makes the previous one less essential, not by replacing it but by absorbing it into a higher-level abstraction.&lt;&#x2F;p&gt;
+&lt;p&gt;Programming languages have always been shaped by who writes them. Assembly was shaped by hardware engineers who thought in registers and opcodes. C was shaped by systems programmers who needed portable abstractions over memory. Python was shaped by people who wanted to get things done without fighting the syntax. COBOL was shaped by business analysts who wanted code that read like English. Every language carries the fingerprints of its intended author. If AI becomes the primary author of code, it follows that the language should adapt to that new author’s strengths and weaknesses. This is not a break from the pattern. It is the pattern, doing what it has always done.&lt;&#x2F;p&gt;
+&lt;p&gt;I kept coming back to three concrete possibilities. Three ways the intermediate layer could evolve. Not competing visions, exactly. More like three points on a timeline.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;make-the-language-explicit-enough-for-machines&quot;&gt;Make the language explicit enough for machines&lt;&#x2F;h2&gt;
+&lt;p&gt;Anyone who has spent real time with coding agents has seen the failure mode. You ask an LLM to write a Python function. The output looks plausible. It passes linting. The variable names are reasonable. The structure follows common patterns. Then it fails at runtime because of a subtle implicit behavior the model did not track. A default mutable argument that gets shared across calls. A generator that gets silently exhausted on second iteration. A method that returns &lt;code&gt;None&lt;&#x2F;code&gt; instead of raising an exception because some library author decided that was more “Pythonic.” The model was not wrong about the algorithm. It was wrong about the language’s hidden behaviors.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the problem Vera is trying to solve, and the first approach I had been contemplating. Take the simplicity and explicitness of Go, push it further, and design a language where every instruction, every method, every design pattern is as unambiguous as possible. No implicit behaviors. No naming ambiguity. No style choices. One canonical way to write everything, so that an LLM does not have to waste inference tokens reasoning about which of seventeen valid approaches to take.&lt;&#x2F;p&gt;
+&lt;p&gt;The language would need excellent compiler diagnostics. Not just “type mismatch on line 47,” but structured feedback that a model can parse, understand, and act on immediately. Rust and Elixir already do this well for humans. Do it even better, and do it for machines.&lt;&#x2F;p&gt;
+&lt;p&gt;The pipeline looks like this:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Explicit language feedback loop&quot;&gt;+-------+     prompt      +-------+    explicit     +-----------+
+| Human | -------------&amp;gt;  |  LLM  | -------------&amp;gt;  | Verifying |
++-------+                 +-------+    source       | Compiler  |
+                             ^                      +-----------+
+                             |                           |
+                             |   structured error        |
+                             |   + suggested fix         |
+                             +---------------------------+
+                                                         |
+                                                    verified
+                                                         |
+                                                         v
+                                                  [correct program]&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The key insight is the feedback loop. The compiler does not just reject bad code. It explains what is wrong in terms the model can act on, with a concrete fix suggestion. The model re-generates. The compiler re-checks. You converge on correct code through iteration, and the tightness of that loop depends on how unambiguous the language is and how actionable the errors are.&lt;&#x2F;p&gt;
+&lt;p&gt;Vera is exactly this idea, executed with conviction. Here is what a function looks like:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot;&gt;&lt;code data-lang=&quot;vera&quot;&gt;public fn safe_divide(@Int, @Int -&amp;gt; @Int)
+  requires(@Int.1 != 0)
+  ensures(@Int.result == @Int.0 &amp;#x2F; @Int.1)
+  effects(pure)
+{
+  @Int.0 &amp;#x2F; @Int.1
+}&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;No variable names at all. Parameters are referenced by type and positional index using De Bruijn slot notation. &lt;code&gt;@Int.0&lt;&#x2F;code&gt; is the most recently bound integer, &lt;code&gt;@Int.1&lt;&#x2F;code&gt; is the one before that. Every function must declare its preconditions (&lt;code&gt;requires&lt;&#x2F;code&gt;), postconditions (&lt;code&gt;ensures&lt;&#x2F;code&gt;), and side effects (&lt;code&gt;effects&lt;&#x2F;code&gt;). The compiler verifies contracts statically using Z3 where possible and falls back to runtime checks for what it cannot decide at compile time.&lt;&#x2F;p&gt;
+&lt;p&gt;The design principle is sharp: the model does not need to be right, it needs to be checkable. The language constrains the space of valid programs so tightly that the compiler catches mistakes before execution and explains them in natural language. Division by zero is not a runtime exception. It is a contract violation caught during compilation.&lt;&#x2F;p&gt;
+&lt;p&gt;Think of it like this. Traditional languages are an open field. You can walk in any direction, and you might end up somewhere useful or you might walk off a cliff. Vera is a guided path with guardrails. You can only go certain directions, and every time you try to step off the path, a sign tells you exactly where to step instead. An LLM on an open field will wander. An LLM on a guided path will converge.&lt;&#x2F;p&gt;
+&lt;p&gt;The early benchmark results are interesting, if mixed. Kimi K2.5 apparently writes perfect Vera code, scoring 100% on VeraBench and beating its own Python and TypeScript scores. Other models do not fare as well. Claude Opus 4 scores 88% in Vera versus 96% in Python. The Vera team is honest about this variance, which I appreciate. The &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47696263&quot;&gt;HackerNews discussion&lt;&#x2F;a&gt; was thin, twelve points and three skeptical comments, which tells you how early this conversation still is. The broader developer community has not engaged with this idea seriously yet. That will change.&lt;&#x2F;p&gt;
+&lt;p&gt;But there is something that bothers me about optimizing the language for how machines iterate on solutions. Look at the pipeline diagram again. The LLM is still generating step-by-step instructions. It is still describing HOW to do things, just with the ambiguity stripped out and the contracts made explicit. The machine still reasons through the process sequentially. You have reduced the noise in the feedback loop, but you have not changed the nature of the signal. The model is still writing recipes. They are just more precise recipes.&lt;&#x2F;p&gt;
+&lt;p&gt;What if you stopped writing recipes entirely?&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;describe-what-not-how&quot;&gt;Describe what, not how&lt;&#x2F;h2&gt;
+&lt;p&gt;The second idea starts from a different premise. Instead of making procedural code easier for AI to write correctly, change what you ask the AI to express.&lt;&#x2F;p&gt;
+&lt;p&gt;Let me make this concrete. Say you need to find the ten most recent server errors in a log. Here is how you would describe that process in a procedural language:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;python&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;errors = []
+for entry in log_entries:
+    if entry.status &amp;gt;= 500:
+        errors.append({
+            &amp;quot;time&amp;quot;: entry.timestamp,
+            &amp;quot;path&amp;quot;: entry.path,
+            &amp;quot;code&amp;quot;: entry.status
+        })
+errors.sort(key=lambda e: e[&amp;quot;time&amp;quot;], reverse=True)
+return errors[:10]
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You are telling the machine: create an empty list. Walk through each entry. Check a condition. If it matches, build a dictionary and append it. Then sort the accumulated list by a key. Then take the first ten elements. Every step is an instruction. The machine has to track the mutable list, the iteration state, the sort, the slice. And if you get any step wrong, the others might still succeed, producing output that looks correct but is subtly broken. A missing &lt;code&gt;reverse=True&lt;&#x2F;code&gt; and you silently get the oldest errors instead of the most recent.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is the same thing in Haskell:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;haskell&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;recentErrors :: [LogEntry] -&amp;gt; [ErrorSummary]
+recentErrors =
+    take 10
+  . sortBy (flip compare `on` time)
+  . map toSummary
+  . filter isServerError
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Read it bottom to top: filter server errors, transform each into a summary, sort by time descending, take ten. There is no mutable accumulator. No loop variable. No intermediate state. You are not describing a process. You are describing a relationship between the input and the output. The function says what the result IS, not how to compute it step by step.&lt;&#x2F;p&gt;
+&lt;p&gt;The type signature at the top, &lt;code&gt;[LogEntry] -&amp;gt; [ErrorSummary]&lt;&#x2F;code&gt;, is a contract the compiler enforces. If &lt;code&gt;toSummary&lt;&#x2F;code&gt; returns the wrong type, if &lt;code&gt;isServerError&lt;&#x2F;code&gt; does not take a &lt;code&gt;LogEntry&lt;&#x2F;code&gt;, if you accidentally compose functions in an order that does not type-check, the compiler rejects the program before it runs. Not with a vague “object has no attribute” at runtime. With a precise type error at compile time that tells you exactly which piece does not fit.&lt;&#x2F;p&gt;
+&lt;p&gt;This distinction matters enormously for AI. Think about what an LLM actually has to track in each case:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Procedural vs declarative complexity&quot;&gt;Procedural (Vera, Python, Go)          Declarative (Haskell)
+================================       ================================
+- mutable variables and their          - input type
+  current state at each step           - output type
+- loop iteration progress              - which transformations to compose
+- conditional branching outcomes       - whether types align
+- order of side effects
+- implicit language behaviors
+- names and what they refer to&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The procedural model asks the AI to simulate execution in its head. The declarative model asks the AI to describe a transformation and let the compiler verify it. One plays to an LLM’s weakness (tracking state across many steps). The other plays to its strength (recognizing and generating patterns that satisfy formal constraints).&lt;&#x2F;p&gt;
+&lt;p&gt;The pipeline changes fundamentally:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Type-driven proof pipeline&quot;&gt;+-------+     prompt      +-------+   type sigs      +-----------+
+| Human | -------------&amp;gt;  |  LLM  | -------------&amp;gt;    | Compiler  |
++-------+                 +-------+   pure exprs      +-----------+
+                                                           |
+                                                      types align?
+                                                        &amp;#x2F;      \
+                                                      yes       no
+                                                      |          |
+                                                      v          v
+                                              [proven correct]  [precise type error:
+                                                                 &amp;quot;Expected LogEntry,
+                                                                  got String at ...]&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;No feedback loop needed in the happy path. If the types align, the program is correct by construction for the properties the type system tracks. The compiler is not iterating with the model. It is checking a proof.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the approach I bet on. It is the reason this blog exists.&lt;&#x2F;p&gt;
+&lt;p&gt;Raskell, the name behind this site, is a portmanteau of Rascal (as in raccoon, which is my mascot) and Haskell. The language I have loved for years because of how elegantly it describes things close to mathematical proofs. QEDs, not TODOs. When you write a well-typed Haskell function, you are not just writing code. You are writing a proof that a certain transformation is valid, and the compiler is the proof checker.&lt;&#x2F;p&gt;
+&lt;p&gt;But loving Haskell and shipping Haskell in production are different experiences, and the gap between them is mostly tooling. The ecosystem is fragmented in a way that has frustrated people for over a decade. &lt;code&gt;cabal&lt;&#x2F;code&gt;, &lt;code&gt;stack&lt;&#x2F;code&gt;, &lt;code&gt;ghcup&lt;&#x2F;code&gt;. Three tools that do overlapping jobs with different opinions about how dependencies should work. If you come from Python, imagine if &lt;code&gt;pip&lt;&#x2F;code&gt;, &lt;code&gt;poetry&lt;&#x2F;code&gt;, and &lt;code&gt;pyenv&lt;&#x2F;code&gt; were all developed independently, with different lockfile formats, different resolver algorithms, and occasional incompatibilities. That was Haskell. Build times were slow. Error messages ranged from helpful to cryptic. The runtime assumed one performance profile fits every use case. If you wanted Haskell for edge functions, for embedded systems, for GPU-accelerated numerics, you spent as much time fighting the toolchain as writing the actual code.&lt;&#x2F;p&gt;
+&lt;p&gt;The language was right. The surrounding infrastructure was not.&lt;&#x2F;p&gt;
+&lt;p&gt;So I started building &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&quot;&gt;arcanist.sh&lt;&#x2F;a&gt;, taking the same approach that &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;astral.sh&quot;&gt;astral.sh&lt;&#x2F;a&gt; brought to Python tooling. When astral.sh released &lt;code&gt;uv&lt;&#x2F;code&gt; and &lt;code&gt;ruff&lt;&#x2F;code&gt;, it showed that you could take a mature ecosystem with entrenched tooling, rebuild the developer experience from scratch in Rust, and make everything dramatically faster and more coherent. I wanted to do the same for Haskell. arcanist.sh houses two projects.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;hx&#x2F;&quot;&gt;hx&lt;&#x2F;a&gt; is a fast, opinionated, next-gen toolchain for Haskell, built in Rust. One tool that replaces the fragmented stack. Managed compiler versions pinned per-project. Deterministic TOML lockfiles with fingerprint verification. 5.6x faster cold builds than cabal. 7.8x faster incremental rebuilds.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;curl -fsSL https:&amp;#x2F;&amp;#x2F;arcanist.sh&amp;#x2F;install.sh | sh
+hx new my-app &amp;amp;&amp;amp; cd my-app
+hx run
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;No ghcup. No stack. No cabal-install. Just &lt;code&gt;hx&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;bhc&#x2F;&quot;&gt;BHC&lt;&#x2F;a&gt;, the Basel Haskell Compiler, goes further. It is a clean-slate Haskell compiler written in Rust, not a GHC fork, targeting the Haskell 2026 Platform specification. It uses LLVM for native code generation and offers six runtime profiles that you select at compile time:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Profile&lt;&#x2F;th&gt;&lt;th&gt;Designed for&lt;&#x2F;th&gt;&lt;th&gt;Key trait&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;default&lt;&#x2F;td&gt;&lt;td&gt;General applications&lt;&#x2F;td&gt;&lt;td&gt;Lazy evaluation, GC-managed, GHC-compatible semantics&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;server&lt;&#x2F;td&gt;&lt;td&gt;Backend services&lt;&#x2F;td&gt;&lt;td&gt;Structured concurrency, automatic cancellation, observability hooks&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;numeric&lt;&#x2F;td&gt;&lt;td&gt;ML and scientific compute&lt;&#x2F;td&gt;&lt;td&gt;Strict numerics, tensor lowering, SIMD, GPU backends (CUDA&#x2F;ROCm)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;edge&lt;&#x2F;td&gt;&lt;td&gt;WASM and CDN workers&lt;&#x2F;td&gt;&lt;td&gt;Minimal footprint, direct WASM emission without LLVM&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;realtime&lt;&#x2F;td&gt;&lt;td&gt;Games, audio, robotics&lt;&#x2F;td&gt;&lt;td&gt;Bounded GC pauses under 1ms, arena allocation&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;embedded&lt;&#x2F;td&gt;&lt;td&gt;Bare metal, microcontrollers&lt;&#x2F;td&gt;&lt;td&gt;No GC at all, static allocation, targets like ARM Cortex-M&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;The same Haskell source, different runtime contracts depending on what you are building. Your security policy engine compiles with the server profile and gets structured concurrency with tracing. Your tensor pipeline compiles with the numeric profile and gets GPU acceleration. Your edge function compiles to WASM and runs on Cloudflare Workers. Same language. Same type safety. Different performance envelopes.&lt;&#x2F;p&gt;
+&lt;p&gt;The conviction behind this work is specific. When AI writes the code, the language that survives is not the one optimized for procedural explicitness. It is the one that brings consistency and purity by describing what something is, not how to compute it. AI is extraordinarily good at generating expressions that satisfy formal constraints. And source code that reads like a proof can survive time. It can survive maintainer burnout. It can survive the fact that three years from now, nobody remembers why a function was written the way it was. The types remember. The proof is self-documenting in a way that procedural code never is, because the types encode the intent.&lt;&#x2F;p&gt;
+&lt;p&gt;Vera and arcanist.sh accept the same premise: the intermediate layer is changing. They disagree about which direction it should change in. Vera optimizes for reducing errors in the generation loop. Valuable. But hx and BHC optimize for making the generated code correct by construction, because the language itself constrains what valid programs look like at a structural level.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;skip-the-language-entirely&quot;&gt;Skip the language entirely&lt;&#x2F;h2&gt;
+&lt;p&gt;The third possibility is the one I think about late at night and do not have a concrete project for. Not yet. It is also the one I find most fascinating and most unsettling.&lt;&#x2F;p&gt;
+&lt;p&gt;What if AI stops writing source code at all?&lt;&#x2F;p&gt;
+&lt;p&gt;To understand why this is plausible, it helps to look at what source code actually is. It is not the final product. It never was. Source code is a set of instructions that a compiler transforms into machine code. Machine code is what the hardware executes. Source code exists because humans needed an abstraction layer between their intentions and the silicon. We think in concepts like “sort this list” or “reject unauthorized requests.” The CPU thinks in register moves, memory loads, and conditional jumps. Source code bridges that gap.&lt;&#x2F;p&gt;
+&lt;p&gt;But that bridge was built for human authors. If the author is no longer human, the bridge serves a different purpose. It becomes an audit trail. A way for humans to read and verify what the AI produced. Not an authoring medium, but a transparency layer.&lt;&#x2F;p&gt;
+&lt;p&gt;I see this playing out in two distinct phases.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;phase-one-ai-targets-existing-machine-code&quot;&gt;Phase one: AI targets existing machine code&lt;&#x2F;h3&gt;
+&lt;p&gt;The first phase is closer than most people think, and it is conceptually straightforward. We already train models on source code. What happens when we also train them extensively on compiled artifacts? On binaries, object files, intermediate representations, the actual output of compilers?&lt;&#x2F;p&gt;
+&lt;p&gt;Consider what a compiler does. It takes source code and transforms it into machine instructions following well-defined, deterministic rules. There is a mapping between source patterns and output patterns. A &lt;code&gt;for&lt;&#x2F;code&gt; loop in C becomes a specific sequence of compare, branch, and increment instructions on x86. A function call follows a specific calling convention. Memory allocation follows specific system call patterns. These mappings are learnable. They are patterns, and pattern recognition is exactly what LLMs excel at.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Skipping the source layer&quot;&gt;Today:
+human intent → prompt → LLM → source code → compiler → x86&amp;#x2F;ARM → CPU
+
+Phase one:
+human intent → prompt → LLM → x86&amp;#x2F;ARM directly → CPU
+                                (trained on source +
+                                 compiled artifact pairs)&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;In this phase, the model skips the source code layer and generates machine code directly. Not by “compiling” in the traditional sense. By having learned the patterns well enough to produce valid executables from intent descriptions. The way a fluent translator does not parse grammar rules consciously but produces correct sentences from meaning directly.&lt;&#x2F;p&gt;
+&lt;p&gt;This sounds radical until you remember that we already trust compilers we do not read the output of. When was the last time you inspected the assembly output of &lt;code&gt;gcc -O3&lt;&#x2F;code&gt; to verify it correctly compiled your C program? You trust the compiler. You test the behavior of the resulting binary. You do not audit the intermediate representation. If an AI can produce binaries that pass the same behavioral tests, the practical difference between “AI-generated machine code” and “compiler-generated machine code” becomes a question of trust calibration, not fundamental possibility.&lt;&#x2F;p&gt;
+&lt;p&gt;The analogy I keep returning to is aviation. Early pilots flew by hand and understood every mechanical system in the aircraft. Fly-by-wire changed that. The pilot communicates intent (climb, turn, maintain altitude). The computer translates that into control surface movements. The pilot does not manually adjust ailerons and elevators for every gust of wind. They trust the system. They verify outcomes (altitude, heading, airspeed), not intermediate steps. Phase one of post-language programming is fly-by-wire for software.&lt;&#x2F;p&gt;
+&lt;p&gt;If this sounds speculative, consider what happened this week. Anthropic announced &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.anthropic.com&#x2F;glasswing&quot;&gt;Project Glasswing&lt;&#x2F;a&gt;, a coalition including AWS, Apple, Google, Microsoft, NVIDIA, CrowdStrike, Palo Alto Networks, the Linux Foundation, and others, formed to secure the world’s most critical software using AI. Dario Amodei, Anthropic’s CEO, put it plainly:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“AI models have reached a level of coding capability where they can surpass all but the most skilled humans at finding and exploiting software vulnerabilities.”&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The proof point he offered: “For OpenBSD, we found a bug that’s been present for 27 years.”&lt;&#x2F;p&gt;
+&lt;p&gt;Think about what that means. OpenBSD is one of the most carefully audited codebases in the world. Decades of security-focused human review by some of the most meticulous systems programmers alive. And an AI model found something that every human reviewer missed for twenty-seven years. If AI can understand existing code deeply enough to find vulnerabilities that humans cannot, it can understand code deeply enough to generate it without human-readable source as an intermediate step. The question is no longer whether AI comprehends code at a structural level. That question was answered this week. The question is what it does with that comprehension next.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;phase-two-a-new-kind-of-machine&quot;&gt;Phase two: a new kind of machine&lt;&#x2F;h3&gt;
+&lt;p&gt;The second phase is further out and more speculative. But I think it is where things ultimately go.&lt;&#x2F;p&gt;
+&lt;p&gt;If AI is generating code for machines to execute and no human needs to read it, there is no reason that code needs to target instruction sets designed for human comprehension. x86 and ARM were designed with the assumption that someone, at least occasionally, would look at the instructions. They have mnemonics. They follow conventions that make disassembly feasible. They are organized into instructions that map, loosely, to operations humans understand.&lt;&#x2F;p&gt;
+&lt;p&gt;But what if the execution target was designed from scratch for AI-generated code? A virtual machine or runtime that consumes a new kind of bytecode. Not optimized for human readability. Not optimized for hand-authored assembly. Optimized purely for execution density and machine generation.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;AI-native execution target&quot;&gt;Phase two:
+human intent → prompt → AI → dense symbolic bytecode → AI-native VM
+                               (opaque to humans,         |
+                                optimized for machine     v
+                                generation + execution)  [result]&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;I keep thinking about information density. Chinese characters encode meaning in individual symbols that carry far more semantic weight than Latin alphabet words. A single character can represent a concept that takes an entire English phrase to express. When a system is designed for readers who can process dense symbols natively, the representation compresses. It becomes more efficient at the cost of being less accessible to readers who were not part of the design audience.&lt;&#x2F;p&gt;
+&lt;p&gt;AI-native bytecode could follow the same principle. Each instruction could encode complex composite operations that would take dozens of conventional instructions to express. The bytecode would be dense in ways that make current machine code look verbose. Entirely opaque when decompiled or analyzed. Not obfuscated on purpose. Just natively incomprehensible to human cognition, the same way a trained neural network’s weights are incomprehensible even though they encode real, functional knowledge.&lt;&#x2F;p&gt;
+&lt;p&gt;The virtual machine running this bytecode would itself be a different kind of system. Not a stack machine or a register machine in the traditional sense. Possibly something closer to a dataflow engine, where the bytecode describes transformation graphs rather than sequential instructions. Think of it as the difference between giving someone turn-by-turn driving directions (go north, turn left, continue for two miles) versus handing them a map with the destination marked. The bytecode is the map. The VM figures out the route.&lt;&#x2F;p&gt;
+&lt;p&gt;I want to be honest about where we are. We are not at phase one. Not in April 2026. Current models still need the intermediate layer. They produce better code when they can reason through it step by step. They benefit from type systems and contracts and explicit error messages. The first and second approaches are not just viable, they are necessary right now.&lt;&#x2F;p&gt;
+&lt;p&gt;But the trajectory is visible. Models are getting better at generating correct programs with every generation. Formal verification is becoming more practical. Hardware is getting cheaper. The gap between “prompt that describes intent” and “correct executable output” is shrinking. Phase one will arrive when models trained on enough source-plus-binary pairs can reliably produce correct executables. Phase two will arrive when someone asks: if the model is already generating the binary, why are we targeting an instruction set that was designed for a species that is no longer doing the writing?&lt;&#x2F;p&gt;
+&lt;p&gt;At some point the intermediate layer becomes optional. And optional things, given enough time, become vestigial.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-this-means&quot;&gt;What this means&lt;&#x2F;h2&gt;
+&lt;p&gt;I do not think these three approaches are in competition. They are three points on a timeline, and the timeline is the story of the intermediate layer contracting.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;The intermediate layer timeline&quot;&gt;Near term          Medium term           Long term
+(now)              (2-5 years)           (5-15 years)
+
+Explicit           Declarative           Post-language
+languages          languages             (AI-native targets)
+(Vera)             (Haskell + BHC)
+
+Reduce noise  --&amp;gt;  Change the signal --&amp;gt; Remove the layer
+in the loop        entirely              entirely
+
+HOW, but           WHAT, verified        Intent to
+unambiguous        by types              execution&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;In the near term, explicit languages like Vera make AI-generated code more reliable by constraining the generation space and providing machine-readable diagnostics. This is useful today. If you are building an AI coding pipeline right now and need to ship next quarter, this approach works.&lt;&#x2F;p&gt;
+&lt;p&gt;In the medium term, declarative languages like Haskell, especially with modern tooling and modern runtimes, make AI-generated code correct by construction. The type system does the heavy verification work at a fundamental level. The code that survives is the code that describes invariants, not procedures. This is the era I am building for with arcanist.sh.&lt;&#x2F;p&gt;
+&lt;p&gt;In the long term, the language disappears. First into existing machine code generated directly by AI. Then into new execution formats designed for AI generation from the ground up. The intermediate layer that has defined software engineering for seventy years becomes an implementation detail.&lt;&#x2F;p&gt;
+&lt;p&gt;That last possibility makes some people uncomfortable. It made me uncomfortable when I first thought about it in December. It means that the craft of programming as we know it, the fluency in syntax, the mastery of idioms, the instinct for an elegant implementation, becomes less like a core skill and more like knowing how to operate a manual lathe. Valuable in the right context. Still needed for the hard cases. But no longer the primary way most software gets built.&lt;&#x2F;p&gt;
+&lt;p&gt;This has happened before. There was a time when every programmer understood assembly. Then C abstracted it away, and most programmers stopped reading machine code. Then Python and JavaScript abstracted C away, and most programmers stopped thinking about memory management. Each time, the previous layer did not disappear. It became the domain of specialists who maintained the infrastructure everyone else stood on. The same thing will happen to source code. It will not vanish. It will specialize.&lt;&#x2F;p&gt;
+&lt;p&gt;I still write code every day. I still think in types. I am still building hx and BHC because I believe the medium-term future is both real and long, and Haskell’s strengths are exactly what that future demands. Pure functions, strong types, provable correctness. These are not luxuries in a world where AI writes the implementation. They are the load-bearing structure. But I do it with one eye on the horizon, knowing that the intermediate layer I am investing in is exactly that. Intermediate.&lt;&#x2F;p&gt;
+&lt;p&gt;The person who built Vera saw the same thing I saw, probably around the same time. They chose the first approach. I chose the second. Somebody, eventually, will build the third. And then we will all need to figure out what we mean by “programming” when nobody writes programs anymore.&lt;&#x2F;p&gt;
+&lt;p&gt;I am already curious about the answer.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>All beginning is Haskell</title>
+          <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/all-beginning-is-haskell/</link>
+          <guid>https://raskell.io/articles/all-beginning-is-haskell/</guid>
+          <description xml:base="https://raskell.io/articles/all-beginning-is-haskell/">&lt;p&gt;This site is called raskell.io. That is not an accident.&lt;&#x2F;p&gt;
+&lt;p&gt;I started learning Haskell because I liked mathematics and someone told me there was a programming language built on top of it. Not “inspired by” in the loose way that every language claims some mathematical foundation. Actually built on lambda calculus, category theory, and type theory, in a way where the math is not decoration but structure.&lt;&#x2F;p&gt;
+&lt;p&gt;What I did not expect was how thoroughly it would rewire the way I think about building software. Not because Haskell is the best language for every task. It is not, and I write far more Rust than Haskell these days. But because Haskell teaches you to think about programs in a way that makes you better at everything else.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-haskell-actually-teaches-you&quot;&gt;What Haskell actually teaches you&lt;&#x2F;h2&gt;
+&lt;p&gt;Most introductions to Haskell talk about pure functions, immutability, and monads. They are not wrong, but they miss the point. The point is not any single feature. It is how those features combine into a way of thinking about programs as compositions of well-typed transformations.&lt;&#x2F;p&gt;
+&lt;p&gt;In an imperative language, you think about sequences of steps. Do this, then that, then check a condition, then loop. The program is a recipe. In Haskell, you think about transformations. What goes in, what comes out, what shape does the data have at each stage. The program is a pipeline.&lt;&#x2F;p&gt;
+&lt;p&gt;This sounds abstract until you see it in practice. Suppose you need to process a list of user records: filter out inactive users, extract their email addresses, and normalize them to lowercase.&lt;&#x2F;p&gt;
+&lt;p&gt;In an imperative style, you write a loop with conditions and mutations. In Haskell:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;haskell&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;activeEmails :: [User] -&amp;gt; [Email]
+activeEmails = map (normalize . email) . filter isActive
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;One line. Read it right to left: filter active users, then map over the result, extracting and normalizing emails. The type signature tells you what goes in (&lt;code&gt;[User]&lt;&#x2F;code&gt;) and what comes out (&lt;code&gt;[Email]&lt;&#x2F;code&gt;). No mutation. No intermediate variables. No place for off-by-one errors or null pointer exceptions.&lt;&#x2F;p&gt;
+&lt;p&gt;The type signature is not just documentation. It is a contract enforced by the compiler. If &lt;code&gt;isActive&lt;&#x2F;code&gt; expects a &lt;code&gt;User&lt;&#x2F;code&gt; and you pass it a &lt;code&gt;String&lt;&#x2F;code&gt;, the program will not compile. If &lt;code&gt;normalize&lt;&#x2F;code&gt; returns an &lt;code&gt;Email&lt;&#x2F;code&gt; but you try to use it as a &lt;code&gt;String&lt;&#x2F;code&gt;, the program will not compile. The compiler is your first reviewer, and it is tireless.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;types-as-design-tools&quot;&gt;Types as design tools&lt;&#x2F;h2&gt;
+&lt;p&gt;The deeper lesson is that types are not just error catchers. They are design tools.&lt;&#x2F;p&gt;
+&lt;p&gt;When I design a system in Haskell, I start with the types. What are the entities? What are the relationships? What transformations are valid? The type system forces you to be precise about these questions before you write any logic. This precision surfaces design problems early, when they are cheap to fix.&lt;&#x2F;p&gt;
+&lt;p&gt;Consider modeling a document that can be in one of several states:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;haskell&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;data Document
+  = Draft { content :: Text, author :: UserId }
+  | UnderReview { content :: Text, author :: UserId, reviewer :: UserId }
+  | Published { content :: Text, author :: UserId, publishedAt :: UTCTime }
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This is an algebraic data type. Each variant carries exactly the data that makes sense for that state. A &lt;code&gt;Draft&lt;&#x2F;code&gt; has no reviewer. A &lt;code&gt;Published&lt;&#x2F;code&gt; document has a timestamp. You cannot accidentally access a reviewer on a draft because the type system will not let you. The invalid state is unrepresentable.&lt;&#x2F;p&gt;
+&lt;p&gt;This pattern, making illegal states unrepresentable, is perhaps the most valuable idea I took from Haskell. I use it in Rust constantly. Rust’s &lt;code&gt;enum&lt;&#x2F;code&gt; with associated data is directly descended from Haskell’s algebraic data types, and the same design principle applies: encode your invariants in the type system and let the compiler enforce them.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-monad-is-not-the-point&quot;&gt;The monad is not the point&lt;&#x2F;h2&gt;
+&lt;p&gt;Every Haskell introduction eventually gets to monads, usually with a metaphor involving burritos or boxes. I will skip the metaphor.&lt;&#x2F;p&gt;
+&lt;p&gt;A monad is a pattern for sequencing computations that carry some context. The &lt;code&gt;IO&lt;&#x2F;code&gt; monad carries the context of interacting with the outside world. The &lt;code&gt;Maybe&lt;&#x2F;code&gt; monad carries the context of possible failure. The &lt;code&gt;State&lt;&#x2F;code&gt; monad carries the context of mutable state. The pattern is the same in each case: take a value in a context, apply a function that produces a new value in a context, get back a combined context.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;haskell&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;lookupUser :: UserId -&amp;gt; IO (Maybe User)
+lookupUser uid = do
+  conn &amp;lt;- getConnection
+  result &amp;lt;- query conn &amp;quot;SELECT * FROM users WHERE id = ?&amp;quot; [uid]
+  return (listToMaybe result)
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The &lt;code&gt;IO&lt;&#x2F;code&gt; monad here sequences database operations. The &lt;code&gt;Maybe&lt;&#x2F;code&gt; handles the case where no user is found. The types tell you both things at a glance: this function does I&#x2F;O and might not return a result.&lt;&#x2F;p&gt;
+&lt;p&gt;The point of monads is not that they are clever. The point is that they make effects explicit and composable. In most languages, a function can do I&#x2F;O, throw exceptions, mutate global state, or launch missiles, and you cannot tell from its signature. In Haskell, the type signature tells you exactly what effects a function can have. &lt;code&gt;Int -&amp;gt; Int&lt;&#x2F;code&gt; is pure. &lt;code&gt;Int -&amp;gt; IO Int&lt;&#x2F;code&gt; does I&#x2F;O. &lt;code&gt;Int -&amp;gt; Maybe Int&lt;&#x2F;code&gt; can fail. The information is right there, enforced by the compiler.&lt;&#x2F;p&gt;
+&lt;p&gt;This discipline, making effects explicit, changed how I design APIs even in languages that do not enforce it. When I write a Rust function that returns &lt;code&gt;Result&amp;lt;T, E&amp;gt;&lt;&#x2F;code&gt;, I am using the same pattern: making failure explicit in the type rather than hiding it behind an exception. Rust learned this from Haskell, and so did I.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-i-am-still-building-haskell-tooling&quot;&gt;Why I am still building Haskell tooling&lt;&#x2F;h2&gt;
+&lt;p&gt;If Haskell taught me so much, why do I mostly write Rust?&lt;&#x2F;p&gt;
+&lt;p&gt;The honest answer: Haskell’s ecosystem has gaps. The language itself is excellent. GHC is one of the most sophisticated compilers ever built. The type system is unmatched in its expressiveness among production languages. But the surrounding infrastructure, the package management, the build tooling, the deployment story, has not kept pace.&lt;&#x2F;p&gt;
+&lt;p&gt;Dependency management in Haskell is fragmented. Cabal and Stack coexist with overlapping but incompatible approaches. Build times are long. Cross-compilation is painful. Setting up a Haskell development environment from scratch still involves more friction than it should in 2026.&lt;&#x2F;p&gt;
+&lt;p&gt;This is why hx exists. hx is a Haskell toolchain CLI that I am building in Rust. The choice of implementation language is deliberate. Haskell’s tooling problems are partly caused by tooling that is itself written in Haskell, creating bootstrap problems and long compile times for the tools themselves. A Rust binary starts instantly, compiles to a single static executable, and cross-compiles trivially. The tool should not have the same dependencies as the thing it manages.&lt;&#x2F;p&gt;
+&lt;p&gt;hx is distributed through &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;mise-ate-my-makefile&#x2F;&quot;&gt;mise&lt;&#x2F;a&gt; (naturally), as well as through AUR, Homebrew, Scoop, and Chocolatey. The goal is that setting up a Haskell project should be as frictionless as setting up a Rust project: one command to install the toolchain, one command to build.&lt;&#x2F;p&gt;
+&lt;p&gt;On the other end of the spectrum, bhc (the Basel Haskell Compiler) is an experiment in taking Haskell in a direction GHC was never designed for: compiling Haskell for low-latency runtimes without a garbage collector. The target is workloads like tensor pipelines and real-time systems where GC pauses are not acceptable. bhc is early and ambitious, but it comes from the same conviction: Haskell’s ideas deserve better infrastructure than they currently have.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-haskell-in-my-rust&quot;&gt;The Haskell in my Rust&lt;&#x2F;h2&gt;
+&lt;p&gt;I write Rust the way Haskell taught me to think.&lt;&#x2F;p&gt;
+&lt;p&gt;Rust’s ownership model is not the same as Haskell’s purity, but it serves a similar purpose: it forces you to think about data flow explicitly. In Haskell, you cannot mutate a value because the language will not let you. In Rust, you can mutate, but the borrow checker forces you to be explicit about who owns the data and who can see it. Both languages make you think before you write.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;conflux&quot;&gt;Conflux&lt;&#x2F;a&gt;, my CRDT engine, uses algebraic data types for its merge semantics. Each CRDT field type (LwwRegister, GrowOnlySet, ObservedRemoveSet) is an enum variant with associated data, exactly the pattern I described above. The merge function is associative, commutative, and idempotent. These are mathematical properties that I learned to care about from Haskell, where such properties are often expressed as type class laws.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt;, the reverse proxy, uses Rust’s type system to enforce that WAF decisions are handled in the correct pipeline stage. An &lt;code&gt;AgentDecision&lt;&#x2F;code&gt; is either &lt;code&gt;Allow&lt;&#x2F;code&gt;, &lt;code&gt;Block&lt;&#x2F;code&gt;, or &lt;code&gt;Modify&lt;&#x2F;code&gt;, and the proxy’s merge logic ensures that a &lt;code&gt;Block&lt;&#x2F;code&gt; from any agent cannot be overridden. The pattern is a monoid (decisions combine associatively with &lt;code&gt;Block&lt;&#x2F;code&gt; as the absorbing element), though nobody would call it that in the Rust codebase. The concept came from Haskell. The implementation is pure Rust.&lt;&#x2F;p&gt;
+&lt;p&gt;Even &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;Shiioo&lt;&#x2F;a&gt;, the agentic orchestrator, uses Haskell-influenced patterns. DAG workflows are compositions of typed transformations. Events are algebraic data types with exhaustive pattern matching. The event-sourcing model treats state as a fold over an event stream. &lt;code&gt;foldl&lt;&#x2F;code&gt; in Haskell, &lt;code&gt;Iterator::fold&lt;&#x2F;code&gt; in Rust. Same idea, different syntax.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-raskell&quot;&gt;Why “raskell”&lt;&#x2F;h2&gt;
+&lt;p&gt;The name is a portmanteau. Raffael plus Haskell. I chose it because Haskell is where my engineering thinking started to take its current shape. Not the first language I learned, but the first one that changed how I think about all the others.&lt;&#x2F;p&gt;
+&lt;p&gt;I do not believe you need to write Haskell to benefit from Haskell. But I believe that learning it, really learning it, not just reading about monads but building something real with algebraic data types and type classes and higher-order functions, will make you a better engineer in whatever language you actually use.&lt;&#x2F;p&gt;
+&lt;p&gt;All beginning is Haskell. The rest is implementation.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;learning-haskell&quot;&gt;Learning Haskell&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;&quot;&gt;Haskell Language&lt;&#x2F;a&gt; - Official site with documentation and community links&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;learnyouahaskell.com&#x2F;&quot;&gt;Learn You a Haskell for Great Good!&lt;&#x2F;a&gt; - Approachable illustrated introduction&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;book.realworldhaskell.org&#x2F;&quot;&gt;Real World Haskell&lt;&#x2F;a&gt; - Practical Haskell for production use&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;&quot;&gt;Haskell Wiki&lt;&#x2F;a&gt; - Community-maintained reference and tutorials&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;Typeclassopedia&quot;&gt;Typeclassopedia&lt;&#x2F;a&gt; - Comprehensive guide to Haskell’s type class hierarchy&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;type-systems-and-theory&quot;&gt;Type systems and theory&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Haskell_Curry&quot;&gt;Haskell Curry&lt;&#x2F;a&gt; - The logician the language is named after&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Lambda_calculus&quot;&gt;Lambda calculus&lt;&#x2F;a&gt; - Alonzo Church’s formal system underlying Haskell&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hindley%E2%80%93Milner_type_system&quot;&gt;Hindley-Milner type system&lt;&#x2F;a&gt; - The type inference algorithm at the core of Haskell and ML&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;blog.janestreet.com&#x2F;effective-ml-revisited&#x2F;&quot;&gt;Making illegal states unrepresentable&lt;&#x2F;a&gt; - Yaron Minsky’s influential talk on using types for correctness&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;Algebraic_data_type&quot;&gt;Algebraic data types&lt;&#x2F;a&gt; - Haskell wiki reference on sum and product types&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;monads-and-effects&quot;&gt;Monads and effects&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;homepages.inf.ed.ac.uk&#x2F;wadler&#x2F;papers&#x2F;marktoberdorf&#x2F;baastad.pdf&quot;&gt;Philip Wadler, “Monads for functional programming”&lt;&#x2F;a&gt; - The foundational paper on monads in programming&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wiki.haskell.org&#x2F;All_About_Monads&quot;&gt;All About Monads&lt;&#x2F;a&gt; - Haskell wiki guide to monadic programming&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;haskell-tooling&quot;&gt;Haskell tooling&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;ghc&#x2F;&quot;&gt;GHC&lt;&#x2F;a&gt; - The Glasgow Haskell Compiler&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.haskell.org&#x2F;cabal&#x2F;&quot;&gt;Cabal&lt;&#x2F;a&gt; - Haskell’s build and package system&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.haskellstack.org&#x2F;&quot;&gt;Stack&lt;&#x2F;a&gt; - Alternative build tool with curated package sets&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;mise-hx&quot;&gt;mise-hx&lt;&#x2F;a&gt; - mise plugin for the hx Haskell toolchain CLI&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;projects-referenced&quot;&gt;Projects referenced&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;conflux&quot;&gt;Conflux&lt;&#x2F;a&gt; - CRDT engine using algebraic data types for merge semantics&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Reverse proxy with monoid-based decision merging&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;Shiioo&lt;&#x2F;a&gt; - Agentic orchestrator using event-sourced state folds&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
+    </channel>
+</rss>
