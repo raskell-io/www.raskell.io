@@ -343,6 +343,43 @@ I do not know which domains move first. My best guess is the domains that alread
 
 I do not know how long the migration takes. My only confident claim about timing is that it does not arrive by deleting today's stacks. It arrives by moving semantics upward, year by year, until the artifact most teams care about is no longer a tree of source files.
 
+## Further reading
+
+The systems already pointing at parts of this future, grouped by the dimension each one gets right.
+
+**Semantic IRs and structural identity.** The argument that artifact identity should not depend on filenames, and that compiler stacks should preserve high-level structure across lowering, already has working precedent.
+
+- [MLIR](https://mlir.llvm.org/) for multi-level dialect stacks
+- [Unison](https://www.unison-lang.org/) for content-addressed code
+
+**Verification.** What it looks like to push specifications and proofs into the artifact, with three different bets on how strict the proof obligation should be.
+
+- [Dafny](https://dafny.org/) for specs in the language, SMT-backed
+- [Lean](https://lean-lang.org/) for a minimal trusted kernel and proofs as terms
+- [Vera](https://veralang.dev/) for Z3 on decidable cases and runtime fallback for the rest
+
+**Typed effects.** The case for putting side effects into the type rather than hiding them in the function body.
+
+- [Koka](https://koka-lang.github.io/koka/doc/index.html) for row-polymorphic effects with handlers
+- [Vera](https://veralang.dev/) for mandatory effect declarations on every function
+
+**Reproducible execution.** What "the same artifact runs the same way somewhere else, a year later" actually requires in production.
+
+- [WebAssembly](https://webassembly.org/) and [WASI](https://wasi.dev/) for portable, sandboxed, increasingly deterministic execution
+- [Wasmtime determinism guide](https://docs.wasmtime.dev/) for the concrete steps to byte-identical replay
+- [Nix](https://nix.dev/) for declarative, isolated, pinned environments
+
+**Provenance and packaging.** The vocabulary for explaining what ran, on what data, in what environment, with what evidence.
+
+- [PROV-O](https://www.w3.org/TR/prov-o/) for entities, activities, and agents
+- [RO-Crate](https://www.researchobject.org/ro-crate/) for artifact bundles with methods, data, and identifiers
+- [Common Workflow Language](https://www.commonwl.org/) for portable, vendor-neutral workflows
+
+**Domain artifacts.** The honest evidence that "software artifact" is too narrow a category for what comes next.
+
+- [Accord Project](https://accordproject.org/) for contracts as text plus data model plus logic
+- [Common Domain Model](https://cdm.finos.org/) for financial products and lifecycle events as machine-readable, machine-executable objects
+
 ## Closing
 
 We called them programming languages because we thought we were speaking to machines. In reality, we were translating ourselves into a form machines could tolerate. The notation was a compromise between what we could write and what they could lower.
