@@ -5,7 +5,7 @@ description = "Inference tokens are not API calls. They are a metered resource t
 
 [taxonomies]
 tags = ["ai-for-ops", "platform-automation", "edge-systems"]
-categories = ["patterns"]
+categories = ["deep-dives"]
 
 [extra]
 author = "Raffael"

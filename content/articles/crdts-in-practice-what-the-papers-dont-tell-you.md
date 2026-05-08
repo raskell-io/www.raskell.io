@@ -5,7 +5,7 @@ draft = true
 description = "CRDTs promise conflict-free merges with mathematical guarantees. The papers are correct. They are also incomplete. Here is what building a real CRDT engine taught me about clocks, garbage, and the distance between theory and production."
 
 [taxonomies]
-tags = ["reliability", "oss", "rust"]
+tags = ["reliability", "rust"]
 categories = ["deep-dives"]
 
 [extra]

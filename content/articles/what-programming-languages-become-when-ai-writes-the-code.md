@@ -4,8 +4,8 @@ date = 2026-04-11
 description = "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell."
 
 [taxonomies]
-tags = ["ai-for-ops", "oss", "haskell"]
-categories = ["patterns"]
+tags = ["ai-for-ops", "haskell"]
+categories = ["deep-dives"]
 
 [extra]
 author = "Raffael"
