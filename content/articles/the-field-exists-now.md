@@ -1,7 +1,7 @@
 +++
 title = "The Field Exists Now"
 date = 2026-05-22
-draft = true
+draft = false
 description = "Alasdair Allan's agentlanguages.dev catalogue turns AI-oriented programming languages from a loose set of experiments into a field with camps, disagreements, and testable claims."
 
 [taxonomies]
