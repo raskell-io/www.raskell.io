@@ -7,7 +7,88 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/ai-engineering/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Fri, 22 May 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>The Field Exists Now</title>
+          <pubDate>Fri, 22 May 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/the-field-exists-now/</link>
+          <guid>https://raskell.io/articles/the-field-exists-now/</guid>
+          <description xml:base="https://raskell.io/articles/the-field-exists-now/">&lt;p&gt;Alasdair Allan, the creator of &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;veralang.dev&#x2F;&quot;&gt;Vera&lt;&#x2F;a&gt;, has started a public catalogue at &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;agentlanguages.dev&#x2F;&quot;&gt;agentlanguages.dev&lt;&#x2F;a&gt;: programming languages designed for AI agents to write.&lt;&#x2F;p&gt;
+&lt;p&gt;When he mentioned it to me on LinkedIn, the count was twenty-one. When I checked, the site already listed twenty-eight. That pace is the point.&lt;&#x2F;p&gt;
+&lt;p&gt;Six months ago, the idea that programming languages would bend around AI authorship still sounded like a late-night compiler conversation. Now there is a catalogue, a taxonomy, and enough independent projects to argue about the shape of the field without pretending the field is hypothetical.&lt;&#x2F;p&gt;
+&lt;p&gt;That is a real change.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-taxonomy-is-better-than-my-timeline&quot;&gt;The taxonomy is better than my timeline&lt;&#x2F;h2&gt;
+&lt;p&gt;In &lt;a href=&quot;&#x2F;articles&#x2F;what-programming-languages-become-when-ai-writes-the-code&#x2F;&quot;&gt;The Last Programming Language Might Not Be for Humans&lt;&#x2F;a&gt;, I described three futures:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;explicit languages stripped of ambiguity&lt;&#x2F;li&gt;
+&lt;li&gt;declarative languages where types act as proof obligations&lt;&#x2F;li&gt;
+&lt;li&gt;no language at all, where the prompt is the specification and the executable is the product&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I still think that direction of travel is useful. The long arc points away from source code as the thing humans primarily edit, and toward artifacts that agents generate, compilers check, runtimes execute, and other agents can trust.&lt;&#x2F;p&gt;
+&lt;p&gt;But Alasdair’s taxonomy is cleaner for describing the field as it exists today.&lt;&#x2F;p&gt;
+&lt;p&gt;He splits it into three camps:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;syntactic, where the problem is representational ambiguity&lt;&#x2F;li&gt;
+&lt;li&gt;verification, where the problem is semantic correctness&lt;&#x2F;li&gt;
+&lt;li&gt;orchestration, where the problem is agent coordination&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;That framing is less linear and more honest. Vera and my Haskell work are not step one and step two. They are two near-term answers to the same pressure.&lt;&#x2F;p&gt;
+&lt;p&gt;That correction matters because it changes what we should measure.&lt;&#x2F;p&gt;
+&lt;p&gt;If the field is a timeline, the question is which phase arrives next. If the field is a set of camps, the question is which diagnosis is right for which workload.&lt;&#x2F;p&gt;
+&lt;p&gt;That is a much better question.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;vera-and-bhc-are-adjacent-not-sequential&quot;&gt;Vera and BHC are adjacent, not sequential&lt;&#x2F;h2&gt;
+&lt;p&gt;One useful correction: Raskell is not the project. Raskell is this blog.&lt;&#x2F;p&gt;
+&lt;p&gt;The relevant projects are &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;hx&#x2F;&quot;&gt;hx&lt;&#x2F;a&gt; and BHC, the Basel Haskell Compiler, both under &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;&quot;&gt;arcanist.sh&lt;&#x2F;a&gt;. hx is the tooling layer. BHC is the compiler layer.&lt;&#x2F;p&gt;
+&lt;p&gt;That distinction matters because the bet is not “invent Raskell as a new AI language.” The bet is that Haskell already has much of the semantic shape we need, and that the missing layer is tooling, runtime control, diagnostics, and compilation strategy.&lt;&#x2F;p&gt;
+&lt;p&gt;Vera takes a more bespoke path. It asks what a language should look like if it is designed for models from first principles. That leads to mandatory contracts, typed effects, solver-backed verification, and De Bruijn-style slot references instead of variable names.&lt;&#x2F;p&gt;
+&lt;p&gt;That is a serious design. I like it because it does not just say “AI will write code” and stop there. It changes the language around that claim.&lt;&#x2F;p&gt;
+&lt;p&gt;BHC starts from the other side.&lt;&#x2F;p&gt;
+&lt;p&gt;It assumes Haskell’s purity, type system, and compositional style are already close to the right substrate for AI-written software. The weak points are around the compiler and the experience around it: how fast the loop is, how clear the errors are, how reproducible the build is, how explicit the runtime profile is, and eventually how much semantic information survives into numeric and GPU-oriented lowering.&lt;&#x2F;p&gt;
+&lt;p&gt;So I do not think Vera and BHC compete for the same idea. They may compete for attention, mindshare, or some future market. But intellectually they are adjacent.&lt;&#x2F;p&gt;
+&lt;p&gt;Vera says: design the language around the agent.&lt;&#x2F;p&gt;
+&lt;p&gt;BHC says: make the semantically rich language operationally good enough for the agent era.&lt;&#x2F;p&gt;
+&lt;p&gt;Both are verification-camp bets.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-the-verification-camp-is-crowded&quot;&gt;Why the verification camp is crowded&lt;&#x2F;h2&gt;
+&lt;p&gt;The most interesting thing in the catalogue is how crowded the verification camp is.&lt;&#x2F;p&gt;
+&lt;p&gt;That should not surprise us, but it still does.&lt;&#x2F;p&gt;
+&lt;p&gt;Once you work with coding agents every day, the failure mode becomes obvious. The problem is not that the model cannot type syntax. It can type syntax just fine. The problem is that plausible code is cheap, and plausible code is often wrong.&lt;&#x2F;p&gt;
+&lt;p&gt;That changes the job of the language.&lt;&#x2F;p&gt;
+&lt;p&gt;A language for AI-authored code does not need to make the model feel clever. It needs to make wrongness cheap to detect. Ideally before runtime. Ideally before deployment. Ideally in a form the model can consume and repair.&lt;&#x2F;p&gt;
+&lt;p&gt;That is why contracts, effects, refinement types, strong type systems, proof export, SMT solvers, and structured compiler diagnostics keep showing up. These are not aesthetic choices. They are different ways of building a feedback loop around a generator that will always be probabilistic.&lt;&#x2F;p&gt;
+&lt;p&gt;The generator does not need to be trusted. The artifact needs to be checkable.&lt;&#x2F;p&gt;
+&lt;p&gt;That sentence is probably the center of the whole field.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-market-is-less-interesting-than-the-artifact&quot;&gt;The market is less interesting than the artifact&lt;&#x2F;h2&gt;
+&lt;p&gt;There will be a temptation to turn this into a market map too early.&lt;&#x2F;p&gt;
+&lt;p&gt;Which language wins? Which toolchain gets adopted? Which one has the most stars? Which one gets bundled into an IDE or agent framework first?&lt;&#x2F;p&gt;
+&lt;p&gt;Those questions matter eventually. They do not matter most right now.&lt;&#x2F;p&gt;
+&lt;p&gt;The important question is what the unit of software becomes when the author is no longer primarily human. My answer, in &lt;a href=&quot;&#x2F;articles&#x2F;semantic-artifacts-and-meaning-engines&#x2F;&quot;&gt;Source Code Is the New Assembly&lt;&#x2F;a&gt;, was that source code becomes one rendering of a richer semantic artifact.&lt;&#x2F;p&gt;
+&lt;p&gt;The agentlanguages.dev catalogue strengthens that view.&lt;&#x2F;p&gt;
+&lt;p&gt;The syntactic camp is trying to make the text representation easier for models to manipulate. The verification camp is trying to make the artifact easier to prove correct. The orchestration camp is trying to make agent work easier to sequence, constrain, and audit.&lt;&#x2F;p&gt;
+&lt;p&gt;Those are not disconnected concerns. They are different surfaces of the same object.&lt;&#x2F;p&gt;
+&lt;p&gt;If agents are going to generate software that matters, the artifact has to carry more than instructions. It has to carry constraints, effects, provenance, trust boundaries, and execution intent. Source code can be part of that. It cannot remain the whole thing.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;where-bhc-fits&quot;&gt;Where BHC fits&lt;&#x2F;h2&gt;
+&lt;p&gt;BHC’s long-term target is not just “AI writes Haskell.”&lt;&#x2F;p&gt;
+&lt;p&gt;That is too small.&lt;&#x2F;p&gt;
+&lt;p&gt;The more interesting target is verifiable compute expressed through a functional, semantically dense language and lowered into the right execution profile. Sometimes that means ordinary native code. Sometimes WebAssembly. Eventually, for the numeric profile, it should mean GPU-oriented compute where the compiler can preserve enough structure to reason about what is being executed.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the part that keeps pulling me back to Haskell.&lt;&#x2F;p&gt;
+&lt;p&gt;Functional purity is not just beautiful. It is useful. It makes dependencies visible. It makes transformations local. It reduces the hidden state an agent has to simulate. It gives the compiler more leverage. It gives verification machinery more structure.&lt;&#x2F;p&gt;
+&lt;p&gt;And Haskell is verbose in exactly the right places. Not verbose like boilerplate. Verbose like meaning. Type signatures, algebraic data types, explicit transformations, pure functions. These are things an agent can generate, a compiler can check, and a human can audit later when something matters enough to read.&lt;&#x2F;p&gt;
+&lt;p&gt;That is the bet behind BHC and hx.&lt;&#x2F;p&gt;
+&lt;p&gt;Not a new language for its own sake. Not Haskell nostalgia. A belief that semantic density becomes more valuable when generation gets cheap.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-the-catalogue-proves&quot;&gt;What the catalogue proves&lt;&#x2F;h2&gt;
+&lt;p&gt;The catalogue does not prove which camp is right.&lt;&#x2F;p&gt;
+&lt;p&gt;It proves the pressure is real.&lt;&#x2F;p&gt;
+&lt;p&gt;Independent people arrived in the same neighborhood at roughly the same time, using different words and different tools. That usually means the underlying constraint changed. In this case, the constraint is authorship.&lt;&#x2F;p&gt;
+&lt;p&gt;The old language design question was: what can humans write, read, and maintain?&lt;&#x2F;p&gt;
+&lt;p&gt;The new question is: what can agents generate, compilers verify, runtimes constrain, and humans audit when needed?&lt;&#x2F;p&gt;
+&lt;p&gt;That does not make human readability irrelevant. It changes its position. Human readability becomes part of auditability, not necessarily the primary authoring constraint.&lt;&#x2F;p&gt;
+&lt;p&gt;That is the shift agentlanguages.dev makes visible.&lt;&#x2F;p&gt;
+&lt;p&gt;The field exists now. It has camps. It has disagreements. It has projects with code, projects with papers, projects with benchmarks, and projects that are still mostly intent. That is fine. Early fields are messy.&lt;&#x2F;p&gt;
+&lt;p&gt;The useful thing is that we can stop arguing about whether the category is real and start arguing about which claims survive measurement.&lt;&#x2F;p&gt;
+&lt;p&gt;That is where the work gets interesting.&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>Source Code Is the New Assembly</title>
           <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
