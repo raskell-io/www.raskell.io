@@ -7,7 +7,307 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/categories/deep-dives/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Thu, 07 May 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Tue, 02 Jun 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>What an Agent Actually Is</title>
+          <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/what-an-agent-actually-is/</link>
+          <guid>https://raskell.io/articles/what-an-agent-actually-is/</guid>
+          <description xml:base="https://raskell.io/articles/what-an-agent-actually-is/">&lt;blockquote&gt;
+&lt;p&gt;Part 1 of &lt;em&gt;The Agent Platform Handbook. From Loop to Platform.&lt;&#x2F;em&gt; A 22-post series that walks the agent stack from a single loop to a production platform. Next: &lt;a href=&quot;&#x2F;articles&#x2F;your-agent-wants-root&#x2F;&quot;&gt;Your Agent Wants Root&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;If you sit in three meetings on the same day, you will hear the word &lt;em&gt;agent&lt;&#x2F;em&gt; used to mean three different things. A vendor will use it to mean a chat window with a logo. A platform team will use it to mean a workflow with a retry. A security lead will use it to mean a long-running process with credentials you cannot see. None of those people are entirely wrong. None of them are talking about the same thing.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the first post in a series that goes from a single agent loop up to a production platform. Before we can talk about isolation, tools, identity, or orchestration, we have to agree on what the thing in the middle of the diagram actually is. So we will define it, sketch its anatomy, trace the path the industry took to get here, and then build a working one in roughly two hundred lines of TypeScript on Bun.&lt;&#x2F;p&gt;
+&lt;p&gt;By the end of the post the abstract noun is a concrete file you can run.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-working-definition&quot;&gt;A working definition&lt;&#x2F;h2&gt;
+&lt;p&gt;An agent is software with five properties. Drop any one and what you have is something else.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;A goal.&lt;&#x2F;strong&gt; Not a single prompt. A target state, a task description, or a problem statement that the system is trying to satisfy.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;A model.&lt;&#x2F;strong&gt; One or more inference engines that translate the current state plus the goal into a next step. Today this is almost always a large language model.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;A context.&lt;&#x2F;strong&gt; Information the model can read beyond the user input. System prompts, documents, prior turns, environment state, configuration files.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Tools.&lt;&#x2F;strong&gt; A finite, named set of side-effecting operations the model is allowed to invoke. Reading a file. Running a shell command. Calling an API.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;A loop.&lt;&#x2F;strong&gt; The model picks a tool, the tool runs, the result re-enters the context, the model picks again. The loop ends when the goal is satisfied, the budget is exhausted, or a stop condition is hit.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;There is usually a sixth property in production, &lt;strong&gt;memory&lt;&#x2F;strong&gt;, which is state that survives the loop. We will treat memory as a separate layer in &lt;a href=&quot;#&quot;&gt;post six&lt;&#x2F;a&gt; and keep this first agent stateless.&lt;&#x2F;p&gt;
+&lt;p&gt;A system with all five properties is an agent. A system with four is something else worth a name. A chat window has goal, model, context, and a loop, but no tools, so it is a chatbot. A CI pipeline has a goal, context, tools, and a loop, but no model, so it is a workflow. A function call has a goal, a model, context, and a tool, but no loop, so it is a one-shot completion. The presence of the loop is what makes the behavior open-ended. The presence of tools is what makes the loop matter.&lt;&#x2F;p&gt;
+&lt;p&gt;The architecture diagram for every agent ever shipped looks like this.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;The agent loop&quot;&gt;+--------------+
+                          |    Goal      |
+                          | (user task)  |
+                          +-------+------+
+                                  |
+                                  v
+   +------------+         +---------------+         +------------+
+   |  Context   +--------&amp;gt;|     Model     |&amp;lt;--------+   Memory   |
+   | docs, env, |         | next action?  |         | (optional) |
+   | prior turns|         +-------+-------+         +------------+
+   +------------+                 |
+                                  | tool call
+                                  v
+                          +---------------+
+                          |   Tool        |
+                          | shell, http,  |
+                          | file, custom  |
+                          +-------+-------+
+                                  |
+                                  | result
+                                  v
+                          +---------------+
+                          |    Runtime    |
+                          | (where the    |
+                          |  side effect  |
+                          |  happens)     |
+                          +-------+-------+
+                                  |
+                                  v
+                       +----------+----------+
+                       | done? --no--&amp;gt; loop  |
+                       |   |                 |
+                       |  yes                |
+                       |   v                 |
+                       | return              |
+                       +---------------------+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The diagram is small on purpose. Almost every post in this series will redraw it with one component opened up. Post two opens the runtime. Post three opens the tool. Post four opens the context. Post six opens the memory. Post seven opens the model. The capstone in post twenty-two assembles all of them into a reference architecture.&lt;&#x2F;p&gt;
+&lt;p&gt;Hold the picture in your head. We will come back to it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-we-got-here&quot;&gt;How we got here&lt;&#x2F;h2&gt;
+&lt;p&gt;You can read the rest of this section as background and skip the first two subsections if you have already lived through them. The third subsection, on the 2024 to 2026 stretch, is worth the read either way because it explains why everyone you work with is suddenly using the word &lt;em&gt;agent&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-old-ai&quot;&gt;The old AI&lt;&#x2F;h3&gt;
+&lt;p&gt;The idea of a software agent is older than the modern LLM by about fifty years. Terry Winograd’s SHRDLU, in 1970, was a program that took natural-language commands, planned actions in a simulated blocks world, executed them, and updated its internal state. It had a goal, a model of the world, a set of tools, and a loop. It was an agent. It worked beautifully on the blocks world and fell over the instant you stepped outside it, because the model of the world was hand-coded and the language understanding was brittle.&lt;&#x2F;p&gt;
+&lt;p&gt;Through the 1980s and 1990s the idea kept coming back under different names. Expert systems wrapped business logic in inference rules. The Belief-Desire-Intention architecture, formalized by Bratman and others, gave agents an explicit cognitive model: what they believed, what they wanted, what they intended to do next. There were good papers, working systems, and shipping products. The thing all of them missed was a usable model of language. You could specify the agent’s goals in formal logic or in a structured DSL. You could not say “go book me a flight” and have it parse.&lt;&#x2F;p&gt;
+&lt;p&gt;The lesson from this era is that the architecture has been right for decades. The bottleneck was the model.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-chat-era&quot;&gt;The chat era&lt;&#x2F;h3&gt;
+&lt;p&gt;When GPT-3 arrived in 2020 and ChatGPT in late 2022, the language bottleneck broke. You could finally write a goal in English and the system would respond coherently. The first response from the industry was to wrap that capability in a chat window and sell it. That is not an agent. There is no loop, no tools, and the model cannot do anything to the world it lives in. It is a very good autocomplete with a memory of the conversation.&lt;&#x2F;p&gt;
+&lt;p&gt;The agent pattern only came back when somebody asked the obvious next question. If the model can read and write English, and we can let it call functions, can we close the loop and let it act?&lt;&#x2F;p&gt;
+&lt;p&gt;Two papers and two viral demos answered that question between late 2022 and early 2023.&lt;&#x2F;p&gt;
+&lt;p&gt;The papers came first. &lt;em&gt;ReAct: Synergizing Reasoning and Acting in Language Models&lt;&#x2F;em&gt; by Yao and others, published in October 2022, showed that interleaving a reasoning step with a tool-use step produced better performance than either alone. The blueprint was small enough to fit on a napkin: think, act, observe, repeat. It became the de facto pattern for almost every agent shipped since.&lt;&#x2F;p&gt;
+&lt;p&gt;The demos came in early 2023. Auto-GPT, released by Toran Bruce Richards in March 2023, wrapped GPT-4 in exactly that loop and let it run unattended. It demoed brilliantly and broke constantly. BabyAGI, by Yohei Nakajima a few weeks later, did the same thing with about a hundred lines of Python. Neither was production-grade. Both made the idea legible to people who had never read the ReAct paper. After Auto-GPT you could explain an agent by saying “imagine ChatGPT but it keeps going until the task is done.” That was a marketing breakthrough, not an engineering one, but marketing is how ideas spread.&lt;&#x2F;p&gt;
+&lt;p&gt;OpenAI’s function-calling API, launched in June 2023, was the engineering breakthrough that followed. Instead of trying to parse “the model wants to call &lt;code&gt;search(query)&lt;&#x2F;code&gt;” out of free-form prose, you declared your tools with JSON schemas and the model returned a structured tool call. Anthropic’s &lt;code&gt;tool_use&lt;&#x2F;code&gt; shipped on the same pattern. With function calling, the agent loop stopped being a regex problem and started being a software problem. We will come back to this in &lt;a href=&quot;#&quot;&gt;post three&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The 2023 wave produced the first real frameworks: LangChain in October 2022, AutoGen in late 2023, CrewAI and LangGraph in 2024. They competed on abstractions. Some won, some lost. We will review them in &lt;a href=&quot;#&quot;&gt;post nine&lt;&#x2F;a&gt;. The point for now is that by mid-2024, building an agent was a Python or TypeScript exercise rather than a research project.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-2025-to-2026-bundling&quot;&gt;The 2025 to 2026 bundling&lt;&#x2F;h3&gt;
+&lt;p&gt;Here is where the word &lt;em&gt;agent&lt;&#x2F;em&gt; stopped being a research term and became a product category. It happened in two waves.&lt;&#x2F;p&gt;
+&lt;p&gt;The first wave was builder-facing. In early 2025, Anthropic shipped Claude Code, a command-line agent that ran on your laptop, edited files, ran shell commands, and could spawn sub-agents. OpenAI relaunched Codex as a real agent rather than a completion endpoint. The open-source community produced OpenCode and a half-dozen adjacent projects (aider, continue, opencoder) that gave the same shape a vendor-neutral surface. None of these were technically novel. The loop was the ReAct loop. The tools were &lt;code&gt;bash&lt;&#x2F;code&gt; and &lt;code&gt;edit&lt;&#x2F;code&gt;. What was new was the bundling: the loop, the tools, and the runtime arrived together, in a binary you could install in thirty seconds. Once that shipped, every infrastructure and platform engineer had a working agent on their laptop within a week.&lt;&#x2F;p&gt;
+&lt;p&gt;I wrote about what came next in &lt;a href=&quot;&#x2F;articles&#x2F;what-sixteen-ai-agents-taught-me-about-management&#x2F;&quot;&gt;What Sixteen AI Agents Taught Me About Management&lt;&#x2F;a&gt;. Once builders had working agents, they wanted to run more than one. Once they ran more than one, they hit coordination problems. Once they hit coordination problems, they discovered that agent orchestration is a management problem with a software wrapper.&lt;&#x2F;p&gt;
+&lt;p&gt;The second wave was assistant-facing and it broke out of the developer audience entirely. OpenClaw shipped in early 2026 and crossed a hundred thousand GitHub stars in its first week. Hermes followed in the same lane. Both took the agent pattern and gave it to people who do not write code. A research task. A contract review. A calendar negotiation. The same loop, with different tools and different context. The enterprise buyer stopped being the developer tooling team and started being any line of business with a workflow.&lt;&#x2F;p&gt;
+&lt;p&gt;That is where the market is right now, as of mid-2026. Every engineering org has builders running coding agents locally. Every business org has someone piloting an assistant agent. Almost no organization has a coherent platform underneath any of it. The point of this series is to close that gap.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;build-one&quot;&gt;Build one&lt;&#x2F;h2&gt;
+&lt;p&gt;You learn what an agent is by building one. The code that follows is a complete, working agent in TypeScript on Bun. It is roughly two hundred lines. It reads a goal from the command line, calls Anthropic’s API with a small tool registry, executes tool calls, feeds results back, and stops when the model is done or the iteration budget is exhausted.&lt;&#x2F;p&gt;
+&lt;p&gt;You will need three things to follow along.&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;bun --version          # 1.1 or newer
+echo $ANTHROPIC_API_KEY  # any valid key
+bun add @anthropic-ai&amp;#x2F;sdk
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The full source for this post is in &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&quot;&gt;&lt;code&gt;the-agent-platform-handbook&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; at tag &lt;code&gt;post-01&lt;&#x2F;code&gt;. You can clone it and run &lt;code&gt;bun agent.ts &quot;list the three largest files under &#x2F;etc&quot;&lt;&#x2F;code&gt; if you would rather read the code in your editor.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-tool-interface&quot;&gt;The tool interface&lt;&#x2F;h3&gt;
+&lt;p&gt;The smallest unit worth defining first is a tool. A tool has a name, a description the model can read, a JSON schema for its input, and a function that runs the side effect and returns a string.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; tools.ts
+export type Tool = {
+  name: string;
+  description: string;
+  input_schema: {
+    type: &amp;quot;object&amp;quot;;
+    properties: Record&amp;lt;string, unknown&amp;gt;;
+    required?: string[];
+  };
+  run: (input: Record&amp;lt;string, unknown&amp;gt;) =&amp;gt; Promise&amp;lt;string&amp;gt;;
+};
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;That is the entire contract. The &lt;code&gt;run&lt;&#x2F;code&gt; function returns a string because the model will read the result as text. If your tool returns structured data, serialize it with &lt;code&gt;JSON.stringify&lt;&#x2F;code&gt; and let the model parse it. We will revisit this choice in &lt;a href=&quot;#&quot;&gt;post three&lt;&#x2F;a&gt; when we look at structured outputs more carefully.&lt;&#x2F;p&gt;
+&lt;p&gt;A shell tool, which is the most useful single tool you can give an agent, looks like this.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; tools.ts (continued)
+export const shell: Tool = {
+  name: &amp;quot;shell&amp;quot;,
+  description:
+    &amp;quot;Run a shell command in the current working directory and return its stdout, stderr, and exit code as JSON.&amp;quot;,
+  input_schema: {
+    type: &amp;quot;object&amp;quot;,
+    properties: {
+      command: {
+        type: &amp;quot;string&amp;quot;,
+        description: &amp;quot;The shell command to run. Runs under `sh -c`.&amp;quot;,
+      },
+    },
+    required: [&amp;quot;command&amp;quot;],
+  },
+  run: async ({ command }) =&amp;gt; {
+    const proc = Bun.spawn([&amp;quot;sh&amp;quot;, &amp;quot;-c&amp;quot;, String(command)], {
+      stdout: &amp;quot;pipe&amp;quot;,
+      stderr: &amp;quot;pipe&amp;quot;,
+    });
+    const [stdout, stderr] = await Promise.all([
+      new Response(proc.stdout).text(),
+      new Response(proc.stderr).text(),
+    ]);
+    const code = await proc.exited;
+    return JSON.stringify({ code, stdout, stderr });
+  },
+};
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;A few things to notice. The description is written for the model, not for you. Be specific about what the tool does, what it returns, and what its constraints are. The JSON schema is the contract the model sees when it decides whether to call this tool. Bun’s &lt;code&gt;Bun.spawn&lt;&#x2F;code&gt; returns streams, so we read both stdout and stderr and join them with the exit code into one JSON payload the model can reason about.&lt;&#x2F;p&gt;
+&lt;p&gt;This tool will run any shell command. That is wildly unsafe. Do not deploy it. We will spend &lt;a href=&quot;#&quot;&gt;post two&lt;&#x2F;a&gt; explaining why and what to do about it. For a single-user, single-directory demo on your own laptop, it is fine.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-loop&quot;&gt;The loop&lt;&#x2F;h3&gt;
+&lt;p&gt;The loop is the part most explanations rush. Take it slowly.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; agent.ts
+import Anthropic from &amp;quot;@anthropic-ai&amp;#x2F;sdk&amp;quot;;
+import type { MessageParam, ToolResultBlockParam } from &amp;quot;@anthropic-ai&amp;#x2F;sdk&amp;#x2F;resources&amp;#x2F;messages&amp;quot;;
+import { shell, type Tool } from &amp;quot;.&amp;#x2F;tools&amp;quot;;
+
+const client = new Anthropic();
+const tools: Tool[] = [shell];
+
+const SYSTEM_PROMPT = `You are a careful command-line assistant.
+You have access to a shell tool. Use it to investigate the user&amp;#x27;s
+request and answer concretely. When you have the answer, stop calling
+tools and reply in plain text.`;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;We pull in the SDK, register one tool, and write a system prompt. The system prompt is the first piece of context that is not user input. We will spend &lt;a href=&quot;#&quot;&gt;post four&lt;&#x2F;a&gt; on how to grow this into a real context strategy. For now it is a single paragraph telling the model how to behave.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; agent.ts (continued)
+async function step(messages: MessageParam[]) {
+  return client.messages.create({
+    model: &amp;quot;claude-sonnet-4-6&amp;quot;,
+    max_tokens: 4096,
+    system: SYSTEM_PROMPT,
+    tools: tools.map(({ run, ...t }) =&amp;gt; t),
+    messages,
+  });
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Every call to the model is a &lt;code&gt;step&lt;&#x2F;code&gt;. The tool list we send is the schema only, never the &lt;code&gt;run&lt;&#x2F;code&gt; function, so we strip it. The model returns a message that is either a final text answer or a request to call one or more tools.&lt;&#x2F;p&gt;
+&lt;p&gt;The loop itself is fifty lines.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; agent.ts (continued)
+export async function run(goal: string, maxIterations = 10) {
+  const messages: MessageParam[] = [{ role: &amp;quot;user&amp;quot;, content: goal }];
+
+  for (let i = 0; i &amp;lt; maxIterations; i++) {
+    const response = await step(messages);
+    messages.push({ role: &amp;quot;assistant&amp;quot;, content: response.content });
+
+    if (response.stop_reason === &amp;quot;end_turn&amp;quot;) {
+      const text = response.content
+        .filter((b) =&amp;gt; b.type === &amp;quot;text&amp;quot;)
+        .map((b) =&amp;gt; (b as { text: string }).text)
+        .join(&amp;quot;\n&amp;quot;);
+      console.log(text);
+      return;
+    }
+
+    if (response.stop_reason !== &amp;quot;tool_use&amp;quot;) {
+      throw new Error(`unexpected stop reason: ${response.stop_reason}`);
+    }
+
+    const toolResults: ToolResultBlockParam[] = [];
+    for (const block of response.content) {
+      if (block.type !== &amp;quot;tool_use&amp;quot;) continue;
+      const tool = tools.find((t) =&amp;gt; t.name === block.name);
+      if (!tool) {
+        toolResults.push({
+          type: &amp;quot;tool_result&amp;quot;,
+          tool_use_id: block.id,
+          content: `unknown tool: ${block.name}`,
+          is_error: true,
+        });
+        continue;
+      }
+      console.error(`&amp;gt; ${block.name} ${JSON.stringify(block.input)}`);
+      try {
+        const result = await tool.run(block.input as Record&amp;lt;string, unknown&amp;gt;);
+        toolResults.push({ type: &amp;quot;tool_result&amp;quot;, tool_use_id: block.id, content: result });
+      } catch (err) {
+        toolResults.push({
+          type: &amp;quot;tool_result&amp;quot;,
+          tool_use_id: block.id,
+          content: String(err),
+          is_error: true,
+        });
+      }
+    }
+
+    messages.push({ role: &amp;quot;user&amp;quot;, content: toolResults });
+  }
+
+  console.error(`iteration limit (${maxIterations}) reached`);
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Walk through it once. We start with the goal as the first user message. We call the model. We append the model’s response to the conversation. If the model says &lt;code&gt;end_turn&lt;&#x2F;code&gt;, we print the final text and return. If the model says &lt;code&gt;tool_use&lt;&#x2F;code&gt;, we find the requested tool, run it, and append the result as a user-role &lt;code&gt;tool_result&lt;&#x2F;code&gt; block. The model sees the result on its next turn and decides what to do.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;code&gt;for&lt;&#x2F;code&gt; loop with &lt;code&gt;maxIterations&lt;&#x2F;code&gt; is the only thing standing between this agent and an unbounded run. We will spend a chunk of &lt;a href=&quot;#&quot;&gt;post sixteen&lt;&#x2F;a&gt; on whether iteration counts are the right budget unit. They are not, but they are the simplest. Start with the simplest.&lt;&#x2F;p&gt;
+&lt;p&gt;The entry point is two lines.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; agent.ts (continued)
+const goal = process.argv.slice(2).join(&amp;quot; &amp;quot;);
+if (!goal) {
+  console.error(&amp;quot;usage: bun agent.ts &amp;#x27;&amp;lt;goal&amp;gt;&amp;#x27;&amp;quot;);
+  process.exit(1);
+}
+await run(goal);
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;That is the entire agent. Around one hundred and forty lines of code with the imports and the system prompt. It is a real agent by the definition we started with. It has a goal, a model, context (the system prompt and the running message list), tools (one of them), and a loop (the &lt;code&gt;for&lt;&#x2F;code&gt; with &lt;code&gt;maxIterations&lt;&#x2F;code&gt;).&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;running-it&quot;&gt;Running it&lt;&#x2F;h3&gt;
+&lt;p&gt;A small transcript makes the loop concrete.&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ bun agent.ts &amp;quot;what is the largest TypeScript file under src and what does it do?&amp;quot;
+&amp;gt; shell {&amp;quot;command&amp;quot;:&amp;quot;find src -name &amp;#x27;*.ts&amp;#x27; -type f -printf &amp;#x27;%s %p\n&amp;#x27; | sort -nr | head -5&amp;quot;}
+&amp;gt; shell {&amp;quot;command&amp;quot;:&amp;quot;wc -l src&amp;#x2F;agent.ts&amp;quot;}
+&amp;gt; shell {&amp;quot;command&amp;quot;:&amp;quot;head -40 src&amp;#x2F;agent.ts&amp;quot;}
+The largest TypeScript file under src is src&amp;#x2F;agent.ts at 4837 bytes
+(150 lines). It implements an agent loop against the Anthropic Messages
+API. It defines a single shell tool, sends the user&amp;#x27;s goal to the model,
+executes any tool calls the model requests, feeds the results back, and
+stops when the model returns an end_turn response or the iteration
+budget of 10 steps is exhausted.
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The lines prefixed with &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; are the agent’s tool calls, logged from the &lt;code&gt;console.error&lt;&#x2F;code&gt; in the loop. The final paragraph is the model’s &lt;code&gt;end_turn&lt;&#x2F;code&gt; text. Three tool calls, one final answer, one closed loop.&lt;&#x2F;p&gt;
+&lt;p&gt;You have an agent.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-most-agent-demos-are-not-agents&quot;&gt;Why most agent demos are not agents&lt;&#x2F;h2&gt;
+&lt;p&gt;Now that the definition is concrete and you have a working example, the question of what is and is not an agent becomes useful. The honest version of the answer is in the table.&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;System&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: center&quot;&gt;Goal&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: center&quot;&gt;Model&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: center&quot;&gt;Context&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: center&quot;&gt;Tools&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: center&quot;&gt;Loop&lt;&#x2F;th&gt;&lt;th&gt;Verdict&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;ChatGPT, 2022 launch&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;N&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;Chatbot&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;ChatGPT today (browse, code, files)&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;Agent&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Cursor’s inline edit&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;N&lt;&#x2F;td&gt;&lt;td&gt;Completion&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;A GitHub Actions workflow&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;N&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;Workflow&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;A pure retrieval-augmented chat&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;N&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;Chatbot+RAG&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;A function-calling API call&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;N&lt;&#x2F;td&gt;&lt;td&gt;Tool call&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Claude Code in the terminal&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;Agent&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;The script in this post&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;Agent&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Auto-GPT, BabyAGI&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;Agent&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;OpenClaw&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;Agent&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;A Temporal workflow with an LLM step&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;Agent&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;The first two rows are the same product two years apart. ChatGPT launched in November 2022 as a chat window with no tools. Today the same web UI can browse the live web, run Python in a sandboxed runtime, convert and read PDFs, and generate images. It crossed the line. The interesting thing is that the user-facing language did not change. It is still called a chatbot. Under the definition we are working with, it is an agent. The boundary moved underneath the marketing.&lt;&#x2F;p&gt;
+&lt;p&gt;That is the pattern to expect across the industry over the next two years. Every chat product will quietly grow tools. Every workflow product will quietly grow a model. The labels will lag the architecture by a year or two. If you only listen to the labels, you will miss the moment a system becomes something you should be governing differently.&lt;&#x2F;p&gt;
+&lt;p&gt;The pure RAG row is the one that does not cross. A retrieval-augmented chat that only enriches its own context does not get tools in the sense that matters. The model cannot decide to do something different based on what it finds. It just answers from a richer context. Useful, sometimes excellent, not an agent. The moment that same system gains a “search again with a different query” or “fetch this document” tool, it is.&lt;&#x2F;p&gt;
+&lt;p&gt;The Temporal-with-LLM row is interesting for the opposite reason. That is an agent. It is also a workflow. The two categories are not mutually exclusive. &lt;a href=&quot;#&quot;&gt;Post seventeen&lt;&#x2F;a&gt; will explain why the production version of almost every agent ends up wrapped in a durable workflow.&lt;&#x2F;p&gt;
+&lt;p&gt;The point of the table is not to gatekeep the word. It is to point at the conceptual distinction. A chatbot fails by being uninformed. An agent fails by acting wrong. Once your system can act, the failure mode changes, and so does what you owe the operator.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;failure-modes&quot;&gt;Failure modes&lt;&#x2F;h2&gt;
+&lt;p&gt;The script above will work the first ten times you run it. Some of the failure modes it has are obvious. Some you only see in production. The honest list, in roughly the order you will hit them.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Infinite loops disguised as progress.&lt;&#x2F;strong&gt; The model can call tools forever without converging. &lt;code&gt;maxIterations = 10&lt;&#x2F;code&gt; saves you from your own demo today. It will not save you when somebody asks a harder question tomorrow. Real budgets are token-based or wall-clock-based, not step-based. We will fix this properly in &lt;a href=&quot;#&quot;&gt;post sixteen&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Cost runaway.&lt;&#x2F;strong&gt; Every iteration is a full model call with the entire conversation as input. The token cost grows roughly quadratically with the number of steps because each new turn re-sends every prior turn. A ten-step loop costs more than ten times a one-step call. Prompt caching helps. Smaller models for the cheap turns help more. We will spend &lt;a href=&quot;#&quot;&gt;post eighteen&lt;&#x2F;a&gt; on this.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Lying about success.&lt;&#x2F;strong&gt; The model can claim it completed the task without actually verifying. The shell tool does not check whether the answer is correct. You can ask “did you do X?” and get “yes” when the truth is “I tried, it failed, I gave up.” Evals exist for this. &lt;a href=&quot;#&quot;&gt;Post sixteen&lt;&#x2F;a&gt; explains them.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Broken tool output.&lt;&#x2F;strong&gt; If a tool returns a megabyte of binary data, the model will choke or hallucinate. Tool outputs need to be summarized, truncated, or schema-shaped. The agent will not do this for you.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No isolation.&lt;&#x2F;strong&gt; The shell tool will run &lt;code&gt;rm -rf $HOME&lt;&#x2F;code&gt; if the model decides that is the right command. The model will not decide this often. It will decide it at least once. That is the topic of the next post.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Hidden state.&lt;&#x2F;strong&gt; Every tool call has side effects on the runtime. Files get created. Network calls get made. Database rows get inserted. The conversation log does not capture any of it. You can replay the model’s reasoning. You cannot replay the world it was reasoning about. Idempotency and durable execution are how serious systems handle this.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Concurrency edge cases.&lt;&#x2F;strong&gt; This loop is sequential. The model can ask for multiple tools in one turn, and the example above runs them in order. If two of those tools both want to write the same file, you have a bug the model cannot see.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;None of these are reasons not to build an agent. They are the reasons the rest of this series exists.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-this-post-left-out-on-purpose&quot;&gt;What this post left out on purpose&lt;&#x2F;h2&gt;
+&lt;p&gt;A long post still leaves things out. The intentional omissions, with pointers to the posts that pick them up.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Isolation.&lt;&#x2F;strong&gt; The shell tool is dangerous. Fixed in &lt;a href=&quot;&#x2F;articles&#x2F;your-agent-wants-root&#x2F;&quot;&gt;post two: Your Agent Wants Root&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;A real tool registry.&lt;&#x2F;strong&gt; One tool is the demo. A useful agent has four to a dozen. Covered in &lt;a href=&quot;#&quot;&gt;post three&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Context strategy.&lt;&#x2F;strong&gt; The system prompt is a paragraph. Real systems load context from disk and shape it per task. Covered in &lt;a href=&quot;#&quot;&gt;post four&lt;&#x2F;a&gt; and &lt;a href=&quot;#&quot;&gt;post five&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Memory across sessions.&lt;&#x2F;strong&gt; The agent forgets everything between runs. Covered in &lt;a href=&quot;#&quot;&gt;post six&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Model selection.&lt;&#x2F;strong&gt; We hardcoded one model. Production agents route. Covered in &lt;a href=&quot;#&quot;&gt;post seven&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Tool protocol.&lt;&#x2F;strong&gt; The tool interface is bespoke. The industry converged on MCP. Covered in &lt;a href=&quot;#&quot;&gt;post eight&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Frameworks.&lt;&#x2F;strong&gt; We built this raw. The framework conversation is in &lt;a href=&quot;#&quot;&gt;post nine&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Identity, evals, durability, economics, governance.&lt;&#x2F;strong&gt; All of arc four and five.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;If you read the table of contents for the series you can see the shape: every post in the rest of the series fixes one limitation of the agent you just built.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;where-this-lands-in-the-platform&quot;&gt;Where this lands in the platform&lt;&#x2F;h2&gt;
+&lt;p&gt;The diagram at the top of this post is the smallest box in the eventual reference architecture. The agent loop sits inside a runtime. The runtime sits inside a fleet. The fleet sits inside a platform with identity, observability, governance, and a control plane. The shape we end up with in &lt;a href=&quot;#&quot;&gt;post twenty-two&lt;&#x2F;a&gt; is the same shape we started with, blown up to enterprise scale, with every component opened up and given its own production-grade story.&lt;&#x2F;p&gt;
+&lt;p&gt;You can hold the whole series in your head with a single rule. Each post adds one layer of the stack and explains why the layer below was not enough on its own.&lt;&#x2F;p&gt;
+&lt;p&gt;The next layer up is the runtime. The shell tool you just gave a frontier model is a loaded gun. Next week we explain how to point it somewhere safe.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;next&quot;&gt;Next&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Part 2: &lt;a href=&quot;&#x2F;articles&#x2F;your-agent-wants-root&#x2F;&quot;&gt;Your Agent Wants Root&lt;&#x2F;a&gt;.&lt;&#x2F;strong&gt; Why a Docker container is not enough, and what Firecracker, gVisor, and Kata actually solve. Publishes Thursday.&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>Source Code Is the New Assembly</title>
           <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
