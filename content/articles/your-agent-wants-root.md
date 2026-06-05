@@ -16,13 +16,15 @@ og_image = "your-agent-wants-root.png"
 
 > Part 2 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [What an Agent Actually Is](/articles/what-an-agent-actually-is/). Next: Tools, How Agents Actually Do Things.
 
-In [post one](/articles/what-an-agent-actually-is/) we built an agent in roughly one hundred and fifty lines of TypeScript on Bun. It had one tool, called `shell`, that ran any command you handed it under `sh -c`. The post ended with a one-line caveat: that tool will run `rm -rf $HOME` if the model decides that is the right command, and the model will decide this at least once.
+In [post one](/articles/what-an-agent-actually-is/) we did not just define what an agent is. We built one. A working harness in roughly one hundred and fifty lines of TypeScript on Bun: a loop, a one-tool registry, a system prompt, a dispatcher, and an iteration budget. The code lives at tag [`post-01`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-01) of [`the-agent-platform-handbook`](https://github.com/raskell-io/the-agent-platform-handbook), and the rest of the series builds on it one layer at a time. Every post adds one file or rewrites one piece. This is the post that adds the second layer.
+
+The harness has one tool so far, called `shell`, that runs any command you hand it under `sh -c`. Post one closed with a one-line caveat: that tool will run `rm -rf $HOME` if the model decides that is the right command, and the model will decide this at least once.
 
 This post is about the gap between "at least once" and "we are fine with that."
 
 The shell tool from post one is, by any honest reading, an arbitrary-code-execution primitive with a polite English-language API in front of it. The model is non-deterministic. Tool results can carry instructions the model will treat as authoritative. Other agents may feed inputs back into your loop. Each of those is a way for a tool call to do something the operator did not intend. The defense is not to write better prompts. The defense is to put a fence around the runtime so the cost of a bad call is bounded.
 
-So this is the runtime post. We will sketch the threat model, walk the lineage of isolation primitives from chroot to microVMs, explain why "just run it in Docker" is only half an answer, and end with a hardened sandbox you can wrap the post-one agent in today.
+So this is the runtime post: the layer that sits underneath every tool the harness will ever have. We will sketch the threat model, walk the lineage of isolation primitives from chroot to microVMs, explain why "just run it in Docker" is only half an answer, and end by adding that layer to the harness from post one. The agent loop does not move. Only the floor underneath the shell tool changes, and the diff lands as tag [`post-02`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-02) in the same repo.
 
 ## What an agent runtime is actually exposed to
 
@@ -122,9 +124,9 @@ Read it bottom-up. Firecracker and Kata give you the strongest isolation by givi
 
 Pick the layer that matches the workload. Stacking is allowed and often correct: hardened Docker plus gVisor is the usual production starting point for agent fleets.
 
-## A hardened sandbox you can use today
+## Adding the runtime layer to the harness
 
-The cheapest meaningful upgrade to the post-one agent is to stop running tool calls in the same process as the agent loop. Wrap the shell tool in a hardened container, with gVisor underneath if you have it installed. The agent loop stays the same. The blast radius drops by an order of magnitude.
+The cheapest meaningful upgrade to the harness from post one is to stop running tool calls in the same process as the agent loop. Wrap the shell tool in a hardened container, with gVisor underneath if you have it installed. The loop stays the same. The blast radius drops by an order of magnitude. None of the four other pieces of the harness (system prompt, dispatcher, message history, iteration budget) need to know any of this happened.
 
 Install gVisor once on the host:
 
@@ -141,7 +143,7 @@ sudo runsc install
 sudo systemctl reload docker
 ```
 
-You now have `runsc` as an available Docker runtime. The rest of this section is three changes to the post-one harness. The agent loop itself does not change. The full source is at tag [`post-02`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-02) of `the-agent-platform-handbook`; the diff against [`post-01`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-01) is exactly these three files.
+You now have `runsc` as an available Docker runtime. From here, the rest of this section is three small changes to the harness from post one. The repo at `post-01` has three files (`agent.ts`, `tools.ts`, `package.json`); at `post-02` it has four. Run `git diff post-01 post-02` against [`the-agent-platform-handbook`](https://github.com/raskell-io/the-agent-platform-handbook) and the entire delta of this post is on screen.
 
 **Change 1: extract the `Tool` type into its own file.** In post one, `Tool` lived at the top of `tools.ts` next to the only implementation. We are about to grow the toolbox and start swapping tool implementations between sandboxed and non-sandboxed variants, so the type and the implementations want to live in different files. Pure refactor, no behavior change.
 
@@ -228,7 +230,7 @@ Total damage: one new file of ten lines, one moved import, and forty-five lines 
 
 A few things to notice.
 
-The agent loop did not change. The contract between the agent and the tool is the same JSON. The sandbox is a runtime concern, not an agent-architecture concern. This separation is exactly the point. You should be able to swap gVisor for Firecracker, or Docker for Podman, or Alpine for a custom image, without touching the loop.
+The harness shape from post one is intact. Same loop, same dispatcher, same system prompt, same iteration budget, same JSON contract between the agent and the tool. The sandbox is a runtime concern, not an agent-architecture concern. This separation is exactly the point. You should be able to swap gVisor for Firecracker, or Docker for Podman, or Alpine for a custom image, without touching the loop.
 
 The tradeoffs are real. Spawning a container per tool call costs roughly 200 to 800 milliseconds on a modern host, mostly Docker daemon overhead. For a coding agent that runs three shell commands per turn, that is acceptable. For a sub-millisecond-per-call tool, it is not. The fix at scale is a container pool, or moving to Firecracker microVMs with snapshot/restore where boot time drops to around 125 milliseconds and per-call cost drops further.
 
@@ -262,11 +264,11 @@ Isolation is a necessary condition for a safe agent runtime. It is not a suffici
 
 ## Where this lands in the platform
 
-You can hold the platform in your head one box at a time. Post one drew the agent loop. This post just opened the runtime box and put three concrete things inside it: a hardened container, a user-space kernel, and a microVM. The reference architecture in [post twenty-two](#) will keep this box exactly where it is and treat the contents as a choice that varies by workload.
+You can hold the platform in your head one box at a time, and you can hold the harness on disk one tag at a time. Post one drew the agent loop and shipped it as [`post-01`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-01). This post opened the runtime box, put three concrete things inside it (a hardened container, a user-space kernel, a microVM), picked one, and shipped the result as [`post-02`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-02). The reference architecture in [post twenty-two](#) will keep this box exactly where it is and treat the contents as a choice that varies by workload.
 
-The rule from post one still holds. Each post adds one layer and explains why the layer below was not enough.
+The rule from post one still holds. Each post adds one layer to the same harness and explains why the layer below was not enough. The harness only ever grows; it does not get rewritten.
 
-The layer below this one was the shell tool itself. The layer above is the rest of the toolbox. An agent with one tool is a demo. An agent with a real tool registry is software. Next we build the registry, give it a schema, and explain what changes when the model decides between four tools instead of one.
+The layer below this one was the shell tool itself. The layer above is the rest of the toolbox. An agent with one tool is a demo. An agent with a real tool registry is software. Next we extend the same harness with a real registry, give it a schema, and explain what changes when the model decides between four tools instead of one. That post will ship as `post-03` in the same repo.
 
 ## Next
 
