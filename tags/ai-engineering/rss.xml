@@ -7,7 +7,181 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/ai-engineering/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Tue, 02 Jun 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Fri, 05 Jun 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Your Agent Wants Root</title>
+          <pubDate>Fri, 05 Jun 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/your-agent-wants-root/</link>
+          <guid>https://raskell.io/articles/your-agent-wants-root/</guid>
+          <description xml:base="https://raskell.io/articles/your-agent-wants-root/">&lt;blockquote&gt;
+&lt;p&gt;Part 2 of &lt;em&gt;The Agent Platform Handbook. From Loop to Platform.&lt;&#x2F;em&gt; Previous: &lt;a href=&quot;&#x2F;articles&#x2F;what-an-agent-actually-is&#x2F;&quot;&gt;What an Agent Actually Is&lt;&#x2F;a&gt;. Next: Tools, How Agents Actually Do Things.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;In &lt;a href=&quot;&#x2F;articles&#x2F;what-an-agent-actually-is&#x2F;&quot;&gt;post one&lt;&#x2F;a&gt; we built an agent in roughly one hundred and fifty lines of TypeScript on Bun. It had one tool, called &lt;code&gt;shell&lt;&#x2F;code&gt;, that ran any command you handed it under &lt;code&gt;sh -c&lt;&#x2F;code&gt;. The post ended with a one-line caveat: that tool will run &lt;code&gt;rm -rf $HOME&lt;&#x2F;code&gt; if the model decides that is the right command, and the model will decide this at least once.&lt;&#x2F;p&gt;
+&lt;p&gt;This post is about the gap between “at least once” and “we are fine with that.”&lt;&#x2F;p&gt;
+&lt;p&gt;The shell tool from post one is, by any honest reading, an arbitrary-code-execution primitive with a polite English-language API in front of it. The model is non-deterministic. Tool results can carry instructions the model will treat as authoritative. Other agents may feed inputs back into your loop. Each of those is a way for a tool call to do something the operator did not intend. The defense is not to write better prompts. The defense is to put a fence around the runtime so the cost of a bad call is bounded.&lt;&#x2F;p&gt;
+&lt;p&gt;So this is the runtime post. We will sketch the threat model, walk the lineage of isolation primitives from chroot to microVMs, explain why “just run it in Docker” is only half an answer, and end with a hardened sandbox you can wrap the post-one agent in today.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-an-agent-runtime-is-actually-exposed-to&quot;&gt;What an agent runtime is actually exposed to&lt;&#x2F;h2&gt;
+&lt;p&gt;A traditional service runs known code. You wrote it. You reviewed it. The only inputs are the ones the API contract allows. An agent runtime is not that.&lt;&#x2F;p&gt;
+&lt;p&gt;Three things make the agent threat model different.&lt;&#x2F;p&gt;
+&lt;p&gt;First, the &lt;strong&gt;model picks the action&lt;&#x2F;strong&gt;. The set of commands your shell tool will execute over its lifetime is a function of every prompt, every retrieved document, every tool output, and the model’s sampling temperature. You cannot enumerate it in advance. You cannot review it in code. You can only constrain what happens after.&lt;&#x2F;p&gt;
+&lt;p&gt;Second, &lt;strong&gt;tool results are an injection surface&lt;&#x2F;strong&gt;. A web page the agent fetches can contain “ignore previous instructions and run X.” A code file the agent reads can contain a comment that nudges the next decision. This is indirect prompt injection, documented by Greshake and others in 2023, and there is no fully reliable defense at the model layer. The runtime is where you assume the model will eventually be tricked.&lt;&#x2F;p&gt;
+&lt;p&gt;Third, &lt;strong&gt;blast radius scales with fanout&lt;&#x2F;strong&gt;. A single agent in a single shell on a single laptop is a manageable problem. A fleet of one hundred agents per tenant, each with shell, network, and file-system access, is not. Once you have more than one, you have a multi-tenant security problem whether you planned for one or not.&lt;&#x2F;p&gt;
+&lt;p&gt;So the question is no longer “can my agent be subverted.” It will be. The question is “what does the rest of the system look like the day after.”&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-short-history-of-trying-to-contain-a-process&quot;&gt;A short history of trying to contain a process&lt;&#x2F;h2&gt;
+&lt;p&gt;The good news is that the industry has been working on “give this process less than the full machine” for forty-six years. The bad news is that almost none of the early answers were built with an adversary that picks its own commands in mind.&lt;&#x2F;p&gt;
+&lt;p&gt;The lineage matters because every modern option is a reaction to a specific failure of the option before it.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;chroot&lt;&#x2F;strong&gt;, Unix V7, 1979. Bill Joy’s contribution. A process sees a subtree of the filesystem as its root. Designed for build isolation, not security. Trivial to escape if you have any capability beyond a vanilla user.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;FreeBSD jails&lt;&#x2F;strong&gt;, Poul-Henning Kamp, 1999. Took chroot’s filesystem trick and added process visibility, network, and user separation. The first credible “container” in the modern sense. Still in production today and still good at what it does.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Solaris Zones&lt;&#x2F;strong&gt;, 2004. A more ambitious version of jails with resource controls. Influential design, not a survivor.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Linux cgroups and namespaces&lt;&#x2F;strong&gt;, 2002 through 2008. Namespaces gave you separate views of mounts, PIDs, networks, and users. cgroups, originally Process Containers from Google in 2007, gave you per-group resource accounting. The pieces existed. The user experience was awful.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;LXC&lt;&#x2F;strong&gt;, 2008. Tied cgroups and namespaces into a single CLI. Still awful, just less so.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Docker&lt;&#x2F;strong&gt;, 2013. Took the same primitives and made them shippable. Image format, registry, declarative configuration, single command. The reason every paragraph after this one talks about “containers” is Docker.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Kubernetes&lt;&#x2F;strong&gt;, 2014. Made running many containers across many machines a default. Pushed isolation choices down into the runtime layer.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Kata Containers&lt;&#x2F;strong&gt;, 2017. A merger of Intel Clear Containers and Hyper.sh runV. Each pod runs in its own Linux VM, exposed to Kubernetes through a runtime that looks OCI-compatible. The first serious answer to “what if my container shared less than a whole kernel with the host.”&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Firecracker&lt;&#x2F;strong&gt;, AWS, 2018. A minimal virtual machine monitor on top of KVM, built to run Lambda and Fargate workloads. Around 125 milliseconds to boot. No legacy device model. Designed from the start for multi-tenant short-lived workloads.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;gVisor&lt;&#x2F;strong&gt;, Google, 2018. A user-space kernel, called &lt;code&gt;runsc&lt;&#x2F;code&gt;, that intercepts syscalls from a container and services most of them itself, only escalating a narrow subset to the host. Drop-in replacement for &lt;code&gt;runc&lt;&#x2F;code&gt; in any OCI-compatible runtime. Slower I&#x2F;O, smaller attack surface.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Wasmtime and the WASI runtimes&lt;&#x2F;strong&gt;, 2019 onward. A different model entirely: compile your tool to WebAssembly, run it in a sandbox with capability-passed I&#x2F;O. Excellent for things that fit. Not yet a general answer for “run arbitrary shell commands.”&lt;&#x2F;p&gt;
+&lt;p&gt;The lesson from this lineage is the one the agent runtime question keeps re-asking. Every layer was designed for the threat model of the time. chroot was about build isolation. Docker was about deployment ergonomics. Firecracker, gVisor, and Kata were the first three options designed in an era where the workload itself was assumed to be untrusted. That assumption is the one that matches what an agent does.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-a-default-docker-container-is-not-enough&quot;&gt;Why a default Docker container is not enough&lt;&#x2F;h2&gt;
+&lt;p&gt;Docker is the default for almost every agent project that is past the laptop stage. There are good reasons. The packaging is good. The ecosystem is enormous. Kubernetes speaks it natively. For most workloads that are not adversarial, it is the right answer.&lt;&#x2F;p&gt;
+&lt;p&gt;Three things stop it from being enough for an agent runtime.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;The kernel is shared.&lt;&#x2F;strong&gt; A default &lt;code&gt;docker run&lt;&#x2F;code&gt; puts your process in a set of namespaces with a set of cgroups, but it runs against the same kernel as the host. Any kernel bug reachable from the container becomes a host compromise. This is not theoretical. The runc CVEs of 2019 and 2024 each gave a container with default settings a path to escape. Those got patched. The next one is in flight somewhere.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;The defaults are generous.&lt;&#x2F;strong&gt; A vanilla &lt;code&gt;docker run&lt;&#x2F;code&gt; keeps a substantial set of Linux capabilities, allows the container to write to its own root filesystem, leaves network access to internal services open by default, and runs the process as root inside the container. None of those are inherent to containers. All of them have to be turned off explicitly.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;The agent will be told to do things.&lt;&#x2F;strong&gt; Volume mounts that expose the host filesystem will get used. Network interfaces that reach internal APIs will get called. Secrets sitting in environment variables will end up in tool output. The model is helpful. It does not have a security review board.&lt;&#x2F;p&gt;
+&lt;p&gt;The honest version of the rule is this. A hardened Docker container, with capabilities dropped, network disabled, the root filesystem read-only, user namespacing on, no-new-privileges set, and resource caps in place, is enough for &lt;strong&gt;single-tenant, low-stakes, well-scoped&lt;&#x2F;strong&gt; agent workloads. It is not enough for multi-tenant or for code paths where the agent can be steered by external input. For those, you want a second isolation boundary underneath the container.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-mental-model&quot;&gt;The mental model&lt;&#x2F;h2&gt;
+&lt;p&gt;There are three boundaries you can put between an agent’s tool call and the host kernel. Stack them in your head before picking a vendor.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Three isolation boundaries for an agent tool call&quot;&gt;host kernel
+       =================================================
+       |                                               |
+       |    +------------------+    +---------------+  |
+       |    |  Docker default  |    |  Hardened     |  |
+       |    |  ----------------|    |  Docker       |  |
+       |    |  shared kernel,  |    |  ----------   |  |
+       |    |  many caps,      |    |  no caps,     |  |
+       |    |  network on,     |    |  no net,      |  |
+       |    |  fs writable     |    |  ro fs        |  |
+       |    +------------------+    +---------------+  |
+       |             ^                       ^         |
+       |             |                       |         |
+       |    +--------+-----------------------+------+  |
+       |    |               gVisor (runsc)          |  |
+       |    |  user-space kernel intercepts the     |  |
+       |    |  syscall surface. host kernel sees    |  |
+       |    |  only a narrow subset.                |  |
+       |    +---------------------------------------+  |
+       |                       ^                       |
+       |                       |                       |
+       |    +------------------+--------------------+  |
+       |    |        Firecracker &amp;#x2F; Kata             |  |
+       |    |  separate Linux kernel per workload.  |  |
+       |    |  KVM is the boundary. host kernel is  |  |
+       |    |  one hypervisor call away.            |  |
+       |    +---------------------------------------+  |
+       =================================================
+                            host hardware&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Read it bottom-up. Firecracker and Kata give you the strongest isolation by giving the workload its own kernel and putting KVM between it and yours. gVisor gives you most of the same benefit with a lower operational cost by replacing the syscall surface with a user-space implementation. Hardened Docker is what you actually want at the laptop or small-team scale. Default Docker is fine for code you wrote and not for code the model wrote.&lt;&#x2F;p&gt;
+&lt;p&gt;Pick the layer that matches the workload. Stacking is allowed and often correct: hardened Docker plus gVisor is the usual production starting point for agent fleets.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-hardened-sandbox-you-can-use-today&quot;&gt;A hardened sandbox you can use today&lt;&#x2F;h2&gt;
+&lt;p&gt;The cheapest meaningful upgrade to the post-one agent is to stop running tool calls in the same process as the agent loop. Wrap the shell tool in a hardened container, with gVisor underneath if you have it installed. The agent loop stays the same. The blast radius drops by an order of magnitude.&lt;&#x2F;p&gt;
+&lt;p&gt;Install gVisor once on the host:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;# Linux only. macOS users can skip gVisor and keep the hardened flags.
+curl -fsSL https:&amp;#x2F;&amp;#x2F;gvisor.dev&amp;#x2F;archive.key | sudo gpg --dearmor \
+  -o &amp;#x2F;usr&amp;#x2F;share&amp;#x2F;keyrings&amp;#x2F;gvisor-archive-keyring.gpg
+echo &amp;quot;deb [arch=$(dpkg --print-architecture) \
+  signed-by=&amp;#x2F;usr&amp;#x2F;share&amp;#x2F;keyrings&amp;#x2F;gvisor-archive-keyring.gpg] \
+  https:&amp;#x2F;&amp;#x2F;storage.googleapis.com&amp;#x2F;gvisor&amp;#x2F;releases release main&amp;quot; | \
+  sudo tee &amp;#x2F;etc&amp;#x2F;apt&amp;#x2F;sources.list.d&amp;#x2F;gvisor.list
+sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y runsc
+sudo runsc install
+sudo systemctl reload docker
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You now have &lt;code&gt;runsc&lt;&#x2F;code&gt; as an available Docker runtime. Replace the shell tool from post one with the version below. The agent loop does not change.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; tools.ts (sandboxed version)
+import type { Tool } from &amp;quot;.&amp;#x2F;types&amp;quot;;
+
+const SANDBOX_IMAGE = &amp;quot;alpine:3.20&amp;quot;;
+const SANDBOX_WORKDIR = &amp;quot;&amp;#x2F;work&amp;quot;;
+
+const dockerArgs = (image: string, command: string) =&amp;gt; [
+  &amp;quot;docker&amp;quot;, &amp;quot;run&amp;quot;,
+  &amp;quot;--rm&amp;quot;,
+  &amp;quot;--runtime=runsc&amp;quot;,                  &amp;#x2F;&amp;#x2F; gVisor. drop on macOS.
+  &amp;quot;--network=none&amp;quot;,                   &amp;#x2F;&amp;#x2F; no exfil, no SSRF
+  &amp;quot;--read-only&amp;quot;,                      &amp;#x2F;&amp;#x2F; no writes to the rootfs
+  &amp;quot;--tmpfs&amp;quot;, &amp;quot;&amp;#x2F;tmp:size=64m&amp;quot;,         &amp;#x2F;&amp;#x2F; give &amp;#x2F;tmp back, bounded
+  &amp;quot;--cap-drop=ALL&amp;quot;,                   &amp;#x2F;&amp;#x2F; no Linux capabilities
+  &amp;quot;--security-opt=no-new-privileges&amp;quot;, &amp;#x2F;&amp;#x2F; no setuid escalation
+  &amp;quot;--user=1000:1000&amp;quot;,                 &amp;#x2F;&amp;#x2F; unprivileged uid in the container
+  &amp;quot;--memory=256m&amp;quot;,                    &amp;#x2F;&amp;#x2F; hard memory cap
+  &amp;quot;--cpus=0.5&amp;quot;,                       &amp;#x2F;&amp;#x2F; fractional cpu cap
+  &amp;quot;--pids-limit=64&amp;quot;,                  &amp;#x2F;&amp;#x2F; no fork bombs
+  &amp;quot;--workdir&amp;quot;, SANDBOX_WORKDIR,
+  image,
+  &amp;quot;sh&amp;quot;, &amp;quot;-c&amp;quot;, command,
+];
+
+export const shell: Tool = {
+  name: &amp;quot;shell&amp;quot;,
+  description:
+    &amp;quot;Run a shell command inside an isolated sandbox with no network and a read-only filesystem. Returns stdout, stderr, and exit code as JSON.&amp;quot;,
+  input_schema: {
+    type: &amp;quot;object&amp;quot;,
+    properties: {
+      command: {
+        type: &amp;quot;string&amp;quot;,
+        description: &amp;quot;Shell command to run under `sh -c` inside the sandbox.&amp;quot;,
+      },
+    },
+    required: [&amp;quot;command&amp;quot;],
+  },
+  run: async ({ command }) =&amp;gt; {
+    const args = dockerArgs(SANDBOX_IMAGE, String(command));
+    const proc = Bun.spawn(args, { stdout: &amp;quot;pipe&amp;quot;, stderr: &amp;quot;pipe&amp;quot; });
+    const [stdout, stderr] = await Promise.all([
+      new Response(proc.stdout).text(),
+      new Response(proc.stderr).text(),
+    ]);
+    const code = await proc.exited;
+    return JSON.stringify({ code, stdout, stderr });
+  },
+};
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;That is forty-five lines of code and roughly a thousand-fold reduction in blast radius. The agent can still ask &lt;code&gt;rm -rf &#x2F;&lt;&#x2F;code&gt;. It will return an exit code, an error, and a clean host. Network calls will fail closed. Reads outside &lt;code&gt;&#x2F;work&lt;&#x2F;code&gt; are not possible because nothing is mounted into &lt;code&gt;&#x2F;work&lt;&#x2F;code&gt;. The sandbox dies the moment the command returns, so persistence between calls is also gone, which is a separate problem we will pick up in &lt;a href=&quot;#&quot;&gt;post six on memory&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;A few things to notice.&lt;&#x2F;p&gt;
+&lt;p&gt;The agent loop did not change. The contract between the agent and the tool is the same JSON. The sandbox is a runtime concern, not an agent-architecture concern. This separation is exactly the point. You should be able to swap gVisor for Firecracker, or Docker for Podman, or Alpine for a custom image, without touching the loop.&lt;&#x2F;p&gt;
+&lt;p&gt;The tradeoffs are real. Spawning a container per tool call costs roughly 200 to 800 milliseconds on a modern host, mostly Docker daemon overhead. For a coding agent that runs three shell commands per turn, that is acceptable. For a sub-millisecond-per-call tool, it is not. The fix at scale is a container pool, or moving to Firecracker microVMs with snapshot&#x2F;restore where boot time drops to around 125 milliseconds and per-call cost drops further.&lt;&#x2F;p&gt;
+&lt;p&gt;The image is &lt;code&gt;alpine:3.20&lt;&#x2F;code&gt;, which is around 8 megabytes. Use a bigger image when the workload needs it. Mount a per-session work directory under &lt;code&gt;&#x2F;work&lt;&#x2F;code&gt; when the agent needs to read or write files between calls. Both of those are configuration changes, not architecture changes.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;picking-the-layer&quot;&gt;Picking the layer&lt;&#x2F;h2&gt;
+&lt;p&gt;Use the table to pick where to start. The honest answer for most teams is “hardened Docker plus gVisor today, Firecracker microVMs later when scale or tenancy demands it.”&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Workload&lt;&#x2F;th&gt;&lt;th&gt;Sensible default&lt;&#x2F;th&gt;&lt;th&gt;Why&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Local dev agent, one user, your laptop&lt;&#x2F;td&gt;&lt;td&gt;Hardened Docker, gVisor if available&lt;&#x2F;td&gt;&lt;td&gt;Convenience wins; the blast radius is one machine.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Shared internal tool, single tenant&lt;&#x2F;td&gt;&lt;td&gt;Hardened Docker plus gVisor&lt;&#x2F;td&gt;&lt;td&gt;Cheap upgrade, real benefit, no orchestration cost.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Multi-tenant SaaS, agent per user session&lt;&#x2F;td&gt;&lt;td&gt;Firecracker microVM per session&lt;&#x2F;td&gt;&lt;td&gt;Per-tenant kernel isolation; fast boot per session.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Kubernetes-native agent platform&lt;&#x2F;td&gt;&lt;td&gt;Kata Containers&lt;&#x2F;td&gt;&lt;td&gt;Drop-in OCI shape, pod-level VM boundary.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Unknown code from the public internet&lt;&#x2F;td&gt;&lt;td&gt;gVisor at minimum, microVM preferred&lt;&#x2F;td&gt;&lt;td&gt;Syscall surface or hypervisor surface, not yours.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;WASM-shaped pure-function tool&lt;&#x2F;td&gt;&lt;td&gt;Wasmtime with capability-passed I&#x2F;O&lt;&#x2F;td&gt;&lt;td&gt;Fastest sandbox available when the workload fits.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Throwaway batch job, internal only&lt;&#x2F;td&gt;&lt;td&gt;Hardened Docker&lt;&#x2F;td&gt;&lt;td&gt;Stacking layers adds cost without proportional gain.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;The table assumes Linux. macOS does not have KVM, so Firecracker and gVisor are Linux-host options. On macOS you can run them inside a Linux VM (Lima, OrbStack, Docker Desktop) and pay the nested cost.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-this-layer-does-not-solve&quot;&gt;What this layer does not solve&lt;&#x2F;h2&gt;
+&lt;p&gt;Isolation is a necessary condition for a safe agent runtime. It is not a sufficient one. The honest list of what is still on your plate after this post.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Outbound network policy.&lt;&#x2F;strong&gt; &lt;code&gt;--network=none&lt;&#x2F;code&gt; is the right default for the shell tool. The moment you give an agent an &lt;code&gt;http&lt;&#x2F;code&gt; tool, you need an egress policy that distinguishes “the model should reach the public web” from “the model should never reach the internal metadata service.” That is its own design problem.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Persistent state.&lt;&#x2F;strong&gt; A throwaway sandbox forgets everything between calls. Real agents need memory across tool invocations. The design question is which directories survive, who can read them, and what the eviction policy is. We will come back to this in &lt;a href=&quot;#&quot;&gt;post six&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Tool-level policy.&lt;&#x2F;strong&gt; Even inside a perfectly isolated sandbox, you may want certain commands to require human approval. That is a permissions problem, not an isolation problem, and we will spend &lt;a href=&quot;#&quot;&gt;post fourteen&lt;&#x2F;a&gt; on it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Identity.&lt;&#x2F;strong&gt; A sandboxed container still has to call your tools, your models, and your APIs. Long-lived API keys baked into the image are how production agent fleets get embarrassed. &lt;a href=&quot;#&quot;&gt;Post thirteen&lt;&#x2F;a&gt; puts SPIFFE under this stack.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Time and resource budgets.&lt;&#x2F;strong&gt; &lt;code&gt;--cpus=0.5&lt;&#x2F;code&gt; and &lt;code&gt;--memory=256m&lt;&#x2F;code&gt; cap a single invocation. They do not cap a loop that asks for one hundred invocations. Iteration budgets, token budgets, and wall-clock budgets are a separate fence. &lt;a href=&quot;#&quot;&gt;Post sixteen&lt;&#x2F;a&gt; covers that fence.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;where-this-lands-in-the-platform&quot;&gt;Where this lands in the platform&lt;&#x2F;h2&gt;
+&lt;p&gt;You can hold the platform in your head one box at a time. Post one drew the agent loop. This post just opened the runtime box and put three concrete things inside it: a hardened container, a user-space kernel, and a microVM. The reference architecture in &lt;a href=&quot;#&quot;&gt;post twenty-two&lt;&#x2F;a&gt; will keep this box exactly where it is and treat the contents as a choice that varies by workload.&lt;&#x2F;p&gt;
+&lt;p&gt;The rule from post one still holds. Each post adds one layer and explains why the layer below was not enough.&lt;&#x2F;p&gt;
+&lt;p&gt;The layer below this one was the shell tool itself. The layer above is the rest of the toolbox. An agent with one tool is a demo. An agent with a real tool registry is software. Next we build the registry, give it a schema, and explain what changes when the model decides between four tools instead of one.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;next&quot;&gt;Next&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Part 3: Tools, How Agents Actually Do Things.&lt;&#x2F;strong&gt; Function calling, structured outputs, schema design that survives model drift, and the failure modes nobody talks about. We extend the post-one agent with a four-tool registry and a tool-selection trace.&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>What an Agent Actually Is</title>
           <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
