@@ -16,7 +16,11 @@ og_image = "your-agent-wants-root.png"
 
 > Part 2 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [What an Agent Actually Is](/articles/what-an-agent-actually-is/). Next: Tools, How Agents Actually Do Things.
 
-In [post one](/articles/what-an-agent-actually-is/) we did not just define what an agent is. We built one. A working harness in roughly one hundred and fifty lines of TypeScript on Bun: a loop, a one-tool registry, a system prompt, a dispatcher, and an iteration budget. The code lives at tag [`post-01`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-01) of [`the-agent-platform-handbook`](https://github.com/raskell-io/the-agent-platform-handbook), and the rest of the series builds on it one layer at a time. Every post adds one file or rewrites one piece. This is the post that adds the second layer.
+In [post one](/articles/what-an-agent-actually-is/) we did not just define what an agent is. We built one. A working harness in roughly one hundred and fifty lines of TypeScript on Bun: a loop, a one-tool registry, a system prompt, a dispatcher, and an iteration budget.
+
+A note on the word, because post one did not use it. The *harness* is the code that wraps the model and turns a chat API into something that acts. Loop, tools, system prompt, dispatcher, budgets today, and (further into the series) memory, identity, observability, policy, and the rest. Everything that is yours to write and yours to operate. The model is a dependency you call. The harness is the artifact you ship. In this series the harness is what grows, post by post.
+
+The code lives at tag [`post-01`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-01) of [`the-agent-platform-handbook`](https://github.com/raskell-io/the-agent-platform-handbook), and the rest of the series builds on it one layer at a time. Every post adds one file or rewrites one piece. This is the post that adds the second layer.
 
 The harness has one tool so far, called `shell`, that runs any command you hand it under `sh -c`. Post one closed with a one-line caveat: that tool will run `rm -rf $HOME` if the model decides that is the right command, and the model will decide this at least once.
 
