@@ -141,9 +141,36 @@ sudo runsc install
 sudo systemctl reload docker
 ```
 
-You now have `runsc` as an available Docker runtime. Replace the shell tool from post one with the version below. The agent loop does not change.
+You now have `runsc` as an available Docker runtime. The rest of this section is three changes to the post-one harness. The agent loop itself does not change. The full source is at tag [`post-02`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-02) of `the-agent-platform-handbook`; the diff against [`post-01`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-01) is exactly these three files.
 
-The full source for this post is in [`the-agent-platform-handbook`](https://github.com/raskell-io/the-agent-platform-handbook) at tag `post-02`. The diff against `post-01` is exactly what the prose claims: a new `types.ts`, a rewritten `tools.ts`, and a one-line import change in `agent.ts`.
+**Change 1: extract the `Tool` type into its own file.** In post one, `Tool` lived at the top of `tools.ts` next to the only implementation. We are about to grow the toolbox and start swapping tool implementations between sandboxed and non-sandboxed variants, so the type and the implementations want to live in different files. Pure refactor, no behavior change.
+
+```typescript
+// types.ts (new file)
+export type Tool = {
+  name: string;
+  description: string;
+  input_schema: {
+    type: "object";
+    properties: Record<string, unknown>;
+    required?: string[];
+  };
+  run: (input: Record<string, unknown>) => Promise<string>;
+};
+```
+
+**Change 2: point `agent.ts` at the new location.** One line. The loop, the system prompt, the iteration budget, the tool-call dispatcher are all untouched.
+
+```diff
+  // agent.ts
+  import Anthropic from "@anthropic-ai/sdk";
+  import type { MessageParam, ToolResultBlockParam } from "@anthropic-ai/sdk/resources/messages";
+- import { shell, type Tool } from "./tools";
++ import { shell } from "./tools";
++ import type { Tool } from "./types";
+```
+
+**Change 3: rewrite `tools.ts` so the shell tool runs inside a hardened container.** The exported name, description, and input schema stay the same so the model sees the same tool. Everything that changes is below the public interface, in `run`. That is the separation we are paying for: the agent does not know its tool got fenced.
 
 ```typescript
 // tools.ts (sandboxed version)
@@ -197,7 +224,7 @@ export const shell: Tool = {
 };
 ```
 
-That is forty-five lines of code and roughly a thousand-fold reduction in blast radius. The agent can still ask `rm -rf /`. It will return an exit code, an error, and a clean host. Network calls will fail closed. Reads outside `/work` are not possible because nothing is mounted into `/work`. The sandbox dies the moment the command returns, so persistence between calls is also gone, which is a separate problem we will pick up in [post six on memory](#).
+Total damage: one new file of ten lines, one moved import, and forty-five lines of `tools.ts`. In exchange, roughly a thousand-fold reduction in blast radius. The agent can still ask `rm -rf /`. It will return an exit code, an error, and a clean host. Network calls will fail closed. Reads outside `/work` are not possible because nothing is mounted into `/work`. The sandbox dies the moment the command returns, so persistence between calls is also gone, which is a separate problem we will pick up in [post six on memory](#).
 
 A few things to notice.
 
