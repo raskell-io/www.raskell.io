@@ -143,6 +143,8 @@ sudo systemctl reload docker
 
 You now have `runsc` as an available Docker runtime. Replace the shell tool from post one with the version below. The agent loop does not change.
 
+The full source for this post is in [`the-agent-platform-handbook`](https://github.com/raskell-io/the-agent-platform-handbook) at tag `post-02`. The diff against `post-01` is exactly what the prose claims: a new `types.ts`, a rewritten `tools.ts`, and a one-line import change in `agent.ts`.
+
 ```typescript
 // tools.ts (sandboxed version)
 import type { Tool } from "./types";
