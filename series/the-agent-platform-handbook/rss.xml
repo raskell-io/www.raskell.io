@@ -97,8 +97,29 @@ sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y runsc
 sudo runsc install
 sudo systemctl reload docker
 &lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;You now have &lt;code&gt;runsc&lt;&#x2F;code&gt; as an available Docker runtime. Replace the shell tool from post one with the version below. The agent loop does not change.&lt;&#x2F;p&gt;
-&lt;p&gt;The full source for this post is in &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&quot;&gt;&lt;code&gt;the-agent-platform-handbook&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; at tag &lt;code&gt;post-02&lt;&#x2F;code&gt;. The diff against &lt;code&gt;post-01&lt;&#x2F;code&gt; is exactly what the prose claims: a new &lt;code&gt;types.ts&lt;&#x2F;code&gt;, a rewritten &lt;code&gt;tools.ts&lt;&#x2F;code&gt;, and a one-line import change in &lt;code&gt;agent.ts&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;You now have &lt;code&gt;runsc&lt;&#x2F;code&gt; as an available Docker runtime. The rest of this section is three changes to the post-one harness. The agent loop itself does not change. The full source is at tag &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&#x2F;tree&#x2F;post-02&quot;&gt;&lt;code&gt;post-02&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; of &lt;code&gt;the-agent-platform-handbook&lt;&#x2F;code&gt;; the diff against &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&#x2F;tree&#x2F;post-01&quot;&gt;&lt;code&gt;post-01&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; is exactly these three files.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Change 1: extract the &lt;code&gt;Tool&lt;&#x2F;code&gt; type into its own file.&lt;&#x2F;strong&gt; In post one, &lt;code&gt;Tool&lt;&#x2F;code&gt; lived at the top of &lt;code&gt;tools.ts&lt;&#x2F;code&gt; next to the only implementation. We are about to grow the toolbox and start swapping tool implementations between sandboxed and non-sandboxed variants, so the type and the implementations want to live in different files. Pure refactor, no behavior change.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; types.ts (new file)
+export type Tool = {
+  name: string;
+  description: string;
+  input_schema: {
+    type: &amp;quot;object&amp;quot;;
+    properties: Record&amp;lt;string, unknown&amp;gt;;
+    required?: string[];
+  };
+  run: (input: Record&amp;lt;string, unknown&amp;gt;) =&amp;gt; Promise&amp;lt;string&amp;gt;;
+};
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Change 2: point &lt;code&gt;agent.ts&lt;&#x2F;code&gt; at the new location.&lt;&#x2F;strong&gt; One line. The loop, the system prompt, the iteration budget, the tool-call dispatcher are all untouched.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;diff&quot; class=&quot;language-diff &quot;&gt;&lt;code class=&quot;language-diff&quot; data-lang=&quot;diff&quot;&gt;  &amp;#x2F;&amp;#x2F; agent.ts
+  import Anthropic from &amp;quot;@anthropic-ai&amp;#x2F;sdk&amp;quot;;
+  import type { MessageParam, ToolResultBlockParam } from &amp;quot;@anthropic-ai&amp;#x2F;sdk&amp;#x2F;resources&amp;#x2F;messages&amp;quot;;
+- import { shell, type Tool } from &amp;quot;.&amp;#x2F;tools&amp;quot;;
++ import { shell } from &amp;quot;.&amp;#x2F;tools&amp;quot;;
++ import type { Tool } from &amp;quot;.&amp;#x2F;types&amp;quot;;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Change 3: rewrite &lt;code&gt;tools.ts&lt;&#x2F;code&gt; so the shell tool runs inside a hardened container.&lt;&#x2F;strong&gt; The exported name, description, and input schema stay the same so the model sees the same tool. Everything that changes is below the public interface, in &lt;code&gt;run&lt;&#x2F;code&gt;. That is the separation we are paying for: the agent does not know its tool got fenced.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; tools.ts (sandboxed version)
 import type { Tool } from &amp;quot;.&amp;#x2F;types&amp;quot;;
 
@@ -149,7 +170,7 @@ export const shell: Tool = {
   },
 };
 &lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;That is forty-five lines of code and roughly a thousand-fold reduction in blast radius. The agent can still ask &lt;code&gt;rm -rf &#x2F;&lt;&#x2F;code&gt;. It will return an exit code, an error, and a clean host. Network calls will fail closed. Reads outside &lt;code&gt;&#x2F;work&lt;&#x2F;code&gt; are not possible because nothing is mounted into &lt;code&gt;&#x2F;work&lt;&#x2F;code&gt;. The sandbox dies the moment the command returns, so persistence between calls is also gone, which is a separate problem we will pick up in &lt;a href=&quot;#&quot;&gt;post six on memory&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Total damage: one new file of ten lines, one moved import, and forty-five lines of &lt;code&gt;tools.ts&lt;&#x2F;code&gt;. In exchange, roughly a thousand-fold reduction in blast radius. The agent can still ask &lt;code&gt;rm -rf &#x2F;&lt;&#x2F;code&gt;. It will return an exit code, an error, and a clean host. Network calls will fail closed. Reads outside &lt;code&gt;&#x2F;work&lt;&#x2F;code&gt; are not possible because nothing is mounted into &lt;code&gt;&#x2F;work&lt;&#x2F;code&gt;. The sandbox dies the moment the command returns, so persistence between calls is also gone, which is a separate problem we will pick up in &lt;a href=&quot;#&quot;&gt;post six on memory&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;A few things to notice.&lt;&#x2F;p&gt;
 &lt;p&gt;The agent loop did not change. The contract between the agent and the tool is the same JSON. The sandbox is a runtime concern, not an agent-architecture concern. This separation is exactly the point. You should be able to swap gVisor for Firecracker, or Docker for Podman, or Alpine for a custom image, without touching the loop.&lt;&#x2F;p&gt;
 &lt;p&gt;The tradeoffs are real. Spawning a container per tool call costs roughly 200 to 800 milliseconds on a modern host, mostly Docker daemon overhead. For a coding agent that runs three shell commands per turn, that is acceptable. For a sub-millisecond-per-call tool, it is not. The fix at scale is a container pool, or moving to Firecracker microVMs with snapshot&#x2F;restore where boot time drops to around 125 milliseconds and per-call cost drops further.&lt;&#x2F;p&gt;
