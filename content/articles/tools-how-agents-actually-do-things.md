@@ -17,9 +17,9 @@ og_image = "tools-how-agents-actually-do-things.png"
 
 > Part 3 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Your Agent Wants Root](/articles/your-agent-wants-root/). Next: Context Is the Product.
 
-In [post one](/articles/what-an-agent-actually-is/) the agent had one tool. In [post two](/articles/your-agent-wants-root/) we put that tool behind a hardened sandbox. The loop works. The runtime is fenced. The agent is still mostly useless, because one tool means the model can either run a shell command or do nothing. Every real agent has a toolbox.
+In [post one](/articles/what-an-agent-actually-is/) we built the agent harness: a loop, a one-tool registry, a system prompt, a dispatcher, an iteration budget. In [post two](/articles/your-agent-wants-root/) we slid a sandboxed runtime under the shell tool without touching the loop. The harness stands today at tag [`post-02`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-02) of [`the-agent-platform-handbook`](https://github.com/raskell-io/the-agent-platform-handbook): four files, one tool, fenced. The loop works. The runtime is fenced. The agent is still mostly useless, because one tool means the model can either run a shell command or do nothing. Every real agent has a toolbox.
 
-This is the toolbox post. We will extend the agent with four tools (`shell`, `fs_read`, `http_get`, `git`), build a registry around them, handle parallel tool calls, and look at the failure modes that show up the first time the model has more than one thing to pick from.
+This is the toolbox post. We will extend the same harness with three more tools (`fs_read`, `http_get`, `git`), promote the one-tool registry into a real one, handle parallel tool calls, and look at the failure modes that show up the first time the model has more than one thing to pick from. The diff lands as tag [`post-03`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-03) in the same repo. The agent loop's overall shape, the system prompt structure, and the iteration budget do not change.
 
 The interesting work in this post is not the tools themselves. It is the registry, the schemas, and the contract between what the model sees and what your code runs. Get those right and adding a fifth tool is a one-file change. Get them wrong and you will spend the next quarter retraining users on a registry the model cannot navigate.
 
@@ -73,7 +73,21 @@ What the model sees and what the handler runs are decoupled. The model sees a na
 
 ## Build the registry
 
-The contract from [post one](/articles/what-an-agent-actually-is/) was a single `Tool` type. We need three small additions to make it a real registry: a result envelope so errors are data and not exceptions, an output cap so a 50 MB log file does not blow the context window, and a registry object so the loop does not care how many tools exist.
+[Post two](/articles/your-agent-wants-root/) left the harness with a single `Tool` type in `types.ts` and one implementation in `tools.ts`. Three additions turn that into a real registry: a tagged-union `ToolResult` so errors flow as data and not exceptions, a `max_output_bytes` field so a 50 MB log file does not blow the context window, and a new `registry.ts` so the loop does not care how many tools exist. We also reorganize the tools onto their own subdirectory now that there is more than one of them. The post-03 tree looks like this.
+
+```
+the-agent-platform-handbook/
+├── agent.ts          # loop and dispatch (rewritten)
+├── registry.ts       # new
+├── types.ts          # +ToolResult, +max_output_bytes
+└── tools/
+    ├── shell.ts      # moved from ./tools.ts, returns ToolResult
+    ├── fs.ts         # new
+    ├── http.ts       # new
+    └── git.ts        # new
+```
+
+Two changes in `types.ts` versus `post-02`.
 
 ```typescript
 // types.ts
@@ -93,8 +107,6 @@ export type Tool = {
   run: (input: Record<string, unknown>) => Promise<ToolResult>;
 };
 ```
-
-Three things changed since post one.
 
 `ToolResult` is a tagged union. Tools never throw to the loop. They return `{ ok: false, error }` when the side effect fails or the input is wrong. This matters because the model needs to read the failure and decide what to do next. An exception kills the loop. A returned error gives the model a chance to retry, switch tools, or report back to the user.
 
@@ -258,7 +270,7 @@ export const git: Tool = {
 
 The `git` tool is interesting because it shows the allow-list pattern. The model can ask `git push --force` if it wants to. The handler refuses, returns a clear error, and the model goes back to the drawing board. The allow-list lives in the handler, not in the description, because trusting the model to obey natural-language constraints is exactly the trap [post two](/articles/your-agent-wants-root/) was about.
 
-The `shell` tool from post two stays as it was. Four tools, registered:
+The `shell` tool from `post-02` moves to `tools/shell.ts` and gets the same envelope refactor as the new tools: its `run` now returns `ToolResult` instead of a raw string. The sandbox flags and the executed command stay exactly as they were. Four tools, registered:
 
 ```typescript
 // agent.ts
@@ -312,7 +324,7 @@ const results = await Promise.all(
 messages.push({ role: "user", content: results });
 ```
 
-Two changes from post one. The loop runs all tool calls from a single turn in parallel with `Promise.all`. The `is_error` flag is set when the result was an error, because the model uses it to decide whether to retry or change strategy.
+Two changes versus the `post-02` dispatch. The loop runs all tool calls from a single turn in parallel with `Promise.all`. The `is_error` flag now gets set when the result was an error, because the model uses it to decide whether to retry or change strategy. The rest of the work — unknown-tool handling, exception wrapping, output capping — moved into the registry, so the agent.ts dispatch shrinks from roughly twenty-five lines to ten.
 
 A short transcript shows the difference.
 
@@ -377,11 +389,13 @@ This is the tool layer. It is not the context layer, the memory layer, or the id
 
 ## Where this lands in the platform
 
+Total damage going from `post-02` to `post-03`: one new file (`registry.ts`), one new directory (`tools/`) with four files, two extensions to `types.ts`, a rewritten `agent.ts` dispatch, and a one-line `tsconfig.json` update so the build picks up the new subdirectory. `git diff post-02 post-03` against the companion repo is the entire delta this post describes. The system prompt grows by a sentence. The iteration budget, the message-history shape, and the overall loop are unchanged.
+
 Post one was the loop. Post two was the runtime around the loop. This post is what the loop reaches through to do anything useful. In the reference architecture from [post twenty-two](#), the registry is the seam between the agent process and everything else: MCP servers, internal APIs, file systems, side effects, the world.
 
-The rule from earlier posts still holds. Each post adds one layer and explains why the layer below was not enough.
+The rule from earlier posts still holds. The harness only ever grows; it does not get rewritten. Each post adds one layer to the same artifact and explains why the layer below was not enough.
 
-The layer below this one was an empty toolbox. The layer above is what the model knows when it picks. A model with a brilliant toolbox and no context will pick wrong every time. Next we make the model less blind.
+The layer below this one was an empty toolbox. The layer above is what the model knows when it picks. A model with a brilliant toolbox and no context will pick wrong every time. Next we make the model less blind. That post will ship as `post-04` in the same repo.
 
 ## Next
 
