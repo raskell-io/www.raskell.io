@@ -98,6 +98,7 @@ sudo runsc install
 sudo systemctl reload docker
 &lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;You now have &lt;code&gt;runsc&lt;&#x2F;code&gt; as an available Docker runtime. Replace the shell tool from post one with the version below. The agent loop does not change.&lt;&#x2F;p&gt;
+&lt;p&gt;The full source for this post is in &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&quot;&gt;&lt;code&gt;the-agent-platform-handbook&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; at tag &lt;code&gt;post-02&lt;&#x2F;code&gt;. The diff against &lt;code&gt;post-01&lt;&#x2F;code&gt; is exactly what the prose claims: a new &lt;code&gt;types.ts&lt;&#x2F;code&gt;, a rewritten &lt;code&gt;tools.ts&lt;&#x2F;code&gt;, and a one-line import change in &lt;code&gt;agent.ts&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; tools.ts (sandboxed version)
 import type { Tool } from &amp;quot;.&amp;#x2F;types&amp;quot;;
 
