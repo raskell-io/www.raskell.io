@@ -93,7 +93,12 @@
     /* ===== Reset ===== */
     *, *::before, *::after { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      scroll-padding-top: var(--slide-gap);
+      scroll-padding-bottom: var(--slide-gap);
+    }
     body {
       font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--slide-fg);
@@ -141,7 +146,7 @@
     /* ===== Typography ===== */
     .slide__eyebrow {
       font-family: 'Geist Mono', monospace;
-      font-size: 0.85rem;
+      font-size: clamp(0.95rem, 1.2vw, 1.15rem);
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--slide-fg-faint);
@@ -166,10 +171,14 @@
     }
 
     .slide__sub {
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+      line-height: 1.2;
       color: var(--slide-fg-muted);
-      margin: 0;
+      margin: 0.25rem 0 0.5rem;
+      font-weight: 400;
       font-style: italic;
+      letter-spacing: -0.005em;
+      max-width: 36ch;
     }
 
     .slide__lede {
@@ -633,7 +642,10 @@
 
     /* ===== Reduced motion ===== */
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; scroll-snap-type: none; }
+      html {
+        scroll-behavior: auto;
+        scroll-snap-type: none;
+      }
     }
 
     /* ===== Print (PDF export) ===== */
