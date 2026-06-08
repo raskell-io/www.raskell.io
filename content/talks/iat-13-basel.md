@@ -201,6 +201,34 @@ event_date_human = "10 June 2026"
   </div>
 </section>
 
+<section class="slide">
+  <div class="slide__inner">
+    <p class="slide__eyebrow">07</p>
+    <h2 class="slide__title">What happened next</h2>
+    <ol class="slide__timeline">
+      <li>
+        <span class="slide__timeline-date">March 2026 · San Francisco</span>
+        <p>Co-presented an AI Web Security tool at <strong>RSAC 2026</strong> with <strong>Milan Duric</strong>. Same trip: a private downtown dinner hosted by <strong>Maverick Capital</strong>, room of AI Platform leaders.</p>
+      </li>
+      <li>
+        <span class="slide__timeline-date">Spring 2026</span>
+        <p>Shipped a <strong>Temporal-based self-service</strong> that lets users order web-service resources while AI quietly handles the operational work. Role at the time: Senior Platform Engineer & Solution Architect, Web Security / Application Delivery.</p>
+      </li>
+      <li>
+        <span class="slide__timeline-date">Two weeks ago</span>
+        <p>New role: <strong>Enterprise Solution Architect</strong> for Group-wide AI Platform and AI-assisted development.</p>
+      </li>
+      <li>
+        <span class="slide__timeline-date">Last week</span>
+        <p>Joined <a href="https://thejfloor.com/"><strong>J floor</strong></a>. More talks already on the calendar.</p>
+      </li>
+    </ol>
+    <p class="slide__kicker slide__kicker--strong">
+      None of this was on my calendar a year ago.
+    </p>
+  </div>
+</section>
+
 <section class="slide slide--end">
   <div class="slide__inner">
     <p class="slide__eyebrow">Thank you</p>
