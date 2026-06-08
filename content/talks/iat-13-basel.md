@@ -113,25 +113,11 @@ event_date_human = "10 June 2026"
     <p class="slide__eyebrow">04</p>
     <h2 class="slide__title">What I actually built</h2>
     <div class="slide__grid slide__grid--icons">
-      <a class="slide__card slide__card--linked" href="https://arcanist.sh" target="_blank" rel="noopener">
-        <img class="slide__card-icon" src="/talks/iat-13-basel/arcanist.svg" alt="" width="48" height="48" loading="lazy">
-        <div>
-          <h3>Arcanist.sh</h3>
-          <p>Haskell ecosystem in Rust. Home of <strong>hx</strong> and <strong>BHC</strong>.</p>
-        </div>
-      </a>
       <a class="slide__card slide__card--linked" href="https://archipelag.io" target="_blank" rel="noopener">
         <img class="slide__card-icon" src="/talks/iat-13-basel/archipelag.png" alt="" width="48" height="48" loading="lazy">
         <div>
           <h3>Archipelag.io</h3>
           <p>Distributed AI compute. Inference across idle GPUs and mining rigs.</p>
-        </div>
-      </a>
-      <a class="slide__card slide__card--linked" href="https://zentinelproxy.io" target="_blank" rel="noopener">
-        <img class="slide__card-icon" src="/talks/iat-13-basel/zentinel.png" alt="" width="48" height="48" loading="lazy">
-        <div>
-          <h3>Zentinel</h3>
-          <p>Security-first reverse proxy on Pingora.</p>
         </div>
       </a>
       <a class="slide__card slide__card--linked" href="https://cyanea.bio" target="_blank" rel="noopener">
@@ -141,18 +127,32 @@ event_date_human = "10 June 2026"
           <p>Open community platform for life-science research.</p>
         </div>
       </a>
-      <a class="slide__card slide__card--linked" href="https://die-zukunft.ch" target="_blank" rel="noopener">
-        <img class="slide__card-icon" src="/talks/iat-13-basel/die-zukunft.png" alt="" width="48" height="48" loading="lazy">
-        <div>
-          <h3>Die Zukunft</h3>
-          <p>A Swiss political party. Founded entirely outside office hours.</p>
-        </div>
-      </a>
       <a class="slide__card slide__card--linked" href="https://humankind.plus" target="_blank" rel="noopener">
         <img class="slide__card-icon" src="/talks/iat-13-basel/humankind.png" alt="" width="48" height="48" loading="lazy">
         <div>
           <h3>Humankind</h3>
           <p>A long-running creative initiative, finally with a home of its own.</p>
+        </div>
+      </a>
+      <a class="slide__card slide__card--linked" href="https://arcanist.sh" target="_blank" rel="noopener">
+        <img class="slide__card-icon" src="/talks/iat-13-basel/arcanist.svg" alt="" width="48" height="48" loading="lazy">
+        <div>
+          <h3>Arcanist.sh</h3>
+          <p>Haskell ecosystem in Rust. Home of <strong>hx</strong> and the <strong>Basel Haskell Compiler</strong>.</p>
+        </div>
+      </a>
+      <a class="slide__card slide__card--linked" href="https://zentinelproxy.io" target="_blank" rel="noopener">
+        <img class="slide__card-icon" src="/talks/iat-13-basel/zentinel.png" alt="" width="48" height="48" loading="lazy">
+        <div>
+          <h3>Zentinel</h3>
+          <p>Security-first reverse proxy on Pingora.</p>
+        </div>
+      </a>
+      <a class="slide__card slide__card--linked" href="https://die-zukunft.ch" target="_blank" rel="noopener">
+        <img class="slide__card-icon" src="/talks/iat-13-basel/die-zukunft.png" alt="" width="48" height="48" loading="lazy">
+        <div>
+          <h3>Die Zukunft</h3>
+          <p>A Swiss political party. Past left and right, into UBI, digital sovereignty, and a serious technology agenda.</p>
         </div>
       </a>
     </div>

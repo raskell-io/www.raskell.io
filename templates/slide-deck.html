@@ -665,7 +665,7 @@
 </head>
 <body>
   <a class="deck__home" href="/speaking/">← Speaking</a>
-  <div class="deck__counter" aria-hidden="true"><span id="deck-current">01</span> / <span id="deck-total">--</span></div>
+  <div class="deck__counter" aria-hidden="true"><span id="deck-current">00</span> / <span id="deck-total">--</span></div>
 
   <main class="deck" id="deck">
     {{ page.content | safe }}
@@ -679,9 +679,8 @@
       var total = slides.length;
       var currentEl = document.getElementById('deck-current');
       var totalEl = document.getElementById('deck-total');
-      totalEl.textContent = String(total).padStart(2, '0');
-
       function pad(n) { return String(n).padStart(2, '0'); }
+      totalEl.textContent = pad(total - 1);
 
       var visibleRatios = new Array(total).fill(0);
       function updateCurrent() {
@@ -689,7 +688,7 @@
         for (var i = 0; i < total; i++) {
           if (visibleRatios[i] > maxVal) { maxVal = visibleRatios[i]; maxIdx = i; }
         }
-        currentEl.textContent = pad(maxIdx + 1);
+        currentEl.textContent = pad(maxIdx);
       }
 
       var io = new IntersectionObserver(function(entries) {
