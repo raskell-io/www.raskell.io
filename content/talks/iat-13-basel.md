@@ -19,7 +19,11 @@ event_date_human = "10 June 2026"
     <p class="slide__id">
       <span class="slide__id-item">
         <img class="slide__avatar" src="/talks/iat-13-basel/raffael-portrait.png" alt="Raffael Schneider" width="64" height="64">
-        <span>Raffael Schneider</span>
+        <span class="slide__id-text">
+          <span class="slide__id-name">Raffael Schneider</span>
+          <span class="slide__id-role">Enterprise Solution Architect</span>
+          <span class="slide__id-org">AI Platforms</span>
+        </span>
       </span>
       <span class="slide__id-sep" aria-hidden="true">·</span>
       <span class="slide__id-item slide__id-item--brand">
