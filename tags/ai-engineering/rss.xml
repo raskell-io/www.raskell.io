@@ -7,7 +7,335 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/ai-engineering/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Fri, 05 Jun 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Tue, 09 Jun 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Tools: How Agents Actually Do Things</title>
+          <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/tools-how-agents-actually-do-things/</link>
+          <guid>https://raskell.io/articles/tools-how-agents-actually-do-things/</guid>
+          <description xml:base="https://raskell.io/articles/tools-how-agents-actually-do-things/">&lt;blockquote&gt;
+&lt;p&gt;Part 3 of &lt;em&gt;The Agent Platform Handbook. From Loop to Platform.&lt;&#x2F;em&gt; Previous: &lt;a href=&quot;&#x2F;articles&#x2F;your-agent-wants-root&#x2F;&quot;&gt;Your Agent Wants Root&lt;&#x2F;a&gt;. Next: Context Is the Product.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;In &lt;a href=&quot;&#x2F;articles&#x2F;what-an-agent-actually-is&#x2F;&quot;&gt;post one&lt;&#x2F;a&gt; we built the agent harness: a loop, a one-tool registry, a system prompt, a dispatcher, an iteration budget. In &lt;a href=&quot;&#x2F;articles&#x2F;your-agent-wants-root&#x2F;&quot;&gt;post two&lt;&#x2F;a&gt; we slid a sandboxed runtime under the shell tool without touching the loop. The harness stands today at tag &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&#x2F;tree&#x2F;post-02&quot;&gt;&lt;code&gt;post-02&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; of &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&quot;&gt;&lt;code&gt;the-agent-platform-handbook&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;: four files, one tool, fenced. The loop works. The runtime is fenced. The agent is still mostly useless, because one tool means the model can either run a shell command or do nothing. Every real agent has a toolbox.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the toolbox post. We will extend the same harness with three more tools (&lt;code&gt;fs_read&lt;&#x2F;code&gt;, &lt;code&gt;http_get&lt;&#x2F;code&gt;, &lt;code&gt;git&lt;&#x2F;code&gt;), promote the one-tool registry into a real one, handle parallel tool calls, and look at the failure modes that show up the first time the model has more than one thing to pick from. The diff lands as tag &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&#x2F;tree&#x2F;post-03&quot;&gt;&lt;code&gt;post-03&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; in the same repo. The agent loop’s overall shape, the system prompt structure, and the iteration budget do not change.&lt;&#x2F;p&gt;
+&lt;p&gt;The interesting work in this post is not the tools themselves. It is the registry, the schemas, and the contract between what the model sees and what your code runs. Get those right and adding a fifth tool is a one-file change. Get them wrong and you will spend the next quarter retraining users on a registry the model cannot navigate.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-we-got-here&quot;&gt;How we got here&lt;&#x2F;h2&gt;
+&lt;p&gt;For about a year, the way you let a language model call a function was to ask it nicely.&lt;&#x2F;p&gt;
+&lt;p&gt;The ReAct paper in October 2022 sketched the loop in pseudocode. The first implementations, including the early LangChain releases that month, made it real by parsing the model’s prose output. You instructed the model to write &lt;code&gt;Action: search&lt;&#x2F;code&gt; on one line, &lt;code&gt;Action Input: &quot;what is X&quot;&lt;&#x2F;code&gt; on the next, then stopped generation on a token like &lt;code&gt;Observation:&lt;&#x2F;code&gt; and used the rest of the lines verbatim. It worked. It also broke whenever the model felt creative, whenever the user’s question contained the stop token, whenever the prompt accidentally taught the model a slightly different format.&lt;&#x2F;p&gt;
+&lt;p&gt;Then on June 13, 2023, OpenAI shipped function calling. You declared your tools with a JSON Schema. The model returned a structured object with &lt;code&gt;name&lt;&#x2F;code&gt; and &lt;code&gt;arguments&lt;&#x2F;code&gt;. No more parsing prose. No more stop tokens. The reliability gap between “this works in the demo” and “this works on Tuesday morning” closed by an order of magnitude in a single release. Anthropic shipped &lt;code&gt;tool_use&lt;&#x2F;code&gt; shortly after on the same shape, and structured outputs (constrained decoding that guarantees the model emits valid JSON for a given schema) followed in late 2024.&lt;&#x2F;p&gt;
+&lt;p&gt;The Model Context Protocol, also from Anthropic, arrived in November 2024 and added a transport layer for tools so they could live in a separate process or a separate machine. The calling convention did not change. MCP just gave the registry a network. We will spend &lt;a href=&quot;#&quot;&gt;post eight&lt;&#x2F;a&gt; on MCP specifically.&lt;&#x2F;p&gt;
+&lt;p&gt;The lesson from this lineage is one sentence. The model talks JSON now. The work that remains is the work you control: the registry, the schemas, the contract for what happens after the call. That is what this post is about.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-mental-model&quot;&gt;The mental model&lt;&#x2F;h2&gt;
+&lt;p&gt;A tool layer has three pieces. The model picks. The registry resolves. The handler runs.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;The tool layer of an agent&quot;&gt;+-------------------+
+                |      Model        |
+                | &amp;quot;I want to call   |
+                |  fs_read with     |
+                |  path=&amp;#x2F;etc&amp;#x2F;hosts&amp;quot; |
+                +---------+---------+
+                          |
+                          | tool_use block
+                          v
+                +-------------------+         schema list
+                |  Tool registry    | &amp;lt;-----  the model sees
+                | name -&amp;gt; handler   |
+                +---------+---------+
+                          |
+                          | dispatch
+                          v
+                +-------------------+
+                |     Handler       |
+                | side effect runs  |
+                | (in the sandbox)  |
+                +---------+---------+
+                          |
+                          | { ok, value | error }
+                          v
+                +-------------------+
+                |  tool_result      | ---&amp;gt;  back into context
+                +-------------------+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;What the model sees and what the handler runs are decoupled. The model sees a name, a description, and a JSON schema for inputs. The handler sees parsed arguments and returns a result string. The registry is the seam. Every tool engineering decision in this post is about that seam.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;build-the-registry&quot;&gt;Build the registry&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;articles&#x2F;your-agent-wants-root&#x2F;&quot;&gt;Post two&lt;&#x2F;a&gt; left the harness with a single &lt;code&gt;Tool&lt;&#x2F;code&gt; type in &lt;code&gt;types.ts&lt;&#x2F;code&gt; and one implementation in &lt;code&gt;tools.ts&lt;&#x2F;code&gt;. Three additions turn that into a real registry: a tagged-union &lt;code&gt;ToolResult&lt;&#x2F;code&gt; so errors flow as data and not exceptions, a &lt;code&gt;max_output_bytes&lt;&#x2F;code&gt; field so a 50 MB log file does not blow the context window, and a new &lt;code&gt;registry.ts&lt;&#x2F;code&gt; so the loop does not care how many tools exist. We also reorganize the tools onto their own subdirectory now that there is more than one of them. The post-03 tree looks like this.&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;the-agent-platform-handbook&amp;#x2F;
+├── agent.ts          # loop and dispatch (rewritten)
+├── registry.ts       # new
+├── types.ts          # +ToolResult, +max_output_bytes
+└── tools&amp;#x2F;
+    ├── shell.ts      # moved from .&amp;#x2F;tools.ts, returns ToolResult
+    ├── fs.ts         # new
+    ├── http.ts       # new
+    └── git.ts        # new
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Two changes in &lt;code&gt;types.ts&lt;&#x2F;code&gt; versus &lt;code&gt;post-02&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; types.ts
+export type ToolResult =
+  | { ok: true; value: string }
+  | { ok: false; error: string };
+
+export type Tool = {
+  name: string;
+  description: string;
+  input_schema: {
+    type: &amp;quot;object&amp;quot;;
+    properties: Record&amp;lt;string, unknown&amp;gt;;
+    required?: string[];
+  };
+  max_output_bytes?: number;
+  run: (input: Record&amp;lt;string, unknown&amp;gt;) =&amp;gt; Promise&amp;lt;ToolResult&amp;gt;;
+};
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;ToolResult&lt;&#x2F;code&gt; is a tagged union. Tools never throw to the loop. They return &lt;code&gt;{ ok: false, error }&lt;&#x2F;code&gt; when the side effect fails or the input is wrong. This matters because the model needs to read the failure and decide what to do next. An exception kills the loop. A returned error gives the model a chance to retry, switch tools, or report back to the user.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;max_output_bytes&lt;&#x2F;code&gt; is the per-tool truncation cap. The default is small. A &lt;code&gt;shell&lt;&#x2F;code&gt; tool that runs &lt;code&gt;cat &#x2F;var&#x2F;log&#x2F;syslog&lt;&#x2F;code&gt; should not return three megabytes of text into a context window that costs you per token.&lt;&#x2F;p&gt;
+&lt;p&gt;The registry itself is tiny.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; registry.ts
+import type { Tool, ToolResult } from &amp;quot;.&amp;#x2F;types&amp;quot;;
+
+export class Registry {
+  private readonly tools = new Map&amp;lt;string, Tool&amp;gt;();
+
+  register(tool: Tool): this {
+    if (this.tools.has(tool.name)) {
+      throw new Error(`duplicate tool: ${tool.name}`);
+    }
+    this.tools.set(tool.name, tool);
+    return this;
+  }
+
+  schemas() {
+    return Array.from(this.tools.values()).map(({ run, ...t }) =&amp;gt; t);
+  }
+
+  async dispatch(name: string, input: Record&amp;lt;string, unknown&amp;gt;): Promise&amp;lt;ToolResult&amp;gt; {
+    const tool = this.tools.get(name);
+    if (!tool) return { ok: false, error: `unknown tool: ${name}` };
+    try {
+      const result = await tool.run(input);
+      return cap(result, tool.max_output_bytes ?? 8192);
+    } catch (err) {
+      return { ok: false, error: `tool threw: ${String(err)}` };
+    }
+  }
+}
+
+function cap(result: ToolResult, max: number): ToolResult {
+  if (!result.ok) return result;
+  const bytes = Buffer.byteLength(result.value, &amp;quot;utf8&amp;quot;);
+  if (bytes &amp;lt;= max) return result;
+  const head = result.value.slice(0, max);
+  return { ok: true, value: `${head}\n\n[truncated: ${bytes - max} more bytes]` };
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The registry holds tools, hands the model the schema view (without the handler), dispatches by name, caps output, and turns any thrown exception into a returned error. Forty lines. Done.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;four-tools&quot;&gt;Four tools&lt;&#x2F;h2&gt;
+&lt;p&gt;Now the actual toolbox. The shapes are deliberate, and so are the descriptions.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; tools&amp;#x2F;fs.ts
+import type { Tool } from &amp;quot;..&amp;#x2F;types&amp;quot;;
+
+export const fs_read: Tool = {
+  name: &amp;quot;fs_read&amp;quot;,
+  description:
+    &amp;quot;Read a UTF-8 text file from the local filesystem and return its contents. &amp;quot; +
+    &amp;quot;Fails if the path does not exist, is not a regular file, is not valid UTF-8, &amp;quot; +
+    &amp;quot;or exceeds 1 MB. Use this for source files, configs, and logs.&amp;quot;,
+  input_schema: {
+    type: &amp;quot;object&amp;quot;,
+    properties: {
+      path: { type: &amp;quot;string&amp;quot;, description: &amp;quot;Absolute or relative path to the file.&amp;quot; },
+    },
+    required: [&amp;quot;path&amp;quot;],
+  },
+  max_output_bytes: 1024 * 1024,
+  run: async ({ path }) =&amp;gt; {
+    try {
+      const file = Bun.file(String(path));
+      const exists = await file.exists();
+      if (!exists) return { ok: false, error: `no such file: ${path}` };
+      if (file.size &amp;gt; 1024 * 1024) return { ok: false, error: `file too large: ${file.size} bytes` };
+      const text = await file.text();
+      return { ok: true, value: text };
+    } catch (err) {
+      return { ok: false, error: String(err) };
+    }
+  },
+};
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Notice the description. It tells the model what the tool does, when it fails, and when to choose it (“Use this for source files, configs, and logs”). The model’s tool-selection is a function of these strings. Vague descriptions produce vague selection. Boring, specific descriptions produce reliable selection.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; tools&amp;#x2F;http.ts
+export const http_get: Tool = {
+  name: &amp;quot;http_get&amp;quot;,
+  description:
+    &amp;quot;Perform an HTTP GET request and return the response body as text. &amp;quot; +
+    &amp;quot;Times out after 10 seconds. Returns the status code in the result. &amp;quot; +
+    &amp;quot;Use this to fetch public documentation, API responses, or web pages. &amp;quot; +
+    &amp;quot;Do not use it to interact with internal services.&amp;quot;,
+  input_schema: {
+    type: &amp;quot;object&amp;quot;,
+    properties: {
+      url: { type: &amp;quot;string&amp;quot;, description: &amp;quot;Absolute https:&amp;#x2F;&amp;#x2F; URL.&amp;quot; },
+    },
+    required: [&amp;quot;url&amp;quot;],
+  },
+  max_output_bytes: 64 * 1024,
+  run: async ({ url }) =&amp;gt; {
+    const u = String(url);
+    if (!u.startsWith(&amp;quot;https:&amp;#x2F;&amp;#x2F;&amp;quot;)) return { ok: false, error: &amp;quot;only https:&amp;#x2F;&amp;#x2F; is allowed&amp;quot; };
+    try {
+      const ctl = AbortSignal.timeout(10_000);
+      const res = await fetch(u, { signal: ctl });
+      const body = await res.text();
+      return { ok: true, value: `status: ${res.status}\n\n${body}` };
+    } catch (err) {
+      return { ok: false, error: String(err) };
+    }
+  },
+};
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Two design choices to call out. The tool enforces &lt;code&gt;https:&#x2F;&#x2F;&lt;&#x2F;code&gt; at the handler level even though the description says so, because the model will sometimes call it with &lt;code&gt;http:&#x2F;&#x2F;&lt;&#x2F;code&gt; anyway. The status code is folded into the value, not into a separate field, because the model reads strings.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; tools&amp;#x2F;git.ts
+export const git: Tool = {
+  name: &amp;quot;git&amp;quot;,
+  description:
+    &amp;quot;Run a read-only git command in the current repository and return its output. &amp;quot; +
+    &amp;quot;Allowed subcommands: log, diff, show, status, branch, ls-files. &amp;quot; +
+    &amp;quot;Any other subcommand is rejected. Use this to inspect history, &amp;quot; +
+    &amp;quot;see uncommitted changes, or list tracked files.&amp;quot;,
+  input_schema: {
+    type: &amp;quot;object&amp;quot;,
+    properties: {
+      args: {
+        type: &amp;quot;array&amp;quot;,
+        items: { type: &amp;quot;string&amp;quot; },
+        description: &amp;quot;Arguments after `git`, e.g. [&amp;#x27;log&amp;#x27;, &amp;#x27;--oneline&amp;#x27;, &amp;#x27;-5&amp;#x27;].&amp;quot;,
+      },
+    },
+    required: [&amp;quot;args&amp;quot;],
+  },
+  max_output_bytes: 32 * 1024,
+  run: async ({ args }) =&amp;gt; {
+    const a = (args as string[]) ?? [];
+    const allowed = new Set([&amp;quot;log&amp;quot;, &amp;quot;diff&amp;quot;, &amp;quot;show&amp;quot;, &amp;quot;status&amp;quot;, &amp;quot;branch&amp;quot;, &amp;quot;ls-files&amp;quot;]);
+    if (a.length === 0 || !allowed.has(a[0])) {
+      return { ok: false, error: `subcommand not allowed: ${a[0] ?? &amp;quot;(none)&amp;quot;}` };
+    }
+    const proc = Bun.spawn([&amp;quot;git&amp;quot;, ...a.map(String)], { stdout: &amp;quot;pipe&amp;quot;, stderr: &amp;quot;pipe&amp;quot; });
+    const [stdout, stderr] = await Promise.all([
+      new Response(proc.stdout).text(),
+      new Response(proc.stderr).text(),
+    ]);
+    const code = await proc.exited;
+    if (code !== 0) return { ok: false, error: stderr || `git exited ${code}` };
+    return { ok: true, value: stdout };
+  },
+};
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The &lt;code&gt;git&lt;&#x2F;code&gt; tool is interesting because it shows the allow-list pattern. The model can ask &lt;code&gt;git push --force&lt;&#x2F;code&gt; if it wants to. The handler refuses, returns a clear error, and the model goes back to the drawing board. The allow-list lives in the handler, not in the description, because trusting the model to obey natural-language constraints is exactly the trap &lt;a href=&quot;&#x2F;articles&#x2F;your-agent-wants-root&#x2F;&quot;&gt;post two&lt;&#x2F;a&gt; was about.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;code&gt;shell&lt;&#x2F;code&gt; tool from &lt;code&gt;post-02&lt;&#x2F;code&gt; moves to &lt;code&gt;tools&#x2F;shell.ts&lt;&#x2F;code&gt; and gets the same envelope refactor as the new tools: its &lt;code&gt;run&lt;&#x2F;code&gt; now returns &lt;code&gt;ToolResult&lt;&#x2F;code&gt; instead of a raw string. The sandbox flags and the executed command stay exactly as they were. Four tools, registered:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; agent.ts
+import { Registry } from &amp;quot;.&amp;#x2F;registry&amp;quot;;
+import { fs_read } from &amp;quot;.&amp;#x2F;tools&amp;#x2F;fs&amp;quot;;
+import { http_get } from &amp;quot;.&amp;#x2F;tools&amp;#x2F;http&amp;quot;;
+import { git } from &amp;quot;.&amp;#x2F;tools&amp;#x2F;git&amp;quot;;
+import { shell } from &amp;quot;.&amp;#x2F;tools&amp;#x2F;shell&amp;quot;;
+
+const tools = new Registry()
+  .register(shell)
+  .register(fs_read)
+  .register(http_get)
+  .register(git);
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;the-loop-changes-a-little&quot;&gt;The loop changes a little&lt;&#x2F;h2&gt;
+&lt;p&gt;Modern frontier models can ask for several tools in a single turn. Treat them as parallel calls and you save round trips. Treat them as sequential and the model will figure it out, but slowly.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; agent.ts (continued)
+const response = await client.messages.create({
+  model: &amp;quot;claude-sonnet-4-6&amp;quot;,
+  max_tokens: 4096,
+  system: SYSTEM_PROMPT,
+  tools: tools.schemas(),
+  messages,
+});
+
+messages.push({ role: &amp;quot;assistant&amp;quot;, content: response.content });
+
+if (response.stop_reason === &amp;quot;end_turn&amp;quot;) {
+  &amp;#x2F;&amp;#x2F; ... print final answer, return
+}
+
+const calls = response.content.filter((b) =&amp;gt; b.type === &amp;quot;tool_use&amp;quot;);
+const results = await Promise.all(
+  calls.map(async (block) =&amp;gt; {
+    const result = await tools.dispatch(block.name, block.input as Record&amp;lt;string, unknown&amp;gt;);
+    console.error(`&amp;gt; ${block.name} ${JSON.stringify(block.input)} -&amp;gt; ${result.ok ? &amp;quot;ok&amp;quot; : &amp;quot;err&amp;quot;}`);
+    return {
+      type: &amp;quot;tool_result&amp;quot; as const,
+      tool_use_id: block.id,
+      content: result.ok ? result.value : result.error,
+      is_error: !result.ok,
+    };
+  }),
+);
+
+messages.push({ role: &amp;quot;user&amp;quot;, content: results });
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Two changes versus the &lt;code&gt;post-02&lt;&#x2F;code&gt; dispatch. The loop runs all tool calls from a single turn in parallel with &lt;code&gt;Promise.all&lt;&#x2F;code&gt;. The &lt;code&gt;is_error&lt;&#x2F;code&gt; flag now gets set when the result was an error, because the model uses it to decide whether to retry or change strategy. The rest of the work — unknown-tool handling, exception wrapping, output capping — moved into the registry, so the agent.ts dispatch shrinks from roughly twenty-five lines to ten.&lt;&#x2F;p&gt;
+&lt;p&gt;A short transcript shows the difference.&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ bun agent.ts &amp;quot;summarize the largest TypeScript file under src and tell me what changed in the last commit&amp;quot;
+&amp;gt; fs_read {&amp;quot;path&amp;quot;:&amp;quot;src&amp;#x2F;agent.ts&amp;quot;} -&amp;gt; ok
+&amp;gt; git {&amp;quot;args&amp;quot;:[&amp;quot;log&amp;quot;,&amp;quot;-1&amp;quot;,&amp;quot;--stat&amp;quot;]} -&amp;gt; ok
+src&amp;#x2F;agent.ts (185 lines) implements the agent loop against the Anthropic
+Messages API. It builds a registry of four tools (shell, fs_read, http_get,
+git), dispatches tool_use blocks in parallel, and stops when the model
+returns an end_turn response or hits the 10-iteration budget. The last
+commit added the parallel-dispatch path and a small output truncation
+helper; net 38 lines added across agent.ts and registry.ts.
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;One turn. Two tool calls. They ran simultaneously. The model fused the results into a single answer.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;designing-tools-that-the-model-can-actually-use&quot;&gt;Designing tools that the model can actually use&lt;&#x2F;h2&gt;
+&lt;p&gt;After you have built the registry, the failure mode that bites you is not the code. It is the design. Three patterns that hold up.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;One tool per concept.&lt;&#x2F;strong&gt; A &lt;code&gt;fs&lt;&#x2F;code&gt; tool with a union input schema (&lt;code&gt;mode: &quot;read&quot; | &quot;list&quot; | &quot;stat&quot;&lt;&#x2F;code&gt;) reads cleaner to a human and worse to a model. The model has to pick the right &lt;code&gt;mode&lt;&#x2F;code&gt; &lt;em&gt;and&lt;&#x2F;em&gt; the right arguments simultaneously. Split it: &lt;code&gt;fs_read&lt;&#x2F;code&gt;, &lt;code&gt;fs_list&lt;&#x2F;code&gt;, &lt;code&gt;fs_stat&lt;&#x2F;code&gt;. Three tools, three clear pictures. The model picks better and the schemas are simpler.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Descriptions are written for the model.&lt;&#x2F;strong&gt; The description is the only place the model learns when to use a tool. Be specific about inputs, outputs, error cases, and use cases. “Read a file” picks worse than the &lt;code&gt;fs_read&lt;&#x2F;code&gt; description above. The cost of the extra eighty tokens per turn is rounding error against the cost of the model picking the wrong tool and looping.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Errors are data.&lt;&#x2F;strong&gt; Every tool returns &lt;code&gt;{ ok, error }&lt;&#x2F;code&gt; rather than throwing. The model can read the error, reason about it, and choose: retry with different inputs, switch tools, or surface the failure to the user. An exception removes all of that.&lt;&#x2F;p&gt;
+&lt;p&gt;The honest version of the tradeoff is in the table.&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Decision&lt;&#x2F;th&gt;&lt;th&gt;Cheap option&lt;&#x2F;th&gt;&lt;th&gt;Right option&lt;&#x2F;th&gt;&lt;th&gt;Why&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Tool granularity&lt;&#x2F;td&gt;&lt;td&gt;one tool with a &lt;code&gt;mode&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;one tool per concept&lt;&#x2F;td&gt;&lt;td&gt;Better selection, simpler schemas, simpler errors.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Description&lt;&#x2F;td&gt;&lt;td&gt;one sentence&lt;&#x2F;td&gt;&lt;td&gt;inputs, errors, when-to-use, in prose&lt;&#x2F;td&gt;&lt;td&gt;The model picks from the string.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Error model&lt;&#x2F;td&gt;&lt;td&gt;throw exceptions&lt;&#x2F;td&gt;&lt;td&gt;tagged-union &lt;code&gt;ToolResult&lt;&#x2F;code&gt; always&lt;&#x2F;td&gt;&lt;td&gt;The model can recover. Exceptions kill the loop.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Output size&lt;&#x2F;td&gt;&lt;td&gt;return whatever the OS gives&lt;&#x2F;td&gt;&lt;td&gt;cap per tool, truncate with a marker&lt;&#x2F;td&gt;&lt;td&gt;Context windows are not log files.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Side effects&lt;&#x2F;td&gt;&lt;td&gt;run, hope, retry on error&lt;&#x2F;td&gt;&lt;td&gt;idempotency keys or &lt;code&gt;confirm&lt;&#x2F;code&gt; argument&lt;&#x2F;td&gt;&lt;td&gt;Retries are real. Re-deletes are real.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Parallel calls&lt;&#x2F;td&gt;&lt;td&gt;serial loop&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;Promise.all&lt;&#x2F;code&gt; over tool_use blocks&lt;&#x2F;td&gt;&lt;td&gt;Modern models batch. Latency drops by ~Nx.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Sensitive ops&lt;&#x2F;td&gt;&lt;td&gt;“do not delete files” in prompt&lt;&#x2F;td&gt;&lt;td&gt;allow-list in the handler&lt;&#x2F;td&gt;&lt;td&gt;The model will eventually try anyway.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;h2 id=&quot;failure-modes-worth-naming&quot;&gt;Failure modes worth naming&lt;&#x2F;h2&gt;
+&lt;p&gt;The first time you hit any of these you will think your code is broken. It is not. These are tool-layer problems specifically.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tool sprawl.&lt;&#x2F;strong&gt; Beyond roughly twenty tools, models start picking poorly. Domains blur. Two tools with similar descriptions get confused. The fix is not “better descriptions.” It is fewer tools at any given turn, achieved by routing or by giving different sub-agents different toolboxes. We will come back to this in &lt;a href=&quot;#&quot;&gt;post twelve&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Description rot.&lt;&#x2F;strong&gt; A tool’s behavior changes (faster timeout, new error mode, narrower input). The description does not. The model keeps picking it for the old reasons. Treat descriptions as part of the API surface. Version them.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Argument hallucination.&lt;&#x2F;strong&gt; The model passes &lt;code&gt;path: &quot;the file the user mentioned&quot;&lt;&#x2F;code&gt; instead of an actual path because it lost track of the conversation. Strict schemas help. Server-side validation of plausible inputs (file exists, URL parses) helps more.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Hallucinated tools.&lt;&#x2F;strong&gt; The model invents a tool name that is not in the registry. The registry returns &lt;code&gt;unknown tool: X&lt;&#x2F;code&gt; as an error. The model reads it and either retries with a real tool or apologizes. Both are correct behaviors. The bug would be silently dispatching to a default handler.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Output explosion.&lt;&#x2F;strong&gt; A &lt;code&gt;cat large_file&lt;&#x2F;code&gt; or a &lt;code&gt;curl massive_api&lt;&#x2F;code&gt; blows the context window. The per-tool cap above handles it. Without a cap, you discover the problem at a token-cost billing alert.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Side effects on retry.&lt;&#x2F;strong&gt; The model calls a tool, the call hangs, the loop retries, the tool runs twice. For idempotent reads, this is fine. For &lt;code&gt;git push&lt;&#x2F;code&gt;, &lt;code&gt;email_send&lt;&#x2F;code&gt;, or &lt;code&gt;database_write&lt;&#x2F;code&gt;, it is not. Idempotency keys or explicit &lt;code&gt;confirm: true&lt;&#x2F;code&gt; arguments are the only durable fixes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Concurrent races.&lt;&#x2F;strong&gt; Parallel tool calls can step on each other. Two &lt;code&gt;fs_write&lt;&#x2F;code&gt; calls to the same path in one turn is the classic example. The agent will not notice. You will, in production. The fix is per-tool serialization or explicit no-parallel marking in the dispatcher.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Auth surfaces in errors.&lt;&#x2F;strong&gt; A tool that calls an internal API may put a bearer token in its error message when the request fails. That error becomes part of the conversation and gets sent back to the model on the next turn. Strip secrets from error strings at the handler.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;what-this-layer-does-not-solve&quot;&gt;What this layer does not solve&lt;&#x2F;h2&gt;
+&lt;p&gt;This is the tool layer. It is not the context layer, the memory layer, or the identity layer. Things you might expect this post to cover that get a dedicated post later.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Where the tool definitions live.&lt;&#x2F;strong&gt; Hardcoded into the agent works at the demo scale. Real fleets need a shared registry. That is MCP. &lt;a href=&quot;#&quot;&gt;Post eight&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Which tools an agent should know about for a given task.&lt;&#x2F;strong&gt; The registry above gives every tool to every turn. Per-task filtering and tool discovery are part of the context strategy. &lt;a href=&quot;#&quot;&gt;Post four&lt;&#x2F;a&gt; and &lt;a href=&quot;#&quot;&gt;post five&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Which agent gets which tools.&lt;&#x2F;strong&gt; Different sub-agents need different toolboxes. The dispatch problem is the multi-agent problem. &lt;a href=&quot;#&quot;&gt;Post ten&lt;&#x2F;a&gt; and &lt;a href=&quot;#&quot;&gt;post twelve&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Who is allowed to call which tool.&lt;&#x2F;strong&gt; Per-tool RBAC, capability tokens, human-in-the-loop approvals. &lt;a href=&quot;#&quot;&gt;Post fourteen&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Identity for the call itself.&lt;&#x2F;strong&gt; When the &lt;code&gt;http_get&lt;&#x2F;code&gt; tool calls an internal service, the service needs to know who is asking. &lt;a href=&quot;#&quot;&gt;Post thirteen&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;where-this-lands-in-the-platform&quot;&gt;Where this lands in the platform&lt;&#x2F;h2&gt;
+&lt;p&gt;Total damage going from &lt;code&gt;post-02&lt;&#x2F;code&gt; to &lt;code&gt;post-03&lt;&#x2F;code&gt;: one new file (&lt;code&gt;registry.ts&lt;&#x2F;code&gt;), one new directory (&lt;code&gt;tools&#x2F;&lt;&#x2F;code&gt;) with four files, two extensions to &lt;code&gt;types.ts&lt;&#x2F;code&gt;, a rewritten &lt;code&gt;agent.ts&lt;&#x2F;code&gt; dispatch, and a one-line &lt;code&gt;tsconfig.json&lt;&#x2F;code&gt; update so the build picks up the new subdirectory. &lt;code&gt;git diff post-02 post-03&lt;&#x2F;code&gt; against the companion repo is the entire delta this post describes. The system prompt grows by a sentence. The iteration budget, the message-history shape, and the overall loop are unchanged.&lt;&#x2F;p&gt;
+&lt;p&gt;Post one was the loop. Post two was the runtime around the loop. This post is what the loop reaches through to do anything useful. In the reference architecture from &lt;a href=&quot;#&quot;&gt;post twenty-two&lt;&#x2F;a&gt;, the registry is the seam between the agent process and everything else: MCP servers, internal APIs, file systems, side effects, the world.&lt;&#x2F;p&gt;
+&lt;p&gt;The rule from earlier posts still holds. The harness only ever grows; it does not get rewritten. Each post adds one layer to the same artifact and explains why the layer below was not enough.&lt;&#x2F;p&gt;
+&lt;p&gt;The layer below this one was an empty toolbox. The layer above is what the model knows when it picks. A model with a brilliant toolbox and no context will pick wrong every time. Next we make the model less blind. That post will ship as &lt;code&gt;post-04&lt;&#x2F;code&gt; in the same repo.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;next&quot;&gt;Next&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Part 4: Context Is the Product.&lt;&#x2F;strong&gt; Models are commodities. Context is not. Sources of context, why retrieval alone is not enough, and a minimal &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; convention that loads context from disk into the same agent we have been building.&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>Your Agent Wants Root</title>
           <pubDate>Fri, 05 Jun 2026 00:00:00 +0000</pubDate>
