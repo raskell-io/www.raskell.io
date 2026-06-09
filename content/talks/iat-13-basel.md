@@ -37,8 +37,8 @@ event_date_human = "10 June 2026"
 <section class="slide">
   <div class="slide__inner">
     <p class="slide__eyebrow">01</p>
-    <h2 class="slide__title slide__title--mono">May → November&nbsp;2025</h2>
-    <p class="slide__lede">Two milestones, six months apart.</p>
+    <h2 class="slide__title">It came down to two subscriptions.</h2>
+    <p class="slide__subline">May → November&nbsp;2025</p>
     <ol class="slide__timeline">
       <li>
         <span class="slide__timeline-date">Before</span>
