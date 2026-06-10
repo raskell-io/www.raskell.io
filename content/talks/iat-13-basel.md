@@ -37,20 +37,24 @@ event_date_human = "10 June 2026"
 <section class="slide">
   <div class="slide__inner">
     <p class="slide__eyebrow">01</p>
-    <h2 class="slide__title">It came down to two subscriptions.</h2>
-    <p class="slide__subline">May → November&nbsp;2025</p>
+    <h2 class="slide__title">It came down to three subscriptions.</h2>
+    <p class="slide__subline">December 2022 → November&nbsp;2025</p>
     <ol class="slide__timeline">
       <li>
-        <span class="slide__timeline-date">Before</span>
-        <p>Mostly using Zed's AI offering. Solid editor, fine integrations. Nothing that changed how I worked.</p>
+        <span class="slide__timeline-date">December 2022</span>
+        <p><strong>OpenAI.</strong> Subscription almost day one. Chat-first AI joins my daily workflow and stays there.</p>
+      </li>
+      <li>
+        <span class="slide__timeline-date">Then Zed</span>
+        <p>A Rust-built editor that bet on AI very early. The best LLM integrations of its era. My gateway to AI-assisted development while Cursor, Windsurf, and Copilot were finding their feet.</p>
       </li>
       <li>
         <span class="slide__timeline-date">May 2025</span>
-        <p><strong>Claude Code drops.</strong> I take the $20 Anthropic subscription on day one. Early adopter, on a hunch.</p>
+        <p><strong>Claude Code drops.</strong> First TUI-first coding agent. I take the $20 Anthropic subscription the day it ships. Hooked.</p>
       </li>
       <li>
         <span class="slide__timeline-date">November 2025</span>
-        <p><strong>Opus 4.5 ships.</strong> I upgrade to the $200 Max 20× plan right before Christmas vacation. A better model meets three weeks of free time on my hands.</p>
+        <p><strong>Opus 4.5 ships.</strong> I upgrade to the $200 Max 20× plan right before Christmas vacation. Three weeks of free time meets a step-change in capability.</p>
       </li>
     </ol>
     <p class="slide__kicker">I am an engineer. I know how to build things.</p>
@@ -176,7 +180,7 @@ event_date_human = "10 June 2026"
 <section class="slide">
   <div class="slide__inner">
     <p class="slide__eyebrow">05</p>
-    <h2 class="slide__title">What AI is still bad at</h2>
+    <h2 class="slide__title">Where the human still steers.</h2>
     <ul class="slide__list">
       <li>Requirements</li>
       <li>Architecture tradeoffs</li>
@@ -188,6 +192,50 @@ event_date_human = "10 June 2026"
     <p class="slide__kicker slide__kicker--strong">
       The human did not disappear. The human moved up the stack.
     </p>
+    <svg class="slide__diagram" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="diag05-title">
+      <title id="diag05-title">Before: the human reasoned about syntax; the compiler enforced it. Now: the human reasons about meaning; the coding agent interprets it.</title>
+      <defs>
+        <marker id="diag05-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0 L10 5 L0 10 z" fill="#a8acba"/>
+        </marker>
+      </defs>
+      <text x="22" y="89" class="slide__diagram-row-label">Before</text>
+      <g class="slide__diagram-node">
+        <rect x="140" y="55" width="240" height="70" rx="14"/>
+        <text x="260" y="86">Human</text>
+        <text x="260" y="108" class="slide__diagram-node-sub">reasons about</text>
+      </g>
+      <line x1="395" y1="90" x2="465" y2="90" class="slide__diagram-arrow" marker-end="url(#diag05-arrow)"/>
+      <g class="slide__diagram-node slide__diagram-node--soft">
+        <rect x="480" y="55" width="240" height="70" rx="14"/>
+        <text x="600" y="86">Syntax</text>
+        <text x="600" y="108" class="slide__diagram-node-sub">enforced by</text>
+      </g>
+      <line x1="735" y1="90" x2="805" y2="90" class="slide__diagram-arrow" marker-end="url(#diag05-arrow)"/>
+      <g class="slide__diagram-node">
+        <rect x="820" y="55" width="240" height="70" rx="14"/>
+        <text x="940" y="86">Compiler</text>
+        <text x="940" y="108" class="slide__diagram-node-sub">that makes it work</text>
+      </g>
+      <text x="22" y="239" class="slide__diagram-row-label">Now</text>
+      <g class="slide__diagram-node">
+        <rect x="140" y="205" width="240" height="70" rx="14"/>
+        <text x="260" y="236">Human</text>
+        <text x="260" y="258" class="slide__diagram-node-sub">reasons about</text>
+      </g>
+      <line x1="395" y1="240" x2="465" y2="240" class="slide__diagram-arrow" marker-end="url(#diag05-arrow)"/>
+      <g class="slide__diagram-node slide__diagram-node--accent">
+        <rect x="480" y="205" width="240" height="70" rx="14"/>
+        <text x="600" y="236">Meaning</text>
+        <text x="600" y="258" class="slide__diagram-node-sub">interpreted by</text>
+      </g>
+      <line x1="735" y1="240" x2="805" y2="240" class="slide__diagram-arrow" marker-end="url(#diag05-arrow)"/>
+      <g class="slide__diagram-node slide__diagram-node--accent">
+        <rect x="820" y="205" width="240" height="70" rx="14"/>
+        <text x="940" y="236">Coding Agent</text>
+        <text x="940" y="258" class="slide__diagram-node-sub">that makes it work</text>
+      </g>
+    </svg>
   </div>
 </section>
 

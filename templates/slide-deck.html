@@ -587,6 +587,59 @@
       color: var(--slide-fg-faint);
     }
 
+    /* ===== Pipeline diagram (slide 5) ===== */
+    .slide__diagram {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 56rem;
+      margin: 0.75rem auto 1rem;
+    }
+    .slide__diagram-row-label {
+      font-family: 'Geist Mono', monospace;
+      font-size: 16px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      fill: var(--slide-fg-faint);
+    }
+    .slide__diagram-node rect {
+      fill: rgba(255, 255, 255, 0.65);
+      stroke: rgba(76, 79, 105, 0.12);
+      stroke-width: 1.5;
+    }
+    .slide__diagram-node text {
+      font-family: 'Geist Mono', monospace;
+      font-size: 17px;
+      fill: var(--slide-fg);
+      text-anchor: middle;
+    }
+    .slide__diagram-node--accent rect {
+      fill: #8a72c0;
+      stroke: none;
+    }
+    .slide__diagram-node--accent text {
+      fill: #ffffff;
+      font-weight: 500;
+    }
+    .slide__diagram-node-sub {
+      font-size: 12px !important;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+    .slide__diagram-node--soft rect {
+      fill: rgba(138, 114, 192, 0.07);
+      stroke: rgba(138, 114, 192, 0.18);
+    }
+    .slide__diagram-arrow {
+      stroke: #a8acba;
+      stroke-width: 2;
+      fill: none;
+    }
+    .slide__diagram-row-label {
+      fill: #8c8fa1;
+    }
+
     /* ===== Plain list (slide 5) ===== */
     .slide__list {
       list-style: none;
