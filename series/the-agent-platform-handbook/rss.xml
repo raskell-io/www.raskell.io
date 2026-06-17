@@ -7,7 +7,254 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/series/the-agent-platform-handbook/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Sat, 13 Jun 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Wed, 17 Jun 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Retrieval Is a Tool, Not a Layer</title>
+          <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/</link>
+          <guid>https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/</guid>
+          <description xml:base="https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/">&lt;blockquote&gt;
+&lt;p&gt;Part 5 of &lt;em&gt;The Agent Platform Handbook. From Loop to Platform.&lt;&#x2F;em&gt; Previous: &lt;a href=&quot;&#x2F;articles&#x2F;context-is-the-product&#x2F;&quot;&gt;Context Is the Product&lt;&#x2F;a&gt;. Next: Memory Is a Write Path.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;articles&#x2F;context-is-the-product&#x2F;&quot;&gt;Post four&lt;&#x2F;a&gt; gave the harness a context layer. A &lt;code&gt;context.ts&lt;&#x2F;code&gt; module reads markdown files from a &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; directory at startup, applies a byte budget, wraps each file in a &lt;code&gt;&amp;lt;context path=&quot;...&quot;&amp;gt;&lt;&#x2F;code&gt; block, and concatenates the whole thing under the core prompt. The agent now arrives at every turn knowing what the project is, how to talk about it, and what it is not allowed to do. The harness sits at tag &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&#x2F;tree&#x2F;post-04&quot;&gt;&lt;code&gt;post-04&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;: a loop, a registry, four sandboxed tools, parallel dispatch, and a static context loader.&lt;&#x2F;p&gt;
+&lt;p&gt;It loads the entire directory on every turn.&lt;&#x2F;p&gt;
+&lt;p&gt;That is fine for the three small files the repo ships with. It is roughly three kilobytes. It costs almost nothing with prompt caching, and the agent reads its conventions on turn one without a single tool call. The argument from post four holds: the static layer is necessary, and it is cheap when it is small.&lt;&#x2F;p&gt;
+&lt;p&gt;The directory does not stay small. The first real project that adopts &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; adds a &lt;code&gt;security.md&lt;&#x2F;code&gt;. Then an &lt;code&gt;architecture.md&lt;&#x2F;code&gt;. Then, because it is a monorepo, a file per service. Then the platform team adds a &lt;code&gt;deploy.md&lt;&#x2F;code&gt; and the data team adds a &lt;code&gt;schemas.md&lt;&#x2F;code&gt; and six months later the directory is forty files and four hundred kilobytes, and the loader from post four is pasting all of it into every turn, including the turn where the user asked the agent to fix a typo in the README.&lt;&#x2F;p&gt;
+&lt;p&gt;This post is about the layer that fixes that. It ships as tag &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&#x2F;tree&#x2F;post-05&quot;&gt;&lt;code&gt;post-05&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;. The change is smaller than the problem makes it sound, because the harness already has the right shape. The agent does not need a retrieval &lt;em&gt;layer&lt;&#x2F;em&gt;. It needs a retrieval &lt;em&gt;tool&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-wrong-fix-has-a-product-page&quot;&gt;The wrong fix has a product page&lt;&#x2F;h2&gt;
+&lt;p&gt;The reflex, when “load everything” stops scaling, is to reach for retrieval-augmented generation. Stand up a vector database. Pick an embedding model. Write a chunker. Write an ingestion job that walks the corpus, embeds every chunk, and upserts it into the store. Write a sync job so that when a document changes, the index changes with it. Add the vector store to your deployment, your backups, your on-call rotation, and your bill.&lt;&#x2F;p&gt;
+&lt;p&gt;Now, on every turn, you embed the user’s query, run a nearest-neighbor search against the store, pull the top chunks, and splice them into the prompt. This is the architecture every vector database vendor will sell you, and for a corpus of fifty thousand documents it is the right architecture. For a &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; directory it is a second production system standing next to your agent to solve a problem your agent already has the machinery to solve.&lt;&#x2F;p&gt;
+&lt;p&gt;The framing error is in the word “layer.” A layer sits beside the agent and feeds it. It has its own lifecycle, its own failure modes, its own latency, its own operational surface. You built one whole distributed system in &lt;a href=&quot;&#x2F;articles&#x2F;tools-how-agents-actually-do-things&#x2F;&quot;&gt;post three’s registry&lt;&#x2F;a&gt; and you are about to build a second one next to it.&lt;&#x2F;p&gt;
+&lt;p&gt;You do not have to. The registry from post three already dispatches named operations, runs them in parallel, caps their output, and wraps their errors. Retrieval is a named operation that takes a query and returns text. It is a tool. Put it in the registry and the agent calls it the same way it calls &lt;code&gt;fs_read&lt;&#x2F;code&gt; or &lt;code&gt;git&lt;&#x2F;code&gt;, on the turns where it needs it, and not on the turns where it does not.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;pinned-versus-searchable&quot;&gt;Pinned versus searchable&lt;&#x2F;h2&gt;
+&lt;p&gt;The split that makes this work was already implied by post four. That post argued that some context is cross-cutting: the rule “do not write files” applies to every tool call, so it has to be present on every turn. Other context is topical: the glossary entry for a term the agent will use once this session, the security policy that only matters when the task touches secrets, the architecture note that only matters when the task touches the loop.&lt;&#x2F;p&gt;
+&lt;p&gt;Post four loaded both kinds the same way. Post five separates them.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Pinned context versus searchable context&quot;&gt;.AGENTS&amp;#x2F;
+   +-- overview.md      ---+
+   +-- conventions.md   ---+----&amp;gt; PINNED  ----&amp;gt; system prompt, every turn
+   |                                            (cross-cutting, always true)
+   +-- glossary.md      ---+
+   +-- security.md      ---+----&amp;gt; SEARCHABLE -&amp;gt; context_search tool, on demand
+   +-- architecture.md  ---+                    (topical, pulled per task)
+   +-- ...              ---+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Pinned files load into the system prompt on every turn, exactly as in post four, with the same budget and the same &lt;code&gt;&amp;lt;context&amp;gt;&lt;&#x2F;code&gt; wrapping. The pinned set is deliberately tiny: &lt;code&gt;overview.md&lt;&#x2F;code&gt;, so the agent knows what the project is, and &lt;code&gt;conventions.md&lt;&#x2F;code&gt;, so the agent knows the rules that apply to every action. These are the files you cannot afford to have the agent miss, so you pay for them every turn on purpose.&lt;&#x2F;p&gt;
+&lt;p&gt;Everything else in &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; becomes searchable. It is not in the prompt. It is sitting in an index, and the agent pulls the relevant sections by calling a tool. The glossary moves here, because a glossary is a lookup table and you look things up when you need them. The security policy moves here, because the turn that prints a file needs it and the turn that counts lines does not. The architecture notes move here for the same reason.&lt;&#x2F;p&gt;
+&lt;p&gt;The contract in &lt;code&gt;context.ts&lt;&#x2F;code&gt; is two lines.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&amp;#x2F;&amp;#x2F; Pinned files load into every turn. They carry cross-cutting rules that
+&amp;#x2F;&amp;#x2F; have to be true regardless of the task. Everything else in .AGENTS&amp;#x2F; is
+&amp;#x2F;&amp;#x2F; searchable on demand through the context_search tool (see retriever.ts).
+export const PINNED = [&amp;quot;overview.md&amp;quot;, &amp;quot;conventions.md&amp;quot;];
+
+export function isPinned(name: string): boolean {
+  return PINNED.includes(name);
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;loadContext&lt;&#x2F;code&gt; from post four now filters to the pinned set and is otherwise unchanged. The byte budget, the truncation marker, the per-file logging, the &lt;code&gt;&amp;lt;context&amp;gt;&lt;&#x2F;code&gt; rendering all survive. The function got smaller, not more complex.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-retriever&quot;&gt;The retriever&lt;&#x2F;h2&gt;
+&lt;p&gt;The searchable half needs an index and a ranker. The whole thing is one new file, &lt;code&gt;retriever.ts&lt;&#x2F;code&gt;, and it does not import a database.&lt;&#x2F;p&gt;
+&lt;p&gt;Start with the shape of an indexed chunk.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;export type Chunk = {
+  path: string;            &amp;#x2F;&amp;#x2F; .AGENTS&amp;#x2F;security.md
+  heading: string;         &amp;#x2F;&amp;#x2F; &amp;quot;Secrets&amp;quot;
+  text: string;            &amp;#x2F;&amp;#x2F; the section body, heading included
+  length: number;          &amp;#x2F;&amp;#x2F; token count, for length normalization
+  tf: Map&amp;lt;string, number&amp;gt;; &amp;#x2F;&amp;#x2F; term -&amp;gt; frequency within this chunk
+};
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;A chunk is a section, not a file and not a fixed-size window. Markdown already tells you where the meaningful boundaries are: they are the headings. Splitting on headings means a chunk is a coherent unit a human wrote on purpose, with a title that describes it. That title becomes the chunk’s &lt;code&gt;heading&lt;&#x2F;code&gt;, which is both a retrieval signal and the label the agent cites back to the user.&lt;&#x2F;p&gt;
+&lt;p&gt;The chunker walks the file line by line, starts a new chunk at every heading, and tokenizes each section as it closes.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;function chunkMarkdown(path: string, raw: string): Chunk[] {
+  const chunks: Chunk[] = [];
+  let heading = &amp;quot;(intro)&amp;quot;;
+  let buf: string[] = [];
+
+  const flush = () =&amp;gt; {
+    const body = buf.join(&amp;quot;\n&amp;quot;).trim();
+    if (body.length === 0) return;
+    const tf = new Map&amp;lt;string, number&amp;gt;();
+    let length = 0;
+    for (const tok of tokenize(body)) {
+      tf.set(tok, (tf.get(tok) ?? 0) + 1);
+      length++;
+    }
+    chunks.push({ path, heading, text: body, length, tf });
+  };
+
+  for (const line of raw.split(&amp;quot;\n&amp;quot;)) {
+    const m = &amp;#x2F;^#{1,6}\s+(.*)$&amp;#x2F;.exec(line);
+    if (m) {
+      flush();
+      heading = m[1].trim();
+      buf = [line];
+    } else {
+      buf.push(line);
+    }
+  }
+  flush();
+  return chunks;
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Tokenization is lowercase, split on non-alphanumeric, drop a short stop list and single characters. Nothing clever. The point is to count terms, and the ranker does the rest.&lt;&#x2F;p&gt;
+&lt;p&gt;The ranker is BM25. It is the function that powers Lucene, Elasticsearch, and most of the search you have ever used that was not a neural model, and it has been the strong baseline in information retrieval for thirty years. The formula rewards a chunk for containing a query term often, with two corrections that matter. Term frequency saturates, so the tenth occurrence of a word counts for much less than the second. And the score is normalized by chunk length, so a long section does not win simply for being long. Rare terms, the ones that actually discriminate between sections, are weighted up through inverse document frequency.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;const K1 = 1.5;
+const B = 0.75;
+
+export function search(index: Index, query: string, k = 3): Hit[] {
+  const terms = tokenize(query);
+  if (terms.length === 0 || index.chunks.length === 0) return [];
+
+  const N = index.chunks.length;
+  const hits: Hit[] = [];
+
+  for (const chunk of index.chunks) {
+    let score = 0;
+    for (const term of terms) {
+      const tf = chunk.tf.get(term);
+      if (!tf) continue;
+      const df = index.df.get(term) ?? 0;
+      const idf = Math.log(1 + (N - df + 0.5) &amp;#x2F; (df + 0.5));
+      const denom = tf + K1 * (1 - B + B * (chunk.length &amp;#x2F; (index.avgLength || 1)));
+      score += idf * (tf * (K1 + 1)) &amp;#x2F; denom;
+    }
+    if (score &amp;gt; 0) hits.push({ chunk, score });
+  }
+
+  hits.sort((a, b) =&amp;gt; b.score - a.score);
+  return hits.slice(0, k);
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;That is the entire ranking engine. No model to download, no service to call, no index to host. &lt;code&gt;buildIndex&lt;&#x2F;code&gt; reads the non-pinned markdown files at startup, chunks them, and computes document frequencies and the average chunk length once. The result lives in memory for the life of the process.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-tool&quot;&gt;The tool&lt;&#x2F;h2&gt;
+&lt;p&gt;Wrapping the retriever as a tool is the part that earns this post its title. The retriever does not get a special pathway into the loop. It gets registered like every other tool, with a name, an input schema, an output cap, and a handler.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;export function makeContextSearch(index: Index): Tool {
+  return {
+    name: &amp;quot;context_search&amp;quot;,
+    description:
+      &amp;quot;Search the project&amp;#x27;s on-demand .AGENTS&amp;#x2F; context for sections relevant &amp;quot; +
+      &amp;quot;to a query. Returns the best-matching documentation sections, each &amp;quot; +
+      &amp;quot;wrapped in a &amp;lt;context&amp;gt; block with its source path and heading. Use &amp;quot; +
+      &amp;quot;this when you need project conventions, glossary terms, or architecture &amp;quot; +
+      &amp;quot;notes that are not already in your system prompt. The system prompt &amp;quot; +
+      &amp;quot;lists which sources are searchable.&amp;quot;,
+    input_schema: {
+      type: &amp;quot;object&amp;quot;,
+      properties: {
+        query: { type: &amp;quot;string&amp;quot;, description: &amp;quot;Natural-language description of what you need.&amp;quot; },
+        k: { type: &amp;quot;number&amp;quot;, description: &amp;quot;Maximum number of sections to return. Defaults to 3.&amp;quot; },
+      },
+      required: [&amp;quot;query&amp;quot;],
+    },
+    max_output_bytes: 16 * 1024,
+    run: async ({ query, k }) =&amp;gt; {
+      const q = String(query ?? &amp;quot;&amp;quot;).trim();
+      if (q.length === 0) return { ok: false, error: &amp;quot;query is required&amp;quot; };
+
+      const limit = typeof k === &amp;quot;number&amp;quot; &amp;amp;&amp;amp; k &amp;gt; 0 ? Math.floor(k) : 3;
+      const hits = search(index, q, limit);
+      if (hits.length === 0) return { ok: true, value: `no matching context for: ${q}` };
+
+      return {
+        ok: true,
+        value: hits
+          .map(
+            (h) =&amp;gt;
+              `&amp;lt;context path=&amp;quot;${h.chunk.path}&amp;quot; section=&amp;quot;${h.chunk.heading}&amp;quot; score=&amp;quot;${h.score.toFixed(2)}&amp;quot;&amp;gt;\n` +
+              `${h.chunk.text.trim()}\n&amp;lt;&amp;#x2F;context&amp;gt;`,
+          )
+          .join(&amp;quot;\n\n&amp;quot;),
+      };
+    },
+  };
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;makeContextSearch&lt;&#x2F;code&gt; is a factory rather than a plain export because the tool closes over the index that &lt;code&gt;buildIndex&lt;&#x2F;code&gt; produced at startup. That is the only structural difference between this tool and the four that came before it. Everything downstream is identical. The registry caps its output at &lt;code&gt;max_output_bytes&lt;&#x2F;code&gt;. The loop dispatches it in the same &lt;code&gt;Promise.all&lt;&#x2F;code&gt; as any other call from the turn. A miss returns an ordinary &lt;code&gt;ok&lt;&#x2F;code&gt; result with a “no matching context” string, not an error, because an empty search is a fact about the corpus, not a failure of the tool.&lt;&#x2F;p&gt;
+&lt;p&gt;The rendered hit carries &lt;code&gt;path&lt;&#x2F;code&gt;, &lt;code&gt;section&lt;&#x2F;code&gt;, and &lt;code&gt;score&lt;&#x2F;code&gt;. The agent reads the section, answers the question, and cites the source the same way it learned to cite pinned context in post four. The score is there for the operator. When you read the trace and wonder why the agent pulled a particular section, the number tells you how strong the match was.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;wiring-it-into-the-loop&quot;&gt;Wiring it into the loop&lt;&#x2F;h2&gt;
+&lt;p&gt;Three changes in &lt;code&gt;agent.ts&lt;&#x2F;code&gt;, and the loop body does not move.&lt;&#x2F;p&gt;
+&lt;p&gt;The registry construction becomes a function, because one tool now depends on runtime state.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;function buildRegistry(index: Index): Registry {
+  return new Registry()
+    .register(shell)
+    .register(fs_read)
+    .register(http_get)
+    .register(git)
+    .register(makeContextSearch(index));
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The system prompt gains a manifest. The agent cannot search a corpus it does not know exists, so the prompt lists the searchable sources and their section headings. The manifest is small, a few dozen tokens, and it is the difference between an agent that calls &lt;code&gt;context_search&lt;&#x2F;code&gt; on the right turn and one that never calls it at all.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;const m = manifest(index);
+if (m) {
+  parts.push(
+    &amp;quot;More project context is available on demand. Call context_search &amp;quot; +
+    &amp;quot;with a natural-language query to pull the relevant sections instead &amp;quot; +
+    &amp;quot;of guessing. Searchable sources and their sections:\n\n&amp;quot; + m,
+  );
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And &lt;code&gt;run&lt;&#x2F;code&gt; builds the index at startup, alongside the pinned load it already did.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;const ctx = await loadContext();
+const index = await buildIndex();
+const registry = buildRegistry(index);
+const system = systemPrompt(ctx, index);
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The pinned files print as &lt;code&gt;# pinned&lt;&#x2F;code&gt;, and the searchable corpus prints its size, so the operator sees both halves of the context layer before the agent runs. That is the whole wiring change. The dispatcher, the parallel &lt;code&gt;Promise.all&lt;&#x2F;code&gt;, the iteration budget, the error envelopes are untouched. The loop still does not know what a tool does. It only knows how to call one.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-it-looks-like-running&quot;&gt;What it looks like running&lt;&#x2F;h2&gt;
+&lt;p&gt;The manifest tells the agent what is searchable. The agent decides when to reach for it.&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ bun agent.ts &amp;quot;am I allowed to write files or print the contents of .env?&amp;quot;
+# pinned .AGENTS&amp;#x2F;overview.md (1002B)
+# pinned .AGENTS&amp;#x2F;conventions.md (1339B)
+# searchable 11 sections across 3 files
+&amp;gt; context_search {&amp;quot;query&amp;quot;:&amp;quot;writing files and printing secret env files&amp;quot;} -&amp;gt; ok
+No, on both counts.
+
+- Printing .env is prohibited. The security policy excludes .env,
+  secrets.env, and any .key, .pem, or .p12 file, and says to stop and
+  explain rather than print it (.AGENTS&amp;#x2F;security.md, &amp;quot;Secrets&amp;quot;).
+- There is no write tool in this harness, and the policy says to describe
+  the change and let the operator apply it instead
+  (.AGENTS&amp;#x2F;security.md, &amp;quot;Filesystem boundaries&amp;quot;).
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;One tool call. The rule lived in &lt;code&gt;security.md&lt;&#x2F;code&gt;, which is not in the prompt, and the agent retrieved exactly the two sections it needed and cited both by file and heading. The pinned &lt;code&gt;conventions.md&lt;&#x2F;code&gt; told it that rules exist and to prefer rejecting over guessing. The searchable &lt;code&gt;security.md&lt;&#x2F;code&gt; told it which rule. The same harness pointed at a forty-file &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; behaves identically. It pays for two pinned files and one search, not for forty files on a turn that touched one of them.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-not-embeddings&quot;&gt;Why not embeddings&lt;&#x2F;h2&gt;
+&lt;p&gt;This is the section the vector database vendor disagrees with, so it is worth being precise about where they are right.&lt;&#x2F;p&gt;
+&lt;p&gt;Embeddings solve a real problem: vocabulary mismatch. A lexical ranker scores on the words that are actually present. If the user asks “how do I ship this” and the document says “deployment procedure,” BM25 sees no shared terms and scores zero. An embedding model maps both phrases into a vector space where “ship” and “deployment” sit close together, and the search finds the document anyway. When you cannot control the words in the query, and you cannot control the words in the corpus, semantic search is the answer. That is most consumer search, most support-ticket retrieval, most search over a corpus written by people who are not you.&lt;&#x2F;p&gt;
+&lt;p&gt;A &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; directory is none of those things. You control the corpus. You wrote it. The query comes from a model that has the manifest in its prompt, so it knows the corpus uses the word “deployment” and phrases its search accordingly. The vocabulary-mismatch problem that justifies embeddings is a problem you can edit away by writing the glossary heading as the word people search for. At this scale the docs and the queries share an author and a vocabulary, and lexical ranking is not a weaker version of the right answer. It is the right answer.&lt;&#x2F;p&gt;
+&lt;p&gt;The cost of reaching for embeddings anyway is not zero, and it is worth naming.&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Concern&lt;&#x2F;th&gt;&lt;th&gt;Lexical (BM25)&lt;&#x2F;th&gt;&lt;th&gt;Embeddings + vector store&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Infrastructure&lt;&#x2F;td&gt;&lt;td&gt;None. An in-memory index.&lt;&#x2F;td&gt;&lt;td&gt;An embedding model and a vector database to host.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Build cost&lt;&#x2F;td&gt;&lt;td&gt;Read files, count terms. Milliseconds.&lt;&#x2F;td&gt;&lt;td&gt;Embed every chunk. A model call per chunk.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Staleness&lt;&#x2F;td&gt;&lt;td&gt;Rebuild is reading the directory again.&lt;&#x2F;td&gt;&lt;td&gt;Re-embed and re-upsert on every document edit.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Debuggability&lt;&#x2F;td&gt;&lt;td&gt;Read the score. See which terms matched.&lt;&#x2F;td&gt;&lt;td&gt;Cosine distance in a space you cannot inspect.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Failure mode&lt;&#x2F;td&gt;&lt;td&gt;Misses on vocabulary mismatch.&lt;&#x2F;td&gt;&lt;td&gt;Retrieves plausible-but-wrong neighbors silently.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Right scale&lt;&#x2F;td&gt;&lt;td&gt;Tens of files, hundreds of chunks.&lt;&#x2F;td&gt;&lt;td&gt;Tens of thousands of documents and up.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;The last row is the whole decision. Embeddings earn their keep when the corpus is too large for a human to have written with consistent vocabulary, when the queries come from people you do not control, or when you genuinely need to match across languages or heavy paraphrase. None of that is true of a project’s own context directory, and all of it is true of a knowledge base with fifty thousand pages. The mistake is not using embeddings. The mistake is using them at the scale where a thirty-year-old ranking function does the job with no operational surface at all.&lt;&#x2F;p&gt;
+&lt;p&gt;When &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; grows past the point where lexical ranking holds, the tool boundary is exactly where you swap the implementation. &lt;code&gt;context_search&lt;&#x2F;code&gt; keeps its name, its schema, and its contract. The retriever behind it grows an embedding index. The agent never knows the difference, and neither does the loop. That is the payoff of treating retrieval as a tool: the upgrade path is a change behind an interface, not a new system.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;failure-modes-worth-naming&quot;&gt;Failure modes worth naming&lt;&#x2F;h2&gt;
+&lt;p&gt;The first time you hit one of these you will suspect the retriever. Usually the retriever is fine and the corpus or the prompt needs an edit.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Under-retrieval.&lt;&#x2F;strong&gt; The agent answers from priors instead of calling &lt;code&gt;context_search&lt;&#x2F;code&gt;, and gets the project-specific detail wrong. The cause is almost always a weak manifest or a missing instruction. The pinned &lt;code&gt;conventions.md&lt;&#x2F;code&gt; should say, in the negative voice from post four, that the agent must search project context before guessing. The manifest should list headings specific enough that the model recognizes the turn needs them.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Over-retrieval.&lt;&#x2F;strong&gt; The agent calls &lt;code&gt;context_search&lt;&#x2F;code&gt; on every turn, including turns that the pinned context already answers. This costs a tool round-trip and some latency. The fix is the manifest again, framed so the model treats search as the fallback for topical detail, not the default for everything.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Stale index.&lt;&#x2F;strong&gt; &lt;code&gt;buildIndex&lt;&#x2F;code&gt; runs once at startup. A long-running agent process will not see edits to &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; until it restarts. For a CLI that starts per invocation this never matters. For a daemon it does, and the fix is to watch the directory and rebuild, which is a few lines and a problem for the day you actually run a daemon, not before.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Chunk boundaries.&lt;&#x2F;strong&gt; A rule that spans two headings gets split across two chunks, and a top-k search returns one half. The fix is editorial: keep a rule under one heading. The heading-based chunker rewards documents that are organized the way you would organize them for a human reader anyway.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Vocabulary mismatch.&lt;&#x2F;strong&gt; The lexical failure mode the embeddings section described. A query shares no terms with the section that answers it, and the search scores zero. At &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; scale the fix is to add the missing word to the heading or the body. You own the corpus. Make it say what people search for.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Manifest bloat.&lt;&#x2F;strong&gt; Forty searchable files, each with eight headings, is a manifest of three hundred lines, and now the thing you built to keep context out of the prompt is itself a large block of context in the prompt. The fix is to summarize: list files and a short description rather than every heading, once the directory is large enough that the full listing stops paying for itself.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-this-layer-does-not-solve&quot;&gt;What this layer does not solve&lt;&#x2F;h2&gt;
+&lt;p&gt;The pattern from the earlier posts holds. Each layer earns the right to be small by deferring what does not belong to it.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Embeddings for large corpora.&lt;&#x2F;strong&gt; The tool boundary is built to absorb this. The day the corpus outgrows lexical ranking, the retriever behind &lt;code&gt;context_search&lt;&#x2F;code&gt; changes and nothing else does. This post does not build it because nothing at &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; scale needs it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Per-turn token budgeting.&lt;&#x2F;strong&gt; Retrieved sections compete for the same window as the conversation history and the pinned context. Deciding how many sections to pull and how to evict them under pressure is a budgeting problem this post leaves at a fixed &lt;code&gt;k&lt;&#x2F;code&gt;. &lt;a href=&quot;#&quot;&gt;Post eighteen&lt;&#x2F;a&gt; on economics returns to it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Memory across turns and sessions.&lt;&#x2F;strong&gt; Retrieval reads context the project wrote. It does not write anything. A note the agent leaves for its future self is a different layer with a different lifetime and different write semantics, and it is the whole subject of the next post.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Shared context across many agents.&lt;&#x2F;strong&gt; A fleet may want its context to live in a service rather than in every repo. The MCP &lt;code&gt;resources&#x2F;list&lt;&#x2F;code&gt; and &lt;code&gt;resources&#x2F;read&lt;&#x2F;code&gt; shape fits behind the same tool boundary. &lt;a href=&quot;#&quot;&gt;Post eight&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;where-this-lands-in-the-platform&quot;&gt;Where this lands in the platform&lt;&#x2F;h2&gt;
+&lt;p&gt;Total damage going from &lt;code&gt;post-04&lt;&#x2F;code&gt; to &lt;code&gt;post-05&lt;&#x2F;code&gt;: one new file (&lt;code&gt;retriever.ts&lt;&#x2F;code&gt;), one new tool (&lt;code&gt;tools&#x2F;context_search.ts&lt;&#x2F;code&gt;), a split in &lt;code&gt;context.ts&lt;&#x2F;code&gt; between pinned and searchable, and three changes in &lt;code&gt;agent.ts&lt;&#x2F;code&gt;. The loop, the registry internals, the sandbox, the four original tools, and the types are all untouched. The agent now pays a fixed cost for the context that is always true, and a variable cost it decides for the context that is only sometimes relevant.&lt;&#x2F;p&gt;
+&lt;p&gt;The retriever sits on top of the static layer from post four, exactly as that post predicted it would. The pinned files are the static context. The searchable files are the corpus. The tool is the seam between them, and the seam is an entry in the registry from &lt;a href=&quot;&#x2F;articles&#x2F;tools-how-agents-actually-do-things&#x2F;&quot;&gt;post three&lt;&#x2F;a&gt;, dispatched and capped and error-wrapped by machinery that already existed. No vector store joined the deployment. No second system joined the on-call rotation. Retrieval became a tool, because the harness was already the kind of thing that turns a function into a capability the model can reach.&lt;&#x2F;p&gt;
+&lt;p&gt;The rule from the earlier posts still holds. The harness only ever grows; it does not get rewritten. Each post adds one capability to the same artifact and explains why the layer below was not enough. The layer below this one was a context loader that read everything every turn. This one reads what the turn needs. The layer above is the one that writes.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;next&quot;&gt;Next&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Part 6: Memory Is a Write Path.&lt;&#x2F;strong&gt; Retrieval reads context the project authored. Memory is the agent writing context for its own future turns and future sessions. Why the write path is the hard part, where session memory and cross-session memory diverge, and what it takes to let an agent remember without letting it corrupt its own ground truth.&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>Context Is the Product</title>
           <pubDate>Sat, 13 Jun 2026 00:00:00 +0000</pubDate>

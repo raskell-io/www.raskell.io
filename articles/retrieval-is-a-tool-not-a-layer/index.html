@@ -1,0 +1,266 @@
+<!doctype html><html prefix="og: https://ogp.me/ns#" lang=en><head><meta charset=utf-8><meta content="width=device-width,initial-scale=1.0,viewport-fit=cover" name=viewport><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="dark light" name=color-scheme><title>Retrieval Is a Tool, Not a Layer | Raskell</title><meta content="Loading the whole .AGENTS/ directory on every turn does not scale. The fix is not a retrieval layer bolted to the side of the agent. It is a search tool in the registry the agent already has. BM25 over project docs, no vector store, and an honest account of when embeddings start to earn their keep. Part five of The Agent Platform Handbook." name=description><meta content="ai-engineering, platform-automation, typescript" name=keywords><meta content=Raffael name=author><meta content="index, follow" name=robots><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=googlebot><link href=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/ rel=canonical><meta content=article property=og:type><meta content=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/ property=og:url><meta content="Raskell | Tech web space curated by Raffael" property=og:site_name><meta content="Retrieval Is a Tool, Not a Layer | Raskell" property=og:title><meta content="Loading the whole .AGENTS/ directory on every turn does not scale. The fix is not a retrieval layer bolted to the side of the agent. It is a search tool in the registry the agent already has. BM25 over project docs, no vector store, and an honest account of when embeddings start to earn their keep. Part five of The Agent Platform Handbook." property=og:description><meta content=https://raskell.io/retrieval-is-a-tool-not-a-layer.png property=og:image><meta content="Retrieval Is a Tool, Not a Layer" property=og:image:alt><meta content=1200 property=og:image:width><meta content=630 property=og:image:height><meta content=image/png property=og:image:type><meta content=en property=og:locale><meta content=Raffael property=article:author><meta content=2026-06-17T00:00:00+00:00 property=article:published_time><meta content=ai-engineering property=article:tag><meta content=platform-automation property=article:tag><meta content=typescript property=article:tag><meta content=summary_large_image name=twitter:card><meta content=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/ name=twitter:url><meta content="Retrieval Is a Tool, Not a Layer | Raskell" name=twitter:title><meta content="Loading the whole .AGENTS/ directory on every turn does not scale. The fix is not a retrieval layer bolted to the side of the agent. It is a search tool in the registry the agent already has. BM25 over project docs, no vector store, and an honest account of when embeddings start to earn their keep. Part five of The Agent Platform Handbook." name=twitter:description><meta content=https://raskell.io/retrieval-is-a-tool-not-a-layer.png name=twitter:image><meta content="Retrieval Is a Tool, Not a Layer" name=twitter:image:alt><meta content=@raskelll name=twitter:site><meta content=@raskelll name=twitter:creator><meta content="Retrieval Is a Tool, Not a Layer | Raskell" itemprop=name><meta content="Loading the whole .AGENTS/ directory on every turn does not scale. The fix is not a retrieval layer bolted to the side of the agent. It is a search tool in the registry the agent already has. BM25 over project docs, no vector store, and an honest account of when embeddings start to earn their keep. Part five of The Agent Platform Handbook." itemprop=description><meta content=Raskell name=application-name><meta media="(prefers-color-scheme: dark)" content=#cba6f7 name=theme-color><meta media="(prefers-color-scheme: light)" content=#8839ef name=theme-color><link href=https://raskell.io/favicon.ico rel=icon sizes=48x48><link href=https://raskell.io/favicon-32x32.png rel=icon sizes=32x32 type=image/png><link href=https://raskell.io/icon-192.png rel=icon sizes=192x192 type=image/png><link href=https://raskell.io/apple-touch-icon.png rel=apple-touch-icon sizes=180x180><link href=https://raskell.io/site.webmanifest rel=manifest><link title="RSS Feed for Raskell" href=https://raskell.io/rss.xml rel=alternate type=application/rss+xml><link href=https://raskell.io/style.css rel=stylesheet><link href=https://github.com rel=dns-prefetch><link href=https://schema.org rel=dns-prefetch><link as=font crossorigin href=https://raskell.io/fonts/Geist-Variable.woff2 rel=preload type=font/woff2><link as=font crossorigin href=https://raskell.io/fonts/GeistMono-Variable.woff2 rel=preload type=font/woff2><script>(()=>{const a=`ThemeColorScheme`;const b=`auto`;if(!localStorage.getItem(a)){localStorage.setItem(a,b)}})()</script><script>(()=>{let e=`dark`,d=`auto`;const a=`ThemeColorScheme`;const b=localStorage.getItem(a);const c=window.matchMedia(`(prefers-color-scheme: dark)`).matches===!0;document.documentElement.dataset.themeSetting=b||d;if(b==e||b===d&&c){document.documentElement.dataset.userColorScheme=e}else{document.documentElement.dataset.userColorScheme=`light`}})()</script><script type=application/ld+json>
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://raskell.io/#website",
+                "url": "https://raskell.io",
+                "name": "Raskell",
+                "description": "Writing about platform automation, edge systems, applied security, and open standards. Building automation-first platforms that survive production reality.",
+                "publisher": {
+                    "@id": "https://raskell.io/#person"
+                },
+                "inLanguage": "en"
+            },
+            {
+                "@type": "Person",
+                "@id": "https://raskell.io/#person",
+                "name": "Raffael",
+                "url": "https://raskell.io"
+                ,"sameAs": [
+                    "https:&#x2F;&#x2F;github.com&#x2F;raffaelschneider"
+                    ,"https:&#x2F;&#x2F;ch.linkedin.com&#x2F;in&#x2F;raffael-e-schneider"
+                    ,"https:&#x2F;&#x2F;twitter.com&#x2F;raskelll"
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://raskell.io/articles/retrieval-is-a-tool-not-a-layer//#webpage",
+                "url": "https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/",
+                "name": "Retrieval Is a Tool, Not a Layer",
+                "description": "Loading the whole .AGENTS&#x2F; directory on every turn does not scale. The fix is not a retrieval layer bolted to the side of the agent. It is a search tool in the registry the agent already has. BM25 over project docs, no vector store, and an honest account of when embeddings start to earn their keep. Part five of The Agent Platform Handbook.",
+                "isPartOf": {
+                    "@id": "https://raskell.io/#website"
+                },
+                "inLanguage": "en"
+                ,
+                "datePublished": "2026-06-17T00:00:00+00:00"
+                
+                
+            }
+            
+            ,{
+                "@type": "BlogPosting",
+                "@id": "https://raskell.io/articles/retrieval-is-a-tool-not-a-layer//#article",
+                "headline": "Retrieval Is a Tool, Not a Layer",
+                "description": "Loading the whole .AGENTS&#x2F; directory on every turn does not scale. The fix is not a retrieval layer bolted to the side of the agent. It is a search tool in the registry the agent already has. BM25 over project docs, no vector store, and an honest account of when embeddings start to earn their keep. Part five of The Agent Platform Handbook.",
+                "url": "https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/",
+                "isPartOf": {
+                    "@id": "https://raskell.io/articles/retrieval-is-a-tool-not-a-layer//#webpage"
+                },
+                "mainEntityOfPage": {
+                    "@id": "https://raskell.io/articles/retrieval-is-a-tool-not-a-layer//#webpage"
+                },
+                "inLanguage": "en",
+                "author": {
+                    "@type": "Person",
+                    "@id": "https://raskell.io/#person"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Raskell",
+                    "url": "https://raskell.io",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://raskell.io/icon-192.png"
+                    }
+                },
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": [".article-header h1", ".article-post p:first-of-type"]
+                }
+                ,
+                "datePublished": "2026-06-17T00:00:00+00:00"
+                
+                
+                ,
+                "keywords": "ai-engineering, platform-automation, typescript"
+                
+                ,
+                "wordCount": 3163
+                
+                ,
+                "image": "https://raskell.io/retrieval-is-a-tool-not-a-layer.png"
+                
+            }
+            
+            
+            ,{
+                "@type": "BreadcrumbList",
+                "@id": "https://raskell.io/articles/retrieval-is-a-tool-not-a-layer//#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://raskell.io"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Articles",
+                        "item": "https://raskell.io/articles/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Retrieval Is a Tool, Not a Layer"
+                    }
+                ]
+            }
+
+        ]
+    }
+    </script><body><a class=skip-link href=#main-content>Skip to main content</a><header class=navbar role=banner><div class=container><div class=flex><div><a aria-label="Raskell Home" class=brand href=https://raskell.io> <img alt aria-hidden=true class=brand-logo src=https://raskell.io/raskell-mascot.avif> <span class=brand-text>Raskell</span> </a></div><nav aria-label="Main navigation" class="flex nav-links" role=navigation><a aria-current=page href=https://raskell.io/articles/>Articles</a><a href=https://raskell.io/projects/>Projects</a><a href=https://raskell.io/speaking/>Speaking</a><a href=https://raskell.io/about/>About</a><button title="Search (/)" aria-label=Search class=search-toggle type=button><svg viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=11 cy=11 r=8 /><path d="m21 21-4.3-4.3"/></svg></button><button aria-label="Toggle color theme" title="Toggle theme" aria-live=polite class=theme-toggle type=button><span class=theme-toggle__icons> <span aria-hidden=true class=theme-toggle__sun> <svg viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=4 /><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg> </span> <span aria-hidden=true class=theme-toggle__moon> <svg viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg> </span> <span aria-hidden=true class=theme-toggle__auto> <svg viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=10 /><path d="M12 2a7 7 0 1 0 7 7"/></svg> </span> </span></button></nav><button aria-label="Open navigation menu" aria-controls=mobile-menu-overlay aria-expanded=false class=mobile-menu-button id=mobile-menu-button><svg viewbox="0 0 24 24" aria-hidden=true class=menu-icon fill=none height=24 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=24><line x1=3 x2=21 y1=6 y2=6></line><line x1=3 x2=21 y1=12 y2=12></line><line x1=3 x2=21 y1=18 y2=18></line></svg> <svg viewbox="0 0 24 24" aria-hidden=true class=close-icon fill=none height=24 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=24><line x1=18 x2=6 y1=6 y2=18></line><line x1=6 x2=18 y1=6 y2=18></line></svg></button></div></div></header><div aria-label="Navigation menu" aria-hidden=true aria-modal=true class=mobile-menu-overlay id=mobile-menu-overlay role=dialog><nav aria-label="Mobile navigation" class=mobile-menu-content role=navigation><a aria-current=page href=https://raskell.io/articles/>Articles</a><a href=https://raskell.io/projects/>Projects</a><a href=https://raskell.io/speaking/>Speaking</a><a href=https://raskell.io/about/>About</a><button class="search-toggle mobile-search-toggle" aria-label=Search type=button><svg viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=11 cy=11 r=8 /><path d="m21 21-4.3-4.3"/></svg> <span class=search-label>Search</span></button><button aria-label="Toggle theme" class="theme-toggle mobile-theme-toggle" type=button><span class=theme-toggle__icons> <span aria-hidden=true class=theme-toggle__sun> <svg viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=4 /><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg> </span> <span aria-hidden=true class=theme-toggle__moon> <svg viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg> </span> <span aria-hidden=true class=theme-toggle__auto> <svg viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=10 /><path d="M12 2a7 7 0 1 0 7 7"/></svg> </span> </span> <span class=theme-label>Toggle theme</span></button></nav></div><div aria-labelledby=search-title aria-modal=true class=search-overlay role=dialog><div class=search><h2 class=sr-only id=search-title>Search</h2><div class=search__input-wrapper><span aria-hidden=true class=search__icon> <svg viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=11 cy=11 r=8 /><path d="m21 21-4.3-4.3"/></svg> </span><input aria-label="Search query" placeholder="Search articles..." autocomplete=off class=search__input type=search><span aria-hidden=true class=search__shortcut>/</span><button aria-label="Close search" title="Close (Esc)" class=search__close type=button><svg viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></div><div aria-label="Search results" class=search__results role=listbox></div><footer class=search__footer><nav aria-label="Keyboard shortcuts" class=search__hints><span class=search__hint><kbd>↑</kbd><kbd>↓</kbd> Navigate</span><span class=search__hint><kbd>↵</kbd> Select</span><span class=search__hint><kbd>esc</kbd> Close</span></nav></footer></div></div><main aria-label="Main content" id=main-content role=main><div class=container><article><header class=article-header><div class=thumb><div><h1>Retrieval Is a Tool, Not a Layer</h1><div class=post-meta><div class=meta-line><span class=author>Raffael</span><span class=separator>·</span><time datetime=2026-06-17>June 17, 2026</time><span class=separator>·</span><span class=reading-time>16 min read</span></div><div class=article-taxonomies><div class=tags><a class=tag href=https://raskell.io/tags/ai-engineering/>ai-engineering</a><a class=tag href=https://raskell.io/tags/platform-automation/>platform-automation</a><a class=tag href=https://raskell.io/tags/typescript/>typescript</a></div><div class=series-badge>Series: <a href=https://raskell.io/series/the-agent-platform-handbook/>the-agent-platform-handbook</a></div></div></div></div></div><img alt="Retrieval Is a Tool, Not a Layer" class=post-thumbnail decoding=async loading=lazy src=/retrieval-is-a-tool-not-a-layer.avif></header></article><nav aria-label="Table of contents" class=toc><details open><summary>Table of contents</summary> <ul><li><a href=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/#the-wrong-fix-has-a-product-page>The wrong fix has a product page</a><li><a href=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/#pinned-versus-searchable>Pinned versus searchable</a><li><a href=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/#the-retriever>The retriever</a><li><a href=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/#the-tool>The tool</a><li><a href=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/#wiring-it-into-the-loop>Wiring it into the loop</a><li><a href=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/#what-it-looks-like-running>What it looks like running</a><li><a href=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/#why-not-embeddings>Why not embeddings</a><li><a href=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/#failure-modes-worth-naming>Failure modes worth naming</a><li><a href=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/#what-this-layer-does-not-solve>What this layer does not solve</a><li><a href=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/#where-this-lands-in-the-platform>Where this lands in the platform</a><li><a href=https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/#next>Next</a></ul></details></nav><div class=article-post><blockquote><p>Part 5 of <em>The Agent Platform Handbook. From Loop to Platform.</em> Previous: <a href=/articles/context-is-the-product/>Context Is the Product</a>. Next: Memory Is a Write Path.</blockquote><p><a href=/articles/context-is-the-product/>Post four</a> gave the harness a context layer. A <code>context.ts</code> module reads markdown files from a <code>.AGENTS/</code> directory at startup, applies a byte budget, wraps each file in a <code>&LTcontext path="..."></code> block, and concatenates the whole thing under the core prompt. The agent now arrives at every turn knowing what the project is, how to talk about it, and what it is not allowed to do. The harness sits at tag <a href=https://github.com/raskell-io/the-agent-platform-handbook/tree/post-04 rel=noopener target=_blank><code>post-04</code></a>: a loop, a registry, four sandboxed tools, parallel dispatch, and a static context loader.<p>It loads the entire directory on every turn.<p>That is fine for the three small files the repo ships with. It is roughly three kilobytes. It costs almost nothing with prompt caching, and the agent reads its conventions on turn one without a single tool call. The argument from post four holds: the static layer is necessary, and it is cheap when it is small.<p>The directory does not stay small. The first real project that adopts <code>.AGENTS/</code> adds a <code>security.md</code>. Then an <code>architecture.md</code>. Then, because it is a monorepo, a file per service. Then the platform team adds a <code>deploy.md</code> and the data team adds a <code>schemas.md</code> and six months later the directory is forty files and four hundred kilobytes, and the loader from post four is pasting all of it into every turn, including the turn where the user asked the agent to fix a typo in the README.<p>This post is about the layer that fixes that. It ships as tag <a href=https://github.com/raskell-io/the-agent-platform-handbook/tree/post-05 rel=noopener target=_blank><code>post-05</code></a>. The change is smaller than the problem makes it sound, because the harness already has the right shape. The agent does not need a retrieval <em>layer</em>. It needs a retrieval <em>tool</em>.<h2 id=the-wrong-fix-has-a-product-page>The wrong fix has a product page</h2><p>The reflex, when “load everything” stops scaling, is to reach for retrieval-augmented generation. Stand up a vector database. Pick an embedding model. Write a chunker. Write an ingestion job that walks the corpus, embeds every chunk, and upserts it into the store. Write a sync job so that when a document changes, the index changes with it. Add the vector store to your deployment, your backups, your on-call rotation, and your bill.<p>Now, on every turn, you embed the user’s query, run a nearest-neighbor search against the store, pull the top chunks, and splice them into the prompt. This is the architecture every vector database vendor will sell you, and for a corpus of fifty thousand documents it is the right architecture. For a <code>.AGENTS/</code> directory it is a second production system standing next to your agent to solve a problem your agent already has the machinery to solve.<p>The framing error is in the word “layer.” A layer sits beside the agent and feeds it. It has its own lifecycle, its own failure modes, its own latency, its own operational surface. You built one whole distributed system in <a href=/articles/tools-how-agents-actually-do-things/>post three’s registry</a> and you are about to build a second one next to it.<p>You do not have to. The registry from post three already dispatches named operations, runs them in parallel, caps their output, and wraps their errors. Retrieval is a named operation that takes a query and returns text. It is a tool. Put it in the registry and the agent calls it the same way it calls <code>fs_read</code> or <code>git</code>, on the turns where it needs it, and not on the turns where it does not.<h2 id=pinned-versus-searchable>Pinned versus searchable</h2><p>The split that makes this work was already implied by post four. That post argued that some context is cross-cutting: the rule “do not write files” applies to every tool call, so it has to be present on every turn. Other context is topical: the glossary entry for a term the agent will use once this session, the security policy that only matters when the task touches secrets, the architecture note that only matters when the task touches the loop.<p>Post four loaded both kinds the same way. Post five separates them.<pre class="giallo diagram"><code data-title="Pinned context versus searchable context" data-lang=diagram>.AGENTS/
+   +-- overview.md      ---+
+   +-- conventions.md   ---+----> PINNED  ----> system prompt, every turn
+   |                                            (cross-cutting, always true)
+   +-- glossary.md      ---+
+   +-- security.md      ---+----> SEARCHABLE -> context_search tool, on demand
+   +-- architecture.md  ---+                    (topical, pulled per task)
+   +-- ...              ---+</code></pre><p>Pinned files load into the system prompt on every turn, exactly as in post four, with the same budget and the same <code>&LTcontext></code> wrapping. The pinned set is deliberately tiny: <code>overview.md</code>, so the agent knows what the project is, and <code>conventions.md</code>, so the agent knows the rules that apply to every action. These are the files you cannot afford to have the agent miss, so you pay for them every turn on purpose.<p>Everything else in <code>.AGENTS/</code> becomes searchable. It is not in the prompt. It is sitting in an index, and the agent pulls the relevant sections by calling a tool. The glossary moves here, because a glossary is a lookup table and you look things up when you need them. The security policy moves here, because the turn that prints a file needs it and the turn that counts lines does not. The architecture notes move here for the same reason.<p>The contract in <code>context.ts</code> is two lines.<pre class=language-typescript data-lang=typescript><code class=language-typescript data-lang=typescript>// Pinned files load into every turn. They carry cross-cutting rules that
+// have to be true regardless of the task. Everything else in .AGENTS/ is
+// searchable on demand through the context_search tool (see retriever.ts).
+export const PINNED = ["overview.md", "conventions.md"];
+
+export function isPinned(name: string): boolean {
+  return PINNED.includes(name);
+}
+</code></pre><p><code>loadContext</code> from post four now filters to the pinned set and is otherwise unchanged. The byte budget, the truncation marker, the per-file logging, the <code>&LTcontext></code> rendering all survive. The function got smaller, not more complex.<h2 id=the-retriever>The retriever</h2><p>The searchable half needs an index and a ranker. The whole thing is one new file, <code>retriever.ts</code>, and it does not import a database.<p>Start with the shape of an indexed chunk.<pre class=language-typescript data-lang=typescript><code class=language-typescript data-lang=typescript>export type Chunk = {
+  path: string;            // .AGENTS/security.md
+  heading: string;         // "Secrets"
+  text: string;            // the section body, heading included
+  length: number;          // token count, for length normalization
+  tf: Map&LTstring, number>; // term -> frequency within this chunk
+};
+</code></pre><p>A chunk is a section, not a file and not a fixed-size window. Markdown already tells you where the meaningful boundaries are: they are the headings. Splitting on headings means a chunk is a coherent unit a human wrote on purpose, with a title that describes it. That title becomes the chunk’s <code>heading</code>, which is both a retrieval signal and the label the agent cites back to the user.<p>The chunker walks the file line by line, starts a new chunk at every heading, and tokenizes each section as it closes.<pre class=language-typescript data-lang=typescript><code class=language-typescript data-lang=typescript>function chunkMarkdown(path: string, raw: string): Chunk[] {
+  const chunks: Chunk[] = [];
+  let heading = "(intro)";
+  let buf: string[] = [];
+
+  const flush = () => {
+    const body = buf.join("\n").trim();
+    if (body.length === 0) return;
+    const tf = new Map&LTstring, number>();
+    let length = 0;
+    for (const tok of tokenize(body)) {
+      tf.set(tok, (tf.get(tok) ?? 0) + 1);
+      length++;
+    }
+    chunks.push({ path, heading, text: body, length, tf });
+  };
+
+  for (const line of raw.split("\n")) {
+    const m = /^#{1,6}\s+(.*)$/.exec(line);
+    if (m) {
+      flush();
+      heading = m[1].trim();
+      buf = [line];
+    } else {
+      buf.push(line);
+    }
+  }
+  flush();
+  return chunks;
+}
+</code></pre><p>Tokenization is lowercase, split on non-alphanumeric, drop a short stop list and single characters. Nothing clever. The point is to count terms, and the ranker does the rest.<p>The ranker is BM25. It is the function that powers Lucene, Elasticsearch, and most of the search you have ever used that was not a neural model, and it has been the strong baseline in information retrieval for thirty years. The formula rewards a chunk for containing a query term often, with two corrections that matter. Term frequency saturates, so the tenth occurrence of a word counts for much less than the second. And the score is normalized by chunk length, so a long section does not win simply for being long. Rare terms, the ones that actually discriminate between sections, are weighted up through inverse document frequency.<pre class=language-typescript data-lang=typescript><code class=language-typescript data-lang=typescript>const K1 = 1.5;
+const B = 0.75;
+
+export function search(index: Index, query: string, k = 3): Hit[] {
+  const terms = tokenize(query);
+  if (terms.length === 0 || index.chunks.length === 0) return [];
+
+  const N = index.chunks.length;
+  const hits: Hit[] = [];
+
+  for (const chunk of index.chunks) {
+    let score = 0;
+    for (const term of terms) {
+      const tf = chunk.tf.get(term);
+      if (!tf) continue;
+      const df = index.df.get(term) ?? 0;
+      const idf = Math.log(1 + (N - df + 0.5) / (df + 0.5));
+      const denom = tf + K1 * (1 - B + B * (chunk.length / (index.avgLength || 1)));
+      score += idf * (tf * (K1 + 1)) / denom;
+    }
+    if (score > 0) hits.push({ chunk, score });
+  }
+
+  hits.sort((a, b) => b.score - a.score);
+  return hits.slice(0, k);
+}
+</code></pre><p>That is the entire ranking engine. No model to download, no service to call, no index to host. <code>buildIndex</code> reads the non-pinned markdown files at startup, chunks them, and computes document frequencies and the average chunk length once. The result lives in memory for the life of the process.<h2 id=the-tool>The tool</h2><p>Wrapping the retriever as a tool is the part that earns this post its title. The retriever does not get a special pathway into the loop. It gets registered like every other tool, with a name, an input schema, an output cap, and a handler.<pre class=language-typescript data-lang=typescript><code class=language-typescript data-lang=typescript>export function makeContextSearch(index: Index): Tool {
+  return {
+    name: "context_search",
+    description:
+      "Search the project's on-demand .AGENTS/ context for sections relevant " +
+      "to a query. Returns the best-matching documentation sections, each " +
+      "wrapped in a &LTcontext> block with its source path and heading. Use " +
+      "this when you need project conventions, glossary terms, or architecture " +
+      "notes that are not already in your system prompt. The system prompt " +
+      "lists which sources are searchable.",
+    input_schema: {
+      type: "object",
+      properties: {
+        query: { type: "string", description: "Natural-language description of what you need." },
+        k: { type: "number", description: "Maximum number of sections to return. Defaults to 3." },
+      },
+      required: ["query"],
+    },
+    max_output_bytes: 16 * 1024,
+    run: async ({ query, k }) => {
+      const q = String(query ?? "").trim();
+      if (q.length === 0) return { ok: false, error: "query is required" };
+
+      const limit = typeof k === "number" && k > 0 ? Math.floor(k) : 3;
+      const hits = search(index, q, limit);
+      if (hits.length === 0) return { ok: true, value: `no matching context for: ${q}` };
+
+      return {
+        ok: true,
+        value: hits
+          .map(
+            (h) =>
+              `&LTcontext path="${h.chunk.path}" section="${h.chunk.heading}" score="${h.score.toFixed(2)}">\n` +
+              `${h.chunk.text.trim()}\n&LT/context>`,
+          )
+          .join("\n\n"),
+      };
+    },
+  };
+}
+</code></pre><p><code>makeContextSearch</code> is a factory rather than a plain export because the tool closes over the index that <code>buildIndex</code> produced at startup. That is the only structural difference between this tool and the four that came before it. Everything downstream is identical. The registry caps its output at <code>max_output_bytes</code>. The loop dispatches it in the same <code>Promise.all</code> as any other call from the turn. A miss returns an ordinary <code>ok</code> result with a “no matching context” string, not an error, because an empty search is a fact about the corpus, not a failure of the tool.<p>The rendered hit carries <code>path</code>, <code>section</code>, and <code>score</code>. The agent reads the section, answers the question, and cites the source the same way it learned to cite pinned context in post four. The score is there for the operator. When you read the trace and wonder why the agent pulled a particular section, the number tells you how strong the match was.<h2 id=wiring-it-into-the-loop>Wiring it into the loop</h2><p>Three changes in <code>agent.ts</code>, and the loop body does not move.<p>The registry construction becomes a function, because one tool now depends on runtime state.<pre class=language-typescript data-lang=typescript><code class=language-typescript data-lang=typescript>function buildRegistry(index: Index): Registry {
+  return new Registry()
+    .register(shell)
+    .register(fs_read)
+    .register(http_get)
+    .register(git)
+    .register(makeContextSearch(index));
+}
+</code></pre><p>The system prompt gains a manifest. The agent cannot search a corpus it does not know exists, so the prompt lists the searchable sources and their section headings. The manifest is small, a few dozen tokens, and it is the difference between an agent that calls <code>context_search</code> on the right turn and one that never calls it at all.<pre class=language-typescript data-lang=typescript><code class=language-typescript data-lang=typescript>const m = manifest(index);
+if (m) {
+  parts.push(
+    "More project context is available on demand. Call context_search " +
+    "with a natural-language query to pull the relevant sections instead " +
+    "of guessing. Searchable sources and their sections:\n\n" + m,
+  );
+}
+</code></pre><p>And <code>run</code> builds the index at startup, alongside the pinned load it already did.<pre class=language-typescript data-lang=typescript><code class=language-typescript data-lang=typescript>const ctx = await loadContext();
+const index = await buildIndex();
+const registry = buildRegistry(index);
+const system = systemPrompt(ctx, index);
+</code></pre><p>The pinned files print as <code># pinned</code>, and the searchable corpus prints its size, so the operator sees both halves of the context layer before the agent runs. That is the whole wiring change. The dispatcher, the parallel <code>Promise.all</code>, the iteration budget, the error envelopes are untouched. The loop still does not know what a tool does. It only knows how to call one.<h2 id=what-it-looks-like-running>What it looks like running</h2><p>The manifest tells the agent what is searchable. The agent decides when to reach for it.<pre><code>$ bun agent.ts "am I allowed to write files or print the contents of .env?"
+# pinned .AGENTS/overview.md (1002B)
+# pinned .AGENTS/conventions.md (1339B)
+# searchable 11 sections across 3 files
+> context_search {"query":"writing files and printing secret env files"} -> ok
+No, on both counts.
+
+- Printing .env is prohibited. The security policy excludes .env,
+  secrets.env, and any .key, .pem, or .p12 file, and says to stop and
+  explain rather than print it (.AGENTS/security.md, "Secrets").
+- There is no write tool in this harness, and the policy says to describe
+  the change and let the operator apply it instead
+  (.AGENTS/security.md, "Filesystem boundaries").
+</code></pre><p>One tool call. The rule lived in <code>security.md</code>, which is not in the prompt, and the agent retrieved exactly the two sections it needed and cited both by file and heading. The pinned <code>conventions.md</code> told it that rules exist and to prefer rejecting over guessing. The searchable <code>security.md</code> told it which rule. The same harness pointed at a forty-file <code>.AGENTS/</code> behaves identically. It pays for two pinned files and one search, not for forty files on a turn that touched one of them.<h2 id=why-not-embeddings>Why not embeddings</h2><p>This is the section the vector database vendor disagrees with, so it is worth being precise about where they are right.<p>Embeddings solve a real problem: vocabulary mismatch. A lexical ranker scores on the words that are actually present. If the user asks “how do I ship this” and the document says “deployment procedure,” BM25 sees no shared terms and scores zero. An embedding model maps both phrases into a vector space where “ship” and “deployment” sit close together, and the search finds the document anyway. When you cannot control the words in the query, and you cannot control the words in the corpus, semantic search is the answer. That is most consumer search, most support-ticket retrieval, most search over a corpus written by people who are not you.<p>A <code>.AGENTS/</code> directory is none of those things. You control the corpus. You wrote it. The query comes from a model that has the manifest in its prompt, so it knows the corpus uses the word “deployment” and phrases its search accordingly. The vocabulary-mismatch problem that justifies embeddings is a problem you can edit away by writing the glossary heading as the word people search for. At this scale the docs and the queries share an author and a vocabulary, and lexical ranking is not a weaker version of the right answer. It is the right answer.<p>The cost of reaching for embeddings anyway is not zero, and it is worth naming.<table><thead><tr><th>Concern<th>Lexical (BM25)<th>Embeddings + vector store<tbody><tr><td>Infrastructure<td>None. An in-memory index.<td>An embedding model and a vector database to host.<tr><td>Build cost<td>Read files, count terms. Milliseconds.<td>Embed every chunk. A model call per chunk.<tr><td>Staleness<td>Rebuild is reading the directory again.<td>Re-embed and re-upsert on every document edit.<tr><td>Debuggability<td>Read the score. See which terms matched.<td>Cosine distance in a space you cannot inspect.<tr><td>Failure mode<td>Misses on vocabulary mismatch.<td>Retrieves plausible-but-wrong neighbors silently.<tr><td>Right scale<td>Tens of files, hundreds of chunks.<td>Tens of thousands of documents and up.</table><p>The last row is the whole decision. Embeddings earn their keep when the corpus is too large for a human to have written with consistent vocabulary, when the queries come from people you do not control, or when you genuinely need to match across languages or heavy paraphrase. None of that is true of a project’s own context directory, and all of it is true of a knowledge base with fifty thousand pages. The mistake is not using embeddings. The mistake is using them at the scale where a thirty-year-old ranking function does the job with no operational surface at all.<p>When <code>.AGENTS/</code> grows past the point where lexical ranking holds, the tool boundary is exactly where you swap the implementation. <code>context_search</code> keeps its name, its schema, and its contract. The retriever behind it grows an embedding index. The agent never knows the difference, and neither does the loop. That is the payoff of treating retrieval as a tool: the upgrade path is a change behind an interface, not a new system.<h2 id=failure-modes-worth-naming>Failure modes worth naming</h2><p>The first time you hit one of these you will suspect the retriever. Usually the retriever is fine and the corpus or the prompt needs an edit.<p><strong>Under-retrieval.</strong> The agent answers from priors instead of calling <code>context_search</code>, and gets the project-specific detail wrong. The cause is almost always a weak manifest or a missing instruction. The pinned <code>conventions.md</code> should say, in the negative voice from post four, that the agent must search project context before guessing. The manifest should list headings specific enough that the model recognizes the turn needs them.<p><strong>Over-retrieval.</strong> The agent calls <code>context_search</code> on every turn, including turns that the pinned context already answers. This costs a tool round-trip and some latency. The fix is the manifest again, framed so the model treats search as the fallback for topical detail, not the default for everything.<p><strong>Stale index.</strong> <code>buildIndex</code> runs once at startup. A long-running agent process will not see edits to <code>.AGENTS/</code> until it restarts. For a CLI that starts per invocation this never matters. For a daemon it does, and the fix is to watch the directory and rebuild, which is a few lines and a problem for the day you actually run a daemon, not before.<p><strong>Chunk boundaries.</strong> A rule that spans two headings gets split across two chunks, and a top-k search returns one half. The fix is editorial: keep a rule under one heading. The heading-based chunker rewards documents that are organized the way you would organize them for a human reader anyway.<p><strong>Vocabulary mismatch.</strong> The lexical failure mode the embeddings section described. A query shares no terms with the section that answers it, and the search scores zero. At <code>.AGENTS/</code> scale the fix is to add the missing word to the heading or the body. You own the corpus. Make it say what people search for.<p><strong>Manifest bloat.</strong> Forty searchable files, each with eight headings, is a manifest of three hundred lines, and now the thing you built to keep context out of the prompt is itself a large block of context in the prompt. The fix is to summarize: list files and a short description rather than every heading, once the directory is large enough that the full listing stops paying for itself.<h2 id=what-this-layer-does-not-solve>What this layer does not solve</h2><p>The pattern from the earlier posts holds. Each layer earns the right to be small by deferring what does not belong to it.<ul><li><strong>Embeddings for large corpora.</strong> The tool boundary is built to absorb this. The day the corpus outgrows lexical ranking, the retriever behind <code>context_search</code> changes and nothing else does. This post does not build it because nothing at <code>.AGENTS/</code> scale needs it.<li><strong>Per-turn token budgeting.</strong> Retrieved sections compete for the same window as the conversation history and the pinned context. Deciding how many sections to pull and how to evict them under pressure is a budgeting problem this post leaves at a fixed <code>k</code>. <a href=#>Post eighteen</a> on economics returns to it.<li><strong>Memory across turns and sessions.</strong> Retrieval reads context the project wrote. It does not write anything. A note the agent leaves for its future self is a different layer with a different lifetime and different write semantics, and it is the whole subject of the next post.<li><strong>Shared context across many agents.</strong> A fleet may want its context to live in a service rather than in every repo. The MCP <code>resources/list</code> and <code>resources/read</code> shape fits behind the same tool boundary. <a href=#>Post eight</a>.</ul><h2 id=where-this-lands-in-the-platform>Where this lands in the platform</h2><p>Total damage going from <code>post-04</code> to <code>post-05</code>: one new file (<code>retriever.ts</code>), one new tool (<code>tools/context_search.ts</code>), a split in <code>context.ts</code> between pinned and searchable, and three changes in <code>agent.ts</code>. The loop, the registry internals, the sandbox, the four original tools, and the types are all untouched. The agent now pays a fixed cost for the context that is always true, and a variable cost it decides for the context that is only sometimes relevant.<p>The retriever sits on top of the static layer from post four, exactly as that post predicted it would. The pinned files are the static context. The searchable files are the corpus. The tool is the seam between them, and the seam is an entry in the registry from <a href=/articles/tools-how-agents-actually-do-things/>post three</a>, dispatched and capped and error-wrapped by machinery that already existed. No vector store joined the deployment. No second system joined the on-call rotation. Retrieval became a tool, because the harness was already the kind of thing that turns a function into a capability the model can reach.<p>The rule from the earlier posts still holds. The harness only ever grows; it does not get rewritten. Each post adds one capability to the same artifact and explains why the layer below was not enough. The layer below this one was a context loader that read everything every turn. This one reads what the turn needs. The layer above is the one that writes.<h2 id=next>Next</h2><p><strong>Part 6: Memory Is a Write Path.</strong> Retrieval reads context the project authored. Memory is the agent writing context for its own future turns and future sessions. Why the write path is the hard part, where session memory and cross-session memory diverge, and what it takes to let an agent remember without letting it corrupt its own ground truth.</div></div><div class=container><section class=related-articles><h2>Related articles</h2><div class=related-articles__grid><a class=related-articles__card href=https://raskell.io/articles/context-is-the-product/> <h3>Context Is the Product</h3> <p>Models are commodities. Context is not. The sources of context an agent draws on, why retrieval alone is not enough, and a minimal .AGENTS/ convention that loads context from disk into the same harness we have been building. Part four of The Agent Platform Handbook.</p> </a><a class=related-articles__card href=https://raskell.io/articles/tools-how-agents-actually-do-things/> <h3>Tools: How Agents Actually Do Things</h3> <p>Function calling is the API between language and action, but the engineering is in the registry. A working four-tool registry in TypeScript on Bun, schema design that survives model drift, parallel tool calls, and the failure modes nobody mentions in the demo. Part three of The Agent Platform Handbook.</p> </a><a class=related-articles__card href=https://raskell.io/articles/your-agent-wants-root/> <h3>Your Agent Wants Root</h3> <p>An agent with a shell tool is arbitrary code execution with a friendly face. A short tour of why Docker alone is not enough, what Firecracker, gVisor, and Kata actually solve, and a hardened sandbox you can wrap the post-one agent in today. Part two of The Agent Platform Handbook.</p> </a></div></section></div><div class=container><nav class="flex container suggested"><a title="Next post (newer)" href=https://raskell.io/articles/context-is-the-product/ rel=next> <span>Next →</span> <strong>Context Is the Product</strong> </a></nav></div></main><footer class="footer flex" role=contentinfo><section class=container><nav aria-label="Footer navigation" class=footer-links role=navigation><a href=https://raskell.io/rss.xml>RSS</a></nav></section><script src=https://raskell.io/app.js></script></footer><script src=https://raskell.io/scroll-to-top.js></script><script src=https://raskell.io/anchors.js></script><script src=https://raskell.io/link-preview.js></script><script src=https://raskell.io/copy-code.js></script><script src=https://raskell.io/code-lang-labels.js></script><script src=https://raskell.io/section-spy.js></script><script src=https://raskell.io/icons.js></script><script src=https://raskell.io/elasticlunr.min.js></script><script src=https://raskell.io/search_index.en.js></script><script src=https://raskell.io/search.js></script>
