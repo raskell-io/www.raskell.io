@@ -14,7 +14,7 @@ image = "context-is-the-product.avif"
 og_image = "context-is-the-product.png"
 +++
 
-> Part 4 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Tools: How Agents Actually Do Things](/articles/tools-how-agents-actually-do-things/). Next: Retrieval Is a Tool, Not a Layer.
+> Part 4 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Tools: How Agents Actually Do Things](/articles/tools-how-agents-actually-do-things/). Next: [Retrieval Is a Tool, Not a Layer](/articles/retrieval-is-a-tool-not-a-layer/).
 
 In [post one](/articles/what-an-agent-actually-is/) we built the agent harness: a loop, a one-tool registry, a system prompt, a dispatcher, and an iteration budget. In [post two](/articles/your-agent-wants-root/) we slid a sandboxed runtime underneath the shell tool without touching the loop. In [post three](/articles/tools-how-agents-actually-do-things/) we promoted the registry into a real toolbox and let the model call several tools in one turn. The harness sits at tag [`post-03`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-03) today: a loop, a registry, four sandboxed tools, parallel dispatch, output caps, error envelopes. The pieces fit. The agent answers concrete questions about the directory it is pointed at.
 
@@ -463,4 +463,4 @@ The layer below this one was a model that knew nothing about your project. The l
 
 ## Next
 
-**Part 5: Retrieval Is a Tool, Not a Layer.** Why pulling context dynamically is its own design problem, where embeddings stop being the right answer, and how to subset `.AGENTS/` per task in the harness we have been building.
+**[Part 5: Retrieval Is a Tool, Not a Layer](/articles/retrieval-is-a-tool-not-a-layer/).** Why pulling context dynamically is its own design problem, where embeddings stop being the right answer, and how to subset `.AGENTS/` per task in the harness we have been building.
