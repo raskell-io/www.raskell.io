@@ -14,7 +14,7 @@ image = "retrieval-is-a-tool-not-a-layer.avif"
 og_image = "retrieval-is-a-tool-not-a-layer.png"
 +++
 
-> Part 5 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Context Is the Product](/articles/context-is-the-product/). Next: Memory Is a Write Path.
+> Part 5 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Context Is the Product](/articles/context-is-the-product/). Next: [Memory Is a Write Path](/articles/memory-is-a-write-path/).
 
 [Post four](/articles/context-is-the-product/) gave the harness a context layer. A `context.ts` module reads markdown files from a `.AGENTS/` directory at startup, applies a byte budget, wraps each file in a `<context path="...">` block, and concatenates the whole thing under the core prompt. The agent now arrives at every turn knowing what the project is, how to talk about it, and what it is not allowed to do. The harness sits at tag [`post-04`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-04): a loop, a registry, four sandboxed tools, parallel dispatch, and a static context loader.
 
@@ -334,4 +334,4 @@ The rule from the earlier posts still holds. The harness only ever grows; it doe
 
 ## Next
 
-**Part 6: Memory Is a Write Path.** Retrieval reads context the project authored. Memory is the agent writing context for its own future turns and future sessions. Why the write path is the hard part, where session memory and cross-session memory diverge, and what it takes to let an agent remember without letting it corrupt its own ground truth.
+**Part 6: [Memory Is a Write Path](/articles/memory-is-a-write-path/).** Retrieval reads context the project authored. Memory is the agent writing context for its own future turns and future sessions. Why the write path is the hard part, where session memory and cross-session memory diverge, and what it takes to let an agent remember without letting it corrupt its own ground truth.
