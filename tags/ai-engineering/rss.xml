@@ -7,7 +7,219 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/ai-engineering/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Fri, 19 Jun 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Tue, 23 Jun 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Memory Is a Write Path</title>
+          <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/memory-is-a-write-path/</link>
+          <guid>https://raskell.io/articles/memory-is-a-write-path/</guid>
+          <description xml:base="https://raskell.io/articles/memory-is-a-write-path/">&lt;blockquote&gt;
+&lt;p&gt;Part 6 of &lt;em&gt;The Agent Platform Handbook. From Loop to Platform.&lt;&#x2F;em&gt; Previous: &lt;a href=&quot;&#x2F;articles&#x2F;retrieval-is-a-tool-not-a-layer&#x2F;&quot;&gt;Retrieval Is a Tool, Not a Layer&lt;&#x2F;a&gt;. Next: The Model Is a Dependency.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;articles&#x2F;retrieval-is-a-tool-not-a-layer&#x2F;&quot;&gt;Post five&lt;&#x2F;a&gt; gave the harness a read path. A &lt;code&gt;retriever.ts&lt;&#x2F;code&gt; module chunks the searchable half of &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; by heading, ranks sections with BM25, and exposes the whole thing as a &lt;code&gt;context_search&lt;&#x2F;code&gt; tool the agent calls on the turns where it needs project detail. The harness sits at tag &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&#x2F;tree&#x2F;post-05&quot;&gt;&lt;code&gt;post-05&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;: a loop, a registry, four sandboxed tools, parallel dispatch, a pinned context layer, and a lexical retriever behind a tool. The agent reads what the project authored, and it reads only the slice each turn needs.&lt;&#x2F;p&gt;
+&lt;p&gt;It cannot write a single thing.&lt;&#x2F;p&gt;
+&lt;p&gt;Every run starts from the same blank state. The agent works out, on turn three of a session, that this repo deploys through a script that refuses to run with a dirty tree. It finishes the task. The process exits. The next session it works that out again, from scratch, because the only place that fact ever lived was the transcript of a conversation that no longer exists. Retrieval reads context the project wrote. Nothing writes the context the agent learns.&lt;&#x2F;p&gt;
+&lt;p&gt;This post adds the write path. It ships as tag &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&#x2F;tree&#x2F;post-06&quot;&gt;&lt;code&gt;post-06&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;. The machinery is small, because the read side from post five already did most of the work. The hard part is not storing a fact. The hard part is that a stored fact becomes ground truth on every future turn, and an agent that writes its own ground truth can poison it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;reads-are-safe-writes-are-not&quot;&gt;Reads are safe, writes are not&lt;&#x2F;h2&gt;
+&lt;p&gt;The reason retrieval was a calm post and memory is a nervous one comes down to a single asymmetry.&lt;&#x2F;p&gt;
+&lt;p&gt;A read is idempotent and disposable. When &lt;code&gt;context_search&lt;&#x2F;code&gt; returns the wrong section, the agent wastes a tool call, notices the result does not answer the question, and moves on. The cost is one round-trip. The corpus is untouched. Run the same search twice and you get the same answer twice. Nothing accumulates.&lt;&#x2F;p&gt;
+&lt;p&gt;A write is neither. When the agent saves a fact that is wrong, or true today and false next month, that fact does not cost one turn. It is loaded into context on every future turn, presented with the same weight as everything else the agent knows, and acted on until something removes it. A retrieval mistake is a bad answer. A memory mistake is a bad premise, and a bad premise is worse, because the agent reasons forward from it confidently and the error shows up three steps later wearing the face of a conclusion.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the whole design problem, and it is worth stating before any code. Memory is not hard because writing to disk is hard. Memory is hard because the thing you are writing is the agent’s future ground truth, and you are letting the agent write it. Everything in &lt;code&gt;post-06&lt;&#x2F;code&gt; is shaped by one goal: let the agent remember, without letting it corrupt the context it depends on.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;session-memory-is-already-solved&quot;&gt;Session memory is already solved&lt;&#x2F;h2&gt;
+&lt;p&gt;There is a temptation, when you set out to build memory, to build one mechanism that handles everything from “what did the user just ask me to do” to “what did I learn about this project last month.” Resist it, because those are two different lifetimes with two different readers, and one of them is already handled.&lt;&#x2F;p&gt;
+&lt;p&gt;Within a single run, the agent already remembers everything. The message array in the loop accumulates every turn: the user’s request, every tool call, every result, every intermediate reply. That array is session memory. It is working memory for the task in front of the agent, it is bounded by the context window, and it dies when the process exits. The loop from &lt;a href=&quot;&#x2F;articles&#x2F;what-an-agent-actually-is&#x2F;&quot;&gt;post one&lt;&#x2F;a&gt; has carried it the entire series. You do not need a tool, a file, or a database to remember what happened earlier in the same conversation. You need the transcript you already have.&lt;&#x2F;p&gt;
+&lt;p&gt;Cross-session memory is the unsolved half, and it is unsolved precisely because of its reader. A note you leave for later in the same run is read by an agent that still has the whole conversation in context. A note you leave for next week is read by an agent that has none of it. The reader of a durable memory is a stranger who happens to share your name. That is the constraint that makes the write path hard, and it is the reason a durable memory has to be written differently from a scratch note: small, self-contained, and phrased to survive the loss of all the context that made it obvious when you wrote it.&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;Session memory&lt;&#x2F;th&gt;&lt;th&gt;Cross-session memory&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Lifetime&lt;&#x2F;td&gt;&lt;td&gt;One run&lt;&#x2F;td&gt;&lt;td&gt;Across runs, indefinitely&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Mechanism&lt;&#x2F;td&gt;&lt;td&gt;The message array, already in the loop&lt;&#x2F;td&gt;&lt;td&gt;Files on disk, loaded at startup&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Reader&lt;&#x2F;td&gt;&lt;td&gt;The agent, with full conversation context&lt;&#x2F;td&gt;&lt;td&gt;The agent, with none of it&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Failure mode&lt;&#x2F;td&gt;&lt;td&gt;Runs out of context window&lt;&#x2F;td&gt;&lt;td&gt;Persists a wrong premise forever&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Built in this post&lt;&#x2F;td&gt;&lt;td&gt;Nothing. It already exists.&lt;&#x2F;td&gt;&lt;td&gt;The entire write path.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;So &lt;code&gt;post-06&lt;&#x2F;code&gt; builds only the durable path. The scratchpad is the transcript. The work is everything that outlives it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-shape-a-file-per-fact&quot;&gt;The shape: a file per fact&lt;&#x2F;h2&gt;
+&lt;p&gt;The durable store is a directory, &lt;code&gt;memory&#x2F;&lt;&#x2F;code&gt;, and the unit is one file per fact. This is the same shape the read side settled on in post four, and it is not a coincidence. A fact the agent wants to keep is a small markdown document with a title and a body, exactly like a &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; section, so it indexes the same way and reads back the same way.&lt;&#x2F;p&gt;
+&lt;p&gt;Each memory carries three pieces of frontmatter and a body. The type captures the contract.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;export type MemoryType = &amp;quot;fact&amp;quot; | &amp;quot;preference&amp;quot; | &amp;quot;decision&amp;quot;;
+
+export type Memory = {
+  name: string;        &amp;#x2F;&amp;#x2F; slug and filename stem; the dedup key
+  description: string;  &amp;#x2F;&amp;#x2F; one line; lands in the always-pinned index
+  type: MemoryType;     &amp;#x2F;&amp;#x2F; fact, preference, or decision
+  body: string;         &amp;#x2F;&amp;#x2F; the fact, written to stand on its own later
+};
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;On disk a memory is the kind of file a person could read and edit without tooling.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;markdown&quot; class=&quot;language-markdown &quot;&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;---
+name: operator-prefers-ripgrep
+description: The operator searches code with ripgrep and wants line numbers
+type: preference
+---
+
+When searching the codebase outside the sandbox, the operator prefers
+ripgrep (`rg`) over `grep`, and asks for `rg -n` so matches carry line
+numbers they can paste straight into a `path:line` reference.
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The &lt;code&gt;description&lt;&#x2F;code&gt; is doing the same job the pinned files did in post four. It is the one line the agent pays for on every turn, the summary that tells the agent this memory exists and roughly what it covers. The &lt;code&gt;body&lt;&#x2F;code&gt; is the part it pays for only on the turns it actually pulls the memory. The split between always-loaded summary and on-demand body is the post-five idea applied to a second corpus, and it is what keeps a hundred memories from costing a hundred memories’ worth of tokens on the turn the user said hello.&lt;&#x2F;p&gt;
+&lt;p&gt;The directory mirrors &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; one more way. It has an index file, &lt;code&gt;MEMORY.md&lt;&#x2F;code&gt;, that lists every memory in one line each. The difference from &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; is who writes it, and that difference is the next two sections.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ground-truth-stays-read-only&quot;&gt;Ground truth stays read-only&lt;&#x2F;h2&gt;
+&lt;p&gt;The boundary that keeps the agent from corrupting itself is really two boundaries wearing one coat.&lt;&#x2F;p&gt;
+&lt;p&gt;The first is a directory boundary. The agent writes to &lt;code&gt;memory&#x2F;&lt;&#x2F;code&gt; and to nowhere else. &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; is project ground truth, authored by the people who run the agent, and it is read-only to the agent for the entire series. There is no tool that writes to it. The memory write path hardcodes its directory and slugs every name into a flat filename, so there is no path the model can supply that climbs out of &lt;code&gt;memory&#x2F;&lt;&#x2F;code&gt; and into the project’s authored context. The thing the agent cannot afford to corrupt and the thing the agent is allowed to write live in different directories, and the write tool only knows about one of them.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;export function resolveMemoryDir(dir?: string): string {
+  return dir ?? process.env.MEMORY_DIR ?? DEFAULT_DIR;
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The second is an authority boundary, and it lives in the prompt. Pinned &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; context is introduced as authoritative. Memory is introduced as the agent’s own fallible notes, lower in authority than the pinned context, to be verified against the live system before it is acted on.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;parts.push(
+  &amp;quot;You keep a durable memory across sessions. The entries below are &amp;quot; +
+  &amp;quot;notes you saved on earlier runs, one line each. They are your own &amp;quot; +
+  &amp;quot;past observations, not project ground truth: treat them as fallible, &amp;quot; +
+  &amp;quot;prefer the pinned .AGENTS&amp;#x2F; context when they conflict, and verify &amp;quot; +
+  &amp;quot;against the live system before acting. Call memory_search to pull the &amp;quot; +
+  &amp;quot;full text of a relevant entry. Call memory_write to save a new durable &amp;quot; +
+  &amp;quot;fact when you learn one that is stable and reusable.\n\n&amp;quot; +
+  mem.rendered,
+);
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;That framing matters more than it looks. A memory and a pinned convention can arrive in the same prompt and contradict each other, because the project changed after the agent wrote its note. Without an authority order the agent has no principled way to choose, and a stale self-authored note can override a current project rule. With it, the agent treats its own memory as a lead to verify, not a fact to obey. Memory earns a place in the context window, but it does not earn the project’s authority, and the prompt says so on every turn.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-write-path&quot;&gt;The write path&lt;&#x2F;h2&gt;
+&lt;p&gt;Saving a memory is one function, and almost all of it is the careful part rather than the writing part.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;export async function writeMemory(
+  input: { name: string; description: string; type?: string; body: string },
+  dir = resolveMemoryDir(),
+): Promise&amp;lt;{ name: string; updated: boolean }&amp;gt; {
+  const name = slugify(input.name);
+  if (!name) throw new Error(&amp;quot;memory name is empty after slugifying&amp;quot;);
+
+  const description = input.description.trim();
+  if (!description) throw new Error(&amp;quot;memory description is required&amp;quot;);
+
+  const body = input.body.trim();
+  if (!body) throw new Error(&amp;quot;memory body is required&amp;quot;);
+  if (Buffer.byteLength(body, &amp;quot;utf8&amp;quot;) &amp;gt; MAX_BODY_BYTES) {
+    throw new Error(`memory body exceeds ${MAX_BODY_BYTES} bytes`);
+  }
+
+  await mkdir(dir, { recursive: true });
+  const file = join(dir, `${name}.md`);
+  const updated = await exists(file);
+  await writeFile(file, render({ name, description, type: coerceType(input.type), body }), &amp;quot;utf8&amp;quot;);
+  await rebuildIndexFile(dir);
+  return { name, updated };
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The slug is the load-bearing decision. &lt;code&gt;slugify&lt;&#x2F;code&gt; lowercases the name, replaces every run of non-alphanumeric characters with a single hyphen, trims, and clamps the length. It does two jobs at once. It sanitizes the path, so a name the model invented can never traverse out of the directory or collide with the filesystem. And it makes the slug the dedup key. “User prefers ripgrep” and “user-prefers-ripgrep” slug to the same filename, so writing a memory whose name matches an existing one overwrites it in place. That overwrite is not a bug to guard against. It is the correction path. When the agent learns that a fact it saved is now wrong, it writes the corrected version under the same name, and the stale memory is gone rather than lingering to be recalled forever. The function reports &lt;code&gt;updated&lt;&#x2F;code&gt; so the operator can see a correction land in the trace.&lt;&#x2F;p&gt;
+&lt;p&gt;The size clamp is the other guard worth naming. A memory is a fact, not a transcript. The four-kilobyte cap on the body keeps the agent from dumping a whole conversation into a single memory and calling it remembering. If a fact does not fit in four kilobytes, it is not one fact, and the agent should write several.&lt;&#x2F;p&gt;
+&lt;p&gt;The tool around this function is the thinnest possible wrapper, and its description is most of its design. The description tells the model what a memory is for, when to write one, and, with equal weight, when not to: not for things that only matter for the current task, and not for things &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; already states. An agent that remembers everything is as useless as one that remembers nothing, because the index becomes noise and the signal drowns. The instruction to not remember is part of the write path.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-index-is-derived-not-authored&quot;&gt;The index is derived, not authored&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;code&gt;MEMORY.md&lt;&#x2F;code&gt; is the agent’s pinned index, the list of one-line summaries that loads on every turn. The agent never writes it directly. Every call to &lt;code&gt;writeMemory&lt;&#x2F;code&gt; regenerates it from the files on disk.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;async function rebuildIndexFile(dir: string): Promise&amp;lt;void&amp;gt; {
+  const memories = await listMemories(dir);
+  const lines = memories.map(
+    (m) =&amp;gt; `- [${m.name}](${m.name}.md) (${m.type}) -- ${m.description}`,
+  );
+  &amp;#x2F;&amp;#x2F; header omitted; writes MEMORY.md from the lines above
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This is a small thing with a large payoff. If the agent wrote both the fact and the index line, the two could disagree. The index could point at a memory that was renamed, or describe a memory whose body later changed, or simply drift as edits accumulate. By making the index a pure function of the files, regenerated on every write, the two cannot diverge. The agent owns the facts. The layer owns the index. There is exactly one source of truth, the files, and the index is a view of it. A view cannot be stale relative to the thing it is a view of.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;recall-reuses-the-retriever&quot;&gt;Recall reuses the retriever&lt;&#x2F;h2&gt;
+&lt;p&gt;The read side of memory is the read side of post five, pointed at a different directory. That is the entire implementation, and it is the payoff the last post promised when it argued that putting retrieval behind a tool boundary lets you change what is behind it without touching anything else.&lt;&#x2F;p&gt;
+&lt;p&gt;Post five’s &lt;code&gt;retriever.ts&lt;&#x2F;code&gt; grew two exported helpers so a second corpus could reuse the ranker. &lt;code&gt;makeChunk&lt;&#x2F;code&gt; builds one scored chunk from a heading and a body. &lt;code&gt;indexChunks&lt;&#x2F;code&gt; turns a set of chunks into a searchable index. The &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; path and the memory path now both build chunks their own way and finish through the same two functions, so BM25 ranks both corpora with one implementation.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;export async function buildMemoryIndex(dir = resolveMemoryDir()): Promise&amp;lt;Index&amp;gt; {
+  const memories = await listMemories(dir);
+  const chunks = memories.map((m) =&amp;gt;
+    makeChunk(join(dir, `${m.name}.md`), m.description, `${m.description}\n\n${m.body}`),
+  );
+  return indexChunks(chunks);
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Each memory is one chunk, and its &lt;code&gt;description&lt;&#x2F;code&gt; becomes the chunk heading, so a search hit cites back the same one-liner the agent already saw in the pinned index. The &lt;code&gt;memory_search&lt;&#x2F;code&gt; tool wraps this index exactly the way &lt;code&gt;context_search&lt;&#x2F;code&gt; wrapped its own in post five: a factory that closes over the index built at startup, a query and an optional &lt;code&gt;k&lt;&#x2F;code&gt;, an output cap, and a rendered result with the source path and score. The only difference is the wrapper, &lt;code&gt;&amp;lt;memory&amp;gt;&lt;&#x2F;code&gt; rather than &lt;code&gt;&amp;lt;context&amp;gt;&lt;&#x2F;code&gt;, and the tool description, which repeats the authority warning so the model sees it at the moment of recall and not only at the top of the prompt.&lt;&#x2F;p&gt;
+&lt;p&gt;The retriever did not learn anything new. It learned to serve a second customer, and the second customer was almost free.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;wiring-it-into-the-loop&quot;&gt;Wiring it into the loop&lt;&#x2F;h2&gt;
+&lt;p&gt;The loop body does not move. The changes are in startup and in the prompt, the same places post five touched.&lt;&#x2F;p&gt;
+&lt;p&gt;The registry construction takes a second index now, because a second tool closes over runtime state.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;function buildRegistry(contextIndex: Index, memoryIndex: Index): Registry {
+  return new Registry()
+    .register(shell)
+    .register(fs_read)
+    .register(http_get)
+    .register(git)
+    .register(makeContextSearch(contextIndex))
+    .register(makeMemorySearch(memoryIndex))
+    .register(memory_write);
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Startup builds the memory index and the pinned block alongside the context it already loaded, and prints the size of each, so the operator sees all three layers of context before the agent runs a single turn.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;const ctx = await loadContext();
+const contextIndex = await buildIndex();
+const mem = await loadMemory();
+const memoryIndex = await buildMemoryIndex();
+const registry = buildRegistry(contextIndex, memoryIndex);
+const system = systemPrompt(ctx, contextIndex, mem);
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The system prompt gains the memory block from the authority section above, or, when the directory is empty, a single line telling the agent it has a memory it has not written to yet. The dispatcher, the parallel &lt;code&gt;Promise.all&lt;&#x2F;code&gt;, the iteration budget, the error envelopes are all untouched. The loop still does not know what a tool does. It learned to load one more index at startup, and nothing else.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-it-looks-like-running&quot;&gt;What it looks like running&lt;&#x2F;h2&gt;
+&lt;p&gt;The write path and the read path are best shown across two separate processes, because that boundary, the process exit, is the one session memory cannot cross and the whole reason this layer exists.&lt;&#x2F;p&gt;
+&lt;p&gt;First session, the agent learns something and decides to keep it.&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ bun agent.ts &amp;quot;remember that we deploy this project with .&amp;#x2F;deploy.sh,
+  which refuses to run unless the git tree is clean&amp;quot;
+# pinned .AGENTS&amp;#x2F;overview.md (1002B)
+# pinned .AGENTS&amp;#x2F;conventions.md (1339B)
+# searchable 11 sections across 3 files
+# memory 2 entries
+&amp;gt; memory_write {&amp;quot;name&amp;quot;:&amp;quot;deploy-with-deploy-sh&amp;quot;,&amp;quot;type&amp;quot;:&amp;quot;decision&amp;quot;, ...} -&amp;gt; ok
+Saved. In a later session I will know deploys go through .&amp;#x2F;deploy.sh and
+that it refuses to run against a dirty tree, so a deploy starts with a
+clean commit or a stash.
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Second session, a fresh process with an empty transcript, a different question that the saved fact answers.&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ bun agent.ts &amp;quot;how do I cut a release here?&amp;quot;
+# pinned .AGENTS&amp;#x2F;overview.md (1002B)
+# pinned .AGENTS&amp;#x2F;conventions.md (1339B)
+# searchable 11 sections across 3 files
+# memory 3 entries
+&amp;gt; memory_search {&amp;quot;query&amp;quot;:&amp;quot;cut a release, deploy script, tags&amp;quot;} -&amp;gt; ok
+Two things from earlier sessions apply.
+
+- Deploys run through .&amp;#x2F;deploy.sh, and it refuses to run with a dirty
+  git tree, so commit or stash first (memory: deploy-with-deploy-sh).
+- Release tags follow the post-NN convention and map one-to-one to
+  posts, so cut the next number rather than moving an existing tag
+  (memory: release-tags-map-to-posts).
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The memory count went from two to three between the sessions, because the write from the first run is on disk and loaded at the start of the second. The agent in the second session has no memory of the conversation in the first. It has the file the first session left behind, the one-line summary pinned into its prompt, and a search tool to pull the body. That is cross-session memory, and it is the difference between an agent that learns and an agent that relearns.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-one-file-per-fact&quot;&gt;Why one file per fact&lt;&#x2F;h2&gt;
+&lt;p&gt;The shape is worth defending against the two alternatives, because both look simpler at first and both cost you the part that matters.&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Approach&lt;&#x2F;th&gt;&lt;th&gt;Correction&lt;&#x2F;th&gt;&lt;th&gt;Dedup&lt;&#x2F;th&gt;&lt;th&gt;Human-editable&lt;&#x2F;th&gt;&lt;th&gt;Index drift&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;One file per fact&lt;&#x2F;td&gt;&lt;td&gt;Overwrite by slug&lt;&#x2F;td&gt;&lt;td&gt;Slug is the key&lt;&#x2F;td&gt;&lt;td&gt;Yes, plain markdown&lt;&#x2F;td&gt;&lt;td&gt;None; index derived from files&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Append-only log&lt;&#x2F;td&gt;&lt;td&gt;Append a contradiction, hope recall prefers it&lt;&#x2F;td&gt;&lt;td&gt;None; duplicates pile up&lt;&#x2F;td&gt;&lt;td&gt;Painful; one growing file&lt;&#x2F;td&gt;&lt;td&gt;The log is the index, and it only grows&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;One memory blob&lt;&#x2F;td&gt;&lt;td&gt;Rewrite the whole blob&lt;&#x2F;td&gt;&lt;td&gt;Manual, inside the blob&lt;&#x2F;td&gt;&lt;td&gt;Yes, but merges are lossy&lt;&#x2F;td&gt;&lt;td&gt;The blob is the index&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;The append-only log is the reflex for anything called memory, and it is wrong for this for the same reason it is right for an audit trail. It never forgets, which is exactly the property you do not want. A fact that became false is still in the log, recalled with the same weight as its own correction, and now the agent has two contradictory memories and a ranking function deciding which one wins. The single blob fails the other way: every write rewrites everything, corrections are lossy merges, and two facts that should be independent are coupled in one document. One file per fact gives you the correction path for free through the slug, keeps facts independent, stays readable and editable by a person, and lets the index be a derived view rather than a thing that drifts. The cost is a directory of small files, which is a cost a filesystem was built to absorb.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;failure-modes-worth-naming&quot;&gt;Failure modes worth naming&lt;&#x2F;h2&gt;
+&lt;p&gt;The first time you hit one of these you will suspect the store. Usually the store is fine and the prompt or the corpus needs an edit.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Memory poisoning.&lt;&#x2F;strong&gt; The agent saves a fact that is wrong, or that decays, and reasons from it forward in later sessions. This is the failure the whole post is built around, and the defenses are layered rather than absolute: the authority framing tells the agent to verify before acting, the slug-keyed overwrite gives a correction path, and the size clamp keeps any one memory from being a sprawling premise. None of that makes a wrong memory impossible. It makes a wrong memory correctable and low-authority instead of permanent and trusted.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Over-remembering.&lt;&#x2F;strong&gt; The agent treats &lt;code&gt;memory_write&lt;&#x2F;code&gt; as a reflex and saves task-local trivia, and the index fills with noise until the signal is buried. The fix is the tool description, framed so that remembering is for stable, reusable facts and the default is to not write. An index of five good memories beats an index of fifty where five are good.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Stale recall index.&lt;&#x2F;strong&gt; &lt;code&gt;buildMemoryIndex&lt;&#x2F;code&gt; runs once at startup. A memory written mid-run is on disk and in the transcript, so the agent still knows it this session, but the search index will not include it until the next process starts. For a CLI that starts per invocation this never bites. For a long-running daemon it does, and the fix is the same directory watch post five deferred, for the same reason.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Vocabulary mismatch on recall.&lt;&#x2F;strong&gt; The lexical ranker scores on the words present, and it does not stem. A memory whose body says “searching” will not match a query that says “search,” and a query that shares no terms with the memory that answers it scores zero. You own this corpus, so the fix is editorial: write the description in the words you will later search for. The same correction post five named, now pointed at memory.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Slug collisions.&lt;&#x2F;strong&gt; Two genuinely different facts can slug to the same name if you name them carelessly, and the second silently overwrites the first. The dedup that powers corrections is the same mechanism that causes this. The fix is naming discipline, and the size clamp plus the &lt;code&gt;updated&lt;&#x2F;code&gt; flag in the trace make a surprise overwrite visible rather than silent.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-this-layer-does-not-solve&quot;&gt;What this layer does not solve&lt;&#x2F;h2&gt;
+&lt;p&gt;Each layer earns the right to be small by deferring what does not belong to it. Memory defers more than most, because memory is where a platform’s hardest questions live.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Forgetting on purpose.&lt;&#x2F;strong&gt; Overwrite-by-slug corrects a memory; it does not delete one that is simply obsolete. A &lt;code&gt;memory_forget&lt;&#x2F;code&gt; tool is a few lines, but eviction policy, deciding what ages out and when, is a real problem this post leaves at “rewrite or leave it.” The store grows until someone prunes it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Conflict resolution.&lt;&#x2F;strong&gt; When a memory and the live system disagree, the prompt tells the agent to trust the system. When two memories disagree, the ranker picks one and the post does not arbitrate. Reconciling contradictory memories is its own design problem.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Shared memory across a fleet.&lt;&#x2F;strong&gt; This memory is per-checkout, on local disk. A fleet of agents that should share what one of them learned needs the store behind a service rather than in every repo, and the MCP resource shape fits behind the same tool boundary. &lt;a href=&quot;#&quot;&gt;Post eight&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Embeddings for a large memory.&lt;&#x2F;strong&gt; At a few dozen memories, lexical recall is the right answer for the same reasons it was in post five. The day the store outgrows it, the retriever behind &lt;code&gt;memory_search&lt;&#x2F;code&gt; changes and the tool boundary holds. Nothing at this scale needs it.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;where-this-lands-in-the-platform&quot;&gt;Where this lands in the platform&lt;&#x2F;h2&gt;
+&lt;p&gt;Total damage going from &lt;code&gt;post-05&lt;&#x2F;code&gt; to &lt;code&gt;post-06&lt;&#x2F;code&gt;: one new file (&lt;code&gt;memory.ts&lt;&#x2F;code&gt;), two new tools (&lt;code&gt;memory_write&lt;&#x2F;code&gt; and &lt;code&gt;memory_search&lt;&#x2F;code&gt;), two exported helpers on &lt;code&gt;retriever.ts&lt;&#x2F;code&gt; so the ranker serves a second corpus, and the startup and prompt changes in &lt;code&gt;agent.ts&lt;&#x2F;code&gt;. The loop, the registry internals, the sandbox, the four original tools, and the context layer are untouched. The agent now pays a fixed cost for the one-line summaries of what it has chosen to remember, a variable cost it decides for the bodies, and it writes new memories into a directory it cannot escape and whose contents it is told to distrust.&lt;&#x2F;p&gt;
+&lt;p&gt;The read path and the write path are the same shape from two sides. Post five read what the project authored. This post writes what the agent learned, into a parallel directory, indexed by the same ranker, pinned and searched the same way, and walled off from the ground truth it must not touch. The hard part was never the disk. It was the asymmetry that a write becomes a future read with the authority of fact, and the answer was to give the agent a write surface that is its own, structured, correctable, and explicitly less trusted than the context it was handed.&lt;&#x2F;p&gt;
+&lt;p&gt;The rule from the earlier posts still holds. The harness only ever grows; it does not get rewritten. Each post adds one capability to the same artifact and explains why the layer below was not enough. The layer below this one read context the project wrote. This one writes context the agent learns. The layer above is the model itself, the dependency every other layer has been feeding.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;next&quot;&gt;Next&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Part 7: The Model Is a Dependency.&lt;&#x2F;strong&gt; Every layer so far has existed to put the right tokens in front of the model. Part seven opens the model: why the harness treats it as a swappable dependency rather than a fixed assumption, how to route a cheap model for easy turns and a strong one for hard turns without rewriting the loop, what a fallback looks like when a provider is down, and why “models are commodities” is a claim about your architecture before it is a claim about the market.&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>The Proof You Only Have to Write Once</title>
           <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
@@ -104,7 +316,7 @@ parseRFC3339 input = run (unpack input)
           <link>https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/</link>
           <guid>https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/</guid>
           <description xml:base="https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/">&lt;blockquote&gt;
-&lt;p&gt;Part 5 of &lt;em&gt;The Agent Platform Handbook. From Loop to Platform.&lt;&#x2F;em&gt; Previous: &lt;a href=&quot;&#x2F;articles&#x2F;context-is-the-product&#x2F;&quot;&gt;Context Is the Product&lt;&#x2F;a&gt;. Next: Memory Is a Write Path.&lt;&#x2F;p&gt;
+&lt;p&gt;Part 5 of &lt;em&gt;The Agent Platform Handbook. From Loop to Platform.&lt;&#x2F;em&gt; Previous: &lt;a href=&quot;&#x2F;articles&#x2F;context-is-the-product&#x2F;&quot;&gt;Context Is the Product&lt;&#x2F;a&gt;. Next: &lt;a href=&quot;&#x2F;articles&#x2F;memory-is-a-write-path&#x2F;&quot;&gt;Memory Is a Write Path&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;&#x2F;articles&#x2F;context-is-the-product&#x2F;&quot;&gt;Post four&lt;&#x2F;a&gt; gave the harness a context layer. A &lt;code&gt;context.ts&lt;&#x2F;code&gt; module reads markdown files from a &lt;code&gt;.AGENTS&#x2F;&lt;&#x2F;code&gt; directory at startup, applies a byte budget, wraps each file in a &lt;code&gt;&amp;lt;context path=&quot;...&quot;&amp;gt;&lt;&#x2F;code&gt; block, and concatenates the whole thing under the core prompt. The agent now arrives at every turn knowing what the project is, how to talk about it, and what it is not allowed to do. The harness sits at tag &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&#x2F;tree&#x2F;post-04&quot;&gt;&lt;code&gt;post-04&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;: a loop, a registry, four sandboxed tools, parallel dispatch, and a static context loader.&lt;&#x2F;p&gt;
 &lt;p&gt;It loads the entire directory on every turn.&lt;&#x2F;p&gt;
@@ -341,7 +553,7 @@ No, on both counts.
 &lt;p&gt;The retriever sits on top of the static layer from post four, exactly as that post predicted it would. The pinned files are the static context. The searchable files are the corpus. The tool is the seam between them, and the seam is an entry in the registry from &lt;a href=&quot;&#x2F;articles&#x2F;tools-how-agents-actually-do-things&#x2F;&quot;&gt;post three&lt;&#x2F;a&gt;, dispatched and capped and error-wrapped by machinery that already existed. No vector store joined the deployment. No second system joined the on-call rotation. Retrieval became a tool, because the harness was already the kind of thing that turns a function into a capability the model can reach.&lt;&#x2F;p&gt;
 &lt;p&gt;The rule from the earlier posts still holds. The harness only ever grows; it does not get rewritten. Each post adds one capability to the same artifact and explains why the layer below was not enough. The layer below this one was a context loader that read everything every turn. This one reads what the turn needs. The layer above is the one that writes.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;next&quot;&gt;Next&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;strong&gt;Part 6: Memory Is a Write Path.&lt;&#x2F;strong&gt; Retrieval reads context the project authored. Memory is the agent writing context for its own future turns and future sessions. Why the write path is the hard part, where session memory and cross-session memory diverge, and what it takes to let an agent remember without letting it corrupt its own ground truth.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Part 6: &lt;a href=&quot;&#x2F;articles&#x2F;memory-is-a-write-path&#x2F;&quot;&gt;Memory Is a Write Path&lt;&#x2F;a&gt;.&lt;&#x2F;strong&gt; Retrieval reads context the project authored. Memory is the agent writing context for its own future turns and future sessions. Why the write path is the hard part, where session memory and cross-session memory diverge, and what it takes to let an agent remember without letting it corrupt its own ground truth.&lt;&#x2F;p&gt;
 </description>
       </item>
       <item>
