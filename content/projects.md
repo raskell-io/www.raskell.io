@@ -151,6 +151,14 @@ Woodland Wars. A turn-based tactics game featuring animal factions battling for 
 
 ---
 
+### <img src="/brands/manabi.png" alt="" class="project-icon"> Manabi <span class="status-badge status-badge--dev">In active development</span>
+
+A local-first, reading-first language-learning app for Chinese, Japanese, and Hebrew — recognition, pronunciation, listening, and reading, with no handwriting drills. Multi-dimensional spaced repetition, fully prerecorded native audio, and an AI content workbench, all running offline in the browser via Automerge CRDTs. Installable as a PWA.
+
+<p class="project-links"><a href="https://manabi.raskell.io"><i data-lucide="globe"></i> Website</a> <a href="https://github.com/raskell-io/manabi"><i data-lucide="github"></i> GitHub</a></p>
+
+---
+
 ### Kurumi <span class="status-badge status-badge--dev">In active development</span>
 
 A local-first second brain. Your ideas, everywhere, offline. Wikilinks, backlinks, graph visualization, full-text search — completely offline-first with optional sync via Automerge CRDTs. No vendor lock-in.
