@@ -17,6 +17,16 @@ time,
     font-size: 1rem;
 }
 
+/* Scientific names (binomials, taxa): Computer Modern italic, the LaTeX look.
+   The webfont is italic by design; size nudged up slightly to optically match
+   Geist's larger x-height. */
+.binomial {
+    font-family: var(--sci-font-family);
+    font-style: italic;
+    font-size: 1.04em;
+    letter-spacing: 0.01em;
+}
+
 /* Accessibility */
 .sr-only {
     position: absolute;
