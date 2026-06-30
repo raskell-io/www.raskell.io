@@ -112,7 +112,7 @@
     {% endif %}
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{ get_url(path='style.css') | safe }}">
+    <link rel="stylesheet" href="{{ get_url(path='style.css', cachebust=true) | safe }}">
 
     <!-- DNS prefetch for external domains -->
     <link rel="dns-prefetch" href="https://github.com">
