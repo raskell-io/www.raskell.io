@@ -7,7 +7,18 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/policy/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Fri, 01 May 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Tue, 30 Jun 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>The Bottleneck Is Data, and Europe Is Sitting on It</title>
+          <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/</link>
+          <guid>https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/</guid>
+          <description xml:base="https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/">&lt;p&gt;The public conversation about who wins in AI is almost entirely a conversation about hardware. Who has the most accelerators, who controls the fabs, whose export-control list bites whose supply chain. That conversation is real, and I have spent enough time on the compute side to take it seriously. It is also, increasingly, the wrong place to look for the binding constraint.&lt;&#x2F;p&gt;
+&lt;p&gt;The people running the largest labs have been saying so out loud. At NeurIPS in December 2024, Ilya Sutskever told a packed room that “pre-training as we know it will unquestionably end,” for the blunt reason that “compute is growing through better hardware, better algorithms and larger clusters, but the data is not growing, because we have but one internet.” He called data “the fossil fuel of AI” and said the field had “achieved peak data.” A month later Elon Musk said the cumulative sum of human knowledge usable for training had been “exhausted” the previous year. Strip away the showmanship and the claim underneath is an engineering claim about a substrate running short.&lt;&#x2F;p&gt;
+&lt;p&gt;I want to take that claim seriously and follow it to where it leads, which is not where the hardware conversation goes. If the scarce input is high-quality data, then the interesting question is who holds the data that has not already been consumed. The answer, for a large and specific category of it, is Europe. Not because Europe planned it that way, but because Europe wrote and printed and catalogued for five centuries and then, for the most part, never put the result on the open web.&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>Patents Per Capita Is a Vanity Metric</title>
           <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
