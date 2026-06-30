@@ -34,19 +34,22 @@
     --h1-color: var(--ctp-text);
     --font-color: var(--ctp-text);
     --heading-color: var(--ctp-text);
-    --background: var(--ctp-base);
+    // Pure-white base with a cool, white-anchored neutral ramp for raised
+    // surfaces, hovers, and borders. Accents and text stay Catppuccin Latte,
+    // which read cleanly on white. (Dark theme redefines these in _dark.scss.)
+    --background: #ffffff;
     --dark-font-color: var(--ctp-text);
     --medium-font-color: var(--ctp-subtext1);
     --light-font-color: var(--ctp-subtext0);
-    --light-background: var(--ctp-mantle);
-    --light-background-hover: var(--ctp-surface0);
-    --border: var(--ctp-surface0);
+    --light-background: #f3f4f7;
+    --light-background-hover: #e8eaef;
+    --border: #e4e6ec;
     --link-color: var(--ctp-blue);
     --link-color-darker: var(--ctp-sapphire);
     --link-hover-color: var(--ctp-sapphire);
-    --navbar-color: var(--ctp-base);
-    --blockquote: var(--ctp-mantle);
-    --blockquote-left: var(--ctp-surface0);
+    --navbar-color: #ffffff;
+    --blockquote: #f3f4f7;
+    --blockquote-left: #d7dae2;
     --transparent-text: var(--ctp-overlay2);
     --transparent-bg: var(--ctp-surface1);
     --light-transparent-bg: var(--ctp-surface0);

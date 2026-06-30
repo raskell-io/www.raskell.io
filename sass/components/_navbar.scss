@@ -20,7 +20,10 @@ main {
     top: 0;
     left: 0;
     background: var(--navbar-color);
-    z-index: 10;
+    // Above in-content stacking (code-block buttons, footnote pills sit at 10
+    // or below) but under floating UI and modals (scroll-to-top 100, search
+    // 1000, link preview 9998+). Keeps content from painting over the header.
+    z-index: 50;
     padding: 0.75rem 0.5rem;
     padding-top: calc(0.75rem + env(safe-area-inset-top, 0px));
     will-change: transform;
@@ -94,19 +97,10 @@ main {
     .navbar {
         position: sticky;
         top: 0;
-        padding: 1.5rem 0;
-        background: transparent;
-        box-shadow: none;
-        transition:
-            background-color 0.2s ease-out,
-            box-shadow 0.2s ease-out,
-            padding 0.2s ease-out;
-
-        &.navbar--scrolled {
-            background: var(--navbar-color);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-            padding: 0.75rem 0;
-        }
+        padding: 0.75rem 0;
+        // Solid white header at all times (no transparent-over-hero state).
+        background: var(--navbar-color);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 
         .flex {
             justify-content: space-between;
