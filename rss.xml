@@ -7,7 +7,159 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Tue, 30 Jun 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Thu, 09 Jul 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>The Model Is a Dependency</title>
+          <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/the-model-is-a-dependency/</link>
+          <guid>https://raskell.io/articles/the-model-is-a-dependency/</guid>
+          <description xml:base="https://raskell.io/articles/the-model-is-a-dependency/">&lt;blockquote&gt;
+&lt;p&gt;Part 7 of &lt;em&gt;The Agent Platform Handbook. From Loop to Platform.&lt;&#x2F;em&gt; Previous: &lt;a href=&quot;&#x2F;articles&#x2F;memory-is-a-write-path&#x2F;&quot;&gt;Memory Is a Write Path&lt;&#x2F;a&gt;. Next: The Bill Is Part of the Loop.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;articles&#x2F;memory-is-a-write-path&#x2F;&quot;&gt;Post six&lt;&#x2F;a&gt; gave the agent a write path. A &lt;code&gt;memory.ts&lt;&#x2F;code&gt; module lets it save durable facts into a directory it cannot escape, indexed by the same BM25 ranker that powers retrieval, pinned and searched the same way, and walled off from the project context it must not corrupt. The harness sits at tag &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&#x2F;tree&#x2F;post-06&quot;&gt;&lt;code&gt;post-06&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;: a loop, a registry, four sandboxed tools, parallel dispatch, a pinned context layer, a lexical retriever, and an agent-owned memory. Six posts of machinery, all of it pointed at one thing.&lt;&#x2F;p&gt;
+&lt;p&gt;That thing is the model, and it has been a single hardcoded string this entire time.&lt;&#x2F;p&gt;
+&lt;p&gt;Open &lt;code&gt;agent.ts&lt;&#x2F;code&gt; at &lt;code&gt;post-06&lt;&#x2F;code&gt; and find the only function that actually calls the API. It has carried the same line since &lt;a href=&quot;&#x2F;articles&#x2F;what-an-agent-actually-is&#x2F;&quot;&gt;post one&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;async function step(registry: Registry, messages: MessageParam[], system: string) {
+  return client.messages.create({
+    model: &amp;quot;claude-sonnet-4-6&amp;quot;,
+    max_tokens: 4096,
+    system,
+    tools: registry.schemas(),
+    messages,
+  });
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Every other part of the harness became a swappable thing as the series went on. Tools are entries in a registry. Context is files in a directory. Memory is a write surface with a boundary. The model is a string literal, named once, in the one place that matters most. This post pulls it out and makes the model a dependency the loop can route, fail over, and replace. It ships as tag &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&#x2F;tree&#x2F;post-07&quot;&gt;&lt;code&gt;post-07&lt;&#x2F;code&gt;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-string-that-never-moved&quot;&gt;The string that never moved&lt;&#x2F;h2&gt;
+&lt;p&gt;It is worth being precise about why this particular hardcode is the dangerous one, because at first glance it looks harmless. It is a valid model id. It works. It has worked for six posts.&lt;&#x2F;p&gt;
+&lt;p&gt;It is the riskiest line in the harness for the same reason it is easy to miss: it is the dependency every other layer feeds. The context loader, the retriever, the memory index, the sandbox, the tool registry all exist to assemble the right tokens and hand them to that one call. Everything upstream is in service of the model. And the model is the one component whose three most important properties are entirely outside your control.&lt;&#x2F;p&gt;
+&lt;p&gt;Its &lt;strong&gt;cost&lt;&#x2F;strong&gt; is set by a vendor and changes without your say. Its &lt;strong&gt;availability&lt;&#x2F;strong&gt; is a remote service that has outages. Its &lt;strong&gt;capability&lt;&#x2F;strong&gt; is fixed at a tier you chose once and then forgot you chose. A hardcoded string commits you to a single answer on all three axes for every turn the agent ever takes. The cheap turn and the hard turn pay the same price. The outage takes the whole agent down. The capability ceiling is wherever you left it. None of that is visible until it bills you, pages you, or fails you.&lt;&#x2F;p&gt;
+&lt;p&gt;The fix is the oldest one in software. Put an interface between the thing you depend on and the thing that uses it, so the user describes what it needs and the boundary decides who provides it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-model-is-a-function-from-request-to-response&quot;&gt;A model is a function from request to response&lt;&#x2F;h2&gt;
+&lt;p&gt;A new file, &lt;code&gt;model.ts&lt;&#x2F;code&gt;, holds the whole boundary. It starts by naming what a turn actually is, stripped of any vendor:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;export type ModelRequest = {
+  system: string;
+  messages: MessageParam[];
+  tools: Omit&amp;lt;Tool, &amp;quot;run&amp;quot;&amp;gt;[];
+  maxTokens: number;
+  hard: boolean; &amp;#x2F;&amp;#x2F; does this turn need the strong model?
+};
+
+export interface Model {
+  readonly name: string;
+  complete(req: ModelRequest): Promise&amp;lt;Message&amp;gt;;
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Look at what is in &lt;code&gt;ModelRequest&lt;&#x2F;code&gt; and what is not. It has the four things any chat model needs to do a turn: a system prompt, the conversation, the tools, and an output ceiling. It has one extra field, &lt;code&gt;hard&lt;&#x2F;code&gt;, which is a routing hint the loop fills in, and which I will come back to. What it does not have is a model id, or a temperature, or anything that names a provider. The request describes the work. It does not name who does it.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;Model&lt;&#x2F;code&gt; is the interface. One method, &lt;code&gt;complete&lt;&#x2F;code&gt;, that takes a request and returns a &lt;code&gt;Message&lt;&#x2F;code&gt;. Anything that satisfies that shape is a model as far as the loop is concerned: a real provider, a router that picks between several, a recorded fixture in a test that never touches the network. This is the sentence “models are commodities” rendered as a type. It is a claim about the shape of your code before it is a claim about the market.&lt;&#x2F;p&gt;
+&lt;p&gt;The first thing that satisfies the interface is a single provider model:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;const client = new Anthropic();
+
+export function anthropicModel(id: string): Model {
+  return {
+    name: id,
+    complete: (req) =&amp;gt;
+      client.messages.create({
+        model: id,
+        max_tokens: req.maxTokens,
+        system: req.system,
+        tools: req.tools,
+        messages: req.messages,
+      }),
+  };
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;That is the same API call that used to live in &lt;code&gt;step&lt;&#x2F;code&gt;, with one change: the model id is now an argument, not a literal. This is the only function in the entire harness that imports the vendor SDK or names a model string. Everything else, including the loop, now speaks &lt;code&gt;Model&lt;&#x2F;code&gt;. The blast radius of “we are switching providers” just shrank to one file.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;route-the-turn-not-the-session&quot;&gt;Route the turn, not the session&lt;&#x2F;h2&gt;
+&lt;p&gt;Once the model is a parameter, the obvious next question is which model, and the obvious wrong answer is “pick one.” The right answer is “it depends on the turn,” and that is the whole reason the model had to become a dependency in the first place. A string cannot vary by turn. A function can.&lt;&#x2F;p&gt;
+&lt;p&gt;Watch what an agent loop actually spends its turns on. The agent reads a file and decides the next step. It runs a command and summarizes the output. It searches its context and picks the relevant slice. The large majority of turns in a tool-driven loop are this kind of routine digestion, and a small fast model handles them without complaint. A few turns are different: the opening plan, the recovery after something failed, the moment the task is genuinely ambiguous. Those want the strong model.&lt;&#x2F;p&gt;
+&lt;p&gt;The price gap makes the case on its own. At the time of writing, the relevant tier runs roughly one dollar per million input tokens and five per million output for the small model, three and fifteen for the mid model, five and twenty-five for the large one.&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#pricing&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; That is a three-to-five-times spread, paid on every turn, and most turns are the cheap kind. Routing them to the small model is not a micro-optimization. It is the difference between an agent you can afford to leave running and one you cannot.&lt;&#x2F;p&gt;
+&lt;p&gt;The router is four lines, because all the work is in the interface it composes:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;export function router(cheap: Model, strong: Model): Model {
+  return {
+    name: `router(${cheap.name},${strong.name})`,
+    complete: (req) =&amp;gt; (req.hard ? strong : cheap).complete(req),
+  };
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;A router is a &lt;code&gt;Model&lt;&#x2F;code&gt; that delegates to other &lt;code&gt;Model&lt;&#x2F;code&gt;s. The loop cannot tell the difference between a router and a single provider, which is the point: routing is invisible above the interface.&lt;&#x2F;p&gt;
+&lt;p&gt;That leaves the actual decision, the &lt;code&gt;hard&lt;&#x2F;code&gt; flag, and here I am going to be honest rather than clever. The harness uses the cheapest signal that is already sitting in the loop: it starts optimistic and escalates on evidence of trouble.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;let hard = false; &amp;#x2F;&amp;#x2F; first turn is optimistic: take the cheap model, escalate on trouble
+&amp;#x2F;&amp;#x2F; ... inside the loop, after running the turn&amp;#x27;s tools:
+hard = results.some((r) =&amp;gt; r.is_error); &amp;#x2F;&amp;#x2F; a tool error means the next turn is recovery: send in the strong model
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The first turn goes to the cheap model. A turn whose tools all succeeded is followed by another cheap turn. The moment a tool returns an error, the next turn is recovery, and recovery is exactly the kind of reasoning the strong model is worth paying for, so the next turn escalates. This is a proxy for difficulty, not a measurement of it, and I want it labeled as a proxy. A turn can be hard without any tool failing, and an error can be trivial to fix. Better signals exist: a tiny classifier turn that reads the request and rates it, the token length of the turn, an explicit tool the agent can call to say “this one needs thought.” The harness ships the cheap signal because it costs nothing and recovers most of the value, and because a routing layer that is easy to reason about is worth more than one that is clever and opaque.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fallback-is-the-layer-below-the-sdk-s-retries&quot;&gt;Fallback is the layer below the SDK’s retries&lt;&#x2F;h2&gt;
+&lt;p&gt;Routing handles cost and capability. It does nothing for availability, which is the axis that turns a slow night into a pager at 3 a.m. A model is a remote service, and remote services go down. A hardcoded string has exactly one response to an outage: stop.&lt;&#x2F;p&gt;
+&lt;p&gt;The fix is a second &lt;code&gt;Model&lt;&#x2F;code&gt; that wraps a primary and falls over to a backup:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;export function withFallback(primary: Model, backup: Model): Model {
+  return {
+    name: `${primary.name}|${backup.name}`,
+    async complete(req) {
+      try {
+        return await primary.complete(req);
+      } catch (err) {
+        if (!isOutage(err)) throw err;
+        console.error(`# ${primary.name} is down (${String(err)}), failing over to ${backup.name}`);
+        return backup.complete(req);
+      }
+    },
+  };
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The important judgment is in &lt;code&gt;isOutage&lt;&#x2F;code&gt;, and it is a judgment about which layer owns retries. The provider SDK already retries rate limits and server errors with exponential backoff before it ever throws. So if &lt;code&gt;complete&lt;&#x2F;code&gt; throws, the SDK has already tried and given up. This is not a busy endpoint, it is a down one, and you handle the two differently:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;function isOutage(err: unknown): boolean {
+  return (
+    err instanceof Anthropic.InternalServerError ||
+    err instanceof Anthropic.APIConnectionError
+  );
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;InternalServerError&lt;&#x2F;code&gt; covers any status at or above 500, which is where an overloaded provider lands. &lt;code&gt;APIConnectionError&lt;&#x2F;code&gt; covers the network simply not answering. Those are the errors a different endpoint might survive, so those are the only ones worth failing over for. A &lt;code&gt;400&lt;&#x2F;code&gt; is not an outage, it is a malformed request, which is to say our bug. Retrying our bug on a second provider just breaks it twice and hides the cause. Fallback is for the failures that are theirs, not the ones that are ours.&lt;&#x2F;p&gt;
+&lt;p&gt;The default wiring puts routing and fallback together:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;export function defaultModel(): Model {
+  const haiku = anthropicModel(&amp;quot;claude-haiku-4-5&amp;quot;);
+  const sonnet = anthropicModel(&amp;quot;claude-sonnet-4-6&amp;quot;);
+  return router(withFallback(haiku, sonnet), withFallback(sonnet, haiku));
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Each tier fails over to the other. That is a compromise I will name plainly: failing the strong tier down to the cheap one trades quality for availability on purpose, because a degraded answer beats no answer when the strong endpoint is dark. In production the backup is not a weaker model, it is the same tier on a second provider, the same Sonnet-class capability behind a different endpoint, wrapped in the same &lt;code&gt;Model&lt;&#x2F;code&gt; interface so the loop never learns there were two. And that is the real content of “models are commodities.” It is only true if nothing above the interface knows which provider answered. The moment your loop branches on the vendor, you do not have a commodity, you have a lock-in with extra steps.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-the-loop-changed&quot;&gt;What the loop changed&lt;&#x2F;h2&gt;
+&lt;p&gt;The point of doing this work in a file the loop does not import is that the loop barely changes. &lt;code&gt;agent.ts&lt;&#x2F;code&gt; drops the vendor SDK import and the &lt;code&gt;client&lt;&#x2F;code&gt;, asks for a model once, threads the routing flag, and logs which model actually answered each turn:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;typescript&quot; class=&quot;language-typescript &quot;&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;const model = defaultModel();
+&amp;#x2F;&amp;#x2F; ...
+let hard = false;
+for (let i = 0; i &amp;lt; maxIterations; i++) {
+  const response = await step(model, registry, messages, system, hard);
+  console.error(`# turn ${i + 1} ${hard ? &amp;quot;hard&amp;quot; : &amp;quot;easy&amp;quot;} -&amp;gt; ${response.model}`);
+  &amp;#x2F;&amp;#x2F; ... handle tool calls ...
+  hard = results.some((r) =&amp;gt; r.is_error);
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The &lt;code&gt;response.model&lt;&#x2F;code&gt; field is the model the request actually ran on, reported by the API, so the log is ground truth rather than what we hoped would happen. Run the agent on a clean task and the turns read &lt;code&gt;easy -&amp;gt; claude-haiku-4-5&lt;&#x2F;code&gt;. Make it hit a wall and the line after the failure flips to &lt;code&gt;hard -&amp;gt; claude-sonnet-4-6&lt;&#x2F;code&gt;. The routing is visible, per turn, in the place you were already watching.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-this-layer-does-not-solve&quot;&gt;What this layer does not solve&lt;&#x2F;h2&gt;
+&lt;p&gt;The interface is in the right place. Several things behind it are still stubs, and naming them is the honest way to ship a boundary.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Responses are not normalized.&lt;&#x2F;strong&gt; &lt;code&gt;complete&lt;&#x2F;code&gt; returns the vendor’s &lt;code&gt;Message&lt;&#x2F;code&gt;, and the loop still reads its &lt;code&gt;content&lt;&#x2F;code&gt; blocks and &lt;code&gt;stop_reason&lt;&#x2F;code&gt; directly. A genuinely different provider returns a different shape, and making it fit means an adapter that translates content and stop reasons into one internal type behind the interface. The boundary is drawn; the translation across it is not written. Until it is, “swap the provider” works for any provider that speaks the same response shape, and no further.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;The routing signal is a proxy.&lt;&#x2F;strong&gt; Tool-error-means-hard is one cheap heuristic standing in for a real difficulty estimate. It misses hard turns that do not fail and over-escalates on trivial errors. A better router earns its keep with a real signal; this one earns its keep by being free and legible.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Cost is logged, not budgeted.&lt;&#x2F;strong&gt; The harness prints which model ran. It does not count the tokens or the dollars, and it does not stop. A turn can route to the cheap model and still cost a fortune by carrying a huge context, and nothing here would notice. Seeing the model is not the same as seeing the bill.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Routing fights the cache.&lt;&#x2F;strong&gt; Switching models mid-session invalidates the provider’s prompt cache, because the cache is keyed per model.&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#cache&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; An agent that alternates between two models every few turns keeps neither tier’s cache warm, and the cache miss has a price of its own. A serious router weighs the saved price of the cheap tier against the lost savings of a cold cache. The harness routes naively and leaves that arithmetic for later.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;The prompt is not portable.&lt;&#x2F;strong&gt; The system prompt was written and tuned against one model family. A different provider may read it differently. The interface swaps the model; it does not swap the prompt that earned the model’s behaviour, and a real multi-provider setup carries a prompt per family.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;where-this-lands-in-the-platform&quot;&gt;Where this lands in the platform&lt;&#x2F;h2&gt;
+&lt;p&gt;Total damage going from &lt;code&gt;post-06&lt;&#x2F;code&gt; to &lt;code&gt;post-07&lt;&#x2F;code&gt;: one new file, &lt;code&gt;model.ts&lt;&#x2F;code&gt;, holding the &lt;code&gt;Model&lt;&#x2F;code&gt; interface, a single-provider implementation, a router, and a fallback wrapper. The change to &lt;code&gt;agent.ts&lt;&#x2F;code&gt; is seventeen lines added and nine removed: drop the SDK import and the client, take a model from &lt;code&gt;defaultModel()&lt;&#x2F;code&gt;, thread the &lt;code&gt;hard&lt;&#x2F;code&gt; flag through &lt;code&gt;step&lt;&#x2F;code&gt;, and log the model that answered. The loop, the registry, the sandbox, the four tools, the context layer, the retriever, and the memory are untouched. They were already speaking to a function that returns a response. They did not need to know the function grew a router and a fallback underneath them.&lt;&#x2F;p&gt;
+&lt;p&gt;The rule from the earlier posts still holds. The harness only ever grows; it does not get rewritten. Each post adds one capability to the same artifact and explains why the layer below was not enough. Every layer until now existed to assemble the right tokens and hand them to one fixed model. This post took the fixedness away. The model is now a dependency the agent routes by difficulty, fails over on outage, and can replace without the loop noticing, and the one thing every other layer feeds is finally as swappable as the layers that feed it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;next&quot;&gt;Next&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Part 8: The Bill Is Part of the Loop.&lt;&#x2F;strong&gt; Routing just turned cost and latency into a per-turn variable, and the harness still cannot see either one. Every layer in the series added a cost surface: tool output, pinned context, retrieved chunks, memory, and now a model that bills differently every turn. Part eight instruments the loop. Token and dollar accounting per turn, a trace you can actually read after the run, and the budget that turns “route the cheap model” from a hope into a ceiling the agent cannot cross. You cannot operate what you cannot see, and right now the most expensive thing in the platform is the thing you can see the least.&lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;pricing&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;1&lt;&#x2F;sup&gt;
+&lt;p&gt;Per-model pricing changes; treat these as the shape of the gap, not a current quote. At the time of writing, the small, mid, and large tiers used here (&lt;code&gt;claude-haiku-4-5&lt;&#x2F;code&gt;, &lt;code&gt;claude-sonnet-4-6&lt;&#x2F;code&gt;, &lt;code&gt;claude-opus-4-8&lt;&#x2F;code&gt;) run roughly $1 &#x2F; $5, $3 &#x2F; $15, and $5 &#x2F; $25 per million input &#x2F; output tokens respectively. The exact numbers matter less than the ratio: the cheap tier is several times cheaper per token, and most turns in a tool loop are cheap-tier work.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;cache&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;2&lt;&#x2F;sup&gt;
+&lt;p&gt;Prompt caches are scoped per model, so a request that changes the model id cannot read a cache written under the previous one. This is the same reason a fork operation has to reuse its parent’s exact model and prompt prefix to hit the cache, and the reason routing every turn between two models is not free even when the cheaper model wins on raw token price.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+</description>
+      </item>
       <item>
           <title>The Bottleneck Is Data, and Europe Is Sitting on It</title>
           <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
