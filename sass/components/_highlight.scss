@@ -38,7 +38,9 @@ pre.giallo,
         0 10px 15px -3px rgba(0, 0, 0, 0.3),
         0 4px 6px -2px rgba(0, 0, 0, 0.2);
     position: relative;
-    background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
+    // Keep the Catppuccin code surface; override Zola's inline nord background
+    // (highlight_theme = "nord" stamps background-color on <pre> inline).
+    background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%) !important;
     border: none;
 
     &::before {

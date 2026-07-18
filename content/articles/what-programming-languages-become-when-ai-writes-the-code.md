@@ -189,7 +189,7 @@ So I started building [arcanist.sh](https://arcanist.sh), taking the same approa
 
 [hx](https://arcanist.sh/hx/) is a fast, opinionated, next-gen toolchain for Haskell, built in Rust. One tool that replaces the fragmented stack. Managed compiler versions pinned per-project. Deterministic TOML lockfiles with fingerprint verification. 5.6x faster cold builds than cabal. 7.8x faster incremental rebuilds.
 
-```shell
+```bash
 curl -fsSL https://arcanist.sh/install.sh | sh
 hx new my-app && cd my-app
 hx run

@@ -65,7 +65,7 @@ GHC's runtime system adds initialization overhead to every invocation. When you 
 
 hx starts in 12 milliseconds. A native binary without a garbage-collected runtime does not need to initialize one. The tool should not have the same dependencies as the thing it manages.
 
-```shell
+```bash
 hx build    # 12ms startup + build time
 cabal build # 45ms startup + build time
 stack build # 89ms startup + build time
@@ -87,7 +87,7 @@ The Rust decision also solves the distribution problem. A Rust binary is a singl
 
 hx replaces the `cabal + stack + ghcup + fourmolu + hlint` workflow with a single binary:
 
-```shell
+```bash
 curl -fsSL https://arcanist.sh/hx/install.sh | sh
 hx new my-app && cd my-app
 hx run
@@ -219,7 +219,7 @@ Plugins live in `.hx/plugins/` and time out after a configurable interval so a m
 
 If you have an existing project, hx can import it:
 
-```shell
+```bash
 hx init --from-cabal   # Import from an existing .cabal project
 hx init --from-stack   # Import from a Stack project
 ```
@@ -282,7 +282,7 @@ Same language. Same type safety. Different performance contracts depending on wh
 
 hx already supports BHC as an alternative backend:
 
-```shell
+```bash
 hx build --compiler=bhc --profile=server
 ```
 
@@ -310,7 +310,7 @@ At least I have tried.
 
 ## Try it
 
-```shell
+```bash
 curl -fsSL https://arcanist.sh/hx/install.sh | sh
 hx new my-app && cd my-app
 hx run
