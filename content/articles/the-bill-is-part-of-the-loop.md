@@ -1,7 +1,6 @@
 +++
 title = "The Bill Is Part of the Loop"
-date = 2026-07-09
-draft = true
+date = 2026-07-18
 description = "Every model response already carries its own bill in the usage field, and the loop throws it away. This post reads that field, prices it against a table, and turns cost into a value the loop can see per turn and act on: a metering decorator that needs no loop change, a running ledger, prompt-cache accounting that moves the number the most, and a budget that degrades before it stops. Part eight of The Agent Platform Handbook."
 
 [taxonomies]

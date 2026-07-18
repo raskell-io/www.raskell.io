@@ -14,7 +14,7 @@ image = "the-model-is-a-dependency.avif"
 og_image = "the-model-is-a-dependency.png"
 +++
 
-> Part 7 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Memory Is a Write Path](/articles/memory-is-a-write-path/). Next: The Bill Is Part of the Loop.
+> Part 7 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Memory Is a Write Path](/articles/memory-is-a-write-path/). Next: [The Bill Is Part of the Loop](/articles/the-bill-is-part-of-the-loop/).
 
 [Post six](/articles/memory-is-a-write-path/) gave the agent a write path. A `memory.ts` module lets it save durable facts into a directory it cannot escape, indexed by the same BM25 ranker that powers retrieval, pinned and searched the same way, and walled off from the project context it must not corrupt. The harness sits at tag [`post-06`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-06): a loop, a registry, four sandboxed tools, parallel dispatch, a pinned context layer, a lexical retriever, and an agent-owned memory. Six posts of machinery, all of it pointed at one thing.
 
