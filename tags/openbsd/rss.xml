@@ -58,52 +58,52 @@
 &lt;&#x2F;ol&gt;
 &lt;h3 id=&quot;step-by-step-guide&quot;&gt;Step-by-step guide&lt;&#x2F;h3&gt;
 &lt;p&gt;Let’s first install the &lt;code&gt;libvirt&lt;&#x2F;code&gt; package and some related packages which we need in order to connect via VNC. The VNC will provide us with the possibility to use the graphical interface of the running OpenBSD instance.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ sudo xbps-install -S dbus qemu libvirt virt-manager virt-viewer tigervnc
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo xbps-install -S dbus qemu libvirt virt-manager virt-viewer tigervnc
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Now, we need to add our user, in my case &lt;code&gt;raskell&lt;&#x2F;code&gt;, to the &lt;code&gt;libvirt&lt;&#x2F;code&gt; group which got simultanously created with the installation of libvirt.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ sudo usermod -aG libvirt raskell
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo usermod -aG libvirt raskell
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;OpenBSD features a release cycle of six months. We would need to update our system every six month to keep up with the latest packages. During a given release, only security and bug fix patches are applied to the curated packages maintained by pkg_add. Therefore, in February 2023, we’re using the &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;72.html&quot;&gt;OpenBSD 7.2&lt;&#x2F;a&gt; release version. As I’m living in Switzerland, I chose to pull the iso image from a Swiss mirror, in this case from &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&#x2F;7.2&#x2F;&quot;&gt;&lt;code&gt;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; (check what mirror is closest to you to get the best download rate).&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# cd &amp;#x2F;var&amp;#x2F;lib&amp;#x2F;libvirt&amp;#x2F;boot&amp;#x2F;
-# sudo wget https:&amp;#x2F;&amp;#x2F;mirror.ungleich.ch&amp;#x2F;pub&amp;#x2F;OpenBSD&amp;#x2F;7.2&amp;#x2F;amd64&amp;#x2F;install72.iso
---2023-01-12 20:48:15--  https:&amp;#x2F;&amp;#x2F;mirror.ungleich.ch&amp;#x2F;pub&amp;#x2F;OpenBSD&amp;#x2F;7.2&amp;#x2F;amd64&amp;#x2F;install72.iso
-Resolving mirror.ungleich.ch (mirror.ungleich.ch)... 2a0a:e5c0:2:2:400:c8ff:fe68:bef3, 185.203.114.135
-Connecting to mirror.ungleich.ch (mirror.ungleich.ch)|2a0a:e5c0:2:2:400:c8ff:fe68:bef3|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 583352320 (556M) [application&amp;#x2F;octet-stream]
-Saving to: ‘install72.iso.1’
-
-install72.iso.1                      100%[====================================================================&amp;gt;] 556.33M  7.11MB&amp;#x2F;s    in 77s     
-
-2023-01-12 20:49:33 (7.19 MB&amp;#x2F;s) - ‘install72.iso.1’ saved [583352320&amp;#x2F;583352320]
-sudo wget https:&amp;#x2F;&amp;#x2F;mirror.ungleich.ch&amp;#x2F;pub&amp;#x2F;OpenBSD&amp;#x2F;7.2&amp;#x2F;amd64&amp;#x2F;SHA256
---2023-01-12 20:47:38--  https:&amp;#x2F;&amp;#x2F;mirror.ungleich.ch&amp;#x2F;pub&amp;#x2F;OpenBSD&amp;#x2F;7.2&amp;#x2F;amd64&amp;#x2F;SHA256
-Resolving mirror.ungleich.ch (mirror.ungleich.ch)... 2a0a:e5c0:2:2:400:c8ff:fe68:bef3, 185.203.114.135
-Connecting to mirror.ungleich.ch (mirror.ungleich.ch)|2a0a:e5c0:2:2:400:c8ff:fe68:bef3|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 1992 (1.9K) [application&amp;#x2F;octet-stream]
-Saving to: ‘SHA256.1’
-
-SHA256.1                             100%[====================================================================&amp;gt;]   1.95K  --.-KB&amp;#x2F;s    in 0s      
-
-2023-01-12 20:47:39 (742 MB&amp;#x2F;s) - ‘SHA256.1’ saved [1992&amp;#x2F;1992]
-# grep install63.iso SHA256 &amp;gt; &amp;#x2F;tmp&amp;#x2F;x
-# sha256sum -c &amp;#x2F;tmp&amp;#x2F;x
-# rm &amp;#x2F;tmp&amp;#x2F;x
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# cd &#x2F;var&#x2F;lib&#x2F;libvirt&#x2F;boot&#x2F;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# sudo wget https:&#x2F;&#x2F;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&#x2F;7.2&#x2F;amd64&#x2F;install72.iso
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;--2023-01-12&lt;&#x2F;span&gt;&lt;span&gt; 20:48:15--  https:&#x2F;&#x2F;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&#x2F;7.2&#x2F;amd64&#x2F;install72.iso
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Resolving&lt;&#x2F;span&gt;&lt;span&gt; mirror.ungleich.ch (mirror.ungleich.ch)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;...&lt;&#x2F;span&gt;&lt;span&gt; 2a0a:e5c0:2:2:400:c8ff:fe68:bef3, 185.203.114.135
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Connecting&lt;&#x2F;span&gt;&lt;span&gt; to mirror.ungleich.ch (mirror.ungleich.ch)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;2a0a:e5c0:2:2:400:c8ff:fe68:bef3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;:443...&lt;&#x2F;span&gt;&lt;span&gt; connected.
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;HTTP&lt;&#x2F;span&gt;&lt;span&gt; request sent, awaiting response... 200 OK
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Length:&lt;&#x2F;span&gt;&lt;span&gt; 583352320 (556M) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;[application&#x2F;octet-stream]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Saving&lt;&#x2F;span&gt;&lt;span&gt; to: ‘install72.iso.1’
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;install72.iso.1&lt;&#x2F;span&gt;&lt;span&gt;                      100&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;%[&lt;&#x2F;span&gt;&lt;span&gt;====================================================================&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span&gt; 556.33M  7.11MB&#x2F;s    in 77s     
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;2023-01-12&lt;&#x2F;span&gt;&lt;span&gt; 20:49:33 (7.19 MB&#x2F;s) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; ‘install72.iso.1’ saved &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span&gt;583352320&#x2F;583352320&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;span&gt; wget https:&#x2F;&#x2F;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&#x2F;7.2&#x2F;amd64&#x2F;SHA256
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;--2023-01-12&lt;&#x2F;span&gt;&lt;span&gt; 20:47:38--  https:&#x2F;&#x2F;mirror.ungleich.ch&#x2F;pub&#x2F;OpenBSD&#x2F;7.2&#x2F;amd64&#x2F;SHA256
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Resolving&lt;&#x2F;span&gt;&lt;span&gt; mirror.ungleich.ch (mirror.ungleich.ch)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;...&lt;&#x2F;span&gt;&lt;span&gt; 2a0a:e5c0:2:2:400:c8ff:fe68:bef3, 185.203.114.135
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Connecting&lt;&#x2F;span&gt;&lt;span&gt; to mirror.ungleich.ch (mirror.ungleich.ch)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;2a0a:e5c0:2:2:400:c8ff:fe68:bef3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;:443...&lt;&#x2F;span&gt;&lt;span&gt; connected.
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;HTTP&lt;&#x2F;span&gt;&lt;span&gt; request sent, awaiting response... 200 OK
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Length:&lt;&#x2F;span&gt;&lt;span&gt; 1992 (1.9K) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;[application&#x2F;octet-stream]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Saving&lt;&#x2F;span&gt;&lt;span&gt; to: ‘SHA256.1’
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;SHA256.1&lt;&#x2F;span&gt;&lt;span&gt;                             100&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;%[&lt;&#x2F;span&gt;&lt;span&gt;====================================================================&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span&gt;   1.95K  --.-KB&#x2F;s    in 0s      
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;2023-01-12&lt;&#x2F;span&gt;&lt;span&gt; 20:47:39 (742 MB&#x2F;s) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; ‘SHA256.1’ saved &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span&gt;1992&#x2F;1992&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# grep install63.iso SHA256 &amp;gt; &#x2F;tmp&#x2F;x
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# sha256sum -c &#x2F;tmp&#x2F;x
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# rm &#x2F;tmp&#x2F;x
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Before we can start the virtualization server and get running our OpenBSD instance, we need to define the configuraiton on how to virtualize and ultimately boot the system with. This is done with &lt;code&gt;virt-install&lt;&#x2F;code&gt;. Noteworthy here is that we &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.qemu.org&#x2F;&quot;&gt;QEMU&lt;&#x2F;a&gt; as our emulation solution of choice, we allocate up to 4GB of RAM and 4 CPU cores to the machine.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ sudo virt-install \
-      --name=openbsd \
-      --virt-type=qemu \
-      --memory=2048,maxmemory=4096 \
-      --vcpus=2,maxvcpus=4 \
-      --cpu host \
-      --os-variant=openbsd7.0 \
-      --cdrom=&amp;#x2F;var&amp;#x2F;lib&amp;#x2F;libvirt&amp;#x2F;boot&amp;#x2F;install72.iso \
-      --network=bridge=virbr0,model=virtio \
-      --graphics=vnc \
-      --disk path=&amp;#x2F;var&amp;#x2F;lib&amp;#x2F;libvirt&amp;#x2F;images&amp;#x2F;openbsd.qcow2,size=40,bus=virtio,format=qcow2
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo virt-install &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;      --name&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;openbsd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;      --virt-type&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;qemu &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;      --memory&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;2048,maxmemory=4096 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;      --vcpus&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;2,maxvcpus=4 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;      --cpu host &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;      --os-variant&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;openbsd7.0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;      --cdrom&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;var&#x2F;lib&#x2F;libvirt&#x2F;boot&#x2F;install72.iso &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;      --network&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;bridge=virbr0,model=virtio &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;      --graphics&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;vnc &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;      --disk path=&#x2F;var&#x2F;lib&#x2F;libvirt&#x2F;images&#x2F;openbsd.qcow2,size=40,bus=virtio,format=qcow2
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Once, it is up and running, we can use a vnc solution to connect to the running machine. In this case, I chose &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.libvirt.org&#x2F;manpages&#x2F;virsh.html&quot;&gt;virsh&lt;&#x2F;a&gt; to do the job. virsh is a command-line interface tool for managing virtualization environments created with libvirt. It allows us to manage virtual machines, storage pools, and network interfaces, as well as other virtualization components, from the command line.&lt;&#x2F;p&gt;
 &lt;p&gt;To establish a VNC connection with a running libvirt virtualized OpenBSD instance, you can use the following steps:&lt;&#x2F;p&gt;
 &lt;ol&gt;
@@ -113,14 +113,14 @@ SHA256.1                             100%[======================================
 &lt;li&gt;Authenticate to the VNC server: You may need to enter a password to authenticate to the VNC server. The password is set when the virtual machine is created in libvirt.&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;p&gt;With these steps, you can establish a VNC connection with a running libvirt virtualized OpenBSD instance and interact with the virtual machine’s graphical user interface.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ virsh dumpxml openbsd | grep vnc
-&amp;lt;graphics type=&amp;#x27;vnc&amp;#x27; port=&amp;#x27;5900&amp;#x27; autoport=&amp;#x27;yes&amp;#x27; listen=&amp;#x27;127.0.0.1&amp;#x27;&amp;gt;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; virsh dumpxml openbsd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;grep&lt;&#x2F;span&gt;&lt;span&gt; vnc
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;graphics type&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;#39;vnc&amp;#39; &lt;&#x2F;span&gt;&lt;span&gt;port&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;#39;5900&amp;#39; &lt;&#x2F;span&gt;&lt;span&gt;autoport&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;#39;yes&amp;#39; &lt;&#x2F;span&gt;&lt;span&gt;listen&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;#39;127.0.0.1&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Like I did, most of you would like to interact with a graphical interface such as with X11. For that, we yet another tool, a so-called VNC viewer. A very simple implementation of such a vnc viewer is &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;tigervnc.org&#x2F;&quot;&gt;tigervnc&lt;&#x2F;a&gt; (simply install it with &lt;code&gt;$ sudo xbps-install -S tigervnc&lt;&#x2F;code&gt;).&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ sudo virsh --connect
-qemu:&amp;#x2F;&amp;#x2F;&amp;#x2F;system start openbsd
-Domain &amp;#x27;openbsd&amp;#x27; started
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo virsh --connect
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;qemu:&#x2F;&#x2F;&#x2F;system&lt;&#x2F;span&gt;&lt;span&gt; start openbsd
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;Domain &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;#39;openbsd&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; started
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;openbsd&quot;&gt;OpenBSD&lt;&#x2F;h3&gt;
 &lt;ul&gt;

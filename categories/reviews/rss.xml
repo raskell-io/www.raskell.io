@@ -35,14 +35,14 @@
 &lt;p&gt;GNU Make and BSD Make disagree on syntax in ways that cause silent failures. A Makefile that works on my Linux CI runner breaks on a contributor’s macOS laptop because of a conditional or a shell invocation difference. The fix is always “use GNU make,” but that means documenting it, adding a check, and fielding issues from people who forget.&lt;&#x2F;p&gt;
 &lt;p&gt;Worse, Makefiles cannot declare tool dependencies. A Rust project needs a specific Rust version, maybe &lt;code&gt;protoc&lt;&#x2F;code&gt; for gRPC, maybe &lt;code&gt;cargo-watch&lt;&#x2F;code&gt; for development convenience. The Makefile assumes these tools exist. When they do not, the developer gets a cryptic error five minutes into their first build.&lt;&#x2F;p&gt;
 &lt;p&gt;So projects accumulated scaffolding:&lt;&#x2F;p&gt;
-&lt;pre&gt;&lt;code&gt;.rust-version
-.tool-versions
-Makefile
-scripts&amp;#x2F;setup.sh
-scripts&amp;#x2F;ci.sh
-scripts&amp;#x2F;release.sh
-.envrc
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre style=&quot;background-color:#2e3440;color:#d8dee9;&quot;&gt;&lt;code&gt;&lt;span&gt;.rust-version
+&lt;&#x2F;span&gt;&lt;span&gt;.tool-versions
+&lt;&#x2F;span&gt;&lt;span&gt;Makefile
+&lt;&#x2F;span&gt;&lt;span&gt;scripts&#x2F;setup.sh
+&lt;&#x2F;span&gt;&lt;span&gt;scripts&#x2F;ci.sh
+&lt;&#x2F;span&gt;&lt;span&gt;scripts&#x2F;release.sh
+&lt;&#x2F;span&gt;&lt;span&gt;.envrc
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Six files to express what amounts to: “this project uses Rust 1.83, needs protoc, and has five things you can run.” Multiply that by forty repos and you have a maintenance surface that nobody wants to touch. The &lt;code&gt;scripts&#x2F;&lt;&#x2F;code&gt; folder in particular had a way of growing silently. Someone adds a helper. Someone else copies it from another project with modifications. Six months later you have three slightly different versions of the same release script across three orgs.&lt;&#x2F;p&gt;
 &lt;p&gt;The Elixir projects had it worse. Elixir needs Erlang&#x2F;OTP at a specific version, then Elixir itself at a matching version, then Node for asset compilation in Phoenix, then possibly Rust for NIFs (Cyanea compiles Rust bioinformatics code into the BEAM release). Four tool dependencies before you write a line of application code. &lt;code&gt;asdf&lt;&#x2F;code&gt; handled the version management, but slowly and without task automation, so you still needed a Makefile on top.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;why-not-nix&quot;&gt;Why not Nix&lt;&#x2F;h2&gt;
@@ -58,87 +58,87 @@ scripts&amp;#x2F;release.sh
 &lt;h2 id=&quot;what-mise-actually-does&quot;&gt;What mise actually does&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mise.jdx.dev&#x2F;&quot;&gt;Mise&lt;&#x2F;a&gt; is a single Rust binary that combines tool version management and task running into one configuration file per project. It does asdf’s job and Make’s job in a single tool.&lt;&#x2F;p&gt;
 &lt;p&gt;Here is this site’s configuration. The entire thing:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# mise.toml (raskell.io)
-[tools]
-zola = &amp;quot;0.19&amp;quot;
-
-[env]
-_.file = &amp;quot;.env&amp;quot;
-
-[tasks.serve]
-description = &amp;quot;Start the Zola development server&amp;quot;
-run = &amp;quot;zola serve&amp;quot;
-
-[tasks.build]
-description = &amp;quot;Build the site for production&amp;quot;
-run = &amp;quot;zola build&amp;quot;
-
-[tasks.check]
-description = &amp;quot;Check the site for errors without building&amp;quot;
-run = &amp;quot;zola check&amp;quot;
-
-[tasks.new]
-description = &amp;quot;Create a new article&amp;quot;
-run = &amp;quot;&amp;quot;&amp;quot;
-#!&amp;#x2F;usr&amp;#x2F;bin&amp;#x2F;env bash
-if [ -z &amp;quot;$1&amp;quot; ]; then
-  echo &amp;quot;Usage: mise run new &amp;lt;article-slug&amp;gt;&amp;quot;
-  exit 1
-fi
-SLUG=&amp;quot;$1&amp;quot;
-DATE=$(date +%Y-%m-%d)
-FILE=&amp;quot;content&amp;#x2F;articles&amp;#x2F;${SLUG}.md&amp;quot;
-cat &amp;gt; &amp;quot;$FILE&amp;quot; &amp;lt;&amp;lt; ARTICLE
-+++
-title = &amp;quot;&amp;quot;
-date = ${DATE}
-description = &amp;quot;&amp;quot;
-[taxonomies]
-tags = []
-categories = []
-[extra]
-author = &amp;quot;Raffael&amp;quot;
-+++
-ARTICLE
-echo &amp;quot;Created $FILE&amp;quot;
-&amp;quot;&amp;quot;&amp;quot;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# mise.toml (raskell.io)
+&lt;&#x2F;span&gt;&lt;span&gt;[tools]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;zola &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;0.19&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[env]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;_&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;file &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;.env&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;serve]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Start the Zola development server&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;zola serve&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;build]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Build the site for production&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;zola build&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;check]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Check the site for errors without building&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;zola check&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;new]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Create a new article&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;&amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;#!&#x2F;usr&#x2F;bin&#x2F;env bash
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;if [ -z &amp;quot;$1&amp;quot; ]; then
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;  echo &amp;quot;Usage: mise run new &amp;lt;article-slug&amp;gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;  exit 1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;SLUG=&amp;quot;$1&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;DATE=$(date +%Y-%m-%d)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;FILE=&amp;quot;content&#x2F;articles&#x2F;${SLUG}.md&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;cat &amp;gt; &amp;quot;$FILE&amp;quot; &amp;lt;&amp;lt; ARTICLE
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;+++
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;title = &amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;date = ${DATE}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;description = &amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;[taxonomies]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;tags = []
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;categories = []
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;[extra]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;author = &amp;quot;Raffael&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;+++
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;ARTICLE
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;echo &amp;quot;Created $FILE&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;&amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;One file. Declares the tool (Zola 0.19), loads environment variables, and defines every task a contributor needs. &lt;code&gt;mise install&lt;&#x2F;code&gt; sets up the toolchain. &lt;code&gt;mise tasks&lt;&#x2F;code&gt; shows what is available. &lt;code&gt;mise run serve&lt;&#x2F;code&gt; starts the dev server. No Makefile. No scripts folder. No documentation page explaining how to get Zola at the right version.&lt;&#x2F;p&gt;
 &lt;p&gt;For a Rust project like &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;Shiioo&lt;&#x2F;a&gt; (the agentic orchestrator), the configuration is larger but follows the same pattern:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# .mise.toml (shiioo)
-[tools]
-rust = &amp;quot;latest&amp;quot;
-
-[env]
-RUST_LOG = &amp;quot;info&amp;quot;
-RUST_BACKTRACE = &amp;quot;1&amp;quot;
-_.path = [&amp;quot;.&amp;#x2F;target&amp;#x2F;release&amp;quot;, &amp;quot;.&amp;#x2F;target&amp;#x2F;debug&amp;quot;]
-
-[tasks.build]
-description = &amp;quot;Build all crates in release mode&amp;quot;
-run = &amp;quot;cargo build --release&amp;quot;
-
-[tasks.test]
-description = &amp;quot;Run all tests&amp;quot;
-run = &amp;quot;cargo test&amp;quot;
-
-[tasks.clippy]
-description = &amp;quot;Run clippy lints&amp;quot;
-run = &amp;quot;cargo clippy --all-targets -- -D warnings&amp;quot;
-
-[tasks.fmt]
-description = &amp;quot;Format code with rustfmt&amp;quot;
-run = &amp;quot;cargo fmt --all&amp;quot;
-
-[tasks.ci]
-description = &amp;quot;CI pipeline: format check, clippy, test&amp;quot;
-depends = [&amp;quot;fmt-check&amp;quot;, &amp;quot;clippy&amp;quot;, &amp;quot;test&amp;quot;]
-
-[tasks.dev]
-description = &amp;quot;Full development build and run&amp;quot;
-depends = [&amp;quot;fmt&amp;quot;, &amp;quot;check&amp;quot;, &amp;quot;test&amp;quot;]
-run = &amp;quot;cargo run -p shiioo-server&amp;quot;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# .mise.toml (shiioo)
+&lt;&#x2F;span&gt;&lt;span&gt;[tools]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;rust &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;latest&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[env]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;RUST_LOG &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;info&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;RUST_BACKTRACE &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;1&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;_&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;path &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;.&#x2F;target&#x2F;release&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;.&#x2F;target&#x2F;debug&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;build]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Build all crates in release mode&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo build --release&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;test]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Run all tests&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo test&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;clippy]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Run clippy lints&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo clippy --all-targets -- -D warnings&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;fmt]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Format code with rustfmt&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo fmt --all&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;ci]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;CI pipeline: format check, clippy, test&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;depends &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;fmt-check&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;clippy&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;test&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;dev]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Full development build and run&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;depends &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;fmt&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;check&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;test&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo run -p shiioo-server&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The &lt;code&gt;depends&lt;&#x2F;code&gt; key is where mise replaces the one thing Make was genuinely good at: task dependency ordering. &lt;code&gt;mise run ci&lt;&#x2F;code&gt; runs format checking, then clippy, then tests, in sequence. If clippy fails, tests do not run. It is not as expressive as Make’s file-based dependency graph, but for project automation tasks (as opposed to build tasks, which cargo or mix handle), it covers what I actually need.&lt;&#x2F;p&gt;
 &lt;p&gt;For a multi-language project like Cyanea, the value is even clearer. The Elixir app needs Erlang, Elixir, Node, and Rust. One &lt;code&gt;[tools]&lt;&#x2F;code&gt; section pins all four. One &lt;code&gt;mise install&lt;&#x2F;code&gt; gets a contributor from zero to a working environment. Without mise, that setup involved installing asdf, adding four plugins, running &lt;code&gt;asdf install&lt;&#x2F;code&gt;, then installing direnv for environment variables, then reading the Makefile to figure out how to run things. With mise, it is two commands: &lt;code&gt;mise install&lt;&#x2F;code&gt; and &lt;code&gt;mise run dev&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-cross-project-pattern&quot;&gt;The cross-project pattern&lt;&#x2F;h2&gt;

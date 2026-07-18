@@ -67,10 +67,10 @@
 &lt;p&gt;Think about what this means in practice. You are a new developer. You want to try Haskell. You download ghcup. ghcup is a shell script that downloads a pre-built GHC binary, but it also installs Cabal, which is itself a Haskell binary compiled with GHC. If the pre-built binary does not exist for your platform, you need GHC to build Cabal, but you need Cabal to set up GHC. The bootstrap documentation exists because the bootstrap problem exists, and it exists because the tools are written in the language they manage.&lt;&#x2F;p&gt;
 &lt;p&gt;GHC’s runtime system adds initialization overhead to every invocation. When you type &lt;code&gt;cabal build&lt;&#x2F;code&gt;, the first 45 milliseconds are spent starting the GHC runtime before Cabal even begins to think about your project. Stack is worse at 89 milliseconds. These numbers sound small until you are running commands in a tight development loop, hitting save and expecting the build to start instantly. Or in CI, where the build tool is invoked hundreds of times across a pipeline and those milliseconds compound into minutes.&lt;&#x2F;p&gt;
 &lt;p&gt;hx starts in 12 milliseconds. A native binary without a garbage-collected runtime does not need to initialize one. The tool should not have the same dependencies as the thing it manages.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;hx build    # 12ms startup + build time
-cabal build # 45ms startup + build time
-stack build # 89ms startup + build time
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;hx&lt;&#x2F;span&gt;&lt;span&gt; build    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# 12ms startup + build time
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;cabal&lt;&#x2F;span&gt;&lt;span&gt; build &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# 45ms startup + build time
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;stack&lt;&#x2F;span&gt;&lt;span&gt; build &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# 89ms startup + build time
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Memory tells the same story:&lt;&#x2F;p&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Tool&lt;&#x2F;th&gt;&lt;th&gt;Startup memory&lt;&#x2F;th&gt;&lt;th&gt;Build memory (simple project)&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;hx&lt;&#x2F;td&gt;&lt;td&gt;8 MB&lt;&#x2F;td&gt;&lt;td&gt;45 MB&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -81,47 +81,47 @@ stack build # 89ms startup + build time
 &lt;p&gt;The Rust decision also solves the distribution problem. A Rust binary is a single static executable that cross-compiles trivially. No runtime dependencies. No “install GHC first so you can install the tool that installs GHC.” &lt;code&gt;curl | sh&lt;&#x2F;code&gt; and you are running. hx is available via the install script, Cargo, aqua, winget on Windows, and Homebrew. Every distribution channel ships a self-contained binary.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;what-hx-actually-does&quot;&gt;What hx actually does&lt;&#x2F;h2&gt;
 &lt;p&gt;hx replaces the &lt;code&gt;cabal + stack + ghcup + fourmolu + hlint&lt;&#x2F;code&gt; workflow with a single binary:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;curl -fsSL https:&amp;#x2F;&amp;#x2F;arcanist.sh&amp;#x2F;hx&amp;#x2F;install.sh | sh
-hx new my-app &amp;amp;&amp;amp; cd my-app
-hx run
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;curl&lt;&#x2F;span&gt;&lt;span&gt; -fsSL https:&#x2F;&#x2F;arcanist.sh&#x2F;hx&#x2F;install.sh &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;sh
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;hx&lt;&#x2F;span&gt;&lt;span&gt; new my-app &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;cd&lt;&#x2F;span&gt;&lt;span&gt; my-app
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;hx&lt;&#x2F;span&gt;&lt;span&gt; run
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;No ghcup. No stack. No cabal-install. One tool, one configuration file, one lockfile format.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;configuration&quot;&gt;Configuration&lt;&#x2F;h3&gt;
 &lt;p&gt;The configuration is &lt;code&gt;hx.toml&lt;&#x2F;code&gt;. Not a &lt;code&gt;.cabal&lt;&#x2F;code&gt; file with its custom syntax that nobody can parse without a library. Not a &lt;code&gt;stack.yaml&lt;&#x2F;code&gt; with YAML indentation traps. TOML, the same format that Rust (&lt;code&gt;Cargo.toml&lt;&#x2F;code&gt;), Python (&lt;code&gt;pyproject.toml&lt;&#x2F;code&gt;), and most modern tools have converged on.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;[project]
-name = &amp;quot;my-app&amp;quot;
-kind = &amp;quot;bin&amp;quot;
-
-[toolchain]
-ghc = &amp;quot;9.8.2&amp;quot;
-
-[build]
-optimization = 2
-warnings = true
-
-[format]
-formatter = &amp;quot;fourmolu&amp;quot;
-
-[lint]
-hlint = true
-
-[hooks]
-pre-build = &amp;quot;scripts&amp;#x2F;generate-version.sh&amp;quot;
-post-test = &amp;quot;scripts&amp;#x2F;notify.sh&amp;quot;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span&gt;[project]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;my-app&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;kind &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;bin&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[toolchain]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;ghc &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;9.8.2&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[build]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;optimization &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;warnings &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;true
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[format]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;formatter &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;fourmolu&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[lint]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;hlint &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;true
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[hooks]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;pre-build &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;scripts&#x2F;generate-version.sh&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;post-test &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;scripts&#x2F;notify.sh&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Everything in one file. The toolchain version is pinned per-project, so different projects can use different GHC versions without conflict. When you run &lt;code&gt;hx build&lt;&#x2F;code&gt; in a project pinned to GHC 9.8.2 and another pinned to 9.6.4, hx switches automatically. No &lt;code&gt;ghcup set&lt;&#x2F;code&gt; commands. No global state.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;lockfiles&quot;&gt;Lockfiles&lt;&#x2F;h3&gt;
 &lt;p&gt;The lockfile is also TOML. Every dependency is pinned with a sha256 fingerprint:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;version = 1
-ghc = &amp;quot;9.8.2&amp;quot;
-created_at = &amp;quot;2026-01-16T00:00:00Z&amp;quot;
-
-[[package]]
-name = &amp;quot;aeson&amp;quot;
-version = &amp;quot;2.2.1.0&amp;quot;
-sha256 = &amp;quot;a5a5b8a...&amp;quot;
-deps = [&amp;quot;base&amp;quot;, &amp;quot;text&amp;quot;, &amp;quot;bytestring&amp;quot;]
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;version &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;ghc &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;9.8.2&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;created_at &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;2026-01-16T00:00:00Z&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[[package]]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;aeson&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;version &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;2.2.1.0&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;sha256 &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;a5a5b8a...&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;deps &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;base&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;text&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;bytestring&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;code&gt;hx lock --check&lt;&#x2F;code&gt; in CI fails if the lockfile is stale. This is deterministic by default. Not “deterministic if you remember to run &lt;code&gt;cabal freeze&lt;&#x2F;code&gt; and commit the freeze file and hope nobody ran &lt;code&gt;cabal update&lt;&#x2F;code&gt; on a different machine.” Deterministic the way &lt;code&gt;cargo&lt;&#x2F;code&gt; and &lt;code&gt;uv&lt;&#x2F;code&gt; are deterministic. Automatically. Every time.&lt;&#x2F;p&gt;
 &lt;p&gt;If you are coming from Stack, you might say “Stack already has lockfiles.” It does. Stack’s approach is to pin to a Stackage snapshot, which gives you a curated set of packages known to work together. This is a valid approach, but it means your dependency versions are dictated by what the Stackage maintainers decided to include in that snapshot. If you need a newer version of a package that is not in the current LTS, you start adding &lt;code&gt;extra-deps&lt;&#x2F;code&gt;, and your reproducibility guarantees become more complex. hx resolves from Hackage directly, pins every version, and verifies checksums. You control exactly what you get.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;native-builds&quot;&gt;Native builds&lt;&#x2F;h3&gt;
@@ -145,37 +145,37 @@ deps = [&amp;quot;base&amp;quot;, &amp;quot;text&amp;quot;, &amp;quot;bytestring
 &lt;h3 id=&quot;error-messages&quot;&gt;Error messages&lt;&#x2F;h3&gt;
 &lt;p&gt;Haskell’s reputation for cryptic error messages is partly deserved and partly a tooling problem. GHC type errors can be daunting, but build tool errors are often worse because they mix configuration issues with compilation issues in unhelpful ways. “Could not resolve dependencies” from Cabal tells you almost nothing about which constraint is blocking resolution or what you could change to fix it.&lt;&#x2F;p&gt;
 &lt;p&gt;hx uses structured error codes with actionable suggestions:&lt;&#x2F;p&gt;
-&lt;pre&gt;&lt;code&gt;E0012: Package &amp;#x27;aeson&amp;#x27; not found in local index
-
-  The package index may be outdated.
-  Run: hx index update
-
-  Or add the package explicitly:
-  Run: hx add aeson
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;pre&gt;&lt;code&gt;E0020: GHC version mismatch
-
-  Project requires GHC 9.8.2 but 9.6.4 is active.
-  Run: hx toolchain install 9.8.2
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre style=&quot;background-color:#2e3440;color:#d8dee9;&quot;&gt;&lt;code&gt;&lt;span&gt;E0012: Package &amp;#39;aeson&amp;#39; not found in local index
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  The package index may be outdated.
+&lt;&#x2F;span&gt;&lt;span&gt;  Run: hx index update
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  Or add the package explicitly:
+&lt;&#x2F;span&gt;&lt;span&gt;  Run: hx add aeson
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre style=&quot;background-color:#2e3440;color:#d8dee9;&quot;&gt;&lt;code&gt;&lt;span&gt;E0020: GHC version mismatch
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  Project requires GHC 9.8.2 but 9.6.4 is active.
+&lt;&#x2F;span&gt;&lt;span&gt;  Run: hx toolchain install 9.8.2
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Every error has a code, a human-readable explanation, and a concrete command to fix it. &lt;code&gt;hx doctor&lt;&#x2F;code&gt; runs a comprehensive diagnostic of your entire environment, checking GHC, Cabal, HLS, PATH configuration, and project setup, reporting exactly what is wrong and how to fix each issue.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;everything-else&quot;&gt;Everything else&lt;&#x2F;h3&gt;
 &lt;p&gt;hx bundles the rest of the development workflow too. &lt;code&gt;hx fmt&lt;&#x2F;code&gt; wraps fourmolu for formatting. &lt;code&gt;hx lint&lt;&#x2F;code&gt; wraps hlint. &lt;code&gt;hx coverage --html --open&lt;&#x2F;code&gt; generates an HTML coverage report and opens it in your browser. &lt;code&gt;hx doc --open&lt;&#x2F;code&gt; builds Haddock documentation and serves it locally. &lt;code&gt;hx watch&lt;&#x2F;code&gt; detects file changes in 15 milliseconds (versus 180ms for &lt;code&gt;stack --file-watch&lt;&#x2F;code&gt;) and triggers rebuilds or test runs. &lt;code&gt;hx profile --heap&lt;&#x2F;code&gt; generates heap profiles for memory analysis.&lt;&#x2F;p&gt;
 &lt;p&gt;The goal is that you should never need to leave hx to do something with your Haskell project. Not because hx reimplements everything, but because it wraps the best existing tools with a consistent interface and fast orchestration.&lt;&#x2F;p&gt;
 &lt;p&gt;There is also a plugin system using Steel, a Scheme dialect, for custom build lifecycle hooks:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;scheme&quot; class=&quot;language-scheme &quot;&gt;&lt;code class=&quot;language-scheme&quot; data-lang=&quot;scheme&quot;&gt;;; .hx&amp;#x2F;plugins&amp;#x2F;check-todos.scm
-(define (on-build-success project)
-  (when (file-exists? &amp;quot;TODO.md&amp;quot;)
-    (warn &amp;quot;Do not forget to update TODO.md&amp;quot;)))
-
-(register-hook &amp;#x27;post-build on-build-success)
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;scheme&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-scheme &quot;&gt;&lt;code class=&quot;language-scheme&quot; data-lang=&quot;scheme&quot;&gt;&lt;span&gt;;; .hx&#x2F;plugins&#x2F;check-todos.scm
+&lt;&#x2F;span&gt;&lt;span&gt;(define (on-build-success project)
+&lt;&#x2F;span&gt;&lt;span&gt;  (when (file-exists? &amp;quot;TODO.md&amp;quot;)
+&lt;&#x2F;span&gt;&lt;span&gt;    (warn &amp;quot;Do not forget to update TODO.md&amp;quot;)))
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;(register-hook &amp;#39;post-build on-build-success)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Plugins live in &lt;code&gt;.hx&#x2F;plugins&#x2F;&lt;&#x2F;code&gt; and time out after a configurable interval so a misbehaving script cannot stall your build. They hook into pre-build, post-build, pre-test, post-test, and other lifecycle events. Lightweight enough that you can add project-specific automation without maintaining a separate build script.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;migration&quot;&gt;Migration&lt;&#x2F;h3&gt;
 &lt;p&gt;If you have an existing project, hx can import it:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;hx init --from-cabal   # Import from an existing .cabal project
-hx init --from-stack   # Import from a Stack project
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;hx&lt;&#x2F;span&gt;&lt;span&gt; init --from-cabal   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# Import from an existing .cabal project
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;hx&lt;&#x2F;span&gt;&lt;span&gt; init --from-stack   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# Import from a Stack project
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;It reads your existing configuration, generates &lt;code&gt;hx.toml&lt;&#x2F;code&gt;, creates a lockfile, and you are running. The &lt;code&gt;.cabal&lt;&#x2F;code&gt; file is preserved for compatibility. hx reads it for package metadata and dependency specifications, but the build configuration and toolchain management move to &lt;code&gt;hx.toml&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-architecture&quot;&gt;The architecture&lt;&#x2F;h2&gt;
 &lt;p&gt;hx is structured as a Rust workspace with 14 crates:&lt;&#x2F;p&gt;
@@ -215,8 +215,8 @@ Separate concerns: hx-plugins, hx-lsp, hx-warnings, hx-telemetry&lt;&#x2F;code&g
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Same language. Same type safety. Different performance contracts depending on what you are building. Your security policy engine compiles with the server profile. Your tensor pipeline compiles with the numeric profile and runs on a GPU. Your edge function compiles to WASM. You do not change your source code. You change the compiler flag.&lt;&#x2F;p&gt;
 &lt;p&gt;hx already supports BHC as an alternative backend:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;hx build --compiler=bhc --profile=server
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;hx&lt;&#x2F;span&gt;&lt;span&gt; build --compiler&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;bhc --profile&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;server
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;One flag. Same project. Different runtime.&lt;&#x2F;p&gt;
 &lt;p&gt;The vision behind &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&quot;&gt;arcanist.sh&lt;&#x2F;a&gt; is that Haskell’s ideas deserve infrastructure that matches their ambition. The language has always been decades ahead of its tooling. hx closes the gap on the developer experience side. BHC closes it on the runtime side. Together, they make the case that Haskell is not a language for academics and hobbyists. It is a language for the era we are entering, where correctness is not a luxury, it is the load-bearing structure of software that AI writes and humans verify.&lt;&#x2F;p&gt;
 &lt;p&gt;The tooling is not separate from the thesis. The tooling IS the thesis.&lt;&#x2F;p&gt;
@@ -229,10 +229,10 @@ Separate concerns: hx-plugins, hx-lsp, hx-warnings, hx-telemetry&lt;&#x2F;code&g
 &lt;p&gt;And honestly, even on the unlikely side, I would rather have tried and been wrong than watched from the sidelines while the most elegant language I have ever used slowly faded because nobody bothered to fix the parts that were not the language.&lt;&#x2F;p&gt;
 &lt;p&gt;At least I have tried.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;try-it&quot;&gt;Try it&lt;&#x2F;h2&gt;
-&lt;pre data-lang=&quot;shell&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;curl -fsSL https:&amp;#x2F;&amp;#x2F;arcanist.sh&amp;#x2F;hx&amp;#x2F;install.sh | sh
-hx new my-app &amp;amp;&amp;amp; cd my-app
-hx run
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;curl&lt;&#x2F;span&gt;&lt;span&gt; -fsSL https:&#x2F;&#x2F;arcanist.sh&#x2F;hx&#x2F;install.sh &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;sh
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;hx&lt;&#x2F;span&gt;&lt;span&gt; new my-app &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;cd&lt;&#x2F;span&gt;&lt;span&gt; my-app
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;hx&lt;&#x2F;span&gt;&lt;span&gt; run
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Then try &lt;code&gt;hx doctor&lt;&#x2F;code&gt;, &lt;code&gt;hx fmt&lt;&#x2F;code&gt;, &lt;code&gt;hx test --watch&lt;&#x2F;code&gt;. See how it feels when the tooling gets out of your way.&lt;&#x2F;p&gt;
 &lt;p&gt;hx is MIT-licensed and open source. If you have opinions about Haskell tooling, I want to hear them.&lt;&#x2F;p&gt;
 </description>
@@ -251,14 +251,14 @@ hx run
 &lt;p&gt;GNU Make and BSD Make disagree on syntax in ways that cause silent failures. A Makefile that works on my Linux CI runner breaks on a contributor’s macOS laptop because of a conditional or a shell invocation difference. The fix is always “use GNU make,” but that means documenting it, adding a check, and fielding issues from people who forget.&lt;&#x2F;p&gt;
 &lt;p&gt;Worse, Makefiles cannot declare tool dependencies. A Rust project needs a specific Rust version, maybe &lt;code&gt;protoc&lt;&#x2F;code&gt; for gRPC, maybe &lt;code&gt;cargo-watch&lt;&#x2F;code&gt; for development convenience. The Makefile assumes these tools exist. When they do not, the developer gets a cryptic error five minutes into their first build.&lt;&#x2F;p&gt;
 &lt;p&gt;So projects accumulated scaffolding:&lt;&#x2F;p&gt;
-&lt;pre&gt;&lt;code&gt;.rust-version
-.tool-versions
-Makefile
-scripts&amp;#x2F;setup.sh
-scripts&amp;#x2F;ci.sh
-scripts&amp;#x2F;release.sh
-.envrc
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre style=&quot;background-color:#2e3440;color:#d8dee9;&quot;&gt;&lt;code&gt;&lt;span&gt;.rust-version
+&lt;&#x2F;span&gt;&lt;span&gt;.tool-versions
+&lt;&#x2F;span&gt;&lt;span&gt;Makefile
+&lt;&#x2F;span&gt;&lt;span&gt;scripts&#x2F;setup.sh
+&lt;&#x2F;span&gt;&lt;span&gt;scripts&#x2F;ci.sh
+&lt;&#x2F;span&gt;&lt;span&gt;scripts&#x2F;release.sh
+&lt;&#x2F;span&gt;&lt;span&gt;.envrc
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Six files to express what amounts to: “this project uses Rust 1.83, needs protoc, and has five things you can run.” Multiply that by forty repos and you have a maintenance surface that nobody wants to touch. The &lt;code&gt;scripts&#x2F;&lt;&#x2F;code&gt; folder in particular had a way of growing silently. Someone adds a helper. Someone else copies it from another project with modifications. Six months later you have three slightly different versions of the same release script across three orgs.&lt;&#x2F;p&gt;
 &lt;p&gt;The Elixir projects had it worse. Elixir needs Erlang&#x2F;OTP at a specific version, then Elixir itself at a matching version, then Node for asset compilation in Phoenix, then possibly Rust for NIFs (Cyanea compiles Rust bioinformatics code into the BEAM release). Four tool dependencies before you write a line of application code. &lt;code&gt;asdf&lt;&#x2F;code&gt; handled the version management, but slowly and without task automation, so you still needed a Makefile on top.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;why-not-nix&quot;&gt;Why not Nix&lt;&#x2F;h2&gt;
@@ -274,87 +274,87 @@ scripts&amp;#x2F;release.sh
 &lt;h2 id=&quot;what-mise-actually-does&quot;&gt;What mise actually does&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mise.jdx.dev&#x2F;&quot;&gt;Mise&lt;&#x2F;a&gt; is a single Rust binary that combines tool version management and task running into one configuration file per project. It does asdf’s job and Make’s job in a single tool.&lt;&#x2F;p&gt;
 &lt;p&gt;Here is this site’s configuration. The entire thing:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# mise.toml (raskell.io)
-[tools]
-zola = &amp;quot;0.19&amp;quot;
-
-[env]
-_.file = &amp;quot;.env&amp;quot;
-
-[tasks.serve]
-description = &amp;quot;Start the Zola development server&amp;quot;
-run = &amp;quot;zola serve&amp;quot;
-
-[tasks.build]
-description = &amp;quot;Build the site for production&amp;quot;
-run = &amp;quot;zola build&amp;quot;
-
-[tasks.check]
-description = &amp;quot;Check the site for errors without building&amp;quot;
-run = &amp;quot;zola check&amp;quot;
-
-[tasks.new]
-description = &amp;quot;Create a new article&amp;quot;
-run = &amp;quot;&amp;quot;&amp;quot;
-#!&amp;#x2F;usr&amp;#x2F;bin&amp;#x2F;env bash
-if [ -z &amp;quot;$1&amp;quot; ]; then
-  echo &amp;quot;Usage: mise run new &amp;lt;article-slug&amp;gt;&amp;quot;
-  exit 1
-fi
-SLUG=&amp;quot;$1&amp;quot;
-DATE=$(date +%Y-%m-%d)
-FILE=&amp;quot;content&amp;#x2F;articles&amp;#x2F;${SLUG}.md&amp;quot;
-cat &amp;gt; &amp;quot;$FILE&amp;quot; &amp;lt;&amp;lt; ARTICLE
-+++
-title = &amp;quot;&amp;quot;
-date = ${DATE}
-description = &amp;quot;&amp;quot;
-[taxonomies]
-tags = []
-categories = []
-[extra]
-author = &amp;quot;Raffael&amp;quot;
-+++
-ARTICLE
-echo &amp;quot;Created $FILE&amp;quot;
-&amp;quot;&amp;quot;&amp;quot;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# mise.toml (raskell.io)
+&lt;&#x2F;span&gt;&lt;span&gt;[tools]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;zola &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;0.19&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[env]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;_&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;file &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;.env&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;serve]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Start the Zola development server&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;zola serve&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;build]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Build the site for production&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;zola build&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;check]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Check the site for errors without building&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;zola check&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;new]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Create a new article&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;&amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;#!&#x2F;usr&#x2F;bin&#x2F;env bash
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;if [ -z &amp;quot;$1&amp;quot; ]; then
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;  echo &amp;quot;Usage: mise run new &amp;lt;article-slug&amp;gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;  exit 1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;SLUG=&amp;quot;$1&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;DATE=$(date +%Y-%m-%d)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;FILE=&amp;quot;content&#x2F;articles&#x2F;${SLUG}.md&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;cat &amp;gt; &amp;quot;$FILE&amp;quot; &amp;lt;&amp;lt; ARTICLE
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;+++
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;title = &amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;date = ${DATE}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;description = &amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;[taxonomies]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;tags = []
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;categories = []
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;[extra]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;author = &amp;quot;Raffael&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;+++
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;ARTICLE
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;echo &amp;quot;Created $FILE&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;&amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;One file. Declares the tool (Zola 0.19), loads environment variables, and defines every task a contributor needs. &lt;code&gt;mise install&lt;&#x2F;code&gt; sets up the toolchain. &lt;code&gt;mise tasks&lt;&#x2F;code&gt; shows what is available. &lt;code&gt;mise run serve&lt;&#x2F;code&gt; starts the dev server. No Makefile. No scripts folder. No documentation page explaining how to get Zola at the right version.&lt;&#x2F;p&gt;
 &lt;p&gt;For a Rust project like &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;Shiioo&lt;&#x2F;a&gt; (the agentic orchestrator), the configuration is larger but follows the same pattern:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# .mise.toml (shiioo)
-[tools]
-rust = &amp;quot;latest&amp;quot;
-
-[env]
-RUST_LOG = &amp;quot;info&amp;quot;
-RUST_BACKTRACE = &amp;quot;1&amp;quot;
-_.path = [&amp;quot;.&amp;#x2F;target&amp;#x2F;release&amp;quot;, &amp;quot;.&amp;#x2F;target&amp;#x2F;debug&amp;quot;]
-
-[tasks.build]
-description = &amp;quot;Build all crates in release mode&amp;quot;
-run = &amp;quot;cargo build --release&amp;quot;
-
-[tasks.test]
-description = &amp;quot;Run all tests&amp;quot;
-run = &amp;quot;cargo test&amp;quot;
-
-[tasks.clippy]
-description = &amp;quot;Run clippy lints&amp;quot;
-run = &amp;quot;cargo clippy --all-targets -- -D warnings&amp;quot;
-
-[tasks.fmt]
-description = &amp;quot;Format code with rustfmt&amp;quot;
-run = &amp;quot;cargo fmt --all&amp;quot;
-
-[tasks.ci]
-description = &amp;quot;CI pipeline: format check, clippy, test&amp;quot;
-depends = [&amp;quot;fmt-check&amp;quot;, &amp;quot;clippy&amp;quot;, &amp;quot;test&amp;quot;]
-
-[tasks.dev]
-description = &amp;quot;Full development build and run&amp;quot;
-depends = [&amp;quot;fmt&amp;quot;, &amp;quot;check&amp;quot;, &amp;quot;test&amp;quot;]
-run = &amp;quot;cargo run -p shiioo-server&amp;quot;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# .mise.toml (shiioo)
+&lt;&#x2F;span&gt;&lt;span&gt;[tools]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;rust &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;latest&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[env]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;RUST_LOG &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;info&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;RUST_BACKTRACE &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;1&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;_&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;path &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;.&#x2F;target&#x2F;release&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;.&#x2F;target&#x2F;debug&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;build]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Build all crates in release mode&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo build --release&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;test]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Run all tests&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo test&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;clippy]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Run clippy lints&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo clippy --all-targets -- -D warnings&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;fmt]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Format code with rustfmt&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo fmt --all&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;ci]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;CI pipeline: format check, clippy, test&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;depends &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;fmt-check&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;clippy&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;test&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;dev]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Full development build and run&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;depends &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;fmt&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;check&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;test&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo run -p shiioo-server&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The &lt;code&gt;depends&lt;&#x2F;code&gt; key is where mise replaces the one thing Make was genuinely good at: task dependency ordering. &lt;code&gt;mise run ci&lt;&#x2F;code&gt; runs format checking, then clippy, then tests, in sequence. If clippy fails, tests do not run. It is not as expressive as Make’s file-based dependency graph, but for project automation tasks (as opposed to build tasks, which cargo or mix handle), it covers what I actually need.&lt;&#x2F;p&gt;
 &lt;p&gt;For a multi-language project like Cyanea, the value is even clearer. The Elixir app needs Erlang, Elixir, Node, and Rust. One &lt;code&gt;[tools]&lt;&#x2F;code&gt; section pins all four. One &lt;code&gt;mise install&lt;&#x2F;code&gt; gets a contributor from zero to a working environment. Without mise, that setup involved installing asdf, adding four plugins, running &lt;code&gt;asdf install&lt;&#x2F;code&gt;, then installing direnv for environment variables, then reading the Makefile to figure out how to run things. With mise, it is two commands: &lt;code&gt;mise install&lt;&#x2F;code&gt; and &lt;code&gt;mise run dev&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-cross-project-pattern&quot;&gt;The cross-project pattern&lt;&#x2F;h2&gt;
@@ -423,31 +423,31 @@ run = &amp;quot;cargo run -p shiioo-server&amp;quot;
 &lt;p&gt;In an imperative language, you think about sequences of steps. Do this, then that, then check a condition, then loop. The program is a recipe. In Haskell, you think about transformations. What goes in, what comes out, what shape does the data have at each stage. The program is a pipeline.&lt;&#x2F;p&gt;
 &lt;p&gt;This sounds abstract until you see it in practice. Suppose you need to process a list of user records: filter out inactive users, extract their email addresses, and normalize them to lowercase.&lt;&#x2F;p&gt;
 &lt;p&gt;In an imperative style, you write a loop with conditions and mutations. In Haskell:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;haskell&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;activeEmails :: [User] -&amp;gt; [Email]
-activeEmails = map (normalize . email) . filter isActive
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;haskell&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;activeEmails &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;::&lt;&#x2F;span&gt;&lt;span&gt; [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;User&lt;&#x2F;span&gt;&lt;span&gt;] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;-&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;Email&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt;activeEmails &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; map (normalize &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt; email) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt; filter isActive
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;One line. Read it right to left: filter active users, then map over the result, extracting and normalizing emails. The type signature tells you what goes in (&lt;code&gt;[User]&lt;&#x2F;code&gt;) and what comes out (&lt;code&gt;[Email]&lt;&#x2F;code&gt;). No mutation. No intermediate variables. No place for off-by-one errors or null pointer exceptions.&lt;&#x2F;p&gt;
 &lt;p&gt;The type signature is not just documentation. It is a contract enforced by the compiler. If &lt;code&gt;isActive&lt;&#x2F;code&gt; expects a &lt;code&gt;User&lt;&#x2F;code&gt; and you pass it a &lt;code&gt;String&lt;&#x2F;code&gt;, the program will not compile. If &lt;code&gt;normalize&lt;&#x2F;code&gt; returns an &lt;code&gt;Email&lt;&#x2F;code&gt; but you try to use it as a &lt;code&gt;String&lt;&#x2F;code&gt;, the program will not compile. The compiler is your first reviewer, and it is tireless.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;types-as-design-tools&quot;&gt;Types as design tools&lt;&#x2F;h2&gt;
 &lt;p&gt;The deeper lesson is that types are not just error catchers. They are design tools.&lt;&#x2F;p&gt;
 &lt;p&gt;When I design a system in Haskell, I start with the types. What are the entities? What are the relationships? What transformations are valid? The type system forces you to be precise about these questions before you write any logic. This precision surfaces design problems early, when they are cheap to fix.&lt;&#x2F;p&gt;
 &lt;p&gt;Consider modeling a document that can be in one of several states:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;haskell&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;data Document
-  = Draft { content :: Text, author :: UserId }
-  | UnderReview { content :: Text, author :: UserId, reviewer :: UserId }
-  | Published { content :: Text, author :: UserId, publishedAt :: UTCTime }
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;haskell&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;data &lt;&#x2F;span&gt;&lt;span&gt;Document
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;Draft { content &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: &lt;&#x2F;span&gt;&lt;span&gt;Text&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; author &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: &lt;&#x2F;span&gt;&lt;span&gt;UserId }
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span&gt;UnderReview { content &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: &lt;&#x2F;span&gt;&lt;span&gt;Text&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; author &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: &lt;&#x2F;span&gt;&lt;span&gt;UserId&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; reviewer &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: &lt;&#x2F;span&gt;&lt;span&gt;UserId }
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span&gt;Published { content &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: &lt;&#x2F;span&gt;&lt;span&gt;Text&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; author &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: &lt;&#x2F;span&gt;&lt;span&gt;UserId&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; publishedAt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: &lt;&#x2F;span&gt;&lt;span&gt;UTCTime }
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;This is an algebraic data type. Each variant carries exactly the data that makes sense for that state. A &lt;code&gt;Draft&lt;&#x2F;code&gt; has no reviewer. A &lt;code&gt;Published&lt;&#x2F;code&gt; document has a timestamp. You cannot accidentally access a reviewer on a draft because the type system will not let you. The invalid state is unrepresentable.&lt;&#x2F;p&gt;
 &lt;p&gt;This pattern, making illegal states unrepresentable, is perhaps the most valuable idea I took from Haskell. I use it in Rust constantly. Rust’s &lt;code&gt;enum&lt;&#x2F;code&gt; with associated data is directly descended from Haskell’s algebraic data types, and the same design principle applies: encode your invariants in the type system and let the compiler enforce them.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-monad-is-not-the-point&quot;&gt;The monad is not the point&lt;&#x2F;h2&gt;
 &lt;p&gt;Every Haskell introduction eventually gets to monads, usually with a metaphor involving burritos or boxes. I will skip the metaphor.&lt;&#x2F;p&gt;
 &lt;p&gt;A monad is a pattern for sequencing computations that carry some context. The &lt;code&gt;IO&lt;&#x2F;code&gt; monad carries the context of interacting with the outside world. The &lt;code&gt;Maybe&lt;&#x2F;code&gt; monad carries the context of possible failure. The &lt;code&gt;State&lt;&#x2F;code&gt; monad carries the context of mutable state. The pattern is the same in each case: take a value in a context, apply a function that produces a new value in a context, get back a combined context.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;haskell&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;lookupUser :: UserId -&amp;gt; IO (Maybe User)
-lookupUser uid = do
-  conn &amp;lt;- getConnection
-  result &amp;lt;- query conn &amp;quot;SELECT * FROM users WHERE id = ?&amp;quot; [uid]
-  return (listToMaybe result)
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;haskell&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-haskell &quot;&gt;&lt;code class=&quot;language-haskell&quot; data-lang=&quot;haskell&quot;&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;lookupUser &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;:: UserId -&amp;gt; IO&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;Maybe User&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;lookupUser uid &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;= do
+&lt;&#x2F;span&gt;&lt;span&gt;  conn &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;&amp;lt;-&lt;&#x2F;span&gt;&lt;span&gt; getConnection
+&lt;&#x2F;span&gt;&lt;span&gt;  result &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;&amp;lt;-&lt;&#x2F;span&gt;&lt;span&gt; query conn &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;SELECT * FROM users WHERE id = ?&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; [uid]
+&lt;&#x2F;span&gt;&lt;span&gt;  return (listToMaybe result)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The &lt;code&gt;IO&lt;&#x2F;code&gt; monad here sequences database operations. The &lt;code&gt;Maybe&lt;&#x2F;code&gt; handles the case where no user is found. The types tell you both things at a glance: this function does I&#x2F;O and might not return a result.&lt;&#x2F;p&gt;
 &lt;p&gt;The point of monads is not that they are clever. The point is that they make effects explicit and composable. In most languages, a function can do I&#x2F;O, throw exceptions, mutate global state, or launch missiles, and you cannot tell from its signature. In Haskell, the type signature tells you exactly what effects a function can have. &lt;code&gt;Int -&amp;gt; Int&lt;&#x2F;code&gt; is pure. &lt;code&gt;Int -&amp;gt; IO Int&lt;&#x2F;code&gt; does I&#x2F;O. &lt;code&gt;Int -&amp;gt; Maybe Int&lt;&#x2F;code&gt; can fail. The information is right there, enforced by the compiler.&lt;&#x2F;p&gt;
 &lt;p&gt;This discipline, making effects explicit, changed how I design APIs even in languages that do not enforce it. When I write a Rust function that returns &lt;code&gt;Result&amp;lt;T, E&amp;gt;&lt;&#x2F;code&gt;, I am using the same pattern: making failure explicit in the type rather than hiding it behind an exception. Rust learned this from Haskell, and so did I.&lt;&#x2F;p&gt;

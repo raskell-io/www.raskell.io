@@ -92,117 +92,117 @@
 &lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;vela&quot;&gt;Vela&lt;&#x2F;a&gt; is what came out of that process. A single Rust binary that handles everything I listed above: reverse proxy, auto-TLS, process supervision, zero-downtime deploys, health checks, secret management, log streaming, rollbacks. No containers. No Docker. No YAML.&lt;&#x2F;p&gt;
 &lt;p&gt;The design draws from both of its ancestors. From Nomad, the suckless philosophy: a single binary, minimal configuration, no opinions about things that are not its problem. From Zentinel, the Pingora-inspired proxy architecture: hyper-based reverse proxy with TLS termination, domain-based routing, and WebSocket support baked into the same process. Vela is what happens when you take the best ideas from tools you admire and combine them into something purpose-built for your exact workload.&lt;&#x2F;p&gt;
 &lt;p&gt;The design philosophy is blunt: one binary, two modes.&lt;&#x2F;p&gt;
-&lt;pre&gt;&lt;code&gt;┌─────────────────────────────────────────────┐
-│  Your server                                │
-│                                             │
-│  Vela daemon                                │
-│  ├── Reverse proxy (:80&amp;#x2F;:443, auto-TLS)     │
-│  ├── Process manager (start, health, swap)  │
-│  └── IPC socket                             │
-│                                             │
-│  Apps                                       │
-│  ├── cyanea.bio      → :10001              │
-│  └── archipelag.io   → :10002              │
-└─────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────┐
-│  Your laptop                                │
-│                                             │
-│  vela deploy  →  scp + ssh  →  server       │
-└─────────────────────────────────────────────┘
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre style=&quot;background-color:#2e3440;color:#d8dee9;&quot;&gt;&lt;code&gt;&lt;span&gt;┌─────────────────────────────────────────────┐
+&lt;&#x2F;span&gt;&lt;span&gt;│  Your server                                │
+&lt;&#x2F;span&gt;&lt;span&gt;│                                             │
+&lt;&#x2F;span&gt;&lt;span&gt;│  Vela daemon                                │
+&lt;&#x2F;span&gt;&lt;span&gt;│  ├── Reverse proxy (:80&#x2F;:443, auto-TLS)     │
+&lt;&#x2F;span&gt;&lt;span&gt;│  ├── Process manager (start, health, swap)  │
+&lt;&#x2F;span&gt;&lt;span&gt;│  └── IPC socket                             │
+&lt;&#x2F;span&gt;&lt;span&gt;│                                             │
+&lt;&#x2F;span&gt;&lt;span&gt;│  Apps                                       │
+&lt;&#x2F;span&gt;&lt;span&gt;│  ├── cyanea.bio      → :10001              │
+&lt;&#x2F;span&gt;&lt;span&gt;│  └── archipelag.io   → :10002              │
+&lt;&#x2F;span&gt;&lt;span&gt;└─────────────────────────────────────────────┘
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;┌─────────────────────────────────────────────┐
+&lt;&#x2F;span&gt;&lt;span&gt;│  Your laptop                                │
+&lt;&#x2F;span&gt;&lt;span&gt;│                                             │
+&lt;&#x2F;span&gt;&lt;span&gt;│  vela deploy  →  scp + ssh  →  server       │
+&lt;&#x2F;span&gt;&lt;span&gt;└─────────────────────────────────────────────┘
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;code&gt;vela serve&lt;&#x2F;code&gt; runs on the server. It is the reverse proxy, the process manager, and the IPC daemon, all in one process. &lt;code&gt;vela deploy&lt;&#x2F;code&gt; runs on your laptop. It reads a manifest, uploads your artifact over SSH, and tells the server to activate it.&lt;&#x2F;p&gt;
 &lt;p&gt;SSH is the control plane. No tokens, no API keys, no custom authentication layer. If you can SSH into the server, you can deploy. This is a deliberate choice. SSH key management is a solved problem. Every developer already has it configured. Every server already has it running. Building a custom auth system on top would be adding complexity for no practical gain.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;the-manifest&quot;&gt;The manifest&lt;&#x2F;h3&gt;
 &lt;p&gt;Each app gets a &lt;code&gt;Vela.toml&lt;&#x2F;code&gt; in its project root:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;[app]
-name = &amp;quot;cyanea&amp;quot;
-domain = &amp;quot;app.cyanea.bio&amp;quot;
-
-[deploy]
-server = &amp;quot;deploy@my-server&amp;quot;
-type = &amp;quot;beam&amp;quot;
-binary = &amp;quot;server&amp;quot;
-health = &amp;quot;&amp;#x2F;health&amp;quot;
-strategy = &amp;quot;sequential&amp;quot;
-pre_start = &amp;quot;bin&amp;#x2F;cyanea eval &amp;#x27;Cyanea.Release.migrate()&amp;#x27;&amp;quot;
-
-[env]
-DATABASE_PATH = &amp;quot;${data_dir}&amp;#x2F;cyanea.db&amp;quot;
-SECRET_KEY_BASE = &amp;quot;${secret:SECRET_KEY_BASE}&amp;quot;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span&gt;[app]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cyanea&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;domain &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;app.cyanea.bio&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[deploy]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;server &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;deploy@my-server&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;beam&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;binary &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;server&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;health &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;&#x2F;health&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;strategy &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;sequential&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;pre_start &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;bin&#x2F;cyanea eval &amp;#39;Cyanea.Release.migrate()&amp;#39;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[env]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;DATABASE_PATH &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;${data_dir}&#x2F;cyanea.db&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;SECRET_KEY_BASE &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;${secret:SECRET_KEY_BASE}&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;That is the entire deploy configuration. The app type tells Vela how to start it (&lt;code&gt;beam&lt;&#x2F;code&gt; runs Elixir releases, &lt;code&gt;binary&lt;&#x2F;code&gt; runs compiled executables). The health path tells it where to check. The strategy tells it how to swap traffic. The &lt;code&gt;pre_start&lt;&#x2F;code&gt; hook runs database migrations before the new instance starts, and if migrations fail, the deploy aborts and the old instance keeps running.&lt;&#x2F;p&gt;
 &lt;p&gt;Environment variables support two substitution patterns: &lt;code&gt;${data_dir}&lt;&#x2F;code&gt; expands to the app’s persistent data directory (which survives deploys), and &lt;code&gt;${secret:KEY}&lt;&#x2F;code&gt; pulls from the server-side secret store. Secrets never live in your repo.&lt;&#x2F;p&gt;
 &lt;p&gt;Deploying looks like this:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;MIX_ENV=prod mix release
-vela deploy .&amp;#x2F;_build&amp;#x2F;prod&amp;#x2F;rel&amp;#x2F;cyanea
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;MIX_ENV&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;prod &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;mix&lt;&#x2F;span&gt;&lt;span&gt; release
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;vela&lt;&#x2F;span&gt;&lt;span&gt; deploy .&#x2F;_build&#x2F;prod&#x2F;rel&#x2F;cyanea
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Two commands. The artifact goes up, the health check passes, traffic swaps, done.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;zero-downtime-deploys&quot;&gt;Zero-downtime deploys&lt;&#x2F;h3&gt;
 &lt;p&gt;Vela supports two deploy strategies, and the choice matters.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Blue-green&lt;&#x2F;strong&gt; is the default. The new instance starts alongside the old one on a fresh port. Vela runs a health check against it (30 retries, one per second, five-second timeout per attempt). Once the health check passes, the reverse proxy atomically swaps the route table entry for that domain to point at the new port. The old instance gets a configurable drain period to finish in-flight requests, then receives SIGTERM. If it does not exit within the drain window, SIGKILL.&lt;&#x2F;p&gt;
-&lt;pre&gt;&lt;code&gt;Time ──────────────────────────────────────────►
-
-Old instance     ████████████████████░░░░  (draining)
-New instance              ░░░░████████████████████
-                          ▲   ▲
-                     start │   │ health passes, swap
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre style=&quot;background-color:#2e3440;color:#d8dee9;&quot;&gt;&lt;code&gt;&lt;span&gt;Time ──────────────────────────────────────────►
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Old instance     ████████████████████░░░░  (draining)
+&lt;&#x2F;span&gt;&lt;span&gt;New instance              ░░░░████████████████████
+&lt;&#x2F;span&gt;&lt;span&gt;                          ▲   ▲
+&lt;&#x2F;span&gt;&lt;span&gt;                     start │   │ health passes, swap
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Zero downtime. The user never sees a blip. This works for stateless apps and apps backed by PostgreSQL (where both instances can connect to the same database simultaneously).&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Sequential&lt;&#x2F;strong&gt; is for SQLite apps. You cannot have two processes writing to the same SQLite database (WAL mode helps, but concurrent writers from separate instances is asking for trouble). So Vela stops the old instance first, starts the new one, health checks it, and activates it. Sub-second blip. Acceptable for apps where the alternative is write contention.&lt;&#x2F;p&gt;
-&lt;pre&gt;&lt;code&gt;Time ──────────────────────────────────────────►
-
-Old instance     ████████████████████
-New instance                          ░░░░████████████████████
-                                 ▲   ▲
-                            stop │   │ start + health check
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre style=&quot;background-color:#2e3440;color:#d8dee9;&quot;&gt;&lt;code&gt;&lt;span&gt;Time ──────────────────────────────────────────►
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Old instance     ████████████████████
+&lt;&#x2F;span&gt;&lt;span&gt;New instance                          ░░░░████████████████████
+&lt;&#x2F;span&gt;&lt;span&gt;                                 ▲   ▲
+&lt;&#x2F;span&gt;&lt;span&gt;                            stop │   │ start + health check
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The decision is per-app, configured in the manifest. Cyanea uses sequential (SQLite). Archipelag uses blue-green (PostgreSQL).&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;process-supervision&quot;&gt;Process supervision&lt;&#x2F;h3&gt;
 &lt;p&gt;Vela does not just start your app and walk away. It supervises it. If a process crashes, Vela detects the exit (via non-blocking &lt;code&gt;try_wait&lt;&#x2F;code&gt; on the child process handle), logs it, and restarts from the stored launch configuration:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;pub async fn check_and_restart(&amp;amp;mut self) -&amp;gt; Vec&amp;lt;String&amp;gt; {
-    let mut to_restart = Vec::new();
-
-    for (key, process) in &amp;amp;mut self.running {
-        match process.child.try_wait() {
-            Ok(Some(status)) if !status.success() =&amp;gt; {
-                &amp;#x2F;&amp;#x2F; Process exited unexpectedly
-                to_restart.push((
-                    key.clone(),
-                    process.launch_config.clone(),
-                ));
-            }
-            _ =&amp;gt; {}
-        }
-    }
-
-    for (key, config) in to_restart {
-        &amp;#x2F;&amp;#x2F; Restart on same port if available, allocate new otherwise
-        self.restart_from_config(&amp;amp;key, &amp;amp;config).await;
-    }
-}
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;pub&lt;&#x2F;span&gt;&lt;span&gt; async &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;fn &lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;check_and_restart&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;&amp;amp;mut &lt;&#x2F;span&gt;&lt;span&gt;self) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;-&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fbcbb;&quot;&gt;Vec&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fbcbb;&quot;&gt;String&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt; {
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;let mut&lt;&#x2F;span&gt;&lt;span&gt; to_restart &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fbcbb;&quot;&gt;Vec&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;::&lt;&#x2F;span&gt;&lt;span&gt;new()&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span&gt;(key&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; process) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;in &amp;amp;mut self.&lt;&#x2F;span&gt;&lt;span&gt;running {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;match&lt;&#x2F;span&gt;&lt;span&gt; process&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;child&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;try_wait&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fbcbb;&quot;&gt;Ok&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fbcbb;&quot;&gt;Some&lt;&#x2F;span&gt;&lt;span&gt;(status)) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;if !&lt;&#x2F;span&gt;&lt;span&gt;status&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;success&lt;&#x2F;span&gt;&lt;span&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;=&amp;gt; &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;&#x2F;&#x2F; Process exited unexpectedly
+&lt;&#x2F;span&gt;&lt;span&gt;                to_restart&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;((
+&lt;&#x2F;span&gt;&lt;span&gt;                    key&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;clone&lt;&#x2F;span&gt;&lt;span&gt;()&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;                    process&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;launch_config&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;clone&lt;&#x2F;span&gt;&lt;span&gt;()&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;                ))&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;            }
+&lt;&#x2F;span&gt;&lt;span&gt;            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;_ =&amp;gt; &lt;&#x2F;span&gt;&lt;span&gt;{}
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span&gt;(key&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; config) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;in&lt;&#x2F;span&gt;&lt;span&gt; to_restart {
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;&#x2F;&#x2F; Restart on same port if available, allocate new otherwise
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;self.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;restart_from_config&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span&gt;key&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span&gt;config)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;await&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Each app’s &lt;code&gt;LaunchConfig&lt;&#x2F;code&gt; (release directory, binary name, app type, environment variables, data directory) is stored so that restarts use the exact same configuration. The daemon also persists app state to disk, so if Vela itself restarts (server reboot, daemon upgrade), it restores all running apps from their saved configurations.&lt;&#x2F;p&gt;
 &lt;p&gt;This is the kind of feature that would take a day to specify and a week to implement if you were writing it from scratch. With Claude, it took about an hour of iteration, including the edge cases around port reallocation and the pending&#x2F;active state split during deploys.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;built-in-services&quot;&gt;Built-in services&lt;&#x2F;h3&gt;
 &lt;p&gt;Both of my apps have service dependencies. Archipelag needs PostgreSQL and NATS. Rather than managing these separately, Vela handles service provisioning directly:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;[services.postgres]
-version = &amp;quot;17&amp;quot;
-databases = [&amp;quot;archipelag_prod&amp;quot;]
-
-[services.nats]
-version = &amp;quot;2.10&amp;quot;
-jetstream = true
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span&gt;[services&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;postgres]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;version &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;17&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;databases &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;archipelag_prod&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[services&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;nats]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;version &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;2.10&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;jetstream &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;true
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;On first deploy, Vela installs PostgreSQL (via apt), creates the database with a generated password, and injects &lt;code&gt;DATABASE_URL&lt;&#x2F;code&gt; into the app’s environment. For NATS, it downloads the binary, generates a config, and starts it as a supervised child process with &lt;code&gt;NATS_URL&lt;&#x2F;code&gt; injected. Service credentials persist across deploys and daemon restarts.&lt;&#x2F;p&gt;
 &lt;p&gt;This was one of those features where the AI really earned its keep. The NATS lifecycle management alone, downloading the right binary for the platform, generating config, supervising the process, health-checking the monitoring endpoint, persisting credentials, involved touching six or seven modules. Claude handled the plumbing while I focused on the design decisions.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;the-reverse-proxy&quot;&gt;The reverse proxy&lt;&#x2F;h3&gt;
 &lt;p&gt;Vela embeds its own reverse proxy built on hyper. It handles TLS termination (auto-provisioned via Let’s Encrypt ACME HTTP-01, or static certificates for Cloudflare setups), domain-based routing, WebSocket upgrades, and HTTP-to-HTTPS redirects.&lt;&#x2F;p&gt;
 &lt;p&gt;The routing model is simple. A thread-safe hash map from domain to port:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;pub struct RouteTable {
-    routes: Arc&amp;lt;RwLock&amp;lt;HashMap&amp;lt;String, u16&amp;gt;&amp;gt;&amp;gt;,
-}
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;rust&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;pub struct &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fbcbb;&quot;&gt;RouteTable &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    routes&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span&gt;Arc&amp;lt;RwLock&amp;lt;HashMap&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#8fbcbb;&quot;&gt;String&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;u16&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&amp;gt;&amp;gt;,
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;When a request arrives, Vela extracts the Host header, looks up the port, and forwards the request to &lt;code&gt;localhost:{port}&lt;&#x2F;code&gt;. When a deploy swaps traffic, it is a single write-lock on the hash map to update the port number. Atomic. No configuration reload. No proxy restart.&lt;&#x2F;p&gt;
 &lt;p&gt;For WebSocket connections (which both Phoenix apps use for LiveView), Vela detects the &lt;code&gt;Upgrade: websocket&lt;&#x2F;code&gt; header and switches to raw TCP tunneling with bidirectional I&#x2F;O. This was important for my use case, Phoenix LiveView is WebSocket-native, and if the proxy does not handle upgrades correctly, the entire UI breaks.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;from-empty-box-to-production-in-a-day&quot;&gt;From empty box to production in a day&lt;&#x2F;h2&gt;
@@ -335,14 +335,14 @@ jetstream = true
 &lt;p&gt;GNU Make and BSD Make disagree on syntax in ways that cause silent failures. A Makefile that works on my Linux CI runner breaks on a contributor’s macOS laptop because of a conditional or a shell invocation difference. The fix is always “use GNU make,” but that means documenting it, adding a check, and fielding issues from people who forget.&lt;&#x2F;p&gt;
 &lt;p&gt;Worse, Makefiles cannot declare tool dependencies. A Rust project needs a specific Rust version, maybe &lt;code&gt;protoc&lt;&#x2F;code&gt; for gRPC, maybe &lt;code&gt;cargo-watch&lt;&#x2F;code&gt; for development convenience. The Makefile assumes these tools exist. When they do not, the developer gets a cryptic error five minutes into their first build.&lt;&#x2F;p&gt;
 &lt;p&gt;So projects accumulated scaffolding:&lt;&#x2F;p&gt;
-&lt;pre&gt;&lt;code&gt;.rust-version
-.tool-versions
-Makefile
-scripts&amp;#x2F;setup.sh
-scripts&amp;#x2F;ci.sh
-scripts&amp;#x2F;release.sh
-.envrc
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre style=&quot;background-color:#2e3440;color:#d8dee9;&quot;&gt;&lt;code&gt;&lt;span&gt;.rust-version
+&lt;&#x2F;span&gt;&lt;span&gt;.tool-versions
+&lt;&#x2F;span&gt;&lt;span&gt;Makefile
+&lt;&#x2F;span&gt;&lt;span&gt;scripts&#x2F;setup.sh
+&lt;&#x2F;span&gt;&lt;span&gt;scripts&#x2F;ci.sh
+&lt;&#x2F;span&gt;&lt;span&gt;scripts&#x2F;release.sh
+&lt;&#x2F;span&gt;&lt;span&gt;.envrc
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Six files to express what amounts to: “this project uses Rust 1.83, needs protoc, and has five things you can run.” Multiply that by forty repos and you have a maintenance surface that nobody wants to touch. The &lt;code&gt;scripts&#x2F;&lt;&#x2F;code&gt; folder in particular had a way of growing silently. Someone adds a helper. Someone else copies it from another project with modifications. Six months later you have three slightly different versions of the same release script across three orgs.&lt;&#x2F;p&gt;
 &lt;p&gt;The Elixir projects had it worse. Elixir needs Erlang&#x2F;OTP at a specific version, then Elixir itself at a matching version, then Node for asset compilation in Phoenix, then possibly Rust for NIFs (Cyanea compiles Rust bioinformatics code into the BEAM release). Four tool dependencies before you write a line of application code. &lt;code&gt;asdf&lt;&#x2F;code&gt; handled the version management, but slowly and without task automation, so you still needed a Makefile on top.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;why-not-nix&quot;&gt;Why not Nix&lt;&#x2F;h2&gt;
@@ -358,87 +358,87 @@ scripts&amp;#x2F;release.sh
 &lt;h2 id=&quot;what-mise-actually-does&quot;&gt;What mise actually does&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mise.jdx.dev&#x2F;&quot;&gt;Mise&lt;&#x2F;a&gt; is a single Rust binary that combines tool version management and task running into one configuration file per project. It does asdf’s job and Make’s job in a single tool.&lt;&#x2F;p&gt;
 &lt;p&gt;Here is this site’s configuration. The entire thing:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# mise.toml (raskell.io)
-[tools]
-zola = &amp;quot;0.19&amp;quot;
-
-[env]
-_.file = &amp;quot;.env&amp;quot;
-
-[tasks.serve]
-description = &amp;quot;Start the Zola development server&amp;quot;
-run = &amp;quot;zola serve&amp;quot;
-
-[tasks.build]
-description = &amp;quot;Build the site for production&amp;quot;
-run = &amp;quot;zola build&amp;quot;
-
-[tasks.check]
-description = &amp;quot;Check the site for errors without building&amp;quot;
-run = &amp;quot;zola check&amp;quot;
-
-[tasks.new]
-description = &amp;quot;Create a new article&amp;quot;
-run = &amp;quot;&amp;quot;&amp;quot;
-#!&amp;#x2F;usr&amp;#x2F;bin&amp;#x2F;env bash
-if [ -z &amp;quot;$1&amp;quot; ]; then
-  echo &amp;quot;Usage: mise run new &amp;lt;article-slug&amp;gt;&amp;quot;
-  exit 1
-fi
-SLUG=&amp;quot;$1&amp;quot;
-DATE=$(date +%Y-%m-%d)
-FILE=&amp;quot;content&amp;#x2F;articles&amp;#x2F;${SLUG}.md&amp;quot;
-cat &amp;gt; &amp;quot;$FILE&amp;quot; &amp;lt;&amp;lt; ARTICLE
-+++
-title = &amp;quot;&amp;quot;
-date = ${DATE}
-description = &amp;quot;&amp;quot;
-[taxonomies]
-tags = []
-categories = []
-[extra]
-author = &amp;quot;Raffael&amp;quot;
-+++
-ARTICLE
-echo &amp;quot;Created $FILE&amp;quot;
-&amp;quot;&amp;quot;&amp;quot;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# mise.toml (raskell.io)
+&lt;&#x2F;span&gt;&lt;span&gt;[tools]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;zola &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;0.19&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[env]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;_&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;file &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;.env&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;serve]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Start the Zola development server&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;zola serve&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;build]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Build the site for production&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;zola build&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;check]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Check the site for errors without building&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;zola check&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;new]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Create a new article&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;&amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;#!&#x2F;usr&#x2F;bin&#x2F;env bash
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;if [ -z &amp;quot;$1&amp;quot; ]; then
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;  echo &amp;quot;Usage: mise run new &amp;lt;article-slug&amp;gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;  exit 1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;SLUG=&amp;quot;$1&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;DATE=$(date +%Y-%m-%d)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;FILE=&amp;quot;content&#x2F;articles&#x2F;${SLUG}.md&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;cat &amp;gt; &amp;quot;$FILE&amp;quot; &amp;lt;&amp;lt; ARTICLE
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;+++
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;title = &amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;date = ${DATE}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;description = &amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;[taxonomies]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;tags = []
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;categories = []
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;[extra]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;author = &amp;quot;Raffael&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;+++
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;ARTICLE
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;echo &amp;quot;Created $FILE&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;&amp;quot;&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;One file. Declares the tool (Zola 0.19), loads environment variables, and defines every task a contributor needs. &lt;code&gt;mise install&lt;&#x2F;code&gt; sets up the toolchain. &lt;code&gt;mise tasks&lt;&#x2F;code&gt; shows what is available. &lt;code&gt;mise run serve&lt;&#x2F;code&gt; starts the dev server. No Makefile. No scripts folder. No documentation page explaining how to get Zola at the right version.&lt;&#x2F;p&gt;
 &lt;p&gt;For a Rust project like &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;Shiioo&lt;&#x2F;a&gt; (the agentic orchestrator), the configuration is larger but follows the same pattern:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;toml&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;# .mise.toml (shiioo)
-[tools]
-rust = &amp;quot;latest&amp;quot;
-
-[env]
-RUST_LOG = &amp;quot;info&amp;quot;
-RUST_BACKTRACE = &amp;quot;1&amp;quot;
-_.path = [&amp;quot;.&amp;#x2F;target&amp;#x2F;release&amp;quot;, &amp;quot;.&amp;#x2F;target&amp;#x2F;debug&amp;quot;]
-
-[tasks.build]
-description = &amp;quot;Build all crates in release mode&amp;quot;
-run = &amp;quot;cargo build --release&amp;quot;
-
-[tasks.test]
-description = &amp;quot;Run all tests&amp;quot;
-run = &amp;quot;cargo test&amp;quot;
-
-[tasks.clippy]
-description = &amp;quot;Run clippy lints&amp;quot;
-run = &amp;quot;cargo clippy --all-targets -- -D warnings&amp;quot;
-
-[tasks.fmt]
-description = &amp;quot;Format code with rustfmt&amp;quot;
-run = &amp;quot;cargo fmt --all&amp;quot;
-
-[tasks.ci]
-description = &amp;quot;CI pipeline: format check, clippy, test&amp;quot;
-depends = [&amp;quot;fmt-check&amp;quot;, &amp;quot;clippy&amp;quot;, &amp;quot;test&amp;quot;]
-
-[tasks.dev]
-description = &amp;quot;Full development build and run&amp;quot;
-depends = [&amp;quot;fmt&amp;quot;, &amp;quot;check&amp;quot;, &amp;quot;test&amp;quot;]
-run = &amp;quot;cargo run -p shiioo-server&amp;quot;
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;toml&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-toml &quot;&gt;&lt;code class=&quot;language-toml&quot; data-lang=&quot;toml&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# .mise.toml (shiioo)
+&lt;&#x2F;span&gt;&lt;span&gt;[tools]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;rust &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;latest&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[env]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;RUST_LOG &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;info&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;RUST_BACKTRACE &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;1&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;_&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;path &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;.&#x2F;target&#x2F;release&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;.&#x2F;target&#x2F;debug&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;build]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Build all crates in release mode&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo build --release&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;test]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Run all tests&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo test&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;clippy]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Run clippy lints&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo clippy --all-targets -- -D warnings&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;fmt]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Format code with rustfmt&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo fmt --all&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;ci]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;CI pipeline: format check, clippy, test&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;depends &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;fmt-check&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;clippy&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;test&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;[tasks&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;dev]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;description &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Full development build and run&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;depends &lt;&#x2F;span&gt;&lt;span&gt;= [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;fmt&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;check&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eceff4;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;test&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;run &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;cargo run -p shiioo-server&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The &lt;code&gt;depends&lt;&#x2F;code&gt; key is where mise replaces the one thing Make was genuinely good at: task dependency ordering. &lt;code&gt;mise run ci&lt;&#x2F;code&gt; runs format checking, then clippy, then tests, in sequence. If clippy fails, tests do not run. It is not as expressive as Make’s file-based dependency graph, but for project automation tasks (as opposed to build tasks, which cargo or mix handle), it covers what I actually need.&lt;&#x2F;p&gt;
 &lt;p&gt;For a multi-language project like Cyanea, the value is even clearer. The Elixir app needs Erlang, Elixir, Node, and Rust. One &lt;code&gt;[tools]&lt;&#x2F;code&gt; section pins all four. One &lt;code&gt;mise install&lt;&#x2F;code&gt; gets a contributor from zero to a working environment. Without mise, that setup involved installing asdf, adding four plugins, running &lt;code&gt;asdf install&lt;&#x2F;code&gt;, then installing direnv for environment variables, then reading the Makefile to figure out how to run things. With mise, it is two commands: &lt;code&gt;mise install&lt;&#x2F;code&gt; and &lt;code&gt;mise run dev&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-cross-project-pattern&quot;&gt;The cross-project pattern&lt;&#x2F;h2&gt;

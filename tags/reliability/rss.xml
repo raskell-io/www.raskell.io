@@ -46,20 +46,20 @@
 &lt;li&gt;&lt;strong&gt;Security headers&lt;&#x2F;strong&gt;: did CSP, HSTS, or X-Frame-Options change between environments?&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Response characteristics&lt;&#x2F;strong&gt;: same content type? Same cache behavior?&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;pre&gt;&lt;code&gt;Request: GET &amp;#x2F;api&amp;#x2F;v2&amp;#x2F;users?search=&amp;lt;script&amp;gt;alert(1)&amp;lt;&amp;#x2F;script&amp;gt;
-
-Production (current rules):
-  Status: 403
-  x-waf-action: block
-  x-waf-rule: 941100
-
-Staging (proposed rules):
-  Status: 200
-  x-waf-action: pass
-  x-waf-rule: (none)
-
-⚠ WAF regression: XSS payload now passes
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre style=&quot;background-color:#2e3440;color:#d8dee9;&quot;&gt;&lt;code&gt;&lt;span&gt;Request: GET &#x2F;api&#x2F;v2&#x2F;users?search=&amp;lt;script&amp;gt;alert(1)&amp;lt;&#x2F;script&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Production (current rules):
+&lt;&#x2F;span&gt;&lt;span&gt;  Status: 403
+&lt;&#x2F;span&gt;&lt;span&gt;  x-waf-action: block
+&lt;&#x2F;span&gt;&lt;span&gt;  x-waf-rule: 941100
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;Staging (proposed rules):
+&lt;&#x2F;span&gt;&lt;span&gt;  Status: 200
+&lt;&#x2F;span&gt;&lt;span&gt;  x-waf-action: pass
+&lt;&#x2F;span&gt;&lt;span&gt;  x-waf-rule: (none)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;⚠ WAF regression: XSS payload now passes
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;This changes the WAF tuning conversation entirely. Instead of “I think loosening rule 941100 is safe,” you have “I replayed 2,000 captured requests against the proposed rule change. Three requests that were previously blocked are now allowed. Here they are. Two are false positives that should pass. One is an XSS payload that should not.”&lt;&#x2F;p&gt;
 &lt;p&gt;That is not a guess. That is evidence.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;why-this-is-a-security-primitive&quot;&gt;Why this is a security primitive&lt;&#x2F;h2&gt;
@@ -81,25 +81,25 @@ Staging (proposed rules):
 &lt;p&gt;The pattern across all of these is the same. Each tool handles one or two steps well: capture, or replay, or analysis. No single tool captures real traffic, replays it deterministically with URL rewriting and cookie stripping, and then produces a structured behavioral diff across WAF decisions, security headers, and status codes. The pieces exist. The composition does not.&lt;&#x2F;p&gt;
 &lt;p&gt;This is the gap that &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;ushio&quot;&gt;Ushio&lt;&#x2F;a&gt; fills.&lt;&#x2F;p&gt;
 &lt;p&gt;Ushio is a Rust CLI that does three things. It converts HAR files into a replayable capture format. It replays captures against one or more targets with URL rewriting, header mutation, and cookie stripping. And it diffs two replay results to identify behavioral changes in status codes, WAF decisions, and security headers.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# Convert a browser HAR export to ushio format
-ushio convert session.har -o capture.json
-
-# Replay against staging with auth header, strip cookies
-ushio replay capture.json \
-  -t https:&amp;#x2F;&amp;#x2F;staging.example.com \
-  --header &amp;quot;Authorization:Bearer $TOKEN&amp;quot; \
-  --strip-cookies \
-  -o staging.json
-
-# Replay against production
-ushio replay capture.json \
-  -t https:&amp;#x2F;&amp;#x2F;prod.example.com \
-  --strip-cookies \
-  -o prod.json
-
-# Diff the results
-ushio diff staging.json prod.json --only-diff
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# Convert a browser HAR export to ushio format
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;ushio&lt;&#x2F;span&gt;&lt;span&gt; convert session.har -o capture.json
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# Replay against staging with auth header, strip cookies
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;ushio&lt;&#x2F;span&gt;&lt;span&gt; replay capture.json &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;  -t https:&#x2F;&#x2F;staging.example.com &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;  --header &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot;Authorization:Bearer &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt;TOKEN&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;  --strip-cookies &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;  -o staging.json
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# Replay against production
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;ushio&lt;&#x2F;span&gt;&lt;span&gt; replay capture.json &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;  -t https:&#x2F;&#x2F;prod.example.com &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;  --strip-cookies &lt;&#x2F;span&gt;&lt;span style=&quot;color:#81a1c1;&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;span&gt;  -o prod.json
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#616e88;&quot;&gt;# Diff the results
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#88c0d0;&quot;&gt;ushio&lt;&#x2F;span&gt;&lt;span&gt; diff staging.json prod.json --only-diff
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The output is either pretty-printed for human review or JSON for pipeline integration. Exit code 0 means no behavioral differences. Exit code 1 means differences were found. This makes it composable with CI&#x2F;CD: run a replay diff on every edge config change, fail the pipeline if behavior regresses.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;what-changes-when-you-have-this&quot;&gt;What changes when you have this&lt;&#x2F;h2&gt;
 &lt;p&gt;The shift is from reactive to proactive. Without replay, you discover WAF problems when users report them or when the pager goes off. With replay, you discover them before deployment. The feedback loop compresses from incident-driven to change-driven.&lt;&#x2F;p&gt;
@@ -149,40 +149,40 @@ ushio diff staging.json prod.json --only-diff
 &lt;p&gt;When you are on call, “reason about what will happen” is not philosophical. It means concrete things.&lt;&#x2F;p&gt;
 &lt;p&gt;It means every queue has a maximum depth. Every timeout is explicit and declared. Every connection pool has a ceiling. No unbounded allocations anywhere. If you set a body size limit of 10 MB, that is a hard limit, not a suggestion. If a security agent’s concurrency is capped at 100, the 101st request gets the configured failure mode, not a silent queue that grows until the box dies.&lt;&#x2F;p&gt;
 &lt;p&gt;It means every route declares what happens when a security agent is unreachable. Not a global toggle. Per route, per agent. Your API fails closed when the WAF is down (deny everything, because your API handles sensitive data and you do not want it exposed without inspection). Your marketing site fails open (allow traffic, log the gap, because a few minutes of unfiltered marketing pages is better than a full outage). You decide. You write it down. The system enforces it.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;kdl&quot; class=&quot;language-kdl &quot;&gt;&lt;code class=&quot;language-kdl&quot; data-lang=&quot;kdl&quot;&gt;agents {
-    agent &amp;quot;waf&amp;quot; {
-        transport { unix-socket &amp;quot;&amp;#x2F;var&amp;#x2F;run&amp;#x2F;zentinel-waf.sock&amp;quot; }
-        events &amp;quot;request-headers&amp;quot; &amp;quot;request-body&amp;quot;
-        timeout-ms 50
-        max-concurrent-calls 100
-        failure-mode &amp;quot;closed&amp;quot;
-
-        circuit-breaker {
-            failure-threshold 5
-            success-threshold 3
-            timeout-seconds 30
-        }
-    }
-}
-
-routes {
-    route &amp;quot;api&amp;quot; {
-        priority 100
-        matches { path-prefix &amp;quot;&amp;#x2F;api&amp;#x2F;&amp;quot; }
-        upstream &amp;quot;backend&amp;quot;
-        filters &amp;quot;waf&amp;quot;
-        failure-mode &amp;quot;closed&amp;quot;
-    }
-
-    route &amp;quot;marketing&amp;quot; {
-        priority 50
-        matches { path-prefix &amp;quot;&amp;#x2F;&amp;quot; }
-        upstream &amp;quot;static-backend&amp;quot;
-        filters &amp;quot;waf&amp;quot;
-        failure-mode &amp;quot;open&amp;quot;
-    }
-}
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;kdl&quot; style=&quot;background-color:#2e3440;color:#d8dee9;&quot; class=&quot;language-kdl &quot;&gt;&lt;code class=&quot;language-kdl&quot; data-lang=&quot;kdl&quot;&gt;&lt;span&gt;agents {
+&lt;&#x2F;span&gt;&lt;span&gt;    agent &amp;quot;waf&amp;quot; {
+&lt;&#x2F;span&gt;&lt;span&gt;        transport { unix-socket &amp;quot;&#x2F;var&#x2F;run&#x2F;zentinel-waf.sock&amp;quot; }
+&lt;&#x2F;span&gt;&lt;span&gt;        events &amp;quot;request-headers&amp;quot; &amp;quot;request-body&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        timeout-ms 50
+&lt;&#x2F;span&gt;&lt;span&gt;        max-concurrent-calls 100
+&lt;&#x2F;span&gt;&lt;span&gt;        failure-mode &amp;quot;closed&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;        circuit-breaker {
+&lt;&#x2F;span&gt;&lt;span&gt;            failure-threshold 5
+&lt;&#x2F;span&gt;&lt;span&gt;            success-threshold 3
+&lt;&#x2F;span&gt;&lt;span&gt;            timeout-seconds 30
+&lt;&#x2F;span&gt;&lt;span&gt;        }
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;routes {
+&lt;&#x2F;span&gt;&lt;span&gt;    route &amp;quot;api&amp;quot; {
+&lt;&#x2F;span&gt;&lt;span&gt;        priority 100
+&lt;&#x2F;span&gt;&lt;span&gt;        matches { path-prefix &amp;quot;&#x2F;api&#x2F;&amp;quot; }
+&lt;&#x2F;span&gt;&lt;span&gt;        upstream &amp;quot;backend&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        filters &amp;quot;waf&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        failure-mode &amp;quot;closed&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    route &amp;quot;marketing&amp;quot; {
+&lt;&#x2F;span&gt;&lt;span&gt;        priority 50
+&lt;&#x2F;span&gt;&lt;span&gt;        matches { path-prefix &amp;quot;&#x2F;&amp;quot; }
+&lt;&#x2F;span&gt;&lt;span&gt;        upstream &amp;quot;static-backend&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        filters &amp;quot;waf&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        failure-mode &amp;quot;open&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;It means every security decision gets a trace ID and ends up in structured logs. When someone asks “why was this request blocked at 3:47 AM?”, you can answer with a correlation ID and a full trace: which agent decided, which rule matched, how long it took. Not “the WAF blocked it, probably.” The actual chain of events.&lt;&#x2F;p&gt;
 &lt;p&gt;It means configuration reloads are atomic. You send SIGHUP, the new configuration is parsed, validated, and swapped in. In-flight requests finish on the old config. New requests pick up the new one. No window where half the routes are on the old version and half on the new.&lt;&#x2F;p&gt;
 &lt;p&gt;I could describe all of this clearly. I had been able to for years. Describing what you want and having the means to build it are different things.&lt;&#x2F;p&gt;
