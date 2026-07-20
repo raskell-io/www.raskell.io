@@ -25,7 +25,8 @@ DRAFT NOTES — remove before publish
 2. Set the final date; remove draft = true.
 3. Add hero (960x300 -> .avif) and OG (1200x630 .png) as observability-is-not-logging.*
 4. Wire Part 8's "Next:" line to link here: /articles/observability-is-not-logging/
-5. Confirm the Part 10 title in the "Next:" line below (placeholder used).
+5. Part 10 title confirmed as "Evaluation Closes the Loop"; link the "Next:" line
+   below once post-10 publishes (brief promoted in context/briefs/the-agent-platform-handbook.md).
 -->
 
 > Part 9 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [The Bill Is Part of the Loop](/articles/the-bill-is-part-of-the-loop/). Next: Evaluation Closes the Loop.
