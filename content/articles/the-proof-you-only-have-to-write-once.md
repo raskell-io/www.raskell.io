@@ -70,6 +70,14 @@ manifest  7f3a9c1e…
 
 This is a different kind of object from a `.hs` file. It carries an identity, the hash. It carries an evidence bundle that says exactly what holds, and, just as plainly, what was only *asserted* and never checked. And it carries a provenance: who stands behind it. I am careful not to call it a truth. A well-typed function proves consistency with a specification, not fitness for your intent; `head :: [a] -> a` is perfectly well-typed and still throws on the empty list. A manifest claims something narrower and more useful: an account of what holds, with the gaps marked, that anyone can check.
 
+## Libraries reuse the code, not the proof
+
+The obvious objection is that reuse is a solved problem, and that this is what package registries are for. Hackage, npm, crates — write `sort` once, publish it, and everyone imports it. So why a commons?
+
+Because a registry solves a different problem. It shares the code a person chose to package and publish, and that another person chose to find, vet, and trust. That loop does not run for the twenty-line helper an agent regenerates inline, because finding and trusting a package costs more than writing it again. The long tail of small, re-derived functions — the part that is actually being wasted — is the part libraries never touch.
+
+And what a registry hands you is code you trust by reputation: the maintainer, the download count, the version number. What a manifest hands you is a proof you can re-check, with the evidence of what was verified bound to the content. One reuses the code; the other reuses the verification. The gap is widest where registries hurt the most: a package is a mutable name and version — the home of dependency conflicts and supply-chain attacks — while a manifest is content, where the same meaning is the same address and nothing can be swapped under the name.
+
 ## The same source is not the same manifest
 
 There is a wrinkle here, specific to the compiler I am building, and it is the most clarifying part of the design. In BHC the same source does not have one meaning. The same `Date.hs`, compiled under different runtime profiles, means different things:
