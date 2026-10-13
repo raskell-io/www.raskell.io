@@ -285,6 +285,13 @@
     .acnh-ping {
         animation: none;
     }
+
+    .hero .cta,
+    .hero .cta:hover,
+    .hero .cta:active {
+        transition: none;
+        transform: none;
+    }
 }
 
 // Homepage sections
@@ -299,6 +306,33 @@
         border-radius: 12px;
         font-size: 1.4rem;
         margin-bottom: 1.5rem;
+    }
+}
+
+// What I am working on
+.now-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    li {
+        padding: 1rem 1.25rem;
+        background: var(--light-background);
+        border-radius: 16px;
+        line-height: 1.55;
+    }
+
+    a,
+    strong {
+        font-weight: 600;
+        margin-right: 0.5rem;
+    }
+
+    span {
+        color: var(--font-color);
     }
 }
 

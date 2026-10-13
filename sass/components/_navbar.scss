@@ -119,8 +119,9 @@ main {
         }
 
         a {
-            padding: 0.6rem 1.3rem;
+            padding: 0.6rem 0.95rem;
             margin: 0 0.15rem;
+            white-space: nowrap;
             font-size: 1.05rem;
             font-weight: 500;
             color: var(--font-color);
@@ -129,7 +130,7 @@ main {
             transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 
             &:first-of-type {
-                margin-left: -1.3rem;
+                margin-left: -0.95rem;
             }
 
             &:hover {

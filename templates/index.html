@@ -6,6 +6,10 @@
         <div class="content">
             {{ section.content | safe }}
         </div>
+        <div class="hero-ctas">
+            <a class="cta cta--primary" href="{{ get_url(path='@/start-here.md') }}">Start here</a>
+            <a class="cta cta--secondary" href="{{ get_url(path='@/projects.md') }}">Projects</a>
+        </div>
 
         <div class="hero-meta">
             <div class="bio-social">
@@ -50,6 +54,23 @@
         <a class="view-all-link" href="/start-here/">See all recommendations →</a>
     </section>
 </div>
+
+{# What I am working on - edit [[extra.now]] in content/_index.md #}
+{% if section.extra.now %}
+<div class="container">
+    <section class="home-section">
+        <h2>What I am working on</h2>
+        <ul class="now-list">
+            {% for item in section.extra.now %}
+            <li>
+                {% if item.url %}<a href="{{ item.url }}">{{ item.name }}</a>{% else %}<strong>{{ item.name }}</strong>{% endif %}
+                <span>{{ item.text }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>
+{% endif %}
 
 {# Selected writing #}
 {% set articles_section = get_section(path="articles/_index.md") %}
