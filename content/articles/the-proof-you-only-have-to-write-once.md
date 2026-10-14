@@ -72,11 +72,11 @@ This is a different kind of object from a `.hs` file. It carries an identity, th
 
 ## Libraries reuse the code, not the proof
 
-The obvious objection is that reuse is a solved problem, and that this is what package registries are for. Hackage, npm, crates — write `sort` once, publish it, and everyone imports it. So why a commons?
+The obvious objection is that reuse is a solved problem, and that this is what package registries are for. Hackage, npm, crates: write `sort` once, publish it, and everyone imports it. So why a commons?
 
-Because a registry solves a different problem. It shares the code a person chose to package and publish, and that another person chose to find, vet, and trust. That loop does not run for the twenty-line helper an agent regenerates inline, because finding and trusting a package costs more than writing it again. The long tail of small, re-derived functions — the part that is actually being wasted — is the part libraries never touch.
+Because a registry solves a different problem. It shares the code a person chose to package and publish, and that another person chose to find, vet, and trust. That loop does not run for the twenty-line helper an agent regenerates inline, because finding and trusting a package costs more than writing it again. The part that is actually being wasted, the long tail of small, re-derived functions, is the part libraries never touch.
 
-And what a registry hands you is code you trust by reputation: the maintainer, the download count, the version number. What a manifest hands you is a proof you can re-check, with the evidence of what was verified bound to the content. One reuses the code; the other reuses the verification. The gap is widest where registries hurt the most: a package is a mutable name and version — the home of dependency conflicts and supply-chain attacks — while a manifest is content, where the same meaning is the same address and nothing can be swapped under the name.
+And what a registry hands you is code you trust by reputation: the maintainer, the download count, the version number. What a manifest hands you is a proof you can re-check, with the evidence of what was verified bound to the content. One reuses the code; the other reuses the verification. The gap is widest where registries hurt the most. A package is a mutable name and version, which is where dependency conflicts and supply-chain attacks live. A manifest is content: the same meaning is the same address, and nothing can be swapped under the name.
 
 ## The same source is not the same manifest
 
