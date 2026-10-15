@@ -19,7 +19,7 @@ I was paying over two hundred dollars a month to run two apps that had zero payi
 
 Not because the apps were complex. Not because they needed high availability across regions. Because I was running Kubernetes on DigitalOcean, and Kubernetes has opinions about how much infrastructure you need. A control plane. Worker nodes. Load balancers. Persistent volumes. Managed databases. Each line item modest on its own, adding up to a bill that felt absurd for two Phoenix applications in their bootstrapping phase.
 
-The apps are [archipelag.io](https://archipelag.io) and [cyanea.bio](https://cyanea.bio). Both are Elixir/Phoenix projects. Archipelag uses PostgreSQL and NATS for its messaging layer. Cyanea uses SQLite. Neither gets meaningful traffic yet. Both are real products I am actively building, not side projects I will abandon next month. But they are pre-revenue, and every dollar I spend on infrastructure is a dollar I am betting against future income that does not exist yet.
+The apps are [archipelag.io](https://archipelag.io) and [cyanea.bio](https://cyanea.bio). Both are Elixir/Phoenix projects. Archipelag.io uses PostgreSQL and NATS for its messaging layer. Cyanea uses SQLite. Neither gets meaningful traffic yet. Both are real products I am actively building, not side projects I will abandon next month. But they are pre-revenue, and every dollar I spend on infrastructure is a dollar I am betting against future income that does not exist yet.
 
 Something had to change.
 
@@ -27,7 +27,7 @@ Something had to change.
 
 Here is the thing about Kubernetes: it solves problems you might not have. If you are running fifty microservices across three regions with autoscaling requirements and a platform team to manage it, Kubernetes earns its keep. If you are running two BEAM applications that each consume less than 512 MB of memory, you are paying a complexity tax for infrastructure capabilities you will never touch.
 
-My K8s setup on DigitalOcean looked like this: a managed cluster with two worker nodes (the minimum for any reasonable availability), a managed PostgreSQL instance for Archipelag, a load balancer for ingress, persistent volumes for Cyanea's SQLite database. Each component had its own monthly cost. The cluster management fee alone was more than what I would eventually pay for an entire bare metal server.
+My K8s setup on DigitalOcean looked like this: a managed cluster with two worker nodes (the minimum for any reasonable availability), a managed PostgreSQL instance for Archipelag.io, a load balancer for ingress, persistent volumes for Cyanea's SQLite database. Each component had its own monthly cost. The cluster management fee alone was more than what I would eventually pay for an entire bare metal server.
 
 The operational overhead was worse than the cost. Helm charts. Ingress controllers. Certificate managers. Pod disruption budgets. Every time I wanted to deploy a new version, I was wrangling YAML files that described infrastructure concerns my apps did not care about. A Phoenix release does not need a pod spec. It needs a port, an environment, and someone to restart it if it crashes.
 
@@ -222,7 +222,7 @@ New instance                          ░░░░██████████
                             stop │   │ start + health check
 ```
 
-The decision is per-app, configured in the manifest. Cyanea uses sequential (SQLite). Archipelag uses blue-green (PostgreSQL).
+The decision is per-app, configured in the manifest. Cyanea uses sequential (SQLite). Archipelag.io uses blue-green (PostgreSQL).
 
 ### Process supervision
 
@@ -258,7 +258,7 @@ This is the kind of feature that would take a day to specify and a week to imple
 
 ### Built-in services
 
-Both of my apps have service dependencies. Archipelag needs PostgreSQL and NATS. Rather than managing these separately, Vela handles service provisioning directly:
+Both of my apps have service dependencies. Archipelag.io needs PostgreSQL and NATS. Rather than managing these separately, Vela handles service provisioning directly:
 
 ```toml
 [services.postgres]
@@ -306,7 +306,7 @@ The sequence went roughly like this:
 
 5. **First app deployed (Cyanea)**: Built the Elixir release on the server, set secrets, ran migrations, deployed. The entire build-and-deploy cycle for a Phoenix app with a Rust NIF took about fifteen minutes, most of which was compilation.
 
-6. **Second app deployed (Archipelag)**: Same flow, plus provisioning PostgreSQL and restoring a database dump from Fly, plus setting up NATS. About thirty minutes.
+6. **Second app deployed (Archipelag.io)**: Same flow, plus provisioning PostgreSQL and restoring a database dump from Fly, plus setting up NATS. About thirty minutes.
 
 7. **TLS certificates**: Updated DNS records, Let's Encrypt certificates issued automatically. Vela handles the ACME challenge internally, no Certbot, no cron job, no manual cert management.
 
@@ -415,7 +415,7 @@ Buy a server. Build your tools. Ship your product. The infrastructure should be 
 - [Pingora](https://github.com/cloudflare/pingora) - Cloudflare's Rust framework for building programmable proxies
 - [hyper](https://hyper.rs/) - Rust HTTP library powering Vela's reverse proxy
 - [Let's Encrypt](https://letsencrypt.org/) - Free TLS certificates, automated via ACME in Vela
-- [NATS](https://nats.io/) - Lightweight messaging system used by Archipelag
+- [NATS](https://nats.io/) - Lightweight messaging system used by Archipelag.io
 
 ### Frameworks and runtimes
 - [Phoenix Framework](https://www.phoenixframework.org/) - Elixir web framework powering both apps
@@ -424,6 +424,6 @@ Buy a server. Build your tools. Ship your product. The infrastructure should be 
 
 ### Projects referenced
 - [Zentinel](https://zentinelproxy.io) - Security-first reverse proxy built on Pingora
-- [Archipelag](https://archipelag.io) - Distributed compute platform
+- [Archipelag.io](https://archipelag.io) - Distributed compute platform
 - [Cyanea](https://cyanea.bio) - Bioinformatics platform
 - [Claude Code](https://github.com/anthropics/claude-code) - AI coding tool used to build Vela

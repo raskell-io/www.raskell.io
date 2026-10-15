@@ -60,7 +60,7 @@ That changed something fundamental in how I think about work. Once one long-held
 
 ## Then everything else started moving
 
-In the time since, I have built a whole range of things that had been accumulating in my head for years: Cyanea, Archipelag, Humankind, Arcanist and its Rust-based `hx` Haskell toolchain, the new Basel Haskell Compiler, and other pieces besides.
+In the time since, I have built a whole range of things that had been accumulating in my head for years: Cyanea, Archipelag.io, Humankind, Arcanist and its Rust-based `hx` Haskell toolchain, the new Basel Haskell Compiler, and other pieces besides.
 
 It has been a wild ride, but not in the shallow "everything is crazy" sense people often write about. More in the sense that an internal dam broke. For a long time I had more ideas than I had time, more design clarity than I had execution bandwidth, and more conviction than I had manpower. That is a frustrating place to live in for years. You learn to carry around a quiet backlog of unrealized things. Some of them stay alive as notes. Some become recurring thoughts during commutes or late at night. Some start to hurt a little because you know they are viable, but you also know you are not going to get to them with the tools and energy available to you at that point in your life.
 
@@ -119,4 +119,4 @@ And I suspect we are still early.
 - [Ghostty](https://ghostty.org/) - Terminal I use for most of my agent-heavy coding sessions
 - [Zentinel](https://zentinelproxy.io/) - Reverse proxy project that became the first real proof point for this workflow
 - [Cyanea](https://cyanea.bio/) - One of the projects that came to life during this period
-- [Archipelag](https://archipelag.io/) - Another product that moved from idea to reality in this new working mode
+- [Archipelag.io](https://archipelag.io/) - Another product that moved from idea to reality in this new working mode
