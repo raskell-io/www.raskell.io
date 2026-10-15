@@ -11,6 +11,7 @@ categories = ["deep-dives"]
 [extra]
 author = "Raffael"
 image = "the-proof-you-only-have-to-write-once.avif"
+cover = "covers/the-proof-you-only-have-to-write-once.avif"
 og_image = "the-proof-you-only-have-to-write-once.png"
 related = [
     "semantic-artifacts-and-meaning-engines",

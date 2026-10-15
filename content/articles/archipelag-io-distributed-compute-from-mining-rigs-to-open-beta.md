@@ -11,6 +11,7 @@ series = ["deep-dives"]
 [extra]
 author = "Raffael"
 image = "archipelag-io-open-beta.avif"
+cover = "covers/archipelag-io-open-beta.avif"
 og_image = "archipelag-io-open-beta.png"
 +++
 

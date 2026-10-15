@@ -10,6 +10,7 @@ categories = ["deep-dives"]
 [extra]
 author = "Raffael"
 image = "what-comes-after-the-last-programming-language.avif"
+cover = "covers/what-comes-after-the-last-programming-language.avif"
 og_image = "what-comes-after-the-last-programming-language.png"
 related = [
     "what-programming-languages-become-when-ai-writes-the-code",

@@ -11,6 +11,7 @@ categories = ["field-notes"]
 [extra]
 author = "Raffael"
 image = "void-disk-usage.avif"
+cover = "covers/void-disk-usage.avif"
 og_image = "void-disk-usage.png"
 +++
 

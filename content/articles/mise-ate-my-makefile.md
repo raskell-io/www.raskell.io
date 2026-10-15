@@ -11,6 +11,7 @@ categories = ["reviews"]
 [extra]
 author = "Raffael"
 image = "mise-ate-make.avif"
+cover = "covers/mise-ate-make.avif"
 og_image = "mise-ate-make.png"
 +++
 

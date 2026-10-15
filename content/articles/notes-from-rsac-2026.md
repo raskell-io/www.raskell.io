@@ -10,6 +10,7 @@ categories = ["field-notes"]
 [extra]
 author = "Raffael"
 image = "notes-from-rsac-2026.avif"
+cover = "covers/notes-from-rsac-2026.avif"
 og_image = "notes-from-rsac-2026.png"
 +++
 

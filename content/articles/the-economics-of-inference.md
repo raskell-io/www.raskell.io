@@ -10,6 +10,7 @@ categories = ["deep-dives"]
 [extra]
 author = "Raffael"
 image = "the-economics-of-inference.avif"
+cover = "covers/the-economics-of-inference.avif"
 og_image = "the-economics-of-inference.png"
 +++
 

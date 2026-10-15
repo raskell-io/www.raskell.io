@@ -11,6 +11,7 @@ series = ["the-agent-platform-handbook"]
 [extra]
 author = "Raffael"
 image = "your-agent-wants-root.avif"
+cover = "covers/your-agent-wants-root.avif"
 og_image = "your-agent-wants-root.png"
 +++
 

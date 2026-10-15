@@ -10,6 +10,7 @@ categories = ["reviews"]
 [extra]
 author = "Raffael"
 image = "patents-per-capita-is-a-vanity-metric.avif"
+cover = "covers/patents-per-capita-is-a-vanity-metric.avif"
 og_image = "patents-per-capita-is-a-vanity-metric.png"
 +++
 

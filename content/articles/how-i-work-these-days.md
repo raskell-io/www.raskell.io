@@ -11,6 +11,7 @@ categories = ["meta"]
 [extra]
 author = "Raffael"
 image = "how-i-work-these-days.avif"
+cover = "covers/how-i-work-these-days.avif"
 og_image = "how-i-work-these-days.png"
 +++
 
