@@ -64,6 +64,7 @@ mark_play = true
 main_section = "articles"
 projects_section = "projects"
 cta = { name = "Start here", url = "@/start-here.md" }
+map = "@/map.md"
 nav = [
   { name = "Articles", url = "@/articles/_index.md" },
   { name = "Projects", url = "@/projects/_index.md" },
@@ -72,6 +73,7 @@ nav = [
   { name = "About", url = "@/about.md" },
 ]
 explore = [
+  { name = "Map", url = "@/map.md" },
   { name = "Tags", url = "/tags" },
   { name = "Categories", url = "/categories" },
   { name = "Series", url = "/series" },
