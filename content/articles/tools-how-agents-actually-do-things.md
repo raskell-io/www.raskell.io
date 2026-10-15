@@ -4,7 +4,7 @@ date = 2026-06-09
 description = "Function calling is the API between language and action, but the engineering is in the registry. A working four-tool registry in TypeScript on Bun, schema design that survives model drift, parallel tool calls, and the failure modes nobody mentions in the demo. Part three of The Agent Platform Handbook."
 
 [taxonomies]
-tags = ["ai-engineering", "platform-automation"]
+tags = ["agents", "typescript"]
 categories = ["patterns"]
 series = ["the-agent-platform-handbook"]
 

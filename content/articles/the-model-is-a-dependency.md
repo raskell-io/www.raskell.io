@@ -4,7 +4,7 @@ date = 2026-07-09
 description = "Every layer of the harness has existed to put the right tokens in front of one hardcoded model string. This post pulls that string out and makes the model a dependency: why you route a cheap model for easy turns and a strong one for hard turns, what a fallback looks like when a provider is down, and why 'models are commodities' is a claim about your architecture before it is a claim about the market. Part seven of The Agent Platform Handbook."
 
 [taxonomies]
-tags = ["ai-engineering", "platform-automation", "typescript"]
+tags = ["agents", "reliability", "economics", "typescript"]
 categories = ["patterns"]
 series = ["the-agent-platform-handbook"]
 

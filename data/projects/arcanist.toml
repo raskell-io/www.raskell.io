@@ -4,4 +4,4 @@ status = "dev"
 logo = "brands/arcanist.png"
 featured = true
 links = [ { name = "Website", url = "https://arcanist.sh" }, { name = "GitHub", url = "https://github.com/arcanist-sh" } ]
-topics = ["haskell", "rust", "programming-languages"]
+topics = ["haskell", "rust", "programming-languages", "developer-tooling"]

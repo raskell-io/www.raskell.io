@@ -5,7 +5,7 @@ updated = 2026-03-08
 description = "I migrated two production apps from Kubernetes to a single Hetzner box. The missing piece was not the hardware."
 
 [taxonomies]
-tags = ["platform-automation", "ai-for-ops", "rust", "elixir"]
+tags = ["platform-automation", "ai-engineering", "economics", "reliability", "rust", "elixir"]
 categories = ["deep-dives"]
 series = ["deep-dives"]
 

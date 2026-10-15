@@ -4,7 +4,7 @@ date = 2026-06-05
 description = "An agent with a shell tool is arbitrary code execution with a friendly face. A short tour of why Docker alone is not enough, what Firecracker, gVisor, and Kata actually solve, and a hardened sandbox you can wrap the post-one agent in today. Part two of The Agent Platform Handbook."
 
 [taxonomies]
-tags = ["applied-security", "ai-engineering", "edge-systems"]
+tags = ["agents", "applied-security", "isolation"]
 categories = ["patterns"]
 series = ["the-agent-platform-handbook"]
 

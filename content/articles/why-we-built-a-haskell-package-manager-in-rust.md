@@ -4,7 +4,7 @@ date = 2026-04-13
 description = "hx is a fast, opinionated Haskell toolchain built in Rust, following the playbook astral.sh used to modernize Python."
 
 [taxonomies]
-tags = ["oss", "platform-automation", "programming-languages", "rust", "haskell"]
+tags = ["developer-tooling", "programming-languages", "haskell", "rust"]
 categories = ["patterns"]
 
 [extra]

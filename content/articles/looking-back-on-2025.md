@@ -5,7 +5,7 @@ updated = 2026-03-08
 description = "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself."
 
 [taxonomies]
-tags = ["ai-for-ops", "edge-systems"]
+tags = ["edge-systems", "oss", "ai-for-ops"]
 categories = ["deep-dives"]
 
 [extra]

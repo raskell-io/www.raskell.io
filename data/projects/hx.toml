@@ -3,5 +3,5 @@ description = "An extremely fast Haskell package and project manager, written in
 status = "dev"
 logo = "brands/hx.png"
 links = [ { name = "Website", url = "https://hx.arcanist.sh" }, { name = "GitHub", url = "https://github.com/arcanist-sh/hx" } ]
-topics = ["haskell", "rust", "programming-languages"]
+topics = ["haskell", "rust", "programming-languages", "developer-tooling"]
 related = ["arcanist"]
