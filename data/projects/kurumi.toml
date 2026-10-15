@@ -1,4 +1,5 @@
 title = "Kurumi"
-description = "A local-first second brain. Your ideas, everywhere, offline. Wikilinks, backlinks, graph visualization, full-text search. completely offline-first with optional sync via Automerge CRDTs. No vendor lock-in."
-status = "dev"
-links = [ { name = "GitHub", url = "https://github.com/raskell-io/kurumi" } ]
+description = "A local-first, AI-native second brain. Capture notes, links, and meetings, then find them again through wikilinks, backlinks, a graph view, and full-text search. Everything works offline, with optional sync through Automerge CRDTs and no vendor lock-in."
+status = "live"
+logo = "brands/kurumi.png"
+links = [ { name = "Open app", url = "https://kurumi.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/kurumi" } ]

@@ -1,4 +1,6 @@
 title = "Paw & Claw"
-description = "Woodland Wars. A turn-based tactics game featuring animal factions battling for territory. HD-2D-stylized, spiritual successor to Advance Wars, built with Rust/Bevy."
-status = "dev"
-links = [ { name = "GitHub", url = "https://github.com/raskell-io/paw-and-claw" } ]
+description = "A turn-based strategy game in the spirit of Advance Wars, fought by woodland armies. Raccoons, badgers, lions, red pandas, and moles fight over every thicket and creek. Built in Rust with Bevy. Play it free in the browser, or as a desktop build."
+status = "live"
+status_label = "Playable"
+logo = "brands/paw-and-claw.png"
+links = [ { name = "Play", url = "https://pawandclaw.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/paw-and-claw" } ]

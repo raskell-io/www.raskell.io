@@ -67,6 +67,7 @@ cta = { name = "Start here", url = "@/start-here.md" }
 nav = [
   { name = "Articles", url = "@/articles/_index.md" },
   { name = "Projects", url = "@/projects/_index.md" },
+  { name = "Apps", url = "@/apps/_index.md" },
   { name = "Speaking", url = "@/speaking.md" },
   { name = "About", url = "@/about.md" },
 ]
