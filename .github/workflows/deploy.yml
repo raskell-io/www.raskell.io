@@ -19,7 +19,7 @@ jobs:
       - name: Setup Zola
         uses: taiki-e/install-action@v2
         with:
-          tool: zola@0.21
+          tool: zola@0.22.1
 
       - name: Setup mise
         uses: jdx/mise-action@v2
