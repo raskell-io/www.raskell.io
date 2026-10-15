@@ -71,3 +71,9 @@ svg.chart {
 
 // Talk links on the speaking page.
 .session-link { font-family: var(--font-mono); font-size: 0.9rem; }
+
+// Contact profiles on the about page: one per line, icon beside the handle.
+.contact-links { display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; margin-block: 1.3em; }
+.prose .contact-links a { display: inline-flex; align-items: center; gap: 0.65rem; text-decoration: none; }
+.prose .contact-links a:hover { text-decoration: underline; text-decoration-thickness: 0.06em; text-underline-offset: 0.18em; }
+.prose .contact-links a svg { flex: none; margin: 0; }
