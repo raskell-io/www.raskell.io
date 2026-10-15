@@ -2286,7 +2286,7 @@ Separate concerns: hx-plugins, hx-lsp, hx-warnings, hx-telemetry&lt;&#x2F;code&g
                         │
           ┌─────────────┼─────────────┐
           │             │             │
- ┌────────▼───────┐ ┌──▼──────────┐ ┌▼───────────────┐
+ ┌────────▼───────┐ ┌───▼─────────┐ ┌─▼──────────────┐
  │  WAF Agent     │ │ Auth Agent  │ │ Custom Agent   │
  │  semaphore: 100│ │ semaphore:50│ │ semaphore: 25  │
  │  timeout: 50ms │ │ timeout:30ms│ │ timeout: 200ms │

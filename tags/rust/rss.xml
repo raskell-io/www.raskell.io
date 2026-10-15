@@ -284,7 +284,7 @@ Separate concerns: hx-plugins, hx-lsp, hx-warnings, hx-telemetry&lt;&#x2F;code&g
                         │
           ┌─────────────┼─────────────┐
           │             │             │
- ┌────────▼───────┐ ┌──▼──────────┐ ┌▼───────────────┐
+ ┌────────▼───────┐ ┌───▼─────────┐ ┌─▼──────────────┐
  │  WAF Agent     │ │ Auth Agent  │ │ Custom Agent   │
  │  semaphore: 100│ │ semaphore:50│ │ semaphore: 25  │
  │  timeout: 50ms │ │ timeout:30ms│ │ timeout: 200ms │
@@ -435,8 +435,8 @@ Separate concerns: hx-plugins, hx-lsp, hx-warnings, hx-telemetry&lt;&#x2F;code&g
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  └── IPC socket                             │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│                                             │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  Apps                                       │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  ├── cyanea.bio      → :10001              │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  └── archipelag.io   → :10002              │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  ├── cyanea.bio      → :10001               │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  └── archipelag.io   → :10002               │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;└─────────────────────────────────────────────┘&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;┌─────────────────────────────────────────────┐&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
@@ -665,12 +665,12 @@ Separate concerns: hx-plugins, hx-lsp, hx-warnings, hx-telemetry&lt;&#x2F;code&g
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                 │ Users    │ Orders   │ Payments │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                 │ Service  │ Service  │ Service  │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                 ├──────────┼──────────┼──────────┤&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  Auth           │ ✓ (v2.1) │ ✓ (v1.9) │ ✓ (v2.0)│&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  Rate limiting  │ ✓ (lib)  │ ✓ (copy) │ ✗ (none)│&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  Validation     │ ✓        │ ✓        │ ✓       │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  WAF&#x2F;Security   │ ✗        │ ✗        │ ✗       │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  Logging        │ JSON     │ text     │ JSON    │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  Tracing        │ ✓        │ ✗        │ ✓       │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  Auth           │ ✓ (v2.1) │ ✓ (v1.9) │ ✓ (v2.0) │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  Rate limiting  │ ✓ (lib)  │ ✓ (copy) │ ✗ (none) │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  Validation     │ ✓        │ ✓        │ ✓        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  WAF&#x2F;Security   │ ✗        │ ✗        │ ✗        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  Logging        │ JSON     │ text     │ JSON     │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  Tracing        │ ✓        │ ✗        │ ✓        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                 └──────────┴──────────┴──────────┘&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Libraries helped. Service meshes helped more. But the complexity was still distributed across every service, in every team’s codebase, in every deployment pipeline. The mesh moved networking concerns to a sidecar. It did not move application-level concerns like auth, validation, or security inspection.&lt;&#x2F;p&gt;
 &lt;p&gt;The edge was an afterthought. A reverse proxy. TLS termination. Maybe Varnish for caching. Maybe a CDN for static assets. It was infrastructure plumbing, not a place where decisions happened.&lt;&#x2F;p&gt;
