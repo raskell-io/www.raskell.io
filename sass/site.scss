@@ -2,11 +2,20 @@
 // anything a second site could use belongs in the theme instead.
 
 // Scientific names (binomials, taxa) in Computer Modern italic, the LaTeX look.
-// The webfont is subsetted to Basic Latin and italic by design.
+// The webfonts are subsetted to Basic Latin (the upright one also has × · −); both are OFL, see fonts/CMUSerif-OFL-LICENSE.txt.
 @font-face {
   font-family: "CMU Serif";
   src: url("fonts/CMUSerif-Italic.woff2") format("woff2");
   font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+// Upright Computer Modern for math operators and equation numbers; subsetted to Basic Latin plus ×, ·, −.
+@font-face {
+  font-family: "CMU Serif";
+  src: url("fonts/CMUSerif-Roman.woff2") format("woff2");
+  font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
@@ -20,7 +29,6 @@
 
 // Display equations set like LaTeX math: Computer Modern italic for the identifiers, upright operators
 // with TeX's spacing (thick around relations, medium around binary operators), and a right-hand number.
-// The CMU subset has no ×, so the operators fall through to Latin Modern or a plain serif.
 .equation {
   position: relative;
   margin-block: 1.8em;
@@ -38,13 +46,14 @@
   content: "(" counter(equation) ")";
   position: absolute;
   right: 0;
-  font-family: "Latin Modern Roman", "CMU Serif Roman", "Times New Roman", serif;
+  font-family: "CMU Serif", "Latin Modern Roman", "Times New Roman", serif;
+  font-style: normal;
   font-size: 0.8em;
 }
 .math, .math-text { font-family: "CMU Serif", "Latin Modern Roman", "Latin Modern Math", "STIX Two Math", "Cambria Math", "Times New Roman", serif; }
 .math var, .math-text { font-style: italic; }
 .math-text { font-size: 0.72em; color: var(--muted); }
-.math .mrel, .math .mbin { font-family: "Latin Modern Math", "STIX Two Math", "Cambria Math", "Times New Roman", serif; font-style: normal; }
+.math .mrel, .math .mbin { font-style: normal; }
 .math .mrel { margin-inline: 0.36em 0.28em; }   // a touch more on the left: the italic leans away from it
 .math .mbin { margin-inline: 0.3em 0.22em; }
 .prose { counter-reset: equation; }
