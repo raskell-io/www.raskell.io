@@ -1,0 +1,1959 @@
+{
+ "source": "https://raskell.io/map/",
+ "generated": "2026-10-15T17:16:03+00:00",
+ "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
+ "nodes": [
+  {
+   "id": "a:/articles/this-site-is-becoming-a-map/",
+   "kind": "article",
+   "label": "This Site Is Becoming a Map",
+   "url": "https://raskell.io/articles/this-site-is-becoming-a-map/",
+   "meta": "2026-10-15 · 9 min",
+   "description": "A blog shows what I wrote last. The new map on raskell.io shows what I keep coming back to, and it is the start of a public second brain.",
+   "degree": 9
+  },
+  {
+   "id": "a:/articles/the-bill-is-part-of-the-loop/",
+   "kind": "article",
+   "label": "The Bill Is Part of the Loop",
+   "url": "https://raskell.io/articles/the-bill-is-part-of-the-loop/",
+   "meta": "2026-07-18 · 10 min",
+   "description": "Every model response already carries its own bill in the usage field, and the loop throws it away. This post reads that field, prices it against a table, and turns cost into a value the loop can see per turn and act on: a metering decorator that needs no loop change, a running ledger, prompt-cache accounting that moves the number the most, and a budget that degrades before it stops. Part eight of The Agent Platform Handbook.",
+   "degree": 6
+  },
+  {
+   "id": "a:/articles/the-model-is-a-dependency/",
+   "kind": "article",
+   "label": "The Model Is a Dependency",
+   "url": "https://raskell.io/articles/the-model-is-a-dependency/",
+   "meta": "2026-07-09 · 14 min",
+   "description": "Every layer of the harness has existed to put the right tokens in front of one hardcoded model string. This post pulls that string out and makes the model a dependency: why you route a cheap model for easy turns and a strong one for hard turns, what a fallback looks like when a provider is down, and why 'models are commodities' is a claim about your architecture before it is a claim about the market. Part seven of The Agent Platform Handbook.",
+   "degree": 8
+  },
+  {
+   "id": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "kind": "article",
+   "label": "The Bottleneck Is Data, and Europe Is Sitting on It",
+   "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "meta": "2026-06-30 · 34 min",
+   "description": "Frontier AI is running short on public text, not compute. Europe's edge is the high-quality data it never put online. Capturing it needs coordination.",
+   "degree": 8
+  },
+  {
+   "id": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
+   "kind": "article",
+   "label": "Brain Emulation, Read as an Infrastructure Problem",
+   "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/",
+   "meta": "2026-06-28 · 13 min",
+   "description": "An MIT thesis argues brain emulation has crossed into engineering. Read as infrastructure, the numbers describe a workload your AI cluster was not built for.",
+   "degree": 4
+  },
+  {
+   "id": "a:/articles/memory-is-a-write-path/",
+   "kind": "article",
+   "label": "Memory Is a Write Path",
+   "url": "https://raskell.io/articles/memory-is-a-write-path/",
+   "meta": "2026-06-23 · 19 min",
+   "description": "Retrieval reads context the project authored. Memory is the agent writing context for its own future sessions, and the write is the part that is dangerous. Why session memory comes free from the transcript, why cross-session memory needs a separate write surface, and how to let an agent remember without letting it corrupt its own ground truth. Part six of The Agent Platform Handbook.",
+   "degree": 6
+  },
+  {
+   "id": "a:/articles/the-proof-you-only-have-to-write-once/",
+   "kind": "article",
+   "label": "The Proof You Only Have to Write Once",
+   "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/",
+   "meta": "2026-06-19 · 13 min",
+   "description": "Generation is cheap, so verification is the bottleneck — and we throw the verification away every time. What if a proof, once written, could be named, shared, and vouched for? A content-addressed commons for verified Haskell, and the move I left for after the semantic-artifact trilogy.",
+   "degree": 8
+  },
+  {
+   "id": "a:/articles/retrieval-is-a-tool-not-a-layer/",
+   "kind": "article",
+   "label": "Retrieval Is a Tool, Not a Layer",
+   "url": "https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/",
+   "meta": "2026-06-17 · 16 min",
+   "description": "Loading the whole .AGENTS/ directory on every turn does not scale. The fix is not a retrieval layer bolted to the side of the agent. It is a search tool in the registry the agent already has. BM25 over project docs, no vector store, and an honest account of when embeddings start to earn their keep. Part five of The Agent Platform Handbook.",
+   "degree": 6
+  },
+  {
+   "id": "a:/articles/context-is-the-product/",
+   "kind": "article",
+   "label": "Context Is the Product",
+   "url": "https://raskell.io/articles/context-is-the-product/",
+   "meta": "2026-06-13 · 26 min",
+   "description": "Models are commodities. Context is not. The sources of context an agent draws on, why retrieval alone is not enough, and a minimal .AGENTS/ convention that loads context from disk into the same harness we have been building. Part four of The Agent Platform Handbook.",
+   "degree": 9
+  },
+  {
+   "id": "a:/articles/tools-how-agents-actually-do-things/",
+   "kind": "article",
+   "label": "Tools: How Agents Actually Do Things",
+   "url": "https://raskell.io/articles/tools-how-agents-actually-do-things/",
+   "meta": "2026-06-09 · 13 min",
+   "description": "Function calling is the API between language and action, but the engineering is in the registry. A working four-tool registry in TypeScript on Bun, schema design that survives model drift, parallel tool calls, and the failure modes nobody mentions in the demo. Part three of The Agent Platform Handbook.",
+   "degree": 7
+  },
+  {
+   "id": "a:/articles/your-agent-wants-root/",
+   "kind": "article",
+   "label": "Your Agent Wants Root",
+   "url": "https://raskell.io/articles/your-agent-wants-root/",
+   "meta": "2026-06-05 · 16 min",
+   "description": "An agent with a shell tool is arbitrary code execution with a friendly face. A short tour of why Docker alone is not enough, what Firecracker, gVisor, and Kata actually solve, and a hardened sandbox you can wrap the post-one agent in today. Part two of The Agent Platform Handbook.",
+   "degree": 7
+  },
+  {
+   "id": "a:/articles/what-an-agent-actually-is/",
+   "kind": "article",
+   "label": "What an Agent Actually Is",
+   "url": "https://raskell.io/articles/what-an-agent-actually-is/",
+   "meta": "2026-06-02 · 19 min",
+   "description": "AI agent is the most overloaded word in the industry. This is the anatomy, the lineage, and a working implementation in roughly two hundred lines of TypeScript on Bun. Part one of The Agent Platform Handbook.",
+   "degree": 9
+  },
+  {
+   "id": "a:/articles/the-field-exists-now/",
+   "kind": "article",
+   "label": "The Field Exists Now",
+   "url": "https://raskell.io/articles/the-field-exists-now/",
+   "meta": "2026-05-22 · 7 min",
+   "description": "Alasdair Allan's agentlanguages.dev catalogue turns AI-oriented programming languages from a loose set of experiments into a field with camps, disagreements, and testable claims.",
+   "degree": 6
+  },
+  {
+   "id": "a:/articles/semantic-artifacts-and-meaning-engines/",
+   "kind": "article",
+   "label": "Source Code Is the New Assembly",
+   "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/",
+   "meta": "2026-05-07 · 27 min",
+   "description": "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target.",
+   "degree": 8
+  },
+  {
+   "id": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "kind": "article",
+   "label": "Patents Per Capita Is a Vanity Metric",
+   "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/",
+   "meta": "2026-05-01 · 23 min",
+   "description": "Switzerland tops the Global Innovation Index for the fifteenth year running. As an engineer, that should make you suspicious of the metric, not proud of the country.",
+   "degree": 8
+  },
+  {
+   "id": "a:/articles/traffic-replay-as-a-security-primitive/",
+   "kind": "article",
+   "label": "Traffic Replay as a Security Primitive",
+   "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/",
+   "meta": "2026-04-27 · 12 min",
+   "description": "WAF tuning is a guessing game because you cannot reproduce the traffic that triggered the rule. Deterministic replay changes that.",
+   "degree": 8
+  },
+  {
+   "id": "a:/articles/the-economics-of-inference/",
+   "kind": "article",
+   "label": "The Economics of Inference",
+   "url": "https://raskell.io/articles/the-economics-of-inference/",
+   "meta": "2026-04-22 · 12 min",
+   "description": "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas.",
+   "degree": 11
+  },
+  {
+   "id": "a:/articles/what-comes-after-the-last-programming-language/",
+   "kind": "article",
+   "label": "What Comes After the Last Programming Language",
+   "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/",
+   "meta": "2026-04-19 · 23 min",
+   "description": "If AI generates machine code directly, why are we still running operating systems designed for humans? The answer might be an inference-native OS.",
+   "degree": 9
+  },
+  {
+   "id": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
+   "kind": "article",
+   "label": "What Sixteen AI Agents Taught Me About Management",
+   "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/",
+   "meta": "2026-04-16 · 19 min",
+   "description": "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway.",
+   "degree": 7
+  },
+  {
+   "id": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "kind": "article",
+   "label": "Why We Built a Haskell Package Manager in Rust",
+   "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "meta": "2026-04-13 · 19 min",
+   "description": "hx is a fast, opinionated Haskell toolchain built in Rust, following the playbook astral.sh used to modernize Python.",
+   "degree": 7
+  },
+  {
+   "id": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "kind": "article",
+   "label": "The Last Programming Language Might Not Be for Humans",
+   "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "meta": "2026-04-11 · 26 min",
+   "description": "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell.",
+   "degree": 12
+  },
+  {
+   "id": "a:/articles/notes-from-rsac-2026/",
+   "kind": "article",
+   "label": "Notes from RSAC 2026",
+   "url": "https://raskell.io/articles/notes-from-rsac-2026/",
+   "meta": "2026-04-09 · 23 min",
+   "description": "Third time at RSA Conference, first time as a speaker. What I saw, what I heard, and what I am still processing.",
+   "degree": 10
+  },
+  {
+   "id": "a:/articles/what-zentinel-is-really-optimizing-for/",
+   "kind": "article",
+   "label": "What Zentinel Is Really Optimizing For",
+   "url": "https://raskell.io/articles/what-zentinel-is-really-optimizing-for/",
+   "meta": "2026-03-22 · 18 min",
+   "description": "Every major proxy was a product of its time. Zentinel is built for this one: safety, operability, and the operator's ability to sleep.",
+   "degree": 10
+  },
+  {
+   "id": "a:/articles/how-i-work-these-days/",
+   "kind": "article",
+   "label": "How I Work These Days",
+   "url": "https://raskell.io/articles/how-i-work-these-days/",
+   "meta": "2026-03-15 · 10 min",
+   "description": "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right.",
+   "degree": 13
+  },
+  {
+   "id": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
+   "kind": "article",
+   "label": "Archipelag.io Is in Open Beta: Here's Why I Built It",
+   "url": "https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
+   "meta": "2026-03-13 · 23 min",
+   "description": "From watching Ethereum miners in 2016 to building a decentralized compute network in open beta. Architecture, conviction, and the long road.",
+   "degree": 10
+  },
+  {
+   "id": "a:/articles/how-ai-makes-bare-metal-viable-again/",
+   "kind": "article",
+   "label": "How AI Makes Bare Metal Viable Again",
+   "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/",
+   "meta": "2026-03-08 · 29 min",
+   "description": "I migrated two production apps from Kubernetes to a single Hetzner box. The missing piece was not the hardware.",
+   "degree": 12
+  },
+  {
+   "id": "a:/articles/edge-systems-are-the-new-backend/",
+   "kind": "article",
+   "label": "Edge Systems Are the New Backend",
+   "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/",
+   "meta": "2026-02-11 · 30 min",
+   "description": "Auth, policy, and business logic are migrating to the edge. The traditional backend is becoming a persistence layer.",
+   "degree": 12
+  },
+  {
+   "id": "a:/articles/looking-back-on-2025/",
+   "kind": "article",
+   "label": "Looking back on 2025",
+   "url": "https://raskell.io/articles/looking-back-on-2025/",
+   "meta": "2025-12-31 · 7 min",
+   "description": "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself.",
+   "degree": 7
+  },
+  {
+   "id": "a:/articles/mise-ate-my-makefile/",
+   "kind": "article",
+   "label": "Mise ate my Makefile",
+   "url": "https://raskell.io/articles/mise-ate-my-makefile/",
+   "meta": "2025-12-14 · 12 min",
+   "description": "Mise replaced Make, asdf, and a pile of shell scripts with a single TOML file per project. Here is why it stuck.",
+   "degree": 13
+  },
+  {
+   "id": "a:/articles/disk-space-void-linux-maintenance/",
+   "kind": "article",
+   "label": "Disk space maintenance on Void Linux",
+   "url": "https://raskell.io/articles/disk-space-void-linux-maintenance/",
+   "meta": "2024-05-01 · 4 min",
+   "description": "Cleaning old kernels, pruning xbps package cache, and reclaiming disk space on Void Linux without breaking your system.",
+   "degree": 1
+  },
+  {
+   "id": "a:/articles/all-beginning-is-haskell/",
+   "kind": "article",
+   "label": "All beginning is Haskell",
+   "url": "https://raskell.io/articles/all-beginning-is-haskell/",
+   "meta": "2023-03-06 · 10 min",
+   "description": "How Haskell shaped the way I think about building systems, and why I am still building Haskell tooling years after writing my first monad.",
+   "degree": 8
+  },
+  {
+   "id": "a:/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/",
+   "kind": "article",
+   "label": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+   "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/",
+   "meta": "2023-02-06 · 10 min",
+   "description": "A step-by-step guide to running OpenBSD in a libvirt virtual machine on Void Linux, without needing VirtualBox or VMWare. Part 1 of my OpenBSD journey.",
+   "degree": 2
+  },
+  {
+   "id": "a:/articles/hello-and-outlook/",
+   "kind": "article",
+   "label": "Hello and outlook",
+   "url": "https://raskell.io/articles/hello-and-outlook/",
+   "meta": "2022-09-20 · 1 min",
+   "description": "The first post on raskell.io. What this site is for and what I planned to write about.",
+   "degree": 2
+  },
+  {
+   "id": "t:agents",
+   "kind": "tag",
+   "label": "agents",
+   "url": "https://raskell.io/tags/agents/",
+   "meta": "9 articles",
+   "degree": 11
+  },
+  {
+   "id": "t:ai-engineering",
+   "kind": "tag",
+   "label": "ai-engineering",
+   "url": "https://raskell.io/tags/ai-engineering/",
+   "meta": "9 articles",
+   "degree": 9
+  },
+  {
+   "id": "t:ai-for-ops",
+   "kind": "tag",
+   "label": "ai-for-ops",
+   "url": "https://raskell.io/tags/ai-for-ops/",
+   "meta": "4 articles",
+   "degree": 6
+  },
+  {
+   "id": "t:applied-security",
+   "kind": "tag",
+   "label": "applied-security",
+   "url": "https://raskell.io/tags/applied-security/",
+   "meta": "5 articles",
+   "degree": 7
+  },
+  {
+   "id": "t:coconutos",
+   "kind": "tag",
+   "label": "coconutos",
+   "url": "https://raskell.io/tags/coconutos/",
+   "meta": "1 articles",
+   "degree": 1
+  },
+  {
+   "id": "t:developer-tooling",
+   "kind": "tag",
+   "label": "developer-tooling",
+   "url": "https://raskell.io/tags/developer-tooling/",
+   "meta": "5 articles",
+   "degree": 11
+  },
+  {
+   "id": "t:distributed-systems",
+   "kind": "tag",
+   "label": "distributed-systems",
+   "url": "https://raskell.io/tags/distributed-systems/",
+   "meta": "3 articles",
+   "degree": 6
+  },
+  {
+   "id": "t:economics",
+   "kind": "tag",
+   "label": "economics",
+   "url": "https://raskell.io/tags/economics/",
+   "meta": "7 articles",
+   "degree": 7
+  },
+  {
+   "id": "t:edge-systems",
+   "kind": "tag",
+   "label": "edge-systems",
+   "url": "https://raskell.io/tags/edge-systems/",
+   "meta": "6 articles",
+   "degree": 11
+  },
+  {
+   "id": "t:elixir",
+   "kind": "tag",
+   "label": "elixir",
+   "url": "https://raskell.io/tags/elixir/",
+   "meta": "2 articles",
+   "degree": 4
+  },
+  {
+   "id": "t:formal-methods",
+   "kind": "tag",
+   "label": "formal-methods",
+   "url": "https://raskell.io/tags/formal-methods/",
+   "meta": "3 articles",
+   "degree": 3
+  },
+  {
+   "id": "t:haskell",
+   "kind": "tag",
+   "label": "haskell",
+   "url": "https://raskell.io/tags/haskell/",
+   "meta": "7 articles",
+   "degree": 10
+  },
+  {
+   "id": "t:isolation",
+   "kind": "tag",
+   "label": "isolation",
+   "url": "https://raskell.io/tags/isolation/",
+   "meta": "4 articles",
+   "degree": 6
+  },
+  {
+   "id": "t:linux",
+   "kind": "tag",
+   "label": "linux",
+   "url": "https://raskell.io/tags/linux/",
+   "meta": "3 articles",
+   "degree": 4
+  },
+  {
+   "id": "t:metrics",
+   "kind": "tag",
+   "label": "metrics",
+   "url": "https://raskell.io/tags/metrics/",
+   "meta": "2 articles",
+   "degree": 2
+  },
+  {
+   "id": "t:openbsd",
+   "kind": "tag",
+   "label": "openbsd",
+   "url": "https://raskell.io/tags/openbsd/",
+   "meta": "1 articles",
+   "degree": 1
+  },
+  {
+   "id": "t:oss",
+   "kind": "tag",
+   "label": "oss",
+   "url": "https://raskell.io/tags/oss/",
+   "meta": "4 articles",
+   "degree": 7
+  },
+  {
+   "id": "t:pingora",
+   "kind": "tag",
+   "label": "pingora",
+   "url": "https://raskell.io/tags/pingora/",
+   "meta": "2 articles",
+   "degree": 3
+  },
+  {
+   "id": "t:platform-automation",
+   "kind": "tag",
+   "label": "platform-automation",
+   "url": "https://raskell.io/tags/platform-automation/",
+   "meta": "6 articles",
+   "degree": 8
+  },
+  {
+   "id": "t:policy",
+   "kind": "tag",
+   "label": "policy",
+   "url": "https://raskell.io/tags/policy/",
+   "meta": "3 articles",
+   "degree": 3
+  },
+  {
+   "id": "t:programming-languages",
+   "kind": "tag",
+   "label": "programming-languages",
+   "url": "https://raskell.io/tags/programming-languages/",
+   "meta": "7 articles",
+   "degree": 11
+  },
+  {
+   "id": "t:reliability",
+   "kind": "tag",
+   "label": "reliability",
+   "url": "https://raskell.io/tags/reliability/",
+   "meta": "4 articles",
+   "degree": 5
+  },
+  {
+   "id": "t:rust",
+   "kind": "tag",
+   "label": "rust",
+   "url": "https://raskell.io/tags/rust/",
+   "meta": "7 articles",
+   "degree": 21
+  },
+  {
+   "id": "t:sovereignty",
+   "kind": "tag",
+   "label": "sovereignty",
+   "url": "https://raskell.io/tags/sovereignty/",
+   "meta": "5 articles",
+   "degree": 7
+  },
+  {
+   "id": "t:typescript",
+   "kind": "tag",
+   "label": "typescript",
+   "url": "https://raskell.io/tags/typescript/",
+   "meta": "7 articles",
+   "degree": 9
+  },
+  {
+   "id": "t:zola",
+   "kind": "tag",
+   "label": "zola",
+   "url": "https://raskell.io/tags/zola/",
+   "meta": "1 articles",
+   "degree": 1
+  },
+  {
+   "id": "s:deep-dives",
+   "kind": "series",
+   "label": "Deep Dives",
+   "url": "https://raskell.io/series/deep-dives/",
+   "meta": "3 parts",
+   "degree": 3
+  },
+  {
+   "id": "s:the-agent-platform-handbook",
+   "kind": "series",
+   "label": "The Agent Platform Handbook",
+   "url": "https://raskell.io/series/the-agent-platform-handbook/",
+   "meta": "8 parts",
+   "degree": 8
+  },
+  {
+   "id": "p:archipelag-io",
+   "kind": "project",
+   "label": "Archipelag.io",
+   "url": "https://archipelag.io",
+   "meta": "Project",
+   "description": "Decentralized AI compute platform. Run AI workloads on a network of community-operated GPU hosts. fast, fair, and local. Jobs route to nearby hosts for lower latency, data stays in…",
+   "degree": 15
+  },
+  {
+   "id": "p:cyanea",
+   "kind": "project",
+   "label": "Cyanea",
+   "url": "https://cyanea.bio",
+   "meta": "Project",
+   "description": "The open community for life science research. Share datasets, protocols, and experiments with version control and citation tracking. Rust-powered analysis stack with browser-based …",
+   "degree": 7
+  },
+  {
+   "id": "p:humankind",
+   "kind": "project",
+   "label": "Humankind.",
+   "url": "https://humankind.plus",
+   "meta": "Project",
+   "description": "Human continuity platform for preserving presence across generations. Humankind. helps people build a living archive of voice, stories, memories, values, and relational warmth so t…",
+   "degree": 4
+  },
+  {
+   "id": "p:arcanist",
+   "kind": "project",
+   "label": "Arcanist",
+   "url": "https://arcanist.sh",
+   "meta": "Project",
+   "description": "High-performance Haskell tooling, built in Rust. Home of hx (a unified Haskell package manager with managed toolchains and 5.6x faster cold builds) and bhc (an alternative Haskell …",
+   "degree": 12
+  },
+  {
+   "id": "p:zentinel",
+   "kind": "project",
+   "label": "Zentinel",
+   "url": "https://zentinelproxy.io",
+   "meta": "Project",
+   "description": "Guardian of the Free Web. A security-first reverse proxy built on Cloudflare's Pingora framework. Memory-safe by default, explicit configuration over hidden defaults, and an isolat…",
+   "degree": 18
+  },
+  {
+   "id": "p:conflux",
+   "kind": "project",
+   "label": "Conflux",
+   "url": "https://github.com/raskell-io/conflux",
+   "meta": "Project",
+   "description": "Schema-aware config state coordination. Multiple writers, deterministic merge, git milestones. A CRDT document engine with pluggable storage backends (SQLite, PostgreSQL, DynamoDB)…",
+   "degree": 6
+  },
+  {
+   "id": "p:hx",
+   "kind": "project",
+   "label": "hx",
+   "url": "https://hx.arcanist.sh",
+   "meta": "Project",
+   "description": "An extremely fast Haskell package and project manager, written in Rust. Unified build, test, run, format, and lint with managed toolchains and sub-second response times. Designed t…",
+   "degree": 6
+  },
+  {
+   "id": "p:bhc",
+   "kind": "project",
+   "label": "bhc",
+   "url": "https://bhc.arcanist.sh",
+   "meta": "Project",
+   "description": "The Basel Haskell Compiler. A next-generation Haskell compiler and runtime targeting predictable, low-latency performance. Structured concurrency primitives, a tensor-native numeri…",
+   "degree": 4
+  },
+  {
+   "id": "p:shiioo",
+   "kind": "project",
+   "label": "Shiioo (CO)",
+   "url": "https://github.com/raskell-io/shiioo",
+   "meta": "Project",
+   "description": "The Virtual Company OS. Agentic enterprise orchestrator with DAG workflows, event sourcing, MCP tools, and a categorized skill registry with git import.",
+   "degree": 8
+  },
+  {
+   "id": "p:sango",
+   "kind": "project",
+   "label": "Sango",
+   "url": "https://sango.raskell.io",
+   "meta": "Project",
+   "description": "Edge diagnostics for the modern web. An operator-grade CLI that performs comprehensive endpoint analysis in a single command. TLS inspection, HTTP protocol detection (HTTP/1.1, HTT…",
+   "degree": 7
+  },
+  {
+   "id": "p:ushio",
+   "kind": "project",
+   "label": "Ushio",
+   "url": "https://github.com/raskell-io/ushio",
+   "meta": "Project",
+   "description": "Deterministic edge traffic replay for understanding WAF and proxy behavior. Capture traffic as HAR files, rewrite URLs for staging/production comparison, mutate headers, strip cook…",
+   "degree": 7
+  },
+  {
+   "id": "p:vela",
+   "kind": "project",
+   "label": "Vela",
+   "url": "https://github.com/raskell-io/vela",
+   "meta": "Project",
+   "description": "No-downtime app deployment on bare metal. One binary. No containers. A self-hosted PaaS alternative to Heroku, Fly.io, Coolify, and Kamal. built in Rust with zero-downtime deploys …",
+   "degree": 7
+  },
+  {
+   "id": "p:refrakt",
+   "kind": "project",
+   "label": "Refrakt",
+   "url": "https://github.com/raskell-io/refrakt",
+   "meta": "Project",
+   "description": "A convention-first web framework for Gleam. Productive like Phoenix, explicit like Gleam, composable with Wisp and Lustre. Full-stack code generation, CRUD scaffolding, and a batte…",
+   "degree": 4
+  },
+  {
+   "id": "p:driftscape",
+   "kind": "project",
+   "label": "Driftscape",
+   "url": "https://github.com/raskell-io/driftscape",
+   "meta": "Project",
+   "description": "Ambient soundscape platform. composable, location-aware, AI-powered background music.",
+   "degree": 2
+  },
+  {
+   "id": "p:robogym",
+   "kind": "project",
+   "label": "robogym",
+   "url": "https://github.com/raskell-io/robogym",
+   "meta": "Project",
+   "description": "Rust/Bevy PWA for training robotic agents. Democratizing robotics through browser-based simulation.",
+   "degree": 2
+  },
+  {
+   "id": "p:awesomeify",
+   "kind": "project",
+   "label": "Awesomeify",
+   "url": "https://github.com/raskell-io/awesomeify",
+   "meta": "Project",
+   "description": "Index GitHub repos and generate static awesome-list sites.",
+   "degree": 3
+  },
+  {
+   "id": "p:learn-you-the-web",
+   "kind": "project",
+   "label": "Learn You the Web",
+   "url": "https://learn-you-the-web.raskell.io",
+   "meta": "Project",
+   "description": "A friendly guide to how the web actually works. For Real This Time. HTTP, DNS, TLS, and the protocols that hold it all together. without the hand-waving or oversimplification.",
+   "degree": 2
+  },
+  {
+   "id": "p:manabi",
+   "kind": "project",
+   "label": "Manabi",
+   "url": "https://manabi.raskell.io",
+   "meta": "Project",
+   "description": "A reading-first language-learning app for Chinese, Japanese, Korean, and Hebrew. It trains recognition, pronunciation, listening, context, and recall separately, with spaced repeti…",
+   "degree": 3
+  },
+  {
+   "id": "p:kurumi",
+   "kind": "project",
+   "label": "Kurumi",
+   "url": "https://kurumi.raskell.io",
+   "meta": "Project",
+   "description": "A local-first, AI-native second brain. Capture notes, links, and meetings, then find them again through wikilinks, backlinks, a graph view, and full-text search. Everything works o…",
+   "degree": 7
+  },
+  {
+   "id": "p:paw-and-claw",
+   "kind": "project",
+   "label": "Paw & Claw",
+   "url": "https://pawandclaw.raskell.io",
+   "meta": "Project",
+   "description": "A turn-based strategy game in the spirit of Advance Wars, fought by woodland armies. Raccoons, badgers, lions, red pandas, and moles fight over every thicket and creek. Built in Ru…",
+   "degree": 3
+  },
+  {
+   "id": "p:terrarium",
+   "kind": "project",
+   "label": "Terrarium",
+   "url": "https://github.com/raskell-io/terrarium",
+   "meta": "Project",
+   "description": "A societal simulation engine where LLM-powered agents form emergent civilizations. Each agent has a personality, needs, memories, and beliefs that can be wrong. You set the rules o…",
+   "degree": 4
+  },
+  {
+   "id": "h:projects-venture",
+   "kind": "hub",
+   "label": "Ventures",
+   "url": "https://raskell.io/projects/#tier-venture",
+   "meta": "Group",
+   "degree": 4
+  },
+  {
+   "id": "h:projects-flagship",
+   "kind": "hub",
+   "label": "Flagship and serious builds",
+   "url": "https://raskell.io/projects/#tier-flagship",
+   "meta": "Group",
+   "degree": 9
+  },
+  {
+   "id": "h:projects-lab",
+   "kind": "hub",
+   "label": "Labs / passion projects",
+   "url": "https://raskell.io/projects/#tier-lab",
+   "meta": "Group",
+   "degree": 4
+  },
+  {
+   "id": "h:apps-tools",
+   "kind": "hub",
+   "label": "Tools",
+   "url": "https://raskell.io/apps/#tier-tools",
+   "meta": "Group",
+   "degree": 2
+  },
+  {
+   "id": "h:apps-play",
+   "kind": "hub",
+   "label": "Games and simulations",
+   "url": "https://raskell.io/apps/#tier-play",
+   "meta": "Group",
+   "degree": 2
+  }
+ ],
+ "links": [
+  {
+   "source": "a:/articles/the-bill-is-part-of-the-loop/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/articles/the-model-is-a-dependency/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/articles/memory-is-a-write-path/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/articles/retrieval-is-a-tool-not-a-layer/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/articles/context-is-the-product/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/articles/tools-how-agents-actually-do-things/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/articles/your-agent-wants-root/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/articles/what-an-agent-actually-is/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/articles/this-site-is-becoming-a-map/",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "a:/articles/the-proof-you-only-have-to-write-once/",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "a:/articles/the-field-exists-now/",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "a:/articles/what-comes-after-the-last-programming-language/",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "a:/articles/how-i-work-these-days/",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
+   "target": "t:ai-for-ops"
+  },
+  {
+   "source": "a:/articles/the-economics-of-inference/",
+   "target": "t:ai-for-ops"
+  },
+  {
+   "source": "a:/articles/notes-from-rsac-2026/",
+   "target": "t:ai-for-ops"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "t:ai-for-ops"
+  },
+  {
+   "source": "a:/articles/your-agent-wants-root/",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "a:/articles/traffic-replay-as-a-security-primitive/",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "a:/articles/notes-from-rsac-2026/",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "a:/articles/what-zentinel-is-really-optimizing-for/",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "a:/articles/edge-systems-are-the-new-backend/",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "a:/articles/what-comes-after-the-last-programming-language/",
+   "target": "t:coconutos"
+  },
+  {
+   "source": "a:/articles/traffic-replay-as-a-security-primitive/",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "a:/articles/how-i-work-these-days/",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "a:/articles/edge-systems-are-the-new-backend/",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "a:/articles/the-bill-is-part-of-the-loop/",
+   "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/the-model-is-a-dependency/",
+   "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/context-is-the-product/",
+   "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/the-economics-of-inference/",
+   "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
+   "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
+   "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/traffic-replay-as-a-security-primitive/",
+   "target": "t:edge-systems"
+  },
+  {
+   "source": "a:/articles/the-economics-of-inference/",
+   "target": "t:edge-systems"
+  },
+  {
+   "source": "a:/articles/what-zentinel-is-really-optimizing-for/",
+   "target": "t:edge-systems"
+  },
+  {
+   "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
+   "target": "t:edge-systems"
+  },
+  {
+   "source": "a:/articles/edge-systems-are-the-new-backend/",
+   "target": "t:edge-systems"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "t:edge-systems"
+  },
+  {
+   "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
+   "target": "t:elixir"
+  },
+  {
+   "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
+   "target": "t:elixir"
+  },
+  {
+   "source": "a:/articles/the-proof-you-only-have-to-write-once/",
+   "target": "t:formal-methods"
+  },
+  {
+   "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
+   "target": "t:formal-methods"
+  },
+  {
+   "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "target": "t:formal-methods"
+  },
+  {
+   "source": "a:/articles/the-proof-you-only-have-to-write-once/",
+   "target": "t:haskell"
+  },
+  {
+   "source": "a:/articles/the-field-exists-now/",
+   "target": "t:haskell"
+  },
+  {
+   "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
+   "target": "t:haskell"
+  },
+  {
+   "source": "a:/articles/what-comes-after-the-last-programming-language/",
+   "target": "t:haskell"
+  },
+  {
+   "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "target": "t:haskell"
+  },
+  {
+   "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "target": "t:haskell"
+  },
+  {
+   "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "t:haskell"
+  },
+  {
+   "source": "a:/articles/your-agent-wants-root/",
+   "target": "t:isolation"
+  },
+  {
+   "source": "a:/articles/what-comes-after-the-last-programming-language/",
+   "target": "t:isolation"
+  },
+  {
+   "source": "a:/articles/what-zentinel-is-really-optimizing-for/",
+   "target": "t:isolation"
+  },
+  {
+   "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
+   "target": "t:isolation"
+  },
+  {
+   "source": "a:/articles/disk-space-void-linux-maintenance/",
+   "target": "t:linux"
+  },
+  {
+   "source": "a:/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/",
+   "target": "t:linux"
+  },
+  {
+   "source": "a:/articles/hello-and-outlook/",
+   "target": "t:linux"
+  },
+  {
+   "source": "a:/articles/the-bill-is-part-of-the-loop/",
+   "target": "t:metrics"
+  },
+  {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "t:metrics"
+  },
+  {
+   "source": "a:/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/",
+   "target": "t:openbsd"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "t:oss"
+  },
+  {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "t:oss"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "t:oss"
+  },
+  {
+   "source": "a:/articles/hello-and-outlook/",
+   "target": "t:oss"
+  },
+  {
+   "source": "a:/articles/what-zentinel-is-really-optimizing-for/",
+   "target": "t:pingora"
+  },
+  {
+   "source": "a:/articles/edge-systems-are-the-new-backend/",
+   "target": "t:pingora"
+  },
+  {
+   "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
+   "target": "t:platform-automation"
+  },
+  {
+   "source": "a:/articles/the-economics-of-inference/",
+   "target": "t:platform-automation"
+  },
+  {
+   "source": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
+   "target": "t:platform-automation"
+  },
+  {
+   "source": "a:/articles/how-i-work-these-days/",
+   "target": "t:platform-automation"
+  },
+  {
+   "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
+   "target": "t:platform-automation"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "t:platform-automation"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "t:policy"
+  },
+  {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "t:policy"
+  },
+  {
+   "source": "a:/articles/notes-from-rsac-2026/",
+   "target": "t:policy"
+  },
+  {
+   "source": "a:/articles/the-proof-you-only-have-to-write-once/",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/articles/the-field-exists-now/",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/articles/what-comes-after-the-last-programming-language/",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/articles/the-model-is-a-dependency/",
+   "target": "t:reliability"
+  },
+  {
+   "source": "a:/articles/traffic-replay-as-a-security-primitive/",
+   "target": "t:reliability"
+  },
+  {
+   "source": "a:/articles/what-zentinel-is-really-optimizing-for/",
+   "target": "t:reliability"
+  },
+  {
+   "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
+   "target": "t:reliability"
+  },
+  {
+   "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "target": "t:rust"
+  },
+  {
+   "source": "a:/articles/what-zentinel-is-really-optimizing-for/",
+   "target": "t:rust"
+  },
+  {
+   "source": "a:/articles/how-i-work-these-days/",
+   "target": "t:rust"
+  },
+  {
+   "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
+   "target": "t:rust"
+  },
+  {
+   "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
+   "target": "t:rust"
+  },
+  {
+   "source": "a:/articles/edge-systems-are-the-new-backend/",
+   "target": "t:rust"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "t:rust"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "t:sovereignty"
+  },
+  {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "t:sovereignty"
+  },
+  {
+   "source": "a:/articles/the-economics-of-inference/",
+   "target": "t:sovereignty"
+  },
+  {
+   "source": "a:/articles/notes-from-rsac-2026/",
+   "target": "t:sovereignty"
+  },
+  {
+   "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
+   "target": "t:sovereignty"
+  },
+  {
+   "source": "a:/articles/the-bill-is-part-of-the-loop/",
+   "target": "t:typescript"
+  },
+  {
+   "source": "a:/articles/the-model-is-a-dependency/",
+   "target": "t:typescript"
+  },
+  {
+   "source": "a:/articles/memory-is-a-write-path/",
+   "target": "t:typescript"
+  },
+  {
+   "source": "a:/articles/retrieval-is-a-tool-not-a-layer/",
+   "target": "t:typescript"
+  },
+  {
+   "source": "a:/articles/context-is-the-product/",
+   "target": "t:typescript"
+  },
+  {
+   "source": "a:/articles/tools-how-agents-actually-do-things/",
+   "target": "t:typescript"
+  },
+  {
+   "source": "a:/articles/what-an-agent-actually-is/",
+   "target": "t:typescript"
+  },
+  {
+   "source": "a:/articles/this-site-is-becoming-a-map/",
+   "target": "t:zola"
+  },
+  {
+   "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
+   "target": "s:deep-dives"
+  },
+  {
+   "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
+   "target": "s:deep-dives"
+  },
+  {
+   "source": "a:/articles/edge-systems-are-the-new-backend/",
+   "target": "s:deep-dives"
+  },
+  {
+   "source": "a:/articles/the-bill-is-part-of-the-loop/",
+   "target": "s:the-agent-platform-handbook"
+  },
+  {
+   "source": "a:/articles/the-model-is-a-dependency/",
+   "target": "s:the-agent-platform-handbook"
+  },
+  {
+   "source": "a:/articles/memory-is-a-write-path/",
+   "target": "s:the-agent-platform-handbook"
+  },
+  {
+   "source": "a:/articles/retrieval-is-a-tool-not-a-layer/",
+   "target": "s:the-agent-platform-handbook"
+  },
+  {
+   "source": "a:/articles/context-is-the-product/",
+   "target": "s:the-agent-platform-handbook"
+  },
+  {
+   "source": "a:/articles/tools-how-agents-actually-do-things/",
+   "target": "s:the-agent-platform-handbook"
+  },
+  {
+   "source": "a:/articles/your-agent-wants-root/",
+   "target": "s:the-agent-platform-handbook"
+  },
+  {
+   "source": "a:/articles/what-an-agent-actually-is/",
+   "target": "s:the-agent-platform-handbook"
+  },
+  {
+   "source": "a:/articles/this-site-is-becoming-a-map/",
+   "target": "a:/articles/how-i-work-these-days/"
+  },
+  {
+   "source": "a:/articles/this-site-is-becoming-a-map/",
+   "target": "a:/articles/looking-back-on-2025/"
+  },
+  {
+   "source": "a:/articles/the-bill-is-part-of-the-loop/",
+   "target": "a:/articles/the-model-is-a-dependency/"
+  },
+  {
+   "source": "a:/articles/the-model-is-a-dependency/",
+   "target": "a:/articles/memory-is-a-write-path/"
+  },
+  {
+   "source": "a:/articles/the-model-is-a-dependency/",
+   "target": "a:/articles/what-an-agent-actually-is/"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "a:/articles/patents-per-capita-is-a-vanity-metric/"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "a:/articles/the-economics-of-inference/"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/"
+  },
+  {
+   "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
+   "target": "a:/articles/what-comes-after-the-last-programming-language/"
+  },
+  {
+   "source": "a:/articles/memory-is-a-write-path/",
+   "target": "a:/articles/retrieval-is-a-tool-not-a-layer/"
+  },
+  {
+   "source": "a:/articles/memory-is-a-write-path/",
+   "target": "a:/articles/what-an-agent-actually-is/"
+  },
+  {
+   "source": "a:/articles/the-proof-you-only-have-to-write-once/",
+   "target": "a:/articles/semantic-artifacts-and-meaning-engines/"
+  },
+  {
+   "source": "a:/articles/the-proof-you-only-have-to-write-once/",
+   "target": "a:/articles/what-comes-after-the-last-programming-language/"
+  },
+  {
+   "source": "a:/articles/the-proof-you-only-have-to-write-once/",
+   "target": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/"
+  },
+  {
+   "source": "a:/articles/retrieval-is-a-tool-not-a-layer/",
+   "target": "a:/articles/context-is-the-product/"
+  },
+  {
+   "source": "a:/articles/retrieval-is-a-tool-not-a-layer/",
+   "target": "a:/articles/tools-how-agents-actually-do-things/"
+  },
+  {
+   "source": "a:/articles/context-is-the-product/",
+   "target": "a:/articles/tools-how-agents-actually-do-things/"
+  },
+  {
+   "source": "a:/articles/context-is-the-product/",
+   "target": "a:/articles/your-agent-wants-root/"
+  },
+  {
+   "source": "a:/articles/context-is-the-product/",
+   "target": "a:/articles/what-an-agent-actually-is/"
+  },
+  {
+   "source": "a:/articles/tools-how-agents-actually-do-things/",
+   "target": "a:/articles/your-agent-wants-root/"
+  },
+  {
+   "source": "a:/articles/tools-how-agents-actually-do-things/",
+   "target": "a:/articles/what-an-agent-actually-is/"
+  },
+  {
+   "source": "a:/articles/your-agent-wants-root/",
+   "target": "a:/articles/what-an-agent-actually-is/"
+  },
+  {
+   "source": "a:/articles/what-an-agent-actually-is/",
+   "target": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/"
+  },
+  {
+   "source": "a:/articles/the-field-exists-now/",
+   "target": "a:/articles/semantic-artifacts-and-meaning-engines/"
+  },
+  {
+   "source": "a:/articles/the-field-exists-now/",
+   "target": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/"
+  },
+  {
+   "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
+   "target": "a:/articles/what-comes-after-the-last-programming-language/"
+  },
+  {
+   "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
+   "target": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/"
+  },
+  {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "a:/articles/the-economics-of-inference/"
+  },
+  {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/"
+  },
+  {
+   "source": "a:/articles/traffic-replay-as-a-security-primitive/",
+   "target": "a:/articles/notes-from-rsac-2026/"
+  },
+  {
+   "source": "a:/articles/traffic-replay-as-a-security-primitive/",
+   "target": "a:/articles/what-zentinel-is-really-optimizing-for/"
+  },
+  {
+   "source": "a:/articles/the-economics-of-inference/",
+   "target": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/"
+  },
+  {
+   "source": "a:/articles/the-economics-of-inference/",
+   "target": "a:/articles/notes-from-rsac-2026/"
+  },
+  {
+   "source": "a:/articles/the-economics-of-inference/",
+   "target": "a:/articles/how-i-work-these-days/"
+  },
+  {
+   "source": "a:/articles/what-comes-after-the-last-programming-language/",
+   "target": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/"
+  },
+  {
+   "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "target": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/"
+  },
+  {
+   "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "target": "a:/articles/all-beginning-is-haskell/"
+  },
+  {
+   "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "target": "a:/articles/how-i-work-these-days/"
+  },
+  {
+   "source": "a:/articles/notes-from-rsac-2026/",
+   "target": "a:/articles/what-zentinel-is-really-optimizing-for/"
+  },
+  {
+   "source": "a:/articles/notes-from-rsac-2026/",
+   "target": "a:/articles/how-i-work-these-days/"
+  },
+  {
+   "source": "a:/articles/what-zentinel-is-really-optimizing-for/",
+   "target": "a:/articles/how-i-work-these-days/"
+  },
+  {
+   "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
+   "target": "a:/articles/edge-systems-are-the-new-backend/"
+  },
+  {
+   "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "a:/articles/mise-ate-my-makefile/"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "p:archipelag-io"
+  },
+  {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "p:archipelag-io"
+  },
+  {
+   "source": "a:/articles/the-economics-of-inference/",
+   "target": "p:archipelag-io"
+  },
+  {
+   "source": "a:/articles/notes-from-rsac-2026/",
+   "target": "p:archipelag-io"
+  },
+  {
+   "source": "a:/articles/how-i-work-these-days/",
+   "target": "p:archipelag-io"
+  },
+  {
+   "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
+   "target": "p:archipelag-io"
+  },
+  {
+   "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
+   "target": "p:archipelag-io"
+  },
+  {
+   "source": "a:/articles/edge-systems-are-the-new-backend/",
+   "target": "p:archipelag-io"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:archipelag-io"
+  },
+  {
+   "source": "a:/articles/how-i-work-these-days/",
+   "target": "p:cyanea"
+  },
+  {
+   "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
+   "target": "p:cyanea"
+  },
+  {
+   "source": "a:/articles/edge-systems-are-the-new-backend/",
+   "target": "p:cyanea"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:cyanea"
+  },
+  {
+   "source": "a:/articles/the-proof-you-only-have-to-write-once/",
+   "target": "p:arcanist"
+  },
+  {
+   "source": "a:/articles/the-field-exists-now/",
+   "target": "p:arcanist"
+  },
+  {
+   "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "target": "p:arcanist"
+  },
+  {
+   "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "target": "p:arcanist"
+  },
+  {
+   "source": "a:/articles/how-i-work-these-days/",
+   "target": "p:arcanist"
+  },
+  {
+   "source": "a:/articles/this-site-is-becoming-a-map/",
+   "target": "p:zentinel"
+  },
+  {
+   "source": "a:/articles/context-is-the-product/",
+   "target": "p:zentinel"
+  },
+  {
+   "source": "a:/articles/traffic-replay-as-a-security-primitive/",
+   "target": "p:zentinel"
+  },
+  {
+   "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "target": "p:zentinel"
+  },
+  {
+   "source": "a:/articles/notes-from-rsac-2026/",
+   "target": "p:zentinel"
+  },
+  {
+   "source": "a:/articles/what-zentinel-is-really-optimizing-for/",
+   "target": "p:zentinel"
+  },
+  {
+   "source": "a:/articles/how-i-work-these-days/",
+   "target": "p:zentinel"
+  },
+  {
+   "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
+   "target": "p:zentinel"
+  },
+  {
+   "source": "a:/articles/edge-systems-are-the-new-backend/",
+   "target": "p:zentinel"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "p:zentinel"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:zentinel"
+  },
+  {
+   "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "p:zentinel"
+  },
+  {
+   "source": "a:/articles/edge-systems-are-the-new-backend/",
+   "target": "p:conflux"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:conflux"
+  },
+  {
+   "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "p:conflux"
+  },
+  {
+   "source": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
+   "target": "p:shiioo"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:shiioo"
+  },
+  {
+   "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "p:shiioo"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "p:sango"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:sango"
+  },
+  {
+   "source": "a:/articles/traffic-replay-as-a-security-primitive/",
+   "target": "p:ushio"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "p:ushio"
+  },
+  {
+   "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
+   "target": "p:vela"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:vela"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:refrakt"
+  },
+  {
+   "source": "a:/articles/this-site-is-becoming-a-map/",
+   "target": "p:manabi"
+  },
+  {
+   "source": "a:/articles/this-site-is-becoming-a-map/",
+   "target": "p:kurumi"
+  },
+  {
+   "source": "a:/articles/edge-systems-are-the-new-backend/",
+   "target": "p:kurumi"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:kurumi"
+  },
+  {
+   "source": "a:/articles/this-site-is-becoming-a-map/",
+   "target": "p:paw-and-claw"
+  },
+  {
+   "source": "a:/articles/this-site-is-becoming-a-map/",
+   "target": "p:terrarium"
+  },
+  {
+   "source": "p:archipelag-io",
+   "target": "h:projects-venture"
+  },
+  {
+   "source": "p:archipelag-io",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "p:archipelag-io",
+   "target": "t:sovereignty"
+  },
+  {
+   "source": "p:archipelag-io",
+   "target": "t:edge-systems"
+  },
+  {
+   "source": "p:archipelag-io",
+   "target": "t:ai-for-ops"
+  },
+  {
+   "source": "p:archipelag-io",
+   "target": "t:isolation"
+  },
+  {
+   "source": "p:cyanea",
+   "target": "h:projects-venture"
+  },
+  {
+   "source": "p:cyanea",
+   "target": "t:oss"
+  },
+  {
+   "source": "p:cyanea",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:humankind",
+   "target": "h:projects-venture"
+  },
+  {
+   "source": "p:humankind",
+   "target": "t:elixir"
+  },
+  {
+   "source": "p:humankind",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:humankind",
+   "target": "t:sovereignty"
+  },
+  {
+   "source": "p:arcanist",
+   "target": "h:projects-venture"
+  },
+  {
+   "source": "p:arcanist",
+   "target": "t:haskell"
+  },
+  {
+   "source": "p:arcanist",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:arcanist",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "p:arcanist",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "p:zentinel",
+   "target": "h:projects-flagship"
+  },
+  {
+   "source": "p:zentinel",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "p:zentinel",
+   "target": "t:edge-systems"
+  },
+  {
+   "source": "p:zentinel",
+   "target": "t:pingora"
+  },
+  {
+   "source": "p:zentinel",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:zentinel",
+   "target": "t:isolation"
+  },
+  {
+   "source": "p:conflux",
+   "target": "h:projects-flagship"
+  },
+  {
+   "source": "p:conflux",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "p:conflux",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:hx",
+   "target": "h:projects-flagship"
+  },
+  {
+   "source": "p:hx",
+   "target": "t:haskell"
+  },
+  {
+   "source": "p:hx",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:hx",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "p:hx",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "p:hx",
+   "target": "p:arcanist"
+  },
+  {
+   "source": "p:bhc",
+   "target": "h:projects-flagship"
+  },
+  {
+   "source": "p:bhc",
+   "target": "t:haskell"
+  },
+  {
+   "source": "p:bhc",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "p:bhc",
+   "target": "p:arcanist"
+  },
+  {
+   "source": "p:shiioo",
+   "target": "h:projects-flagship"
+  },
+  {
+   "source": "p:shiioo",
+   "target": "t:ai-for-ops"
+  },
+  {
+   "source": "p:shiioo",
+   "target": "t:platform-automation"
+  },
+  {
+   "source": "p:shiioo",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:shiioo",
+   "target": "t:agents"
+  },
+  {
+   "source": "p:sango",
+   "target": "h:projects-flagship"
+  },
+  {
+   "source": "p:sango",
+   "target": "t:edge-systems"
+  },
+  {
+   "source": "p:sango",
+   "target": "t:reliability"
+  },
+  {
+   "source": "p:sango",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:sango",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "p:ushio",
+   "target": "h:projects-flagship"
+  },
+  {
+   "source": "p:ushio",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "p:ushio",
+   "target": "t:edge-systems"
+  },
+  {
+   "source": "p:ushio",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:ushio",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "p:vela",
+   "target": "h:projects-flagship"
+  },
+  {
+   "source": "p:vela",
+   "target": "t:platform-automation"
+  },
+  {
+   "source": "p:vela",
+   "target": "t:linux"
+  },
+  {
+   "source": "p:vela",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:vela",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "p:refrakt",
+   "target": "h:projects-flagship"
+  },
+  {
+   "source": "p:refrakt",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "p:refrakt",
+   "target": "t:oss"
+  },
+  {
+   "source": "p:driftscape",
+   "target": "h:projects-lab"
+  },
+  {
+   "source": "p:driftscape",
+   "target": "t:elixir"
+  },
+  {
+   "source": "p:robogym",
+   "target": "h:projects-lab"
+  },
+  {
+   "source": "p:robogym",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:awesomeify",
+   "target": "h:projects-lab"
+  },
+  {
+   "source": "p:awesomeify",
+   "target": "t:oss"
+  },
+  {
+   "source": "p:awesomeify",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:learn-you-the-web",
+   "target": "h:projects-lab"
+  },
+  {
+   "source": "p:learn-you-the-web",
+   "target": "t:edge-systems"
+  },
+  {
+   "source": "p:manabi",
+   "target": "h:apps-tools"
+  },
+  {
+   "source": "p:manabi",
+   "target": "t:typescript"
+  },
+  {
+   "source": "p:kurumi",
+   "target": "h:apps-tools"
+  },
+  {
+   "source": "p:kurumi",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "p:kurumi",
+   "target": "t:typescript"
+  },
+  {
+   "source": "p:kurumi",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "p:paw-and-claw",
+   "target": "h:apps-play"
+  },
+  {
+   "source": "p:paw-and-claw",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:terrarium",
+   "target": "h:apps-play"
+  },
+  {
+   "source": "p:terrarium",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:terrarium",
+   "target": "t:agents"
+  }
+ ]
+}
