@@ -4,3 +4,4 @@ status = "stable"
 logo = "brands/zentinel.png"
 featured = true
 links = [ { name = "Website", url = "https://zentinelproxy.io" }, { name = "Docs", url = "https://zentinelproxy.io/docs/" }, { name = "GitHub", url = "https://github.com/zentinelproxy/zentinel" } ]
+topics = ["applied-security", "edge-systems", "pingora", "rust"]

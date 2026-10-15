@@ -4,3 +4,4 @@ status = "live"
 logo = "brands/archipelag.svg"
 featured = true
 links = [ { name = "Website", url = "https://archipelag.io" }, { name = "GitHub", url = "https://github.com/archipelag-io" } ]
+topics = ["distributed-systems", "sovereignty", "edge-systems", "ai-for-ops"]

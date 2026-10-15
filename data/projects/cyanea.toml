@@ -4,3 +4,4 @@ status = "live"
 logo = "brands/cyanea.png"
 featured = true
 links = [ { name = "Website", url = "https://cyanea.bio" }, { name = "GitHub", url = "https://github.com/cyanea-bio" } ]
+topics = ["oss", "rust"]

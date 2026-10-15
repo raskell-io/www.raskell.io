@@ -4,3 +4,4 @@ status = "live"
 status_label = "Playable"
 logo = "brands/paw-and-claw.png"
 links = [ { name = "Play", url = "https://pawandclaw.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/paw-and-claw" } ]
+topics = ["rust"]
