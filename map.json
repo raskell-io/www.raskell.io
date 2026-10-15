@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-15T17:16:03+00:00",
+ "generated": "2026-10-15T17:39:06+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -46,7 +46,7 @@
    "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/",
    "meta": "2026-06-28 · 13 min",
    "description": "An MIT thesis argues brain emulation has crossed into engineering. Read as infrastructure, the numbers describe a workload your AI cluster was not built for.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "a:/articles/memory-is-a-write-path/",
@@ -163,7 +163,7 @@
    "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/",
    "meta": "2026-04-19 · 23 min",
    "description": "If AI generates machine code directly, why are we still running operating systems designed for humans? The answer might be an inference-native OS.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
@@ -322,7 +322,7 @@
    "label": "ai-for-ops",
    "url": "https://raskell.io/tags/ai-for-ops/",
    "meta": "4 articles",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:applied-security",
@@ -338,7 +338,7 @@
    "label": "coconutos",
    "url": "https://raskell.io/tags/coconutos/",
    "meta": "1 articles",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "t:developer-tooling",
@@ -402,7 +402,7 @@
    "label": "isolation",
    "url": "https://raskell.io/tags/isolation/",
    "meta": "4 articles",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:linux",
@@ -482,7 +482,7 @@
    "label": "rust",
    "url": "https://raskell.io/tags/rust/",
    "meta": "7 articles",
-   "degree": 21
+   "degree": 22
   },
   {
    "id": "t:sovereignty",
@@ -642,6 +642,15 @@
    "degree": 4
   },
   {
+   "id": "p:coconutos",
+   "kind": "project",
+   "label": "coconutOS",
+   "url": "https://github.com/coconut-os/coconutOS",
+   "meta": "Project",
+   "description": "A Rust microkernel for GPU-isolated AI inference. Capability-based shards with their own page tables, IOMMU-backed GPU partitioning, monotonic syscall restriction, and side-channel…",
+   "degree": 7
+  },
+  {
    "id": "p:driftscape",
    "kind": "project",
    "label": "Driftscape",
@@ -735,7 +744,7 @@
    "label": "Labs / passion projects",
    "url": "https://raskell.io/projects/#tier-lab",
    "meta": "Group",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "h:apps-tools",
@@ -1612,6 +1621,14 @@
    "target": "p:refrakt"
   },
   {
+   "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
+   "target": "p:coconutos"
+  },
+  {
+   "source": "a:/articles/what-comes-after-the-last-programming-language/",
+   "target": "p:coconutos"
+  },
+  {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "p:manabi"
   },
@@ -1874,6 +1891,26 @@
   {
    "source": "p:refrakt",
    "target": "t:oss"
+  },
+  {
+   "source": "p:coconutos",
+   "target": "h:projects-lab"
+  },
+  {
+   "source": "p:coconutos",
+   "target": "t:coconutos"
+  },
+  {
+   "source": "p:coconutos",
+   "target": "t:isolation"
+  },
+  {
+   "source": "p:coconutos",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:coconutos",
+   "target": "t:ai-for-ops"
   },
   {
    "source": "p:driftscape",
