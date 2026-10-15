@@ -1,0 +1,4 @@
+title = "Ushio"
+description = "Deterministic edge traffic replay for understanding WAF and proxy behavior. Capture traffic as HAR files, rewrite URLs for staging/production comparison, mutate headers, strip cookies, and diff WAF responses across environments."
+status = "dev"
+links = [ { name = "GitHub", url = "https://github.com/raskell-io/ushio" } ]

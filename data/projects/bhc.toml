@@ -1,0 +1,4 @@
+title = "bhc"
+description = "The Basel Haskell Compiler. A next-generation Haskell compiler and runtime targeting predictable, low-latency performance. Structured concurrency primitives, a tensor-native numeric pipeline for ML workloads, and a runtime designed for systems where GC pauses are unacceptable."
+status = "dev"
+links = [ { name = "Website", url = "https://bhc.arcanist.sh" }, { name = "GitHub", url = "https://github.com/arcanist-sh/bhc" } ]

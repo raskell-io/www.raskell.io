@@ -1,0 +1,4 @@
+title = "Vela"
+description = "No-downtime app deployment on bare metal. One binary. No containers. A self-hosted PaaS alternative to Heroku, Fly.io, Coolify, and Kamal. built in Rust with zero-downtime deploys and a built-in reverse proxy."
+status = "dev"
+links = [ { name = "GitHub", url = "https://github.com/raskell-io/vela" } ]

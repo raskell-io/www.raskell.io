@@ -1,0 +1,6 @@
+title = "Zentinel"
+description = "Guardian of the Free Web. A security-first reverse proxy built on Cloudflare's Pingora framework. Memory-safe by default, explicit configuration over hidden defaults, and an isolated agent architecture for extensibility without compromising proxy stability. 20+ security agents, SDKs in 7 languages, a pure Rust ModSecurity reimplementation, and a fleet management control plane."
+status = "stable"
+logo = "brands/zentinel.png"
+featured = true
+links = [ { name = "Website", url = "https://zentinelproxy.io" }, { name = "Docs", url = "https://zentinelproxy.io/docs/" }, { name = "GitHub", url = "https://github.com/zentinelproxy/zentinel" } ]

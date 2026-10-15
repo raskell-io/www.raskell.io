@@ -26,6 +26,7 @@ import sys
 OVERRIDES = {
     "mise-ate-make.avif": "paint",
     "the-bill-is-part-of-the-loop.avif": "keep",
+    "your-agent-wants-root.avif": "keep",
 }
 OUT = "static/covers"
 

@@ -2,7 +2,7 @@ base_url = "https://raskell.io"
 title = "Raskell"
 description = "Writing about platform automation, edge systems, applied security, and open standards. Building automation-first platforms that survive production reality."
 default_language = "en"
-# theme = ""
+theme = "seijaku"
 compile_sass = true
 minify_html = true
 generate_feeds = true
@@ -36,21 +36,48 @@ include_path = true
 include_content = true
 
 [extra]
-site_name = "Raskell | Tech web space curated by Raffael"
 author = "Raffael"
-favicon = "raskell-mascot.avif"
-logo = "raskell-mascot.avif"
-color_scheme_toggle = true
-default_color_scheme = "auto"
-max_category_to_show = 10
-enable_footnotes = true
-comments_enabled = false
-
-# SEO metadata
+twitter_handle = "raskelll"
 keywords = "platform automation, edge systems, applied security, open standards, Rust, DevOps, infrastructure"
-og_image = "og-default.png"
 
-[extra.social]
-github = "https://github.com/raffaelschneider"
-linkedin = "https://ch.linkedin.com/in/raffael-e-schneider"
-twitter = "https://twitter.com/raskelll"
+[extra.seijaku]
+version = "aw26"
+tagline = "(tech web space curated by Raffael)"
+footer_note = "made in Basel with 静寂"
+footer_about = """
+Raskell is my corner of the web and the front door to everything I build.
+I write here about platform automation, edge systems, applied security, and
+what changes when AI writes most of the code.
+
+The projects that fascinate me, from a security-first reverse proxy to Haskell
+tooling written in Rust, start as notes on these pages before they become real
+things. The name is rascal × Haskell × Raffael.
+"""
+og_image = "og-default.png"
+scheme_toggle = true
+code_copy = true
+portrait = "images/raffael.webp"
+hero_motion = "images/raskell-hero.avif"
+hero_poster = "images/raskell-hero.webp"
+mark = "images/raskell-mark.svg"
+mark_play = true
+main_section = "articles"
+projects_section = "projects"
+cta = { name = "Start here", url = "@/start-here.md" }
+nav = [
+  { name = "Articles", url = "@/articles/_index.md" },
+  { name = "Projects", url = "@/projects/_index.md" },
+  { name = "Speaking", url = "@/speaking.md" },
+  { name = "About", url = "@/about.md" },
+]
+explore = [
+  { name = "Tags", url = "/tags" },
+  { name = "Categories", url = "/categories" },
+  { name = "Series", url = "/series" },
+  { name = "RSS", url = "/rss.xml" },
+]
+social = [
+  { name = "GitHub", url = "https://github.com/raffaelschneider" },
+  { name = "X", url = "https://x.com/raskelll" },
+  { name = "LinkedIn", url = "https://ch.linkedin.com/in/raffael-e-schneider" },
+]

@@ -1,0 +1,5 @@
+title = "Manabi"
+description = "A local-first, reading-first language-learning app for Chinese, Japanese, and Hebrew. recognition, pronunciation, listening, and reading, with no handwriting drills. Multi-dimensional spaced repetition, fully prerecorded native audio, and an AI content workbench, all running offline in the browser via Automerge CRDTs. Installable as a PWA."
+status = "dev"
+logo = "brands/manabi.png"
+links = [ { name = "Website", url = "https://manabi.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/manabi" } ]

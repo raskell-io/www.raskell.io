@@ -1,9 +1,7 @@
 +++
 title = "Start Here"
-template = "static-page.html"
+description = "New here? These are the best entry points into what I write about, grouped by theme."
 +++
-
-New here? These are the best entry points into what I write about.
 
 ## Edge systems and applied security
 

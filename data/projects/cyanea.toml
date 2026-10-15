@@ -1,0 +1,6 @@
+title = "Cyanea"
+description = "The open community for life science research. Share datasets, protocols, and experiments with version control and citation tracking. Rust-powered analysis stack with browser-based WASM tools, multi-format support (FASTA, FASTQ, VCF, CSV), and full provenance tracking. Open-source, self-hostable, federation-ready."
+status = "live"
+logo = "brands/cyanea.png"
+featured = true
+links = [ { name = "Website", url = "https://cyanea.bio" }, { name = "GitHub", url = "https://github.com/cyanea-bio" } ]

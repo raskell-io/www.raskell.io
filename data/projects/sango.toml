@@ -1,0 +1,5 @@
+title = "Sango"
+description = "Edge diagnostics for the modern web. An operator-grade CLI that performs comprehensive endpoint analysis in a single command. TLS inspection, HTTP protocol detection (HTTP/1.1, HTTP/2, HTTP/3), security headers, latency measurements, and technology stack identification."
+status = "dev"
+logo = "brands/sango.svg"
+links = [ { name = "Website", url = "https://sango.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/sango" } ]

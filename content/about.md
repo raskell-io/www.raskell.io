@@ -1,6 +1,10 @@
 +++
 title = "About"
-template = "static-page.html"
+description = "Raffael builds automation-first platforms and edge systems at the intersection of security and AI. Basel, Switzerland."
+
+[extra]
+portrait = "images/raffael.webp"
+portrait_alt = "Raffael"
 +++
 
 Hi, I am Raffael. I live in Basel and I build automation-first platforms and edge systems at the intersection of security and AI.

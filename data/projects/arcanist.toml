@@ -1,0 +1,5 @@
+title = "Arcanist"
+description = "High-performance Haskell tooling, built in Rust. Home of hx (a unified Haskell package manager with managed toolchains and 5.6x faster cold builds) and bhc (an alternative Haskell compiler with runtime profiles, WebAssembly support, and tensor-native numerics). Modern workflows, no ecosystem fragmentation."
+status = "dev"
+featured = true
+links = [ { name = "Website", url = "https://arcanist.sh" }, { name = "GitHub", url = "https://github.com/arcanist-sh" } ]
