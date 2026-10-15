@@ -17,6 +17,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: true
+          fetch-depth: 0
 
       - name: Setup Zola
         uses: taiki-e/install-action@v2
@@ -29,8 +30,14 @@ jobs:
       - name: Download fonts
         run: mise run download-fonts
 
+      - name: Generate llms.txt and Markdown copies
+        run: mise run llms
+
       - name: Build
         run: zola build
+
+      - name: Publish map.json
+        run: mise run map-json
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
@@ -38,3 +45,10 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+
+      - name: Notify IndexNow
+        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+        continue-on-error: true
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: mise run indexnow

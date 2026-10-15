@@ -1,0 +1,192 @@
+#!/usr/bin/env python3
+#MISE description="Generate llms.txt, llms-full.txt and per-article Markdown copies (static/)"
+"""
+Answer engines and agents read plain Markdown far more reliably than themed HTML.
+This writes, from content/ and data/:
+
+  static/llms.txt              the llms.txt index (https://llmstxt.org): who, what, and every article
+  static/llms-full.txt         every published article in full, newest first, in one file
+  static/articles/<slug>.md    one clean Markdown copy per article, linked from its page head
+
+Shortcodes become plain fences, internal links become absolute URLs, drafts are skipped.
+The outputs are build artefacts (gitignored); CI runs this before `zola build`.
+Standard library only, so it runs on the CI runner and on macOS's system Python alike.
+"""
+import datetime
+import glob
+import os
+import re
+
+ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+os.chdir(ROOT)
+
+config = open("config.toml").read()
+BASE = re.search(r'^base_url\s*=\s*"([^"]+)"', config, re.M).group(1).rstrip("/")
+AUTHOR = re.search(r'^author_full\s*=\s*"([^"]+)"', config, re.M).group(1)
+JOB = re.search(r'^job_title\s*=\s*"([^"]+)"', config, re.M).group(1)
+SITE_DESC = re.search(r'^description\s*=\s*"([^"]+)"', config, re.M).group(1)
+
+
+def split_front_matter(text):
+    m = re.match(r"\+\+\+\n(.*?)\n\+\+\+\n?(.*)", text, re.S)
+    return (m.group(1), m.group(2)) if m else ("", text)
+
+
+def fm_str(fm, key):
+    m = re.search(r'^%s\s*=\s*"((?:[^"\\]|\\.)*)"' % key, fm, re.M)
+    return m.group(1).replace('\\"', '"') if m else ""
+
+
+def fm_list(fm, key):
+    m = re.search(r"^%s\s*=\s*\[(.*?)\]" % key, fm, re.M | re.S)
+    return re.findall(r'"([^"]+)"', m.group(1)) if m else []
+
+
+def fm_date(fm, key):
+    m = re.search(r"^%s\s*=\s*(\d{4}-\d{2}-\d{2})" % key, fm, re.M)
+    return m.group(1) if m else ""
+
+
+def absolute_links(body):
+    # @/articles/x.md#anchor -> BASE/articles/x/#anchor, @/about.md -> BASE/about/, /path -> BASE/path
+    def at_link(m):
+        path = re.sub(r"(_index)?\.md$", "", m.group(1)).strip("/")
+        url = "%s/%s/" % (BASE, path) if path else BASE + "/"
+        return "](%s%s)" % (url, m.group(2) or "")
+    body = re.sub(r"\]\(@/([^)#\s]+?)(#[^)\s]*)?\)", at_link, body)
+    body = re.sub(r"\]\((/[^)\s]*)\)", lambda m: "](%s%s)" % (BASE, m.group(1)), body)
+    return body
+
+
+def plain_shortcodes(body):
+    # {% diagram(title="...") %} ... {% end %}  and  {% vera() %} ... {% end %}  ->  fenced blocks.
+    out, fence, inside = [], False, None
+    for line in body.split("\n"):
+        stripped = line.strip()
+        if inside is None and stripped.startswith("```"):
+            fence = not fence
+        if not fence:
+            m = re.match(r'\{%\s*(diagram|vera)\((.*?)\)\s*%\}\s*$', stripped)
+            if m and inside is None:
+                title = re.search(r'title\s*=\s*"([^"]*)"', m.group(2))
+                if title:
+                    out.append("*%s*" % title.group(1))
+                    out.append("")
+                out.append("```" + ("text" if m.group(1) == "diagram" else "vera"))
+                inside = m.group(1)
+                continue
+            if inside and re.match(r"\{%\s*end\s*%\}\s*$", stripped):
+                out.append("```")
+                inside = None
+                continue
+        out.append(line)
+    return "\n".join(out)
+
+
+articles = []
+for path in glob.glob("content/articles/*.md"):
+    if path.endswith("_index.md"):
+        continue
+    fm, body = split_front_matter(open(path).read())
+    if re.search(r"^draft\s*=\s*true", fm, re.M):
+        continue
+    slug = fm_str(fm, "slug") or os.path.basename(path)[:-3]
+    articles.append({
+        "slug": slug,
+        "title": fm_str(fm, "title"),
+        "date": fm_date(fm, "date"),
+        "updated": fm_date(fm, "updated"),
+        "description": fm_str(fm, "description"),
+        "tags": fm_list(fm, "tags"),
+        "series": fm_list(fm, "series"),
+        "url": "%s/articles/%s/" % (BASE, slug),
+        "md": "%s/articles/%s.md" % (BASE, slug),
+        "body": plain_shortcodes(absolute_links(body.strip())),
+    })
+articles.sort(key=lambda a: a["date"], reverse=True)
+
+
+def article_markdown(a):
+    head = ["---", 'title: "%s"' % a["title"].replace('"', '\\"'), "url: %s" % a["url"], "author: %s" % AUTHOR,
+            "date: %s" % a["date"]]
+    if a["updated"]:
+        head.append("updated: %s" % a["updated"])
+    head.append('description: "%s"' % a["description"].replace('"', '\\"'))
+    if a["tags"]:
+        head.append("tags: [%s]" % ", ".join(a["tags"]))
+    if a["series"]:
+        head.append("series: %s" % a["series"][0])
+    head += ["---", "", "# " + a["title"], "", a["body"], ""]
+    return "\n".join(head)
+
+
+os.makedirs("static/articles", exist_ok=True)
+for old in glob.glob("static/articles/*.md"):
+    os.remove(old)
+for a in articles:
+    with open("static/articles/%s.md" % a["slug"], "w") as f:
+        f.write(article_markdown(a))
+
+
+def projects_from(section):
+    fm, _ = split_front_matter(open("content/%s/_index.md" % section).read())
+    rows = []
+    for tier in re.finditer(r'\{[^{}]*?title = "([^"]+)"[^{}]*?projects = \[([^\]]*)\][^{}]*\}', fm, re.S):
+        for slug in re.findall(r'"([^"]+)"', tier.group(2)):
+            data = open("data/projects/%s.toml" % slug).read()
+            url = re.search(r'url = "([^"]+)"', data)
+            desc = fm_str(data, "description")
+            first = re.split(r"(?<=[.!?])\s", desc, maxsplit=1)[0]
+            rows.append((fm_str(data, "title"), url.group(1) if url else "%s/%s/" % (BASE, section), first, tier.group(1)))
+    return rows
+
+
+series = {}
+for a in sorted(articles, key=lambda a: a["date"]):
+    for s in a["series"]:
+        series.setdefault(s, []).append(a)
+
+lines = [
+    "# Raskell",
+    "",
+    "> %s" % SITE_DESC,
+    "",
+    "raskell.io is the personal site of %s, an %s in Basel, Switzerland. He works on enterprise AI and agent "
+    "platforms, edge infrastructure, applied security, and developer tooling, and writes long-form articles about them. "
+    "Every article below links to a clean Markdown copy; the HTML page is the same URL without `.md`. "
+    "Content may be read, indexed, and quoted with attribution: %s, \"Article title\", raskell.io, date." % (AUTHOR, JOB, AUTHOR),
+    "",
+    "## Key pages",
+    "",
+    "- [About](%s/about/): who %s is, what he works on, and how to reach him" % (BASE, AUTHOR.split()[0]),
+    "- [Start here](%s/start-here/): curated reading tracks through the archive" % BASE,
+    "- [Map](%s/map/): every article, topic, series, and project as one graph; machine-readable at [map.json](%s/map.json)" % (BASE, BASE),
+    "- [All articles in full](%s/llms-full.txt): every article in one Markdown file, newest first" % BASE,
+    "- [RSS feed](%s/rss.xml): full-text feed" % BASE,
+    "",
+]
+for name, items in series.items():
+    lines += ["## Series: %s" % name.replace("-", " ").title(), ""]
+    lines += ["%d. [%s](%s): %s" % (i + 1, a["title"], a["md"], a["description"]) for i, a in enumerate(items)]
+    lines.append("")
+lines += ["## Articles", ""]
+lines += ["- [%s](%s) (%s): %s" % (a["title"], a["md"], a["date"], a["description"]) for a in articles]
+lines.append("")
+for section, heading in (("projects", "Projects"), ("apps", "Apps")):
+    if os.path.exists("content/%s/_index.md" % section):
+        lines += ["## %s" % heading, ""]
+        lines += ["- [%s](%s): %s" % (t, u, d) for t, u, d, _ in projects_from(section)]
+        lines.append("")
+lines += ["## Optional", "",
+          "- [Tags](%s/tags/): the topic index" % BASE,
+          "- [Speaking](%s/speaking/): talks and availability" % BASE,
+          "- [Contact](%s/about/#contact): GitHub, LinkedIn, X" % BASE, ""]
+open("static/llms.txt", "w").write("\n".join(lines))
+
+full = ["# Raskell: all articles in full", "",
+        "> Every published article on raskell.io by %s, newest first. Generated %s." % (AUTHOR, datetime.date.today().isoformat()), ""]
+for a in articles:
+    full += ["", "=" * 80, "", article_markdown(a)]
+open("static/llms-full.txt", "w").write("\n".join(full))
+
+print("llms: %d articles, %d series -> static/llms.txt, static/llms-full.txt, static/articles/*.md" % (len(articles), len(series)))

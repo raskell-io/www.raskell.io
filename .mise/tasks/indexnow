@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+#MISE description="Tell IndexNow (Bing, Copilot, Yandex, ...) which pages changed since a commit"
+"""
+Usage: mise run indexnow [<since-commit>]   (CI passes the push's `before` SHA)
+
+Maps changed files under content/ to their URLs, adds the homepage and the article index,
+and submits them to api.indexnow.org. The key is the 32-hex-character .txt file in static/,
+which the site serves at its root so the search engines can verify ownership.
+"""
+import glob
+import json
+import os
+import re
+import subprocess
+import sys
+import urllib.request
+
+ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+os.chdir(ROOT)
+BASE = re.search(r'^base_url\s*=\s*"([^"]+)"', open("config.toml").read(), re.M).group(1).rstrip("/")
+keys = [os.path.basename(p)[:-4] for p in glob.glob("static/*.txt") if re.fullmatch(r"[0-9a-f]{32}\.txt", os.path.basename(p))]
+if not keys:
+    sys.exit("indexnow: no key file in static/")
+key = keys[0]
+
+since = (sys.argv[1] if len(sys.argv) > 1 else os.environ.get("BEFORE", "")).strip()
+if not since or set(since) == {"0"}:
+    since = "HEAD~1"
+try:
+    changed = subprocess.run(["git", "diff", "--name-only", since, "HEAD", "--", "content/"],
+                             capture_output=True, text=True, check=True).stdout.split()
+except subprocess.CalledProcessError:
+    changed = []
+
+urls = {BASE + "/", BASE + "/articles/"}
+for path in changed:
+    if not path.endswith(".md") or not os.path.exists(path):
+        continue
+    text = open(path).read()
+    if re.search(r"^draft\s*=\s*true", text, re.M):
+        continue
+    rel = path[len("content/"):]
+    rel = re.sub(r"(^|/)_index\.md$", r"\1", rel)
+    rel = re.sub(r"\.md$", "/", rel)
+    urls.add("%s/%s" % (BASE, rel) if rel else BASE + "/")
+
+host = re.sub(r"^https?://", "", BASE)
+payload = {"host": host, "key": key, "keyLocation": "%s/%s.txt" % (BASE, key), "urlList": sorted(urls)}
+req = urllib.request.Request("https://api.indexnow.org/indexnow", data=json.dumps(payload).encode(),
+                             headers={"Content-Type": "application/json; charset=utf-8"})
+try:
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        print("indexnow: %s for %d urls" % (resp.status, len(urls)))
+except urllib.error.HTTPError as e:
+    print("indexnow: HTTP %s (%s)" % (e.code, e.read()[:200]))
+for u in sorted(urls):
+    print("  " + u)

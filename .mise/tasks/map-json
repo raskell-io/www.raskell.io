@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+#MISE description="After `zola build`: publish the map graph as public/map.json"
+"""
+The map page carries its graph as inline JSON (built by the theme's map.html). This copies it
+out into public/map.json in the same shape as the map's own JSON export, so agents and
+answer engines can read the site's structure without running the page.
+"""
+import datetime
+import json
+import os
+import re
+
+ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+html = open(os.path.join(ROOT, "public", "map", "index.html")).read()
+raw = json.loads(re.search(r'id="?map-data"?[^>]*>(.*?)</script>', html, re.S).group(1))
+nodes = {n["id"]: n for n in raw["nodes"] if n}
+seen, links = set(), []
+for link in raw["links"]:
+    if not link or link[0] not in nodes or link[1] not in nodes or link[0] == link[1]:
+        continue
+    key = tuple(sorted(link))
+    if key not in seen:
+        seen.add(key)
+        links.append({"source": link[0], "target": link[1]})
+degree = {}
+for l in links:
+    for end in (l["source"], l["target"]):
+        degree[end] = degree.get(end, 0) + 1
+out = {
+    "source": "https://raskell.io/map/",
+    "generated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
+    "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
+    "nodes": [
+        {k: v for k, v in {"id": n["id"], "kind": n["kind"], "label": n["label"], "url": n["url"], "meta": n.get("meta"),
+                           "description": n.get("desc") or None, "degree": degree.get(n["id"], 0)}.items() if v not in (None, "")}
+        for n in nodes.values() if degree.get(n["id"])
+    ],
+    "links": links,
+}
+with open(os.path.join(ROOT, "public", "map.json"), "w") as f:
+    json.dump(out, f, indent=1, ensure_ascii=False)
+print("map.json: %d nodes, %d links" % (len(out["nodes"]), len(links)))
