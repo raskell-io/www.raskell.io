@@ -37,12 +37,12 @@ Now multiply. Real organizations have 15, 50, 200 services. Each team implements
                  │ Users    │ Orders   │ Payments │
                  │ Service  │ Service  │ Service  │
                  ├──────────┼──────────┼──────────┤
-  Auth           │ ✓ (v2.1) │ ✓ (v1.9) │ ✓ (v2.0)│
-  Rate limiting  │ ✓ (lib)  │ ✓ (copy) │ ✗ (none)│
-  Validation     │ ✓        │ ✓        │ ✓       │
-  WAF/Security   │ ✗        │ ✗        │ ✗       │
-  Logging        │ JSON     │ text     │ JSON    │
-  Tracing        │ ✓        │ ✗        │ ✓       │
+  Auth           │ ✓ (v2.1) │ ✓ (v1.9) │ ✓ (v2.0) │
+  Rate limiting  │ ✓ (lib)  │ ✓ (copy) │ ✗ (none) │
+  Validation     │ ✓        │ ✓        │ ✓        │
+  WAF/Security   │ ✗        │ ✗        │ ✗        │
+  Logging        │ JSON     │ text     │ JSON     │
+  Tracing        │ ✓        │ ✗        │ ✓        │
                  └──────────┴──────────┴──────────┘
 ```
 

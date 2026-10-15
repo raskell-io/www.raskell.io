@@ -127,7 +127,7 @@ The answer I kept coming back to was process isolation. Not as a compromise or a
                         │
           ┌─────────────┼─────────────┐
           │             │             │
- ┌────────▼───────┐ ┌──▼──────────┐ ┌▼───────────────┐
+ ┌────────▼───────┐ ┌───▼─────────┐ ┌─▼──────────────┐
  │  WAF Agent     │ │ Auth Agent  │ │ Custom Agent   │
  │  semaphore: 100│ │ semaphore:50│ │ semaphore: 25  │
  │  timeout: 50ms │ │ timeout:30ms│ │ timeout: 200ms │

@@ -145,8 +145,8 @@ The design philosophy is blunt: one binary, two modes.
 │  └── IPC socket                             │
 │                                             │
 │  Apps                                       │
-│  ├── cyanea.bio      → :10001              │
-│  └── archipelag.io   → :10002              │
+│  ├── cyanea.bio      → :10001               │
+│  └── archipelag.io   → :10002               │
 └─────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────┐
