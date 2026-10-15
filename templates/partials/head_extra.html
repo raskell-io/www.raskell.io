@@ -39,6 +39,9 @@
       "@type": "Person",
       "@id": {{ id_person | json_encode | safe }},
       "name": {{ config.extra.author | json_encode | safe }},
+      {%- if config.extra.job_title %}
+      "jobTitle": {{ config.extra.job_title | json_encode | safe }},
+      {%- endif %}
       "url": {{ base | json_encode | safe }},
       "sameAs": {{ socials | json_encode | safe }}
     }
