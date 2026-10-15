@@ -53,6 +53,7 @@ tooling written in Rust, start as notes on these pages before they become real
 things. The name is rascal × Haskell × Raffael.
 """
 og_image = "og-default.png"
+og_locale = "en_US"
 scheme_toggle = true
 code_copy = true
 portrait = "images/raffael.webp"
