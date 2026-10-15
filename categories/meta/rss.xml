@@ -37,7 +37,7 @@
 &lt;p&gt;That is the part that still feels a little surreal when I say it plainly. Three months later it is up, it is real, and people are using it. Not as a demo. Not as an abandoned prototype. As actual software in the hands of actual users.&lt;&#x2F;p&gt;
 &lt;p&gt;That changed something fundamental in how I think about work. Once one long-held idea made it through that bottleneck, a lot of others started moving too. It was not just that I had a new tool. It was that the relationship between ambition and execution had changed. The old constraint, the one that said “yes, this could exist, but not with your current time and current bandwidth,” had weakened.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;then-everything-else-started-moving&quot;&gt;Then everything else started moving&lt;&#x2F;h2&gt;
-&lt;p&gt;In the time since, I have built a whole range of things that had been accumulating in my head for years: Cyanea, Archipelag, Humankind, Arcanist and its Rust-based &lt;code&gt;hx&lt;&#x2F;code&gt; Haskell toolchain, the new Basel Haskell Compiler, and other pieces besides.&lt;&#x2F;p&gt;
+&lt;p&gt;In the time since, I have built a whole range of things that had been accumulating in my head for years: Cyanea, Archipelag.io, Humankind, Arcanist and its Rust-based &lt;code&gt;hx&lt;&#x2F;code&gt; Haskell toolchain, the new Basel Haskell Compiler, and other pieces besides.&lt;&#x2F;p&gt;
 &lt;p&gt;It has been a wild ride, but not in the shallow “everything is crazy” sense people often write about. More in the sense that an internal dam broke. For a long time I had more ideas than I had time, more design clarity than I had execution bandwidth, and more conviction than I had manpower. That is a frustrating place to live in for years. You learn to carry around a quiet backlog of unrealized things. Some of them stay alive as notes. Some become recurring thoughts during commutes or late at night. Some start to hurt a little because you know they are viable, but you also know you are not going to get to them with the tools and energy available to you at that point in your life.&lt;&#x2F;p&gt;
 &lt;p&gt;Now the world is different. I can finally push through the backlog that used to exist only in notebooks, mental sketches, half-written design docs, and conversations with myself.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;what-my-days-look-like-now&quot;&gt;What my days look like now&lt;&#x2F;h2&gt;
@@ -65,12 +65,12 @@
 &lt;p&gt;And I suspect we are still early.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;ai-2027.com&#x2F;&quot;&gt;AI 2027&lt;&#x2F;a&gt; - Scenario work that influenced how I thought about the trajectory of this space&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zed.dev&#x2F;&quot;&gt;Zed&lt;&#x2F;a&gt; - Editor I still use alongside Vim&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;ghostty.org&#x2F;&quot;&gt;Ghostty&lt;&#x2F;a&gt; - Terminal I use for most of my agent-heavy coding sessions&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&#x2F;&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Reverse proxy project that became the first real proof point for this workflow&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cyanea.bio&#x2F;&quot;&gt;Cyanea&lt;&#x2F;a&gt; - One of the projects that came to life during this period&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&#x2F;&quot;&gt;Archipelag&lt;&#x2F;a&gt; - Another product that moved from idea to reality in this new working mode&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;ai-2027.com&#x2F;&quot;&gt;AI 2027&lt;&#x2F;a&gt; - Scenario work that influenced how I thought about the trajectory of this space&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zed.dev&#x2F;&quot;&gt;Zed&lt;&#x2F;a&gt; - Editor I still use alongside Vim&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;ghostty.org&#x2F;&quot;&gt;Ghostty&lt;&#x2F;a&gt; - Terminal I use for most of my agent-heavy coding sessions&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&#x2F;&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Reverse proxy project that became the first real proof point for this workflow&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cyanea.bio&#x2F;&quot;&gt;Cyanea&lt;&#x2F;a&gt; - One of the projects that came to life during this period&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&#x2F;&quot;&gt;Archipelag.io&lt;&#x2F;a&gt; - Another product that moved from idea to reality in this new working mode&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </description>
       </item>
@@ -86,7 +86,7 @@
 &lt;h2 id=&quot;what-to-expect&quot;&gt;What to expect&lt;&#x2F;h2&gt;
 &lt;p&gt;At the time of writing, I planned to cover:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;Linux and BSD systems, particularly &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt; and &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Linux and BSD systems, particularly &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt; and &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Open-source tooling and infrastructure&lt;&#x2F;li&gt;
 &lt;li&gt;Platform automation and operability&lt;&#x2F;li&gt;
 &lt;li&gt;Whatever hard problem I happened to be stuck on&lt;&#x2F;li&gt;
@@ -94,9 +94,9 @@
 &lt;p&gt;Looking back from 2026, the scope grew to include edge systems, AI-assisted engineering, and a few deep dives I did not expect to write. The thread that held it together was always the same: systems under pressure, and the tools that keep them running.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;www.raskell.io&quot;&gt;raskell.io source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;www.raskell.io&quot;&gt;raskell.io source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </description>
       </item>
