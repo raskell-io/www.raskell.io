@@ -9,7 +9,7 @@ portrait_alt = "Raffael"
 
 Hi, I am Raffael. I live in Basel and I build automation-first platforms and edge systems at the intersection of security and AI.
 
-**raskell** = rascal × Haskell × Raffael (tanuki mascot included).
+<p class="equation" role="math" aria-label="raskell equals rascal times Haskell times Raffael, tanuki mascot included"><span class="math"><var>raskell</var><span class="mrel">=</span><var>rascal</var><span class="mbin">×</span><var>Haskell</var><span class="mbin">×</span><var>Raffael</var></span><span class="math-text">(tanuki mascot included)</span></p>
 
 Tech that serves humans. Boring by default, precise when required.
 
