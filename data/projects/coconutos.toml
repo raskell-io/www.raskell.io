@@ -1,0 +1,6 @@
+title = "coconutOS"
+description = "A Rust microkernel for GPU-isolated AI inference. Capability-based shards with their own page tables, IOMMU-backed GPU partitioning, monotonic syscall restriction, and side-channel mitigations. It already runs a transformer forward pass end to end inside an isolated shard, with per-token benchmarks."
+status = "dev"
+logo = "brands/coconutos.png"
+links = [ { name = "GitHub", url = "https://github.com/coconut-os/coconutOS" } ]
+topics = ["coconutos", "isolation", "rust", "ai-for-ops"]
