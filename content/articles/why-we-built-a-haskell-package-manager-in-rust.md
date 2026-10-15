@@ -10,6 +10,7 @@ categories = ["patterns"]
 [extra]
 author = "Raffael"
 image = "why-we-build-hx.avif"
+cover = "covers/why-we-build-hx.avif"
 og_image = "why-we-build-hx.png"
 +++
 

@@ -48,6 +48,7 @@ const LANG_ICONS = {
   bash: { lucide: "terminal" },
   shell: { lucide: "terminal" },
   shellscript: { lucide: "terminal" },
+  shellsession: { lucide: "terminal" },
   sh: { lucide: "terminal" },
   zsh: { lucide: "terminal" },
   html: { lucide: "code" },
@@ -122,8 +123,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (codeBlock.querySelector(".code-lang-label")) return;
 
+    // Zola 0.22 tags unlabelled fences as "plain"; they had no label before, so keep it that way.
+    if (lang === "plain") return;
+
     var iconDef = LANG_ICONS[lang] || DEFAULT_ICON;
-    var DISPLAY_NAMES = { shellscript: "Shell" };
+    var DISPLAY_NAMES = { shellscript: "Shell", shellsession: "Console" };
     var displayName = code.getAttribute("data-title") || DISPLAY_NAMES[lang] || lang;
 
     var label = document.createElement("span");

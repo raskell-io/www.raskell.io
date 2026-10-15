@@ -11,6 +11,7 @@ series = ["the-agent-platform-handbook"]
 [extra]
 author = "Raffael"
 image = "memory-is-a-write-path.avif"
+cover = "covers/memory-is-a-write-path.avif"
 og_image = "memory-is-a-write-path.png"
 +++
 

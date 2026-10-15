@@ -1,0 +1,7 @@
+title = "Paw & Claw"
+description = "A turn-based strategy game in the spirit of Advance Wars, fought by woodland armies. Raccoons, badgers, lions, red pandas, and moles fight over every thicket and creek. Built in Rust with Bevy. Play it free in the browser, or as a desktop build."
+status = "live"
+status_label = "Playable"
+logo = "brands/paw-and-claw.png"
+links = [ { name = "Play", url = "https://pawandclaw.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/paw-and-claw" } ]
+topics = ["rust"]

@@ -11,6 +11,7 @@ categories = ["deep-dives"]
 [extra]
 author = "Raffael"
 image = "all-beginning-is-haskell.avif"
+cover = "covers/all-beginning-is-haskell.avif"
 og_image = "all-beginning-is-haskell.png"
 +++
 

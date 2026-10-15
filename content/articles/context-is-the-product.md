@@ -11,6 +11,7 @@ series = ["the-agent-platform-handbook"]
 [extra]
 author = "Raffael"
 image = "context-is-the-product.avif"
+cover = "covers/context-is-the-product.avif"
 og_image = "context-is-the-product.png"
 +++
 

@@ -10,6 +10,7 @@ categories = ["patterns"]
 [extra]
 author = "Raffael"
 image = "traffic-replay-as-a-security-primitive.avif"
+cover = "covers/traffic-replay-as-a-security-primitive.avif"
 og_image = "traffic-replay-as-a-security-primitive.png"
 +++
 

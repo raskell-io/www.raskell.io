@@ -10,6 +10,7 @@ categories = ["patterns"]
 [extra]
 author = "Raffael"
 image = "what-sixteen-ai-agents-taught-me-about-management.avif"
+cover = "covers/what-sixteen-ai-agents-taught-me-about-management.avif"
 og_image = "what-sixteen-ai-agents-taught-me-about-management.png"
 +++
 

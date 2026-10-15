@@ -11,6 +11,7 @@ series = ["the-agent-platform-handbook"]
 [extra]
 author = "Raffael"
 image = "retrieval-is-a-tool-not-a-layer.avif"
+cover = "covers/retrieval-is-a-tool-not-a-layer.avif"
 og_image = "retrieval-is-a-tool-not-a-layer.png"
 +++
 

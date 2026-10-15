@@ -11,6 +11,7 @@ categories = ["field-notes"]
 [extra]
 author = "Raffael"
 image = "the-field-exists-now.avif"
+cover = "covers/the-field-exists-now.avif"
 og_image = "the-field-exists-now.png"
 related = [
     "what-programming-languages-become-when-ai-writes-the-code",

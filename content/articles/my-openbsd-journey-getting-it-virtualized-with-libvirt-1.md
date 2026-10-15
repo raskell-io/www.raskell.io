@@ -11,6 +11,7 @@ categories = ["field-notes"]
 [extra]
 author = "Raffael"
 image = "openbsd-libvirt.avif"
+cover = "covers/openbsd-libvirt.avif"
 og_image = "openbsd-libvirt.png"
 +++
 

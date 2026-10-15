@@ -12,6 +12,7 @@ series = ["deep-dives"]
 [extra]
 author = "Raffael"
 image = "edge-systems-are-the-new-backend.avif"
+cover = "covers/edge-systems-are-the-new-backend.avif"
 og_image = "edge-systems-are-the-new-backend.png"
 +++
 

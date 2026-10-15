@@ -11,6 +11,7 @@ series = ["the-agent-platform-handbook"]
 [extra]
 author = "Raffael"
 image = "the-model-is-a-dependency.avif"
+cover = "covers/the-model-is-a-dependency.avif"
 og_image = "the-model-is-a-dependency.png"
 +++
 

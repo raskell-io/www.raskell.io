@@ -10,6 +10,7 @@ categories = ["deep-dives"]
 [extra]
 author = "Raffael"
 image = "semantic-artifacts-and-meaning-engines.avif"
+cover = "covers/semantic-artifacts-and-meaning-engines.avif"
 og_image = "semantic-artifacts-and-meaning-engines.png"
 related = [
     "what-comes-after-the-last-programming-language",

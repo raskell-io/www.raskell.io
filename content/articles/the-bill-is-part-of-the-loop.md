@@ -11,6 +11,7 @@ series = ["the-agent-platform-handbook"]
 [extra]
 author = "Raffael"
 image = "the-bill-is-part-of-the-loop.avif"
+cover = "covers/the-bill-is-part-of-the-loop.avif"
 og_image = "the-bill-is-part-of-the-loop.png"
 +++
 

@@ -1,27 +1,16 @@
 {
   "name": "Raskell",
   "short_name": "Raskell",
-  "description": "Writing about platform automation, edge systems, applied security, and open standards.",
+  "description": "Notes from the machine room: platform automation, edge systems, applied security, and what changes when AI writes most of the code.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#1e1e2e",
-  "theme_color": "#cba6f7",
+  "background_color": "#111312",
+  "theme_color": "#111312",
   "icons": [
-    {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    }
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }

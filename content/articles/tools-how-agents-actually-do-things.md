@@ -11,6 +11,7 @@ series = ["the-agent-platform-handbook"]
 [extra]
 author = "Raffael"
 image = "tools-how-agents-actually-do-things.avif"
+cover = "covers/tools-how-agents-actually-do-things.avif"
 og_image = "tools-how-agents-actually-do-things.png"
 +++
 

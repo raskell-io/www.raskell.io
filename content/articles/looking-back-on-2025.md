@@ -11,6 +11,7 @@ categories = ["deep-dives"]
 [extra]
 author = "Raffael"
 image = "looking-back-on-2025.avif"
+cover = "covers/looking-back-on-2025.avif"
 og_image = "looking-back-on-2025.png"
 +++
 

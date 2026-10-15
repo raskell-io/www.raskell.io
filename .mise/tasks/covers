@@ -1,0 +1,112 @@
+#!/usr/bin/env python3
+#MISE description="Crop article hero images into on-page covers (static/covers/)"
+"""
+Hero images are 960x300 social banners: a meme centred on a white canvas with a
+raskell.io badge in the top-right corner. On the page we only want the meme, so
+for every article with `extra.image` this writes static/covers/<stem>.avif:
+
+  1. find the meme's horizontal extent from the rows below the badge band,
+  2. if the badge label overlaps the meme's top-right corner, cut the meme just
+     before it (OVERRIDES can paint it out or keep it instead),
+  3. find the vertical extent inside those columns and crop.
+
+It also adds `cover = "covers/<stem>.avif"` to the article's [extra] table.
+Re-run after adding a new hero image:  mise run covers [slug ...]
+Requires ImageMagick 7 (`magick`).
+"""
+import glob
+import os
+import re
+import subprocess
+import sys
+
+# Per-image exceptions, keyed by hero image filename.
+#   paint: the meme background behind the badge is white, so blank the badge instead of cutting
+#   keep:  text runs under the badge, so keep the badge rather than truncate it
+OVERRIDES = {
+    "mise-ate-make.avif": "paint",
+    "the-bill-is-part-of-the-loop.avif": "keep",
+    "your-agent-wants-root.avif": "keep",
+}
+OUT = "static/covers"
+
+
+def run(*args):
+    return subprocess.run(args, capture_output=True, text=True, check=True).stdout
+
+
+def profile(src, geom, axis, white=False, pre=()):
+    """Share of content (or of pure white, with white=True) per column (x) or row (y) in geom."""
+    w, h = map(int, re.match(r"(\d+)x(\d+)", geom).groups())
+    scale = f"{w}x1!" if axis == "x" else f"1x{h}!"
+    txt = run("magick", src + "[0]", "-alpha", "off", *pre, "-crop", geom, "+repage",
+              "-colorspace", "gray", "-threshold", "96%" if white else "93%",
+              *([] if white else ["-negate"]), "-filter", "box", "-resize", scale, "-depth", "16", "txt:-")
+    return [int(m.group(1)) / 65535 for m in re.finditer(r"^\d+,\d+: \((\d+)", txt, re.M)]
+
+
+def span(vals, thr=0.02):
+    idx = [i for i, v in enumerate(vals) if v > thr]
+    return (idx[0], idx[-1] + 1) if idx else (0, len(vals))
+
+
+def crop_box(src, mode, pre=()):
+    W, H = map(int, run("magick", "identify", "-format", "%w %h", src + "[0]").split())
+    band = int(H * 0.25)
+    L, R = span(profile(src, f"{W}x{H - band}+0+{band}", "x", pre=pre))
+    note = "clean"
+    if mode == "auto":
+        # The badge label is a white box over the meme's top-right corner: a short trailing run of
+        # partly white columns in the top rows, where the meme itself is solid.
+        top = profile(src, f"{R - L}x{int(H * 0.16)}+{L}+0", "x", white=True, pre=pre)
+        run_w = 0
+        while run_w < len(top) and top[len(top) - 1 - run_w] > 0.10:
+            run_w += 1
+        if 0 < run_w <= W * 0.14:
+            R -= run_w + 3
+            note = f"cut {run_w}px"
+    T, B = span(profile(src, f"{R - L}x{H}+{L}+0", "y", pre=pre))
+    return W, H, L, R, T, B, note
+
+
+def add_cover_field(md_path, cover):
+    text = open(md_path).read()
+    if re.search(r"^cover = ", text, re.M):
+        text = re.sub(r'^cover = .*$', f'cover = "{cover}"', text, count=1, flags=re.M)
+    else:
+        text = re.sub(r'^(image = .*)$', rf'\1\ncover = "{cover}"', text, count=1, flags=re.M)
+    open(md_path, "w").write(text)
+
+
+def main(slugs):
+    os.makedirs(OUT, exist_ok=True)
+    for md in sorted(glob.glob("content/articles/*.md")):
+        slug = os.path.splitext(os.path.basename(md))[0]
+        if slugs and slug not in slugs:
+            continue
+        m = re.search(r'^image = "([^"]+)"', open(md).read(), re.M)
+        if not m:
+            continue
+        name = m.group(1)
+        src = os.path.join("static", name)
+        if not os.path.exists(src):
+            print(f"skip  {slug}: {src} not found")
+            continue
+        mode = OVERRIDES.get(name, "auto")
+        pre = ()
+        if mode == "paint":
+            W, H = map(int, run("magick", "identify", "-format", "%w %h", src + "[0]").split())
+            pre = ("-fill", "white", "-draw", f"rectangle {int(W * 0.80)},0 {W},{int(H * 0.21)}")
+        W, H, L, R, T, B, note = crop_box(src, mode, pre)
+        if mode != "auto":
+            note = mode
+        stem = os.path.splitext(name)[0]
+        dst = os.path.join(OUT, stem + ".avif")
+        run("magick", src + "[0]", "-alpha", "off", *pre, "-crop", f"{R - L}x{B - T}+{L}+{T}", "+repage",
+            "-resize", "x400>", "-quality", "60", dst)
+        add_cover_field(md, f"covers/{stem}.avif")
+        print(f"cover {slug}: {R - L}x{B - T} ({note})")
+
+
+if __name__ == "__main__":
+    main(set(sys.argv[1:]))

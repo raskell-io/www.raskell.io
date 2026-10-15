@@ -12,6 +12,7 @@ series = ["deep-dives"]
 [extra]
 author = "Raffael"
 image = "how-ai-makes-bare-metal-viable-again.avif"
+cover = "covers/how-ai-makes-bare-metal-viable-again.avif"
 og_image = "how-ai-makes-bare-metal-viable-again.png"
 +++
 

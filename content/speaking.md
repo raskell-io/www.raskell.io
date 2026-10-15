@@ -1,6 +1,6 @@
 +++
 title = "Speaking"
-template = "speaking-page.html"
+description = "Talks, panels, and podcasts on platform automation, edge systems, and applied security."
 +++
 
 ## Talks
@@ -16,7 +16,7 @@ A 15-minute showcase at swiss made software's IT's ABOUT TECH evening on the the
 - AI did not generate the ideas. It let existing ideas escape the notebook
 - The human did not disappear. The human moved up the stack
 
-<p class="session-link"><a href="/talks/iat-13-basel/"><i data-lucide="presentation"></i> Open the slide deck</a> · <a href="https://www.swissmadesoftware.org/en/news/2026/iat--13.html"><i data-lucide="external-link"></i> Event page</a></p>
+<p class="session-link"><a href="/talks/iat-13-basel/">Open the slide deck</a> · <a href="https://www.swissmadesoftware.org/en/news/2026/iat--13.html">Event page</a></p>
 
 ---
 
@@ -33,7 +33,7 @@ ModSecurity with the OWASP Core Rule Set (CRS) is a powerful open-source WAF, bu
 
 **Media-friendly version:** Using generative AI to automatically detect and fix WAF false positives — keeping ModSecurity effective without the tuning headache.
 
-<p class="session-link"><a href="https://path.rsaconference.com/flow/rsac/us26/FullAgenda/page/catalog/session/1753946922633001YdMq"><i data-lucide="external-link"></i> View session on RSAC website</a></p>
+<p class="session-link"><a href="https://path.rsaconference.com/flow/rsac/us26/FullAgenda/page/catalog/session/1753946922633001YdMq">View session on RSAC website</a></p>
 
 ---
 
