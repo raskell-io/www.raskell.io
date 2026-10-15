@@ -13,7 +13,7 @@ text = "Haskell tooling in Rust: hx, a fast package manager, and bhc, a compiler
 url = "https://arcanist.sh"
 +++
 
-# Automation first. Production always.
+# Notes from the machine room.
 
 **Raffael** builds automation-first platforms and edge systems that survive
 production reality. Writing about platform automation, edge infrastructure,
