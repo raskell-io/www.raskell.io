@@ -6,7 +6,8 @@ description = "Raffael is an AI architect in Basel, working on enterprise AI and
 headline = 'Turning <span class="iridescent">intelligence</span><br>into <span class="accent">real-world</span> capability.'
 banner = "images/about-banner.avif"
 banner_fallback = "images/about-banner.jpg"
-banner_video = ["images/about-banner.webm", "images/about-banner.mp4"]
+banner_motion = "images/about-banner-motion.avif"
+banner_motion_fallback = "images/about-banner-motion.webp"
 banner_alt = "Two white humanoid robots on a jungle path, looking toward a sunlit valley with tall white spires."
 og_image = "about.png"
 portrait = "images/raffael.webp"
