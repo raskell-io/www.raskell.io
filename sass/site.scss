@@ -161,3 +161,8 @@ svg.chart {
 }
 .seijaku:hover::after, .seijaku:focus-visible::after { opacity: 1; translate: -50% 0; }
 .seijaku:focus-visible { border-radius: 0.2em; box-shadow: 0 0 0 2px var(--footer-muted); }
+.footer__note .globe { display: inline-block; width: 1.05em; height: 1.05em; margin-inline: 0.05em 0.3em; vertical-align: -0.17em; color: var(--footer-ink); }
+@media (prefers-reduced-motion: no-preference) {
+  .footer__note .globe ellipse { transform-origin: 12px 12px; animation: globe-spin 9s linear infinite; }
+}
+@keyframes globe-spin { 0% { transform: scaleX(1); } 25% { transform: scaleX(0.05); } 50% { transform: scaleX(1); } 50.01% { transform: scaleX(1); } 75% { transform: scaleX(0.05); } 100% { transform: scaleX(1); } }
