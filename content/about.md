@@ -3,6 +3,7 @@ title = "About"
 description = "Raffael is an AI architect in Basel, working on enterprise AI and agent platforms, edge systems, and applied security."
 
 [extra]
+headline = 'Turning intelligence into <span class="term">real-world capability.</span>'
 portrait = "images/raffael.webp"
 portrait_alt = "Raffael"
 +++
