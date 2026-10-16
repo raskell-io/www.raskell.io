@@ -2,5 +2,6 @@ title = "broodwar.live"
 description = "The community platform for StarCraft: Brood War competitive play, a basketball-reference.com for Brood War. Profiles for 150 pro players in English and Korean, build orders for every matchup, tournaments, a wiki, and replay analysis that runs in the browser on WebAssembly, so nothing is uploaded."
 status = "live"
 logo = "brands/broodwar-live.png"
+logo_wide = true
 links = [ { name = "Open site", url = "https://broodwar.live" }, { name = "GitHub", url = "https://github.com/broodwar-live" } ]
 topics = ["zola", "elixir", "rust"]
