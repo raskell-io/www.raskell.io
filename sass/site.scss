@@ -145,3 +145,19 @@ svg.chart {
 .hero-who:hover strong, .hero-who:focus-visible strong { text-decoration-color: currentColor; }
 .hero-who:hover .hero-who__face { transform: scale(1.06); }
 .hero-who:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; border-radius: 0.4em; }
+
+// Footer note: 静寂 with its reading set above as furigana; the meaning shows on hover or focus.
+.footer__meta { align-items: last baseline; }
+.footer__note { line-height: 2.2; }
+.seijaku { position: relative; ruby-position: over; color: var(--footer-ink); cursor: help; outline: none; }
+.seijaku { ruby-align: center; }
+.seijaku rt { font-family: var(--font-mono); font-size: 0.6em; letter-spacing: 0; color: var(--footer-muted); }
+.seijaku::after {
+  content: "stillness, silence";
+  position: absolute; left: 50%; bottom: calc(100% + 1.1em); translate: -50% 0.25rem;
+  padding: 0.3rem 0.6rem; border-radius: 0.5rem; white-space: nowrap;
+  background: var(--footer-ink); color: var(--footer-bg); font: 500 0.72rem/1.2 var(--font-prose);
+  opacity: 0; pointer-events: none; transition: opacity 150ms ease, translate 150ms ease;
+}
+.seijaku:hover::after, .seijaku:focus-visible::after { opacity: 1; translate: -50% 0; }
+.seijaku:focus-visible { border-radius: 0.2em; box-shadow: 0 0 0 2px var(--footer-muted); }
