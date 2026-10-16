@@ -150,8 +150,8 @@ svg.chart {
 .footer__meta { align-items: last baseline; }
 .footer__note { line-height: 2.2; }
 .seijaku { position: relative; ruby-position: over; color: var(--footer-ink); cursor: help; outline: none; }
-.seijaku { ruby-align: center; }
-.seijaku rt { font-family: var(--font-mono); font-size: 0.6em; letter-spacing: 0; color: var(--footer-muted); }
+.seijaku { ruby-align: center; font-size: 1.08em; }
+.seijaku rt { font-family: var(--font-mono); font-size: 0.44em; letter-spacing: -0.03em; color: var(--footer-muted); }   // no wider than the two kanji
 .seijaku::after {
   content: "stillness, silence";
   position: absolute; left: 50%; bottom: calc(100% + 1.1em); translate: -50% 0.25rem;
@@ -161,8 +161,9 @@ svg.chart {
 }
 .seijaku:hover::after, .seijaku:focus-visible::after { opacity: 1; translate: -50% 0; }
 .seijaku:focus-visible { border-radius: 0.2em; box-shadow: 0 0 0 2px var(--footer-muted); }
-.footer__note .globe { display: inline-block; width: 1.05em; height: 1.05em; margin-inline: 0.05em 0.3em; vertical-align: -0.17em; color: var(--footer-ink); }
+.footer__note .globe { display: inline-block; width: 1.15em; height: 1.15em; margin-inline: 0.05em 0.3em; vertical-align: -0.2em; color: var(--footer-ink); }
+// The continents drift west to east behind the rim (two copies, one globe-width apart), a slow quiet spin.
 @media (prefers-reduced-motion: no-preference) {
-  .footer__note .globe ellipse { transform-origin: 12px 12px; animation: globe-spin 9s linear infinite; }
+  .footer__note .globe__land { animation: globe-spin 40s linear infinite; }
 }
-@keyframes globe-spin { 0% { transform: scaleX(1); } 25% { transform: scaleX(0.05); } 50% { transform: scaleX(1); } 50.01% { transform: scaleX(1); } 75% { transform: scaleX(0.05); } 100% { transform: scaleX(1); } }
+@keyframes globe-spin { from { transform: translateX(-24px); } to { transform: translateX(0); } }
