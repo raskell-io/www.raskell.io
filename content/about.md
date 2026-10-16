@@ -3,7 +3,7 @@ title = "About"
 description = "Raffael is an AI architect in Basel, working on enterprise AI and agent platforms, edge systems, and applied security."
 
 [extra]
-headline = 'Turning intelligence into <span class="term">real-world capability.</span>'
+headline = 'Turning intelligence<br>into <span class="accent">real-world</span> capability.'
 banner = "images/about-banner.avif"
 banner_fallback = "images/about-banner.jpg"
 banner_alt = "Two white humanoid robots on a jungle path, looking toward a sunlit valley with tall white spires."
