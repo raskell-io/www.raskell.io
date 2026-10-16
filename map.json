@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-15T17:39:06+00:00",
+ "generated": "2026-10-16T05:35:57+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -378,7 +378,7 @@
    "label": "elixir",
    "url": "https://raskell.io/tags/elixir/",
    "meta": "2 articles",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:formal-methods",
@@ -482,7 +482,7 @@
    "label": "rust",
    "url": "https://raskell.io/tags/rust/",
    "meta": "7 articles",
-   "degree": 22
+   "degree": 23
   },
   {
    "id": "t:sovereignty",
@@ -506,7 +506,7 @@
    "label": "zola",
    "url": "https://raskell.io/tags/zola/",
    "meta": "1 articles",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "s:deep-dives",
@@ -568,6 +568,15 @@
    "meta": "Project",
    "description": "Guardian of the Free Web. A security-first reverse proxy built on Cloudflare's Pingora framework. Memory-safe by default, explicit configuration over hidden defaults, and an isolat…",
    "degree": 18
+  },
+  {
+   "id": "p:broodwar-live",
+   "kind": "project",
+   "label": "broodwar.live",
+   "url": "https://broodwar.live",
+   "meta": "Project",
+   "description": "The community platform for StarCraft: Brood War competitive play, a basketball-reference.com for Brood War. Profiles for 150 pro players in English and Korean, build orders for eve…",
+   "degree": 4
   },
   {
    "id": "p:conflux",
@@ -736,7 +745,7 @@
    "label": "Flagship and serious builds",
    "url": "https://raskell.io/projects/#tier-flagship",
    "meta": "Group",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "h:projects-lab",
@@ -1747,6 +1756,22 @@
   {
    "source": "p:zentinel",
    "target": "t:isolation"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "h:projects-flagship"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "t:zola"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "t:elixir"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "t:rust"
   },
   {
    "source": "p:conflux",
