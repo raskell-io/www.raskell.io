@@ -104,14 +104,14 @@ svg.chart {
 @media (prefers-reduced-motion: reduce) { .hero-home__body h1 .hero-term::after { animation: none; } }
 
 // A page headline can end in the same terminal voice as the homepage: mono, teal ink, block cursor.
-.pagehead__title .term {
+:is(.pagehead__title, .banner__headline) .term {
   font-family: var(--font-mono);
   font-size: 0.84em;
   font-weight: 500;
   letter-spacing: -0.07em;
   color: var(--cyan);
 }
-.pagehead__title .term::after {
+:is(.pagehead__title, .banner__headline) .term::after {
   content: "";
   display: inline-block;
   width: 0.5em;
@@ -121,4 +121,6 @@ svg.chart {
   background: currentColor;
   animation: hero-cursor 1.1s steps(1, end) infinite;
 }
-@media (prefers-reduced-motion: reduce) { .pagehead__title .term::after { animation: none; } }
+@media (prefers-reduced-motion: reduce) { :is(.pagehead__title, .banner__headline) .term::after { animation: none; } }
+// Over the banner photo the term reads as pale cyan phosphor, like the homepage hero.
+.banner__headline .term { color: #72d7dc; text-shadow: 0 0 0.35em rgba(114, 215, 220, 0.4); }
