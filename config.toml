@@ -62,6 +62,7 @@ og_locale = "en_US"
 scheme_toggle = true
 code_copy = true
 portrait = "images/raffael.webp"
+hero_portrait = false   # the homepage shows the face inline next to the name instead (content/_index.md)
 hero_motion = "images/raskell-hero.avif"
 hero_poster = "images/raskell-hero.webp"
 mark = "images/raskell-mark.svg"

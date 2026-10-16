@@ -15,7 +15,7 @@ url = "https://arcanist.sh"
 
 # Notes from the <span class="hero-term">machine room.</span>
 
-**Raffael** builds automation-first platforms and edge systems that survive
+<a class="hero-who" href="/about/"><img class="hero-who__face" src="/images/raffael-face.webp" alt="" width="64" height="64"><strong>Raffael</strong></a> builds automation-first platforms and edge systems that survive
 production reality. Writing about platform automation, edge infrastructure,
 applied security, and AI-assisted engineering. Languages and models are tools.
 They serve humans, not the other way around.
