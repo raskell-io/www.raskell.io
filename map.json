@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-17T13:14:20+00:00",
+ "generated": "2026-10-17T15:10:16+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -217,7 +217,7 @@
    "url": "https://raskell.io/articles/how-i-work-these-days/",
    "meta": "2026-03-15 · 10 min",
    "description": "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
@@ -680,11 +680,11 @@
   {
    "id": "p:humankind",
    "kind": "project",
-   "label": "Humankind.",
+   "label": "Humankind",
    "url": "https://humankind.plus",
    "meta": "Project",
-   "description": "Human continuity platform for preserving presence across generations. Humankind. helps people build a living archive of voice, stories, memories, values, and relational warmth so t…",
-   "degree": 4
+   "description": "Human continuity platform for preserving presence across generations. Humankind helps people build a living archive of voice, stories, memories, values, and relational warmth so th…",
+   "degree": 5
   },
   {
    "id": "p:arcanist",
@@ -1877,6 +1877,10 @@
   {
    "source": "a:/articles/mise-ate-my-makefile/",
    "target": "p:cyanea"
+  },
+  {
+   "source": "a:/articles/how-i-work-these-days/",
+   "target": "p:humankind"
   },
   {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
