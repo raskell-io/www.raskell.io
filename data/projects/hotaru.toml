@@ -1,7 +1,7 @@
 title = "Hotaru"
-description = "A neuron culture on a 60-electrode array, simulated in your browser. Thousands of spiking neurons stay quiet, then fire in bursts that sweep across the dish. Click an electrode to stimulate it. Built in Rust and WebAssembly."
+description = "Simulated neuron cultures on a 60-electrode array play Pong in your browser, as in the DishBrain experiment. One culture gets feedback for its hits and misses, an identical one gets it at random. So far the feedback has not made them reliably better, and the page shows the numbers."
 status = "live"
 logo = "brands/hotaru.png"
-links = [ { name = "Open the dish", url = "https://hotaru.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/hotaru" } ]
+links = [ { name = "Run the experiment", url = "https://hotaru.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/hotaru" } ]
 topics = ["simulation", "complex-systems", "webassembly", "rust"]
 related = ["terrarium"]
