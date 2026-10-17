@@ -1,0 +1,7 @@
+title = "Die Zukunft"
+description = "A Swiss movement that applies engineering principles to public life: not left, not right. Digital sovereignty through open standards, auditable and portable public infrastructure, and policy grounded in evidence, with its own research pipeline for Swiss federal data."
+status = "live"
+logo = "brands/die-zukunft.png"
+links = [ { name = "Website", url = "https://die-zukunft.ch" }, { name = "GitHub", url = "https://github.com/zukunft-ch" } ]
+topics = ["sovereignty", "policy", "oss"]
+accents = ["#a855f7", "#06b6d4"]   # brand colours, used for the card glow

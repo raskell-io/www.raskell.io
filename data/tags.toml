@@ -143,6 +143,11 @@ kind = "concept"
 description = "Running your own infrastructure, from a single bare-metal box to community-operated compute."
 broader = ["platform-automation", "sovereignty"]
 
+[complex-systems]
+name = "Complex systems"
+kind = "concept"
+description = "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies."
+
 [local-first]
 name = "Local-first"
 kind = "concept"
