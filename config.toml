@@ -80,11 +80,29 @@ nav = [
   { name = "About", url = "@/about.md" },
 ]
 explore = [
+  { name = "Start here", url = "@/start-here.md" },
   { name = "Map", url = "@/map.md" },
-  { name = "Tags", url = "/tags" },
+  { name = "Topics", url = "/tags" },
   { name = "Notes", url = "@/notes/_index.md" },
   { name = "Series", url = "/series" },
-  { name = "RSS", url = "/rss.xml" },
+  { name = "The Handbook", url = "/series/the-agent-platform-handbook/" },
+]
+footer_groups = [
+  { title = "Building", items = [
+    { name = "Zentinel", url = "https://zentinelproxy.io" },
+    { name = "Archipelag.io", url = "https://archipelag.io" },
+    { name = "Arcanist.sh", url = "https://arcanist.sh" },
+    { name = "Cyanea", url = "https://cyanea.bio" },
+    { name = "broodwar.live", url = "https://broodwar.live" },
+    { name = "coconutOS", url = "https://github.com/coconut-os/coconutOS" },
+  ] },
+  { title = "For machines", items = [
+    { name = "RSS feed", url = "/rss.xml" },
+    { name = "llms.txt", url = "/llms.txt" },
+    { name = "llms-full.txt", url = "/llms-full.txt" },
+    { name = "map.json", url = "/map.json" },
+    { name = "Sitemap", url = "/sitemap.xml" },
+  ] },
 ]
 social = [
   { name = "GitHub", url = "https://github.com/raffaelschneider" },
