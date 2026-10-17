@@ -4,7 +4,7 @@ url: https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/
 author: Raffael Schneider
 date: 2026-05-01
 description: "Switzerland tops the Global Innovation Index for the fifteenth year running. As an engineer, that should make you suspicious of the metric, not proud of the country."
-tags: [sovereignty, policy, metrics, oss]
+tags: [metrics, policy, sovereignty, economics]
 ---
 
 # Patents Per Capita Is a Vanity Metric

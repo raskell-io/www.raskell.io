@@ -1,6 +1,6 @@
-# Raskell: all articles in full
+# Raskell: all articles and notes in full
 
-> Every published article on raskell.io by Raffael Schneider, newest first. Generated 2026-10-17.
+> Every published article and note on raskell.io by Raffael Schneider, newest first. Generated 2026-10-17.
 
 
 ================================================================================
@@ -11,7 +11,7 @@ url: https://raskell.io/articles/this-site-is-becoming-a-map/
 author: Raffael Schneider
 date: 2026-10-15
 description: "A blog shows what I wrote last. The new map on raskell.io shows what I keep coming back to, and it is the start of a public second brain."
-tags: [zola, ai-engineering]
+tags: [meta, knowledge-management, open-web, zola]
 ---
 
 # This Site Is Becoming a Map
@@ -104,7 +104,7 @@ url: https://raskell.io/articles/the-bill-is-part-of-the-loop/
 author: Raffael Schneider
 date: 2026-07-18
 description: "Every model response already carries its own bill in the usage field, and the loop throws it away. This post reads that field, prices it against a table, and turns cost into a value the loop can see per turn and act on: a metering decorator that needs no loop change, a running ledger, prompt-cache accounting that moves the number the most, and a budget that degrades before it stops. Part eight of The Agent Platform Handbook."
-tags: [agents, economics, metrics, typescript]
+tags: [agents, ai-platforms, economics, observability, metrics, typescript]
 series: the-agent-platform-handbook
 ---
 
@@ -362,7 +362,7 @@ url: https://raskell.io/articles/the-model-is-a-dependency/
 author: Raffael Schneider
 date: 2026-07-09
 description: "Every layer of the harness has existed to put the right tokens in front of one hardcoded model string. This post pulls that string out and makes the model a dependency: why you route a cheap model for easy turns and a strong one for hard turns, what a fallback looks like when a provider is down, and why 'models are commodities' is a claim about your architecture before it is a claim about the market. Part seven of The Agent Platform Handbook."
-tags: [agents, reliability, economics, typescript]
+tags: [agents, ai-platforms, inference, reliability, economics, typescript]
 series: the-agent-platform-handbook
 ---
 
@@ -575,7 +575,7 @@ url: https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on
 author: Raffael Schneider
 date: 2026-06-30
 description: "Frontier AI is running short on public text, not compute. Europe's edge is the high-quality data it never put online. Capturing it needs coordination."
-tags: [sovereignty, policy, economics, oss]
+tags: [sovereignty, policy, economics]
 ---
 
 # The Bottleneck Is Data, and Europe Is Sitting on It
@@ -809,7 +809,7 @@ url: https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/
 author: Raffael Schneider
 date: 2026-06-28
 description: "An MIT thesis argues brain emulation has crossed into engineering. Read as infrastructure, the numbers describe a workload your AI cluster was not built for."
-tags: [ai-for-ops, distributed-systems, platform-automation]
+tags: [distributed-systems, inference, gpus]
 ---
 
 # Brain Emulation, Read as an Infrastructure Problem
@@ -926,7 +926,7 @@ url: https://raskell.io/articles/memory-is-a-write-path/
 author: Raffael Schneider
 date: 2026-06-23
 description: "Retrieval reads context the project authored. Memory is the agent writing context for its own future sessions, and the write is the part that is dangerous. Why session memory comes free from the transcript, why cross-session memory needs a separate write surface, and how to let an agent remember without letting it corrupt its own ground truth. Part six of The Agent Platform Handbook."
-tags: [agents, typescript]
+tags: [agents, context-engineering, knowledge-management, typescript]
 series: the-agent-platform-handbook
 ---
 
@@ -1233,7 +1233,7 @@ url: https://raskell.io/articles/the-proof-you-only-have-to-write-once/
 author: Raffael Schneider
 date: 2026-06-19
 description: "Generation is cheap, so verification is the bottleneck — and we throw the verification away every time. What if a proof, once written, could be named, shared, and vouched for? A content-addressed commons for verified Haskell, and the move I left for after the semantic-artifact trilogy."
-tags: [ai-engineering, programming-languages, formal-methods, haskell]
+tags: [formal-methods, programming-languages, ai-engineering, oss, haskell]
 ---
 
 # The Proof You Only Have to Write Once
@@ -1389,7 +1389,7 @@ url: https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/
 author: Raffael Schneider
 date: 2026-06-17
 description: "Loading the whole .AGENTS/ directory on every turn does not scale. The fix is not a retrieval layer bolted to the side of the agent. It is a search tool in the registry the agent already has. BM25 over project docs, no vector store, and an honest account of when embeddings start to earn their keep. Part five of The Agent Platform Handbook."
-tags: [agents, typescript]
+tags: [agents, context-engineering, typescript]
 series: the-agent-platform-handbook
 ---
 
@@ -1728,7 +1728,7 @@ url: https://raskell.io/articles/context-is-the-product/
 author: Raffael Schneider
 date: 2026-06-13
 description: "Models are commodities. Context is not. The sources of context an agent draws on, why retrieval alone is not enough, and a minimal .AGENTS/ convention that loads context from disk into the same harness we have been building. Part four of The Agent Platform Handbook."
-tags: [agents, economics, typescript]
+tags: [agents, context-engineering, economics, typescript]
 series: the-agent-platform-handbook
 ---
 
@@ -2601,7 +2601,7 @@ url: https://raskell.io/articles/your-agent-wants-root/
 author: Raffael Schneider
 date: 2026-06-05
 description: "An agent with a shell tool is arbitrary code execution with a friendly face. A short tour of why Docker alone is not enough, what Firecracker, gVisor, and Kata actually solve, and a hardened sandbox you can wrap the post-one agent in today. Part two of The Agent Platform Handbook."
-tags: [agents, applied-security, isolation]
+tags: [agents, isolation, applied-security]
 series: the-agent-platform-handbook
 ---
 
@@ -2882,7 +2882,7 @@ url: https://raskell.io/articles/what-an-agent-actually-is/
 author: Raffael Schneider
 date: 2026-06-02
 description: "AI agent is the most overloaded word in the industry. This is the anatomy, the lineage, and a working implementation in roughly two hundred lines of TypeScript on Bun. Part one of The Agent Platform Handbook."
-tags: [agents, typescript]
+tags: [agents, ai-platforms, typescript]
 series: the-agent-platform-handbook
 ---
 
@@ -3279,7 +3279,7 @@ url: https://raskell.io/articles/the-field-exists-now/
 author: Raffael Schneider
 date: 2026-05-22
 description: "Alasdair Allan's agentlanguages.dev catalogue turns AI-oriented programming languages from a loose set of experiments into a field with camps, disagreements, and testable claims."
-tags: [ai-engineering, programming-languages, haskell]
+tags: [programming-languages, ai-engineering, formal-methods, haskell]
 ---
 
 # The Field Exists Now
@@ -3819,7 +3819,7 @@ url: https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/
 author: Raffael Schneider
 date: 2026-05-01
 description: "Switzerland tops the Global Innovation Index for the fifteenth year running. As an engineer, that should make you suspicious of the metric, not proud of the country."
-tags: [sovereignty, policy, metrics, oss]
+tags: [metrics, policy, sovereignty, economics]
 ---
 
 # Patents Per Capita Is a Vanity Metric
@@ -4033,7 +4033,7 @@ url: https://raskell.io/articles/traffic-replay-as-a-security-primitive/
 author: Raffael Schneider
 date: 2026-04-27
 description: "WAF tuning is a guessing game because you cannot reproduce the traffic that triggered the rule. Deterministic replay changes that."
-tags: [applied-security, edge-systems, reliability, developer-tooling]
+tags: [applied-security, waf, edge-systems, reliability, developer-tooling]
 ---
 
 # Traffic Replay as a Security Primitive
@@ -4203,7 +4203,7 @@ url: https://raskell.io/articles/the-economics-of-inference/
 author: Raffael Schneider
 date: 2026-04-22
 description: "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas."
-tags: [ai-for-ops, economics, edge-systems, sovereignty, platform-automation]
+tags: [inference, economics, sovereignty, edge-systems, gpus]
 ---
 
 # The Economics of Inference
@@ -4324,7 +4324,7 @@ url: https://raskell.io/articles/what-comes-after-the-last-programming-language/
 author: Raffael Schneider
 date: 2026-04-19
 description: "If AI generates machine code directly, why are we still running operating systems designed for humans? The answer might be an inference-native OS."
-tags: [ai-engineering, programming-languages, isolation, haskell, coconutos]
+tags: [operating-systems, inference, gpus, isolation, programming-languages, ai-engineering]
 ---
 
 # What Comes After the Last Programming Language
@@ -4564,7 +4564,7 @@ url: https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-manageme
 author: Raffael Schneider
 date: 2026-04-16
 description: "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway."
-tags: [ai-engineering, agents, platform-automation, economics]
+tags: [agents, ai-engineering, economics]
 ---
 
 # What Sixteen AI Agents Taught Me About Management
@@ -4923,7 +4923,7 @@ url: https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/
 author: Raffael Schneider
 date: 2026-04-13
 description: "hx is a fast, opinionated Haskell toolchain built in Rust, following the playbook astral.sh used to modernize Python."
-tags: [developer-tooling, programming-languages, haskell, rust]
+tags: [developer-tooling, programming-languages, oss, haskell, rust]
 ---
 
 # Why We Built a Haskell Package Manager in Rust
@@ -5573,7 +5573,7 @@ url: https://raskell.io/articles/notes-from-rsac-2026/
 author: Raffael Schneider
 date: 2026-04-09
 description: "Third time at RSA Conference, first time as a speaker. What I saw, what I heard, and what I am still processing."
-tags: [applied-security, ai-for-ops, sovereignty, policy]
+tags: [applied-security, ai-for-ops, agents, policy, sovereignty]
 ---
 
 # Notes from RSAC 2026
@@ -5727,7 +5727,7 @@ url: https://raskell.io/articles/what-zentinel-is-really-optimizing-for/
 author: Raffael Schneider
 date: 2026-03-22
 description: "Every major proxy was a product of its time. Zentinel is built for this one: safety, operability, and the operator's ability to sleep."
-tags: [edge-systems, applied-security, reliability, isolation, rust, pingora]
+tags: [edge-systems, applied-security, waf, isolation, reliability, observability, rust, pingora]
 ---
 
 # What Zentinel Is Really Optimizing For
@@ -5953,7 +5953,7 @@ author: Raffael Schneider
 date: 2026-03-15
 updated: 2026-03-15
 description: "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right."
-tags: [ai-engineering, developer-tooling, platform-automation, rust]
+tags: [ai-engineering, developer-tooling, rust]
 ---
 
 # How I Work These Days
@@ -6074,8 +6074,7 @@ url: https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-r
 author: Raffael Schneider
 date: 2026-03-13
 description: "From watching Ethereum miners in 2016 to building a decentralized compute network in open beta. Architecture, conviction, and the long road."
-tags: [distributed-systems, edge-systems, sovereignty, isolation, elixir, rust]
-series: deep-dives
+tags: [distributed-systems, edge-systems, sovereignty, inference, isolation, self-hosting, elixir, rust]
 ---
 
 # Archipelag.io Is in Open Beta: Here's Why I Built It
@@ -6369,8 +6368,7 @@ author: Raffael Schneider
 date: 2026-03-08
 updated: 2026-03-08
 description: "I migrated two production apps from Kubernetes to a single Hetzner box. The missing piece was not the hardware."
-tags: [platform-automation, ai-engineering, economics, reliability, rust, elixir]
-series: deep-dives
+tags: [platform-automation, self-hosting, ai-engineering, economics, kubernetes, rust, elixir]
 ---
 
 # How AI Makes Bare Metal Viable Again
@@ -6798,8 +6796,7 @@ author: Raffael Schneider
 date: 2026-02-11
 updated: 2026-03-08
 description: "Auth, policy, and business logic are migrating to the edge. The traditional backend is becoming a persistence layer."
-tags: [edge-systems, applied-security, distributed-systems, rust, pingora]
-series: deep-dives
+tags: [edge-systems, applied-security, distributed-systems, local-first, waf, rust, pingora]
 ---
 
 # Edge Systems Are the New Backend
@@ -7275,7 +7272,7 @@ author: Raffael Schneider
 date: 2025-12-31
 updated: 2026-03-08
 description: "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself."
-tags: [edge-systems, oss, ai-for-ops]
+tags: [open-web, edge-systems, meta]
 ---
 
 # Looking back on 2025
@@ -7346,7 +7343,7 @@ author: Raffael Schneider
 date: 2025-12-14
 updated: 2026-03-09
 description: "Mise replaced Make, asdf, and a pile of shell scripts with a single TOML file per project. Here is why it stuck."
-tags: [platform-automation, developer-tooling, rust]
+tags: [developer-tooling, platform-automation, rust]
 ---
 
 # Mise ate my Makefile
@@ -7445,7 +7442,6 @@ date = ${DATE}
 description = ""
 [taxonomies]
 tags = []
-categories = []
 [extra]
 author = "Raffael"
 +++
@@ -7581,7 +7577,7 @@ author: Raffael Schneider
 date: 2024-05-01
 updated: 2026-03-08
 description: "Cleaning old kernels, pruning xbps package cache, and reclaiming disk space on Void Linux without breaking your system."
-tags: [linux]
+tags: [operating-systems, linux]
 ---
 
 # Disk space maintenance on Void Linux
@@ -7826,7 +7822,7 @@ author: Raffael Schneider
 date: 2023-02-06
 updated: 2026-03-08
 description: "A step-by-step guide to running OpenBSD in a libvirt virtual machine on Void Linux, without needing VirtualBox or VMWare. Part 1 of my OpenBSD journey."
-tags: [openbsd, linux]
+tags: [operating-systems, openbsd, linux]
 ---
 
 # My OpenBSD journey: Getting it virtualized with libvirt (1)
@@ -8006,7 +8002,7 @@ author: Raffael Schneider
 date: 2022-09-20
 updated: 2026-04-12
 description: "The first post on raskell.io. What this site is for and what I planned to write about."
-tags: [oss, linux]
+tags: [meta, oss, open-web]
 ---
 
 # Hello and outlook

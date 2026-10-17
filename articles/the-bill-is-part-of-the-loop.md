@@ -4,7 +4,7 @@ url: https://raskell.io/articles/the-bill-is-part-of-the-loop/
 author: Raffael Schneider
 date: 2026-07-18
 description: "Every model response already carries its own bill in the usage field, and the loop throws it away. This post reads that field, prices it against a table, and turns cost into a value the loop can see per turn and act on: a metering decorator that needs no loop change, a running ledger, prompt-cache accounting that moves the number the most, and a budget that degrades before it stops. Part eight of The Agent Platform Handbook."
-tags: [agents, economics, metrics, typescript]
+tags: [agents, ai-platforms, economics, observability, metrics, typescript]
 series: the-agent-platform-handbook
 ---
 

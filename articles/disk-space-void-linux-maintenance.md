@@ -5,7 +5,7 @@ author: Raffael Schneider
 date: 2024-05-01
 updated: 2026-03-08
 description: "Cleaning old kernels, pruning xbps package cache, and reclaiming disk space on Void Linux without breaking your system."
-tags: [linux]
+tags: [operating-systems, linux]
 ---
 
 # Disk space maintenance on Void Linux

@@ -4,7 +4,7 @@ url: https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-manageme
 author: Raffael Schneider
 date: 2026-04-16
 description: "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway."
-tags: [ai-engineering, agents, platform-automation, economics]
+tags: [agents, ai-engineering, economics]
 ---
 
 # What Sixteen AI Agents Taught Me About Management

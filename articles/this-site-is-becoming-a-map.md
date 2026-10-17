@@ -4,7 +4,7 @@ url: https://raskell.io/articles/this-site-is-becoming-a-map/
 author: Raffael Schneider
 date: 2026-10-15
 description: "A blog shows what I wrote last. The new map on raskell.io shows what I keep coming back to, and it is the start of a public second brain."
-tags: [zola, ai-engineering]
+tags: [meta, knowledge-management, open-web, zola]
 ---
 
 # This Site Is Becoming a Map

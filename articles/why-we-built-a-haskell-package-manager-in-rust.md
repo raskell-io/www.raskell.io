@@ -4,7 +4,7 @@ url: https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/
 author: Raffael Schneider
 date: 2026-04-13
 description: "hx is a fast, opinionated Haskell toolchain built in Rust, following the playbook astral.sh used to modernize Python."
-tags: [developer-tooling, programming-languages, haskell, rust]
+tags: [developer-tooling, programming-languages, oss, haskell, rust]
 ---
 
 # Why We Built a Haskell Package Manager in Rust

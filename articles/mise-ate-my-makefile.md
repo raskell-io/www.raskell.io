@@ -5,7 +5,7 @@ author: Raffael Schneider
 date: 2025-12-14
 updated: 2026-03-09
 description: "Mise replaced Make, asdf, and a pile of shell scripts with a single TOML file per project. Here is why it stuck."
-tags: [platform-automation, developer-tooling, rust]
+tags: [developer-tooling, platform-automation, rust]
 ---
 
 # Mise ate my Makefile
@@ -104,7 +104,6 @@ date = ${DATE}
 description = ""
 [taxonomies]
 tags = []
-categories = []
 [extra]
 author = "Raffael"
 +++

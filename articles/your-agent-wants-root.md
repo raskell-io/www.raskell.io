@@ -4,7 +4,7 @@ url: https://raskell.io/articles/your-agent-wants-root/
 author: Raffael Schneider
 date: 2026-06-05
 description: "An agent with a shell tool is arbitrary code execution with a friendly face. A short tour of why Docker alone is not enough, what Firecracker, gVisor, and Kata actually solve, and a hardened sandbox you can wrap the post-one agent in today. Part two of The Agent Platform Handbook."
-tags: [agents, applied-security, isolation]
+tags: [agents, isolation, applied-security]
 series: the-agent-platform-handbook
 ---
 

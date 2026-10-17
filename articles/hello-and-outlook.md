@@ -5,7 +5,7 @@ author: Raffael Schneider
 date: 2022-09-20
 updated: 2026-04-12
 description: "The first post on raskell.io. What this site is for and what I planned to write about."
-tags: [oss, linux]
+tags: [meta, oss, open-web]
 ---
 
 # Hello and outlook

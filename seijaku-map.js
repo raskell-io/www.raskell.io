@@ -1,11 +1,11 @@
-// Map page: a small force-directed graph of articles, topics, series and projects on a canvas.
-// Data comes from the #map-data JSON the template writes; no libraries.
+// The site graph: a small force-directed graph of articles, notes, topics, series and projects on a
+// canvas, no libraries. The /map/ page mounts the whole graph from its #map-data JSON; the end-of-page
+// maps (partials/local_map.html) fetch that JSON and mount one page's neighbourhood with SeijakuMap.local().
 (function () {
   "use strict";
-  var fig = document.querySelector("[data-map]");
-  var src = document.getElementById("map-data");
-  if (!fig || !src) { return; }
-  var data = JSON.parse(src.textContent);
+
+function mount(fig, data, opts) {
+  opts = opts || {};
   var canvas = fig.querySelector("canvas");
   var ctx = canvas.getContext("2d");
   var card = fig.querySelector(".map__card");
@@ -14,12 +14,13 @@
 
   var STYLE = {
     article: { fill: "#f4f0df", base: 2.6, grow: 0.9 },
+    note: { fill: "#f4f0df", square: true, base: 2.2, grow: 0.8 },
     tag: { fill: "#72d7dc", base: 3.2, grow: 1.45 },
     series: { fill: "#efd093", base: 5, grow: 1.1 },
     project: { fill: null, ring: "#efd093", base: 4.4, grow: 1.1 },
     hub: { fill: null, ring: "#f4f0df", base: 6, grow: 0.5 }
   };
-  var REST = { tag: 46, series: 40, project: 58, article: 64, hub: 70 };
+  var REST = { tag: 46, series: 40, project: 58, article: 64, note: 56, hub: 70, tagtag: 62 };
 
   // Nodes and links ---------------------------------------------------------
   var nodes = [], byId = {};
@@ -36,7 +37,8 @@
     if (!a || !b || a === b || seen[key]) { return; }
     seen[key] = true;
     a.deg++; b.deg++; a.nb.push(b); b.nb.push(a);
-    var k = a.kind === "hub" || b.kind === "hub" ? "hub" : a.kind === "article" ? b.kind : a.kind;
+    var page = function (n) { return n.kind === "article" || n.kind === "note"; };
+    var k = a.kind === "hub" || b.kind === "hub" ? "hub" : a.kind === "tag" && b.kind === "tag" ? "tagtag" : page(a) ? b.kind : a.kind;
     links.push({ a: a, b: b, rest: REST[k] || 50 });
   });
   // Orphans (an unlinked project, a topic with no articles) would only drift; leave them out.
@@ -83,7 +85,8 @@
   }
 
   // View --------------------------------------------------------------------
-  var W = 0, H = 0, dpr = 1, scale = 1, tx = 0, ty = 0, touched = false, view = { padTop: 64, bg: null };
+  var W = 0, H = 0, dpr = 1, scale = 1, tx = 0, ty = 0, touched = false, view = { padTop: opts.padTop == null ? 64 : opts.padTop, bg: null };
+  var focus = opts.focus ? byId[opts.focus] : null;
   var hidden = {}, hover = null, sel = null;
   // Group hubs travel with the projects toggle.
   function visible(n) { return !hidden[n.kind === "hub" ? "project" : n.kind]; }
@@ -137,12 +140,13 @@
       if (!visible(n)) { return; }
       var st = STYLE[n.kind];
       ctx.globalAlpha = lit(n) ? 1 : 0.18;
-      ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.beginPath();
+      if (st.square) { ctx.rect(n.x - n.r, n.y - n.r, n.r * 2, n.r * 2); } else { ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); }
       if (st.fill) { ctx.fillStyle = st.fill; ctx.fill(); }
       else { ctx.fillStyle = "#0b1412"; ctx.fill(); ctx.lineWidth = 1.6; ctx.strokeStyle = st.ring; ctx.stroke(); ctx.lineWidth = 1 / scale; }
-      if (n === hover || n === sel) {
+      if (n === hover || n === sel || n === focus) {
         ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 3 / scale + 1.5, 0, Math.PI * 2);
-        ctx.lineWidth = 1.5 / scale; ctx.strokeStyle = "#f4f0df"; ctx.stroke(); ctx.lineWidth = 1 / scale;
+        ctx.lineWidth = (n === focus ? 2.2 : 1.5) / scale; ctx.strokeStyle = n === focus ? "#efd093" : "#f4f0df"; ctx.stroke(); ctx.lineWidth = 1 / scale;
       }
     });
     ctx.globalAlpha = 1;
@@ -153,33 +157,35 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     var list = nodes.filter(function (n) {
       if (!visible(n)) { return false; }
-      if (n === hover || n === sel) { return true; }
+      if (n === hover || n === sel || n === focus) { return true; }
       if (sel) { return lit(n); }
-      if (n.kind === "article") { return scale > 1.7; }
+      if (opts.allLabels) { return true; }
+      if (n.kind === "article" || n.kind === "note") { return scale > 1.7; }
       return n.deg >= 2 || scale > 1.2;
     }).sort(function (a, b) {
-      return (b === hover || b === sel) - (a === hover || a === sel) || b.deg - a.deg;
+      return (b === hover || b === sel || b === focus) - (a === hover || a === sel || a === focus) || b.deg - a.deg;
     });
     var boxes = [];
     list.forEach(function (n) {
-      var big = n.kind !== "article";
+      var big = n.kind !== "article" && n.kind !== "note";
       ctx.font = (big ? "500 " : "400 ") + (big ? 13 : 12) + "px " + font;
       var text = n.label.length > 42 ? n.label.slice(0, 40) + "…" : n.label;
-      var w = ctx.measureText(text).width, x = n.x * scale + tx - w / 2, y = (n.y + n.r) * scale + ty + 6;
+      var w = ctx.measureText(text).width, x = Math.max(4, Math.min(W - w - 4, n.x * scale + tx - w / 2)), y = (n.y + n.r) * scale + ty + 6;   // kept inside the canvas
       var box = [x - 3, y - 2, x + w + 3, y + 15];
       var clash = boxes.some(function (o) { return box[0] < o[2] && box[2] > o[0] && box[1] < o[3] && box[3] > o[1]; });
       if (clash && n !== hover && n !== sel) { return; }
       boxes.push(box);
       ctx.fillStyle = "rgba(11, 20, 18, 0.72)"; ctx.fillRect(box[0], box[1], box[2] - box[0], box[3] - box[1]);
-      ctx.fillStyle = n.kind === "tag" ? "#a9e8e9" : n.kind === "article" ? "rgba(244, 240, 223, 0.86)" : n.kind === "hub" ? "#f4f0df" : "#efd093";
+      ctx.fillStyle = n === focus ? "#efd093" : n.kind === "tag" ? "#a9e8e9" : n.kind === "article" || n.kind === "note" ? "rgba(244, 240, 223, 0.86)" : n.kind === "hub" ? "#f4f0df" : "#efd093";
       ctx.textBaseline = "top"; ctx.fillText(text, x, y);
     });
   }
 
   // Selection card -----------------------------------------------------------
-  var KIND_NAME = { article: "Article", tag: "Topic", series: "Series", project: "Project", hub: "Group" };
+  var KIND_NAME = { article: "Article", note: "Note", tag: "Topic", series: "Series", project: "Project", hub: "Group" };
   function select(n) {
     sel = n;
+    if (!card) { draw(); return; }
     if (!n) { card.hidden = true; draw(); return; }
     card.querySelector(".map__card-kind").textContent = KIND_NAME[n.kind] + (n.meta && n.kind !== "project" && n.kind !== "hub" ? " · " + n.meta : "") + " · " + n.deg + " links";
     card.querySelector(".map__card-title").textContent = n.label;
@@ -276,6 +282,11 @@
     });
   });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && sel) { select(null); } });
+  // Focus a node from outside (e.g. /map/#a:/articles/x/): select it and centre on it.
+  function focusOn(id) {
+    var n = byId[id]; if (!n || nodes.indexOf(n) < 0) { return; }
+    touched = true; scale = Math.max(scale, 1.6); tx = W / 2 - n.x * scale; ty = H / 2 - n.y * scale; select(n);
+  }
 
   // Export -----------------------------------------------------------------
   function save(blob, name) {
@@ -333,4 +344,55 @@
   resize();
   if (!reduce) { run(); }
   fig.classList.add("is-ready");
+  if (opts.select) { setTimeout(function () { if (reduce || !running) { focusOn(opts.select); } else { var w = setInterval(function () { if (!running) { clearInterval(w); focusOn(opts.select); } }, 120); } }, 60); }
+  return { focusOn: focusOn };
+}
+
+// One node's neighbourhood: the node, everything linked to it, and the links among those.
+function neighbourhood(data, id) {
+  var keep = {}; keep[id] = true;
+  data.links.forEach(function (l) { if (!l) { return; } if (l[0] === id) { keep[l[1]] = true; } if (l[1] === id) { keep[l[0]] = true; } });
+  return {
+    nodes: data.nodes.filter(function (n) { return n && keep[n.id]; }),
+    links: data.links.filter(function (l) { return l && keep[l[0]] && keep[l[1]]; })
+  };
+}
+
+// The whole graph lives on the map page; fetch it once and reuse it for every local map.
+var graphPromise = null;
+function graph(src) {
+  if (!graphPromise) {
+    graphPromise = fetch(src, { credentials: "same-origin" }).then(function (r) { return r.text(); }).then(function (html) {
+      var m = html.match(/<script[^>]*id="?map-data"?[^>]*>([\s\S]*?)<\/script>/);
+      if (!m) { throw new Error("no map data"); }
+      return JSON.parse(m[1]);
+    });
+  }
+  return graphPromise;
+}
+
+function local(fig) {
+  var id = fig.getAttribute("data-focus");
+  return graph(fig.getAttribute("data-src")).then(function (data) {
+    var sub = neighbourhood(data, id);
+    if (sub.nodes.length < 2) { fig.classList.add("is-empty"); return null; }
+    return mount(fig, sub, { focus: id, padTop: 18, allLabels: sub.nodes.length <= 28 });
+  }).catch(function () { fig.classList.add("is-empty"); });
+}
+
+window.SeijakuMap = { mount: mount, local: local, neighbourhood: neighbourhood };
+
+// The full map page.
+var fig = document.querySelector("[data-map]");
+var src = document.getElementById("map-data");
+if (fig && src) {
+  var hash = decodeURIComponent(location.hash.slice(1));
+  mount(fig, JSON.parse(src.textContent), { select: hash || null });
+}
+// End-of-page maps load when their <details> opens (they may also be open from the start).
+document.querySelectorAll("[data-localmap]").forEach(function (d) {
+  var fig2 = d.querySelector("[data-focus]"), done = false;
+  function go() { if (d.open && !done) { done = true; local(fig2); } }
+  d.addEventListener("toggle", go); go();
+});
 })();

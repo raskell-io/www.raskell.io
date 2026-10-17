@@ -4,7 +4,7 @@ url: https://raskell.io/articles/notes-from-rsac-2026/
 author: Raffael Schneider
 date: 2026-04-09
 description: "Third time at RSA Conference, first time as a speaker. What I saw, what I heard, and what I am still processing."
-tags: [applied-security, ai-for-ops, sovereignty, policy]
+tags: [applied-security, ai-for-ops, agents, policy, sovereignty]
 ---
 
 # Notes from RSAC 2026

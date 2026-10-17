@@ -8,15 +8,10 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 
 - [About](https://raskell.io/about/): who Raffael is, what he works on, and how to reach him
 - [Start here](https://raskell.io/start-here/): curated reading tracks through the archive
-- [Map](https://raskell.io/map/): every article, topic, series, and project as one graph; machine-readable at [map.json](https://raskell.io/map.json)
-- [All articles in full](https://raskell.io/llms-full.txt): every article in one Markdown file, newest first
+- [Map](https://raskell.io/map/): every article, note, topic, series, and project as one graph; machine-readable at [map.json](https://raskell.io/map.json)
+- [All writing in full](https://raskell.io/llms-full.txt): every article and note in one Markdown file, newest first
+- [Notes](https://raskell.io/notes/): short notes that sit between the articles
 - [RSS feed](https://raskell.io/rss.xml): full-text feed
-
-## Series: Deep Dives
-
-1. [Edge Systems Are the New Backend](https://raskell.io/articles/edge-systems-are-the-new-backend.md): Auth, policy, and business logic are migrating to the edge. The traditional backend is becoming a persistence layer.
-2. [How AI Makes Bare Metal Viable Again](https://raskell.io/articles/how-ai-makes-bare-metal-viable-again.md): I migrated two production apps from Kubernetes to a single Hetzner box. The missing piece was not the hardware.
-3. [Archipelag.io Is in Open Beta: Here's Why I Built It](https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta.md): From watching Ethereum miners in 2016 to building a decentralized compute network in open beta. Architecture, conviction, and the long road.
 
 ## Series: The Agent Platform Handbook
 
@@ -64,6 +59,60 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 - [All beginning is Haskell](https://raskell.io/articles/all-beginning-is-haskell.md) (2023-03-06): How Haskell shaped the way I think about building systems, and why I am still building Haskell tooling years after writing my first monad.
 - [My OpenBSD journey: Getting it virtualized with libvirt (1)](https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1.md) (2023-02-06): A step-by-step guide to running OpenBSD in a libvirt virtual machine on Void Linux, without needing VirtualBox or VMWare. Part 1 of my OpenBSD journey.
 - [Hello and outlook](https://raskell.io/articles/hello-and-outlook.md) (2022-09-20): The first post on raskell.io. What this site is for and what I planned to write about.
+
+## Topics
+
+The topic vocabulary every page is filed under, with broader topics in brackets. Topic pages live at https://raskell.io/tags/<slug>/.
+
+### Domains
+
+- AI platforms (`ai-platforms`): The shared foundation an organisation builds AI on: model gateways, agent runtimes, governance, observability, and the operating model around them.
+- AI-assisted engineering (`ai-engineering`): AI as an engineering tool: coding agents, AI-authored code, and what programming becomes when models write most of it.
+- AI for operations (`ai-for-ops`): AI applied to running systems: security triage, alert noise, incident work, and keeping a human in the loop.
+- Platform automation (`platform-automation`): Self-service, guardrails, deployment, and the tooling that keeps operating software sustainable.
+- Edge systems (`edge-systems`): Reverse proxies, policy enforcement, CDNs, and logic that runs close to the user instead of in the backend.
+- Applied security (`applied-security`): Security under production pressure: adversarial input, signal versus noise, and controls that operators can live with.
+- Distributed systems (`distributed-systems`): Replication, coordination, and consistency across machines that fail independently.
+- Programming languages (`programming-languages`): Languages, type systems, compilers, and how executable intent gets written down.
+- Operating systems (`operating-systems`): Kernels, virtualisation, and the layer between hardware and everything else, from BSD to inference-native designs.
+- Reliability (`reliability`): Failure modes, operability, and keeping systems up when the inputs and the dependencies misbehave.
+- Sovereignty (`sovereignty`): Who controls compute, data, and infrastructure, and in which jurisdiction; Europe's position in particular.
+- Policy (`policy`): Where engineering meets regulation, public institutions, procurement, and national strategy.
+- The open web (`open-web`): The web as a commons: open protocols, small independent sites, and publishing outside the platforms.
+
+### Concepts
+
+- Agents (`agents`) [within AI platforms]: LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.
+- Context engineering (`context-engineering`) [within Agents]: Deciding what a model sees: pinned context, retrieval, memory, and the conventions that keep them honest.
+- Inference (`inference`) [within AI platforms]: Running models in production: routing, cost, hardware, and inference as a metered utility.
+- Isolation (`isolation`) [within Applied security, Reliability]: Sandboxes, process and failure-domain isolation, and running untrusted or fallible work safely.
+- WAF and traffic inspection (`waf`) [within Applied security, Edge systems]: Web application firewalls, rule tuning, traffic replay, and inspecting requests without drowning operators.
+- Observability (`observability`) [within Reliability]: Seeing what a running system does: traces, metering, glass-box infrastructure, and what not to log.
+- Economics (`economics`): Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.
+- Metrics (`metrics`): What to measure, leading versus lagging signals, and vanity numbers that look like insight.
+- Formal methods (`formal-methods`) [within Programming languages]: Proofs, verification, and types as specifications, especially once machines write the code.
+- Developer tooling (`developer-tooling`) [within Platform automation]: Package managers, build tools, CLIs, and the daily toolchain an engineer actually touches.
+- Self-hosting (`self-hosting`) [within Platform automation, Sovereignty]: Running your own infrastructure, from a single bare-metal box to community-operated compute.
+- Local-first (`local-first`) [within Distributed systems]: Software that keeps data on your devices and syncs through CRDTs, with the network as an optimisation.
+- Knowledge management (`knowledge-management`): Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.
+- Open source (`oss`) [within The open web]: Open source and open standards as the point of the work, not just its licence.
+
+### Technologies
+
+- Rust (`rust`) [within Programming languages]: The systems language most of the projects here are written in.
+- Haskell (`haskell`) [within Programming languages]: The language that shaped how I think about types, effects, and correctness.
+- TypeScript (`typescript`) [within Programming languages]: TypeScript on Bun, the language of the Agent Platform Handbook code.
+- Elixir (`elixir`) [within Programming languages]: Elixir, Phoenix, and the BEAM for the long-running, fault-tolerant parts.
+- Pingora (`pingora`) [within Edge systems, Rust]: Cloudflare's Rust framework for building proxies, the base of Zentinel.
+- Kubernetes (`kubernetes`) [within Platform automation]: Container orchestration, and the question of when you actually need it.
+- GPUs (`gpus`) [within Inference]: GPUs as the computer: memory shape, partitioning, and the hardware under inference.
+- Linux (`linux`) [within Operating systems]: Linux distributions and system administration, Void Linux in particular.
+- OpenBSD (`openbsd`) [within Operating systems]: OpenBSD and the BSD approach to correctness and simplicity.
+- Zola (`zola`) [within The open web]: The static site generator this site and several project sites are built with.
+
+### This site
+
+- This site (`meta`): Posts about raskell.io itself: why it exists, how it is built, and where it is going.
 
 ## Projects
 

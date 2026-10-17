@@ -4,7 +4,7 @@ url: https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/
 author: Raffael Schneider
 date: 2026-06-17
 description: "Loading the whole .AGENTS/ directory on every turn does not scale. The fix is not a retrieval layer bolted to the side of the agent. It is a search tool in the registry the agent already has. BM25 over project docs, no vector store, and an honest account of when embeddings start to earn their keep. Part five of The Agent Platform Handbook."
-tags: [agents, typescript]
+tags: [agents, context-engineering, typescript]
 series: the-agent-platform-handbook
 ---
 
