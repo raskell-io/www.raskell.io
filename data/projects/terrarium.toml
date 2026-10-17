@@ -3,4 +3,4 @@ description = "A societal simulation engine where LLM-powered agents form emerge
 status = "dev"
 logo = "brands/terrarium.png"
 links = [ { name = "Website", url = "https://terrarium.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/terrarium" } ]
-topics = ["agents", "complex-systems", "rust"]
+topics = ["agents", "simulation", "complex-systems", "rust"]

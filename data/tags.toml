@@ -159,6 +159,17 @@ name = "Knowledge management"
 kind = "concept"
 description = "Second brains, knowledge graphs, and how notes, links, and memory turn into understanding."
 
+[simulation]
+name = "Simulation"
+kind = "domain"
+description = "Interactive worlds that mimic real ones: societies, economies, and agents left to evolve on their own."
+broader = ["complex-systems"]
+
+[games]
+name = "Games"
+kind = "domain"
+description = "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on."
+
 [oss]
 name = "Open source"
 kind = "concept"
@@ -166,6 +177,12 @@ description = "Open source and open standards as the point of the work, not just
 broader = ["open-web"]
 
 # Technologies -------------------------------------------------------------
+
+[webassembly]
+name = "WebAssembly"
+kind = "technology"
+description = "Portable, sandboxed bytecode for running native-speed code in the browser and beyond."
+broader = ["open-web"]
 
 [rust]
 name = "Rust"

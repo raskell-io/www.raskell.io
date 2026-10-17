@@ -11,11 +11,17 @@ url = "/series/the-agent-platform-handbook/"
 name = "Arcanist.sh"
 text = "Haskell tooling in Rust: hx, a fast package manager, and bhc, a compiler with GC-free runtime profiles."
 url = "https://arcanist.sh"
+
+[[extra.now]]
+name = "WASM-AD"
+text = "A fantasy console whose cartridges are WebAssembly modules. Rainbow River, a fishing game, is the first cartridge."
+url = "https://wasmad.raskell.io"
 +++
 
 # Notes from the <span class="hero-term" data-flap="data plane.|rabbit hole.|night shift.|field research.|control plane.|test kitchen.|packet capture.|cold storage.">machine room.</span>
 
-<a class="hero-who" href="/about/"><img class="hero-who__face" src="/images/raffael-face.webp" alt="" width="64" height="64"><strong>Raffael</strong></a> builds automation-first platforms and edge systems that survive
-production reality. Writing about platform automation, edge infrastructure,
-applied security, and AI-assisted engineering. Languages and models are tools.
+<a class="hero-who" href="/about/"><img class="hero-who__face" src="/images/raffael-face.webp" alt="" width="64" height="64"><strong>Raffael</strong></a> builds automation-first platforms and edge systems by day,
+and tries out ideas in language tooling, local-first apps, simulations, and games on the side.
+Writing about platform automation, edge infrastructure, applied security, and
+AI-assisted engineering. Languages and models are tools.
 They serve humans, not the other way around.

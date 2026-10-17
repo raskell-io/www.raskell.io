@@ -1,0 +1,8 @@
+title = "Rainbow River"
+description = "A fishing game in the style of the 32-bit handhelds, inspired by The Legend of the River King. Walk the river, read the water, and fill a fish log of hand-drawn species. Written in Rust, compiled to WebAssembly, and the first cartridge for WASM-AD. It plays in the browser."
+status = "live"
+status_label = "Playable"
+logo = "brands/rainbow-river.png"
+links = [ { name = "Play", url = "https://rainbowriver.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/rainbow-river" } ]
+topics = ["games", "webassembly", "rust"]
+related = ["wasm-ad"]
