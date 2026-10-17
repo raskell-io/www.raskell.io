@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-17T18:44:31+00:00",
+ "generated": "2026-10-17T19:13:10+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -451,7 +451,7 @@
    "url": "https://raskell.io/tags/knowledge-management/",
    "meta": "Concept · 2 pages",
    "description": "Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:kubernetes",
@@ -622,7 +622,7 @@
    "url": "https://raskell.io/tags/typescript/",
    "meta": "Technology · 7 pages",
    "description": "TypeScript on Bun, the language of the Agent Platform Handbook code.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:waf",
@@ -659,6 +659,24 @@
    "meta": "Domain · no pages yet",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
    "degree": 3
+  },
+  {
+   "id": "t:geography",
+   "kind": "tag",
+   "label": "Geography",
+   "url": "https://raskell.io/tags#geography",
+   "meta": "Domain · no pages yet",
+   "description": "Places, terrain, borders, and spatial data, and how their relationships change over time.",
+   "degree": 1
+  },
+  {
+   "id": "t:history",
+   "kind": "tag",
+   "label": "History",
+   "url": "https://raskell.io/tags#history",
+   "meta": "Domain · no pages yet",
+   "description": "Events, institutions, and societies through time, with attention to sources, competing accounts, and uncertainty.",
+   "degree": 1
   },
   {
    "id": "t:simulation",
@@ -793,6 +811,15 @@
    "meta": "Project",
    "description": "A long-term interdisciplinary research project on humans and human collectives across scales, from individuals and families to institutions, cultures, and civilizations: how indivi…",
    "degree": 3
+  },
+  {
+   "id": "p:chronicle-of-earth",
+   "kind": "project",
+   "label": "Chronicle of Earth",
+   "url": "https://github.com/chronicle-of-earth",
+   "meta": "Project",
+   "description": "An interactive atlas of history and geopolitics, starting with 1900–2026. An early prototype pairs a 3D globe that zooms down to villages and streets with a timeline spanning days …",
+   "degree": 5
   },
   {
    "id": "p:wasm-ad",
@@ -951,7 +978,7 @@
    "label": "Civic and research",
    "url": "https://raskell.io/projects/#tier-civic",
    "meta": "Group",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "h:projects-lab",
@@ -2330,6 +2357,26 @@
   {
    "source": "p:human-macroscope",
    "target": "t:knowledge-management"
+  },
+  {
+   "source": "p:chronicle-of-earth",
+   "target": "h:projects-civic"
+  },
+  {
+   "source": "p:chronicle-of-earth",
+   "target": "t:history"
+  },
+  {
+   "source": "p:chronicle-of-earth",
+   "target": "t:geography"
+  },
+  {
+   "source": "p:chronicle-of-earth",
+   "target": "t:knowledge-management"
+  },
+  {
+   "source": "p:chronicle-of-earth",
+   "target": "t:typescript"
   },
   {
    "source": "p:wasm-ad",
