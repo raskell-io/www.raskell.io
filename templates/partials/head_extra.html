@@ -5,7 +5,7 @@
 {%- elif config.extra.keywords %}
 <meta name="keywords" content="{{ config.extra.keywords }}">
 {%- endif %}
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 {%- if config.extra.twitter_handle %}
 <meta name="twitter:site" content="@{{ config.extra.twitter_handle }}">
 <meta name="twitter:creator" content="@{{ config.extra.twitter_handle }}">
@@ -18,7 +18,12 @@
 <link rel="manifest" href="{{ get_url(path='site.webmanifest') | safe }}">
 <link rel="stylesheet" href="{{ get_url(path='site.css', cachebust=true) | safe }}">
 {#- Agent-readable alternates (written by `mise run llms` and `mise run map-json`). #}
-<link rel="alternate" type="text/plain" title="llms.txt" href="{{ get_url(path='llms.txt') | safe }}">
+<link rel="alternate" type="text/markdown" title="llms.txt" href="{{ get_url(path='llms.txt') | safe }}">
+<link rel="alternate" type="text/markdown" title="llms-full.txt (all writing as Markdown)" href="{{ get_url(path='llms-full.txt') | safe }}">
+<link rel="alternate" type="application/atom+xml" title="{{ config.title }} (Atom)" href="{{ get_url(path='atom.xml') | safe }}">
+<link rel="alternate" type="application/rss+xml" title="{{ config.title }}: articles" href="{{ get_url(path='articles/rss.xml') | safe }}">
+<link rel="alternate" type="application/rss+xml" title="{{ config.title }}: notes" href="{{ get_url(path='notes/rss.xml') | safe }}">
+<link rel="api-catalog" href="{{ get_url(path='.well-known/api-catalog') | safe }}">
 {%- if page is defined %}{% set psec = page.components | first | default(value="") %}{% else %}{% set psec = "" %}{% endif %}
 {%- if page is defined and page.date and (psec == "articles" or psec == "notes") %}
 <link rel="alternate" type="text/markdown" title="{{ page.title }} (Markdown)" href="{{ get_url(path=psec ~ '/' ~ page.slug ~ '.md') | safe }}">
@@ -30,6 +35,8 @@
 {%- set here = current_url | default(value=base) %}
 {%- set id_site = base ~ "/#website" %}{% set id_person = base ~ "/#person" %}{% set id_article = here ~ "#article" %}
 {%- set url_home = base ~ "/" %}{% set url_articles = base ~ "/articles/" %}{% set id_profile = here ~ "#profile" %}
+{%- set tagdata = load_data(path=config.extra.seijaku.tag_data | default(value="data/tags.toml"), required=false) %}
+{%- set id_termset = base ~ "/tags/#term-set" %}{% set url_tags = base ~ "/tags/" %}{% set url_notes = base ~ "/notes/" %}{% set id_webpage = here ~ "#webpage" %}{% set id_dataset = here ~ "#dataset" %}
 {%- set socials = [] %}
 {%- for s in config.extra.seijaku.social | default(value=[]) %}{% set_global socials = socials | concat(with=s.url) %}{% endfor %}
 <script type="application/ld+json">
@@ -97,7 +104,14 @@
       {%- if page.taxonomies.series %}{% set s = page.taxonomies.series | first %},
       "isPartOf": { "@type": "CreativeWorkSeries", "name": {{ s | replace(from="-", to=" ") | title | json_encode | safe }}, "url": {{ get_taxonomy_url(kind="series", name=s) | json_encode | safe }} }
       {%- endif %},
-      "encoding": { "@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": {{ get_url(path=psec ~ '/' ~ page.slug ~ '.md') | json_encode | safe }} }
+      "encoding": { "@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": {{ get_url(path=psec ~ '/' ~ page.slug ~ '.md') | json_encode | safe }} },
+      "isAccessibleForFree": true
+      {%- if psec == "articles" and page.reading_time %},
+      "timeRequired": "PT{{ page.reading_time }}M"
+      {%- endif %}
+      {%- if page.taxonomies.tags %},
+      "about": [{% for t in page.taxonomies.tags %}{% set turl = get_taxonomy_url(kind="tags", name=t) %}{ "@type": "DefinedTerm", "@id": {{ turl | json_encode | safe }}, "name": {% if tagdata and t in tagdata %}{{ tagdata[t].name | json_encode | safe }}{% else %}{{ t | json_encode | safe }}{% endif %}, "termCode": {{ t | json_encode | safe }}, "inDefinedTermSet": { "@id": {{ id_termset | json_encode | safe }} } }{% if not loop.last %}, {% endif %}{% endfor %}]
+      {%- endif %}
       {%- if page.extra.og_image or page.extra.image %},
       "image": {{ get_url(path=page.extra.og_image | default(value=page.extra.image)) | json_encode | safe }}
       {%- endif %}
@@ -106,9 +120,52 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ url_home | json_encode | safe }} },
-        { "@type": "ListItem", "position": 2, "name": "Articles", "item": {{ url_articles | json_encode | safe }} },
+        { "@type": "ListItem", "position": 2, "name": {% if psec == "notes" %}"Notes"{% else %}"Articles"{% endif %}, "item": {% if psec == "notes" %}{{ url_notes | json_encode | safe }}{% else %}{{ url_articles | json_encode | safe }}{% endif %} },
         { "@type": "ListItem", "position": 3, "name": {{ page.title | json_encode | safe }}, "item": {{ here | json_encode | safe }} }
       ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": {{ id_webpage | json_encode | safe }},
+      "url": {{ here | json_encode | safe }},
+      "name": {{ page.title | json_encode | safe }},
+      "isPartOf": { "@id": {{ id_site | json_encode | safe }} },
+      "mainEntity": { "@id": {{ id_article | json_encode | safe }} },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["[data-ai-summary]", ".prose > p:first-of-type"] }
+    }
+    {%- elif page is defined and page.path == "/map/" %},
+    {
+      "@type": "Dataset",
+      "@id": {{ id_dataset | json_encode | safe }},
+      "name": "raskell.io site graph",
+      "description": "Every article, note, topic, series, and project on raskell.io as one graph: typed nodes and the links between them, built from tags, series, in-text links, and project data.",
+      "url": {{ here | json_encode | safe }},
+      "creator": { "@id": {{ id_person | json_encode | safe }} },
+      "isAccessibleForFree": true,
+      "keywords": ["knowledge graph", "site map", "topics", "platform engineering", "AI platforms"],
+      "distribution": [
+        { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": {{ get_url(path="map.json") | json_encode | safe }} },
+        { "@type": "DataDownload", "encodingFormat": "text/markdown", "contentUrl": {{ get_url(path="llms-full.txt") | json_encode | safe }} }
+      ]
+    }
+    {%- elif taxonomy is defined and taxonomy.name == "tags" and term is not defined and tagdata %},
+    {
+      "@type": "DefinedTermSet",
+      "@id": {{ id_termset | json_encode | safe }},
+      "name": "raskell.io topics",
+      "description": "The topic vocabulary every page and project on raskell.io is filed under.",
+      "url": {{ url_tags | json_encode | safe }},
+      "hasDefinedTerm": [{% set_global usedtags = [] %}{% for t in terms %}{% set_global usedtags = usedtags | concat(with=t.slug) %}{% endfor %}{% for slug, td in tagdata %}{ "@type": "DefinedTerm", "@id": "{{ base }}/tags/{% if slug in usedtags %}{{ slug }}/{% else %}#{{ slug }}{% endif %}", "name": {{ td.name | json_encode | safe }}, "termCode": {{ slug | json_encode | safe }}, "description": {{ td.description | json_encode | safe }} }{% if not loop.last %}, {% endif %}{% endfor %}]
+    }
+    {%- elif taxonomy is defined and taxonomy.name == "tags" and term is defined and tagdata and term.slug in tagdata %}{% set td = tagdata[term.slug] %},
+    {
+      "@type": "DefinedTerm",
+      "@id": {{ term.permalink | json_encode | safe }},
+      "name": {{ td.name | json_encode | safe }},
+      "termCode": {{ term.slug | json_encode | safe }},
+      "description": {{ td.description | json_encode | safe }},
+      "url": {{ term.permalink | json_encode | safe }},
+      "inDefinedTermSet": { "@type": "DefinedTermSet", "@id": {{ id_termset | json_encode | safe }}, "name": "raskell.io topics", "url": {{ url_tags | json_encode | safe }} }
     }
     {%- elif page is defined and page.path == "/about/" %},
     {

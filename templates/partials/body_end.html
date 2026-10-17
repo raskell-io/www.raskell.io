@@ -2,3 +2,5 @@
 {%- if section is defined and section.path == "/" %}
 <script src="{{ get_url(path='js/split-flap.js', cachebust=true) | safe }}" defer></script>
 {%- endif %}
+{#- WebMCP tools for in-browser agents; the bundle loads only when a model context exists. -#}
+<script>(function(){if(!(document.modelContext||navigator.modelContext)){return}var s=document.createElement("script");s.src={{ get_url(path='js/webmcp.js', cachebust=true) | json_encode | safe }};s.async=true;document.head.appendChild(s)})();</script>

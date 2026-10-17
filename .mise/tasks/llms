@@ -223,6 +223,14 @@ for section, heading in (("projects", "Projects"), ("apps", "Apps")):
         lines += ["## %s" % heading, ""]
         lines += ["- [%s](%s): %s" % (t, u, d) for t, u, d, _ in projects_from(section)]
         lines.append("")
+lines += ["## For agents", "",
+          "- Each article and note as Markdown: its URL with `.md` instead of the trailing slash, e.g. %s/articles/the-model-is-a-dependency.md" % BASE,
+          "- [map.json](%s/map.json): the site graph (pages, topics with definitions, series, projects, and their links)" % BASE,
+          "- [api-catalog](%s/.well-known/api-catalog): RFC 9727 discovery of the machine-readable files" % BASE,
+          "- Feeds: [RSS](%s/rss.xml), [Atom](%s/atom.xml), [articles](%s/articles/rss.xml), [notes](%s/notes/rss.xml)" % (BASE, BASE, BASE, BASE),
+          "- In the browser: WebMCP tools (search_site, get_current_page, get_page_markdown, get_site_index, list_topics, get_connections, cite_current_page, open_page) register when an agent exposes `document.modelContext`.",
+          "- No authentication, no rate limits ([auth.md](%s/.well-known/auth.md)). Crawling for search, answers, and training is welcome (robots.txt Content-Signal)." % BASE,
+          ""]
 lines += ["## Optional", "",
           "- [Tags](%s/tags/): the topic index" % BASE,
           "- [Speaking](%s/speaking/): talks and availability" % BASE,

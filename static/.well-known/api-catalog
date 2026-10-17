@@ -1,0 +1,27 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://raskell.io/",
+      "service-desc": [
+        { "href": "https://raskell.io/llms.txt", "type": "text/markdown", "title": "llms.txt: who writes here, every article and note, the topic vocabulary, projects" },
+        { "href": "https://raskell.io/llms-full.txt", "type": "text/markdown", "title": "Every article and note in full, as Markdown" },
+        { "href": "https://raskell.io/map.json", "type": "application/json", "title": "The site graph: pages, topics, series, projects, and their links" },
+        { "href": "https://raskell.io/sitemap.xml", "type": "application/xml", "title": "Sitemap" }
+      ],
+      "service-doc": [
+        { "href": "https://raskell.io/map/", "type": "text/html", "title": "The map, drawn" },
+        { "href": "https://raskell.io/tags/", "type": "text/html", "title": "The topic vocabulary" }
+      ],
+      "service-meta": [
+        { "href": "https://raskell.io/.well-known/auth.md", "type": "text/markdown", "title": "Authentication policy (there is none)" }
+      ],
+      "alternate": [
+        { "href": "https://raskell.io/rss.xml", "type": "application/rss+xml", "title": "RSS feed" },
+        { "href": "https://raskell.io/atom.xml", "type": "application/atom+xml", "title": "Atom feed" }
+      ],
+      "author": [
+        { "href": "https://raskell.io/about/", "title": "Raffael Schneider" }
+      ]
+    }
+  ]
+}

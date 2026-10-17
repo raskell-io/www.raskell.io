@@ -6,7 +6,7 @@ theme = "seijaku"
 compile_sass = true
 minify_html = true
 generate_feeds = true
-feed_filenames = ["rss.xml"]
+feed_filenames = ["rss.xml", "atom.xml"]
 build_search_index = true
 
 taxonomies = [
