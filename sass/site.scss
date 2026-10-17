@@ -206,3 +206,5 @@ svg.chart {
 @keyframes flap-drop { from { transform: rotateX(-75deg); opacity: 0.4; } to { transform: rotateX(0); opacity: 1; } }
 // Room for the longest board phrase ("field research.") plus its cursor on wide screens.
 @media (min-width: 44.01rem) { .hero-home__body h1:has(.hero-term.is-flap) { max-width: 12em; } }
+// The split-flap board is its own signal of life; no cursor after it.
+.hero-home__body h1 .hero-term.is-flap::after { content: none; }
