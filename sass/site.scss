@@ -191,8 +191,8 @@ svg.chart {
 // Split-flap board for the hero term (static/js/split-flap.js): one flap per character, a hairline
 // across the middle like a Solari board, and a short drop as each flap turns.
 .hero-term.is-flap { display: inline-flex; align-items: baseline; }
-// Phones: the headline column is narrow, so size the flaps to fit "control room." on one line.
-@media (max-width: 44rem) { .hero-home__body h1 .hero-term.is-flap { font-size: calc((100vw - 2 * 9.5vw) / 10.6); white-space: nowrap; } }
+// Phones: the headline column is narrow, so size the flaps to fit "field research." (15 flaps) on one line.
+@media (max-width: 44rem) { .hero-home__body h1 .hero-term.is-flap { font-size: calc((100vw - 2 * 9.5vw) / 12.4); white-space: nowrap; } }
 .flap-board { display: inline-flex; gap: 0.06em; letter-spacing: 0; }
 .flap {
   position: relative; display: inline-block; width: 0.66em; text-align: center;
@@ -204,3 +204,5 @@ svg.chart {
 .flap--space { background: rgba(200, 240, 239, 0.03); box-shadow: none; }
 .flap.is-flip { animation: flap-drop 90ms ease-out; }
 @keyframes flap-drop { from { transform: rotateX(-75deg); opacity: 0.4; } to { transform: rotateX(0); opacity: 1; } }
+// Room for the longest board phrase ("field research.") plus its cursor on wide screens.
+@media (min-width: 44.01rem) { .hero-home__body h1:has(.hero-term.is-flap) { max-width: 12em; } }
