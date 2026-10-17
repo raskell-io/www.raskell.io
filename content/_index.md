@@ -13,7 +13,7 @@ text = "Haskell tooling in Rust: hx, a fast package manager, and bhc, a compiler
 url = "https://arcanist.sh"
 +++
 
-# Notes from the <span class="hero-term" data-flap="server room.|engine room.|edge.|control room.|workbench.|kernel.|field.">machine room.</span>
+# Notes from the <span class="hero-term" data-flap="hot path.|noise floor.|data plane.|blast radius.|rabbit hole.|trenches.|deep end.">machine room.</span>
 
 <a class="hero-who" href="/about/"><img class="hero-who__face" src="/images/raffael-face.webp" alt="" width="64" height="64"><strong>Raffael</strong></a> builds automation-first platforms and edge systems that survive
 production reality. Writing about platform automation, edge infrastructure,
