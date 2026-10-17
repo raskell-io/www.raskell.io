@@ -16,7 +16,7 @@ og_image = "void-disk-usage.png"
 
 ## Monday morning surprise
 
-As I spent most time doing stuff with my computer rather than configuring my beloved Linux distribution, Void Linux, I have developed the tendency to not really bother about Void at all until something crucial becomes unusable. After almost two years of having switched from Arch to Void, I have actually never encountered any major problem and felt I had made the right decision.
+As I spent most time doing stuff with my computer rather than configuring my beloved Linux distribution, Void Linux (the same machine that runs the OpenBSD guests from [my OpenBSD journey](/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/)), I have developed the tendency to not really bother about Void at all until something crucial becomes unusable. After almost two years of having switched from Arch to Void, I have actually never encountered any major problem and felt I had made the right decision.
 
 I checked my disk usage out of curiosity if the 250GB solid-state disk would be enough. And there came the surprise:
 

@@ -54,7 +54,7 @@ I don't want to oversell this. The transition, if it happens, won't be clean. Th
 
 But when I think about what I want to build toward, it's that reef model. Many small, specialized nodes. Interconnected through open protocols. Resilient because distributed. Sustainable because the economics work at small scale.
 
-This site is part of that bet. Static content, no tracking, no platform dependencies. The tools I'm working on (Zentinel, Sango, Ushio) are all about making edge infrastructure more accessible, making it easier to build and operate systems that are distributed and independent.
+This site is part of that bet, as it has been since [the first post](/articles/hello-and-outlook/). Static content, no tracking, no platform dependencies. The tools I'm working on (Zentinel, Sango, Ushio) are all about making edge infrastructure more accessible, making it easier to build and operate systems that are distributed and independent.
 
 2025 was the year AI started breaking the old model. I don't know exactly what grows in its place. But floating in that Okinawan water, watching the reef do what reefs do, I got a sense of what healthy systems look like. Diverse. Interconnected. Resilient. Not optimized for any single metric, but somehow working anyway.
 
