@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-17T19:21:54+00:00",
+ "generated": "2026-10-17T19:42:45+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -854,7 +854,7 @@
    "label": "Hotaru",
    "url": "https://hotaru.raskell.io",
    "meta": "Project",
-   "description": "A neuron culture on a 60-electrode array, simulated in your browser. Thousands of spiking neurons stay quiet, then fire in bursts that sweep across the dish. Click an electrode to …",
+   "description": "Simulated neuron cultures on a 60-electrode array play Pong in your browser, as in the DishBrain experiment. One culture gets feedback for its hits and misses, an identical one get…",
    "degree": 7
   },
   {
