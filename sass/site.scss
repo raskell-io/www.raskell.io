@@ -167,3 +167,23 @@ svg.chart {
   .footer__note .globe__land { animation: globe-spin 40s linear infinite; }
 }
 @keyframes globe-spin { from { transform: translateX(-24px); } to { transform: translateX(0); } }
+
+// Wordmark: "raskell" in Unbounded (OFL; subsetted to the letters of the name, 1.5 KB), sized to stand
+// level with the tanuki rather than beside it.
+@font-face {
+  font-family: "Raskell Wordmark";
+  src: url("fonts/unbounded-wordmark.woff2") format("woff2");
+  font-weight: 600;
+  font-display: block;
+}
+.topnav__brand > span:last-of-type,
+.footer__logo > span:last-of-type {
+  font-family: "Raskell Wordmark", var(--font-prose);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  text-transform: lowercase;
+}
+.topnav__brand { gap: 0.6rem; font-size: 1.6rem; }
+.topnav__brand > span:last-of-type { line-height: 1; padding-block-end: 0.08em; }
+.footer__logo > span:last-of-type { font-size: 1.45rem; }
+@media (max-width: 34rem) { .topnav__brand { font-size: 1.35rem; } }
