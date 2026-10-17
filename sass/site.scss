@@ -190,7 +190,7 @@ svg.chart {
 
 // Split-flap board for the hero term (static/js/split-flap.js): one flap per character, a hairline
 // across the middle like a Solari board, and a short drop as each flap turns.
-.hero-term.is-flap { display: inline-flex; align-items: baseline; }
+.hero-term.is-flap { display: flex; width: fit-content; align-items: baseline; }   // the board always takes its own line
 // Phones: the headline column is narrow, so size the flaps to fit "field research." (15 flaps) on one line.
 @media (max-width: 44rem) { .hero-home__body h1 .hero-term.is-flap { font-size: calc((100vw - 2 * 9.5vw) / 12.4); white-space: nowrap; } }
 .flap-board { display: inline-flex; gap: 0.06em; letter-spacing: 0; }
