@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-17T18:39:10+00:00",
+ "generated": "2026-10-17T18:44:31+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -768,15 +768,6 @@
    "degree": 4
   },
   {
-   "id": "p:sango",
-   "kind": "project",
-   "label": "Sango",
-   "url": "https://sango.raskell.io",
-   "meta": "Project",
-   "description": "Edge diagnostics for the modern web. An operator-grade CLI that performs comprehensive endpoint analysis in a single command. TLS inspection, HTTP protocol detection (HTTP/1.1, HTT…",
-   "degree": 8
-  },
-  {
    "id": "p:vela",
    "kind": "project",
    "label": "Vela",
@@ -829,6 +820,15 @@
    "meta": "Project",
    "description": "A societal simulation engine where LLM-powered agents form emergent civilizations. Each agent has a personality, needs, memories, and beliefs that can be wrong. You set the rules o…",
    "degree": 7
+  },
+  {
+   "id": "p:sango",
+   "kind": "project",
+   "label": "Sango",
+   "url": "https://sango.raskell.io",
+   "meta": "Project",
+   "description": "Edge diagnostics for the modern web. An operator-grade CLI that performs comprehensive endpoint analysis in a single command. TLS inspection, HTTP protocol detection (HTTP/1.1, HTT…",
+   "degree": 8
   },
   {
    "id": "p:conflux",
@@ -943,7 +943,7 @@
    "label": "Flagship and serious builds",
    "url": "https://raskell.io/projects/#tier-flagship",
    "meta": "Group",
-   "degree": 7
+   "degree": 6
   },
   {
    "id": "h:projects-civic",
@@ -959,7 +959,7 @@
    "label": "Labs / passion projects",
    "url": "https://raskell.io/projects/#tier-lab",
    "meta": "Group",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "h:apps-tools",
@@ -2008,14 +2008,6 @@
    "target": "p:refrakt"
   },
   {
-   "source": "a:/articles/looking-back-on-2025/",
-   "target": "p:sango"
-  },
-  {
-   "source": "a:/articles/mise-ate-my-makefile/",
-   "target": "p:sango"
-  },
-  {
    "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
    "target": "p:vela"
   },
@@ -2046,6 +2038,14 @@
   {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "p:terrarium"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "p:sango"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:sango"
   },
   {
    "source": "a:/articles/edge-systems-are-the-new-backend/",
@@ -2280,30 +2280,6 @@
    "target": "t:oss"
   },
   {
-   "source": "p:sango",
-   "target": "h:projects-flagship"
-  },
-  {
-   "source": "p:sango",
-   "target": "t:edge-systems"
-  },
-  {
-   "source": "p:sango",
-   "target": "t:reliability"
-  },
-  {
-   "source": "p:sango",
-   "target": "t:observability"
-  },
-  {
-   "source": "p:sango",
-   "target": "t:developer-tooling"
-  },
-  {
-   "source": "p:sango",
-   "target": "t:rust"
-  },
-  {
    "source": "p:vela",
    "target": "h:projects-flagship"
   },
@@ -2421,6 +2397,30 @@
   },
   {
    "source": "p:terrarium",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:sango",
+   "target": "h:projects-lab"
+  },
+  {
+   "source": "p:sango",
+   "target": "t:edge-systems"
+  },
+  {
+   "source": "p:sango",
+   "target": "t:reliability"
+  },
+  {
+   "source": "p:sango",
+   "target": "t:observability"
+  },
+  {
+   "source": "p:sango",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "p:sango",
    "target": "t:rust"
   },
   {
