@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-17T19:13:10+00:00",
+ "generated": "2026-10-17T19:21:54+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -595,7 +595,7 @@
    "url": "https://raskell.io/tags/rust/",
    "meta": "Technology · 7 pages",
    "description": "The systems language most of the projects here are written in.",
-   "degree": 27
+   "degree": 28
   },
   {
    "id": "t:self-hosting",
@@ -649,7 +649,7 @@
    "url": "https://raskell.io/tags#complex-systems",
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:games",
@@ -684,8 +684,8 @@
    "label": "Simulation",
    "url": "https://raskell.io/tags#simulation",
    "meta": "Domain · no pages yet",
-   "description": "Interactive worlds that mimic real ones: societies, economies, and agents left to evolve on their own.",
-   "degree": 2
+   "description": "Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.",
+   "degree": 3
   },
   {
    "id": "t:webassembly",
@@ -694,7 +694,7 @@
    "url": "https://raskell.io/tags#webassembly",
    "meta": "Technology · no pages yet",
    "description": "Portable, sandboxed bytecode for running native-speed code in the browser and beyond.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "s:the-agent-platform-handbook",
@@ -846,6 +846,15 @@
    "url": "https://terrarium.raskell.io",
    "meta": "Project",
    "description": "A societal simulation engine where LLM-powered agents form emergent civilizations. Each agent has a personality, needs, memories, and beliefs that can be wrong. You set the rules o…",
+   "degree": 8
+  },
+  {
+   "id": "p:hotaru",
+   "kind": "project",
+   "label": "Hotaru",
+   "url": "https://hotaru.raskell.io",
+   "meta": "Project",
+   "description": "A neuron culture on a 60-electrode array, simulated in your browser. Thousands of spiking neurons stay quiet, then fire in bursts that sweep across the dish. Click an electrode to …",
    "degree": 7
   },
   {
@@ -986,7 +995,7 @@
    "label": "Labs / passion projects",
    "url": "https://raskell.io/projects/#tier-lab",
    "meta": "Group",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "h:apps-tools",
@@ -1002,7 +1011,7 @@
    "label": "Simulations and games",
    "url": "https://raskell.io/apps/#tier-play",
    "meta": "Group",
-   "degree": 3
+   "degree": 4
   }
  ],
  "links": [
@@ -2447,6 +2456,30 @@
    "target": "t:rust"
   },
   {
+   "source": "p:hotaru",
+   "target": "h:projects-lab"
+  },
+  {
+   "source": "p:hotaru",
+   "target": "t:simulation"
+  },
+  {
+   "source": "p:hotaru",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "p:hotaru",
+   "target": "t:webassembly"
+  },
+  {
+   "source": "p:hotaru",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:hotaru",
+   "target": "p:terrarium"
+  },
+  {
    "source": "p:sango",
    "target": "h:projects-lab"
   },
@@ -2632,6 +2665,10 @@
   },
   {
    "source": "p:terrarium",
+   "target": "h:apps-play"
+  },
+  {
+   "source": "p:hotaru",
    "target": "h:apps-play"
   }
  ]

@@ -81,7 +81,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - The open web (`open-web`): The web as a commons: open protocols, small independent sites, and publishing outside the platforms.
 - History (`history`): Events, institutions, and societies through time, with attention to sources, competing accounts, and uncertainty.
 - Geography (`geography`): Places, terrain, borders, and spatial data, and how their relationships change over time.
-- Simulation (`simulation`) [within Complex systems]: Interactive worlds that mimic real ones: societies, economies, and agents left to evolve on their own.
+- Simulation (`simulation`) [within Complex systems]: Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.
 - Games (`games`): Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.
 
 ### Concepts
@@ -138,6 +138,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - [WASM-AD](https://wasmad.raskell.io): A fantasy console standard with 32-bit handheld hardware: tile layers, sprites, palettes, and save RAM, memory-mapped inside the cartridge.
 - [coconutOS](https://github.com/coconut-os/coconutOS): A Rust microkernel for GPU-isolated AI inference.
 - [Terrarium](https://terrarium.raskell.io): A societal simulation engine where LLM-powered agents form emergent civilizations.
+- [Hotaru](https://hotaru.raskell.io): A neuron culture on a 60-electrode array, simulated in your browser.
 - [Sango](https://sango.raskell.io): Edge diagnostics for the modern web.
 - [Conflux](https://github.com/raskell-io/conflux): Schema-aware config state coordination.
 - [Shiioo (CO)](https://github.com/raskell-io/shiioo): The Virtual Company OS.
@@ -154,6 +155,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - [Paw & Claw](https://pawandclaw.raskell.io): A turn-based strategy game in the spirit of Advance Wars, fought by woodland armies.
 - [Rainbow River](https://rainbowriver.raskell.io): A fishing game in the style of the 32-bit handhelds, inspired by The Legend of the River King.
 - [Terrarium](https://terrarium.raskell.io): A societal simulation engine where LLM-powered agents form emergent civilizations.
+- [Hotaru](https://hotaru.raskell.io): A neuron culture on a 60-electrode array, simulated in your browser.
 
 ## For agents
 
