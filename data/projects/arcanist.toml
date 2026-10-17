@@ -1,6 +1,6 @@
 title = "Arcanist"
 description = "High-performance Haskell tooling, built in Rust. Home of hx (a unified Haskell package manager with managed toolchains and 5.6x faster cold builds) and bhc (an alternative Haskell compiler with runtime profiles, WebAssembly support, and tensor-native numerics). Modern workflows, no ecosystem fragmentation."
-status = "dev"
+status = "shipping"
 logo = "brands/arcanist.svg"
 logo_wide = true
 logo_mono = true

@@ -1,6 +1,6 @@
 title = "hx"
 description = "An extremely fast Haskell package and project manager, written in Rust. Unified build, test, run, format, and lint with managed toolchains and sub-second response times. Designed to replace the fragmented Haskell tooling ecosystem with a single, cohesive tool."
-status = "dev"
+status = "live"
 logo = "brands/hx.png"
 links = [ { name = "Website", url = "https://hx.arcanist.sh" }, { name = "GitHub", url = "https://github.com/arcanist-sh/hx" } ]
 topics = ["haskell", "rust", "programming-languages", "developer-tooling"]
