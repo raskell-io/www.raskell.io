@@ -89,7 +89,7 @@ So we built both paths. Docker containers for heavy GPU workloads. WASM modules 
 
 This is the part that made me stop procrastinating and actually build the thing.
 
-WebGPU became a standard in modern browsers (Chrome, Edge, Safari, Firefox) and suddenly the browser was not just a document renderer or an application platform. It was a *GPU compute platform*. You could write shaders, run matrix multiplications, and perform inference directly in the browser tab without plugins, without native code, without any installation at all.
+WebGPU became a standard in modern browsers (Chrome, Edge, Safari, Firefox) and suddenly the browser was not just a document renderer or an application platform. It was a *GPU compute platform*. You could write shaders, run matrix multiplications, and perform inference directly in the browser tab without plugins, without native code, without any installation at all. It is the same downward shift toward the client that I described in [Edge Systems Are the New Backend](https://raskell.io/articles/edge-systems-are-the-new-backend/).
 
 WebGPU did not exist when I wrote the original whitepaper. WebGL was around, but it was a graphics API, not a compute API. WebGPU is different. It exposes compute shaders. It is designed for the kind of general-purpose GPU work that machine learning requires. And it runs everywhere a modern browser runs.
 

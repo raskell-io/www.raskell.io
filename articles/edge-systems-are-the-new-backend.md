@@ -50,7 +50,7 @@ That model is over.
 
 Here is the thing I keep coming back to: business logic is migrating in two directions simultaneously.
 
-Upward, to the edge. Infrastructure concerns like auth, WAF, and rate limiting now execute at the edge layer, before requests reach any backend. But it goes further than that. Edge Workers run actual application code. Containers deploy at the edge. Server-side rendering happens at edge nodes 50ms from the user, not in a data center 200ms away.
+Upward, to the edge. Infrastructure concerns like auth, WAF, and rate limiting now execute at the edge layer, before requests reach any backend. But it goes further than that. Edge Workers run actual application code. Containers deploy at the edge. Server-side rendering happens at edge nodes 50ms from the user, not in a data center 200ms away. I sketched where this leads for personalization without surveillance in [Looking back on 2025](https://raskell.io/articles/looking-back-on-2025/).
 
 Downward, to the client. The browser is no longer dumb. WebAssembly runs near-native code. WebGPU puts the GPU to work on ML inference and image processing. Web Workers handle background computation. Service Workers intercept network requests and serve cached responses offline. CRDTs let the client own its data and sync when it feels like it.
 

@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-17T13:04:46+00:00",
+ "generated": "2026-10-17T13:14:20+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -172,7 +172,7 @@
    "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/",
    "meta": "2026-04-16 · 19 min",
    "description": "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
@@ -217,7 +217,7 @@
    "url": "https://raskell.io/articles/how-i-work-these-days/",
    "meta": "2026-03-15 · 10 min",
    "description": "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right.",
-   "degree": 12
+   "degree": 14
   },
   {
    "id": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
@@ -226,7 +226,7 @@
    "url": "https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
    "meta": "2026-03-13 · 23 min",
    "description": "From watching Ethereum miners in 2016 to building a decentralized compute network in open beta. Architecture, conviction, and the long road.",
-   "degree": 11
+   "degree": 13
   },
   {
    "id": "a:/articles/how-ai-makes-bare-metal-viable-again/",
@@ -244,7 +244,7 @@
    "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/",
    "meta": "2026-02-11 · 30 min",
    "description": "Auth, policy, and business logic are migrating to the edge. The traditional backend is becoming a persistence layer.",
-   "degree": 13
+   "degree": 15
   },
   {
    "id": "a:/articles/looking-back-on-2025/",
@@ -253,7 +253,7 @@
    "url": "https://raskell.io/articles/looking-back-on-2025/",
    "meta": "2025-12-31 · 7 min",
    "description": "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself.",
-   "degree": 7
+   "degree": 9
   },
   {
    "id": "a:/articles/mise-ate-my-makefile/",
@@ -271,7 +271,7 @@
    "url": "https://raskell.io/articles/disk-space-void-linux-maintenance/",
    "meta": "2024-05-01 · 4 min",
    "description": "Cleaning old kernels, pruning xbps package cache, and reclaiming disk space on Void Linux without breaking your system.",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "a:/articles/all-beginning-is-haskell/",
@@ -289,7 +289,7 @@
    "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/",
    "meta": "2023-02-06 · 10 min",
    "description": "A step-by-step guide to running OpenBSD in a libvirt virtual machine on Void Linux, without needing VirtualBox or VMWare. Part 1 of my OpenBSD journey.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "a:/articles/hello-and-outlook/",
@@ -298,7 +298,7 @@
    "url": "https://raskell.io/articles/hello-and-outlook/",
    "meta": "2022-09-20 · 1 min",
    "description": "The first post on raskell.io. What this site is for and what I planned to write about.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:agents",
@@ -1771,6 +1771,10 @@
    "target": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/"
   },
   {
+   "source": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
+   "target": "a:/articles/how-i-work-these-days/"
+  },
+  {
    "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
    "target": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/"
   },
@@ -1795,8 +1799,28 @@
    "target": "a:/articles/how-i-work-these-days/"
   },
   {
+   "source": "a:/articles/how-i-work-these-days/",
+   "target": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/"
+  },
+  {
+   "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
+   "target": "a:/articles/edge-systems-are-the-new-backend/"
+  },
+  {
    "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
    "target": "a:/articles/edge-systems-are-the-new-backend/"
+  },
+  {
+   "source": "a:/articles/edge-systems-are-the-new-backend/",
+   "target": "a:/articles/looking-back-on-2025/"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "a:/articles/hello-and-outlook/"
+  },
+  {
+   "source": "a:/articles/disk-space-void-linux-maintenance/",
+   "target": "a:/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
   },
   {
    "source": "a:/articles/all-beginning-is-haskell/",

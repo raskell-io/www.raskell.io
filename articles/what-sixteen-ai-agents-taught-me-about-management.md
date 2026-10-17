@@ -9,7 +9,7 @@ tags: [agents, ai-engineering, economics]
 
 # What Sixteen AI Agents Taught Me About Management
 
-Over the 2025 Christmas holidays I had sixteen AI agents running in parallel across four macOS workspaces. Each workspace held four Ghostty terminal panes, each pane running its own Claude Code instance, each instance working on a different piece of a different project. I was on Anthropic's 20x Max subscription, and during the holiday period the token limits were generous enough that I could burn through context at a rate I had never attempted before.
+Over the 2025 Christmas holidays I had sixteen AI agents running in parallel across four macOS workspaces. Each workspace held four Ghostty terminal panes, each pane running its own Claude Code instance, each instance working on a different piece of a different project. I was on Anthropic's 20x Max subscription, and during the holiday period the token limits were generous enough that I could burn through context at a rate I had never attempted before. The everyday version of this setup is the one I described in [How I Work These Days](https://raskell.io/articles/how-i-work-these-days/); this was that setup pushed to its limit.
 
 It was the most productive week of my engineering life. It was also the week I learned that managing AI agents is, at its core, a management problem. Not a technical one.
 

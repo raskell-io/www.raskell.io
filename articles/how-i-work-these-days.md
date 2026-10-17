@@ -56,7 +56,7 @@ That changed something fundamental in how I think about work. Once one long-held
 
 ## Then everything else started moving
 
-In the time since, I have built a whole range of things that had been accumulating in my head for years: Cyanea, Archipelag.io, Humankind, Arcanist and its Rust-based `hx` Haskell toolchain, the new Basel Haskell Compiler, and other pieces besides.
+In the time since, I have built a whole range of things that had been accumulating in my head for years: Cyanea, [Archipelag.io](https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/), Humankind, Arcanist and its Rust-based `hx` Haskell toolchain, the new Basel Haskell Compiler, and other pieces besides.
 
 It has been a wild ride, but not in the shallow "everything is crazy" sense people often write about. More in the sense that an internal dam broke. For a long time I had more ideas than I had time, more design clarity than I had execution bandwidth, and more conviction than I had manpower. That is a frustrating place to live in for years. You learn to carry around a quiet backlog of unrealized things. Some of them stay alive as notes. Some become recurring thoughts during commutes or late at night. Some start to hurt a little because you know they are viable, but you also know you are not going to get to them with the tools and energy available to you at that point in your life.
 

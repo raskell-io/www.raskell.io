@@ -4569,7 +4569,7 @@ tags: [agents, ai-engineering, economics]
 
 # What Sixteen AI Agents Taught Me About Management
 
-Over the 2025 Christmas holidays I had sixteen AI agents running in parallel across four macOS workspaces. Each workspace held four Ghostty terminal panes, each pane running its own Claude Code instance, each instance working on a different piece of a different project. I was on Anthropic's 20x Max subscription, and during the holiday period the token limits were generous enough that I could burn through context at a rate I had never attempted before.
+Over the 2025 Christmas holidays I had sixteen AI agents running in parallel across four macOS workspaces. Each workspace held four Ghostty terminal panes, each pane running its own Claude Code instance, each instance working on a different piece of a different project. I was on Anthropic's 20x Max subscription, and during the holiday period the token limits were generous enough that I could burn through context at a rate I had never attempted before. The everyday version of this setup is the one I described in [How I Work These Days](https://raskell.io/articles/how-i-work-these-days/); this was that setup pushed to its limit.
 
 It was the most productive week of my engineering life. It was also the week I learned that managing AI agents is, at its core, a management problem. Not a technical one.
 
@@ -6004,7 +6004,7 @@ That changed something fundamental in how I think about work. Once one long-held
 
 ## Then everything else started moving
 
-In the time since, I have built a whole range of things that had been accumulating in my head for years: Cyanea, Archipelag.io, Humankind, Arcanist and its Rust-based `hx` Haskell toolchain, the new Basel Haskell Compiler, and other pieces besides.
+In the time since, I have built a whole range of things that had been accumulating in my head for years: Cyanea, [Archipelag.io](https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/), Humankind, Arcanist and its Rust-based `hx` Haskell toolchain, the new Basel Haskell Compiler, and other pieces besides.
 
 It has been a wild ride, but not in the shallow "everything is crazy" sense people often write about. More in the sense that an internal dam broke. For a long time I had more ideas than I had time, more design clarity than I had execution bandwidth, and more conviction than I had manpower. That is a frustrating place to live in for years. You learn to carry around a quiet backlog of unrealized things. Some of them stay alive as notes. Some become recurring thoughts during commutes or late at night. Some start to hurt a little because you know they are viable, but you also know you are not going to get to them with the tools and energy available to you at that point in your life.
 
@@ -6159,7 +6159,7 @@ So we built both paths. Docker containers for heavy GPU workloads. WASM modules 
 
 This is the part that made me stop procrastinating and actually build the thing.
 
-WebGPU became a standard in modern browsers (Chrome, Edge, Safari, Firefox) and suddenly the browser was not just a document renderer or an application platform. It was a *GPU compute platform*. You could write shaders, run matrix multiplications, and perform inference directly in the browser tab without plugins, without native code, without any installation at all.
+WebGPU became a standard in modern browsers (Chrome, Edge, Safari, Firefox) and suddenly the browser was not just a document renderer or an application platform. It was a *GPU compute platform*. You could write shaders, run matrix multiplications, and perform inference directly in the browser tab without plugins, without native code, without any installation at all. It is the same downward shift toward the client that I described in [Edge Systems Are the New Backend](https://raskell.io/articles/edge-systems-are-the-new-backend/).
 
 WebGPU did not exist when I wrote the original whitepaper. WebGL was around, but it was a graphics API, not a compute API. WebGPU is different. It exposes compute shaders. It is designed for the kind of general-purpose GPU work that machine learning requires. And it runs everywhere a modern browser runs.
 
@@ -6841,7 +6841,7 @@ That model is over.
 
 Here is the thing I keep coming back to: business logic is migrating in two directions simultaneously.
 
-Upward, to the edge. Infrastructure concerns like auth, WAF, and rate limiting now execute at the edge layer, before requests reach any backend. But it goes further than that. Edge Workers run actual application code. Containers deploy at the edge. Server-side rendering happens at edge nodes 50ms from the user, not in a data center 200ms away.
+Upward, to the edge. Infrastructure concerns like auth, WAF, and rate limiting now execute at the edge layer, before requests reach any backend. But it goes further than that. Edge Workers run actual application code. Containers deploy at the edge. Server-side rendering happens at edge nodes 50ms from the user, not in a data center 200ms away. I sketched where this leads for personalization without surveillance in [Looking back on 2025](https://raskell.io/articles/looking-back-on-2025/).
 
 Downward, to the client. The browser is no longer dumb. WebAssembly runs near-native code. WebGPU puts the GPU to work on ML inference and image processing. Web Workers handle background computation. Service Workers intercept network requests and serve cached responses offline. CRDTs let the client own its data and sync when it feels like it.
 
@@ -7317,7 +7317,7 @@ I don't want to oversell this. The transition, if it happens, won't be clean. Th
 
 But when I think about what I want to build toward, it's that reef model. Many small, specialized nodes. Interconnected through open protocols. Resilient because distributed. Sustainable because the economics work at small scale.
 
-This site is part of that bet. Static content, no tracking, no platform dependencies. The tools I'm working on (Zentinel, Sango, Ushio) are all about making edge infrastructure more accessible, making it easier to build and operate systems that are distributed and independent.
+This site is part of that bet, as it has been since [the first post](https://raskell.io/articles/hello-and-outlook/). Static content, no tracking, no platform dependencies. The tools I'm working on (Zentinel, Sango, Ushio) are all about making edge infrastructure more accessible, making it easier to build and operate systems that are distributed and independent.
 
 2025 was the year AI started breaking the old model. I don't know exactly what grows in its place. But floating in that Okinawan water, watching the reef do what reefs do, I got a sense of what healthy systems look like. Diverse. Interconnected. Resilient. Not optimized for any single metric, but somehow working anyway.
 
@@ -7584,7 +7584,7 @@ tags: [operating-systems, linux]
 
 ## Monday morning surprise
 
-As I spent most time doing stuff with my computer rather than configuring my beloved Linux distribution, Void Linux, I have developed the tendency to not really bother about Void at all until something crucial becomes unusable. After almost two years of having switched from Arch to Void, I have actually never encountered any major problem and felt I had made the right decision.
+As I spent most time doing stuff with my computer rather than configuring my beloved Linux distribution, Void Linux (the same machine that runs the OpenBSD guests from [my OpenBSD journey](https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/)), I have developed the tendency to not really bother about Void at all until something crucial becomes unusable. After almost two years of having switched from Arch to Void, I have actually never encountered any major problem and felt I had made the right decision.
 
 I checked my disk usage out of curiosity if the 250GB solid-state disk would be enough. And there came the surprise:
 
