@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Refrakt</title>
+  <style>
+    .f1 { fill: #1b1f3b; stroke: #1b1f3b; }
+    .f2 { fill: #2e3a8c; stroke: #2e3a8c; }
+    @media (prefers-color-scheme: dark) {
+      .f1 { fill: #4651c4; stroke: #4651c4; }
+      .f2 { fill: #3346b8; stroke: #3346b8; }
+    }
+  </style>
+  <g stroke-width="0.6" stroke-linejoin="round">
+    <polygon class="f2" points="32,2 27.5,28.5 58,17"/>
+    <polygon points="58,17 27.5,28.5 58,47" fill="#3f7cff" stroke="#3f7cff"/>
+    <polygon points="58,47 27.5,28.5 32,62" fill="#7ee0ff" stroke="#7ee0ff"/>
+    <polygon points="32,62 27.5,28.5 6,47" fill="#c3b5ff" stroke="#c3b5ff"/>
+    <polygon points="6,47 27.5,28.5 6,17" fill="#ffaff3" stroke="#ffaff3"/>
+    <polygon class="f1" points="6,17 27.5,28.5 32,2"/>
+  </g>
+</svg>
