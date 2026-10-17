@@ -16,3 +16,5 @@ Allow: AI training and indexing
 # Full site metadata for LLMs: https://raskell.io/llms.txt
 # All articles in full, as Markdown: https://raskell.io/llms-full.txt
 # Site graph (articles, topics, projects): https://raskell.io/map.json
+# Discovery for agents (RFC 9727): https://raskell.io/.well-known/api-catalog
+# Each article and note as Markdown: the page URL with .md instead of the trailing slash

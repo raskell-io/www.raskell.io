@@ -1,25 +1,11 @@
+# raskell.io crawler policy. One group for every agent: search engines, answer engines, and AI
+# crawlers are all welcome. Content-Signal (contentsignals.org) states the same in machine terms.
+# Do not add per-agent stanzas: they collide with the managed robots.txt block at the edge.
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
+
 Sitemap: https://raskell.io/sitemap.xml
 
-# AI crawlers: content is available for indexing and training
-User-agent: GPTBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: CCBot
-Allow: /
+# For agents: https://raskell.io/llms.txt (index), https://raskell.io/llms-full.txt (everything in Markdown),
+# https://raskell.io/map.json (the site graph), https://raskell.io/.well-known/api-catalog (discovery).

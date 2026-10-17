@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Raskell - open-web</title>
+    <subtitle>Writing about platform automation, edge systems, applied security, and open standards. Building automation-first platforms that survive production reality.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/open-web/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://raskell.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-10-15T00:00:00+00:00</updated>
+    <id>https://raskell.io/tags/open-web/atom.xml</id>
+    <entry xml:lang="en">
+        <title>This Site Is Becoming a Map</title>
+        <published>2026-10-15T00:00:00+00:00</published>
+        <updated>2026-10-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/articles/this-site-is-becoming-a-map/"/>
+        <id>https://raskell.io/articles/this-site-is-becoming-a-map/</id>
+        
+        <content type="html" xml:base="https://raskell.io/articles/this-site-is-becoming-a-map/">&lt;p&gt;A blog is a timeline. The newest post sits on top, everything else slides down, and after a while the only way to find the post from last spring is to remember roughly when you read it. That works for news. It works badly for ideas, because ideas do not arrive in date order. Two posts written months apart can be circling the same problem, and nothing on a timeline tells you that.&lt;&#x2F;p&gt;
+&lt;p&gt;This site now has a second way in. The &lt;a href=&quot;&#x2F;map&#x2F;&quot;&gt;map&lt;&#x2F;a&gt; draws everything here as one graph: every article, every topic, every series, and every project, with a line wherever two of them are actually connected. It is the first piece of something I have wanted for a long time, and this post is about what it is, what it already showed me, and where I want to take it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-on-the-map&quot;&gt;What is on the map&lt;&#x2F;h2&gt;
+&lt;p&gt;Right now the map holds 32 articles, 20 topics, 2 series, and 21 projects, joined by 266 connections. Pearl dots are articles, cyan dots are topics, champagne dots are series, and rings are projects, grouped under the same headings as the &lt;a href=&quot;&#x2F;projects&#x2F;&quot;&gt;projects&lt;&#x2F;a&gt; and &lt;a href=&quot;&#x2F;apps&#x2F;&quot;&gt;apps&lt;&#x2F;a&gt; pages. Click a dot and its neighbors light up, along with a short card that tells you what it is and lets you open it.&lt;&#x2F;p&gt;
+&lt;p&gt;The connections are the part that matters, so it is worth being precise about where they come from. An article connects to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;the topics it is tagged with,&lt;&#x2F;li&gt;
+&lt;li&gt;the series it belongs to,&lt;&#x2F;li&gt;
+&lt;li&gt;every other article it links to in its text,&lt;&#x2F;li&gt;
+&lt;li&gt;every project it links to or names.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Projects also connect to the topics they are about, so the things I build sit next to the things I write about, even where I have not written about them yet.&lt;&#x2F;p&gt;
+&lt;p&gt;None of this is maintained by hand. The graph is computed when the site is built, in the same template that renders the page. The article-to-article edges are my favorite part, because they come for free from writing:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;jinja&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{%-&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; for&lt;&#x2F;span&gt;&lt;span&gt; a&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; in&lt;&#x2F;span&gt;&lt;span&gt; sec&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;pages %}{%&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; for&lt;&#x2F;span&gt;&lt;span&gt; b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; in&lt;&#x2F;span&gt;&lt;span&gt; sec&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;pages %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {%-&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; if&lt;&#x2F;span&gt;&lt;span&gt; a&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;path&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; !=&lt;&#x2F;span&gt;&lt;span&gt; b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;path&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; and&lt;&#x2F;span&gt;&lt;span&gt; a&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;content&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; is&lt;&#x2F;span&gt;&lt;span&gt; containing&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;path&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span&gt; %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    [&amp;quot;a:{{ a&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;path&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span&gt; safe }}&amp;quot;,&amp;quot;a:{{ b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;path&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span&gt; safe }}&amp;quot;],&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  {%-&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; endif&lt;&#x2F;span&gt;&lt;span&gt; %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;{%-&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; endfor&lt;&#x2F;span&gt;&lt;span&gt; %}{%&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; endfor&lt;&#x2F;span&gt;&lt;span&gt; %}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If one post links to another, the template finds the other post’s path in the rendered body and emits an edge. Every time I cross-reference something, the map grows a line. That is a quiet incentive to cross-reference more, which is exactly the habit I want.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-not-just-tags&quot;&gt;Why not just tags&lt;&#x2F;h2&gt;
+&lt;p&gt;The obvious objection is that tags already do this. Every article here has had tags for years, and every tag has a page that lists its articles.&lt;&#x2F;p&gt;
+&lt;p&gt;Tags answer one question at a time. The tag page for &lt;code&gt;platform-automation&lt;&#x2F;code&gt; tells you what is filed under platform automation. It does not tell you that half of those posts also sit under &lt;code&gt;ai-engineering&lt;&#x2F;code&gt;, that many of them link to each other, or that one project ties a cluster of them together. A list per tag is a set of drawers. The map shows you how the drawers overlap.&lt;&#x2F;p&gt;
+&lt;p&gt;The second objection is the better one. Anyone who has used Obsidian knows the graph view: a beautiful hairball that looks profound and tells you nothing. A graph is only as good as its edges, and edges drawn from shared words or vague similarity produce exactly that hairball. This is why every edge on the map comes from a deliberate act. I tagged it, I put it in a series, I linked it, or I named the project. If the map looks like a hairball someday, that will be an honest picture of my writing.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-it-already-showed-me&quot;&gt;What it already showed me&lt;&#x2F;h2&gt;
+&lt;p&gt;I expected the map to be a nicer table of contents. It turned out to be a mirror, and not an entirely flattering one.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Two centers of gravity.&lt;&#x2F;strong&gt; Most of the graph hangs off two topics, &lt;code&gt;platform-automation&lt;&#x2F;code&gt; and &lt;code&gt;ai-engineering&lt;&#x2F;code&gt;. That is where most of my writing has gone in the last year, and it is a fair summary of what makes me tick right now: how to run systems well, and what changes when software writes software.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;One project holds a lot together.&lt;&#x2F;strong&gt; &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; has more connections than any other project: eleven articles led to it before this one. Articles about edge systems, security, Rust, and even about how I work all lead back to it. I knew it mattered to me. I did not know it was the load-bearing beam of the site.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;A quiet corner.&lt;&#x2F;strong&gt; The Linux and BSD posts sit off to one side, connected to each other and barely to anything else. They date from 2022 to 2024, an older version of my interests, and the map makes that visible in a way a date never did.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Things I build and never write about.&lt;&#x2F;strong&gt; &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;manabi.raskell.io&quot;&gt;Manabi&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;pawandclaw.raskell.io&quot;&gt;Paw &amp;amp; Claw&lt;&#x2F;a&gt;, and &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;terrarium&quot;&gt;Terrarium&lt;&#x2F;a&gt; hung off their topics and their group and nothing else. Until this post, not a single article mentioned them. A timeline hides that kind of gap completely. On the map, it is a dot with a thin line or two, and it is hard to unsee.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;where-this-is-going&quot;&gt;Where this is going&lt;&#x2F;h2&gt;
+&lt;p&gt;The map is the first visible piece of a longer shift. Over the next few years, I want a garden to grow alongside the articles here: a personal but shared map of what I think about, what I build, and what changed my mind.&lt;&#x2F;p&gt;
+&lt;p&gt;None of these ideas are new. Vannevar Bush described the &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.theatlantic.com&#x2F;magazine&#x2F;archive&#x2F;1945&#x2F;07&#x2F;as-we-may-think&#x2F;303881&#x2F;&quot;&gt;memex&lt;&#x2F;a&gt; in 1945, a desk that would let a reader tie documents together into trails and follow them later, the way the mind follows associations. Andy Matuschak’s &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;notes.andymatuschak.org&#x2F;Evergreen_notes&quot;&gt;evergreen notes&lt;&#x2F;a&gt; and Maggie Appleton’s &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;maggieappleton.com&#x2F;garden-history&quot;&gt;history of digital gardens&lt;&#x2F;a&gt; describe the modern version: notes that grow and get revised instead of being published once and left to age. What I want to add is a specific practice, built on the tools I already trust: plain files, a static site, open formats, no platform in between.&lt;&#x2F;p&gt;
+&lt;p&gt;Concretely, that means a few changes, roughly in this order:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Short notes next to long articles.&lt;&#x2F;strong&gt; The long articles stay. They are where I work an idea through properly, with code, trade-offs, and counterarguments. Next to them, I want short notes: a paragraph or a page on an idea, a paper, or a question I have not answered yet. Notes are cheap to write and easy to link, and some of them will become the starting point for a longer piece. The map will show which article grew out of which notes.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Notes that grow.&lt;&#x2F;strong&gt; Some pages should be revised over time rather than frozen on their publication date. The &lt;code&gt;updated&lt;&#x2F;code&gt; field already exists, and I want to use it on purpose.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;What shaped me.&lt;&#x2F;strong&gt; The books, papers, talks, and people that keep showing up in my thinking deserve to be dots too, so you can follow an idea back to where it came from.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Private to public.&lt;&#x2F;strong&gt; &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;kurumi.raskell.io&quot;&gt;Kurumi&lt;&#x2F;a&gt;, the local-first second brain I am building, already has wikilinks, backlinks, and a graph view of its own. Eventually, I want a path for a note to move from a private graph like that to the public one when it is ready, without copying it by hand.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Readable by agents.&lt;&#x2F;strong&gt; Plain files, explicit links, the graph as JSON, and the site’s &lt;a href=&quot;&#x2F;llms.txt&quot;&gt;llms.txt&lt;&#x2F;a&gt; mean an agent can walk this garden as easily as a person can. I want that to stay true as it grows, so the notes can serve as source material for my own agents, and for anyone else’s, when they work on something I have thought about before.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;I do not know yet how far this goes, or what it looks like when the map has five hundred dots instead of eighty. That is part of the point. A garden is not designed up front.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-shared-map&quot;&gt;A shared map&lt;&#x2F;h2&gt;
+&lt;p&gt;A personal map published on the web is still, in one sense, just mine. I want it to be a little more than that. The map has an export button: you can download it as an image, or as JSON with every node and every edge. Take the data, draw it differently, connect it to your own notes, or tell me which links are missing. If you think two pieces belong together and the map does not show it, that is usually a post I should write.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-rest-of-the-relaunch&quot;&gt;The rest of the relaunch&lt;&#x2F;h2&gt;
+&lt;p&gt;It has been quiet here since July. I was away for a good part of that time: in Greece, visiting family and swimming in the Ionian Sea, and then in Hong Kong and Okinawa, where I enjoyed the subtropical weather, sat through two typhoons, and went back to the coral reefs and beaches I wrote about in &lt;a href=&quot;&#x2F;articles&#x2F;looking-back-on-2025&#x2F;&quot;&gt;Looking back on 2025&lt;&#x2F;a&gt;. The redesign is what I did when I got back.&lt;&#x2F;p&gt;
+&lt;p&gt;The map arrived together with a new design for the whole site, a quieter theme called &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;seijaku&quot;&gt;seijaku&lt;&#x2F;a&gt;, from the Japanese word for stillness. The article index is denser and grouped by year, covers are cut automatically from each post’s social banner, the tanuki in the corner blinks, and every old URL still works. Most of it was built in a long session with an AI coding agent, the way I described in &lt;a href=&quot;&#x2F;articles&#x2F;how-i-work-these-days&#x2F;&quot;&gt;How I Work These Days&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The map’s first version had one memorable bug. A single minus sign turned the repulsion between nodes into attraction, and every dot slid into the middle of the canvas until the whole graph was one bright point. It is the most honest picture of a blog I have seen: everything piled in one place, with no way to tell what connects to what.&lt;&#x2F;p&gt;
+&lt;p&gt;A blog tells you what I wrote last. The map shows what I keep coming back to.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Looking back on 2025</title>
+        <published>2025-12-31T00:00:00+00:00</published>
+        <updated>2026-03-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/articles/looking-back-on-2025/"/>
+        <id>https://raskell.io/articles/looking-back-on-2025/</id>
+        
+        <content type="html" xml:base="https://raskell.io/articles/looking-back-on-2025/">&lt;p&gt;I spent part of this year on the shores of Okinawa. The water there is something else entirely, this impossible azure that shifts to turquoise in the shallows, so clear you can see the coral formations from the surface. I found myself thinking about systems while I was there, the way you do when you’re floating in salt water with nothing pressing to attend to.&lt;&#x2F;p&gt;
+&lt;p&gt;Between swims, I read Tim Berners-Lee’s “This is for everyone.” I’ve been building web software for over a decade now, and I thought I understood what the web was. But reading TBL’s words while watching that reef ecosystem do its thing, thousands of species in constant exchange, no central coordinator, just emergent complexity from simple rules, something shifted in how I saw it all.&lt;&#x2F;p&gt;
+&lt;p&gt;The web TBL imagined was supposed to work like that reef. A commons. Many small nodes, each doing their own thing, connected through open protocols. Information flowing freely. The beauty of it wasn’t in any single node but in the connections between them, the way the whole became more than the sum of its parts. The same principle that makes a reef resilient makes a network powerful: diversity, redundancy, local adaptation.&lt;&#x2F;p&gt;
+&lt;p&gt;What we built instead looks more like industrial aquaculture. Five platforms. Algorithmic monoculture. Content optimized for engagement metrics rather than usefulness. We took a system designed for decentralization and built the most centralized information infrastructure in human history.&lt;&#x2F;p&gt;
+&lt;p&gt;I keep thinking about how that happened. The web itself never changed. HTTP still works the same way, HTML still does what it always did. What changed was the economics. Publishing became free, but being &lt;em&gt;found&lt;&#x2F;em&gt; became expensive. The platforms positioned themselves as the gatekeepers of attention, and suddenly you couldn’t reach people without paying the toll, whether in ad spend or in algorithmic compliance or in the slow erosion of doing whatever it took to game SEO.&lt;&#x2F;p&gt;
+&lt;p&gt;The thing about monocultures is they’re efficient right up until they’re not. A reef can lose a species and adapt. A monoculture gets one disease and collapses. We’ve been watching the web’s monoculture show stress fractures for years. The enshittification of platforms, the SEO content farms drowning out signal with noise, the way social media stopped being social and started being a feed of engagement-optimized content from strangers.&lt;&#x2F;p&gt;
+&lt;p&gt;Then 2025 happened, and AI started breaking things in interesting ways.&lt;&#x2F;p&gt;
+&lt;p&gt;The obvious take is that AI makes the content problem worse. And superficially, that’s true. If you thought SEO spam was bad before, wait until you see what happens when generating ten thousand pages of plausible-sounding garbage costs essentially nothing. The content farms went into overdrive. Social platforms filled with synthetic engagement.&lt;&#x2F;p&gt;
+&lt;p&gt;But here’s the thing I keep coming back to: maybe that’s the fever that breaks the infection.&lt;&#x2F;p&gt;
+&lt;p&gt;The old economics of the web depended on a particular scarcity. Human attention is finite, and the platforms controlled access to it. You wanted eyeballs, you played their game. SEO worked because Google was the gateway and you could optimize for what Google wanted. Platform distribution mattered because that’s where the people were.&lt;&#x2F;p&gt;
+&lt;p&gt;AI disrupts this in ways that I think are genuinely interesting. When an AI assistant can synthesize information from across the web and deliver it directly to the user, the value of ranking first on Google diminishes. Why click through to a content farm when the answer is already in front of you? When AI agents can find and surface relevant content directly, you don’t need to be on the platform where the eyeballs gather. The middleman’s leverage starts to evaporate.&lt;&#x2F;p&gt;
+&lt;p&gt;And crucially: when everyone can generate infinite content at zero marginal cost, content quantity becomes worthless. What matters is provenance. Accuracy. Usefulness. The things that are actually hard. The things that require a human perspective, or at least require &lt;em&gt;being right&lt;&#x2F;em&gt; in ways that matter.&lt;&#x2F;p&gt;
+&lt;p&gt;I find myself unexpectedly optimistic about what comes next.&lt;&#x2F;p&gt;
+&lt;p&gt;If AI breaks the distribution stranglehold that platforms have, the economics of the web could flip in interesting directions. The old model needed scale because reaching people was expensive. But if AI handles discovery, finding relevant content and bringing it to users, then maybe you don’t need scale anymore. Maybe small becomes viable again.&lt;&#x2F;p&gt;
+&lt;p&gt;Think about what this means concretely. A static site costs nearly nothing to run. No databases to scale, no servers to babysit, just files sitting on edge nodes around the world. If you don’t need to capture user data for ad-driven personalization, you don’t need the complexity of the surveillance stack. If you don’t need platform distribution, you don’t need to play platform games.&lt;&#x2F;p&gt;
+&lt;p&gt;There’s another piece to this that I think most people are missing: edge computing changes what personalization can mean. The conventional wisdom is that personalization requires surveillance, that you need to know everything about a user to show them relevant content. But that’s only true if personalization happens in a centralized database somewhere. If personalization happens at the edge, at the moment of request, you can adapt content to context without ever needing to know who the user is. The edge function doesn’t need a profile. It just needs to know what was asked for and what context it’s being asked in.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the architecture I keep thinking about: static content at the origin, edge functions that adapt it anonymously, AI agents that find and surface it based on actual relevance rather than SEO gaming. No surveillance required. No platform dependency. No scaling costs that force you into growth-at-all-costs mode.&lt;&#x2F;p&gt;
+&lt;p&gt;It looks more like a reef than a fish farm.&lt;&#x2F;p&gt;
+&lt;p&gt;I don’t want to oversell this. The transition, if it happens, won’t be clean. The platforms aren’t going to quietly cede control. The incentives that built the current web are still operating. And AI itself could go in directions that make things worse rather than better. There are plenty of dystopian paths from here.&lt;&#x2F;p&gt;
+&lt;p&gt;But when I think about what I want to build toward, it’s that reef model. Many small, specialized nodes. Interconnected through open protocols. Resilient because distributed. Sustainable because the economics work at small scale.&lt;&#x2F;p&gt;
+&lt;p&gt;This site is part of that bet. Static content, no tracking, no platform dependencies. The tools I’m working on (Zentinel, Sango, Ushio) are all about making edge infrastructure more accessible, making it easier to build and operate systems that are distributed and independent.&lt;&#x2F;p&gt;
+&lt;p&gt;2025 was the year AI started breaking the old model. I don’t know exactly what grows in its place. But floating in that Okinawan water, watching the reef do what reefs do, I got a sense of what healthy systems look like. Diverse. Interconnected. Resilient. Not optimized for any single metric, but somehow working anyway.&lt;&#x2F;p&gt;
+&lt;p&gt;That’s what I’m betting on.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.w3.org&#x2F;People&#x2F;Berners-Lee&#x2F;&quot;&gt;Tim Berners-Lee&lt;&#x2F;a&gt; - Creator of the World Wide Web and author of “This is for everyone”&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Enshittification&quot;&gt;Enshittification&lt;&#x2F;a&gt; - Cory Doctorow’s term for the pattern of platform decay&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;indieweb.org&#x2F;&quot;&gt;IndieWeb&lt;&#x2F;a&gt; - Community building the independent web with open standards&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt; - Static site generator used to build this site&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Security-first reverse proxy for the open web&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;sango&quot;&gt;Sango&lt;&#x2F;a&gt; - Edge diagnostics CLI for TLS, HTTP, and security header analysis&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;ushio&quot;&gt;Ushio&lt;&#x2F;a&gt; - Deterministic edge traffic replay tool&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Hello and outlook</title>
+        <published>2022-09-20T00:00:00+00:00</published>
+        <updated>2026-04-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/articles/hello-and-outlook/"/>
+        <id>https://raskell.io/articles/hello-and-outlook/</id>
+        
+        <content type="html" xml:base="https://raskell.io/articles/hello-and-outlook/">&lt;h2 id=&quot;hello-world&quot;&gt;Hello world&lt;&#x2F;h2&gt;
+&lt;p&gt;This is the first post on raskell.io. My name is Raffael. I build software, mostly in the space of platform automation, edge infrastructure, and applied security. I also have a long-running interest in open-source software, operating systems, and the kind of hardware you find in recycling bins and give a second life to.&lt;&#x2F;p&gt;
+&lt;p&gt;This site exists to document real work and share patterns that other engineers can use. Not thought leadership. Not personal branding. Just notes from the workshop.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-to-expect&quot;&gt;What to expect&lt;&#x2F;h2&gt;
+&lt;p&gt;At the time of writing, I planned to cover:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux and BSD systems, particularly &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt; and &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Open-source tooling and infrastructure&lt;&#x2F;li&gt;
+&lt;li&gt;Platform automation and operability&lt;&#x2F;li&gt;
+&lt;li&gt;Whatever hard problem I happened to be stuck on&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Looking back from 2026, the scope grew to include edge systems, AI-assisted engineering, and a few deep dives I did not expect to write. The thread that held it together was always the same: systems under pressure, and the tools that keep them running.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;voidlinux.org&#x2F;&quot;&gt;Void Linux&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.openbsd.org&#x2F;&quot;&gt;OpenBSD&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;www.raskell.io&quot;&gt;raskell.io source&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>
