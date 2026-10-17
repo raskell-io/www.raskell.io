@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-17T17:46:39+00:00",
+ "generated": "2026-10-17T18:39:10+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -361,7 +361,7 @@
    "url": "https://raskell.io/tags/developer-tooling/",
    "meta": "Concept · 5 pages",
    "description": "Package managers, build tools, CLIs, and the daily toolchain an engineer actually touches.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:distributed-systems",
@@ -514,7 +514,7 @@
    "url": "https://raskell.io/tags/open-web/",
    "meta": "Domain · 3 pages",
    "description": "The web as a commons: open protocols, small independent sites, and publishing outside the platforms.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:openbsd",
@@ -595,7 +595,7 @@
    "url": "https://raskell.io/tags/rust/",
    "meta": "Technology · 7 pages",
    "description": "The systems language most of the projects here are written in.",
-   "degree": 25
+   "degree": 27
   },
   {
    "id": "t:self-hosting",
@@ -649,7 +649,34 @@
    "url": "https://raskell.io/tags#complex-systems",
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
+   "degree": 3
+  },
+  {
+   "id": "t:games",
+   "kind": "tag",
+   "label": "Games",
+   "url": "https://raskell.io/tags#games",
+   "meta": "Domain · no pages yet",
+   "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
+   "degree": 3
+  },
+  {
+   "id": "t:simulation",
+   "kind": "tag",
+   "label": "Simulation",
+   "url": "https://raskell.io/tags#simulation",
+   "meta": "Domain · no pages yet",
+   "description": "Interactive worlds that mimic real ones: societies, economies, and agents left to evolve on their own.",
    "degree": 2
+  },
+  {
+   "id": "t:webassembly",
+   "kind": "tag",
+   "label": "WebAssembly",
+   "url": "https://raskell.io/tags#webassembly",
+   "meta": "Technology · no pages yet",
+   "description": "Portable, sandboxed bytecode for running native-speed code in the browser and beyond.",
+   "degree": 3
   },
   {
    "id": "s:the-agent-platform-handbook",
@@ -714,15 +741,6 @@
    "degree": 4
   },
   {
-   "id": "p:conflux",
-   "kind": "project",
-   "label": "Conflux",
-   "url": "https://github.com/raskell-io/conflux",
-   "meta": "Project",
-   "description": "Schema-aware config state coordination. Multiple writers, deterministic merge, git milestones. A CRDT document engine with pluggable storage backends (SQLite, PostgreSQL, DynamoDB)…",
-   "degree": 7
-  },
-  {
    "id": "p:hx",
    "kind": "project",
    "label": "hx",
@@ -741,13 +759,13 @@
    "degree": 5
   },
   {
-   "id": "p:shiioo",
+   "id": "p:refrakt",
    "kind": "project",
-   "label": "Shiioo (CO)",
-   "url": "https://github.com/raskell-io/shiioo",
+   "label": "Refrakt",
+   "url": "https://refrakt.raskell.io",
    "meta": "Project",
-   "description": "The Virtual Company OS. Agentic enterprise orchestrator with DAG workflows, event sourcing, MCP tools, and a categorized skill registry with git import.",
-   "degree": 9
+   "description": "A convention-first web framework for Gleam. Productive like Phoenix, explicit like Gleam, composable with Wisp and Lustre. Full-stack code generation, CRUD scaffolding, and a batte…",
+   "degree": 4
   },
   {
    "id": "p:sango",
@@ -759,15 +777,6 @@
    "degree": 8
   },
   {
-   "id": "p:ushio",
-   "kind": "project",
-   "label": "Ushio",
-   "url": "https://github.com/raskell-io/ushio",
-   "meta": "Project",
-   "description": "Deterministic edge traffic replay for understanding WAF and proxy behavior. Capture traffic as HAR files, rewrite URLs for staging/production comparison, mutate headers, strip cook…",
-   "degree": 8
-  },
-  {
    "id": "p:vela",
    "kind": "project",
    "label": "Vela",
@@ -775,15 +784,6 @@
    "meta": "Project",
    "description": "No-downtime app deployment on bare metal. One binary. No containers. A self-hosted PaaS alternative to Heroku, Fly.io, Coolify, and Kamal. built in Rust with zero-downtime deploys …",
    "degree": 8
-  },
-  {
-   "id": "p:refrakt",
-   "kind": "project",
-   "label": "Refrakt",
-   "url": "https://refrakt.raskell.io",
-   "meta": "Project",
-   "description": "A convention-first web framework for Gleam. Productive like Phoenix, explicit like Gleam, composable with Wisp and Lustre. Full-stack code generation, CRUD scaffolding, and a batte…",
-   "degree": 4
   },
   {
    "id": "p:die-zukunft",
@@ -804,6 +804,15 @@
    "degree": 3
   },
   {
+   "id": "p:wasm-ad",
+   "kind": "project",
+   "label": "WASM-AD",
+   "url": "https://wasmad.raskell.io",
+   "meta": "Project",
+   "description": "A fantasy console standard with 32-bit handheld hardware: tile layers, sprites, palettes, and save RAM, memory-mapped inside the cartridge. A cartridge is a single WebAssembly modu…",
+   "degree": 6
+  },
+  {
    "id": "p:coconutos",
    "kind": "project",
    "label": "coconutOS",
@@ -819,7 +828,34 @@
    "url": "https://terrarium.raskell.io",
    "meta": "Project",
    "description": "A societal simulation engine where LLM-powered agents form emergent civilizations. Each agent has a personality, needs, memories, and beliefs that can be wrong. You set the rules o…",
-   "degree": 6
+   "degree": 7
+  },
+  {
+   "id": "p:conflux",
+   "kind": "project",
+   "label": "Conflux",
+   "url": "https://github.com/raskell-io/conflux",
+   "meta": "Project",
+   "description": "Schema-aware config state coordination. Multiple writers, deterministic merge, git milestones. A CRDT document engine with pluggable storage backends (SQLite, PostgreSQL, DynamoDB)…",
+   "degree": 7
+  },
+  {
+   "id": "p:shiioo",
+   "kind": "project",
+   "label": "Shiioo (CO)",
+   "url": "https://github.com/raskell-io/shiioo",
+   "meta": "Project",
+   "description": "The Virtual Company OS. Agentic enterprise orchestrator with DAG workflows, event sourcing, MCP tools, and a categorized skill registry with git import.",
+   "degree": 9
+  },
+  {
+   "id": "p:ushio",
+   "kind": "project",
+   "label": "Ushio",
+   "url": "https://github.com/raskell-io/ushio",
+   "meta": "Project",
+   "description": "Deterministic edge traffic replay for understanding WAF and proxy behavior. Capture traffic as HAR files, rewrite URLs for staging/production comparison, mutate headers, strip cook…",
+   "degree": 8
   },
   {
    "id": "p:driftscape",
@@ -882,7 +918,16 @@
    "url": "https://pawandclaw.raskell.io",
    "meta": "Project",
    "description": "A turn-based strategy game in the spirit of Advance Wars, fought by woodland armies. Raccoons, badgers, lions, red pandas, and moles fight over every thicket and creek. Built in Ru…",
-   "degree": 3
+   "degree": 4
+  },
+  {
+   "id": "p:rainbow-river",
+   "kind": "project",
+   "label": "Rainbow River",
+   "url": "https://rainbowriver.raskell.io",
+   "meta": "Project",
+   "description": "A fishing game in the style of the 32-bit handhelds, inspired by The Legend of the River King. Walk the river, read the water, and fill a fish log of hand-drawn species. Written in…",
+   "degree": 5
   },
   {
    "id": "h:projects-venture",
@@ -898,7 +943,7 @@
    "label": "Flagship and serious builds",
    "url": "https://raskell.io/projects/#tier-flagship",
    "meta": "Group",
-   "degree": 10
+   "degree": 7
   },
   {
    "id": "h:projects-civic",
@@ -914,7 +959,7 @@
    "label": "Labs / passion projects",
    "url": "https://raskell.io/projects/#tier-lab",
    "meta": "Group",
-   "degree": 6
+   "degree": 10
   },
   {
    "id": "h:apps-tools",
@@ -927,10 +972,10 @@
   {
    "id": "h:apps-play",
    "kind": "hub",
-   "label": "Games and simulations",
+   "label": "Simulations and games",
    "url": "https://raskell.io/apps/#tier-play",
    "meta": "Group",
-   "degree": 2
+   "degree": 3
   }
  ],
  "links": [
@@ -1599,6 +1644,14 @@
    "target": "t:open-web"
   },
   {
+   "source": "t:simulation",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "t:webassembly",
+   "target": "t:open-web"
+  },
+  {
    "source": "a:/articles/the-bill-is-part-of-the-loop/",
    "target": "s:the-agent-platform-handbook"
   },
@@ -1951,28 +2004,8 @@
    "target": "p:zentinel"
   },
   {
-   "source": "a:/articles/edge-systems-are-the-new-backend/",
-   "target": "p:conflux"
-  },
-  {
    "source": "a:/articles/mise-ate-my-makefile/",
-   "target": "p:conflux"
-  },
-  {
-   "source": "a:/articles/all-beginning-is-haskell/",
-   "target": "p:conflux"
-  },
-  {
-   "source": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
-   "target": "p:shiioo"
-  },
-  {
-   "source": "a:/articles/mise-ate-my-makefile/",
-   "target": "p:shiioo"
-  },
-  {
-   "source": "a:/articles/all-beginning-is-haskell/",
-   "target": "p:shiioo"
+   "target": "p:refrakt"
   },
   {
    "source": "a:/articles/looking-back-on-2025/",
@@ -1981,14 +2014,6 @@
   {
    "source": "a:/articles/mise-ate-my-makefile/",
    "target": "p:sango"
-  },
-  {
-   "source": "a:/articles/traffic-replay-as-a-security-primitive/",
-   "target": "p:ushio"
-  },
-  {
-   "source": "a:/articles/looking-back-on-2025/",
-   "target": "p:ushio"
   },
   {
    "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
@@ -1997,10 +2022,6 @@
   {
    "source": "a:/articles/mise-ate-my-makefile/",
    "target": "p:vela"
-  },
-  {
-   "source": "a:/articles/mise-ate-my-makefile/",
-   "target": "p:refrakt"
   },
   {
    "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
@@ -2025,6 +2046,38 @@
   {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "p:terrarium"
+  },
+  {
+   "source": "a:/articles/edge-systems-are-the-new-backend/",
+   "target": "p:conflux"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:conflux"
+  },
+  {
+   "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "p:conflux"
+  },
+  {
+   "source": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
+   "target": "p:shiioo"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:shiioo"
+  },
+  {
+   "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "p:shiioo"
+  },
+  {
+   "source": "a:/articles/traffic-replay-as-a-security-primitive/",
+   "target": "p:ushio"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "p:ushio"
   },
   {
    "source": "a:/articles/this-site-is-becoming-a-map/",
@@ -2171,22 +2224,6 @@
    "target": "t:rust"
   },
   {
-   "source": "p:conflux",
-   "target": "h:projects-flagship"
-  },
-  {
-   "source": "p:conflux",
-   "target": "t:distributed-systems"
-  },
-  {
-   "source": "p:conflux",
-   "target": "t:local-first"
-  },
-  {
-   "source": "p:conflux",
-   "target": "t:rust"
-  },
-  {
    "source": "p:hx",
    "target": "h:projects-flagship"
   },
@@ -2231,28 +2268,16 @@
    "target": "p:arcanist"
   },
   {
-   "source": "p:shiioo",
+   "source": "p:refrakt",
    "target": "h:projects-flagship"
   },
   {
-   "source": "p:shiioo",
-   "target": "t:agents"
+   "source": "p:refrakt",
+   "target": "t:programming-languages"
   },
   {
-   "source": "p:shiioo",
-   "target": "t:ai-platforms"
-  },
-  {
-   "source": "p:shiioo",
-   "target": "t:ai-for-ops"
-  },
-  {
-   "source": "p:shiioo",
-   "target": "t:platform-automation"
-  },
-  {
-   "source": "p:shiioo",
-   "target": "t:rust"
+   "source": "p:refrakt",
+   "target": "t:oss"
   },
   {
    "source": "p:sango",
@@ -2279,30 +2304,6 @@
    "target": "t:rust"
   },
   {
-   "source": "p:ushio",
-   "target": "h:projects-flagship"
-  },
-  {
-   "source": "p:ushio",
-   "target": "t:applied-security"
-  },
-  {
-   "source": "p:ushio",
-   "target": "t:waf"
-  },
-  {
-   "source": "p:ushio",
-   "target": "t:edge-systems"
-  },
-  {
-   "source": "p:ushio",
-   "target": "t:developer-tooling"
-  },
-  {
-   "source": "p:ushio",
-   "target": "t:rust"
-  },
-  {
    "source": "p:vela",
    "target": "h:projects-flagship"
   },
@@ -2325,18 +2326,6 @@
   {
    "source": "p:vela",
    "target": "t:developer-tooling"
-  },
-  {
-   "source": "p:refrakt",
-   "target": "h:projects-flagship"
-  },
-  {
-   "source": "p:refrakt",
-   "target": "t:programming-languages"
-  },
-  {
-   "source": "p:refrakt",
-   "target": "t:oss"
   },
   {
    "source": "p:die-zukunft",
@@ -2365,6 +2354,30 @@
   {
    "source": "p:human-macroscope",
    "target": "t:knowledge-management"
+  },
+  {
+   "source": "p:wasm-ad",
+   "target": "h:projects-lab"
+  },
+  {
+   "source": "p:wasm-ad",
+   "target": "t:games"
+  },
+  {
+   "source": "p:wasm-ad",
+   "target": "t:webassembly"
+  },
+  {
+   "source": "p:wasm-ad",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "p:wasm-ad",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:wasm-ad",
+   "target": "p:rainbow-river"
   },
   {
    "source": "p:coconutos",
@@ -2400,10 +2413,78 @@
   },
   {
    "source": "p:terrarium",
+   "target": "t:simulation"
+  },
+  {
+   "source": "p:terrarium",
    "target": "t:complex-systems"
   },
   {
    "source": "p:terrarium",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:conflux",
+   "target": "h:projects-lab"
+  },
+  {
+   "source": "p:conflux",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "p:conflux",
+   "target": "t:local-first"
+  },
+  {
+   "source": "p:conflux",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:shiioo",
+   "target": "h:projects-lab"
+  },
+  {
+   "source": "p:shiioo",
+   "target": "t:agents"
+  },
+  {
+   "source": "p:shiioo",
+   "target": "t:ai-platforms"
+  },
+  {
+   "source": "p:shiioo",
+   "target": "t:ai-for-ops"
+  },
+  {
+   "source": "p:shiioo",
+   "target": "t:platform-automation"
+  },
+  {
+   "source": "p:shiioo",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:ushio",
+   "target": "h:projects-lab"
+  },
+  {
+   "source": "p:ushio",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "p:ushio",
+   "target": "t:waf"
+  },
+  {
+   "source": "p:ushio",
+   "target": "t:edge-systems"
+  },
+  {
+   "source": "p:ushio",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "p:ushio",
    "target": "t:rust"
   },
   {
@@ -2480,6 +2561,26 @@
   },
   {
    "source": "p:paw-and-claw",
+   "target": "t:games"
+  },
+  {
+   "source": "p:paw-and-claw",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:rainbow-river",
+   "target": "h:apps-play"
+  },
+  {
+   "source": "p:rainbow-river",
+   "target": "t:games"
+  },
+  {
+   "source": "p:rainbow-river",
+   "target": "t:webassembly"
+  },
+  {
+   "source": "p:rainbow-river",
    "target": "t:rust"
   },
   {

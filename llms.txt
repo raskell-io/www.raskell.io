@@ -79,6 +79,8 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Sovereignty (`sovereignty`): Who controls compute, data, and infrastructure, and in which jurisdiction; Europe's position in particular.
 - Policy (`policy`): Where engineering meets regulation, public institutions, procurement, and national strategy.
 - The open web (`open-web`): The web as a commons: open protocols, small independent sites, and publishing outside the platforms.
+- Simulation (`simulation`) [within Complex systems]: Interactive worlds that mimic real ones: societies, economies, and agents left to evolve on their own.
+- Games (`games`): Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.
 
 ### Concepts
 
@@ -100,6 +102,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 
 ### Technologies
 
+- WebAssembly (`webassembly`) [within The open web]: Portable, sandboxed bytecode for running native-speed code in the browser and beyond.
 - Rust (`rust`) [within Programming languages]: The systems language most of the projects here are written in.
 - Haskell (`haskell`) [within Programming languages]: The language that shaped how I think about types, effects, and correctness.
 - TypeScript (`typescript`) [within Programming languages]: TypeScript on Bun, the language of the Agent Platform Handbook code.
@@ -123,18 +126,19 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - [Arcanist](https://arcanist.sh): High-performance Haskell tooling, built in Rust.
 - [Zentinel](https://zentinelproxy.io): Guardian of the Free Web.
 - [broodwar.live](https://broodwar.live): The community platform for StarCraft: Brood War competitive play, a basketball-reference.com for Brood War.
-- [Conflux](https://github.com/raskell-io/conflux): Schema-aware config state coordination.
 - [hx](https://hx.arcanist.sh): An extremely fast Haskell package and project manager, written in Rust.
 - [bhc](https://bhc.arcanist.sh): The Basel Haskell Compiler.
-- [Shiioo (CO)](https://github.com/raskell-io/shiioo): The Virtual Company OS.
-- [Sango](https://sango.raskell.io): Edge diagnostics for the modern web.
-- [Ushio](https://github.com/raskell-io/ushio): Deterministic edge traffic replay for understanding WAF and proxy behavior.
-- [Vela](https://github.com/raskell-io/vela): No-downtime app deployment on bare metal.
 - [Refrakt](https://refrakt.raskell.io): A convention-first web framework for Gleam.
+- [Sango](https://sango.raskell.io): Edge diagnostics for the modern web.
+- [Vela](https://github.com/raskell-io/vela): No-downtime app deployment on bare metal.
 - [Die Zukunft](https://die-zukunft.ch): A Swiss movement that applies engineering principles to public life: not left, not right.
 - [Human Macroscope](https://github.com/human-macroscope): A long-term interdisciplinary research project on humans and human collectives across scales, from individuals and families to institutions, cultures, and civilizations: how individual traits, roles, relations, and cultural transmission combine into emergent collective properties.
+- [WASM-AD](https://wasmad.raskell.io): A fantasy console standard with 32-bit handheld hardware: tile layers, sprites, palettes, and save RAM, memory-mapped inside the cartridge.
 - [coconutOS](https://github.com/coconut-os/coconutOS): A Rust microkernel for GPU-isolated AI inference.
 - [Terrarium](https://terrarium.raskell.io): A societal simulation engine where LLM-powered agents form emergent civilizations.
+- [Conflux](https://github.com/raskell-io/conflux): Schema-aware config state coordination.
+- [Shiioo (CO)](https://github.com/raskell-io/shiioo): The Virtual Company OS.
+- [Ushio](https://github.com/raskell-io/ushio): Deterministic edge traffic replay for understanding WAF and proxy behavior.
 - [Driftscape](https://github.com/raskell-io/driftscape): Ambient soundscape platform.
 - [robogym](https://github.com/raskell-io/robogym): Rust/Bevy PWA for training robotic agents.
 - [Awesomeify](https://github.com/raskell-io/awesomeify): Index GitHub repos and generate static awesome-list sites.
@@ -145,6 +149,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - [Manabi](https://manabi.raskell.io): A reading-first language-learning app for Chinese, Japanese, Korean, and Hebrew.
 - [Kurumi](https://kurumi.raskell.io): A local-first, AI-native second brain.
 - [Paw & Claw](https://pawandclaw.raskell.io): A turn-based strategy game in the spirit of Advance Wars, fought by woodland armies.
+- [Rainbow River](https://rainbowriver.raskell.io): A fishing game in the style of the 32-bit handhelds, inspired by The Legend of the River King.
 - [Terrarium](https://terrarium.raskell.io): A societal simulation engine where LLM-powered agents form emergent civilizations.
 
 ## For agents
