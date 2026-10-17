@@ -2,5 +2,5 @@ title = "Terrarium"
 description = "A societal simulation engine where LLM-powered agents form emergent civilizations. Each agent has a personality, needs, memories, and beliefs that can be wrong. You set the rules of the world, then watch for markets, hierarchies, and alliances to emerge on their own."
 status = "dev"
 logo = "brands/terrarium.png"
-links = [ { name = "GitHub", url = "https://github.com/raskell-io/terrarium" } ]
+links = [ { name = "Website", url = "https://terrarium.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/terrarium" } ]
 topics = ["agents", "complex-systems", "rust"]
