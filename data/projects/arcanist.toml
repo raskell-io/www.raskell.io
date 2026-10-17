@@ -7,3 +7,4 @@ logo_mono = true
 featured = true
 links = [ { name = "Website", url = "https://arcanist.sh" }, { name = "GitHub", url = "https://github.com/arcanist-sh" } ]
 topics = ["haskell", "rust", "programming-languages", "developer-tooling"]
+accents = ["#8839ef", "#ea76cb"]   # brand colours, used for the card glow

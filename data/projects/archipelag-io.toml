@@ -5,3 +5,4 @@ logo = "brands/archipelag.svg"
 featured = true
 links = [ { name = "Website", url = "https://archipelag.io" }, { name = "GitHub", url = "https://github.com/archipelag-io" } ]
 topics = ["distributed-systems", "sovereignty", "edge-systems", "inference", "isolation", "self-hosting"]
+accents = ["#00c9b0", "#ffe14d"]   # brand colours, used for the card glow
