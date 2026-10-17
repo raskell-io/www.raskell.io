@@ -1,0 +1,4 @@
+{#- Site hook, included at the end of <body> by the seijaku base layout. -#}
+{%- if section is defined and section.path == "/" %}
+<script src="{{ get_url(path='js/split-flap.js', cachebust=true) | safe }}" defer></script>
+{%- endif %}
