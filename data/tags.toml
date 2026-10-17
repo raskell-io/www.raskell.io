@@ -77,6 +77,16 @@ name = "The open web"
 kind = "domain"
 description = "The web as a commons: open protocols, small independent sites, and publishing outside the platforms."
 
+[history]
+name = "History"
+kind = "domain"
+description = "Events, institutions, and societies through time, with attention to sources, competing accounts, and uncertainty."
+
+[geography]
+name = "Geography"
+kind = "domain"
+description = "Places, terrain, borders, and spatial data, and how their relationships change over time."
+
 # Concepts -----------------------------------------------------------------
 
 [agents]

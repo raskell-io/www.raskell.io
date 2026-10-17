@@ -1,0 +1,8 @@
+title = "Chronicle of Earth"
+description = "An interactive atlas of history and geopolitics, starting with 1900–2026. An early prototype pairs a 3D globe that zooms down to villages and streets with a timeline spanning days to decades. Its data model keeps events, territorial claims, control, sources, and uncertainty distinct. Historical coverage is still a small draft collection; detailed base maps show present-day geography."
+status = "dev"
+status_label = "Early prototype"
+links = [ { name = "GitHub", url = "https://github.com/chronicle-of-earth" } ]
+topics = ["history", "geography", "knowledge-management", "typescript"]
+stack = ["SvelteKit", "TypeScript", "MapLibre"]
+accents = ["#779aa6", "#9eb69a"]
