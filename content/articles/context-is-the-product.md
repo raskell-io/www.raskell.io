@@ -4,8 +4,7 @@ date = 2026-06-13
 description = "Models are commodities. Context is not. The sources of context an agent draws on, why retrieval alone is not enough, and a minimal .AGENTS/ convention that loads context from disk into the same harness we have been building. Part four of The Agent Platform Handbook."
 
 [taxonomies]
-tags = ["agents", "economics", "typescript"]
-categories = ["patterns"]
+tags = ["agents", "context-engineering", "economics", "typescript"]
 series = ["the-agent-platform-handbook"]
 
 [extra]

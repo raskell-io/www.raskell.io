@@ -30,6 +30,9 @@ jobs:
       - name: Download fonts
         run: mise run download-fonts
 
+      - name: Check tags against the vocabulary
+        run: mise run tags-check
+
       - name: Generate llms.txt and Markdown copies
         run: mise run llms
 

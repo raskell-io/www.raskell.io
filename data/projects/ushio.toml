@@ -3,4 +3,4 @@ description = "Deterministic edge traffic replay for understanding WAF and proxy
 status = "dev"
 logo = "brands/ushio.png"
 links = [ { name = "GitHub", url = "https://github.com/raskell-io/ushio" } ]
-topics = ["applied-security", "edge-systems", "rust", "developer-tooling"]
+topics = ["applied-security", "waf", "edge-systems", "developer-tooling", "rust"]

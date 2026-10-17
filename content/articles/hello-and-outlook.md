@@ -5,8 +5,7 @@ updated = 2026-04-12
 description = "The first post on raskell.io. What this site is for and what I planned to write about."
 
 [taxonomies]
-tags = ["oss", "linux"]
-categories = ["meta"]
+tags = ["meta", "oss", "open-web"]
 
 [extra]
 author = "Raffael"

@@ -3,5 +3,5 @@ description = "The Basel Haskell Compiler. A next-generation Haskell compiler an
 status = "dev"
 logo = "brands/bhc.png"
 links = [ { name = "Website", url = "https://bhc.arcanist.sh" }, { name = "GitHub", url = "https://github.com/arcanist-sh/bhc" } ]
-topics = ["haskell", "programming-languages"]
+topics = ["haskell", "programming-languages", "formal-methods"]
 related = ["arcanist"]

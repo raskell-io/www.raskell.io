@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+#MISE description="Check that every tag in content/ and project topics is defined in data/tags.toml"
+"""
+The topic vocabulary in data/tags.toml is the source of truth for tags. This reports:
+  - tags used in content/ or data/projects/*.toml that the vocabulary does not define (an error),
+  - broader references that point at undefined tags (an error),
+  - vocabulary entries nothing uses yet (a note, not an error: the graph still shows them).
+Exit status 1 when there is an error, so CI or a pre-commit hook can use it.
+"""
+import glob
+import os
+import re
+import sys
+
+os.chdir(os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")))
+vocab, broader, cur = {}, {}, None
+for line in open("data/tags.toml"):
+    m = re.match(r"^\[([a-z0-9-]+)\]\s*$", line)
+    if m:
+        cur = m.group(1); vocab[cur] = True; broader[cur] = []
+    m = re.match(r"^broader\s*=\s*\[(.*)\]", line)
+    if cur and m:
+        broader[cur] = re.findall(r'"([^"]+)"', m.group(1))
+
+used = {}
+for path in glob.glob("content/**/*.md", recursive=True):
+    m = re.search(r"^tags\s*=\s*\[(.*?)\]", open(path).read(), re.M)
+    for t in re.findall(r'"([^"]+)"', m.group(1)) if m else []:
+        used.setdefault(t, []).append(path)
+for path in glob.glob("data/projects/*.toml"):
+    m = re.search(r"^topics\s*=\s*\[(.*?)\]", open(path).read(), re.M)
+    for t in re.findall(r'"([^"]+)"', m.group(1)) if m else []:
+        used.setdefault(t, []).append(path)
+
+errors = 0
+for t, where in sorted(used.items()):
+    if t not in vocab:
+        errors += 1
+        print("undefined tag %-22s used in %s" % (t, ", ".join(sorted(set(where)))))
+for t, bs in broader.items():
+    for b in bs:
+        if b not in vocab:
+            errors += 1
+            print("undefined broader %-18s on %s" % (b, t))
+unused = sorted(t for t in vocab if t not in used)
+if unused:
+    print("defined but unused (shown on the map without pages): " + ", ".join(unused))
+print("tags-check: %d defined, %d used, %d errors" % (len(vocab), len(used), errors))
+sys.exit(1 if errors else 0)

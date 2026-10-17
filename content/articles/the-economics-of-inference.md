@@ -4,8 +4,7 @@ date = 2026-04-22
 description = "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas."
 
 [taxonomies]
-tags = ["ai-for-ops", "economics", "edge-systems", "sovereignty", "platform-automation"]
-categories = ["deep-dives"]
+tags = ["inference", "economics", "sovereignty", "edge-systems", "gpus"]
 
 [extra]
 author = "Raffael"

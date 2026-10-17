@@ -3,4 +3,4 @@ description = "A Rust microkernel for GPU-isolated AI inference. Capability-base
 status = "dev"
 logo = "brands/coconutos.png"
 links = [ { name = "GitHub", url = "https://github.com/coconut-os/coconutOS" } ]
-topics = ["coconutos", "isolation", "rust", "ai-for-ops"]
+topics = ["operating-systems", "gpus", "inference", "isolation", "rust"]

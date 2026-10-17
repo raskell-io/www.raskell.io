@@ -5,8 +5,7 @@ updated = 2026-03-09
 description = "Mise replaced Make, asdf, and a pile of shell scripts with a single TOML file per project. Here is why it stuck."
 
 [taxonomies]
-tags = ["platform-automation", "developer-tooling", "rust"]
-categories = ["reviews"]
+tags = ["developer-tooling", "platform-automation", "rust"]
 
 [extra]
 author = "Raffael"
@@ -109,7 +108,6 @@ date = ${DATE}
 description = ""
 [taxonomies]
 tags = []
-categories = []
 [extra]
 author = "Raffael"
 +++

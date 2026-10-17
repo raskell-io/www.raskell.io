@@ -5,7 +5,6 @@ description = "Function calling is the API between language and action, but the 
 
 [taxonomies]
 tags = ["agents", "typescript"]
-categories = ["patterns"]
 series = ["the-agent-platform-handbook"]
 
 [extra]

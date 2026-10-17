@@ -6,7 +6,6 @@ description = "How Haskell shaped the way I think about building systems, and wh
 
 [taxonomies]
 tags = ["programming-languages", "haskell", "developer-tooling"]
-categories = ["deep-dives"]
 
 [extra]
 author = "Raffael"

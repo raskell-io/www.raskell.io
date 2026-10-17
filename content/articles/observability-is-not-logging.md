@@ -5,8 +5,7 @@ draft = true
 description = "The ledger from part eight knows a run cost forty cents across nine turns, and nothing about the shape of those turns. This post turns the per-turn record into a trace: a span type in one file, a tracer that captures the causal tree of a run without touching the loop, and an honest account of when the homegrown tracer should give way to OpenTelemetry and its GenAI semantic conventions. Part nine of The Agent Platform Handbook."
 
 [taxonomies]
-tags = ["ai-engineering", "platform-automation", "typescript"]
-categories = ["patterns"]
+tags = ["agents", "ai-platforms", "observability", "typescript"]
 series = ["the-agent-platform-handbook"]
 
 [extra]

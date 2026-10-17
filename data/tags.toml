@@ -1,0 +1,230 @@
+# The topic vocabulary of raskell.io: one entry per tag slug used in content/ and data/projects/.
+# This is the backbone of the knowledge graph on /map/, the tag pages, and llms.txt.
+#
+#   name         how the tag is shown
+#   kind         domain (a field of work), concept (an idea that cuts across fields),
+#                technology (a language, tool, or platform), or site (about raskell.io itself)
+#   description  one sentence, what the tag means here
+#   broader      parent tags; drawn as edges on the map, so the vocabulary is a graph, not a list
+#
+# Adding a tag: add an entry here first, then use the slug. `mise run tags-check` reports tags used
+# in content that are missing here, and entries nothing uses yet.
+
+# Domains ------------------------------------------------------------------
+
+[ai-platforms]
+name = "AI platforms"
+kind = "domain"
+description = "The shared foundation an organisation builds AI on: model gateways, agent runtimes, governance, observability, and the operating model around them."
+
+[ai-engineering]
+name = "AI-assisted engineering"
+kind = "domain"
+description = "AI as an engineering tool: coding agents, AI-authored code, and what programming becomes when models write most of it."
+
+[ai-for-ops]
+name = "AI for operations"
+kind = "domain"
+description = "AI applied to running systems: security triage, alert noise, incident work, and keeping a human in the loop."
+
+[platform-automation]
+name = "Platform automation"
+kind = "domain"
+description = "Self-service, guardrails, deployment, and the tooling that keeps operating software sustainable."
+
+[edge-systems]
+name = "Edge systems"
+kind = "domain"
+description = "Reverse proxies, policy enforcement, CDNs, and logic that runs close to the user instead of in the backend."
+
+[applied-security]
+name = "Applied security"
+kind = "domain"
+description = "Security under production pressure: adversarial input, signal versus noise, and controls that operators can live with."
+
+[distributed-systems]
+name = "Distributed systems"
+kind = "domain"
+description = "Replication, coordination, and consistency across machines that fail independently."
+
+[programming-languages]
+name = "Programming languages"
+kind = "domain"
+description = "Languages, type systems, compilers, and how executable intent gets written down."
+
+[operating-systems]
+name = "Operating systems"
+kind = "domain"
+description = "Kernels, virtualisation, and the layer between hardware and everything else, from BSD to inference-native designs."
+
+[reliability]
+name = "Reliability"
+kind = "domain"
+description = "Failure modes, operability, and keeping systems up when the inputs and the dependencies misbehave."
+
+[sovereignty]
+name = "Sovereignty"
+kind = "domain"
+description = "Who controls compute, data, and infrastructure, and in which jurisdiction; Europe's position in particular."
+
+[policy]
+name = "Policy"
+kind = "domain"
+description = "Where engineering meets regulation, public institutions, procurement, and national strategy."
+
+[open-web]
+name = "The open web"
+kind = "domain"
+description = "The web as a commons: open protocols, small independent sites, and publishing outside the platforms."
+
+# Concepts -----------------------------------------------------------------
+
+[agents]
+name = "Agents"
+kind = "concept"
+description = "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them."
+broader = ["ai-platforms"]
+
+[context-engineering]
+name = "Context engineering"
+kind = "concept"
+description = "Deciding what a model sees: pinned context, retrieval, memory, and the conventions that keep them honest."
+broader = ["agents"]
+
+[inference]
+name = "Inference"
+kind = "concept"
+description = "Running models in production: routing, cost, hardware, and inference as a metered utility."
+broader = ["ai-platforms"]
+
+[isolation]
+name = "Isolation"
+kind = "concept"
+description = "Sandboxes, process and failure-domain isolation, and running untrusted or fallible work safely."
+broader = ["applied-security", "reliability"]
+
+[waf]
+name = "WAF and traffic inspection"
+kind = "concept"
+description = "Web application firewalls, rule tuning, traffic replay, and inspecting requests without drowning operators."
+broader = ["applied-security", "edge-systems"]
+
+[observability]
+name = "Observability"
+kind = "concept"
+description = "Seeing what a running system does: traces, metering, glass-box infrastructure, and what not to log."
+broader = ["reliability"]
+
+[economics]
+name = "Economics"
+kind = "concept"
+description = "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation."
+
+[metrics]
+name = "Metrics"
+kind = "concept"
+description = "What to measure, leading versus lagging signals, and vanity numbers that look like insight."
+
+[formal-methods]
+name = "Formal methods"
+kind = "concept"
+description = "Proofs, verification, and types as specifications, especially once machines write the code."
+broader = ["programming-languages"]
+
+[developer-tooling]
+name = "Developer tooling"
+kind = "concept"
+description = "Package managers, build tools, CLIs, and the daily toolchain an engineer actually touches."
+broader = ["platform-automation"]
+
+[self-hosting]
+name = "Self-hosting"
+kind = "concept"
+description = "Running your own infrastructure, from a single bare-metal box to community-operated compute."
+broader = ["platform-automation", "sovereignty"]
+
+[local-first]
+name = "Local-first"
+kind = "concept"
+description = "Software that keeps data on your devices and syncs through CRDTs, with the network as an optimisation."
+broader = ["distributed-systems"]
+
+[knowledge-management]
+name = "Knowledge management"
+kind = "concept"
+description = "Second brains, knowledge graphs, and how notes, links, and memory turn into understanding."
+
+[oss]
+name = "Open source"
+kind = "concept"
+description = "Open source and open standards as the point of the work, not just its licence."
+broader = ["open-web"]
+
+# Technologies -------------------------------------------------------------
+
+[rust]
+name = "Rust"
+kind = "technology"
+description = "The systems language most of the projects here are written in."
+broader = ["programming-languages"]
+
+[haskell]
+name = "Haskell"
+kind = "technology"
+description = "The language that shaped how I think about types, effects, and correctness."
+broader = ["programming-languages"]
+
+[typescript]
+name = "TypeScript"
+kind = "technology"
+description = "TypeScript on Bun, the language of the Agent Platform Handbook code."
+broader = ["programming-languages"]
+
+[elixir]
+name = "Elixir"
+kind = "technology"
+description = "Elixir, Phoenix, and the BEAM for the long-running, fault-tolerant parts."
+broader = ["programming-languages"]
+
+[pingora]
+name = "Pingora"
+kind = "technology"
+description = "Cloudflare's Rust framework for building proxies, the base of Zentinel."
+broader = ["edge-systems", "rust"]
+
+[kubernetes]
+name = "Kubernetes"
+kind = "technology"
+description = "Container orchestration, and the question of when you actually need it."
+broader = ["platform-automation"]
+
+[gpus]
+name = "GPUs"
+kind = "technology"
+description = "GPUs as the computer: memory shape, partitioning, and the hardware under inference."
+broader = ["inference"]
+
+[linux]
+name = "Linux"
+kind = "technology"
+description = "Linux distributions and system administration, Void Linux in particular."
+broader = ["operating-systems"]
+
+[openbsd]
+name = "OpenBSD"
+kind = "technology"
+description = "OpenBSD and the BSD approach to correctness and simplicity."
+broader = ["operating-systems"]
+
+[zola]
+name = "Zola"
+kind = "technology"
+description = "The static site generator this site and several project sites are built with."
+broader = ["open-web"]
+
+# This site ----------------------------------------------------------------
+
+[meta]
+name = "This site"
+kind = "site"
+description = "Posts about raskell.io itself: why it exists, how it is built, and where it is going."

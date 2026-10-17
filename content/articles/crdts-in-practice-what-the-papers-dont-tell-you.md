@@ -5,8 +5,7 @@ draft = true
 description = "CRDTs promise conflict-free merges with mathematical guarantees. The papers are correct. They are also incomplete. Here is what building a real CRDT engine taught me about clocks, garbage, and the distance between theory and production."
 
 [taxonomies]
-tags = ["reliability", "distributed-systems", "rust"]
-categories = ["deep-dives"]
+tags = ["distributed-systems", "local-first", "reliability", "rust"]
 
 [extra]
 author = "Raffael"

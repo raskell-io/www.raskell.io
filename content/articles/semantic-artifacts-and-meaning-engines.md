@@ -5,7 +5,6 @@ description = "Closing the trilogy. The artifact you author is no longer source 
 
 [taxonomies]
 tags = ["ai-engineering", "programming-languages", "formal-methods", "haskell"]
-categories = ["deep-dives"]
 
 [extra]
 author = "Raffael"

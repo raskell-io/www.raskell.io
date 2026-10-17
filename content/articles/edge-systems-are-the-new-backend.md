@@ -5,9 +5,7 @@ updated = 2026-03-08
 description = "Auth, policy, and business logic are migrating to the edge. The traditional backend is becoming a persistence layer."
 
 [taxonomies]
-tags = ["edge-systems", "applied-security", "distributed-systems", "rust", "pingora"]
-categories = ["deep-dives"]
-series = ["deep-dives"]
+tags = ["edge-systems", "applied-security", "distributed-systems", "local-first", "waf", "rust", "pingora"]
 
 [extra]
 author = "Raffael"

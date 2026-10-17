@@ -4,8 +4,7 @@ date = 2026-04-27
 description = "WAF tuning is a guessing game because you cannot reproduce the traffic that triggered the rule. Deterministic replay changes that."
 
 [taxonomies]
-tags = ["applied-security", "edge-systems", "reliability", "developer-tooling"]
-categories = ["patterns"]
+tags = ["applied-security", "waf", "edge-systems", "reliability", "developer-tooling"]
 
 [extra]
 author = "Raffael"

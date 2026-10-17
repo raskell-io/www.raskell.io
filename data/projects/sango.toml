@@ -3,4 +3,4 @@ description = "Edge diagnostics for the modern web. An operator-grade CLI that p
 status = "dev"
 logo = "brands/sango.svg"
 links = [ { name = "Website", url = "https://sango.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/sango" } ]
-topics = ["edge-systems", "reliability", "rust", "developer-tooling"]
+topics = ["edge-systems", "reliability", "observability", "developer-tooling", "rust"]

@@ -5,8 +5,7 @@ updated = 2026-03-08
 description = "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself."
 
 [taxonomies]
-tags = ["edge-systems", "oss", "ai-for-ops"]
-categories = ["deep-dives"]
+tags = ["open-web", "edge-systems", "meta"]
 
 [extra]
 author = "Raffael"

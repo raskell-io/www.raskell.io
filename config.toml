@@ -11,7 +11,6 @@ build_search_index = true
 
 taxonomies = [
     { name = "tags", feed = true },
-    { name = "categories", feed = true },
     { name = "series", feed = true },
 ]
 
@@ -71,6 +70,8 @@ main_section = "articles"
 projects_section = "projects"
 cta = { name = "Start here", url = "@/start-here.md" }
 map = "@/map.md"
+graph_sections = ["articles", "notes"]
+tag_data = "data/tags.toml"
 nav = [
   { name = "Articles", url = "@/articles/_index.md" },
   { name = "Projects", url = "@/projects/_index.md" },
@@ -81,7 +82,7 @@ nav = [
 explore = [
   { name = "Map", url = "@/map.md" },
   { name = "Tags", url = "/tags" },
-  { name = "Categories", url = "/categories" },
+  { name = "Notes", url = "@/notes/_index.md" },
   { name = "Series", url = "/series" },
   { name = "RSS", url = "/rss.xml" },
 ]

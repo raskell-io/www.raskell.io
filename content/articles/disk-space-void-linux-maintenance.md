@@ -5,8 +5,7 @@ updated = 2026-03-08
 description = "Cleaning old kernels, pruning xbps package cache, and reclaiming disk space on Void Linux without breaking your system."
 
 [taxonomies]
-tags = ["linux"]
-categories = ["field-notes"]
+tags = ["operating-systems", "linux"]
 
 [extra]
 author = "Raffael"

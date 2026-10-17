@@ -3,4 +3,4 @@ description = "Human continuity platform for preserving presence across generati
 status = "dev"
 logo = "brands/humankind.png"
 links = [ { name = "Website", url = "https://humankind.plus" }, { name = "GitHub", url = "https://github.com/humankind-plus" } ]
-topics = ["elixir", "rust", "sovereignty"]
+topics = ["sovereignty", "elixir", "rust"]

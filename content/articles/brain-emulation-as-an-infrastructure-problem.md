@@ -4,8 +4,7 @@ date = 2026-06-28
 description = "An MIT thesis argues brain emulation has crossed into engineering. Read as infrastructure, the numbers describe a workload your AI cluster was not built for."
 
 [taxonomies]
-tags = ["ai-for-ops", "distributed-systems", "platform-automation"]
-categories = ["patterns"]
+tags = ["distributed-systems", "inference", "gpus"]
 
 [extra]
 author = "Raffael"

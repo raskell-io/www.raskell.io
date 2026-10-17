@@ -6,7 +6,7 @@ This writes, from content/ and data/:
 
   static/llms.txt              the llms.txt index (https://llmstxt.org): who, what, and every article
   static/llms-full.txt         every published article in full, newest first, in one file
-  static/articles/<slug>.md    one clean Markdown copy per article, linked from its page head
+  static/{articles,notes}/<slug>.md  one clean Markdown copy per article and note, linked from its page head
 
 Shortcodes become plain fences, internal links become absolute URLs, drafts are skipped.
 The outputs are build artefacts (gitignored); CI runs this before `zola build`.
@@ -83,15 +83,22 @@ def plain_shortcodes(body):
     return "\n".join(out)
 
 
-articles = []
-for path in glob.glob("content/articles/*.md"):
-    if path.endswith("_index.md"):
-        continue
-    fm, body = split_front_matter(open(path).read())
-    if re.search(r"^draft\s*=\s*true", fm, re.M):
-        continue
-    slug = fm_str(fm, "slug") or os.path.basename(path)[:-3]
-    articles.append({
+def load(section):
+    out = []
+    for path in glob.glob("content/%s/*.md" % section):
+        if path.endswith("_index.md"):
+            continue
+        fm, body = split_front_matter(open(path).read())
+        if re.search(r"^draft\s*=\s*true", fm, re.M):
+            continue
+        slug = fm_str(fm, "slug") or os.path.basename(path)[:-3]
+        out.append(entry(section, slug, fm, body))
+    out.sort(key=lambda a: a["date"], reverse=True)
+    return out
+
+
+def entry(section, slug, fm, body):
+    return {
         "slug": slug,
         "title": fm_str(fm, "title"),
         "date": fm_date(fm, "date"),
@@ -99,11 +106,15 @@ for path in glob.glob("content/articles/*.md"):
         "description": fm_str(fm, "description"),
         "tags": fm_list(fm, "tags"),
         "series": fm_list(fm, "series"),
-        "url": "%s/articles/%s/" % (BASE, slug),
-        "md": "%s/articles/%s.md" % (BASE, slug),
+        "section": section,
+        "url": "%s/%s/%s/" % (BASE, section, slug),
+        "md": "%s/%s/%s.md" % (BASE, section, slug),
         "body": plain_shortcodes(absolute_links(body.strip())),
-    })
-articles.sort(key=lambda a: a["date"], reverse=True)
+    }
+
+
+articles = load("articles")
+notes = load("notes") if os.path.isdir("content/notes") else []
 
 
 def article_markdown(a):
@@ -120,12 +131,31 @@ def article_markdown(a):
     return "\n".join(head)
 
 
-os.makedirs("static/articles", exist_ok=True)
-for old in glob.glob("static/articles/*.md"):
-    os.remove(old)
-for a in articles:
-    with open("static/articles/%s.md" % a["slug"], "w") as f:
-        f.write(article_markdown(a))
+for section, items in (("articles", articles), ("notes", notes)):
+    os.makedirs("static/%s" % section, exist_ok=True)
+    for old in glob.glob("static/%s/*.md" % section):
+        os.remove(old)
+    for a in items:
+        with open("static/%s/%s.md" % (section, a["slug"]), "w") as f:
+            f.write(article_markdown(a))
+
+
+# The topic vocabulary (data/tags.toml), read with a small parser so this runs on any Python 3.
+def vocabulary():
+    entries, cur = [], None
+    for line in open("data/tags.toml"):
+        m = re.match(r"^\[([a-z0-9-]+)\]\s*$", line)
+        if m:
+            cur = {"slug": m.group(1), "broader": []}
+            entries.append(cur)
+            continue
+        m = re.match(r'^(name|kind|description)\s*=\s*"(.*)"\s*$', line)
+        if cur and m:
+            cur[m.group(1)] = m.group(2)
+        m = re.match(r"^broader\s*=\s*\[(.*)\]", line)
+        if cur and m:
+            cur["broader"] = re.findall(r'"([^"]+)"', m.group(1))
+    return entries
 
 
 def projects_from(section):
@@ -160,8 +190,9 @@ lines = [
     "",
     "- [About](%s/about/): who %s is, what he works on, and how to reach him" % (BASE, AUTHOR.split()[0]),
     "- [Start here](%s/start-here/): curated reading tracks through the archive" % BASE,
-    "- [Map](%s/map/): every article, topic, series, and project as one graph; machine-readable at [map.json](%s/map.json)" % (BASE, BASE),
-    "- [All articles in full](%s/llms-full.txt): every article in one Markdown file, newest first" % BASE,
+    "- [Map](%s/map/): every article, note, topic, series, and project as one graph; machine-readable at [map.json](%s/map.json)" % (BASE, BASE),
+    "- [All writing in full](%s/llms-full.txt): every article and note in one Markdown file, newest first" % BASE,
+    "- [Notes](%s/notes/): short notes that sit between the articles" % BASE,
     "- [RSS feed](%s/rss.xml): full-text feed" % BASE,
     "",
 ]
@@ -172,6 +203,21 @@ for name, items in series.items():
 lines += ["## Articles", ""]
 lines += ["- [%s](%s) (%s): %s" % (a["title"], a["md"], a["date"], a["description"]) for a in articles]
 lines.append("")
+if notes:
+    lines += ["## Notes", "", "Short notes, a paragraph or a page each; some grow into articles.", ""]
+    lines += ["- [%s](%s) (%s): %s" % (a["title"], a["md"], a["date"], a["description"]) for a in notes]
+    lines.append("")
+vocab = vocabulary()
+if vocab:
+    names = {v["slug"]: v.get("name", v["slug"]) for v in vocab}
+    lines += ["## Topics", "", "The topic vocabulary every page is filed under, with broader topics in brackets. "
+              "Topic pages live at %s/tags/<slug>/." % BASE, ""]
+    for kind, title in (("domain", "Domains"), ("concept", "Concepts"), ("technology", "Technologies"), ("site", "This site")):
+        group = [v for v in vocab if v.get("kind") == kind]
+        if group:
+            lines += ["### %s" % title, ""]
+            lines += ["- %s (`%s`)%s: %s" % (v.get("name"), v["slug"], " [within %s]" % ", ".join(names.get(b, b) for b in v["broader"]) if v["broader"] else "", v.get("description", "")) for v in group]
+            lines.append("")
 for section, heading in (("projects", "Projects"), ("apps", "Apps")):
     if os.path.exists("content/%s/_index.md" % section):
         lines += ["## %s" % heading, ""]
@@ -183,10 +229,10 @@ lines += ["## Optional", "",
           "- [Contact](%s/about/#contact): GitHub, LinkedIn, X" % BASE, ""]
 open("static/llms.txt", "w").write("\n".join(lines))
 
-full = ["# Raskell: all articles in full", "",
-        "> Every published article on raskell.io by %s, newest first. Generated %s." % (AUTHOR, datetime.date.today().isoformat()), ""]
-for a in articles:
+full = ["# Raskell: all articles and notes in full", "",
+        "> Every published article and note on raskell.io by %s, newest first. Generated %s." % (AUTHOR, datetime.date.today().isoformat()), ""]
+for a in sorted(articles + notes, key=lambda a: a["date"], reverse=True):
     full += ["", "=" * 80, "", article_markdown(a)]
 open("static/llms-full.txt", "w").write("\n".join(full))
 
-print("llms: %d articles, %d series -> static/llms.txt, static/llms-full.txt, static/articles/*.md" % (len(articles), len(series)))
+print("llms: %d articles, %d notes, %d series -> static/llms.txt, static/llms-full.txt, static/articles/*.md" % (len(articles), len(notes), len(series)))

@@ -5,7 +5,6 @@ description = "Three futures for programming languages as AI becomes the primary
 
 [taxonomies]
 tags = ["ai-engineering", "programming-languages", "formal-methods", "haskell"]
-categories = ["deep-dives"]
 
 [extra]
 author = "Raffael"
