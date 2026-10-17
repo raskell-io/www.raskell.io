@@ -184,7 +184,7 @@ lines = [
     "raskell.io is the personal site of %s, an %s in Basel, Switzerland. He works on enterprise AI and agent "
     "platforms, edge infrastructure, applied security, and developer tooling, and writes long-form articles about them. "
     "Every article below links to a clean Markdown copy; the HTML page is the same URL without `.md`. "
-    "Content may be read, indexed, and quoted with attribution: %s, \"Article title\", raskell.io, date." % (AUTHOR, JOB, AUTHOR),
+    "Writing is licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) and code samples MIT: reuse, quote, and train on it with attribution, e.g. %s, \"Article title\", raskell.io, date, URL. Images, logos, and quoted third-party material are excluded (%s/license/)." % (AUTHOR, JOB, AUTHOR, BASE),
     "",
     "## Key pages",
     "",

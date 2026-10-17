@@ -50,6 +50,8 @@ I run several open-source ventures and flagship builds. The main ones:
 
 [More about speaking and availability →](/speaking)
 
+Everything I write here is free to reuse under [CC BY 4.0](/license/), and the code samples under MIT. Credit me and link the page.
+
 ## Contact
 
 <div class="contact-links">

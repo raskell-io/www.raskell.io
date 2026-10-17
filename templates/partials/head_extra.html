@@ -23,6 +23,9 @@
 <link rel="alternate" type="application/atom+xml" title="{{ config.title }} (Atom)" href="{{ get_url(path='atom.xml') | safe }}">
 <link rel="alternate" type="application/rss+xml" title="{{ config.title }}: articles" href="{{ get_url(path='articles/rss.xml') | safe }}">
 <link rel="alternate" type="application/rss+xml" title="{{ config.title }}: notes" href="{{ get_url(path='notes/rss.xml') | safe }}">
+{%- if config.extra.seijaku.license %}
+<link rel="license" href="{{ config.extra.seijaku.license.url }}">
+{%- endif %}
 <link rel="api-catalog" href="{{ get_url(path='.well-known/api-catalog') | safe }}">
 {%- if page is defined %}{% set psec = page.components | first | default(value="") %}{% else %}{% set psec = "" %}{% endif %}
 {%- if page is defined and page.date and (psec == "articles" or psec == "notes") %}
@@ -50,7 +53,8 @@
       "name": {{ config.title | json_encode | safe }},
       "description": {{ config.description | json_encode | safe }},
       "publisher": { "@id": {{ id_person | json_encode | safe }} },
-      "inLanguage": {{ config.default_language | json_encode | safe }}
+      "inLanguage": {{ config.default_language | json_encode | safe }}{% if config.extra.seijaku.license %},
+      "license": {{ config.extra.seijaku.license.url | json_encode | safe }}{% endif %}
     },
     {
       "@type": "Person",
@@ -106,6 +110,9 @@
       {%- endif %},
       "encoding": { "@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": {{ get_url(path=psec ~ '/' ~ page.slug ~ '.md') | json_encode | safe }} },
       "isAccessibleForFree": true
+      {%- if config.extra.seijaku.license %},
+      "license": {{ config.extra.seijaku.license.url | json_encode | safe }}
+      {%- endif %}
       {%- if psec == "articles" and page.reading_time %},
       "timeRequired": "PT{{ page.reading_time }}M"
       {%- endif %}
@@ -142,6 +149,9 @@
       "url": {{ here | json_encode | safe }},
       "creator": { "@id": {{ id_person | json_encode | safe }} },
       "isAccessibleForFree": true,
+      {%- if config.extra.seijaku.license %}
+      "license": {{ config.extra.seijaku.license.url | json_encode | safe }},
+      {%- endif %}
       "keywords": ["knowledge graph", "site map", "topics", "platform engineering", "AI platforms"],
       "distribution": [
         { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": {{ get_url(path="map.json") | json_encode | safe }} },
