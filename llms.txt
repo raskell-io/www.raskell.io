@@ -93,6 +93,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Formal methods (`formal-methods`) [within Programming languages]: Proofs, verification, and types as specifications, especially once machines write the code.
 - Developer tooling (`developer-tooling`) [within Platform automation]: Package managers, build tools, CLIs, and the daily toolchain an engineer actually touches.
 - Self-hosting (`self-hosting`) [within Platform automation, Sovereignty]: Running your own infrastructure, from a single bare-metal box to community-operated compute.
+- Complex systems (`complex-systems`): Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.
 - Local-first (`local-first`) [within Distributed systems]: Software that keeps data on your devices and syncs through CRDTs, with the network as an optimisation.
 - Knowledge management (`knowledge-management`): Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.
 - Open source (`oss`) [within The open web]: Open source and open standards as the point of the work, not just its licence.
@@ -130,6 +131,8 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - [Ushio](https://github.com/raskell-io/ushio): Deterministic edge traffic replay for understanding WAF and proxy behavior.
 - [Vela](https://github.com/raskell-io/vela): No-downtime app deployment on bare metal.
 - [Refrakt](https://github.com/raskell-io/refrakt): A convention-first web framework for Gleam.
+- [Die Zukunft](https://die-zukunft.ch): A Swiss movement that applies engineering principles to public life: not left, not right.
+- [Human Macroscope](https://github.com/human-macroscope): A long-term interdisciplinary research project on humans and human collectives across scales, from individuals and families to institutions, cultures, and civilizations: how individual traits, roles, relations, and cultural transmission combine into emergent collective properties.
 - [coconutOS](https://github.com/coconut-os/coconutOS): A Rust microkernel for GPU-isolated AI inference.
 - [Driftscape](https://github.com/raskell-io/driftscape): Ambient soundscape platform.
 - [robogym](https://github.com/raskell-io/robogym): Rust/Bevy PWA for training robotic agents.

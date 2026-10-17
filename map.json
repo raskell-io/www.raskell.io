@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-17T09:45:14+00:00",
+ "generated": "2026-10-17T09:49:17+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -37,7 +37,7 @@
    "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
    "meta": "2026-06-30 · 34 min",
    "description": "Frontier AI is running short on public text, not compute. Europe's edge is the high-quality data it never put online. Capturing it needs coordination.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
@@ -136,7 +136,7 @@
    "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/",
    "meta": "2026-05-01 · 23 min",
    "description": "Switzerland tops the Global Innovation Index for the fifteenth year running. As an engineer, that should make you suspicious of the metric, not proud of the country.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "a:/articles/traffic-replay-as-a-security-primitive/",
@@ -199,7 +199,7 @@
    "url": "https://raskell.io/articles/notes-from-rsac-2026/",
    "meta": "2026-04-09 · 23 min",
    "description": "Third time at RSA Conference, first time as a speaker. What I saw, what I heard, and what I am still processing.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "a:/articles/what-zentinel-is-really-optimizing-for/",
@@ -451,7 +451,7 @@
    "url": "https://raskell.io/tags/knowledge-management/",
    "meta": "Concept · 2 pages",
    "description": "Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:kubernetes",
@@ -541,7 +541,7 @@
    "url": "https://raskell.io/tags/oss/",
    "meta": "Concept · 3 pages",
    "description": "Open source and open standards as the point of the work, not just its licence.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:pingora",
@@ -568,7 +568,7 @@
    "url": "https://raskell.io/tags/policy/",
    "meta": "Domain · 3 pages",
    "description": "Where engineering meets regulation, public institutions, procurement, and national strategy.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:programming-languages",
@@ -613,7 +613,7 @@
    "url": "https://raskell.io/tags/sovereignty/",
    "meta": "Domain · 5 pages",
    "description": "Who controls compute, data, and infrastructure, and in which jurisdiction; Europe's position in particular.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:typescript",
@@ -641,6 +641,15 @@
    "meta": "Technology · 1 page",
    "description": "The static site generator this site and several project sites are built with.",
    "degree": 3
+  },
+  {
+   "id": "t:complex-systems",
+   "kind": "tag",
+   "label": "Complex systems",
+   "url": "https://raskell.io/tags#complex-systems",
+   "meta": "Concept · no pages yet",
+   "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
+   "degree": 2
   },
   {
    "id": "s:the-agent-platform-handbook",
@@ -777,6 +786,24 @@
    "degree": 4
   },
   {
+   "id": "p:die-zukunft",
+   "kind": "project",
+   "label": "Die Zukunft",
+   "url": "https://die-zukunft.ch",
+   "meta": "Project",
+   "description": "A Swiss movement that applies engineering principles to public life: not left, not right. Digital sovereignty through open standards, auditable and portable public infrastructure, …",
+   "degree": 7
+  },
+  {
+   "id": "p:human-macroscope",
+   "kind": "project",
+   "label": "Human Macroscope",
+   "url": "https://github.com/human-macroscope",
+   "meta": "Project",
+   "description": "A long-term interdisciplinary research project on humans and human collectives across scales, from individuals and families to institutions, cultures, and civilizations: how indivi…",
+   "degree": 3
+  },
+  {
    "id": "p:coconutos",
    "kind": "project",
    "label": "coconutOS",
@@ -855,7 +882,7 @@
    "url": "https://github.com/raskell-io/terrarium",
    "meta": "Project",
    "description": "A societal simulation engine where LLM-powered agents form emergent civilizations. Each agent has a personality, needs, memories, and beliefs that can be wrong. You set the rules o…",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "h:projects-venture",
@@ -872,6 +899,14 @@
    "url": "https://raskell.io/projects/#tier-flagship",
    "meta": "Group",
    "degree": 10
+  },
+  {
+   "id": "h:projects-civic",
+   "kind": "hub",
+   "label": "Civic and research",
+   "url": "https://raskell.io/projects/#tier-civic",
+   "meta": "Group",
+   "degree": 2
   },
   {
    "id": "h:projects-lab",
@@ -1940,6 +1975,18 @@
    "target": "p:refrakt"
   },
   {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "p:die-zukunft"
+  },
+  {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "p:die-zukunft"
+  },
+  {
+   "source": "a:/articles/notes-from-rsac-2026/",
+   "target": "p:die-zukunft"
+  },
+  {
    "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
    "target": "p:coconutos"
   },
@@ -2264,6 +2311,34 @@
    "target": "t:oss"
   },
   {
+   "source": "p:die-zukunft",
+   "target": "h:projects-civic"
+  },
+  {
+   "source": "p:die-zukunft",
+   "target": "t:sovereignty"
+  },
+  {
+   "source": "p:die-zukunft",
+   "target": "t:policy"
+  },
+  {
+   "source": "p:die-zukunft",
+   "target": "t:oss"
+  },
+  {
+   "source": "p:human-macroscope",
+   "target": "h:projects-civic"
+  },
+  {
+   "source": "p:human-macroscope",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "p:human-macroscope",
+   "target": "t:knowledge-management"
+  },
+  {
    "source": "p:coconutos",
    "target": "h:projects-lab"
   },
@@ -2370,6 +2445,10 @@
   {
    "source": "p:terrarium",
    "target": "t:agents"
+  },
+  {
+   "source": "p:terrarium",
+   "target": "t:complex-systems"
   },
   {
    "source": "p:terrarium",
