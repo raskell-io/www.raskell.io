@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-17T15:37:51+00:00",
+ "generated": "2026-10-17T17:07:02+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -813,6 +813,15 @@
    "degree": 8
   },
   {
+   "id": "p:terrarium",
+   "kind": "project",
+   "label": "Terrarium",
+   "url": "https://terrarium.raskell.io",
+   "meta": "Project",
+   "description": "A societal simulation engine where LLM-powered agents form emergent civilizations. Each agent has a personality, needs, memories, and beliefs that can be wrong. You set the rules o…",
+   "degree": 6
+  },
+  {
    "id": "p:driftscape",
    "kind": "project",
    "label": "Driftscape",
@@ -876,15 +885,6 @@
    "degree": 3
   },
   {
-   "id": "p:terrarium",
-   "kind": "project",
-   "label": "Terrarium",
-   "url": "https://github.com/raskell-io/terrarium",
-   "meta": "Project",
-   "description": "A societal simulation engine where LLM-powered agents form emergent civilizations. Each agent has a personality, needs, memories, and beliefs that can be wrong. You set the rules o…",
-   "degree": 5
-  },
-  {
    "id": "h:projects-venture",
    "kind": "hub",
    "label": "Ventures",
@@ -914,7 +914,7 @@
    "label": "Labs / passion projects",
    "url": "https://raskell.io/projects/#tier-lab",
    "meta": "Group",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "h:apps-tools",
@@ -2024,6 +2024,10 @@
   },
   {
    "source": "a:/articles/this-site-is-becoming-a-map/",
+   "target": "p:terrarium"
+  },
+  {
+   "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "p:manabi"
   },
   {
@@ -2041,10 +2045,6 @@
   {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "p:paw-and-claw"
-  },
-  {
-   "source": "a:/articles/this-site-is-becoming-a-map/",
-   "target": "p:terrarium"
   },
   {
    "source": "p:archipelag-io",
@@ -2391,6 +2391,22 @@
    "target": "t:rust"
   },
   {
+   "source": "p:terrarium",
+   "target": "h:projects-lab"
+  },
+  {
+   "source": "p:terrarium",
+   "target": "t:agents"
+  },
+  {
+   "source": "p:terrarium",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "p:terrarium",
+   "target": "t:rust"
+  },
+  {
    "source": "p:driftscape",
    "target": "h:projects-lab"
   },
@@ -2469,18 +2485,6 @@
   {
    "source": "p:terrarium",
    "target": "h:apps-play"
-  },
-  {
-   "source": "p:terrarium",
-   "target": "t:agents"
-  },
-  {
-   "source": "p:terrarium",
-   "target": "t:complex-systems"
-  },
-  {
-   "source": "p:terrarium",
-   "target": "t:rust"
   }
  ]
 }
