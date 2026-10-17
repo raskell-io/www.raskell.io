@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-17T17:07:02+00:00",
+ "generated": "2026-10-17T17:46:39+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -780,7 +780,7 @@
    "id": "p:refrakt",
    "kind": "project",
    "label": "Refrakt",
-   "url": "https://github.com/raskell-io/refrakt",
+   "url": "https://refrakt.raskell.io",
    "meta": "Project",
    "description": "A convention-first web framework for Gleam. Productive like Phoenix, explicit like Gleam, composable with Wisp and Lustre. Full-stack code generation, CRUD scaffolding, and a batte…",
    "degree": 4
