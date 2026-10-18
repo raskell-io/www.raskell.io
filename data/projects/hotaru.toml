@@ -1,5 +1,5 @@
 title = "Hotaru"
-description = "Simulated neuron cultures on a 60-electrode array play Pong in your browser, as in the DishBrain experiment. One culture gets feedback for its hits and misses, an identical one gets it at random. So far the feedback has not made them reliably better, and the page shows the numbers."
+description = "Simulated neuron cultures on a 60-electrode array play Pong in your browser, as in the DishBrain experiment. Feedback for hits and misses alone did not make them better. Input that goes quiet when the paddle moves toward the ball did, and the page shows it next to a control."
 status = "live"
 logo = "brands/hotaru.png"
 links = [ { name = "Run the experiment", url = "https://hotaru.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/hotaru" } ]
