@@ -1,7 +1,7 @@
 title = "hx"
-description = "An extremely fast Haskell package and project manager, written in Rust. Unified build, test, run, format, and lint with managed toolchains and sub-second response times. Designed to replace the fragmented Haskell tooling ecosystem with a single, cohesive tool."
+description = "The Haskell toolchain in one fast binary. hx installs GHC and Cabal, builds, tests, formats and lints your code, pins every dependency by hash, and publishes your packages. Written in Rust, it starts in milliseconds, works with the .cabal files and Hackage you already use, and gives AI agents the same commands over MCP."
 status = "live"
 logo = "brands/hx.png"
-links = [ { name = "Website", url = "https://hx.arcanist.sh" }, { name = "GitHub", url = "https://github.com/arcanist-sh/hx" } ]
+links = [ { name = "Website", url = "https://arcanist.sh/hx/" }, { name = "Docs", url = "https://docs.arcanist.sh/hx/docs/quickstart/" }, { name = "GitHub", url = "https://github.com/arcanist-sh/hx" } ]
 topics = ["haskell", "rust", "programming-languages", "developer-tooling"]
 related = ["arcanist"]

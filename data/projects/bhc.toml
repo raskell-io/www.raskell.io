@@ -1,7 +1,8 @@
 title = "bhc"
-description = "The Basel Haskell Compiler. A next-generation Haskell compiler and runtime targeting predictable, low-latency performance. Structured concurrency primitives, a tensor-native numeric pipeline for ML workloads, and a runtime designed for systems where GC pauses are unacceptable."
+description = "The Basel Haskell Compiler, a clean-slate compiler for the Haskell you already write. Written in Rust, it compiles to native code through LLVM and to WebAssembly, with a runtime profile chosen per build. It compiles all 221 modules of Pandoc, and Pandoc's Markdown reader and HTML writer run end to end."
 status = "dev"
+status_label = "Beta"
 logo = "brands/bhc.png"
-links = [ { name = "Website", url = "https://bhc.arcanist.sh" }, { name = "GitHub", url = "https://github.com/arcanist-sh/bhc" } ]
+links = [ { name = "Website", url = "https://arcanist.sh/bhc/" }, { name = "Docs", url = "https://docs.arcanist.sh/bhc/docs/quickstart/" }, { name = "GitHub", url = "https://github.com/arcanist-sh/bhc" } ]
 topics = ["haskell", "programming-languages", "formal-methods"]
 related = ["arcanist"]
