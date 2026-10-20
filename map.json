@@ -1,8 +1,17 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-18T14:49:09+00:00",
+ "generated": "2026-10-20T14:01:21+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/observability-is-not-logging/",
+   "kind": "article",
+   "label": "Observability Is Not Logging",
+   "url": "https://raskell.io/articles/observability-is-not-logging/",
+   "meta": "2026-10-20 · 15 min",
+   "description": "A cost total says nothing about how a run went. This part turns each agent run into a trace: which turn escalated, which tool failed, where the money went.",
+   "degree": 10
+  },
   {
    "id": "a:/articles/this-site-is-becoming-a-map/",
    "kind": "article",
@@ -19,7 +28,7 @@
    "url": "https://raskell.io/articles/the-bill-is-part-of-the-loop/",
    "meta": "2026-07-18 · 10 min",
    "description": "Every model response already carries its own bill in the usage field, and the loop throws it away. This post reads that field, prices it against a table, and turns cost into a value the loop can see per turn and act on: a metering decorator that needs no loop change, a running ledger, prompt-cache accounting that moves the number the most, and a budget that degrades before it stops. Part eight of The Agent Platform Handbook.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "a:/articles/the-model-is-a-dependency/",
@@ -28,7 +37,7 @@
    "url": "https://raskell.io/articles/the-model-is-a-dependency/",
    "meta": "2026-07-09 · 14 min",
    "description": "Every layer of the harness has existed to put the right tokens in front of one hardcoded model string. This post pulls that string out and makes the model a dependency: why you route a cheap model for easy turns and a strong one for hard turns, what a fallback looks like when a provider is down, and why 'models are commodities' is a claim about your architecture before it is a claim about the market. Part seven of The Agent Platform Handbook.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
@@ -91,7 +100,7 @@
    "url": "https://raskell.io/articles/tools-how-agents-actually-do-things/",
    "meta": "2026-06-09 · 13 min",
    "description": "Function calling is the API between language and action, but the engineering is in the registry. A working four-tool registry in TypeScript on Bun, schema design that survives model drift, parallel tool calls, and the failure modes nobody mentions in the demo. Part three of The Agent Platform Handbook.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "a:/articles/your-agent-wants-root/",
@@ -100,7 +109,7 @@
    "url": "https://raskell.io/articles/your-agent-wants-root/",
    "meta": "2026-06-05 · 16 min",
    "description": "An agent with a shell tool is arbitrary code execution with a friendly face. A short tour of why Docker alone is not enough, what Firecracker, gVisor, and Kata actually solve, and a hardened sandbox you can wrap the post-one agent in today. Part two of The Agent Platform Handbook.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "a:/articles/what-an-agent-actually-is/",
@@ -305,9 +314,9 @@
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 10 pages",
+   "meta": "Concept · 11 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "t:ai-engineering",
@@ -332,9 +341,9 @@
    "kind": "tag",
    "label": "AI platforms",
    "url": "https://raskell.io/tags/ai-platforms/",
-   "meta": "Domain · 3 pages",
+   "meta": "Domain · 4 pages",
    "description": "The shared foundation an organisation builds AI on: model gateways, agent runtimes, governance, observability, and the operating model around them.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:applied-security",
@@ -503,9 +512,9 @@
    "kind": "tag",
    "label": "Observability",
    "url": "https://raskell.io/tags/observability/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Seeing what a running system does: traces, metering, glass-box infrastructure, and what not to log.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "t:open-web",
@@ -523,6 +532,15 @@
    "url": "https://raskell.io/tags/openbsd/",
    "meta": "Technology · 1 page",
    "description": "OpenBSD and the BSD approach to correctness and simplicity.",
+   "degree": 2
+  },
+  {
+   "id": "t:opentelemetry",
+   "kind": "tag",
+   "label": "OpenTelemetry",
+   "url": "https://raskell.io/tags/opentelemetry/",
+   "meta": "Technology · 1 page",
+   "description": "The vendor-neutral standard for traces, metrics, and logs, including the GenAI semantic conventions for model calls.",
    "degree": 2
   },
   {
@@ -620,9 +638,9 @@
    "kind": "tag",
    "label": "TypeScript",
    "url": "https://raskell.io/tags/typescript/",
-   "meta": "Technology · 7 pages",
+   "meta": "Technology · 8 pages",
    "description": "TypeScript on Bun, the language of the Agent Platform Handbook code.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:waf",
@@ -701,8 +719,8 @@
    "kind": "series",
    "label": "The Agent Platform Handbook",
    "url": "https://raskell.io/series/the-agent-platform-handbook/",
-   "meta": "8 parts",
-   "degree": 8
+   "meta": "9 parts",
+   "degree": 9
   },
   {
    "id": "p:archipelag-io",
@@ -1016,6 +1034,10 @@
  ],
  "links": [
   {
+   "source": "a:/articles/observability-is-not-logging/",
+   "target": "t:agents"
+  },
+  {
    "source": "a:/articles/the-bill-is-part-of-the-loop/",
    "target": "t:agents"
   },
@@ -1094,6 +1116,10 @@
   {
    "source": "a:/articles/notes-from-rsac-2026/",
    "target": "t:ai-for-ops"
+  },
+  {
+   "source": "a:/articles/observability-is-not-logging/",
+   "target": "t:ai-platforms"
   },
   {
    "source": "a:/articles/the-bill-is-part-of-the-loop/",
@@ -1416,6 +1442,10 @@
    "target": "t:metrics"
   },
   {
+   "source": "a:/articles/observability-is-not-logging/",
+   "target": "t:observability"
+  },
+  {
    "source": "a:/articles/the-bill-is-part-of-the-loop/",
    "target": "t:observability"
   },
@@ -1446,6 +1476,14 @@
   {
    "source": "t:openbsd",
    "target": "t:operating-systems"
+  },
+  {
+   "source": "a:/articles/observability-is-not-logging/",
+   "target": "t:opentelemetry"
+  },
+  {
+   "source": "t:opentelemetry",
+   "target": "t:observability"
   },
   {
    "source": "a:/articles/what-comes-after-the-last-programming-language/",
@@ -1620,6 +1658,10 @@
    "target": "t:sovereignty"
   },
   {
+   "source": "a:/articles/observability-is-not-logging/",
+   "target": "t:typescript"
+  },
+  {
    "source": "a:/articles/the-bill-is-part-of-the-loop/",
    "target": "t:typescript"
   },
@@ -1688,6 +1730,10 @@
    "target": "t:open-web"
   },
   {
+   "source": "a:/articles/observability-is-not-logging/",
+   "target": "s:the-agent-platform-handbook"
+  },
+  {
    "source": "a:/articles/the-bill-is-part-of-the-loop/",
    "target": "s:the-agent-platform-handbook"
   },
@@ -1718,6 +1764,22 @@
   {
    "source": "a:/articles/what-an-agent-actually-is/",
    "target": "s:the-agent-platform-handbook"
+  },
+  {
+   "source": "a:/articles/observability-is-not-logging/",
+   "target": "a:/articles/the-bill-is-part-of-the-loop/"
+  },
+  {
+   "source": "a:/articles/observability-is-not-logging/",
+   "target": "a:/articles/the-model-is-a-dependency/"
+  },
+  {
+   "source": "a:/articles/observability-is-not-logging/",
+   "target": "a:/articles/tools-how-agents-actually-do-things/"
+  },
+  {
+   "source": "a:/articles/observability-is-not-logging/",
+   "target": "a:/articles/your-agent-wants-root/"
   },
   {
    "source": "a:/articles/this-site-is-becoming-a-map/",
