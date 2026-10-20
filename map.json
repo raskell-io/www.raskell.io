@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-20T14:20:22+00:00",
+ "generated": "2026-10-20T18:09:27+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -127,7 +127,7 @@
    "url": "https://raskell.io/articles/the-field-exists-now/",
    "meta": "2026-05-22 · 7 min",
    "description": "Alasdair Allan's agentlanguages.dev catalogue turns AI-oriented programming languages from a loose set of experiments into a field with camps, disagreements, and testable claims.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "a:/articles/semantic-artifacts-and-meaning-engines/",
@@ -190,7 +190,7 @@
    "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/",
    "meta": "2026-04-13 · 19 min",
    "description": "hx is a fast, opinionated Haskell toolchain built in Rust, following the playbook astral.sh used to modernize Python.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
@@ -199,7 +199,7 @@
    "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/",
    "meta": "2026-04-11 · 26 min",
    "description": "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell.",
-   "degree": 12
+   "degree": 14
   },
   {
    "id": "a:/articles/notes-from-rsac-2026/",
@@ -755,7 +755,7 @@
    "label": "Arcanist",
    "url": "https://arcanist.sh",
    "meta": "Project",
-   "description": "High-performance Haskell tooling, built in Rust. Home of hx (a unified Haskell package manager with managed toolchains and 5.6x faster cold builds) and bhc (an alternative Haskell …",
+   "description": "Haskell tooling for the age of AI-authored code. hx is a fast package and project manager written in Rust, and bhc is a compiler built to check everything it can. With a registry t…",
    "degree": 12
   },
   {
@@ -768,6 +768,24 @@
    "degree": 20
   },
   {
+   "id": "p:hx",
+   "kind": "project",
+   "label": "hx",
+   "url": "https://arcanist.sh/hx/",
+   "meta": "Project",
+   "description": "The Haskell toolchain in one fast binary. hx installs GHC and Cabal, builds, tests, formats and lints your code, pins every dependency by hash, and publishes your packages. Written…",
+   "degree": 9
+  },
+  {
+   "id": "p:bhc",
+   "kind": "project",
+   "label": "bhc",
+   "url": "https://arcanist.sh/bhc/",
+   "meta": "Project",
+   "description": "The Basel Haskell Compiler, a clean-slate compiler for the Haskell you already write. Written in Rust, it compiles to native code through LLVM and to WebAssembly, with a runtime pr…",
+   "degree": 7
+  },
+  {
    "id": "p:broodwar-live",
    "kind": "project",
    "label": "broodwar.live",
@@ -775,24 +793,6 @@
    "meta": "Project",
    "description": "The community platform for StarCraft: Brood War competitive play, a basketball-reference.com for Brood War. Profiles for 150 pro players in English and Korean, build orders for eve…",
    "degree": 4
-  },
-  {
-   "id": "p:hx",
-   "kind": "project",
-   "label": "hx",
-   "url": "https://hx.arcanist.sh",
-   "meta": "Project",
-   "description": "An extremely fast Haskell package and project manager, written in Rust. Unified build, test, run, format, and lint with managed toolchains and sub-second response times. Designed t…",
-   "degree": 6
-  },
-  {
-   "id": "p:bhc",
-   "kind": "project",
-   "label": "bhc",
-   "url": "https://bhc.arcanist.sh",
-   "meta": "Project",
-   "description": "The Basel Haskell Compiler. A next-generation Haskell compiler and runtime targeting predictable, low-latency performance. Structured concurrency primitives, a tensor-native numeri…",
-   "degree": 5
   },
   {
    "id": "p:refrakt",
@@ -2102,6 +2102,26 @@
    "target": "p:zentinel"
   },
   {
+   "source": "a:/articles/the-field-exists-now/",
+   "target": "p:hx"
+  },
+  {
+   "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "target": "p:hx"
+  },
+  {
+   "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "target": "p:hx"
+  },
+  {
+   "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "target": "p:bhc"
+  },
+  {
+   "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "target": "p:bhc"
+  },
+  {
    "source": "a:/articles/mise-ate-my-makefile/",
    "target": "p:refrakt"
   },
@@ -2306,22 +2326,6 @@
    "target": "t:rust"
   },
   {
-   "source": "p:broodwar-live",
-   "target": "h:projects-flagship"
-  },
-  {
-   "source": "p:broodwar-live",
-   "target": "t:zola"
-  },
-  {
-   "source": "p:broodwar-live",
-   "target": "t:elixir"
-  },
-  {
-   "source": "p:broodwar-live",
-   "target": "t:rust"
-  },
-  {
    "source": "p:hx",
    "target": "h:projects-flagship"
   },
@@ -2364,6 +2368,22 @@
   {
    "source": "p:bhc",
    "target": "p:arcanist"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "h:projects-flagship"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "t:zola"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "t:elixir"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "t:rust"
   },
   {
    "source": "p:refrakt",
