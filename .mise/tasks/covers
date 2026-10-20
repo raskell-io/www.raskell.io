@@ -25,6 +25,7 @@ import sys
 #   keep:  text runs under the badge, so keep the badge rather than truncate it
 OVERRIDES = {
     "mise-ate-make.avif": "paint",
+    "observability-is-not-logging.avif": "keep",
     "the-bill-is-part-of-the-loop.avif": "keep",
     "your-agent-wants-root.avif": "keep",
 }

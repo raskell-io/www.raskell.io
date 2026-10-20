@@ -14,7 +14,7 @@ cover = "covers/the-bill-is-part-of-the-loop.avif"
 og_image = "the-bill-is-part-of-the-loop.png"
 +++
 
-> Part 8 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [The Model Is a Dependency](/articles/the-model-is-a-dependency/). Next: Observability Is Not Logging.
+> Part 8 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [The Model Is a Dependency](/articles/the-model-is-a-dependency/). Next: [Observability Is Not Logging](/articles/observability-is-not-logging/).
 
 [Post seven](/articles/the-model-is-a-dependency/) pulled the model out of a hardcoded string and made it a dependency the loop can route and fail over. A `Model` is now an interface: `complete(request)` returns a response, and the loop neither knows nor cares whether a cheap model, a strong model, a router, or a fallback chain produced it. The harness sits at tag [`post-07`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-07).
 

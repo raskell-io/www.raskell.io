@@ -206,6 +206,12 @@ kind = "technology"
 description = "The language that shaped how I think about types, effects, and correctness."
 broader = ["programming-languages"]
 
+[opentelemetry]
+name = "OpenTelemetry"
+kind = "technology"
+description = "The vendor-neutral standard for traces, metrics, and logs, including the GenAI semantic conventions for model calls."
+broader = ["observability"]
+
 [typescript]
 name = "TypeScript"
 kind = "technology"

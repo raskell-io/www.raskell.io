@@ -1,40 +1,26 @@
 +++
 title = "Observability Is Not Logging"
-date = 2026-07-25
-draft = true
-description = "The ledger from part eight knows a run cost forty cents across nine turns, and nothing about the shape of those turns. This post turns the per-turn record into a trace: a span type in one file, a tracer that captures the causal tree of a run without touching the loop, and an honest account of when the homegrown tracer should give way to OpenTelemetry and its GenAI semantic conventions. Part nine of The Agent Platform Handbook."
+date = 2026-10-20
+description = "A cost total says nothing about how a run went. This part turns each agent run into a trace: which turn escalated, which tool failed, where the money went."
 
 [taxonomies]
-tags = ["agents", "ai-platforms", "observability", "typescript"]
+tags = ["agents", "ai-platforms", "observability", "opentelemetry", "typescript"]
 series = ["the-agent-platform-handbook"]
 
 [extra]
 author = "Raffael"
 image = "observability-is-not-logging.avif"
+cover = "covers/observability-is-not-logging.avif"
 og_image = "observability-is-not-logging.png"
 +++
 
-<!--
-DRAFT NOTES — remove before publish
-1. CODE DEPENDENCY: the handbook repo is at post-06. Commit + tag post-07 (model.ts,
-   agent.ts) and post-08 (price.ts, ledger, metered, withBudget) BEFORE this post,
-   then implement + tag post-09 (span.ts, tracer, traced). The tag links in the live
-   Part 7 and Part 8 articles are currently 404 for the same reason. Reconcile the
-   Span/Tracer code below against the real repo before publishing.
-2. Set the final date; remove draft = true.
-3. Add hero (960x300 -> .avif) and OG (1200x630 .png) as observability-is-not-logging.*
-4. Wire Part 8's "Next:" line to link here: /articles/observability-is-not-logging/
-5. Part 10 title confirmed as "Evaluation Closes the Loop"; link the "Next:" line
-   below once post-10 publishes (brief promoted in context/briefs/the-agent-platform-handbook.md).
--->
-
 > Part 9 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [The Bill Is Part of the Loop](/articles/the-bill-is-part-of-the-loop/). Next: Evaluation Closes the Loop.
 
-[Post eight](/articles/the-bill-is-part-of-the-loop/) taught the loop to read its own bill. Every response carries a `usage` object, a price table turns it into dollars, and a ledger accumulates the total, attributed to the run that caused it. The harness sits at tag `post-08`: a loop, a router, a fallback chain, a meter, and a budget that degrades before it stops.
+[Post eight](/articles/the-bill-is-part-of-the-loop/) taught the loop to read its own bill. Every response carries a `usage` object, a price table turns it into dollars, and a ledger accumulates the total, attributed to the run that caused it. The harness sits at tag [`post-08`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-08): a loop, a router, a fallback chain, a meter, and a budget that degrades before it stops.
 
 That ledger can tell you a run cost forty cents across nine turns. It cannot tell you anything about the nine turns. Which one escalated to the strong model. Which tool call failed and got retried. Where the seven seconds of wall-clock actually went. The number is a sum, and a sum throws away the shape of the thing it summed.
 
-This post keeps the number and recovers the shape. It turns the per-turn record the meter already produces into a trace: a tree of spans you can read top to bottom and see the run happen. It ships as tag `post-09`: a `span.ts`, a tracer the decorators write into, and one line in the loop.
+This post keeps the number and recovers the shape. It turns the per-turn record the meter already produces into a trace: a tree of spans you can read top to bottom and see the run happen. The code is at tag [`post-09`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-09) of the companion repository.
 
 ## What observability actually meant
 
@@ -48,7 +34,7 @@ An agent run is a distributed system that happens to live in one process. The lo
 
 ## The unit is the turn, the run is a tree
 
-Here is the reframe that makes the code obvious. The atom of an agent is not the request and not the log line. It is the turn: one pass through the loop, one model call, zero or more tool calls, and whatever the model decided to do with the results. A run is a sequence of turns, and each turn is itself a small tree of work.
+One reframe makes the code obvious. The atom of an agent is not the request and not the log line. It is the turn: one pass through the loop, one model call, zero or more tool calls, and whatever the model decided to do with the results. A run is a sequence of turns, and each turn is itself a small tree of work.
 
 The meter from post eight was already emitting one structured record per model call. Input tokens, output tokens, cache reads, cost. Those records are not logs. They are span attributes that have not been given a span yet. All that is missing is the causal structure: a parent for each record, a start and an end, and the tool calls sitting as siblings to the model call inside the same turn.
 
@@ -72,126 +58,137 @@ type Span = {
 };
 ```
 
-A tracer owns the current span and a stack, so that anything opening a span becomes a child of whatever is already open. This is the one piece of shared state the harness needs, and it is deliberately boring.
+A tracer keeps track of which span is currently open, so that a new span becomes a child of it. The obvious design is a stack: push on start, pop on end, and the parent is whatever sits on top. That works for runs and turns, which happen one after another. It breaks on tools. Since [post three](/articles/tools-how-agents-actually-do-things/), the tool calls of one turn run in parallel, and with a single stack the second call would land inside the first, as if one tool had called the other.
+
+So the tracer separates the two cases. Runs and turns are scopes: `enter` opens one and pushes it, `exit` closes it and pops it. Model and tool calls are leaves: `start` attaches them under the current scope without pushing anything, so any number of them can be open at once.
 
 ```typescript
 class Tracer {
-  private stack: Span[] = [];
   root?: Span;
+  private open: Span[] = [];
 
-  start(name: string, kind: SpanKind, attributes: Record<string, string | number | boolean> = {}): Span {
+  enter(name: string, kind: SpanKind, attributes = {}): Span {
+    const span = this.start(name, kind, attributes);
+    this.open.push(span);
+    return span;
+  }
+
+  exit(span: Span, error?: string) {
+    this.end(span, error);
+    this.open.pop();
+  }
+
+  start(name: string, kind: SpanKind, attributes = {}): Span {
     const span: Span = { name, kind, startedAt: now(), attributes, children: [] };
-    const parent = this.stack[this.stack.length - 1];
+    const parent = this.open[this.open.length - 1];
     if (parent) parent.children.push(span);
     else this.root = span;
-    this.stack.push(span);
     return span;
   }
 
   end(span: Span, error?: string) {
     span.endedAt = now();
     if (error) span.error = error;
-    this.stack.pop();
   }
 }
 ```
 
-`now()` is a monotonic clock, not wall time, so a clock adjustment mid-run cannot make a span appear to end before it started. Everything else falls out of these two methods. Open a span, do the work, close it. The parent link is implicit in the order you open them, which is exactly the causal structure a trace is supposed to capture.
+`now()` is `performance.now()`, a monotonic clock rather than wall time, so a clock adjustment mid-run cannot make a span appear to end before it started. That is the one piece of shared state the harness needs, and it is deliberately boring. The parent link is implicit in what is open when a span starts, which is exactly the causal structure a trace is supposed to capture. A general-purpose tracer solves the same problem with context propagation (OpenTelemetry uses async-local storage in Node), but this harness only nests two levels deep, and two kinds of span are enough.
 
 ## Tracing without touching the loop
 
 The pattern from the last two posts pays off again here. In [post seven](/articles/the-model-is-a-dependency/) the model became an interface, and in [post eight](/articles/the-bill-is-part-of-the-loop/) `metered` and `withBudget` wrapped that interface without the loop noticing. Tracing is one more decorator on the same interface.
 
 ```typescript
-function traced(model: Model, tracer: Tracer): Model {
+export function traced(inner: Model, tracer: Tracer): Model {
   return {
-    async complete(request) {
-      const span = tracer.start("model.complete", "model", {
-        "request.model": request.model,
-      });
+    name: `traced(${inner.name})`,
+    async complete(req) {
+      const span = tracer.start("model.complete", "model", { "request.hard": req.hard });
+      let error: string | undefined;
       try {
-        const response = await model.complete(request);
-        span.attributes["response.model"] = response.model;
-        span.attributes["usage.input_tokens"] = response.usage.input_tokens;
-        span.attributes["usage.output_tokens"] = response.usage.output_tokens;
-        span.attributes["cost.usd"] = priceOf(response.usage, response.model);
-        return response;
+        const res = await inner.complete(req);
+        span.attributes["response.model"] = res.model;
+        span.attributes["usage.input_tokens"] = res.usage.input_tokens;
+        span.attributes["usage.output_tokens"] = res.usage.output_tokens;
+        span.attributes["cost.usd"] = costOf(res.model, res.usage);
+        return res;
       } catch (err) {
-        tracer.end(span, String(err));
+        error = String(err);
         throw err;
-      }
-      finally {
-        if (!span.endedAt) tracer.end(span);
+      } finally {
+        tracer.end(span, error);
       }
     },
   };
 }
 ```
 
-Two attributes on that span do more than they look. `request.model` is what the router was asked for; `response.model` is what actually answered. When the budget from post eight downgrades a turn past its soft cap, those two disagree, and the trace records the downgrade as data instead of a mystery. The cost attribute reuses `priceOf` from the meter, so the same number the ledger sums is now pinned to the exact span that spent it.
+Two attributes on that span do more than they look. `request.hard` is what the loop asked for, a strong model or a cheap one; `response.model` is what actually answered. When the budget from post eight downgrades a hard turn past its soft cap, those two disagree, and the trace records the downgrade as data instead of a mystery. The cost attribute reuses `costOf` from post eight, so the same number the ledger sums is now pinned to the exact span that spent it. (The real file also records the cache read and write counts, which matter more than they look, as the next section shows.)
 
-The tool side is the same move, applied where the registry dispatches. A run opens the root span, each turn opens a turn span, and each tool call the model requests opens a child under the current turn.
+The tool side is the same move, applied at the one place the loop dispatches tools. It is shorter than the model side, because since post three the registry never throws. A failed tool comes back as a result with `ok: false`, so the wrapper only has to read it.
 
 ```typescript
-async function callTool(registry: Registry, call: ToolCall, tracer: Tracer) {
-  const span = tracer.start(`tool.${call.name}`, "tool", { "tool.name": call.name });
-  try {
-    const result = await registry.dispatch(call);
-    span.attributes["result.bytes"] = result.length;
-    return result;
-  } catch (err) {
-    tracer.end(span, String(err));
-    throw err;
-  } finally {
-    if (!span.endedAt) tracer.end(span);
-  }
+export async function tracedDispatch(
+  registry: Registry,
+  tracer: Tracer,
+  name: string,
+  input: Record<string, unknown>,
+): Promise<ToolResult> {
+  const span = tracer.start(`tool.${name}`, "tool", { "tool.name": name });
+  const result = await registry.dispatch(name, input);
+  if (result.ok) span.attributes["result.bytes"] = Buffer.byteLength(result.value, "utf8");
+  tracer.end(span, result.ok ? undefined : result.error);
+  return result;
 }
 ```
 
-The composition order matters, the same way it did for the meter and the budget. The tracer sits outermost, wrapping the whole model chain, because a span should capture what actually happened including the retry and the downgrade, not the intent before either. The one line the loop gains is the turn span, opened at the top of each pass and closed at the bottom. Everything else is a decorator the loop never sees.
+The composition order matters, the same way it did for the meter and the budget. The tracer sits outermost, wrapping the whole model chain, because a span should capture what actually happened including the fallback and the downgrade, not the intent before either. The loop itself changes in two places: it opens a span for the run, and a span for each turn, closed in a `finally` so that a turn which ends early still closes. Everything else is a wrapper the loop never sees.
 
 ## Reading the shape of a run
 
 This is the part the ledger could not give you. A single run, rendered as its span tree, with duration, tokens, and cost on each node:
 
 ```
-run  agent.session                                    7.41s   $0.41
-├─ turn 1                                             0.83s   $0.002
-│  └─ model.complete  haiku→haiku            412 tok  0.79s   $0.002
-├─ turn 2                                             1.14s   $0.004
-│  ├─ model.complete  sonnet→sonnet        1.2k tok  0.71s   $0.004
-│  └─ tool.fs.read    docs/schema.md         ok       0.05s
-├─ turn 3                                             2.02s   $0.006
-│  ├─ model.complete  sonnet→sonnet        1.4k tok  0.68s   $0.006
-│  └─ tool.shell      migrate.sh          ERROR       1.31s
-├─ turn 4  (retry)                                    1.90s   $0.005
-│  ├─ model.complete  sonnet→sonnet        1.3k tok  0.66s   $0.005
-│  └─ tool.shell      migrate.sh            ok        1.22s
-└─ turn 5                                             1.52s   $0.393
-   └─ model.complete  sonnet→opus         3.1k tok  1.49s   $0.393
+agent.session                                               5.91s   $0.071
+├─ turn 1  easy                                             0.89s   $0.013
+│  ├─ model.complete  claude-haiku-4-5  10.3k tok           0.84s   $0.013
+│  └─ tool.fs_read  ok                                      0.04s
+├─ turn 2  easy                                             2.03s   $0.003
+│  ├─ model.complete  claude-haiku-4-5  11.2k tok           0.71s   $0.003
+│  ├─ tool.shell  ERROR                                     1.31s
+│  └─ tool.fs_read  ok                                      0.04s
+├─ turn 3  hard                                             2.34s   $0.050
+│  ├─ model.complete  claude-sonnet-4-6  12.1k tok          1.12s   $0.050
+│  └─ tool.shell  ok                                        1.22s
+└─ turn 4  easy                                             0.66s   $0.005
+   └─ model.complete  claude-haiku-4-5  12.5k tok           0.66s   $0.005
 ```
 
-Read it top to bottom and the run explains itself. Turn one was cheap and ran on the small model. Turn three failed in the shell, not in the model, and the loop retried it in turn four. Turn five is where the money went: the request asked for `sonnet` and `opus` answered, which means the router escalated a hard turn, and that single span is ninety-five percent of the bill. The ledger told you the run cost forty-one cents. The trace tells you that thirty-nine of those cents live in one span, and points at the exact turn to look at first.
+Read it top to bottom and the run explains itself. Turns one and two ran on Haiku. In turn two the model asked for two tools at once, and they ran side by side: the file read was done in forty milliseconds while the shell command took over a second and failed. Because a tool failed, the loop marked turn three as hard, the router sent it to Sonnet, and Sonnet fixed the command. Turn four went back to Haiku and finished.
+
+That one Sonnet span is seventy percent of the bill, and the reason is not what you would guess. Sonnet's answer was not the expensive part. The cache was. Prompt caches are kept per model, so the first time the router sends a turn to Sonnet, Sonnet has to write its own copy of the ten-thousand-token prefix that Haiku had already cached, and at Sonnet's cache-write price that is nearly four of the five cents. The ledger told you the run cost seven cents. The trace tells you that most of it was one escalation, that most of the escalation was a cache write, and therefore where to look: if escalation is common, the boundary between the tiers is what you are paying for.
 
 No prior post could show you that picture, because each one owned a fragment of it. Routing lived in [post seven](/articles/the-model-is-a-dependency/), cost in [post eight](/articles/the-bill-is-part-of-the-loop/), the shell tool in [post two](/articles/your-agent-wants-root/), the tool registry in [post three](/articles/tools-how-agents-actually-do-things/). The trace is the first artifact that holds all of them in one frame, because it records the run rather than any one subsystem's view of it.
 
 ## When the homegrown tracer stops being enough
 
-The span tree above is a hundred lines of code and it will carry you a long way. It stops carrying you at the point where you want to keep traces across runs, query them by attribute, compare today's latency against last week's, or hand a trace to someone who is not sitting at your terminal. Building a storage layer, a query language, and a waterfall UI is not a side quest. It is a product, and it already exists several times over.
+The tracer above is about a hundred and fifty lines, including the renderer that prints the tree, and it will carry you a long way. It stops carrying you at the point where you want to keep traces across runs, query them by attribute, compare today's latency against last week's, or hand a trace to someone who is not sitting at your terminal. Building a storage layer, a query language, and a waterfall UI is not a side quest. It is a product, and it already exists several times over.
 
-That is where OpenTelemetry earns the dependency. The upgrade is the same tool-boundary trick the series keeps using: the `Tracer` above is an interface, so you swap the body for an OTel `Tracer`, keep the decorators, and the loop still never notices. What you get in return is an exporter to any backend that speaks OTLP, Jaeger and Tempo and Honeycomb among them, and a schema other people already understand.
+That is where OpenTelemetry earns the dependency. The upgrade is the same tool-boundary trick the series keeps using: the wrappers only ever call `start` and `end`, so you swap the body of the `Tracer` for an OTel tracer, keep the wrappers, and the loop still never notices. What you get in return is an exporter to any backend that speaks OTLP, Jaeger and Tempo and Honeycomb among them, and a schema other people already understand.
 
 The schema part is worth a beat, because OpenTelemetry has been standardizing exactly this problem. The GenAI semantic conventions define attribute names for model spans so that a trace from your harness and a trace from someone else's mean the same thing:
 
 ```typescript
 span.setAttributes({
   "gen_ai.operation.name": "chat",
-  "gen_ai.request.model": request.model,
-  "gen_ai.response.model": response.model,
-  "gen_ai.usage.input_tokens": response.usage.input_tokens,
-  "gen_ai.usage.output_tokens": response.usage.output_tokens,
+  "gen_ai.response.model": res.model,
+  "gen_ai.usage.input_tokens": res.usage.input_tokens,
+  "gen_ai.usage.output_tokens": res.usage.output_tokens,
 });
 ```
+
+There is also a `gen_ai.request.model` attribute, and it shows where the conventions assume a simpler world than this harness. The loop never asks for a model by name; it asks for a tier, and the router picks the model. At the layer where `traced` sits there is no requested model id to record, only `request.hard`, which no convention has a name for. That attribute stays a custom one.
 
 Adopt those names on the homegrown span from the start, even before you take the dependency, and the eventual migration is a rename instead of a rewrite. One caveat worth stating plainly: as of mid-2026 the GenAI conventions are still marked experimental and the attribute names have moved between releases. Pin the version you target and expect to touch the mapping again. This is an area where I would keep the indirection of my own attribute names and translate at the export boundary, rather than scatter `gen_ai.*` strings through the harness.
 
@@ -233,4 +230,4 @@ The loop can now route a turn, fail over when a provider is down, stay inside a 
 
 What the harness still cannot do is tell you whether any of it was correct. The trace of a run that produced a wrong answer looks exactly like the trace of a run that produced a right one. Same spans, same tokens, same cost, and the only difference is a judgment nothing in the harness has made yet. Closing that gap, turning outcomes into a signal the loop can be measured against, is where this goes next.
 
-Everything here ships as tag `post-09`: a `span.ts`, a `Tracer`, three `traced` decorators over the model and the tools, and the one line in the loop that opens a turn span.
+As with every part of the series, the code is in the [companion repository](https://github.com/raskell-io/the-agent-platform-handbook). Each post leaves the agent in a working state, saved as a git tag, so you can check out [`post-09`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-09) and run the agent exactly as this post leaves it. The change from post eight is small. One new file, `span.ts`, holds the span type and the tracer. A wrapper records every model call, tool calls get the same treatment where they are dispatched, and the loop opens a span for the run and one for each turn.
