@@ -10,7 +10,6 @@ tags = ["applied-security", "waf", "edge-systems", "reliability", "developer-too
 author = "Raffael"
 image = "traffic-replay-as-a-security-primitive.avif"
 cover = "covers/traffic-replay-as-a-security-primitive.avif"
-og_image = "traffic-replay-as-a-security-primitive.png"
 +++
 
 If you have ever tuned a WAF rule, you know the cycle. A rule triggers on legitimate traffic. You get paged. You look at the logs, which tell you the rule ID and the request path but not enough to reproduce what happened. You loosen the rule based on your best guess. You deploy. You wait. Next week, you get paged again, either because the rule is still too aggressive or because you loosened it too far and now something is getting through.

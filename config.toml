@@ -60,6 +60,10 @@ tooling written in Rust, start as notes on these pages before they become real
 things. The name is rascal × Haskell × Raffael.
 """
 og_image = "og-default.png"
+og_cards = true                # a generated 1200x630 card per page (mise run og after zola build)
+og_home_title = "Notes from the machine room."
+og_home_meta = "Raffael Schneider · Basel"
+series_descriptions = { "the-agent-platform-handbook" = "Building an agent platform from first principles, one working piece of TypeScript per part." }
 og_locale = "en_US"
 scheme_toggle = true
 code_copy = true

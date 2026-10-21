@@ -10,7 +10,6 @@ tags = ["ai-engineering", "programming-languages", "formal-methods", "haskell"]
 author = "Raffael"
 image = "semantic-artifacts-and-meaning-engines.avif"
 cover = "covers/semantic-artifacts-and-meaning-engines.avif"
-og_image = "semantic-artifacts-and-meaning-engines.png"
 related = [
     "what-comes-after-the-last-programming-language",
     "what-programming-languages-become-when-ai-writes-the-code",

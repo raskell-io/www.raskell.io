@@ -11,7 +11,6 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "context-is-the-product.avif"
 cover = "covers/context-is-the-product.avif"
-og_image = "context-is-the-product.png"
 +++
 
 > Part 4 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Tools: How Agents Actually Do Things](/articles/tools-how-agents-actually-do-things/). Next: [Retrieval Is a Tool, Not a Layer](/articles/retrieval-is-a-tool-not-a-layer/).

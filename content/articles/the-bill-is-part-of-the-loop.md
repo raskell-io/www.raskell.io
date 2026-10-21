@@ -11,7 +11,6 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "the-bill-is-part-of-the-loop.avif"
 cover = "covers/the-bill-is-part-of-the-loop.avif"
-og_image = "the-bill-is-part-of-the-loop.png"
 +++
 
 > Part 8 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [The Model Is a Dependency](/articles/the-model-is-a-dependency/). Next: [Observability Is Not Logging](/articles/observability-is-not-logging/).

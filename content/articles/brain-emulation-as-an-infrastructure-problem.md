@@ -10,7 +10,6 @@ tags = ["distributed-systems", "inference", "gpus"]
 author = "Raffael"
 image = "brain-emulation-as-an-infrastructure-problem.avif"
 cover = "covers/brain-emulation-as-an-infrastructure-problem.avif"
-og_image = "brain-emulation-as-an-infrastructure-problem.png"
 related = [
     "what-comes-after-the-last-programming-language",
     "the-economics-of-inference",

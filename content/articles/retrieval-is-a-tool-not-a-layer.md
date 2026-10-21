@@ -11,7 +11,6 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "retrieval-is-a-tool-not-a-layer.avif"
 cover = "covers/retrieval-is-a-tool-not-a-layer.avif"
-og_image = "retrieval-is-a-tool-not-a-layer.png"
 +++
 
 > Part 5 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Context Is the Product](/articles/context-is-the-product/). Next: [Memory Is a Write Path](/articles/memory-is-a-write-path/).

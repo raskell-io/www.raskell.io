@@ -11,7 +11,6 @@ tags = ["programming-languages", "haskell", "developer-tooling"]
 author = "Raffael"
 image = "all-beginning-is-haskell.avif"
 cover = "covers/all-beginning-is-haskell.avif"
-og_image = "all-beginning-is-haskell.png"
 +++
 
 This site is called raskell.io. That is not an accident.

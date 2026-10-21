@@ -11,7 +11,6 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "the-model-is-a-dependency.avif"
 cover = "covers/the-model-is-a-dependency.avif"
-og_image = "the-model-is-a-dependency.png"
 +++
 
 > Part 7 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Memory Is a Write Path](/articles/memory-is-a-write-path/). Next: [The Bill Is Part of the Loop](/articles/the-bill-is-part-of-the-loop/).

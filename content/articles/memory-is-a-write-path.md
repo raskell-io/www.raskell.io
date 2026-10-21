@@ -11,7 +11,6 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "memory-is-a-write-path.avif"
 cover = "covers/memory-is-a-write-path.avif"
-og_image = "memory-is-a-write-path.png"
 +++
 
 > Part 6 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Retrieval Is a Tool, Not a Layer](/articles/retrieval-is-a-tool-not-a-layer/). Next: The Model Is a Dependency.

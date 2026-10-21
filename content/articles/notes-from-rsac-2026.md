@@ -10,7 +10,6 @@ tags = ["applied-security", "ai-for-ops", "agents", "policy", "sovereignty"]
 author = "Raffael"
 image = "notes-from-rsac-2026.avif"
 cover = "covers/notes-from-rsac-2026.avif"
-og_image = "notes-from-rsac-2026.png"
 +++
 
 I am writing this about two weeks after RSAC 2026 closed. In between, my coworkers and I drove down the West Coast, through Big Sur to LA, then out to Las Vegas for Easter weekend. That was deliberate. Not the route, exactly, but the space. The conference gave me a lot to process, and I have learned over the years that I process better when I am moving, when I am not sitting at a desk trying to force conclusions out of raw impressions.

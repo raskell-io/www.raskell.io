@@ -11,7 +11,6 @@ tags = ["ai-engineering", "developer-tooling", "rust"]
 author = "Raffael"
 image = "how-i-work-these-days.avif"
 cover = "covers/how-i-work-these-days.avif"
-og_image = "how-i-work-these-days.png"
 +++
 
 If you had asked me a few years ago what kind of shift would truly change software again, I would probably have said something vague about machine learning becoming more useful, more accessible, more integrated into normal tooling. I would not have said that within a few years I would be spending large parts of my day in conversation with models, building products at a pace that used to feel unrealistic for one person.

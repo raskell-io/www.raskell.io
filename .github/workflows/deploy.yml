@@ -49,6 +49,9 @@ jobs:
       - name: Publish map.json
         run: mise run map-json
 
+      - name: Draw social cards
+        run: mise run og
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         if: ${{ github.ref == 'refs/heads/main' }}

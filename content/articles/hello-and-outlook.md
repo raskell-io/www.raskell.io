@@ -11,7 +11,6 @@ tags = ["meta", "oss", "open-web"]
 author = "Raffael"
 image = "hello-world.avif"
 cover = "covers/hello-world.avif"
-og_image = "hello-world.png"
 +++
 
 ## Hello world

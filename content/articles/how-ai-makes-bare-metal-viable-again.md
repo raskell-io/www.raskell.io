@@ -11,7 +11,6 @@ tags = ["platform-automation", "self-hosting", "ai-engineering", "economics", "k
 author = "Raffael"
 image = "how-ai-makes-bare-metal-viable-again.avif"
 cover = "covers/how-ai-makes-bare-metal-viable-again.avif"
-og_image = "how-ai-makes-bare-metal-viable-again.png"
 +++
 
 I was paying over two hundred dollars a month to run two apps that had zero paying users.

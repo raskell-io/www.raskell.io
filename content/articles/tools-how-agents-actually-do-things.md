@@ -11,7 +11,6 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "tools-how-agents-actually-do-things.avif"
 cover = "covers/tools-how-agents-actually-do-things.avif"
-og_image = "tools-how-agents-actually-do-things.png"
 +++
 
 > Part 3 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Your Agent Wants Root](/articles/your-agent-wants-root/). Next: Context Is the Product.

@@ -11,7 +11,6 @@ tags = ["operating-systems", "openbsd", "linux"]
 author = "Raffael"
 image = "openbsd-libvirt.avif"
 cover = "covers/openbsd-libvirt.avif"
-og_image = "openbsd-libvirt.png"
 +++
 
 ## Void Linux as my daily driver

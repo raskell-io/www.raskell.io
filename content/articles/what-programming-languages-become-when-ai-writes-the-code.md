@@ -10,7 +10,6 @@ tags = ["ai-engineering", "programming-languages", "formal-methods", "haskell"]
 author = "Raffael"
 image = "what-programming-languages-become-when-ai-writes-the-code.avif"
 cover = "covers/what-programming-languages-become-when-ai-writes-the-code.avif"
-og_image = "what-programming-languages-become-when-ai-writes-the-code.png"
 related = [
     "what-comes-after-the-last-programming-language",
     "semantic-artifacts-and-meaning-engines",

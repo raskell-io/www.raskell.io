@@ -1,0 +1,79 @@
+<!doctype html>
+<!-- The social card, 1200x630. `mise run og` fills __CARD__ (the page's og-card JSON), __MARK__ (the tanuki SVG)
+     and __PUBLIC__ (file URL of public/), then screenshots it once per page into public/og/. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Card Sans"; src: url("__PUBLIC__/fonts/Geist-Variable.woff2") format("woff2"); font-weight: 100 900; }
+  @font-face { font-family: "Card Mono"; src: url("__PUBLIC__/fonts/GeistMono-Variable.woff2") format("woff2"); font-weight: 100 900; }
+  @font-face { font-family: "Card Wordmark"; src: url("__PUBLIC__/fonts/unbounded-wordmark.woff2") format("woff2"); font-weight: 600; }
+  :root { --paper: #f6f5f2; --ink: #000; --muted: #626260; --line: rgba(0, 0, 0, 0.14); }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background:
+      radial-gradient(640px 420px at 0% 0%, rgba(240, 196, 150, 0.42), transparent 70%),
+      radial-gradient(720px 460px at 100% 0%, rgba(150, 206, 200, 0.40), transparent 70%),
+      var(--paper);
+    color: var(--ink);
+    font-family: "Card Sans", system-ui, sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 64px 72px 56px;
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand svg { width: 52px; height: 52px; color: var(--ink); }
+  .brand span { font-family: "Card Wordmark", "Card Sans", sans-serif; font-weight: 600; font-size: 34px; letter-spacing: -0.035em; line-height: 1; padding-bottom: 3px; }
+  .main { display: flex; align-items: center; gap: 56px; min-height: 0; }
+  .text { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+  .eyebrow { font-family: "Card Mono", monospace; font-size: 22px; color: var(--muted); letter-spacing: 0.01em; }
+  .eyebrow:empty { display: none; }
+  h1 { font-weight: 450; letter-spacing: -0.035em; line-height: 1.04; font-size: 80px; text-wrap: balance; }
+  .desc { font-size: 27px; line-height: 1.36; color: var(--muted); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+  .desc:empty { display: none; }
+  .cover { flex: 0 0 auto; width: 430px; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--line); }
+  .cover img { display: block; width: 100%; height: auto; }
+  .foot { display: flex; justify-content: space-between; align-items: baseline; font-family: "Card Mono", monospace; font-size: 22px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 22px; }
+  body.home h1 { font-size: 96px; }
+  body.has-cover .desc { -webkit-line-clamp: 2; }
+</style>
+</head>
+<body>
+  <div class="brand">__MARK__<span>raskell</span></div>
+  <div class="main">
+    <div class="text">
+      <p class="eyebrow" id="eyebrow"></p>
+      <h1 id="title"></h1>
+      <p class="desc" id="desc"></p>
+    </div>
+  </div>
+  <div class="foot"><span id="meta"></span><span>raskell.io</span></div>
+<script>
+  const card = __CARD__;
+  document.body.classList.add(card.kind);
+  document.getElementById("eyebrow").textContent = card.eyebrow;
+  document.getElementById("title").textContent = card.title;
+  document.getElementById("desc").textContent = card.description;
+  document.getElementById("meta").textContent = card.meta;
+  if (card.cover) {
+    document.body.classList.add("has-cover");
+    const fig = document.createElement("div");
+    fig.className = "cover";
+    fig.innerHTML = `<img src="${card.cover}" alt="">`;
+    document.querySelector(".main").append(fig);
+  }
+  // Shrink the title until it fits in three lines and the column still has room for the description.
+  document.fonts.ready.then(() => {
+    const h1 = document.getElementById("title"), main = document.querySelector(".main"), text = document.querySelector(".text");
+    let size = parseFloat(getComputedStyle(h1).fontSize);
+    const lines = () => Math.round(h1.getBoundingClientRect().height / (size * 1.04));
+    while (size > 44 && (lines() > 3 || text.scrollHeight > main.clientHeight)) {
+      size -= 2;
+      h1.style.fontSize = size + "px";
+    }
+    document.body.dataset.ready = "1";
+  });
+</script>
+</body>
+</html>

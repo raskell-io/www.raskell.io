@@ -11,7 +11,6 @@ tags = ["developer-tooling", "platform-automation", "rust"]
 author = "Raffael"
 image = "mise-ate-make.avif"
 cover = "covers/mise-ate-make.avif"
-og_image = "mise-ate-make.png"
 +++
 
 I maintain around forty repositories across four GitHub organizations. [Zentinel](https://zentinelproxy.io) alone accounts for over thirty: the core proxy, a Rust SDK, and a growing collection of agents for WAF inspection, auth, rate limiting, GraphQL security, and a dozen other edge concerns. [Archipelag.io](https://archipelag.io) spans an Elixir coordinator, a Rust node agent, Python and TypeScript SDKs, mobile agents in Kotlin and Swift, and infrastructure-as-code repos. [Cyanea](https://cyanea.bio) is Elixir with Rust NIFs and a separate Rust bioinformatics library. Then there are the standalone tools: [Conflux](https://github.com/raskell-io/conflux) (Rust CRDT engine), [Sango](https://github.com/raskell-io/sango) (Rust edge diagnostics CLI), [Shiioo](https://github.com/raskell-io/shiioo) (Rust agentic orchestrator), [Vela](https://github.com/raskell-io/vela) (Rust bare-metal deployment), [Refrakt](https://github.com/raskell-io/refrakt) (Gleam web framework), [Kurumi](https://github.com/raskell-io/kurumi) (Svelte local-first app), and this site you are reading (Zola).

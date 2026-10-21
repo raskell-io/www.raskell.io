@@ -10,7 +10,6 @@ tags = ["distributed-systems", "edge-systems", "sovereignty", "inference", "isol
 author = "Raffael"
 image = "archipelag-io-open-beta.avif"
 cover = "covers/archipelag-io-open-beta.avif"
-og_image = "archipelag-io-open-beta.png"
 +++
 
 There is an abandoned factory building in Glarus, a small town wedged between mountains in eastern Switzerland. In 2016, the building was loud. Not machinery-loud, fan-loud. Rows of bare motherboards bolted to open-air frames, each bristling with GPUs and daisy-chained power supplies. The air tasted like warm dust and ozone. Cables ran everywhere, held in place by zip ties and optimism. This was an Ethereum mining operation, and I was standing in the middle of it, watching people I knew convert their gaming rigs, hardware they loved, into money-printing machines.

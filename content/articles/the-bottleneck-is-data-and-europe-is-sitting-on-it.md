@@ -10,7 +10,6 @@ tags = ["sovereignty", "policy", "economics"]
 author = "Raffael"
 image = "the-bottleneck-is-data-and-europe-is-sitting-on-it.avif"
 cover = "covers/the-bottleneck-is-data-and-europe-is-sitting-on-it.avif"
-og_image = "the-bottleneck-is-data-and-europe-is-sitting-on-it.png"
 related = [
     "patents-per-capita-is-a-vanity-metric",
     "the-economics-of-inference",

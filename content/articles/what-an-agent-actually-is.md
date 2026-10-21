@@ -11,7 +11,6 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "what-an-agent-actually-is.avif"
 cover = "covers/what-an-agent-actually-is.avif"
-og_image = "what-an-agent-actually-is.png"
 +++
 
 > Part 1 of *The Agent Platform Handbook. From Loop to Platform.* A 22-post series that walks the agent stack from a single loop to a production platform. Next: [Your Agent Wants Root](/articles/your-agent-wants-root/).

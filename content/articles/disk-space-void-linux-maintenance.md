@@ -11,7 +11,6 @@ tags = ["operating-systems", "linux"]
 author = "Raffael"
 image = "void-disk-usage.avif"
 cover = "covers/void-disk-usage.avif"
-og_image = "void-disk-usage.png"
 +++
 
 ## Monday morning surprise

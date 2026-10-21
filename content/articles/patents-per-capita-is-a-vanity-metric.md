@@ -10,7 +10,6 @@ tags = ["metrics", "policy", "sovereignty", "economics"]
 author = "Raffael"
 image = "patents-per-capita-is-a-vanity-metric.avif"
 cover = "covers/patents-per-capita-is-a-vanity-metric.avif"
-og_image = "patents-per-capita-is-a-vanity-metric.png"
 +++
 
 It is the first of May, Labour Day. A holiday explicitly about work, which makes it a good day to ask whether the work that gets counted is the work that actually matters.

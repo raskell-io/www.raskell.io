@@ -10,7 +10,6 @@ tags = ["developer-tooling", "programming-languages", "oss", "haskell", "rust"]
 author = "Raffael"
 image = "why-we-build-hx.avif"
 cover = "covers/why-we-build-hx.avif"
-og_image = "why-we-build-hx.png"
 +++
 
 Why would anyone invest serious engineering effort into Haskell tooling in 2026? Haskell is a niche language. It has been a niche language for thirty years. Most companies do not use it. Most developers have never written a line of it. If you are going to pour months of work into building a package manager and toolchain from scratch, in Rust no less, the obvious question is: why not just use Rust?

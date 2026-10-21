@@ -11,7 +11,6 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "observability-is-not-logging.avif"
 cover = "covers/observability-is-not-logging.avif"
-og_image = "observability-is-not-logging.png"
 +++
 
 > Part 9 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [The Bill Is Part of the Loop](/articles/the-bill-is-part-of-the-loop/). Next: Evaluation Closes the Loop.

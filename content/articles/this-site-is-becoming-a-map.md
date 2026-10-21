@@ -10,7 +10,6 @@ tags = ["meta", "knowledge-management", "open-web", "zola"]
 author = "Raffael"
 image = "this-site-is-becoming-a-map.avif"
 cover = "covers/this-site-is-becoming-a-map.avif"
-og_image = "this-site-is-becoming-a-map.png"
 +++
 
 A blog is a timeline. The newest post sits on top, everything else slides down, and after a while the only way to find the post from last spring is to remember roughly when you read it. That works for news. It works badly for ideas, because ideas do not arrive in date order. Two posts written months apart can be circling the same problem, and nothing on a timeline tells you that.
