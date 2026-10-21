@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-21T07:55:08+00:00",
+ "generated": "2026-10-21T16:32:25+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -863,7 +863,7 @@
    "label": "coconutOS",
    "url": "https://github.com/coconut-os/coconutOS",
    "meta": "Project",
-   "description": "A Rust microkernel for GPU-isolated AI inference. Capability-based shards with their own page tables, IOMMU-backed GPU partitioning, monotonic syscall restriction, and side-channel…",
+   "description": "A hard shell for AI inference. A Rust microkernel that makes GPU isolation a kernel primitive: every model runs in its own shard with its own page tables, VRAM partition and capabi…",
    "degree": 8
   },
   {
