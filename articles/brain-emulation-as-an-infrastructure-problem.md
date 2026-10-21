@@ -39,11 +39,11 @@ Under what Freeman calls pessimistic assumptions, real-time human brain emulatio
 
 The interesting thing in those numbers is not that the gap closes. It is the shape of the gap.
 
-Modern AI clusters are over-provisioned on interconnect bandwidth by a factor of roughly seventy-five for this workload. They are under-provisioned on per-GPU memory by a factor of nearly four. They are slightly under-provisioned on aggregate compute. The conclusion is unavoidable: the substrate built for LLM inference does not fit brain emulation cleanly. It overshoots on one axis, undershoots on another, and lands roughly correct on a third.
+Modern AI clusters are over-provisioned on interconnect bandwidth by a factor of roughly seventy-five for this workload. They are under-provisioned on per-GPU memory by a factor of nearly four. They are slightly under-provisioned on aggregate compute. If those estimates are anywhere near right, the substrate built for LLM inference does not fit brain emulation cleanly. It overshoots on one axis, undershoots on another, and lands roughly correct on a third.
 
 This is the same observation I have been making about the gap between LLM inference and the operating systems that schedule it. The previous time was [coconutOS](https://raskell.io/articles/what-comes-after-the-last-programming-language/), where the argument was that an inference workload running on Linux is using an OS designed for human-authored sequential CPU programs. The argument generalizes. Whenever a new workload becomes economically important, the existing substrate ends up looking like an awkward fit. The fit is good enough to ship the first generation. It is not good enough to be optimal.
 
-Brain emulation is the next test of the same principle, on a different axis. LLM inference exposed that we are running on the wrong scheduler. Brain emulation will expose that we are running on the wrong memory shape.
+Brain emulation is the next test of the same principle, on a different axis. LLM inference exposed that we are running on the wrong scheduler. My bet is that brain emulation exposes the wrong memory shape.
 
 ## What "the wrong memory shape" means
 
@@ -67,11 +67,11 @@ The most interesting paragraph in Freeman's preface is this one.
 
 That move is what the second post of my recent trilogy, on inference-native operating systems, was trying to do. The same move sits underneath my writing on edge systems and proxy infrastructure. It is, I think, the most important shift a technical field can go through, because it changes who works in it, what their day looks like, and what the next ten years of progress look like.
 
-If you are building infrastructure, this thesis is one more data point that the workloads coming over the horizon are not going to look like what your current scheduler, memory hierarchy, and interconnect were designed for. The gap between "the AI cluster I rent today" and "the substrate the next generation of workloads actually wants" is going to widen, not narrow. Brain emulation is the most extreme version of that argument I have seen so far. It is also the same argument.
+If you are building infrastructure, this thesis is one more data point that the workloads coming over the horizon are not going to look like what your current scheduler, memory hierarchy, and interconnect were designed for. The gap between "the AI cluster I rent today" and "the substrate the next generation of workloads actually wants" is, I expect, going to widen rather than narrow. Brain emulation is the most extreme version of that argument I have seen so far. It is also the same argument.
 
 A few things I would carry forward concretely.
 
-- Per-GPU memory will keep being the binding constraint for an expanding class of workloads. Bandwidth is the easy axis. Density is the hard one.
+- I expect per-GPU memory to stay the binding constraint for an expanding class of workloads. Bandwidth is the easy axis. Density is the hard one.
 - Workloads with strong locality and large per-node state will keep showing up. They look weird on current clusters because clusters are built for the opposite shape.
 - The substrate question is durable. Every time we think the substrate is done, a workload arrives that asks a question we did not design for.
 
@@ -91,7 +91,7 @@ I will probably come back to the thesis when the simulation and benchmarking sec
 
 I have spent the last few months arguing that the substrate is the next thing to bend, in proxy infrastructure, in operating systems for inference, and in the artifact engineers actually author. Brain emulation is the most demanding version of the same argument I have come across.
 
-The AI cluster you are renting today is roughly a generation away from being able to run a thing nobody designed it to run. The cluster after the next one will probably be able to. The only question is what we want the substrate to actually look like by the time it gets there.
+On Freeman's pessimistic estimates, the AI cluster you are renting today is short by a factor of about four on per-GPU memory and about one and a half on compute: roughly a hardware generation away from running a thing nobody designed it to run. Whether the generation after that closes the gap depends on memory density growing as fast as compute has, and memory is the axis the industry is building for least, so I would not put a date on it. The question I would rather ask is what we want the substrate to look like by the time it gets there.
 
 This is what I keep reading outside my field for. You go in for the curiosity, expecting nothing practical, and once in a while you walk out holding a sharper version of a question you already had. The brain does not care how anyone provisions a GPU. But an honest accounting of what it would take to simulate one says something true about the machines we are building for everything else, and I would not have gone looking for it on purpose.
 
