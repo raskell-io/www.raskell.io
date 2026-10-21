@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-21T17:02:16+00:00",
+ "generated": "2026-10-21T17:51:25+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -816,9 +816,9 @@
    "id": "p:vela",
    "kind": "project",
    "label": "Vela",
-   "url": "https://github.com/raskell-io/vela",
+   "url": "https://vela.raskell.io",
    "meta": "Project",
-   "description": "No-downtime app deployment on bare metal. One binary. No containers. A self-hosted PaaS alternative to Heroku, Fly.io, Coolify, and Kamal. built in Rust with zero-downtime deploys …",
+   "description": "No-downtime app deployment on bare metal. One binary. No containers. A self-hosted PaaS alternative to Heroku, Fly.io, Coolify, and Kamal. Built in Rust with zero-downtime deploys …",
    "degree": 8
   },
   {
