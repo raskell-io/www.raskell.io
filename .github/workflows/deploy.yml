@@ -31,9 +31,6 @@ jobs:
       - name: Setup mise
         uses: jdx/mise-action@v2
 
-      - name: Download fonts
-        run: mise run download-fonts
-
       - name: Check tags against the vocabulary
         run: mise run tags-check
 

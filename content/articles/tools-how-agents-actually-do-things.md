@@ -29,7 +29,7 @@ The ReAct paper in October 2022 sketched the loop in pseudocode. The first imple
 
 Then on June 13, 2023, OpenAI shipped function calling. You declared your tools with a JSON Schema. The model returned a structured object with `name` and `arguments`. No more parsing prose. No more stop tokens. The reliability gap between "this works in the demo" and "this works on Tuesday morning" closed by an order of magnitude in a single release. Anthropic shipped `tool_use` shortly after on the same shape, and structured outputs (constrained decoding that guarantees the model emits valid JSON for a given schema) followed in late 2024.
 
-The Model Context Protocol, also from Anthropic, arrived in November 2024 and added a transport layer for tools so they could live in a separate process or a separate machine. The calling convention did not change. MCP just gave the registry a network. We will spend [post eight](#) on MCP specifically.
+The Model Context Protocol, also from Anthropic, arrived in November 2024 and added a transport layer for tools so they could live in a separate process or a separate machine. The calling convention did not change. MCP just gave the registry a network. MCP gets a post of its own later in the series.
 
 The lesson from this lineage is one sentence. The model talks JSON now. The work that remains is the work you control: the registry, the schemas, the contract for what happens after the call. That is what this post is about.
 
@@ -322,7 +322,7 @@ const results = await Promise.all(
 messages.push({ role: "user", content: results });
 ```
 
-Two changes versus the `post-02` dispatch. The loop runs all tool calls from a single turn in parallel with `Promise.all`. The `is_error` flag now gets set when the result was an error, because the model uses it to decide whether to retry or change strategy. The rest of the work — unknown-tool handling, exception wrapping, output capping — moved into the registry, so the agent.ts dispatch shrinks from roughly twenty-five lines to ten.
+Two changes versus the `post-02` dispatch. The loop runs all tool calls from a single turn in parallel with `Promise.all`. The `is_error` flag now gets set when the result was an error, because the model uses it to decide whether to retry or change strategy. The rest of the work (unknown-tool handling, exception wrapping, output capping) moved into the registry, so the agent.ts dispatch shrinks from roughly twenty-five lines to ten.
 
 A short transcript shows the difference.
 
@@ -366,7 +366,7 @@ The honest version of the tradeoff is in the table.
 
 The first time you hit any of these you will think your code is broken. It is not. These are tool-layer problems specifically.
 
-- **Tool sprawl.** Beyond roughly twenty tools, models start picking poorly. Domains blur. Two tools with similar descriptions get confused. The fix is not "better descriptions." It is fewer tools at any given turn, achieved by routing or by giving different sub-agents different toolboxes. We will come back to this in [post twelve](#).
+- **Tool sprawl.** Beyond roughly twenty tools, models start picking poorly. Domains blur. Two tools with similar descriptions get confused. The fix is not "better descriptions." It is fewer tools at any given turn, achieved by routing or by giving different sub-agents different toolboxes. We will come back to this in a later post on orchestration.
 - **Description rot.** A tool's behavior changes (faster timeout, new error mode, narrower input). The description does not. The model keeps picking it for the old reasons. Treat descriptions as part of the API surface. Version them.
 - **Argument hallucination.** The model passes `path: "the file the user mentioned"` instead of an actual path because it lost track of the conversation. Strict schemas help. Server-side validation of plausible inputs (file exists, URL parses) helps more.
 - **Hallucinated tools.** The model invents a tool name that is not in the registry. The registry returns `unknown tool: X` as an error. The model reads it and either retries with a real tool or apologizes. Both are correct behaviors. The bug would be silently dispatching to a default handler.
@@ -379,17 +379,17 @@ The first time you hit any of these you will think your code is broken. It is no
 
 This is the tool layer. It is not the context layer, the memory layer, or the identity layer. Things you might expect this post to cover that get a dedicated post later.
 
-- **Where the tool definitions live.** Hardcoded into the agent works at the demo scale. Real fleets need a shared registry. That is MCP. [Post eight](#).
-- **Which tools an agent should know about for a given task.** The registry above gives every tool to every turn. Per-task filtering and tool discovery are part of the context strategy. [Post four](#) and [post five](#).
-- **Which agent gets which tools.** Different sub-agents need different toolboxes. The dispatch problem is the multi-agent problem. [Post ten](#) and [post twelve](#).
-- **Who is allowed to call which tool.** Per-tool RBAC, capability tokens, human-in-the-loop approvals. [Post fourteen](#).
-- **Identity for the call itself.** When the `http_get` tool calls an internal service, the service needs to know who is asking. [Post thirteen](#).
+- **Where the tool definitions live.** Hardcoded into the agent works at the demo scale. Real fleets need a shared registry. That is MCP, which gets its own post later.
+- **Which tools an agent should know about for a given task.** The registry above gives every tool to every turn. Per-task filtering and tool discovery are part of the context strategy. [Post four](/articles/context-is-the-product/) and [post five](/articles/retrieval-is-a-tool-not-a-layer/).
+- **Which agent gets which tools.** Different sub-agents need different toolboxes. The dispatch problem is the multi-agent problem, which comes later in the series.
+- **Who is allowed to call which tool.** Per-tool RBAC, capability tokens, human-in-the-loop approvals. A later post on permissions.
+- **Identity for the call itself.** When the `http_get` tool calls an internal service, the service needs to know who is asking. A later post on identity.
 
 ## Where this lands in the platform
 
 Total damage going from `post-02` to `post-03`: one new file (`registry.ts`), one new directory (`tools/`) with four files, two extensions to `types.ts`, a rewritten `agent.ts` dispatch, and a one-line `tsconfig.json` update so the build picks up the new subdirectory. `git diff post-02 post-03` against the companion repo is the entire delta this post describes. The system prompt grows by a sentence. The iteration budget, the message-history shape, and the overall loop are unchanged.
 
-Post one was the loop. Post two was the runtime around the loop. This post is what the loop reaches through to do anything useful. In the reference architecture from [post twenty-two](#), the registry is the seam between the agent process and everything else: MCP servers, internal APIs, file systems, side effects, the world.
+Post one was the loop. Post two was the runtime around the loop. This post is what the loop reaches through to do anything useful. In the reference architecture at the end of the series, the registry is the seam between the agent process and everything else: MCP servers, internal APIs, file systems, side effects, the world.
 
 The rule from earlier posts still holds. The harness only ever grows; it does not get rewritten. Each post adds one layer to the same artifact and explains why the layer below was not enough.
 

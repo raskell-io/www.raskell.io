@@ -4,7 +4,7 @@ title = "Home"
 # "What I am working on" on the homepage. Remove [[extra.now]] blocks to hide the section.
 [[extra.now]]
 name = "The Agent Platform Handbook"
-text = "A series on building an agent platform from first principles. Part nine, on tracing agent runs, is in draft."
+text = "A series on building an agent platform from first principles. Nine parts are out; part ten, on evaluating agent runs, is in draft."
 url = "/series/the-agent-platform-handbook/"
 
 [[extra.now]]

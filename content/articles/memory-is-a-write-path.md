@@ -290,7 +290,7 @@ Each layer earns the right to be small by deferring what does not belong to it. 
 
 - **Forgetting on purpose.** Overwrite-by-slug corrects a memory; it does not delete one that is simply obsolete. A `memory_forget` tool is a few lines, but eviction policy, deciding what ages out and when, is a real problem this post leaves at "rewrite or leave it." The store grows until someone prunes it.
 - **Conflict resolution.** When a memory and the live system disagree, the prompt tells the agent to trust the system. When two memories disagree, the ranker picks one and the post does not arbitrate. Reconciling contradictory memories is its own design problem.
-- **Shared memory across a fleet.** This memory is per-checkout, on local disk. A fleet of agents that should share what one of them learned needs the store behind a service rather than in every repo, and the MCP resource shape fits behind the same tool boundary. [Post eight](#).
+- **Shared memory across a fleet.** This memory is per-checkout, on local disk. A fleet of agents that should share what one of them learned needs the store behind a service rather than in every repo, and the MCP resource shape fits behind the same tool boundary. A later post covers MCP.
 - **Embeddings for a large memory.** At a few dozen memories, lexical recall is the right answer for the same reasons it was in post five. The day the store outgrows it, the retriever behind `memory_search` changes and the tool boundary holds. Nothing at this scale needs it.
 
 ## Where this lands in the platform

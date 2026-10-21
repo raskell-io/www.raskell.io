@@ -31,7 +31,7 @@ An agent is software with five properties. Drop any one and what you have is som
 4. **Tools.** A finite, named set of side-effecting operations the model is allowed to invoke. Reading a file. Running a shell command. Calling an API.
 5. **A loop.** The model picks a tool, the tool runs, the result re-enters the context, the model picks again. The loop ends when the goal is satisfied, the budget is exhausted, or a stop condition is hit.
 
-There is usually a sixth property in production, **memory**, which is state that survives the loop. We will treat memory as a separate layer in [post six](#) and keep this first agent stateless.
+There is usually a sixth property in production, **memory**, which is state that survives the loop. We will treat memory as a separate layer in [post six](/articles/memory-is-a-write-path/) and keep this first agent stateless.
 
 A system with all five properties is an agent. A system with four is something else worth a name. A chat window has goal, model, context, and a loop, but no tools, so it is a chatbot. A CI pipeline has a goal, context, tools, and a loop, but no model, so it is a workflow. A function call has a goal, a model, context, and a tool, but no loop, so it is a one-shot completion. The presence of the loop is what makes the behavior open-ended. The presence of tools is what makes the loop matter.
 
@@ -76,7 +76,7 @@ The architecture diagram for every agent ever shipped looks like this.
                        +---------------------+
 {% end %}
 
-The diagram is small on purpose. Almost every post in this series will redraw it with one component opened up. Post two opens the runtime. Post three opens the tool. Post four opens the context. Post six opens the memory. Post seven opens the model. The capstone in post twenty-two assembles all of them into a reference architecture.
+The diagram is small on purpose. Almost every post in this series will redraw it with one component opened up. Post two opens the runtime. Post three opens the tool. Post four opens the context. Post six opens the memory. Post seven opens the model. The capstone at the end of the series assembles all of them into a reference architecture.
 
 Hold the picture in your head. We will come back to it.
 
@@ -104,9 +104,9 @@ The papers came first. *ReAct: Synergizing Reasoning and Acting in Language Mode
 
 The demos came in early 2023. Auto-GPT, released by Toran Bruce Richards in March 2023, wrapped GPT-4 in exactly that loop and let it run unattended. It demoed brilliantly and broke constantly. BabyAGI, by Yohei Nakajima a few weeks later, did the same thing with about a hundred lines of Python. Neither was production-grade. Both made the idea legible to people who had never read the ReAct paper. After Auto-GPT you could explain an agent by saying "imagine ChatGPT but it keeps going until the task is done." That was a marketing breakthrough, not an engineering one, but marketing is how ideas spread.
 
-OpenAI's function-calling API, launched in June 2023, was the engineering breakthrough that followed. Instead of trying to parse "the model wants to call `search(query)`" out of free-form prose, you declared your tools with JSON schemas and the model returned a structured tool call. Anthropic's `tool_use` shipped on the same pattern. With function calling, the agent loop stopped being a regex problem and started being a software problem. We will come back to this in [post three](#).
+OpenAI's function-calling API, launched in June 2023, was the engineering breakthrough that followed. Instead of trying to parse "the model wants to call `search(query)`" out of free-form prose, you declared your tools with JSON schemas and the model returned a structured tool call. Anthropic's `tool_use` shipped on the same pattern. With function calling, the agent loop stopped being a regex problem and started being a software problem. We will come back to this in [post three](/articles/tools-how-agents-actually-do-things/).
 
-The 2023 wave produced the first real frameworks: LangChain in October 2022, AutoGen in late 2023, CrewAI and LangGraph in 2024. They competed on abstractions. Some won, some lost. We will review them in [post nine](#). The point for now is that by mid-2024, building an agent was a Python or TypeScript exercise rather than a research project.
+The 2023 wave produced the first real frameworks: LangChain in October 2022, AutoGen in late 2023, CrewAI and LangGraph in 2024. They competed on abstractions. Some won, some lost. We will review them in a later post. The point for now is that by mid-2024, building an agent was a Python or TypeScript exercise rather than a research project.
 
 ### The 2025 to 2026 bundling
 
@@ -152,7 +152,7 @@ export type Tool = {
 };
 ```
 
-That is the entire contract. The `run` function returns a string because the model will read the result as text. If your tool returns structured data, serialize it with `JSON.stringify` and let the model parse it. We will revisit this choice in [post three](#) when we look at structured outputs more carefully.
+That is the entire contract. The `run` function returns a string because the model will read the result as text. If your tool returns structured data, serialize it with `JSON.stringify` and let the model parse it. We will revisit this choice in [post three](/articles/tools-how-agents-actually-do-things/) when we look at structured outputs more carefully.
 
 A shell tool, which is the most useful single tool you can give an agent, looks like this.
 
@@ -189,7 +189,7 @@ export const shell: Tool = {
 
 A few things to notice. The description is written for the model, not for you. Be specific about what the tool does, what it returns, and what its constraints are. The JSON schema is the contract the model sees when it decides whether to call this tool. Bun's `Bun.spawn` returns streams, so we read both stdout and stderr and join them with the exit code into one JSON payload the model can reason about.
 
-This tool will run any shell command. That is wildly unsafe. Do not deploy it. We will spend [post two](#) explaining why and what to do about it. For a single-user, single-directory demo on your own laptop, it is fine.
+This tool will run any shell command. That is wildly unsafe. Do not deploy it. We will spend [post two](/articles/your-agent-wants-root/) explaining why and what to do about it. For a single-user, single-directory demo on your own laptop, it is fine.
 
 ### The loop
 
@@ -210,7 +210,7 @@ request and answer concretely. When you have the answer, stop calling
 tools and reply in plain text.`;
 ```
 
-We pull in the SDK, register one tool, and write a system prompt. The system prompt is the first piece of context that is not user input. We will spend [post four](#) on how to grow this into a real context strategy. For now it is a single paragraph telling the model how to behave.
+We pull in the SDK, register one tool, and write a system prompt. The system prompt is the first piece of context that is not user input. We will spend [post four](/articles/context-is-the-product/) on how to grow this into a real context strategy. For now it is a single paragraph telling the model how to behave.
 
 ```typescript
 // agent.ts (continued)
@@ -287,7 +287,7 @@ export async function run(goal: string, maxIterations = 10) {
 
 Walk through it once. We start with the goal as the first user message. We call the model. We append the model's response to the conversation. If the model says `end_turn`, we print the final text and return. If the model says `tool_use`, we find the requested tool, run it, and append the result as a user-role `tool_result` block. The model sees the result on its next turn and decides what to do.
 
-The `for` loop with `maxIterations` is the only thing standing between this agent and an unbounded run. We will spend a chunk of [post sixteen](#) on whether iteration counts are the right budget unit. They are not, but they are the simplest. Start with the simplest.
+The `for` loop with `maxIterations` is the only thing standing between this agent and an unbounded run. We will spend a chunk of [post eight](/articles/the-bill-is-part-of-the-loop/) on whether iteration counts are the right budget unit. They are not, but they are the simplest. Start with the simplest.
 
 The entry point is two lines.
 
@@ -348,7 +348,7 @@ That is the pattern to expect across the industry over the next two years. Every
 
 The pure RAG row is the one that does not cross. A retrieval-augmented chat that only enriches its own context does not get tools in the sense that matters. The model cannot decide to do something different based on what it finds. It just answers from a richer context. Useful, sometimes excellent, not an agent. The moment that same system gains a "search again with a different query" or "fetch this document" tool, it is.
 
-The Temporal-with-LLM row is interesting for the opposite reason. That is an agent. It is also a workflow. The two categories are not mutually exclusive. [Post seventeen](#) will explain why the production version of almost every agent ends up wrapped in a durable workflow.
+The Temporal-with-LLM row is interesting for the opposite reason. That is an agent. It is also a workflow. The two categories are not mutually exclusive. A later post will explain why the production version of almost every agent ends up wrapped in a durable workflow.
 
 The point of the table is not to gatekeep the word. It is to point at the conceptual distinction. A chatbot fails by being uninformed. An agent fails by acting wrong. Once your system can act, the failure mode changes, and so does what you owe the operator.
 
@@ -356,9 +356,9 @@ The point of the table is not to gatekeep the word. It is to point at the concep
 
 The script above will work the first ten times you run it. Some of the failure modes it has are obvious. Some you only see in production. The honest list, in roughly the order you will hit them.
 
-- **Infinite loops disguised as progress.** The model can call tools forever without converging. `maxIterations = 10` saves you from your own demo today. It will not save you when somebody asks a harder question tomorrow. Real budgets are token-based or wall-clock-based, not step-based. We will fix this properly in [post sixteen](#).
-- **Cost runaway.** Every iteration is a full model call with the entire conversation as input. The token cost grows roughly quadratically with the number of steps because each new turn re-sends every prior turn. A ten-step loop costs more than ten times a one-step call. Prompt caching helps. Smaller models for the cheap turns help more. We will spend [post eighteen](#) on this.
-- **Lying about success.** The model can claim it completed the task without actually verifying. The shell tool does not check whether the answer is correct. You can ask "did you do X?" and get "yes" when the truth is "I tried, it failed, I gave up." Evals exist for this. [Post sixteen](#) explains them.
+- **Infinite loops disguised as progress.** The model can call tools forever without converging. `maxIterations = 10` saves you from your own demo today. It will not save you when somebody asks a harder question tomorrow. Real budgets are token-based or wall-clock-based, not step-based. We will fix this properly in [post eight](/articles/the-bill-is-part-of-the-loop/).
+- **Cost runaway.** Every iteration is a full model call with the entire conversation as input. The token cost grows roughly quadratically with the number of steps because each new turn re-sends every prior turn. A ten-step loop costs more than ten times a one-step call. Prompt caching helps. Smaller models for the cheap turns help more. We will spend [post eight](/articles/the-bill-is-part-of-the-loop/) on this.
+- **Lying about success.** The model can claim it completed the task without actually verifying. The shell tool does not check whether the answer is correct. You can ask "did you do X?" and get "yes" when the truth is "I tried, it failed, I gave up." Evals exist for this. A later post explains them.
 - **Broken tool output.** If a tool returns a megabyte of binary data, the model will choke or hallucinate. Tool outputs need to be summarized, truncated, or schema-shaped. The agent will not do this for you.
 - **No isolation.** The shell tool will run `rm -rf $HOME` if the model decides that is the right command. The model will not decide this often. It will decide it at least once. That is the topic of the next post.
 - **Hidden state.** Every tool call has side effects on the runtime. Files get created. Network calls get made. Database rows get inserted. The conversation log does not capture any of it. You can replay the model's reasoning. You cannot replay the world it was reasoning about. Idempotency and durable execution are how serious systems handle this.
@@ -371,19 +371,19 @@ None of these are reasons not to build an agent. They are the reasons the rest o
 A long post still leaves things out. The intentional omissions, with pointers to the posts that pick them up.
 
 - **Isolation.** The shell tool is dangerous. Fixed in [post two: Your Agent Wants Root](/articles/your-agent-wants-root/).
-- **A real tool registry.** One tool is the demo. A useful agent has four to a dozen. Covered in [post three](#).
-- **Context strategy.** The system prompt is a paragraph. Real systems load context from disk and shape it per task. Covered in [post four](#) and [post five](#).
-- **Memory across sessions.** The agent forgets everything between runs. Covered in [post six](#).
-- **Model selection.** We hardcoded one model. Production agents route. Covered in [post seven](#).
-- **Tool protocol.** The tool interface is bespoke. The industry converged on MCP. Covered in [post eight](#).
-- **Frameworks.** We built this raw. The framework conversation is in [post nine](#).
+- **A real tool registry.** One tool is the demo. A useful agent has four to a dozen. Covered in [post three](/articles/tools-how-agents-actually-do-things/).
+- **Context strategy.** The system prompt is a paragraph. Real systems load context from disk and shape it per task. Covered in [post four](/articles/context-is-the-product/) and [post five](/articles/retrieval-is-a-tool-not-a-layer/).
+- **Memory across sessions.** The agent forgets everything between runs. Covered in [post six](/articles/memory-is-a-write-path/).
+- **Model selection.** We hardcoded one model. Production agents route. Covered in [post seven](/articles/the-model-is-a-dependency/).
+- **Tool protocol.** The tool interface is bespoke. The industry converged on MCP. Covered in a later post.
+- **Frameworks.** We built this raw. The framework conversation comes later in the series.
 - **Identity, evals, durability, economics, governance.** All of arc four and five.
 
 If you read the table of contents for the series you can see the shape: every post in the rest of the series fixes one limitation of the agent you just built.
 
 ## Where this lands in the platform
 
-The diagram at the top of this post is the smallest box in the eventual reference architecture. The agent loop sits inside a runtime. The runtime sits inside a fleet. The fleet sits inside a platform with identity, observability, governance, and a control plane. The shape we end up with in [post twenty-two](#) is the same shape we started with, blown up to enterprise scale, with every component opened up and given its own production-grade story.
+The diagram at the top of this post is the smallest box in the eventual reference architecture. The agent loop sits inside a runtime. The runtime sits inside a fleet. The fleet sits inside a platform with identity, observability, governance, and a control plane. The shape we end up with at the end of the series is the same shape we started with, blown up to enterprise scale, with every component opened up and given its own production-grade story.
 
 You can hold the whole series in your head with a single rule. Each post adds one layer of the stack and explains why the layer below was not enough on its own.
 
