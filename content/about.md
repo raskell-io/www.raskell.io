@@ -44,7 +44,7 @@ I run several early-stage ventures and flagship builds, alongside a steady strea
 
 - [Zentinel](https://zentinelproxy.io): security-first reverse proxy on Pingora
 - [Archipelag.io](https://archipelag.io): decentralized AI compute platform
-- [Cyanea](https://cyanea.bio): open community for life science research
+- [Cyanea](https://cyanea.bio): bioinformatics notebooks that re-run, in the browser
 - [Arcanist.sh](https://arcanist.sh): high-performance Haskell tooling in Rust
 
 [All projects →](/projects)

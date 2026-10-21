@@ -1,9 +1,10 @@
 title = "Cyanea"
-description = "The open community for life science research. Share datasets, protocols, and experiments with version control and citation tracking. Rust-powered analysis stack with browser-based WASM tools, multi-format support (FASTA, FASTQ, VCF, CSV), and full provenance tracking. Open-source, self-hostable, federation-ready."
+description = "Bioinformatics notebooks that actually re-run. Write, run, and share analyses that execute in your browser on WebAssembly, with nothing to install and nothing to upload. Every notebook, dataset, and output is a versioned snapshot you can run again. A Rust analysis stack underneath, 21 file formats built in. Open source, self-hostable, federated."
 status = "live"
 status_label = "Public alpha"
-logo = "brands/cyanea.png"
+logo = "brands/cyanea.svg"
+logo_dark = "brands/cyanea-dark.svg"
 featured = true
-links = [ { name = "Website", url = "https://cyanea.bio" }, { name = "GitHub", url = "https://github.com/cyanea-bio" } ]
-topics = ["oss", "rust"]
-accents = ["#06b6d4", "#e497f2"]   # brand colours, used for the card glow
+links = [ { name = "Website", url = "https://cyanea.bio" }, { name = "Docs", url = "https://docs.cyanea.bio" }, { name = "GitHub", url = "https://github.com/cyanea-bio" } ]
+topics = ["oss", "rust", "webassembly", "self-hosting"]
+accents = ["#B9A6FF", "#8BE4F5"]   # brand colours (lavender, jelly cyan), used for the card glow
