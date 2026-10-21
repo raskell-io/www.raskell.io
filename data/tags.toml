@@ -130,6 +130,12 @@ name = "Economics"
 kind = "concept"
 description = "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation."
 
+[evaluation]
+name = "Evaluation"
+kind = "concept"
+description = "Measuring whether an AI system does the right thing: golden sets, structural checks, LLM-as-judge, and regression suites."
+broader = ["agents", "metrics"]
+
 [metrics]
 name = "Metrics"
 kind = "concept"
