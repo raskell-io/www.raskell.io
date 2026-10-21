@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-21T07:38:20+00:00",
+ "generated": "2026-10-21T07:55:08+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -622,7 +622,7 @@
    "url": "https://raskell.io/tags/self-hosting/",
    "meta": "Concept · 2 pages",
    "description": "Running your own infrastructure, from a single bare-metal box to community-operated compute.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:sovereignty",
@@ -721,7 +721,7 @@
    "url": "https://raskell.io/tags#webassembly",
    "meta": "Technology · no pages yet",
    "description": "Portable, sandboxed bytecode for running native-speed code in the browser and beyond.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "s:the-agent-platform-handbook",
@@ -746,8 +746,8 @@
    "label": "Cyanea",
    "url": "https://cyanea.bio",
    "meta": "Project",
-   "description": "The open community for life science research. Share datasets, protocols, and experiments with version control and citation tracking. Rust-powered analysis stack with browser-based …",
-   "degree": 7
+   "description": "Bioinformatics notebooks that actually re-run. Write, run, and share analyses that execute in your browser on WebAssembly, with nothing to install and nothing to upload. Every note…",
+   "degree": 9
   },
   {
    "id": "p:humankind",
@@ -2301,6 +2301,14 @@
   {
    "source": "p:cyanea",
    "target": "t:rust"
+  },
+  {
+   "source": "p:cyanea",
+   "target": "t:webassembly"
+  },
+  {
+   "source": "p:cyanea",
+   "target": "t:self-hosting"
   },
   {
    "source": "p:humankind",
