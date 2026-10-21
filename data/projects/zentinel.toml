@@ -1,8 +1,8 @@
 title = "Zentinel"
-description = "Guardian of the Free Web. A security-first reverse proxy built on Cloudflare's Pingora framework. Memory-safe by default, explicit configuration over hidden defaults, and an isolated agent architecture for extensibility without compromising proxy stability. 20+ security agents, SDKs in 7 languages, a pure Rust ModSecurity reimplementation, and a fleet management control plane."
+description = "Security-first reverse proxy built to guard the free web. Rust on Cloudflare's Pingora, explicit configuration over hidden defaults, and WAF, auth and other policy in isolated agents, so a crashing agent leaves the proxy running. Agents for WAF, bot management, identity, API inspection and scripting, SDKs from Rust to Haskell, a pure Rust ModSecurity engine and a fleet control plane."
 status = "stable"
 logo = "brands/zentinel.png"
 featured = true
-links = [ { name = "Website", url = "https://zentinelproxy.io" }, { name = "Docs", url = "https://zentinelproxy.io/docs/" }, { name = "GitHub", url = "https://github.com/zentinelproxy/zentinel" } ]
+links = [ { name = "Website", url = "https://zentinelproxy.io" }, { name = "Docs", url = "https://docs.zentinelproxy.io/" }, { name = "GitHub", url = "https://github.com/zentinelproxy/zentinel" } ]
 topics = ["applied-security", "edge-systems", "waf", "isolation", "observability", "pingora", "rust"]
 accents = ["#f68d31", "#9b4d8a"]   # brand colours, used for the card glow
