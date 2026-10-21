@@ -1,6 +1,8 @@
 title = "coconutOS"
-description = "A Rust microkernel for GPU-isolated AI inference. Capability-based shards with their own page tables, IOMMU-backed GPU partitioning, monotonic syscall restriction, and side-channel mitigations. It already runs a transformer forward pass end to end inside an isolated shard, with per-token benchmarks."
+description = "A hard shell for AI inference. A Rust microkernel that makes GPU isolation a kernel primitive: every model runs in its own shard with its own page tables, VRAM partition and capabilities, GPU drivers live outside ring 0, and pledge_gpu and unveil_vram only ever take privileges away. Runs a transformer forward pass end to end in QEMU today; real GPU silicon is next."
 status = "dev"
-logo = "brands/coconutos.png"
-links = [ { name = "GitHub", url = "https://github.com/coconut-os/coconutOS" } ]
+logo = "brands/coconutos.svg"
+logo_dark = "brands/coconutos-dark.svg"
+links = [ { name = "GitHub", url = "https://github.com/coconut-os/coconutOS" }, { name = "Story", url = "https://github.com/coconut-os/coconutOS/blob/main/docs/vision.md" } ]
 topics = ["operating-systems", "gpus", "inference", "isolation", "rust"]
+accents = ["#B07A4C", "#7A4E2D"]   # brand colours (husk light, husk), used for the card glow
