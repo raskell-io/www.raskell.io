@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-20T18:09:27+00:00",
+ "generated": "2026-10-21T05:42:28+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -316,7 +316,7 @@
    "url": "https://raskell.io/tags/agents/",
    "meta": "Concept · 11 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "t:ai-engineering",
@@ -505,7 +505,7 @@
    "url": "https://raskell.io/tags/metrics/",
    "meta": "Concept · 2 pages",
    "description": "What to measure, leading versus lagging signals, and vanity numbers that look like insight.",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "t:observability",
@@ -668,6 +668,15 @@
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
    "degree": 4
+  },
+  {
+   "id": "t:evaluation",
+   "kind": "tag",
+   "label": "Evaluation",
+   "url": "https://raskell.io/tags#evaluation",
+   "meta": "Concept · no pages yet",
+   "description": "Measuring whether an AI system does the right thing: golden sets, structural checks, LLM-as-judge, and regression suites.",
+   "degree": 2
   },
   {
    "id": "t:games",
@@ -1720,6 +1729,14 @@
   {
    "source": "t:zola",
    "target": "t:open-web"
+  },
+  {
+   "source": "t:evaluation",
+   "target": "t:agents"
+  },
+  {
+   "source": "t:evaluation",
+   "target": "t:metrics"
   },
   {
    "source": "t:simulation",

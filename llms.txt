@@ -95,6 +95,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - WAF and traffic inspection (`waf`) [within Applied security, Edge systems]: Web application firewalls, rule tuning, traffic replay, and inspecting requests without drowning operators.
 - Observability (`observability`) [within Reliability]: Seeing what a running system does: traces, metering, glass-box infrastructure, and what not to log.
 - Economics (`economics`): Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.
+- Evaluation (`evaluation`) [within Agents, Metrics]: Measuring whether an AI system does the right thing: golden sets, structural checks, LLM-as-judge, and regression suites.
 - Metrics (`metrics`): What to measure, leading versus lagging signals, and vanity numbers that look like insight.
 - Formal methods (`formal-methods`) [within Programming languages]: Proofs, verification, and types as specifications, especially once machines write the code.
 - Developer tooling (`developer-tooling`) [within Platform automation]: Package managers, build tools, CLIs, and the daily toolchain an engineer actually touches.
