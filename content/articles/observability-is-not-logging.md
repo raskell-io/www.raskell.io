@@ -219,7 +219,7 @@ The honest edges, as a table, because "it depends" owes you the specifics:
 | Prompt and output on spans | Full fidelity when you are debugging a bad answer | A second uncontrolled copy of sensitive data, plus cost |
 | Sampling | Bounds the telemetry bill | Head sampling drops the rare trace you most wanted |
 
-The row to watch is the last content row. A trace is only as safe as the least sensitive thing you put on it, and the pressure to attach the full prompt is strongest at exactly the moment you are debugging something important. Decide the redaction rule once, at the export boundary, and do not relax it per incident.
+The row to watch is the last content row. A trace is only as safe as the most sensitive thing you put on it, and the pressure to attach the full prompt is strongest at exactly the moment you are debugging something important. Decide the redaction rule once, at the export boundary, and do not relax it per incident.
 
 What this does not solve is judgment. The trace shows you that turn five cost thirty-nine cents and escalated to `opus`. It does not tell you whether that was the right call or a router that panics on hard prompts. It shows you the shell tool failed and retried. It does not tell you whether the migration was safe to retry at all. The trace is the evidence. Reading it is still the job, and knowing whether the run was actually *good*, not just observable, is a different feedback loop and the next post.
 

@@ -1,6 +1,6 @@
 +++
 title = "Start Here"
-description = "New here? These are the best entry points into what I write about, grouped into four tracks. Each one reads well in order, and each article stands on its own."
+description = "New here? Start with three short pieces, then go deeper along four reading tracks. Each track reads well in order, and each article stands on its own."
 template = "tracks.html"
 
 [[extra.tracks]]
@@ -39,3 +39,13 @@ items = [
   { path = "articles/looking-back-on-2025.md", note = "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself." },
 ]
 +++
+
+## If you have ten minutes
+
+Three short ways in, each showing a different side of what I do.
+
+- **[Alert triage is a context problem](/notes/alert-triage-is-a-context-problem/)**, a two-minute note from my day job. A colleague and I put an LLM on a noisy WAF. It did not make the alerts quieter on its own. Giving it the context an operator would look up first did.
+- **[A model gateway is a reverse proxy](/notes/a-model-gateway-is-a-reverse-proxy/)**, another short note, and the idea I keep coming back to: most of what an agent platform needs is old infrastructure work with a new payload, and the vocabulary of edge proxies carries over almost unchanged.
+- **[The hx benchmarks](https://arcanist.sh/hx/benchmarks/)**, for judging the engineering by something you can run. hx is a Haskell toolchain written in Rust, and the page writes down the test machine, the method, and the limits. The [longer story](/articles/why-we-built-a-haskell-package-manager-in-rust/) explains why it exists.
+
+The four tracks below go deeper, one subject at a time.
