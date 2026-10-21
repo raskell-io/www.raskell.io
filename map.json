@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-21T05:45:43+00:00",
+ "generated": "2026-10-21T07:35:21+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -28,7 +28,7 @@
    "url": "https://raskell.io/articles/the-bill-is-part-of-the-loop/",
    "meta": "2026-07-18 · 10 min",
    "description": "Every model response already carries its own bill in the usage field, and the loop throws it away. This post reads that field, prices it against a table, and turns cost into a value the loop can see per turn and act on: a metering decorator that needs no loop change, a running ledger, prompt-cache accounting that moves the number the most, and a budget that degrades before it stops. Part eight of The Agent Platform Handbook.",
-   "degree": 9
+   "degree": 13
   },
   {
    "id": "a:/articles/the-model-is-a-dependency/",
@@ -53,7 +53,7 @@
    "kind": "article",
    "label": "Brain Emulation, Read as an Infrastructure Problem",
    "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/",
-   "meta": "2026-06-28 · 13 min",
+   "meta": "2026-06-28 · 12 min",
    "description": "An MIT thesis argues brain emulation has crossed into engineering. Read as infrastructure, the numbers describe a workload your AI cluster was not built for.",
    "degree": 5
   },
@@ -64,7 +64,7 @@
    "url": "https://raskell.io/articles/memory-is-a-write-path/",
    "meta": "2026-06-23 · 19 min",
    "description": "Retrieval reads context the project authored. Memory is the agent writing context for its own future sessions, and the write is the part that is dangerous. Why session memory comes free from the transcript, why cross-session memory needs a separate write surface, and how to let an agent remember without letting it corrupt its own ground truth. Part six of The Agent Platform Handbook.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "a:/articles/the-proof-you-only-have-to-write-once/",
@@ -82,7 +82,7 @@
    "url": "https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/",
    "meta": "2026-06-17 · 16 min",
    "description": "Loading the whole .AGENTS/ directory on every turn does not scale. The fix is not a retrieval layer bolted to the side of the agent. It is a search tool in the registry the agent already has. BM25 over project docs, no vector store, and an honest account of when embeddings start to earn their keep. Part five of The Agent Platform Handbook.",
-   "degree": 7
+   "degree": 9
   },
   {
    "id": "a:/articles/context-is-the-product/",
@@ -91,7 +91,7 @@
    "url": "https://raskell.io/articles/context-is-the-product/",
    "meta": "2026-06-13 · 26 min",
    "description": "Models are commodities. Context is not. The sources of context an agent draws on, why retrieval alone is not enough, and a minimal .AGENTS/ convention that loads context from disk into the same harness we have been building. Part four of The Agent Platform Handbook.",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "a:/articles/tools-how-agents-actually-do-things/",
@@ -109,7 +109,7 @@
    "url": "https://raskell.io/articles/your-agent-wants-root/",
    "meta": "2026-06-05 · 16 min",
    "description": "An agent with a shell tool is arbitrary code execution with a friendly face. A short tour of why Docker alone is not enough, what Firecracker, gVisor, and Kata actually solve, and a hardened sandbox you can wrap the post-one agent in today. Part two of The Agent Platform Handbook.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "a:/articles/what-an-agent-actually-is/",
@@ -118,7 +118,7 @@
    "url": "https://raskell.io/articles/what-an-agent-actually-is/",
    "meta": "2026-06-02 · 19 min",
    "description": "AI agent is the most overloaded word in the industry. This is the anatomy, the lineage, and a working implementation in roughly two hundred lines of TypeScript on Bun. Part one of The Agent Platform Handbook.",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "a:/articles/the-field-exists-now/",
@@ -737,7 +737,7 @@
    "label": "Archipelag.io",
    "url": "https://archipelag.io",
    "meta": "Project",
-   "description": "Decentralized AI compute platform. Run AI workloads on a network of community-operated GPU hosts. fast, fair, and local. Jobs route to nearby hosts for lower latency, data stays in…",
+   "description": "Decentralized AI compute: AI jobs run on a network of community-operated GPU hosts. Jobs prefer nearby hosts, and a placement policy can keep them in a region to support data-resid…",
    "degree": 16
   },
   {
@@ -1856,11 +1856,23 @@
   },
   {
    "source": "a:/articles/retrieval-is-a-tool-not-a-layer/",
+   "target": "a:/articles/the-bill-is-part-of-the-loop/"
+  },
+  {
+   "source": "a:/articles/retrieval-is-a-tool-not-a-layer/",
    "target": "a:/articles/context-is-the-product/"
   },
   {
    "source": "a:/articles/retrieval-is-a-tool-not-a-layer/",
    "target": "a:/articles/tools-how-agents-actually-do-things/"
+  },
+  {
+   "source": "a:/articles/context-is-the-product/",
+   "target": "a:/articles/the-bill-is-part-of-the-loop/"
+  },
+  {
+   "source": "a:/articles/context-is-the-product/",
+   "target": "a:/articles/memory-is-a-write-path/"
   },
   {
    "source": "a:/articles/context-is-the-product/",
@@ -1884,7 +1896,23 @@
   },
   {
    "source": "a:/articles/your-agent-wants-root/",
+   "target": "a:/articles/the-bill-is-part-of-the-loop/"
+  },
+  {
+   "source": "a:/articles/your-agent-wants-root/",
+   "target": "a:/articles/memory-is-a-write-path/"
+  },
+  {
+   "source": "a:/articles/your-agent-wants-root/",
    "target": "a:/articles/what-an-agent-actually-is/"
+  },
+  {
+   "source": "a:/articles/what-an-agent-actually-is/",
+   "target": "a:/articles/the-bill-is-part-of-the-loop/"
+  },
+  {
+   "source": "a:/articles/what-an-agent-actually-is/",
+   "target": "a:/articles/retrieval-is-a-tool-not-a-layer/"
   },
   {
    "source": "a:/articles/what-an-agent-actually-is/",

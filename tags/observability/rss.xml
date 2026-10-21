@@ -3,7 +3,7 @@
     <channel>
       <title>Raskell - observability</title>
       <link>https://raskell.io</link>
-      <description>Writing about platform automation, edge systems, applied security, and open standards. Building automation-first platforms that survive production reality.</description>
+      <description>Notes on agent platforms, platform automation, edge infrastructure, and applied security. Building automation-first platforms that survive production reality.</description>
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/observability/rss.xml" rel="self" type="application/rss+xml"/>
@@ -163,7 +163,7 @@
 &lt;tr&gt;&lt;td&gt;Prompt and output on spans&lt;&#x2F;td&gt;&lt;td&gt;Full fidelity when you are debugging a bad answer&lt;&#x2F;td&gt;&lt;td&gt;A second uncontrolled copy of sensitive data, plus cost&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;Sampling&lt;&#x2F;td&gt;&lt;td&gt;Bounds the telemetry bill&lt;&#x2F;td&gt;&lt;td&gt;Head sampling drops the rare trace you most wanted&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
-&lt;p&gt;The row to watch is the last content row. A trace is only as safe as the least sensitive thing you put on it, and the pressure to attach the full prompt is strongest at exactly the moment you are debugging something important. Decide the redaction rule once, at the export boundary, and do not relax it per incident.&lt;&#x2F;p&gt;
+&lt;p&gt;The row to watch is the last content row. A trace is only as safe as the most sensitive thing you put on it, and the pressure to attach the full prompt is strongest at exactly the moment you are debugging something important. Decide the redaction rule once, at the export boundary, and do not relax it per incident.&lt;&#x2F;p&gt;
 &lt;p&gt;What this does not solve is judgment. The trace shows you that turn five cost thirty-nine cents and escalated to &lt;code&gt;opus&lt;&#x2F;code&gt;. It does not tell you whether that was the right call or a router that panics on hard prompts. It shows you the shell tool failed and retried. It does not tell you whether the migration was safe to retry at all. The trace is the evidence. Reading it is still the job, and knowing whether the run was actually &lt;em&gt;good&lt;&#x2F;em&gt;, not just observable, is a different feedback loop and the next post.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;where-this-lands-in-the-platform&quot;&gt;Where this lands in the platform&lt;&#x2F;h2&gt;
 &lt;p&gt;The loop can now route a turn, fail over when a provider is down, stay inside a budget, and reconstruct exactly what it did when you ask. Four of the properties an agent exposes at runtime, which model answered, whether it was up, what it cost, and the causal shape of the work, are now things the harness reads and records rather than things that happen to it and vanish.&lt;&#x2F;p&gt;

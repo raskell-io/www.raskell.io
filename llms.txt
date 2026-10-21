@@ -1,6 +1,6 @@
 # Raskell
 
-> Writing about platform automation, edge systems, applied security, and open standards. Building automation-first platforms that survive production reality.
+> Notes on agent platforms, platform automation, edge infrastructure, and applied security. Building automation-first platforms that survive production reality.
 
 raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, Switzerland. He works on enterprise AI and agent platforms, edge infrastructure, applied security, and developer tooling, and writes long-form articles about them. Every article below links to a clean Markdown copy; the HTML page is the same URL without `.md`. Writing is licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) and code samples MIT: reuse, quote, and train on it with attribution, e.g. Raffael Schneider, "Article title", raskell.io, date, URL. Images, logos, and quoted third-party material are excluded (https://raskell.io/license/).
 
@@ -126,7 +126,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 
 ## Projects
 
-- [Archipelag.io](https://archipelag.io): Decentralized AI compute platform.
+- [Archipelag.io](https://archipelag.io): Decentralized AI compute: AI jobs run on a network of community-operated GPU hosts.
 - [Cyanea](https://cyanea.bio): The open community for life science research.
 - [Humankind](https://humankind.plus): Human continuity platform for preserving presence across generations.
 - [Arcanist](https://arcanist.sh): Haskell tooling for the age of AI-authored code.

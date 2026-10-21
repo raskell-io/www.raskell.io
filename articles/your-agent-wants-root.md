@@ -228,7 +228,7 @@ export const shell: Tool = {
 };
 ```
 
-Total damage: one new file of ten lines, one moved import, and forty-five lines of `tools.ts`. In exchange, roughly a thousand-fold reduction in blast radius. The agent can still ask `rm -rf /`. It will return an exit code, an error, and a clean host. Network calls will fail closed. Reads outside `/work` are not possible because nothing is mounted into `/work`. The sandbox dies the moment the command returns, so persistence between calls is also gone, which is a separate problem we will pick up in [post six on memory](#).
+Total damage: one new file of ten lines, one moved import, and forty-five lines of `tools.ts`. In exchange, roughly a thousand-fold reduction in blast radius. The agent can still ask `rm -rf /`. It will return an exit code, an error, and a clean host. Network calls will fail closed. Reads outside `/work` are not possible because nothing is mounted into `/work`. The sandbox dies the moment the command returns, so persistence between calls is also gone, which is a separate problem we will pick up in [post six on memory](https://raskell.io/articles/memory-is-a-write-path/).
 
 A few things to notice.
 
@@ -259,14 +259,14 @@ The table assumes Linux. macOS does not have KVM, so Firecracker and gVisor are 
 Isolation is a necessary condition for a safe agent runtime. It is not a sufficient one. The honest list of what is still on your plate after this post.
 
 - **Outbound network policy.** `--network=none` is the right default for the shell tool. The moment you give an agent an `http` tool, you need an egress policy that distinguishes "the model should reach the public web" from "the model should never reach the internal metadata service." That is its own design problem.
-- **Persistent state.** A throwaway sandbox forgets everything between calls. Real agents need memory across tool invocations. The design question is which directories survive, who can read them, and what the eviction policy is. We will come back to this in [post six](#).
-- **Tool-level policy.** Even inside a perfectly isolated sandbox, you may want certain commands to require human approval. That is a permissions problem, not an isolation problem, and we will spend [post fourteen](#) on it.
-- **Identity.** A sandboxed container still has to call your tools, your models, and your APIs. Long-lived API keys baked into the image are how production agent fleets get embarrassed. [Post thirteen](#) puts SPIFFE under this stack.
-- **Time and resource budgets.** `--cpus=0.5` and `--memory=256m` cap a single invocation. They do not cap a loop that asks for one hundred invocations. Iteration budgets, token budgets, and wall-clock budgets are a separate fence. [Post sixteen](#) covers that fence.
+- **Persistent state.** A throwaway sandbox forgets everything between calls. Real agents need memory across tool invocations. The design question is which directories survive, who can read them, and what the eviction policy is. We will come back to this in [post six](https://raskell.io/articles/memory-is-a-write-path/).
+- **Tool-level policy.** Even inside a perfectly isolated sandbox, you may want certain commands to require human approval. That is a permissions problem, not an isolation problem, and a later post covers it.
+- **Identity.** A sandboxed container still has to call your tools, your models, and your APIs. Long-lived API keys baked into the image are how production agent fleets get embarrassed. A later post puts SPIFFE under this stack.
+- **Time and resource budgets.** `--cpus=0.5` and `--memory=256m` cap a single invocation. They do not cap a loop that asks for one hundred invocations. Iteration budgets, token budgets, and wall-clock budgets are a separate fence. [Post eight](https://raskell.io/articles/the-bill-is-part-of-the-loop/) covers the cost side of that fence.
 
 ## Where this lands in the platform
 
-You can hold the platform in your head one box at a time, and you can hold the harness on disk one tag at a time. Post one drew the agent loop and shipped it as [`post-01`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-01). This post opened the runtime box, put three concrete things inside it (a hardened container, a user-space kernel, a microVM), picked one, and shipped the result as [`post-02`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-02). The reference architecture in [post twenty-two](#) will keep this box exactly where it is and treat the contents as a choice that varies by workload.
+You can hold the platform in your head one box at a time, and you can hold the harness on disk one tag at a time. Post one drew the agent loop and shipped it as [`post-01`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-01). This post opened the runtime box, put three concrete things inside it (a hardened container, a user-space kernel, a microVM), picked one, and shipped the result as [`post-02`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-02). The reference architecture at the end of the series will keep this box exactly where it is and treat the contents as a choice that varies by workload.
 
 The rule from post one still holds. Each post adds one layer to the same harness and explains why the layer below was not enough. The harness only ever grows; it does not get rewritten.
 

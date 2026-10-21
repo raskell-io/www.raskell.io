@@ -85,12 +85,6 @@ The framing does sharpen one thing worth stating plainly. If emulation is a seri
 
 That said, anyone reading the thesis should know the framing is in there. Freeman does not hide it. It is part of why the thesis is worth reading, even if you arrive for the engineering numbers.
 
-## A note on doing this as field notes
-
-The other version of this post I considered was a "field notes" piece. Personal hook, two or three pulls from the thesis, post the same day. I decided against it for the same reason the thesis itself rejects shorter framings. Once you start treating the numbers seriously, the substrate question is the right place to land, and that does not fit in a few hundred words.
-
-The deeper reason is that the argument lives in a shape, not a number. A field note can carry a single striking figure, the cost per neuron falling two orders of magnitude, the 86-billion-neuron run. It cannot carry a mismatch, because a mismatch only becomes visible once you set three axes next to each other and see that the cluster overshoots on one, undershoots on another, and lands close on the third. A single number is a headline. Three numbers in the wrong proportion are an argument. The shorter form keeps the headline and loses the argument, and the argument was the only part worth the reader's time.
-
 I will probably come back to the thesis when the simulation and benchmarking sections give me sharper numbers than what I have used here. The State of Brain Emulation Report 2025, which Freeman cites as a multi-author companion document ([arXiv:2510.15745](https://arxiv.org/abs/2510.15745)), is also on my list. It lives at [brainemulation.mxschons.com](https://brainemulation.mxschons.com) for anyone who wants the broader synthesis before I get to it.
 
 ## Closing

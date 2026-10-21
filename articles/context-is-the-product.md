@@ -67,9 +67,9 @@ An agent gets context from three places, and the engineering decisions you make 
 
 Static context is the layer this post is about. It is the cheapest layer to get right and the one most teams skip because it feels like documentation rather than engineering. It is also the layer that compounds: every other layer of context loads on top of it, and a confused static layer makes every retrieval ambiguous and every tool output harder to interpret.
 
-Dynamic context is what post three started, with `fs_read` and `http_get`. It is also what RAG systems do at industrial scale. The model decides what it needs and a tool fetches it. We will come back to dynamic context as its own design problem in [post five](#) when we look at retrieval, embedding stores, and the per-task subsetting that lets a large repository fit into a small turn.
+Dynamic context is what post three started, with `fs_read` and `http_get`. It is also what RAG systems do at industrial scale. The model decides what it needs and a tool fetches it. We will come back to dynamic context as its own design problem in [post five](https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/) when we look at retrieval, embedding stores, and the per-task subsetting that lets a large repository fit into a small turn.
 
-Persistent context is memory. Notes the agent writes to itself. A session log. A long-running working set the next conversation gets to read. [Post six](#) is dedicated to it because the engineering story is genuinely different, and the design choices are larger than they look.
+Persistent context is memory. Notes the agent writes to itself. A session log. A long-running working set the next conversation gets to read. [Post six](https://raskell.io/articles/memory-is-a-write-path/) is dedicated to it because the engineering story is genuinely different, and the design choices are larger than they look.
 
 The honest version of the rule is that static context is necessary and not sufficient. Get it right and the other two layers have a fighting chance. Get it wrong and no amount of retrieval saves you.
 
@@ -434,20 +434,20 @@ The first time you hit any of these you will think the loader is broken. It is n
 
 **Citation theater.** The model picks up the citation pattern and starts citing files that were not in the loaded context. This happens because the model is good at pattern-matching and `(.AGENTS/conventions.md)` is a pattern. The fix is to read your traces. If a citation is wrong, the convention was either missing or unclear, and the file needs an edit.
 
-**Context overriding the operator.** A convention says "always reply in English." The user asks for a French answer. The model says no. The convention won. This is sometimes what you want and often not. Decide explicitly which rules are operator-overridable and which are not, and write the irreversible ones in the strongest voice. We will come back to this in [post fourteen](#) on policy.
+**Context overriding the operator.** A convention says "always reply in English." The user asks for a French answer. The model says no. The convention won. This is sometimes what you want and often not. Decide explicitly which rules are operator-overridable and which are not, and write the irreversible ones in the strongest voice. We will come back to this in a later post on policy.
 
-**Token cost surprise.** The loader is cheap. The cumulative cost of loading thirty-two kilobytes of context on every call is not. Prompt caching makes it manageable. Without prompt caching, your bill is roughly ten times what it would be without `.AGENTS/`. Turn caching on. We will spend [post eighteen](#) on the economics.
+**Token cost surprise.** The loader is cheap. The cumulative cost of loading thirty-two kilobytes of context on every call is not. Prompt caching makes it manageable. Without prompt caching, your bill is roughly ten times what it would be without `.AGENTS/`. Turn caching on. We will spend [post eight](https://raskell.io/articles/the-bill-is-part-of-the-loop/) on the economics.
 
 ## What this layer does not solve
 
 Static context is one layer. Things you might expect this post to cover that get a dedicated post later.
 
-- **Per-task subsetting.** Loading the whole `.AGENTS/` directory on every turn is wasteful for large repos. The next refinement is to load only the files relevant to the current task. That is a retrieval problem with a static-context shape, and we will pick it up in [post five](#).
-- **Memory across turns and sessions.** A note the agent wrote yesterday is not in `.AGENTS/`. It is in a memory layer with different lifetime, different ownership, and different write semantics. [Post six](#).
+- **Per-task subsetting.** Loading the whole `.AGENTS/` directory on every turn is wasteful for large repos. The next refinement is to load only the files relevant to the current task. That is a retrieval problem with a static-context shape, and we will pick it up in [post five](https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/).
+- **Memory across turns and sessions.** A note the agent wrote yesterday is not in `.AGENTS/`. It is in a memory layer with different lifetime, different ownership, and different write semantics. [Post six](https://raskell.io/articles/memory-is-a-write-path/).
 - **Per-tool context.** A tool might want a small chunk of context that only matters when it runs. "Reading this file? Here is what to expect in its structure." That belongs in the tool description, not in `.AGENTS/`. We covered the principle in [post three](https://raskell.io/articles/tools-how-agents-actually-do-things/).
-- **MCP-served context.** A team that runs many agents may want context to live in a shared service, not in every repo. MCP has a `resources/list` and `resources/read` shape that fits. [Post eight](#).
-- **Versioning, evals, and rollback.** A bad edit to `.AGENTS/conventions.md` can degrade every agent in the fleet. The discipline that wraps that is the same discipline that wraps any production string. Reviewed PRs, traced behavior, a rollback path. [Post sixteen](#) covers the eval side.
-- **Identity and authorization.** A convention that says "do not deploy to production" does not stop the agent from deploying to production if the tool is available. That is policy and identity, [post thirteen](#) and [post fourteen](#).
+- **MCP-served context.** A team that runs many agents may want context to live in a shared service, not in every repo. MCP has a `resources/list` and `resources/read` shape that fits. A later post covers MCP.
+- **Versioning, evals, and rollback.** A bad edit to `.AGENTS/conventions.md` can degrade every agent in the fleet. The discipline that wraps that is the same discipline that wraps any production string. Reviewed PRs, traced behavior, a rollback path. A later post covers the eval side.
+- **Identity and authorization.** A convention that says "do not deploy to production" does not stop the agent from deploying to production if the tool is available. That is policy and identity, which get their own posts later in the series.
 
 The pattern is the same as in the earlier posts. Each layer earns the right to be small by deferring everything that does not belong to it. The static-context layer earns its keep by being short, deterministic, and cited.
 
@@ -455,7 +455,7 @@ The pattern is the same as in the earlier posts. Each layer earns the right to b
 
 Total damage going from `post-03` to `post-04`: one new file (`context.ts`), one new directory (`.AGENTS/`) with three sample files, three changes in `agent.ts`. The loop, the registry, the tools, the sandbox, and the types are all untouched. The diff is roughly one hundred and twenty lines. In exchange, the agent now arrives at every turn knowing what the project is, how to talk about it, and what it is not allowed to do.
 
-In the reference architecture from [post twenty-two](#), the context layer is the seam between the project and the agent. The harness loads from it. The retriever in [post five](#) layers on top of it. The memory layer in [post six](#) writes alongside it. The policy layer in [post fourteen](#) reads from it to decide what is enforced and what is advisory. Same diagram as the earlier posts, with one more box filled in.
+In the reference architecture at the end of the series, the context layer is the seam between the project and the agent. The harness loads from it. The retriever in [post five](https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/) layers on top of it. The memory layer in [post six](https://raskell.io/articles/memory-is-a-write-path/) writes alongside it. The policy layer, when it arrives, reads from it to decide what is enforced and what is advisory. Same diagram as the earlier posts, with one more box filled in.
 
 The rule from the earlier posts still holds. The harness only ever grows; it does not get rewritten. Each post adds one layer to the same artifact and explains why the layer below was not enough.
 

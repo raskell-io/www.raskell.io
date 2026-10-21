@@ -318,9 +318,9 @@ The first time you hit one of these you will suspect the retriever. Usually the 
 The pattern from the earlier posts holds. Each layer earns the right to be small by deferring what does not belong to it.
 
 - **Embeddings for large corpora.** The tool boundary is built to absorb this. The day the corpus outgrows lexical ranking, the retriever behind `context_search` changes and nothing else does. This post does not build it because nothing at `.AGENTS/` scale needs it.
-- **Per-turn token budgeting.** Retrieved sections compete for the same window as the conversation history and the pinned context. Deciding how many sections to pull and how to evict them under pressure is a budgeting problem this post leaves at a fixed `k`. [Post eighteen](#) on economics returns to it.
+- **Per-turn token budgeting.** Retrieved sections compete for the same window as the conversation history and the pinned context. Deciding how many sections to pull and how to evict them under pressure is a budgeting problem this post leaves at a fixed `k`. [Post eight](https://raskell.io/articles/the-bill-is-part-of-the-loop/) on economics returns to it.
 - **Memory across turns and sessions.** Retrieval reads context the project wrote. It does not write anything. A note the agent leaves for its future self is a different layer with a different lifetime and different write semantics, and it is the whole subject of the next post.
-- **Shared context across many agents.** A fleet may want its context to live in a service rather than in every repo. The MCP `resources/list` and `resources/read` shape fits behind the same tool boundary. [Post eight](#).
+- **Shared context across many agents.** A fleet may want its context to live in a service rather than in every repo. The MCP `resources/list` and `resources/read` shape fits behind the same tool boundary. A later post covers MCP.
 
 ## Where this lands in the platform
 

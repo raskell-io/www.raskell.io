@@ -3,7 +3,7 @@
     <channel>
       <title>Raskell - knowledge-management</title>
       <link>https://raskell.io</link>
-      <description>Writing about platform automation, edge systems, applied security, and open standards. Building automation-first platforms that survive production reality.</description>
+      <description>Notes on agent platforms, platform automation, edge infrastructure, and applied security. Building automation-first platforms that survive production reality.</description>
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/knowledge-management/rss.xml" rel="self" type="application/rss+xml"/>
@@ -254,7 +254,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Forgetting on purpose.&lt;&#x2F;strong&gt; Overwrite-by-slug corrects a memory; it does not delete one that is simply obsolete. A &lt;code&gt;memory_forget&lt;&#x2F;code&gt; tool is a few lines, but eviction policy, deciding what ages out and when, is a real problem this post leaves at “rewrite or leave it.” The store grows until someone prunes it.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Conflict resolution.&lt;&#x2F;strong&gt; When a memory and the live system disagree, the prompt tells the agent to trust the system. When two memories disagree, the ranker picks one and the post does not arbitrate. Reconciling contradictory memories is its own design problem.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;Shared memory across a fleet.&lt;&#x2F;strong&gt; This memory is per-checkout, on local disk. A fleet of agents that should share what one of them learned needs the store behind a service rather than in every repo, and the MCP resource shape fits behind the same tool boundary. &lt;a href=&quot;#&quot;&gt;Post eight&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Shared memory across a fleet.&lt;&#x2F;strong&gt; This memory is per-checkout, on local disk. A fleet of agents that should share what one of them learned needs the store behind a service rather than in every repo, and the MCP resource shape fits behind the same tool boundary. A later post covers MCP.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Embeddings for a large memory.&lt;&#x2F;strong&gt; At a few dozen memories, lexical recall is the right answer for the same reasons it was in post five. The day the store outgrows it, the retriever behind &lt;code&gt;memory_search&lt;&#x2F;code&gt; changes and the tool boundary holds. Nothing at this scale needs it.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;where-this-lands-in-the-platform&quot;&gt;Where this lands in the platform&lt;&#x2F;h2&gt;
