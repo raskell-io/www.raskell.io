@@ -1,5 +1,5 @@
 title = "Cyanea"
-description = "Bioinformatics notebooks that actually re-run. Write, run, and share analyses that execute in your browser on WebAssembly, with nothing to install and nothing to upload. Every notebook, dataset, and output is a versioned snapshot you can run again. A Rust analysis stack underneath, 21 file formats built in. Open source, self-hostable, federated."
+description = "Bioinformatics notebooks that actually re-run. Write, run, and share analyses that execute in your browser on WebAssembly, with nothing to install. Every notebook, dataset, and output is a versioned snapshot you can run again. A Rust analysis stack underneath, 21 file formats built in. Open source, with self-hosting and federation on the way."
 status = "live"
 status_label = "Public alpha"
 logo = "brands/cyanea.svg"

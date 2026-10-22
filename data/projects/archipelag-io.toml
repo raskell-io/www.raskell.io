@@ -1,5 +1,5 @@
 title = "Archipelag.io"
-description = "Decentralized AI compute: AI jobs run on a network of community-operated GPU hosts. Jobs prefer nearby hosts, and a placement policy can keep them in a region to support data-residency needs. In free open beta: hosts earn virtual credits while metering is validated, and real-money payouts are not enabled yet."
+description = "Decentralized AI compute: AI jobs run on a network of community-operated GPU hosts. Jobs prefer nearby hosts and a preferred region, and every job records where it ran; strict regional enforcement is in development. In free open beta: hosts earn virtual credits while metering is validated, and real-money payouts are not enabled yet."
 status = "live"
 status_label = "Open beta"
 logo = "brands/archipelag.svg"
