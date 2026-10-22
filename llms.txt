@@ -101,6 +101,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Developer tooling (`developer-tooling`) [within Platform automation]: Package managers, build tools, CLIs, and the daily toolchain an engineer actually touches.
 - Self-hosting (`self-hosting`) [within Platform automation, Sovereignty]: Running your own infrastructure, from a single bare-metal box to community-operated compute.
 - Complex systems (`complex-systems`): Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.
+- Reinforcement learning (`reinforcement-learning`): Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill.
 - Local-first (`local-first`) [within Distributed systems]: Software that keeps data on your devices and syncs through CRDTs, with the network as an optimisation.
 - Knowledge management (`knowledge-management`): Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.
 - Open source (`oss`) [within The open web]: Open source and open standards as the point of the work, not just its licence.
@@ -139,6 +140,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - [coconutOS](https://github.com/coconut-os/coconutOS): A hard shell for AI inference.
 - [Terrarium](https://terrarium.raskell.io): A societal simulation engine where LLM-powered agents form emergent civilizations.
 - [Hotaru](https://hotaru.raskell.io): Simulated neuron cultures on a 60-electrode array play Pong in your browser, as in the DishBrain experiment.
+- [Kishi](https://kishi.raskell.io): A chess engine written in Rust and compiled to WebAssembly.
 - [Sango](https://sango.raskell.io): Edge diagnostics for the modern web.
 - [Conflux](https://github.com/raskell-io/conflux): Schema-aware config state coordination.
 - [Shiioo (CO)](https://github.com/raskell-io/shiioo): The Virtual Company OS.
@@ -153,6 +155,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - [Manabi](https://manabi.raskell.io): A reading-first language-learning app for Chinese, Japanese, Korean, and Hebrew.
 - [Kurumi](https://kurumi.raskell.io): A local-first, AI-native second brain.
 - [Paw & Claw](https://pawandclaw.raskell.io): A turn-based strategy game in the spirit of Advance Wars, fought by woodland armies.
+- [Kishi](https://kishi.raskell.io): A chess engine written in Rust and compiled to WebAssembly.
 - [Rainbow River](https://rainbowriver.raskell.io): A fishing game in the style of the 32-bit handhelds, inspired by The Legend of the River King.
 - [Terrarium](https://terrarium.raskell.io): A societal simulation engine where LLM-powered agents form emergent civilizations.
 - [Hotaru](https://hotaru.raskell.io): Simulated neuron cultures on a 60-electrode array play Pong in your browser, as in the DishBrain experiment.

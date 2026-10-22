@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-22T07:46:14+00:00",
+ "generated": "2026-10-22T15:01:20+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -613,7 +613,7 @@
    "url": "https://raskell.io/tags/rust/",
    "meta": "Technology · 7 pages",
    "description": "The systems language most of the projects here are written in.",
-   "degree": 28
+   "degree": 29
   },
   {
    "id": "t:self-hosting",
@@ -685,7 +685,7 @@
    "url": "https://raskell.io/tags#games",
    "meta": "Domain · no pages yet",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:geography",
@@ -706,6 +706,15 @@
    "degree": 1
   },
   {
+   "id": "t:reinforcement-learning",
+   "kind": "tag",
+   "label": "Reinforcement learning",
+   "url": "https://raskell.io/tags#reinforcement-learning",
+   "meta": "Concept · no pages yet",
+   "description": "Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill.",
+   "degree": 1
+  },
+  {
    "id": "t:simulation",
    "kind": "tag",
    "label": "Simulation",
@@ -721,7 +730,7 @@
    "url": "https://raskell.io/tags#webassembly",
    "meta": "Technology · no pages yet",
    "description": "Portable, sandboxed bytecode for running native-speed code in the browser and beyond.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "s:the-agent-platform-handbook",
@@ -885,6 +894,15 @@
    "degree": 7
   },
   {
+   "id": "p:kishi",
+   "kind": "project",
+   "label": "Kishi",
+   "url": "https://kishi.raskell.io",
+   "meta": "Project",
+   "description": "A chess engine written in Rust and compiled to WebAssembly. It plays in the browser on your own device, multi-threaded and offline, from novice to full strength. Its evaluation net…",
+   "degree": 6
+  },
+  {
    "id": "p:sango",
    "kind": "project",
    "label": "Sango",
@@ -1022,7 +1040,7 @@
    "label": "Labs / passion projects",
    "url": "https://raskell.io/projects/#tier-lab",
    "meta": "Group",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "h:apps-tools",
@@ -1038,7 +1056,7 @@
    "label": "Simulations and games",
    "url": "https://raskell.io/apps/#tier-play",
    "meta": "Group",
-   "degree": 4
+   "degree": 5
   }
  ],
  "links": [
@@ -2615,6 +2633,26 @@
    "target": "p:terrarium"
   },
   {
+   "source": "p:kishi",
+   "target": "h:projects-lab"
+  },
+  {
+   "source": "p:kishi",
+   "target": "t:games"
+  },
+  {
+   "source": "p:kishi",
+   "target": "t:reinforcement-learning"
+  },
+  {
+   "source": "p:kishi",
+   "target": "t:webassembly"
+  },
+  {
+   "source": "p:kishi",
+   "target": "t:rust"
+  },
+  {
    "source": "p:sango",
    "target": "h:projects-lab"
   },
@@ -2781,6 +2819,10 @@
   {
    "source": "p:paw-and-claw",
    "target": "t:rust"
+  },
+  {
+   "source": "p:kishi",
+   "target": "h:apps-play"
   },
   {
    "source": "p:rainbow-river",
