@@ -88,6 +88,7 @@ nav = [
 ]
 explore = [
   { name = "Start here", url = "@/start-here.md" },
+  { name = "Invest", url = "@/invest.md" },
   { name = "Map", url = "@/map.md" },
   { name = "Topics", url = "/tags" },
   { name = "Notes", url = "@/notes/_index.md" },
@@ -113,6 +114,6 @@ footer_groups = [
 ]
 social = [
   { name = "GitHub", url = "https://github.com/raffaelschneider" },
-  { name = "X", url = "https://x.com/raskelll" },
+  { name = "X", url = "https://x.com/raskelll", handle = "@raskelll" },
   { name = "LinkedIn", url = "https://ch.linkedin.com/in/raffael-e-schneider" },
 ]
