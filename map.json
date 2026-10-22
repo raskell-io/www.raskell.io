@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-22T07:29:57+00:00",
+ "generated": "2026-10-22T07:46:14+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -737,7 +737,7 @@
    "label": "Archipelag.io",
    "url": "https://archipelag.io",
    "meta": "Project",
-   "description": "Decentralized AI compute: AI jobs run on a network of community-operated GPU hosts. Jobs prefer nearby hosts, and a placement policy can keep them in a region to support data-resid…",
+   "description": "Decentralized AI compute: AI jobs run on a network of community-operated GPU hosts. Jobs prefer nearby hosts and a preferred region, and every job records where it ran; strict regi…",
    "degree": 16
   },
   {
@@ -746,7 +746,7 @@
    "label": "Cyanea",
    "url": "https://cyanea.bio",
    "meta": "Project",
-   "description": "Bioinformatics notebooks that actually re-run. Write, run, and share analyses that execute in your browser on WebAssembly, with nothing to install and nothing to upload. Every note…",
+   "description": "Bioinformatics notebooks that actually re-run. Write, run, and share analyses that execute in your browser on WebAssembly, with nothing to install. Every notebook, dataset, and out…",
    "degree": 9
   },
   {
