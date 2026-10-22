@@ -3,7 +3,10 @@ description = "Decentralized AI compute: AI jobs run on a network of community-o
 status = "live"
 status_label = "Open beta"
 logo = "brands/archipelag.svg"
+wordmark = "brands/archipelag-wordmark-light.svg"   # the brandtype, shown beside the logo as the card title
+wordmark_dark = "brands/archipelag-wordmark-dark.svg"
 featured = true
 links = [ { name = "Website", url = "https://archipelag.io" }, { name = "GitHub", url = "https://github.com/archipelag-io" } ]
+pitch = "@/pitch/archipelag-io.md"   # investor brief, linked from /invest/
 topics = ["distributed-systems", "sovereignty", "edge-systems", "inference", "isolation", "self-hosting"]
 accents = ["#00c9b0", "#ffe14d"]   # brand colours, used for the card glow

@@ -2,6 +2,8 @@ title = "hx"
 description = "The Haskell toolchain in one fast binary. hx installs GHC and Cabal, builds, tests, formats and lints your code, pins every dependency by hash, and publishes your packages. Written in Rust, it starts in milliseconds, works with the .cabal files and Hackage you already use, and gives AI agents the same commands over MCP."
 status = "live"
 logo = "brands/hx.png"
+wordmark = "brands/hx-wordmark-light.svg"   # the brandtype, shown beside the logo as the card title
+wordmark_dark = "brands/hx-wordmark-dark.svg"
 links = [ { name = "Website", url = "https://arcanist.sh/hx/" }, { name = "Docs", url = "https://docs.arcanist.sh/hx/docs/quickstart/" }, { name = "GitHub", url = "https://github.com/arcanist-sh/hx" } ]
 topics = ["haskell", "rust", "programming-languages", "developer-tooling"]
 related = ["arcanist"]

@@ -4,7 +4,10 @@ status = "live"
 status_label = "Public alpha"
 logo = "brands/cyanea.svg"
 logo_dark = "brands/cyanea-dark.svg"
+wordmark = "brands/cyanea-wordmark-light.svg"   # the brandtype, shown beside the logo as the card title
+wordmark_dark = "brands/cyanea-wordmark-dark.svg"
 featured = true
 links = [ { name = "Website", url = "https://cyanea.bio" }, { name = "Docs", url = "https://docs.cyanea.bio" }, { name = "GitHub", url = "https://github.com/cyanea-bio" } ]
+pitch = "@/pitch/cyanea.md"   # investor brief, linked from /invest/
 topics = ["oss", "rust", "webassembly", "self-hosting"]
 accents = ["#B9A6FF", "#8BE4F5"]   # brand colours (lavender, jelly cyan), used for the card glow

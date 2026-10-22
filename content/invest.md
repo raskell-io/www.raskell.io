@@ -14,7 +14,7 @@ A number of the things I build are open to investment. They come in two kinds, a
 
 Early-stage ventures I want to grow into companies. I am looking for angels, funds, and strategic partners who understand early infrastructure and deep-tech products.
 
-{{ project_cards(slugs=["archipelag-io", "cyanea", "humankind", "arcanist"]) }}
+{{ project_cards(slugs=["archipelag-io", "cyanea", "humankind", "arcanist"], pitch=true) }}
 
 ## Open-source projects
 

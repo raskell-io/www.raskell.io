@@ -2,5 +2,7 @@ title = "Vela"
 description = "No-downtime app deployment on bare metal. One binary. No containers. A self-hosted PaaS alternative to Heroku, Fly.io, Coolify, and Kamal. Built in Rust with zero-downtime deploys and a built-in reverse proxy."
 status = "dev"
 logo = "brands/vela.svg"
+wordmark = "brands/vela-wordmark-light.svg"   # the brandtype, shown beside the logo as the card title
+wordmark_dark = "brands/vela-wordmark-dark.svg"
 links = [ { name = "Website", url = "https://vela.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/vela" } ]
 topics = ["platform-automation", "self-hosting", "linux", "rust", "developer-tooling"]

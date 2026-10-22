@@ -3,6 +3,8 @@ description = "The Basel Haskell Compiler, a clean-slate compiler for the Haskel
 status = "dev"
 status_label = "Beta"
 logo = "brands/bhc.png"
+wordmark = "brands/bhc-wordmark-light.svg"   # the brandtype, shown beside the logo as the card title
+wordmark_dark = "brands/bhc-wordmark-dark.svg"
 links = [ { name = "Website", url = "https://arcanist.sh/bhc/" }, { name = "Docs", url = "https://docs.arcanist.sh/bhc/docs/quickstart/" }, { name = "GitHub", url = "https://github.com/arcanist-sh/bhc" } ]
 topics = ["haskell", "programming-languages", "formal-methods"]
 related = ["arcanist"]

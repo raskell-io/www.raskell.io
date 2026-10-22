@@ -2,6 +2,8 @@ title = "Zentinel"
 description = "Security-first reverse proxy built to guard the free web. Rust on Cloudflare's Pingora, explicit configuration over hidden defaults, and WAF, auth and other policy in isolated agents, so a crashing agent leaves the proxy running. Agents for WAF, bot management, identity, API inspection and scripting, SDKs from Rust to Haskell, a pure Rust ModSecurity engine and a fleet control plane."
 status = "stable"
 logo = "brands/zentinel.png"
+wordmark = "brands/zentinel-wordmark-light.svg"   # the brandtype, shown beside the logo as the card title
+wordmark_dark = "brands/zentinel-wordmark-dark.svg"
 featured = true
 links = [ { name = "Website", url = "https://zentinelproxy.io" }, { name = "Docs", url = "https://docs.zentinelproxy.io/" }, { name = "GitHub", url = "https://github.com/zentinelproxy/zentinel" } ]
 tagline = "Security-first reverse proxy on Pingora"   # short line for support cards
