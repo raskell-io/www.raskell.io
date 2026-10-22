@@ -8,6 +8,6 @@ count_label = "apps"
 # Each app is a TOML file in data/projects/<slug>.toml, same format as the projects page.
 tiers = [
   { key = "tools", title = "Tools", size = "large", deck = "Local-first apps that run in your browser and work offline. Your data stays on your devices.", projects = ["manabi", "kurumi"] },
-  { key = "play", title = "Simulations and games", size = "large", deck = "Worlds with rules, played turn by turn or left to evolve on their own.", projects = ["paw-and-claw", "rainbow-river", "terrarium", "hotaru"] },
+  { key = "play", title = "Simulations and games", size = "large", deck = "Worlds with rules, played turn by turn or left to evolve on their own.", projects = ["paw-and-claw", "kishi", "rainbow-river", "terrarium", "hotaru"] },
 ]
 +++

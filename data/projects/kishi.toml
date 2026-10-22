@@ -1,0 +1,10 @@
+title = "Kishi"
+description = "A chess engine written in Rust and compiled to WebAssembly. It plays in the browser on your own device, multi-threaded and offline, from novice to full strength. Its evaluation network learns by playing itself."
+status = "live"
+status_label = "Playable"
+logo = "brands/kishi.svg"
+wordmark = "brands/kishi-wordmark-light.svg"   # the brandtype, shown beside the logo as the card title
+wordmark_dark = "brands/kishi-wordmark-dark.svg"
+links = [ { name = "Play", url = "https://kishi.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/kishi" } ]
+topics = ["games", "reinforcement-learning", "webassembly", "rust"]
+accents = ["#79c0ff", "#7ee787"]   # brand colours, used for the card glow

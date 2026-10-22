@@ -164,6 +164,11 @@ name = "Complex systems"
 kind = "concept"
 description = "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies."
 
+[reinforcement-learning]
+name = "Reinforcement learning"
+kind = "concept"
+description = "Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill."
+
 [local-first]
 name = "Local-first"
 kind = "concept"
