@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-24T06:45:12+00:00",
+ "generated": "2026-10-24T07:00:10+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -667,7 +667,7 @@
    "url": "https://raskell.io/tags#complex-systems",
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:evaluation",
@@ -694,7 +694,7 @@
    "url": "https://raskell.io/tags#geography",
    "meta": "Domain · no pages yet",
    "description": "Places, terrain, borders, and spatial data, and how their relationships change over time.",
-   "degree": 2
+   "degree": 4
   },
   {
    "id": "t:history",
@@ -703,7 +703,7 @@
    "url": "https://raskell.io/tags#history",
    "meta": "Domain · no pages yet",
    "description": "Events, institutions, and societies through time, with attention to sources, competing accounts, and uncertainty.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "t:history-of-science",
@@ -1065,6 +1065,56 @@
    "degree": 4
   },
   {
+   "id": "w:the-cauldron",
+   "kind": "work",
+   "label": "The Cauldron",
+   "url": "https://raskell.io/reading/#the-cauldron",
+   "meta": "Book · Simon Sebag Montefiore · read 2026",
+   "description": "The Making of the Modern Middle East",
+   "degree": 3
+  },
+  {
+   "id": "w:infinite-jest",
+   "kind": "work",
+   "label": "Infinite Jest",
+   "url": "https://raskell.io/reading/#infinite-jest",
+   "meta": "Novel · David Foster Wallace · read 2025",
+   "degree": 1
+  },
+  {
+   "id": "w:guns-germs-and-steel",
+   "kind": "work",
+   "label": "Guns, Germs, and Steel",
+   "url": "https://raskell.io/reading/#guns-germs-and-steel",
+   "meta": "Book · Jared Diamond · read 2025",
+   "description": "The Fates of Human Societies",
+   "degree": 3
+  },
+  {
+   "id": "w:nuclear-war-a-scenario",
+   "kind": "work",
+   "label": "Nuclear War: A Scenario",
+   "url": "https://raskell.io/reading/#nuclear-war-a-scenario",
+   "meta": "Book · Annie Jacobsen · read 2025",
+   "degree": 1
+  },
+  {
+   "id": "w:jurassic-park",
+   "kind": "work",
+   "label": "Jurassic Park",
+   "url": "https://raskell.io/reading/#jurassic-park",
+   "meta": "Novel · Michael Crichton · read 2025",
+   "degree": 2
+  },
+  {
+   "id": "w:the-books-of-jacob",
+   "kind": "work",
+   "label": "The Books of Jacob",
+   "url": "https://raskell.io/reading/#the-books-of-jacob",
+   "meta": "Novel · Olga Tokarczuk · read 2024",
+   "degree": 1
+  },
+  {
    "id": "w:from-worm-to-human",
    "kind": "work",
    "label": "From Worm to Human: Scaling Brain Emulation",
@@ -1259,7 +1309,7 @@
    "label": "Read",
    "url": "https://raskell.io/reading/#shelf-read",
    "meta": "Shelf",
-   "degree": 3
+   "degree": 9
   },
   {
    "id": "h:projects-venture",
@@ -3130,6 +3180,50 @@
   {
    "source": "w:the-infinity-machine",
    "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:the-cauldron",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-cauldron",
+   "target": "t:history"
+  },
+  {
+   "source": "w:the-cauldron",
+   "target": "t:geography"
+  },
+  {
+   "source": "w:infinite-jest",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:guns-germs-and-steel",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:guns-germs-and-steel",
+   "target": "t:history"
+  },
+  {
+   "source": "w:guns-germs-and-steel",
+   "target": "t:geography"
+  },
+  {
+   "source": "w:nuclear-war-a-scenario",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:jurassic-park",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:jurassic-park",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "w:the-books-of-jacob",
+   "target": "h:shelf-read"
   },
   {
    "source": "w:from-worm-to-human",
