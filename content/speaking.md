@@ -5,6 +5,8 @@ description = "Talks, panels, and podcasts on agentic AI, post-AI-authored code,
 
 ## Talks
 
+The slide decks are collected under [Talks](@/talks/_index.md).
+
 {% card(title="I Stopped Writing Most of My Code", url="/talks/iat-13-basel/", eyebrow="IT's ABOUT TECH #13, Basel", meta="June 10, 2026 · FHNW Aula", links=["Open the slide deck|/talks/iat-13-basel/", "Event page|https://www.swissmadesoftware.org/en/news/2026/iat--13.html"]) %}
 A 15-minute showcase at swiss made software's IT's ABOUT TECH evening on the theme "Hand's on software engineering was yesterday, now it's AI — Really?". Not a tool talk. A story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time.
 

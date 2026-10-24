@@ -12,6 +12,7 @@ build_search_index = true
 taxonomies = [
     { name = "tags", feed = true },
     { name = "series", feed = true },
+    { name = "categories", feed = true },
 ]
 
 [markdown]
@@ -64,6 +65,10 @@ og_cards = true                # a generated 1200x630 card per page (mise run og
 og_home_title = "Notes from the machine room."
 og_home_meta = "Raffael Schneider · Basel"
 series_descriptions = { "the-agent-platform-handbook" = "Building an agent platform from first principles, one working piece of TypeScript per part." }
+# Categories are forms of writing (topics say what a page is about). Every category used in content must be
+# described here; `mise run tags-check` enforces it. Reviews: pages with extra.review, and only those.
+categories_descriptions = { "reviews" = "Reviews of books, papers, and long articles from the reading log: what the work argues, where I was persuaded, and what I made of it." }
+categories_deck = "Forms of writing on this site, alongside the topics they cover."
 og_locale = "en_US"
 scheme_toggle = true
 code_copy = true
@@ -78,8 +83,9 @@ projects_section = "projects"
 cta = { name = "Start here", url = "@/start-here.md" }
 map = "@/map.md"
 reading = "@/reading.md"
+search = "@/search.md"
 reading_data = "data/reading.toml"
-graph_sections = ["articles", "notes"]
+graph_sections = ["articles", "notes", "talks"]
 tag_data = "data/tags.toml"
 nav = [
   { name = "Articles", url = "@/articles/_index.md" },
@@ -90,11 +96,14 @@ nav = [
 ]
 explore = [
   { name = "Start here", url = "@/start-here.md" },
+  { name = "Search", url = "@/search.md" },
   { name = "Invest", url = "@/invest.md" },
   { name = "Map", url = "@/map.md" },
   { name = "Topics", url = "/tags" },
   { name = "Notes", url = "@/notes/_index.md" },
   { name = "Reading", url = "@/reading.md" },
+  { name = "Reviews", url = "/categories/reviews/" },
+  { name = "Talks", url = "@/talks/_index.md" },
   { name = "Series", url = "/series" },
   { name = "The Handbook", url = "/series/the-agent-platform-handbook/" },
 ]

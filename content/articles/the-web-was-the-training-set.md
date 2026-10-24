@@ -5,6 +5,7 @@ description = "Tim Berners-Lee's memoir is the story of a British engineer at a 
 
 [taxonomies]
 tags = ["history-of-technology", "hypertext", "open-standards", "training-data", "decentralisation", "data-sovereignty", "agents"]
+categories = ["reviews"]
 
 [extra]
 author = "Raffael"
