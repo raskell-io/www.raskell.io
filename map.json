@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-22T15:27:53+00:00",
+ "generated": "2026-10-24T05:45:00+00:00",
  "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -899,7 +899,7 @@
    "label": "Kishi",
    "url": "https://kishi.raskell.io",
    "meta": "Project",
-   "description": "A chess engine written in Rust and compiled to WebAssembly. It plays in the browser on your own device, multi-threaded and offline, from novice to full strength. Its evaluation net…",
+   "description": "Chess and shogi against engines written in Rust and compiled to WebAssembly. They play in the browser on your own device, offline, from novice to full strength, on a quiet board. G…",
    "degree": 6
   },
   {
