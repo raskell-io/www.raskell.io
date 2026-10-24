@@ -4,7 +4,7 @@ url: https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on
 author: Raffael Schneider
 date: 2026-06-30
 description: "Frontier AI is running short on public text, not compute. Europe's edge is the high-quality data it never put online. Capturing it needs coordination."
-tags: [sovereignty, policy, economics]
+tags: [sovereignty, training-data, open-data, policy, economics]
 ---
 
 # The Bottleneck Is Data, and Europe Is Sitting on It

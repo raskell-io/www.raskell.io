@@ -5,7 +5,7 @@ author: Raffael Schneider
 date: 2025-12-31
 updated: 2026-03-08
 description: "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself."
-tags: [open-web, edge-systems, meta]
+tags: [open-web, decentralisation, attention-economy, privacy, open-standards, edge-systems, meta]
 ---
 
 # Looking back on 2025

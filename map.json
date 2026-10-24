@@ -1,8 +1,17 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-24T07:05:21+00:00",
+ "generated": "2026-10-24T09:17:13+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/the-web-was-the-training-set/",
+   "kind": "article",
+   "label": "The Web Was the Training Set",
+   "url": "https://raskell.io/articles/the-web-was-the-training-set/",
+   "meta": "2026-10-24 · 16 min",
+   "description": "Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply.",
+   "degree": 13
+  },
   {
    "id": "a:/articles/observability-is-not-logging/",
    "kind": "article",
@@ -19,7 +28,7 @@
    "url": "https://raskell.io/articles/this-site-is-becoming-a-map/",
    "meta": "2026-10-15 · 9 min",
    "description": "A blog shows what I wrote last. The new map on raskell.io shows what I keep coming back to, and it is the start of a public second brain.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "a:/articles/the-bill-is-part-of-the-loop/",
@@ -46,7 +55,7 @@
    "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
    "meta": "2026-06-30 · 34 min",
    "description": "Frontier AI is running short on public text, not compute. Europe's edge is the high-quality data it never put online. Capturing it needs coordination.",
-   "degree": 8
+   "degree": 11
   },
   {
    "id": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
@@ -64,7 +73,7 @@
    "url": "https://raskell.io/articles/memory-is-a-write-path/",
    "meta": "2026-06-23 · 19 min",
    "description": "Retrieval reads context the project authored. Memory is the agent writing context for its own future sessions, and the write is the part that is dangerous. Why session memory comes free from the transcript, why cross-session memory needs a separate write surface, and how to let an agent remember without letting it corrupt its own ground truth. Part six of The Agent Platform Handbook.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "a:/articles/the-proof-you-only-have-to-write-once/",
@@ -91,7 +100,7 @@
    "url": "https://raskell.io/articles/context-is-the-product/",
    "meta": "2026-06-13 · 26 min",
    "description": "Models are commodities. Context is not. The sources of context an agent draws on, why retrieval alone is not enough, and a minimal .AGENTS/ convention that loads context from disk into the same harness we have been building. Part four of The Agent Platform Handbook.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/tools-how-agents-actually-do-things/",
@@ -262,7 +271,7 @@
    "url": "https://raskell.io/articles/looking-back-on-2025/",
    "meta": "2025-12-31 · 7 min",
    "description": "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself.",
-   "degree": 10
+   "degree": 15
   },
   {
    "id": "a:/articles/mise-ate-my-makefile/",
@@ -314,9 +323,9 @@
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 11 pages",
+   "meta": "Concept · 12 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 16
+   "degree": 18
   },
   {
    "id": "t:ai-engineering",
@@ -352,7 +361,16 @@
    "url": "https://raskell.io/tags/applied-security/",
    "meta": "Domain · 5 pages",
    "description": "Security under production pressure: adversarial input, signal versus noise, and controls that operators can live with.",
-   "degree": 9
+   "degree": 10
+  },
+  {
+   "id": "t:attention-economy",
+   "kind": "tag",
+   "label": "Attention economy",
+   "url": "https://raskell.io/tags/attention-economy/",
+   "meta": "Concept · 1 page",
+   "description": "Platforms that sell attention and optimise for engagement, what that does to the web and to discourse, and the intention economy proposed in its place.",
+   "degree": 4
   },
   {
    "id": "t:context-engineering",
@@ -362,6 +380,24 @@
    "meta": "Concept · 3 pages",
    "description": "Deciding what a model sees: pinned context, retrieval, memory, and the conventions that keep them honest.",
    "degree": 4
+  },
+  {
+   "id": "t:data-sovereignty",
+   "kind": "tag",
+   "label": "Data sovereignty",
+   "url": "https://raskell.io/tags/data-sovereignty/",
+   "meta": "Concept · 1 page",
+   "description": "Control over one's own data: pods, portability, and the right to choose the software and the agent that reads it; the personal counterpart of national sovereignty.",
+   "degree": 6
+  },
+  {
+   "id": "t:decentralisation",
+   "kind": "tag",
+   "label": "Decentralisation",
+   "url": "https://raskell.io/tags/decentralisation/",
+   "meta": "Concept · 2 pages",
+   "description": "Many small nodes and no central operator: the web's original shape, and the alternative to platforms that own the users and the data.",
+   "degree": 5
   },
   {
    "id": "t:developer-tooling",
@@ -379,7 +415,7 @@
    "url": "https://raskell.io/tags/distributed-systems/",
    "meta": "Domain · 3 pages",
    "description": "Replication, coordination, and consistency across machines that fail independently.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:economics",
@@ -388,7 +424,7 @@
    "url": "https://raskell.io/tags/economics/",
    "meta": "Concept · 8 pages",
    "description": "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:edge-systems",
@@ -434,6 +470,24 @@
    "meta": "Technology · 6 pages",
    "description": "The language that shaped how I think about types, effects, and correctness.",
    "degree": 10
+  },
+  {
+   "id": "t:history-of-technology",
+   "kind": "tag",
+   "label": "History of technology",
+   "url": "https://raskell.io/tags/history-of-technology/",
+   "meta": "Concept · 1 page",
+   "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
+   "degree": 6
+  },
+  {
+   "id": "t:hypertext",
+   "kind": "tag",
+   "label": "Hypertext",
+   "url": "https://raskell.io/tags/hypertext/",
+   "meta": "Concept · 2 pages",
+   "description": "Links as the unit of the web: addresses that can point at anything, the read-write web that was intended, and what a graph of documents can do that a tree cannot.",
+   "degree": 4
   },
   {
    "id": "t:inference",
@@ -517,13 +571,31 @@
    "degree": 7
   },
   {
+   "id": "t:open-data",
+   "kind": "tag",
+   "label": "Open data",
+   "url": "https://raskell.io/tags/open-data/",
+   "meta": "Concept · 1 page",
+   "description": "Data published for anyone to use: government records, archives, and the five-star ladder from a file on the web to linked data with addresses.",
+   "degree": 4
+  },
+  {
+   "id": "t:open-standards",
+   "kind": "tag",
+   "label": "Open standards",
+   "url": "https://raskell.io/tags/open-standards/",
+   "meta": "Concept · 2 pages",
+   "description": "Protocols and formats agreed in the open and free to implement: HTTP, HTML, TCP/IP, RSS, and the consortia and working groups that keep them so.",
+   "degree": 4
+  },
+  {
    "id": "t:open-web",
    "kind": "tag",
    "label": "The open web",
    "url": "https://raskell.io/tags/open-web/",
    "meta": "Domain · 3 pages",
    "description": "The web as a commons: open protocols, small independent sites, and publishing outside the platforms.",
-   "degree": 8
+   "degree": 13
   },
   {
    "id": "t:openbsd",
@@ -558,7 +630,7 @@
    "label": "Open source",
    "url": "https://raskell.io/tags/oss/",
    "meta": "Concept · 3 pages",
-   "description": "Open source and open standards as the point of the work, not just its licence.",
+   "description": "Open source as the point of the work, not just its licence.",
    "degree": 8
   },
   {
@@ -586,7 +658,16 @@
    "url": "https://raskell.io/tags/policy/",
    "meta": "Domain · 3 pages",
    "description": "Where engineering meets regulation, public institutions, procurement, and national strategy.",
-   "degree": 4
+   "degree": 5
+  },
+  {
+   "id": "t:privacy",
+   "kind": "tag",
+   "label": "Privacy",
+   "url": "https://raskell.io/tags/privacy/",
+   "meta": "Concept · 1 page",
+   "description": "Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place.",
+   "degree": 5
   },
   {
    "id": "t:programming-languages",
@@ -631,7 +712,16 @@
    "url": "https://raskell.io/tags/sovereignty/",
    "meta": "Domain · 5 pages",
    "description": "Who controls compute, data, and infrastructure, and in which jurisdiction; Europe's position in particular.",
-   "degree": 9
+   "degree": 11
+  },
+  {
+   "id": "t:training-data",
+   "kind": "tag",
+   "label": "Training data",
+   "url": "https://raskell.io/tags/training-data/",
+   "meta": "Concept · 2 pages",
+   "description": "What models learn from: web crawls, books, and licensed or unlicensed corpora; who holds what has not been scraped yet, and on what terms.",
+   "degree": 4
   },
   {
    "id": "t:typescript",
@@ -715,15 +805,6 @@
    "degree": 5
   },
   {
-   "id": "t:history-of-technology",
-   "kind": "tag",
-   "label": "History of technology",
-   "url": "https://raskell.io/tags#history-of-technology",
-   "meta": "Concept · no pages yet",
-   "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 5
-  },
-  {
    "id": "t:life-sciences",
    "kind": "tag",
    "label": "Life sciences",
@@ -739,7 +820,7 @@
    "url": "https://raskell.io/tags#machine-learning",
    "meta": "Domain · no pages yet",
    "description": "How models learn from data: the mathematics, the training methods, and what the results can and cannot do.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:neuroscience",
@@ -1026,7 +1107,7 @@
    "url": "https://manabi.raskell.io",
    "meta": "Project",
    "description": "A reading-first language-learning app for Chinese, Japanese, Korean, and Hebrew. It trains recognition, pronunciation, listening, context, and recall separately, with spaced repeti…",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "p:kurumi",
@@ -1035,7 +1116,7 @@
    "url": "https://kurumi.raskell.io",
    "meta": "Project",
    "description": "A local-first, AI-native second brain. Capture notes, links, and meetings, then find them again through wikilinks, backlinks, a graph view, and full-text search. Everything works o…",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "p:paw-and-claw",
@@ -1062,14 +1143,14 @@
    "url": "https://raskell.io/reading/#the-infinity-machine",
    "meta": "Book · Sebastian Mallaby · reading now",
    "description": "Demis Hassabis, DeepMind, and the Quest for Superintelligence",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:the-cauldron",
    "kind": "work",
    "label": "The Cauldron",
    "url": "https://raskell.io/reading/#the-cauldron",
-   "meta": "Book · Simon Sebag Montefiore · read 2026",
+   "meta": "Book · Simon Sebag Montefiore · read September 2026",
    "description": "The Making of the Modern Middle East",
    "degree": 3
   },
@@ -1078,7 +1159,7 @@
    "kind": "work",
    "label": "Infinite Jest",
    "url": "https://raskell.io/reading/#infinite-jest",
-   "meta": "Novel · David Foster Wallace · read 2025",
+   "meta": "Novel · David Foster Wallace · read December 2025",
    "degree": 1
   },
   {
@@ -1086,7 +1167,7 @@
    "kind": "work",
    "label": "Guns, Germs, and Steel",
    "url": "https://raskell.io/reading/#guns-germs-and-steel",
-   "meta": "Book · Jared Diamond · read 2025",
+   "meta": "Book · Jared Diamond · read November 2025",
    "description": "The Fates of Human Societies",
    "degree": 3
   },
@@ -1095,7 +1176,7 @@
    "kind": "work",
    "label": "Nuclear War: A Scenario",
    "url": "https://raskell.io/reading/#nuclear-war-a-scenario",
-   "meta": "Book · Annie Jacobsen · read 2025",
+   "meta": "Book · Annie Jacobsen · read October 2025",
    "degree": 1
   },
   {
@@ -1103,7 +1184,7 @@
    "kind": "work",
    "label": "Jurassic Park",
    "url": "https://raskell.io/reading/#jurassic-park",
-   "meta": "Novel · Michael Crichton · read 2025",
+   "meta": "Novel · Michael Crichton · read July 2025",
    "degree": 2
   },
   {
@@ -1111,7 +1192,7 @@
    "kind": "work",
    "label": "The Books of Jacob",
    "url": "https://raskell.io/reading/#the-books-of-jacob",
-   "meta": "Novel · Olga Tokarczuk · read 2024",
+   "meta": "Novel · Olga Tokarczuk · read August 2024",
    "degree": 1
   },
   {
@@ -1119,7 +1200,7 @@
    "kind": "work",
    "label": "From Worm to Human: Scaling Brain Emulation",
    "url": "https://raskell.io/reading/#from-worm-to-human",
-   "meta": "Paper · Isaak Freeman · read 2026",
+   "meta": "Paper · Isaak Freeman · read June 2026",
    "description": "A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan.",
    "degree": 5
   },
@@ -1128,7 +1209,7 @@
    "kind": "work",
    "label": "State of Brain Emulation Report 2025",
    "url": "https://raskell.io/reading/#state-of-brain-emulation-2025",
-   "meta": "Report · Zanichelli, Schons, Freeman, Shiu, and Arkhipov · read 2026",
+   "meta": "Report · Zanichelli, Schons, Freeman, Shiu, and Arkhipov · read June 2026",
    "description": "The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are.",
    "degree": 4
   },
@@ -1136,10 +1217,10 @@
    "id": "w:this-is-for-everyone",
    "kind": "work",
    "label": "This Is for Everyone",
-   "url": "https://raskell.io/reading/#this-is-for-everyone",
-   "meta": "Book · Tim Berners-Lee · read 2025",
-   "description": "Read on the shores of Okinawa: the web as a commons, and how far what we built drifted from it.",
-   "degree": 4
+   "url": "https://raskell.io/articles/the-web-was-the-training-set/",
+   "meta": "Book · Tim Berners-Lee · read October 2025",
+   "description": "Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all.",
+   "degree": 14
   },
   {
    "id": "w:why-machines-learn",
@@ -1362,6 +1443,10 @@
  ],
  "links": [
   {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "t:agents"
+  },
+  {
    "source": "a:/articles/observability-is-not-logging/",
    "target": "t:agents"
   },
@@ -1482,6 +1567,18 @@
    "target": "t:applied-security"
   },
   {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "t:attention-economy"
+  },
+  {
+   "source": "t:attention-economy",
+   "target": "t:economics"
+  },
+  {
+   "source": "t:attention-economy",
+   "target": "t:open-web"
+  },
+  {
    "source": "a:/articles/memory-is-a-write-path/",
    "target": "t:context-engineering"
   },
@@ -1496,6 +1593,34 @@
   {
    "source": "t:context-engineering",
    "target": "t:agents"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "t:data-sovereignty"
+  },
+  {
+   "source": "t:data-sovereignty",
+   "target": "t:sovereignty"
+  },
+  {
+   "source": "t:data-sovereignty",
+   "target": "t:privacy"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "t:decentralisation"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "t:decentralisation"
+  },
+  {
+   "source": "t:decentralisation",
+   "target": "t:open-web"
+  },
+  {
+   "source": "t:decentralisation",
+   "target": "t:distributed-systems"
   },
   {
    "source": "a:/articles/traffic-replay-as-a-security-primitive/",
@@ -1666,6 +1791,26 @@
    "target": "t:programming-languages"
   },
   {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "t:history-of-technology",
+   "target": "t:history"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "t:hypertext"
+  },
+  {
+   "source": "a:/articles/this-site-is-becoming-a-map/",
+   "target": "t:hypertext"
+  },
+  {
+   "source": "t:hypertext",
+   "target": "t:open-web"
+  },
+  {
    "source": "a:/articles/the-model-is-a-dependency/",
    "target": "t:inference"
   },
@@ -1786,6 +1931,30 @@
    "target": "t:reliability"
   },
   {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "t:open-data"
+  },
+  {
+   "source": "t:open-data",
+   "target": "t:open-web"
+  },
+  {
+   "source": "t:open-data",
+   "target": "t:policy"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "t:open-standards"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "t:open-standards"
+  },
+  {
+   "source": "t:open-standards",
+   "target": "t:open-web"
+  },
+  {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "t:open-web"
   },
@@ -1876,6 +2045,18 @@
   {
    "source": "a:/articles/notes-from-rsac-2026/",
    "target": "t:policy"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "t:privacy"
+  },
+  {
+   "source": "t:privacy",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "t:privacy",
+   "target": "t:sovereignty"
   },
   {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
@@ -1986,6 +2167,18 @@
    "target": "t:sovereignty"
   },
   {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "t:training-data"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "t:training-data"
+  },
+  {
+   "source": "t:training-data",
+   "target": "t:machine-learning"
+  },
+  {
    "source": "a:/articles/observability-is-not-logging/",
    "target": "t:typescript"
   },
@@ -2062,10 +2255,6 @@
    "target": "t:history"
   },
   {
-   "source": "t:history-of-technology",
-   "target": "t:history"
-  },
-  {
    "source": "t:neuroscience",
    "target": "t:life-sciences"
   },
@@ -2116,6 +2305,22 @@
   {
    "source": "a:/articles/what-an-agent-actually-is/",
    "target": "s:the-agent-platform-handbook"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "a:/articles/memory-is-a-write-path/"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "a:/articles/context-is-the-product/"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "a:/articles/looking-back-on-2025/"
   },
   {
    "source": "a:/articles/observability-is-not-logging/",
@@ -3103,6 +3308,10 @@
   },
   {
    "source": "p:manabi",
+   "target": "t:data-sovereignty"
+  },
+  {
+   "source": "p:manabi",
    "target": "t:typescript"
   },
   {
@@ -3112,6 +3321,10 @@
   {
    "source": "p:kurumi",
    "target": "t:local-first"
+  },
+  {
+   "source": "p:kurumi",
+   "target": "t:data-sovereignty"
   },
   {
    "source": "p:kurumi",
@@ -3180,6 +3393,10 @@
   {
    "source": "w:the-infinity-machine",
    "target": "t:history-of-technology"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "w:the-infinity-machine"
   },
   {
    "source": "w:the-cauldron",
@@ -3272,6 +3489,46 @@
   {
    "source": "w:this-is-for-everyone",
    "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:hypertext"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:open-standards"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:decentralisation"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:open-data"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:training-data"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:privacy"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:data-sovereignty"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:attention-economy"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "w:this-is-for-everyone"
   },
   {
    "source": "a:/articles/looking-back-on-2025/",

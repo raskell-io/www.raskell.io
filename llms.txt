@@ -28,6 +28,7 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 
 ## Articles
 
+- [The Web Was the Training Set](https://raskell.io/articles/the-web-was-the-training-set.md) (2026-10-24): Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply.
 - [Observability Is Not Logging](https://raskell.io/articles/observability-is-not-logging.md) (2026-10-20): A cost total says nothing about how a run went. This part turns each agent run into a trace: which turn escalated, which tool failed, where the money went.
 - [This Site Is Becoming a Map](https://raskell.io/articles/this-site-is-becoming-a-map.md) (2026-10-15): A blog shows what I wrote last. The new map on raskell.io shows what I keep coming back to, and it is the start of a public second brain.
 - [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop.md) (2026-07-18): Every model response already carries its own bill in the usage field, and the loop throws it away. This post reads that field, prices it against a table, and turns cost into a value the loop can see per turn and act on: a metering decorator that needs no loop change, a running ledger, prompt-cache accounting that moves the number the most, and a budget that degrades before it stops. Part eight of The Agent Platform Handbook.
@@ -93,15 +94,15 @@ Books, papers, and long articles from the reading log at https://raskell.io/read
 
 ### Read
 
-- [The Cauldron](https://www.hachette.co.uk/titles/simon-sebag-montefiore/the-cauldron/9781399634939/), Simon Sebag Montefiore (book, finished 2026-09)
-- [From Worm to Human: Scaling Brain Emulation](https://pdf.isaak.net/scaling-emulations), Isaak Freeman (paper, finished 2026-06): A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan.
-- [State of Brain Emulation Report 2025](https://arxiv.org/abs/2510.15745), Zanichelli, Schons, Freeman, Shiu, and Arkhipov (report, finished 2026-06): The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are.
-- Infinite Jest, David Foster Wallace (novel, finished 2025-12)
-- Guns, Germs, and Steel, Jared Diamond (book, finished 2025-11)
-- [Nuclear War: A Scenario](https://en.wikipedia.org/wiki/Nuclear_War:_A_Scenario), Annie Jacobsen (book, finished 2025-10)
-- This Is for Everyone, Tim Berners-Lee (book, finished 2025-10): Read on the shores of Okinawa: the web as a commons, and how far what we built drifted from it.
-- Jurassic Park, Michael Crichton (novel, finished 2025-07)
-- The Books of Jacob, Olga Tokarczuk (novel, finished 2024-07)
+- [The Cauldron](https://www.hachette.co.uk/titles/simon-sebag-montefiore/the-cauldron/9781399634939/), Simon Sebag Montefiore (book, finished September 2026)
+- [From Worm to Human: Scaling Brain Emulation](https://pdf.isaak.net/scaling-emulations), Isaak Freeman (paper, finished June 2026): A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan.
+- [State of Brain Emulation Report 2025](https://arxiv.org/abs/2510.15745), Zanichelli, Schons, Freeman, Shiu, and Arkhipov (report, finished June 2026): The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are.
+- Infinite Jest, David Foster Wallace (novel, finished December 2025)
+- Guns, Germs, and Steel, Jared Diamond (book, finished November 2025)
+- [Nuclear War: A Scenario](https://en.wikipedia.org/wiki/Nuclear_War:_A_Scenario), Annie Jacobsen (book, finished October 2025)
+- This Is for Everyone, Tim Berners-Lee (book, finished October 2025): Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all. Review: [The Web Was the Training Set](https://raskell.io/articles/the-web-was-the-training-set.md)
+- Jurassic Park, Michael Crichton (novel, finished July 2025)
+- The Books of Jacob, Olga Tokarczuk (novel, finished August 2024)
 
 ## Topics
 
@@ -150,7 +151,15 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - History of technology (`history-of-technology`) [within History]: How tools, machines, and networks came to be built, and the choices that shaped them.
 - Local-first (`local-first`) [within Distributed systems]: Software that keeps data on your devices and syncs through CRDTs, with the network as an optimisation.
 - Knowledge management (`knowledge-management`): Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.
-- Open source (`oss`) [within The open web]: Open source and open standards as the point of the work, not just its licence.
+- Open source (`oss`) [within The open web]: Open source as the point of the work, not just its licence.
+- Hypertext (`hypertext`) [within The open web]: Links as the unit of the web: addresses that can point at anything, the read-write web that was intended, and what a graph of documents can do that a tree cannot.
+- Open standards (`open-standards`) [within The open web]: Protocols and formats agreed in the open and free to implement: HTTP, HTML, TCP/IP, RSS, and the consortia and working groups that keep them so.
+- Decentralisation (`decentralisation`) [within The open web, Distributed systems]: Many small nodes and no central operator: the web's original shape, and the alternative to platforms that own the users and the data.
+- Open data (`open-data`) [within The open web, Policy]: Data published for anyone to use: government records, archives, and the five-star ladder from a file on the web to linked data with addresses.
+- Training data (`training-data`) [within Machine learning]: What models learn from: web crawls, books, and licensed or unlicensed corpora; who holds what has not been scraped yet, and on what terms.
+- Privacy (`privacy`) [within Applied security, Sovereignty]: Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place.
+- Data sovereignty (`data-sovereignty`) [within Sovereignty, Privacy]: Control over one's own data: pods, portability, and the right to choose the software and the agent that reads it; the personal counterpart of national sovereignty.
+- Attention economy (`attention-economy`) [within Economics, The open web]: Platforms that sell attention and optimise for engagement, what that does to the web and to discourse, and the intention economy proposed in its place.
 
 ### Technologies
 
