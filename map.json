@@ -1,7 +1,7 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-24T05:45:00+00:00",
- "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
+ "generated": "2026-10-24T06:45:12+00:00",
+ "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
    "id": "a:/articles/observability-is-not-logging/",
@@ -55,7 +55,7 @@
    "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/",
    "meta": "2026-06-28 · 12 min",
    "description": "An MIT thesis argues brain emulation has crossed into engineering. Read as infrastructure, the numbers describe a workload your AI cluster was not built for.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "a:/articles/memory-is-a-write-path/",
@@ -262,7 +262,7 @@
    "url": "https://raskell.io/articles/looking-back-on-2025/",
    "meta": "2025-12-31 · 7 min",
    "description": "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/articles/mise-ate-my-makefile/",
@@ -343,7 +343,7 @@
    "url": "https://raskell.io/tags/ai-platforms/",
    "meta": "Domain · 4 pages",
    "description": "The shared foundation an organisation builds AI on: model gateways, agent runtimes, governance, observability, and the operating model around them.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:applied-security",
@@ -379,7 +379,7 @@
    "url": "https://raskell.io/tags/distributed-systems/",
    "meta": "Domain · 3 pages",
    "description": "Replication, coordination, and consistency across machines that fail independently.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:economics",
@@ -424,7 +424,7 @@
    "url": "https://raskell.io/tags/gpus/",
    "meta": "Technology · 3 pages",
    "description": "GPUs as the computer: memory shape, partitioning, and the hardware under inference.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:haskell",
@@ -442,7 +442,7 @@
    "url": "https://raskell.io/tags/inference/",
    "meta": "Concept · 5 pages",
    "description": "Running models in production: routing, cost, hardware, and inference as a metered utility.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:isolation",
@@ -523,7 +523,7 @@
    "url": "https://raskell.io/tags/open-web/",
    "meta": "Domain · 3 pages",
    "description": "The web as a commons: open protocols, small independent sites, and publishing outside the platforms.",
-   "degree": 6
+   "degree": 8
   },
   {
    "id": "t:openbsd",
@@ -667,7 +667,7 @@
    "url": "https://raskell.io/tags#complex-systems",
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:evaluation",
@@ -676,7 +676,7 @@
    "url": "https://raskell.io/tags#evaluation",
    "meta": "Concept · no pages yet",
    "description": "Measuring whether an AI system does the right thing: golden sets, structural checks, LLM-as-judge, and regression suites.",
-   "degree": 2
+   "degree": 4
   },
   {
    "id": "t:games",
@@ -685,7 +685,7 @@
    "url": "https://raskell.io/tags#games",
    "meta": "Domain · no pages yet",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:geography",
@@ -694,7 +694,7 @@
    "url": "https://raskell.io/tags#geography",
    "meta": "Domain · no pages yet",
    "description": "Places, terrain, borders, and spatial data, and how their relationships change over time.",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "t:history",
@@ -703,7 +703,52 @@
    "url": "https://raskell.io/tags#history",
    "meta": "Domain · no pages yet",
    "description": "Events, institutions, and societies through time, with attention to sources, competing accounts, and uncertainty.",
-   "degree": 1
+   "degree": 5
+  },
+  {
+   "id": "t:history-of-science",
+   "kind": "tag",
+   "label": "History of science",
+   "url": "https://raskell.io/tags#history-of-science",
+   "meta": "Concept · no pages yet",
+   "description": "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.",
+   "degree": 5
+  },
+  {
+   "id": "t:history-of-technology",
+   "kind": "tag",
+   "label": "History of technology",
+   "url": "https://raskell.io/tags#history-of-technology",
+   "meta": "Concept · no pages yet",
+   "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
+   "degree": 5
+  },
+  {
+   "id": "t:life-sciences",
+   "kind": "tag",
+   "label": "Life sciences",
+   "url": "https://raskell.io/tags#life-sciences",
+   "meta": "Domain · no pages yet",
+   "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
+   "degree": 5
+  },
+  {
+   "id": "t:machine-learning",
+   "kind": "tag",
+   "label": "Machine learning",
+   "url": "https://raskell.io/tags#machine-learning",
+   "meta": "Domain · no pages yet",
+   "description": "How models learn from data: the mathematics, the training methods, and what the results can and cannot do.",
+   "degree": 10
+  },
+  {
+   "id": "t:neuroscience",
+   "kind": "tag",
+   "label": "Neuroscience",
+   "url": "https://raskell.io/tags#neuroscience",
+   "meta": "Concept · no pages yet",
+   "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
+   "degree": 3
   },
   {
    "id": "t:reinforcement-learning",
@@ -712,7 +757,7 @@
    "url": "https://raskell.io/tags#reinforcement-learning",
    "meta": "Concept · no pages yet",
    "description": "Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill.",
-   "degree": 1
+   "degree": 4
   },
   {
    "id": "t:simulation",
@@ -721,7 +766,7 @@
    "url": "https://raskell.io/tags#simulation",
    "meta": "Domain · no pages yet",
    "description": "Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:webassembly",
@@ -1009,6 +1054,212 @@
    "meta": "Project",
    "description": "A fishing game in the style of the 32-bit handhelds, inspired by The Legend of the River King. Walk the river, read the water, and fill a fish log of hand-drawn species. Written in…",
    "degree": 5
+  },
+  {
+   "id": "w:the-infinity-machine",
+   "kind": "work",
+   "label": "The Infinity Machine",
+   "url": "https://raskell.io/reading/#the-infinity-machine",
+   "meta": "Book · Sebastian Mallaby · reading now",
+   "description": "Demis Hassabis, DeepMind, and the Quest for Superintelligence",
+   "degree": 4
+  },
+  {
+   "id": "w:from-worm-to-human",
+   "kind": "work",
+   "label": "From Worm to Human: Scaling Brain Emulation",
+   "url": "https://raskell.io/reading/#from-worm-to-human",
+   "meta": "Paper · Isaak Freeman · read 2026",
+   "description": "A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan.",
+   "degree": 5
+  },
+  {
+   "id": "w:state-of-brain-emulation-2025",
+   "kind": "work",
+   "label": "State of Brain Emulation Report 2025",
+   "url": "https://raskell.io/reading/#state-of-brain-emulation-2025",
+   "meta": "Report · Zanichelli, Schons, Freeman, Shiu, and Arkhipov · read 2026",
+   "description": "The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are.",
+   "degree": 4
+  },
+  {
+   "id": "w:this-is-for-everyone",
+   "kind": "work",
+   "label": "This Is for Everyone",
+   "url": "https://raskell.io/reading/#this-is-for-everyone",
+   "meta": "Book · Tim Berners-Lee · read 2025",
+   "description": "Read on the shores of Okinawa: the web as a commons, and how far what we built drifted from it.",
+   "degree": 4
+  },
+  {
+   "id": "w:why-machines-learn",
+   "kind": "work",
+   "label": "Why Machines Learn",
+   "url": "https://raskell.io/reading/#why-machines-learn",
+   "meta": "Book · Anil Ananthaswamy · in the backlog",
+   "description": "The Elegant Math Behind Modern AI",
+   "degree": 2
+  },
+  {
+   "id": "w:the-dream-machine",
+   "kind": "work",
+   "label": "The Dream Machine",
+   "url": "https://raskell.io/reading/#the-dream-machine",
+   "meta": "Book · M. Mitchell Waldrop · in the backlog",
+   "degree": 3
+  },
+  {
+   "id": "w:the-alignment-problem",
+   "kind": "work",
+   "label": "The Alignment Problem",
+   "url": "https://raskell.io/reading/#the-alignment-problem",
+   "meta": "Book · Brian Christian · in the backlog",
+   "description": "Machine Learning and Human Values",
+   "degree": 3
+  },
+  {
+   "id": "w:ai-a-guide-for-thinking-humans",
+   "kind": "work",
+   "label": "Artificial Intelligence",
+   "url": "https://raskell.io/reading/#ai-a-guide-for-thinking-humans",
+   "meta": "Book · Melanie Mitchell · in the backlog",
+   "description": "A Guide for Thinking Humans",
+   "degree": 2
+  },
+  {
+   "id": "w:deep-thinking",
+   "kind": "work",
+   "label": "Deep Thinking",
+   "url": "https://raskell.io/reading/#deep-thinking",
+   "meta": "Book · Garry Kasparov · in the backlog",
+   "description": "Where Machine Intelligence Ends and Human Creativity Begins",
+   "degree": 3
+  },
+  {
+   "id": "w:understanding-deep-learning",
+   "kind": "work",
+   "label": "Understanding Deep Learning",
+   "url": "https://raskell.io/reading/#understanding-deep-learning",
+   "meta": "Book · Simon J. D. Prince · in the backlog",
+   "degree": 2
+  },
+  {
+   "id": "w:build-a-large-language-model",
+   "kind": "work",
+   "label": "Build a Large Language Model (From Scratch)",
+   "url": "https://raskell.io/reading/#build-a-large-language-model",
+   "meta": "Book · Sebastian Raschka · in the backlog",
+   "degree": 3
+  },
+  {
+   "id": "w:ai-engineering",
+   "kind": "work",
+   "label": "AI Engineering",
+   "url": "https://raskell.io/reading/#ai-engineering",
+   "meta": "Book · Chip Huyen · in the backlog",
+   "description": "Building Applications with Foundation Models",
+   "degree": 3
+  },
+  {
+   "id": "w:reinforcement-learning-an-introduction",
+   "kind": "work",
+   "label": "Reinforcement Learning: An Introduction",
+   "url": "https://raskell.io/reading/#reinforcement-learning-an-introduction",
+   "meta": "Book · Richard S. Sutton and Andrew G. Barto · in the backlog",
+   "degree": 3
+  },
+  {
+   "id": "w:probabilistic-machine-learning",
+   "kind": "work",
+   "label": "Probabilistic Machine Learning: An Introduction",
+   "url": "https://raskell.io/reading/#probabilistic-machine-learning",
+   "meta": "Book · Kevin P. Murphy · in the backlog",
+   "degree": 2
+  },
+  {
+   "id": "w:the-making-of-the-atomic-bomb",
+   "kind": "work",
+   "label": "The Making of the Atomic Bomb",
+   "url": "https://raskell.io/reading/#the-making-of-the-atomic-bomb",
+   "meta": "Book · Richard Rhodes · in the backlog",
+   "degree": 2
+  },
+  {
+   "id": "w:seeing-like-a-state",
+   "kind": "work",
+   "label": "Seeing Like a State",
+   "url": "https://raskell.io/reading/#seeing-like-a-state",
+   "meta": "Book · James C. Scott · in the backlog",
+   "description": "How Certain Schemes to Improve the Human Condition Have Failed",
+   "degree": 3
+  },
+  {
+   "id": "w:a-peace-to-end-all-peace",
+   "kind": "work",
+   "label": "A Peace to End All Peace",
+   "url": "https://raskell.io/reading/#a-peace-to-end-all-peace",
+   "meta": "Book · David Fromkin · in the backlog",
+   "description": "The Fall of the Ottoman Empire and the Creation of the Modern Middle East",
+   "degree": 3
+  },
+  {
+   "id": "w:the-billion-dollar-molecule",
+   "kind": "work",
+   "label": "The Billion-Dollar Molecule",
+   "url": "https://raskell.io/reading/#the-billion-dollar-molecule",
+   "meta": "Book · Barry Werth · in the backlog",
+   "description": "The Quest for the Perfect Drug",
+   "degree": 3
+  },
+  {
+   "id": "w:the-eighth-day-of-creation",
+   "kind": "work",
+   "label": "The Eighth Day of Creation",
+   "url": "https://raskell.io/reading/#the-eighth-day-of-creation",
+   "meta": "Book · Horace Freeland Judson · in the backlog",
+   "description": "The Makers of the Revolution in Biology",
+   "degree": 3
+  },
+  {
+   "id": "w:the-demon-under-the-microscope",
+   "kind": "work",
+   "label": "The Demon Under the Microscope",
+   "url": "https://raskell.io/reading/#the-demon-under-the-microscope",
+   "meta": "Book · Thomas Hager · in the backlog",
+   "degree": 3
+  },
+  {
+   "id": "w:the-butchering-art",
+   "kind": "work",
+   "label": "The Butchering Art",
+   "url": "https://raskell.io/reading/#the-butchering-art",
+   "meta": "Book · Lindsey Fitzharris · in the backlog",
+   "description": "Joseph Lister's Quest to Transform the Grisly World of Victorian Medicine",
+   "degree": 3
+  },
+  {
+   "id": "h:shelf-reading",
+   "kind": "hub",
+   "label": "Reading now",
+   "url": "https://raskell.io/reading/#shelf-reading",
+   "meta": "Shelf",
+   "degree": 1
+  },
+  {
+   "id": "h:shelf-backlog",
+   "kind": "hub",
+   "label": "Backlog",
+   "url": "https://raskell.io/reading/#shelf-backlog",
+   "meta": "Shelf",
+   "degree": 17
+  },
+  {
+   "id": "h:shelf-read",
+   "kind": "hub",
+   "label": "Read",
+   "url": "https://raskell.io/reading/#shelf-read",
+   "meta": "Shelf",
+   "degree": 3
   },
   {
    "id": "h:projects-venture",
@@ -1755,6 +2006,22 @@
   {
    "source": "t:evaluation",
    "target": "t:metrics"
+  },
+  {
+   "source": "t:history-of-science",
+   "target": "t:history"
+  },
+  {
+   "source": "t:history-of-technology",
+   "target": "t:history"
+  },
+  {
+   "source": "t:neuroscience",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "t:reinforcement-learning",
+   "target": "t:machine-learning"
   },
   {
    "source": "t:simulation",
@@ -2847,6 +3114,258 @@
   {
    "source": "p:hotaru",
    "target": "h:apps-play"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "h:shelf-reading"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:reinforcement-learning"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:from-worm-to-human",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:from-worm-to-human",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "w:from-worm-to-human",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "w:from-worm-to-human",
+   "target": "t:gpus"
+  },
+  {
+   "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
+   "target": "w:from-worm-to-human"
+  },
+  {
+   "source": "w:state-of-brain-emulation-2025",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:state-of-brain-emulation-2025",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "w:state-of-brain-emulation-2025",
+   "target": "t:simulation"
+  },
+  {
+   "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
+   "target": "w:state-of-brain-emulation-2025"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:open-web"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "w:this-is-for-everyone"
+  },
+  {
+   "source": "w:why-machines-learn",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:why-machines-learn",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "w:the-dream-machine",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-dream-machine",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:the-dream-machine",
+   "target": "t:open-web"
+  },
+  {
+   "source": "w:the-alignment-problem",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-alignment-problem",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "w:the-alignment-problem",
+   "target": "t:evaluation"
+  },
+  {
+   "source": "w:ai-a-guide-for-thinking-humans",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:ai-a-guide-for-thinking-humans",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "w:deep-thinking",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:deep-thinking",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "w:deep-thinking",
+   "target": "t:games"
+  },
+  {
+   "source": "w:understanding-deep-learning",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:understanding-deep-learning",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "w:build-a-large-language-model",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:build-a-large-language-model",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "w:build-a-large-language-model",
+   "target": "t:inference"
+  },
+  {
+   "source": "w:ai-engineering",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:ai-engineering",
+   "target": "t:ai-platforms"
+  },
+  {
+   "source": "w:ai-engineering",
+   "target": "t:evaluation"
+  },
+  {
+   "source": "w:reinforcement-learning-an-introduction",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:reinforcement-learning-an-introduction",
+   "target": "t:reinforcement-learning"
+  },
+  {
+   "source": "w:reinforcement-learning-an-introduction",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "w:probabilistic-machine-learning",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:probabilistic-machine-learning",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "w:the-making-of-the-atomic-bomb",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-making-of-the-atomic-bomb",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:seeing-like-a-state",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:seeing-like-a-state",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "w:seeing-like-a-state",
+   "target": "t:history"
+  },
+  {
+   "source": "w:a-peace-to-end-all-peace",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:a-peace-to-end-all-peace",
+   "target": "t:history"
+  },
+  {
+   "source": "w:a-peace-to-end-all-peace",
+   "target": "t:geography"
+  },
+  {
+   "source": "w:the-billion-dollar-molecule",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-billion-dollar-molecule",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:the-billion-dollar-molecule",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:the-eighth-day-of-creation",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-eighth-day-of-creation",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:the-eighth-day-of-creation",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:the-demon-under-the-microscope",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-demon-under-the-microscope",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:the-demon-under-the-microscope",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:the-butchering-art",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-butchering-art",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:the-butchering-art",
+   "target": "t:history-of-science"
   }
  ]
 }

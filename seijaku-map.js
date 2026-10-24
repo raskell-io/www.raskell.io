@@ -1,4 +1,4 @@
-// The site graph: a small force-directed graph of articles, notes, topics, series and projects on a
+// The site graph: a small force-directed graph of articles, notes, topics, series, projects and reading on a
 // canvas, no libraries. The /map/ page mounts the whole graph from its #map-data JSON; the end-of-page
 // maps (partials/local_map.html) fetch that JSON and mount one page's neighbourhood with SeijakuMap.local().
 (function () {
@@ -18,9 +18,10 @@ function mount(fig, data, opts) {
     tag: { fill: "#72d7dc", base: 3.2, grow: 1.45 },
     series: { fill: "#efd093", base: 5, grow: 1.1 },
     project: { fill: null, ring: "#efd093", base: 4.4, grow: 1.1 },
+    work: { fill: null, ring: "#a9e8e9", diamond: true, base: 3.4, grow: 0.9 },
     hub: { fill: null, ring: "#f4f0df", base: 6, grow: 0.5 }
   };
-  var REST = { tag: 46, series: 40, project: 58, article: 64, note: 56, hub: 70, tagtag: 62 };
+  var REST = { tag: 46, series: 40, project: 58, work: 54, article: 64, note: 56, hub: 70, tagtag: 62 };
 
   // Nodes and links ---------------------------------------------------------
   var nodes = [], byId = {};
@@ -88,8 +89,8 @@ function mount(fig, data, opts) {
   var W = 0, H = 0, dpr = 1, scale = 1, tx = 0, ty = 0, touched = false, view = { padTop: opts.padTop == null ? 64 : opts.padTop, bg: null };
   var focus = opts.focus ? byId[opts.focus] : null;
   var hidden = {}, hover = null, sel = null;
-  // Group hubs travel with the projects toggle.
-  function visible(n) { return !hidden[n.kind === "hub" ? "project" : n.kind]; }
+  // Group hubs travel with the projects toggle, shelves (of: "work") with the reading toggle.
+  function visible(n) { return !hidden[n.kind === "hub" ? n.of || "project" : n.kind]; }
   function fit(animate) {
     var x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
     nodes.forEach(function (n) {
@@ -141,7 +142,8 @@ function mount(fig, data, opts) {
       var st = STYLE[n.kind];
       ctx.globalAlpha = lit(n) ? 1 : 0.18;
       ctx.beginPath();
-      if (st.square) { ctx.rect(n.x - n.r, n.y - n.r, n.r * 2, n.r * 2); } else { ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); }
+      if (st.square) { ctx.rect(n.x - n.r, n.y - n.r, n.r * 2, n.r * 2); }
+      else if (st.diamond) { var q = n.r * 1.25; ctx.moveTo(n.x, n.y - q); ctx.lineTo(n.x + q, n.y); ctx.lineTo(n.x, n.y + q); ctx.lineTo(n.x - q, n.y); ctx.closePath(); } else { ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); }
       if (st.fill) { ctx.fillStyle = st.fill; ctx.fill(); }
       else { ctx.fillStyle = "#0b1412"; ctx.fill(); ctx.lineWidth = 1.6; ctx.strokeStyle = st.ring; ctx.stroke(); ctx.lineWidth = 1 / scale; }
       if (n === hover || n === sel || n === focus) {
@@ -176,18 +178,18 @@ function mount(fig, data, opts) {
       if (clash && n !== hover && n !== sel) { return; }
       boxes.push(box);
       ctx.fillStyle = "rgba(11, 20, 18, 0.72)"; ctx.fillRect(box[0], box[1], box[2] - box[0], box[3] - box[1]);
-      ctx.fillStyle = n === focus ? "#efd093" : n.kind === "tag" ? "#a9e8e9" : n.kind === "article" || n.kind === "note" ? "rgba(244, 240, 223, 0.86)" : n.kind === "hub" ? "#f4f0df" : "#efd093";
+      ctx.fillStyle = n === focus ? "#efd093" : n.kind === "tag" ? "#a9e8e9" : n.kind === "article" || n.kind === "note" ? "rgba(244, 240, 223, 0.86)" : n.kind === "hub" ? "#f4f0df" : n.kind === "work" ? "#a9e8e9" : "#efd093";
       ctx.textBaseline = "top"; ctx.fillText(text, x, y);
     });
   }
 
   // Selection card -----------------------------------------------------------
-  var KIND_NAME = { article: "Article", note: "Note", tag: "Topic", series: "Series", project: "Project", hub: "Group" };
+  var KIND_NAME = { article: "Article", note: "Note", tag: "Topic", series: "Series", project: "Project", hub: "Group", work: "Reading" };
   function select(n) {
     sel = n;
     if (!card) { draw(); return; }
     if (!n) { card.hidden = true; draw(); return; }
-    card.querySelector(".map__card-kind").textContent = KIND_NAME[n.kind] + (n.meta && n.kind !== "project" && n.kind !== "hub" ? " · " + n.meta : "") + " · " + n.deg + " links";
+    card.querySelector(".map__card-kind").textContent = (n.kind === "hub" && n.of === "work" ? "Shelf" : KIND_NAME[n.kind]) + (n.meta && n.kind !== "project" && n.kind !== "hub" ? " · " + n.meta : "") + " · " + n.deg + " links";
     card.querySelector(".map__card-title").textContent = n.label;
     var desc = card.querySelector(".map__card-desc");
     desc.textContent = n.desc || ""; desc.hidden = !n.desc;
@@ -277,7 +279,7 @@ function mount(fig, data, opts) {
       var k = b.getAttribute("data-kind"), on = b.getAttribute("aria-pressed") === "true";
       b.setAttribute("aria-pressed", on ? "false" : "true");
       hidden[k] = on;
-      if (sel && hidden[sel.kind]) { select(null); }
+      if (sel && !visible(sel)) { select(null); }
       draw();
     });
   });

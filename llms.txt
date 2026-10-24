@@ -11,6 +11,7 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 - [Map](https://raskell.io/map/): every article, note, topic, series, and project as one graph; machine-readable at [map.json](https://raskell.io/map.json)
 - [All writing in full](https://raskell.io/llms-full.txt): every article and note in one Markdown file, newest first
 - [Notes](https://raskell.io/notes/): short notes that sit between the articles
+- [Reading](https://raskell.io/reading/): what Raffael is reading, what is next, and what he has read, with reviews
 - [RSS feed](https://raskell.io/rss.xml): full-text feed
 
 ## Series: The Agent Platform Handbook
@@ -62,6 +63,40 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 - [My OpenBSD journey: Getting it virtualized with libvirt (1)](https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1.md) (2023-02-06): A step-by-step guide to running OpenBSD in a libvirt virtual machine on Void Linux, without needing VirtualBox or VMWare. Part 1 of my OpenBSD journey.
 - [Hello and outlook](https://raskell.io/articles/hello-and-outlook.md) (2022-09-20): The first post on raskell.io. What this site is for and what I planned to write about.
 
+## Reading
+
+Books, papers, and long articles from the reading log at https://raskell.io/reading/, with reviews where there is one.
+
+### Reading now
+
+- [The Infinity Machine](https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296), Sebastian Mallaby (book)
+
+### Backlog
+
+- [Why Machines Learn](https://www.penguinrandomhouse.com/books/677608/why-machines-learn-by-anil-ananthaswamy/), Anil Ananthaswamy (book)
+- [The Dream Machine](https://press.stripe.com/the-dream-machine), M. Mitchell Waldrop (book)
+- [The Alignment Problem](https://brianchristian.org/the-alignment-problem/), Brian Christian (book)
+- [Artificial Intelligence](https://us.macmillan.com/books/9781250404855/artificialintelligence/), Melanie Mitchell (book)
+- [Deep Thinking](https://www.hachette.co.uk/titles/garry-kasparov/deep-thinking/9781473653504/), Garry Kasparov (book)
+- [Understanding Deep Learning](https://mitpress.mit.edu/9780262048644/understanding-deep-learning/), Simon J. D. Prince (book)
+- [Build a Large Language Model (From Scratch)](https://www.manning.com/books/build-a-large-language-model-from-scratch), Sebastian Raschka (book)
+- [AI Engineering](https://www.oreilly.com/library/view/ai-engineering/9781098166298/), Chip Huyen (book)
+- [Reinforcement Learning: An Introduction](https://mitpress.mit.edu/9780262039246/reinforcement-learning/), Richard S. Sutton and Andrew G. Barto (book)
+- [Probabilistic Machine Learning: An Introduction](https://probml.github.io/pml-book/book1.html), Kevin P. Murphy (book)
+- [The Making of the Atomic Bomb](https://www.simonandschuster.net/books/The-Making-of-the-Atomic-Bomb/Richard-Rhodes/9781451677614), Richard Rhodes (book)
+- [Seeing Like a State](https://yalebooks.yale.edu/book/9780300252989/seeing-like-a-state/), James C. Scott (book)
+- [A Peace to End All Peace](https://academic.macmillan.com/academictrade/9780805088090/apeacetoendallpeace/), David Fromkin (book)
+- [The Billion-Dollar Molecule](https://www.simonandschuster.com/books/The-Billion-Dollar-Molecule/Barry-Werth/9780671510572), Barry Werth (book)
+- The Eighth Day of Creation, Horace Freeland Judson (book)
+- [The Demon Under the Microscope](https://www.penguinrandomhouse.com/books/73465/the-demon-under-the-microscope-by-thomas-hager/), Thomas Hager (book)
+- [The Butchering Art](https://www.penguin.co.nz/books/the-butchering-art-9780141983387), Lindsey Fitzharris (book)
+
+### Read
+
+- [From Worm to Human: Scaling Brain Emulation](https://pdf.isaak.net/scaling-emulations), Isaak Freeman (paper, finished 2026-06): A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan.
+- [State of Brain Emulation Report 2025](https://arxiv.org/abs/2510.15745), Zanichelli, Schons, Freeman, Shiu, and Arkhipov (report, finished 2026-06): The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are.
+- This Is for Everyone, Tim Berners-Lee (book, finished 2025): Read on the shores of Okinawa: the web as a commons, and how far what we built drifted from it.
+
 ## Topics
 
 The topic vocabulary every page is filed under, with broader topics in brackets. Topic pages live at https://raskell.io/tags/<slug>/.
@@ -83,6 +118,8 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - The open web (`open-web`): The web as a commons: open protocols, small independent sites, and publishing outside the platforms.
 - History (`history`): Events, institutions, and societies through time, with attention to sources, competing accounts, and uncertainty.
 - Geography (`geography`): Places, terrain, borders, and spatial data, and how their relationships change over time.
+- Machine learning (`machine-learning`): How models learn from data: the mathematics, the training methods, and what the results can and cannot do.
+- Life sciences (`life-sciences`): Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.
 - Simulation (`simulation`) [within Complex systems]: Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.
 - Games (`games`): Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.
 
@@ -101,7 +138,10 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Developer tooling (`developer-tooling`) [within Platform automation]: Package managers, build tools, CLIs, and the daily toolchain an engineer actually touches.
 - Self-hosting (`self-hosting`) [within Platform automation, Sovereignty]: Running your own infrastructure, from a single bare-metal box to community-operated compute.
 - Complex systems (`complex-systems`): Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.
-- Reinforcement learning (`reinforcement-learning`): Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill.
+- Reinforcement learning (`reinforcement-learning`) [within Machine learning]: Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill.
+- Neuroscience (`neuroscience`) [within Life sciences]: Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.
+- History of science (`history-of-science`) [within History]: How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.
+- History of technology (`history-of-technology`) [within History]: How tools, machines, and networks came to be built, and the choices that shaped them.
 - Local-first (`local-first`) [within Distributed systems]: Software that keeps data on your devices and syncs through CRDTs, with the network as an optimisation.
 - Knowledge management (`knowledge-management`): Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.
 - Open source (`oss`) [within The open web]: Open source and open standards as the point of the work, not just its licence.
