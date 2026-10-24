@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Raskell - Talks</title>
+      <link>https://raskell.io/talks/</link>
+      <description>Notes on agent platforms, platform automation, edge infrastructure, and applied security. Building automation-first platforms that survive production reality.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://raskell.io/talks/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Wed, 10 Jun 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>I Stopped Writing Most of My Code</title>
+          <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/talks/iat-13-basel/</link>
+          <guid>https://raskell.io/talks/iat-13-basel/</guid>
+          <description xml:base="https://raskell.io/talks/iat-13-basel/">&lt;section class=&quot;slide slide--title&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;IT&#x27;s ABOUT TECH #13 · Basel · 10 June 2026&lt;&#x2F;p&gt;
+    &lt;h1 class=&quot;slide__title slide__title--xl&quot;&gt;I Stopped Writing Most of My Code&lt;&#x2F;h1&gt;
+    &lt;p class=&quot;slide__sub&quot;&gt;The year my backlog came alive.&lt;&#x2F;p&gt;
+    &lt;p class=&quot;slide__id&quot;&gt;
+      &lt;span class=&quot;slide__id-item&quot;&gt;
+        &lt;img class=&quot;slide__avatar&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;raffael-portrait.png&quot; alt=&quot;Raffael Schneider&quot; width=&quot;64&quot; height=&quot;64&quot;&gt;
+        &lt;span class=&quot;slide__id-text&quot;&gt;
+          &lt;span class=&quot;slide__id-name&quot;&gt;Raffael Schneider&lt;&#x2F;span&gt;
+          &lt;span class=&quot;slide__id-role&quot;&gt;Enterprise Solution Architect&lt;&#x2F;span&gt;
+          &lt;span class=&quot;slide__id-org&quot;&gt;AI Platforms&lt;&#x2F;span&gt;
+        &lt;&#x2F;span&gt;
+      &lt;&#x2F;span&gt;
+      &lt;span class=&quot;slide__id-sep&quot; aria-hidden=&quot;true&quot;&gt;·&lt;&#x2F;span&gt;
+      &lt;span class=&quot;slide__id-item slide__id-item--brand&quot;&gt;
+        &lt;img class=&quot;slide__avatar slide__avatar--brand&quot; src=&quot;&#x2F;raskell-mascot.avif&quot; alt=&quot;Raskell tanuki&quot; width=&quot;64&quot; height=&quot;64&quot;&gt;
+        &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&quot;&gt;raskell.io&lt;&#x2F;a&gt;
+      &lt;&#x2F;span&gt;
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;01&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;It came down to three subscriptions.&lt;&#x2F;h2&gt;
+    &lt;p class=&quot;slide__subline&quot;&gt;December 2022 → November&amp;nbsp;2025&lt;&#x2F;p&gt;
+    &lt;ol class=&quot;slide__timeline&quot;&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;December 2022&lt;&#x2F;span&gt;
+        &lt;p&gt;&lt;strong&gt;OpenAI.&lt;&#x2F;strong&gt; Subscription almost day one. Chat-first AI joins my daily workflow and stays there.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;Then Zed&lt;&#x2F;span&gt;
+        &lt;p&gt;A Rust-built editor that bet on AI very early. The best LLM integrations of its era. My gateway to AI-assisted development while Cursor, Windsurf, and Copilot were finding their feet.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;May 2025&lt;&#x2F;span&gt;
+        &lt;p&gt;&lt;strong&gt;Claude Code drops.&lt;&#x2F;strong&gt; First TUI-first coding agent. I take the $20 Anthropic subscription the day it ships. Hooked.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;November 2025&lt;&#x2F;span&gt;
+        &lt;p&gt;&lt;strong&gt;Opus 4.5 ships.&lt;&#x2F;strong&gt; I upgrade to the $200 Max 20× plan right before Christmas vacation. Three weeks of free time meets a step-change in capability.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ol&gt;
+    &lt;p class=&quot;slide__kicker&quot;&gt;I am an engineer. I know how to build things.&lt;&#x2F;p&gt;
+    &lt;p class=&quot;slide__kicker slide__kicker--strong&quot;&gt;The bottleneck was never ideas. The bottleneck was always time.&lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;02&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;Then something changed.&lt;&#x2F;h2&gt;
+    &lt;div class=&quot;slide__stack&quot;&gt;
+      &lt;div class=&quot;slide__pill&quot;&gt;
+        &lt;img class=&quot;slide__pill-icon slide__pill-icon--brand&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;claude.svg&quot; alt=&quot;&quot; width=&quot;32&quot; height=&quot;32&quot;&gt;
+        Claude Opus 4.5
+      &lt;&#x2F;div&gt;
+      &lt;div class=&quot;slide__pill&quot;&gt;
+        &lt;img class=&quot;slide__pill-icon slide__pill-icon--brand&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;claude-code.png&quot; alt=&quot;&quot; width=&quot;32&quot; height=&quot;32&quot;&gt;
+        Claude Code
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    &lt;p class=&quot;slide__quote&quot;&gt;
+      I expected a better autocomplete.&lt;br&gt;
+      What I got was something closer to a junior engineer that never sleeps.
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;03&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;The new workflow&lt;&#x2F;h2&gt;
+    &lt;div class=&quot;slide__compare&quot;&gt;
+      &lt;div class=&quot;slide__compare-col&quot;&gt;
+        &lt;p class=&quot;slide__compare-label&quot;&gt;Before&lt;&#x2F;p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Decide what to build&lt;&#x2F;li&gt;
+          &lt;li class=&quot;is-heavy&quot;&gt;Translate thoughts into syntax&lt;&#x2F;li&gt;
+          &lt;li&gt;Review and ship&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;div&gt;
+      &lt;div class=&quot;slide__compare-col&quot;&gt;
+        &lt;p class=&quot;slide__compare-label&quot;&gt;After&lt;&#x2F;p&gt;
+        &lt;ul&gt;
+          &lt;li class=&quot;is-heavy&quot;&gt;Decide what to build&lt;&#x2F;li&gt;
+          &lt;li&gt;Translate thoughts into syntax&lt;&#x2F;li&gt;
+          &lt;li class=&quot;is-heavy&quot;&gt;Decide whether the result is acceptable&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    &lt;p class=&quot;slide__kicker slide__kicker--strong&quot;&gt;
+      You no longer spend most of your time translating thoughts into syntax.
+      You spend most of your time deciding.
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;04&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;What I actually built&lt;&#x2F;h2&gt;
+    &lt;div class=&quot;slide__grid slide__grid--icons&quot;&gt;
+      &lt;a class=&quot;slide__card slide__card--linked&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+        &lt;img class=&quot;slide__card-icon&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;archipelag.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; loading=&quot;lazy&quot;&gt;
+        &lt;div&gt;
+          &lt;h3&gt;Archipelag.io&lt;&#x2F;h3&gt;
+          &lt;p&gt;Distributed AI compute. Inference across idle GPUs and mining rigs.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;a&gt;
+      &lt;a class=&quot;slide__card slide__card--linked&quot; href=&quot;https:&#x2F;&#x2F;cyanea.bio&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+        &lt;img class=&quot;slide__card-icon&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;cyanea.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; loading=&quot;lazy&quot;&gt;
+        &lt;div&gt;
+          &lt;h3&gt;Cyanea&lt;&#x2F;h3&gt;
+          &lt;p&gt;Open community platform for life-science research.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;a&gt;
+      &lt;a class=&quot;slide__card slide__card--linked&quot; href=&quot;https:&#x2F;&#x2F;humankind.plus&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+        &lt;img class=&quot;slide__card-icon&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;humankind.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; loading=&quot;lazy&quot;&gt;
+        &lt;div&gt;
+          &lt;h3&gt;Humankind&lt;&#x2F;h3&gt;
+          &lt;p&gt;A long-running creative initiative, finally with a home of its own.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;a&gt;
+      &lt;a class=&quot;slide__card slide__card--linked&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+        &lt;img class=&quot;slide__card-icon&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;arcanist.svg&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; loading=&quot;lazy&quot;&gt;
+        &lt;div&gt;
+          &lt;h3&gt;Arcanist.sh&lt;&#x2F;h3&gt;
+          &lt;p&gt;Haskell ecosystem in Rust. Home of &lt;strong&gt;hx&lt;&#x2F;strong&gt; and the &lt;strong&gt;Basel Haskell Compiler&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;a&gt;
+      &lt;a class=&quot;slide__card slide__card--linked&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+        &lt;img class=&quot;slide__card-icon&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;zentinel.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; loading=&quot;lazy&quot;&gt;
+        &lt;div&gt;
+          &lt;h3&gt;Zentinel&lt;&#x2F;h3&gt;
+          &lt;p&gt;Security-first reverse proxy on Pingora.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;a&gt;
+      &lt;a class=&quot;slide__card slide__card--linked&quot; href=&quot;https:&#x2F;&#x2F;die-zukunft.ch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+        &lt;img class=&quot;slide__card-icon&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;die-zukunft.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; loading=&quot;lazy&quot;&gt;
+        &lt;div&gt;
+          &lt;h3&gt;Die Zukunft&lt;&#x2F;h3&gt;
+          &lt;p&gt;A Swiss political party. Past left and right, into UBI, digital sovereignty, and a serious technology agenda.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;a&gt;
+    &lt;&#x2F;div&gt;
+    &lt;p class=&quot;slide__minor-label&quot;&gt;Experiments and tooling&lt;&#x2F;p&gt;
+    &lt;ul class=&quot;slide__minor-chips&quot;&gt;
+      &lt;li&gt;&lt;img src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;terrarium.png&quot; alt=&quot;&quot; width=&quot;20&quot; height=&quot;20&quot;&gt; Terrarium&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;svg class=&quot;slide__minor-icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.18-.02-2.14-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.76 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z&quot;&#x2F;&gt;&lt;&#x2F;svg&gt; Shiioo&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;svg class=&quot;slide__minor-icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.18-.02-2.14-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.76 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z&quot;&#x2F;&gt;&lt;&#x2F;svg&gt; Conflux&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;svg class=&quot;slide__minor-icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.18-.02-2.14-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.76 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z&quot;&#x2F;&gt;&lt;&#x2F;svg&gt; Refrakt&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;img src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;kurumi.png&quot; alt=&quot;&quot; width=&quot;20&quot; height=&quot;20&quot;&gt; Kurumi&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;svg class=&quot;slide__minor-icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.18-.02-2.14-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.76 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z&quot;&#x2F;&gt;&lt;&#x2F;svg&gt; Vela&lt;&#x2F;li&gt;
+      &lt;li&gt;…and the daily-driver utilities&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;p class=&quot;slide__kicker slide__kicker--strong&quot;&gt;
+      None of these were started because AI generated ideas.
+      AI allowed existing ideas to escape my notebook.
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;05&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;Where the human still steers.&lt;&#x2F;h2&gt;
+    &lt;ul class=&quot;slide__list&quot;&gt;
+      &lt;li&gt;Requirements&lt;&#x2F;li&gt;
+      &lt;li&gt;Architecture tradeoffs&lt;&#x2F;li&gt;
+      &lt;li&gt;Long-term maintainability&lt;&#x2F;li&gt;
+      &lt;li&gt;Taste&lt;&#x2F;li&gt;
+      &lt;li&gt;Product decisions&lt;&#x2F;li&gt;
+      &lt;li&gt;Knowing when not to build something&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;p class=&quot;slide__kicker slide__kicker--strong&quot;&gt;
+      The human did not disappear. The human moved up the stack.
+    &lt;&#x2F;p&gt;
+    &lt;svg class=&quot;slide__diagram&quot; viewBox=&quot;0 0 1200 320&quot; xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; role=&quot;img&quot; aria-labelledby=&quot;diag05-title&quot;&gt;
+      &lt;title id=&quot;diag05-title&quot;&gt;Before: the human reasoned about syntax; the compiler enforced it. Now: the human reasons about meaning; the coding agent interprets it.&lt;&#x2F;title&gt;
+      &lt;defs&gt;
+        &lt;marker id=&quot;diag05-arrow&quot; viewBox=&quot;0 0 10 10&quot; refX=&quot;8&quot; refY=&quot;5&quot; markerWidth=&quot;7&quot; markerHeight=&quot;7&quot; orient=&quot;auto&quot;&gt;
+          &lt;path d=&quot;M0 0 L10 5 L0 10 z&quot; fill=&quot;#a8acba&quot;&#x2F;&gt;
+        &lt;&#x2F;marker&gt;
+      &lt;&#x2F;defs&gt;
+      &lt;text x=&quot;22&quot; y=&quot;89&quot; class=&quot;slide__diagram-row-label&quot;&gt;Before&lt;&#x2F;text&gt;
+      &lt;g class=&quot;slide__diagram-node&quot;&gt;
+        &lt;rect x=&quot;140&quot; y=&quot;55&quot; width=&quot;240&quot; height=&quot;70&quot; rx=&quot;14&quot;&#x2F;&gt;
+        &lt;text x=&quot;260&quot; y=&quot;86&quot;&gt;Human&lt;&#x2F;text&gt;
+        &lt;text x=&quot;260&quot; y=&quot;108&quot; class=&quot;slide__diagram-node-sub&quot;&gt;reasons about&lt;&#x2F;text&gt;
+      &lt;&#x2F;g&gt;
+      &lt;line x1=&quot;395&quot; y1=&quot;90&quot; x2=&quot;465&quot; y2=&quot;90&quot; class=&quot;slide__diagram-arrow&quot; marker-end=&quot;url(#diag05-arrow)&quot;&#x2F;&gt;
+      &lt;g class=&quot;slide__diagram-node slide__diagram-node--soft&quot;&gt;
+        &lt;rect x=&quot;480&quot; y=&quot;55&quot; width=&quot;240&quot; height=&quot;70&quot; rx=&quot;14&quot;&#x2F;&gt;
+        &lt;text x=&quot;600&quot; y=&quot;86&quot;&gt;Syntax&lt;&#x2F;text&gt;
+        &lt;text x=&quot;600&quot; y=&quot;108&quot; class=&quot;slide__diagram-node-sub&quot;&gt;enforced by&lt;&#x2F;text&gt;
+      &lt;&#x2F;g&gt;
+      &lt;line x1=&quot;735&quot; y1=&quot;90&quot; x2=&quot;805&quot; y2=&quot;90&quot; class=&quot;slide__diagram-arrow&quot; marker-end=&quot;url(#diag05-arrow)&quot;&#x2F;&gt;
+      &lt;g class=&quot;slide__diagram-node&quot;&gt;
+        &lt;rect x=&quot;820&quot; y=&quot;55&quot; width=&quot;240&quot; height=&quot;70&quot; rx=&quot;14&quot;&#x2F;&gt;
+        &lt;text x=&quot;940&quot; y=&quot;86&quot;&gt;Compiler&lt;&#x2F;text&gt;
+        &lt;text x=&quot;940&quot; y=&quot;108&quot; class=&quot;slide__diagram-node-sub&quot;&gt;that makes it work&lt;&#x2F;text&gt;
+      &lt;&#x2F;g&gt;
+      &lt;text x=&quot;22&quot; y=&quot;239&quot; class=&quot;slide__diagram-row-label&quot;&gt;Now&lt;&#x2F;text&gt;
+      &lt;g class=&quot;slide__diagram-node&quot;&gt;
+        &lt;rect x=&quot;140&quot; y=&quot;205&quot; width=&quot;240&quot; height=&quot;70&quot; rx=&quot;14&quot;&#x2F;&gt;
+        &lt;text x=&quot;260&quot; y=&quot;236&quot;&gt;Human&lt;&#x2F;text&gt;
+        &lt;text x=&quot;260&quot; y=&quot;258&quot; class=&quot;slide__diagram-node-sub&quot;&gt;reasons about&lt;&#x2F;text&gt;
+      &lt;&#x2F;g&gt;
+      &lt;line x1=&quot;395&quot; y1=&quot;240&quot; x2=&quot;465&quot; y2=&quot;240&quot; class=&quot;slide__diagram-arrow&quot; marker-end=&quot;url(#diag05-arrow)&quot;&#x2F;&gt;
+      &lt;g class=&quot;slide__diagram-node slide__diagram-node--accent&quot;&gt;
+        &lt;rect x=&quot;480&quot; y=&quot;205&quot; width=&quot;240&quot; height=&quot;70&quot; rx=&quot;14&quot;&#x2F;&gt;
+        &lt;text x=&quot;600&quot; y=&quot;236&quot;&gt;Meaning&lt;&#x2F;text&gt;
+        &lt;text x=&quot;600&quot; y=&quot;258&quot; class=&quot;slide__diagram-node-sub&quot;&gt;interpreted by&lt;&#x2F;text&gt;
+      &lt;&#x2F;g&gt;
+      &lt;line x1=&quot;735&quot; y1=&quot;240&quot; x2=&quot;805&quot; y2=&quot;240&quot; class=&quot;slide__diagram-arrow&quot; marker-end=&quot;url(#diag05-arrow)&quot;&#x2F;&gt;
+      &lt;g class=&quot;slide__diagram-node slide__diagram-node--accent&quot;&gt;
+        &lt;rect x=&quot;820&quot; y=&quot;205&quot; width=&quot;240&quot; height=&quot;70&quot; rx=&quot;14&quot;&#x2F;&gt;
+        &lt;text x=&quot;940&quot; y=&quot;236&quot;&gt;Coding Agent&lt;&#x2F;text&gt;
+        &lt;text x=&quot;940&quot; y=&quot;258&quot; class=&quot;slide__diagram-node-sub&quot;&gt;that makes it work&lt;&#x2F;text&gt;
+      &lt;&#x2F;g&gt;
+    &lt;&#x2F;svg&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide slide--closing&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;06&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;The unexpected consequence&lt;&#x2F;h2&gt;
+    &lt;p class=&quot;slide__quote slide__quote--xl&quot;&gt;
+      I thought AI would make me write software faster.&lt;br&gt;
+      Instead, it made me start projects I would never have started before.
+    &lt;&#x2F;p&gt;
+    &lt;p class=&quot;slide__kicker slide__kicker--strong&quot;&gt;
+      The biggest change was not productivity. The biggest change was willingness.
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;07&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;What happened next&lt;&#x2F;h2&gt;
+    &lt;ol class=&quot;slide__timeline&quot;&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;March 2026 · San Francisco&lt;&#x2F;span&gt;
+        &lt;p&gt;Co-presented an AI Web Security tool at &lt;strong&gt;RSAC 2026&lt;&#x2F;strong&gt; with Milan Duric. Same trip: a private downtown dinner hosted by &lt;strong&gt;Maverick Capital&lt;&#x2F;strong&gt;, room of AI Platform leaders.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;Spring 2026&lt;&#x2F;span&gt;
+        &lt;p&gt;Shipped a &lt;strong&gt;Temporal-based self-service&lt;&#x2F;strong&gt; that lets users order web-service resources while AI quietly handles the operational work. Role at the time: Senior Platform Engineer &amp; Solution Architect, Web Security &#x2F; Application Delivery.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;Two weeks ago&lt;&#x2F;span&gt;
+        &lt;p&gt;New role: &lt;strong&gt;Enterprise Solution Architect&lt;&#x2F;strong&gt; for Group-wide AI Platform and AI-assisted development.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;Last week&lt;&#x2F;span&gt;
+        &lt;p&gt;Joined &lt;a href=&quot;https:&#x2F;&#x2F;thejfloor.com&#x2F;&quot;&gt;&lt;strong&gt;J floor&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. More talks already on the calendar.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ol&gt;
+    &lt;p class=&quot;slide__kicker slide__kicker--strong&quot;&gt;
+      None of this was on my calendar a year ago.
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide slide--end&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;Thank you&lt;&#x2F;p&gt;
+    &lt;p class=&quot;slide__quote slide__quote--final&quot;&gt;
+      The most important thing Claude Code gave me was not faster software development.
+      It gave me the ability to turn years of accumulated ideas into working systems
+      before I lost interest in them.
+    &lt;&#x2F;p&gt;
+    &lt;p class=&quot;slide__byline slide__byline--icons&quot;&gt;
+      &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&quot;&gt;
+        &lt;img class=&quot;slide__byline-icon slide__byline-icon--img&quot; src=&quot;&#x2F;raskell-mascot.avif&quot; alt=&quot;&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;
+        raskell.io
+      &lt;&#x2F;a&gt;
+      &lt;span class=&quot;slide__byline-sep&quot; aria-hidden=&quot;true&quot;&gt;·&lt;&#x2F;span&gt;
+      &lt;a href=&quot;https:&#x2F;&#x2F;ch.linkedin.com&#x2F;in&#x2F;raffael-e-schneider&quot;&gt;
+        &lt;svg class=&quot;slide__byline-icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z&quot;&#x2F;&gt;&lt;&#x2F;svg&gt;
+        raffael-e-schneider
+      &lt;&#x2F;a&gt;
+      &lt;span class=&quot;slide__byline-sep&quot; aria-hidden=&quot;true&quot;&gt;·&lt;&#x2F;span&gt;
+      &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;raskelll&quot;&gt;
+        &lt;svg class=&quot;slide__byline-icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;&#x2F;&gt;&lt;&#x2F;svg&gt;
+        @raskelll
+      &lt;&#x2F;a&gt;
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+</description>
+      </item>
+    </channel>
+</rss>

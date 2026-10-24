@@ -12,6 +12,9 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 - [All writing in full](https://raskell.io/llms-full.txt): every article and note in one Markdown file, newest first
 - [Notes](https://raskell.io/notes/): short notes that sit between the articles
 - [Reading](https://raskell.io/reading/): what Raffael is reading, what is next, and what he has read, with reviews
+- [Reviews](https://raskell.io/categories/reviews/): reviews of books, papers, and long articles from the reading log
+- [Talks](https://raskell.io/talks/): slide decks from talks
+- [Search](https://raskell.io/search/): everything on the site, including every external link the writing cites; `?q=` and `?type=link` (or article, review, note, talk, work, project, topic) work as URLs
 - [RSS feed](https://raskell.io/rss.xml): full-text feed
 
 ## Series: The Agent Platform Handbook
@@ -220,7 +223,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Each article and note as Markdown: its URL with `.md` instead of the trailing slash, e.g. https://raskell.io/articles/the-model-is-a-dependency.md
 - [map.json](https://raskell.io/map.json): the site graph (pages, topics with definitions, series, projects, and their links)
 - [api-catalog](https://raskell.io/.well-known/api-catalog): RFC 9727 discovery of the machine-readable files
-- Feeds: [RSS](https://raskell.io/rss.xml), [Atom](https://raskell.io/atom.xml), [articles](https://raskell.io/articles/rss.xml), [notes](https://raskell.io/notes/rss.xml)
+- Feeds: [RSS](https://raskell.io/rss.xml), [Atom](https://raskell.io/atom.xml), [articles](https://raskell.io/articles/rss.xml), [notes](https://raskell.io/notes/rss.xml), [reviews](https://raskell.io/categories/reviews/rss.xml)
 - In the browser: WebMCP tools (search_site, get_current_page, get_page_markdown, get_site_index, list_topics, get_connections, cite_current_page, open_page) register when an agent exposes `document.modelContext`.
 - No authentication, no rate limits ([auth.md](https://raskell.io/.well-known/auth.md)). Crawling for search, answers, and training is welcome (robots.txt Content-Signal).
 

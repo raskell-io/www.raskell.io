@@ -1,4 +1,4 @@
-// The site graph: a small force-directed graph of articles, notes, topics, series, projects and reading on a
+// The site graph: a small force-directed graph of articles, notes, topics, series, categories, projects and reading on a
 // canvas, no libraries. The /map/ page mounts the whole graph from its #map-data JSON; the end-of-page
 // maps (partials/local_map.html) fetch that JSON and mount one page's neighbourhood with SeijakuMap.local().
 (function () {
@@ -15,13 +15,15 @@ function mount(fig, data, opts) {
   var STYLE = {
     article: { fill: "#f4f0df", base: 2.6, grow: 0.9 },
     note: { fill: "#f4f0df", square: true, base: 2.2, grow: 0.8 },
+    talk: { fill: "#efd093", base: 3, grow: 0.9 },
     tag: { fill: "#72d7dc", base: 3.2, grow: 1.45 },
     series: { fill: "#efd093", base: 5, grow: 1.1 },
+    category: { fill: null, ring: "#efd093", square: true, base: 4.4, grow: 0.9 },
     project: { fill: null, ring: "#efd093", base: 4.4, grow: 1.1 },
     work: { fill: null, ring: "#a9e8e9", diamond: true, base: 3.4, grow: 0.9 },
     hub: { fill: null, ring: "#f4f0df", base: 6, grow: 0.5 }
   };
-  var REST = { tag: 46, series: 40, project: 58, work: 54, article: 64, note: 56, hub: 70, tagtag: 62 };
+  var REST = { tag: 46, series: 40, category: 52, talk: 60, project: 58, work: 54, article: 64, note: 56, hub: 70, tagtag: 62 };
 
   // Nodes and links ---------------------------------------------------------
   var nodes = [], byId = {};
@@ -38,7 +40,7 @@ function mount(fig, data, opts) {
     if (!a || !b || a === b || seen[key]) { return; }
     seen[key] = true;
     a.deg++; b.deg++; a.nb.push(b); b.nb.push(a);
-    var page = function (n) { return n.kind === "article" || n.kind === "note"; };
+    var page = function (n) { return n.kind === "article" || n.kind === "note" || n.kind === "talk"; };
     var k = a.kind === "hub" || b.kind === "hub" ? "hub" : a.kind === "tag" && b.kind === "tag" ? "tagtag" : page(a) ? b.kind : a.kind;
     links.push({ a: a, b: b, rest: REST[k] || 50 });
   });
@@ -162,14 +164,14 @@ function mount(fig, data, opts) {
       if (n === hover || n === sel || n === focus) { return true; }
       if (sel) { return lit(n); }
       if (opts.allLabels) { return true; }
-      if (n.kind === "article" || n.kind === "note") { return scale > 1.7; }
+      if (n.kind === "article" || n.kind === "note" || n.kind === "talk") { return scale > 1.7; }
       return n.deg >= 2 || scale > 1.2;
     }).sort(function (a, b) {
       return (b === hover || b === sel || b === focus) - (a === hover || a === sel || a === focus) || b.deg - a.deg;
     });
     var boxes = [];
     list.forEach(function (n) {
-      var big = n.kind !== "article" && n.kind !== "note";
+      var big = n.kind !== "article" && n.kind !== "note" && n.kind !== "talk";
       ctx.font = (big ? "500 " : "400 ") + (big ? 13 : 12) + "px " + font;
       var text = n.label.length > 42 ? n.label.slice(0, 40) + "…" : n.label;
       var w = ctx.measureText(text).width, x = Math.max(4, Math.min(W - w - 4, n.x * scale + tx - w / 2)), y = (n.y + n.r) * scale + ty + 6;   // kept inside the canvas
@@ -178,13 +180,13 @@ function mount(fig, data, opts) {
       if (clash && n !== hover && n !== sel) { return; }
       boxes.push(box);
       ctx.fillStyle = "rgba(11, 20, 18, 0.72)"; ctx.fillRect(box[0], box[1], box[2] - box[0], box[3] - box[1]);
-      ctx.fillStyle = n === focus ? "#efd093" : n.kind === "tag" ? "#a9e8e9" : n.kind === "article" || n.kind === "note" ? "rgba(244, 240, 223, 0.86)" : n.kind === "hub" ? "#f4f0df" : n.kind === "work" ? "#a9e8e9" : "#efd093";
+      ctx.fillStyle = n === focus ? "#efd093" : n.kind === "tag" ? "#a9e8e9" : n.kind === "article" || n.kind === "note" || n.kind === "talk" ? "rgba(244, 240, 223, 0.86)" : n.kind === "hub" ? "#f4f0df" : n.kind === "work" ? "#a9e8e9" : "#efd093";
       ctx.textBaseline = "top"; ctx.fillText(text, x, y);
     });
   }
 
   // Selection card -----------------------------------------------------------
-  var KIND_NAME = { article: "Article", note: "Note", tag: "Topic", series: "Series", project: "Project", hub: "Group", work: "Reading" };
+  var KIND_NAME = { article: "Article", note: "Note", talk: "Talk", tag: "Topic", series: "Series", project: "Project", hub: "Group", work: "Reading", category: "Category" };
   function select(n) {
     sel = n;
     if (!card) { draw(); return; }

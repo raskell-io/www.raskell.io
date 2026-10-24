@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-24T09:17:13+00:00",
+ "generated": "2026-10-24T09:42:11+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -10,7 +10,7 @@
    "url": "https://raskell.io/articles/the-web-was-the-training-set/",
    "meta": "2026-10-24 · 16 min",
    "description": "Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/observability-is-not-logging/",
@@ -317,6 +317,15 @@
    "meta": "2022-09-20 · 1 min",
    "description": "The first post on raskell.io. What this site is for and what I planned to write about.",
    "degree": 4
+  },
+  {
+   "id": "a:/talks/iat-13-basel/",
+   "kind": "talk",
+   "label": "I Stopped Writing Most of My Code",
+   "url": "https://raskell.io/talks/iat-13-basel/",
+   "meta": "2026-06-10 · IT's ABOUT TECH #13",
+   "description": "Slide deck for IT's ABOUT TECH #13 in Basel. A 15-minute story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time.",
+   "degree": 10
   },
   {
    "id": "t:agents",
@@ -867,13 +876,22 @@
    "degree": 9
   },
   {
+   "id": "c:reviews",
+   "kind": "category",
+   "label": "Reviews",
+   "url": "https://raskell.io/categories/reviews/",
+   "meta": "1 entry",
+   "description": "Reviews of books, papers, and long articles from the reading log: what the work argues, where I was persuaded, and what I made of it.",
+   "degree": 1
+  },
+  {
    "id": "p:archipelag-io",
    "kind": "project",
    "label": "Archipelag.io",
    "url": "https://archipelag.io",
    "meta": "Project",
    "description": "Decentralized AI compute: AI jobs run on a network of community-operated GPU hosts. Jobs prefer nearby hosts and a preferred region, and every job records where it ran; strict regi…",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "p:cyanea",
@@ -882,7 +900,7 @@
    "url": "https://cyanea.bio",
    "meta": "Project",
    "description": "Bioinformatics notebooks that actually re-run. Write, run, and share analyses that execute in your browser on WebAssembly, with nothing to install. Every notebook, dataset, and out…",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "p:humankind",
@@ -891,7 +909,7 @@
    "url": "https://humankind.plus",
    "meta": "Project",
    "description": "Human continuity platform for preserving presence across generations. Humankind helps people build a living archive of voice, stories, memories, values, and relational warmth so th…",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "p:arcanist",
@@ -900,7 +918,7 @@
    "url": "https://arcanist.sh",
    "meta": "Project",
    "description": "Haskell tooling for the age of AI-authored code. hx is a fast package and project manager written in Rust, and bhc is a compiler built to check everything it can. With a registry t…",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "p:zentinel",
@@ -909,7 +927,7 @@
    "url": "https://zentinelproxy.io",
    "meta": "Project",
    "description": "Security-first reverse proxy built to guard the free web. Rust on Cloudflare's Pingora, explicit configuration over hidden defaults, and WAF, auth and other policy in isolated agen…",
-   "degree": 20
+   "degree": 21
   },
   {
    "id": "p:hx",
@@ -945,7 +963,7 @@
    "url": "https://refrakt.raskell.io",
    "meta": "Project",
    "description": "A convention-first web framework for Gleam. Productive like Phoenix, explicit like Gleam, composable with Wisp and Lustre. Full-stack code generation, CRUD scaffolding, and a batte…",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "p:vela",
@@ -963,7 +981,7 @@
    "url": "https://die-zukunft.ch",
    "meta": "Project",
    "description": "A Swiss movement that applies engineering principles to public life: not left, not right. Digital sovereignty through open standards, auditable and portable public infrastructure, …",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "p:human-macroscope",
@@ -1008,7 +1026,7 @@
    "url": "https://terrarium.raskell.io",
    "meta": "Project",
    "description": "A societal simulation engine where LLM-powered agents form emergent civilizations. Each agent has a personality, needs, memories, and beliefs that can be wrong. You set the rules o…",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "p:hotaru",
@@ -1044,7 +1062,7 @@
    "url": "https://github.com/raskell-io/conflux",
    "meta": "Project",
    "description": "Schema-aware config state coordination. Multiple writers, deterministic merge, git milestones. A CRDT document engine with pluggable storage backends (SQLite, PostgreSQL, DynamoDB)…",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "p:shiioo",
@@ -1116,7 +1134,7 @@
    "url": "https://kurumi.raskell.io",
    "meta": "Project",
    "description": "A local-first, AI-native second brain. Capture notes, links, and meetings, then find them again through wikilinks, backlinks, a graph view, and full-text search. Everything works o…",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "p:paw-and-claw",
@@ -2308,6 +2326,10 @@
   },
   {
    "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "c:reviews"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
    "target": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
   },
   {
@@ -2599,6 +2621,10 @@
    "target": "p:archipelag-io"
   },
   {
+   "source": "a:/talks/iat-13-basel/",
+   "target": "p:archipelag-io"
+  },
+  {
    "source": "a:/articles/how-i-work-these-days/",
    "target": "p:cyanea"
   },
@@ -2615,7 +2641,15 @@
    "target": "p:cyanea"
   },
   {
+   "source": "a:/talks/iat-13-basel/",
+   "target": "p:cyanea"
+  },
+  {
    "source": "a:/articles/how-i-work-these-days/",
+   "target": "p:humankind"
+  },
+  {
+   "source": "a:/talks/iat-13-basel/",
    "target": "p:humankind"
   },
   {
@@ -2636,6 +2670,10 @@
   },
   {
    "source": "a:/articles/how-i-work-these-days/",
+   "target": "p:arcanist"
+  },
+  {
+   "source": "a:/talks/iat-13-basel/",
    "target": "p:arcanist"
   },
   {
@@ -2687,6 +2725,10 @@
    "target": "p:zentinel"
   },
   {
+   "source": "a:/talks/iat-13-basel/",
+   "target": "p:zentinel"
+  },
+  {
    "source": "a:/articles/the-field-exists-now/",
    "target": "p:hx"
   },
@@ -2711,6 +2753,10 @@
    "target": "p:refrakt"
   },
   {
+   "source": "a:/talks/iat-13-basel/",
+   "target": "p:refrakt"
+  },
+  {
    "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
    "target": "p:vela"
   },
@@ -2731,6 +2777,10 @@
    "target": "p:die-zukunft"
   },
   {
+   "source": "a:/talks/iat-13-basel/",
+   "target": "p:die-zukunft"
+  },
+  {
    "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
    "target": "p:coconutos"
   },
@@ -2740,6 +2790,10 @@
   },
   {
    "source": "a:/articles/this-site-is-becoming-a-map/",
+   "target": "p:terrarium"
+  },
+  {
+   "source": "a:/talks/iat-13-basel/",
    "target": "p:terrarium"
   },
   {
@@ -2760,6 +2814,10 @@
   },
   {
    "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "p:conflux"
+  },
+  {
+   "source": "a:/talks/iat-13-basel/",
    "target": "p:conflux"
   },
   {
@@ -2796,6 +2854,10 @@
   },
   {
    "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:kurumi"
+  },
+  {
+   "source": "a:/talks/iat-13-basel/",
    "target": "p:kurumi"
   },
   {
