@@ -1,0 +1,449 @@
+{
+ "source": "https://raskell.io/reading/",
+ "generated": "2026-10-24",
+ "description": "The reading log of raskell.io by Raffael Schneider: what is being read, what is next, and what has been read.",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "works": [
+  {
+   "id": "the-infinity-machine",
+   "title": "The Infinity Machine",
+   "subtitle": "Demis Hassabis, DeepMind, and the Quest for Superintelligence",
+   "author": "Sebastian Mallaby",
+   "kind": "book",
+   "year": 2026,
+   "isbn": "9780593831847",
+   "url": "https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296",
+   "status": "reading",
+   "topics": [
+    "machine-learning",
+    "reinforcement-learning",
+    "history-of-technology"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-infinity-machine.avif",
+   "page": "https://raskell.io/reading/#the-infinity-machine"
+  },
+  {
+   "id": "the-cauldron",
+   "title": "The Cauldron",
+   "subtitle": "The Making of the Modern Middle East",
+   "author": "Simon Sebag Montefiore",
+   "kind": "book",
+   "year": 2026,
+   "url": "https://www.hachette.co.uk/titles/simon-sebag-montefiore/the-cauldron/9781399634939/",
+   "status": "read",
+   "finished": "2026-09",
+   "topics": [
+    "history",
+    "geography"
+   ],
+   "page": "https://raskell.io/reading/#the-cauldron"
+  },
+  {
+   "id": "infinite-jest",
+   "title": "Infinite Jest",
+   "author": "David Foster Wallace",
+   "kind": "novel",
+   "year": 1996,
+   "status": "read",
+   "finished": "2025-12",
+   "cover": "https://raskell.io/covers/reading/infinite-jest.avif",
+   "page": "https://raskell.io/reading/#infinite-jest"
+  },
+  {
+   "id": "guns-germs-and-steel",
+   "title": "Guns, Germs, and Steel",
+   "subtitle": "The Fates of Human Societies",
+   "author": "Jared Diamond",
+   "kind": "book",
+   "year": 1997,
+   "status": "read",
+   "finished": "2025-11",
+   "topics": [
+    "history",
+    "geography"
+   ],
+   "cover": "https://raskell.io/covers/reading/guns-germs-and-steel.avif",
+   "page": "https://raskell.io/reading/#guns-germs-and-steel"
+  },
+  {
+   "id": "nuclear-war-a-scenario",
+   "title": "Nuclear War: A Scenario",
+   "author": "Annie Jacobsen",
+   "kind": "book",
+   "year": 2024,
+   "isbn": "9780593476093",
+   "url": "https://en.wikipedia.org/wiki/Nuclear_War:_A_Scenario",
+   "status": "read",
+   "finished": "2025-10",
+   "cover": "https://raskell.io/covers/reading/nuclear-war-a-scenario.avif",
+   "page": "https://raskell.io/reading/#nuclear-war-a-scenario"
+  },
+  {
+   "id": "jurassic-park",
+   "title": "Jurassic Park",
+   "author": "Michael Crichton",
+   "kind": "novel",
+   "year": 1990,
+   "status": "read",
+   "finished": "2025-07",
+   "topics": [
+    "complex-systems"
+   ],
+   "cover": "https://raskell.io/covers/reading/jurassic-park.avif",
+   "page": "https://raskell.io/reading/#jurassic-park"
+  },
+  {
+   "id": "the-books-of-jacob",
+   "title": "The Books of Jacob",
+   "author": "Olga Tokarczuk",
+   "kind": "novel",
+   "year": 2014,
+   "edition": "Translated from the Polish (Księgi Jakubowe) by Jennifer Croft",
+   "isbn": "9780593087480",
+   "status": "read",
+   "finished": "2024-08",
+   "cover": "https://raskell.io/covers/reading/the-books-of-jacob.avif",
+   "page": "https://raskell.io/reading/#the-books-of-jacob"
+  },
+  {
+   "id": "from-worm-to-human",
+   "title": "From Worm to Human: Scaling Brain Emulation",
+   "author": "Isaak Freeman",
+   "kind": "paper",
+   "year": 2026,
+   "publisher": "MIT, Boyden Lab (thesis)",
+   "url": "https://pdf.isaak.net/scaling-emulations",
+   "status": "read",
+   "finished": "2026-06",
+   "topics": [
+    "neuroscience",
+    "distributed-systems",
+    "gpus"
+   ],
+   "take": "A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan.",
+   "page": "https://raskell.io/reading/#from-worm-to-human"
+  },
+  {
+   "id": "state-of-brain-emulation-2025",
+   "title": "State of Brain Emulation Report 2025",
+   "author": "Zanichelli, Schons, Freeman, Shiu, and Arkhipov",
+   "kind": "report",
+   "year": 2025,
+   "url": "https://arxiv.org/abs/2510.15745",
+   "status": "read",
+   "finished": "2026-06",
+   "topics": [
+    "neuroscience",
+    "simulation"
+   ],
+   "take": "The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are.",
+   "page": "https://raskell.io/reading/#state-of-brain-emulation-2025"
+  },
+  {
+   "id": "this-is-for-everyone",
+   "title": "This Is for Everyone",
+   "subtitle": "The Unfinished Story of the World Wide Web",
+   "author": "Tim Berners-Lee",
+   "kind": "book",
+   "year": 2025,
+   "status": "read",
+   "finished": "2025-10",
+   "rating": 8,
+   "topics": [
+    "open-web",
+    "history-of-technology",
+    "hypertext",
+    "open-standards",
+    "decentralisation",
+    "open-data",
+    "training-data",
+    "privacy",
+    "data-sovereignty",
+    "attention-economy",
+    "agents"
+   ],
+   "take": "Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all.",
+   "cover": "https://raskell.io/covers/reading/this-is-for-everyone.avif",
+   "page": "https://raskell.io/reading/#this-is-for-everyone",
+   "review": {
+    "title": "The Web Was the Training Set",
+    "url": "https://raskell.io/articles/the-web-was-the-training-set/",
+    "markdown": "https://raskell.io/articles/the-web-was-the-training-set.md"
+   }
+  },
+  {
+   "id": "why-machines-learn",
+   "title": "Why Machines Learn",
+   "subtitle": "The Elegant Math Behind Modern AI",
+   "author": "Anil Ananthaswamy",
+   "kind": "book",
+   "year": 2024,
+   "edition": "2025 paperback, with the afterword on transformers",
+   "url": "https://www.penguinrandomhouse.com/books/677608/why-machines-learn-by-anil-ananthaswamy/",
+   "status": "backlog",
+   "topics": [
+    "machine-learning"
+   ],
+   "cover": "https://raskell.io/covers/reading/why-machines-learn.avif",
+   "page": "https://raskell.io/reading/#why-machines-learn"
+  },
+  {
+   "id": "the-dream-machine",
+   "title": "The Dream Machine",
+   "author": "M. Mitchell Waldrop",
+   "kind": "book",
+   "year": 2001,
+   "edition": "Stripe Press",
+   "isbn": "9781953953360",
+   "url": "https://press.stripe.com/the-dream-machine",
+   "status": "backlog",
+   "topics": [
+    "history-of-technology",
+    "open-web"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-dream-machine.avif",
+   "page": "https://raskell.io/reading/#the-dream-machine"
+  },
+  {
+   "id": "the-alignment-problem",
+   "title": "The Alignment Problem",
+   "subtitle": "Machine Learning and Human Values",
+   "author": "Brian Christian",
+   "kind": "book",
+   "year": 2020,
+   "url": "https://brianchristian.org/the-alignment-problem/",
+   "status": "backlog",
+   "topics": [
+    "machine-learning",
+    "evaluation"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-alignment-problem.avif",
+   "page": "https://raskell.io/reading/#the-alignment-problem"
+  },
+  {
+   "id": "ai-a-guide-for-thinking-humans",
+   "title": "Artificial Intelligence",
+   "subtitle": "A Guide for Thinking Humans",
+   "author": "Melanie Mitchell",
+   "kind": "book",
+   "year": 2019,
+   "edition": "2025 edition, with the new preface",
+   "isbn": "9781250404855",
+   "url": "https://us.macmillan.com/books/9781250404855/artificialintelligence/",
+   "status": "backlog",
+   "topics": [
+    "machine-learning"
+   ],
+   "cover": "https://raskell.io/covers/reading/ai-a-guide-for-thinking-humans.avif",
+   "page": "https://raskell.io/reading/#ai-a-guide-for-thinking-humans"
+  },
+  {
+   "id": "deep-thinking",
+   "title": "Deep Thinking",
+   "subtitle": "Where Machine Intelligence Ends and Human Creativity Begins",
+   "author": "Garry Kasparov",
+   "kind": "book",
+   "year": 2017,
+   "isbn": "9781473653504",
+   "url": "https://www.hachette.co.uk/titles/garry-kasparov/deep-thinking/9781473653504/",
+   "status": "backlog",
+   "topics": [
+    "machine-learning",
+    "games"
+   ],
+   "cover": "https://raskell.io/covers/reading/deep-thinking.avif",
+   "page": "https://raskell.io/reading/#deep-thinking"
+  },
+  {
+   "id": "understanding-deep-learning",
+   "title": "Understanding Deep Learning",
+   "author": "Simon J. D. Prince",
+   "kind": "book",
+   "year": 2023,
+   "isbn": "9780262048644",
+   "url": "https://mitpress.mit.edu/9780262048644/understanding-deep-learning/",
+   "status": "backlog",
+   "topics": [
+    "machine-learning"
+   ],
+   "page": "https://raskell.io/reading/#understanding-deep-learning"
+  },
+  {
+   "id": "build-a-large-language-model",
+   "title": "Build a Large Language Model (From Scratch)",
+   "author": "Sebastian Raschka",
+   "kind": "book",
+   "year": 2024,
+   "url": "https://www.manning.com/books/build-a-large-language-model-from-scratch",
+   "status": "backlog",
+   "topics": [
+    "machine-learning",
+    "inference"
+   ],
+   "cover": "https://raskell.io/covers/reading/build-a-large-language-model.avif",
+   "page": "https://raskell.io/reading/#build-a-large-language-model"
+  },
+  {
+   "id": "ai-engineering",
+   "title": "AI Engineering",
+   "subtitle": "Building Applications with Foundation Models",
+   "author": "Chip Huyen",
+   "kind": "book",
+   "year": 2025,
+   "isbn": "9781098166298",
+   "url": "https://www.oreilly.com/library/view/ai-engineering/9781098166298/",
+   "status": "backlog",
+   "topics": [
+    "ai-platforms",
+    "evaluation"
+   ],
+   "cover": "https://raskell.io/covers/reading/ai-engineering.avif",
+   "page": "https://raskell.io/reading/#ai-engineering"
+  },
+  {
+   "id": "reinforcement-learning-an-introduction",
+   "title": "Reinforcement Learning: An Introduction",
+   "author": "Richard S. Sutton and Andrew G. Barto",
+   "kind": "book",
+   "year": 2018,
+   "edition": "Second edition",
+   "isbn": "9780262039246",
+   "url": "https://mitpress.mit.edu/9780262039246/reinforcement-learning/",
+   "status": "backlog",
+   "topics": [
+    "reinforcement-learning",
+    "machine-learning"
+   ],
+   "cover": "https://raskell.io/covers/reading/reinforcement-learning-an-introduction.avif",
+   "page": "https://raskell.io/reading/#reinforcement-learning-an-introduction"
+  },
+  {
+   "id": "probabilistic-machine-learning",
+   "title": "Probabilistic Machine Learning: An Introduction",
+   "author": "Kevin P. Murphy",
+   "kind": "book",
+   "year": 2022,
+   "url": "https://probml.github.io/pml-book/book1.html",
+   "status": "backlog",
+   "topics": [
+    "machine-learning"
+   ],
+   "page": "https://raskell.io/reading/#probabilistic-machine-learning"
+  },
+  {
+   "id": "the-making-of-the-atomic-bomb",
+   "title": "The Making of the Atomic Bomb",
+   "author": "Richard Rhodes",
+   "kind": "book",
+   "year": 1986,
+   "edition": "25th anniversary edition",
+   "isbn": "9781451677614",
+   "url": "https://www.simonandschuster.net/books/The-Making-of-the-Atomic-Bomb/Richard-Rhodes/9781451677614",
+   "status": "backlog",
+   "topics": [
+    "history-of-technology"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-making-of-the-atomic-bomb.avif",
+   "page": "https://raskell.io/reading/#the-making-of-the-atomic-bomb"
+  },
+  {
+   "id": "seeing-like-a-state",
+   "title": "Seeing Like a State",
+   "subtitle": "How Certain Schemes to Improve the Human Condition Have Failed",
+   "author": "James C. Scott",
+   "kind": "book",
+   "year": 1998,
+   "isbn": "9780300246759",
+   "url": "https://yalebooks.yale.edu/book/9780300252989/seeing-like-a-state/",
+   "status": "backlog",
+   "topics": [
+    "complex-systems",
+    "history"
+   ],
+   "cover": "https://raskell.io/covers/reading/seeing-like-a-state.avif",
+   "page": "https://raskell.io/reading/#seeing-like-a-state"
+  },
+  {
+   "id": "a-peace-to-end-all-peace",
+   "title": "A Peace to End All Peace",
+   "subtitle": "The Fall of the Ottoman Empire and the Creation of the Modern Middle East",
+   "author": "David Fromkin",
+   "kind": "book",
+   "year": 1989,
+   "url": "https://academic.macmillan.com/academictrade/9780805088090/apeacetoendallpeace/",
+   "status": "backlog",
+   "topics": [
+    "history",
+    "geography"
+   ],
+   "cover": "https://raskell.io/covers/reading/a-peace-to-end-all-peace.avif",
+   "page": "https://raskell.io/reading/#a-peace-to-end-all-peace"
+  },
+  {
+   "id": "the-billion-dollar-molecule",
+   "title": "The Billion-Dollar Molecule",
+   "subtitle": "The Quest for the Perfect Drug",
+   "author": "Barry Werth",
+   "kind": "book",
+   "year": 1994,
+   "isbn": "9780671510572",
+   "url": "https://www.simonandschuster.com/books/The-Billion-Dollar-Molecule/Barry-Werth/9780671510572",
+   "status": "backlog",
+   "topics": [
+    "life-sciences",
+    "history-of-science"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-billion-dollar-molecule.avif",
+   "page": "https://raskell.io/reading/#the-billion-dollar-molecule"
+  },
+  {
+   "id": "the-eighth-day-of-creation",
+   "title": "The Eighth Day of Creation",
+   "subtitle": "The Makers of the Revolution in Biology",
+   "author": "Horace Freeland Judson",
+   "kind": "book",
+   "year": 1979,
+   "edition": "Commemorative edition",
+   "publisher": "Cold Spring Harbor Laboratory Press",
+   "status": "backlog",
+   "topics": [
+    "life-sciences",
+    "history-of-science"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-eighth-day-of-creation.avif",
+   "page": "https://raskell.io/reading/#the-eighth-day-of-creation"
+  },
+  {
+   "id": "the-demon-under-the-microscope",
+   "title": "The Demon Under the Microscope",
+   "author": "Thomas Hager",
+   "kind": "book",
+   "year": 2006,
+   "url": "https://www.penguinrandomhouse.com/books/73465/the-demon-under-the-microscope-by-thomas-hager/",
+   "status": "backlog",
+   "topics": [
+    "life-sciences",
+    "history-of-science"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-demon-under-the-microscope.avif",
+   "page": "https://raskell.io/reading/#the-demon-under-the-microscope"
+  },
+  {
+   "id": "the-butchering-art",
+   "title": "The Butchering Art",
+   "subtitle": "Joseph Lister's Quest to Transform the Grisly World of Victorian Medicine",
+   "author": "Lindsey Fitzharris",
+   "kind": "book",
+   "year": 2017,
+   "isbn": "9780141983387",
+   "url": "https://www.penguin.co.nz/books/the-butchering-art-9780141983387",
+   "status": "backlog",
+   "topics": [
+    "life-sciences",
+    "history-of-science"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-butchering-art.avif",
+   "page": "https://raskell.io/reading/#the-butchering-art"
+  }
+ ]
+}

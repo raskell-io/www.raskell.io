@@ -2,7 +2,7 @@
 
 > Notes on agent platforms, platform automation, edge infrastructure, and applied security. Building automation-first platforms that survive production reality.
 
-raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, Switzerland. He works on enterprise AI and agent platforms, edge infrastructure, applied security, and developer tooling, and writes long-form articles about them. Every article below links to a clean Markdown copy; the HTML page is the same URL without `.md`. Writing is licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) and code samples MIT: reuse, quote, and train on it with attribution, e.g. Raffael Schneider, "Article title", raskell.io, date, URL. Images, logos, and quoted third-party material are excluded (https://raskell.io/license/).
+raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, Switzerland. He works on enterprise AI and agent platforms, edge infrastructure, applied security, and developer tooling, and writes long-form articles about them. The site is a digital garden: articles, book reviews, notes, talks, a reading log, projects, a topic vocabulary, and every source the writing cites, all connected in one graph (map.json) and one search index (garden.json). Every article below links to a clean Markdown copy; the HTML page is the same URL without `.md`. Writing is licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) and code samples MIT: reuse, quote, and train on it with attribution, e.g. Raffael Schneider, "Article title", raskell.io, date, URL. Images, logos, and quoted third-party material are excluded (https://raskell.io/license/).
 
 ## Key pages
 
@@ -14,7 +14,7 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 - [Reading](https://raskell.io/reading/): what Raffael is reading, what is next, and what he has read, with reviews
 - [Reviews](https://raskell.io/categories/reviews/): reviews of books, papers, and long articles from the reading log
 - [Talks](https://raskell.io/talks/): slide decks from talks
-- [Search](https://raskell.io/search/): everything on the site, including every external link the writing cites; `?q=` and `?type=link` (or article, review, note, talk, work, project, topic) work as URLs
+- [Search](https://raskell.io/search/): everything on the site, including every external link the writing cites; `?q=` and `?type=link` (or article, review, note, talk, work, project, topic) work as URLs, e.g. https://raskell.io/search/?q=zentinel
 - [RSS feed](https://raskell.io/rss.xml): full-text feed
 
 ## Series: The Agent Platform Handbook
@@ -67,9 +67,21 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 - [My OpenBSD journey: Getting it virtualized with libvirt (1)](https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1.md) (2023-02-06): A step-by-step guide to running OpenBSD in a libvirt virtual machine on Void Linux, without needing VirtualBox or VMWare. Part 1 of my OpenBSD journey.
 - [Hello and outlook](https://raskell.io/articles/hello-and-outlook.md) (2022-09-20): The first post on raskell.io. What this site is for and what I planned to write about.
 
+## Reviews
+
+Reviews of works from the reading log (category: reviews, feed https://raskell.io/categories/reviews/rss.xml). Each Markdown copy names the reviewed work and the rating in its front matter.
+
+- [The Web Was the Training Set](https://raskell.io/articles/the-web-was-the-training-set.md) (2026-10-24): review of *This Is for Everyone* by Tim Berners-Lee (book, 2025), rated 8/10. Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply.
+
+## Talks
+
+Slide decks; each has a Markdown copy with the words of every slide.
+
+- [I Stopped Writing Most of My Code](https://raskell.io/talks/iat-13-basel.md) (2026-06-10, IT's ABOUT TECH #13): Slide deck for IT's ABOUT TECH #13 in Basel. A 15-minute story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time.
+
 ## Reading
 
-Books, papers, and long articles from the reading log at https://raskell.io/reading/, with reviews where there is one.
+The reading log at https://raskell.io/reading/ (as data: [reading.json](https://raskell.io/reading.json)): books, papers, and long articles, with the month finished, a rating out of 10 where there is a review, and the review.
 
 ### Reading now
 
@@ -103,9 +115,34 @@ Books, papers, and long articles from the reading log at https://raskell.io/read
 - Infinite Jest, David Foster Wallace (novel, finished December 2025)
 - Guns, Germs, and Steel, Jared Diamond (book, finished November 2025)
 - [Nuclear War: A Scenario](https://en.wikipedia.org/wiki/Nuclear_War:_A_Scenario), Annie Jacobsen (book, finished October 2025)
-- This Is for Everyone, Tim Berners-Lee (book, finished October 2025): Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all. Review: [The Web Was the Training Set](https://raskell.io/articles/the-web-was-the-training-set.md)
+- This Is for Everyone, Tim Berners-Lee (book, finished October 2025, rated 8/10): Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all. Review: [The Web Was the Training Set](https://raskell.io/articles/the-web-was-the-training-set.md)
 - Jurassic Park, Michael Crichton (novel, finished July 2025)
 - The Books of Jacob, Olga Tokarczuk (novel, finished August 2024)
+
+## Sources cited most
+
+External links cited on more than one page (all 252 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
+
+- [Zentinel](https://zentinelproxy.io): cited on 10 pages
+- [Archipelag.io](https://archipelag.io/): cited on 8 pages
+- [Cyanea](https://cyanea.bio/): cited on 5 pages
+- [arcanist.sh](https://arcanist.sh/): cited on 4 pages
+- [Die Zukunft](https://die-zukunft.ch/): cited on 4 pages
+- [companion repository](https://github.com/raskell-io/the-agent-platform-handbook): cited on 4 pages
+- [AI 2027](https://ai-2027.com/): cited on 3 pages
+- [Pingora](https://github.com/cloudflare/pingora): cited on 3 pages
+- [Conflux](https://github.com/raskell-io/conflux): cited on 3 pages
+- [shiioo](https://github.com/raskell-io/shiioo): cited on 3 pages
+- [Vera](https://veralang.dev/): cited on 3 pages
+- [Void Linux](https://voidlinux.org/): cited on 3 pages
+- [catalogue of languages built for agents to write](https://agentlanguages.dev): cited on 2 pages
+- [BHC](https://arcanist.sh/bhc/): cited on 2 pages
+- [hx](https://arcanist.sh/hx/): cited on 2 pages
+- [astral.sh](https://astral.sh): cited on 2 pages
+- [Void Linux Handbook: XBPS](https://docs.voidlinux.org/xbps/index.html): cited on 2 pages
+- [fly.io](https://fly.io): cited on 2 pages
+- [Ghostty terminal emulator](https://ghostty.org): cited on 2 pages
+- [Kurumi](https://github.com/raskell-io/kurumi): cited on 2 pages
 
 ## Topics
 
@@ -221,10 +258,15 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 ## For agents
 
 - Each article and note as Markdown: its URL with `.md` instead of the trailing slash, e.g. https://raskell.io/articles/the-model-is-a-dependency.md
-- [map.json](https://raskell.io/map.json): the site graph (pages, topics with definitions, series, projects, and their links)
+- Each talk as Markdown too, e.g. https://raskell.io/talks/iat-13-basel.md
+- [map.json](https://raskell.io/map.json): the site graph (articles, notes, talks, topics with definitions, series, categories, works from the reading log, projects, and their links)
+- [garden.json](https://raskell.io/garden.json): the search index as data: every article, review, note, talk, work, project, topic, and cited link, with kinds, topics, and dates
+- [links.json](https://raskell.io/links.json): every external link the writing cites, with the pages that cite it and whether it is a reference
+- [reading.json](https://raskell.io/reading.json): the reading log, with status, dates, ratings, and reviews
+- Search as a URL: https://raskell.io/search/?q={query}&type={article|review|note|talk|work|project|topic|link}
 - [api-catalog](https://raskell.io/.well-known/api-catalog): RFC 9727 discovery of the machine-readable files
-- Feeds: [RSS](https://raskell.io/rss.xml), [Atom](https://raskell.io/atom.xml), [articles](https://raskell.io/articles/rss.xml), [notes](https://raskell.io/notes/rss.xml), [reviews](https://raskell.io/categories/reviews/rss.xml)
-- In the browser: WebMCP tools (search_site, get_current_page, get_page_markdown, get_site_index, list_topics, get_connections, cite_current_page, open_page) register when an agent exposes `document.modelContext`.
+- Feeds: [RSS](https://raskell.io/rss.xml), [Atom](https://raskell.io/atom.xml), [articles](https://raskell.io/articles/rss.xml), [notes](https://raskell.io/notes/rss.xml), [reviews](https://raskell.io/categories/reviews/rss.xml), [talks](https://raskell.io/talks/rss.xml)
+- In the browser: WebMCP tools (search_site, list_reading, find_links, get_current_page, get_page_markdown, get_site_index, list_topics, get_connections, cite_current_page, open_page) register when an agent exposes `document.modelContext`.
 - No authentication, no rate limits ([auth.md](https://raskell.io/.well-known/auth.md)). Crawling for search, answers, and training is welcome (robots.txt Content-Signal).
 
 ## Optional

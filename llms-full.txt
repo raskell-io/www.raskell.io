@@ -1,6 +1,6 @@
-# Raskell: all articles and notes in full
+# Raskell: all writing in full
 
-> Every published article and note on raskell.io by Raffael Schneider, newest first. Generated 2026-10-24.
+> Every published article, review, note, and talk on raskell.io by Raffael Schneider, newest first, then the reading log. Generated 2026-10-24. Index: https://raskell.io/llms.txt
 
 
 ================================================================================
@@ -12,6 +12,12 @@ author: Raffael Schneider
 date: 2026-10-24
 description: "Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply."
 tags: [history-of-technology, hypertext, open-standards, training-data, decentralisation, data-sovereignty, agents]
+categories: [reviews]
+review_of: "This Is for Everyone"
+review_of_author: "Tim Berners-Lee"
+review_of_kind: book
+review_of_year: 2025
+rating: 8/10
 ---
 
 # The Web Was the Training Set
@@ -2503,6 +2509,198 @@ The layer below this one was a model that knew nothing about your project. The l
 ## Next
 
 **[Part 5: Retrieval Is a Tool, Not a Layer](https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/).** Why pulling context dynamically is its own design problem, where embeddings stop being the right answer, and how to subset `.AGENTS/` per task in the harness we have been building.
+
+
+================================================================================
+
+---
+title: "I Stopped Writing Most of My Code"
+url: https://raskell.io/talks/iat-13-basel/
+author: Raffael Schneider
+date: 2026-06-10
+description: "Slide deck for IT's ABOUT TECH #13 in Basel. A 15-minute story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time."
+event: "IT's ABOUT TECH #13"
+venue: "FHNW Aula, Basel"
+---
+
+# I Stopped Writing Most of My Code
+
+IT's ABOUT TECH #13 · Basel · 10 June 2026
+
+## I Stopped Writing Most of My Code
+
+The year my backlog came alive.
+
+Raffael Schneider
+Enterprise Solution Architect
+AI Platforms
+
+[raskell.io](https://raskell.io)
+
+### It came down to three subscriptions.
+
+December 2022 → November 2025
+
+- December 2022
+OpenAI. Subscription almost day one. Chat-first AI joins my daily workflow and stays there.
+
+- Then Zed
+A Rust-built editor that bet on AI very early. The best LLM integrations of its era. My gateway to AI-assisted development while Cursor, Windsurf, and Copilot were finding their feet.
+
+- May 2025
+Claude Code drops. First TUI-first coding agent. I take the $20 Anthropic subscription the day it ships. Hooked.
+
+- November 2025
+Opus 4.5 ships. I upgrade to the $200 Max 20× plan right before Christmas vacation. Three weeks of free time meets a step-change in capability.
+
+I am an engineer. I know how to build things.
+
+The bottleneck was never ideas. The bottleneck was always time.
+
+### Then something changed.
+
+Claude Opus 4.5
+
+Claude Code
+
+I expected a better autocomplete.
+
+What I got was something closer to a junior engineer that never sleeps.
+
+### The new workflow
+
+Before
+
+- Decide what to build
+
+- Translate thoughts into syntax
+
+- Review and ship
+
+After
+
+- Decide what to build
+
+- Translate thoughts into syntax
+
+- Decide whether the result is acceptable
+
+You no longer spend most of your time translating thoughts into syntax.
+You spend most of your time deciding.
+
+### What I actually built
+
+[### Archipelag.io
+
+Distributed AI compute. Inference across idle GPUs and mining rigs.](https://archipelag.io)
+[### Cyanea
+
+Open community platform for life-science research.](https://cyanea.bio)
+[### Humankind
+
+A long-running creative initiative, finally with a home of its own.](https://humankind.plus)
+[### Arcanist.sh
+
+Haskell ecosystem in Rust. Home of hx and the Basel Haskell Compiler.](https://arcanist.sh)
+[### Zentinel
+
+Security-first reverse proxy on Pingora.](https://zentinelproxy.io)
+[### Die Zukunft
+
+A Swiss political party. Past left and right, into UBI, digital sovereignty, and a serious technology agenda.](https://die-zukunft.ch)
+
+Experiments and tooling
+
+- Terrarium
+
+- Shiioo
+
+- Conflux
+
+- Refrakt
+
+- Kurumi
+
+- Vela
+
+- …and the daily-driver utilities
+
+None of these were started because AI generated ideas.
+AI allowed existing ideas to escape my notebook.
+
+### Where the human still steers.
+
+- Requirements
+
+- Architecture tradeoffs
+
+- Long-term maintainability
+
+- Taste
+
+- Product decisions
+
+- Knowing when not to build something
+
+The human did not disappear. The human moved up the stack.
+
+Before: the human reasoned about syntax; the compiler enforced it. Now: the human reasons about meaning; the coding agent interprets it.
+
+Before
+
+Human
+reasons about
+
+- Syntax
+enforced by
+
+- Compiler
+that makes it work
+
+Now
+
+Human
+reasons about
+
+- Meaning
+interpreted by
+
+- Coding Agent
+that makes it work
+
+### The unexpected consequence
+
+I thought AI would make me write software faster.
+
+Instead, it made me start projects I would never have started before.
+
+The biggest change was not productivity. The biggest change was willingness.
+
+### What happened next
+
+- March 2026 · San Francisco
+Co-presented an AI Web Security tool at RSAC 2026 with Milan Duric. Same trip: a private downtown dinner hosted by Maverick Capital, room of AI Platform leaders.
+
+- Spring 2026
+Shipped a Temporal-based self-service that lets users order web-service resources while AI quietly handles the operational work. Role at the time: Senior Platform Engineer & Solution Architect, Web Security / Application Delivery.
+
+- Two weeks ago
+New role: Enterprise Solution Architect for Group-wide AI Platform and AI-assisted development.
+
+- Last week
+Joined [J floor](https://thejfloor.com/). More talks already on the calendar.
+
+None of this was on my calendar a year ago.
+
+Thank you
+
+The most important thing Claude Code gave me was not faster software development.
+It gave me the ability to turn years of accumulated ideas into working systems
+before I lost interest in them.
+
+[raskell.io](https://raskell.io)
+[raffael-e-schneider](https://ch.linkedin.com/in/raffael-e-schneider)
+[@raskelll](https://twitter.com/raskelll)
 
 
 ================================================================================
@@ -8344,3 +8542,46 @@ Looking back from 2026, the scope grew to include edge systems, AI-assisted engi
 - [Void Linux](https://voidlinux.org/)
 - [OpenBSD](https://www.openbsd.org/)
 - [raskell.io source](https://github.com/raskell-io/www.raskell.io)
+
+
+================================================================================
+
+# Reading log
+
+From https://raskell.io/reading/ (as data: https://raskell.io/reading.json).
+
+## Reading now
+
+- *The Infinity Machine*: Demis Hassabis, DeepMind, and the Quest for Superintelligence by Sebastian Mallaby (book, 2026)
+
+## Backlog
+
+- *Why Machines Learn*: The Elegant Math Behind Modern AI by Anil Ananthaswamy (book, 2024)
+- *The Dream Machine* by M. Mitchell Waldrop (book, 2001)
+- *The Alignment Problem*: Machine Learning and Human Values by Brian Christian (book, 2020)
+- *Artificial Intelligence*: A Guide for Thinking Humans by Melanie Mitchell (book, 2019)
+- *Deep Thinking*: Where Machine Intelligence Ends and Human Creativity Begins by Garry Kasparov (book, 2017)
+- *Understanding Deep Learning* by Simon J. D. Prince (book, 2023)
+- *Build a Large Language Model (From Scratch)* by Sebastian Raschka (book, 2024)
+- *AI Engineering*: Building Applications with Foundation Models by Chip Huyen (book, 2025)
+- *Reinforcement Learning: An Introduction* by Richard S. Sutton and Andrew G. Barto (book, 2018)
+- *Probabilistic Machine Learning: An Introduction* by Kevin P. Murphy (book, 2022)
+- *The Making of the Atomic Bomb* by Richard Rhodes (book, 1986)
+- *Seeing Like a State*: How Certain Schemes to Improve the Human Condition Have Failed by James C. Scott (book, 1998)
+- *A Peace to End All Peace*: The Fall of the Ottoman Empire and the Creation of the Modern Middle East by David Fromkin (book, 1989)
+- *The Billion-Dollar Molecule*: The Quest for the Perfect Drug by Barry Werth (book, 1994)
+- *The Eighth Day of Creation*: The Makers of the Revolution in Biology by Horace Freeland Judson (book, 1979)
+- *The Demon Under the Microscope* by Thomas Hager (book, 2006)
+- *The Butchering Art*: Joseph Lister's Quest to Transform the Grisly World of Victorian Medicine by Lindsey Fitzharris (book, 2017)
+
+## Read
+
+- *The Cauldron*: The Making of the Modern Middle East by Simon Sebag Montefiore (book, 2026, finished September 2026)
+- *From Worm to Human: Scaling Brain Emulation* by Isaak Freeman (paper, 2026, finished June 2026). A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan
+- *State of Brain Emulation Report 2025* by Zanichelli, Schons, Freeman, Shiu, and Arkhipov (report, 2025, finished June 2026). The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are
+- *Infinite Jest* by David Foster Wallace (novel, 1996, finished December 2025)
+- *Guns, Germs, and Steel*: The Fates of Human Societies by Jared Diamond (book, 1997, finished November 2025)
+- *Nuclear War: A Scenario* by Annie Jacobsen (book, 2024, finished October 2025)
+- *This Is for Everyone*: The Unfinished Story of the World Wide Web by Tim Berners-Lee (book, 2025, finished October 2025, rated 8/10). Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all. Review: https://raskell.io/articles/the-web-was-the-training-set/
+- *Jurassic Park* by Michael Crichton (novel, 1990, finished July 2025)
+- *The Books of Jacob* by Olga Tokarczuk (novel, 2014, finished August 2024)

@@ -11,10 +11,15 @@ Allow: AI training and indexing
 # Preferred citation format:
 # Raffael Schneider, "Article Title", raskell.io, YYYY-MM-DD
 # URL: https://raskell.io/articles/[slug]/
+# Reviews are articles too; cite the review, and the reviewed work by its own author and title.
 
 # Contact: https://raskell.io/about/
 # Full site metadata for LLMs: https://raskell.io/llms.txt
 # All articles in full, as Markdown: https://raskell.io/llms-full.txt
-# Site graph (articles, topics, projects): https://raskell.io/map.json
+# Site graph (articles, notes, talks, topics, categories, books, projects): https://raskell.io/map.json
+# Search index (everything, including every link the writing cites): https://raskell.io/garden.json
+# Every cited source, with the pages citing it: https://raskell.io/links.json
+# Reading log (books and papers, status, ratings, reviews): https://raskell.io/reading.json
+# Search as a URL: https://raskell.io/search/?q={query}&type={article|review|note|talk|work|project|topic|link}
 # Discovery for agents (RFC 9727): https://raskell.io/.well-known/api-catalog
-# Each article and note as Markdown: the page URL with .md instead of the trailing slash
+# Each article, note, and talk as Markdown: the page URL with .md instead of the trailing slash

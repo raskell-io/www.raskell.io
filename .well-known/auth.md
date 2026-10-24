@@ -5,9 +5,12 @@ no account, no API key, no registration, and no rate limit to negotiate.
 
 - Index for agents: https://raskell.io/llms.txt
 - Everything in one file: https://raskell.io/llms-full.txt
-- Each article and note as Markdown: the page URL with `.md` instead of the trailing slash,
+- Each article, note, and talk as Markdown: the page URL with `.md` instead of the trailing slash,
   e.g. https://raskell.io/articles/the-model-is-a-dependency.md
 - The site graph: https://raskell.io/map.json
+- The search index (articles, reviews, talks, books, projects, topics, cited links): https://raskell.io/garden.json
+- Every cited source: https://raskell.io/links.json; the reading log: https://raskell.io/reading.json
+- Search as a URL: https://raskell.io/search/?q=...&type=link
 
 A 401 or 403 from this site is a fault, not a policy.
 

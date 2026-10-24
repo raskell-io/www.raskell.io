@@ -1,0 +1,5179 @@
+{
+ "source": "https://raskell.io/search/",
+ "generated": "2026-10-24T10:12:48+00:00",
+ "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "counts": {
+  "review": 1,
+  "article": 34,
+  "talk": 1,
+  "work": 27,
+  "project": 30,
+  "topic": 60,
+  "link": 253
+ },
+ "search_url": "https://raskell.io/search/?q={query}&type={kind}",
+ "related": {
+  "graph": "https://raskell.io/map.json",
+  "links": "https://raskell.io/links.json",
+  "reading": "https://raskell.io/reading.json",
+  "llms": "https://raskell.io/llms.txt"
+ },
+ "items": [
+  {
+   "kind": "review",
+   "title": "The Web Was the Training Set",
+   "url": "https://raskell.io/articles/the-web-was-the-training-set/",
+   "description": "Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply.",
+   "date": "2026-10-24",
+   "topics": [
+    "history-of-technology",
+    "hypertext",
+    "open-standards",
+    "training-data",
+    "decentralisation",
+    "data-sovereignty",
+    "agents"
+   ],
+   "categories": [
+    "reviews"
+   ],
+   "meta": "16 min"
+  },
+  {
+   "kind": "article",
+   "title": "Observability Is Not Logging",
+   "url": "https://raskell.io/articles/observability-is-not-logging/",
+   "description": "A cost total says nothing about how a run went. This part turns each agent run into a trace: which turn escalated, which tool failed, where the money went.",
+   "date": "2026-10-20",
+   "topics": [
+    "agents",
+    "ai-platforms",
+    "observability",
+    "opentelemetry",
+    "typescript"
+   ],
+   "meta": "15 min"
+  },
+  {
+   "kind": "article",
+   "title": "This Site Is Becoming a Map",
+   "url": "https://raskell.io/articles/this-site-is-becoming-a-map/",
+   "description": "A blog shows what I wrote last. The new map on raskell.io shows what I keep coming back to, and it is the start of a public second brain.",
+   "date": "2026-10-15",
+   "topics": [
+    "meta",
+    "knowledge-management",
+    "hypertext",
+    "open-web",
+    "zola"
+   ],
+   "meta": "9 min"
+  },
+  {
+   "kind": "article",
+   "title": "The Bill Is Part of the Loop",
+   "url": "https://raskell.io/articles/the-bill-is-part-of-the-loop/",
+   "description": "Every model response already carries its own bill in the usage field, and the loop throws it away. This post reads that field, prices it against a table, and turns cost into a value the loop can see per turn and act on: a metering decorator that needs no loop change, a running ledger, prompt-cache accounting that moves the number the most, and a budget that degrades before it stops. Part eight of The Agent Platform Handbook.",
+   "date": "2026-07-18",
+   "topics": [
+    "agents",
+    "ai-platforms",
+    "economics",
+    "observability",
+    "metrics",
+    "typescript"
+   ],
+   "meta": "10 min"
+  },
+  {
+   "kind": "article",
+   "title": "The Model Is a Dependency",
+   "url": "https://raskell.io/articles/the-model-is-a-dependency/",
+   "description": "Every layer of the harness has existed to put the right tokens in front of one hardcoded model string. This post pulls that string out and makes the model a dependency: why you route a cheap model for easy turns and a strong one for hard turns, what a fallback looks like when a provider is down, and why 'models are commodities' is a claim about your architecture before it is a claim about the market. Part seven of The Agent Platform Handbook.",
+   "date": "2026-07-09",
+   "topics": [
+    "agents",
+    "ai-platforms",
+    "inference",
+    "reliability",
+    "economics",
+    "typescript"
+   ],
+   "meta": "14 min"
+  },
+  {
+   "kind": "article",
+   "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+   "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "description": "Frontier AI is running short on public text, not compute. Europe's edge is the high-quality data it never put online. Capturing it needs coordination.",
+   "date": "2026-06-30",
+   "topics": [
+    "sovereignty",
+    "training-data",
+    "open-data",
+    "policy",
+    "economics"
+   ],
+   "meta": "34 min"
+  },
+  {
+   "kind": "article",
+   "title": "Brain Emulation, Read as an Infrastructure Problem",
+   "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/",
+   "description": "An MIT thesis argues brain emulation has crossed into engineering. Read as infrastructure, the numbers describe a workload your AI cluster was not built for.",
+   "date": "2026-06-28",
+   "topics": [
+    "distributed-systems",
+    "inference",
+    "gpus"
+   ],
+   "meta": "12 min"
+  },
+  {
+   "kind": "article",
+   "title": "Memory Is a Write Path",
+   "url": "https://raskell.io/articles/memory-is-a-write-path/",
+   "description": "Retrieval reads context the project authored. Memory is the agent writing context for its own future sessions, and the write is the part that is dangerous. Why session memory comes free from the transcript, why cross-session memory needs a separate write surface, and how to let an agent remember without letting it corrupt its own ground truth. Part six of The Agent Platform Handbook.",
+   "date": "2026-06-23",
+   "topics": [
+    "agents",
+    "context-engineering",
+    "knowledge-management",
+    "typescript"
+   ],
+   "meta": "19 min"
+  },
+  {
+   "kind": "article",
+   "title": "The Proof You Only Have to Write Once",
+   "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/",
+   "description": "Generation is cheap, so verification is the bottleneck — and we throw the verification away every time. What if a proof, once written, could be named, shared, and vouched for? A content-addressed commons for verified Haskell, and the move I left for after the semantic-artifact trilogy.",
+   "date": "2026-06-19",
+   "topics": [
+    "formal-methods",
+    "programming-languages",
+    "ai-engineering",
+    "oss",
+    "haskell"
+   ],
+   "meta": "13 min"
+  },
+  {
+   "kind": "article",
+   "title": "Retrieval Is a Tool, Not a Layer",
+   "url": "https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/",
+   "description": "Loading the whole .AGENTS/ directory on every turn does not scale. The fix is not a retrieval layer bolted to the side of the agent. It is a search tool in the registry the agent already has. BM25 over project docs, no vector store, and an honest account of when embeddings start to earn their keep. Part five of The Agent Platform Handbook.",
+   "date": "2026-06-17",
+   "topics": [
+    "agents",
+    "context-engineering",
+    "typescript"
+   ],
+   "meta": "16 min"
+  },
+  {
+   "kind": "article",
+   "title": "Context Is the Product",
+   "url": "https://raskell.io/articles/context-is-the-product/",
+   "description": "Models are commodities. Context is not. The sources of context an agent draws on, why retrieval alone is not enough, and a minimal .AGENTS/ convention that loads context from disk into the same harness we have been building. Part four of The Agent Platform Handbook.",
+   "date": "2026-06-13",
+   "topics": [
+    "agents",
+    "context-engineering",
+    "economics",
+    "typescript"
+   ],
+   "meta": "26 min"
+  },
+  {
+   "kind": "article",
+   "title": "Tools: How Agents Actually Do Things",
+   "url": "https://raskell.io/articles/tools-how-agents-actually-do-things/",
+   "description": "Function calling is the API between language and action, but the engineering is in the registry. A working four-tool registry in TypeScript on Bun, schema design that survives model drift, parallel tool calls, and the failure modes nobody mentions in the demo. Part three of The Agent Platform Handbook.",
+   "date": "2026-06-09",
+   "topics": [
+    "agents",
+    "typescript"
+   ],
+   "meta": "13 min"
+  },
+  {
+   "kind": "article",
+   "title": "Your Agent Wants Root",
+   "url": "https://raskell.io/articles/your-agent-wants-root/",
+   "description": "An agent with a shell tool is arbitrary code execution with a friendly face. A short tour of why Docker alone is not enough, what Firecracker, gVisor, and Kata actually solve, and a hardened sandbox you can wrap the post-one agent in today. Part two of The Agent Platform Handbook.",
+   "date": "2026-06-05",
+   "topics": [
+    "agents",
+    "isolation",
+    "applied-security"
+   ],
+   "meta": "16 min"
+  },
+  {
+   "kind": "article",
+   "title": "What an Agent Actually Is",
+   "url": "https://raskell.io/articles/what-an-agent-actually-is/",
+   "description": "AI agent is the most overloaded word in the industry. This is the anatomy, the lineage, and a working implementation in roughly two hundred lines of TypeScript on Bun. Part one of The Agent Platform Handbook.",
+   "date": "2026-06-02",
+   "topics": [
+    "agents",
+    "ai-platforms",
+    "typescript"
+   ],
+   "meta": "19 min"
+  },
+  {
+   "kind": "article",
+   "title": "The Field Exists Now",
+   "url": "https://raskell.io/articles/the-field-exists-now/",
+   "description": "Alasdair Allan's agentlanguages.dev catalogue turns AI-oriented programming languages from a loose set of experiments into a field with camps, disagreements, and testable claims.",
+   "date": "2026-05-22",
+   "topics": [
+    "programming-languages",
+    "ai-engineering",
+    "formal-methods",
+    "haskell"
+   ],
+   "meta": "7 min"
+  },
+  {
+   "kind": "article",
+   "title": "Source Code Is the New Assembly",
+   "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/",
+   "description": "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target.",
+   "date": "2026-05-07",
+   "topics": [
+    "ai-engineering",
+    "programming-languages",
+    "formal-methods",
+    "haskell"
+   ],
+   "meta": "27 min"
+  },
+  {
+   "kind": "article",
+   "title": "Patents Per Capita Is a Vanity Metric",
+   "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/",
+   "description": "Switzerland tops the Global Innovation Index for the fifteenth year running. As an engineer, that should make you suspicious of the metric, not proud of the country.",
+   "date": "2026-05-01",
+   "topics": [
+    "metrics",
+    "policy",
+    "sovereignty",
+    "economics"
+   ],
+   "meta": "23 min"
+  },
+  {
+   "kind": "article",
+   "title": "Traffic Replay as a Security Primitive",
+   "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/",
+   "description": "WAF tuning is a guessing game because you cannot reproduce the traffic that triggered the rule. Deterministic replay changes that.",
+   "date": "2026-04-27",
+   "topics": [
+    "applied-security",
+    "waf",
+    "edge-systems",
+    "reliability",
+    "developer-tooling"
+   ],
+   "meta": "12 min"
+  },
+  {
+   "kind": "article",
+   "title": "The Economics of Inference",
+   "url": "https://raskell.io/articles/the-economics-of-inference/",
+   "description": "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas.",
+   "date": "2026-04-22",
+   "topics": [
+    "inference",
+    "economics",
+    "sovereignty",
+    "edge-systems",
+    "gpus"
+   ],
+   "meta": "12 min"
+  },
+  {
+   "kind": "article",
+   "title": "What Comes After the Last Programming Language",
+   "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/",
+   "description": "If AI generates machine code directly, why are we still running operating systems designed for humans? The answer might be an inference-native OS.",
+   "date": "2026-04-19",
+   "topics": [
+    "operating-systems",
+    "inference",
+    "gpus",
+    "isolation",
+    "programming-languages",
+    "ai-engineering"
+   ],
+   "meta": "23 min"
+  },
+  {
+   "kind": "article",
+   "title": "What Sixteen AI Agents Taught Me About Management",
+   "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/",
+   "description": "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway.",
+   "date": "2026-04-16",
+   "topics": [
+    "agents",
+    "ai-engineering",
+    "economics"
+   ],
+   "meta": "19 min"
+  },
+  {
+   "kind": "article",
+   "title": "Why We Built a Haskell Package Manager in Rust",
+   "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "description": "hx is a fast, opinionated Haskell toolchain built in Rust, following the playbook astral.sh used to modernize Python.",
+   "date": "2026-04-13",
+   "topics": [
+    "developer-tooling",
+    "programming-languages",
+    "oss",
+    "haskell",
+    "rust"
+   ],
+   "meta": "19 min"
+  },
+  {
+   "kind": "article",
+   "title": "The Last Programming Language Might Not Be for Humans",
+   "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "description": "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell.",
+   "date": "2026-04-11",
+   "topics": [
+    "ai-engineering",
+    "programming-languages",
+    "formal-methods",
+    "haskell"
+   ],
+   "meta": "26 min"
+  },
+  {
+   "kind": "article",
+   "title": "Notes from RSAC 2026",
+   "url": "https://raskell.io/articles/notes-from-rsac-2026/",
+   "description": "Third time at RSA Conference, first time as a speaker. What I saw, what I heard, and what I am still processing.",
+   "date": "2026-04-09",
+   "topics": [
+    "applied-security",
+    "ai-for-ops",
+    "agents",
+    "policy",
+    "sovereignty"
+   ],
+   "meta": "23 min"
+  },
+  {
+   "kind": "article",
+   "title": "What Zentinel Is Really Optimizing For",
+   "url": "https://raskell.io/articles/what-zentinel-is-really-optimizing-for/",
+   "description": "Every major proxy was a product of its time. Zentinel is built for this one: safety, operability, and the operator's ability to sleep.",
+   "date": "2026-03-22",
+   "topics": [
+    "edge-systems",
+    "applied-security",
+    "waf",
+    "isolation",
+    "reliability",
+    "observability",
+    "rust",
+    "pingora"
+   ],
+   "meta": "18 min"
+  },
+  {
+   "kind": "article",
+   "title": "How I Work These Days",
+   "url": "https://raskell.io/articles/how-i-work-these-days/",
+   "description": "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right.",
+   "date": "2026-03-15",
+   "topics": [
+    "ai-engineering",
+    "developer-tooling",
+    "rust"
+   ],
+   "meta": "10 min"
+  },
+  {
+   "kind": "article",
+   "title": "Archipelag.io Is in Open Beta: Here's Why I Built It",
+   "url": "https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
+   "description": "From watching Ethereum miners in 2016 to building a decentralized compute network in open beta. Architecture, conviction, and the long road.",
+   "date": "2026-03-13",
+   "topics": [
+    "distributed-systems",
+    "edge-systems",
+    "sovereignty",
+    "inference",
+    "isolation",
+    "self-hosting",
+    "elixir",
+    "rust"
+   ],
+   "meta": "23 min"
+  },
+  {
+   "kind": "article",
+   "title": "How AI Makes Bare Metal Viable Again",
+   "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/",
+   "description": "I migrated two production apps from Kubernetes to a single Hetzner box. The missing piece was not the hardware.",
+   "date": "2026-03-08",
+   "topics": [
+    "platform-automation",
+    "self-hosting",
+    "ai-engineering",
+    "economics",
+    "kubernetes",
+    "rust",
+    "elixir"
+   ],
+   "meta": "29 min"
+  },
+  {
+   "kind": "article",
+   "title": "Edge Systems Are the New Backend",
+   "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/",
+   "description": "Auth, policy, and business logic are migrating to the edge. The traditional backend is becoming a persistence layer.",
+   "date": "2026-02-11",
+   "topics": [
+    "edge-systems",
+    "applied-security",
+    "distributed-systems",
+    "local-first",
+    "waf",
+    "rust",
+    "pingora"
+   ],
+   "meta": "30 min"
+  },
+  {
+   "kind": "article",
+   "title": "Looking back on 2025",
+   "url": "https://raskell.io/articles/looking-back-on-2025/",
+   "description": "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself.",
+   "date": "2025-12-31",
+   "topics": [
+    "open-web",
+    "decentralisation",
+    "attention-economy",
+    "privacy",
+    "open-standards",
+    "edge-systems",
+    "meta"
+   ],
+   "meta": "7 min"
+  },
+  {
+   "kind": "article",
+   "title": "Mise ate my Makefile",
+   "url": "https://raskell.io/articles/mise-ate-my-makefile/",
+   "description": "Mise replaced Make, asdf, and a pile of shell scripts with a single TOML file per project. Here is why it stuck.",
+   "date": "2025-12-14",
+   "topics": [
+    "developer-tooling",
+    "platform-automation",
+    "rust"
+   ],
+   "meta": "12 min"
+  },
+  {
+   "kind": "article",
+   "title": "Disk space maintenance on Void Linux",
+   "url": "https://raskell.io/articles/disk-space-void-linux-maintenance/",
+   "description": "Cleaning old kernels, pruning xbps package cache, and reclaiming disk space on Void Linux without breaking your system.",
+   "date": "2024-05-01",
+   "topics": [
+    "operating-systems",
+    "linux"
+   ],
+   "meta": "4 min"
+  },
+  {
+   "kind": "article",
+   "title": "All beginning is Haskell",
+   "url": "https://raskell.io/articles/all-beginning-is-haskell/",
+   "description": "How Haskell shaped the way I think about building systems, and why I am still building Haskell tooling years after writing my first monad.",
+   "date": "2023-03-06",
+   "topics": [
+    "programming-languages",
+    "haskell",
+    "developer-tooling"
+   ],
+   "meta": "10 min"
+  },
+  {
+   "kind": "article",
+   "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+   "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/",
+   "description": "A step-by-step guide to running OpenBSD in a libvirt virtual machine on Void Linux, without needing VirtualBox or VMWare. Part 1 of my OpenBSD journey.",
+   "date": "2023-02-06",
+   "topics": [
+    "operating-systems",
+    "openbsd",
+    "linux"
+   ],
+   "meta": "10 min"
+  },
+  {
+   "kind": "article",
+   "title": "Hello and outlook",
+   "url": "https://raskell.io/articles/hello-and-outlook/",
+   "description": "The first post on raskell.io. What this site is for and what I planned to write about.",
+   "date": "2022-09-20",
+   "topics": [
+    "meta",
+    "oss",
+    "open-web"
+   ],
+   "meta": "1 min"
+  },
+  {
+   "kind": "talk",
+   "title": "I Stopped Writing Most of My Code",
+   "url": "https://raskell.io/talks/iat-13-basel/",
+   "description": "Slide deck for IT's ABOUT TECH #13 in Basel. A 15-minute story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time.",
+   "date": "2026-06-10",
+   "meta": "IT's ABOUT TECH #13"
+  },
+  {
+   "kind": "work",
+   "title": "The Infinity Machine",
+   "url": "https://raskell.io/reading/#the-infinity-machine",
+   "description": "Demis Hassabis, DeepMind, and the Quest for Superintelligence",
+   "topics": [
+    "machine-learning",
+    "reinforcement-learning",
+    "history-of-technology"
+   ],
+   "meta": "Book · Sebastian Mallaby · Reading now"
+  },
+  {
+   "kind": "work",
+   "title": "The Cauldron",
+   "url": "https://raskell.io/reading/#the-cauldron",
+   "description": "The Making of the Modern Middle East",
+   "date": "2026-09",
+   "topics": [
+    "history",
+    "geography"
+   ],
+   "meta": "Book · Simon Sebag Montefiore · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Infinite Jest",
+   "url": "https://raskell.io/reading/#infinite-jest",
+   "date": "2025-12",
+   "meta": "Novel · David Foster Wallace · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Guns, Germs, and Steel",
+   "url": "https://raskell.io/reading/#guns-germs-and-steel",
+   "description": "The Fates of Human Societies",
+   "date": "2025-11",
+   "topics": [
+    "history",
+    "geography"
+   ],
+   "meta": "Book · Jared Diamond · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Nuclear War: A Scenario",
+   "url": "https://raskell.io/reading/#nuclear-war-a-scenario",
+   "date": "2025-10",
+   "meta": "Book · Annie Jacobsen · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Jurassic Park",
+   "url": "https://raskell.io/reading/#jurassic-park",
+   "date": "2025-07",
+   "topics": [
+    "complex-systems"
+   ],
+   "meta": "Novel · Michael Crichton · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Books of Jacob",
+   "url": "https://raskell.io/reading/#the-books-of-jacob",
+   "date": "2024-08",
+   "meta": "Novel · Olga Tokarczuk · Read"
+  },
+  {
+   "kind": "work",
+   "title": "From Worm to Human: Scaling Brain Emulation",
+   "url": "https://raskell.io/reading/#from-worm-to-human",
+   "description": "A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan.",
+   "date": "2026-06",
+   "topics": [
+    "neuroscience",
+    "distributed-systems",
+    "gpus"
+   ],
+   "meta": "Paper · Isaak Freeman · Read"
+  },
+  {
+   "kind": "work",
+   "title": "State of Brain Emulation Report 2025",
+   "url": "https://raskell.io/reading/#state-of-brain-emulation-2025",
+   "description": "The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are.",
+   "date": "2026-06",
+   "topics": [
+    "neuroscience",
+    "simulation"
+   ],
+   "meta": "Report · Zanichelli, Schons, Freeman, Shiu, and Arkhipov · Read"
+  },
+  {
+   "kind": "work",
+   "title": "This Is for Everyone",
+   "url": "https://raskell.io/articles/the-web-was-the-training-set/",
+   "description": "Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all.",
+   "date": "2025-10",
+   "topics": [
+    "open-web",
+    "history-of-technology",
+    "hypertext",
+    "open-standards",
+    "decentralisation",
+    "open-data",
+    "training-data",
+    "privacy",
+    "data-sovereignty",
+    "attention-economy",
+    "agents"
+   ],
+   "meta": "Book · Tim Berners-Lee · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Why Machines Learn",
+   "url": "https://raskell.io/reading/#why-machines-learn",
+   "description": "The Elegant Math Behind Modern AI",
+   "topics": [
+    "machine-learning"
+   ],
+   "meta": "Book · Anil Ananthaswamy · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Dream Machine",
+   "url": "https://raskell.io/reading/#the-dream-machine",
+   "topics": [
+    "history-of-technology",
+    "open-web"
+   ],
+   "meta": "Book · M. Mitchell Waldrop · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Alignment Problem",
+   "url": "https://raskell.io/reading/#the-alignment-problem",
+   "description": "Machine Learning and Human Values",
+   "topics": [
+    "machine-learning",
+    "evaluation"
+   ],
+   "meta": "Book · Brian Christian · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Artificial Intelligence",
+   "url": "https://raskell.io/reading/#ai-a-guide-for-thinking-humans",
+   "description": "A Guide for Thinking Humans",
+   "topics": [
+    "machine-learning"
+   ],
+   "meta": "Book · Melanie Mitchell · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Deep Thinking",
+   "url": "https://raskell.io/reading/#deep-thinking",
+   "description": "Where Machine Intelligence Ends and Human Creativity Begins",
+   "topics": [
+    "machine-learning",
+    "games"
+   ],
+   "meta": "Book · Garry Kasparov · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Understanding Deep Learning",
+   "url": "https://raskell.io/reading/#understanding-deep-learning",
+   "topics": [
+    "machine-learning"
+   ],
+   "meta": "Book · Simon J. D. Prince · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Build a Large Language Model (From Scratch)",
+   "url": "https://raskell.io/reading/#build-a-large-language-model",
+   "topics": [
+    "machine-learning",
+    "inference"
+   ],
+   "meta": "Book · Sebastian Raschka · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "AI Engineering",
+   "url": "https://raskell.io/reading/#ai-engineering",
+   "description": "Building Applications with Foundation Models",
+   "topics": [
+    "ai-platforms",
+    "evaluation"
+   ],
+   "meta": "Book · Chip Huyen · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Reinforcement Learning: An Introduction",
+   "url": "https://raskell.io/reading/#reinforcement-learning-an-introduction",
+   "topics": [
+    "reinforcement-learning",
+    "machine-learning"
+   ],
+   "meta": "Book · Richard S. Sutton and Andrew G. Barto · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Probabilistic Machine Learning: An Introduction",
+   "url": "https://raskell.io/reading/#probabilistic-machine-learning",
+   "topics": [
+    "machine-learning"
+   ],
+   "meta": "Book · Kevin P. Murphy · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Making of the Atomic Bomb",
+   "url": "https://raskell.io/reading/#the-making-of-the-atomic-bomb",
+   "topics": [
+    "history-of-technology"
+   ],
+   "meta": "Book · Richard Rhodes · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Seeing Like a State",
+   "url": "https://raskell.io/reading/#seeing-like-a-state",
+   "description": "How Certain Schemes to Improve the Human Condition Have Failed",
+   "topics": [
+    "complex-systems",
+    "history"
+   ],
+   "meta": "Book · James C. Scott · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "A Peace to End All Peace",
+   "url": "https://raskell.io/reading/#a-peace-to-end-all-peace",
+   "description": "The Fall of the Ottoman Empire and the Creation of the Modern Middle East",
+   "topics": [
+    "history",
+    "geography"
+   ],
+   "meta": "Book · David Fromkin · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Billion-Dollar Molecule",
+   "url": "https://raskell.io/reading/#the-billion-dollar-molecule",
+   "description": "The Quest for the Perfect Drug",
+   "topics": [
+    "life-sciences",
+    "history-of-science"
+   ],
+   "meta": "Book · Barry Werth · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Eighth Day of Creation",
+   "url": "https://raskell.io/reading/#the-eighth-day-of-creation",
+   "description": "The Makers of the Revolution in Biology",
+   "topics": [
+    "life-sciences",
+    "history-of-science"
+   ],
+   "meta": "Book · Horace Freeland Judson · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Demon Under the Microscope",
+   "url": "https://raskell.io/reading/#the-demon-under-the-microscope",
+   "topics": [
+    "life-sciences",
+    "history-of-science"
+   ],
+   "meta": "Book · Thomas Hager · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Butchering Art",
+   "url": "https://raskell.io/reading/#the-butchering-art",
+   "description": "Joseph Lister's Quest to Transform the Grisly World of Victorian Medicine",
+   "topics": [
+    "life-sciences",
+    "history-of-science"
+   ],
+   "meta": "Book · Lindsey Fitzharris · Backlog"
+  },
+  {
+   "kind": "project",
+   "title": "Archipelag.io",
+   "url": "https://archipelag.io",
+   "description": "Decentralized AI compute: AI jobs run on a network of community-operated GPU hosts. Jobs prefer nearby hosts and a preferred region, and every job records where it ran; strict regional enforcement is in development. In free open beta: hosts earn virtual credits while metering is validated, and real-money payouts are not enabled yet.",
+   "topics": [
+    "distributed-systems",
+    "sovereignty",
+    "edge-systems",
+    "inference",
+    "isolation",
+    "self-hosting"
+   ],
+   "meta": "Ventures · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Cyanea",
+   "url": "https://cyanea.bio",
+   "description": "Bioinformatics notebooks that actually re-run. Write, run, and share analyses that execute in your browser on WebAssembly, with nothing to install. Every notebook, dataset, and output is a versioned snapshot you can run again. A Rust analysis stack underneath, 21 file formats built in. Open source, with self-hosting and federation on the way.",
+   "topics": [
+    "oss",
+    "rust",
+    "webassembly",
+    "self-hosting"
+   ],
+   "meta": "Ventures · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Humankind",
+   "url": "https://humankind.plus",
+   "description": "Human continuity platform for preserving presence across generations. Humankind helps people build a living archive of voice, stories, memories, values, and relational warmth so the texture of a person remains accessible long after distance, aging, or death would otherwise erase it. Consent-first, privacy by default, and explicit about the difference between recorded truth, reconstruction, and inference.",
+   "topics": [
+    "sovereignty",
+    "elixir",
+    "rust"
+   ],
+   "meta": "Ventures · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Arcanist",
+   "url": "https://arcanist.sh",
+   "description": "Haskell tooling for the age of AI-authored code. hx is a fast package and project manager written in Rust, and bhc is a compiler built to check everything it can. With a registry that records what has been verified, they lead toward a commons where nobody, human or model, has to verify the same thing twice.",
+   "topics": [
+    "haskell",
+    "rust",
+    "programming-languages",
+    "developer-tooling"
+   ],
+   "meta": "Ventures · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Zentinel",
+   "url": "https://zentinelproxy.io",
+   "description": "Security-first reverse proxy built to guard the free web. Rust on Cloudflare's Pingora, explicit configuration over hidden defaults, and WAF, auth and other policy in isolated agents, so a crashing agent leaves the proxy running. Agents for WAF, bot management, identity, API inspection and scripting, SDKs from Rust to Haskell, a pure Rust ModSecurity engine and a fleet control plane.",
+   "topics": [
+    "applied-security",
+    "edge-systems",
+    "waf",
+    "isolation",
+    "observability",
+    "pingora",
+    "rust"
+   ],
+   "meta": "Flagship and serious builds · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "hx",
+   "url": "https://arcanist.sh/hx/",
+   "description": "The Haskell toolchain in one fast binary. hx installs GHC and Cabal, builds, tests, formats and lints your code, pins every dependency by hash, and publishes your packages. Written in Rust, it starts in milliseconds, works with the .cabal files and Hackage you already use, and gives AI agents the same commands over MCP.",
+   "topics": [
+    "haskell",
+    "rust",
+    "programming-languages",
+    "developer-tooling"
+   ],
+   "meta": "Flagship and serious builds · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "bhc",
+   "url": "https://arcanist.sh/bhc/",
+   "description": "The Basel Haskell Compiler, a clean-slate compiler for the Haskell you already write. Written in Rust, it compiles to native code through LLVM and to WebAssembly, with a runtime profile chosen per build. It compiles all 221 modules of Pandoc, and Pandoc's Markdown reader and HTML writer run end to end.",
+   "topics": [
+    "haskell",
+    "programming-languages",
+    "formal-methods"
+   ],
+   "meta": "Flagship and serious builds · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "broodwar.live",
+   "url": "https://broodwar.live",
+   "description": "The community platform for StarCraft: Brood War competitive play, a basketball-reference.com for Brood War. Profiles for 150 pro players in English and Korean, build orders for every matchup, tournaments, a wiki, and replay analysis that runs in the browser on WebAssembly, so nothing is uploaded.",
+   "topics": [
+    "zola",
+    "elixir",
+    "rust"
+   ],
+   "meta": "Flagship and serious builds · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Refrakt",
+   "url": "https://refrakt.raskell.io",
+   "description": "A convention-first web framework for Gleam. Productive like Phoenix, explicit like Gleam, composable with Wisp and Lustre. Full-stack code generation, CRUD scaffolding, and a batteries-included developer experience on the BEAM.",
+   "topics": [
+    "programming-languages",
+    "oss"
+   ],
+   "meta": "Flagship and serious builds · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Vela",
+   "url": "https://vela.raskell.io",
+   "description": "No-downtime app deployment on bare metal. One binary. No containers. A self-hosted PaaS alternative to Heroku, Fly.io, Coolify, and Kamal. Built in Rust with zero-downtime deploys and a built-in reverse proxy.",
+   "topics": [
+    "platform-automation",
+    "self-hosting",
+    "linux",
+    "rust",
+    "developer-tooling"
+   ],
+   "meta": "Flagship and serious builds · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Die Zukunft",
+   "url": "https://die-zukunft.ch",
+   "description": "A Swiss movement that applies engineering principles to public life: not left, not right. Digital sovereignty through open standards, auditable and portable public infrastructure, and policy grounded in evidence, with its own research pipeline for Swiss federal data.",
+   "topics": [
+    "sovereignty",
+    "policy",
+    "oss"
+   ],
+   "meta": "Civic and research · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Human Macroscope",
+   "url": "https://github.com/human-macroscope",
+   "description": "A long-term interdisciplinary research project on humans and human collectives across scales, from individuals and families to institutions, cultures, and civilizations: how individual traits, roles, relations, and cultural transmission combine into emergent collective properties.",
+   "topics": [
+    "complex-systems",
+    "knowledge-management"
+   ],
+   "meta": "Civic and research · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Chronicle of Earth",
+   "url": "https://github.com/chronicle-of-earth",
+   "description": "An interactive atlas of history and geopolitics, starting with 1900–2026. An early prototype pairs a 3D globe that zooms down to villages and streets with a timeline spanning days to decades. Its data model keeps events, territorial claims, control, sources, and uncertainty distinct. Historical coverage is still a small draft collection; detailed base maps show present-day geography.",
+   "topics": [
+    "history",
+    "geography",
+    "knowledge-management",
+    "typescript"
+   ],
+   "meta": "Civic and research · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "WASM-AD",
+   "url": "https://wasmad.raskell.io",
+   "description": "A fantasy console standard with 32-bit handheld hardware: tile layers, sprites, palettes, and save RAM, memory-mapped inside the cartridge. A cartridge is a single WebAssembly module. Comes with a written spec, a reference renderer with conformance tests, a Rust SDK, and a web player.",
+   "topics": [
+    "games",
+    "webassembly",
+    "developer-tooling",
+    "rust"
+   ],
+   "meta": "Labs / passion projects · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "coconutOS",
+   "url": "https://github.com/coconut-os/coconutOS",
+   "description": "A hard shell for AI inference. A Rust microkernel that makes GPU isolation a kernel primitive: every model runs in its own shard with its own page tables, VRAM partition and capabilities, GPU drivers live outside ring 0, and pledge_gpu and unveil_vram only ever take privileges away. Runs a transformer forward pass end to end in QEMU today; real GPU silicon is next.",
+   "topics": [
+    "operating-systems",
+    "gpus",
+    "inference",
+    "isolation",
+    "rust"
+   ],
+   "meta": "Labs / passion projects · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Terrarium",
+   "url": "https://terrarium.raskell.io",
+   "description": "A societal simulation engine where LLM-powered agents form emergent civilizations. Each agent has a personality, needs, memories, and beliefs that can be wrong. You set the rules of the world, then watch for markets, hierarchies, and alliances to emerge on their own.",
+   "topics": [
+    "agents",
+    "simulation",
+    "complex-systems",
+    "rust"
+   ],
+   "meta": "Labs / passion projects · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Hotaru",
+   "url": "https://hotaru.raskell.io",
+   "description": "Simulated neuron cultures on a 60-electrode array play Pong in your browser, as in the DishBrain experiment. Feedback for hits and misses alone did not make them better. Input that goes quiet when the paddle moves toward the ball did, and the page shows it next to a control.",
+   "topics": [
+    "simulation",
+    "complex-systems",
+    "webassembly",
+    "rust"
+   ],
+   "meta": "Labs / passion projects · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Kishi",
+   "url": "https://kishi.raskell.io",
+   "description": "Chess, shogi and Go against engines written in Rust and compiled to WebAssembly. They play in the browser on your own device, offline, from novice to full strength, on a quiet board.",
+   "topics": [
+    "games",
+    "reinforcement-learning",
+    "webassembly",
+    "rust"
+   ],
+   "meta": "Labs / passion projects · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Sango",
+   "url": "https://sango.raskell.io",
+   "description": "Edge diagnostics for the modern web. An operator-grade CLI that performs comprehensive endpoint analysis in a single command. TLS inspection, HTTP protocol detection (HTTP/1.1, HTTP/2, HTTP/3), security headers, latency measurements, and technology stack identification.",
+   "topics": [
+    "edge-systems",
+    "reliability",
+    "observability",
+    "developer-tooling",
+    "rust"
+   ],
+   "meta": "Labs / passion projects · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Conflux",
+   "url": "https://github.com/raskell-io/conflux",
+   "description": "Schema-aware config state coordination. Multiple writers, deterministic merge, git milestones. A CRDT document engine with pluggable storage backends (SQLite, PostgreSQL, DynamoDB).",
+   "topics": [
+    "distributed-systems",
+    "local-first",
+    "rust"
+   ],
+   "meta": "Labs / passion projects · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Shiioo (CO)",
+   "url": "https://github.com/raskell-io/shiioo",
+   "description": "The Virtual Company OS. Agentic enterprise orchestrator with DAG workflows, event sourcing, MCP tools, and a categorized skill registry with git import.",
+   "topics": [
+    "agents",
+    "ai-platforms",
+    "ai-for-ops",
+    "platform-automation",
+    "rust"
+   ],
+   "meta": "Labs / passion projects · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Ushio",
+   "url": "https://github.com/raskell-io/ushio",
+   "description": "Deterministic edge traffic replay for understanding WAF and proxy behavior. Capture traffic as HAR files, rewrite URLs for staging/production comparison, mutate headers, strip cookies, and diff WAF responses across environments.",
+   "topics": [
+    "applied-security",
+    "waf",
+    "edge-systems",
+    "developer-tooling",
+    "rust"
+   ],
+   "meta": "Labs / passion projects · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Driftscape",
+   "url": "https://github.com/raskell-io/driftscape",
+   "description": "Ambient soundscape platform. composable, location-aware, AI-powered background music.",
+   "topics": [
+    "elixir"
+   ],
+   "meta": "Labs / passion projects · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "robogym",
+   "url": "https://github.com/raskell-io/robogym",
+   "description": "Rust/Bevy PWA for training robotic agents. Democratizing robotics through browser-based simulation.",
+   "topics": [
+    "rust"
+   ],
+   "meta": "Labs / passion projects · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Awesomeify",
+   "url": "https://github.com/raskell-io/awesomeify",
+   "description": "Index GitHub repos and generate static awesome-list sites.",
+   "topics": [
+    "oss",
+    "rust"
+   ],
+   "meta": "Labs / passion projects · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Learn You the Web",
+   "url": "https://learn-you-the-web.raskell.io",
+   "description": "A friendly guide to how the web actually works. For Real This Time. HTTP, DNS, TLS, and the protocols that hold it all together. without the hand-waving or oversimplification.",
+   "topics": [
+    "edge-systems"
+   ],
+   "meta": "Labs / passion projects · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Manabi",
+   "url": "https://manabi.raskell.io",
+   "description": "A reading-first language-learning app for Chinese, Japanese, Korean, and Hebrew. It trains recognition, pronunciation, listening, context, and recall separately, with spaced repetition and prerecorded native audio. It runs offline in the browser and installs as a PWA.",
+   "topics": [
+    "local-first",
+    "data-sovereignty",
+    "typescript"
+   ],
+   "meta": "Tools · Apps"
+  },
+  {
+   "kind": "project",
+   "title": "Kurumi",
+   "url": "https://kurumi.raskell.io",
+   "description": "A local-first, AI-native second brain. Capture notes, links, and meetings, then find them again through wikilinks, backlinks, a graph view, and full-text search. Everything works offline, with optional sync through Automerge CRDTs and no vendor lock-in.",
+   "topics": [
+    "local-first",
+    "data-sovereignty",
+    "knowledge-management",
+    "distributed-systems",
+    "typescript"
+   ],
+   "meta": "Tools · Apps"
+  },
+  {
+   "kind": "project",
+   "title": "Paw & Claw",
+   "url": "https://pawandclaw.raskell.io",
+   "description": "A turn-based strategy game in the spirit of Advance Wars, fought by woodland armies. Raccoons, badgers, lions, red pandas, and moles fight over every thicket and creek. Built in Rust with Bevy. Play it free in the browser, or as a desktop build.",
+   "topics": [
+    "games",
+    "rust"
+   ],
+   "meta": "Simulations and games · Apps"
+  },
+  {
+   "kind": "project",
+   "title": "Rainbow River",
+   "url": "https://rainbowriver.raskell.io",
+   "description": "A fishing game in the style of the 32-bit handhelds, inspired by The Legend of the River King. Walk the river, read the water, and fill a fish log of hand-drawn species. Written in Rust, compiled to WebAssembly, and the first cartridge for WASM-AD. It plays in the browser.",
+   "topics": [
+    "games",
+    "webassembly",
+    "rust"
+   ],
+   "meta": "Simulations and games · Apps"
+  },
+  {
+   "kind": "topic",
+   "title": "Agents",
+   "url": "https://raskell.io/tags/agents/",
+   "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "AI-assisted engineering",
+   "url": "https://raskell.io/tags/ai-engineering/",
+   "description": "AI as an engineering tool: coding agents, AI-authored code, and what programming becomes when models write most of it.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "AI for operations",
+   "url": "https://raskell.io/tags/ai-for-ops/",
+   "description": "AI applied to running systems: security triage, alert noise, incident work, and keeping a human in the loop.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "AI platforms",
+   "url": "https://raskell.io/tags/ai-platforms/",
+   "description": "The shared foundation an organisation builds AI on: model gateways, agent runtimes, governance, observability, and the operating model around them.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Applied security",
+   "url": "https://raskell.io/tags/applied-security/",
+   "description": "Security under production pressure: adversarial input, signal versus noise, and controls that operators can live with.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Attention economy",
+   "url": "https://raskell.io/tags/attention-economy/",
+   "description": "Platforms that sell attention and optimise for engagement, what that does to the web and to discourse, and the intention economy proposed in its place.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Complex systems",
+   "url": "https://raskell.io/tags#complex-systems",
+   "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Context engineering",
+   "url": "https://raskell.io/tags/context-engineering/",
+   "description": "Deciding what a model sees: pinned context, retrieval, memory, and the conventions that keep them honest.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Data sovereignty",
+   "url": "https://raskell.io/tags/data-sovereignty/",
+   "description": "Control over one's own data: pods, portability, and the right to choose the software and the agent that reads it; the personal counterpart of national sovereignty.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Decentralisation",
+   "url": "https://raskell.io/tags/decentralisation/",
+   "description": "Many small nodes and no central operator: the web's original shape, and the alternative to platforms that own the users and the data.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Developer tooling",
+   "url": "https://raskell.io/tags/developer-tooling/",
+   "description": "Package managers, build tools, CLIs, and the daily toolchain an engineer actually touches.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Distributed systems",
+   "url": "https://raskell.io/tags/distributed-systems/",
+   "description": "Replication, coordination, and consistency across machines that fail independently.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Economics",
+   "url": "https://raskell.io/tags/economics/",
+   "description": "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Edge systems",
+   "url": "https://raskell.io/tags/edge-systems/",
+   "description": "Reverse proxies, policy enforcement, CDNs, and logic that runs close to the user instead of in the backend.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Elixir",
+   "url": "https://raskell.io/tags/elixir/",
+   "description": "Elixir, Phoenix, and the BEAM for the long-running, fault-tolerant parts.",
+   "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "Evaluation",
+   "url": "https://raskell.io/tags#evaluation",
+   "description": "Measuring whether an AI system does the right thing: golden sets, structural checks, LLM-as-judge, and regression suites.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Formal methods",
+   "url": "https://raskell.io/tags/formal-methods/",
+   "description": "Proofs, verification, and types as specifications, especially once machines write the code.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Games",
+   "url": "https://raskell.io/tags#games",
+   "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Geography",
+   "url": "https://raskell.io/tags#geography",
+   "description": "Places, terrain, borders, and spatial data, and how their relationships change over time.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "GPUs",
+   "url": "https://raskell.io/tags/gpus/",
+   "description": "GPUs as the computer: memory shape, partitioning, and the hardware under inference.",
+   "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "Haskell",
+   "url": "https://raskell.io/tags/haskell/",
+   "description": "The language that shaped how I think about types, effects, and correctness.",
+   "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "History",
+   "url": "https://raskell.io/tags#history",
+   "description": "Events, institutions, and societies through time, with attention to sources, competing accounts, and uncertainty.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "History of science",
+   "url": "https://raskell.io/tags#history-of-science",
+   "description": "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "History of technology",
+   "url": "https://raskell.io/tags/history-of-technology/",
+   "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Hypertext",
+   "url": "https://raskell.io/tags/hypertext/",
+   "description": "Links as the unit of the web: addresses that can point at anything, the read-write web that was intended, and what a graph of documents can do that a tree cannot.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Inference",
+   "url": "https://raskell.io/tags/inference/",
+   "description": "Running models in production: routing, cost, hardware, and inference as a metered utility.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Isolation",
+   "url": "https://raskell.io/tags/isolation/",
+   "description": "Sandboxes, process and failure-domain isolation, and running untrusted or fallible work safely.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Knowledge management",
+   "url": "https://raskell.io/tags/knowledge-management/",
+   "description": "Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Kubernetes",
+   "url": "https://raskell.io/tags/kubernetes/",
+   "description": "Container orchestration, and the question of when you actually need it.",
+   "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "Life sciences",
+   "url": "https://raskell.io/tags#life-sciences",
+   "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Linux",
+   "url": "https://raskell.io/tags/linux/",
+   "description": "Linux distributions and system administration, Void Linux in particular.",
+   "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "Local-first",
+   "url": "https://raskell.io/tags/local-first/",
+   "description": "Software that keeps data on your devices and syncs through CRDTs, with the network as an optimisation.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Machine learning",
+   "url": "https://raskell.io/tags#machine-learning",
+   "description": "How models learn from data: the mathematics, the training methods, and what the results can and cannot do.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "This site",
+   "url": "https://raskell.io/tags/meta/",
+   "description": "Posts about raskell.io itself: why it exists, how it is built, and where it is going.",
+   "meta": "Site"
+  },
+  {
+   "kind": "topic",
+   "title": "Metrics",
+   "url": "https://raskell.io/tags/metrics/",
+   "description": "What to measure, leading versus lagging signals, and vanity numbers that look like insight.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Neuroscience",
+   "url": "https://raskell.io/tags#neuroscience",
+   "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Observability",
+   "url": "https://raskell.io/tags/observability/",
+   "description": "Seeing what a running system does: traces, metering, glass-box infrastructure, and what not to log.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Open data",
+   "url": "https://raskell.io/tags/open-data/",
+   "description": "Data published for anyone to use: government records, archives, and the five-star ladder from a file on the web to linked data with addresses.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Open standards",
+   "url": "https://raskell.io/tags/open-standards/",
+   "description": "Protocols and formats agreed in the open and free to implement: HTTP, HTML, TCP/IP, RSS, and the consortia and working groups that keep them so.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "The open web",
+   "url": "https://raskell.io/tags/open-web/",
+   "description": "The web as a commons: open protocols, small independent sites, and publishing outside the platforms.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "OpenBSD",
+   "url": "https://raskell.io/tags/openbsd/",
+   "description": "OpenBSD and the BSD approach to correctness and simplicity.",
+   "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "OpenTelemetry",
+   "url": "https://raskell.io/tags/opentelemetry/",
+   "description": "The vendor-neutral standard for traces, metrics, and logs, including the GenAI semantic conventions for model calls.",
+   "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "Operating systems",
+   "url": "https://raskell.io/tags/operating-systems/",
+   "description": "Kernels, virtualisation, and the layer between hardware and everything else, from BSD to inference-native designs.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Open source",
+   "url": "https://raskell.io/tags/oss/",
+   "description": "Open source as the point of the work, not just its licence.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Pingora",
+   "url": "https://raskell.io/tags/pingora/",
+   "description": "Cloudflare's Rust framework for building proxies, the base of Zentinel.",
+   "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "Platform automation",
+   "url": "https://raskell.io/tags/platform-automation/",
+   "description": "Self-service, guardrails, deployment, and the tooling that keeps operating software sustainable.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Policy",
+   "url": "https://raskell.io/tags/policy/",
+   "description": "Where engineering meets regulation, public institutions, procurement, and national strategy.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Privacy",
+   "url": "https://raskell.io/tags/privacy/",
+   "description": "Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Programming languages",
+   "url": "https://raskell.io/tags/programming-languages/",
+   "description": "Languages, type systems, compilers, and how executable intent gets written down.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Reinforcement learning",
+   "url": "https://raskell.io/tags#reinforcement-learning",
+   "description": "Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Reliability",
+   "url": "https://raskell.io/tags/reliability/",
+   "description": "Failure modes, operability, and keeping systems up when the inputs and the dependencies misbehave.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Rust",
+   "url": "https://raskell.io/tags/rust/",
+   "description": "The systems language most of the projects here are written in.",
+   "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "Self-hosting",
+   "url": "https://raskell.io/tags/self-hosting/",
+   "description": "Running your own infrastructure, from a single bare-metal box to community-operated compute.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Simulation",
+   "url": "https://raskell.io/tags#simulation",
+   "description": "Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Sovereignty",
+   "url": "https://raskell.io/tags/sovereignty/",
+   "description": "Who controls compute, data, and infrastructure, and in which jurisdiction; Europe's position in particular.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Training data",
+   "url": "https://raskell.io/tags/training-data/",
+   "description": "What models learn from: web crawls, books, and licensed or unlicensed corpora; who holds what has not been scraped yet, and on what terms.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "TypeScript",
+   "url": "https://raskell.io/tags/typescript/",
+   "description": "TypeScript on Bun, the language of the Agent Platform Handbook code.",
+   "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "WAF and traffic inspection",
+   "url": "https://raskell.io/tags/waf/",
+   "description": "Web application firewalls, rule tuning, traffic replay, and inspecting requests without drowning operators.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "WebAssembly",
+   "url": "https://raskell.io/tags#webassembly",
+   "description": "Portable, sandboxed bytecode for running native-speed code in the browser and beyond.",
+   "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "Zola",
+   "url": "https://raskell.io/tags/zola/",
+   "description": "The static site generator this site and several project sites are built with.",
+   "meta": "Technology"
+  },
+  {
+   "kind": "link",
+   "title": "Zentinel",
+   "url": "https://zentinelproxy.io",
+   "domain": "zentinelproxy.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "This Site Is Becoming a Map",
+     "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    },
+    {
+     "title": "The Last Programming Language Might Not Be for Humans",
+     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    },
+    {
+     "title": "Notes from RSAC 2026",
+     "url": "https://raskell.io/articles/notes-from-rsac-2026/"
+    },
+    {
+     "title": "How I Work These Days",
+     "url": "https://raskell.io/articles/how-i-work-these-days/"
+    },
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    },
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    },
+    {
+     "title": "Looking back on 2025",
+     "url": "https://raskell.io/articles/looking-back-on-2025/"
+    },
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    },
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    },
+    {
+     "title": "I Stopped Writing Most of My Code",
+     "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Archipelag.io",
+   "url": "https://archipelag.io/",
+   "domain": "archipelag.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Economics of Inference",
+     "url": "https://raskell.io/articles/the-economics-of-inference/"
+    },
+    {
+     "title": "Notes from RSAC 2026",
+     "url": "https://raskell.io/articles/notes-from-rsac-2026/"
+    },
+    {
+     "title": "How I Work These Days",
+     "url": "https://raskell.io/articles/how-i-work-these-days/"
+    },
+    {
+     "title": "Archipelag.io Is in Open Beta: Here's Why I Built It",
+     "url": "https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/"
+    },
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    },
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    },
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    },
+    {
+     "title": "I Stopped Writing Most of My Code",
+     "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "cyanea.bio",
+   "url": "https://cyanea.bio/",
+   "domain": "cyanea.bio",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How I Work These Days",
+     "url": "https://raskell.io/articles/how-i-work-these-days/"
+    },
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    },
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    },
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    },
+    {
+     "title": "I Stopped Writing Most of My Code",
+     "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "arcanist.sh",
+   "url": "https://arcanist.sh/",
+   "domain": "arcanist.sh",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Field Exists Now",
+     "url": "https://raskell.io/articles/the-field-exists-now/"
+    },
+    {
+     "title": "Why We Built a Haskell Package Manager in Rust",
+     "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/"
+    },
+    {
+     "title": "The Last Programming Language Might Not Be for Humans",
+     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    },
+    {
+     "title": "I Stopped Writing Most of My Code",
+     "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Die Zukunft",
+   "url": "https://die-zukunft.ch/",
+   "domain": "die-zukunft.ch",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    },
+    {
+     "title": "Patents Per Capita Is a Vanity Metric",
+     "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/"
+    },
+    {
+     "title": "Notes from RSAC 2026",
+     "url": "https://raskell.io/articles/notes-from-rsac-2026/"
+    },
+    {
+     "title": "I Stopped Writing Most of My Code",
+     "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "the-agent-platform-handbook",
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Observability Is Not Logging",
+     "url": "https://raskell.io/articles/observability-is-not-logging/"
+    },
+    {
+     "title": "Tools: How Agents Actually Do Things",
+     "url": "https://raskell.io/articles/tools-how-agents-actually-do-things/"
+    },
+    {
+     "title": "Your Agent Wants Root",
+     "url": "https://raskell.io/articles/your-agent-wants-root/"
+    },
+    {
+     "title": "What an Agent Actually Is",
+     "url": "https://raskell.io/articles/what-an-agent-actually-is/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "AI 2027",
+   "url": "https://ai-2027.com/",
+   "domain": "ai-2027.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Economics of Inference",
+     "url": "https://raskell.io/articles/the-economics-of-inference/"
+    },
+    {
+     "title": "Notes from RSAC 2026",
+     "url": "https://raskell.io/articles/notes-from-rsac-2026/"
+    },
+    {
+     "title": "How I Work These Days",
+     "url": "https://raskell.io/articles/how-i-work-these-days/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Pingora",
+   "url": "https://github.com/cloudflare/pingora",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Zentinel Is Really Optimizing For",
+     "url": "https://raskell.io/articles/what-zentinel-is-really-optimizing-for/"
+    },
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    },
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Conflux",
+   "url": "https://github.com/raskell-io/conflux",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    },
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    },
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "shiioo: Virtual Company OS",
+   "url": "https://github.com/raskell-io/shiioo",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "What Sixteen AI Agents Taught Me About Management",
+     "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
+    },
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    },
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Vera",
+   "url": "https://veralang.dev/",
+   "domain": "veralang.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Field Exists Now",
+     "url": "https://raskell.io/articles/the-field-exists-now/"
+    },
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    },
+    {
+     "title": "The Last Programming Language Might Not Be for Humans",
+     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Void Linux",
+   "url": "https://voidlinux.org/",
+   "domain": "voidlinux.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Disk space maintenance on Void Linux",
+     "url": "https://raskell.io/articles/disk-space-void-linux-maintenance/"
+    },
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    },
+    {
+     "title": "Hello and outlook",
+     "url": "https://raskell.io/articles/hello-and-outlook/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "catalogue of languages built for agents to write",
+   "url": "https://agentlanguages.dev",
+   "domain": "agentlanguages.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Proof You Only Have to Write Once",
+     "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/"
+    },
+    {
+     "title": "The Field Exists Now",
+     "url": "https://raskell.io/articles/the-field-exists-now/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "BHC",
+   "url": "https://arcanist.sh/bhc/",
+   "domain": "arcanist.sh",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Why We Built a Haskell Package Manager in Rust",
+     "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/"
+    },
+    {
+     "title": "The Last Programming Language Might Not Be for Humans",
+     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "hx",
+   "url": "https://arcanist.sh/hx/",
+   "domain": "arcanist.sh",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Field Exists Now",
+     "url": "https://raskell.io/articles/the-field-exists-now/"
+    },
+    {
+     "title": "The Last Programming Language Might Not Be for Humans",
+     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "astral.sh",
+   "url": "https://astral.sh",
+   "domain": "astral.sh",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Why We Built a Haskell Package Manager in Rust",
+     "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/"
+    },
+    {
+     "title": "The Last Programming Language Might Not Be for Humans",
+     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Void Linux Handbook: XBPS",
+   "url": "https://docs.voidlinux.org/xbps/index.html",
+   "domain": "docs.voidlinux.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Disk space maintenance on Void Linux",
+     "url": "https://raskell.io/articles/disk-space-void-linux-maintenance/"
+    },
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "fly.io",
+   "url": "https://fly.io",
+   "domain": "fly.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    },
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Ghostty terminal emulator",
+   "url": "https://ghostty.org",
+   "domain": "ghostty.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "What Sixteen AI Agents Taught Me About Management",
+     "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
+    },
+    {
+     "title": "How I Work These Days",
+     "url": "https://raskell.io/articles/how-i-work-these-days/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Kurumi",
+   "url": "https://github.com/raskell-io/kurumi",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    },
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "mise-hx",
+   "url": "https://github.com/raskell-io/mise-hx",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    },
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Sango",
+   "url": "https://github.com/raskell-io/sango",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Looking back on 2025",
+     "url": "https://raskell.io/articles/looking-back-on-2025/"
+    },
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "post-02",
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook/tree/post-02",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Tools: How Agents Actually Do Things",
+     "url": "https://raskell.io/articles/tools-how-agents-actually-do-things/"
+    },
+    {
+     "title": "Your Agent Wants Root",
+     "url": "https://raskell.io/articles/your-agent-wants-root/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "post-03",
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook/tree/post-03",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Context Is the Product",
+     "url": "https://raskell.io/articles/context-is-the-product/"
+    },
+    {
+     "title": "Tools: How Agents Actually Do Things",
+     "url": "https://raskell.io/articles/tools-how-agents-actually-do-things/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "post-04",
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook/tree/post-04",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Retrieval Is a Tool, Not a Layer",
+     "url": "https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/"
+    },
+    {
+     "title": "Context Is the Product",
+     "url": "https://raskell.io/articles/context-is-the-product/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "post-05",
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook/tree/post-05",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Memory Is a Write Path",
+     "url": "https://raskell.io/articles/memory-is-a-write-path/"
+    },
+    {
+     "title": "Retrieval Is a Tool, Not a Layer",
+     "url": "https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "post-06",
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook/tree/post-06",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Model Is a Dependency",
+     "url": "https://raskell.io/articles/the-model-is-a-dependency/"
+    },
+    {
+     "title": "Memory Is a Write Path",
+     "url": "https://raskell.io/articles/memory-is-a-write-path/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "post-07",
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook/tree/post-07",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bill Is Part of the Loop",
+     "url": "https://raskell.io/articles/the-bill-is-part-of-the-loop/"
+    },
+    {
+     "title": "The Model Is a Dependency",
+     "url": "https://raskell.io/articles/the-model-is-a-dependency/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "post-08",
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook/tree/post-08",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Observability Is Not Logging",
+     "url": "https://raskell.io/articles/observability-is-not-logging/"
+    },
+    {
+     "title": "The Bill Is Part of the Loop",
+     "url": "https://raskell.io/articles/the-bill-is-part-of-the-loop/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Ushio",
+   "url": "https://github.com/raskell-io/ushio",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    },
+    {
+     "title": "Looking back on 2025",
+     "url": "https://raskell.io/articles/looking-back-on-2025/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Vela",
+   "url": "https://github.com/raskell-io/vela",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    },
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Zentinel",
+   "url": "https://github.com/zentinelproxy/zentinel",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    },
+    {
+     "title": "What Zentinel Is Really Optimizing For",
+     "url": "https://raskell.io/articles/what-zentinel-is-really-optimizing-for/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "WASI",
+   "url": "https://wasi.dev/",
+   "domain": "wasi.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    },
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "WebAssembly",
+   "url": "https://webassembly.org/",
+   "domain": "webassembly.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    },
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "OpenBSD",
+   "url": "https://www.openbsd.org/",
+   "domain": "openbsd.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    },
+    {
+     "title": "Hello and outlook",
+     "url": "https://raskell.io/articles/hello-and-outlook/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Unison",
+   "url": "https://www.unison-lang.org/",
+   "domain": "unison-lang.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Proof You Only Have to Write Once",
+     "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/"
+    },
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "HAProxy",
+   "url": "http://www.haproxy.org/",
+   "domain": "haproxy.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Zentinel Is Really Optimizing For",
+     "url": "https://raskell.io/articles/what-zentinel-is-really-optimizing-for/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "HAR 1.2 specification",
+   "url": "http://www.softwareishard.com/blog/har-12-spec/",
+   "domain": "softwareishard.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Accord Project",
+   "url": "https://accordproject.org/",
+   "domain": "accordproject.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“Europarl: A Parallel Corpus for Statistical Machine Translation”",
+   "url": "https://aclanthology.org/2005.mtsummit-papers.11/",
+   "domain": "aclanthology.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "simulated nearly 10 million mouse neurons on the Fugaku supercomputer",
+   "url": "https://alleninstitute.org/news/one-of-worlds-most-detailed-virtual-brain-simulations-is-changing-how-we-study-the-brain",
+   "domain": "alleninstitute.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Brain Emulation, Read as an Infrastructure Problem",
+     "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "app.archipelag.io",
+   "url": "https://app.archipelag.io",
+   "domain": "app.archipelag.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Archipelag.io Is in Open Beta: Here's Why I Built It",
+     "url": "https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "arcanist.sh",
+   "url": "https://arcanist.sh/building-the-commons/",
+   "domain": "arcanist.sh",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Proof You Only Have to Write Once",
+     "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "manifesto",
+   "url": "https://arcanist.sh/manifesto/",
+   "domain": "arcanist.sh",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Proof You Only Have to Write Once",
+     "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Language Models are Few-Shot Learners",
+   "url": "https://arxiv.org/abs/2005.14165",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Web Was the Training Set",
+     "url": "https://raskell.io/articles/the-web-was-the-training-set/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "ZAPBench: A Benchmark for Whole-Brain Activity Prediction in Zebrafish",
+   "url": "https://arxiv.org/abs/2503.02618",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Brain Emulation, Read as an Infrastructure Problem",
+     "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "arXiv 2506.01732",
+   "url": "https://arxiv.org/abs/2506.01732",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "State of Brain Emulation Report 2025",
+   "url": "https://arxiv.org/abs/2510.15745",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Brain Emulation, Read as an Infrastructure Problem",
+     "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "arXiv 2404.01856",
+   "url": "https://arxiv.org/pdf/2404.01856",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“Institutional Books 1.0”",
+   "url": "https://arxiv.org/pdf/2506.08300",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "asdf",
+   "url": "https://asdf-vm.com/",
+   "domain": "asdf-vm.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“What authors need to know about the Anthropic settlement”",
+   "url": "https://authorsguild.org/advocacy/artificial-intelligence/what-authors-need-to-know-about-the-anthropic-settlement/",
+   "domain": "authorsguild.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Automerge",
+   "url": "https://automerge.org/",
+   "domain": "automerge.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Making illegal states unrepresentable",
+   "url": "https://blog.janestreet.com/effective-ml-revisited/",
+   "domain": "blog.janestreet.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Real World Haskell",
+   "url": "https://book.realworldhaskell.org/",
+   "domain": "book.realworldhaskell.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "brainemulation.mxschons.com",
+   "url": "https://brainemulation.mxschons.com",
+   "domain": "brainemulation.mxschons.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Brain Emulation, Read as an Infrastructure Problem",
+     "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Common Domain Model",
+   "url": "https://cdm.finos.org/",
+   "domain": "cdm.finos.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "raffael-e-schneider",
+   "url": "https://ch.linkedin.com/in/raffael-e-schneider",
+   "domain": "ch.linkedin.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "I Stopped Writing Most of My Code",
+     "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“The future of European competitiveness”",
+   "url": "https://commission.europa.eu/topics/eu-competitiveness/draghi-report_en",
+   "domain": "commission.europa.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Common Crawl",
+   "url": "https://commoncrawl.org/",
+   "domain": "commoncrawl.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Web Was the Training Set",
+     "url": "https://raskell.io/articles/the-web-was-the-training-set/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "commoncrawl.org/latest-crawl",
+   "url": "https://commoncrawl.org/latest-crawl",
+   "domain": "commoncrawl.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "alacritty_terminal crate",
+   "url": "https://crates.io/crates/alacritty_terminal",
+   "domain": "crates.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "What Sixteen AI Agents Taught Me About Management",
+     "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "curl",
+   "url": "https://curl.se/",
+   "domain": "curl.se",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Dafny",
+   "url": "https://dafny.org/",
+   "domain": "dafny.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Research and development expenditure (% of GDP) — Switzerland",
+   "url": "https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS?locations=CH",
+   "domain": "data.worldbank.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Patents Per Capita Is a Vanity Metric",
+     "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "World Bank Patent applications, residents dataset",
+   "url": "https://data.worldbank.org/indicator/IP.PAT.RESD",
+   "domain": "data.worldbank.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Patents Per Capita Is a Vanity Metric",
+     "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Deno Deploy",
+   "url": "https://deno.com/deploy",
+   "domain": "deno.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Origin Private File System",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system",
+   "domain": "developer.mozilla.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Service Worker API",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API",
+   "domain": "developer.mozilla.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Web Workers API",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API",
+   "domain": "developer.mozilla.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "MediaPipe",
+   "url": "https://developers.google.com/mediapipe",
+   "domain": "developers.google.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Code of Practice and template",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+   "domain": "digital-strategy.ec.europa.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Common European Data Spaces",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/data-spaces",
+   "domain": "digital-strategy.ec.europa.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "direnv",
+   "url": "https://direnv.net/",
+   "domain": "direnv.net",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Stack",
+   "url": "https://docs.haskellstack.org/",
+   "domain": "docs.haskellstack.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Void Linux Handbook",
+   "url": "https://docs.voidlinux.org/",
+   "domain": "docs.voidlinux.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Void Linux FAQ",
+   "url": "https://docs.voidlinux.org/about/faq.html",
+   "domain": "docs.voidlinux.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Disk space maintenance on Void Linux",
+     "url": "https://raskell.io/articles/disk-space-void-linux-maintenance/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Wasmtime’s determinism guide",
+   "url": "https://docs.wasmtime.dev/",
+   "domain": "docs.wasmtime.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Zentinel documentation",
+   "url": "https://docs.zentinelproxy.io/",
+   "domain": "docs.zentinelproxy.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Zentinel Is Really Optimizing For",
+     "url": "https://raskell.io/articles/what-zentinel-is-really-optimizing-for/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Regional Innovation Scoreboard 2025 — Switzerland profile",
+   "url": "https://ec.europa.eu/assets/rtd/ris/2025/ec_rtd_ris-regional-profile-ch.pdf",
+   "domain": "ec.europa.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Patents Per Capita Is a Vanity Metric",
+     "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "its Wikipedia entry",
+   "url": "https://en.wikipedia.org/wiki/Anna&#x27;s_Archive",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Enshittification",
+   "url": "https://en.wikipedia.org/wiki/Enshittification",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Looking back on 2025",
+     "url": "https://raskell.io/articles/looking-back-on-2025/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Haskell Curry",
+   "url": "https://en.wikipedia.org/wiki/Haskell_Curry",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Hindley-Milner type system",
+   "url": "https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Lambda calculus",
+   "url": "https://en.wikipedia.org/wiki/Lambda_calculus",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The Pile (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/The_Pile_(dataset)",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Theo de Raadt",
+   "url": "https://en.wikipedia.org/wiki/Theo_de_Raadt",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“Will we run out of data? Limits of LLM scaling based on human-generated data”",
+   "url": "https://epoch.ai/publications/will-we-run-out-of-data-limits-of-llm-scaling-based-on-human-generated-data",
+   "domain": "epoch.ai",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "EUR-Lex 2019/1024",
+   "url": "https://eur-lex.europa.eu/eli/dir/2019/1024/oj",
+   "domain": "eur-lex.europa.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "EUR-Lex 2019/790",
+   "url": "https://eur-lex.europa.eu/eli/dir/2019/790/oj",
+   "domain": "eur-lex.europa.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "EUR-Lex 2016/679",
+   "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+   "domain": "eur-lex.europa.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "EUR-Lex 2023/2854",
+   "url": "https://eur-lex.europa.eu/eli/reg/2023/2854/oj",
+   "domain": "eur-lex.europa.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "EUR-Lex 2024/1689",
+   "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+   "domain": "eur-lex.europa.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "EUR-Lex 2022/868",
+   "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R0868",
+   "domain": "eur-lex.europa.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Gatling",
+   "url": "https://gatling.io/",
+   "domain": "gatling.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "deterministic profile",
+   "url": "https://github.com/WebAssembly/proposals",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Claude Code",
+   "url": "https://github.com/anthropics/claude-code",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "GitHub issues",
+   "url": "https://github.com/archipelag-io",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Archipelag.io Is in Open Beta: Here's Why I Built It",
+     "url": "https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "JavaScript",
+   "url": "https://github.com/archipelag-io/archipelag-js",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Archipelag.io Is in Open Beta: Here's Why I Built It",
+     "url": "https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Python",
+   "url": "https://github.com/archipelag-io/archipelag-python",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Archipelag.io Is in Open Beta: Here's Why I Built It",
+     "url": "https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "node agent",
+   "url": "https://github.com/archipelag-io/node-agent",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Archipelag.io Is in Open Beta: Here's Why I Built It",
+     "url": "https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "BHC",
+   "url": "https://github.com/bhc-lang",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "github.com/coconut-os/coconutOS",
+   "url": "https://github.com/coconut-os/coconutOS",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Comes After the Last Programming Language",
+     "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "ftw",
+   "url": "https://github.com/coreruleset/ftw",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "mise source code",
+   "url": "https://github.com/jdx/mise",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "llama2.c",
+   "url": "https://github.com/karpathy/llama2.c",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Comes After the Last Programming Language",
+     "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "OpenClaw: Personal AI agent framework",
+   "url": "https://github.com/openclaw/openclaw",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "What Sixteen AI Agents Taught Me About Management",
+     "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Nuclei",
+   "url": "https://github.com/projectdiscovery/nuclei",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "kage: Local-first agentic work orchestrator",
+   "url": "https://github.com/raskell-io/kage",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "What Sixteen AI Agents Taught Me About Management",
+     "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Refrakt",
+   "url": "https://github.com/raskell-io/refrakt",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "seijaku",
+   "url": "https://github.com/raskell-io/seijaku",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "This Site Is Becoming a Map",
+     "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Terrarium",
+   "url": "https://github.com/raskell-io/terrarium",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "This Site Is Becoming a Map",
+     "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "post-01",
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook/tree/post-01",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Your Agent Wants Root",
+     "url": "https://raskell.io/articles/your-agent-wants-root/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "post-09",
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook/tree/post-09",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Observability Is Not Logging",
+     "url": "https://raskell.io/articles/observability-is-not-logging/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "raskell.io source",
+   "url": "https://github.com/raskell-io/www.raskell.io",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Hello and outlook",
+     "url": "https://raskell.io/articles/hello-and-outlook/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "LiteFS",
+   "url": "https://github.com/superfly/litefs",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "vkpurge source",
+   "url": "https://github.com/void-linux/void-packages/blob/master/srcpkgs/base-files/files/vkpurge",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Disk space maintenance on Void Linux",
+     "url": "https://raskell.io/articles/disk-space-void-linux-maintenance/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“Anti-Piracy Group Takes AI Training Dataset ‘Books3’ Offline”",
+   "url": "https://gizmodo.com/anti-piracy-group-takes-ai-training-dataset-books3-off-1850743763",
+   "domain": "gizmodo.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "GoReplay",
+   "url": "https://goreplay.org/",
+   "domain": "goreplay.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "A comprehensive study of CRDTs",
+   "url": "https://hal.inria.fr/inria-00555588/document",
+   "domain": "hal.inria.fr",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Twenty years of a free, open web",
+   "url": "https://home.cern/twenty-years-free-and-open-www/",
+   "domain": "home.cern",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Web Was the Training Set",
+     "url": "https://raskell.io/articles/the-web-was-the-training-set/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Philip Wadler, “Monads for functional programming”",
+   "url": "https://homepages.inf.ed.ac.uk/wadler/papers/marktoberdorf/baastad.pdf",
+   "domain": "homepages.inf.ed.ac.uk",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "LumiOpen/Poro-34B",
+   "url": "https://huggingface.co/LumiOpen/Poro-34B",
+   "domain": "huggingface.co",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "EuroLLM-22B",
+   "url": "https://huggingface.co/blog/eurollm-team/eurollm-22b",
+   "domain": "huggingface.co",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "EuroLLM-9B",
+   "url": "https://huggingface.co/blog/eurollm-team/eurollm-9b",
+   "domain": "huggingface.co",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "HuggingFace dataset",
+   "url": "https://huggingface.co/datasets/PleIAs/common_corpus",
+   "domain": "huggingface.co",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Teuken-7B on HuggingFace",
+   "url": "https://huggingface.co/openGPT-X/Teuken-7B-instruct-v0.6",
+   "domain": "huggingface.co",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Humankind",
+   "url": "https://humankind.plus",
+   "domain": "humankind.plus",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "I Stopped Writing Most of My Code",
+     "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Hurl",
+   "url": "https://hurl.dev/",
+   "domain": "hurl.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "hyper",
+   "url": "https://hyper.rs/",
+   "domain": "hyper.rs",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "IndieWeb",
+   "url": "https://indieweb.org/",
+   "domain": "indieweb.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Looking back on 2025",
+     "url": "https://raskell.io/articles/looking-back-on-2025/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "JRC-Acquis",
+   "url": "https://joint-research-centre.ec.europa.eu/language-technology-resources/jrc-acquis_en",
+   "domain": "joint-research-centre.ec.europa.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "k6",
+   "url": "https://k6.io/",
+   "domain": "k6.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Koka",
+   "url": "https://koka-lang.github.io/koka/doc/index.html",
+   "domain": "koka-lang.github.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Kurumi",
+   "url": "https://kurumi.raskell.io",
+   "domain": "kurumi.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "This Site Is Becoming a Map",
+     "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Opinion (Justia, Doc. 598)",
+   "url": "https://law.justia.com/cases/federal/district-courts/california/candce/3:2023cv03417/415175/598/",
+   "domain": "law.justia.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Lean",
+   "url": "https://lean-lang.org/",
+   "domain": "lean-lang.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Learn You a Haskell for Great Good!",
+   "url": "https://learnyouahaskell.com/",
+   "domain": "learnyouahaskell.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Let’s Encrypt",
+   "url": "https://letsencrypt.org/",
+   "domain": "letsencrypt.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "libvirt",
+   "url": "https://libvirt.org/",
+   "domain": "libvirt.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Locust",
+   "url": "https://locust.io/",
+   "domain": "locust.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "history of digital gardens",
+   "url": "https://maggieappleton.com/garden-history",
+   "domain": "maggieappleton.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "This Site Is Becoming a Map",
+     "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "pledge(2)",
+   "url": "https://man.openbsd.org/pledge.2",
+   "domain": "man.openbsd.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "unveil(2)",
+   "url": "https://man.openbsd.org/unveil.2",
+   "domain": "man.openbsd.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "xbps-remove(1) man page",
+   "url": "https://man.voidlinux.org/xbps-remove.1",
+   "domain": "man.voidlinux.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Disk space maintenance on Void Linux",
+     "url": "https://raskell.io/articles/disk-space-void-linux-maintenance/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "man page",
+   "url": "https://man.voidlinux.org/xbps-remove.1#O,",
+   "domain": "man.voidlinux.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Disk space maintenance on Void Linux",
+     "url": "https://raskell.io/articles/disk-space-void-linux-maintenance/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "man page",
+   "url": "https://man.voidlinux.org/xbps-remove.1#o,",
+   "domain": "man.voidlinux.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Disk space maintenance on Void Linux",
+     "url": "https://raskell.io/articles/disk-space-void-linux-maintenance/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Manabi",
+   "url": "https://manabi.raskell.io",
+   "domain": "manabi.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "This Site Is Becoming a Map",
+     "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "mirror.ungleich.ch/pub/OpenBSD",
+   "url": "https://mirror.ungleich.ch/pub/OpenBSD/7.2/",
+   "domain": "mirror.ungleich.ch",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Mise",
+   "url": "https://mise.jdx.dev/",
+   "domain": "mise.jdx.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "mitmproxy",
+   "url": "https://mitmproxy.org/",
+   "domain": "mitmproxy.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "MLIR",
+   "url": "https://mlir.llvm.org/",
+   "domain": "mlir.llvm.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "NATS",
+   "url": "https://nats.io/",
+   "domain": "nats.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Neon",
+   "url": "https://neon.tech/",
+   "domain": "neon.tech",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "HackerNews discussion",
+   "url": "https://news.ycombinator.com/item?id=47696263",
+   "domain": "news.ycombinator.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Last Programming Language Might Not Be for Humans",
+     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Nginx",
+   "url": "https://nginx.org/",
+   "domain": "nginx.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Zentinel Is Really Optimizing For",
+     "url": "https://raskell.io/articles/what-zentinel-is-really-optimizing-for/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Nix",
+   "url": "https://nix.dev/",
+   "domain": "nix.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Nix",
+   "url": "https://nixos.org/",
+   "domain": "nixos.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "evergreen notes",
+   "url": "https://notes.andymatuschak.org/Evergreen_notes",
+   "domain": "notes.andymatuschak.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "This Site Is Becoming a Map",
+     "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "CVE-2023-31018",
+   "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5491",
+   "domain": "nvidia.custhelp.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Comes After the Last Programming Language",
+     "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "CVE-2024-0090",
+   "url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5551",
+   "domain": "nvidia.custhelp.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Comes After the Last Programming Language",
+     "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "OpenTofu",
+   "url": "https://opentofu.org/",
+   "domain": "opentofu.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "openwebsearch.eu",
+   "url": "https://openwebsearch.eu/open-webindex/",
+   "domain": "openwebsearch.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Paw &amp; Claw",
+   "url": "https://pawandclaw.raskell.io",
+   "domain": "pawandclaw.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "This Site Is Becoming a Map",
+     "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "From Worm to Human: Scaling Brain Emulation",
+   "url": "https://pdf.isaak.net/scaling-emulations",
+   "domain": "pdf.isaak.net",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Brain Emulation, Read as an Infrastructure Problem",
+     "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Physics World",
+   "url": "https://physicsworld.com/a/tim-berners-lee-why-the-inventor-of-the-web-is-optimistic-idealistic-and-perhaps-a-little-naive/",
+   "domain": "physicsworld.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Web Was the Training Set",
+     "url": "https://raskell.io/articles/the-web-was-the-training-set/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Burp Suite",
+   "url": "https://portswigger.net/burp",
+   "domain": "portswigger.net",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "European Innovation Scoreboard 2025",
+   "url": "https://research-and-innovation.ec.europa.eu/knowledge-publications-tools-and-data/publications/all-publications/european-innovation-scoreboard-2025_en",
+   "domain": "research-and-innovation.ec.europa.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Patents Per Capita Is a Vanity Metric",
+     "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "seL4",
+   "url": "https://sel4.systems/",
+   "domain": "sel4.systems",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Comes After the Last Programming Language",
+     "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "sql.js",
+   "url": "https://sql.js.org/",
+   "domain": "sql.js.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "SQLite Wasm",
+   "url": "https://sqlite.org/wasm",
+   "domain": "sqlite.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Supabase",
+   "url": "https://supabase.com/",
+   "domain": "supabase.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "tcpreplay",
+   "url": "https://tcpreplay.appneta.com/",
+   "domain": "tcpreplay.appneta.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“Elon Musk agrees that we’ve exhausted AI training data”",
+   "url": "https://techcrunch.com/2025/01/08/elon-musk-agrees-that-weve-exhausted-ai-training-data/",
+   "domain": "techcrunch.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“OpenAI co-founder says AI is reaching ‘peak data’ as it hits the limits of the internet”",
+   "url": "https://the-decoder.com/openai-co-founder-says-ai-is-reaching-peak-data-as-it-hits-the-limits-of-the-internet/",
+   "domain": "the-decoder.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "J floor",
+   "url": "https://thejfloor.com/",
+   "domain": "thejfloor.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "I Stopped Writing Most of My Code",
+     "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "tigervnc",
+   "url": "https://tigervnc.org/",
+   "domain": "tigervnc.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "tilde.ai/tildeopen-llm",
+   "url": "https://tilde.ai/tildeopen-llm/",
+   "domain": "tilde.ai",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "TOML specification",
+   "url": "https://toml.io/",
+   "domain": "toml.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Turso",
+   "url": "https://turso.tech/",
+   "domain": "turso.tech",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@raskelll",
+   "url": "https://twitter.com/raskelll",
+   "domain": "twitter.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "I Stopped Writing Most of My Code",
+     "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Varnish",
+   "url": "https://varnish-cache.org/",
+   "domain": "varnish-cache.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Zentinel Is Really Optimizing For",
+     "url": "https://raskell.io/articles/what-zentinel-is-really-optimizing-for/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Vercel Edge Functions",
+   "url": "https://vercel.com/docs/functions/edge-functions",
+   "domain": "vercel.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Why OpenBSD Rocks",
+   "url": "https://why-openbsd.rocks/",
+   "domain": "why-openbsd.rocks",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Why OpenBSD rocks",
+   "url": "https://why-openbsd.rocks/fact/freezero/",
+   "domain": "why-openbsd.rocks",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Haskell Wiki",
+   "url": "https://wiki.haskell.org/",
+   "domain": "wiki.haskell.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Algebraic data types",
+   "url": "https://wiki.haskell.org/Algebraic_data_type",
+   "domain": "wiki.haskell.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "All About Monads",
+   "url": "https://wiki.haskell.org/All_About_Monads",
+   "domain": "wiki.haskell.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Typeclassopedia",
+   "url": "https://wiki.haskell.org/Typeclassopedia",
+   "domain": "wiki.haskell.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Cloudflare Workers",
+   "url": "https://workers.cloudflare.com/",
+   "domain": "workers.cloudflare.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Project Glasswing",
+   "url": "https://www.anthropic.com/glasswing",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Last Programming Language Might Not Be for Humans",
+     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "bnf.fr Gallica",
+   "url": "https://www.bnf.fr/en/gallica-bnf-digital-library",
+   "domain": "bnf.fr",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Barcelona Supercomputing Center",
+   "url": "https://www.bsc.es/news/bsc-news/alia-europes-first-public-open-and-multilingual-ai-infrastructure",
+   "domain": "bsc.es",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Charles Proxy",
+   "url": "https://www.charlesproxy.com/",
+   "domain": "charlesproxy.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "CockroachDB",
+   "url": "https://www.cockroachlabs.com/",
+   "domain": "cockroachlabs.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Common Workflow Language",
+   "url": "https://www.commonwl.org/",
+   "domain": "commonwl.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "KVM virt-install: Install OpenBSD as Guest Operating System",
+   "url": "https://www.cyberciti.biz/faq/kvmvirtualization-virt-install-openbsd-unix-guest/",
+   "domain": "cyberciti.biz",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "deutsche-digitale-bibliothek.de",
+   "url": "https://www.deutsche-digitale-bibliothek.de/?lang=en",
+   "domain": "deutsche-digitale-bibliothek.de",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“How much LLM training data is there, in the limit?”",
+   "url": "https://www.educatingsilicon.com/2024/05/09/how-much-llm-training-data-is-there-in-the-limit/",
+   "domain": "educatingsilicon.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Envoy",
+   "url": "https://www.envoyproxy.io/",
+   "domain": "envoyproxy.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Zentinel Is Really Optimizing For",
+     "url": "https://raskell.io/articles/what-zentinel-is-really-optimizing-for/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Erlang/OTP",
+   "url": "https://www.erlang.org/",
+   "domain": "erlang.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "europeana.eu/en/about-us",
+   "url": "https://www.europeana.eu/en/about-us",
+   "domain": "europeana.eu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Fastly Compute",
+   "url": "https://www.fastly.com/products/edge-compute",
+   "domain": "fastly.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Zola",
+   "url": "https://www.getzola.org/",
+   "domain": "getzola.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Looking back on 2025",
+     "url": "https://raskell.io/articles/looking-back-on-2025/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "GNU Make",
+   "url": "https://www.gnu.org/software/make/",
+   "domain": "gnu.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Haskell Language",
+   "url": "https://www.haskell.org/",
+   "domain": "haskell.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Cabal",
+   "url": "https://www.haskell.org/cabal/",
+   "domain": "haskell.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "GHC",
+   "url": "https://www.haskell.org/ghc/",
+   "domain": "haskell.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Hetzner Server Auction",
+   "url": "https://www.hetzner.com/sb/",
+   "domain": "hetzner.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Fraunhofer IAIS",
+   "url": "https://www.iais.fraunhofer.de/en/industries_and_cross-sector_solutions/cross-sector_solutions/generative-ai/opengpt-x.html",
+   "domain": "iais.fraunhofer.de",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Local-first software",
+   "url": "https://www.inkandswitch.com/local-first/",
+   "domain": "inkandswitch.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "virsh(1)",
+   "url": "https://www.libvirt.org/manpages/virsh.html",
+   "domain": "libvirt.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Minix",
+   "url": "https://www.minix3.org/",
+   "domain": "minix3.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Comes After the Last Programming Language",
+     "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "complete wiring diagram of an adult fruit fly brain",
+   "url": "https://www.nature.com/articles/s41586-024-07558-y",
+   "domain": "nature.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Brain Emulation, Read as an Infrastructure Problem",
+     "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Simulation and assimilation of the digital human brain",
+   "url": "https://www.nature.com/articles/s43588-024-00731-3",
+   "domain": "nature.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Brain Emulation, Read as an Infrastructure Problem",
+     "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“Shadow libraries and AI training”",
+   "url": "https://www.nembal.com/blog/sahdow_libraries_and_ai_training",
+   "domain": "nembal.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Nomad",
+   "url": "https://www.nomadproject.io/",
+   "domain": "nomadproject.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“Anthropic to pay $1.5 billion to authors in landmark AI settlement”",
+   "url": "https://www.npr.org/2025/09/05/nx-s1-5529404/anthropic-settlement-authors-copyright-ai",
+   "domain": "npr.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "How the Web Was Lost",
+   "url": "https://www.nybooks.com/contributors/james-gleick/",
+   "domain": "nybooks.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Web Was the Training Set",
+     "url": "https://raskell.io/articles/the-web-was-the-training-set/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“NZZ digitalisiert Ausgaben seit 1780”",
+   "url": "https://www.nzz.ch/zuerich/nzz-digitalisiert-ausgaben-seit-1780-im-internet-zugaenglich-ld.1648371",
+   "domain": "nzz.ch",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "OpenBSD 7.2",
+   "url": "https://www.openbsd.org/72.html",
+   "domain": "openbsd.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "OpenBSD FAQ",
+   "url": "https://www.openbsd.org/faq/",
+   "domain": "openbsd.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "OpenSSH",
+   "url": "https://www.openssh.com/",
+   "domain": "openssh.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "This Is for Everyone",
+   "url": "https://www.panmacmillan.com/authors/tim-berners-lee/this-is-for-everyone/9781035023677",
+   "domain": "panmacmillan.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Web Was the Training Set",
+     "url": "https://raskell.io/articles/the-web-was-the-training-set/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence",
+   "url": "https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296",
+   "domain": "penguin.co.uk",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Web Was the Training Set",
+     "url": "https://raskell.io/articles/the-web-was-the-training-set/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Phoenix Framework",
+   "url": "https://www.phoenixframework.org/",
+   "domain": "phoenixframework.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "A Turing test of whether AI chatbots are behaviorally similar to humans",
+   "url": "https://www.pnas.org/doi/10.1073/pnas.2313925121",
+   "domain": "pnas.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Web Was the Training Set",
+     "url": "https://raskell.io/articles/the-web-was-the-training-set/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Publishers Weekly",
+   "url": "https://www.publishersweekly.com/9780374612467",
+   "domain": "publishersweekly.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Web Was the Training Set",
+     "url": "https://raskell.io/articles/the-web-was-the-training-set/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "QEMU",
+   "url": "https://www.qemu.org/",
+   "domain": "qemu.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "[Guide] How to setup QEMU/KVM emulation on Void Linux",
+   "url": "https://www.reddit.com/r/voidlinux/comments/ghwvv5/guide_how_to_setup_qemukvm_emulation_on_void_linux/",
+   "domain": "reddit.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "RO-Crate",
+   "url": "https://www.researchobject.org/ro-crate/",
+   "domain": "researchobject.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“Meta Pirated Library, Court Filing Alleges”",
+   "url": "https://www.rollingstone.com/culture/culture-news/ai-meta-pirated-library-zuckerberg-1235235394/",
+   "domain": "rollingstone.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "RSAC 2026",
+   "url": "https://www.rsaconference.com/",
+   "domain": "rsaconference.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Notes from RSAC 2026",
+     "url": "https://raskell.io/articles/notes-from-rsac-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Rust",
+   "url": "https://www.rust-lang.org/",
+   "domain": "rust-lang.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Auto-install OpenBSD on QEMU",
+   "url": "https://www.skreutz.com/posts/autoinstall-openbsd-on-qemu/",
+   "domain": "skreutz.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
+     "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Fiddler",
+   "url": "https://www.telerik.com/fiddler",
+   "domain": "telerik.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "memex",
+   "url": "https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/",
+   "domain": "theatlantic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "This Site Is Becoming a Map",
+     "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Tim Berners-Lee",
+   "url": "https://www.w3.org/People/Berners-Lee/",
+   "domain": "w3.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Looking back on 2025",
+     "url": "https://raskell.io/articles/looking-back-on-2025/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "PROV-O",
+   "url": "https://www.w3.org/TR/prov-o/",
+   "domain": "w3.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "WebGPU specification",
+   "url": "https://www.w3.org/TR/webgpu/",
+   "domain": "w3.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "GII 2025 Switzerland country profile",
+   "url": "https://www.wipo.int/edocs/gii-ranking/2025/ch.pdf",
+   "domain": "wipo.int",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Patents Per Capita Is a Vanity Metric",
+     "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Global Innovation Index 2025: Innovation Investment Growth Slows",
+   "url": "https://www.wipo.int/en/web/global-innovation-index/w/news/2025/wipo-global-innovation-index-2025-switzerland-sweden-us-the-republic-of-korea-and-singapore-top-ranking-china-enters-top-10-innovation-investment-growth-slows",
+   "domain": "wipo.int",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Patents Per Capita Is a Vanity Metric",
+     "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "GII 2025 results",
+   "url": "https://www.wipo.int/web-publications/global-innovation-index-2025/en/gii-2025-results.html",
+   "domain": "wipo.int",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Patents Per Capita Is a Vanity Metric",
+     "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "World Intellectual Property Indicators 2024: Patents Highlights",
+   "url": "https://www.wipo.int/web-publications/world-intellectual-property-indicators-2024-highlights/en/patents-highlights.html",
+   "domain": "wipo.int",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Patents Per Capita Is a Vanity Metric",
+     "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "WIPI 2025",
+   "url": "https://www.wipo.int/web-publications/world-intellectual-property-indicators-2025-highlights/en/patents-highlights.html",
+   "domain": "wipo.int",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Patents Per Capita Is a Vanity Metric",
+     "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "CRDTs: The Hard Parts",
+   "url": "https://www.youtube.com/watch?v=x7drE24geUw",
+   "domain": "youtube.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "OWASP ZAP",
+   "url": "https://www.zaproxy.org/",
+   "domain": "zaproxy.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Traffic Replay as a Security Primitive",
+     "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Yjs",
+   "url": "https://yjs.dev/",
+   "domain": "yjs.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Edge Systems Are the New Backend",
+     "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Zed",
+   "url": "https://zed.dev/",
+   "domain": "zed.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How I Work These Days",
+     "url": "https://raskell.io/articles/how-i-work-these-days/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "zeitungsarchiv.nzz.ch",
+   "url": "https://zeitungsarchiv.nzz.ch/",
+   "domain": "zeitungsarchiv.nzz.ch",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
+     "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Zentinel config converter",
+   "url": "https://zentinelproxy.io/converter/",
+   "domain": "zentinelproxy.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Zentinel Is Really Optimizing For",
+     "url": "https://raskell.io/articles/what-zentinel-is-really-optimizing-for/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Zentinel manifesto",
+   "url": "https://zentinelproxy.io/manifesto/",
+   "domain": "zentinelproxy.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Zentinel Is Really Optimizing For",
+     "url": "https://raskell.io/articles/what-zentinel-is-really-optimizing-for/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Zentinel playground",
+   "url": "https://zentinelproxy.io/playground/",
+   "domain": "zentinelproxy.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "What Zentinel Is Really Optimizing For",
+     "url": "https://raskell.io/articles/what-zentinel-is-really-optimizing-for/"
+    }
+   ]
+  }
+ ]
+}

@@ -5,6 +5,12 @@ author: Raffael Schneider
 date: 2026-10-24
 description: "Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply."
 tags: [history-of-technology, hypertext, open-standards, training-data, decentralisation, data-sovereignty, agents]
+categories: [reviews]
+review_of: "This Is for Everyone"
+review_of_author: "Tim Berners-Lee"
+review_of_kind: book
+review_of_year: 2025
+rating: 8/10
 ---
 
 # The Web Was the Training Set
