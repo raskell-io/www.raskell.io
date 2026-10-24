@@ -1,16 +1,17 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-24T10:12:48+00:00",
+ "generated": "2026-10-24T10:23:53+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "review": 1,
   "article": 34,
+  "note": 1,
   "talk": 1,
   "work": 27,
   "project": 30,
   "topic": 60,
-  "link": 253
+  "link": 256
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -532,6 +533,18 @@
     "open-web"
    ],
    "meta": "1 min"
+  },
+  {
+   "kind": "note",
+   "title": "Opus 5.5 is the best Opus since 4.5",
+   "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/",
+   "description": "A month in, Claude Opus 5.5 feels like the next milestone after Opus 4.5: the same jump in what Claude Code can carry, now faster and cheaper per task.",
+   "date": "2026-10-24",
+   "topics": [
+    "ai-engineering",
+    "inference",
+    "economics"
+   ]
   },
   {
    "kind": "talk",
@@ -1668,6 +1681,10 @@
     {
      "title": "All beginning is Haskell",
      "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    },
+    {
+     "title": "Opus 5.5 is the best Opus since 4.5",
+     "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/"
     },
     {
      "title": "I Stopped Writing Most of My Code",
@@ -4046,6 +4063,19 @@
   },
   {
    "kind": "link",
+   "title": "Opus 5.5 model overview",
+   "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+   "domain": "platform.claude.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Opus 5.5 is the best Opus since 4.5",
+     "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Burp Suite",
    "url": "https://portswigger.net/burp",
    "domain": "portswigger.net",
@@ -4358,6 +4388,19 @@
   },
   {
    "kind": "link",
+   "title": "Introducing Claude Opus 5.5",
+   "url": "https://www.anthropic.com/claude-opus-5-5",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Opus 5.5 is the best Opus since 4.5",
+     "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Project Glasswing",
    "url": "https://www.anthropic.com/glasswing",
    "domain": "anthropic.com",
@@ -4366,6 +4409,19 @@
     {
      "title": "The Last Programming Language Might Not Be for Humans",
      "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Introducing Claude Opus 4.5",
+   "url": "https://www.anthropic.com/news/claude-opus-4-5",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Opus 5.5 is the best Opus since 4.5",
+     "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/"
     }
    ]
   },

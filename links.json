@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-10-24T10:12:48+00:00",
+ "generated": "2026-10-24T10:23:53+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 253,
+ "count": 256,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -47,11 +47,15 @@
      "url": "https://raskell.io/articles/all-beginning-is-haskell/"
     },
     {
+     "title": "Opus 5.5 is the best Opus since 4.5",
+     "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/"
+    },
+    {
      "title": "I Stopped Writing Most of My Code",
      "url": "https://raskell.io/talks/iat-13-basel/"
     }
    ],
-   "citations": 10
+   "citations": 11
   },
   {
    "url": "https://archipelag.io/",
@@ -2423,6 +2427,19 @@
    "citations": 1
   },
   {
+   "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+   "title": "Opus 5.5 model overview",
+   "domain": "platform.claude.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Opus 5.5 is the best Opus since 4.5",
+     "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://portswigger.net/burp",
    "title": "Burp Suite",
    "domain": "portswigger.net",
@@ -2735,6 +2752,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.anthropic.com/claude-opus-5-5",
+   "title": "Introducing Claude Opus 5.5",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Opus 5.5 is the best Opus since 4.5",
+     "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.anthropic.com/glasswing",
    "title": "Project Glasswing",
    "domain": "anthropic.com",
@@ -2743,6 +2773,19 @@
     {
      "title": "The Last Programming Language Might Not Be for Humans",
      "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.anthropic.com/news/claude-opus-4-5",
+   "title": "Introducing Claude Opus 4.5",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Opus 5.5 is the best Opus since 4.5",
+     "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/"
     }
    ],
    "citations": 1

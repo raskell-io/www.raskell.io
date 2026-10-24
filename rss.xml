@@ -59,6 +59,31 @@
 </description>
       </item>
       <item>
+          <title>Opus 5.5 is the best Opus since 4.5</title>
+          <pubDate>Sat, 24 Oct 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/</link>
+          <guid>https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/</guid>
+          <description xml:base="https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/">&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;Opus 4.5&lt;&#x2F;th&gt;&lt;th&gt;Opus 5.5&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Released&lt;&#x2F;td&gt;&lt;td&gt;24 November 2025&lt;&#x2F;td&gt;&lt;td&gt;22 September 2026&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Price per million tokens, input &#x2F; output&lt;&#x2F;td&gt;&lt;td&gt;$5 &#x2F; $25&lt;&#x2F;td&gt;&lt;td&gt;$4 &#x2F; $20&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Fast mode&lt;&#x2F;td&gt;&lt;td&gt;not offered&lt;&#x2F;td&gt;&lt;td&gt;$8 &#x2F; $40&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Context window&lt;&#x2F;td&gt;&lt;td&gt;200K&lt;&#x2F;td&gt;&lt;td&gt;1M&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Model ID&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;claude-opus-4-5-20251101&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;claude-opus-5-5&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Opus 4.5 was the moment Claude Code started working the way it was meant to. I had paid for Claude Code since May 2025 without being convinced; over the 2025 Christmas break, with Opus 4.5, it carried whole projects, and I built &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; with it. I wrote that up in &lt;a href=&quot;&#x2F;articles&#x2F;how-i-work-these-days&#x2F;&quot;&gt;How I Work These Days&lt;&#x2F;a&gt; and &lt;a href=&quot;&#x2F;articles&#x2F;what-sixteen-ai-agents-taught-me-about-management&#x2F;&quot;&gt;What Sixteen AI Agents Taught Me About Management&lt;&#x2F;a&gt;, and it is the opening of my &lt;a href=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;&quot;&gt;Basel talk&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Opus 5.5 is the first release since then that felt like the same kind of step rather than an increment.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It holds the thread.&lt;&#x2F;strong&gt; Long sessions that span a theme, a site, CI, and several data files stay coherent. The search across this site, the reading log, and the agent-readable files behind them were built in sessions with it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Speed changes how I work with it.&lt;&#x2F;strong&gt; Fast enough that I stay in the loop instead of switching away while it runs. Fast mode exists for when that matters more than the bill.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;The cost moved the right way.&lt;&#x2F;strong&gt; A cheaper rate card than 4.5, and Anthropic puts it at about 40 per cent cheaper to run than Opus 5 on typical work. The rate card is half the story; fewer wasted turns is the other half, the same argument I made in &lt;a href=&quot;&#x2F;articles&#x2F;the-economics-of-inference&#x2F;&quot;&gt;The Economics of Inference&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Opus is the default again.&lt;&#x2F;strong&gt; For most of my work I no longer pick a smaller model to save money, which was the point of 4.5 too.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;What I do not know yet: whether it holds up on the hardest, longest-running tasks, where the gap to a larger model would show first. A month is not a benchmark.&lt;&#x2F;p&gt;
+&lt;p&gt;Sources: &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.anthropic.com&#x2F;news&#x2F;claude-opus-4-5&quot;&gt;Introducing Claude Opus 4.5&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.anthropic.com&#x2F;claude-opus-5-5&quot;&gt;Introducing Claude Opus 5.5&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;platform.claude.com&#x2F;docs&#x2F;en&#x2F;models&#x2F;opus-5-5&#x2F;overview&quot;&gt;Opus 5.5 model overview&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
           <title>Observability Is Not Logging</title>
           <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
           <author>Unknown</author>

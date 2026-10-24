@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-24T10:12:48+00:00",
+ "generated": "2026-10-24T10:23:53+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -172,7 +172,7 @@
    "url": "https://raskell.io/articles/the-economics-of-inference/",
    "meta": "2026-04-22 · 12 min",
    "description": "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "a:/articles/what-comes-after-the-last-programming-language/",
@@ -190,7 +190,7 @@
    "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/",
    "meta": "2026-04-16 · 19 min",
    "description": "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
@@ -235,7 +235,7 @@
    "url": "https://raskell.io/articles/how-i-work-these-days/",
    "meta": "2026-03-15 · 10 min",
    "description": "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
@@ -319,13 +319,22 @@
    "degree": 4
   },
   {
+   "id": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
+   "kind": "note",
+   "label": "Opus 5.5 is the best Opus since 4.5",
+   "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/",
+   "meta": "2026-10-24",
+   "description": "A month in, Claude Opus 5.5 feels like the next milestone after Opus 4.5: the same jump in what Claude Code can carry, now faster and cheaper per task.",
+   "degree": 8
+  },
+  {
    "id": "a:/talks/iat-13-basel/",
    "kind": "talk",
    "label": "I Stopped Writing Most of My Code",
    "url": "https://raskell.io/talks/iat-13-basel/",
    "meta": "2026-06-10 · IT's ABOUT TECH #13",
    "description": "Slide deck for IT's ABOUT TECH #13 in Basel. A 15-minute story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:agents",
@@ -341,9 +350,9 @@
    "kind": "tag",
    "label": "AI-assisted engineering",
    "url": "https://raskell.io/tags/ai-engineering/",
-   "meta": "Domain · 8 pages",
+   "meta": "Domain · 9 pages",
    "description": "AI as an engineering tool: coding agents, AI-authored code, and what programming becomes when models write most of it.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:ai-for-ops",
@@ -431,9 +440,9 @@
    "kind": "tag",
    "label": "Economics",
    "url": "https://raskell.io/tags/economics/",
-   "meta": "Concept · 8 pages",
+   "meta": "Concept · 9 pages",
    "description": "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:edge-systems",
@@ -503,9 +512,9 @@
    "kind": "tag",
    "label": "Inference",
    "url": "https://raskell.io/tags/inference/",
-   "meta": "Concept · 5 pages",
+   "meta": "Concept · 6 pages",
    "description": "Running models in production: routing, cost, hardware, and inference as a metered utility.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:isolation",
@@ -927,7 +936,7 @@
    "url": "https://zentinelproxy.io",
    "meta": "Project",
    "description": "Security-first reverse proxy built to guard the free web. Rust on Cloudflare's Pingora, explicit configuration over hidden defaults, and WAF, auth and other policy in isolated agen…",
-   "degree": 21
+   "degree": 22
   },
   {
    "id": "p:hx",
@@ -1513,6 +1522,10 @@
    "target": "t:ai-platforms"
   },
   {
+   "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
+   "target": "t:ai-engineering"
+  },
+  {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
    "target": "t:ai-engineering"
   },
@@ -1677,6 +1690,10 @@
    "target": "t:distributed-systems"
   },
   {
+   "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
+   "target": "t:economics"
+  },
+  {
    "source": "a:/articles/the-bill-is-part-of-the-loop/",
    "target": "t:economics"
   },
@@ -1827,6 +1844,10 @@
   {
    "source": "t:hypertext",
    "target": "t:open-web"
+  },
+  {
+   "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
+   "target": "t:inference"
   },
   {
    "source": "a:/articles/the-model-is-a-dependency/",
@@ -2585,6 +2606,22 @@
    "target": "a:/articles/mise-ate-my-makefile/"
   },
   {
+   "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
+   "target": "a:/articles/the-economics-of-inference/"
+  },
+  {
+   "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
+   "target": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/"
+  },
+  {
+   "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
+   "target": "a:/articles/how-i-work-these-days/"
+  },
+  {
+   "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
+   "target": "a:/talks/iat-13-basel/"
+  },
+  {
    "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
    "target": "p:archipelag-io"
   },
@@ -2722,6 +2759,10 @@
   },
   {
    "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "p:zentinel"
+  },
+  {
+   "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
    "target": "p:zentinel"
   },
   {
