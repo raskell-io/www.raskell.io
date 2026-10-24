@@ -1,8 +1,9 @@
 # Zola build output
 public/
 
-# Claude Code configuration
-.claude/
+# Claude Code configuration: local context stays local; the curate skill is shared
+.claude/*
+!.claude/skills/
 
 # mise
 .mise.local.toml
