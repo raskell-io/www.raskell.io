@@ -55,7 +55,7 @@ text = open("data/reading.toml").read()
 for block in re.split(r"^\[\[works\]\]\s*$", text, flags=re.M)[1:]:
     work = {k: (re.search(r'^%s\s*=\s*"([^"]*)"' % k, block, re.M) or [None, ""])[1] for k in ("id", "title", "author", "kind", "isbn", "cover_id")}
     target = os.path.join(OUT, work["id"] + ".avif")
-    if work["kind"] != "book" or work["cover_id"] == "none" or (only and work["id"] != only) or (os.path.exists(target) and not only):
+    if work["kind"] not in ("book", "novel") or work["cover_id"] == "none" or (only and work["id"] != only) or (os.path.exists(target) and not only):
         continue
     data, how = cover_bytes(work)
     if not data:

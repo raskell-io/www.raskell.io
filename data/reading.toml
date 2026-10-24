@@ -4,7 +4,7 @@
 #   id        slug, unique; the anchor on /reading/ (#id) and the map node (w:id)
 #   title     the work's title; subtitle optional
 #   author    as printed; several authors in one string
-#   kind      book, paper, report, article, essay, or journal
+#   kind      book, novel, paper, report, article, essay, or journal
 #   year      first published (optional); edition, publisher optional
 #   isbn      the edition I read; picks its cover (`mise run reading-covers`), optional;
 #             cover_id (an Open Library cover id) when the ISBN finds the wrong one, "none" for no cover
@@ -14,6 +14,8 @@
 #             read, or set-aside
 #   started   when I started (reading), finished when I finished (read, set-aside):
 #             "2026", "2026-10", or "2026-10-24"; read entries need finished
+#   when      how the date is shown, when it is vaguer than finished: "summer 2025" (finished
+#             then only orders the list)
 #   topics    tag slugs from data/tags.toml (checked by `mise run tags-check`)
 #   take      one sentence: what it is about for me, or what I made of it
 #   suggested_by, suggested_url, suggested_note
@@ -40,6 +42,80 @@ status = "reading"
 topics = ["machine-learning", "reinforcement-learning", "history-of-technology"]
 
 # Read ---------------------------------------------------------------------
+
+[[works]]
+id = "the-cauldron"
+title = "The Cauldron"
+subtitle = "The Making of the Modern Middle East"
+author = "Simon Sebag Montefiore"
+kind = "book"
+year = 2026
+url = "https://www.hachette.co.uk/titles/simon-sebag-montefiore/the-cauldron/9781399634939/"
+status = "read"
+finished = "2026-09"
+when = "end of summer 2026"
+topics = ["history", "geography"]
+
+[[works]]
+id = "infinite-jest"
+title = "Infinite Jest"
+author = "David Foster Wallace"
+kind = "novel"
+cover = "covers/reading/infinite-jest.avif"
+year = 1996
+status = "read"
+finished = "2025-12"
+when = "winter 2025"
+
+[[works]]
+id = "guns-germs-and-steel"
+title = "Guns, Germs, and Steel"
+subtitle = "The Fates of Human Societies"
+author = "Jared Diamond"
+kind = "book"
+cover = "covers/reading/guns-germs-and-steel.avif"
+year = 1997
+status = "read"
+finished = "2025-11"
+topics = ["history", "geography"]
+
+[[works]]
+id = "nuclear-war-a-scenario"
+title = "Nuclear War: A Scenario"
+author = "Annie Jacobsen"
+kind = "book"
+cover = "covers/reading/nuclear-war-a-scenario.avif"
+isbn = "9780593476093"
+year = 2024
+url = "https://en.wikipedia.org/wiki/Nuclear_War:_A_Scenario"
+status = "read"
+finished = "2025-10"
+when = "autumn 2025"
+
+[[works]]
+id = "jurassic-park"
+title = "Jurassic Park"
+author = "Michael Crichton"
+kind = "novel"
+cover = "covers/reading/jurassic-park.avif"
+year = 1990
+status = "read"
+finished = "2025-07"
+when = "summer 2025"
+topics = ["complex-systems"]
+
+[[works]]
+id = "the-books-of-jacob"
+title = "The Books of Jacob"
+author = "Olga Tokarczuk"
+kind = "novel"
+cover = "covers/reading/the-books-of-jacob.avif"
+isbn = "9780593087480"
+year = 2014
+edition = "Translated from the Polish (Księgi Jakubowe) by Jennifer Croft"
+status = "read"
+finished = "2024-07"
+when = "summer 2024"
 
 [[works]]
 id = "from-worm-to-human"
@@ -75,7 +151,8 @@ kind = "book"
 cover = "covers/reading/this-is-for-everyone.avif"
 year = 2025
 status = "read"
-finished = "2025"
+finished = "2025-10"   # just before Guns, Germs, and Steel
+when = "2025"
 topics = ["open-web", "history-of-technology"]
 take = "Read on the shores of Okinawa: the web as a commons, and how far what we built drifted from it."
 

@@ -111,7 +111,7 @@
       "encoding": { "@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": {{ get_url(path=psec ~ '/' ~ page.slug ~ '.md') | json_encode | safe }} },
       "isAccessibleForFree": true
       {%- if page.extra.review %}{% set rdata = load_data(path="data/reading.toml", required=false) %}
-      {%- if rdata %}{% for w in rdata.works %}{% if w.id == page.extra.review %}{% if w.kind == "book" %}{% set wtype = "Book" %}{% elif w.kind == "paper" or w.kind == "report" %}{% set wtype = "ScholarlyArticle" %}{% else %}{% set wtype = "CreativeWork" %}{% endif %},
+      {%- if rdata %}{% for w in rdata.works %}{% if w.id == page.extra.review %}{% if w.kind == "book" or w.kind == "novel" %}{% set wtype = "Book" %}{% elif w.kind == "paper" or w.kind == "report" %}{% set wtype = "ScholarlyArticle" %}{% else %}{% set wtype = "CreativeWork" %}{% endif %},
       "itemReviewed": { "@type": {{ wtype | json_encode | safe }}, "name": {{ w.title | json_encode | safe }}, "author": { "@type": "Person", "name": {{ w.author | json_encode | safe }} }{% if w.year %}, "datePublished": {{ w.year | as_str | json_encode | safe }}{% endif %}{% if w.url %}, "url": {{ w.url | json_encode | safe }}{% endif %} }
       {%- endif %}{% endfor %}{% endif %}
       {%- endif %}

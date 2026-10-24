@@ -47,7 +47,7 @@ if os.path.exists("data/reading.toml"):
         problems = ["missing %s" % k for k in ("id", "title", "author", "kind", "status") if not field(k)]
         if field("status") and field("status") not in ("reading", "next", "backlog", "read", "set-aside"):
             problems.append("unknown status %s" % field("status"))
-        if field("kind") and field("kind") not in ("book", "paper", "report", "article", "essay", "journal"):
+        if field("kind") and field("kind") not in ("book", "novel", "paper", "report", "article", "essay", "journal"):
             problems.append("unknown kind %s" % field("kind"))
         if field("status") == "read" and not field("finished"):
             problems.append("read without finished")
