@@ -12,12 +12,11 @@
 #   url       the publisher's or author's page, or the paper itself
 #   status    reading (now), next (right after what I am reading), backlog (some day, in no order),
 #             read, or set-aside
-#   started   when I started (reading), finished when I finished (read, set-aside):
-#             "2026", "2026-10", or "2026-10-24"; read entries need finished
-#   when      how the date is shown, when it is vaguer than finished: "summer 2025" (finished
-#             then only orders the list)
+#   started   the month I started (reading), finished the month I finished (read, set-aside), as
+#             "YYYY-MM", shown as "October 2026"; read entries need finished
 #   topics    tag slugs from data/tags.toml (checked by `mise run tags-check`)
 #   take      one sentence: what it is about for me, or what I made of it
+#   rating    1 to 10, set when there is a review; shown with the review and on the row
 #   suggested_by, suggested_url, suggested_note
 #             credit for a reader who suggested the work: name, a link to them, and why (optional)
 #
@@ -53,7 +52,6 @@ year = 2026
 url = "https://www.hachette.co.uk/titles/simon-sebag-montefiore/the-cauldron/9781399634939/"
 status = "read"
 finished = "2026-09"
-when = "end of summer 2026"
 topics = ["history", "geography"]
 
 [[works]]
@@ -65,7 +63,6 @@ cover = "covers/reading/infinite-jest.avif"
 year = 1996
 status = "read"
 finished = "2025-12"
-when = "winter 2025"
 
 [[works]]
 id = "guns-germs-and-steel"
@@ -90,7 +87,6 @@ year = 2024
 url = "https://en.wikipedia.org/wiki/Nuclear_War:_A_Scenario"
 status = "read"
 finished = "2025-10"
-when = "autumn 2025"
 
 [[works]]
 id = "jurassic-park"
@@ -101,7 +97,6 @@ cover = "covers/reading/jurassic-park.avif"
 year = 1990
 status = "read"
 finished = "2025-07"
-when = "summer 2025"
 topics = ["complex-systems"]
 
 [[works]]
@@ -114,8 +109,7 @@ isbn = "9780593087480"
 year = 2014
 edition = "Translated from the Polish (Księgi Jakubowe) by Jennifer Croft"
 status = "read"
-finished = "2024-07"
-when = "summer 2024"
+finished = "2024-08"
 
 [[works]]
 id = "from-worm-to-human"
@@ -151,10 +145,10 @@ kind = "book"
 cover = "covers/reading/this-is-for-everyone.avif"
 year = 2025
 status = "read"
-finished = "2025-10"   # just before Guns, Germs, and Steel
-when = "2025"
-topics = ["open-web", "history-of-technology"]
-take = "Read on the shores of Okinawa: the web as a commons, and how far what we built drifted from it."
+finished = "2025-10"
+rating = 8
+topics = ["open-web", "history-of-technology", "hypertext", "open-standards", "decentralisation", "open-data", "training-data", "privacy", "data-sovereignty", "attention-economy", "agents"]
+take = "Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all."
 
 # Backlog: suggestions I am weighing, in no fixed order -----------------------
 
@@ -216,6 +210,7 @@ title = "Deep Thinking"
 subtitle = "Where Machine Intelligence Ends and Human Creativity Begins"
 author = "Garry Kasparov"
 kind = "book"
+cover_id = "13562599"   # title search is not stable for this one
 cover = "covers/reading/deep-thinking.avif"
 isbn = "9781473653504"
 year = 2017

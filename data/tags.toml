@@ -223,8 +223,56 @@ description = "Games made with care: tactics, fishing, and the engines and fanta
 [oss]
 name = "Open source"
 kind = "concept"
-description = "Open source and open standards as the point of the work, not just its licence."
+description = "Open source as the point of the work, not just its licence."
 broader = ["open-web"]
+
+[hypertext]
+name = "Hypertext"
+kind = "concept"
+description = "Links as the unit of the web: addresses that can point at anything, the read-write web that was intended, and what a graph of documents can do that a tree cannot."
+broader = ["open-web"]
+
+[open-standards]
+name = "Open standards"
+kind = "concept"
+description = "Protocols and formats agreed in the open and free to implement: HTTP, HTML, TCP/IP, RSS, and the consortia and working groups that keep them so."
+broader = ["open-web"]
+
+[decentralisation]
+name = "Decentralisation"
+kind = "concept"
+description = "Many small nodes and no central operator: the web's original shape, and the alternative to platforms that own the users and the data."
+broader = ["open-web", "distributed-systems"]
+
+[open-data]
+name = "Open data"
+kind = "concept"
+description = "Data published for anyone to use: government records, archives, and the five-star ladder from a file on the web to linked data with addresses."
+broader = ["open-web", "policy"]
+
+[training-data]
+name = "Training data"
+kind = "concept"
+description = "What models learn from: web crawls, books, and licensed or unlicensed corpora; who holds what has not been scraped yet, and on what terms."
+broader = ["machine-learning"]
+
+[privacy]
+name = "Privacy"
+kind = "concept"
+description = "Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place."
+broader = ["applied-security", "sovereignty"]
+
+[data-sovereignty]
+name = "Data sovereignty"
+kind = "concept"
+description = "Control over one's own data: pods, portability, and the right to choose the software and the agent that reads it; the personal counterpart of national sovereignty."
+broader = ["sovereignty", "privacy"]
+
+[attention-economy]
+name = "Attention economy"
+kind = "concept"
+description = "Platforms that sell attention and optimise for engagement, what that does to the web and to discourse, and the intention economy proposed in its place."
+broader = ["economics", "open-web"]
 
 # Technologies -------------------------------------------------------------
 

@@ -238,7 +238,7 @@ if works:
         lines += ["### %s" % title, ""]
         for w in shelf:
             line = "- %s, %s (%s%s)" % ("[%s](%s)" % (w["title"], w["url"]) if w["url"] else w["title"], w["author"], w["kind"],
-                                       ", finished %s" % w["finished"] if w["finished"] else "")
+                                       ", finished %s" % datetime.datetime.strptime(w["finished"], "%Y-%m").strftime("%B %Y") if w["finished"] else "")
             if w["take"]:
                 line += ": " + w["take"]
             if w["review"]:

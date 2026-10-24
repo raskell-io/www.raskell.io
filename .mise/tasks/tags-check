@@ -52,8 +52,11 @@ if os.path.exists("data/reading.toml"):
         if field("status") == "read" and not field("finished"):
             problems.append("read without finished")
         for k in ("started", "finished"):
-            if field(k) and not re.match(r"^\d{4}(-\d{2}(-\d{2})?)?$", field(k)):
-                problems.append("%s is not YYYY, YYYY-MM, or YYYY-MM-DD" % k)
+            if field(k) and not re.match(r"^\d{4}-(0[1-9]|1[0-2])$", field(k)):
+                problems.append("%s is not a month, YYYY-MM" % k)
+        m = re.search(r"^rating\s*=\s*(\S+)", block, re.M)
+        if m and not (m.group(1).isdigit() and 1 <= int(m.group(1)) <= 10):
+            problems.append("rating is not a whole number from 1 to 10")
         if wid in works:
             problems.append("duplicate id")
         works[wid] = True

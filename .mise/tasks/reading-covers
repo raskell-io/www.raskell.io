@@ -4,7 +4,7 @@
 """
 Book covers for /reading/, fetched once and committed (CI does not run this): for every book without
 static/covers/reading/<id>.avif, the cover of its `isbn` when Open Library has one (the edition I read),
-else the cover of the best title and author match. Written as a 320 px wide AVIF via ImageMagick, and
+else the cover of the best title and author match. Written as an AVIF up to 600 px wide via ImageMagick, and
 the entry gets `cover = "covers/reading/<id>.avif"`.
 A wrong match: set `isbn` or `cover_id` (an Open Library cover id) in data/reading.toml and run
 `mise run reading-covers <id>`, or drop a file of your own at the same path. `cover_id = "none"` skips a
@@ -64,7 +64,7 @@ for block in re.split(r"^\[\[works\]\]\s*$", text, flags=re.M)[1:]:
     with tempfile.NamedTemporaryFile(suffix=".jpg") as tmp:
         tmp.write(data)
         tmp.flush()
-        subprocess.run(["magick", tmp.name, "-resize", "320x>", "-strip", "-quality", "60", target], check=True)
+        subprocess.run(["magick", tmp.name, "-resize", "600x>", "-strip", "-quality", "60", target], check=True)
     # Point the entry at the file (once), right after its kind.
     line = 'cover = "covers/reading/%s.avif"' % work["id"]
     if line not in text:

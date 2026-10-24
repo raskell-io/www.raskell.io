@@ -1,6 +1,8 @@
 <!doctype html>
 <!-- The social card, 1200x630. `mise run og` fills __CARD__ (the page's og-card JSON), __MARK__ (the tanuki SVG)
-     and __PUBLIC__ (file URL of public/), then screenshots it once per page into public/og/. -->
+     and __PUBLIC__ (file URL of public/), then screenshots it once per page into public/og/.
+     Reviews (kind "review") get their own layout: the reviewed work under the title, and the book's cover
+     standing on the right in the site's tritone grade, ring and grain, as covers look on the page. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -39,7 +41,36 @@
   .foot { display: flex; justify-content: space-between; align-items: baseline; font-family: "Card Mono", monospace; font-size: 22px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 22px; }
   body.home h1 { font-size: 96px; }
   body.has-cover .desc { -webkit-line-clamp: 2; }
+
+  /* Reviews */
+  .work { font-size: 30px; line-height: 1.3; letter-spacing: -0.01em; }
+  .work cite { font-style: italic; }
+  body.review .text { gap: 18px; }
+  body.review .desc { -webkit-line-clamp: 2; font-size: 25px; }
+  .book { position: relative; flex: 0 0 auto; height: 372px; margin-right: 8px; border-radius: 6px; overflow: hidden; isolation: isolate;
+          box-shadow: 0 28px 50px -18px rgba(0, 0, 0, 0.45), 0 10px 18px -10px rgba(0, 0, 0, 0.3); }
+  .book img { display: block; height: 100%; width: auto; }
+  .book .grade { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; filter: url(#grade); }
+  .book::before { /* champagne-to-ice ring */
+    content: ""; position: absolute; inset: 0; z-index: 3; border-radius: inherit; padding: 1.5px;
+    background: linear-gradient(118deg, #e9bd70 0%, #f4f0df 46%, #c8f0ef 73%, #62d0d5 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; }
+  .book::after { /* film grain */
+    content: ""; position: absolute; inset: 0; z-index: 2; opacity: 0.16; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
+  .book .spine { position: absolute; inset: 0 auto 0 0; width: 14px; z-index: 2; background: linear-gradient(90deg, rgba(0,0,0,0.28), rgba(255,255,255,0.10) 55%, transparent); }
 </style>
+<!-- The theme's tritone (themes/seijaku/templates/partials/grade_filter.html). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="grade" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values=".2126 .7152 .0722 0 0  .2126 .7152 .0722 0 0  .2126 .7152 .0722 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues=".043 .24 .92 .98"/>
+      <feFuncG type="table" tableValues=".078 .46 .84 .96"/>
+      <feFuncB type="table" tableValues=".071 .47 .64 .91"/>
+    </feComponentTransfer>
+  </filter>
+</svg>
 </head>
 <body>
   <div class="brand">__MARK__<span>raskell</span></div>
@@ -58,7 +89,23 @@
   document.getElementById("title").textContent = card.title;
   document.getElementById("desc").textContent = card.description;
   document.getElementById("meta").textContent = card.meta;
-  if (card.cover) {
+  if (card.kind === "review") {
+    if (card.work) {
+      const p = document.createElement("p");
+      p.className = "work";
+      p.append("On ");
+      const c = document.createElement("cite");
+      c.textContent = card.work;
+      p.append(c, card.author ? " by " + card.author : "");
+      document.getElementById("title").after(p);
+    }
+    if (card.cover) {
+      const fig = document.createElement("div");
+      fig.className = "book";
+      fig.innerHTML = `<img src="${card.cover}" alt=""><img class="grade" src="${card.cover}" alt=""><span class="spine"></span>`;
+      document.querySelector(".main").append(fig);
+    }
+  } else if (card.cover) {
     document.body.classList.add("has-cover");
     const fig = document.createElement("div");
     fig.className = "cover";
