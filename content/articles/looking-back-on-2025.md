@@ -11,6 +11,7 @@ tags = ["open-web", "edge-systems", "meta"]
 author = "Raffael"
 image = "looking-back-on-2025.avif"
 cover = "covers/looking-back-on-2025.avif"
+reads = ["this-is-for-everyone"]
 +++
 
 I spent part of this year on the shores of Okinawa. The water there is something else entirely, this impossible azure that shifts to turquoise in the shallows, so clear you can see the coral formations from the surface. I found myself thinking about systems while I was there, the way you do when you're floating in salt water with nothing pressing to attend to.

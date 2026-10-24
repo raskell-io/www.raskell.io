@@ -77,6 +77,8 @@ main_section = "articles"
 projects_section = "projects"
 cta = { name = "Start here", url = "@/start-here.md" }
 map = "@/map.md"
+reading = "@/reading.md"
+reading_data = "data/reading.toml"
 graph_sections = ["articles", "notes"]
 tag_data = "data/tags.toml"
 nav = [
@@ -92,6 +94,7 @@ explore = [
   { name = "Map", url = "@/map.md" },
   { name = "Topics", url = "/tags" },
   { name = "Notes", url = "@/notes/_index.md" },
+  { name = "Reading", url = "@/reading.md" },
   { name = "Series", url = "/series" },
   { name = "The Handbook", url = "/series/the-agent-platform-handbook/" },
 ]

@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+#MISE description="Start a draft review of a work in data/reading.toml: mise run review <work-id> [article-slug]"
+"""
+Writes content/articles/review-<work-id>.md (or <article-slug>.md) as a draft with `review = "<work-id>"`,
+the work's topics as tags, and the questions a review on this site tries to answer as a comment.
+The review then shows up on /reading/, on the map next to the work, and under the Reviews filter on /articles/.
+"""
+import datetime
+import os
+import re
+import sys
+
+os.chdir(os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")))
+args = [a for a in sys.argv[1:] if a]
+if not args:
+    sys.exit("Usage: mise run review <work-id> [article-slug]")
+wid = args[0]
+blocks = re.split(r"^\[\[works\]\]\s*$", open("data/reading.toml").read(), flags=re.M)[1:]
+block = next((b for b in blocks if re.search(r'^id\s*=\s*"%s"' % re.escape(wid), b, re.M)), None)
+if block is None:
+    sys.exit("No work with id %s in data/reading.toml" % wid)
+
+
+def field(k):
+    m = re.search(r'^%s\s*=\s*"([^"]*)"' % k, block, re.M)
+    return m.group(1) if m else ""
+
+
+topics = re.search(r"^topics\s*=\s*(\[.*?\])", block, re.M)
+path = "content/articles/%s.md" % (args[1] if len(args) > 1 else "review-" + wid)
+if os.path.exists(path):
+    sys.exit("%s already exists" % path)
+with open(path, "w") as f:
+    f.write("""+++
+title = ""
+date = %s
+draft = true
+description = ""
+
+[taxonomies]
+tags = %s
+
+[extra]
+author = "Raffael"
+review = "%s"
++++
+
+<!-- A review of %s by %s (%s). Questions worth answering, in any order and not as headings:
+  - Why did I pick it up, and what question was I bringing to it?
+  - What is its central argument? A fair, short account the author would recognise.
+  - Which ideas, experiments, episodes, or passages deserve attention? Be specific: chapter or page.
+  - Where was I persuaded, unconvinced, or surprised? What changed in my understanding, or did not, and why?
+  - Who should read it, with what expectations: prerequisites, depth, limits?
+  Keep apart what the author argues, what evidence the work offers, and what I infer beyond it.
+  When this goes out, set the work's status in data/reading.toml to "read" with a finished date. -->
+""" % (datetime.date.today().isoformat(), topics.group(1) if topics else "[]", wid, field("title"), field("author"), field("kind")))
+print("Created %s" % path)

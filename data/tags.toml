@@ -87,6 +87,16 @@ name = "Geography"
 kind = "domain"
 description = "Places, terrain, borders, and spatial data, and how their relationships change over time."
 
+[machine-learning]
+name = "Machine learning"
+kind = "domain"
+description = "How models learn from data: the mathematics, the training methods, and what the results can and cannot do."
+
+[life-sciences]
+name = "Life sciences"
+kind = "domain"
+description = "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them."
+
 # Concepts -----------------------------------------------------------------
 
 [agents]
@@ -168,6 +178,25 @@ description = "Emergence and collective dynamics: how simple agents, roles, and 
 name = "Reinforcement learning"
 kind = "concept"
 description = "Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill."
+broader = ["machine-learning"]
+
+[neuroscience]
+name = "Neuroscience"
+kind = "concept"
+description = "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute."
+broader = ["life-sciences"]
+
+[history-of-science]
+name = "History of science"
+kind = "concept"
+description = "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them."
+broader = ["history"]
+
+[history-of-technology]
+name = "History of technology"
+kind = "concept"
+description = "How tools, machines, and networks came to be built, and the choices that shaped them."
+broader = ["history"]
 
 [local-first]
 name = "Local-first"

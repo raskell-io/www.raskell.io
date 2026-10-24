@@ -193,6 +193,7 @@ lines = [
     "- [Map](%s/map/): every article, note, topic, series, and project as one graph; machine-readable at [map.json](%s/map.json)" % (BASE, BASE),
     "- [All writing in full](%s/llms-full.txt): every article and note in one Markdown file, newest first" % BASE,
     "- [Notes](%s/notes/): short notes that sit between the articles" % BASE,
+    "- [Reading](%s/reading/): what %s is reading, what is next, and what he has read, with reviews" % (BASE, AUTHOR.split()[0]),
     "- [RSS feed](%s/rss.xml): full-text feed" % BASE,
     "",
 ]
@@ -207,6 +208,44 @@ if notes:
     lines += ["## Notes", "", "Short notes, a paragraph or a page each; some grow into articles.", ""]
     lines += ["- [%s](%s) (%s): %s" % (a["title"], a["md"], a["date"], a["description"]) for a in notes]
     lines.append("")
+
+
+
+def reading():
+    # data/reading.toml, parsed by hand like the vocabulary (no tomllib on older Pythons): [[works]] blocks.
+    if not os.path.exists("data/reading.toml"):
+        return []
+    works = []
+    for block in re.split(r"^\[\[works\]\]\s*$", open("data/reading.toml").read(), flags=re.M)[1:]:
+        works.append({k: fm_str(block, k) for k in ("id", "title", "author", "kind", "status", "finished", "url", "take")})
+    reviews = {}
+    for a in articles + notes:
+        fm, _ = split_front_matter(open("content/%s/%s.md" % (a["section"], a["slug"])).read())
+        if fm_str(fm, "review"):
+            reviews[fm_str(fm, "review")] = a
+    return [dict(w, review=reviews.get(w["id"])) for w in works]
+
+
+works = reading()
+if works:
+    lines += ["## Reading", "", "Books, papers, and long articles from the reading log at %s/reading/, with reviews where there is one." % BASE, ""]
+    for status, title in (("reading", "Reading now"), ("next", "Up next"), ("backlog", "Backlog"), ("read", "Read"), ("set-aside", "Set aside")):
+        shelf = [w for w in works if w["status"] == status]
+        if status == "read":
+            shelf.sort(key=lambda w: w["finished"], reverse=True)
+        if not shelf:
+            continue
+        lines += ["### %s" % title, ""]
+        for w in shelf:
+            line = "- %s, %s (%s%s)" % ("[%s](%s)" % (w["title"], w["url"]) if w["url"] else w["title"], w["author"], w["kind"],
+                                       ", finished %s" % w["finished"] if w["finished"] else "")
+            if w["take"]:
+                line += ": " + w["take"]
+            if w["review"]:
+                line += " Review: [%s](%s)" % (w["review"]["title"], w["review"]["md"])
+            lines.append(line)
+        lines.append("")
+
 vocab = vocabulary()
 if vocab:
     names = {v["slug"]: v.get("name", v["slug"]) for v in vocab}

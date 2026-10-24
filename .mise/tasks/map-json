@@ -29,7 +29,7 @@ for l in links:
 out = {
     "source": "https://raskell.io/map/",
     "generated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
-    "description": "Articles, topics, series, and projects on raskell.io, and how they connect.",
+    "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
     "nodes": [
         {k: v for k, v in {"id": n["id"], "kind": n["kind"], "label": n["label"], "url": n["url"], "meta": n.get("meta"),
                            "description": n.get("desc") or None, "degree": degree.get(n["id"], 0)}.items() if v not in (None, "")}

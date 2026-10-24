@@ -16,6 +16,11 @@ url = "https://arcanist.sh"
 name = "WASM-AD"
 text = "A fantasy console whose cartridges are WebAssembly modules. Rainbow River, a fishing game, is the first cartridge."
 url = "https://wasmad.raskell.io"
+
+# Filled in from data/reading.toml: whatever has status "reading".
+[[extra.now]]
+reading = true
+text = "Everything else I read, have read, and plan to read is in the reading log."
 +++
 
 # Notes from the <span class="hero-term" data-flap="data plane.|rabbit hole.|night shift.|field research.|control plane.|test kitchen.|packet capture.|cold storage.">machine room.</span>

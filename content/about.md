@@ -26,6 +26,8 @@ Tech that serves humans. Boring by default, precise when required.
 
 I like hard problems. The kind where latency, reliability, risk, and people all collide. Applied security is just one arena of that. It is systems under pressure with adversarial inputs and questionable signal-to-noise.
 
+Most of my ideas start with reading: books, papers, and long articles, many of them far from my field. I keep a [reading log](@/reading.md) of what I am reading, what is next, and what I have read, and I review a book when I have something specific to say about it.
+
 ## What I do
 
 {% tiles() %}

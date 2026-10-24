@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+#MISE description="Fetch missing book covers for data/reading.toml from Open Library into static/covers/reading/"
+#USAGE arg "[id]" help="Only this work (refetches it even when a cover exists)"
+"""
+Book covers for /reading/, fetched once and committed (CI does not run this): for every book without
+static/covers/reading/<id>.avif, the cover of its `isbn` when Open Library has one (the edition I read),
+else the cover of the best title and author match. Written as a 320 px wide AVIF via ImageMagick, and
+the entry gets `cover = "covers/reading/<id>.avif"`.
+A wrong match: set `isbn` or `cover_id` (an Open Library cover id) in data/reading.toml and run
+`mise run reading-covers <id>`, or drop a file of your own at the same path. `cover_id = "none"` skips a
+book whose cover Open Library does not have right. Works without a cover (papers, reports, skipped
+books) get a typographic tile on the page instead.
+"""
+import json
+import os
+import re
+import subprocess
+import sys
+import tempfile
+import urllib.parse
+import urllib.request
+
+os.chdir(os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")))
+OUT = "static/covers/reading"
+UA = {"User-Agent": "raskell.io reading-covers (https://raskell.io/reading/)"}
+only = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] else None
+
+
+def get(url):
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r:
+        return r.read()
+
+
+def cover_bytes(work):
+    if work.get("cover_id"):
+        return get("https://covers.openlibrary.org/b/id/%s-L.jpg" % work["cover_id"]), "cover " + work["cover_id"]
+    if work.get("isbn"):
+        try:
+            data = get("https://covers.openlibrary.org/b/isbn/%s-L.jpg?default=false" % work["isbn"])
+            if len(data) > 2000:
+                return data, "isbn " + work["isbn"]
+        except Exception:
+            pass
+    author = work["author"].split(" and ")[0].split(",")[0].split()[-1]   # the surname matches more editions
+    q = urllib.parse.urlencode({"title": work["title"], "author": author, "limit": 5, "fields": "cover_i,title"})
+    docs = json.loads(get("https://openlibrary.org/search.json?" + q)).get("docs", [])
+    for d in docs:
+        if d.get("cover_i"):
+            return get("https://covers.openlibrary.org/b/id/%d-L.jpg" % d["cover_i"]), "search, cover %d" % d["cover_i"]
+    return None, "no cover found"
+
+
+os.makedirs(OUT, exist_ok=True)
+text = open("data/reading.toml").read()
+for block in re.split(r"^\[\[works\]\]\s*$", text, flags=re.M)[1:]:
+    work = {k: (re.search(r'^%s\s*=\s*"([^"]*)"' % k, block, re.M) or [None, ""])[1] for k in ("id", "title", "author", "kind", "isbn", "cover_id")}
+    target = os.path.join(OUT, work["id"] + ".avif")
+    if work["kind"] != "book" or work["cover_id"] == "none" or (only and work["id"] != only) or (os.path.exists(target) and not only):
+        continue
+    data, how = cover_bytes(work)
+    if not data:
+        print("%-40s %s" % (work["id"], how))
+        continue
+    with tempfile.NamedTemporaryFile(suffix=".jpg") as tmp:
+        tmp.write(data)
+        tmp.flush()
+        subprocess.run(["magick", tmp.name, "-resize", "320x>", "-strip", "-quality", "60", target], check=True)
+    # Point the entry at the file (once), right after its kind.
+    line = 'cover = "covers/reading/%s.avif"' % work["id"]
+    if line not in text:
+        text = re.sub(r'(^id = "%s"\n(?:(?!\[\[works\]\]).*\n)*?kind = .*\n)' % re.escape(work["id"]), lambda m: m.group(1) + line + "\n", text, count=1, flags=re.M)
+        open("data/reading.toml", "w").write(text)
+    print("%-40s %s -> %s" % (work["id"], how, target))

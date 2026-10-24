@@ -81,7 +81,7 @@
     }
     {%- if page is defined and page.date and (psec == "articles" or psec == "notes") %},
     {
-      "@type": "BlogPosting",
+      "@type": {% if page.extra.review %}["BlogPosting", "Review"]{% else %}"BlogPosting"{% endif %},
       "@id": {{ id_article | json_encode | safe }},
       "headline": {{ page.title | json_encode | safe }},
       "description": {{ page.description | default(value=config.description) | json_encode | safe }},
@@ -110,6 +110,11 @@
       {%- endif %},
       "encoding": { "@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": {{ get_url(path=psec ~ '/' ~ page.slug ~ '.md') | json_encode | safe }} },
       "isAccessibleForFree": true
+      {%- if page.extra.review %}{% set rdata = load_data(path="data/reading.toml", required=false) %}
+      {%- if rdata %}{% for w in rdata.works %}{% if w.id == page.extra.review %}{% if w.kind == "book" %}{% set wtype = "Book" %}{% elif w.kind == "paper" or w.kind == "report" %}{% set wtype = "ScholarlyArticle" %}{% else %}{% set wtype = "CreativeWork" %}{% endif %},
+      "itemReviewed": { "@type": {{ wtype | json_encode | safe }}, "name": {{ w.title | json_encode | safe }}, "author": { "@type": "Person", "name": {{ w.author | json_encode | safe }} }{% if w.year %}, "datePublished": {{ w.year | as_str | json_encode | safe }}{% endif %}{% if w.url %}, "url": {{ w.url | json_encode | safe }}{% endif %} }
+      {%- endif %}{% endfor %}{% endif %}
+      {%- endif %}
       {%- if config.extra.seijaku.license %},
       "license": {{ config.extra.seijaku.license.url | json_encode | safe }}
       {%- endif %}
@@ -149,7 +154,7 @@
       "@type": "Dataset",
       "@id": {{ id_dataset | json_encode | safe }},
       "name": "raskell.io site graph",
-      "description": "Every article, note, topic, series, and project on raskell.io as one graph: typed nodes and the links between them, built from tags, series, in-text links, and project data.",
+      "description": "Every article, note, topic, series, project, and work in the reading log on raskell.io as one graph: typed nodes and the links between them, built from tags, series, in-text links, project data, and the reading log.",
       "url": {{ here | json_encode | safe }},
       "creator": { "@id": {{ id_person | json_encode | safe }} },
       "isAccessibleForFree": true,

@@ -1,0 +1,295 @@
+# The reading log of raskell.io: books, papers, reports, and long articles, read, being read, or next.
+# It drives /reading/, the reading nodes on /map/, and the "Review of" line on reviews.
+#
+#   id        slug, unique; the anchor on /reading/ (#id) and the map node (w:id)
+#   title     the work's title; subtitle optional
+#   author    as printed; several authors in one string
+#   kind      book, paper, report, article, essay, or journal
+#   year      first published (optional); edition, publisher optional
+#   isbn      the edition I read; picks its cover (`mise run reading-covers`), optional;
+#             cover_id (an Open Library cover id) when the ISBN finds the wrong one, "none" for no cover
+#   cover     path under static/, written by `mise run reading-covers`; without it the page shows a tile
+#   url       the publisher's or author's page, or the paper itself
+#   status    reading (now), next (right after what I am reading), backlog (some day, in no order),
+#             read, or set-aside
+#   started   when I started (reading), finished when I finished (read, set-aside):
+#             "2026", "2026-10", or "2026-10-24"; read entries need finished
+#   topics    tag slugs from data/tags.toml (checked by `mise run tags-check`)
+#   take      one sentence: what it is about for me, or what I made of it
+#   suggested_by, suggested_url, suggested_note
+#             credit for a reader who suggested the work: name, a link to them, and why (optional)
+#
+# A review is an article (or a note) with `review = "<id>"` under [extra]; `mise run review <id>` starts
+# one. Pages that discuss a work without reviewing it list it in `reads = ["<id>"]`. Both draw the page
+# into the work's neighbourhood on the map. Order inside a status is the order on the page (next: the
+# queue, top first; read: newest finished first, whatever the order here).
+
+# Reading now --------------------------------------------------------------
+
+[[works]]
+id = "the-infinity-machine"
+title = "The Infinity Machine"
+subtitle = "Demis Hassabis, DeepMind, and the Quest for Superintelligence"
+author = "Sebastian Mallaby"
+kind = "book"
+cover = "covers/reading/the-infinity-machine.avif"
+isbn = "9780593831847"
+year = 2026
+url = "https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296"
+status = "reading"
+topics = ["machine-learning", "reinforcement-learning", "history-of-technology"]
+
+# Read ---------------------------------------------------------------------
+
+[[works]]
+id = "from-worm-to-human"
+title = "From Worm to Human: Scaling Brain Emulation"
+author = "Isaak Freeman"
+kind = "paper"
+year = 2026
+publisher = "MIT, Boyden Lab (thesis)"
+url = "https://pdf.isaak.net/scaling-emulations"
+status = "read"
+finished = "2026-06"
+topics = ["neuroscience", "distributed-systems", "gpus"]
+take = "A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan."
+
+[[works]]
+id = "state-of-brain-emulation-2025"
+title = "State of Brain Emulation Report 2025"
+author = "Zanichelli, Schons, Freeman, Shiu, and Arkhipov"
+kind = "report"
+year = 2025
+url = "https://arxiv.org/abs/2510.15745"
+status = "read"
+finished = "2026-06"
+topics = ["neuroscience", "simulation"]
+take = "The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are."
+
+[[works]]
+id = "this-is-for-everyone"
+title = "This Is for Everyone"
+subtitle = "The Unfinished Story of the World Wide Web"
+author = "Tim Berners-Lee"
+kind = "book"
+cover = "covers/reading/this-is-for-everyone.avif"
+year = 2025
+status = "read"
+finished = "2025"
+topics = ["open-web", "history-of-technology"]
+take = "Read on the shores of Okinawa: the web as a commons, and how far what we built drifted from it."
+
+# Backlog: suggestions I am weighing, in no fixed order -----------------------
+
+[[works]]
+id = "why-machines-learn"
+title = "Why Machines Learn"
+subtitle = "The Elegant Math Behind Modern AI"
+author = "Anil Ananthaswamy"
+kind = "book"
+cover = "covers/reading/why-machines-learn.avif"
+year = 2024
+edition = "2025 paperback, with the afterword on transformers"
+url = "https://www.penguinrandomhouse.com/books/677608/why-machines-learn-by-anil-ananthaswamy/"
+status = "backlog"
+topics = ["machine-learning"]
+
+[[works]]
+id = "the-dream-machine"
+title = "The Dream Machine"
+author = "M. Mitchell Waldrop"
+kind = "book"
+cover = "covers/reading/the-dream-machine.avif"
+isbn = "9781953953360"
+year = 2001
+edition = "Stripe Press"
+url = "https://press.stripe.com/the-dream-machine"
+status = "backlog"
+topics = ["history-of-technology", "open-web"]
+
+[[works]]
+id = "the-alignment-problem"
+title = "The Alignment Problem"
+subtitle = "Machine Learning and Human Values"
+author = "Brian Christian"
+kind = "book"
+cover = "covers/reading/the-alignment-problem.avif"
+year = 2020
+url = "https://brianchristian.org/the-alignment-problem/"
+status = "backlog"
+topics = ["machine-learning", "evaluation"]
+
+[[works]]
+id = "ai-a-guide-for-thinking-humans"
+title = "Artificial Intelligence"
+subtitle = "A Guide for Thinking Humans"
+author = "Melanie Mitchell"
+kind = "book"
+cover = "covers/reading/ai-a-guide-for-thinking-humans.avif"
+isbn = "9781250404855"
+year = 2019
+edition = "2025 edition, with the new preface"
+url = "https://us.macmillan.com/books/9781250404855/artificialintelligence/"
+status = "backlog"
+topics = ["machine-learning"]
+
+[[works]]
+id = "deep-thinking"
+title = "Deep Thinking"
+subtitle = "Where Machine Intelligence Ends and Human Creativity Begins"
+author = "Garry Kasparov"
+kind = "book"
+cover = "covers/reading/deep-thinking.avif"
+isbn = "9781473653504"
+year = 2017
+url = "https://www.hachette.co.uk/titles/garry-kasparov/deep-thinking/9781473653504/"
+status = "backlog"
+topics = ["machine-learning", "games"]
+
+[[works]]
+id = "understanding-deep-learning"
+title = "Understanding Deep Learning"
+author = "Simon J. D. Prince"
+kind = "book"
+isbn = "9780262048644"
+year = 2023
+url = "https://mitpress.mit.edu/9780262048644/understanding-deep-learning/"
+status = "backlog"
+topics = ["machine-learning"]
+
+[[works]]
+id = "build-a-large-language-model"
+title = "Build a Large Language Model (From Scratch)"
+author = "Sebastian Raschka"
+kind = "book"
+cover = "covers/reading/build-a-large-language-model.avif"
+year = 2024
+url = "https://www.manning.com/books/build-a-large-language-model-from-scratch"
+status = "backlog"
+topics = ["machine-learning", "inference"]
+
+[[works]]
+id = "ai-engineering"
+title = "AI Engineering"
+subtitle = "Building Applications with Foundation Models"
+author = "Chip Huyen"
+kind = "book"
+cover = "covers/reading/ai-engineering.avif"
+isbn = "9781098166298"
+year = 2025
+url = "https://www.oreilly.com/library/view/ai-engineering/9781098166298/"
+status = "backlog"
+topics = ["ai-platforms", "evaluation"]
+
+[[works]]
+id = "reinforcement-learning-an-introduction"
+title = "Reinforcement Learning: An Introduction"
+author = "Richard S. Sutton and Andrew G. Barto"
+kind = "book"
+cover = "covers/reading/reinforcement-learning-an-introduction.avif"
+isbn = "9780262039246"
+year = 2018
+edition = "Second edition"
+url = "https://mitpress.mit.edu/9780262039246/reinforcement-learning/"
+status = "backlog"
+topics = ["reinforcement-learning", "machine-learning"]
+
+[[works]]
+id = "probabilistic-machine-learning"
+title = "Probabilistic Machine Learning: An Introduction"
+author = "Kevin P. Murphy"
+kind = "book"
+cover_id = "none"   # Open Library only has the cover of the second volume
+year = 2022
+url = "https://probml.github.io/pml-book/book1.html"
+status = "backlog"
+topics = ["machine-learning"]
+
+[[works]]
+id = "the-making-of-the-atomic-bomb"
+title = "The Making of the Atomic Bomb"
+author = "Richard Rhodes"
+kind = "book"
+cover = "covers/reading/the-making-of-the-atomic-bomb.avif"
+isbn = "9781451677614"
+year = 1986
+edition = "25th anniversary edition"
+url = "https://www.simonandschuster.net/books/The-Making-of-the-Atomic-Bomb/Richard-Rhodes/9781451677614"
+status = "backlog"
+topics = ["history-of-technology"]
+
+[[works]]
+id = "seeing-like-a-state"
+title = "Seeing Like a State"
+subtitle = "How Certain Schemes to Improve the Human Condition Have Failed"
+author = "James C. Scott"
+kind = "book"
+cover = "covers/reading/seeing-like-a-state.avif"
+isbn = "9780300246759"
+year = 1998
+url = "https://yalebooks.yale.edu/book/9780300252989/seeing-like-a-state/"
+status = "backlog"
+topics = ["complex-systems", "history"]
+
+[[works]]
+id = "a-peace-to-end-all-peace"
+title = "A Peace to End All Peace"
+subtitle = "The Fall of the Ottoman Empire and the Creation of the Modern Middle East"
+author = "David Fromkin"
+kind = "book"
+cover = "covers/reading/a-peace-to-end-all-peace.avif"
+cover_id = "580826"
+year = 1989
+url = "https://academic.macmillan.com/academictrade/9780805088090/apeacetoendallpeace/"
+status = "backlog"
+topics = ["history", "geography"]
+
+[[works]]
+id = "the-billion-dollar-molecule"
+title = "The Billion-Dollar Molecule"
+subtitle = "The Quest for the Perfect Drug"
+author = "Barry Werth"
+kind = "book"
+cover = "covers/reading/the-billion-dollar-molecule.avif"
+isbn = "9780671510572"
+year = 1994
+url = "https://www.simonandschuster.com/books/The-Billion-Dollar-Molecule/Barry-Werth/9780671510572"
+status = "backlog"
+topics = ["life-sciences", "history-of-science"]
+
+[[works]]
+id = "the-eighth-day-of-creation"
+title = "The Eighth Day of Creation"
+subtitle = "The Makers of the Revolution in Biology"
+author = "Horace Freeland Judson"
+kind = "book"
+cover = "covers/reading/the-eighth-day-of-creation.avif"
+year = 1979
+edition = "Commemorative edition"
+publisher = "Cold Spring Harbor Laboratory Press"
+status = "backlog"
+topics = ["life-sciences", "history-of-science"]
+
+[[works]]
+id = "the-demon-under-the-microscope"
+title = "The Demon Under the Microscope"
+author = "Thomas Hager"
+kind = "book"
+cover = "covers/reading/the-demon-under-the-microscope.avif"
+year = 2006
+url = "https://www.penguinrandomhouse.com/books/73465/the-demon-under-the-microscope-by-thomas-hager/"
+status = "backlog"
+topics = ["life-sciences", "history-of-science"]
+
+[[works]]
+id = "the-butchering-art"
+title = "The Butchering Art"
+subtitle = "Joseph Lister's Quest to Transform the Grisly World of Victorian Medicine"
+author = "Lindsey Fitzharris"
+kind = "book"
+cover = "covers/reading/the-butchering-art.avif"
+isbn = "9780141983387"
+year = 2017
+url = "https://www.penguin.co.nz/books/the-butchering-art-9780141983387"
+status = "backlog"
+topics = ["life-sciences", "history-of-science"]

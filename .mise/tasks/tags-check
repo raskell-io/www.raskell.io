@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#MISE description="Check that every tag in content/ and project topics is defined in data/tags.toml"
+#MISE description="Check that every tag in content/, project topics, and the reading log is defined in data/tags.toml; validate the reading log"
 """
 The topic vocabulary in data/tags.toml is the source of truth for tags. This reports:
   - tags used in content/ or data/projects/*.toml that the vocabulary does not define (an error),
@@ -33,6 +33,43 @@ for path in glob.glob("data/projects/*.toml"):
         used.setdefault(t, []).append(path)
 
 errors = 0
+
+# The reading log: topics count as uses; each entry needs its fields, a known status and kind, and a
+# unique id; reviews (extra.review) and mentions (extra.reads) in content must name an entry.
+works = {}
+if os.path.exists("data/reading.toml"):
+    for block in re.split(r"^\[\[works\]\]\s*$", open("data/reading.toml").read(), flags=re.M)[1:]:
+        field = lambda k: (re.search(r'^%s\s*=\s*"([^"]*)"' % k, block, re.M) or [None, None])[1]
+        wid = field("id") or "?"
+        m = re.search(r"^topics\s*=\s*\[(.*?)\]", block, re.M)
+        for t in re.findall(r'"([^"]+)"', m.group(1)) if m else []:
+            used.setdefault(t, []).append("data/reading.toml (%s)" % wid)
+        problems = ["missing %s" % k for k in ("id", "title", "author", "kind", "status") if not field(k)]
+        if field("status") and field("status") not in ("reading", "next", "backlog", "read", "set-aside"):
+            problems.append("unknown status %s" % field("status"))
+        if field("kind") and field("kind") not in ("book", "paper", "report", "article", "essay", "journal"):
+            problems.append("unknown kind %s" % field("kind"))
+        if field("status") == "read" and not field("finished"):
+            problems.append("read without finished")
+        for k in ("started", "finished"):
+            if field(k) and not re.match(r"^\d{4}(-\d{2}(-\d{2})?)?$", field(k)):
+                problems.append("%s is not YYYY, YYYY-MM, or YYYY-MM-DD" % k)
+        if wid in works:
+            problems.append("duplicate id")
+        works[wid] = True
+        for p in problems:
+            errors += 1
+            print("reading %-24s %s" % (wid, p))
+    for path in glob.glob("content/**/*.md", recursive=True):
+        text = open(path).read()
+        refs = re.findall(r'^review\s*=\s*"([^"]+)"', text, re.M)
+        m = re.search(r"^reads\s*=\s*\[(.*?)\]", text, re.M | re.S)
+        refs += re.findall(r'"([^"]+)"', m.group(1)) if m else []
+        for r in refs:
+            if r not in works:
+                errors += 1
+                print("unknown work %-21s named in %s" % (r, path))
+
 for t, where in sorted(used.items()):
     if t not in vocab:
         errors += 1
