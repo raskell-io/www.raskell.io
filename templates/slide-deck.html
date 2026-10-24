@@ -729,6 +729,31 @@
       .deck__counter, .deck__home { display: none; }
     }
   </style>
+  {#- For agents: the deck as Markdown (`mise run llms`), the site's discovery files, and the talk as data. -#}
+  {%- set base = config.base_url %}{% set md = get_url(path='talks/' ~ page.slug ~ '.md') %}
+  <link rel="alternate" type="text/markdown" title="{{ page.title }} (Markdown)" href="{{ md | safe }}">
+  <link rel="alternate" type="text/markdown" title="llms.txt" href="{{ get_url(path='llms.txt') | safe }}">
+  <link rel="api-catalog" href="{{ get_url(path='.well-known/api-catalog') | safe }}">
+  {%- if config.extra.seijaku.license %}
+  <link rel="license" href="{{ config.extra.seijaku.license.url }}">
+  {%- endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PresentationDigitalDocument",
+    "@id": {{ current_url ~ "#talk" | json_encode | safe }},
+    "name": {{ page.title | json_encode | safe }},
+    "description": {{ page.description | default(value="") | json_encode | safe }},
+    "url": {{ current_url | json_encode | safe }},
+    "inLanguage": {{ config.default_language | json_encode | safe }},
+    "author": { "@type": "Person", "@id": "{{ base }}/#person", "name": {{ config.extra.author_full | json_encode | safe }}, "url": "{{ base }}/about/" },
+    "datePublished": {{ page.date | date(format="%Y-%m-%dT00:00:00+00:00") | json_encode | safe }},
+    "isPartOf": { "@type": "WebSite", "@id": "{{ base }}/#website", "url": {{ base | json_encode | safe }} },
+    "encoding": { "@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": {{ md | json_encode | safe }} }{% if config.extra.seijaku.license %},
+    "license": {{ config.extra.seijaku.license.url | json_encode | safe }}{% endif %}{% if page.extra.event %},
+    "about": { "@type": "Event", "name": {{ page.extra.event | json_encode | safe }}, "startDate": {{ page.date | date(format="%Y-%m-%d") | json_encode | safe }}{% if page.extra.event_url %}, "url": {{ page.extra.event_url | json_encode | safe }}{% endif %}{% if page.extra.venue %}, "location": { "@type": "Place", "name": {{ page.extra.venue | json_encode | safe }} }{% endif %}, "performer": { "@id": "{{ base }}/#person" } }{% endif %}
+  }
+  </script>
 </head>
 <body>
   <a class="deck__home" href="/speaking/">← Speaking</a>

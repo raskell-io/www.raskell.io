@@ -8,4 +8,6 @@ Allow: /
 Sitemap: https://raskell.io/sitemap.xml
 
 # For agents: https://raskell.io/llms.txt (index), https://raskell.io/llms-full.txt (everything in Markdown),
-# https://raskell.io/map.json (the site graph), https://raskell.io/.well-known/api-catalog (discovery).
+# https://raskell.io/map.json (the site graph), https://raskell.io/garden.json (the search index: articles,
+# reviews, talks, books, projects, topics, cited links), https://raskell.io/links.json (every cited source),
+# https://raskell.io/reading.json (the reading log), https://raskell.io/.well-known/api-catalog (discovery).

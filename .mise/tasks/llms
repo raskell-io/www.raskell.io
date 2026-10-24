@@ -4,9 +4,12 @@
 Answer engines and agents read plain Markdown far more reliably than themed HTML.
 This writes, from content/ and data/:
 
-  static/llms.txt              the llms.txt index (https://llmstxt.org): who, what, and every article
-  static/llms-full.txt         every published article in full, newest first, in one file
-  static/{articles,notes}/<slug>.md  one clean Markdown copy per article and note, linked from its page head
+  static/llms.txt              the llms.txt index (https://llmstxt.org): who, what, and every piece of the garden:
+                               articles, reviews, notes, talks, the reading log, topics, projects, cited sources
+  static/llms-full.txt         every published article, note, and talk in full, newest first, then the reading log
+  static/{articles,notes,talks}/<slug>.md  one clean Markdown copy per page, linked from its page head;
+                               reviews carry the reviewed work and the rating in their front matter
+  static/reading.json          the reading log as data: every work, its status, dates, rating, and review
 
 Shortcodes become plain fences, internal links become absolute URLs, drafts are skipped.
 The outputs are build artefacts (gitignored); CI runs this before `zola build`.
@@ -14,6 +17,8 @@ Standard library only, so it runs on the CI runner and on macOS's system Python 
 """
 import datetime
 import glob
+import html
+import json
 import os
 import re
 
@@ -40,6 +45,11 @@ def fm_str(fm, key):
 def fm_list(fm, key):
     m = re.search(r"^%s\s*=\s*\[(.*?)\]" % key, fm, re.M | re.S)
     return re.findall(r'"([^"]+)"', m.group(1)) if m else []
+
+
+def fm_num(fm, key):
+    m = re.search(r"^%s\s*=\s*(\d+)\s*(#.*)?$" % key, fm, re.M)
+    return int(m.group(1)) if m else None
 
 
 def fm_date(fm, key):
@@ -83,6 +93,28 @@ def plain_shortcodes(body):
     return "\n".join(out)
 
 
+def slides_to_markdown(body):
+    # Talks are slide decks written as HTML sections: keep the words, one heading per slide.
+    text = re.sub(r"<(script|style)\b.*?</\1>", "", body, flags=re.S)
+    text = re.sub(r"<h1[^>]*>(.*?)</h1>", lambda m: "\n\n## " + m.group(1) + "\n\n", text, flags=re.S)
+    text = re.sub(r"<h[23][^>]*>(.*?)</h[23]>", lambda m: "\n\n### " + m.group(1) + "\n\n", text, flags=re.S)
+    text = re.sub(r"<li[^>]*>", "\n- ", text)
+    text = re.sub(r"</(p|li|div|section|blockquote|figcaption)>", "\n", text)
+    text = re.sub(r"<br\s*/?>", "\n", text)
+    text = re.sub(r'<a [^>]*href="([^"]+)"[^>]*>(.*?)</a>', lambda m: "[%s](%s)" % (re.sub(r"<[^>]+>", "", m.group(2)).strip(), m.group(1)), text, flags=re.S)
+    text = html.unescape(re.sub(r"<[^>]+>", "", text))
+    lines = [re.sub(r"[ \t]+", " ", l).strip() for l in text.split("\n")]
+    # Slide numbers and separator dots carry nothing in text; a bullet whose text sits on the next line joins it.
+    lines = [l for l in lines if not re.fullmatch(r"\d{1,3}|[·•|/]", l)]
+    out = []
+    for l in lines:
+        if out and out[-1] == "-" and l:
+            out[-1] = "- " + l
+        elif not (l == "" and out and out[-1] == "-"):
+            out.append(l)
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(l for l in out if l != "-")).strip()
+
+
 def load(section):
     out = []
     for path in glob.glob("content/%s/*.md" % section):
@@ -106,15 +138,42 @@ def entry(section, slug, fm, body):
         "description": fm_str(fm, "description"),
         "tags": fm_list(fm, "tags"),
         "series": fm_list(fm, "series"),
+        "categories": fm_list(fm, "categories"),
+        "review": fm_str(fm, "review"),
+        "reads": fm_list(fm, "reads"),
+        "event": fm_str(fm, "event"),
+        "venue": fm_str(fm, "venue"),
         "section": section,
         "url": "%s/%s/%s/" % (BASE, section, slug),
         "md": "%s/%s/%s.md" % (BASE, section, slug),
-        "body": plain_shortcodes(absolute_links(body.strip())),
+        "body": slides_to_markdown(body) if section == "talks" else plain_shortcodes(absolute_links(body.strip())),
     }
 
 
 articles = load("articles")
 notes = load("notes") if os.path.isdir("content/notes") else []
+talks = load("talks") if os.path.isdir("content/talks") else []
+
+
+def parse_works():
+    # data/reading.toml, parsed by hand like the vocabulary (no tomllib on older Pythons): [[works]] blocks.
+    if not os.path.exists("data/reading.toml"):
+        return []
+    out = []
+    for block in re.split(r"^\[\[works\]\]\s*$", open("data/reading.toml").read(), flags=re.M)[1:]:
+        w = {k: fm_str(block, k) for k in ("id", "title", "subtitle", "author", "kind", "edition", "publisher", "isbn",
+                                          "url", "status", "started", "finished", "take", "cover")}
+        w["year"], w["rating"], w["topics"] = fm_num(block, "year"), fm_num(block, "rating"), fm_list(block, "topics")
+        out.append(w)
+    return out
+
+
+WORKS = {w["id"]: w for w in parse_works()}
+REVIEWS = {a["review"]: a for a in articles + notes if a["review"]}
+
+
+def month(ym):
+    return datetime.datetime.strptime(ym, "%Y-%m").strftime("%B %Y") if ym else ""
 
 
 def article_markdown(a):
@@ -127,11 +186,26 @@ def article_markdown(a):
         head.append("tags: [%s]" % ", ".join(a["tags"]))
     if a["series"]:
         head.append("series: %s" % a["series"][0])
+    if a["categories"]:
+        head.append("categories: [%s]" % ", ".join(a["categories"]))
+    w = WORKS.get(a["review"])
+    if w:
+        head.append('review_of: "%s"' % w["title"].replace('"', '\\"'))
+        head.append('review_of_author: "%s"' % w["author"].replace('"', '\\"'))
+        head.append("review_of_kind: %s" % w["kind"])
+        if w["year"]:
+            head.append("review_of_year: %d" % w["year"])
+        if w["rating"]:
+            head.append("rating: %d/10" % w["rating"])
+    if a["event"]:
+        head.append('event: "%s"' % a["event"].replace('"', '\\"'))
+    if a["venue"]:
+        head.append('venue: "%s"' % a["venue"].replace('"', '\\"'))
     head += ["---", "", "# " + a["title"], "", a["body"], ""]
     return "\n".join(head)
 
 
-for section, items in (("articles", articles), ("notes", notes)):
+for section, items in (("articles", articles), ("notes", notes), ("talks", talks)):
     os.makedirs("static/%s" % section, exist_ok=True)
     for old in glob.glob("static/%s/*.md" % section):
         os.remove(old)
@@ -183,6 +257,8 @@ lines = [
     "",
     "raskell.io is the personal site of %s, an %s in Basel, Switzerland. He works on enterprise AI and agent "
     "platforms, edge infrastructure, applied security, and developer tooling, and writes long-form articles about them. "
+    "The site is a digital garden: articles, book reviews, notes, talks, a reading log, projects, a topic vocabulary, and "
+    "every source the writing cites, all connected in one graph (map.json) and one search index (garden.json). "
     "Every article below links to a clean Markdown copy; the HTML page is the same URL without `.md`. "
     "Writing is licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) and code samples MIT: reuse, quote, and train on it with attribution, e.g. %s, \"Article title\", raskell.io, date, URL. Images, logos, and quoted third-party material are excluded (%s/license/)." % (AUTHOR, JOB, AUTHOR, BASE),
     "",
@@ -196,7 +272,7 @@ lines = [
     "- [Reading](%s/reading/): what %s is reading, what is next, and what he has read, with reviews" % (BASE, AUTHOR.split()[0]),
     "- [Reviews](%s/categories/reviews/): reviews of books, papers, and long articles from the reading log" % BASE,
     "- [Talks](%s/talks/): slide decks from talks" % BASE,
-    "- [Search](%s/search/): everything on the site, including every external link the writing cites; `?q=` and `?type=link` (or article, review, note, talk, work, project, topic) work as URLs" % BASE,
+    "- [Search](%s/search/): everything on the site, including every external link the writing cites; `?q=` and `?type=link` (or article, review, note, talk, work, project, topic) work as URLs, e.g. %s/search/?q=zentinel" % (BASE, BASE),
     "- [RSS feed](%s/rss.xml): full-text feed" % BASE,
     "",
 ]
@@ -207,6 +283,20 @@ for name, items in series.items():
 lines += ["## Articles", ""]
 lines += ["- [%s](%s) (%s): %s" % (a["title"], a["md"], a["date"], a["description"]) for a in articles]
 lines.append("")
+reviews = [a for a in articles + notes if a["review"] in WORKS]
+if reviews:
+    lines += ["## Reviews", "", "Reviews of works from the reading log (category: reviews, feed %s/categories/reviews/rss.xml). "
+              "Each Markdown copy names the reviewed work and the rating in its front matter." % BASE, ""]
+    for a in reviews:
+        w = WORKS[a["review"]]
+        lines.append("- [%s](%s) (%s): review of *%s* by %s (%s%s)%s. %s" % (
+            a["title"], a["md"], a["date"], w["title"], w["author"], w["kind"], ", %d" % w["year"] if w["year"] else "",
+            ", rated %d/10" % w["rating"] if w["rating"] else "", a["description"]))
+    lines.append("")
+if talks:
+    lines += ["## Talks", "", "Slide decks; each has a Markdown copy with the words of every slide.", ""]
+    lines += ["- [%s](%s) (%s%s): %s" % (t["title"], t["md"], t["date"], ", " + t["event"] if t["event"] else "", t["description"]) for t in talks]
+    lines.append("")
 if notes:
     lines += ["## Notes", "", "Short notes, a paragraph or a page each; some grow into articles.", ""]
     lines += ["- [%s](%s) (%s): %s" % (a["title"], a["md"], a["date"], a["description"]) for a in notes]
@@ -214,25 +304,13 @@ if notes:
 
 
 
-def reading():
-    # data/reading.toml, parsed by hand like the vocabulary (no tomllib on older Pythons): [[works]] blocks.
-    if not os.path.exists("data/reading.toml"):
-        return []
-    works = []
-    for block in re.split(r"^\[\[works\]\]\s*$", open("data/reading.toml").read(), flags=re.M)[1:]:
-        works.append({k: fm_str(block, k) for k in ("id", "title", "author", "kind", "status", "finished", "url", "take")})
-    reviews = {}
-    for a in articles + notes:
-        fm, _ = split_front_matter(open("content/%s/%s.md" % (a["section"], a["slug"])).read())
-        if fm_str(fm, "review"):
-            reviews[fm_str(fm, "review")] = a
-    return [dict(w, review=reviews.get(w["id"])) for w in works]
 
-
-works = reading()
+SHELVES = (("reading", "Reading now"), ("next", "Up next"), ("backlog", "Backlog"), ("read", "Read"), ("set-aside", "Set aside"))
+works = list(WORKS.values())
 if works:
-    lines += ["## Reading", "", "Books, papers, and long articles from the reading log at %s/reading/, with reviews where there is one." % BASE, ""]
-    for status, title in (("reading", "Reading now"), ("next", "Up next"), ("backlog", "Backlog"), ("read", "Read"), ("set-aside", "Set aside")):
+    lines += ["## Reading", "", "The reading log at %s/reading/ (as data: [reading.json](%s/reading.json)): books, papers, and long articles, "
+              "with the month finished, a rating out of 10 where there is a review, and the review." % (BASE, BASE), ""]
+    for status, title in SHELVES:
         shelf = [w for w in works if w["status"] == status]
         if status == "read":
             shelf.sort(key=lambda w: w["finished"], reverse=True)
@@ -240,14 +318,49 @@ if works:
             continue
         lines += ["### %s" % title, ""]
         for w in shelf:
-            line = "- %s, %s (%s%s)" % ("[%s](%s)" % (w["title"], w["url"]) if w["url"] else w["title"], w["author"], w["kind"],
-                                       ", finished %s" % datetime.datetime.strptime(w["finished"], "%Y-%m").strftime("%B %Y") if w["finished"] else "")
+            line = "- %s, %s (%s%s%s)" % ("[%s](%s)" % (w["title"], w["url"]) if w["url"] else w["title"], w["author"], w["kind"],
+                                         ", finished %s" % month(w["finished"]) if w["finished"] else "",
+                                         ", rated %d/10" % w["rating"] if w["rating"] else "")
             if w["take"]:
                 line += ": " + w["take"]
-            if w["review"]:
-                line += " Review: [%s](%s)" % (w["review"]["title"], w["review"]["md"])
+            if w["id"] in REVIEWS:
+                line += " Review: [%s](%s)" % (REVIEWS[w["id"]]["title"], REVIEWS[w["id"]]["md"])
             lines.append(line)
         lines.append("")
+
+reading_json = {
+    "source": BASE + "/reading/",
+    "generated": datetime.date.today().isoformat(),
+    "description": "The reading log of raskell.io by %s: what is being read, what is next, and what has been read." % AUTHOR,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "works": [{k: v for k, v in {
+        "id": w["id"], "title": w["title"], "subtitle": w["subtitle"] or None, "author": w["author"], "kind": w["kind"],
+        "year": w["year"], "edition": w["edition"] or None, "publisher": w["publisher"] or None, "isbn": w["isbn"] or None,
+        "url": w["url"] or None, "status": w["status"], "started": w["started"] or None, "finished": w["finished"] or None,
+        "rating": w["rating"], "topics": w["topics"] or None, "take": w["take"] or None,
+        "cover": "%s/%s" % (BASE, w["cover"]) if w["cover"] else None, "page": "%s/reading/#%s" % (BASE, w["id"]),
+        "review": {"title": REVIEWS[w["id"]]["title"], "url": REVIEWS[w["id"]]["url"], "markdown": REVIEWS[w["id"]]["md"]} if w["id"] in REVIEWS else None,
+    }.items() if v is not None} for w in works],
+}
+with open("static/reading.json", "w") as f:
+    json.dump(reading_json, f, indent=1, ensure_ascii=False)
+
+# The sources the writing cites most: Markdown links to other sites, counted once per page.
+cites = {}
+for a in articles + notes + talks:
+    seen = set()
+    for text, url in re.findall(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", a["body"]):
+        key = url.rstrip("/")
+        if key.startswith(BASE) or key in seen:
+            continue
+        seen.add(key)
+        c = cites.setdefault(key, {"url": url, "text": text, "pages": 0})
+        c["pages"] += 1
+top = [c for c in sorted(cites.values(), key=lambda c: (-c["pages"], c["url"])) if c["pages"] > 1][:20]
+if top:
+    lines += ["## Sources cited most", "", "External links cited on more than one page (all %d are searchable at %s/search/?type=link and listed in [links.json](%s/links.json))." % (len(cites), BASE, BASE), ""]
+    lines += ["- [%s](%s): cited on %d pages" % (re.sub(r"[*_`]", "", c["text"]), c["url"], c["pages"]) for c in top]
+    lines.append("")
 
 vocab = vocabulary()
 if vocab:
@@ -267,10 +380,15 @@ for section, heading in (("projects", "Projects"), ("apps", "Apps")):
         lines.append("")
 lines += ["## For agents", "",
           "- Each article and note as Markdown: its URL with `.md` instead of the trailing slash, e.g. %s/articles/the-model-is-a-dependency.md" % BASE,
-          "- [map.json](%s/map.json): the site graph (pages, topics with definitions, series, projects, and their links)" % BASE,
+          "- Each talk as Markdown too, e.g. %s/talks/iat-13-basel.md" % BASE,
+          "- [map.json](%s/map.json): the site graph (articles, notes, talks, topics with definitions, series, categories, works from the reading log, projects, and their links)" % BASE,
+          "- [garden.json](%s/garden.json): the search index as data: every article, review, note, talk, work, project, topic, and cited link, with kinds, topics, and dates" % BASE,
+          "- [links.json](%s/links.json): every external link the writing cites, with the pages that cite it and whether it is a reference" % BASE,
+          "- [reading.json](%s/reading.json): the reading log, with status, dates, ratings, and reviews" % BASE,
+          "- Search as a URL: %s/search/?q={query}&type={article|review|note|talk|work|project|topic|link}" % BASE,
           "- [api-catalog](%s/.well-known/api-catalog): RFC 9727 discovery of the machine-readable files" % BASE,
-          "- Feeds: [RSS](%s/rss.xml), [Atom](%s/atom.xml), [articles](%s/articles/rss.xml), [notes](%s/notes/rss.xml), [reviews](%s/categories/reviews/rss.xml)" % (BASE, BASE, BASE, BASE, BASE),
-          "- In the browser: WebMCP tools (search_site, get_current_page, get_page_markdown, get_site_index, list_topics, get_connections, cite_current_page, open_page) register when an agent exposes `document.modelContext`.",
+          "- Feeds: [RSS](%s/rss.xml), [Atom](%s/atom.xml), [articles](%s/articles/rss.xml), [notes](%s/notes/rss.xml), [reviews](%s/categories/reviews/rss.xml), [talks](%s/talks/rss.xml)" % (BASE, BASE, BASE, BASE, BASE, BASE),
+          "- In the browser: WebMCP tools (search_site, list_reading, find_links, get_current_page, get_page_markdown, get_site_index, list_topics, get_connections, cite_current_page, open_page) register when an agent exposes `document.modelContext`.",
           "- No authentication, no rate limits ([auth.md](%s/.well-known/auth.md)). Crawling for search, answers, and training is welcome (robots.txt Content-Signal)." % BASE,
           ""]
 lines += ["## Optional", "",
@@ -279,10 +397,25 @@ lines += ["## Optional", "",
           "- [Contact](%s/about/#contact): GitHub, LinkedIn, X" % BASE, ""]
 open("static/llms.txt", "w").write("\n".join(lines))
 
-full = ["# Raskell: all articles and notes in full", "",
-        "> Every published article and note on raskell.io by %s, newest first. Generated %s." % (AUTHOR, datetime.date.today().isoformat()), ""]
-for a in sorted(articles + notes, key=lambda a: a["date"], reverse=True):
+full = ["# Raskell: all writing in full", "",
+        "> Every published article, review, note, and talk on raskell.io by %s, newest first, then the reading log. "
+        "Generated %s. Index: %s/llms.txt" % (AUTHOR, datetime.date.today().isoformat(), BASE), ""]
+for a in sorted(articles + notes + talks, key=lambda a: a["date"], reverse=True):
     full += ["", "=" * 80, "", article_markdown(a)]
+if works:
+    full += ["", "=" * 80, "", "# Reading log", "", "From %s/reading/ (as data: %s/reading.json)." % (BASE, BASE), ""]
+    for status, title in SHELVES:
+        shelf = sorted([w for w in works if w["status"] == status], key=lambda w: w["finished"], reverse=True)
+        if not shelf:
+            continue
+        full += ["## %s" % title, ""]
+        for w in shelf:
+            bits = [w["kind"]] + ([str(w["year"])] if w["year"] else []) + (["finished " + month(w["finished"])] if w["finished"] else []) + (["rated %d/10" % w["rating"]] if w["rating"] else [])
+            full.append("- *%s*%s by %s (%s)%s%s" % (w["title"], ": " + w["subtitle"] if w["subtitle"] else "", w["author"], ", ".join(bits),
+                                                  ". " + w["take"].rstrip(".") if w["take"] else "",
+                                                  ". Review: " + REVIEWS[w["id"]]["url"] if w["id"] in REVIEWS else ""))
+        full.append("")
 open("static/llms-full.txt", "w").write("\n".join(full))
 
-print("llms: %d articles, %d notes, %d series -> static/llms.txt, static/llms-full.txt, static/articles/*.md" % (len(articles), len(notes), len(series)))
+print("llms: %d articles (%d reviews), %d notes, %d talks, %d works, %d cited links, %d series -> static/llms.txt, llms-full.txt, reading.json, {articles,notes,talks}/*.md"
+      % (len(articles), len(reviews), len(notes), len(talks), len(works), len(cites), len(series)))

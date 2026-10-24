@@ -37,7 +37,7 @@ jobs:
       - name: Generate security.txt
         run: mise run security-txt
 
-      - name: Generate llms.txt and Markdown copies
+      - name: Generate llms.txt, Markdown copies, and reading.json
         run: mise run llms
 
       - name: Build
@@ -45,6 +45,9 @@ jobs:
 
       - name: Publish map.json
         run: mise run map-json
+
+      - name: Publish garden.json and links.json
+        run: mise run garden-json
 
       - name: Draw social cards
         run: mise run og

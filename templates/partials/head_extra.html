@@ -23,6 +23,8 @@
 <link rel="alternate" type="application/atom+xml" title="{{ config.title }} (Atom)" href="{{ get_url(path='atom.xml') | safe }}">
 <link rel="alternate" type="application/rss+xml" title="{{ config.title }}: articles" href="{{ get_url(path='articles/rss.xml') | safe }}">
 <link rel="alternate" type="application/rss+xml" title="{{ config.title }}: notes" href="{{ get_url(path='notes/rss.xml') | safe }}">
+<link rel="alternate" type="application/rss+xml" title="{{ config.title }}: reviews" href="{{ get_url(path='categories/reviews/rss.xml') | safe }}">
+<link rel="alternate" type="application/rss+xml" title="{{ config.title }}: talks" href="{{ get_url(path='talks/rss.xml') | safe }}">
 {%- if config.extra.seijaku.license %}
 <link rel="license" href="{{ config.extra.seijaku.license.url }}">
 {%- endif %}
@@ -33,6 +35,11 @@
 {%- endif %}
 {%- if page is defined and page.path == "/map/" %}
 <link rel="alternate" type="application/json" title="Site map graph" href="{{ get_url(path='map.json') | safe }}">
+{%- elif page is defined and page.path == "/search/" %}
+<link rel="alternate" type="application/json" title="The search index: everything on the site" href="{{ get_url(path='garden.json') | safe }}">
+<link rel="alternate" type="application/json" title="Every external link the writing cites" href="{{ get_url(path='links.json') | safe }}">
+{%- elif page is defined and page.path == "/reading/" %}
+<link rel="alternate" type="application/json" title="The reading log as data" href="{{ get_url(path='reading.json') | safe }}">
 {%- endif %}
 {%- set base = config.base_url %}
 {%- set here = current_url | default(value=base) %}
@@ -54,7 +61,8 @@
       "description": {{ config.description | json_encode | safe }},
       "publisher": { "@id": {{ id_person | json_encode | safe }} },
       "inLanguage": {{ config.default_language | json_encode | safe }}{% if config.extra.seijaku.license %},
-      "license": {{ config.extra.seijaku.license.url | json_encode | safe }}{% endif %}
+      "license": {{ config.extra.seijaku.license.url | json_encode | safe }}{% endif %}{% if config.extra.seijaku.search %},
+      "potentialAction": { "@type": "SearchAction", "target": { "@type": "EntryPoint", "urlTemplate": "{{ base }}/search/?q={search_term_string}" }, "query-input": "required name=search_term_string" }{% endif %}
     },
     {
       "@type": "Person",
@@ -165,6 +173,9 @@
       "keywords": ["knowledge graph", "site map", "topics", "platform engineering", "AI platforms"],
       "distribution": [
         { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": {{ get_url(path="map.json") | json_encode | safe }} },
+        { "@type": "DataDownload", "encodingFormat": "application/json", "name": "garden.json: the search index", "contentUrl": {{ get_url(path="garden.json") | json_encode | safe }} },
+        { "@type": "DataDownload", "encodingFormat": "application/json", "name": "links.json: every cited link", "contentUrl": {{ get_url(path="links.json") | json_encode | safe }} },
+        { "@type": "DataDownload", "encodingFormat": "application/json", "name": "reading.json: the reading log", "contentUrl": {{ get_url(path="reading.json") | json_encode | safe }} },
         { "@type": "DataDownload", "encodingFormat": "text/markdown", "contentUrl": {{ get_url(path="llms-full.txt") | json_encode | safe }} }
       ]
     }
@@ -186,6 +197,63 @@
       "description": {{ td.description | json_encode | safe }},
       "url": {{ term.permalink | json_encode | safe }},
       "inDefinedTermSet": { "@type": "DefinedTermSet", "@id": {{ id_termset | json_encode | safe }}, "name": "raskell.io topics", "url": {{ url_tags | json_encode | safe }} }
+    }
+    {%- elif page is defined and page.path == "/reading/" %}{% set rdata = load_data(path="data/reading.toml", required=false) %},
+    {
+      "@type": "CollectionPage",
+      "@id": {{ id_webpage | json_encode | safe }},
+      "url": {{ here | json_encode | safe }},
+      "name": "Reading",
+      "description": {{ page.description | default(value="") | json_encode | safe }},
+      "isPartOf": { "@id": {{ id_site | json_encode | safe }} },
+      "author": { "@id": {{ id_person | json_encode | safe }} },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Reading log",
+        "numberOfItems": {% if rdata %}{{ rdata.works | length }}{% else %}0{% endif %},
+        "itemListElement": [{% if rdata %}{% for w in rdata.works %}{% if w.kind == "book" or w.kind == "novel" %}{% set wt = "Book" %}{% elif w.kind == "paper" %}{% set wt = "ScholarlyArticle" %}{% elif w.kind == "report" %}{% set wt = "Report" %}{% else %}{% set wt = "CreativeWork" %}{% endif %}{% set wurl = here ~ "#" ~ w.id %}
+          { "@type": "ListItem", "position": {{ loop.index }}, "item": { "@type": {{ wt | json_encode | safe }}, "@id": {{ wurl | json_encode | safe }}, "name": {{ w.title | json_encode | safe }}{% if w.subtitle %}, "alternativeHeadline": {{ w.subtitle | json_encode | safe }}{% endif %}, "author": { "@type": "Person", "name": {{ w.author | json_encode | safe }} }{% if w.year %}, "datePublished": "{{ w.year }}"{% endif %}{% if w.isbn %}, "isbn": "{{ w.isbn }}"{% endif %}{% if w.url %}, "sameAs": {{ w.url | json_encode | safe }}{% endif %}{% if w.cover %}, "image": "{{ base }}/{{ w.cover }}"{% endif %}{% if w.kind == "novel" %}, "genre": "Novel"{% endif %}{% if w.topics %}, "keywords": {{ w.topics | join(sep=", ") | json_encode | safe }}{% endif %} } }{% if not loop.last %},{% endif %}{% endfor %}{% endif %}
+        ]
+      },
+      "encoding": { "@type": "MediaObject", "encodingFormat": "application/json", "contentUrl": {{ get_url(path="reading.json") | json_encode | safe }} }
+    }
+    {%- elif page is defined and page.path == "/search/" %},
+    {
+      "@type": "SearchResultsPage",
+      "@id": {{ id_webpage | json_encode | safe }},
+      "url": {{ here | json_encode | safe }},
+      "name": {{ page.title | json_encode | safe }},
+      "description": {{ page.description | default(value="") | json_encode | safe }},
+      "isPartOf": { "@id": {{ id_site | json_encode | safe }} }
+    },
+    {
+      "@type": "Dataset",
+      "@id": {{ id_dataset | json_encode | safe }},
+      "name": "raskell.io search index",
+      "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites, with where each link is cited.",
+      "url": {{ here | json_encode | safe }},
+      "creator": { "@id": {{ id_person | json_encode | safe }} },
+      "isAccessibleForFree": true,
+      {%- if config.extra.seijaku.license %}
+      "license": {{ config.extra.seijaku.license.url | json_encode | safe }},
+      {%- endif %}
+      "keywords": ["digital garden", "search index", "reading log", "citations", "bibliography"],
+      "distribution": [
+        { "@type": "DataDownload", "encodingFormat": "application/json", "name": "garden.json", "contentUrl": {{ get_url(path="garden.json") | json_encode | safe }} },
+        { "@type": "DataDownload", "encodingFormat": "application/json", "name": "links.json", "contentUrl": {{ get_url(path="links.json") | json_encode | safe }} }
+      ]
+    }
+    {%- elif taxonomy is defined and taxonomy.name == "categories" and term is defined %}{% set cdescs = config.extra.seijaku.categories_descriptions | default(value=false) %},
+    {
+      "@type": "CollectionPage",
+      "@id": {{ id_webpage | json_encode | safe }},
+      "url": {{ term.permalink | json_encode | safe }},
+      "name": {{ term.name | replace(from="-", to=" ") | title | json_encode | safe }},
+      {%- if cdescs and term.slug in cdescs %}
+      "description": {{ cdescs[term.slug] | json_encode | safe }},
+      {%- endif %}
+      "isPartOf": { "@id": {{ id_site | json_encode | safe }} },
+      "hasPart": [{% for a in term.pages %}{ "@type": {% if a.extra.review %}["BlogPosting", "Review"]{% else %}"BlogPosting"{% endif %}, "@id": {{ a.permalink ~ "#article" | json_encode | safe }}, "headline": {{ a.title | json_encode | safe }}, "url": {{ a.permalink | json_encode | safe }}, "datePublished": {{ a.date | date(format="%Y-%m-%dT00:00:00+00:00") | json_encode | safe }} }{% if not loop.last %}, {% endif %}{% endfor %}]
     }
     {%- elif page is defined and page.path == "/about/" %},
     {

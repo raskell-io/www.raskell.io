@@ -3,24 +3,98 @@
     {
       "anchor": "https://raskell.io/",
       "service-desc": [
-        { "href": "https://raskell.io/llms.txt", "type": "text/markdown", "title": "llms.txt: who writes here, every article and note, the topic vocabulary, projects" },
-        { "href": "https://raskell.io/llms-full.txt", "type": "text/markdown", "title": "Every article and note in full, as Markdown" },
-        { "href": "https://raskell.io/map.json", "type": "application/json", "title": "The site graph: pages, topics, series, projects, and their links" },
-        { "href": "https://raskell.io/sitemap.xml", "type": "application/xml", "title": "Sitemap" }
+        {
+          "href": "https://raskell.io/llms.txt",
+          "type": "text/markdown",
+          "title": "llms.txt: who writes here, every article, review, note, and talk, the reading log, topics, projects, and the sources cited most"
+        },
+        {
+          "href": "https://raskell.io/llms-full.txt",
+          "type": "text/markdown",
+          "title": "Every article, review, note, and talk in full, as Markdown, then the reading log"
+        },
+        {
+          "href": "https://raskell.io/map.json",
+          "type": "application/json",
+          "title": "The site graph: pages, talks, topics, series, categories, works from the reading log, projects, and their links"
+        },
+        {
+          "href": "https://raskell.io/garden.json",
+          "type": "application/json",
+          "title": "The search index: every article, review, note, talk, work, project, topic, and cited link"
+        },
+        {
+          "href": "https://raskell.io/links.json",
+          "type": "application/json",
+          "title": "Every external link the writing cites, with the pages citing it and whether it is a reference"
+        },
+        {
+          "href": "https://raskell.io/reading.json",
+          "type": "application/json",
+          "title": "The reading log: books and papers, status, dates, ratings, and reviews"
+        },
+        {
+          "href": "https://raskell.io/sitemap.xml",
+          "type": "application/xml",
+          "title": "Sitemap"
+        }
       ],
       "service-doc": [
-        { "href": "https://raskell.io/map/", "type": "text/html", "title": "The map, drawn" },
-        { "href": "https://raskell.io/tags/", "type": "text/html", "title": "The topic vocabulary" }
+        {
+          "href": "https://raskell.io/search/",
+          "type": "text/html",
+          "title": "Search everything; ?q= and ?type= work as URLs"
+        },
+        {
+          "href": "https://raskell.io/map/",
+          "type": "text/html",
+          "title": "The map, drawn"
+        },
+        {
+          "href": "https://raskell.io/reading/",
+          "type": "text/html",
+          "title": "The reading log"
+        },
+        {
+          "href": "https://raskell.io/tags/",
+          "type": "text/html",
+          "title": "The topic vocabulary"
+        }
       ],
       "service-meta": [
-        { "href": "https://raskell.io/.well-known/auth.md", "type": "text/markdown", "title": "Authentication policy (there is none)" }
+        {
+          "href": "https://raskell.io/.well-known/auth.md",
+          "type": "text/markdown",
+          "title": "Authentication policy (there is none)"
+        }
       ],
       "alternate": [
-        { "href": "https://raskell.io/rss.xml", "type": "application/rss+xml", "title": "RSS feed" },
-        { "href": "https://raskell.io/atom.xml", "type": "application/atom+xml", "title": "Atom feed" }
+        {
+          "href": "https://raskell.io/rss.xml",
+          "type": "application/rss+xml",
+          "title": "RSS feed"
+        },
+        {
+          "href": "https://raskell.io/atom.xml",
+          "type": "application/atom+xml",
+          "title": "Atom feed"
+        },
+        {
+          "href": "https://raskell.io/categories/reviews/rss.xml",
+          "type": "application/rss+xml",
+          "title": "Reviews"
+        },
+        {
+          "href": "https://raskell.io/talks/rss.xml",
+          "type": "application/rss+xml",
+          "title": "Talks"
+        }
       ],
       "author": [
-        { "href": "https://raskell.io/about/", "title": "Raffael Schneider" }
+        {
+          "href": "https://raskell.io/about/",
+          "title": "Raffael Schneider"
+        }
       ]
     }
   ]
