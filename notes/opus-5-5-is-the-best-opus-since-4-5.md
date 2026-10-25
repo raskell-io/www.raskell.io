@@ -4,7 +4,7 @@ url: https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/
 author: Raffael Schneider
 date: 2026-10-24
 description: "A month in, Claude Opus 5.5 feels like the next milestone after Opus 4.5: the same jump in what Claude Code can carry, now faster and cheaper per task."
-tags: [ai-engineering, inference, economics]
+tags: [ai-engineering, inference, economics, augmentation]
 ---
 
 # Opus 5.5 is the best Opus since 4.5

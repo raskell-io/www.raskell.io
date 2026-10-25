@@ -199,6 +199,9 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Geography (`geography`): Places, terrain, borders, and spatial data, and how their relationships change over time.
 - Machine learning (`machine-learning`): How models learn from data: the mathematics, the training methods, and what the results can and cannot do.
 - Life sciences (`life-sciences`): Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.
+- Philosophy (`philosophy`): Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.
+- Literature (`literature`): Fiction and writing about fiction: novels read for their own sake, and the forms they take.
+- Mathematics (`mathematics`): The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.
 - Simulation (`simulation`) [within Complex systems]: Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.
 - Games (`games`): Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.
 
@@ -232,6 +235,36 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Privacy (`privacy`) [within Applied security, Sovereignty]: Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place.
 - Data sovereignty (`data-sovereignty`) [within Sovereignty, Privacy]: Control over one's own data: pods, portability, and the right to choose the software and the agent that reads it; the personal counterpart of national sovereignty.
 - Attention economy (`attention-economy`) [within Economics, The open web]: Platforms that sell attention and optimise for engagement, what that does to the web and to discourse, and the intention economy proposed in its place.
+- Philosophy of science (`philosophy-of-science`) [within Philosophy, History of science]: How science produces knowledge, what counts as evidence, and where its methods and claims reach their limits.
+- Ethics (`ethics`) [within Philosophy]: Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.
+- Religion (`religion`) [within Philosophy, History]: Faith, doubt, and the institutions and cities built around belief, as history and as argument.
+- Maximalist novels (`maximalist-novels`) [within Literature]: Very long, encyclopedic novels that try to hold a whole world: Infinite Jest, The Books of Jacob, and the studies of the form.
+- Intelligence (`intelligence`) [within Machine learning, Neuroscience]: What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.
+- Risk (`risk`) [within Reliability, Economics]: Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.
+- Existential risk (`existential-risk`) [within Risk, Policy]: Technologies that could end or permanently cripple civilisation, from nuclear weapons to misaligned AI, and how people have tried to contain them.
+- AI alignment (`ai-alignment`) [within Machine learning, Existential risk]: Making AI systems pursue what their builders and users actually intend, and what happens when they do not.
+- Legibility (`legibility`) [within Complex systems, Metrics, Observability]: Making a complex system readable from above: what the measure captures, what it erases, and what breaks when the map replaces the territory.
+- Research labs (`research-labs`) [within History of science, History of technology]: The institutions where discovery happens and how they are funded and run: CERN, Bell Labs, ARPA, Los Alamos, DeepMind, and the labs behind modern medicine.
+- Medicine (`medicine`) [within Life sciences]: How treatments are discovered, tested, and brought to patients, from antisepsis and sulfa drugs to modern drug design.
+- Compilers (`compilers`) [within Programming languages]: Turning programs into other programs: parsers, interpreters, type checkers, and code generation.
+- Networking (`networking`) [within Distributed systems, The open web]: How machines talk: packets, protocols, sockets, and the networks from ARPANET to the web that carry them.
+- Geopolitics (`geopolitics`) [within History, Geography]: How geography, empires, and arms shape the balance of power between states and regions, as history.
+- Social reform (`social-reform`) [within Economics, Policy]: Plans to redesign society or the economy, from nineteenth-century utopias to high-modernist states and basic income, and what happened when they met people.
+- World history (`world-history`) [within History, Geography]: History told at the scale of continents and millennia: why societies diverged, and how the world came to look the way it does.
+- Emergence (`emergence`) [within Complex systems]: Order nobody designed: reefs, the early web, neuron cultures, and simulated worlds where simple rules add up to behaviour no single part has.
+- High modernism (`high-modernism`) [within Legibility, Social reform]: The confidence that society can be planned from above by experts: Le Corbusier's rational city, scientific forestry, and the schemes that failed when they met real life.
+- Hubris (`hubris`) [within Risk, Ethics]: When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand.
+- The commons (`commons`) [within The open web, Economics]: Resources held in common and the rules that keep them so: common land, open protocols, open data, and the web before the platforms.
+- Intellectual property (`intellectual-property`) [within Policy, Economics]: Patents, copyright, and licences: who owns an invention or a text, from the web given to the public domain to books scraped for training data.
+- Provenance (`provenance`) [within Training data, Applied security]: Where something came from and who vouches for it: signed media, rights-clear training data, and artifacts that carry their own history.
+- External memory (`external-memory`) [within Knowledge management, Context engineering]: Notes, links, and stores that remember for us: second brains, the web as a shared memory, and what agents write down for their next session.
+- Augmentation (`augmentation`) [within AI-assisted engineering, Intelligence]: Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents.
+- Technology races (`technology-races`) [within Geopolitics, Existential risk]: Powers racing to build a technology first, from the bomb and its deterrence to frontier AI and the data it needs.
+- Scientific revolutions (`scientific-revolutions`) [within Philosophy of science, History of science]: Moments when a field's picture of the world changes: the invention of modern science, molecular biology, antisepsis, and the first antibiotics.
+- Cities (`cities`) [within Geography]: How cities are planned and how they actually grow: Jerusalem over three thousand years, Brasilia drawn on paper, and the rational city the web was designed against.
+- Languages and translation (`languages`) [within Literature]: Human languages and moving meaning between them: translated novels, learning to read Chinese, Japanese, and Hebrew, and Europe's multilingual text.
+- Europe (`europe`) [within Sovereignty, Geography]: Europe's place in technology and history: where the web was invented, what it builds and gives away, and the data and capabilities it still holds.
+- Switzerland (`switzerland`) [within Europe]: The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Swiss civic projects.
 
 ### Technologies
 

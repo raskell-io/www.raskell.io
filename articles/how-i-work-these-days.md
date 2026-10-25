@@ -5,7 +5,7 @@ author: Raffael Schneider
 date: 2026-03-15
 updated: 2026-03-15
 description: "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right."
-tags: [ai-engineering, developer-tooling, rust]
+tags: [ai-engineering, developer-tooling, rust, augmentation]
 ---
 
 # How I Work These Days

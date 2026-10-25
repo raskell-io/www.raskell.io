@@ -4,7 +4,7 @@ url: https://raskell.io/articles/the-proof-you-only-have-to-write-once/
 author: Raffael Schneider
 date: 2026-06-19
 description: "Generation is cheap, so verification is the bottleneck — and we throw the verification away every time. What if a proof, once written, could be named, shared, and vouched for? A content-addressed commons for verified Haskell, and the move I left for after the semantic-artifact trilogy."
-tags: [formal-methods, programming-languages, ai-engineering, oss, haskell]
+tags: [formal-methods, programming-languages, ai-engineering, oss, haskell, compilers]
 ---
 
 # The Proof You Only Have to Write Once

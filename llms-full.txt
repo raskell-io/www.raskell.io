@@ -11,7 +11,7 @@ url: https://raskell.io/articles/the-web-was-the-training-set/
 author: Raffael Schneider
 date: 2026-10-24
 description: "Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply."
-tags: [history-of-technology, hypertext, open-standards, training-data, decentralisation, data-sovereignty, agents]
+tags: [history-of-technology, hypertext, training-data, data-sovereignty, research-labs, intellectual-property, europe]
 categories: [reviews]
 review_of: "This Is for Everyone"
 review_of_author: "Tim Berners-Lee"
@@ -105,7 +105,7 @@ url: https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/
 author: Raffael Schneider
 date: 2026-10-24
 description: "A month in, Claude Opus 5.5 feels like the next milestone after Opus 4.5: the same jump in what Claude Code can carry, now faster and cheaper per task."
-tags: [ai-engineering, inference, economics]
+tags: [ai-engineering, inference, economics, augmentation]
 ---
 
 # Opus 5.5 is the best Opus since 4.5
@@ -373,7 +373,7 @@ url: https://raskell.io/articles/this-site-is-becoming-a-map/
 author: Raffael Schneider
 date: 2026-10-15
 description: "A blog shows what I wrote last. The new map on raskell.io shows what I keep coming back to, and it is the start of a public second brain."
-tags: [meta, knowledge-management, hypertext, open-web, zola]
+tags: [meta, knowledge-management, hypertext, open-web, zola, external-memory]
 ---
 
 # This Site Is Becoming a Map
@@ -937,7 +937,7 @@ url: https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on
 author: Raffael Schneider
 date: 2026-06-30
 description: "Frontier AI is running short on public text, not compute. Europe's edge is the high-quality data it never put online. Capturing it needs coordination."
-tags: [sovereignty, training-data, open-data, policy, economics]
+tags: [training-data, open-data, europe, intellectual-property, provenance, languages, technology-races]
 ---
 
 # The Bottleneck Is Data, and Europe Is Sitting on It
@@ -1171,7 +1171,7 @@ url: https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/
 author: Raffael Schneider
 date: 2026-06-28
 description: "An MIT thesis argues brain emulation has crossed into engineering. Read as infrastructure, the numbers describe a workload your AI cluster was not built for."
-tags: [distributed-systems, inference, gpus]
+tags: [distributed-systems, inference, gpus, neuroscience, intelligence, simulation]
 ---
 
 # Brain Emulation, Read as an Infrastructure Problem
@@ -1282,7 +1282,7 @@ url: https://raskell.io/articles/memory-is-a-write-path/
 author: Raffael Schneider
 date: 2026-06-23
 description: "Retrieval reads context the project authored. Memory is the agent writing context for its own future sessions, and the write is the part that is dangerous. Why session memory comes free from the transcript, why cross-session memory needs a separate write surface, and how to let an agent remember without letting it corrupt its own ground truth. Part six of The Agent Platform Handbook."
-tags: [agents, context-engineering, knowledge-management, typescript]
+tags: [agents, context-engineering, knowledge-management, typescript, external-memory]
 series: the-agent-platform-handbook
 ---
 
@@ -1589,7 +1589,7 @@ url: https://raskell.io/articles/the-proof-you-only-have-to-write-once/
 author: Raffael Schneider
 date: 2026-06-19
 description: "Generation is cheap, so verification is the bottleneck — and we throw the verification away every time. What if a proof, once written, could be named, shared, and vouched for? A content-addressed commons for verified Haskell, and the move I left for after the semantic-artifact trilogy."
-tags: [formal-methods, programming-languages, ai-engineering, oss, haskell]
+tags: [formal-methods, programming-languages, ai-engineering, oss, haskell, compilers]
 ---
 
 # The Proof You Only Have to Write Once
@@ -2084,7 +2084,7 @@ url: https://raskell.io/articles/context-is-the-product/
 author: Raffael Schneider
 date: 2026-06-13
 description: "Models are commodities. Context is not. The sources of context an agent draws on, why retrieval alone is not enough, and a minimal .AGENTS/ convention that loads context from disk into the same harness we have been building. Part four of The Agent Platform Handbook."
-tags: [agents, context-engineering, economics, typescript]
+tags: [agents, context-engineering, economics, typescript, external-memory]
 series: the-agent-platform-handbook
 ---
 
@@ -2554,6 +2554,7 @@ url: https://raskell.io/talks/iat-13-basel/
 author: Raffael Schneider
 date: 2026-06-10
 description: "Slide deck for IT's ABOUT TECH #13 in Basel. A 15-minute story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time."
+tags: [ai-engineering, augmentation, switzerland]
 event: "IT's ABOUT TECH #13"
 venue: "FHNW Aula, Basel"
 ---
@@ -3827,7 +3828,7 @@ url: https://raskell.io/articles/the-field-exists-now/
 author: Raffael Schneider
 date: 2026-05-22
 description: "Alasdair Allan's agentlanguages.dev catalogue turns AI-oriented programming languages from a loose set of experiments into a field with camps, disagreements, and testable claims."
-tags: [programming-languages, ai-engineering, formal-methods, haskell]
+tags: [programming-languages, ai-engineering, formal-methods, haskell, compilers]
 ---
 
 # The Field Exists Now
@@ -3975,7 +3976,7 @@ url: https://raskell.io/articles/semantic-artifacts-and-meaning-engines/
 author: Raffael Schneider
 date: 2026-05-07
 description: "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target."
-tags: [ai-engineering, programming-languages, formal-methods, haskell]
+tags: [ai-engineering, programming-languages, formal-methods, haskell, compilers, provenance]
 ---
 
 # Source Code Is the New Assembly
@@ -4367,7 +4368,7 @@ url: https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/
 author: Raffael Schneider
 date: 2026-05-01
 description: "Switzerland tops the Global Innovation Index for the fifteenth year running. As an engineer, that should make you suspicious of the metric, not proud of the country."
-tags: [metrics, policy, sovereignty, economics]
+tags: [metrics, policy, sovereignty, economics, switzerland, intellectual-property]
 ---
 
 # Patents Per Capita Is a Vanity Metric
@@ -5112,7 +5113,7 @@ url: https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-manageme
 author: Raffael Schneider
 date: 2026-04-16
 description: "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway."
-tags: [agents, ai-engineering, economics]
+tags: [agents, ai-engineering, economics, augmentation]
 ---
 
 # What Sixteen AI Agents Taught Me About Management
@@ -5794,7 +5795,7 @@ url: https://raskell.io/articles/what-programming-languages-become-when-ai-write
 author: Raffael Schneider
 date: 2026-04-11
 description: "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell."
-tags: [ai-engineering, programming-languages, formal-methods, haskell]
+tags: [ai-engineering, programming-languages, formal-methods, haskell, compilers]
 ---
 
 # The Last Programming Language Might Not Be for Humans
@@ -6501,7 +6502,7 @@ author: Raffael Schneider
 date: 2026-03-15
 updated: 2026-03-15
 description: "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right."
-tags: [ai-engineering, developer-tooling, rust]
+tags: [ai-engineering, developer-tooling, rust, augmentation]
 ---
 
 # How I Work These Days
@@ -7820,7 +7821,7 @@ author: Raffael Schneider
 date: 2025-12-31
 updated: 2026-03-08
 description: "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself."
-tags: [open-web, decentralisation, attention-economy, privacy, open-standards, edge-systems, meta]
+tags: [decentralisation, attention-economy, open-standards, edge-systems, meta, commons, emergence]
 ---
 
 # Looking back on 2025
@@ -8226,7 +8227,7 @@ author: Raffael Schneider
 date: 2023-03-06
 updated: 2026-03-09
 description: "How Haskell shaped the way I think about building systems, and why I am still building Haskell tooling years after writing my first monad."
-tags: [programming-languages, haskell, developer-tooling]
+tags: [programming-languages, haskell, developer-tooling, compilers]
 ---
 
 # All beginning is Haskell

@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Raskell - augmentation</title>
+    <subtitle>Notes on agent platforms, platform automation, edge infrastructure, and applied security. Building automation-first platforms that survive production reality.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/augmentation/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://raskell.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-10-24T00:00:00+00:00</updated>
+    <id>https://raskell.io/tags/augmentation/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Opus 5.5 is the best Opus since 4.5</title>
+        <published>2026-10-24T00:00:00+00:00</published>
+        <updated>2026-10-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/"/>
+        <id>https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/">&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;Opus 4.5&lt;&#x2F;th&gt;&lt;th&gt;Opus 5.5&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Released&lt;&#x2F;td&gt;&lt;td&gt;24 November 2025&lt;&#x2F;td&gt;&lt;td&gt;22 September 2026&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Price per million tokens, input &#x2F; output&lt;&#x2F;td&gt;&lt;td&gt;$5 &#x2F; $25&lt;&#x2F;td&gt;&lt;td&gt;$4 &#x2F; $20&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Fast mode&lt;&#x2F;td&gt;&lt;td&gt;not offered&lt;&#x2F;td&gt;&lt;td&gt;$8 &#x2F; $40&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Context window&lt;&#x2F;td&gt;&lt;td&gt;200K&lt;&#x2F;td&gt;&lt;td&gt;1M&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Model ID&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;claude-opus-4-5-20251101&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;claude-opus-5-5&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Opus 4.5 was the moment Claude Code started working the way it was meant to. I had paid for Claude Code since May 2025 without being convinced; over the 2025 Christmas break, with Opus 4.5, it carried whole projects, and I built &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt; with it. I wrote that up in &lt;a href=&quot;&#x2F;articles&#x2F;how-i-work-these-days&#x2F;&quot;&gt;How I Work These Days&lt;&#x2F;a&gt; and &lt;a href=&quot;&#x2F;articles&#x2F;what-sixteen-ai-agents-taught-me-about-management&#x2F;&quot;&gt;What Sixteen AI Agents Taught Me About Management&lt;&#x2F;a&gt;, and it is the opening of my &lt;a href=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;&quot;&gt;Basel talk&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Opus 5.5 is the first release since then that felt like the same kind of step rather than an increment.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It holds the thread.&lt;&#x2F;strong&gt; Long sessions that span a theme, a site, CI, and several data files stay coherent. The search across this site, the reading log, and the agent-readable files behind them were built in sessions with it.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Speed changes how I work with it.&lt;&#x2F;strong&gt; Fast enough that I stay in the loop instead of switching away while it runs. Fast mode exists for when that matters more than the bill.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;The cost moved the right way.&lt;&#x2F;strong&gt; A cheaper rate card than 4.5, and Anthropic puts it at about 40 per cent cheaper to run than Opus 5 on typical work. The rate card is half the story; fewer wasted turns is the other half, the same argument I made in &lt;a href=&quot;&#x2F;articles&#x2F;the-economics-of-inference&#x2F;&quot;&gt;The Economics of Inference&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Opus is the default again.&lt;&#x2F;strong&gt; For most of my work I no longer pick a smaller model to save money, which was the point of 4.5 too.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;What I do not know yet: whether it holds up on the hardest, longest-running tasks, where the gap to a larger model would show first. A month is not a benchmark.&lt;&#x2F;p&gt;
+&lt;p&gt;Sources: &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.anthropic.com&#x2F;news&#x2F;claude-opus-4-5&quot;&gt;Introducing Claude Opus 4.5&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.anthropic.com&#x2F;claude-opus-5-5&quot;&gt;Introducing Claude Opus 5.5&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;platform.claude.com&#x2F;docs&#x2F;en&#x2F;models&#x2F;opus-5-5&#x2F;overview&quot;&gt;Opus 5.5 model overview&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>I Stopped Writing Most of My Code</title>
+        <published>2026-06-10T00:00:00+00:00</published>
+        <updated>2026-06-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/talks/iat-13-basel/"/>
+        <id>https://raskell.io/talks/iat-13-basel/</id>
+        
+        <content type="html" xml:base="https://raskell.io/talks/iat-13-basel/">&lt;section class=&quot;slide slide--title&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;IT&#x27;s ABOUT TECH #13 · Basel · 10 June 2026&lt;&#x2F;p&gt;
+    &lt;h1 class=&quot;slide__title slide__title--xl&quot;&gt;I Stopped Writing Most of My Code&lt;&#x2F;h1&gt;
+    &lt;p class=&quot;slide__sub&quot;&gt;The year my backlog came alive.&lt;&#x2F;p&gt;
+    &lt;p class=&quot;slide__id&quot;&gt;
+      &lt;span class=&quot;slide__id-item&quot;&gt;
+        &lt;img class=&quot;slide__avatar&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;raffael-portrait.png&quot; alt=&quot;Raffael Schneider&quot; width=&quot;64&quot; height=&quot;64&quot;&gt;
+        &lt;span class=&quot;slide__id-text&quot;&gt;
+          &lt;span class=&quot;slide__id-name&quot;&gt;Raffael Schneider&lt;&#x2F;span&gt;
+          &lt;span class=&quot;slide__id-role&quot;&gt;Enterprise Solution Architect&lt;&#x2F;span&gt;
+          &lt;span class=&quot;slide__id-org&quot;&gt;AI Platforms&lt;&#x2F;span&gt;
+        &lt;&#x2F;span&gt;
+      &lt;&#x2F;span&gt;
+      &lt;span class=&quot;slide__id-sep&quot; aria-hidden=&quot;true&quot;&gt;·&lt;&#x2F;span&gt;
+      &lt;span class=&quot;slide__id-item slide__id-item--brand&quot;&gt;
+        &lt;img class=&quot;slide__avatar slide__avatar--brand&quot; src=&quot;&#x2F;raskell-mascot.avif&quot; alt=&quot;Raskell tanuki&quot; width=&quot;64&quot; height=&quot;64&quot;&gt;
+        &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&quot;&gt;raskell.io&lt;&#x2F;a&gt;
+      &lt;&#x2F;span&gt;
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;01&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;It came down to three subscriptions.&lt;&#x2F;h2&gt;
+    &lt;p class=&quot;slide__subline&quot;&gt;December 2022 → November&amp;nbsp;2025&lt;&#x2F;p&gt;
+    &lt;ol class=&quot;slide__timeline&quot;&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;December 2022&lt;&#x2F;span&gt;
+        &lt;p&gt;&lt;strong&gt;OpenAI.&lt;&#x2F;strong&gt; Subscription almost day one. Chat-first AI joins my daily workflow and stays there.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;Then Zed&lt;&#x2F;span&gt;
+        &lt;p&gt;A Rust-built editor that bet on AI very early. The best LLM integrations of its era. My gateway to AI-assisted development while Cursor, Windsurf, and Copilot were finding their feet.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;May 2025&lt;&#x2F;span&gt;
+        &lt;p&gt;&lt;strong&gt;Claude Code drops.&lt;&#x2F;strong&gt; First TUI-first coding agent. I take the $20 Anthropic subscription the day it ships. Hooked.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;November 2025&lt;&#x2F;span&gt;
+        &lt;p&gt;&lt;strong&gt;Opus 4.5 ships.&lt;&#x2F;strong&gt; I upgrade to the $200 Max 20× plan right before Christmas vacation. Three weeks of free time meets a step-change in capability.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ol&gt;
+    &lt;p class=&quot;slide__kicker&quot;&gt;I am an engineer. I know how to build things.&lt;&#x2F;p&gt;
+    &lt;p class=&quot;slide__kicker slide__kicker--strong&quot;&gt;The bottleneck was never ideas. The bottleneck was always time.&lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;02&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;Then something changed.&lt;&#x2F;h2&gt;
+    &lt;div class=&quot;slide__stack&quot;&gt;
+      &lt;div class=&quot;slide__pill&quot;&gt;
+        &lt;img class=&quot;slide__pill-icon slide__pill-icon--brand&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;claude.svg&quot; alt=&quot;&quot; width=&quot;32&quot; height=&quot;32&quot;&gt;
+        Claude Opus 4.5
+      &lt;&#x2F;div&gt;
+      &lt;div class=&quot;slide__pill&quot;&gt;
+        &lt;img class=&quot;slide__pill-icon slide__pill-icon--brand&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;claude-code.png&quot; alt=&quot;&quot; width=&quot;32&quot; height=&quot;32&quot;&gt;
+        Claude Code
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    &lt;p class=&quot;slide__quote&quot;&gt;
+      I expected a better autocomplete.&lt;br&gt;
+      What I got was something closer to a junior engineer that never sleeps.
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;03&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;The new workflow&lt;&#x2F;h2&gt;
+    &lt;div class=&quot;slide__compare&quot;&gt;
+      &lt;div class=&quot;slide__compare-col&quot;&gt;
+        &lt;p class=&quot;slide__compare-label&quot;&gt;Before&lt;&#x2F;p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Decide what to build&lt;&#x2F;li&gt;
+          &lt;li class=&quot;is-heavy&quot;&gt;Translate thoughts into syntax&lt;&#x2F;li&gt;
+          &lt;li&gt;Review and ship&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;div&gt;
+      &lt;div class=&quot;slide__compare-col&quot;&gt;
+        &lt;p class=&quot;slide__compare-label&quot;&gt;After&lt;&#x2F;p&gt;
+        &lt;ul&gt;
+          &lt;li class=&quot;is-heavy&quot;&gt;Decide what to build&lt;&#x2F;li&gt;
+          &lt;li&gt;Translate thoughts into syntax&lt;&#x2F;li&gt;
+          &lt;li class=&quot;is-heavy&quot;&gt;Decide whether the result is acceptable&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    &lt;p class=&quot;slide__kicker slide__kicker--strong&quot;&gt;
+      You no longer spend most of your time translating thoughts into syntax.
+      You spend most of your time deciding.
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;04&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;What I actually built&lt;&#x2F;h2&gt;
+    &lt;div class=&quot;slide__grid slide__grid--icons&quot;&gt;
+      &lt;a class=&quot;slide__card slide__card--linked&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+        &lt;img class=&quot;slide__card-icon&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;archipelag.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; loading=&quot;lazy&quot;&gt;
+        &lt;div&gt;
+          &lt;h3&gt;Archipelag.io&lt;&#x2F;h3&gt;
+          &lt;p&gt;Distributed AI compute. Inference across idle GPUs and mining rigs.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;a&gt;
+      &lt;a class=&quot;slide__card slide__card--linked&quot; href=&quot;https:&#x2F;&#x2F;cyanea.bio&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+        &lt;img class=&quot;slide__card-icon&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;cyanea.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; loading=&quot;lazy&quot;&gt;
+        &lt;div&gt;
+          &lt;h3&gt;Cyanea&lt;&#x2F;h3&gt;
+          &lt;p&gt;Open community platform for life-science research.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;a&gt;
+      &lt;a class=&quot;slide__card slide__card--linked&quot; href=&quot;https:&#x2F;&#x2F;humankind.plus&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+        &lt;img class=&quot;slide__card-icon&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;humankind.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; loading=&quot;lazy&quot;&gt;
+        &lt;div&gt;
+          &lt;h3&gt;Humankind&lt;&#x2F;h3&gt;
+          &lt;p&gt;A long-running creative initiative, finally with a home of its own.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;a&gt;
+      &lt;a class=&quot;slide__card slide__card--linked&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+        &lt;img class=&quot;slide__card-icon&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;arcanist.svg&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; loading=&quot;lazy&quot;&gt;
+        &lt;div&gt;
+          &lt;h3&gt;Arcanist.sh&lt;&#x2F;h3&gt;
+          &lt;p&gt;Haskell ecosystem in Rust. Home of &lt;strong&gt;hx&lt;&#x2F;strong&gt; and the &lt;strong&gt;Basel Haskell Compiler&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;a&gt;
+      &lt;a class=&quot;slide__card slide__card--linked&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+        &lt;img class=&quot;slide__card-icon&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;zentinel.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; loading=&quot;lazy&quot;&gt;
+        &lt;div&gt;
+          &lt;h3&gt;Zentinel&lt;&#x2F;h3&gt;
+          &lt;p&gt;Security-first reverse proxy on Pingora.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;a&gt;
+      &lt;a class=&quot;slide__card slide__card--linked&quot; href=&quot;https:&#x2F;&#x2F;die-zukunft.ch&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+        &lt;img class=&quot;slide__card-icon&quot; src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;die-zukunft.png&quot; alt=&quot;&quot; width=&quot;48&quot; height=&quot;48&quot; loading=&quot;lazy&quot;&gt;
+        &lt;div&gt;
+          &lt;h3&gt;Die Zukunft&lt;&#x2F;h3&gt;
+          &lt;p&gt;A Swiss political party. Past left and right, into UBI, digital sovereignty, and a serious technology agenda.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+      &lt;&#x2F;a&gt;
+    &lt;&#x2F;div&gt;
+    &lt;p class=&quot;slide__minor-label&quot;&gt;Experiments and tooling&lt;&#x2F;p&gt;
+    &lt;ul class=&quot;slide__minor-chips&quot;&gt;
+      &lt;li&gt;&lt;img src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;terrarium.png&quot; alt=&quot;&quot; width=&quot;20&quot; height=&quot;20&quot;&gt; Terrarium&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;svg class=&quot;slide__minor-icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.18-.02-2.14-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.76 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z&quot;&#x2F;&gt;&lt;&#x2F;svg&gt; Shiioo&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;svg class=&quot;slide__minor-icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.18-.02-2.14-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.76 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z&quot;&#x2F;&gt;&lt;&#x2F;svg&gt; Conflux&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;svg class=&quot;slide__minor-icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.18-.02-2.14-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.76 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z&quot;&#x2F;&gt;&lt;&#x2F;svg&gt; Refrakt&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;img src=&quot;&#x2F;talks&#x2F;iat-13-basel&#x2F;kurumi.png&quot; alt=&quot;&quot; width=&quot;20&quot; height=&quot;20&quot;&gt; Kurumi&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;svg class=&quot;slide__minor-icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.18-.02-2.14-3.2.69-3.87-1.36-3.87-1.36-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.76 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z&quot;&#x2F;&gt;&lt;&#x2F;svg&gt; Vela&lt;&#x2F;li&gt;
+      &lt;li&gt;…and the daily-driver utilities&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;p class=&quot;slide__kicker slide__kicker--strong&quot;&gt;
+      None of these were started because AI generated ideas.
+      AI allowed existing ideas to escape my notebook.
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;05&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;Where the human still steers.&lt;&#x2F;h2&gt;
+    &lt;ul class=&quot;slide__list&quot;&gt;
+      &lt;li&gt;Requirements&lt;&#x2F;li&gt;
+      &lt;li&gt;Architecture tradeoffs&lt;&#x2F;li&gt;
+      &lt;li&gt;Long-term maintainability&lt;&#x2F;li&gt;
+      &lt;li&gt;Taste&lt;&#x2F;li&gt;
+      &lt;li&gt;Product decisions&lt;&#x2F;li&gt;
+      &lt;li&gt;Knowing when not to build something&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;p class=&quot;slide__kicker slide__kicker--strong&quot;&gt;
+      The human did not disappear. The human moved up the stack.
+    &lt;&#x2F;p&gt;
+    &lt;svg class=&quot;slide__diagram&quot; viewBox=&quot;0 0 1200 320&quot; xmlns=&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot; role=&quot;img&quot; aria-labelledby=&quot;diag05-title&quot;&gt;
+      &lt;title id=&quot;diag05-title&quot;&gt;Before: the human reasoned about syntax; the compiler enforced it. Now: the human reasons about meaning; the coding agent interprets it.&lt;&#x2F;title&gt;
+      &lt;defs&gt;
+        &lt;marker id=&quot;diag05-arrow&quot; viewBox=&quot;0 0 10 10&quot; refX=&quot;8&quot; refY=&quot;5&quot; markerWidth=&quot;7&quot; markerHeight=&quot;7&quot; orient=&quot;auto&quot;&gt;
+          &lt;path d=&quot;M0 0 L10 5 L0 10 z&quot; fill=&quot;#a8acba&quot;&#x2F;&gt;
+        &lt;&#x2F;marker&gt;
+      &lt;&#x2F;defs&gt;
+      &lt;text x=&quot;22&quot; y=&quot;89&quot; class=&quot;slide__diagram-row-label&quot;&gt;Before&lt;&#x2F;text&gt;
+      &lt;g class=&quot;slide__diagram-node&quot;&gt;
+        &lt;rect x=&quot;140&quot; y=&quot;55&quot; width=&quot;240&quot; height=&quot;70&quot; rx=&quot;14&quot;&#x2F;&gt;
+        &lt;text x=&quot;260&quot; y=&quot;86&quot;&gt;Human&lt;&#x2F;text&gt;
+        &lt;text x=&quot;260&quot; y=&quot;108&quot; class=&quot;slide__diagram-node-sub&quot;&gt;reasons about&lt;&#x2F;text&gt;
+      &lt;&#x2F;g&gt;
+      &lt;line x1=&quot;395&quot; y1=&quot;90&quot; x2=&quot;465&quot; y2=&quot;90&quot; class=&quot;slide__diagram-arrow&quot; marker-end=&quot;url(#diag05-arrow)&quot;&#x2F;&gt;
+      &lt;g class=&quot;slide__diagram-node slide__diagram-node--soft&quot;&gt;
+        &lt;rect x=&quot;480&quot; y=&quot;55&quot; width=&quot;240&quot; height=&quot;70&quot; rx=&quot;14&quot;&#x2F;&gt;
+        &lt;text x=&quot;600&quot; y=&quot;86&quot;&gt;Syntax&lt;&#x2F;text&gt;
+        &lt;text x=&quot;600&quot; y=&quot;108&quot; class=&quot;slide__diagram-node-sub&quot;&gt;enforced by&lt;&#x2F;text&gt;
+      &lt;&#x2F;g&gt;
+      &lt;line x1=&quot;735&quot; y1=&quot;90&quot; x2=&quot;805&quot; y2=&quot;90&quot; class=&quot;slide__diagram-arrow&quot; marker-end=&quot;url(#diag05-arrow)&quot;&#x2F;&gt;
+      &lt;g class=&quot;slide__diagram-node&quot;&gt;
+        &lt;rect x=&quot;820&quot; y=&quot;55&quot; width=&quot;240&quot; height=&quot;70&quot; rx=&quot;14&quot;&#x2F;&gt;
+        &lt;text x=&quot;940&quot; y=&quot;86&quot;&gt;Compiler&lt;&#x2F;text&gt;
+        &lt;text x=&quot;940&quot; y=&quot;108&quot; class=&quot;slide__diagram-node-sub&quot;&gt;that makes it work&lt;&#x2F;text&gt;
+      &lt;&#x2F;g&gt;
+      &lt;text x=&quot;22&quot; y=&quot;239&quot; class=&quot;slide__diagram-row-label&quot;&gt;Now&lt;&#x2F;text&gt;
+      &lt;g class=&quot;slide__diagram-node&quot;&gt;
+        &lt;rect x=&quot;140&quot; y=&quot;205&quot; width=&quot;240&quot; height=&quot;70&quot; rx=&quot;14&quot;&#x2F;&gt;
+        &lt;text x=&quot;260&quot; y=&quot;236&quot;&gt;Human&lt;&#x2F;text&gt;
+        &lt;text x=&quot;260&quot; y=&quot;258&quot; class=&quot;slide__diagram-node-sub&quot;&gt;reasons about&lt;&#x2F;text&gt;
+      &lt;&#x2F;g&gt;
+      &lt;line x1=&quot;395&quot; y1=&quot;240&quot; x2=&quot;465&quot; y2=&quot;240&quot; class=&quot;slide__diagram-arrow&quot; marker-end=&quot;url(#diag05-arrow)&quot;&#x2F;&gt;
+      &lt;g class=&quot;slide__diagram-node slide__diagram-node--accent&quot;&gt;
+        &lt;rect x=&quot;480&quot; y=&quot;205&quot; width=&quot;240&quot; height=&quot;70&quot; rx=&quot;14&quot;&#x2F;&gt;
+        &lt;text x=&quot;600&quot; y=&quot;236&quot;&gt;Meaning&lt;&#x2F;text&gt;
+        &lt;text x=&quot;600&quot; y=&quot;258&quot; class=&quot;slide__diagram-node-sub&quot;&gt;interpreted by&lt;&#x2F;text&gt;
+      &lt;&#x2F;g&gt;
+      &lt;line x1=&quot;735&quot; y1=&quot;240&quot; x2=&quot;805&quot; y2=&quot;240&quot; class=&quot;slide__diagram-arrow&quot; marker-end=&quot;url(#diag05-arrow)&quot;&#x2F;&gt;
+      &lt;g class=&quot;slide__diagram-node slide__diagram-node--accent&quot;&gt;
+        &lt;rect x=&quot;820&quot; y=&quot;205&quot; width=&quot;240&quot; height=&quot;70&quot; rx=&quot;14&quot;&#x2F;&gt;
+        &lt;text x=&quot;940&quot; y=&quot;236&quot;&gt;Coding Agent&lt;&#x2F;text&gt;
+        &lt;text x=&quot;940&quot; y=&quot;258&quot; class=&quot;slide__diagram-node-sub&quot;&gt;that makes it work&lt;&#x2F;text&gt;
+      &lt;&#x2F;g&gt;
+    &lt;&#x2F;svg&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide slide--closing&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;06&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;The unexpected consequence&lt;&#x2F;h2&gt;
+    &lt;p class=&quot;slide__quote slide__quote--xl&quot;&gt;
+      I thought AI would make me write software faster.&lt;br&gt;
+      Instead, it made me start projects I would never have started before.
+    &lt;&#x2F;p&gt;
+    &lt;p class=&quot;slide__kicker slide__kicker--strong&quot;&gt;
+      The biggest change was not productivity. The biggest change was willingness.
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;07&lt;&#x2F;p&gt;
+    &lt;h2 class=&quot;slide__title&quot;&gt;What happened next&lt;&#x2F;h2&gt;
+    &lt;ol class=&quot;slide__timeline&quot;&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;March 2026 · San Francisco&lt;&#x2F;span&gt;
+        &lt;p&gt;Co-presented an AI Web Security tool at &lt;strong&gt;RSAC 2026&lt;&#x2F;strong&gt; with Milan Duric. Same trip: a private downtown dinner hosted by &lt;strong&gt;Maverick Capital&lt;&#x2F;strong&gt;, room of AI Platform leaders.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;Spring 2026&lt;&#x2F;span&gt;
+        &lt;p&gt;Shipped a &lt;strong&gt;Temporal-based self-service&lt;&#x2F;strong&gt; that lets users order web-service resources while AI quietly handles the operational work. Role at the time: Senior Platform Engineer &amp; Solution Architect, Web Security &#x2F; Application Delivery.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;Two weeks ago&lt;&#x2F;span&gt;
+        &lt;p&gt;New role: &lt;strong&gt;Enterprise Solution Architect&lt;&#x2F;strong&gt; for Group-wide AI Platform and AI-assisted development.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;
+        &lt;span class=&quot;slide__timeline-date&quot;&gt;Last week&lt;&#x2F;span&gt;
+        &lt;p&gt;Joined &lt;a href=&quot;https:&#x2F;&#x2F;thejfloor.com&#x2F;&quot;&gt;&lt;strong&gt;J floor&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;. More talks already on the calendar.&lt;&#x2F;p&gt;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ol&gt;
+    &lt;p class=&quot;slide__kicker slide__kicker--strong&quot;&gt;
+      None of this was on my calendar a year ago.
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section class=&quot;slide slide--end&quot;&gt;
+  &lt;div class=&quot;slide__inner&quot;&gt;
+    &lt;p class=&quot;slide__eyebrow&quot;&gt;Thank you&lt;&#x2F;p&gt;
+    &lt;p class=&quot;slide__quote slide__quote--final&quot;&gt;
+      The most important thing Claude Code gave me was not faster software development.
+      It gave me the ability to turn years of accumulated ideas into working systems
+      before I lost interest in them.
+    &lt;&#x2F;p&gt;
+    &lt;p class=&quot;slide__byline slide__byline--icons&quot;&gt;
+      &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&quot;&gt;
+        &lt;img class=&quot;slide__byline-icon slide__byline-icon--img&quot; src=&quot;&#x2F;raskell-mascot.avif&quot; alt=&quot;&quot; width=&quot;20&quot; height=&quot;20&quot;&gt;
+        raskell.io
+      &lt;&#x2F;a&gt;
+      &lt;span class=&quot;slide__byline-sep&quot; aria-hidden=&quot;true&quot;&gt;·&lt;&#x2F;span&gt;
+      &lt;a href=&quot;https:&#x2F;&#x2F;ch.linkedin.com&#x2F;in&#x2F;raffael-e-schneider&quot;&gt;
+        &lt;svg class=&quot;slide__byline-icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z&quot;&#x2F;&gt;&lt;&#x2F;svg&gt;
+        raffael-e-schneider
+      &lt;&#x2F;a&gt;
+      &lt;span class=&quot;slide__byline-sep&quot; aria-hidden=&quot;true&quot;&gt;·&lt;&#x2F;span&gt;
+      &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;raskelll&quot;&gt;
+        &lt;svg class=&quot;slide__byline-icon&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;&#x2F;&gt;&lt;&#x2F;svg&gt;
+        @raskelll
+      &lt;&#x2F;a&gt;
+    &lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>What Sixteen AI Agents Taught Me About Management</title>
+        <published>2026-04-16T00:00:00+00:00</published>
+        <updated>2026-04-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"/>
+        <id>https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/</id>
+        
+        <content type="html" xml:base="https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/">&lt;p&gt;Over the 2025 Christmas holidays I had sixteen AI agents running in parallel across four macOS workspaces. Each workspace held four Ghostty terminal panes, each pane running its own Claude Code instance, each instance working on a different piece of a different project. I was on Anthropic’s 20x Max subscription, and during the holiday period the token limits were generous enough that I could burn through context at a rate I had never attempted before. The everyday version of this setup is the one I described in &lt;a href=&quot;&#x2F;articles&#x2F;how-i-work-these-days&#x2F;&quot;&gt;How I Work These Days&lt;&#x2F;a&gt;; this was that setup pushed to its limit.&lt;&#x2F;p&gt;
+&lt;p&gt;It was the most productive week of my engineering life. It was also the week I learned that managing AI agents is, at its core, a management problem. Not a technical one.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-terminal-wall&quot;&gt;The terminal wall&lt;&#x2F;h2&gt;
+&lt;p&gt;The setup started simple. Mitchell Hashimoto’s Ghostty, which I consider one of the best terminal emulators released in years, supports split panes in both directions. Four panes per workspace. Four workspaces. Sixteen agents. Each one working on a real task: scaffolding a new crate, writing tests for a module I had sketched out, researching an API I needed to integrate, refactoring a component I had been putting off for months.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;The terminal wall: 4 workspaces x 4 Ghostty panes&quot;&gt;Workspace 1              Workspace 2              Workspace 3              Workspace 4
+===================      ===================      ===================      ===================
+| Agent 1 | Agent 2|     | Agent 5 | Agent 6|     | Agent 9  | Agent 10|   | Agent 13 | Agent 14|
+|  scaffold|  tests |     |  refactor| research|   |  API     |  migrate|   |  docs    |  bench  |
+|---------|---------|     |---------|---------|     |---------|---------|   |---------|---------|
+| Agent 3 | Agent 4|     | Agent 7 | Agent 8|     | Agent 11 | Agent 12|   | Agent 15 | Agent 16|
+|  config |  lint  |     |  deploy |  review |     |  schema  |  ci     |   |  proto   |  fuzz   |
+===================      ===================      ===================      ===================
+
+                         Me: switching between workspaces,
+                         scrolling back through conversations,
+                         keeping a text file of who does what&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The first few hours were exhilarating. I would spin up an agent, give it a task, switch to the next pane, give it a task, move to the next workspace, repeat. By mid-morning I had more concurrent engineering work happening than most small teams produce in a day.&lt;&#x2F;p&gt;
+&lt;p&gt;Then the problems started.&lt;&#x2F;p&gt;
+&lt;p&gt;I could not remember what each agent was doing. This was before Claude Code added the prompt and context summary at the top of the input line, so the only way to check was to scroll back through the conversation history and find the original prompt. With sixteen sessions, that meant a lot of scrolling. I started naming my macOS workspaces. I named each Ghostty pane. I kept a text file open with a list of which agent was doing what. I was, without quite realizing it, building a project management system out of sticky notes and window titles.&lt;&#x2F;p&gt;
+&lt;p&gt;The irony was not lost on me. I had sixteen AI agents doing engineering work, and I was spending half my time doing the one thing AI was supposed to eliminate: keeping track of who was working on what.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;kage-the-first-attempt&quot;&gt;Kage, the first attempt&lt;&#x2F;h2&gt;
+&lt;p&gt;That frustration led to &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;kage&quot;&gt;kage&lt;&#x2F;a&gt;. The name means shadow in Japanese. The idea was straightforward: build a Rust binary that could orchestrate multiple terminal sessions, let me switch between them, and show me at a glance what each one was doing.&lt;&#x2F;p&gt;
+&lt;p&gt;kage used &lt;code&gt;alacritty_terminal&lt;&#x2F;code&gt; (the terminal emulation library extracted from the Alacritty terminal emulator) to manage PTY sessions, &lt;code&gt;ratatui&lt;&#x2F;code&gt; for a terminal UI, and &lt;code&gt;redb&lt;&#x2F;code&gt; for local persistence. I could spawn agents with goals, set iteration limits, checkpoint and resume sessions, and pool across multiple LLM providers. The vision was that I could use Claude Code alongside OpenAI’s Codex and whatever else was available, routing tasks to whichever provider had capacity.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;kage: terminal session orchestrator&quot;&gt;+-----------------------------------------------------------+
+|                      kage TUI (ratatui)                   |
+|  +-------+  +-------+  +-------+  +-------+  +-------+   |
+|  | Sess 1|  | Sess 2|  | Sess 3|  | Sess 4|  |  ...  |   |
+|  | goal: |  | goal: |  | goal: |  | goal: |  |       |   |
+|  | scaf. |  | tests |  | refac.|  | API   |  |       |   |
+|  +---+---+  +---+---+  +---+---+  +---+---+  +-------+   |
+|      |          |           |          |                   |
++------|----------|-----------|----------|-------------------+
+       |          |           |          |
+  +----v----+  +--v----+  +--v----+  +--v----+
+  | PTY     |  | PTY   |  | PTY   |  | PTY   |    alacritty_terminal
+  | (Claude)|  |(Codex)|  |(Claude|  |(Claude|    manages each session
+  +---------+  +-------+  +-------+  +-------+
+
+  +---------------------+    +------------------+
+  | redb (persistence)  |    | LLM provider pool|
+  | checkpoints, goals, |    | Anthropic, OpenAI|
+  | session state       |    | route by capacity|
+  +---------------------+    +------------------+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;It worked. Technically. I could see all my sessions in one interface. I could switch between them. I could track what each agent was supposed to be doing.&lt;&#x2F;p&gt;
+&lt;p&gt;But it felt clunky. The terminal streaming had issues. The UI was functional but not fluid. And more importantly, I realized the tool was solving the wrong problem. The problem was not that I needed a better way to look at sixteen terminal panes. The problem was that sixteen independent agents with no coordination between them produced sixteen independent streams of work with no coherence between them. Agent A would refactor a module that agent B was simultaneously writing tests for, using the old API. Agent C would make a design decision that conflicted with what agent D was building. I was the only point of integration, and I could not context-switch fast enough to catch every conflict.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;The coordination problem kage could not solve&quot;&gt;  Agent A: refactors auth module         Agent B: writes tests for auth module
+  |                                       |
+  +-- removes old_login()                 +-- tests old_login()
+  +-- renames to authenticate()           +-- expects old return type
+  +-- changes return type                 +-- passes locally (stale code)
+                                          +-- FAILS after A merges
+
+Agent C: picks REST for new API        Agent D: builds gRPC client for new API
+  |                                       |
+  +-- adds &amp;#x2F;api&amp;#x2F;v2&amp;#x2F;users                  +-- generates proto stubs
+  +-- writes OpenAPI spec                 +-- implements streaming calls
+                                          +-- INCOMPATIBLE with C&amp;#x27;s design
+
+              Me (the only integration point):
+              &amp;quot;Wait, what is everyone doing?&amp;quot;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;I needed the agents to coordinate with each other. Not just run in parallel. Actually collaborate.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;shiioo-the-virtual-company&quot;&gt;Shiioo, the virtual company&lt;&#x2F;h2&gt;
+&lt;p&gt;The second attempt was &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;shiioo&lt;&#x2F;a&gt;. The name is the Japanese romanization of CEO. The premise had changed entirely.&lt;&#x2F;p&gt;
+&lt;p&gt;What if the agents were not just parallel workers? What if they were employees in a virtual enterprise, each with a specific role, a defined skillset, a limited set of tools, and a reporting structure?&lt;&#x2F;p&gt;
+&lt;p&gt;I had been reading about organizational design and it struck me how directly the problems I was having with agent orchestration mapped to problems that real companies solve with management hierarchies. When you have sixteen people working on a project, you do not give each one independent access to everything and hope for the best. You create teams. You assign leads. You define communication channels. You escalate decisions that exceed a team’s authority.&lt;&#x2F;p&gt;
+&lt;p&gt;So that is what I built. shiioo is a Rust-based client-server system with an event-sourced persistence layer. Each agent is modeled as an employee with a &lt;code&gt;SKILLS.md&lt;&#x2F;code&gt; file that defines its capabilities, a limited set of MCP interfaces it can access, and a position in an organizational hierarchy. Agents are grouped into squads. Each squad has a lead. Squad leads report to department leads. Department leads report up to me.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;shiioo: virtual company hierarchy&quot;&gt;                            +------------------+
+                            |   CEO (me)       |
+                            |   Strategic      |
+                            |   decisions only |
+                            +--------+---------+
+                                     |
+                   +-----------------+-----------------+
+                   |                                   |
+          +--------v---------+               +---------v--------+
+          |  Dept Lead:      |               |  Dept Lead:      |
+          |  Infrastructure  |               |  Product         |
+          +--------+---------+               +---------+--------+
+                   |                                   |
+          +--------+--------+                 +--------+--------+
+          |                 |                 |                 |
+   +------v------+  +------v------+   +------v------+  +------v------+
+   | Squad Lead: |  | Squad Lead: |   | Squad Lead: |  | Squad Lead: |
+   | Backend     |  | Platform    |   | Frontend    |  | Data        |
+   +------+------+  +------+------+   +------+------+  +------+------+
+          |                 |                 |                 |
+     +----+----+       +---+---+        +----+----+       +---+---+
+     |    |    |       |       |        |    |    |       |       |
+    Ag1  Ag2  Ag3    Ag4     Ag5      Ag6  Ag7  Ag8    Ag9    Ag10
+
+   Each agent has:
+   - SKILLS.md (capabilities)     - Limited MCP interfaces
+   - Defined scope of authority   - Escalation path upward&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The architecture uses a DAG workflow engine built on &lt;code&gt;petgraph&lt;&#x2F;code&gt; for task dependencies, a policy engine for authorization and approval gates, and a capacity broker that routes LLM calls across multiple providers. Every action is event-sourced, which means I have a complete audit trail of every decision every agent made, and I can replay any sequence of events to understand how a particular outcome was reached.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;shiioo system architecture&quot;&gt;+-------------------------------------------------------------------+
+|                         shiioo server                             |
+|                                                                   |
+|  +------------------+  +------------------+  +-----------------+  |
+|  | Workflow Engine   |  | Policy Engine    |  | Capacity Broker |  |
+|  | (petgraph DAGs)  |  | (RBAC, approval  |  | (route LLM     |  |
+|  |                  |  |  gates, authz)   |  |  calls across   |  |
+|  | task deps,       |  |                  |  |  providers)     |  |
+|  | retries,         |  | who can do what, |  |                 |  |
+|  | timeouts         |  | who approves     |  | Anthropic,      |  |
+|  +--------+---------+  +--------+---------+  | OpenAI, ...     |  |
+|           |                     |             +---------+-------+  |
+|           +----------+----------+                       |         |
+|                      |                                  |         |
+|              +-------v--------+                         |         |
+|              | Event Store    |    +--------------------v------+  |
+|              | (redb + S3)   |    | MCP Tool Server            |  |
+|              |               |    | (expose enterprise tools   |  |
+|              | every action  |    |  to agents)                |  |
+|              | is persisted, |    +----------------------------+  |
+|              | replayable    |                                    |
+|              +---------------+                                    |
++-------------------------------------------------------------------+
+        |                                        |
+   +----v----+                              +----v----+
+   | CLI REPL|                              | Web     |
+   | (Chief  |                              | Dashboard|
+   | of Staff|                              | (real-  |
+   | mode)   |                              |  time)  |
+   +---------+                              +---------+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The key insight was the escalation model. Most tasks could be handled by individual agents within their defined scope. When an agent encountered a decision that exceeded its authority, such as a design choice that would affect other teams, a dependency conflict, or a resource allocation question, it escalated to its squad lead. The squad lead either resolved it or escalated further. Only the decisions that truly required strategic judgment, market positioning, resource allocation across projects, architectural direction, reached me.&lt;&#x2F;p&gt;
+&lt;p&gt;I was the CEO. Not in some metaphorical sense. In the literal operational sense that the only decisions that required my attention were the ones that should require a CEO’s attention.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;it-worked&quot;&gt;It worked&lt;&#x2F;h2&gt;
+&lt;p&gt;shiioo was rough. The UI was a REPL with seven built-in commands. The web dashboard was basic. The documentation was incomplete.&lt;&#x2F;p&gt;
+&lt;p&gt;But the model worked. I bootstrapped multiple projects using this setup over the holidays. Agents would pick up tasks, work within their scope, coordinate through the reporting structure, and escalate when they hit ambiguity. The squad lead agents were particularly effective because they had enough context about their team’s work to resolve most conflicts without involving me.&lt;&#x2F;p&gt;
+&lt;p&gt;The event sourcing turned out to be more valuable than I expected. When something went wrong, and things did go wrong, I could trace the decision chain from the final output back to the original task assignment. I could see exactly where an agent made a bad call, which agent approved it, and what information was available at each step. This is something you cannot do with sixteen independent terminal sessions. You cannot even do it with most human teams.&lt;&#x2F;p&gt;
+&lt;p&gt;For a week, I was running a virtual company. And the virtual company was shipping code.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;then-the-tokens-ran-out&quot;&gt;Then the tokens ran out&lt;&#x2F;h2&gt;
+&lt;p&gt;Nobody talks about this part when they discuss agent orchestration: the economics.&lt;&#x2F;p&gt;
+&lt;p&gt;During the Christmas holiday period, Anthropic’s 20x Max subscription was unusually generous with token limits. I do not know the exact numbers, but the allowance was noticeably higher than usual. I was burning through it.&lt;&#x2F;p&gt;
+&lt;p&gt;The problem was not the agents doing useful work. The problem was the agents talking to each other. In any organization, a significant portion of communication is overhead. Status updates. Clarifying questions. Acknowledging instructions. Confirming understanding. In a human company, this overhead is accepted because humans need it to function. In an agent company, every word of that communication costs tokens.&lt;&#x2F;p&gt;
+&lt;p&gt;I watched my weekly token budget evaporate. Not because the agents were writing code, although they were. Because the squad leads were having lengthy exchanges with their teams about task requirements. Because agents were asking clarifying questions that a slightly better prompt would have made unnecessary. Because the escalation chain, every step of it, required a full context window of conversation.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Where the tokens actually went&quot;&gt;Token budget (weekly)
+=====================
+
+  Useful work (code, tests, docs)       ████████░░░░░░░░░░░░  ~35%
+  Agent-to-agent coordination           ██████████████░░░░░░  ~40%
+  Escalation chain overhead             ████████░░░░░░░░░░░░  ~15%
+  Clarifying questions &amp;#x2F; retries        ████░░░░░░░░░░░░░░░░  ~10%
+                                        ^^^^^^^^^^^^^^^^^^^^
+                                        |---- productive ---|--- overhead ---|
+
+  The overhead was not a bug. It was the cost of coordination.
+  The same cost human companies pay in salaries for meetings,
+  Slack threads, standups, and status reports.
+
+  The difference: human overhead is a fixed cost.
+  Token overhead scales with every message.&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;It was the AI equivalent of employees standing around the coffee machine. Except every minute at the coffee machine cost real money.&lt;&#x2F;p&gt;
+&lt;p&gt;When the holiday period ended and the token limits returned to normal, shiioo became impractical for my situation. I have more than ten active projects. I need to decide, deliberately and granularly, what my limited token budget goes toward. A virtual company that autonomously allocates its own token spend, no matter how effectively, does not give me that control. I stopped using it. Not because the architecture was wrong. Because the economics did not fit my constraints.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-management-lesson&quot;&gt;The management lesson&lt;&#x2F;h2&gt;
+&lt;p&gt;Every problem I encountered was a management problem that real companies have solved, or at least learned to live with.&lt;&#x2F;p&gt;
+&lt;p&gt;The coordination problem: sixteen independent workers producing inconsistent output. Solved the same way companies solve it. Hierarchy, defined roles, communication channels.&lt;&#x2F;p&gt;
+&lt;p&gt;The overhead problem: too much communication relative to productive work. Every manager knows this. Every company struggles with it. The optimal amount of coordination is not zero and it is not “as much as possible.” It is somewhere in between, and finding that point is one of the hardest problems in organizational design.&lt;&#x2F;p&gt;
+&lt;p&gt;The economics problem: the work gets done, but the cost of the work exceeds the budget. This is not a technology problem. This is a business problem. And it has different answers at different scales.&lt;&#x2F;p&gt;
+&lt;p&gt;For an individual developer on a consumer subscription, shiioo’s overhead is too expensive. The token cost of agent-to-agent communication eats into the budget for actual work. I need to be hands-on, directing each agent personally, because my token budget is small enough that every token should go toward output I directly value.&lt;&#x2F;p&gt;
+&lt;p&gt;For an enterprise with API access and a meaningful budget, the calculus is completely different. If you are paying for engineering time at market rates, the token cost of agent coordination is a rounding error compared to the cost of human coordination. The overhead that made shiioo impractical for me, agents discussing requirements, leads resolving conflicts, escalation chains processing decisions, would be a bargain for a company that currently pays humans to do the same thing at 100x the cost and 10x the latency.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;The economics at different scales&quot;&gt;Individual developer (consumer sub)     Enterprise (API access)
+====================================    ====================================
+
+Token budget:  limited, weekly cap      Token budget:  pay per use, large
+Overhead cost: eats into real work      Overhead cost: rounding error
+Control need:  high (every token        Control need:  moderate (aggregate
+               must count)                             ROI matters)
+
+  +----------+                            +----------+
+  |  Useful  |  &amp;lt;-- want to maximize      |  Useful  |  &amp;lt;-- still majority
+  |  work    |      this slice            |  work    |
+  +----------+                            +----------+
+  | Overhead |  &amp;lt;-- this hurts            | Overhead |  &amp;lt;-- acceptable cost
+  +----------+                            +----------+
+  | Budget   |                            |          |
+  +----------+                            | Room to  |
+  (no room)                               | grow     |
+                                          +----------+
+
+  Same architecture. Different economics. Different answer.&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;then-openclaw-happened&quot;&gt;Then OpenClaw happened&lt;&#x2F;h2&gt;
+&lt;p&gt;A few weeks after Christmas, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;openclaw&#x2F;openclaw&quot;&gt;OpenClaw&lt;&#x2F;a&gt; launched and crossed 100,000 GitHub stars within its first week. The community was impressed. A personal AI agent framework with multi-agent support, tool integrations, and an approachable setup experience.&lt;&#x2F;p&gt;
+&lt;p&gt;I looked at it and felt a mix of recognition and mild frustration. OpenClaw solved the “how do I run an AI agent” problem elegantly. But shiioo was solving a different problem. Not “how do I run agents” but “how do I run an organization of agents.” Hiring, delegation, escalation, governance, audit trails, budget management. The boring, structural, enterprise problems that do not demo well but determine whether agent orchestration actually works at scale.&lt;&#x2F;p&gt;
+&lt;p&gt;OpenClaw is a good tool for individuals. What I built, rough as it was, is a sketch of what enterprises will need when they move past “we have an AI assistant” to “we have an AI workforce.” Those are fundamentally different problems, and they require fundamentally different architectures.&lt;&#x2F;p&gt;
+&lt;p&gt;I do not say this to diminish OpenClaw. I say it because I think the industry is still mostly working on the first problem while the second one is coming fast.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-i-would-do-differently&quot;&gt;What I would do differently&lt;&#x2F;h2&gt;
+&lt;p&gt;If I were building shiioo again today, three things would change.&lt;&#x2F;p&gt;
+&lt;p&gt;First, the communication protocol between agents needs to be structured and minimal. Free-form conversation between agents is expensive and produces the same rambling overhead that plagues human Slack channels. Agents should exchange typed messages with defined schemas. Not “hey, I was thinking about the API design and I wonder if we should consider…” but &lt;code&gt;{ type: &quot;design_decision&quot;, scope: &quot;api&quot;, proposal: &quot;...&quot;, requires_approval: true }&lt;&#x2F;code&gt;. Every token in agent-to-agent communication should carry information, not politeness.&lt;&#x2F;p&gt;
+&lt;p&gt;Second, the token budget needs to be a first-class resource managed by the system, not an afterthought. Every agent should have a token allowance. Every escalation should have a cost. The system should make tradeoff decisions about whether a clarifying question is worth the tokens, the same way a well-run company makes tradeoff decisions about whether a meeting is worth the calendar time.&lt;&#x2F;p&gt;
+&lt;p&gt;Third, I would separate the orchestration layer from the LLM provider entirely. shiioo was built around the Anthropic Messages API. It should have been built around an abstract capability interface where the provider is a pluggable backend. Not for vendor neutrality as a principle, but because the economics change when you can route low-stakes agent communication through a smaller, cheaper model and reserve the frontier model for decisions that actually require it.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Smarter token routing by decision weight&quot;&gt;Task type                Model tier          Cost per 1K tokens
+==========               ==========          ==================
+
+Strategic decisions       Frontier            $$$$
+(architecture, design)    (Opus, GPT-5)
+        |
+        v
+Squad lead coordination   Mid-tier            $$
+(conflict resolution,     (Sonnet, GPT-4o)
+ task assignment)
+        |
+        v
+Agent-to-agent comms      Small&amp;#x2F;fast          $
+(status, ack, handoff)    (Haiku, GPT-4o-mini)
+
+Route by decision weight, not uniformly.
+Most tokens go to the cheapest tier.
+Most value comes from the expensive tier.&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;what-this-means-for-actual-enterprises&quot;&gt;What this means for actual enterprises&lt;&#x2F;h2&gt;
+&lt;p&gt;I ran my virtual company for a week across personal projects. It was an experiment. But the patterns I stumbled into are not experimental. They are the same patterns that every large organization will need to operationalize as agentic employees become real line items on the org chart.&lt;&#x2F;p&gt;
+&lt;p&gt;This is not a distant future. Companies are already deploying AI agents for customer support, code review, compliance checks, and data pipeline management. What most of them have not done yet is think about what happens when those agents need to coordinate. When the support agent needs to escalate to the engineering agent. When the compliance agent needs to block a deployment the CI agent is trying to push. When three agents working on the same codebase need to not step on each other.&lt;&#x2F;p&gt;
+&lt;p&gt;The companies that figure this out first will have a structural advantage that compounds.&lt;&#x2F;p&gt;
+&lt;p&gt;Consider a mid-size engineering organization. Two hundred engineers. They spend, conservatively, 30% of their time on coordination. Standups, planning meetings, Slack threads, code review discussions, design document feedback loops, incident response coordination. That is sixty full-time-equivalent salaries spent on people talking to each other about work rather than doing it. Nobody questions this cost because it has always been the cost of building software with humans.&lt;&#x2F;p&gt;
+&lt;p&gt;Now replace even a fraction of that coordination layer with agents. Not the engineers themselves. The coordination between them. An agentic squad lead that triages incoming tickets, assigns them based on skill match, checks for conflicts with in-flight work, and only escalates to a human lead when the decision genuinely requires human judgment. An agentic project manager that tracks dependencies across teams, flags blockers before they become crises, and generates status updates from actual commit history instead of asking twelve people to fill out a spreadsheet.&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;&lt;&#x2F;th&gt;&lt;th&gt;Today&lt;&#x2F;th&gt;&lt;th&gt;Near future&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Coordination&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;All human, expensive, slow, lossy&lt;&#x2F;td&gt;&lt;td&gt;Mostly agents, cheap, fast, auditable&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Status updates&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;Asked for weekly (often stale by the time they reach leadership)&lt;&#x2F;td&gt;&lt;td&gt;Generated from event logs (always current)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Conflict detection&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;Someone notices during code review (after the work is done)&lt;&#x2F;td&gt;&lt;td&gt;Automatic, flagged before work begins&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Escalation&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;Informal, depends on who knows whom&lt;&#x2F;td&gt;&lt;td&gt;Structured, policy-driven, with full context&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;The organizations that will benefit most are not the ones with the best AI models. They are the ones that treat agent orchestration as an organizational design problem. That means defining clear scopes of authority, building escalation paths that preserve context, implementing approval gates that match their governance requirements, and maintaining audit trails that satisfy compliance. These are not engineering problems. They are operations problems. And most companies already have people who know how to solve them. They are called managers.&lt;&#x2F;p&gt;
+&lt;p&gt;The irony is that the skills most relevant to the agentic enterprise are not machine learning or prompt engineering. They are the skills that good managers have always had: defining clear responsibilities, building trust through transparency, knowing when to delegate and when to intervene, and designing systems where people, or agents, can do their best work without tripping over each other.&lt;&#x2F;p&gt;
+&lt;p&gt;Every enterprise will need to answer a specific set of questions in the next few years. How do you onboard an agentic employee? How do you define its scope? What happens when it makes a mistake? Who is accountable? How do you audit its decisions? How do you revoke its access? These questions sound like IT governance, and they are. But the answers will reshape how companies think about headcount, team structure, and operational capacity in ways that most leadership teams have not begun to consider.&lt;&#x2F;p&gt;
+&lt;p&gt;The companies that start experimenting now, even crudely, even with something as rough as what I built over a holiday week, will have a vocabulary and a set of institutional patterns that the latecomers will not. And in organizational design, having the right patterns early matters more than having the best technology late.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;where-this-goes&quot;&gt;Where this goes&lt;&#x2F;h2&gt;
+&lt;p&gt;I still believe the virtual company model is the right abstraction for large-scale agent orchestration. It solves the same coordination problems that human organizations solve, using the same structural patterns that have been refined over decades of organizational theory.&lt;&#x2F;p&gt;
+&lt;p&gt;The technology is ready. The architectures are straightforward. The missing piece is the economics. When frontier model inference costs drop by another order of magnitude, and they will, the token overhead of agent-to-agent communication stops being prohibitive. When that happens, the question will not be “should we orchestrate agents in a hierarchy” but “what does the org chart look like.”&lt;&#x2F;p&gt;
+&lt;p&gt;I suspect we are closer to that moment than most people think. And when it arrives, the hard problems will not be technical. They will be the same problems that have always made management hard: delegation, trust, accountability, and knowing when to let your people work and when to step in.&lt;&#x2F;p&gt;
+&lt;p&gt;The agents are ready to work. We just need to learn how to manage them.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;kage&quot;&gt;kage: Local-first agentic work orchestrator&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;shiioo&quot;&gt;shiioo: Virtual Company OS&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;openclaw&#x2F;openclaw&quot;&gt;OpenClaw: Personal AI agent framework&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;ghostty.org&quot;&gt;Ghostty terminal emulator&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;alacritty_terminal&quot;&gt;alacritty_terminal crate&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>How I Work These Days</title>
+        <published>2026-03-15T00:00:00+00:00</published>
+        <updated>2026-03-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/articles/how-i-work-these-days/"/>
+        <id>https://raskell.io/articles/how-i-work-these-days/</id>
+        
+        <content type="html" xml:base="https://raskell.io/articles/how-i-work-these-days/">&lt;p&gt;If you had asked me a few years ago what kind of shift would truly change software again, I would probably have said something vague about machine learning becoming more useful, more accessible, more integrated into normal tooling. I would not have said that within a few years I would be spending large parts of my day in conversation with models, building products at a pace that used to feel unrealistic for one person.&lt;&#x2F;p&gt;
+&lt;p&gt;But that is where I am now, and the path here did not start with ChatGPT. It started earlier.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;before-the-shock&quot;&gt;Before the shock&lt;&#x2F;h2&gt;
+&lt;p&gt;I had been on Kaggle and Hugging Face since 2020. I was already paying attention. I had a decent understanding of machine learning, enough to know that something important was happening. I was not looking at this space as an outsider who suddenly discovered AI in a news cycle. I had been around it long enough to see that the ingredients were there.&lt;&#x2F;p&gt;
+&lt;p&gt;Still, understanding a field and feeling a historical shift are not the same thing. When OpenAI released ChatGPT 3.5 in November 2022, something in me changed almost immediately. I do not mean that in a mystical way. I mean I recognized, very quickly, that this was not just another incremental product launch. It felt like a boundary marker, one of those moments where you can see a new layer of the technology stack forming in front of you.&lt;&#x2F;p&gt;
+&lt;p&gt;At the time, I thought: this is going to be enormous. Bigger than most people realize. Bigger, maybe, than the web itself in terms of how deeply it will alter the shape of work, software, and the distribution of capability. That sounds exaggerated when people say it too casually. I know that. But that was honestly my reaction back then. Not hype. Recognition.&lt;&#x2F;p&gt;
+&lt;p&gt;I was one of the early people willing to pay OpenAI. That mattered to me. I wanted access, and I wanted to stay close to the frontier as it moved. I did not want to be reading second-hand summaries while something this consequential was taking shape in real time.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-part-i-still-underestimated&quot;&gt;The part I still underestimated&lt;&#x2F;h2&gt;
+&lt;p&gt;Even then, I still underestimated one thing: the speed. I understood generative AI was around the corner. I did not understand just how fast it would become operationally useful for actual software creation.&lt;&#x2F;p&gt;
+&lt;p&gt;I had read AI 2027, the scenario work by Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, and Romeo Dean. It stayed with me, and it still does now in March 2026. I still think the basic direction it sketches is largely correct, even if the path is turning out a bit differently in practice than any single forecast can capture. But even with that framing in my head, I did not fully expect that less than two years after ChatGPT 3.5, coding agents would already start to feel like a real category rather than a novelty.&lt;&#x2F;p&gt;
+&lt;p&gt;That part came faster than I thought.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;paying-attention-waiting-for-the-right-moment&quot;&gt;Paying attention, waiting for the right moment&lt;&#x2F;h2&gt;
+&lt;p&gt;In 2025 I was trying different tools seriously. I was paying for Claude Code from May 2025 onward, but I was not especially impressed at first. I liked the CLI orientation. I liked that it felt coder-friendly. That part made sense to me immediately. But the model quality at that moment, and the rate limiting, left me cold. It was interesting. It was not yet transformative for my own workflow.&lt;&#x2F;p&gt;
+&lt;p&gt;So I mostly leaned on Zed’s offering. I liked the editor experience, and I still do. I still reach for Zed when I want to inspect, edit, or move through files outside of Vim in the terminal. It fit me better in that phase.&lt;&#x2F;p&gt;
+&lt;p&gt;Then November 2025 arrived, three years after ChatGPT 3.5, and then December came with Christmas break. I gave Claude Code another real try, this time with Opus 4.5, and that was the moment it really landed for me. Not politely. Not academically. It hit me hard.&lt;&#x2F;p&gt;
+&lt;p&gt;I remember the feeling very clearly: this is it. This is the first time the whole thing feels like more than an assistant and less than a gimmick. This is a tool I can genuinely build with.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;zentinel-was-the-proof&quot;&gt;Zentinel was the proof&lt;&#x2F;h2&gt;
+&lt;p&gt;Zentinel had been sitting in the back of my mind for a long time. The idea was not new. The frustration behind it was not new either. At my day job, we had been dealing with unreliable reverse proxies for long enough that the pain was familiar. I had always wanted River, the Pingora-based reverse proxy, to succeed. I wanted that project to become the thing I could reach for and trust. But it never got there.&lt;&#x2F;p&gt;
+&lt;p&gt;So I did what this new moment suddenly made possible: I stopped waiting for somebody else to build the thing I wanted to exist.&lt;&#x2F;p&gt;
+&lt;p&gt;I built Zentinel with Opus 4.5, and it worked.&lt;&#x2F;p&gt;
+&lt;p&gt;That is the part that still feels a little surreal when I say it plainly. Three months later it is up, it is real, and people are using it. Not as a demo. Not as an abandoned prototype. As actual software in the hands of actual users.&lt;&#x2F;p&gt;
+&lt;p&gt;That changed something fundamental in how I think about work. Once one long-held idea made it through that bottleneck, a lot of others started moving too. It was not just that I had a new tool. It was that the relationship between ambition and execution had changed. The old constraint, the one that said “yes, this could exist, but not with your current time and current bandwidth,” had weakened.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;then-everything-else-started-moving&quot;&gt;Then everything else started moving&lt;&#x2F;h2&gt;
+&lt;p&gt;In the time since, I have built a whole range of things that had been accumulating in my head for years: Cyanea, &lt;a href=&quot;&#x2F;articles&#x2F;archipelag-io-distributed-compute-from-mining-rigs-to-open-beta&#x2F;&quot;&gt;Archipelag.io&lt;&#x2F;a&gt;, Humankind, Arcanist and its Rust-based &lt;code&gt;hx&lt;&#x2F;code&gt; Haskell toolchain, the new Basel Haskell Compiler, and other pieces besides.&lt;&#x2F;p&gt;
+&lt;p&gt;It has been a wild ride, but not in the shallow “everything is crazy” sense people often write about. More in the sense that an internal dam broke. For a long time I had more ideas than I had time, more design clarity than I had execution bandwidth, and more conviction than I had manpower. That is a frustrating place to live in for years. You learn to carry around a quiet backlog of unrealized things. Some of them stay alive as notes. Some become recurring thoughts during commutes or late at night. Some start to hurt a little because you know they are viable, but you also know you are not going to get to them with the tools and energy available to you at that point in your life.&lt;&#x2F;p&gt;
+&lt;p&gt;Now the world is different. I can finally push through the backlog that used to exist only in notebooks, mental sketches, half-written design docs, and conversations with myself.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-my-days-look-like-now&quot;&gt;What my days look like now&lt;&#x2F;h2&gt;
+&lt;p&gt;My daily routine changed dramatically.&lt;&#x2F;p&gt;
+&lt;p&gt;I still have a day job, and then I have the rest of my work. Together it often adds up to something close to sixteen hours a day. That would sound bleak if I were forcing it. It does not feel bleak. It feels like release.&lt;&#x2F;p&gt;
+&lt;p&gt;My workspace reflects that change. These days I use mostly Apple hardware, which is funny if you know how much of a Linux person I am, and how much of an OpenBSD person I still am. That part of me has not gone anywhere. I still love those systems. I still think they matter deeply. But if I am being honest about the practical question of where I am most productive right now, Apple has become the answer.&lt;&#x2F;p&gt;
+&lt;p&gt;I work across a MacBook Pro M4, an iMac, and an Apple Vision Pro. I spend time talking ideas out in real time with ChatGPT’s voice mode, using it less like a search engine and more like a sparring partner. Sometimes intimate, sometimes brutally honest, sometimes audacious in exactly the way a good thinking partner should be. I push an idea, it pushes back, I sharpen it, it sharpens me, and we keep going until something solid emerges.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;how-i-work-these-days-desk.avif&quot; alt=&quot;My desk setup right now&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Then there is the terminal, where much of the actual implementation happens in Ghostty, usually with four panes open, often with multiple Claude Code agents running in parallel on the Max plan. Two hundred dollars a month for that level of leverage is, for me, one of the clearest trades I have ever made.&lt;&#x2F;p&gt;
+&lt;p&gt;This is not a lifestyle performance. It is just the current shape of my work: ideas moving between speech, terminal, editor, design notes, code, back to speech, then back to code again.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;beast-mode-for-lack-of-a-better-term&quot;&gt;Beast mode, for lack of a better term&lt;&#x2F;h2&gt;
+&lt;p&gt;There is a part of this that feels almost embarrassingly direct to say, but it would be dishonest to leave it out: I am the happiest I have ever been.&lt;&#x2F;p&gt;
+&lt;p&gt;Not because everything is easy. It is not. Not because every project succeeds. They will not. Not because the industry suddenly became sane. It did not.&lt;&#x2F;p&gt;
+&lt;p&gt;I am happy because the mismatch that used to define so much of my working life has narrowed. For years I had to live with the feeling that my ideas were outrunning my available hours and my available hands. Now, for the first time, it feels like I can actually meet myself where my ambition has been waiting.&lt;&#x2F;p&gt;
+&lt;p&gt;There is a phrase people use, “beast mode,” and usually I would avoid it because it sounds like posturing. But I do not really have a cleaner shorthand for the intensity of this period. I am working hard, very hard, but with a degree of joy and clarity that makes the effort feel proportionate.&lt;&#x2F;p&gt;
+&lt;p&gt;I am in conquest mode.&lt;&#x2F;p&gt;
+&lt;p&gt;Not conquest in the empty startup sense. Not domination, not vanity metrics, not growth for its own sake. I mean conquest over the inertia that used to keep good ideas trapped inside my head. Conquest over backlog. Conquest over hesitation. Conquest over the old excuses about lacking time, lacking team, lacking the right moment.&lt;&#x2F;p&gt;
+&lt;p&gt;And yes, some of it is for me. To feel better. To feel more whole. To stop carrying around years of deferred execution. But some of it is also because I genuinely want to make useful things. I want to build software that improves the texture of work, that makes systems more reliable, that gives people better tools, that opens up possibilities that were previously too expensive or too cumbersome to pursue.&lt;&#x2F;p&gt;
+&lt;p&gt;That still matters to me. Probably more than ever.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-real-change&quot;&gt;The real change&lt;&#x2F;h2&gt;
+&lt;p&gt;So when I say that the way I work these days has changed, I do not just mean that I use different tools.&lt;&#x2F;p&gt;
+&lt;p&gt;I mean that the relation between thought and execution changed. The lag collapsed. The emotional burden of unrealized ideas shrank. The number of things that are now viable to attempt expanded dramatically. That is the real story.&lt;&#x2F;p&gt;
+&lt;p&gt;I was already paying attention in 2020. I recognized the significance of ChatGPT in 2022. I underestimated the speed anyway. Then late 2025 arrived, the tools crossed a threshold, and my daily life reorganized itself around that fact.&lt;&#x2F;p&gt;
+&lt;p&gt;Three years is not a long time. It feels longer when you live through a real transition.&lt;&#x2F;p&gt;
+&lt;p&gt;And I suspect we are still early.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references-and-further-reading&quot;&gt;References and further reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;ai-2027.com&#x2F;&quot;&gt;AI 2027&lt;&#x2F;a&gt; - Scenario work that influenced how I thought about the trajectory of this space&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zed.dev&#x2F;&quot;&gt;Zed&lt;&#x2F;a&gt; - Editor I still use alongside Vim&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;ghostty.org&#x2F;&quot;&gt;Ghostty&lt;&#x2F;a&gt; - Terminal I use for most of my agent-heavy coding sessions&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&#x2F;&quot;&gt;Zentinel&lt;&#x2F;a&gt; - Reverse proxy project that became the first real proof point for this workflow&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cyanea.bio&#x2F;&quot;&gt;Cyanea&lt;&#x2F;a&gt; - One of the projects that came to life during this period&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&#x2F;&quot;&gt;Archipelag.io&lt;&#x2F;a&gt; - Another product that moved from idea to reality in this new working mode&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

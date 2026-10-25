@@ -4,7 +4,7 @@ url: https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/
 author: Raffael Schneider
 date: 2026-06-28
 description: "An MIT thesis argues brain emulation has crossed into engineering. Read as infrastructure, the numbers describe a workload your AI cluster was not built for."
-tags: [distributed-systems, inference, gpus]
+tags: [distributed-systems, inference, gpus, neuroscience, intelligence, simulation]
 ---
 
 # Brain Emulation, Read as an Infrastructure Problem

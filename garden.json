@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-25T09:24:00+00:00",
+ "generated": "2026-10-25T09:57:54+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -10,7 +10,7 @@
   "talk": 1,
   "work": 50,
   "project": 30,
-  "topic": 60,
+  "topic": 93,
   "link": 256
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
@@ -30,11 +30,11 @@
    "topics": [
     "history-of-technology",
     "hypertext",
-    "open-standards",
     "training-data",
-    "decentralisation",
     "data-sovereignty",
-    "agents"
+    "research-labs",
+    "intellectual-property",
+    "europe"
    ],
    "categories": [
     "reviews"
@@ -67,7 +67,8 @@
     "knowledge-management",
     "hypertext",
     "open-web",
-    "zola"
+    "zola",
+    "external-memory"
    ],
    "meta": "9 min"
   },
@@ -110,11 +111,13 @@
    "description": "Frontier AI is running short on public text, not compute. Europe's edge is the high-quality data it never put online. Capturing it needs coordination.",
    "date": "2026-06-30",
    "topics": [
-    "sovereignty",
     "training-data",
     "open-data",
-    "policy",
-    "economics"
+    "europe",
+    "intellectual-property",
+    "provenance",
+    "languages",
+    "technology-races"
    ],
    "meta": "34 min"
   },
@@ -127,7 +130,10 @@
    "topics": [
     "distributed-systems",
     "inference",
-    "gpus"
+    "gpus",
+    "neuroscience",
+    "intelligence",
+    "simulation"
    ],
    "meta": "12 min"
   },
@@ -141,7 +147,8 @@
     "agents",
     "context-engineering",
     "knowledge-management",
-    "typescript"
+    "typescript",
+    "external-memory"
    ],
    "meta": "19 min"
   },
@@ -156,7 +163,8 @@
     "programming-languages",
     "ai-engineering",
     "oss",
-    "haskell"
+    "haskell",
+    "compilers"
    ],
    "meta": "13 min"
   },
@@ -183,7 +191,8 @@
     "agents",
     "context-engineering",
     "economics",
-    "typescript"
+    "typescript",
+    "external-memory"
    ],
    "meta": "26 min"
   },
@@ -235,7 +244,8 @@
     "programming-languages",
     "ai-engineering",
     "formal-methods",
-    "haskell"
+    "haskell",
+    "compilers"
    ],
    "meta": "7 min"
   },
@@ -249,7 +259,9 @@
     "ai-engineering",
     "programming-languages",
     "formal-methods",
-    "haskell"
+    "haskell",
+    "compilers",
+    "provenance"
    ],
    "meta": "27 min"
   },
@@ -263,7 +275,9 @@
     "metrics",
     "policy",
     "sovereignty",
-    "economics"
+    "economics",
+    "switzerland",
+    "intellectual-property"
    ],
    "meta": "23 min"
   },
@@ -322,7 +336,8 @@
    "topics": [
     "agents",
     "ai-engineering",
-    "economics"
+    "economics",
+    "augmentation"
    ],
    "meta": "19 min"
   },
@@ -351,7 +366,8 @@
     "ai-engineering",
     "programming-languages",
     "formal-methods",
-    "haskell"
+    "haskell",
+    "compilers"
    ],
    "meta": "26 min"
   },
@@ -397,7 +413,8 @@
    "topics": [
     "ai-engineering",
     "developer-tooling",
-    "rust"
+    "rust",
+    "augmentation"
    ],
    "meta": "10 min"
   },
@@ -460,13 +477,13 @@
    "description": "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself.",
    "date": "2025-12-31",
    "topics": [
-    "open-web",
     "decentralisation",
     "attention-economy",
-    "privacy",
     "open-standards",
     "edge-systems",
-    "meta"
+    "meta",
+    "commons",
+    "emergence"
    ],
    "meta": "7 min"
   },
@@ -504,7 +521,8 @@
    "topics": [
     "programming-languages",
     "haskell",
-    "developer-tooling"
+    "developer-tooling",
+    "compilers"
    ],
    "meta": "10 min"
   },
@@ -543,7 +561,8 @@
    "topics": [
     "ai-engineering",
     "inference",
-    "economics"
+    "economics",
+    "augmentation"
    ]
   },
   {
@@ -552,6 +571,11 @@
    "url": "https://raskell.io/talks/iat-13-basel/",
    "description": "Slide deck for IT's ABOUT TECH #13 in Basel. A 15-minute story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time.",
    "date": "2026-06-10",
+   "topics": [
+    "ai-engineering",
+    "augmentation",
+    "switzerland"
+   ],
    "meta": "IT's ABOUT TECH #13"
   },
   {
@@ -560,9 +584,13 @@
    "url": "https://raskell.io/reading/#the-infinity-machine",
    "description": "Demis Hassabis, DeepMind, and the Quest for Superintelligence",
    "topics": [
-    "machine-learning",
+    "intelligence",
     "reinforcement-learning",
-    "history-of-technology"
+    "games",
+    "research-labs",
+    "ai-alignment",
+    "history-of-technology",
+    "technology-races"
    ],
    "meta": "Book · Sebastian Mallaby · Reading now"
   },
@@ -573,8 +601,8 @@
    "description": "The Making of the Modern Middle East",
    "date": "2026-09",
    "topics": [
-    "history",
-    "geography"
+    "geopolitics",
+    "history"
    ],
    "meta": "Book · Simon Sebag Montefiore · Read"
   },
@@ -585,8 +613,9 @@
    "description": "The Fates of Human Societies",
    "date": "2025-11",
    "topics": [
-    "history",
-    "geography"
+    "world-history",
+    "history-of-technology",
+    "complex-systems"
    ],
    "meta": "Book · Jared Diamond · Read"
   },
@@ -595,6 +624,11 @@
    "title": "Nuclear War: A Scenario",
    "url": "https://raskell.io/reading/#nuclear-war-a-scenario",
    "date": "2025-10",
+   "topics": [
+    "existential-risk",
+    "geopolitics",
+    "technology-races"
+   ],
    "meta": "Book · Annie Jacobsen · Read"
   },
   {
@@ -603,7 +637,12 @@
    "url": "https://raskell.io/reading/#jurassic-park",
    "date": "2025-07",
    "topics": [
-    "complex-systems"
+    "literature",
+    "complex-systems",
+    "risk",
+    "life-sciences",
+    "hubris",
+    "emergence"
    ],
    "meta": "Novel · Michael Crichton · Read"
   },
@@ -612,6 +651,13 @@
    "title": "The Books of Jacob",
    "url": "https://raskell.io/reading/#the-books-of-jacob",
    "date": "2024-08",
+   "topics": [
+    "maximalist-novels",
+    "religion",
+    "history",
+    "languages",
+    "europe"
+   ],
    "meta": "Novel · Olga Tokarczuk · Read"
   },
   {
@@ -622,6 +668,8 @@
    "date": "2026-06",
    "topics": [
     "neuroscience",
+    "intelligence",
+    "simulation",
     "distributed-systems",
     "gpus"
    ],
@@ -635,6 +683,7 @@
    "date": "2026-06",
    "topics": [
     "neuroscience",
+    "intelligence",
     "simulation"
    ],
    "meta": "Report · Zanichelli, Schons, Freeman, Shiu, and Arkhipov · Read"
@@ -644,6 +693,9 @@
    "title": "Science After Babel",
    "url": "https://raskell.io/reading/#science-after-babel",
    "date": "2023",
+   "topics": [
+    "philosophy-of-science"
+   ],
    "meta": "Book · David Berlinski · Read"
   },
   {
@@ -653,7 +705,7 @@
    "description": "Code Secure and Reliable Network Services from Scratch",
    "date": "2023",
    "topics": [
-    "distributed-systems"
+    "networking"
    ],
    "meta": "Book · Adam Woodbeck · Read"
   },
@@ -663,7 +715,9 @@
    "url": "https://raskell.io/reading/#elixir-in-action",
    "date": "2023",
    "topics": [
-    "elixir"
+    "elixir",
+    "distributed-systems",
+    "reliability"
    ],
    "meta": "Book · Saša Jurić · Read"
   },
@@ -673,7 +727,7 @@
    "url": "https://raskell.io/reading/#crafting-interpreters",
    "date": "2024",
    "topics": [
-    "programming-languages"
+    "compilers"
    ],
    "meta": "Book · Robert Nystrom · Read"
   },
@@ -683,7 +737,8 @@
    "url": "https://raskell.io/reading/#building-a-second-brain",
    "date": "2022",
    "topics": [
-    "knowledge-management"
+    "knowledge-management",
+    "external-memory"
    ],
    "meta": "Book · Tiago Forte · Read"
   },
@@ -693,7 +748,8 @@
    "url": "https://raskell.io/reading/#rust-web-programming",
    "date": "2022",
    "topics": [
-    "rust"
+    "rust",
+    "networking"
    ],
    "meta": "Book · Maxwell Flitton · Read"
   },
@@ -735,8 +791,10 @@
    "url": "https://raskell.io/reading/#jerusalem-the-biography",
    "date": "2017",
    "topics": [
-    "history",
-    "geography"
+    "religion",
+    "geopolitics",
+    "world-history",
+    "cities"
    ],
    "meta": "Book · Simon Sebag Montefiore · Read"
   },
@@ -747,7 +805,9 @@
    "description": "A Social Anticipation",
    "date": "2017",
    "topics": [
-    "economics"
+    "literature",
+    "social-reform",
+    "commons"
    ],
    "meta": "Novel · Theodor Hertzka · Read"
   },
@@ -757,7 +817,7 @@
    "url": "https://raskell.io/reading/#das-soziale-problem",
    "date": "2017",
    "topics": [
-    "economics"
+    "social-reform"
    ],
    "meta": "Book · Theodor Hertzka · Read"
   },
@@ -767,6 +827,10 @@
    "url": "https://raskell.io/reading/#the-devils-delusion",
    "description": "Atheism and Its Scientific Pretensions",
    "date": "2016",
+   "topics": [
+    "philosophy-of-science",
+    "religion"
+   ],
    "meta": "Book · David Berlinski · Read"
   },
   {
@@ -776,8 +840,8 @@
    "description": "Things That Gain from Disorder",
    "date": "2015",
    "topics": [
-    "complex-systems",
-    "economics"
+    "risk",
+    "complex-systems"
    ],
    "meta": "Book · Nassim Nicholas Taleb · Read"
   },
@@ -786,6 +850,11 @@
    "title": "Demons",
    "url": "https://raskell.io/reading/#demons",
    "date": "2012",
+   "topics": [
+    "literature",
+    "ethics",
+    "religion"
+   ],
    "meta": "Novel · Fyodor Dostoevsky · Read"
   },
   {
@@ -793,6 +862,11 @@
    "title": "The Brothers Karamazov",
    "url": "https://raskell.io/reading/#the-brothers-karamazov",
    "date": "2011",
+   "topics": [
+    "literature",
+    "ethics",
+    "religion"
+   ],
    "meta": "Novel · Fyodor Dostoevsky · Read"
   },
   {
@@ -801,7 +875,7 @@
    "url": "https://raskell.io/reading/#a-little-history-of-the-world",
    "date": "2011",
    "topics": [
-    "history"
+    "world-history"
    ],
    "meta": "Book · E. H. Gombrich · Read"
   },
@@ -810,6 +884,10 @@
    "title": "Crime and Punishment",
    "url": "https://raskell.io/reading/#crime-and-punishment",
    "date": "2010",
+   "topics": [
+    "literature",
+    "ethics"
+   ],
    "meta": "Novel · Fyodor Dostoevsky · Read"
   },
   {
@@ -817,6 +895,10 @@
    "title": "Infinite Jest",
    "url": "https://raskell.io/reading/#infinite-jest",
    "date": "2025-10",
+   "topics": [
+    "maximalist-novels",
+    "attention-economy"
+   ],
    "meta": "Novel · David Foster Wallace · Read"
   },
   {
@@ -825,6 +907,10 @@
    "url": "https://raskell.io/reading/#the-maximalist-novel",
    "description": "From Thomas Pynchon's Gravity's Rainbow to Roberto Bolaño's 2666",
    "date": "2025-10",
+   "topics": [
+    "maximalist-novels",
+    "languages"
+   ],
    "meta": "Book · Stefano Ercolino · Read"
   },
   {
@@ -834,17 +920,21 @@
    "description": "Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all.",
    "date": "2025-10",
    "topics": [
-    "open-web",
     "history-of-technology",
-    "hypertext",
-    "open-standards",
+    "research-labs",
+    "networking",
     "decentralisation",
-    "open-data",
     "training-data",
-    "privacy",
     "data-sovereignty",
     "attention-economy",
-    "agents"
+    "agents",
+    "commons",
+    "intellectual-property",
+    "provenance",
+    "external-memory",
+    "emergence",
+    "europe",
+    "switzerland"
    ],
    "meta": "Book · Tim Berners-Lee · Read"
   },
@@ -855,7 +945,9 @@
    "description": "A New History of the Scientific Revolution",
    "date": "2016",
    "topics": [
-    "history-of-science"
+    "history-of-science",
+    "philosophy-of-science",
+    "scientific-revolutions"
    ],
    "meta": "Book · David Wootton · Read"
   },
@@ -875,6 +967,8 @@
    "url": "https://raskell.io/reading/#the-art-of-doing-science-and-engineering",
    "description": "Learning to Learn",
    "topics": [
+    "research-labs",
+    "philosophy-of-science",
     "history-of-technology"
    ],
    "meta": "Book · Richard W. Hamming · Backlog"
@@ -885,7 +979,8 @@
    "url": "https://raskell.io/reading/#why-machines-learn",
    "description": "The Elegant Math Behind Modern AI",
    "topics": [
-    "machine-learning"
+    "machine-learning",
+    "mathematics"
    ],
    "meta": "Book · Anil Ananthaswamy · Backlog"
   },
@@ -895,7 +990,9 @@
    "url": "https://raskell.io/reading/#the-dream-machine",
    "topics": [
     "history-of-technology",
-    "open-web"
+    "research-labs",
+    "networking",
+    "augmentation"
    ],
    "meta": "Book · M. Mitchell Waldrop · Backlog"
   },
@@ -905,8 +1002,10 @@
    "url": "https://raskell.io/reading/#the-alignment-problem",
    "description": "Machine Learning and Human Values",
    "topics": [
-    "machine-learning",
-    "evaluation"
+    "ai-alignment",
+    "ethics",
+    "evaluation",
+    "hubris"
    ],
    "meta": "Book · Brian Christian · Backlog"
   },
@@ -916,6 +1015,7 @@
    "url": "https://raskell.io/reading/#ai-a-guide-for-thinking-humans",
    "description": "A Guide for Thinking Humans",
    "topics": [
+    "intelligence",
     "machine-learning"
    ],
    "meta": "Book · Melanie Mitchell · Backlog"
@@ -926,8 +1026,9 @@
    "url": "https://raskell.io/reading/#deep-thinking",
    "description": "Where Machine Intelligence Ends and Human Creativity Begins",
    "topics": [
-    "machine-learning",
-    "games"
+    "intelligence",
+    "games",
+    "augmentation"
    ],
    "meta": "Book · Garry Kasparov · Backlog"
   },
@@ -936,7 +1037,8 @@
    "title": "Understanding Deep Learning",
    "url": "https://raskell.io/reading/#understanding-deep-learning",
    "topics": [
-    "machine-learning"
+    "machine-learning",
+    "mathematics"
    ],
    "meta": "Book · Simon J. D. Prince · Backlog"
   },
@@ -945,7 +1047,7 @@
    "title": "Build a Large Language Model (From Scratch)",
    "url": "https://raskell.io/reading/#build-a-large-language-model",
    "topics": [
-    "machine-learning",
+    "training-data",
     "inference"
    ],
    "meta": "Book · Sebastian Raschka · Backlog"
@@ -957,7 +1059,8 @@
    "description": "Building Applications with Foundation Models",
    "topics": [
     "ai-platforms",
-    "evaluation"
+    "evaluation",
+    "agents"
    ],
    "meta": "Book · Chip Huyen · Backlog"
   },
@@ -976,7 +1079,8 @@
    "title": "Probabilistic Machine Learning: An Introduction",
    "url": "https://raskell.io/reading/#probabilistic-machine-learning",
    "topics": [
-    "machine-learning"
+    "machine-learning",
+    "mathematics"
    ],
    "meta": "Book · Kevin P. Murphy · Backlog"
   },
@@ -985,7 +1089,13 @@
    "title": "The Making of the Atomic Bomb",
    "url": "https://raskell.io/reading/#the-making-of-the-atomic-bomb",
    "topics": [
-    "history-of-technology"
+    "history-of-science",
+    "research-labs",
+    "existential-risk",
+    "geopolitics",
+    "ethics",
+    "technology-races",
+    "hubris"
    ],
    "meta": "Book · Richard Rhodes · Backlog"
   },
@@ -995,8 +1105,11 @@
    "url": "https://raskell.io/reading/#seeing-like-a-state",
    "description": "How Certain Schemes to Improve the Human Condition Have Failed",
    "topics": [
-    "complex-systems",
-    "history"
+    "history",
+    "high-modernism",
+    "hubris",
+    "commons",
+    "cities"
    ],
    "meta": "Book · James C. Scott · Backlog"
   },
@@ -1006,8 +1119,8 @@
    "url": "https://raskell.io/reading/#a-peace-to-end-all-peace",
    "description": "The Fall of the Ottoman Empire and the Creation of the Modern Middle East",
    "topics": [
-    "history",
-    "geography"
+    "geopolitics",
+    "history"
    ],
    "meta": "Book · David Fromkin · Backlog"
   },
@@ -1017,7 +1130,8 @@
    "url": "https://raskell.io/reading/#the-billion-dollar-molecule",
    "description": "The Quest for the Perfect Drug",
    "topics": [
-    "life-sciences",
+    "medicine",
+    "research-labs",
     "history-of-science"
    ],
    "meta": "Book · Barry Werth · Backlog"
@@ -1029,7 +1143,9 @@
    "description": "The Makers of the Revolution in Biology",
    "topics": [
     "life-sciences",
-    "history-of-science"
+    "research-labs",
+    "history-of-science",
+    "scientific-revolutions"
    ],
    "meta": "Book · Horace Freeland Judson · Backlog"
   },
@@ -1038,8 +1154,10 @@
    "title": "The Demon Under the Microscope",
    "url": "https://raskell.io/reading/#the-demon-under-the-microscope",
    "topics": [
-    "life-sciences",
-    "history-of-science"
+    "medicine",
+    "research-labs",
+    "history-of-science",
+    "scientific-revolutions"
    ],
    "meta": "Book · Thomas Hager · Backlog"
   },
@@ -1049,8 +1167,9 @@
    "url": "https://raskell.io/reading/#the-butchering-art",
    "description": "Joseph Lister's Quest to Transform the Grisly World of Victorian Medicine",
    "topics": [
-    "life-sciences",
-    "history-of-science"
+    "medicine",
+    "history-of-science",
+    "scientific-revolutions"
    ],
    "meta": "Book · Lindsey Fitzharris · Backlog"
   },
@@ -1060,7 +1179,7 @@
    "url": "https://raskell.io/reading/#sicp",
    "date": "2024",
    "topics": [
-    "programming-languages"
+    "compilers"
    ],
    "meta": "Book · Harold Abelson, Gerald Jay Sussman, and Julie Sussman · Set aside"
   },
@@ -1113,7 +1232,8 @@
     "haskell",
     "rust",
     "programming-languages",
-    "developer-tooling"
+    "developer-tooling",
+    "compilers"
    ],
    "meta": "Ventures · Projects"
   },
@@ -1129,7 +1249,8 @@
     "isolation",
     "observability",
     "pingora",
-    "rust"
+    "rust",
+    "networking"
    ],
    "meta": "Flagship and serious builds · Projects"
   },
@@ -1203,7 +1324,9 @@
    "topics": [
     "sovereignty",
     "policy",
-    "oss"
+    "oss",
+    "social-reform",
+    "switzerland"
    ],
    "meta": "Civic and research · Projects"
   },
@@ -1214,7 +1337,8 @@
    "description": "A long-term interdisciplinary research project on humans and human collectives across scales, from individuals and families to institutions, cultures, and civilizations: how individual traits, roles, relations, and cultural transmission combine into emergent collective properties.",
    "topics": [
     "complex-systems",
-    "knowledge-management"
+    "knowledge-management",
+    "emergence"
    ],
    "meta": "Civic and research · Projects"
   },
@@ -1267,7 +1391,8 @@
     "agents",
     "simulation",
     "complex-systems",
-    "rust"
+    "rust",
+    "emergence"
    ],
    "meta": "Labs / passion projects · Projects"
   },
@@ -1280,7 +1405,10 @@
     "simulation",
     "complex-systems",
     "webassembly",
-    "rust"
+    "rust",
+    "neuroscience",
+    "intelligence",
+    "emergence"
    ],
    "meta": "Labs / passion projects · Projects"
   },
@@ -1400,7 +1528,8 @@
    "topics": [
     "local-first",
     "data-sovereignty",
-    "typescript"
+    "typescript",
+    "languages"
    ],
    "meta": "Tools · Apps"
   },
@@ -1414,7 +1543,8 @@
     "data-sovereignty",
     "knowledge-management",
     "distributed-systems",
-    "typescript"
+    "typescript",
+    "external-memory"
    ],
    "meta": "Tools · Apps"
   },
@@ -1450,6 +1580,13 @@
   },
   {
    "kind": "topic",
+   "title": "AI alignment",
+   "url": "https://raskell.io/tags#ai-alignment",
+   "description": "Making AI systems pursue what their builders and users actually intend, and what happens when they do not.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "AI-assisted engineering",
    "url": "https://raskell.io/tags/ai-engineering/",
    "description": "AI as an engineering tool: coding agents, AI-authored code, and what programming becomes when models write most of it.",
@@ -1481,6 +1618,34 @@
    "title": "Attention economy",
    "url": "https://raskell.io/tags/attention-economy/",
    "description": "Platforms that sell attention and optimise for engagement, what that does to the web and to discourse, and the intention economy proposed in its place.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Augmentation",
+   "url": "https://raskell.io/tags/augmentation/",
+   "description": "Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Cities",
+   "url": "https://raskell.io/tags#cities",
+   "description": "How cities are planned and how they actually grow: Jerusalem over three thousand years, Brasilia drawn on paper, and the rational city the web was designed against.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "The commons",
+   "url": "https://raskell.io/tags/commons/",
+   "description": "Resources held in common and the rules that keep them so: common land, open protocols, open data, and the web before the platforms.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Compilers",
+   "url": "https://raskell.io/tags/compilers/",
+   "description": "Turning programs into other programs: parsers, interpreters, type checkers, and code generation.",
    "meta": "Concept"
   },
   {
@@ -1548,9 +1713,44 @@
   },
   {
    "kind": "topic",
+   "title": "Emergence",
+   "url": "https://raskell.io/tags/emergence/",
+   "description": "Order nobody designed: reefs, the early web, neuron cultures, and simulated worlds where simple rules add up to behaviour no single part has.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Ethics",
+   "url": "https://raskell.io/tags#ethics",
+   "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Europe",
+   "url": "https://raskell.io/tags/europe/",
+   "description": "Europe's place in technology and history: where the web was invented, what it builds and gives away, and the data and capabilities it still holds.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Evaluation",
    "url": "https://raskell.io/tags#evaluation",
    "description": "Measuring whether an AI system does the right thing: golden sets, structural checks, LLM-as-judge, and regression suites.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Existential risk",
+   "url": "https://raskell.io/tags#existential-risk",
+   "description": "Technologies that could end or permanently cripple civilisation, from nuclear weapons to misaligned AI, and how people have tried to contain them.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "External memory",
+   "url": "https://raskell.io/tags/external-memory/",
+   "description": "Notes, links, and stores that remember for us: second brains, the web as a shared memory, and what agents write down for their next session.",
    "meta": "Concept"
   },
   {
@@ -1576,6 +1776,13 @@
   },
   {
    "kind": "topic",
+   "title": "Geopolitics",
+   "url": "https://raskell.io/tags#geopolitics",
+   "description": "How geography, empires, and arms shape the balance of power between states and regions, as history.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "GPUs",
    "url": "https://raskell.io/tags/gpus/",
    "description": "GPUs as the computer: memory shape, partitioning, and the hardware under inference.",
@@ -1587,6 +1794,13 @@
    "url": "https://raskell.io/tags/haskell/",
    "description": "The language that shaped how I think about types, effects, and correctness.",
    "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "High modernism",
+   "url": "https://raskell.io/tags#high-modernism",
+   "description": "The confidence that society can be planned from above by experts: Le Corbusier's rational city, scientific forestry, and the schemes that failed when they met real life.",
+   "meta": "Concept"
   },
   {
    "kind": "topic",
@@ -1611,6 +1825,13 @@
   },
   {
    "kind": "topic",
+   "title": "Hubris",
+   "url": "https://raskell.io/tags#hubris",
+   "description": "When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Hypertext",
    "url": "https://raskell.io/tags/hypertext/",
    "description": "Links as the unit of the web: addresses that can point at anything, the read-write web that was intended, and what a graph of documents can do that a tree cannot.",
@@ -1621,6 +1842,20 @@
    "title": "Inference",
    "url": "https://raskell.io/tags/inference/",
    "description": "Running models in production: routing, cost, hardware, and inference as a metered utility.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Intellectual property",
+   "url": "https://raskell.io/tags/intellectual-property/",
+   "description": "Patents, copyright, and licences: who owns an invention or a text, from the web given to the public domain to books scraped for training data.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Intelligence",
+   "url": "https://raskell.io/tags/intelligence/",
+   "description": "What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.",
    "meta": "Concept"
   },
   {
@@ -1646,6 +1881,20 @@
   },
   {
    "kind": "topic",
+   "title": "Languages and translation",
+   "url": "https://raskell.io/tags/languages/",
+   "description": "Human languages and moving meaning between them: translated novels, learning to read Chinese, Japanese, and Hebrew, and Europe's multilingual text.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Legibility",
+   "url": "https://raskell.io/tags#legibility",
+   "description": "Making a complex system readable from above: what the measure captures, what it erases, and what breaks when the map replaces the territory.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Life sciences",
    "url": "https://raskell.io/tags#life-sciences",
    "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
@@ -1657,6 +1906,13 @@
    "url": "https://raskell.io/tags/linux/",
    "description": "Linux distributions and system administration, Void Linux in particular.",
    "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "Literature",
+   "url": "https://raskell.io/tags#literature",
+   "description": "Fiction and writing about fiction: novels read for their own sake, and the forms they take.",
+   "meta": "Domain"
   },
   {
    "kind": "topic",
@@ -1674,6 +1930,27 @@
   },
   {
    "kind": "topic",
+   "title": "Mathematics",
+   "url": "https://raskell.io/tags#mathematics",
+   "description": "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Maximalist novels",
+   "url": "https://raskell.io/tags#maximalist-novels",
+   "description": "Very long, encyclopedic novels that try to hold a whole world: Infinite Jest, The Books of Jacob, and the studies of the form.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Medicine",
+   "url": "https://raskell.io/tags#medicine",
+   "description": "How treatments are discovered, tested, and brought to patients, from antisepsis and sulfa drugs to modern drug design.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "This site",
    "url": "https://raskell.io/tags/meta/",
    "description": "Posts about raskell.io itself: why it exists, how it is built, and where it is going.",
@@ -1688,8 +1965,15 @@
   },
   {
    "kind": "topic",
+   "title": "Networking",
+   "url": "https://raskell.io/tags#networking",
+   "description": "How machines talk: packets, protocols, sockets, and the networks from ARPANET to the web that carry them.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Neuroscience",
-   "url": "https://raskell.io/tags#neuroscience",
+   "url": "https://raskell.io/tags/neuroscience/",
    "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
    "meta": "Concept"
   },
@@ -1751,6 +2035,20 @@
   },
   {
    "kind": "topic",
+   "title": "Philosophy",
+   "url": "https://raskell.io/tags#philosophy",
+   "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Philosophy of science",
+   "url": "https://raskell.io/tags#philosophy-of-science",
+   "description": "How science produces knowledge, what counts as evidence, and where its methods and claims reach their limits.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Pingora",
    "url": "https://raskell.io/tags/pingora/",
    "description": "Cloudflare's Rust framework for building proxies, the base of Zentinel.",
@@ -1773,7 +2071,7 @@
   {
    "kind": "topic",
    "title": "Privacy",
-   "url": "https://raskell.io/tags/privacy/",
+   "url": "https://raskell.io/tags#privacy",
    "description": "Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place.",
    "meta": "Concept"
   },
@@ -1783,6 +2081,13 @@
    "url": "https://raskell.io/tags/programming-languages/",
    "description": "Languages, type systems, compilers, and how executable intent gets written down.",
    "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Provenance",
+   "url": "https://raskell.io/tags/provenance/",
+   "description": "Where something came from and who vouches for it: signed media, rights-clear training data, and artifacts that carry their own history.",
+   "meta": "Concept"
   },
   {
    "kind": "topic",
@@ -1800,10 +2105,38 @@
   },
   {
    "kind": "topic",
+   "title": "Religion",
+   "url": "https://raskell.io/tags#religion",
+   "description": "Faith, doubt, and the institutions and cities built around belief, as history and as argument.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Research labs",
+   "url": "https://raskell.io/tags/research-labs/",
+   "description": "The institutions where discovery happens and how they are funded and run: CERN, Bell Labs, ARPA, Los Alamos, DeepMind, and the labs behind modern medicine.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Risk",
+   "url": "https://raskell.io/tags#risk",
+   "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Rust",
    "url": "https://raskell.io/tags/rust/",
    "description": "The systems language most of the projects here are written in.",
    "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "Scientific revolutions",
+   "url": "https://raskell.io/tags#scientific-revolutions",
+   "description": "Moments when a field's picture of the world changes: the invention of modern science, molecular biology, antisepsis, and the first antibiotics.",
+   "meta": "Concept"
   },
   {
    "kind": "topic",
@@ -1815,9 +2148,16 @@
   {
    "kind": "topic",
    "title": "Simulation",
-   "url": "https://raskell.io/tags#simulation",
+   "url": "https://raskell.io/tags/simulation/",
    "description": "Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.",
    "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Social reform",
+   "url": "https://raskell.io/tags#social-reform",
+   "description": "Plans to redesign society or the economy, from nineteenth-century utopias to high-modernist states and basic income, and what happened when they met people.",
+   "meta": "Concept"
   },
   {
    "kind": "topic",
@@ -1825,6 +2165,20 @@
    "url": "https://raskell.io/tags/sovereignty/",
    "description": "Who controls compute, data, and infrastructure, and in which jurisdiction; Europe's position in particular.",
    "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Switzerland",
+   "url": "https://raskell.io/tags/switzerland/",
+   "description": "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Swiss civic projects.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Technology races",
+   "url": "https://raskell.io/tags/technology-races/",
+   "description": "Powers racing to build a technology first, from the bomb and its deterrence to frontier AI and the data it needs.",
+   "meta": "Concept"
   },
   {
    "kind": "topic",
@@ -1853,6 +2207,13 @@
    "url": "https://raskell.io/tags#webassembly",
    "description": "Portable, sandboxed bytecode for running native-speed code in the browser and beyond.",
    "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "World history",
+   "url": "https://raskell.io/tags#world-history",
+   "description": "History told at the scale of continents and millennia: why societies diverged, and how the world came to look the way it does.",
+   "meta": "Concept"
   },
   {
    "kind": "topic",

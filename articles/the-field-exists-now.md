@@ -4,7 +4,7 @@ url: https://raskell.io/articles/the-field-exists-now/
 author: Raffael Schneider
 date: 2026-05-22
 description: "Alasdair Allan's agentlanguages.dev catalogue turns AI-oriented programming languages from a loose set of experiments into a field with camps, disagreements, and testable claims."
-tags: [programming-languages, ai-engineering, formal-methods, haskell]
+tags: [programming-languages, ai-engineering, formal-methods, haskell, compilers]
 ---
 
 # The Field Exists Now

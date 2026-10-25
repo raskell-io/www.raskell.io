@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-25T09:24:00+00:00",
+ "generated": "2026-10-25T09:57:54+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -28,7 +28,7 @@
    "url": "https://raskell.io/articles/this-site-is-becoming-a-map/",
    "meta": "2026-10-15 · 9 min",
    "description": "A blog shows what I wrote last. The new map on raskell.io shows what I keep coming back to, and it is the start of a public second brain.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/the-bill-is-part-of-the-loop/",
@@ -55,7 +55,7 @@
    "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
    "meta": "2026-06-30 · 34 min",
    "description": "Frontier AI is running short on public text, not compute. Europe's edge is the high-quality data it never put online. Capturing it needs coordination.",
-   "degree": 11
+   "degree": 13
   },
   {
    "id": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
@@ -64,7 +64,7 @@
    "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/",
    "meta": "2026-06-28 · 12 min",
    "description": "An MIT thesis argues brain emulation has crossed into engineering. Read as infrastructure, the numbers describe a workload your AI cluster was not built for.",
-   "degree": 7
+   "degree": 10
   },
   {
    "id": "a:/articles/memory-is-a-write-path/",
@@ -73,7 +73,7 @@
    "url": "https://raskell.io/articles/memory-is-a-write-path/",
    "meta": "2026-06-23 · 19 min",
    "description": "Retrieval reads context the project authored. Memory is the agent writing context for its own future sessions, and the write is the part that is dangerous. Why session memory comes free from the transcript, why cross-session memory needs a separate write surface, and how to let an agent remember without letting it corrupt its own ground truth. Part six of The Agent Platform Handbook.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "a:/articles/the-proof-you-only-have-to-write-once/",
@@ -82,7 +82,7 @@
    "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/",
    "meta": "2026-06-19 · 13 min",
    "description": "Generation is cheap, so verification is the bottleneck — and we throw the verification away every time. What if a proof, once written, could be named, shared, and vouched for? A content-addressed commons for verified Haskell, and the move I left for after the semantic-artifact trilogy.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/articles/retrieval-is-a-tool-not-a-layer/",
@@ -100,7 +100,7 @@
    "url": "https://raskell.io/articles/context-is-the-product/",
    "meta": "2026-06-13 · 26 min",
    "description": "Models are commodities. Context is not. The sources of context an agent draws on, why retrieval alone is not enough, and a minimal .AGENTS/ convention that loads context from disk into the same harness we have been building. Part four of The Agent Platform Handbook.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/tools-how-agents-actually-do-things/",
@@ -136,7 +136,7 @@
    "url": "https://raskell.io/articles/the-field-exists-now/",
    "meta": "2026-05-22 · 7 min",
    "description": "Alasdair Allan's agentlanguages.dev catalogue turns AI-oriented programming languages from a loose set of experiments into a field with camps, disagreements, and testable claims.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "a:/articles/semantic-artifacts-and-meaning-engines/",
@@ -145,7 +145,7 @@
    "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/",
    "meta": "2026-05-07 · 27 min",
    "description": "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "a:/articles/patents-per-capita-is-a-vanity-metric/",
@@ -154,7 +154,7 @@
    "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/",
    "meta": "2026-05-01 · 23 min",
    "description": "Switzerland tops the Global Innovation Index for the fifteenth year running. As an engineer, that should make you suspicious of the metric, not proud of the country.",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "a:/articles/traffic-replay-as-a-security-primitive/",
@@ -190,7 +190,7 @@
    "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/",
    "meta": "2026-04-16 · 19 min",
    "description": "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
@@ -208,7 +208,7 @@
    "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/",
    "meta": "2026-04-11 · 26 min",
    "description": "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "a:/articles/notes-from-rsac-2026/",
@@ -235,7 +235,7 @@
    "url": "https://raskell.io/articles/how-i-work-these-days/",
    "meta": "2026-03-15 · 10 min",
    "description": "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right.",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
@@ -298,7 +298,7 @@
    "url": "https://raskell.io/articles/all-beginning-is-haskell/",
    "meta": "2023-03-06 · 10 min",
    "description": "How Haskell shaped the way I think about building systems, and why I am still building Haskell tooling years after writing my first monad.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "a:/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/",
@@ -325,7 +325,7 @@
    "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/",
    "meta": "2026-10-24",
    "description": "A month in, Claude Opus 5.5 feels like the next milestone after Opus 4.5: the same jump in what Claude Code can carry, now faster and cheaper per task.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "a:/talks/iat-13-basel/",
@@ -334,14 +334,14 @@
    "url": "https://raskell.io/talks/iat-13-basel/",
    "meta": "2026-06-10 · IT's ABOUT TECH #13",
    "description": "Slide deck for IT's ABOUT TECH #13 in Basel. A 15-minute story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time.",
-   "degree": 11
+   "degree": 14
   },
   {
    "id": "t:agents",
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 12 pages",
+   "meta": "Concept · 11 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
    "degree": 18
   },
@@ -350,9 +350,9 @@
    "kind": "tag",
    "label": "AI-assisted engineering",
    "url": "https://raskell.io/tags/ai-engineering/",
-   "meta": "Domain · 9 pages",
+   "meta": "Domain · 10 pages",
    "description": "AI as an engineering tool: coding agents, AI-authored code, and what programming becomes when models write most of it.",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "t:ai-for-ops",
@@ -379,7 +379,7 @@
    "url": "https://raskell.io/tags/applied-security/",
    "meta": "Domain · 5 pages",
    "description": "Security under production pressure: adversarial input, signal versus noise, and controls that operators can live with.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:attention-economy",
@@ -388,7 +388,34 @@
    "url": "https://raskell.io/tags/attention-economy/",
    "meta": "Concept · 1 page",
    "description": "Platforms that sell attention and optimise for engagement, what that does to the web and to discourse, and the intention economy proposed in its place.",
-   "degree": 4
+   "degree": 5
+  },
+  {
+   "id": "t:augmentation",
+   "kind": "tag",
+   "label": "Augmentation",
+   "url": "https://raskell.io/tags/augmentation/",
+   "meta": "Concept · 4 pages",
+   "description": "Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents.",
+   "degree": 8
+  },
+  {
+   "id": "t:commons",
+   "kind": "tag",
+   "label": "The commons",
+   "url": "https://raskell.io/tags/commons/",
+   "meta": "Concept · 1 page",
+   "description": "Resources held in common and the rules that keep them so: common land, open protocols, open data, and the web before the platforms.",
+   "degree": 6
+  },
+  {
+   "id": "t:compilers",
+   "kind": "tag",
+   "label": "Compilers",
+   "url": "https://raskell.io/tags/compilers/",
+   "meta": "Concept · 5 pages",
+   "description": "Turning programs into other programs: parsers, interpreters, type checkers, and code generation.",
+   "degree": 9
   },
   {
    "id": "t:context-engineering",
@@ -397,7 +424,7 @@
    "url": "https://raskell.io/tags/context-engineering/",
    "meta": "Concept · 3 pages",
    "description": "Deciding what a model sees: pinned context, retrieval, memory, and the conventions that keep them honest.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:data-sovereignty",
@@ -413,9 +440,9 @@
    "kind": "tag",
    "label": "Decentralisation",
    "url": "https://raskell.io/tags/decentralisation/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 1 page",
    "description": "Many small nodes and no central operator: the web's original shape, and the alternative to platforms that own the users and the data.",
-   "degree": 5
+   "degree": 4
   },
   {
    "id": "t:developer-tooling",
@@ -433,14 +460,14 @@
    "url": "https://raskell.io/tags/distributed-systems/",
    "meta": "Domain · 3 pages",
    "description": "Replication, coordination, and consistency across machines that fail independently.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:economics",
    "kind": "tag",
    "label": "Economics",
    "url": "https://raskell.io/tags/economics/",
-   "meta": "Concept · 9 pages",
+   "meta": "Concept · 8 pages",
    "description": "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.",
    "degree": 13
   },
@@ -461,6 +488,33 @@
    "meta": "Technology · 2 pages",
    "description": "Elixir, Phoenix, and the BEAM for the long-running, fault-tolerant parts.",
    "degree": 7
+  },
+  {
+   "id": "t:emergence",
+   "kind": "tag",
+   "label": "Emergence",
+   "url": "https://raskell.io/tags/emergence/",
+   "meta": "Concept · 1 page",
+   "description": "Order nobody designed: reefs, the early web, neuron cultures, and simulated worlds where simple rules add up to behaviour no single part has.",
+   "degree": 7
+  },
+  {
+   "id": "t:europe",
+   "kind": "tag",
+   "label": "Europe",
+   "url": "https://raskell.io/tags/europe/",
+   "meta": "Concept · 2 pages",
+   "description": "Europe's place in technology and history: where the web was invented, what it builds and gives away, and the data and capabilities it still holds.",
+   "degree": 7
+  },
+  {
+   "id": "t:external-memory",
+   "kind": "tag",
+   "label": "External memory",
+   "url": "https://raskell.io/tags/external-memory/",
+   "meta": "Concept · 3 pages",
+   "description": "Notes, links, and stores that remember for us: second brains, the web as a shared memory, and what agents write down for their next session.",
+   "degree": 8
   },
   {
    "id": "t:formal-methods",
@@ -496,7 +550,7 @@
    "url": "https://raskell.io/tags/history-of-technology/",
    "meta": "Concept · 1 page",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:hypertext",
@@ -505,7 +559,7 @@
    "url": "https://raskell.io/tags/hypertext/",
    "meta": "Concept · 2 pages",
    "description": "Links as the unit of the web: addresses that can point at anything, the read-write web that was intended, and what a graph of documents can do that a tree cannot.",
-   "degree": 4
+   "degree": 3
   },
   {
    "id": "t:inference",
@@ -515,6 +569,24 @@
    "meta": "Concept · 6 pages",
    "description": "Running models in production: routing, cost, hardware, and inference as a metered utility.",
    "degree": 11
+  },
+  {
+   "id": "t:intellectual-property",
+   "kind": "tag",
+   "label": "Intellectual property",
+   "url": "https://raskell.io/tags/intellectual-property/",
+   "meta": "Concept · 3 pages",
+   "description": "Patents, copyright, and licences: who owns an invention or a text, from the web given to the public domain to books scraped for training data.",
+   "degree": 6
+  },
+  {
+   "id": "t:intelligence",
+   "kind": "tag",
+   "label": "Intelligence",
+   "url": "https://raskell.io/tags/intelligence/",
+   "meta": "Concept · 1 page",
+   "description": "What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.",
+   "degree": 10
   },
   {
    "id": "t:isolation",
@@ -532,7 +604,7 @@
    "url": "https://raskell.io/tags/knowledge-management/",
    "meta": "Concept · 2 pages",
    "description": "Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:kubernetes",
@@ -542,6 +614,15 @@
    "meta": "Technology · 1 page",
    "description": "Container orchestration, and the question of when you actually need it.",
    "degree": 2
+  },
+  {
+   "id": "t:languages",
+   "kind": "tag",
+   "label": "Languages and translation",
+   "url": "https://raskell.io/tags/languages/",
+   "meta": "Concept · 1 page",
+   "description": "Human languages and moving meaning between them: translated novels, learning to read Chinese, Japanese, and Hebrew, and Europe's multilingual text.",
+   "degree": 5
   },
   {
    "id": "t:linux",
@@ -577,7 +658,16 @@
    "url": "https://raskell.io/tags/metrics/",
    "meta": "Concept · 2 pages",
    "description": "What to measure, leading versus lagging signals, and vanity numbers that look like insight.",
-   "degree": 3
+   "degree": 4
+  },
+  {
+   "id": "t:neuroscience",
+   "kind": "tag",
+   "label": "Neuroscience",
+   "url": "https://raskell.io/tags/neuroscience/",
+   "meta": "Concept · 1 page",
+   "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
+   "degree": 6
   },
   {
    "id": "t:observability",
@@ -586,7 +676,7 @@
    "url": "https://raskell.io/tags/observability/",
    "meta": "Concept · 3 pages",
    "description": "Seeing what a running system does: traces, metering, glass-box infrastructure, and what not to log.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:open-data",
@@ -595,25 +685,25 @@
    "url": "https://raskell.io/tags/open-data/",
    "meta": "Concept · 1 page",
    "description": "Data published for anyone to use: government records, archives, and the five-star ladder from a file on the web to linked data with addresses.",
-   "degree": 4
+   "degree": 3
   },
   {
    "id": "t:open-standards",
    "kind": "tag",
    "label": "Open standards",
    "url": "https://raskell.io/tags/open-standards/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 1 page",
    "description": "Protocols and formats agreed in the open and free to implement: HTTP, HTML, TCP/IP, RSS, and the consortia and working groups that keep them so.",
-   "degree": 4
+   "degree": 2
   },
   {
    "id": "t:open-web",
    "kind": "tag",
    "label": "The open web",
    "url": "https://raskell.io/tags/open-web/",
-   "meta": "Domain · 3 pages",
+   "meta": "Domain · 2 pages",
    "description": "The web as a commons: open protocols, small independent sites, and publishing outside the platforms.",
-   "degree": 13
+   "degree": 12
   },
   {
    "id": "t:openbsd",
@@ -674,18 +764,9 @@
    "kind": "tag",
    "label": "Policy",
    "url": "https://raskell.io/tags/policy/",
-   "meta": "Domain · 3 pages",
+   "meta": "Domain · 2 pages",
    "description": "Where engineering meets regulation, public institutions, procurement, and national strategy.",
-   "degree": 5
-  },
-  {
-   "id": "t:privacy",
-   "kind": "tag",
-   "label": "Privacy",
-   "url": "https://raskell.io/tags/privacy/",
-   "meta": "Concept · 1 page",
-   "description": "Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "t:programming-languages",
@@ -694,7 +775,16 @@
    "url": "https://raskell.io/tags/programming-languages/",
    "meta": "Domain · 7 pages",
    "description": "Languages, type systems, compilers, and how executable intent gets written down.",
-   "degree": 18
+   "degree": 17
+  },
+  {
+   "id": "t:provenance",
+   "kind": "tag",
+   "label": "Provenance",
+   "url": "https://raskell.io/tags/provenance/",
+   "meta": "Concept · 2 pages",
+   "description": "Where something came from and who vouches for it: signed media, rights-clear training data, and artifacts that carry their own history.",
+   "degree": 5
   },
   {
    "id": "t:reliability",
@@ -703,7 +793,16 @@
    "url": "https://raskell.io/tags/reliability/",
    "meta": "Domain · 3 pages",
    "description": "Failure modes, operability, and keeping systems up when the inputs and the dependencies misbehave.",
-   "degree": 6
+   "degree": 8
+  },
+  {
+   "id": "t:research-labs",
+   "kind": "tag",
+   "label": "Research labs",
+   "url": "https://raskell.io/tags/research-labs/",
+   "meta": "Concept · 1 page",
+   "description": "The institutions where discovery happens and how they are funded and run: CERN, Bell Labs, ARPA, Los Alamos, DeepMind, and the labs behind modern medicine.",
+   "degree": 11
   },
   {
    "id": "t:rust",
@@ -724,13 +823,40 @@
    "degree": 7
   },
   {
+   "id": "t:simulation",
+   "kind": "tag",
+   "label": "Simulation",
+   "url": "https://raskell.io/tags/simulation/",
+   "meta": "Domain · 1 page",
+   "description": "Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.",
+   "degree": 6
+  },
+  {
    "id": "t:sovereignty",
    "kind": "tag",
    "label": "Sovereignty",
    "url": "https://raskell.io/tags/sovereignty/",
-   "meta": "Domain · 5 pages",
+   "meta": "Domain · 4 pages",
    "description": "Who controls compute, data, and infrastructure, and in which jurisdiction; Europe's position in particular.",
    "degree": 11
+  },
+  {
+   "id": "t:switzerland",
+   "kind": "tag",
+   "label": "Switzerland",
+   "url": "https://raskell.io/tags/switzerland/",
+   "meta": "Concept · 2 pages",
+   "description": "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Swiss civic projects.",
+   "degree": 5
+  },
+  {
+   "id": "t:technology-races",
+   "kind": "tag",
+   "label": "Technology races",
+   "url": "https://raskell.io/tags/technology-races/",
+   "meta": "Concept · 1 page",
+   "description": "Powers racing to build a technology first, from the bomb and its deterrence to frontier AI and the data it needs.",
+   "degree": 6
   },
   {
    "id": "t:training-data",
@@ -739,7 +865,7 @@
    "url": "https://raskell.io/tags/training-data/",
    "meta": "Concept · 2 pages",
    "description": "What models learn from: web crawls, books, and licensed or unlicensed corpora; who holds what has not been scraped yet, and on what terms.",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "t:typescript",
@@ -769,12 +895,39 @@
    "degree": 3
   },
   {
+   "id": "t:ai-alignment",
+   "kind": "tag",
+   "label": "AI alignment",
+   "url": "https://raskell.io/tags#ai-alignment",
+   "meta": "Concept · no pages yet",
+   "description": "Making AI systems pursue what their builders and users actually intend, and what happens when they do not.",
+   "degree": 4
+  },
+  {
+   "id": "t:cities",
+   "kind": "tag",
+   "label": "Cities",
+   "url": "https://raskell.io/tags#cities",
+   "meta": "Concept · no pages yet",
+   "description": "How cities are planned and how they actually grow: Jerusalem over three thousand years, Brasilia drawn on paper, and the rational city the web was designed against.",
+   "degree": 3
+  },
+  {
    "id": "t:complex-systems",
    "kind": "tag",
    "label": "Complex systems",
    "url": "https://raskell.io/tags#complex-systems",
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
+   "degree": 9
+  },
+  {
+   "id": "t:ethics",
+   "kind": "tag",
+   "label": "Ethics",
+   "url": "https://raskell.io/tags#ethics",
+   "meta": "Concept · no pages yet",
+   "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
    "degree": 7
   },
   {
@@ -787,13 +940,22 @@
    "degree": 4
   },
   {
+   "id": "t:existential-risk",
+   "kind": "tag",
+   "label": "Existential risk",
+   "url": "https://raskell.io/tags#existential-risk",
+   "meta": "Concept · no pages yet",
+   "description": "Technologies that could end or permanently cripple civilisation, from nuclear weapons to misaligned AI, and how people have tried to contain them.",
+   "degree": 6
+  },
+  {
    "id": "t:games",
    "kind": "tag",
    "label": "Games",
    "url": "https://raskell.io/tags#games",
    "meta": "Domain · no pages yet",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:geography",
@@ -805,13 +967,31 @@
    "degree": 5
   },
   {
+   "id": "t:geopolitics",
+   "kind": "tag",
+   "label": "Geopolitics",
+   "url": "https://raskell.io/tags#geopolitics",
+   "meta": "Concept · no pages yet",
+   "description": "How geography, empires, and arms shape the balance of power between states and regions, as history.",
+   "degree": 8
+  },
+  {
+   "id": "t:high-modernism",
+   "kind": "tag",
+   "label": "High modernism",
+   "url": "https://raskell.io/tags#high-modernism",
+   "meta": "Concept · no pages yet",
+   "description": "The confidence that society can be planned from above by experts: Le Corbusier's rational city, scientific forestry, and the schemes that failed when they met real life.",
+   "degree": 3
+  },
+  {
    "id": "t:history",
    "kind": "tag",
    "label": "History",
    "url": "https://raskell.io/tags#history",
    "meta": "Domain · no pages yet",
    "description": "Events, institutions, and societies through time, with attention to sources, competing accounts, and uncertainty.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:history-of-science",
@@ -820,7 +1000,25 @@
    "url": "https://raskell.io/tags#history-of-science",
    "meta": "Concept · no pages yet",
    "description": "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.",
+   "degree": 10
+  },
+  {
+   "id": "t:hubris",
+   "kind": "tag",
+   "label": "Hubris",
+   "url": "https://raskell.io/tags#hubris",
+   "meta": "Concept · no pages yet",
+   "description": "When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand.",
    "degree": 6
+  },
+  {
+   "id": "t:legibility",
+   "kind": "tag",
+   "label": "Legibility",
+   "url": "https://raskell.io/tags#legibility",
+   "meta": "Concept · no pages yet",
+   "description": "Making a complex system readable from above: what the measure captures, what it erases, and what breaks when the map replaces the territory.",
+   "degree": 4
   },
   {
    "id": "t:life-sciences",
@@ -829,7 +1027,16 @@
    "url": "https://raskell.io/tags#life-sciences",
    "meta": "Domain · no pages yet",
    "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
-   "degree": 5
+   "degree": 4
+  },
+  {
+   "id": "t:literature",
+   "kind": "tag",
+   "label": "Literature",
+   "url": "https://raskell.io/tags#literature",
+   "meta": "Domain · no pages yet",
+   "description": "Fiction and writing about fiction: novels read for their own sake, and the forms they take.",
+   "degree": 7
   },
   {
    "id": "t:machine-learning",
@@ -838,15 +1045,69 @@
    "url": "https://raskell.io/tags#machine-learning",
    "meta": "Domain · no pages yet",
    "description": "How models learn from data: the mathematics, the training methods, and what the results can and cannot do.",
-   "degree": 11
+   "degree": 9
   },
   {
-   "id": "t:neuroscience",
+   "id": "t:mathematics",
    "kind": "tag",
-   "label": "Neuroscience",
-   "url": "https://raskell.io/tags#neuroscience",
+   "label": "Mathematics",
+   "url": "https://raskell.io/tags#mathematics",
+   "meta": "Domain · no pages yet",
+   "description": "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.",
+   "degree": 3
+  },
+  {
+   "id": "t:maximalist-novels",
+   "kind": "tag",
+   "label": "Maximalist novels",
+   "url": "https://raskell.io/tags#maximalist-novels",
    "meta": "Concept · no pages yet",
-   "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
+   "description": "Very long, encyclopedic novels that try to hold a whole world: Infinite Jest, The Books of Jacob, and the studies of the form.",
+   "degree": 4
+  },
+  {
+   "id": "t:medicine",
+   "kind": "tag",
+   "label": "Medicine",
+   "url": "https://raskell.io/tags#medicine",
+   "meta": "Concept · no pages yet",
+   "description": "How treatments are discovered, tested, and brought to patients, from antisepsis and sulfa drugs to modern drug design.",
+   "degree": 4
+  },
+  {
+   "id": "t:networking",
+   "kind": "tag",
+   "label": "Networking",
+   "url": "https://raskell.io/tags#networking",
+   "meta": "Concept · no pages yet",
+   "description": "How machines talk: packets, protocols, sockets, and the networks from ARPANET to the web that carry them.",
+   "degree": 7
+  },
+  {
+   "id": "t:philosophy",
+   "kind": "tag",
+   "label": "Philosophy",
+   "url": "https://raskell.io/tags#philosophy",
+   "meta": "Domain · no pages yet",
+   "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
+   "degree": 3
+  },
+  {
+   "id": "t:philosophy-of-science",
+   "kind": "tag",
+   "label": "Philosophy of science",
+   "url": "https://raskell.io/tags#philosophy-of-science",
+   "meta": "Concept · no pages yet",
+   "description": "How science produces knowledge, what counts as evidence, and where its methods and claims reach their limits.",
+   "degree": 7
+  },
+  {
+   "id": "t:privacy",
+   "kind": "tag",
+   "label": "Privacy",
+   "url": "https://raskell.io/tags#privacy",
+   "meta": "Concept · no pages yet",
+   "description": "Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place.",
    "degree": 3
   },
   {
@@ -859,13 +1120,40 @@
    "degree": 4
   },
   {
-   "id": "t:simulation",
+   "id": "t:religion",
    "kind": "tag",
-   "label": "Simulation",
-   "url": "https://raskell.io/tags#simulation",
-   "meta": "Domain · no pages yet",
-   "description": "Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.",
-   "degree": 4
+   "label": "Religion",
+   "url": "https://raskell.io/tags#religion",
+   "meta": "Concept · no pages yet",
+   "description": "Faith, doubt, and the institutions and cities built around belief, as history and as argument.",
+   "degree": 7
+  },
+  {
+   "id": "t:risk",
+   "kind": "tag",
+   "label": "Risk",
+   "url": "https://raskell.io/tags#risk",
+   "meta": "Concept · no pages yet",
+   "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
+   "degree": 6
+  },
+  {
+   "id": "t:scientific-revolutions",
+   "kind": "tag",
+   "label": "Scientific revolutions",
+   "url": "https://raskell.io/tags#scientific-revolutions",
+   "meta": "Concept · no pages yet",
+   "description": "Moments when a field's picture of the world changes: the invention of modern science, molecular biology, antisepsis, and the first antibiotics.",
+   "degree": 6
+  },
+  {
+   "id": "t:social-reform",
+   "kind": "tag",
+   "label": "Social reform",
+   "url": "https://raskell.io/tags#social-reform",
+   "meta": "Concept · no pages yet",
+   "description": "Plans to redesign society or the economy, from nineteenth-century utopias to high-modernist states and basic income, and what happened when they met people.",
+   "degree": 6
   },
   {
    "id": "t:webassembly",
@@ -875,6 +1163,15 @@
    "meta": "Technology · no pages yet",
    "description": "Portable, sandboxed bytecode for running native-speed code in the browser and beyond.",
    "degree": 8
+  },
+  {
+   "id": "t:world-history",
+   "kind": "tag",
+   "label": "World history",
+   "url": "https://raskell.io/tags#world-history",
+   "meta": "Concept · no pages yet",
+   "description": "History told at the scale of continents and millennia: why societies diverged, and how the world came to look the way it does.",
+   "degree": 5
   },
   {
    "id": "s:the-agent-platform-handbook",
@@ -927,7 +1224,7 @@
    "url": "https://arcanist.sh",
    "meta": "Project",
    "description": "Haskell tooling for the age of AI-authored code. hx is a fast package and project manager written in Rust, and bhc is a compiler built to check everything it can. With a registry t…",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "p:zentinel",
@@ -936,7 +1233,7 @@
    "url": "https://zentinelproxy.io",
    "meta": "Project",
    "description": "Security-first reverse proxy built to guard the free web. Rust on Cloudflare's Pingora, explicit configuration over hidden defaults, and WAF, auth and other policy in isolated agen…",
-   "degree": 22
+   "degree": 23
   },
   {
    "id": "p:hx",
@@ -990,7 +1287,7 @@
    "url": "https://die-zukunft.ch",
    "meta": "Project",
    "description": "A Swiss movement that applies engineering principles to public life: not left, not right. Digital sovereignty through open standards, auditable and portable public infrastructure, …",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "p:human-macroscope",
@@ -999,7 +1296,7 @@
    "url": "https://github.com/human-macroscope",
    "meta": "Project",
    "description": "A long-term interdisciplinary research project on humans and human collectives across scales, from individuals and families to institutions, cultures, and civilizations: how indivi…",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "p:chronicle-of-earth",
@@ -1035,7 +1332,7 @@
    "url": "https://terrarium.raskell.io",
    "meta": "Project",
    "description": "A societal simulation engine where LLM-powered agents form emergent civilizations. Each agent has a personality, needs, memories, and beliefs that can be wrong. You set the rules o…",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "p:hotaru",
@@ -1044,7 +1341,7 @@
    "url": "https://hotaru.raskell.io",
    "meta": "Project",
    "description": "Simulated neuron cultures on a 60-electrode array play Pong in your browser, as in the DishBrain experiment. Feedback for hits and misses alone did not make them better. Input that…",
-   "degree": 7
+   "degree": 10
   },
   {
    "id": "p:kishi",
@@ -1134,7 +1431,7 @@
    "url": "https://manabi.raskell.io",
    "meta": "Project",
    "description": "A reading-first language-learning app for Chinese, Japanese, Korean, and Hebrew. It trains recognition, pronunciation, listening, context, and recall separately, with spaced repeti…",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "p:kurumi",
@@ -1143,7 +1440,7 @@
    "url": "https://kurumi.raskell.io",
    "meta": "Project",
    "description": "A local-first, AI-native second brain. Capture notes, links, and meetings, then find them again through wikilinks, backlinks, a graph view, and full-text search. Everything works o…",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "p:paw-and-claw",
@@ -1170,7 +1467,7 @@
    "url": "https://raskell.io/reading/#the-infinity-machine",
    "meta": "Book · Sebastian Mallaby · reading now",
    "description": "Demis Hassabis, DeepMind, and the Quest for Superintelligence",
-   "degree": 5
+   "degree": 9
   },
   {
    "id": "w:the-cauldron",
@@ -1188,7 +1485,7 @@
    "url": "https://raskell.io/reading/#guns-germs-and-steel",
    "meta": "Book · Jared Diamond · read November 2025",
    "description": "The Fates of Human Societies",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "w:nuclear-war-a-scenario",
@@ -1196,7 +1493,7 @@
    "label": "Nuclear War: A Scenario",
    "url": "https://raskell.io/reading/#nuclear-war-a-scenario",
    "meta": "Book · Annie Jacobsen · read October 2025",
-   "degree": 1
+   "degree": 4
   },
   {
    "id": "w:jurassic-park",
@@ -1204,7 +1501,7 @@
    "label": "Jurassic Park",
    "url": "https://raskell.io/reading/#jurassic-park",
    "meta": "Novel · Michael Crichton · read July 2025",
-   "degree": 2
+   "degree": 7
   },
   {
    "id": "w:the-books-of-jacob",
@@ -1212,7 +1509,7 @@
    "label": "The Books of Jacob",
    "url": "https://raskell.io/reading/#the-books-of-jacob",
    "meta": "Novel · Olga Tokarczuk · read August 2024",
-   "degree": 1
+   "degree": 6
   },
   {
    "id": "w:from-worm-to-human",
@@ -1221,7 +1518,7 @@
    "url": "https://raskell.io/reading/#from-worm-to-human",
    "meta": "Paper · Isaak Freeman · read June 2026",
    "description": "A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "w:state-of-brain-emulation-2025",
@@ -1230,7 +1527,7 @@
    "url": "https://raskell.io/reading/#state-of-brain-emulation-2025",
    "meta": "Report · Zanichelli, Schons, Freeman, Shiu, and Arkhipov · read June 2026",
    "description": "The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:science-after-babel",
@@ -1238,7 +1535,7 @@
    "label": "Science After Babel",
    "url": "https://raskell.io/reading/#science-after-babel",
    "meta": "Book · David Berlinski · read 2023",
-   "degree": 1
+   "degree": 2
   },
   {
    "id": "w:network-programming-with-go",
@@ -1255,7 +1552,7 @@
    "label": "Elixir in Action",
    "url": "https://raskell.io/reading/#elixir-in-action",
    "meta": "Book · Saša Jurić · read 2023",
-   "degree": 2
+   "degree": 4
   },
   {
    "id": "w:crafting-interpreters",
@@ -1271,7 +1568,7 @@
    "label": "Building a Second Brain",
    "url": "https://raskell.io/reading/#building-a-second-brain",
    "meta": "Book · Tiago Forte · read 2022",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "w:rust-web-programming",
@@ -1279,7 +1576,7 @@
    "label": "Rust Web Programming",
    "url": "https://raskell.io/reading/#rust-web-programming",
    "meta": "Book · Maxwell Flitton · read 2022",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "w:programming-webassembly-with-rust",
@@ -1312,7 +1609,7 @@
    "label": "Jerusalem: The Biography",
    "url": "https://raskell.io/reading/#jerusalem-the-biography",
    "meta": "Book · Simon Sebag Montefiore · read 2017",
-   "degree": 3
+   "degree": 5
   },
   {
    "id": "w:freeland",
@@ -1321,7 +1618,7 @@
    "url": "https://raskell.io/reading/#freeland",
    "meta": "Novel · Theodor Hertzka · read 2017",
    "description": "A Social Anticipation",
-   "degree": 2
+   "degree": 4
   },
   {
    "id": "w:das-soziale-problem",
@@ -1338,7 +1635,7 @@
    "url": "https://raskell.io/reading/#the-devils-delusion",
    "meta": "Book · David Berlinski · read 2016",
    "description": "Atheism and Its Scientific Pretensions",
-   "degree": 1
+   "degree": 3
   },
   {
    "id": "w:antifragile",
@@ -1355,7 +1652,7 @@
    "label": "Demons",
    "url": "https://raskell.io/reading/#demons",
    "meta": "Novel · Fyodor Dostoevsky · read 2012",
-   "degree": 1
+   "degree": 4
   },
   {
    "id": "w:the-brothers-karamazov",
@@ -1363,7 +1660,7 @@
    "label": "The Brothers Karamazov",
    "url": "https://raskell.io/reading/#the-brothers-karamazov",
    "meta": "Novel · Fyodor Dostoevsky · read 2011",
-   "degree": 1
+   "degree": 4
   },
   {
    "id": "w:a-little-history-of-the-world",
@@ -1379,7 +1676,7 @@
    "label": "Crime and Punishment",
    "url": "https://raskell.io/reading/#crime-and-punishment",
    "meta": "Novel · Fyodor Dostoevsky · read 2010",
-   "degree": 1
+   "degree": 3
   },
   {
    "id": "w:infinite-jest",
@@ -1387,7 +1684,7 @@
    "label": "Infinite Jest",
    "url": "https://raskell.io/reading/#infinite-jest",
    "meta": "Novel · David Foster Wallace · read October 2025",
-   "degree": 1
+   "degree": 3
   },
   {
    "id": "w:the-maximalist-novel",
@@ -1396,7 +1693,7 @@
    "url": "https://raskell.io/reading/#the-maximalist-novel",
    "meta": "Book · Stefano Ercolino · read October 2025",
    "description": "From Thomas Pynchon's Gravity's Rainbow to Roberto Bolaño's 2666",
-   "degree": 1
+   "degree": 3
   },
   {
    "id": "w:this-is-for-everyone",
@@ -1405,7 +1702,7 @@
    "url": "https://raskell.io/articles/the-web-was-the-training-set/",
    "meta": "Book · Tim Berners-Lee · read October 2025",
    "description": "Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all.",
-   "degree": 14
+   "degree": 18
   },
   {
    "id": "w:the-invention-of-science",
@@ -1414,7 +1711,7 @@
    "url": "https://raskell.io/reading/#the-invention-of-science",
    "meta": "Book · David Wootton · read 2016",
    "description": "A New History of the Scientific Revolution",
-   "degree": 2
+   "degree": 4
   },
   {
    "id": "w:enterprise-architecture-as-strategy",
@@ -1432,7 +1729,7 @@
    "url": "https://raskell.io/reading/#the-art-of-doing-science-and-engineering",
    "meta": "Book · Richard W. Hamming · in the backlog",
    "description": "Learning to Learn",
-   "degree": 2
+   "degree": 4
   },
   {
    "id": "w:why-machines-learn",
@@ -1441,7 +1738,7 @@
    "url": "https://raskell.io/reading/#why-machines-learn",
    "meta": "Book · Anil Ananthaswamy · in the backlog",
    "description": "The Elegant Math Behind Modern AI",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "w:the-dream-machine",
@@ -1449,7 +1746,7 @@
    "label": "The Dream Machine",
    "url": "https://raskell.io/reading/#the-dream-machine",
    "meta": "Book · M. Mitchell Waldrop · in the backlog",
-   "degree": 3
+   "degree": 5
   },
   {
    "id": "w:the-alignment-problem",
@@ -1458,7 +1755,7 @@
    "url": "https://raskell.io/reading/#the-alignment-problem",
    "meta": "Book · Brian Christian · in the backlog",
    "description": "Machine Learning and Human Values",
-   "degree": 3
+   "degree": 5
   },
   {
    "id": "w:ai-a-guide-for-thinking-humans",
@@ -1467,7 +1764,7 @@
    "url": "https://raskell.io/reading/#ai-a-guide-for-thinking-humans",
    "meta": "Book · Melanie Mitchell · in the backlog",
    "description": "A Guide for Thinking Humans",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "w:deep-thinking",
@@ -1476,7 +1773,7 @@
    "url": "https://raskell.io/reading/#deep-thinking",
    "meta": "Book · Garry Kasparov · in the backlog",
    "description": "Where Machine Intelligence Ends and Human Creativity Begins",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "w:understanding-deep-learning",
@@ -1484,7 +1781,7 @@
    "label": "Understanding Deep Learning",
    "url": "https://raskell.io/reading/#understanding-deep-learning",
    "meta": "Book · Simon J. D. Prince · in the backlog",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "w:build-a-large-language-model",
@@ -1501,7 +1798,7 @@
    "url": "https://raskell.io/reading/#ai-engineering",
    "meta": "Book · Chip Huyen · in the backlog",
    "description": "Building Applications with Foundation Models",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "w:reinforcement-learning-an-introduction",
@@ -1517,7 +1814,7 @@
    "label": "Probabilistic Machine Learning: An Introduction",
    "url": "https://raskell.io/reading/#probabilistic-machine-learning",
    "meta": "Book · Kevin P. Murphy · in the backlog",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "w:the-making-of-the-atomic-bomb",
@@ -1525,7 +1822,7 @@
    "label": "The Making of the Atomic Bomb",
    "url": "https://raskell.io/reading/#the-making-of-the-atomic-bomb",
    "meta": "Book · Richard Rhodes · in the backlog",
-   "degree": 2
+   "degree": 8
   },
   {
    "id": "w:seeing-like-a-state",
@@ -1534,7 +1831,7 @@
    "url": "https://raskell.io/reading/#seeing-like-a-state",
    "meta": "Book · James C. Scott · in the backlog",
    "description": "How Certain Schemes to Improve the Human Condition Have Failed",
-   "degree": 3
+   "degree": 6
   },
   {
    "id": "w:a-peace-to-end-all-peace",
@@ -1552,7 +1849,7 @@
    "url": "https://raskell.io/reading/#the-billion-dollar-molecule",
    "meta": "Book · Barry Werth · in the backlog",
    "description": "The Quest for the Perfect Drug",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "w:the-eighth-day-of-creation",
@@ -1561,7 +1858,7 @@
    "url": "https://raskell.io/reading/#the-eighth-day-of-creation",
    "meta": "Book · Horace Freeland Judson · in the backlog",
    "description": "The Makers of the Revolution in Biology",
-   "degree": 3
+   "degree": 5
   },
   {
    "id": "w:the-demon-under-the-microscope",
@@ -1569,7 +1866,7 @@
    "label": "The Demon Under the Microscope",
    "url": "https://raskell.io/reading/#the-demon-under-the-microscope",
    "meta": "Book · Thomas Hager · in the backlog",
-   "degree": 3
+   "degree": 5
   },
   {
    "id": "w:the-butchering-art",
@@ -1578,7 +1875,7 @@
    "url": "https://raskell.io/reading/#the-butchering-art",
    "meta": "Book · Lindsey Fitzharris · in the backlog",
    "description": "Joseph Lister's Quest to Transform the Grisly World of Victorian Medicine",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "w:sicp",
@@ -1671,10 +1968,6 @@
  ],
  "links": [
   {
-   "source": "a:/articles/the-web-was-the-training-set/",
-   "target": "t:agents"
-  },
-  {
    "source": "a:/articles/observability-is-not-logging/",
    "target": "t:agents"
   },
@@ -1728,6 +2021,10 @@
   },
   {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "a:/talks/iat-13-basel/",
    "target": "t:ai-engineering"
   },
   {
@@ -1811,6 +2108,66 @@
    "target": "t:open-web"
   },
   {
+   "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
+   "target": "t:augmentation"
+  },
+  {
+   "source": "a:/talks/iat-13-basel/",
+   "target": "t:augmentation"
+  },
+  {
+   "source": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
+   "target": "t:augmentation"
+  },
+  {
+   "source": "a:/articles/how-i-work-these-days/",
+   "target": "t:augmentation"
+  },
+  {
+   "source": "t:augmentation",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "t:augmentation",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "t:commons"
+  },
+  {
+   "source": "t:commons",
+   "target": "t:open-web"
+  },
+  {
+   "source": "t:commons",
+   "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/the-proof-you-only-have-to-write-once/",
+   "target": "t:compilers"
+  },
+  {
+   "source": "a:/articles/the-field-exists-now/",
+   "target": "t:compilers"
+  },
+  {
+   "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
+   "target": "t:compilers"
+  },
+  {
+   "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "target": "t:compilers"
+  },
+  {
+   "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "t:compilers"
+  },
+  {
+   "source": "t:compilers",
+   "target": "t:programming-languages"
+  },
+  {
    "source": "a:/articles/memory-is-a-write-path/",
    "target": "t:context-engineering"
   },
@@ -1837,10 +2194,6 @@
   {
    "source": "t:data-sovereignty",
    "target": "t:privacy"
-  },
-  {
-   "source": "a:/articles/the-web-was-the-training-set/",
-   "target": "t:decentralisation"
   },
   {
    "source": "a:/articles/looking-back-on-2025/",
@@ -1903,10 +2256,6 @@
    "target": "t:economics"
   },
   {
-   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
-   "target": "t:economics"
-  },
-  {
    "source": "a:/articles/context-is-the-product/",
    "target": "t:economics"
   },
@@ -1961,6 +2310,50 @@
   {
    "source": "t:elixir",
    "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "t:emergence"
+  },
+  {
+   "source": "t:emergence",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "t:europe"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "t:europe"
+  },
+  {
+   "source": "t:europe",
+   "target": "t:sovereignty"
+  },
+  {
+   "source": "t:europe",
+   "target": "t:geography"
+  },
+  {
+   "source": "a:/articles/this-site-is-becoming-a-map/",
+   "target": "t:external-memory"
+  },
+  {
+   "source": "a:/articles/memory-is-a-write-path/",
+   "target": "t:external-memory"
+  },
+  {
+   "source": "a:/articles/context-is-the-product/",
+   "target": "t:external-memory"
+  },
+  {
+   "source": "t:external-memory",
+   "target": "t:knowledge-management"
+  },
+  {
+   "source": "t:external-memory",
+   "target": "t:context-engineering"
   },
   {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
@@ -2075,6 +2468,38 @@
    "target": "t:ai-platforms"
   },
   {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "t:intellectual-property"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "t:intellectual-property"
+  },
+  {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "t:intellectual-property"
+  },
+  {
+   "source": "t:intellectual-property",
+   "target": "t:policy"
+  },
+  {
+   "source": "t:intellectual-property",
+   "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "t:intelligence",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "t:intelligence",
+   "target": "t:neuroscience"
+  },
+  {
    "source": "a:/articles/your-agent-wants-root/",
    "target": "t:isolation"
   },
@@ -2113,6 +2538,14 @@
   {
    "source": "t:kubernetes",
    "target": "t:platform-automation"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "t:languages"
+  },
+  {
+   "source": "t:languages",
+   "target": "t:literature"
   },
   {
    "source": "a:/articles/disk-space-void-linux-maintenance/",
@@ -2155,6 +2588,14 @@
    "target": "t:metrics"
   },
   {
+   "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "t:neuroscience",
+   "target": "t:life-sciences"
+  },
+  {
    "source": "a:/articles/observability-is-not-logging/",
    "target": "t:observability"
   },
@@ -2183,10 +2624,6 @@
    "target": "t:policy"
   },
   {
-   "source": "a:/articles/the-web-was-the-training-set/",
-   "target": "t:open-standards"
-  },
-  {
    "source": "a:/articles/looking-back-on-2025/",
    "target": "t:open-standards"
   },
@@ -2196,10 +2633,6 @@
   },
   {
    "source": "a:/articles/this-site-is-becoming-a-map/",
-   "target": "t:open-web"
-  },
-  {
-   "source": "a:/articles/looking-back-on-2025/",
    "target": "t:open-web"
   },
   {
@@ -2275,28 +2708,12 @@
    "target": "t:platform-automation"
   },
   {
-   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
-   "target": "t:policy"
-  },
-  {
    "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
    "target": "t:policy"
   },
   {
    "source": "a:/articles/notes-from-rsac-2026/",
    "target": "t:policy"
-  },
-  {
-   "source": "a:/articles/looking-back-on-2025/",
-   "target": "t:privacy"
-  },
-  {
-   "source": "t:privacy",
-   "target": "t:applied-security"
-  },
-  {
-   "source": "t:privacy",
-   "target": "t:sovereignty"
   },
   {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
@@ -2327,6 +2744,22 @@
    "target": "t:programming-languages"
   },
   {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "t:provenance"
+  },
+  {
+   "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
+   "target": "t:provenance"
+  },
+  {
+   "source": "t:provenance",
+   "target": "t:training-data"
+  },
+  {
+   "source": "t:provenance",
+   "target": "t:applied-security"
+  },
+  {
    "source": "a:/articles/the-model-is-a-dependency/",
    "target": "t:reliability"
   },
@@ -2337,6 +2770,18 @@
   {
    "source": "a:/articles/what-zentinel-is-really-optimizing-for/",
    "target": "t:reliability"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "t:research-labs"
+  },
+  {
+   "source": "t:research-labs",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "t:research-labs",
+   "target": "t:history-of-technology"
   },
   {
    "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
@@ -2387,8 +2832,12 @@
    "target": "t:sovereignty"
   },
   {
-   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
-   "target": "t:sovereignty"
+   "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
+   "target": "t:simulation"
+  },
+  {
+   "source": "t:simulation",
+   "target": "t:complex-systems"
   },
   {
    "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
@@ -2405,6 +2854,30 @@
   {
    "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
    "target": "t:sovereignty"
+  },
+  {
+   "source": "a:/talks/iat-13-basel/",
+   "target": "t:switzerland"
+  },
+  {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "t:switzerland"
+  },
+  {
+   "source": "t:switzerland",
+   "target": "t:europe"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "t:technology-races"
+  },
+  {
+   "source": "t:technology-races",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "t:technology-races",
+   "target": "t:existential-risk"
   },
   {
    "source": "a:/articles/the-web-was-the-training-set/",
@@ -2483,6 +2956,22 @@
    "target": "t:open-web"
   },
   {
+   "source": "t:ai-alignment",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "t:ai-alignment",
+   "target": "t:existential-risk"
+  },
+  {
+   "source": "t:cities",
+   "target": "t:geography"
+  },
+  {
+   "source": "t:ethics",
+   "target": "t:philosophy"
+  },
+  {
    "source": "t:evaluation",
    "target": "t:agents"
   },
@@ -2491,24 +2980,132 @@
    "target": "t:metrics"
   },
   {
+   "source": "t:existential-risk",
+   "target": "t:risk"
+  },
+  {
+   "source": "t:existential-risk",
+   "target": "t:policy"
+  },
+  {
+   "source": "t:geopolitics",
+   "target": "t:history"
+  },
+  {
+   "source": "t:geopolitics",
+   "target": "t:geography"
+  },
+  {
+   "source": "t:high-modernism",
+   "target": "t:legibility"
+  },
+  {
+   "source": "t:high-modernism",
+   "target": "t:social-reform"
+  },
+  {
    "source": "t:history-of-science",
    "target": "t:history"
   },
   {
-   "source": "t:neuroscience",
+   "source": "t:hubris",
+   "target": "t:risk"
+  },
+  {
+   "source": "t:hubris",
+   "target": "t:ethics"
+  },
+  {
+   "source": "t:legibility",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "t:legibility",
+   "target": "t:metrics"
+  },
+  {
+   "source": "t:legibility",
+   "target": "t:observability"
+  },
+  {
+   "source": "t:maximalist-novels",
+   "target": "t:literature"
+  },
+  {
+   "source": "t:medicine",
    "target": "t:life-sciences"
+  },
+  {
+   "source": "t:networking",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "t:networking",
+   "target": "t:open-web"
+  },
+  {
+   "source": "t:philosophy-of-science",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "t:philosophy-of-science",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "t:privacy",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "t:privacy",
+   "target": "t:sovereignty"
   },
   {
    "source": "t:reinforcement-learning",
    "target": "t:machine-learning"
   },
   {
-   "source": "t:simulation",
-   "target": "t:complex-systems"
+   "source": "t:religion",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "t:religion",
+   "target": "t:history"
+  },
+  {
+   "source": "t:risk",
+   "target": "t:reliability"
+  },
+  {
+   "source": "t:risk",
+   "target": "t:economics"
+  },
+  {
+   "source": "t:scientific-revolutions",
+   "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "t:scientific-revolutions",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "t:social-reform",
+   "target": "t:economics"
+  },
+  {
+   "source": "t:social-reform",
+   "target": "t:policy"
   },
   {
    "source": "t:webassembly",
    "target": "t:open-web"
+  },
+  {
+   "source": "t:world-history",
+   "target": "t:history"
+  },
+  {
+   "source": "t:world-history",
+   "target": "t:geography"
   },
   {
    "source": "a:/articles/observability-is-not-logging/",
@@ -3191,6 +3788,10 @@
    "target": "t:developer-tooling"
   },
   {
+   "source": "p:arcanist",
+   "target": "t:compilers"
+  },
+  {
    "source": "p:zentinel",
    "target": "h:projects-flagship"
   },
@@ -3221,6 +3822,10 @@
   {
    "source": "p:zentinel",
    "target": "t:rust"
+  },
+  {
+   "source": "p:zentinel",
+   "target": "t:networking"
   },
   {
    "source": "p:hx",
@@ -3335,6 +3940,14 @@
    "target": "t:oss"
   },
   {
+   "source": "p:die-zukunft",
+   "target": "t:social-reform"
+  },
+  {
+   "source": "p:die-zukunft",
+   "target": "t:switzerland"
+  },
+  {
    "source": "p:human-macroscope",
    "target": "h:projects-civic"
   },
@@ -3345,6 +3958,10 @@
   {
    "source": "p:human-macroscope",
    "target": "t:knowledge-management"
+  },
+  {
+   "source": "p:human-macroscope",
+   "target": "t:emergence"
   },
   {
    "source": "p:chronicle-of-earth",
@@ -3435,6 +4052,10 @@
    "target": "t:rust"
   },
   {
+   "source": "p:terrarium",
+   "target": "t:emergence"
+  },
+  {
    "source": "p:hotaru",
    "target": "h:projects-lab"
   },
@@ -3453,6 +4074,18 @@
   {
    "source": "p:hotaru",
    "target": "t:rust"
+  },
+  {
+   "source": "p:hotaru",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "p:hotaru",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "p:hotaru",
+   "target": "t:emergence"
   },
   {
    "source": "p:hotaru",
@@ -3619,6 +4252,10 @@
    "target": "t:typescript"
   },
   {
+   "source": "p:manabi",
+   "target": "t:languages"
+  },
+  {
    "source": "p:kurumi",
    "target": "h:apps-tools"
   },
@@ -3641,6 +4278,10 @@
   {
    "source": "p:kurumi",
    "target": "t:typescript"
+  },
+  {
+   "source": "p:kurumi",
+   "target": "t:external-memory"
   },
   {
    "source": "p:paw-and-claw",
@@ -3688,7 +4329,7 @@
   },
   {
    "source": "w:the-infinity-machine",
-   "target": "t:machine-learning"
+   "target": "t:intelligence"
   },
   {
    "source": "w:the-infinity-machine",
@@ -3696,7 +4337,23 @@
   },
   {
    "source": "w:the-infinity-machine",
+   "target": "t:games"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:research-labs"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:ai-alignment"
+  },
+  {
+   "source": "w:the-infinity-machine",
    "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:technology-races"
   },
   {
    "source": "a:/articles/the-web-was-the-training-set/",
@@ -3708,11 +4365,11 @@
   },
   {
    "source": "w:the-cauldron",
-   "target": "t:history"
+   "target": "t:geopolitics"
   },
   {
    "source": "w:the-cauldron",
-   "target": "t:geography"
+   "target": "t:history"
   },
   {
    "source": "w:guns-germs-and-steel",
@@ -3720,27 +4377,83 @@
   },
   {
    "source": "w:guns-germs-and-steel",
-   "target": "t:history"
+   "target": "t:world-history"
   },
   {
    "source": "w:guns-germs-and-steel",
-   "target": "t:geography"
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:guns-germs-and-steel",
+   "target": "t:complex-systems"
   },
   {
    "source": "w:nuclear-war-a-scenario",
    "target": "h:shelf-read"
   },
   {
+   "source": "w:nuclear-war-a-scenario",
+   "target": "t:existential-risk"
+  },
+  {
+   "source": "w:nuclear-war-a-scenario",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:nuclear-war-a-scenario",
+   "target": "t:technology-races"
+  },
+  {
    "source": "w:jurassic-park",
    "target": "h:shelf-read"
+  },
+  {
+   "source": "w:jurassic-park",
+   "target": "t:literature"
   },
   {
    "source": "w:jurassic-park",
    "target": "t:complex-systems"
   },
   {
+   "source": "w:jurassic-park",
+   "target": "t:risk"
+  },
+  {
+   "source": "w:jurassic-park",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:jurassic-park",
+   "target": "t:hubris"
+  },
+  {
+   "source": "w:jurassic-park",
+   "target": "t:emergence"
+  },
+  {
    "source": "w:the-books-of-jacob",
    "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-books-of-jacob",
+   "target": "t:maximalist-novels"
+  },
+  {
+   "source": "w:the-books-of-jacob",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:the-books-of-jacob",
+   "target": "t:history"
+  },
+  {
+   "source": "w:the-books-of-jacob",
+   "target": "t:languages"
+  },
+  {
+   "source": "w:the-books-of-jacob",
+   "target": "t:europe"
   },
   {
    "source": "w:from-worm-to-human",
@@ -3749,6 +4462,14 @@
   {
    "source": "w:from-worm-to-human",
    "target": "t:neuroscience"
+  },
+  {
+   "source": "w:from-worm-to-human",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:from-worm-to-human",
+   "target": "t:simulation"
   },
   {
    "source": "w:from-worm-to-human",
@@ -3772,6 +4493,10 @@
   },
   {
    "source": "w:state-of-brain-emulation-2025",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:state-of-brain-emulation-2025",
    "target": "t:simulation"
   },
   {
@@ -3783,12 +4508,16 @@
    "target": "h:shelf-read"
   },
   {
+   "source": "w:science-after-babel",
+   "target": "t:philosophy-of-science"
+  },
+  {
    "source": "w:network-programming-with-go",
    "target": "h:shelf-read"
   },
   {
    "source": "w:network-programming-with-go",
-   "target": "t:distributed-systems"
+   "target": "t:networking"
   },
   {
    "source": "w:elixir-in-action",
@@ -3799,12 +4528,20 @@
    "target": "t:elixir"
   },
   {
+   "source": "w:elixir-in-action",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "w:elixir-in-action",
+   "target": "t:reliability"
+  },
+  {
    "source": "w:crafting-interpreters",
    "target": "h:shelf-read"
   },
   {
    "source": "w:crafting-interpreters",
-   "target": "t:programming-languages"
+   "target": "t:compilers"
   },
   {
    "source": "w:building-a-second-brain",
@@ -3815,12 +4552,20 @@
    "target": "t:knowledge-management"
   },
   {
+   "source": "w:building-a-second-brain",
+   "target": "t:external-memory"
+  },
+  {
    "source": "w:rust-web-programming",
    "target": "h:shelf-read"
   },
   {
    "source": "w:rust-web-programming",
    "target": "t:rust"
+  },
+  {
+   "source": "w:rust-web-programming",
+   "target": "t:networking"
   },
   {
    "source": "w:programming-webassembly-with-rust",
@@ -3856,11 +4601,19 @@
   },
   {
    "source": "w:jerusalem-the-biography",
-   "target": "t:history"
+   "target": "t:religion"
   },
   {
    "source": "w:jerusalem-the-biography",
-   "target": "t:geography"
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:jerusalem-the-biography",
+   "target": "t:world-history"
+  },
+  {
+   "source": "w:jerusalem-the-biography",
+   "target": "t:cities"
   },
   {
    "source": "w:freeland",
@@ -3868,7 +4621,15 @@
   },
   {
    "source": "w:freeland",
-   "target": "t:economics"
+   "target": "t:literature"
+  },
+  {
+   "source": "w:freeland",
+   "target": "t:social-reform"
+  },
+  {
+   "source": "w:freeland",
+   "target": "t:commons"
   },
   {
    "source": "w:das-soziale-problem",
@@ -3876,59 +4637,111 @@
   },
   {
    "source": "w:das-soziale-problem",
-   "target": "t:economics"
+   "target": "t:social-reform"
   },
   {
    "source": "w:the-devils-delusion",
    "target": "h:shelf-read"
   },
   {
+   "source": "w:the-devils-delusion",
+   "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "w:the-devils-delusion",
+   "target": "t:religion"
+  },
+  {
    "source": "w:antifragile",
    "target": "h:shelf-read"
+  },
+  {
+   "source": "w:antifragile",
+   "target": "t:risk"
   },
   {
    "source": "w:antifragile",
    "target": "t:complex-systems"
   },
   {
-   "source": "w:antifragile",
-   "target": "t:economics"
+   "source": "w:demons",
+   "target": "h:shelf-read"
   },
   {
    "source": "w:demons",
-   "target": "h:shelf-read"
+   "target": "t:literature"
+  },
+  {
+   "source": "w:demons",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:demons",
+   "target": "t:religion"
   },
   {
    "source": "w:the-brothers-karamazov",
    "target": "h:shelf-read"
   },
   {
+   "source": "w:the-brothers-karamazov",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:the-brothers-karamazov",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:the-brothers-karamazov",
+   "target": "t:religion"
+  },
+  {
    "source": "w:a-little-history-of-the-world",
    "target": "h:shelf-read"
   },
   {
    "source": "w:a-little-history-of-the-world",
-   "target": "t:history"
+   "target": "t:world-history"
   },
   {
    "source": "w:crime-and-punishment",
    "target": "h:shelf-read"
   },
   {
+   "source": "w:crime-and-punishment",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:crime-and-punishment",
+   "target": "t:ethics"
+  },
+  {
    "source": "w:infinite-jest",
    "target": "h:shelf-read"
+  },
+  {
+   "source": "w:infinite-jest",
+   "target": "t:maximalist-novels"
+  },
+  {
+   "source": "w:infinite-jest",
+   "target": "t:attention-economy"
   },
   {
    "source": "w:the-maximalist-novel",
    "target": "h:shelf-read"
   },
   {
-   "source": "w:this-is-for-everyone",
-   "target": "h:shelf-read"
+   "source": "w:the-maximalist-novel",
+   "target": "t:maximalist-novels"
+  },
+  {
+   "source": "w:the-maximalist-novel",
+   "target": "t:languages"
   },
   {
    "source": "w:this-is-for-everyone",
-   "target": "t:open-web"
+   "target": "h:shelf-read"
   },
   {
    "source": "w:this-is-for-everyone",
@@ -3936,11 +4749,11 @@
   },
   {
    "source": "w:this-is-for-everyone",
-   "target": "t:hypertext"
+   "target": "t:research-labs"
   },
   {
    "source": "w:this-is-for-everyone",
-   "target": "t:open-standards"
+   "target": "t:networking"
   },
   {
    "source": "w:this-is-for-everyone",
@@ -3948,15 +4761,7 @@
   },
   {
    "source": "w:this-is-for-everyone",
-   "target": "t:open-data"
-  },
-  {
-   "source": "w:this-is-for-everyone",
    "target": "t:training-data"
-  },
-  {
-   "source": "w:this-is-for-everyone",
-   "target": "t:privacy"
   },
   {
    "source": "w:this-is-for-everyone",
@@ -3969,6 +4774,34 @@
   {
    "source": "w:this-is-for-everyone",
    "target": "t:agents"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:commons"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:intellectual-property"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:provenance"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:external-memory"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:emergence"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:europe"
+  },
+  {
+   "source": "w:this-is-for-everyone",
+   "target": "t:switzerland"
   },
   {
    "source": "a:/articles/the-web-was-the-training-set/",
@@ -3987,6 +4820,14 @@
    "target": "t:history-of-science"
   },
   {
+   "source": "w:the-invention-of-science",
+   "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "w:the-invention-of-science",
+   "target": "t:scientific-revolutions"
+  },
+  {
    "source": "w:enterprise-architecture-as-strategy",
    "target": "h:shelf-backlog"
   },
@@ -4000,6 +4841,14 @@
   },
   {
    "source": "w:the-art-of-doing-science-and-engineering",
+   "target": "t:research-labs"
+  },
+  {
+   "source": "w:the-art-of-doing-science-and-engineering",
+   "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "w:the-art-of-doing-science-and-engineering",
    "target": "t:history-of-technology"
   },
   {
@@ -4011,6 +4860,10 @@
    "target": "t:machine-learning"
   },
   {
+   "source": "w:why-machines-learn",
+   "target": "t:mathematics"
+  },
+  {
    "source": "w:the-dream-machine",
    "target": "h:shelf-backlog"
   },
@@ -4020,7 +4873,15 @@
   },
   {
    "source": "w:the-dream-machine",
-   "target": "t:open-web"
+   "target": "t:research-labs"
+  },
+  {
+   "source": "w:the-dream-machine",
+   "target": "t:networking"
+  },
+  {
+   "source": "w:the-dream-machine",
+   "target": "t:augmentation"
   },
   {
    "source": "w:the-alignment-problem",
@@ -4028,15 +4889,27 @@
   },
   {
    "source": "w:the-alignment-problem",
-   "target": "t:machine-learning"
+   "target": "t:ai-alignment"
+  },
+  {
+   "source": "w:the-alignment-problem",
+   "target": "t:ethics"
   },
   {
    "source": "w:the-alignment-problem",
    "target": "t:evaluation"
   },
   {
+   "source": "w:the-alignment-problem",
+   "target": "t:hubris"
+  },
+  {
    "source": "w:ai-a-guide-for-thinking-humans",
    "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:ai-a-guide-for-thinking-humans",
+   "target": "t:intelligence"
   },
   {
    "source": "w:ai-a-guide-for-thinking-humans",
@@ -4048,13 +4921,17 @@
   },
   {
    "source": "w:deep-thinking",
-   "target": "t:machine-learning"
+   "target": "t:intelligence"
   },
   {
    "source": "w:deep-thinking",
    "target": "t:games"
   },
   {
+   "source": "w:deep-thinking",
+   "target": "t:augmentation"
+  },
+  {
    "source": "w:understanding-deep-learning",
    "target": "h:shelf-backlog"
   },
@@ -4063,12 +4940,16 @@
    "target": "t:machine-learning"
   },
   {
+   "source": "w:understanding-deep-learning",
+   "target": "t:mathematics"
+  },
+  {
    "source": "w:build-a-large-language-model",
    "target": "h:shelf-backlog"
   },
   {
    "source": "w:build-a-large-language-model",
-   "target": "t:machine-learning"
+   "target": "t:training-data"
   },
   {
    "source": "w:build-a-large-language-model",
@@ -4085,6 +4966,10 @@
   {
    "source": "w:ai-engineering",
    "target": "t:evaluation"
+  },
+  {
+   "source": "w:ai-engineering",
+   "target": "t:agents"
   },
   {
    "source": "w:reinforcement-learning-an-introduction",
@@ -4107,44 +4992,88 @@
    "target": "t:machine-learning"
   },
   {
+   "source": "w:probabilistic-machine-learning",
+   "target": "t:mathematics"
+  },
+  {
    "source": "w:the-making-of-the-atomic-bomb",
    "target": "h:shelf-backlog"
   },
   {
    "source": "w:the-making-of-the-atomic-bomb",
-   "target": "t:history-of-technology"
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:the-making-of-the-atomic-bomb",
+   "target": "t:research-labs"
+  },
+  {
+   "source": "w:the-making-of-the-atomic-bomb",
+   "target": "t:existential-risk"
+  },
+  {
+   "source": "w:the-making-of-the-atomic-bomb",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:the-making-of-the-atomic-bomb",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:the-making-of-the-atomic-bomb",
+   "target": "t:technology-races"
+  },
+  {
+   "source": "w:the-making-of-the-atomic-bomb",
+   "target": "t:hubris"
   },
   {
    "source": "w:seeing-like-a-state",
    "target": "h:shelf-backlog"
-  },
-  {
-   "source": "w:seeing-like-a-state",
-   "target": "t:complex-systems"
   },
   {
    "source": "w:seeing-like-a-state",
    "target": "t:history"
   },
   {
+   "source": "w:seeing-like-a-state",
+   "target": "t:high-modernism"
+  },
+  {
+   "source": "w:seeing-like-a-state",
+   "target": "t:hubris"
+  },
+  {
+   "source": "w:seeing-like-a-state",
+   "target": "t:commons"
+  },
+  {
+   "source": "w:seeing-like-a-state",
+   "target": "t:cities"
+  },
+  {
    "source": "w:a-peace-to-end-all-peace",
    "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:a-peace-to-end-all-peace",
+   "target": "t:geopolitics"
   },
   {
    "source": "w:a-peace-to-end-all-peace",
    "target": "t:history"
   },
   {
-   "source": "w:a-peace-to-end-all-peace",
-   "target": "t:geography"
-  },
-  {
    "source": "w:the-billion-dollar-molecule",
    "target": "h:shelf-backlog"
   },
   {
    "source": "w:the-billion-dollar-molecule",
-   "target": "t:life-sciences"
+   "target": "t:medicine"
+  },
+  {
+   "source": "w:the-billion-dollar-molecule",
+   "target": "t:research-labs"
   },
   {
    "source": "w:the-billion-dollar-molecule",
@@ -4160,7 +5089,15 @@
   },
   {
    "source": "w:the-eighth-day-of-creation",
+   "target": "t:research-labs"
+  },
+  {
+   "source": "w:the-eighth-day-of-creation",
    "target": "t:history-of-science"
+  },
+  {
+   "source": "w:the-eighth-day-of-creation",
+   "target": "t:scientific-revolutions"
   },
   {
    "source": "w:the-demon-under-the-microscope",
@@ -4168,11 +5105,19 @@
   },
   {
    "source": "w:the-demon-under-the-microscope",
-   "target": "t:life-sciences"
+   "target": "t:medicine"
+  },
+  {
+   "source": "w:the-demon-under-the-microscope",
+   "target": "t:research-labs"
   },
   {
    "source": "w:the-demon-under-the-microscope",
    "target": "t:history-of-science"
+  },
+  {
+   "source": "w:the-demon-under-the-microscope",
+   "target": "t:scientific-revolutions"
   },
   {
    "source": "w:the-butchering-art",
@@ -4180,11 +5125,15 @@
   },
   {
    "source": "w:the-butchering-art",
-   "target": "t:life-sciences"
+   "target": "t:medicine"
   },
   {
    "source": "w:the-butchering-art",
    "target": "t:history-of-science"
+  },
+  {
+   "source": "w:the-butchering-art",
+   "target": "t:scientific-revolutions"
   },
   {
    "source": "w:sicp",
@@ -4192,7 +5141,7 @@
   },
   {
    "source": "w:sicp",
-   "target": "t:programming-languages"
+   "target": "t:compilers"
   }
  ]
 }

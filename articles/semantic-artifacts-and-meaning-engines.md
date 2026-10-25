@@ -4,7 +4,7 @@ url: https://raskell.io/articles/semantic-artifacts-and-meaning-engines/
 author: Raffael Schneider
 date: 2026-05-07
 description: "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target."
-tags: [ai-engineering, programming-languages, formal-methods, haskell]
+tags: [ai-engineering, programming-languages, formal-methods, haskell, compilers, provenance]
 ---
 
 # Source Code Is the New Assembly

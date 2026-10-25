@@ -15,9 +15,13 @@
    "url": "https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296",
    "status": "reading",
    "topics": [
-    "machine-learning",
+    "intelligence",
     "reinforcement-learning",
-    "history-of-technology"
+    "games",
+    "research-labs",
+    "ai-alignment",
+    "history-of-technology",
+    "technology-races"
    ],
    "cover": "https://raskell.io/covers/reading/the-infinity-machine.avif",
    "page": "https://raskell.io/reading/#the-infinity-machine"
@@ -33,8 +37,8 @@
    "status": "read",
    "finished": "2026-09",
    "topics": [
-    "history",
-    "geography"
+    "geopolitics",
+    "history"
    ],
    "page": "https://raskell.io/reading/#the-cauldron"
   },
@@ -48,8 +52,9 @@
    "status": "read",
    "finished": "2025-11",
    "topics": [
-    "history",
-    "geography"
+    "world-history",
+    "history-of-technology",
+    "complex-systems"
    ],
    "cover": "https://raskell.io/covers/reading/guns-germs-and-steel.avif",
    "page": "https://raskell.io/reading/#guns-germs-and-steel"
@@ -64,6 +69,11 @@
    "url": "https://en.wikipedia.org/wiki/Nuclear_War:_A_Scenario",
    "status": "read",
    "finished": "2025-10",
+   "topics": [
+    "existential-risk",
+    "geopolitics",
+    "technology-races"
+   ],
    "cover": "https://raskell.io/covers/reading/nuclear-war-a-scenario.avif",
    "page": "https://raskell.io/reading/#nuclear-war-a-scenario"
   },
@@ -76,7 +86,12 @@
    "status": "read",
    "finished": "2025-07",
    "topics": [
-    "complex-systems"
+    "literature",
+    "complex-systems",
+    "risk",
+    "life-sciences",
+    "hubris",
+    "emergence"
    ],
    "cover": "https://raskell.io/covers/reading/jurassic-park.avif",
    "page": "https://raskell.io/reading/#jurassic-park"
@@ -91,6 +106,13 @@
    "isbn": "9780593087480",
    "status": "read",
    "finished": "2024-08",
+   "topics": [
+    "maximalist-novels",
+    "religion",
+    "history",
+    "languages",
+    "europe"
+   ],
    "cover": "https://raskell.io/covers/reading/the-books-of-jacob.avif",
    "page": "https://raskell.io/reading/#the-books-of-jacob"
   },
@@ -106,6 +128,8 @@
    "finished": "2026-06",
    "topics": [
     "neuroscience",
+    "intelligence",
+    "simulation",
     "distributed-systems",
     "gpus"
    ],
@@ -123,6 +147,7 @@
    "finished": "2026-06",
    "topics": [
     "neuroscience",
+    "intelligence",
     "simulation"
    ],
    "take": "The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are.",
@@ -136,6 +161,9 @@
    "year": 2023,
    "status": "read",
    "finished": "2023",
+   "topics": [
+    "philosophy-of-science"
+   ],
    "page": "https://raskell.io/reading/#science-after-babel"
   },
   {
@@ -148,7 +176,7 @@
    "status": "read",
    "finished": "2023",
    "topics": [
-    "distributed-systems"
+    "networking"
    ],
    "page": "https://raskell.io/reading/#network-programming-with-go"
   },
@@ -163,7 +191,9 @@
    "status": "read",
    "finished": "2023",
    "topics": [
-    "elixir"
+    "elixir",
+    "distributed-systems",
+    "reliability"
    ],
    "cover": "https://raskell.io/covers/reading/elixir-in-action.avif",
    "page": "https://raskell.io/reading/#elixir-in-action"
@@ -177,7 +207,7 @@
    "status": "read",
    "finished": "2024",
    "topics": [
-    "programming-languages"
+    "compilers"
    ],
    "cover": "https://raskell.io/covers/reading/crafting-interpreters.avif",
    "page": "https://raskell.io/reading/#crafting-interpreters"
@@ -191,7 +221,8 @@
    "status": "read",
    "finished": "2022",
    "topics": [
-    "knowledge-management"
+    "knowledge-management",
+    "external-memory"
    ],
    "cover": "https://raskell.io/covers/reading/building-a-second-brain.avif",
    "page": "https://raskell.io/reading/#building-a-second-brain"
@@ -205,7 +236,8 @@
    "status": "read",
    "finished": "2022",
    "topics": [
-    "rust"
+    "rust",
+    "networking"
    ],
    "cover": "https://raskell.io/covers/reading/rust-web-programming.avif",
    "page": "https://raskell.io/reading/#rust-web-programming"
@@ -262,8 +294,10 @@
    "status": "read",
    "finished": "2017",
    "topics": [
-    "history",
-    "geography"
+    "religion",
+    "geopolitics",
+    "world-history",
+    "cities"
    ],
    "cover": "https://raskell.io/covers/reading/jerusalem-the-biography.avif",
    "page": "https://raskell.io/reading/#jerusalem-the-biography"
@@ -278,7 +312,9 @@
    "status": "read",
    "finished": "2017",
    "topics": [
-    "economics"
+    "literature",
+    "social-reform",
+    "commons"
    ],
    "cover": "https://raskell.io/covers/reading/freeland.avif",
    "page": "https://raskell.io/reading/#freeland"
@@ -292,7 +328,7 @@
    "status": "read",
    "finished": "2017",
    "topics": [
-    "economics"
+    "social-reform"
    ],
    "cover": "https://raskell.io/covers/reading/das-soziale-problem.avif",
    "page": "https://raskell.io/reading/#das-soziale-problem"
@@ -306,6 +342,10 @@
    "year": 2008,
    "status": "read",
    "finished": "2016",
+   "topics": [
+    "philosophy-of-science",
+    "religion"
+   ],
    "cover": "https://raskell.io/covers/reading/the-devils-delusion.avif",
    "page": "https://raskell.io/reading/#the-devils-delusion"
   },
@@ -320,8 +360,8 @@
    "status": "read",
    "finished": "2015",
    "topics": [
-    "complex-systems",
-    "economics"
+    "risk",
+    "complex-systems"
    ],
    "cover": "https://raskell.io/covers/reading/antifragile.avif",
    "page": "https://raskell.io/reading/#antifragile"
@@ -334,6 +374,11 @@
    "year": 1872,
    "status": "read",
    "finished": "2012",
+   "topics": [
+    "literature",
+    "ethics",
+    "religion"
+   ],
    "cover": "https://raskell.io/covers/reading/demons.avif",
    "page": "https://raskell.io/reading/#demons"
   },
@@ -345,6 +390,11 @@
    "year": 1880,
    "status": "read",
    "finished": "2011",
+   "topics": [
+    "literature",
+    "ethics",
+    "religion"
+   ],
    "cover": "https://raskell.io/covers/reading/the-brothers-karamazov.avif",
    "page": "https://raskell.io/reading/#the-brothers-karamazov"
   },
@@ -357,7 +407,7 @@
    "status": "read",
    "finished": "2011",
    "topics": [
-    "history"
+    "world-history"
    ],
    "cover": "https://raskell.io/covers/reading/a-little-history-of-the-world.avif",
    "page": "https://raskell.io/reading/#a-little-history-of-the-world"
@@ -370,6 +420,10 @@
    "year": 1866,
    "status": "read",
    "finished": "2010",
+   "topics": [
+    "literature",
+    "ethics"
+   ],
    "cover": "https://raskell.io/covers/reading/crime-and-punishment.avif",
    "page": "https://raskell.io/reading/#crime-and-punishment"
   },
@@ -381,6 +435,10 @@
    "year": 1996,
    "status": "read",
    "finished": "2025-10",
+   "topics": [
+    "maximalist-novels",
+    "attention-economy"
+   ],
    "cover": "https://raskell.io/covers/reading/infinite-jest.avif",
    "page": "https://raskell.io/reading/#infinite-jest"
   },
@@ -395,6 +453,10 @@
    "isbn": "9781623562915",
    "status": "read",
    "finished": "2025-10",
+   "topics": [
+    "maximalist-novels",
+    "languages"
+   ],
    "cover": "https://raskell.io/covers/reading/the-maximalist-novel.avif",
    "page": "https://raskell.io/reading/#the-maximalist-novel"
   },
@@ -409,17 +471,21 @@
    "finished": "2025-10",
    "rating": 8,
    "topics": [
-    "open-web",
     "history-of-technology",
-    "hypertext",
-    "open-standards",
+    "research-labs",
+    "networking",
     "decentralisation",
-    "open-data",
     "training-data",
-    "privacy",
     "data-sovereignty",
     "attention-economy",
-    "agents"
+    "agents",
+    "commons",
+    "intellectual-property",
+    "provenance",
+    "external-memory",
+    "emergence",
+    "europe",
+    "switzerland"
    ],
    "take": "Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all.",
    "cover": "https://raskell.io/covers/reading/this-is-for-everyone.avif",
@@ -440,7 +506,9 @@
    "status": "read",
    "finished": "2016",
    "topics": [
-    "history-of-science"
+    "history-of-science",
+    "philosophy-of-science",
+    "scientific-revolutions"
    ],
    "cover": "https://raskell.io/covers/reading/the-invention-of-science.avif",
    "page": "https://raskell.io/reading/#the-invention-of-science"
@@ -468,6 +536,8 @@
    "year": 1997,
    "status": "backlog",
    "topics": [
+    "research-labs",
+    "philosophy-of-science",
     "history-of-technology"
    ],
    "cover": "https://raskell.io/covers/reading/the-art-of-doing-science-and-engineering.avif",
@@ -484,7 +554,8 @@
    "url": "https://www.penguinrandomhouse.com/books/677608/why-machines-learn-by-anil-ananthaswamy/",
    "status": "backlog",
    "topics": [
-    "machine-learning"
+    "machine-learning",
+    "mathematics"
    ],
    "cover": "https://raskell.io/covers/reading/why-machines-learn.avif",
    "page": "https://raskell.io/reading/#why-machines-learn"
@@ -501,7 +572,9 @@
    "status": "backlog",
    "topics": [
     "history-of-technology",
-    "open-web"
+    "research-labs",
+    "networking",
+    "augmentation"
    ],
    "cover": "https://raskell.io/covers/reading/the-dream-machine.avif",
    "page": "https://raskell.io/reading/#the-dream-machine"
@@ -516,8 +589,10 @@
    "url": "https://brianchristian.org/the-alignment-problem/",
    "status": "backlog",
    "topics": [
-    "machine-learning",
-    "evaluation"
+    "ai-alignment",
+    "ethics",
+    "evaluation",
+    "hubris"
    ],
    "cover": "https://raskell.io/covers/reading/the-alignment-problem.avif",
    "page": "https://raskell.io/reading/#the-alignment-problem"
@@ -534,6 +609,7 @@
    "url": "https://us.macmillan.com/books/9781250404855/artificialintelligence/",
    "status": "backlog",
    "topics": [
+    "intelligence",
     "machine-learning"
    ],
    "cover": "https://raskell.io/covers/reading/ai-a-guide-for-thinking-humans.avif",
@@ -550,8 +626,9 @@
    "url": "https://www.hachette.co.uk/titles/garry-kasparov/deep-thinking/9781473653504/",
    "status": "backlog",
    "topics": [
-    "machine-learning",
-    "games"
+    "intelligence",
+    "games",
+    "augmentation"
    ],
    "cover": "https://raskell.io/covers/reading/deep-thinking.avif",
    "page": "https://raskell.io/reading/#deep-thinking"
@@ -566,7 +643,8 @@
    "url": "https://mitpress.mit.edu/9780262048644/understanding-deep-learning/",
    "status": "backlog",
    "topics": [
-    "machine-learning"
+    "machine-learning",
+    "mathematics"
    ],
    "page": "https://raskell.io/reading/#understanding-deep-learning"
   },
@@ -579,7 +657,7 @@
    "url": "https://www.manning.com/books/build-a-large-language-model-from-scratch",
    "status": "backlog",
    "topics": [
-    "machine-learning",
+    "training-data",
     "inference"
    ],
    "cover": "https://raskell.io/covers/reading/build-a-large-language-model.avif",
@@ -597,7 +675,8 @@
    "status": "backlog",
    "topics": [
     "ai-platforms",
-    "evaluation"
+    "evaluation",
+    "agents"
    ],
    "cover": "https://raskell.io/covers/reading/ai-engineering.avif",
    "page": "https://raskell.io/reading/#ai-engineering"
@@ -628,7 +707,8 @@
    "url": "https://probml.github.io/pml-book/book1.html",
    "status": "backlog",
    "topics": [
-    "machine-learning"
+    "machine-learning",
+    "mathematics"
    ],
    "page": "https://raskell.io/reading/#probabilistic-machine-learning"
   },
@@ -643,7 +723,13 @@
    "url": "https://www.simonandschuster.net/books/The-Making-of-the-Atomic-Bomb/Richard-Rhodes/9781451677614",
    "status": "backlog",
    "topics": [
-    "history-of-technology"
+    "history-of-science",
+    "research-labs",
+    "existential-risk",
+    "geopolitics",
+    "ethics",
+    "technology-races",
+    "hubris"
    ],
    "cover": "https://raskell.io/covers/reading/the-making-of-the-atomic-bomb.avif",
    "page": "https://raskell.io/reading/#the-making-of-the-atomic-bomb"
@@ -659,8 +745,11 @@
    "url": "https://yalebooks.yale.edu/book/9780300252989/seeing-like-a-state/",
    "status": "backlog",
    "topics": [
-    "complex-systems",
-    "history"
+    "history",
+    "high-modernism",
+    "hubris",
+    "commons",
+    "cities"
    ],
    "cover": "https://raskell.io/covers/reading/seeing-like-a-state.avif",
    "page": "https://raskell.io/reading/#seeing-like-a-state"
@@ -675,8 +764,8 @@
    "url": "https://academic.macmillan.com/academictrade/9780805088090/apeacetoendallpeace/",
    "status": "backlog",
    "topics": [
-    "history",
-    "geography"
+    "geopolitics",
+    "history"
    ],
    "cover": "https://raskell.io/covers/reading/a-peace-to-end-all-peace.avif",
    "page": "https://raskell.io/reading/#a-peace-to-end-all-peace"
@@ -692,7 +781,8 @@
    "url": "https://www.simonandschuster.com/books/The-Billion-Dollar-Molecule/Barry-Werth/9780671510572",
    "status": "backlog",
    "topics": [
-    "life-sciences",
+    "medicine",
+    "research-labs",
     "history-of-science"
    ],
    "cover": "https://raskell.io/covers/reading/the-billion-dollar-molecule.avif",
@@ -710,7 +800,9 @@
    "status": "backlog",
    "topics": [
     "life-sciences",
-    "history-of-science"
+    "research-labs",
+    "history-of-science",
+    "scientific-revolutions"
    ],
    "cover": "https://raskell.io/covers/reading/the-eighth-day-of-creation.avif",
    "page": "https://raskell.io/reading/#the-eighth-day-of-creation"
@@ -724,8 +816,10 @@
    "url": "https://www.penguinrandomhouse.com/books/73465/the-demon-under-the-microscope-by-thomas-hager/",
    "status": "backlog",
    "topics": [
-    "life-sciences",
-    "history-of-science"
+    "medicine",
+    "research-labs",
+    "history-of-science",
+    "scientific-revolutions"
    ],
    "cover": "https://raskell.io/covers/reading/the-demon-under-the-microscope.avif",
    "page": "https://raskell.io/reading/#the-demon-under-the-microscope"
@@ -741,8 +835,9 @@
    "url": "https://www.penguin.co.nz/books/the-butchering-art-9780141983387",
    "status": "backlog",
    "topics": [
-    "life-sciences",
-    "history-of-science"
+    "medicine",
+    "history-of-science",
+    "scientific-revolutions"
    ],
    "cover": "https://raskell.io/covers/reading/the-butchering-art.avif",
    "page": "https://raskell.io/reading/#the-butchering-art"
@@ -757,7 +852,7 @@
    "status": "set-aside",
    "started": "2024",
    "topics": [
-    "programming-languages"
+    "compilers"
    ],
    "cover": "https://raskell.io/covers/reading/sicp.avif",
    "page": "https://raskell.io/reading/#sicp"

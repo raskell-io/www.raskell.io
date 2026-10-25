@@ -4,7 +4,7 @@ url: https://raskell.io/articles/memory-is-a-write-path/
 author: Raffael Schneider
 date: 2026-06-23
 description: "Retrieval reads context the project authored. Memory is the agent writing context for its own future sessions, and the write is the part that is dangerous. Why session memory comes free from the transcript, why cross-session memory needs a separate write surface, and how to let an agent remember without letting it corrupt its own ground truth. Part six of The Agent Platform Handbook."
-tags: [agents, context-engineering, knowledge-management, typescript]
+tags: [agents, context-engineering, knowledge-management, typescript, external-memory]
 series: the-agent-platform-handbook
 ---
 

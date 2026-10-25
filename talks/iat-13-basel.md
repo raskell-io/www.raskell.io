@@ -4,6 +4,7 @@ url: https://raskell.io/talks/iat-13-basel/
 author: Raffael Schneider
 date: 2026-06-10
 description: "Slide deck for IT's ABOUT TECH #13 in Basel. A 15-minute story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time."
+tags: [ai-engineering, augmentation, switzerland]
 event: "IT's ABOUT TECH #13"
 venue: "FHNW Aula, Basel"
 ---
