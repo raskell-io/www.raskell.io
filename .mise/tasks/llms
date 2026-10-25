@@ -401,17 +401,23 @@ def translations():
         if not m or m.group(3) == DEFAULT_LANG or m.group(3) not in [l["code"] for l in LANGS]:
             continue
         folder, name, code = m.groups()
+        if name.startswith("taxonomy-tags-") and not folder:
+            continue   # generated topic pages (mise run topic-pages); the topics index stands for them
         fm, _ = split_front_matter(open(path).read())
-        if re.search(r"^draft\s*=\s*true", fm, re.M):
+        if re.search(r"^(draft\s*=\s*true|render\s*=\s*false)", fm, re.M):
             continue
-        src_fm, _ = split_front_matter(open("content/%s%s.md" % (folder, name)).read())
-        fixed = fm_str(src_fm, "path")
+        # A translation usually sits beside its English source; a page that exists only in a translated language
+        # (the per-language topic and series indexes) has its own path and no source.
+        src_path = "content/%s%s.md" % (folder, name)
+        src_fm = split_front_matter(open(src_path).read())[0] if os.path.exists(src_path) else ""
+        own = fm_str(fm, "path")
+        fixed = own[len(code) + 1:] if own and own.startswith(code + "/") else fm_str(src_fm, "path")
         rel = fixed.strip("/") if fixed else (folder.strip("/") if name == "_index" else (folder + name).strip("/"))
         rel = rel + "/" if rel else ""
         lang_desc = re.search(r'^\[languages\.%s\]\n(?:.*\n)*?description\s*=\s*"([^"]*)"' % code, config, re.M)
         found.setdefault(code, []).append({"title": fm_str(fm, "title"), "description": fm_str(fm, "description") or (lang_desc.group(1) if lang_desc else ""),
                                            "url": "%s/%s/%s" % (BASE, code, rel), "source": "%s/%s" % (BASE, rel),
-                                           "source_title": fm_str(src_fm, "title")})
+                                           "source_title": fm_str(src_fm, "title") or fm_str(fm, "title")})
     return {l["code"]: found[l["code"]] for l in LANGS if l["code"] in found}
 
 TRANSLATED = translations()

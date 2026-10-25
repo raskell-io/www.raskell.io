@@ -6,6 +6,8 @@ The topic vocabulary in data/tags.toml is the source of truth for tags. This rep
   - broader references that point at undefined tags (an error),
   - vocabulary entries nothing uses yet (a note, not an error: the graph still shows them).
 Exit status 1 when there is an error, so CI or a pre-commit hook can use it.
+  - translations of the vocabulary (data/tags.<lang>.toml) with slugs it does not define (an error),
+    and topics they do not translate yet (a note).
 """
 import glob
 import os
@@ -103,5 +105,16 @@ for t, bs in broader.items():
 unused = sorted(t for t in vocab if t not in used)
 if unused:
     print("defined but unused (shown on the map without pages): " + ", ".join(unused))
+# Translations of the vocabulary (data/tags.<lang>.toml, keyed by the same slugs): a slug the vocabulary does
+# not define is an error; a topic with no translation is a note (it shows in English in that language).
+for path in sorted(glob.glob("data/tags.*.toml")):
+    tr = [m.group(1) for m in (re.match(r"^\[([a-z0-9-]+)\]\s*$", l) for l in open(path)) if m]
+    for slug in tr:
+        if slug not in vocab:
+            print("%s: [%s] is not in data/tags.toml" % (path, slug)); errors += 1
+    missing = [s for s in vocab if s not in tr]
+    if missing:
+        print("%s: no translation yet for %s" % (path, ", ".join(missing)))
+
 print("tags-check: %d defined, %d used, %d errors" % (len(vocab), len(used), errors))
 sys.exit(1 if errors else 0)

@@ -31,7 +31,7 @@ Every kind of content has exactly one source of truth.
 | Talk | `content/talks/<slug>.md` with `template = "slide-deck.html"` | title, date, description, `extra.event`, `extra.venue`, `extra.event_url` | slides are HTML sections; assets in `static/talks/<slug>/`; add a card to `content/speaking.md` |
 | Work (book, novel, paper, report, article, essay, journal) | `data/reading.toml`, one `[[works]]` block | id, title, author, kind, status | dates are months, `"YYYY-MM"`; `rating` 1 to 10 when reviewed; cover via `mise run reading-covers <id>` |
 | Project or app | `data/projects/<slug>.toml` | title, description, status, links, topics | listed by adding the slug to a tier in `content/projects/_index.md` or `content/apps/_index.md`; `schema_type` (default SoftwareApplication; VideoGame, Book, ResearchProject, Project) and `app_category` (default DeveloperApplication) set its JSON-LD |
-| Topic | `data/tags.toml` | name, kind (domain, concept, technology, site), description | `broader` links it into the graph; define it before using it |
+| Topic | `data/tags.toml` | name, kind (domain, concept, technology, site), description | `broader` links it into the graph; define it before using it; translate it in `data/tags.<code>.toml` |
 | Category | `config.toml`, `extra.seijaku.categories_descriptions` | a one-line description | a form of writing, not a subject; today only `reviews` |
 | Series | `taxonomies.series` on each part, `extra.seijaku.series_descriptions` in config | | only for real multi-part reading orders |
 
@@ -58,7 +58,7 @@ Once registered, content reaches all of these without further work, unless the t
 | WebMCP tools for in-browser agents | `static/js/webmcp.js` | reads llms.txt, the Markdown copies, map.json, garden.json, reading.json |
 | Sitemap, IndexNow ping | Zola; CI on push | every page |
 
-CI order matters: `tags-check`, `security-txt`, `llms`, `zola build`, `map-json`, `garden-json`, `og`,
+CI order matters: `tags-check`, `security-txt`, `llms`, `topic-pages`, `zola build`, `map-json`, `garden-json`, `og`,
 deploy, IndexNow.
 
 ## Topics are for discovery
@@ -149,26 +149,46 @@ A new kind (say, podcasts or bookmarks) has to be taught to every sink. Touch po
 ## Translations
 
 English is the source language and lives at `/`; Simplified Chinese (`zh`) and Korean (`ko`) live under
-`/zh/` and `/ko/`. Today the homepage, About, Projects, Apps, Invest, and the investor briefs are translated; everything else is English in
-every language, and the footer's language switch sends readers of an untranslated page to that
-language's home.
+`/zh/` and `/ko/`. Every page the navigation, footer, and indexes link to exists in all three languages, so a
+reader never drops back into English chrome: home, about, projects, apps, invest and the investor briefs,
+speaking, start here, search, map, reading, licence, privacy, and the articles, notes, and talks indexes.
+The writing itself (articles, reviews, notes, talks) is English only; translated lists show it in English
+inside the translated page. Topics are translated: names, definitions, and a page per topic in every language.
 
 - **A page:** add `<name>.<code>.md` beside the source (`content/about.zh.md`, `content/_index.ko.md`) with
   the same front matter and a translated title, description, and body. URLs keep the English names
   (`/zh/about/`); never set a translated `slug`. A source with an explicit `path` (the investor briefs,
   `path = "invest/cyanea"`) needs the language in front of it in the translation (`path = "zh/invest/cyanea"`),
-  because Zola does not prefix an explicit path. Links inside a translation point to the
-  English page unless that page is translated too.
+  because Zola does not prefix an explicit path. Give every heading its English anchor: `## 联系 {#contact}`.
+- **Links in a translation** go to the translated page when there is one: `@/reading.zh.md`,
+  `/zh/license/`. Links to articles, notes, talks, and single topics stay English. Templates do this with
+  `i18n::url` (an `@/` path follows its translation; a site path such as `/tags/` gets the language prefix).
+- **Section indexes** (`articles/_index.zh.md`) list the English pages when the language has none of its own.
+- **Topics, series, categories:** Zola builds taxonomies per language, so translations would be empty. Each
+  language instead has small pages with `template = "taxonomy_index.html"`, named
+  `content/taxonomy-<taxonomy>[-<term>].<code>.md` (the theme finds a page's other languages by that name):
+  the indexes `/zh/tags/`, `/zh/series/`, `/zh/categories/`, and the terms `/zh/categories/reviews/` and the
+  Handbook series. A new series or category linked from the navigation needs one per language.
+- **Topic translations:** `data/tags.<code>.toml` holds each topic's `name` and `description` in that
+  language, keyed by the slugs of `data/tags.toml`. A new topic gets an entry in each, or it shows in English
+  (`tags-check` notes missing ones and rejects unknown slugs). `mise run topic-pages` writes the per-language
+  topic pages (`content/taxonomy-tags-<slug>.<code>.md`, gitignored) from the vocabulary; CI runs it before the
+  build, and you run it locally after changing the vocabulary or its translations.
 - **Project data:** each `data/projects/<slug>.toml` ends with `[i18n.zh]` and `[i18n.ko]` tables
   (`description`, optionally `title` and `tagline`); the cards use them wherever they appear. A new
   project gets both tables, or it shows in English on the translated pages.
-- **Interface text:** `config.toml`, `[extra.seijaku.i18n.<code>]`: `labels` maps English interface text
-  (navigation, footer, homepage buttons) to its translation; `tagline` and `footer_about` replace the
-  footer introduction. A new nav item or footer link needs its label added for each language.
+- **Interface text:** `config.toml`, `[extra.seijaku.i18n.<code>]` holds `tagline` and `footer_about`, and
+  `[extra.seijaku.i18n.<code>.labels]` maps every English interface string to its translation, one per
+  line. `{name}` marks a placeholder (`"{n} of {total}"`), and `%`-codes are date formats (`"%b %d"`). The same
+  labels reach the search, map, and filter scripts as `window.SEIJAKU_I18N`. A new string in a template
+  or script needs its label in each language, or it shows in English.
 - **A language:** a `[languages.<code>]` block (with `build_search_index = false` and `taxonomies = []`),
-  an entry in `extra.seijaku.languages` (native name, hreflang, og_locale), and an `i18n` table.
-- **English only, by design for now:** topics, series, categories, feeds, search, the map, llms.txt and
-  the other machine files, and social cards (a translation reuses the English card).
+  an entry in `extra.seijaku.languages` (native name, hreflang, og_locale), an `i18n` table with labels,
+  the pages above, and a script set in `static/js/split-flap.js` for the homepage board.
+- **English only, by design:** the writing, feeds, the full-text search index (translated pages search the
+  English one), map.json, llms-full.txt, Markdown copies, and social cards.
+- **Check:** after a build, no link on a `/zh/` or `/ko/` page should leave its language except to
+  English-only content; a broken page in the language is a 404 for that reader.
 - Translations follow the writing rules: no em or en dashes; Korean in the formal 합니다체. Chinese
   paragraphs go on one line, because a line break inside one renders as a space.
 
@@ -177,6 +197,7 @@ language's home.
 ```sh
 mise run tags-check                                   # vocabulary, reading log, categories, reviews
 mise run llms                                         # llms.txt, llms-full.txt, Markdown copies, reading.json
+mise run topic-pages                                  # the topic pages of every translated language
 mise exec zola@0.22.1 -- zola build                   # add --drafts to see drafts
 mise run map-json && mise run garden-json             # the data files, from the built pages
 mise run og articles/<slug>                           # one social card, to look at

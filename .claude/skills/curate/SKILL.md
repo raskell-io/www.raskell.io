@@ -29,7 +29,8 @@ Something that fits none of these is a new kind: go to step 6.
 Write the source file(s) per the recipe in `AGENTS.md`. Checklist:
 
 - [ ] Front matter complete; description under 160 characters; `draft = true` until the user says publish.
-- [ ] 3 to 7 topics, the most specific; any new topic added to `data/tags.toml` first, with `broader`.
+- [ ] 3 to 7 topics, the most specific; any new topic added to `data/tags.toml` first, with `broader`,
+      and translated in `data/tags.zh.toml` and `data/tags.ko.toml`.
       Include at least one idea that joins this piece to something of a different kind (see "Topics are
       for discovery" in `AGENTS.md`), and only where the text actually discusses it.
 - [ ] In-body links to related pages (they become map edges and backlinks).
@@ -48,6 +49,7 @@ Write the source file(s) per the recipe in `AGENTS.md`. Checklist:
 ```sh
 mise run tags-check
 mise run llms
+mise run topic-pages
 mise exec zola@0.22.1 -- zola build --drafts
 mise run map-json && mise run garden-json
 mise run og <section>/<slug>

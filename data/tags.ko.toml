@@ -1,0 +1,399 @@
+# The Korean names and definitions of the topics in data/tags.toml, keyed by the same slug.
+# Only name and description are translated; kind and broader stay in data/tags.toml.
+# Anything missing here falls back to the English in data/tags.toml.
+
+# Domains ------------------------------------------------------------------
+
+[ai-platforms]
+name = "AI 플랫폼"
+description = "조직이 AI를 구축하는 공통 기반: 모델 게이트웨이, 에이전트 런타임, 거버넌스, 관측 가능성, 그리고 이를 둘러싼 운영 모델."
+
+[ai-engineering]
+name = "AI 보조 엔지니어링"
+description = "엔지니어링 도구로서의 AI: 코딩 에이전트, AI가 작성한 코드, 그리고 모델이 코드 대부분을 작성할 때 프로그래밍은 무엇이 되는가."
+
+[ai-for-ops]
+name = "운영을 위한 AI"
+description = "실행 중인 시스템에 적용한 AI: 보안 트리아지, 알림 노이즈, 인시던트 대응, 그리고 사람을 루프 안에 두는 일."
+
+[platform-automation]
+name = "플랫폼 자동화"
+description = "셀프서비스, 가드레일, 배포, 그리고 소프트웨어 운영을 지속 가능하게 하는 도구."
+
+[edge-systems]
+name = "엣지 시스템"
+description = "리버스 프록시, 정책 적용, CDN, 그리고 백엔드가 아니라 사용자 가까이에서 실행되는 로직."
+
+[applied-security]
+name = "응용 보안"
+description = "프로덕션의 압박 속에서의 보안: 적대적 입력, 신호와 노이즈의 구분, 그리고 운영자가 감당할 수 있는 통제."
+
+[distributed-systems]
+name = "분산 시스템"
+description = "서로 독립적으로 장애가 나는 머신들 사이의 복제, 조정, 일관성."
+
+[programming-languages]
+name = "프로그래밍 언어"
+description = "언어, 타입 시스템, 컴파일러, 그리고 실행 가능한 의도를 글로 적는 방식."
+
+[operating-systems]
+name = "운영체제"
+description = "커널, 가상화, 그리고 하드웨어와 그 밖의 모든 것 사이에 놓인 계층. BSD부터 추론 네이티브 설계까지."
+
+[reliability]
+name = "신뢰성"
+description = "장애 모드, 운영 용이성, 그리고 입력과 의존성이 제대로 동작하지 않을 때에도 시스템을 계속 가동하는 일."
+
+[sovereignty]
+name = "주권"
+description = "누가 어느 관할권에서 컴퓨팅, 데이터, 인프라를 통제하는가. 특히 유럽의 위치."
+
+[policy]
+name = "정책"
+description = "엔지니어링이 규제, 공공 기관, 공공 조달, 국가 전략과 만나는 지점."
+
+[open-web]
+name = "열린 웹"
+description = "공유지로서의 웹: 개방형 프로토콜, 작은 독립 사이트, 그리고 플랫폼 바깥에서의 출판."
+
+[history]
+name = "역사"
+description = "사료, 엇갈리는 서술, 불확실성에 주의를 기울여 살펴보는 시간 속의 사건, 제도, 사회."
+
+[geography]
+name = "지리"
+description = "장소, 지형, 국경, 공간 데이터, 그리고 이들의 관계가 시간에 따라 어떻게 변하는가."
+
+[machine-learning]
+name = "머신러닝"
+description = "모델이 데이터로부터 학습하는 방식: 그 수학, 훈련 방법, 그리고 그 결과가 할 수 있는 것과 할 수 없는 것."
+
+[life-sciences]
+name = "생명과학"
+description = "생물학과 의학: 생명 시스템이 어떻게 작동하는가, 그리고 우리가 이를 측정하고 모델링하고 치료하는 법을 어떻게 익혀 가는가."
+
+[game-ai]
+name = "게임 AI"
+description = "게임을 두는 프로그램: 탐색, 평가, 학습된 신경망, 그리고 그 기력을 측정하는 방법. 체스 엔진부터 바둑과 실시간 전략 게임까지."
+
+[philosophy]
+name = "철학"
+description = "지식, 마음, 도덕, 믿음에 관한 물음. 과학이 무언가를 아는 방식부터 신과 논쟁하는 소설까지."
+
+[literature]
+name = "문학"
+description = "소설과 소설에 관한 글: 그 자체를 위해 읽는 장편소설과 그것이 취하는 형식."
+
+[mathematics]
+name = "수학"
+description = "이 사이트의 시스템 밑바탕에 있는 수학: 확률, 선형대수, 최적화, 증명."
+
+# Concepts -----------------------------------------------------------------
+
+[agents]
+name = "에이전트"
+description = "소프트웨어로서의 LLM 에이전트: 루프, 도구, 컨텍스트, 메모리, 샌드박스, 그리고 그 아래의 플랫폼."
+
+[context-engineering]
+name = "컨텍스트 엔지니어링"
+description = "모델이 무엇을 보게 할지 정하는 일: 고정 컨텍스트, 검색, 메모리, 그리고 이들을 정직하게 유지하는 규약."
+
+[inference]
+name = "추론"
+description = "프로덕션에서 모델을 실행하는 일: 라우팅, 비용, 하드웨어, 그리고 사용량 과금형 유틸리티로서의 추론."
+
+[isolation]
+name = "격리"
+description = "샌드박스, 프로세스 및 장애 도메인 격리, 그리고 신뢰할 수 없거나 실패할 수 있는 작업을 안전하게 실행하는 일."
+
+[waf]
+name = "WAF와 트래픽 검사"
+description = "웹 애플리케이션 방화벽, 규칙 튜닝, 트래픽 재생, 그리고 운영자를 압도하지 않으면서 요청을 검사하는 일."
+
+[observability]
+name = "관측 가능성"
+description = "실행 중인 시스템이 무엇을 하는지 보는 일: 트레이스, 사용량 계측, 글래스 박스 인프라, 그리고 로그로 남기지 말아야 할 것."
+
+[economics]
+name = "경제"
+description = "비용, 가격 책정, 예산, 그리고 인프라, 추론, 혁신의 금전적 측면."
+
+[evaluation]
+name = "평가"
+description = "AI 시스템이 올바른 일을 하는지 측정하는 일: 골든 세트, 구조 검사, LLM-as-judge, 회귀 테스트 스위트."
+
+[metrics]
+name = "지표"
+description = "무엇을 측정할 것인가, 선행 신호와 후행 신호, 그리고 통찰처럼 보이는 허영 지표."
+
+[formal-methods]
+name = "정형 기법"
+description = "증명, 검증, 명세로서의 타입. 특히 기계가 코드를 작성하게 된 이후에."
+
+[developer-tooling]
+name = "개발자 도구"
+description = "패키지 관리자, 빌드 도구, CLI, 그리고 엔지니어가 매일 실제로 다루는 툴체인."
+
+[self-hosting]
+name = "셀프 호스팅"
+description = "자신의 인프라를 직접 운영하는 일. 베어메탈 서버 한 대부터 커뮤니티가 운영하는 컴퓨팅까지."
+
+[complex-systems]
+name = "복잡계"
+description = "창발과 집단 역학: 단순한 행위자, 역할, 규칙이 모여 어떻게 시장, 제도, 사회가 되는가."
+
+[reinforcement-learning]
+name = "강화학습"
+description = "자기 행동의 결과로부터 배우는 일: 자기 대국, 보상, 그리고 경험을 기술로 바꾸는 피드백 루프."
+
+[self-play]
+name = "자기 대국"
+description = "자기 자신과 대국하며 발전하는 프로그램: 스스로 훈련 데이터를 생성하고, 그 결과로부터 학습하며, 각 세대를 이전 세대와 겨루게 해 검증합니다."
+
+[tree-search]
+name = "트리 탐색"
+description = "수의 트리를 펼쳐 앞을 내다보는 일: 미니맥스와 알파-베타, 몬테카를로 트리 탐색, 그리고 이를 다룰 만한 규모로 만드는 가지치기와 수 순서 정렬."
+
+[neural-networks]
+name = "신경망"
+description = "예시로부터 함수를 학습하는 가중치의 층: 아키텍처, 활성화 함수, 양자화, 그리고 데이터가 있는 곳에서 이를 실행하는 일."
+
+[neuroscience]
+name = "신경과학"
+description = "뇌와 신경계: 커넥톰, 신경 기록, 그리고 뉴런이 무엇을 계산하는지 모델링하려는 시도."
+
+[history-of-science]
+name = "과학사"
+description = "발견이 실제로 어떻게 이루어졌는가: 그 뒤에 있던 사람, 도구, 막다른 길, 제도."
+
+[history-of-technology]
+name = "기술사"
+description = "도구, 기계, 네트워크가 어떻게 만들어졌는가, 그리고 그것을 형성한 선택들."
+
+[local-first]
+name = "로컬 퍼스트"
+description = "데이터를 사용자의 기기에 보관하고 CRDT로 동기화하며, 네트워크는 최적화 수단으로 다루는 소프트웨어."
+
+[knowledge-management]
+name = "지식 관리"
+description = "세컨드 브레인, 지식 그래프, 그리고 노트와 링크와 기억이 어떻게 이해로 바뀌는가."
+
+[simulation]
+name = "시뮬레이션"
+description = "실제 세계를 모방하는 인터랙티브 세계: 사회, 경제, 뉴런 배양체, 그리고 스스로 진화하도록 놓아둔 에이전트."
+
+[games]
+name = "게임"
+description = "정성 들여 만든 게임: 전술, 낚시, 그리고 그것이 돌아가는 엔진과 판타지 콘솔."
+
+[oss]
+name = "오픈 소스"
+description = "단순한 라이선스가 아니라 작업의 목적 그 자체로서의 오픈 소스."
+
+[hypertext]
+name = "하이퍼텍스트"
+description = "웹의 단위로서의 링크: 무엇이든 가리킬 수 있는 주소, 본래 의도되었던 읽고 쓰는 웹, 그리고 트리로는 할 수 없지만 문서의 그래프로는 할 수 있는 일."
+
+[open-standards]
+name = "개방형 표준"
+description = "공개적으로 합의되고 누구나 자유롭게 구현할 수 있는 프로토콜과 형식: HTTP, HTML, TCP/IP, RSS, 그리고 이를 그렇게 유지하는 컨소시엄과 워킹 그룹."
+
+[decentralisation]
+name = "탈중앙화"
+description = "중앙 운영자 없이 수많은 작은 노드로 이루어진 구조: 웹의 본래 모습이자, 사용자와 데이터를 소유하는 플랫폼에 대한 대안."
+
+[open-data]
+name = "오픈 데이터"
+description = "누구나 쓸 수 있도록 공개된 데이터: 정부 기록, 아카이브, 그리고 웹에 올린 파일 하나에서 주소를 가진 링크드 데이터에 이르는 5성 단계."
+
+[training-data]
+name = "학습 데이터"
+description = "모델이 무엇으로부터 학습하는가: 웹 크롤, 책, 라이선스를 받았거나 받지 않은 말뭉치. 그리고 아직 스크레이핑되지 않은 것을 누가 어떤 조건으로 보유하고 있는가."
+
+[privacy]
+name = "프라이버시"
+description = "웹에서의 추적, 프로파일링, 동의, 그리고 애초에 데이터를 수집하지 않는 설계."
+
+[data-sovereignty]
+name = "데이터 주권"
+description = "자신의 데이터에 대한 통제권: 포드, 이동성, 그리고 그 데이터를 읽는 소프트웨어와 에이전트를 선택할 권리. 국가 주권에 대응하는 개인 차원의 주권."
+
+[attention-economy]
+name = "관심 경제"
+description = "관심을 팔고 참여도를 최적화하는 플랫폼, 그것이 웹과 담론에 미치는 영향, 그리고 그 대안으로 제안된 의도 경제."
+
+[philosophy-of-science]
+name = "과학철학"
+description = "과학이 어떻게 지식을 생산하는가, 무엇이 증거로 인정되는가, 그리고 그 방법과 주장이 어디에서 한계에 이르는가."
+
+[ethics]
+name = "윤리"
+description = "압박 속의 옳고 그름: 소설 속의 죄책감과 자유, 과학자의 책임, 그리고 우리가 만드는 시스템과 그 영향을 받는 사람들에게 우리가 지는 의무."
+
+[religion]
+name = "종교"
+description = "믿음, 의심, 그리고 신앙을 중심으로 세워진 제도와 도시. 역사로서, 그리고 논쟁으로서."
+
+[maximalist-novels]
+name = "맥시멀리즘 소설"
+description = "하나의 세계 전체를 담으려 하는 아주 길고 백과사전적인 소설: Infinite Jest, The Books of Jacob, 그리고 이 형식에 관한 연구."
+
+[intelligence]
+name = "지능"
+description = "지능이란 무엇이며 어떻게 생겨나는가. 뇌에서, 뉴런 배양체에서, 그리고 학습하는 기계에서."
+
+[risk]
+name = "위험"
+description = "불확실성, 취약성, 그리고 아무도 계획하지 않은 방식으로 실패하는 시스템. 시장에서 테마파크, 프로덕션 환경까지."
+
+[existential-risk]
+name = "실존적 위험"
+description = "문명을 끝내거나 영구적으로 무력화할 수 있는 기술. 핵무기부터 정렬되지 않은 AI까지, 그리고 사람들이 이를 억제하려 해 온 방식."
+
+[ai-alignment]
+name = "AI 정렬"
+description = "AI 시스템이 그것을 만든 이와 사용자가 실제로 의도한 바를 추구하게 하는 일, 그리고 그렇지 않을 때 벌어지는 일."
+
+[legibility]
+name = "가독성"
+description = "복잡한 시스템을 위에서 읽어낼 수 있게 만드는 일: 척도가 포착하는 것, 지워 버리는 것, 그리고 지도가 영토를 대신할 때 무너지는 것."
+
+[research-labs]
+name = "연구소"
+description = "발견이 일어나는 기관, 그리고 그곳이 자금을 조달하고 운영되는 방식: CERN, 벨 연구소, ARPA, 로스앨러모스, DeepMind, 그리고 현대 의학을 뒷받침한 연구소들."
+
+[medicine]
+name = "의학"
+description = "치료법이 어떻게 발견되고 시험되어 환자에게 전달되는가. 소독법과 설파제부터 현대 약물 설계까지."
+
+[compilers]
+name = "컴파일러"
+description = "프로그램을 다른 프로그램으로 바꾸는 일: 파서, 인터프리터, 타입 검사기, 코드 생성."
+
+[networking]
+name = "네트워킹"
+description = "기계들이 서로 통신하는 방식: 패킷, 프로토콜, 소켓, 그리고 이를 실어 나르는 ARPANET부터 웹까지의 네트워크."
+
+[geopolitics]
+name = "지정학"
+description = "지리, 제국, 군비가 국가와 지역 사이의 세력 균형을 어떻게 형성하는가를 역사로서 다룹니다."
+
+[social-reform]
+name = "사회 개혁"
+description = "사회나 경제를 새로 설계하려는 계획. 19세기 유토피아부터 하이 모더니즘 국가와 기본소득까지, 그리고 그것이 사람들과 만났을 때 벌어진 일."
+
+[world-history]
+name = "세계사"
+description = "대륙과 천 년 단위의 규모로 서술한 역사: 사회들은 왜 서로 다른 길을 걸었는가, 그리고 세계는 어떻게 지금의 모습이 되었는가."
+
+[emergence]
+name = "창발"
+description = "아무도 설계하지 않은 질서: 산호초, 초기 웹, 뉴런 배양체, 그리고 단순한 규칙이 모여 어느 한 부분도 지니지 않은 행동을 만들어 내는 시뮬레이션 세계."
+
+[high-modernism]
+name = "하이 모더니즘"
+description = "전문가가 위에서 사회를 계획할 수 있다는 확신: 르 코르뷔지에의 합리적 도시, 과학적 임업, 그리고 실제 삶과 만났을 때 실패한 계획들."
+
+[hubris]
+name = "오만"
+description = "만드는 이가 자신의 통제력을 과대평가할 때: 복제된 공룡의 섬, 종이 위에서 계획된 도시, 원자폭탄, 그리고 만든 이가 이해하는 것보다 더 많은 능력을 지닌 시스템."
+
+[commons]
+name = "공유지"
+description = "공동으로 보유한 자원과 이를 그렇게 유지하는 규칙: 공유 토지, 개방형 프로토콜, 오픈 데이터, 그리고 플랫폼 이전의 웹."
+
+[intellectual-property]
+name = "지식재산"
+description = "특허, 저작권, 라이선스: 발명이나 텍스트를 누가 소유하는가. 퍼블릭 도메인으로 내놓은 웹부터 학습 데이터로 스크레이핑된 책까지."
+
+[provenance]
+name = "출처"
+description = "무언가가 어디에서 왔으며 누가 이를 보증하는가: 서명된 미디어, 권리 관계가 정리된 학습 데이터, 그리고 자신의 이력을 지니고 다니는 아티팩트."
+
+[external-memory]
+name = "외부 기억"
+description = "우리 대신 기억하는 노트, 링크, 저장소: 세컨드 브레인, 공유 기억으로서의 웹, 그리고 에이전트가 다음 세션을 위해 적어 두는 것."
+
+[augmentation]
+name = "증강"
+description = "사람을 대체하는 대신 사람이 할 수 있는 일을 넓혀 주는 컴퓨터: 리클라이더의 인간과 컴퓨터의 공생, 카스파로프의 켄타우로스 체스, 그리고 코딩 에이전트와 함께 일하기."
+
+[technology-races]
+name = "기술 경쟁"
+description = "어떤 기술을 먼저 만들기 위해 경쟁하는 강대국들. 원자폭탄과 그 억지력부터 프런티어 AI와 그것에 필요한 데이터까지."
+
+[scientific-revolutions]
+name = "과학 혁명"
+description = "한 분야가 그리는 세계상이 바뀌는 순간: 근대 과학의 발명, 분자생물학, 소독법, 그리고 최초의 항생제."
+
+[cities]
+name = "도시"
+description = "도시가 어떻게 계획되고 실제로는 어떻게 자라는가: 3천 년에 걸친 예루살렘, 종이 위에 그려진 브라질리아, 그리고 웹이 그에 맞서 설계된 합리적 도시."
+
+[languages]
+name = "언어와 번역"
+description = "인간의 언어와 그 사이에서 의미를 옮기는 일: 번역 소설, 중국어, 일본어, 히브리어 읽기 배우기, 그리고 유럽의 다국어 텍스트."
+
+[europe]
+name = "유럽"
+description = "기술과 역사 속 유럽의 자리: 웹이 발명된 곳, 유럽이 만들고 또 내어 주는 것, 그리고 여전히 보유한 데이터와 역량."
+
+[switzerland]
+name = "스위스"
+description = "이 사이트가 쓰이는 나라: 제네바의 CERN, 바젤, 수치로 측정되고 또 삶으로 경험되는 스위스의 혁신, 그리고 스위스의 시민 프로젝트."
+
+# Technologies -------------------------------------------------------------
+
+[webassembly]
+name = "WebAssembly"
+description = "브라우저와 그 너머에서 네이티브에 가까운 속도로 코드를 실행하기 위한, 이식 가능하고 샌드박스화된 바이트코드."
+
+[rust]
+name = "Rust"
+description = "이곳 프로젝트 대부분이 작성된 시스템 언어."
+
+[haskell]
+name = "Haskell"
+description = "타입, 이펙트, 정확성에 대한 제 사고방식을 형성한 언어."
+
+[opentelemetry]
+name = "OpenTelemetry"
+description = "트레이스, 메트릭, 로그를 위한 벤더 중립 표준으로, 모델 호출을 위한 GenAI 시맨틱 컨벤션을 포함합니다."
+
+[typescript]
+name = "TypeScript"
+description = "Bun 위에서 실행하는 TypeScript, Agent Platform Handbook 코드의 언어."
+
+[elixir]
+name = "Elixir"
+description = "오래 실행되고 장애에 강해야 하는 부분을 위한 Elixir, Phoenix, BEAM."
+
+[pingora]
+name = "Pingora"
+description = "프록시를 구축하기 위한 Cloudflare의 Rust 프레임워크로, Zentinel의 기반입니다."
+
+[kubernetes]
+name = "Kubernetes"
+description = "컨테이너 오케스트레이션, 그리고 그것이 실제로 언제 필요한가라는 물음."
+
+[gpus]
+name = "GPU"
+description = "컴퓨터로서의 GPU: 메모리 구조, 파티셔닝, 그리고 추론을 떠받치는 하드웨어."
+
+[linux]
+name = "Linux"
+description = "Linux 배포판과 시스템 관리, 특히 Void Linux."
+
+[openbsd]
+name = "OpenBSD"
+description = "OpenBSD, 그리고 정확성과 단순성을 대하는 BSD의 접근 방식."
+
+[zola]
+name = "Zola"
+description = "이 사이트와 여러 프로젝트 사이트를 만드는 데 쓰인 정적 사이트 생성기."
+
+# This site ----------------------------------------------------------------
+
+[meta]
+name = "이 사이트"
+description = "raskell.io 자체에 관한 글: 이 사이트가 왜 존재하는지, 어떻게 만들어졌는지, 어디로 향하고 있는지."

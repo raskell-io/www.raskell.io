@@ -198,6 +198,20 @@
       "url": {{ url_tags | json_encode | safe }},
       "hasDefinedTerm": [{% set_global usedtags = [] %}{% for t in terms %}{% set_global usedtags = usedtags | concat(with=t.slug) %}{% endfor %}{% for slug, td in tagdata %}{ "@type": "DefinedTerm", "@id": "{{ base }}/tags/{% if slug in usedtags %}{{ slug }}/{% else %}#{{ slug }}{% endif %}", "name": {{ td.name | json_encode | safe }}, "termCode": {{ slug | json_encode | safe }}, "description": {{ td.description | json_encode | safe }} }{% if not loop.last %}, {% endif %}{% endfor %}]
     }
+    {%- elif page is defined and page.extra.taxonomy is defined and page.extra.taxonomy == "tags" and page.extra.term is defined and tagdata and page.extra.term in tagdata %}{% set en_term = base ~ "/tags/" ~ page.extra.term ~ "/" %},
+    {#- A topic page in a translated language (mise run topic-pages): the same term, named in this language. -#}
+    {
+      "@type": "DefinedTerm",
+      "@id": {{ here | json_encode | safe }},
+      "name": {{ page.title | json_encode | safe }},
+      "termCode": {{ page.extra.term | json_encode | safe }},
+      "description": {{ page.description | json_encode | safe }},
+      "url": {{ here | json_encode | safe }},
+      "inLanguage": {{ ld_tag | json_encode | safe }},
+      "sameAs": {{ en_term | json_encode | safe }},
+      "translationOfWork": { "@id": {{ en_term | json_encode | safe }} },
+      "inDefinedTermSet": { "@type": "DefinedTermSet", "@id": {{ id_termset | json_encode | safe }}, "name": "raskell.io topics", "url": {{ url_tags | json_encode | safe }} }
+    }
     {%- elif taxonomy is defined and taxonomy.name == "tags" and term is defined and tagdata and term.slug in tagdata %}{% set td = tagdata[term.slug] %},
     {
       "@type": "DefinedTerm",
@@ -340,13 +354,13 @@
       "description": {{ cur.description | json_encode | safe }},
       {%- endif %}
       "inLanguage": {{ ld_tag | json_encode | safe }},
-      "isPartOf": { "@id": {{ id_site | json_encode | safe }} },
+      "isPartOf": { "@id": {{ id_site | json_encode | safe }} }
       {%- if lang != config.default_language %}
-      {%- for tr in cur.translations %}{% if tr.lang == config.default_language %}
+      {%- for tr in cur.translations %}{% if tr.lang == config.default_language %},
       "translationOfWork": { "@id": {{ tr.permalink ~ "#page" | json_encode | safe }}, "url": {{ tr.permalink | json_encode | safe }}, "inLanguage": {{ config.default_language | json_encode | safe }} }
       {%- endif %}{% endfor %}
       {%- else %}
-      {%- set_global ld_n = 0 %}
+      {%- set_global ld_n = 0 %},
       "workTranslation": [{% for tr in cur.translations %}{% if tr.lang != lang %}{% set_global trtag = tr.lang %}{% for l in langs %}{% if l.code == tr.lang %}{% set_global trtag = l.hreflang %}{% endif %}{% endfor %}{% if ld_n > 0 %}, {% endif %}{ "@id": {{ tr.permalink ~ "#page" | json_encode | safe }}, "url": {{ tr.permalink | json_encode | safe }}, "inLanguage": {{ trtag | json_encode | safe }} }{% set_global ld_n = ld_n + 1 %}{% endif %}{% endfor %}]
       {%- endif %}
     }

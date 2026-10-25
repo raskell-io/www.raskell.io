@@ -1,0 +1,399 @@
+# The Simplified Chinese names and definitions of the topics in data/tags.toml, keyed by the same slug.
+# Only name and description are translated here; kind and broader stay in the source.
+# Anything missing here falls back to the English in data/tags.toml.
+
+# Domains ------------------------------------------------------------------
+
+[ai-platforms]
+name = "AI 平台"
+description = "组织构建 AI 所依托的共享基础：模型网关、智能体运行时、治理、可观测性，以及围绕它们的运营模式。"
+
+[ai-engineering]
+name = "AI 辅助工程"
+description = "AI 作为工程工具：编码智能体、由 AI 编写的代码，以及当模型写下大部分代码时编程会变成什么样。"
+
+[ai-for-ops]
+name = "AI 赋能运维"
+description = "应用于系统运行的 AI：安全分诊、告警噪声、事件处理，以及让人始终参与其中。"
+
+[platform-automation]
+name = "平台自动化"
+description = "自助服务、护栏、部署，以及让软件运营可持续的工具。"
+
+[edge-systems]
+name = "边缘系统"
+description = "反向代理、策略执行、CDN，以及在靠近用户而非后端处运行的逻辑。"
+
+[applied-security]
+name = "应用安全"
+description = "生产压力下的安全：对抗性输入、信号与噪声，以及运维人员能够接受的控制措施。"
+
+[distributed-systems]
+name = "分布式系统"
+description = "在各自独立发生故障的多台机器之间进行复制、协调并保持一致性。"
+
+[programming-languages]
+name = "编程语言"
+description = "语言、类型系统、编译器，以及可执行的意图如何被写下来。"
+
+[operating-systems]
+name = "操作系统"
+description = "内核、虚拟化，以及介于硬件与其他一切之间的那一层，从 BSD 到原生面向推理的设计。"
+
+[reliability]
+name = "可靠性"
+description = "故障模式、可运维性，以及在输入和依赖出问题时保持系统正常运行。"
+
+[sovereignty]
+name = "主权"
+description = "谁掌控算力、数据和基础设施，又处于哪个司法管辖区之下；尤其是欧洲的处境。"
+
+[policy]
+name = "政策"
+description = "工程与监管、公共机构、公共采购和国家战略的交汇之处。"
+
+[open-web]
+name = "开放网络"
+description = "作为公地的网络：开放协议、小型独立网站，以及在平台之外发布内容。"
+
+[history]
+name = "历史"
+description = "跨越时间的事件、制度与社会，关注史料、相互竞争的叙述与不确定性。"
+
+[geography]
+name = "地理"
+description = "地点、地形、边界与空间数据，以及它们之间的关系如何随时间变化。"
+
+[machine-learning]
+name = "机器学习"
+description = "模型如何从数据中学习：其中的数学、训练方法，以及结果能做到和做不到什么。"
+
+[life-sciences]
+name = "生命科学"
+description = "生物学与医学：生命系统如何运作，以及我们如何学会测量、建模和治疗它们。"
+
+[game-ai]
+name = "游戏 AI"
+description = "会玩游戏的程序：搜索、评估、学习得到的网络，以及如何衡量它们的棋力，从国际象棋引擎到围棋和即时战略游戏。"
+
+[philosophy]
+name = "哲学"
+description = "关于知识、心灵、道德与信仰的问题，从科学如何认识事物，到与上帝争辩的小说。"
+
+[literature]
+name = "文学"
+description = "小说及关于小说的写作：为小说本身而读的长篇，以及它们所采取的形式。"
+
+[mathematics]
+name = "数学"
+description = "本站各个系统背后的数学：概率、线性代数、最优化与证明。"
+
+# Concepts -----------------------------------------------------------------
+
+[agents]
+name = "智能体"
+description = "作为软件的 LLM 智能体：循环、工具、上下文、记忆、沙箱，以及它们底下的平台。"
+
+[context-engineering]
+name = "上下文工程"
+description = "决定模型看到什么：固定上下文、检索、记忆，以及让它们保持可信的约定。"
+
+[inference]
+name = "推理"
+description = "在生产环境中运行模型：路由、成本、硬件，以及作为按量计费的公用服务的推理。"
+
+[isolation]
+name = "隔离"
+description = "沙箱、进程隔离与故障域隔离，以及安全地运行不受信任或可能出错的工作。"
+
+[waf]
+name = "WAF 与流量检测"
+description = "Web 应用防火墙、规则调优、流量回放，以及在不让运维人员淹没其中的前提下检查请求。"
+
+[observability]
+name = "可观测性"
+description = "看清一个运行中的系统在做什么：追踪、计量、玻璃盒式基础设施，以及哪些内容不该记录。"
+
+[economics]
+name = "经济学"
+description = "成本、定价、预算，以及基础设施、推理和创新中与钱有关的一面。"
+
+[evaluation]
+name = "评估"
+description = "衡量一个 AI 系统是否做对了事：黄金数据集、结构检查、LLM 评审，以及回归测试套件。"
+
+[metrics]
+name = "指标"
+description = "该衡量什么、领先信号与滞后信号，以及看似洞见的虚荣数字。"
+
+[formal-methods]
+name = "形式化方法"
+description = "证明、验证，以及作为规约的类型，在由机器编写代码之后尤其重要。"
+
+[developer-tooling]
+name = "开发者工具"
+description = "包管理器、构建工具、命令行工具，以及工程师每天真正接触的工具链。"
+
+[self-hosting]
+name = "自托管"
+description = "运行自己的基础设施，从一台裸金属服务器到由社区运营的算力。"
+
+[complex-systems]
+name = "复杂系统"
+description = "涌现与集体动力学：简单的个体、角色和规则如何汇聚成市场、制度与社会。"
+
+[reinforcement-learning]
+name = "强化学习"
+description = "从自身行动的结果中学习：自我对弈、奖励，以及把经验转化为技能的反馈回路。"
+
+[self-play]
+name = "自我对弈"
+description = "程序通过与自己对弈而进步：自己生成训练数据，从结果中学习，并让每一代与上一代对战检验。"
+
+[tree-search]
+name = "树搜索"
+description = "通过展开着法树来向前看：极小化极大与 alpha-beta 剪枝、蒙特卡洛树搜索，以及让它们变得可行的剪枝和排序。"
+
+[neural-networks]
+name = "神经网络"
+description = "从样例中学习一个函数的多层权重：架构、激活函数、量化，以及在数据所在之处运行它们。"
+
+[neuroscience]
+name = "神经科学"
+description = "大脑与神经系统：连接组、神经记录，以及为神经元的计算建模的尝试。"
+
+[history-of-science]
+name = "科学史"
+description = "发现实际上是如何做出的：背后的人、仪器、死胡同和机构。"
+
+[history-of-technology]
+name = "技术史"
+description = "工具、机器和网络是如何被建造出来的，以及塑造了它们的那些选择。"
+
+[local-first]
+name = "本地优先"
+description = "把数据保存在你自己的设备上、通过 CRDT 同步的软件，网络只是一种优化。"
+
+[knowledge-management]
+name = "知识管理"
+description = "第二大脑、知识图谱，以及笔记、链接和记忆如何转化为理解。"
+
+[simulation]
+name = "模拟"
+description = "模仿真实世界的交互式世界：社会、经济、神经元培养物，以及任其自行演化的智能体。"
+
+[games]
+name = "游戏"
+description = "用心制作的游戏：战术、钓鱼，以及它们所运行的引擎和幻想主机。"
+
+[oss]
+name = "开源"
+description = "开源是这项工作的意义所在，而不只是它的许可证。"
+
+[hypertext]
+name = "超文本"
+description = "链接是网络的基本单位：可以指向任何东西的地址、原本设想的可读可写网络，以及文档构成的图能做到而树做不到的事。"
+
+[open-standards]
+name = "开放标准"
+description = "公开商定、可自由实现的协议与格式：HTTP、HTML、TCP/IP、RSS，以及让它们保持开放的联盟和工作组。"
+
+[decentralisation]
+name = "去中心化"
+description = "众多小节点、没有中心运营者：网络最初的形态，也是对掌控用户和数据的平台的替代。"
+
+[open-data]
+name = "开放数据"
+description = "发布出来供任何人使用的数据：政府记录、档案，以及从网上的一个文件到带有地址的关联数据的五星阶梯。"
+
+[training-data]
+name = "训练数据"
+description = "模型从中学习的东西：网络爬取、书籍，以及已获授权或未获授权的语料库；谁掌握着尚未被抓取的内容，又以什么条件提供。"
+
+[privacy]
+name = "隐私"
+description = "网络上的追踪、用户画像与同意，以及从一开始就避免收集数据的设计。"
+
+[data-sovereignty]
+name = "数据主权"
+description = "对自身数据的控制：数据存储舱（pod）、可携带性，以及选择读取数据的软件和智能体的权利；是国家主权在个人层面的对应。"
+
+[attention-economy]
+name = "注意力经济"
+description = "出售注意力、以参与度为优化目标的平台，它们对网络和公共讨论造成的影响，以及被提出来取而代之的意图经济。"
+
+[philosophy-of-science]
+name = "科学哲学"
+description = "科学如何产生知识，什么算作证据，以及其方法和主张在哪里触及极限。"
+
+[ethics]
+name = "伦理"
+description = "压力之下的对与错：小说中的罪责与自由、科学家的责任，以及我们对自己所建造的系统和受其影响的人负有什么。"
+
+[religion]
+name = "宗教"
+description = "信仰、怀疑，以及围绕信仰建立起来的制度和城市，既作为历史，也作为论辩。"
+
+[maximalist-novels]
+name = "百科全书式小说"
+description = "试图容纳整个世界的超长篇百科全书式小说：《无尽的玩笑》（Infinite Jest）、《雅各布之书》（The Books of Jacob），以及对这一形式的研究。"
+
+[intelligence]
+name = "智能"
+description = "智能是什么、如何产生，无论是在大脑中、在神经元培养物中，还是在会学习的机器中。"
+
+[risk]
+name = "风险"
+description = "不确定性、脆弱性，以及以无人预料的方式失效的系统，从市场到主题公园再到生产环境。"
+
+[existential-risk]
+name = "生存风险"
+description = "可能终结文明或使其永久瘫痪的技术，从核武器到未对齐的 AI，以及人们试图遏制它们的方式。"
+
+[ai-alignment]
+name = "AI 对齐"
+description = "让 AI 系统追求其构建者和用户真正想要的东西，以及当它们没有这样做时会发生什么。"
+
+[legibility]
+name = "清晰性"
+description = "让一个复杂系统能够被自上而下地读懂：度量捕捉了什么、抹去了什么，以及当地图取代疆域时什么会崩坏。"
+
+[research-labs]
+name = "研究实验室"
+description = "发现发生的机构，以及它们如何获得资助和运作：CERN、贝尔实验室、ARPA、洛斯阿拉莫斯、DeepMind，以及现代医学背后的实验室。"
+
+[medicine]
+name = "医学"
+description = "疗法如何被发现、检验并送到患者手中，从消毒防腐和磺胺类药物到现代药物设计。"
+
+[compilers]
+name = "编译器"
+description = "把程序变成另一些程序：解析器、解释器、类型检查器与代码生成。"
+
+[networking]
+name = "计算机网络"
+description = "机器之间如何对话：数据包、协议、套接字，以及从 ARPANET 到万维网承载它们的网络。"
+
+[geopolitics]
+name = "地缘政治"
+description = "地理、帝国和军备如何塑造国家与地区之间的力量平衡，作为历史来看。"
+
+[social-reform]
+name = "社会改革"
+description = "重新设计社会或经济的计划，从十九世纪的乌托邦到极端现代主义国家和基本收入，以及它们遇到真实的人之后发生了什么。"
+
+[world-history]
+name = "世界史"
+description = "以大陆和千年为尺度讲述的历史：各个社会为何走向分化，世界又如何变成今天的样子。"
+
+[emergence]
+name = "涌现"
+description = "无人设计的秩序：珊瑚礁、早期的网络、神经元培养物，以及简单规则汇聚出任何单一部分都不具备的行为的模拟世界。"
+
+[high-modernism]
+name = "极端现代主义"
+description = "相信社会可以由专家自上而下地规划：勒·柯布西耶的理性城市、科学林业，以及那些遇到现实生活便失败的方案。"
+
+[hubris]
+name = "狂妄"
+description = "当建造者高估了自己的掌控力：一座满是克隆恐龙的岛屿、在纸上规划的城市、原子弹，以及能力超出其创造者理解的系统。"
+
+[commons]
+name = "公地"
+description = "共同持有的资源以及让它们保持共有的规则：公共土地、开放协议、开放数据，以及平台出现之前的网络。"
+
+[intellectual-property]
+name = "知识产权"
+description = "专利、版权与许可证：一项发明或一段文本归谁所有，从被交给公有领域的万维网，到被抓取用作训练数据的书籍。"
+
+[provenance]
+name = "来源溯源"
+description = "某样东西从何而来，由谁为它担保：带签名的媒体、权利清晰的训练数据，以及自带历史记录的制品。"
+
+[external-memory]
+name = "外部记忆"
+description = "替我们记住事情的笔记、链接和存储：第二大脑、作为共享记忆的网络，以及智能体为下一次会话写下的内容。"
+
+[augmentation]
+name = "增强"
+description = "扩展人的能力而不是取代人的计算机：利克莱德的人机共生、卡斯帕罗夫的半人马国际象棋，以及与编码智能体并肩工作。"
+
+[technology-races]
+name = "技术竞赛"
+description = "大国竞相率先造出某项技术，从原子弹及其威慑，到前沿 AI 及其所需的数据。"
+
+[scientific-revolutions]
+name = "科学革命"
+description = "一个领域的世界图景发生改变的时刻：现代科学的诞生、分子生物学、消毒防腐法，以及最早的抗生素。"
+
+[cities]
+name = "城市"
+description = "城市如何被规划，又实际上如何生长：三千年来的耶路撒冷、画在纸上的巴西利亚，以及万维网在设计上所反对的理性城市。"
+
+[languages]
+name = "语言与翻译"
+description = "人类语言以及在语言之间传递意义：翻译小说，学习阅读中文、日文和希伯来文，以及欧洲的多语文本。"
+
+[europe]
+name = "欧洲"
+description = "欧洲在技术与历史中的位置：万维网在这里发明，它建造了什么、又送出了什么，以及它仍然掌握的数据和能力。"
+
+[switzerland]
+name = "瑞士"
+description = "本站写作所在的国家：日内瓦的 CERN、巴塞尔、被衡量的和被亲历的瑞士创新，以及瑞士的公民项目。"
+
+# Technologies -------------------------------------------------------------
+
+[webassembly]
+name = "WebAssembly"
+description = "可移植、沙箱化的字节码，用于在浏览器内外以原生速度运行代码。"
+
+[rust]
+name = "Rust"
+description = "这里大多数项目所使用的系统编程语言。"
+
+[haskell]
+name = "Haskell"
+description = "塑造了我对类型、副作用和正确性的思考方式的语言。"
+
+[opentelemetry]
+name = "OpenTelemetry"
+description = "与厂商无关的追踪、指标和日志标准，包括用于模型调用的 GenAI 语义约定。"
+
+[typescript]
+name = "TypeScript"
+description = "运行在 Bun 上的 TypeScript，Agent Platform Handbook 代码所用的语言。"
+
+[elixir]
+name = "Elixir"
+description = "Elixir、Phoenix 和 BEAM，用于长期运行、容错的部分。"
+
+[pingora]
+name = "Pingora"
+description = "Cloudflare 用于构建代理的 Rust 框架，Zentinel 的基础。"
+
+[kubernetes]
+name = "Kubernetes"
+description = "容器编排，以及什么时候你真正需要它的问题。"
+
+[gpus]
+name = "GPU"
+description = "GPU 就是计算机：显存形态、分区，以及推理底下的硬件。"
+
+[linux]
+name = "Linux"
+description = "Linux 发行版与系统管理，尤其是 Void Linux。"
+
+[openbsd]
+name = "OpenBSD"
+description = "OpenBSD，以及 BSD 追求正确与简洁的做法。"
+
+[zola]
+name = "Zola"
+description = "构建本站和若干项目网站所用的静态网站生成器。"
+
+# This site ----------------------------------------------------------------
+
+[meta]
+name = "关于本站"
+description = "关于 raskell.io 本身的文章：它为何存在、如何构建，以及将走向何方。"

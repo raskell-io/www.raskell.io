@@ -40,6 +40,9 @@ jobs:
       - name: Generate llms.txt, Markdown copies, and reading.json
         run: mise run llms
 
+      - name: Generate the topic pages of every translated language
+        run: mise run topic-pages
+
       - name: Build
         run: zola build
 
