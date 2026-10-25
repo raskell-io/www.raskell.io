@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-25T18:22:36+00:00",
+ "generated": "2026-10-25T18:47:28+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -1394,12 +1394,14 @@
   },
   {
    "kind": "project",
-   "title": "broodwar.live",
-   "url": "https://broodwar.live",
-   "description": "The community platform for StarCraft: Brood War competitive play, a basketball-reference.com for Brood War. Profiles for 150 pro players in English and Korean, build orders for every matchup, tournaments, a wiki, and replay analysis that runs in the browser on WebAssembly, so nothing is uploaded.",
+   "title": "Shiioo",
+   "url": "https://shiioo.raskell.io",
+   "description": "A virtual company of AI agents on your Mac, run from your phone. Claude Code, Codex and local models work in their own branches; a rules file decides what they may do alone, the rest reaches you on Telegram as a question, and every step lands in a tamper-evident record. One Rust binary, open source.",
    "topics": [
-    "zola",
-    "elixir",
+    "agents",
+    "ai-platforms",
+    "ai-for-ops",
+    "platform-automation",
     "rust"
    ],
    "meta": "Flagship and serious builds · Projects"
@@ -1426,6 +1428,18 @@
     "linux",
     "rust",
     "developer-tooling"
+   ],
+   "meta": "Flagship and serious builds · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "broodwar.live",
+   "url": "https://broodwar.live",
+   "description": "The community platform for StarCraft: Brood War competitive play, a basketball-reference.com for Brood War. Profiles for 150 pro players in English and Korean, build orders for every matchup, tournaments, a wiki, and replay analysis that runs in the browser on WebAssembly, so nothing is uploaded.",
+   "topics": [
+    "zola",
+    "elixir",
+    "rust"
    ],
    "meta": "Flagship and serious builds · Projects"
   },
@@ -1560,20 +1574,6 @@
    "topics": [
     "distributed-systems",
     "local-first",
-    "rust"
-   ],
-   "meta": "Labs / passion projects · Projects"
-  },
-  {
-   "kind": "project",
-   "title": "Shiioo (CO)",
-   "url": "https://github.com/raskell-io/shiioo",
-   "description": "The Virtual Company OS. Agentic enterprise orchestrator with DAG workflows, event sourcing, MCP tools, and a categorized skill registry with git import.",
-   "topics": [
-    "agents",
-    "ai-platforms",
-    "ai-for-ops",
-    "platform-automation",
     "rust"
    ],
    "meta": "Labs / passion projects · Projects"

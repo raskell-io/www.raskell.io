@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-25T18:22:36+00:00",
+ "generated": "2026-10-25T18:47:28+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -406,7 +406,7 @@
    "url": "https://raskell.io/talks/iat-13-basel/",
    "meta": "2026-06-10 · IT's ABOUT TECH #13",
    "description": "Slide deck for IT's ABOUT TECH #13 in Basel. A 15-minute story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "t:agents",
@@ -1398,13 +1398,13 @@
    "degree": 7
   },
   {
-   "id": "p:broodwar-live",
+   "id": "p:shiioo",
    "kind": "project",
-   "label": "broodwar.live",
-   "url": "https://broodwar.live",
+   "label": "Shiioo",
+   "url": "https://shiioo.raskell.io",
    "meta": "Project",
-   "description": "The community platform for StarCraft: Brood War competitive play, a basketball-reference.com for Brood War. Profiles for 150 pro players in English and Korean, build orders for eve…",
-   "degree": 4
+   "description": "A virtual company of AI agents on your Mac, run from your phone. Claude Code, Codex and local models work in their own branches; a rules file decides what they may do alone, the re…",
+   "degree": 10
   },
   {
    "id": "p:refrakt",
@@ -1423,6 +1423,15 @@
    "meta": "Project",
    "description": "No-downtime app deployment on bare metal. One binary. No containers. A self-hosted PaaS alternative to Heroku, Fly.io, Coolify, and Kamal. Built in Rust with zero-downtime deploys …",
    "degree": 8
+  },
+  {
+   "id": "p:broodwar-live",
+   "kind": "project",
+   "label": "broodwar.live",
+   "url": "https://broodwar.live",
+   "meta": "Project",
+   "description": "The community platform for StarCraft: Brood War competitive play, a basketball-reference.com for Brood War. Profiles for 150 pro players in English and Korean, build orders for eve…",
+   "degree": 4
   },
   {
    "id": "p:die-zukunft",
@@ -1513,15 +1522,6 @@
    "meta": "Project",
    "description": "Schema-aware config state coordination. Multiple writers, deterministic merge, git milestones. A CRDT document engine with pluggable storage backends (SQLite, PostgreSQL, DynamoDB)…",
    "degree": 8
-  },
-  {
-   "id": "p:shiioo",
-   "kind": "project",
-   "label": "Shiioo (CO)",
-   "url": "https://github.com/raskell-io/shiioo",
-   "meta": "Project",
-   "description": "The Virtual Company OS. Agentic enterprise orchestrator with DAG workflows, event sourcing, MCP tools, and a categorized skill registry with git import.",
-   "degree": 9
   },
   {
    "id": "p:ushio",
@@ -2075,7 +2075,7 @@
    "label": "Flagship and serious builds",
    "url": "https://raskell.io/projects/#tier-flagship",
    "meta": "Group",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "h:projects-civic",
@@ -2091,7 +2091,7 @@
    "label": "Labs / passion projects",
    "url": "https://raskell.io/projects/#tier-lab",
    "meta": "Group",
-   "degree": 13
+   "degree": 12
   },
   {
    "id": "h:apps-tools",
@@ -4016,6 +4016,22 @@
    "target": "p:bhc"
   },
   {
+   "source": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
+   "target": "p:shiioo"
+  },
+  {
+   "source": "a:/articles/mise-ate-my-makefile/",
+   "target": "p:shiioo"
+  },
+  {
+   "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "p:shiioo"
+  },
+  {
+   "source": "a:/talks/iat-13-basel/",
+   "target": "p:shiioo"
+  },
+  {
    "source": "a:/articles/mise-ate-my-makefile/",
    "target": "p:refrakt"
   },
@@ -4106,18 +4122,6 @@
   {
    "source": "a:/talks/iat-13-basel/",
    "target": "p:conflux"
-  },
-  {
-   "source": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
-   "target": "p:shiioo"
-  },
-  {
-   "source": "a:/articles/mise-ate-my-makefile/",
-   "target": "p:shiioo"
-  },
-  {
-   "source": "a:/articles/all-beginning-is-haskell/",
-   "target": "p:shiioo"
   },
   {
    "source": "a:/articles/traffic-replay-as-a-security-primitive/",
@@ -4320,19 +4324,27 @@
    "target": "p:arcanist"
   },
   {
-   "source": "p:broodwar-live",
+   "source": "p:shiioo",
    "target": "h:projects-flagship"
   },
   {
-   "source": "p:broodwar-live",
-   "target": "t:zola"
+   "source": "p:shiioo",
+   "target": "t:agents"
   },
   {
-   "source": "p:broodwar-live",
-   "target": "t:elixir"
+   "source": "p:shiioo",
+   "target": "t:ai-platforms"
   },
   {
-   "source": "p:broodwar-live",
+   "source": "p:shiioo",
+   "target": "t:ai-for-ops"
+  },
+  {
+   "source": "p:shiioo",
+   "target": "t:platform-automation"
+  },
+  {
+   "source": "p:shiioo",
    "target": "t:rust"
   },
   {
@@ -4370,6 +4382,22 @@
   {
    "source": "p:vela",
    "target": "t:developer-tooling"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "h:projects-flagship"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "t:zola"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "t:elixir"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "t:rust"
   },
   {
    "source": "p:die-zukunft",
@@ -4597,30 +4625,6 @@
   },
   {
    "source": "p:conflux",
-   "target": "t:rust"
-  },
-  {
-   "source": "p:shiioo",
-   "target": "h:projects-lab"
-  },
-  {
-   "source": "p:shiioo",
-   "target": "t:agents"
-  },
-  {
-   "source": "p:shiioo",
-   "target": "t:ai-platforms"
-  },
-  {
-   "source": "p:shiioo",
-   "target": "t:ai-for-ops"
-  },
-  {
-   "source": "p:shiioo",
-   "target": "t:platform-automation"
-  },
-  {
-   "source": "p:shiioo",
    "target": "t:rust"
   },
   {
