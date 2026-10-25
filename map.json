@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-24T10:39:49+00:00",
+ "generated": "2026-10-25T09:24:00+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -433,7 +433,7 @@
    "url": "https://raskell.io/tags/distributed-systems/",
    "meta": "Domain · 3 pages",
    "description": "Replication, coordination, and consistency across machines that fail independently.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:economics",
@@ -442,7 +442,7 @@
    "url": "https://raskell.io/tags/economics/",
    "meta": "Concept · 9 pages",
    "description": "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.",
-   "degree": 10
+   "degree": 13
   },
   {
    "id": "t:edge-systems",
@@ -460,7 +460,7 @@
    "url": "https://raskell.io/tags/elixir/",
    "meta": "Technology · 2 pages",
    "description": "Elixir, Phoenix, and the BEAM for the long-running, fault-tolerant parts.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:formal-methods",
@@ -496,7 +496,7 @@
    "url": "https://raskell.io/tags/history-of-technology/",
    "meta": "Concept · 1 page",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:hypertext",
@@ -532,7 +532,7 @@
    "url": "https://raskell.io/tags/knowledge-management/",
    "meta": "Concept · 2 pages",
    "description": "Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:kubernetes",
@@ -667,7 +667,7 @@
    "url": "https://raskell.io/tags/platform-automation/",
    "meta": "Domain · 2 pages",
    "description": "Self-service, guardrails, deployment, and the tooling that keeps operating software sustainable.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:policy",
@@ -694,7 +694,7 @@
    "url": "https://raskell.io/tags/programming-languages/",
    "meta": "Domain · 7 pages",
    "description": "Languages, type systems, compilers, and how executable intent gets written down.",
-   "degree": 16
+   "degree": 18
   },
   {
    "id": "t:reliability",
@@ -712,7 +712,7 @@
    "url": "https://raskell.io/tags/rust/",
    "meta": "Technology · 7 pages",
    "description": "The systems language most of the projects here are written in.",
-   "degree": 29
+   "degree": 31
   },
   {
    "id": "t:self-hosting",
@@ -775,7 +775,7 @@
    "url": "https://raskell.io/tags#complex-systems",
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:evaluation",
@@ -802,7 +802,7 @@
    "url": "https://raskell.io/tags#geography",
    "meta": "Domain · no pages yet",
    "description": "Places, terrain, borders, and spatial data, and how their relationships change over time.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:history",
@@ -811,7 +811,7 @@
    "url": "https://raskell.io/tags#history",
    "meta": "Domain · no pages yet",
    "description": "Events, institutions, and societies through time, with attention to sources, competing accounts, and uncertainty.",
-   "degree": 7
+   "degree": 10
   },
   {
    "id": "t:history-of-science",
@@ -820,7 +820,7 @@
    "url": "https://raskell.io/tags#history-of-science",
    "meta": "Concept · no pages yet",
    "description": "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:life-sciences",
@@ -874,7 +874,7 @@
    "url": "https://raskell.io/tags#webassembly",
    "meta": "Technology · no pages yet",
    "description": "Portable, sandboxed bytecode for running native-speed code in the browser and beyond.",
-   "degree": 6
+   "degree": 8
   },
   {
    "id": "s:the-agent-platform-handbook",
@@ -1182,14 +1182,6 @@
    "degree": 3
   },
   {
-   "id": "w:infinite-jest",
-   "kind": "work",
-   "label": "Infinite Jest",
-   "url": "https://raskell.io/reading/#infinite-jest",
-   "meta": "Novel · David Foster Wallace · read December 2025",
-   "degree": 1
-  },
-  {
    "id": "w:guns-germs-and-steel",
    "kind": "work",
    "label": "Guns, Germs, and Steel",
@@ -1241,6 +1233,172 @@
    "degree": 4
   },
   {
+   "id": "w:science-after-babel",
+   "kind": "work",
+   "label": "Science After Babel",
+   "url": "https://raskell.io/reading/#science-after-babel",
+   "meta": "Book · David Berlinski · read 2023",
+   "degree": 1
+  },
+  {
+   "id": "w:network-programming-with-go",
+   "kind": "work",
+   "label": "Network Programming with Go",
+   "url": "https://raskell.io/reading/#network-programming-with-go",
+   "meta": "Book · Adam Woodbeck · read 2023",
+   "description": "Code Secure and Reliable Network Services from Scratch",
+   "degree": 2
+  },
+  {
+   "id": "w:elixir-in-action",
+   "kind": "work",
+   "label": "Elixir in Action",
+   "url": "https://raskell.io/reading/#elixir-in-action",
+   "meta": "Book · Saša Jurić · read 2023",
+   "degree": 2
+  },
+  {
+   "id": "w:crafting-interpreters",
+   "kind": "work",
+   "label": "Crafting Interpreters",
+   "url": "https://raskell.io/reading/#crafting-interpreters",
+   "meta": "Book · Robert Nystrom · read 2024",
+   "degree": 2
+  },
+  {
+   "id": "w:building-a-second-brain",
+   "kind": "work",
+   "label": "Building a Second Brain",
+   "url": "https://raskell.io/reading/#building-a-second-brain",
+   "meta": "Book · Tiago Forte · read 2022",
+   "degree": 2
+  },
+  {
+   "id": "w:rust-web-programming",
+   "kind": "work",
+   "label": "Rust Web Programming",
+   "url": "https://raskell.io/reading/#rust-web-programming",
+   "meta": "Book · Maxwell Flitton · read 2022",
+   "degree": 2
+  },
+  {
+   "id": "w:programming-webassembly-with-rust",
+   "kind": "work",
+   "label": "Programming WebAssembly with Rust",
+   "url": "https://raskell.io/reading/#programming-webassembly-with-rust",
+   "meta": "Book · Kevin Hoffman · read 2021",
+   "degree": 3
+  },
+  {
+   "id": "w:webassembly-the-definitive-guide",
+   "kind": "work",
+   "label": "WebAssembly: The Definitive Guide",
+   "url": "https://raskell.io/reading/#webassembly-the-definitive-guide",
+   "meta": "Book · Brian Sletten · read 2021",
+   "degree": 2
+  },
+  {
+   "id": "w:these-truths",
+   "kind": "work",
+   "label": "These Truths",
+   "url": "https://raskell.io/reading/#these-truths",
+   "meta": "Book · Jill Lepore · read 2018",
+   "description": "A History of the United States",
+   "degree": 2
+  },
+  {
+   "id": "w:jerusalem-the-biography",
+   "kind": "work",
+   "label": "Jerusalem: The Biography",
+   "url": "https://raskell.io/reading/#jerusalem-the-biography",
+   "meta": "Book · Simon Sebag Montefiore · read 2017",
+   "degree": 3
+  },
+  {
+   "id": "w:freeland",
+   "kind": "work",
+   "label": "Freeland",
+   "url": "https://raskell.io/reading/#freeland",
+   "meta": "Novel · Theodor Hertzka · read 2017",
+   "description": "A Social Anticipation",
+   "degree": 2
+  },
+  {
+   "id": "w:das-soziale-problem",
+   "kind": "work",
+   "label": "Das soziale Problem",
+   "url": "https://raskell.io/reading/#das-soziale-problem",
+   "meta": "Book · Theodor Hertzka · read 2017",
+   "degree": 2
+  },
+  {
+   "id": "w:the-devils-delusion",
+   "kind": "work",
+   "label": "The Devil's Delusion",
+   "url": "https://raskell.io/reading/#the-devils-delusion",
+   "meta": "Book · David Berlinski · read 2016",
+   "description": "Atheism and Its Scientific Pretensions",
+   "degree": 1
+  },
+  {
+   "id": "w:antifragile",
+   "kind": "work",
+   "label": "Antifragile",
+   "url": "https://raskell.io/reading/#antifragile",
+   "meta": "Book · Nassim Nicholas Taleb · read 2015",
+   "description": "Things That Gain from Disorder",
+   "degree": 3
+  },
+  {
+   "id": "w:demons",
+   "kind": "work",
+   "label": "Demons",
+   "url": "https://raskell.io/reading/#demons",
+   "meta": "Novel · Fyodor Dostoevsky · read 2012",
+   "degree": 1
+  },
+  {
+   "id": "w:the-brothers-karamazov",
+   "kind": "work",
+   "label": "The Brothers Karamazov",
+   "url": "https://raskell.io/reading/#the-brothers-karamazov",
+   "meta": "Novel · Fyodor Dostoevsky · read 2011",
+   "degree": 1
+  },
+  {
+   "id": "w:a-little-history-of-the-world",
+   "kind": "work",
+   "label": "A Little History of the World",
+   "url": "https://raskell.io/reading/#a-little-history-of-the-world",
+   "meta": "Book · E. H. Gombrich · read 2011",
+   "degree": 2
+  },
+  {
+   "id": "w:crime-and-punishment",
+   "kind": "work",
+   "label": "Crime and Punishment",
+   "url": "https://raskell.io/reading/#crime-and-punishment",
+   "meta": "Novel · Fyodor Dostoevsky · read 2010",
+   "degree": 1
+  },
+  {
+   "id": "w:infinite-jest",
+   "kind": "work",
+   "label": "Infinite Jest",
+   "url": "https://raskell.io/reading/#infinite-jest",
+   "meta": "Novel · David Foster Wallace · read October 2025",
+   "degree": 1
+  },
+  {
+   "id": "w:the-maximalist-novel",
+   "kind": "work",
+   "label": "The Maximalist Novel",
+   "url": "https://raskell.io/reading/#the-maximalist-novel",
+   "meta": "Book · Stefano Ercolino · read October 2025",
+   "description": "From Thomas Pynchon's Gravity's Rainbow to Roberto Bolaño's 2666",
+   "degree": 1
+  },
+  {
    "id": "w:this-is-for-everyone",
    "kind": "work",
    "label": "This Is for Everyone",
@@ -1248,6 +1406,33 @@
    "meta": "Book · Tim Berners-Lee · read October 2025",
    "description": "Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all.",
    "degree": 14
+  },
+  {
+   "id": "w:the-invention-of-science",
+   "kind": "work",
+   "label": "The Invention of Science",
+   "url": "https://raskell.io/reading/#the-invention-of-science",
+   "meta": "Book · David Wootton · read 2016",
+   "description": "A New History of the Scientific Revolution",
+   "degree": 2
+  },
+  {
+   "id": "w:enterprise-architecture-as-strategy",
+   "kind": "work",
+   "label": "Enterprise Architecture as Strategy",
+   "url": "https://raskell.io/reading/#enterprise-architecture-as-strategy",
+   "meta": "Book · Jeanne W. Ross, Peter Weill, and David C. Robertson · in the backlog",
+   "description": "Creating a Foundation for Business Execution",
+   "degree": 2
+  },
+  {
+   "id": "w:the-art-of-doing-science-and-engineering",
+   "kind": "work",
+   "label": "The Art of Doing Science and Engineering",
+   "url": "https://raskell.io/reading/#the-art-of-doing-science-and-engineering",
+   "meta": "Book · Richard W. Hamming · in the backlog",
+   "description": "Learning to Learn",
+   "degree": 2
   },
   {
    "id": "w:why-machines-learn",
@@ -1396,6 +1581,14 @@
    "degree": 3
   },
   {
+   "id": "w:sicp",
+   "kind": "work",
+   "label": "Structure and Interpretation of Computer Programs",
+   "url": "https://raskell.io/reading/#sicp",
+   "meta": "Book · Harold Abelson, Gerald Jay Sussman, and Julie Sussman · set aside",
+   "degree": 2
+  },
+  {
    "id": "h:shelf-reading",
    "kind": "hub",
    "label": "Reading now",
@@ -1409,7 +1602,7 @@
    "label": "Backlog",
    "url": "https://raskell.io/reading/#shelf-backlog",
    "meta": "Shelf",
-   "degree": 17
+   "degree": 19
   },
   {
    "id": "h:shelf-read",
@@ -1417,7 +1610,15 @@
    "label": "Read",
    "url": "https://raskell.io/reading/#shelf-read",
    "meta": "Shelf",
-   "degree": 9
+   "degree": 29
+  },
+  {
+   "id": "h:shelf-set-aside",
+   "kind": "hub",
+   "label": "Set aside",
+   "url": "https://raskell.io/reading/#shelf-set-aside",
+   "meta": "Shelf",
+   "degree": 1
   },
   {
    "id": "h:projects-venture",
@@ -3514,10 +3715,6 @@
    "target": "t:geography"
   },
   {
-   "source": "w:infinite-jest",
-   "target": "h:shelf-read"
-  },
-  {
    "source": "w:guns-germs-and-steel",
    "target": "h:shelf-read"
   },
@@ -3582,6 +3779,150 @@
    "target": "w:state-of-brain-emulation-2025"
   },
   {
+   "source": "w:science-after-babel",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:network-programming-with-go",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:network-programming-with-go",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "w:elixir-in-action",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:elixir-in-action",
+   "target": "t:elixir"
+  },
+  {
+   "source": "w:crafting-interpreters",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:crafting-interpreters",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "w:building-a-second-brain",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:building-a-second-brain",
+   "target": "t:knowledge-management"
+  },
+  {
+   "source": "w:rust-web-programming",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:rust-web-programming",
+   "target": "t:rust"
+  },
+  {
+   "source": "w:programming-webassembly-with-rust",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:programming-webassembly-with-rust",
+   "target": "t:webassembly"
+  },
+  {
+   "source": "w:programming-webassembly-with-rust",
+   "target": "t:rust"
+  },
+  {
+   "source": "w:webassembly-the-definitive-guide",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:webassembly-the-definitive-guide",
+   "target": "t:webassembly"
+  },
+  {
+   "source": "w:these-truths",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:these-truths",
+   "target": "t:history"
+  },
+  {
+   "source": "w:jerusalem-the-biography",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:jerusalem-the-biography",
+   "target": "t:history"
+  },
+  {
+   "source": "w:jerusalem-the-biography",
+   "target": "t:geography"
+  },
+  {
+   "source": "w:freeland",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:freeland",
+   "target": "t:economics"
+  },
+  {
+   "source": "w:das-soziale-problem",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:das-soziale-problem",
+   "target": "t:economics"
+  },
+  {
+   "source": "w:the-devils-delusion",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:antifragile",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:antifragile",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "w:antifragile",
+   "target": "t:economics"
+  },
+  {
+   "source": "w:demons",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-brothers-karamazov",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:a-little-history-of-the-world",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:a-little-history-of-the-world",
+   "target": "t:history"
+  },
+  {
+   "source": "w:crime-and-punishment",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:infinite-jest",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-maximalist-novel",
+   "target": "h:shelf-read"
+  },
+  {
    "source": "w:this-is-for-everyone",
    "target": "h:shelf-read"
   },
@@ -3636,6 +3977,30 @@
   {
    "source": "a:/articles/looking-back-on-2025/",
    "target": "w:this-is-for-everyone"
+  },
+  {
+   "source": "w:the-invention-of-science",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-invention-of-science",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:enterprise-architecture-as-strategy",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:enterprise-architecture-as-strategy",
+   "target": "t:platform-automation"
+  },
+  {
+   "source": "w:the-art-of-doing-science-and-engineering",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-art-of-doing-science-and-engineering",
+   "target": "t:history-of-technology"
   },
   {
    "source": "w:why-machines-learn",
@@ -3820,6 +4185,14 @@
   {
    "source": "w:the-butchering-art",
    "target": "t:history-of-science"
+  },
+  {
+   "source": "w:sicp",
+   "target": "h:shelf-set-aside"
+  },
+  {
+   "source": "w:sicp",
+   "target": "t:programming-languages"
   }
  ]
 }

@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/reading/",
- "generated": "2026-10-24",
+ "generated": "2026-10-25",
  "description": "The reading log of raskell.io by Raffael Schneider: what is being read, what is next, and what has been read.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "works": [
@@ -37,17 +37,6 @@
     "geography"
    ],
    "page": "https://raskell.io/reading/#the-cauldron"
-  },
-  {
-   "id": "infinite-jest",
-   "title": "Infinite Jest",
-   "author": "David Foster Wallace",
-   "kind": "novel",
-   "year": 1996,
-   "status": "read",
-   "finished": "2025-12",
-   "cover": "https://raskell.io/covers/reading/infinite-jest.avif",
-   "page": "https://raskell.io/reading/#infinite-jest"
   },
   {
    "id": "guns-germs-and-steel",
@@ -140,6 +129,276 @@
    "page": "https://raskell.io/reading/#state-of-brain-emulation-2025"
   },
   {
+   "id": "science-after-babel",
+   "title": "Science After Babel",
+   "author": "David Berlinski",
+   "kind": "book",
+   "year": 2023,
+   "status": "read",
+   "finished": "2023",
+   "page": "https://raskell.io/reading/#science-after-babel"
+  },
+  {
+   "id": "network-programming-with-go",
+   "title": "Network Programming with Go",
+   "subtitle": "Code Secure and Reliable Network Services from Scratch",
+   "author": "Adam Woodbeck",
+   "kind": "book",
+   "year": 2021,
+   "status": "read",
+   "finished": "2023",
+   "topics": [
+    "distributed-systems"
+   ],
+   "page": "https://raskell.io/reading/#network-programming-with-go"
+  },
+  {
+   "id": "elixir-in-action",
+   "title": "Elixir in Action",
+   "author": "Saša Jurić",
+   "kind": "book",
+   "year": 2019,
+   "edition": "Second edition",
+   "isbn": "9781617295027",
+   "status": "read",
+   "finished": "2023",
+   "topics": [
+    "elixir"
+   ],
+   "cover": "https://raskell.io/covers/reading/elixir-in-action.avif",
+   "page": "https://raskell.io/reading/#elixir-in-action"
+  },
+  {
+   "id": "crafting-interpreters",
+   "title": "Crafting Interpreters",
+   "author": "Robert Nystrom",
+   "kind": "book",
+   "year": 2021,
+   "status": "read",
+   "finished": "2024",
+   "topics": [
+    "programming-languages"
+   ],
+   "cover": "https://raskell.io/covers/reading/crafting-interpreters.avif",
+   "page": "https://raskell.io/reading/#crafting-interpreters"
+  },
+  {
+   "id": "building-a-second-brain",
+   "title": "Building a Second Brain",
+   "author": "Tiago Forte",
+   "kind": "book",
+   "year": 2022,
+   "status": "read",
+   "finished": "2022",
+   "topics": [
+    "knowledge-management"
+   ],
+   "cover": "https://raskell.io/covers/reading/building-a-second-brain.avif",
+   "page": "https://raskell.io/reading/#building-a-second-brain"
+  },
+  {
+   "id": "rust-web-programming",
+   "title": "Rust Web Programming",
+   "author": "Maxwell Flitton",
+   "kind": "book",
+   "year": 2021,
+   "status": "read",
+   "finished": "2022",
+   "topics": [
+    "rust"
+   ],
+   "cover": "https://raskell.io/covers/reading/rust-web-programming.avif",
+   "page": "https://raskell.io/reading/#rust-web-programming"
+  },
+  {
+   "id": "programming-webassembly-with-rust",
+   "title": "Programming WebAssembly with Rust",
+   "author": "Kevin Hoffman",
+   "kind": "book",
+   "year": 2019,
+   "status": "read",
+   "finished": "2021",
+   "topics": [
+    "webassembly",
+    "rust"
+   ],
+   "page": "https://raskell.io/reading/#programming-webassembly-with-rust"
+  },
+  {
+   "id": "webassembly-the-definitive-guide",
+   "title": "WebAssembly: The Definitive Guide",
+   "author": "Brian Sletten",
+   "kind": "book",
+   "year": 2021,
+   "status": "read",
+   "finished": "2021",
+   "topics": [
+    "webassembly"
+   ],
+   "page": "https://raskell.io/reading/#webassembly-the-definitive-guide"
+  },
+  {
+   "id": "these-truths",
+   "title": "These Truths",
+   "subtitle": "A History of the United States",
+   "author": "Jill Lepore",
+   "kind": "book",
+   "year": 2018,
+   "status": "read",
+   "finished": "2018",
+   "topics": [
+    "history"
+   ],
+   "cover": "https://raskell.io/covers/reading/these-truths.avif",
+   "page": "https://raskell.io/reading/#these-truths"
+  },
+  {
+   "id": "jerusalem-the-biography",
+   "title": "Jerusalem: The Biography",
+   "author": "Simon Sebag Montefiore",
+   "kind": "book",
+   "year": 2011,
+   "isbn": "9780297852650",
+   "status": "read",
+   "finished": "2017",
+   "topics": [
+    "history",
+    "geography"
+   ],
+   "cover": "https://raskell.io/covers/reading/jerusalem-the-biography.avif",
+   "page": "https://raskell.io/reading/#jerusalem-the-biography"
+  },
+  {
+   "id": "freeland",
+   "title": "Freeland",
+   "subtitle": "A Social Anticipation",
+   "author": "Theodor Hertzka",
+   "kind": "novel",
+   "year": 1890,
+   "status": "read",
+   "finished": "2017",
+   "topics": [
+    "economics"
+   ],
+   "cover": "https://raskell.io/covers/reading/freeland.avif",
+   "page": "https://raskell.io/reading/#freeland"
+  },
+  {
+   "id": "das-soziale-problem",
+   "title": "Das soziale Problem",
+   "author": "Theodor Hertzka",
+   "kind": "book",
+   "year": 1912,
+   "status": "read",
+   "finished": "2017",
+   "topics": [
+    "economics"
+   ],
+   "cover": "https://raskell.io/covers/reading/das-soziale-problem.avif",
+   "page": "https://raskell.io/reading/#das-soziale-problem"
+  },
+  {
+   "id": "the-devils-delusion",
+   "title": "The Devil's Delusion",
+   "subtitle": "Atheism and Its Scientific Pretensions",
+   "author": "David Berlinski",
+   "kind": "book",
+   "year": 2008,
+   "status": "read",
+   "finished": "2016",
+   "cover": "https://raskell.io/covers/reading/the-devils-delusion.avif",
+   "page": "https://raskell.io/reading/#the-devils-delusion"
+  },
+  {
+   "id": "antifragile",
+   "title": "Antifragile",
+   "subtitle": "Things That Gain from Disorder",
+   "author": "Nassim Nicholas Taleb",
+   "kind": "book",
+   "year": 2012,
+   "isbn": "9780812979688",
+   "status": "read",
+   "finished": "2015",
+   "topics": [
+    "complex-systems",
+    "economics"
+   ],
+   "cover": "https://raskell.io/covers/reading/antifragile.avif",
+   "page": "https://raskell.io/reading/#antifragile"
+  },
+  {
+   "id": "demons",
+   "title": "Demons",
+   "author": "Fyodor Dostoevsky",
+   "kind": "novel",
+   "year": 1872,
+   "status": "read",
+   "finished": "2012",
+   "cover": "https://raskell.io/covers/reading/demons.avif",
+   "page": "https://raskell.io/reading/#demons"
+  },
+  {
+   "id": "the-brothers-karamazov",
+   "title": "The Brothers Karamazov",
+   "author": "Fyodor Dostoevsky",
+   "kind": "novel",
+   "year": 1880,
+   "status": "read",
+   "finished": "2011",
+   "cover": "https://raskell.io/covers/reading/the-brothers-karamazov.avif",
+   "page": "https://raskell.io/reading/#the-brothers-karamazov"
+  },
+  {
+   "id": "a-little-history-of-the-world",
+   "title": "A Little History of the World",
+   "author": "E. H. Gombrich",
+   "kind": "book",
+   "year": 1936,
+   "status": "read",
+   "finished": "2011",
+   "topics": [
+    "history"
+   ],
+   "cover": "https://raskell.io/covers/reading/a-little-history-of-the-world.avif",
+   "page": "https://raskell.io/reading/#a-little-history-of-the-world"
+  },
+  {
+   "id": "crime-and-punishment",
+   "title": "Crime and Punishment",
+   "author": "Fyodor Dostoevsky",
+   "kind": "novel",
+   "year": 1866,
+   "status": "read",
+   "finished": "2010",
+   "cover": "https://raskell.io/covers/reading/crime-and-punishment.avif",
+   "page": "https://raskell.io/reading/#crime-and-punishment"
+  },
+  {
+   "id": "infinite-jest",
+   "title": "Infinite Jest",
+   "author": "David Foster Wallace",
+   "kind": "novel",
+   "year": 1996,
+   "status": "read",
+   "finished": "2025-10",
+   "cover": "https://raskell.io/covers/reading/infinite-jest.avif",
+   "page": "https://raskell.io/reading/#infinite-jest"
+  },
+  {
+   "id": "the-maximalist-novel",
+   "title": "The Maximalist Novel",
+   "subtitle": "From Thomas Pynchon's Gravity's Rainbow to Roberto Bolaño's 2666",
+   "author": "Stefano Ercolino",
+   "kind": "book",
+   "year": 2014,
+   "edition": "Translated from the Italian by Albert Sbragia",
+   "isbn": "9781623562915",
+   "status": "read",
+   "finished": "2025-10",
+   "cover": "https://raskell.io/covers/reading/the-maximalist-novel.avif",
+   "page": "https://raskell.io/reading/#the-maximalist-novel"
+  },
+  {
    "id": "this-is-for-everyone",
    "title": "This Is for Everyone",
    "subtitle": "The Unfinished Story of the World Wide Web",
@@ -170,6 +429,49 @@
     "url": "https://raskell.io/articles/the-web-was-the-training-set/",
     "markdown": "https://raskell.io/articles/the-web-was-the-training-set.md"
    }
+  },
+  {
+   "id": "the-invention-of-science",
+   "title": "The Invention of Science",
+   "subtitle": "A New History of the Scientific Revolution",
+   "author": "David Wootton",
+   "kind": "book",
+   "year": 2015,
+   "status": "read",
+   "finished": "2016",
+   "topics": [
+    "history-of-science"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-invention-of-science.avif",
+   "page": "https://raskell.io/reading/#the-invention-of-science"
+  },
+  {
+   "id": "enterprise-architecture-as-strategy",
+   "title": "Enterprise Architecture as Strategy",
+   "subtitle": "Creating a Foundation for Business Execution",
+   "author": "Jeanne W. Ross, Peter Weill, and David C. Robertson",
+   "kind": "book",
+   "year": 2006,
+   "status": "backlog",
+   "topics": [
+    "platform-automation"
+   ],
+   "cover": "https://raskell.io/covers/reading/enterprise-architecture-as-strategy.avif",
+   "page": "https://raskell.io/reading/#enterprise-architecture-as-strategy"
+  },
+  {
+   "id": "the-art-of-doing-science-and-engineering",
+   "title": "The Art of Doing Science and Engineering",
+   "subtitle": "Learning to Learn",
+   "author": "Richard W. Hamming",
+   "kind": "book",
+   "year": 1997,
+   "status": "backlog",
+   "topics": [
+    "history-of-technology"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-art-of-doing-science-and-engineering.avif",
+   "page": "https://raskell.io/reading/#the-art-of-doing-science-and-engineering"
   },
   {
    "id": "why-machines-learn",
@@ -444,6 +746,21 @@
    ],
    "cover": "https://raskell.io/covers/reading/the-butchering-art.avif",
    "page": "https://raskell.io/reading/#the-butchering-art"
+  },
+  {
+   "id": "sicp",
+   "title": "Structure and Interpretation of Computer Programs",
+   "author": "Harold Abelson, Gerald Jay Sussman, and Julie Sussman",
+   "kind": "book",
+   "year": 1985,
+   "edition": "Second edition",
+   "status": "set-aside",
+   "started": "2024",
+   "topics": [
+    "programming-languages"
+   ],
+   "cover": "https://raskell.io/covers/reading/sicp.avif",
+   "page": "https://raskell.io/reading/#sicp"
   }
  ]
 }

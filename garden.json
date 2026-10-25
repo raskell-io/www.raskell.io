@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-24T10:39:49+00:00",
+ "generated": "2026-10-25T09:24:00+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -8,7 +8,7 @@
   "article": 34,
   "note": 1,
   "talk": 1,
-  "work": 27,
+  "work": 50,
   "project": 30,
   "topic": 60,
   "link": 256
@@ -580,13 +580,6 @@
   },
   {
    "kind": "work",
-   "title": "Infinite Jest",
-   "url": "https://raskell.io/reading/#infinite-jest",
-   "date": "2025-12",
-   "meta": "Novel · David Foster Wallace · Read"
-  },
-  {
-   "kind": "work",
    "title": "Guns, Germs, and Steel",
    "url": "https://raskell.io/reading/#guns-germs-and-steel",
    "description": "The Fates of Human Societies",
@@ -648,6 +641,194 @@
   },
   {
    "kind": "work",
+   "title": "Science After Babel",
+   "url": "https://raskell.io/reading/#science-after-babel",
+   "date": "2023",
+   "meta": "Book · David Berlinski · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Network Programming with Go",
+   "url": "https://raskell.io/reading/#network-programming-with-go",
+   "description": "Code Secure and Reliable Network Services from Scratch",
+   "date": "2023",
+   "topics": [
+    "distributed-systems"
+   ],
+   "meta": "Book · Adam Woodbeck · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Elixir in Action",
+   "url": "https://raskell.io/reading/#elixir-in-action",
+   "date": "2023",
+   "topics": [
+    "elixir"
+   ],
+   "meta": "Book · Saša Jurić · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Crafting Interpreters",
+   "url": "https://raskell.io/reading/#crafting-interpreters",
+   "date": "2024",
+   "topics": [
+    "programming-languages"
+   ],
+   "meta": "Book · Robert Nystrom · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Building a Second Brain",
+   "url": "https://raskell.io/reading/#building-a-second-brain",
+   "date": "2022",
+   "topics": [
+    "knowledge-management"
+   ],
+   "meta": "Book · Tiago Forte · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Rust Web Programming",
+   "url": "https://raskell.io/reading/#rust-web-programming",
+   "date": "2022",
+   "topics": [
+    "rust"
+   ],
+   "meta": "Book · Maxwell Flitton · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Programming WebAssembly with Rust",
+   "url": "https://raskell.io/reading/#programming-webassembly-with-rust",
+   "date": "2021",
+   "topics": [
+    "webassembly",
+    "rust"
+   ],
+   "meta": "Book · Kevin Hoffman · Read"
+  },
+  {
+   "kind": "work",
+   "title": "WebAssembly: The Definitive Guide",
+   "url": "https://raskell.io/reading/#webassembly-the-definitive-guide",
+   "date": "2021",
+   "topics": [
+    "webassembly"
+   ],
+   "meta": "Book · Brian Sletten · Read"
+  },
+  {
+   "kind": "work",
+   "title": "These Truths",
+   "url": "https://raskell.io/reading/#these-truths",
+   "description": "A History of the United States",
+   "date": "2018",
+   "topics": [
+    "history"
+   ],
+   "meta": "Book · Jill Lepore · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Jerusalem: The Biography",
+   "url": "https://raskell.io/reading/#jerusalem-the-biography",
+   "date": "2017",
+   "topics": [
+    "history",
+    "geography"
+   ],
+   "meta": "Book · Simon Sebag Montefiore · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Freeland",
+   "url": "https://raskell.io/reading/#freeland",
+   "description": "A Social Anticipation",
+   "date": "2017",
+   "topics": [
+    "economics"
+   ],
+   "meta": "Novel · Theodor Hertzka · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Das soziale Problem",
+   "url": "https://raskell.io/reading/#das-soziale-problem",
+   "date": "2017",
+   "topics": [
+    "economics"
+   ],
+   "meta": "Book · Theodor Hertzka · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Devil's Delusion",
+   "url": "https://raskell.io/reading/#the-devils-delusion",
+   "description": "Atheism and Its Scientific Pretensions",
+   "date": "2016",
+   "meta": "Book · David Berlinski · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Antifragile",
+   "url": "https://raskell.io/reading/#antifragile",
+   "description": "Things That Gain from Disorder",
+   "date": "2015",
+   "topics": [
+    "complex-systems",
+    "economics"
+   ],
+   "meta": "Book · Nassim Nicholas Taleb · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Demons",
+   "url": "https://raskell.io/reading/#demons",
+   "date": "2012",
+   "meta": "Novel · Fyodor Dostoevsky · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Brothers Karamazov",
+   "url": "https://raskell.io/reading/#the-brothers-karamazov",
+   "date": "2011",
+   "meta": "Novel · Fyodor Dostoevsky · Read"
+  },
+  {
+   "kind": "work",
+   "title": "A Little History of the World",
+   "url": "https://raskell.io/reading/#a-little-history-of-the-world",
+   "date": "2011",
+   "topics": [
+    "history"
+   ],
+   "meta": "Book · E. H. Gombrich · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Crime and Punishment",
+   "url": "https://raskell.io/reading/#crime-and-punishment",
+   "date": "2010",
+   "meta": "Novel · Fyodor Dostoevsky · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Infinite Jest",
+   "url": "https://raskell.io/reading/#infinite-jest",
+   "date": "2025-10",
+   "meta": "Novel · David Foster Wallace · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Maximalist Novel",
+   "url": "https://raskell.io/reading/#the-maximalist-novel",
+   "description": "From Thomas Pynchon's Gravity's Rainbow to Roberto Bolaño's 2666",
+   "date": "2025-10",
+   "meta": "Book · Stefano Ercolino · Read"
+  },
+  {
+   "kind": "work",
    "title": "This Is for Everyone",
    "url": "https://raskell.io/articles/the-web-was-the-training-set/",
    "description": "Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all.",
@@ -666,6 +847,37 @@
     "agents"
    ],
    "meta": "Book · Tim Berners-Lee · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Invention of Science",
+   "url": "https://raskell.io/reading/#the-invention-of-science",
+   "description": "A New History of the Scientific Revolution",
+   "date": "2016",
+   "topics": [
+    "history-of-science"
+   ],
+   "meta": "Book · David Wootton · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Enterprise Architecture as Strategy",
+   "url": "https://raskell.io/reading/#enterprise-architecture-as-strategy",
+   "description": "Creating a Foundation for Business Execution",
+   "topics": [
+    "platform-automation"
+   ],
+   "meta": "Book · Jeanne W. Ross, Peter Weill, and David C. Robertson · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Art of Doing Science and Engineering",
+   "url": "https://raskell.io/reading/#the-art-of-doing-science-and-engineering",
+   "description": "Learning to Learn",
+   "topics": [
+    "history-of-technology"
+   ],
+   "meta": "Book · Richard W. Hamming · Backlog"
   },
   {
    "kind": "work",
@@ -841,6 +1053,16 @@
     "history-of-science"
    ],
    "meta": "Book · Lindsey Fitzharris · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Structure and Interpretation of Computer Programs",
+   "url": "https://raskell.io/reading/#sicp",
+   "date": "2024",
+   "topics": [
+    "programming-languages"
+   ],
+   "meta": "Book · Harold Abelson, Gerald Jay Sussman, and Julie Sussman · Set aside"
   },
   {
    "kind": "project",
