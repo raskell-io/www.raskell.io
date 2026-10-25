@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-10-25T10:09:49+00:00",
+ "generated": "2026-10-25T10:16:34+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 256,
+ "count": 266,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -1686,6 +1686,32 @@
    "citations": 1
   },
   {
+   "url": "https://github.com/raskell-io/kishi",
+   "title": "on GitHub",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://github.com/raskell-io/kishi/blob/main/docs/study/notebook.md",
+   "title": "a notebook",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://github.com/raskell-io/refrakt",
    "title": "Refrakt",
    "domain": "github.com",
@@ -1855,6 +1881,19 @@
    "citations": 1
   },
   {
+   "url": "https://hotaru.raskell.io",
+   "title": "neuron culture",
+   "domain": "hotaru.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://huggingface.co/LumiOpen/Poro-34B",
    "title": "LumiOpen/Poro-34B",
    "domain": "huggingface.co",
@@ -1993,6 +2032,19 @@
     {
      "title": "Traffic Replay as a Security Primitive",
      "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://kishi.raskell.io",
+   "title": "kishi.raskell.io",
+   "domain": "kishi.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ],
    "citations": 1
@@ -2505,6 +2557,19 @@
    "citations": 1
   },
   {
+   "url": "https://stockfishchess.org/blog/2020/introducing-nnue-evaluation/",
+   "title": "Introducing NNUE Evaluation",
+   "domain": "stockfishchess.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://supabase.com/",
    "title": "Supabase",
    "domain": "supabase.com",
@@ -2539,6 +2604,19 @@
     {
      "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
      "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://terrarium.raskell.io",
+   "title": "a terrarium",
+   "domain": "terrarium.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ],
    "citations": 1
@@ -2656,6 +2734,19 @@
     {
      "title": "Edge Systems Are the New Backend",
      "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://wasmad.raskell.io",
+   "title": "fantasy console",
+   "domain": "wasmad.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ],
    "citations": 1
@@ -2791,6 +2882,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.apply.computer-shogi.org/wcsc28/appeal/the_end_of_genesis_T.N.K.evolution_turbo_type_D/nnue.pdf",
+   "title": "Efficiently Updatable Neural-Network-based Evaluation Functions for Computer Shogi",
+   "domain": "apply.computer-shogi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.bnf.fr/en/gallica-bnf-digital-library",
    "title": "bnf.fr Gallica",
    "domain": "bnf.fr",
@@ -2851,6 +2955,19 @@
     {
      "title": "Source Code Is the New Assembly",
      "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.computerhistory.org/chess/doc-431614f6d9b4e/",
+   "title": "Programming a Computer for Playing Chess",
+   "domain": "computerhistory.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ],
    "citations": 1
@@ -3072,6 +3189,19 @@
     {
      "title": "What Comes After the Last Programming Language",
      "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.nature.com/articles/nature16961",
+   "title": "Mastering the game of Go with deep neural networks and tree search",
+   "domain": "nature.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ],
    "citations": 1

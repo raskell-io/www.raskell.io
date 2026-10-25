@@ -1,17 +1,17 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-25T10:09:49+00:00",
+ "generated": "2026-10-25T10:16:34+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
+  "article": 35,
   "review": 1,
-  "article": 34,
   "note": 1,
   "talk": 1,
   "work": 50,
   "project": 30,
   "topic": 97,
-  "link": 256
+  "link": 266
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -21,6 +21,23 @@
   "llms": "https://raskell.io/llms.txt"
  },
  "items": [
+  {
+   "kind": "article",
+   "title": "Learning to Play",
+   "url": "https://raskell.io/articles/learning-to-play/",
+   "description": "A chess prodigy's handbook, three old games and one laptop: rebuilding the ideas behind game-playing AI in Rust for a browser on my phone, and measuring them.",
+   "date": "2026-10-25",
+   "topics": [
+    "game-ai",
+    "machine-learning",
+    "reinforcement-learning",
+    "games",
+    "rust",
+    "webassembly",
+    "history-of-technology"
+   ],
+   "meta": "22 min"
+  },
   {
    "kind": "review",
    "title": "The Web Was the Training Set",
@@ -1763,14 +1780,14 @@
   {
    "kind": "topic",
    "title": "Game AI",
-   "url": "https://raskell.io/tags#game-ai",
+   "url": "https://raskell.io/tags/game-ai/",
    "description": "Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy.",
    "meta": "Domain"
   },
   {
    "kind": "topic",
    "title": "Games",
-   "url": "https://raskell.io/tags#games",
+   "url": "https://raskell.io/tags/games/",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
    "meta": "Domain"
   },
@@ -1931,7 +1948,7 @@
   {
    "kind": "topic",
    "title": "Machine learning",
-   "url": "https://raskell.io/tags#machine-learning",
+   "url": "https://raskell.io/tags/machine-learning/",
    "description": "How models learn from data: the mathematics, the training methods, and what the results can and cannot do.",
    "meta": "Domain"
   },
@@ -2106,7 +2123,7 @@
   {
    "kind": "topic",
    "title": "Reinforcement learning",
-   "url": "https://raskell.io/tags#reinforcement-learning",
+   "url": "https://raskell.io/tags/reinforcement-learning/",
    "description": "Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill.",
    "meta": "Concept"
   },
@@ -2232,7 +2249,7 @@
   {
    "kind": "topic",
    "title": "WebAssembly",
-   "url": "https://raskell.io/tags#webassembly",
+   "url": "https://raskell.io/tags/webassembly/",
    "description": "Portable, sandboxed bytecode for running native-speed code in the browser and beyond.",
    "meta": "Technology"
   },
@@ -3933,6 +3950,32 @@
   },
   {
    "kind": "link",
+   "title": "on GitHub",
+   "url": "https://github.com/raskell-io/kishi",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "a notebook",
+   "url": "https://github.com/raskell-io/kishi/blob/main/docs/study/notebook.md",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Refrakt",
    "url": "https://github.com/raskell-io/refrakt",
    "domain": "github.com",
@@ -4102,6 +4145,19 @@
   },
   {
    "kind": "link",
+   "title": "neuron culture",
+   "url": "https://hotaru.raskell.io",
+   "domain": "hotaru.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "LumiOpen/Poro-34B",
    "url": "https://huggingface.co/LumiOpen/Poro-34B",
    "domain": "huggingface.co",
@@ -4240,6 +4296,19 @@
     {
      "title": "Traffic Replay as a Security Primitive",
      "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "kishi.raskell.io",
+   "url": "https://kishi.raskell.io",
+   "domain": "kishi.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ]
   },
@@ -4752,6 +4821,19 @@
   },
   {
    "kind": "link",
+   "title": "Introducing NNUE Evaluation",
+   "url": "https://stockfishchess.org/blog/2020/introducing-nnue-evaluation/",
+   "domain": "stockfishchess.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Supabase",
    "url": "https://supabase.com/",
    "domain": "supabase.com",
@@ -4786,6 +4868,19 @@
     {
      "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
      "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "a terrarium",
+   "url": "https://terrarium.raskell.io",
+   "domain": "terrarium.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ]
   },
@@ -4903,6 +4998,19 @@
     {
      "title": "Edge Systems Are the New Backend",
      "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "fantasy console",
+   "url": "https://wasmad.raskell.io",
+   "domain": "wasmad.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ]
   },
@@ -5038,6 +5146,19 @@
   },
   {
    "kind": "link",
+   "title": "Efficiently Updatable Neural-Network-based Evaluation Functions for Computer Shogi",
+   "url": "https://www.apply.computer-shogi.org/wcsc28/appeal/the_end_of_genesis_T.N.K.evolution_turbo_type_D/nnue.pdf",
+   "domain": "apply.computer-shogi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "bnf.fr Gallica",
    "url": "https://www.bnf.fr/en/gallica-bnf-digital-library",
    "domain": "bnf.fr",
@@ -5098,6 +5219,19 @@
     {
      "title": "Source Code Is the New Assembly",
      "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Programming a Computer for Playing Chess",
+   "url": "https://www.computerhistory.org/chess/doc-431614f6d9b4e/",
+   "domain": "computerhistory.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ]
   },
@@ -5319,6 +5453,19 @@
     {
      "title": "What Comes After the Last Programming Language",
      "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Mastering the game of Go with deep neural networks and tree search",
+   "url": "https://www.nature.com/articles/nature16961",
+   "domain": "nature.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ]
   },

@@ -1,8 +1,17 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-25T10:09:49+00:00",
+ "generated": "2026-10-25T10:16:34+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/learning-to-play/",
+   "kind": "article",
+   "label": "Learning to Play",
+   "url": "https://raskell.io/articles/learning-to-play/",
+   "meta": "2026-10-25 · 22 min",
+   "description": "A chess prodigy's handbook, three old games and one laptop: rebuilding the ideas behind game-playing AI in Rust for a browser on my phone, and measuring them.",
+   "degree": 12
+  },
   {
    "id": "a:/articles/the-web-was-the-training-set/",
    "kind": "article",
@@ -64,7 +73,7 @@
    "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/",
    "meta": "2026-06-28 · 12 min",
    "description": "An MIT thesis argues brain emulation has crossed into engineering. Read as infrastructure, the numbers describe a workload your AI cluster was not built for.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "a:/articles/memory-is-a-write-path/",
@@ -526,6 +535,24 @@
    "degree": 6
   },
   {
+   "id": "t:game-ai",
+   "kind": "tag",
+   "label": "Game AI",
+   "url": "https://raskell.io/tags/game-ai/",
+   "meta": "Domain · 1 page",
+   "description": "Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy.",
+   "degree": 5
+  },
+  {
+   "id": "t:games",
+   "kind": "tag",
+   "label": "Games",
+   "url": "https://raskell.io/tags/games/",
+   "meta": "Domain · 1 page",
+   "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
+   "degree": 8
+  },
+  {
    "id": "t:gpus",
    "kind": "tag",
    "label": "GPUs",
@@ -548,9 +575,9 @@
    "kind": "tag",
    "label": "History of technology",
    "url": "https://raskell.io/tags/history-of-technology/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:hypertext",
@@ -641,6 +668,15 @@
    "meta": "Concept · 1 page",
    "description": "Software that keeps data on your devices and syncs through CRDTs, with the network as an optimisation.",
    "degree": 5
+  },
+  {
+   "id": "t:machine-learning",
+   "kind": "tag",
+   "label": "Machine learning",
+   "url": "https://raskell.io/tags/machine-learning/",
+   "meta": "Domain · 1 page",
+   "description": "How models learn from data: the mathematics, the training methods, and what the results can and cannot do.",
+   "degree": 12
   },
   {
    "id": "t:meta",
@@ -787,6 +823,15 @@
    "degree": 5
   },
   {
+   "id": "t:reinforcement-learning",
+   "kind": "tag",
+   "label": "Reinforcement learning",
+   "url": "https://raskell.io/tags/reinforcement-learning/",
+   "meta": "Concept · 1 page",
+   "description": "Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill.",
+   "degree": 6
+  },
+  {
    "id": "t:reliability",
    "kind": "tag",
    "label": "Reliability",
@@ -809,9 +854,9 @@
    "kind": "tag",
    "label": "Rust",
    "url": "https://raskell.io/tags/rust/",
-   "meta": "Technology · 7 pages",
+   "meta": "Technology · 8 pages",
    "description": "The systems language most of the projects here are written in.",
-   "degree": 31
+   "degree": 32
   },
   {
    "id": "t:self-hosting",
@@ -886,6 +931,15 @@
    "degree": 7
   },
   {
+   "id": "t:webassembly",
+   "kind": "tag",
+   "label": "WebAssembly",
+   "url": "https://raskell.io/tags/webassembly/",
+   "meta": "Technology · 1 page",
+   "description": "Portable, sandboxed bytecode for running native-speed code in the browser and beyond.",
+   "degree": 9
+  },
+  {
    "id": "t:zola",
    "kind": "tag",
    "label": "Zola",
@@ -947,24 +1001,6 @@
    "meta": "Concept · no pages yet",
    "description": "Technologies that could end or permanently cripple civilisation, from nuclear weapons to misaligned AI, and how people have tried to contain them.",
    "degree": 6
-  },
-  {
-   "id": "t:game-ai",
-   "kind": "tag",
-   "label": "Game AI",
-   "url": "https://raskell.io/tags#game-ai",
-   "meta": "Domain · no pages yet",
-   "description": "Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy.",
-   "degree": 4
-  },
-  {
-   "id": "t:games",
-   "kind": "tag",
-   "label": "Games",
-   "url": "https://raskell.io/tags#games",
-   "meta": "Domain · no pages yet",
-   "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
-   "degree": 7
   },
   {
    "id": "t:geography",
@@ -1048,15 +1084,6 @@
    "degree": 7
   },
   {
-   "id": "t:machine-learning",
-   "kind": "tag",
-   "label": "Machine learning",
-   "url": "https://raskell.io/tags#machine-learning",
-   "meta": "Domain · no pages yet",
-   "description": "How models learn from data: the mathematics, the training methods, and what the results can and cannot do.",
-   "degree": 11
-  },
-  {
    "id": "t:mathematics",
    "kind": "tag",
    "label": "Mathematics",
@@ -1129,15 +1156,6 @@
    "degree": 3
   },
   {
-   "id": "t:reinforcement-learning",
-   "kind": "tag",
-   "label": "Reinforcement learning",
-   "url": "https://raskell.io/tags#reinforcement-learning",
-   "meta": "Concept · no pages yet",
-   "description": "Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill.",
-   "degree": 5
-  },
-  {
    "id": "t:religion",
    "kind": "tag",
    "label": "Religion",
@@ -1190,15 +1208,6 @@
    "meta": "Concept · no pages yet",
    "description": "Looking ahead by expanding a tree of moves: minimax and alpha-beta, Monte Carlo tree search, and the pruning and ordering that make them tractable.",
    "degree": 1
-  },
-  {
-   "id": "t:webassembly",
-   "kind": "tag",
-   "label": "WebAssembly",
-   "url": "https://raskell.io/tags#webassembly",
-   "meta": "Technology · no pages yet",
-   "description": "Portable, sandboxed bytecode for running native-speed code in the browser and beyond.",
-   "degree": 8
   },
   {
    "id": "t:world-history",
@@ -1350,7 +1359,7 @@
    "url": "https://wasmad.raskell.io",
    "meta": "Project",
    "description": "A fantasy console standard with 32-bit handheld hardware: tile layers, sprites, palettes, and save RAM, memory-mapped inside the cartridge. A cartridge is a single WebAssembly modu…",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "p:coconutos",
@@ -1368,7 +1377,7 @@
    "url": "https://terrarium.raskell.io",
    "meta": "Project",
    "description": "A societal simulation engine where LLM-powered agents form emergent civilizations. Each agent has a personality, needs, memories, and beliefs that can be wrong. You set the rules o…",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "p:hotaru",
@@ -1377,7 +1386,7 @@
    "url": "https://hotaru.raskell.io",
    "meta": "Project",
    "description": "Simulated neuron cultures on a 60-electrode array play Pong in your browser, as in the DishBrain experiment. Feedback for hits and misses alone did not make them better. Input that…",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "p:kishi",
@@ -1386,7 +1395,7 @@
    "url": "https://kishi.raskell.io",
    "meta": "Project",
    "description": "Chess, shogi and Go against engines written in Rust and compiled to WebAssembly. They play in the browser on your own device, offline, from novice to full strength, on a quiet boar…",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "p:sango",
@@ -2412,6 +2421,22 @@
    "target": "t:programming-languages"
   },
   {
+   "source": "a:/articles/learning-to-play/",
+   "target": "t:game-ai"
+  },
+  {
+   "source": "t:game-ai",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "t:game-ai",
+   "target": "t:games"
+  },
+  {
+   "source": "a:/articles/learning-to-play/",
+   "target": "t:games"
+  },
+  {
    "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
    "target": "t:gpus"
   },
@@ -2454,6 +2479,10 @@
   {
    "source": "t:haskell",
    "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/articles/learning-to-play/",
+   "target": "t:history-of-technology"
   },
   {
    "source": "a:/articles/the-web-was-the-training-set/",
@@ -2602,6 +2631,10 @@
   {
    "source": "t:local-first",
    "target": "t:distributed-systems"
+  },
+  {
+   "source": "a:/articles/learning-to-play/",
+   "target": "t:machine-learning"
   },
   {
    "source": "a:/articles/this-site-is-becoming-a-map/",
@@ -2796,6 +2829,14 @@
    "target": "t:applied-security"
   },
   {
+   "source": "a:/articles/learning-to-play/",
+   "target": "t:reinforcement-learning"
+  },
+  {
+   "source": "t:reinforcement-learning",
+   "target": "t:machine-learning"
+  },
+  {
    "source": "a:/articles/the-model-is-a-dependency/",
    "target": "t:reliability"
   },
@@ -2818,6 +2859,10 @@
   {
    "source": "t:research-labs",
    "target": "t:history-of-technology"
+  },
+  {
+   "source": "a:/articles/learning-to-play/",
+   "target": "t:rust"
   },
   {
    "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
@@ -2984,6 +3029,14 @@
    "target": "t:edge-systems"
   },
   {
+   "source": "a:/articles/learning-to-play/",
+   "target": "t:webassembly"
+  },
+  {
+   "source": "t:webassembly",
+   "target": "t:open-web"
+  },
+  {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "t:zola"
   },
@@ -3022,14 +3075,6 @@
   {
    "source": "t:existential-risk",
    "target": "t:policy"
-  },
-  {
-   "source": "t:game-ai",
-   "target": "t:machine-learning"
-  },
-  {
-   "source": "t:game-ai",
-   "target": "t:games"
   },
   {
    "source": "t:geopolitics",
@@ -3108,10 +3153,6 @@
    "target": "t:sovereignty"
   },
   {
-   "source": "t:reinforcement-learning",
-   "target": "t:machine-learning"
-  },
-  {
    "source": "t:religion",
    "target": "t:philosophy"
   },
@@ -3154,10 +3195,6 @@
   {
    "source": "t:tree-search",
    "target": "t:game-ai"
-  },
-  {
-   "source": "t:webassembly",
-   "target": "t:open-web"
   },
   {
    "source": "t:world-history",
@@ -3206,6 +3243,10 @@
   {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "c:reviews"
+  },
+  {
+   "source": "a:/articles/learning-to-play/",
+   "target": "a:/articles/brain-emulation-as-an-infrastructure-problem/"
   },
   {
    "source": "a:/articles/the-web-was-the-training-set/",
@@ -3680,6 +3721,10 @@
    "target": "p:die-zukunft"
   },
   {
+   "source": "a:/articles/learning-to-play/",
+   "target": "p:wasm-ad"
+  },
+  {
    "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
    "target": "p:coconutos"
   },
@@ -3688,12 +3733,24 @@
    "target": "p:coconutos"
   },
   {
+   "source": "a:/articles/learning-to-play/",
+   "target": "p:terrarium"
+  },
+  {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "p:terrarium"
   },
   {
    "source": "a:/talks/iat-13-basel/",
    "target": "p:terrarium"
+  },
+  {
+   "source": "a:/articles/learning-to-play/",
+   "target": "p:hotaru"
+  },
+  {
+   "source": "a:/articles/learning-to-play/",
+   "target": "p:kishi"
   },
   {
    "source": "a:/articles/looking-back-on-2025/",
