@@ -3,3 +3,10 @@ description = "Rust/Bevy PWA for training robotic agents. Democratizing robotics
 status = "early"
 links = [ { name = "GitHub", url = "https://github.com/raskell-io/robogym" } ]
 topics = ["rust"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "用于训练机器人智能体的 Rust/Bevy PWA。通过浏览器中的模拟，让机器人技术人人可及。"
+
+[i18n.ko]
+description = "로봇 에이전트를 훈련하기 위한 Rust/Bevy PWA입니다. 브라우저 기반 시뮬레이션으로 로보틱스를 누구나 접할 수 있게 합니다."

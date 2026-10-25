@@ -5,3 +5,10 @@ logo = "brands/hotaru.png"
 links = [ { name = "Run the experiment", url = "https://hotaru.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/hotaru" } ]
 topics = ["simulation", "complex-systems", "webassembly", "rust", "neuroscience", "intelligence", "emergence"]
 related = ["terrarium"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "60 电极阵列上的模拟神经元培养物在你的浏览器里打乒乓，就像 DishBrain 实验那样。只对击中和漏接给出反馈，并没有让它们变得更好；而当球拍朝球移动时就安静下来的输入做到了，页面会把它和对照组并排展示。"
+
+[i18n.ko]
+description = "60전극 어레이 위의 시뮬레이션된 뉴런 배양체가 DishBrain 실험처럼 브라우저에서 퐁을 합니다. 맞혔을 때와 놓쳤을 때의 피드백만으로는 실력이 늘지 않았습니다. 패들이 공 쪽으로 움직이면 조용해지는 입력은 효과가 있었고, 페이지는 이를 대조군과 나란히 보여 줍니다."

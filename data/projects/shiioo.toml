@@ -3,3 +3,10 @@ description = "The Virtual Company OS. Agentic enterprise orchestrator with DAG 
 status = "dev"
 links = [ { name = "GitHub", url = "https://github.com/raskell-io/shiioo" } ]
 topics = ["agents", "ai-platforms", "ai-for-ops", "platform-automation", "rust"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "虚拟公司操作系统。一个智能体化的企业编排器，具备 DAG 工作流、事件溯源、MCP 工具，以及支持从 git 导入的分类技能注册中心。"
+
+[i18n.ko]
+description = "가상 회사 OS입니다. DAG 워크플로, 이벤트 소싱, MCP 도구, 그리고 git에서 가져올 수 있는 분류된 스킬 레지스트리를 갖춘 에이전트 기반 엔터프라이즈 오케스트레이터입니다."

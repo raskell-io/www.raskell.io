@@ -48,7 +48,7 @@ portrait_alt = "Raffael"
 
 {{ project_cards(slugs=["zentinel", "archipelag-io", "cyanea", "arcanist"]) }}
 
-[全部项目 →](/projects/) · 其中几个[开放投资](/invest/)。
+[全部项目 →](/zh/projects/) · 其中几个[开放投资](/invest/)。
 
 ## 演讲
 

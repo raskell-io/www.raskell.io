@@ -6,3 +6,10 @@ logo = "brands/rainbow-river.png"
 links = [ { name = "Play", url = "https://rainbowriver.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/rainbow-river" } ]
 topics = ["games", "webassembly", "rust"]
 related = ["wasm-ad"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "一款 32 位掌机风格的钓鱼游戏，灵感来自 The Legend of the River King。沿着河走，读懂水面，用手绘的鱼种填满你的鱼类图鉴。用 Rust 编写，编译为 WebAssembly，是 WASM-AD 的第一张卡带。可以在浏览器里玩。"
+
+[i18n.ko]
+description = "32비트 휴대용 게임기 스타일의 낚시 게임으로, The Legend of the River King에서 영감을 받았습니다. 강을 따라 걷고, 물을 읽고, 손으로 그린 어종으로 물고기 도감을 채웁니다. Rust로 작성하고 WebAssembly로 컴파일했으며, WASM-AD의 첫 번째 카트리지입니다. 브라우저에서 플레이할 수 있습니다."

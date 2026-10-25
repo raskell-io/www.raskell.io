@@ -3,3 +3,10 @@ description = "Schema-aware config state coordination. Multiple writers, determi
 status = "dev"
 links = [ { name = "GitHub", url = "https://github.com/raskell-io/conflux" } ]
 topics = ["distributed-systems", "local-first", "rust"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "感知 schema 的配置状态协调。多个写入方，确定性合并，git 里程碑。一个支持可插拔存储后端（SQLite、PostgreSQL、DynamoDB）的 CRDT 文档引擎。"
+
+[i18n.ko]
+description = "스키마를 인식하는 설정 상태 조정 도구입니다. 여러 작성자, 결정적 병합, git 마일스톤을 지원합니다. 저장소 백엔드(SQLite, PostgreSQL, DynamoDB)를 바꿔 끼울 수 있는 CRDT 문서 엔진입니다."

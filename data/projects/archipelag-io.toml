@@ -10,3 +10,10 @@ links = [ { name = "Website", url = "https://archipelag.io" }, { name = "GitHub"
 pitch = "@/pitch/archipelag-io.md"   # investor brief, linked from /invest/
 topics = ["distributed-systems", "sovereignty", "edge-systems", "inference", "isolation", "self-hosting"]
 accents = ["#00c9b0", "#ffe14d"]   # brand colours, used for the card glow
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "去中心化的 AI 算力：AI 任务运行在由社区运营的 GPU 主机网络上。任务优先选择就近的主机和首选地区，每个任务都会记录它在哪里运行；严格的地区约束正在开发中。目前为免费公开测试：主机在计量功能验证期间获得虚拟积分，真实货币结算尚未开放。"
+
+[i18n.ko]
+description = "탈중앙화 AI 컴퓨팅입니다. AI 작업이 커뮤니티가 운영하는 GPU 호스트 네트워크에서 실행됩니다. 작업은 가까운 호스트와 선호 지역을 우선하고, 모든 작업은 어디서 실행되었는지 기록합니다. 엄격한 지역 제한은 개발 중입니다. 현재 무료 공개 베타로, 계량 기능을 검증하는 동안 호스트는 가상 크레딧을 받으며 실제 금전 지급은 아직 열리지 않았습니다."

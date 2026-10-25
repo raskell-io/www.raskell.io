@@ -6,3 +6,10 @@ logo_dark = "brands/coconutos-dark.svg"
 links = [ { name = "GitHub", url = "https://github.com/coconut-os/coconutOS" }, { name = "Story", url = "https://github.com/coconut-os/coconutOS/blob/main/docs/vision.md" } ]
 topics = ["operating-systems", "gpus", "inference", "isolation", "rust"]
 accents = ["#B07A4C", "#7A4E2D"]   # brand colours (husk light, husk), used for the card glow
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "AI 推理的一层硬壳。一个把 GPU 隔离做成内核原语的 Rust 微内核：每个模型运行在自己的分片中，拥有自己的页表、显存分区和能力；GPU 驱动运行在 ring 0 之外；pledge_gpu 和 unveil_vram 只会收回权限，从不增加。如今已能在 QEMU 中端到端运行一次 Transformer 前向计算；下一步是真实的 GPU 硬件。"
+
+[i18n.ko]
+description = "AI 추론을 위한 단단한 껍데기입니다. GPU 격리를 커널 기본 요소로 만드는 Rust 마이크로커널로, 모든 모델은 자체 페이지 테이블, VRAM 파티션, 권한을 가진 고유한 샤드에서 실행되고, GPU 드라이버는 ring 0 밖에 있으며, pledge_gpu와 unveil_vram은 권한을 줄이기만 합니다. 현재 QEMU에서 트랜스포머 순전파를 처음부터 끝까지 실행하며, 다음 단계는 실제 GPU 하드웨어입니다."

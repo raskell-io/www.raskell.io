@@ -7,3 +7,10 @@ wordmark_dark = "brands/hx-wordmark-dark.svg"
 links = [ { name = "Website", url = "https://arcanist.sh/hx/" }, { name = "Docs", url = "https://docs.arcanist.sh/hx/docs/quickstart/" }, { name = "GitHub", url = "https://github.com/arcanist-sh/hx" } ]
 topics = ["haskell", "rust", "programming-languages", "developer-tooling"]
 related = ["arcanist"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "装进一个快速二进制文件里的 Haskell 工具链。hx 负责安装 GHC 和 Cabal，构建、测试、格式化和检查你的代码，按哈希锁定每个依赖，并发布你的包。它用 Rust 编写，几毫秒内启动，兼容你已经在用的 .cabal 文件和 Hackage，还通过 MCP 为 AI 智能体提供同样的命令。"
+
+[i18n.ko]
+description = "빠른 바이너리 하나에 담은 Haskell 툴체인입니다. hx는 GHC와 Cabal을 설치하고, 코드를 빌드, 테스트, 포맷, 린트하며, 모든 의존성을 해시로 고정하고, 패키지를 배포합니다. Rust로 작성되어 몇 밀리초 만에 시작하고, 이미 쓰고 있는 .cabal 파일과 Hackage와 함께 동작하며, MCP를 통해 AI 에이전트에게도 같은 명령을 제공합니다."

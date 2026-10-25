@@ -145,7 +145,7 @@ A new kind (say, podcasts or bookmarks) has to be taught to every sink. Touch po
 ## Translations
 
 English is the source language and lives at `/`; Simplified Chinese (`zh`) and Korean (`ko`) live under
-`/zh/` and `/ko/`. Today only the homepage and About page are translated; everything else is English in
+`/zh/` and `/ko/`. Today the homepage, About, Projects, and Apps are translated; everything else is English in
 every language, and the footer's language switch sends readers of an untranslated page to that
 language's home.
 
@@ -153,6 +153,9 @@ language's home.
   the same front matter and a translated title, description, and body. URLs keep the English names
   (`/zh/about/`); never set a translated `slug` or `path`. Links inside a translation point to the
   English page unless that page is translated too.
+- **Project data:** each `data/projects/<slug>.toml` ends with `[i18n.zh]` and `[i18n.ko]` tables
+  (`description`, optionally `title` and `tagline`); the cards use them wherever they appear. A new
+  project gets both tables, or it shows in English on the translated pages.
 - **Interface text:** `config.toml`, `[extra.seijaku.i18n.<code>]`: `labels` maps English interface text
   (navigation, footer, homepage buttons) to its translation; `tagline` and `footer_about` replace the
   footer introduction. A new nav item or footer link needs its label added for each language.

@@ -6,3 +6,10 @@ wordmark = "brands/die-zukunft-wordmark.svg"   # the brandtype, shown beside the
 links = [ { name = "Website", url = "https://die-zukunft.ch" }, { name = "GitHub", url = "https://github.com/zukunft-ch" } ]
 topics = ["sovereignty", "policy", "oss", "social-reform", "switzerland"]
 accents = ["#a855f7", "#06b6d4"]   # brand colours, used for the card glow
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "一个把工程原则应用于公共生活的瑞士运动：不左也不右。通过开放标准实现数字主权，可审计、可迁移的公共基础设施，以证据为依据的政策，并拥有自己的瑞士联邦数据研究流程。"
+
+[i18n.ko]
+description = "공공의 삶에 공학 원칙을 적용하는 스위스의 운동으로, 좌도 우도 아닙니다. 개방형 표준을 통한 디지털 주권, 감사할 수 있고 이전할 수 있는 공공 인프라, 근거에 기반한 정책을 추구하며, 스위스 연방 데이터를 위한 자체 연구 파이프라인을 갖추고 있습니다."

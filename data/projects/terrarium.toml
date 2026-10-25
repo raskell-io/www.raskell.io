@@ -4,3 +4,10 @@ status = "dev"
 logo = "brands/terrarium.png"
 links = [ { name = "Website", url = "https://terrarium.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/terrarium" } ]
 topics = ["agents", "simulation", "complex-systems", "rust", "emergence"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "一个社会模拟引擎，由 LLM 驱动的智能体在其中形成涌现的文明。每个智能体都有性格、需求、记忆，以及可能出错的信念。你来设定世界的规则，然后观察市场、等级和联盟如何自行出现。"
+
+[i18n.ko]
+description = "LLM으로 움직이는 에이전트들이 창발적인 문명을 이루는 사회 시뮬레이션 엔진입니다. 각 에이전트는 성격, 욕구, 기억, 그리고 틀릴 수도 있는 믿음을 가집니다. 여러분이 세계의 규칙을 정하면, 시장과 위계와 동맹이 스스로 생겨나는 모습을 지켜볼 수 있습니다."

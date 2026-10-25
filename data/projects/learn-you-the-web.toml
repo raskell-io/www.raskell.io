@@ -4,3 +4,10 @@ status = "progress"
 logo = "brands/learn-you-the-web.png"
 links = [ { name = "Read online", url = "https://learn-you-the-web.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/learn-you-the-web" } ]
 topics = ["edge-systems"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "一本友好的指南，讲 Web 究竟是如何运作的。这一次是真的。HTTP、DNS、TLS，以及把这一切连在一起的协议，不含糊其辞，也不过度简化。"
+
+[i18n.ko]
+description = "웹이 실제로 어떻게 동작하는지 알려 주는 친절한 안내서입니다. 이번에는 정말로요. HTTP, DNS, TLS, 그리고 이 모든 것을 이어 주는 프로토콜을 얼버무리거나 지나치게 단순화하지 않고 설명합니다."

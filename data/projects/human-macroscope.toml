@@ -4,3 +4,10 @@ status = "early"
 links = [ { name = "GitHub", url = "https://github.com/human-macroscope" } ]
 topics = ["complex-systems", "knowledge-management", "emergence"]
 accents = ["#5b45f2", "#007f78"]   # brand colours, used for the card glow
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "一个关于人类及人类集体的长期跨学科研究项目，跨越从个人、家庭到机构、文化和文明的各个尺度：个体的特质、角色、关系和文化传递，如何组合成涌现的集体属性。"
+
+[i18n.ko]
+description = "개인과 가족에서 제도, 문화, 문명에 이르기까지 여러 규모에 걸쳐 인간과 인간 집단을 다루는 장기적인 학제 간 연구 프로젝트입니다. 개인의 특성, 역할, 관계, 문화적 전승이 어떻게 결합해 창발적인 집단적 속성이 되는지를 탐구합니다."

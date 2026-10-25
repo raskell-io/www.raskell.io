@@ -3,3 +3,10 @@ description = "Index GitHub repos and generate static awesome-list sites."
 status = "dev"
 links = [ { name = "GitHub", url = "https://github.com/raskell-io/awesomeify" } ]
 topics = ["oss", "rust"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "为 GitHub 仓库建立索引，并生成静态的 awesome 列表网站。"
+
+[i18n.ko]
+description = "GitHub 저장소를 색인하고 정적인 awesome 목록 사이트를 생성합니다."

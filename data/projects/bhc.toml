@@ -8,3 +8,10 @@ wordmark_dark = "brands/bhc-wordmark-dark.svg"
 links = [ { name = "Website", url = "https://arcanist.sh/bhc/" }, { name = "Docs", url = "https://docs.arcanist.sh/bhc/docs/quickstart/" }, { name = "GitHub", url = "https://github.com/arcanist-sh/bhc" } ]
 topics = ["haskell", "programming-languages", "formal-methods"]
 related = ["arcanist"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "Basel Haskell Compiler，一个为你已经在写的 Haskell 从零打造的编译器。它用 Rust 编写，经由 LLVM 编译为原生代码，也可编译为 WebAssembly，每次构建选择一种运行时配置。它能编译 Pandoc 的全部 221 个模块，Pandoc 的 Markdown 读取器和 HTML 写入器可以端到端运行。"
+
+[i18n.ko]
+description = "Basel Haskell Compiler는 여러분이 이미 쓰고 있는 Haskell을 위해 처음부터 새로 만든 컴파일러입니다. Rust로 작성되었고 LLVM을 통해 네이티브 코드로, 그리고 WebAssembly로 컴파일하며, 빌드마다 런타임 프로필을 고릅니다. Pandoc의 221개 모듈을 모두 컴파일하고, Pandoc의 Markdown 리더와 HTML 라이터가 처음부터 끝까지 실행됩니다."

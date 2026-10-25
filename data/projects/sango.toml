@@ -4,3 +4,10 @@ status = "dev"
 logo = "brands/sango.svg"
 links = [ { name = "Website", url = "https://sango.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/sango" } ]
 topics = ["edge-systems", "reliability", "observability", "developer-tooling", "rust"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "面向现代 Web 的边缘诊断工具。一个运维级的命令行工具，一条命令完成全面的端点分析：TLS 检查、HTTP 协议检测（HTTP/1.1、HTTP/2、HTTP/3）、安全响应头、延迟测量和技术栈识别。"
+
+[i18n.ko]
+description = "현대 웹을 위한 엣지 진단 도구입니다. 명령 하나로 엔드포인트를 종합 분석하는 운영자 수준의 CLI입니다. TLS 검사, HTTP 프로토콜 감지(HTTP/1.1, HTTP/2, HTTP/3), 보안 헤더, 지연 시간 측정, 기술 스택 식별을 수행합니다."

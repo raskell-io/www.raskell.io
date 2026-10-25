@@ -6,3 +6,10 @@ wordmark = "brands/vela-wordmark-light.svg"   # the brandtype, shown beside the 
 wordmark_dark = "brands/vela-wordmark-dark.svg"
 links = [ { name = "Website", url = "https://vela.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/vela" } ]
 topics = ["platform-automation", "self-hosting", "linux", "rust", "developer-tooling"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "在裸机上零停机部署应用。一个二进制文件，没有容器。一个可自托管的 PaaS，可替代 Heroku、Fly.io、Coolify 和 Kamal。用 Rust 构建，支持零停机部署，并内置反向代理。"
+
+[i18n.ko]
+description = "베어메탈에서 중단 없이 앱을 배포합니다. 바이너리 하나, 컨테이너 없음. Heroku, Fly.io, Coolify, Kamal을 대신하는 셀프 호스팅 PaaS입니다. Rust로 만들었고, 무중단 배포와 내장 리버스 프록시를 갖추고 있습니다."

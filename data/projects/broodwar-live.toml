@@ -5,3 +5,10 @@ logo = "brands/broodwar-live.png"
 logo_wide = true
 links = [ { name = "Open site", url = "https://broodwar.live" }, { name = "GitHub", url = "https://github.com/broodwar-live" } ]
 topics = ["zola", "elixir", "rust"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "《星际争霸：母巢之战》竞技圈的社区平台，相当于母巢之战版的 basketball-reference.com。150 位职业选手的英文和韩文资料，每种对局的建造顺序、赛事、维基，以及在浏览器中用 WebAssembly 运行的录像分析，什么都不用上传。"
+
+[i18n.ko]
+description = "스타크래프트: 브루드 워 경쟁 플레이를 위한 커뮤니티 플랫폼으로, 브루드 워판 basketball-reference.com입니다. 영어와 한국어로 된 프로게이머 150명의 프로필, 모든 종족전의 빌드 오더, 대회, 위키, 그리고 브라우저에서 WebAssembly로 실행되어 아무것도 업로드하지 않는 리플레이 분석을 제공합니다."

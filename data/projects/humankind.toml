@@ -8,3 +8,10 @@ links = [ { name = "Website", url = "https://humankind.plus" }, { name = "GitHub
 pitch = "@/pitch/humankind.md"   # investor brief, linked from /invest/
 topics = ["sovereignty", "elixir", "rust"]
 accents = ["#2fd8b4", "#9a86ff"]   # brand teal and violet, used for the card glow
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "一个跨越世代保存一个人存在感的人类延续平台。Humankind 帮助人们建立一份由声音、故事、记忆、价值观和人与人之间的温情组成的活档案，让一个人的质感在距离、衰老或死亡本会将其抹去之后，依然可以被触及。同意优先，默认保护隐私，并明确区分记录下来的事实、重建和推断。"
+
+[i18n.ko]
+description = "세대를 넘어 한 사람의 존재감을 보존하는 인간 연속성 플랫폼입니다. Humankind는 목소리, 이야기, 기억, 가치관, 관계의 온기로 이루어진 살아 있는 기록을 만들도록 도와, 거리나 노화나 죽음이 지워 버렸을 한 사람의 결을 오래도록 만날 수 있게 합니다. 동의를 우선하고, 기본적으로 개인정보를 보호하며, 기록된 사실과 재구성과 추론의 차이를 분명히 밝힙니다."

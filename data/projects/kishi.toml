@@ -8,3 +8,10 @@ wordmark_dark = "brands/kishi-wordmark-dark.svg"
 links = [ { name = "Play", url = "https://kishi.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/kishi" } ]
 topics = ["games", "reinforcement-learning", "webassembly", "rust"]
 accents = ["#c8553d", "#ece6d9"]   # brand colours, used for the card glow
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "与用 Rust 编写、编译为 WebAssembly 的引擎下国际象棋、将棋和围棋。引擎在浏览器里、在你自己的设备上离线对弈，棋力从新手到满级，棋盘简洁安静。"
+
+[i18n.ko]
+description = "Rust로 작성하고 WebAssembly로 컴파일한 엔진을 상대로 체스, 쇼기, 바둑을 둡니다. 엔진은 브라우저 안에서 여러분의 기기로, 오프라인으로 두며, 초보자 수준부터 최고 실력까지, 조용한 판 위에서 대국합니다."

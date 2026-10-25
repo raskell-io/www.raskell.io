@@ -6,3 +6,10 @@ wordmark = "brands/refrakt-wordmark-light.svg"   # the brandtype, shown beside t
 wordmark_dark = "brands/refrakt-wordmark-dark.svg"
 links = [ { name = "Website", url = "https://refrakt.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/refrakt" } ]
 topics = ["programming-languages", "oss"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "一个约定优先的 Gleam Web 框架。像 Phoenix 一样高效，像 Gleam 一样明确，可与 Wisp 和 Lustre 组合。全栈代码生成、CRUD 脚手架，以及运行在 BEAM 上、开箱即用的开发体验。"
+
+[i18n.ko]
+description = "Gleam을 위한 관례 우선 웹 프레임워크입니다. Phoenix처럼 생산적이고, Gleam처럼 명시적이며, Wisp 및 Lustre와 조합할 수 있습니다. 풀스택 코드 생성, CRUD 스캐폴딩, 그리고 BEAM 위에서 필요한 것을 모두 갖춘 개발 경험을 제공합니다."

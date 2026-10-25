@@ -4,3 +4,10 @@ status = "dev"
 logo = "brands/ushio.png"
 links = [ { name = "GitHub", url = "https://github.com/raskell-io/ushio" } ]
 topics = ["applied-security", "waf", "edge-systems", "developer-tooling", "rust"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "确定性的边缘流量回放，用来理解 WAF 和代理的行为。把流量捕获为 HAR 文件，为预发布与生产环境的对比改写 URL，修改请求头，去除 Cookie，并比较不同环境下的 WAF 响应。"
+
+[i18n.ko]
+description = "WAF와 프록시의 동작을 이해하기 위한 결정적인 엣지 트래픽 재생 도구입니다. 트래픽을 HAR 파일로 캡처하고, 스테이징과 프로덕션 비교를 위해 URL을 다시 쓰고, 헤더를 변경하고, 쿠키를 제거하고, 환경별 WAF 응답을 비교합니다."

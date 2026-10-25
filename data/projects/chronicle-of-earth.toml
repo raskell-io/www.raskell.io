@@ -6,3 +6,10 @@ links = [ { name = "GitHub", url = "https://github.com/chronicle-of-earth" } ]
 topics = ["history", "geography", "knowledge-management", "typescript"]
 stack = ["SvelteKit", "TypeScript", "MapLibre"]
 accents = ["#779aa6", "#9eb69a"]
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "一部关于历史与地缘政治的互动地图集，从 1900 年到 2026 年开始。早期原型把一个可以放大到村庄和街道的 3D 地球，与一条跨越数天到数十年的时间轴结合在一起。它的数据模型把事件、领土主张、实际控制、来源和不确定性分开记录。历史内容目前还只是一小批草稿；详细底图显示的是当今的地理。"
+
+[i18n.ko]
+description = "역사와 지정학을 다루는 인터랙티브 지도책으로, 1900년부터 2026년까지에서 시작합니다. 초기 프로토타입은 마을과 거리까지 확대되는 3D 지구본과 며칠에서 수십 년에 이르는 타임라인을 짝지었습니다. 데이터 모델은 사건, 영토 주장, 실효 지배, 출처, 불확실성을 구분해 기록합니다. 역사 데이터는 아직 작은 초안 모음이며, 상세 기본 지도는 현재의 지리를 보여 줍니다."
