@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-25T18:12:59+00:00",
+ "generated": "2026-10-25T18:15:00+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -10,7 +10,7 @@
   "talk": 1,
   "work": 50,
   "project": 30,
-  "topic": 100,
+  "topic": 102,
   "link": 266
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
@@ -1678,6 +1678,13 @@
   },
   {
    "kind": "topic",
+   "title": "Agent identity",
+   "url": "https://raskell.io/tags#agent-identity",
+   "description": "Agents as principals of their own: identities, entitlements, credentials, budgets and audit trails provisioned like an employee's, with a human sponsor, instead of borrowed rights.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Agents",
    "url": "https://raskell.io/tags/agents/",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
@@ -1829,6 +1836,13 @@
    "url": "https://raskell.io/tags/emergence/",
    "description": "Order nobody designed: reefs, the early web, neuron cultures, and simulated worlds where simple rules add up to behaviour no single part has.",
    "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Enterprise architecture",
+   "url": "https://raskell.io/tags#enterprise-architecture",
+   "description": "How a company's capabilities, applications, data and infrastructure fit together, who owns what, and how the landscape is changed on purpose.",
+   "meta": "Domain"
   },
   {
    "kind": "topic",

@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-25T18:12:59+00:00",
+ "generated": "2026-10-25T18:15:00+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -415,7 +415,7 @@
    "url": "https://raskell.io/tags/agents/",
    "meta": "Concept · 12 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 19
+   "degree": 20
   },
   {
    "id": "t:ai-engineering",
@@ -451,7 +451,7 @@
    "url": "https://raskell.io/tags/applied-security/",
    "meta": "Domain · 5 pages",
    "description": "Security under production pressure: adversarial input, signal versus noise, and controls that operators can live with.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:attention-economy",
@@ -1064,6 +1064,15 @@
    "meta": "Technology · 1 page",
    "description": "The static site generator this site and several project sites are built with.",
    "degree": 3
+  },
+  {
+   "id": "t:agent-identity",
+   "kind": "tag",
+   "label": "Agent identity",
+   "url": "https://raskell.io/tags#agent-identity",
+   "meta": "Concept · no pages yet",
+   "description": "Agents as principals of their own: identities, entitlements, credentials, budgets and audit trails provisioned like an employee's, with a human sponsor, instead of borrowed rights.",
+   "degree": 2
   },
   {
    "id": "t:ai-alignment",
@@ -3273,6 +3282,14 @@
   {
    "source": "t:zola",
    "target": "t:open-web"
+  },
+  {
+   "source": "t:agent-identity",
+   "target": "t:agents"
+  },
+  {
+   "source": "t:agent-identity",
+   "target": "t:applied-security"
   },
   {
    "source": "t:ai-alignment",
