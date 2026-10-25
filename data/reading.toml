@@ -50,6 +50,8 @@ title = "The Cauldron"
 subtitle = "The Making of the Modern Middle East"
 author = "Simon Sebag Montefiore"
 kind = "book"
+cover = "covers/reading/the-cauldron.avif"
+isbn = "9781399634892"
 year = 2026
 url = "https://www.hachette.co.uk/titles/simon-sebag-montefiore/the-cauldron/9781399634939/"
 status = "read"
@@ -135,6 +137,8 @@ id = "science-after-babel"
 title = "Science After Babel"
 author = "David Berlinski"
 kind = "book"
+cover = "covers/reading/science-after-babel.avif"
+isbn = "9781637120262"
 year = 2023
 status = "read"
 finished = "2023"
@@ -146,6 +150,8 @@ title = "Network Programming with Go"
 subtitle = "Code Secure and Reliable Network Services from Scratch"
 author = "Adam Woodbeck"
 kind = "book"
+cover = "covers/reading/network-programming-with-go.avif"
+isbn = "9781718500884"
 year = 2021
 status = "read"
 finished = "2023"
@@ -202,6 +208,8 @@ id = "programming-webassembly-with-rust"
 title = "Programming WebAssembly with Rust"
 author = "Kevin Hoffman"
 kind = "book"
+cover = "covers/reading/programming-webassembly-with-rust.avif"
+isbn = "9781680506365"
 year = 2019
 status = "read"
 finished = "2021"
@@ -212,6 +220,8 @@ id = "webassembly-the-definitive-guide"
 title = "WebAssembly: The Definitive Guide"
 author = "Brian Sletten"
 kind = "book"
+cover = "covers/reading/webassembly-the-definitive-guide.avif"
+isbn = "9781492089841"
 year = 2021
 status = "read"
 finished = "2021"
@@ -384,6 +394,285 @@ status = "read"
 finished = "2016"
 topics = ["history-of-science", "philosophy-of-science", "scientific-revolutions"]
 
+[[works]]
+id = "ocean-earths-last-wilderness"
+title = "Ocean"
+subtitle = "Earth's Last Wilderness"
+author = "David Attenborough and Colin Butfield"
+kind = "book"
+cover = "covers/reading/ocean-earths-last-wilderness.avif"
+year = 2025
+status = "read"
+finished = "2026-10"
+topics = ["life-sciences", "commons", "risk"]
+
+[[works]]
+id = "the-ultimate-hidden-truth-of-the-world"
+title = "The Ultimate Hidden Truth of the World"
+subtitle = "Essays"
+author = "David Graeber"
+kind = "book"
+cover = "covers/reading/the-ultimate-hidden-truth-of-the-world.avif"
+year = 2024
+edition = "Edited by Nika Dubrovsky"
+status = "read"
+finished = "2026-02"
+topics = ["philosophy", "economics", "democratisation"]
+
+[[works]]
+id = "pirate-enlightenment"
+title = "Pirate Enlightenment, or the Real Libertalia"
+author = "David Graeber"
+kind = "book"
+cover = "covers/reading/pirate-enlightenment.avif"
+cover_id = "14407897"
+year = 2023
+status = "read"
+finished = "2025-10"
+topics = ["history", "democratisation", "commons"]
+
+[[works]]
+id = "codebreaking"
+title = "Codebreaking"
+subtitle = "A Practical Guide"
+author = "Elonka Dunin and Klaus Schmeh"
+kind = "book"
+cover = "covers/reading/codebreaking.avif"
+year = 2020
+status = "read"
+finished = "2025-04"
+topics = ["applied-security", "mathematics", "history"]
+
+[[works]]
+id = "the-island-at-the-center-of-the-world"
+title = "The Island at the Center of the World"
+subtitle = "The Epic Story of Dutch Manhattan and the Forgotten Colony That Shaped America"
+author = "Russell Shorto"
+kind = "book"
+cover = "covers/reading/the-island-at-the-center-of-the-world.avif"
+year = 2004
+status = "read"
+finished = "2025-01"
+topics = ["history", "cities", "europe"]
+
+[[works]]
+id = "at-war"
+title = "@War"
+subtitle = "The Rise of the Military-Internet Complex"
+author = "Shane Harris"
+kind = "book"
+cover = "covers/reading/at-war.avif"
+cover_id = "8467996"
+year = 2014
+status = "read"
+finished = "2024-09"
+topics = ["applied-security", "geopolitics", "technology-races"]
+
+[[works]]
+id = "future-science"
+title = "Future Science"
+subtitle = "Essays from the Cutting Edge"
+author = "Max Brockman (editor)"
+kind = "book"
+cover = "covers/reading/future-science.avif"
+cover_id = "8464209"
+year = 2011
+status = "read"
+finished = "2024-05"
+topics = ["philosophy-of-science", "life-sciences", "neuroscience"]
+
+[[works]]
+id = "programming-rust"
+title = "Programming Rust"
+subtitle = "Fast, Safe Systems Development"
+author = "Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall"
+kind = "book"
+cover = "covers/reading/programming-rust.avif"
+year = 2021
+edition = "Second edition"
+status = "read"
+finished = "2023"
+topics = ["rust", "programming-languages"]
+
+[[works]]
+id = "site-reliability-engineering"
+title = "Site Reliability Engineering"
+subtitle = "How Google Runs Production Systems"
+author = "Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy"
+kind = "book"
+cover = "covers/reading/site-reliability-engineering.avif"
+year = 2016
+url = "https://sre.google/sre-book/table-of-contents/"
+status = "read"
+finished = "2023"
+topics = ["reliability", "observability", "distributed-systems"]
+
+[[works]]
+id = "who-we-are-and-how-we-got-here"
+title = "Who We Are and How We Got Here"
+subtitle = "Ancient DNA and the New Science of the Human Past"
+author = "David Reich"
+kind = "book"
+cover = "covers/reading/who-we-are-and-how-we-got-here.avif"
+year = 2018
+status = "read"
+finished = "2023"
+topics = ["life-sciences", "world-history", "history-of-science"]
+
+[[works]]
+id = "the-phoenix-project"
+title = "The Phoenix Project"
+subtitle = "A Novel about IT, DevOps, and Helping Your Business Win"
+author = "Gene Kim, Kevin Behr, and George Spafford"
+kind = "novel"
+cover = "covers/reading/the-phoenix-project.avif"
+year = 2013
+status = "read"
+finished = "2022"
+topics = ["platform-automation", "reliability", "enterprise-architecture"]
+
+[[works]]
+id = "foucaults-pendulum"
+title = "Foucault's Pendulum"
+author = "Umberto Eco"
+kind = "novel"
+cover = "covers/reading/foucaults-pendulum.avif"
+isbn = "9780156032971"
+year = 1988
+status = "read"
+finished = "2021-01"
+topics = ["literature", "maximalist-novels", "religion"]
+
+[[works]]
+id = "der-kampf-um-die-deutung-der-neuzeit"
+title = "Der Kampf um die Deutung der Neuzeit"
+subtitle = "Die geschichtsphilosophische Diskussion in Deutschland vom Ersten Weltkrieg bis zum Mauerfall"
+author = "Hauke Ritz"
+kind = "book"
+cover = "covers/reading/der-kampf-um-die-deutung-der-neuzeit.avif"
+year = 2014
+publisher = "Wilhelm Fink"
+status = "read"
+finished = "2020-11"
+topics = ["philosophy", "history", "europe"]
+
+[[works]]
+id = "das-tagebuch-der-menschheit"
+title = "Das Tagebuch der Menschheit"
+subtitle = "Was die Bibel über unsere Evolution verrät"
+author = "Carel van Schaik and Kai Michel"
+kind = "book"
+cover = "covers/reading/das-tagebuch-der-menschheit.avif"
+isbn = "9783498062163"
+year = 2016
+status = "read"
+finished = "2020-08"
+topics = ["religion", "life-sciences", "world-history"]
+
+[[works]]
+id = "the-art-of-war"
+title = "The Art of War"
+author = "Sun Tzu"
+kind = "book"
+cover = "covers/reading/the-art-of-war.avif"
+status = "read"
+finished = "2018-06"
+topics = ["philosophy", "geopolitics"]
+
+[[works]]
+id = "language-the-cultural-tool"
+title = "Language"
+subtitle = "The Cultural Tool"
+author = "Daniel Everett"
+kind = "book"
+cover = "covers/reading/language-the-cultural-tool.avif"
+cover_id = "7498236"
+year = 2012
+status = "read"
+finished = "2016-01"
+topics = ["languages", "intelligence"]
+
+[[works]]
+id = "erkenne-die-welt"
+title = "Erkenne die Welt"
+subtitle = "Eine Geschichte der Philosophie, Band 1"
+author = "Richard David Precht"
+kind = "book"
+cover = "covers/reading/erkenne-die-welt.avif"
+year = 2015
+status = "read"
+finished = "2015-12"
+topics = ["philosophy", "history"]
+
+[[works]]
+id = "cloud-atlas"
+title = "Cloud Atlas"
+author = "David Mitchell"
+kind = "novel"
+cover = "covers/reading/cloud-atlas.avif"
+year = 2004
+status = "read"
+finished = "2015-11"
+topics = ["literature", "maximalist-novels"]
+
+[[works]]
+id = "the-silk-roads"
+title = "The Silk Roads"
+subtitle = "A New History of the World"
+author = "Peter Frankopan"
+kind = "book"
+cover = "covers/reading/the-silk-roads.avif"
+year = 2015
+status = "read"
+finished = "2015-09"
+topics = ["world-history", "geopolitics", "cities"]
+
+[[works]]
+id = "die-geschichte-der-kunst"
+title = "Die Geschichte der Kunst"
+author = "E. H. Gombrich"
+kind = "book"
+cover = "covers/reading/die-geschichte-der-kunst.avif"
+year = 1950
+status = "read"
+finished = "2014-01"
+topics = ["history", "world-history"]
+
+[[works]]
+id = "die-psychologie-von-c-g-jung"
+title = "Die Psychologie von C. G. Jung"
+author = "Jolande Jacobi"
+kind = "book"
+cover = "covers/reading/die-psychologie-von-c-g-jung.avif"
+year = 1940
+status = "read"
+finished = "2012-06"
+topics = ["philosophy"]
+
+[[works]]
+id = "ai-2027"
+title = "AI 2027"
+author = "Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, and Romeo Dean"
+kind = "report"
+cover = "covers/reading/ai-2027.avif"
+year = 2025
+url = "https://ai-2027.com/"
+status = "read"
+finished = "2025-04"
+topics = ["ai-alignment", "existential-risk", "technology-races", "geopolitics", "intelligence"]
+
+[[works]]
+id = "ai-2040-plan-a"
+title = "AI 2040: Plan A"
+author = "Thomas Larsen, Romeo Dean, Brendan Halstead, Eli Lifland, Ryan Greenblatt, and Daniel Kokotajlo"
+kind = "report"
+cover = "covers/reading/ai-2040-plan-a.avif"
+year = 2026
+url = "https://ai-2040.com/"
+status = "read"
+finished = "2026-07"
+topics = ["ai-alignment", "existential-risk", "technology-races", "geopolitics", "policy"]
+
 # Backlog: suggestions I am weighing, in no fixed order -----------------------
 
 [[works]]
@@ -481,6 +770,7 @@ id = "understanding-deep-learning"
 title = "Understanding Deep Learning"
 author = "Simon J. D. Prince"
 kind = "book"
+cover = "covers/reading/understanding-deep-learning.avif"
 isbn = "9780262048644"
 year = 2023
 url = "https://mitpress.mit.edu/9780262048644/understanding-deep-learning/"
@@ -623,6 +913,51 @@ year = 2017
 url = "https://www.penguin.co.nz/books/the-butchering-art-9780141983387"
 status = "backlog"
 topics = ["medicine", "history-of-science", "scientific-revolutions"]
+
+[[works]]
+id = "deep-dive"
+title = "Deep Dive"
+subtitle = "Exploring the Real-world Value of Open Source Intelligence"
+author = "Rae L. Baker"
+kind = "book"
+cover = "covers/reading/deep-dive.avif"
+isbn = "9781119933243"
+year = 2023
+status = "backlog"
+topics = ["applied-security", "open-data", "privacy"]
+
+[[works]]
+id = "palo-alto"
+title = "Palo Alto"
+subtitle = "A History of California, Capitalism, and the World"
+author = "Malcolm Harris"
+kind = "book"
+cover = "covers/reading/palo-alto.avif"
+year = 2023
+status = "backlog"
+topics = ["history-of-technology", "economics", "geopolitics"]
+
+[[works]]
+id = "strategy-a-history"
+title = "Strategy"
+subtitle = "A History"
+author = "Lawrence Freedman"
+kind = "book"
+cover = "covers/reading/strategy-a-history.avif"
+year = 2013
+status = "backlog"
+topics = ["geopolitics", "history"]
+
+[[works]]
+id = "the-lost-art-of-scripture"
+title = "The Lost Art of Scripture"
+subtitle = "Rescuing the Sacred Texts"
+author = "Karen Armstrong"
+kind = "book"
+cover = "covers/reading/the-lost-art-of-scripture.avif"
+year = 2019
+status = "backlog"
+topics = ["religion", "history"]
 
 # Set aside ----------------------------------------------------------------
 
