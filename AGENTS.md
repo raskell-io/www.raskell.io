@@ -144,6 +144,7 @@ A new kind (say, podcasts or bookmarks) has to be taught to every sink. Touch po
   `static/.well-known/auth.md`, and the "For agents" list in the llms task.
 - WebMCP: `static/js/webmcp.js` (search kinds, a tool if the kind deserves one, `get_current_page`).
 - Social card: `og_card.html` and `og/card.html` if it needs its own layout.
+- Icon: a Phosphor duotone `<symbol>` in the theme's `partials/kind_icons.html` and the kind in `macros/icons.html`.
 - Docs: this file, and the theme README for anything in the theme.
 
 ## Translations
