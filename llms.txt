@@ -325,6 +325,38 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - [Terrarium](https://terrarium.raskell.io): A societal simulation engine where LLM-powered agents form emergent civilizations.
 - [Hotaru](https://hotaru.raskell.io): Simulated neuron cultures on a 60-electrode array play Pong in your browser, as in the DishBrain experiment.
 
+## Translations
+
+The site is written in English. Some pages are also translated; a translation lives at the same path under a language prefix (/zh/about/ translates /about/), carries hreflang alternates, and is linked from its English page. Articles, reviews, notes, and talks are English only. Each language has a short index of its own.
+
+### 简体中文 (hreflang `zh-Hans`, under /zh/)
+
+- [llms.txt in 简体中文](https://raskell.io/zh/llms.txt)
+- [首页](https://raskell.io/zh/): translation of [Home](https://raskell.io/)
+- [关于](https://raskell.io/zh/about/): translation of [About](https://raskell.io/about/)
+- [应用](https://raskell.io/zh/apps/): translation of [Apps](https://raskell.io/apps/)
+- [投资](https://raskell.io/zh/invest/): translation of [Invest](https://raskell.io/invest/)
+- [投资简报](https://raskell.io/zh/pitch/): translation of [Investor briefs](https://raskell.io/pitch/)
+- [Arcanist](https://raskell.io/zh/invest/arcanist/): translation of [Arcanist](https://raskell.io/invest/arcanist/)
+- [Archipelag.io](https://raskell.io/zh/invest/archipelag-io/): translation of [Archipelag.io](https://raskell.io/invest/archipelag-io/)
+- [Cyanea](https://raskell.io/zh/invest/cyanea/): translation of [Cyanea](https://raskell.io/invest/cyanea/)
+- [Humankind](https://raskell.io/zh/invest/humankind/): translation of [Humankind](https://raskell.io/invest/humankind/)
+- [项目](https://raskell.io/zh/projects/): translation of [Projects](https://raskell.io/projects/)
+
+### 한국어 (hreflang `ko`, under /ko/)
+
+- [llms.txt in 한국어](https://raskell.io/ko/llms.txt)
+- [홈](https://raskell.io/ko/): translation of [Home](https://raskell.io/)
+- [소개](https://raskell.io/ko/about/): translation of [About](https://raskell.io/about/)
+- [앱](https://raskell.io/ko/apps/): translation of [Apps](https://raskell.io/apps/)
+- [투자](https://raskell.io/ko/invest/): translation of [Invest](https://raskell.io/invest/)
+- [투자 소개서](https://raskell.io/ko/pitch/): translation of [Investor briefs](https://raskell.io/pitch/)
+- [Arcanist](https://raskell.io/ko/invest/arcanist/): translation of [Arcanist](https://raskell.io/invest/arcanist/)
+- [Archipelag.io](https://raskell.io/ko/invest/archipelag-io/): translation of [Archipelag.io](https://raskell.io/invest/archipelag-io/)
+- [Cyanea](https://raskell.io/ko/invest/cyanea/): translation of [Cyanea](https://raskell.io/invest/cyanea/)
+- [Humankind](https://raskell.io/ko/invest/humankind/): translation of [Humankind](https://raskell.io/invest/humankind/)
+- [프로젝트](https://raskell.io/ko/projects/): translation of [Projects](https://raskell.io/projects/)
+
 ## For agents
 
 - Each article and note as Markdown: its URL with `.md` instead of the trailing slash, e.g. https://raskell.io/articles/the-model-is-a-dependency.md

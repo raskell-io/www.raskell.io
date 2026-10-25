@@ -140,12 +140,14 @@
     {
       name: "get_current_page",
       title: "Describe the current page",
-      description: "Metadata of the page open in the browser: URL, title, description, kind (article, note, topic, project list, ...), topics, dates, the Markdown copy URL, and the heading outline.",
+      description: "Metadata of the page open in the browser: URL, title, description, kind (article, note, topic, project list, ...), topics, dates, the Markdown copy URL, the heading outline, its language, and its translations (other languages of the same page).",
       inputSchema: { type: "object", properties: {}, additionalProperties: false },
       annotations: { readOnlyHint: true },
       execute: function () {
         var kw = meta("keywords");
-        var path = location.pathname, review = !!document.querySelector('a[href*="/categories/reviews/"]') && /^\/articles\//.test(path);
+        // Translations live under a language prefix (/zh/about/); the kind is read from the path without it.
+        var lang = document.documentElement.lang || "en";
+        var path = location.pathname.replace(/^\/(zh|ko)\//, "/"), review = !!document.querySelector('a[href*="/categories/reviews/"]') && /^\/articles\//.test(path);
         var kind = /^\/articles\/[^/]+\/$/.test(path) ? (review ? "review" : "article") : /^\/notes\/[^/]+\/$/.test(path) ? "note" : /^\/talks\/[^/]+\/$/.test(path) ? "talk"
           : /^\/tags\/[^/]+\/$/.test(path) ? "topic" : /^\/categories\/[^/]+\/$/.test(path) ? "category" : path === "/reading/" ? "reading log" : path === "/search/" ? "search" : path === "/map/" ? "map" : "page";
         var times = Array.prototype.map.call(document.querySelectorAll(".pagehead time, table.meta time"), function (t) { return t.getAttribute("datetime"); });
@@ -153,7 +155,9 @@
           url: location.href, title: document.title, kind: kind,
           description: meta("description"), summary: collapse((document.querySelector("[data-ai-summary]") || {}).textContent) || null,
           topics: kw ? kw.split(/,\s*/) : [], dates: times, markdown: mdUrl(location.href),
-          headings: Array.prototype.map.call(document.querySelectorAll(".prose h2, .prose h3"), function (h) { return { level: h.tagName.toLowerCase(), text: collapse(h.textContent), id: h.id || null }; })
+          headings: Array.prototype.map.call(document.querySelectorAll(".prose h2, .prose h3"), function (h) { return { level: h.tagName.toLowerCase(), text: collapse(h.textContent), id: h.id || null }; }),
+          language: lang,
+          translations: Array.prototype.filter.call(document.querySelectorAll('link[rel="alternate"][hreflang]:not([type])'), function (l) { return l.hreflang !== "x-default" && l.hreflang !== lang; }).map(function (l) { return { language: l.hreflang, url: l.href }; })
         };
       }
     },
