@@ -128,34 +128,61 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 - The Eighth Day of Creation, Horace Freeland Judson (book)
 - [The Demon Under the Microscope](https://www.penguinrandomhouse.com/books/73465/the-demon-under-the-microscope-by-thomas-hager/), Thomas Hager (book)
 - [The Butchering Art](https://www.penguin.co.nz/books/the-butchering-art-9780141983387), Lindsey Fitzharris (book)
+- Deep Dive, Rae L. Baker (book)
+- Palo Alto, Malcolm Harris (book)
+- Strategy, Lawrence Freedman (book)
+- The Lost Art of Scripture, Karen Armstrong (book)
 
 ### Read
 
+- Ocean, David Attenborough and Colin Butfield (book, finished October 2026)
 - [The Cauldron](https://www.hachette.co.uk/titles/simon-sebag-montefiore/the-cauldron/9781399634939/), Simon Sebag Montefiore (book, finished September 2026)
+- [AI 2040: Plan A](https://ai-2040.com/), Thomas Larsen, Romeo Dean, Brendan Halstead, Eli Lifland, Ryan Greenblatt, and Daniel Kokotajlo (report, finished July 2026)
 - [From Worm to Human: Scaling Brain Emulation](https://pdf.isaak.net/scaling-emulations), Isaak Freeman (paper, finished June 2026): A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan.
 - [State of Brain Emulation Report 2025](https://arxiv.org/abs/2510.15745), Zanichelli, Schons, Freeman, Shiu, and Arkhipov (report, finished June 2026): The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are.
+- The Ultimate Hidden Truth of the World, David Graeber (book, finished February 2026)
 - Guns, Germs, and Steel, Jared Diamond (book, finished November 2025)
 - [Nuclear War: A Scenario](https://en.wikipedia.org/wiki/Nuclear_War:_A_Scenario), Annie Jacobsen (book, finished October 2025)
 - Infinite Jest, David Foster Wallace (novel, finished October 2025)
 - The Maximalist Novel, Stefano Ercolino (book, finished October 2025)
 - This Is for Everyone, Tim Berners-Lee (book, finished October 2025, rated 8/10): Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all. Review: [The Web Was the Training Set](https://raskell.io/articles/the-web-was-the-training-set.md)
+- Pirate Enlightenment, or the Real Libertalia, David Graeber (book, finished October 2025)
 - Jurassic Park, Michael Crichton (novel, finished July 2025)
+- Codebreaking, Elonka Dunin and Klaus Schmeh (book, finished April 2025)
+- [AI 2027](https://ai-2027.com/), Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, and Romeo Dean (report, finished April 2025)
+- The Island at the Center of the World, Russell Shorto (book, finished January 2025)
+- @War, Shane Harris (book, finished September 2024)
 - The Books of Jacob, Olga Tokarczuk (novel, finished August 2024)
+- Future Science, Max Brockman (editor) (book, finished May 2024)
 - Crafting Interpreters, Robert Nystrom (book, finished 2024)
 - Science After Babel, David Berlinski (book, finished 2023)
 - Network Programming with Go, Adam Woodbeck (book, finished 2023)
 - Elixir in Action, Saša Jurić (book, finished 2023)
+- Programming Rust, Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall (book, finished 2023)
+- [Site Reliability Engineering](https://sre.google/sre-book/table-of-contents/), Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy (book, finished 2023)
+- Who We Are and How We Got Here, David Reich (book, finished 2023)
 - Building a Second Brain, Tiago Forte (book, finished 2022)
 - Rust Web Programming, Maxwell Flitton (book, finished 2022)
+- The Phoenix Project, Gene Kim, Kevin Behr, and George Spafford (novel, finished 2022)
+- Foucault's Pendulum, Umberto Eco (novel, finished January 2021)
 - Programming WebAssembly with Rust, Kevin Hoffman (book, finished 2021)
 - WebAssembly: The Definitive Guide, Brian Sletten (book, finished 2021)
+- Der Kampf um die Deutung der Neuzeit, Hauke Ritz (book, finished November 2020)
+- Das Tagebuch der Menschheit, Carel van Schaik and Kai Michel (book, finished August 2020)
+- The Art of War, Sun Tzu (book, finished June 2018)
 - These Truths, Jill Lepore (book, finished 2018)
 - Jerusalem: The Biography, Simon Sebag Montefiore (book, finished 2017)
 - Freeland, Theodor Hertzka (novel, finished 2017)
 - Das soziale Problem, Theodor Hertzka (book, finished 2017)
+- Language, Daniel Everett (book, finished January 2016)
 - The Devil's Delusion, David Berlinski (book, finished 2016)
 - The Invention of Science, David Wootton (book, finished 2016)
+- Erkenne die Welt, Richard David Precht (book, finished December 2015)
+- Cloud Atlas, David Mitchell (novel, finished November 2015)
+- The Silk Roads, Peter Frankopan (book, finished September 2015)
 - Antifragile, Nassim Nicholas Taleb (book, finished 2015)
+- Die Geschichte der Kunst, E. H. Gombrich (book, finished January 2014)
+- Die Psychologie von C. G. Jung, Jolande Jacobi (book, finished June 2012)
 - Demons, Fyodor Dostoevsky (novel, finished 2012)
 - The Brothers Karamazov, Fyodor Dostoevsky (novel, finished 2011)
 - A Little History of the World, E. H. Gombrich (book, finished 2011)
@@ -213,10 +240,10 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Geography (`geography`): Places, terrain, borders, and spatial data, and how their relationships change over time.
 - Machine learning (`machine-learning`): How models learn from data: the mathematics, the training methods, and what the results can and cannot do.
 - Life sciences (`life-sciences`): Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.
+- Game AI (`game-ai`) [within Machine learning, Games]: Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy.
 - Philosophy (`philosophy`): Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.
 - Literature (`literature`): Fiction and writing about fiction: novels read for their own sake, and the forms they take.
 - Mathematics (`mathematics`): The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.
-- Game AI (`game-ai`) [within Machine learning, Games]: Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy.
 - Enterprise architecture (`enterprise-architecture`): How a company's capabilities, applications, data and infrastructure fit together, who owns what, and how the landscape is changed on purpose.
 - Simulation (`simulation`) [within Complex systems]: Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.
 - Games (`games`): Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.

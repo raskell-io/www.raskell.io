@@ -33,6 +33,7 @@
    "author": "Simon Sebag Montefiore",
    "kind": "book",
    "year": 2026,
+   "isbn": "9781399634892",
    "url": "https://www.hachette.co.uk/titles/simon-sebag-montefiore/the-cauldron/9781399634939/",
    "status": "read",
    "finished": "2026-09",
@@ -40,6 +41,7 @@
     "geopolitics",
     "history"
    ],
+   "cover": "https://raskell.io/covers/reading/the-cauldron.avif",
    "page": "https://raskell.io/reading/#the-cauldron"
   },
   {
@@ -159,11 +161,13 @@
    "author": "David Berlinski",
    "kind": "book",
    "year": 2023,
+   "isbn": "9781637120262",
    "status": "read",
    "finished": "2023",
    "topics": [
     "philosophy-of-science"
    ],
+   "cover": "https://raskell.io/covers/reading/science-after-babel.avif",
    "page": "https://raskell.io/reading/#science-after-babel"
   },
   {
@@ -173,11 +177,13 @@
    "author": "Adam Woodbeck",
    "kind": "book",
    "year": 2021,
+   "isbn": "9781718500884",
    "status": "read",
    "finished": "2023",
    "topics": [
     "networking"
    ],
+   "cover": "https://raskell.io/covers/reading/network-programming-with-go.avif",
    "page": "https://raskell.io/reading/#network-programming-with-go"
   },
   {
@@ -248,12 +254,14 @@
    "author": "Kevin Hoffman",
    "kind": "book",
    "year": 2019,
+   "isbn": "9781680506365",
    "status": "read",
    "finished": "2021",
    "topics": [
     "webassembly",
     "rust"
    ],
+   "cover": "https://raskell.io/covers/reading/programming-webassembly-with-rust.avif",
    "page": "https://raskell.io/reading/#programming-webassembly-with-rust"
   },
   {
@@ -262,11 +270,13 @@
    "author": "Brian Sletten",
    "kind": "book",
    "year": 2021,
+   "isbn": "9781492089841",
    "status": "read",
    "finished": "2021",
    "topics": [
     "webassembly"
    ],
+   "cover": "https://raskell.io/covers/reading/webassembly-the-definitive-guide.avif",
    "page": "https://raskell.io/reading/#webassembly-the-definitive-guide"
   },
   {
@@ -514,6 +524,392 @@
    "page": "https://raskell.io/reading/#the-invention-of-science"
   },
   {
+   "id": "ocean-earths-last-wilderness",
+   "title": "Ocean",
+   "subtitle": "Earth's Last Wilderness",
+   "author": "David Attenborough and Colin Butfield",
+   "kind": "book",
+   "year": 2025,
+   "status": "read",
+   "finished": "2026-10",
+   "topics": [
+    "life-sciences",
+    "commons",
+    "risk"
+   ],
+   "cover": "https://raskell.io/covers/reading/ocean-earths-last-wilderness.avif",
+   "page": "https://raskell.io/reading/#ocean-earths-last-wilderness"
+  },
+  {
+   "id": "the-ultimate-hidden-truth-of-the-world",
+   "title": "The Ultimate Hidden Truth of the World",
+   "subtitle": "Essays",
+   "author": "David Graeber",
+   "kind": "book",
+   "year": 2024,
+   "edition": "Edited by Nika Dubrovsky",
+   "status": "read",
+   "finished": "2026-02",
+   "topics": [
+    "philosophy",
+    "economics",
+    "democratisation"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-ultimate-hidden-truth-of-the-world.avif",
+   "page": "https://raskell.io/reading/#the-ultimate-hidden-truth-of-the-world"
+  },
+  {
+   "id": "pirate-enlightenment",
+   "title": "Pirate Enlightenment, or the Real Libertalia",
+   "author": "David Graeber",
+   "kind": "book",
+   "year": 2023,
+   "status": "read",
+   "finished": "2025-10",
+   "topics": [
+    "history",
+    "democratisation",
+    "commons"
+   ],
+   "cover": "https://raskell.io/covers/reading/pirate-enlightenment.avif",
+   "page": "https://raskell.io/reading/#pirate-enlightenment"
+  },
+  {
+   "id": "codebreaking",
+   "title": "Codebreaking",
+   "subtitle": "A Practical Guide",
+   "author": "Elonka Dunin and Klaus Schmeh",
+   "kind": "book",
+   "year": 2020,
+   "status": "read",
+   "finished": "2025-04",
+   "topics": [
+    "applied-security",
+    "mathematics",
+    "history"
+   ],
+   "cover": "https://raskell.io/covers/reading/codebreaking.avif",
+   "page": "https://raskell.io/reading/#codebreaking"
+  },
+  {
+   "id": "the-island-at-the-center-of-the-world",
+   "title": "The Island at the Center of the World",
+   "subtitle": "The Epic Story of Dutch Manhattan and the Forgotten Colony That Shaped America",
+   "author": "Russell Shorto",
+   "kind": "book",
+   "year": 2004,
+   "status": "read",
+   "finished": "2025-01",
+   "topics": [
+    "history",
+    "cities",
+    "europe"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-island-at-the-center-of-the-world.avif",
+   "page": "https://raskell.io/reading/#the-island-at-the-center-of-the-world"
+  },
+  {
+   "id": "at-war",
+   "title": "@War",
+   "subtitle": "The Rise of the Military-Internet Complex",
+   "author": "Shane Harris",
+   "kind": "book",
+   "year": 2014,
+   "status": "read",
+   "finished": "2024-09",
+   "topics": [
+    "applied-security",
+    "geopolitics",
+    "technology-races"
+   ],
+   "cover": "https://raskell.io/covers/reading/at-war.avif",
+   "page": "https://raskell.io/reading/#at-war"
+  },
+  {
+   "id": "future-science",
+   "title": "Future Science",
+   "subtitle": "Essays from the Cutting Edge",
+   "author": "Max Brockman (editor)",
+   "kind": "book",
+   "year": 2011,
+   "status": "read",
+   "finished": "2024-05",
+   "topics": [
+    "philosophy-of-science",
+    "life-sciences",
+    "neuroscience"
+   ],
+   "cover": "https://raskell.io/covers/reading/future-science.avif",
+   "page": "https://raskell.io/reading/#future-science"
+  },
+  {
+   "id": "programming-rust",
+   "title": "Programming Rust",
+   "subtitle": "Fast, Safe Systems Development",
+   "author": "Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall",
+   "kind": "book",
+   "year": 2021,
+   "edition": "Second edition",
+   "status": "read",
+   "finished": "2023",
+   "topics": [
+    "rust",
+    "programming-languages"
+   ],
+   "cover": "https://raskell.io/covers/reading/programming-rust.avif",
+   "page": "https://raskell.io/reading/#programming-rust"
+  },
+  {
+   "id": "site-reliability-engineering",
+   "title": "Site Reliability Engineering",
+   "subtitle": "How Google Runs Production Systems",
+   "author": "Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy",
+   "kind": "book",
+   "year": 2016,
+   "url": "https://sre.google/sre-book/table-of-contents/",
+   "status": "read",
+   "finished": "2023",
+   "topics": [
+    "reliability",
+    "observability",
+    "distributed-systems"
+   ],
+   "cover": "https://raskell.io/covers/reading/site-reliability-engineering.avif",
+   "page": "https://raskell.io/reading/#site-reliability-engineering"
+  },
+  {
+   "id": "who-we-are-and-how-we-got-here",
+   "title": "Who We Are and How We Got Here",
+   "subtitle": "Ancient DNA and the New Science of the Human Past",
+   "author": "David Reich",
+   "kind": "book",
+   "year": 2018,
+   "status": "read",
+   "finished": "2023",
+   "topics": [
+    "life-sciences",
+    "world-history",
+    "history-of-science"
+   ],
+   "cover": "https://raskell.io/covers/reading/who-we-are-and-how-we-got-here.avif",
+   "page": "https://raskell.io/reading/#who-we-are-and-how-we-got-here"
+  },
+  {
+   "id": "the-phoenix-project",
+   "title": "The Phoenix Project",
+   "subtitle": "A Novel about IT, DevOps, and Helping Your Business Win",
+   "author": "Gene Kim, Kevin Behr, and George Spafford",
+   "kind": "novel",
+   "year": 2013,
+   "status": "read",
+   "finished": "2022",
+   "topics": [
+    "platform-automation",
+    "reliability",
+    "enterprise-architecture"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-phoenix-project.avif",
+   "page": "https://raskell.io/reading/#the-phoenix-project"
+  },
+  {
+   "id": "foucaults-pendulum",
+   "title": "Foucault's Pendulum",
+   "author": "Umberto Eco",
+   "kind": "novel",
+   "year": 1988,
+   "isbn": "9780156032971",
+   "status": "read",
+   "finished": "2021-01",
+   "topics": [
+    "literature",
+    "maximalist-novels",
+    "religion"
+   ],
+   "cover": "https://raskell.io/covers/reading/foucaults-pendulum.avif",
+   "page": "https://raskell.io/reading/#foucaults-pendulum"
+  },
+  {
+   "id": "der-kampf-um-die-deutung-der-neuzeit",
+   "title": "Der Kampf um die Deutung der Neuzeit",
+   "subtitle": "Die geschichtsphilosophische Diskussion in Deutschland vom Ersten Weltkrieg bis zum Mauerfall",
+   "author": "Hauke Ritz",
+   "kind": "book",
+   "year": 2014,
+   "publisher": "Wilhelm Fink",
+   "status": "read",
+   "finished": "2020-11",
+   "topics": [
+    "philosophy",
+    "history",
+    "europe"
+   ],
+   "cover": "https://raskell.io/covers/reading/der-kampf-um-die-deutung-der-neuzeit.avif",
+   "page": "https://raskell.io/reading/#der-kampf-um-die-deutung-der-neuzeit"
+  },
+  {
+   "id": "das-tagebuch-der-menschheit",
+   "title": "Das Tagebuch der Menschheit",
+   "subtitle": "Was die Bibel über unsere Evolution verrät",
+   "author": "Carel van Schaik and Kai Michel",
+   "kind": "book",
+   "year": 2016,
+   "isbn": "9783498062163",
+   "status": "read",
+   "finished": "2020-08",
+   "topics": [
+    "religion",
+    "life-sciences",
+    "world-history"
+   ],
+   "cover": "https://raskell.io/covers/reading/das-tagebuch-der-menschheit.avif",
+   "page": "https://raskell.io/reading/#das-tagebuch-der-menschheit"
+  },
+  {
+   "id": "the-art-of-war",
+   "title": "The Art of War",
+   "author": "Sun Tzu",
+   "kind": "book",
+   "status": "read",
+   "finished": "2018-06",
+   "topics": [
+    "philosophy",
+    "geopolitics"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-art-of-war.avif",
+   "page": "https://raskell.io/reading/#the-art-of-war"
+  },
+  {
+   "id": "language-the-cultural-tool",
+   "title": "Language",
+   "subtitle": "The Cultural Tool",
+   "author": "Daniel Everett",
+   "kind": "book",
+   "year": 2012,
+   "status": "read",
+   "finished": "2016-01",
+   "topics": [
+    "languages",
+    "intelligence"
+   ],
+   "cover": "https://raskell.io/covers/reading/language-the-cultural-tool.avif",
+   "page": "https://raskell.io/reading/#language-the-cultural-tool"
+  },
+  {
+   "id": "erkenne-die-welt",
+   "title": "Erkenne die Welt",
+   "subtitle": "Eine Geschichte der Philosophie, Band 1",
+   "author": "Richard David Precht",
+   "kind": "book",
+   "year": 2015,
+   "status": "read",
+   "finished": "2015-12",
+   "topics": [
+    "philosophy",
+    "history"
+   ],
+   "cover": "https://raskell.io/covers/reading/erkenne-die-welt.avif",
+   "page": "https://raskell.io/reading/#erkenne-die-welt"
+  },
+  {
+   "id": "cloud-atlas",
+   "title": "Cloud Atlas",
+   "author": "David Mitchell",
+   "kind": "novel",
+   "year": 2004,
+   "status": "read",
+   "finished": "2015-11",
+   "topics": [
+    "literature",
+    "maximalist-novels"
+   ],
+   "cover": "https://raskell.io/covers/reading/cloud-atlas.avif",
+   "page": "https://raskell.io/reading/#cloud-atlas"
+  },
+  {
+   "id": "the-silk-roads",
+   "title": "The Silk Roads",
+   "subtitle": "A New History of the World",
+   "author": "Peter Frankopan",
+   "kind": "book",
+   "year": 2015,
+   "status": "read",
+   "finished": "2015-09",
+   "topics": [
+    "world-history",
+    "geopolitics",
+    "cities"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-silk-roads.avif",
+   "page": "https://raskell.io/reading/#the-silk-roads"
+  },
+  {
+   "id": "die-geschichte-der-kunst",
+   "title": "Die Geschichte der Kunst",
+   "author": "E. H. Gombrich",
+   "kind": "book",
+   "year": 1950,
+   "status": "read",
+   "finished": "2014-01",
+   "topics": [
+    "history",
+    "world-history"
+   ],
+   "cover": "https://raskell.io/covers/reading/die-geschichte-der-kunst.avif",
+   "page": "https://raskell.io/reading/#die-geschichte-der-kunst"
+  },
+  {
+   "id": "die-psychologie-von-c-g-jung",
+   "title": "Die Psychologie von C. G. Jung",
+   "author": "Jolande Jacobi",
+   "kind": "book",
+   "year": 1940,
+   "status": "read",
+   "finished": "2012-06",
+   "topics": [
+    "philosophy"
+   ],
+   "cover": "https://raskell.io/covers/reading/die-psychologie-von-c-g-jung.avif",
+   "page": "https://raskell.io/reading/#die-psychologie-von-c-g-jung"
+  },
+  {
+   "id": "ai-2027",
+   "title": "AI 2027",
+   "author": "Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, and Romeo Dean",
+   "kind": "report",
+   "year": 2025,
+   "url": "https://ai-2027.com/",
+   "status": "read",
+   "finished": "2025-04",
+   "topics": [
+    "ai-alignment",
+    "existential-risk",
+    "technology-races",
+    "geopolitics",
+    "intelligence"
+   ],
+   "cover": "https://raskell.io/covers/reading/ai-2027.avif",
+   "page": "https://raskell.io/reading/#ai-2027"
+  },
+  {
+   "id": "ai-2040-plan-a",
+   "title": "AI 2040: Plan A",
+   "author": "Thomas Larsen, Romeo Dean, Brendan Halstead, Eli Lifland, Ryan Greenblatt, and Daniel Kokotajlo",
+   "kind": "report",
+   "year": 2026,
+   "url": "https://ai-2040.com/",
+   "status": "read",
+   "finished": "2026-07",
+   "topics": [
+    "ai-alignment",
+    "existential-risk",
+    "technology-races",
+    "geopolitics",
+    "policy"
+   ],
+   "cover": "https://raskell.io/covers/reading/ai-2040-plan-a.avif",
+   "page": "https://raskell.io/reading/#ai-2040-plan-a"
+  },
+  {
    "id": "enterprise-architecture-as-strategy",
    "title": "Enterprise Architecture as Strategy",
    "subtitle": "Creating a Foundation for Business Execution",
@@ -646,6 +1042,7 @@
     "machine-learning",
     "mathematics"
    ],
+   "cover": "https://raskell.io/covers/reading/understanding-deep-learning.avif",
    "page": "https://raskell.io/reading/#understanding-deep-learning"
   },
   {
@@ -841,6 +1238,69 @@
    ],
    "cover": "https://raskell.io/covers/reading/the-butchering-art.avif",
    "page": "https://raskell.io/reading/#the-butchering-art"
+  },
+  {
+   "id": "deep-dive",
+   "title": "Deep Dive",
+   "subtitle": "Exploring the Real-world Value of Open Source Intelligence",
+   "author": "Rae L. Baker",
+   "kind": "book",
+   "year": 2023,
+   "isbn": "9781119933243",
+   "status": "backlog",
+   "topics": [
+    "applied-security",
+    "open-data",
+    "privacy"
+   ],
+   "cover": "https://raskell.io/covers/reading/deep-dive.avif",
+   "page": "https://raskell.io/reading/#deep-dive"
+  },
+  {
+   "id": "palo-alto",
+   "title": "Palo Alto",
+   "subtitle": "A History of California, Capitalism, and the World",
+   "author": "Malcolm Harris",
+   "kind": "book",
+   "year": 2023,
+   "status": "backlog",
+   "topics": [
+    "history-of-technology",
+    "economics",
+    "geopolitics"
+   ],
+   "cover": "https://raskell.io/covers/reading/palo-alto.avif",
+   "page": "https://raskell.io/reading/#palo-alto"
+  },
+  {
+   "id": "strategy-a-history",
+   "title": "Strategy",
+   "subtitle": "A History",
+   "author": "Lawrence Freedman",
+   "kind": "book",
+   "year": 2013,
+   "status": "backlog",
+   "topics": [
+    "geopolitics",
+    "history"
+   ],
+   "cover": "https://raskell.io/covers/reading/strategy-a-history.avif",
+   "page": "https://raskell.io/reading/#strategy-a-history"
+  },
+  {
+   "id": "the-lost-art-of-scripture",
+   "title": "The Lost Art of Scripture",
+   "subtitle": "Rescuing the Sacred Texts",
+   "author": "Karen Armstrong",
+   "kind": "book",
+   "year": 2019,
+   "status": "backlog",
+   "topics": [
+    "religion",
+    "history"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-lost-art-of-scripture.avif",
+   "page": "https://raskell.io/reading/#the-lost-art-of-scripture"
   },
   {
    "id": "sicp",

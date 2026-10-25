@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-25T18:47:28+00:00",
+ "generated": "2026-10-25T19:30:23+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -181,7 +181,7 @@
    "url": "https://raskell.io/articles/the-economics-of-inference/",
    "meta": "2026-04-22 · 12 min",
    "description": "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/what-comes-after-the-last-programming-language/",
@@ -226,7 +226,7 @@
    "url": "https://raskell.io/articles/notes-from-rsac-2026/",
    "meta": "2026-04-09 · 23 min",
    "description": "Third time at RSA Conference, first time as a speaker. What I saw, what I heard, and what I am still processing.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/what-zentinel-is-really-optimizing-for/",
@@ -244,7 +244,7 @@
    "url": "https://raskell.io/articles/how-i-work-these-days/",
    "meta": "2026-03-15 · 10 min",
    "description": "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right.",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
@@ -451,7 +451,7 @@
    "url": "https://raskell.io/tags/applied-security/",
    "meta": "Domain · 5 pages",
    "description": "Security under production pressure: adversarial input, signal versus noise, and controls that operators can live with.",
-   "degree": 12
+   "degree": 15
   },
   {
    "id": "t:attention-economy",
@@ -478,7 +478,7 @@
    "url": "https://raskell.io/tags/cities/",
    "meta": "Concept · 1 page",
    "description": "How cities are planned and how they actually grow: Jerusalem over three thousand years, Brasilia drawn on paper, and the rational city the web was designed against.",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "t:commons",
@@ -487,7 +487,7 @@
    "url": "https://raskell.io/tags/commons/",
    "meta": "Concept · 2 pages",
    "description": "Resources held in common and the rules that keep them so: common land, open protocols, open data, and the web before the platforms.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "t:compilers",
@@ -532,7 +532,7 @@
    "url": "https://raskell.io/tags/democratisation/",
    "meta": "Concept · 5 pages",
    "description": "A capability that needed money, a team, or years of training becoming available to anyone: printing, the web, and now building software by describing it.",
-   "degree": 7
+   "degree": 9
   },
   {
    "id": "t:developer-tooling",
@@ -550,7 +550,7 @@
    "url": "https://raskell.io/tags/distributed-systems/",
    "meta": "Domain · 3 pages",
    "description": "Replication, coordination, and consistency across machines that fail independently.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:economics",
@@ -559,7 +559,7 @@
    "url": "https://raskell.io/tags/economics/",
    "meta": "Concept · 10 pages",
    "description": "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.",
-   "degree": 17
+   "degree": 19
   },
   {
    "id": "t:edge-systems",
@@ -613,7 +613,7 @@
    "url": "https://raskell.io/tags/europe/",
    "meta": "Concept · 2 pages",
    "description": "Europe's place in technology and history: where the web was invented, what it builds and gives away, and the data and capabilities it still holds.",
-   "degree": 7
+   "degree": 9
   },
   {
    "id": "t:external-memory",
@@ -685,7 +685,7 @@
    "url": "https://raskell.io/tags/history-of-technology/",
    "meta": "Concept · 4 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:hypertext",
@@ -721,7 +721,7 @@
    "url": "https://raskell.io/tags/intelligence/",
    "meta": "Concept · 1 page",
    "description": "What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "t:isolation",
@@ -757,7 +757,7 @@
    "url": "https://raskell.io/tags/languages/",
    "meta": "Concept · 1 page",
    "description": "Human languages and moving meaning between them: translated novels, learning to read Chinese, Japanese, and Hebrew, and Europe's multilingual text.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:linux",
@@ -811,7 +811,7 @@
    "url": "https://raskell.io/tags/neuroscience/",
    "meta": "Concept · 1 page",
    "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:observability",
@@ -820,7 +820,7 @@
    "url": "https://raskell.io/tags/observability/",
    "meta": "Concept · 3 pages",
    "description": "Seeing what a running system does: traces, metering, glass-box infrastructure, and what not to log.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:open-data",
@@ -829,7 +829,7 @@
    "url": "https://raskell.io/tags/open-data/",
    "meta": "Concept · 1 page",
    "description": "Data published for anyone to use: government records, archives, and the five-star ladder from a file on the web to linked data with addresses.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:open-standards",
@@ -901,7 +901,7 @@
    "url": "https://raskell.io/tags/platform-automation/",
    "meta": "Domain · 2 pages",
    "description": "Self-service, guardrails, deployment, and the tooling that keeps operating software sustainable.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:policy",
@@ -910,7 +910,7 @@
    "url": "https://raskell.io/tags/policy/",
    "meta": "Domain · 3 pages",
    "description": "Where engineering meets regulation, public institutions, procurement, and national strategy.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:programming-languages",
@@ -919,7 +919,7 @@
    "url": "https://raskell.io/tags/programming-languages/",
    "meta": "Domain · 7 pages",
    "description": "Languages, type systems, compilers, and how executable intent gets written down.",
-   "degree": 17
+   "degree": 18
   },
   {
    "id": "t:provenance",
@@ -946,7 +946,7 @@
    "url": "https://raskell.io/tags/reliability/",
    "meta": "Domain · 3 pages",
    "description": "Failure modes, operability, and keeping systems up when the inputs and the dependencies misbehave.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "t:research-labs",
@@ -964,7 +964,7 @@
    "url": "https://raskell.io/tags/risk/",
    "meta": "Concept · 1 page",
    "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:rust",
@@ -973,7 +973,7 @@
    "url": "https://raskell.io/tags/rust/",
    "meta": "Technology · 8 pages",
    "description": "The systems language most of the projects here are written in.",
-   "degree": 32
+   "degree": 33
   },
   {
    "id": "t:self-hosting",
@@ -1027,7 +1027,7 @@
    "url": "https://raskell.io/tags/technology-races/",
    "meta": "Concept · 1 page",
    "description": "Powers racing to build a technology first, from the bomb and its deterrence to frontier AI and the data it needs.",
-   "degree": 6
+   "degree": 9
   },
   {
    "id": "t:training-data",
@@ -1072,7 +1072,7 @@
    "url": "https://raskell.io/tags/world-history/",
    "meta": "Concept · 1 page",
    "description": "History told at the scale of continents and millennia: why societies diverged, and how the world came to look the way it does.",
-   "degree": 6
+   "degree": 10
   },
   {
    "id": "t:zola",
@@ -1099,7 +1099,7 @@
    "url": "https://raskell.io/tags#ai-alignment",
    "meta": "Concept · no pages yet",
    "description": "Making AI systems pursue what their builders and users actually intend, and what happens when they do not.",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "t:complex-systems",
@@ -1109,6 +1109,15 @@
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
    "degree": 9
+  },
+  {
+   "id": "t:enterprise-architecture",
+   "kind": "tag",
+   "label": "Enterprise architecture",
+   "url": "https://raskell.io/tags#enterprise-architecture",
+   "meta": "Domain · no pages yet",
+   "description": "How a company's capabilities, applications, data and infrastructure fit together, who owns what, and how the landscape is changed on purpose.",
+   "degree": 1
   },
   {
    "id": "t:evaluation",
@@ -1126,7 +1135,7 @@
    "url": "https://raskell.io/tags#existential-risk",
    "meta": "Concept · no pages yet",
    "description": "Technologies that could end or permanently cripple civilisation, from nuclear weapons to misaligned AI, and how people have tried to contain them.",
-   "degree": 6
+   "degree": 8
   },
   {
    "id": "t:geography",
@@ -1144,7 +1153,7 @@
    "url": "https://raskell.io/tags#geopolitics",
    "meta": "Concept · no pages yet",
    "description": "How geography, empires, and arms shape the balance of power between states and regions, as history.",
-   "degree": 8
+   "degree": 15
   },
   {
    "id": "t:high-modernism",
@@ -1162,7 +1171,7 @@
    "url": "https://raskell.io/tags#history",
    "meta": "Domain · no pages yet",
    "description": "Events, institutions, and societies through time, with attention to sources, competing accounts, and uncertainty.",
-   "degree": 11
+   "degree": 19
   },
   {
    "id": "t:history-of-science",
@@ -1171,7 +1180,7 @@
    "url": "https://raskell.io/tags#history-of-science",
    "meta": "Concept · no pages yet",
    "description": "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:hubris",
@@ -1198,7 +1207,7 @@
    "url": "https://raskell.io/tags#life-sciences",
    "meta": "Domain · no pages yet",
    "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
-   "degree": 4
+   "degree": 8
   },
   {
    "id": "t:literature",
@@ -1207,7 +1216,7 @@
    "url": "https://raskell.io/tags#literature",
    "meta": "Domain · no pages yet",
    "description": "Fiction and writing about fiction: novels read for their own sake, and the forms they take.",
-   "degree": 7
+   "degree": 9
   },
   {
    "id": "t:mathematics",
@@ -1216,7 +1225,7 @@
    "url": "https://raskell.io/tags#mathematics",
    "meta": "Domain · no pages yet",
    "description": "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:maximalist-novels",
@@ -1225,7 +1234,7 @@
    "url": "https://raskell.io/tags#maximalist-novels",
    "meta": "Concept · no pages yet",
    "description": "Very long, encyclopedic novels that try to hold a whole world: Infinite Jest, The Books of Jacob, and the studies of the form.",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "t:medicine",
@@ -1261,7 +1270,7 @@
    "url": "https://raskell.io/tags#philosophy",
    "meta": "Domain · no pages yet",
    "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
-   "degree": 3
+   "degree": 8
   },
   {
    "id": "t:philosophy-of-science",
@@ -1270,7 +1279,7 @@
    "url": "https://raskell.io/tags#philosophy-of-science",
    "meta": "Concept · no pages yet",
    "description": "How science produces knowledge, what counts as evidence, and where its methods and claims reach their limits.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:privacy",
@@ -1279,7 +1288,7 @@
    "url": "https://raskell.io/tags#privacy",
    "meta": "Concept · no pages yet",
    "description": "Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:religion",
@@ -1288,7 +1297,7 @@
    "url": "https://raskell.io/tags#religion",
    "meta": "Concept · no pages yet",
    "description": "Faith, doubt, and the institutions and cities built around belief, as history and as argument.",
-   "degree": 7
+   "degree": 10
   },
   {
    "id": "t:scientific-revolutions",
@@ -1858,6 +1867,205 @@
    "degree": 4
   },
   {
+   "id": "w:ocean-earths-last-wilderness",
+   "kind": "work",
+   "label": "Ocean",
+   "url": "https://raskell.io/reading/#ocean-earths-last-wilderness",
+   "meta": "Book · David Attenborough and Colin Butfield · read October 2026",
+   "description": "Earth's Last Wilderness",
+   "degree": 4
+  },
+  {
+   "id": "w:the-ultimate-hidden-truth-of-the-world",
+   "kind": "work",
+   "label": "The Ultimate Hidden Truth of the World",
+   "url": "https://raskell.io/reading/#the-ultimate-hidden-truth-of-the-world",
+   "meta": "Book · David Graeber · read February 2026",
+   "description": "Essays",
+   "degree": 4
+  },
+  {
+   "id": "w:pirate-enlightenment",
+   "kind": "work",
+   "label": "Pirate Enlightenment, or the Real Libertalia",
+   "url": "https://raskell.io/reading/#pirate-enlightenment",
+   "meta": "Book · David Graeber · read October 2025",
+   "degree": 4
+  },
+  {
+   "id": "w:codebreaking",
+   "kind": "work",
+   "label": "Codebreaking",
+   "url": "https://raskell.io/reading/#codebreaking",
+   "meta": "Book · Elonka Dunin and Klaus Schmeh · read April 2025",
+   "description": "A Practical Guide",
+   "degree": 4
+  },
+  {
+   "id": "w:the-island-at-the-center-of-the-world",
+   "kind": "work",
+   "label": "The Island at the Center of the World",
+   "url": "https://raskell.io/reading/#the-island-at-the-center-of-the-world",
+   "meta": "Book · Russell Shorto · read January 2025",
+   "description": "The Epic Story of Dutch Manhattan and the Forgotten Colony That Shaped America",
+   "degree": 4
+  },
+  {
+   "id": "w:at-war",
+   "kind": "work",
+   "label": "@War",
+   "url": "https://raskell.io/reading/#at-war",
+   "meta": "Book · Shane Harris · read September 2024",
+   "description": "The Rise of the Military-Internet Complex",
+   "degree": 4
+  },
+  {
+   "id": "w:future-science",
+   "kind": "work",
+   "label": "Future Science",
+   "url": "https://raskell.io/reading/#future-science",
+   "meta": "Book · Max Brockman (editor) · read May 2024",
+   "description": "Essays from the Cutting Edge",
+   "degree": 4
+  },
+  {
+   "id": "w:programming-rust",
+   "kind": "work",
+   "label": "Programming Rust",
+   "url": "https://raskell.io/reading/#programming-rust",
+   "meta": "Book · Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall · read 2023",
+   "description": "Fast, Safe Systems Development",
+   "degree": 3
+  },
+  {
+   "id": "w:site-reliability-engineering",
+   "kind": "work",
+   "label": "Site Reliability Engineering",
+   "url": "https://raskell.io/reading/#site-reliability-engineering",
+   "meta": "Book · Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy · read 2023",
+   "description": "How Google Runs Production Systems",
+   "degree": 4
+  },
+  {
+   "id": "w:who-we-are-and-how-we-got-here",
+   "kind": "work",
+   "label": "Who We Are and How We Got Here",
+   "url": "https://raskell.io/reading/#who-we-are-and-how-we-got-here",
+   "meta": "Book · David Reich · read 2023",
+   "description": "Ancient DNA and the New Science of the Human Past",
+   "degree": 4
+  },
+  {
+   "id": "w:the-phoenix-project",
+   "kind": "work",
+   "label": "The Phoenix Project",
+   "url": "https://raskell.io/reading/#the-phoenix-project",
+   "meta": "Novel · Gene Kim, Kevin Behr, and George Spafford · read 2022",
+   "description": "A Novel about IT, DevOps, and Helping Your Business Win",
+   "degree": 4
+  },
+  {
+   "id": "w:foucaults-pendulum",
+   "kind": "work",
+   "label": "Foucault's Pendulum",
+   "url": "https://raskell.io/reading/#foucaults-pendulum",
+   "meta": "Novel · Umberto Eco · read January 2021",
+   "degree": 4
+  },
+  {
+   "id": "w:der-kampf-um-die-deutung-der-neuzeit",
+   "kind": "work",
+   "label": "Der Kampf um die Deutung der Neuzeit",
+   "url": "https://raskell.io/reading/#der-kampf-um-die-deutung-der-neuzeit",
+   "meta": "Book · Hauke Ritz · read November 2020",
+   "description": "Die geschichtsphilosophische Diskussion in Deutschland vom Ersten Weltkrieg bis zum Mauerfall",
+   "degree": 4
+  },
+  {
+   "id": "w:das-tagebuch-der-menschheit",
+   "kind": "work",
+   "label": "Das Tagebuch der Menschheit",
+   "url": "https://raskell.io/reading/#das-tagebuch-der-menschheit",
+   "meta": "Book · Carel van Schaik and Kai Michel · read August 2020",
+   "description": "Was die Bibel über unsere Evolution verrät",
+   "degree": 4
+  },
+  {
+   "id": "w:the-art-of-war",
+   "kind": "work",
+   "label": "The Art of War",
+   "url": "https://raskell.io/reading/#the-art-of-war",
+   "meta": "Book · Sun Tzu · read June 2018",
+   "degree": 3
+  },
+  {
+   "id": "w:language-the-cultural-tool",
+   "kind": "work",
+   "label": "Language",
+   "url": "https://raskell.io/reading/#language-the-cultural-tool",
+   "meta": "Book · Daniel Everett · read January 2016",
+   "description": "The Cultural Tool",
+   "degree": 3
+  },
+  {
+   "id": "w:erkenne-die-welt",
+   "kind": "work",
+   "label": "Erkenne die Welt",
+   "url": "https://raskell.io/reading/#erkenne-die-welt",
+   "meta": "Book · Richard David Precht · read December 2015",
+   "description": "Eine Geschichte der Philosophie, Band 1",
+   "degree": 3
+  },
+  {
+   "id": "w:cloud-atlas",
+   "kind": "work",
+   "label": "Cloud Atlas",
+   "url": "https://raskell.io/reading/#cloud-atlas",
+   "meta": "Novel · David Mitchell · read November 2015",
+   "degree": 3
+  },
+  {
+   "id": "w:the-silk-roads",
+   "kind": "work",
+   "label": "The Silk Roads",
+   "url": "https://raskell.io/reading/#the-silk-roads",
+   "meta": "Book · Peter Frankopan · read September 2015",
+   "description": "A New History of the World",
+   "degree": 4
+  },
+  {
+   "id": "w:die-geschichte-der-kunst",
+   "kind": "work",
+   "label": "Die Geschichte der Kunst",
+   "url": "https://raskell.io/reading/#die-geschichte-der-kunst",
+   "meta": "Book · E. H. Gombrich · read January 2014",
+   "degree": 3
+  },
+  {
+   "id": "w:die-psychologie-von-c-g-jung",
+   "kind": "work",
+   "label": "Die Psychologie von C. G. Jung",
+   "url": "https://raskell.io/reading/#die-psychologie-von-c-g-jung",
+   "meta": "Book · Jolande Jacobi · read June 2012",
+   "degree": 2
+  },
+  {
+   "id": "w:ai-2027",
+   "kind": "work",
+   "label": "AI 2027",
+   "url": "https://raskell.io/reading/#ai-2027",
+   "meta": "Report · Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, and Romeo Dean · read April 2025",
+   "degree": 9
+  },
+  {
+   "id": "w:ai-2040-plan-a",
+   "kind": "work",
+   "label": "AI 2040: Plan A",
+   "url": "https://raskell.io/reading/#ai-2040-plan-a",
+   "meta": "Report · Thomas Larsen, Romeo Dean, Brendan Halstead, Eli Lifland, Ryan Greenblatt, and Daniel Kokotajlo · read July 2026",
+   "degree": 6
+  },
+  {
    "id": "w:enterprise-architecture-as-strategy",
    "kind": "work",
    "label": "Enterprise Architecture as Strategy",
@@ -2022,6 +2230,42 @@
    "degree": 4
   },
   {
+   "id": "w:deep-dive",
+   "kind": "work",
+   "label": "Deep Dive",
+   "url": "https://raskell.io/reading/#deep-dive",
+   "meta": "Book · Rae L. Baker · in the backlog",
+   "description": "Exploring the Real-world Value of Open Source Intelligence",
+   "degree": 4
+  },
+  {
+   "id": "w:palo-alto",
+   "kind": "work",
+   "label": "Palo Alto",
+   "url": "https://raskell.io/reading/#palo-alto",
+   "meta": "Book · Malcolm Harris · in the backlog",
+   "description": "A History of California, Capitalism, and the World",
+   "degree": 4
+  },
+  {
+   "id": "w:strategy-a-history",
+   "kind": "work",
+   "label": "Strategy",
+   "url": "https://raskell.io/reading/#strategy-a-history",
+   "meta": "Book · Lawrence Freedman · in the backlog",
+   "description": "A History",
+   "degree": 3
+  },
+  {
+   "id": "w:the-lost-art-of-scripture",
+   "kind": "work",
+   "label": "The Lost Art of Scripture",
+   "url": "https://raskell.io/reading/#the-lost-art-of-scripture",
+   "meta": "Book · Karen Armstrong · in the backlog",
+   "description": "Rescuing the Sacred Texts",
+   "degree": 3
+  },
+  {
    "id": "w:sicp",
    "kind": "work",
    "label": "Structure and Interpretation of Computer Programs",
@@ -2043,7 +2287,7 @@
    "label": "Backlog",
    "url": "https://raskell.io/reading/#shelf-backlog",
    "meta": "Shelf",
-   "degree": 19
+   "degree": 23
   },
   {
    "id": "h:shelf-read",
@@ -2051,7 +2295,7 @@
    "label": "Read",
    "url": "https://raskell.io/reading/#shelf-read",
    "meta": "Shelf",
-   "degree": 29
+   "degree": 52
   },
   {
    "id": "h:shelf-set-aside",
@@ -5288,6 +5532,370 @@
    "target": "t:scientific-revolutions"
   },
   {
+   "source": "w:ocean-earths-last-wilderness",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:ocean-earths-last-wilderness",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:ocean-earths-last-wilderness",
+   "target": "t:commons"
+  },
+  {
+   "source": "w:ocean-earths-last-wilderness",
+   "target": "t:risk"
+  },
+  {
+   "source": "w:the-ultimate-hidden-truth-of-the-world",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-ultimate-hidden-truth-of-the-world",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:the-ultimate-hidden-truth-of-the-world",
+   "target": "t:economics"
+  },
+  {
+   "source": "w:the-ultimate-hidden-truth-of-the-world",
+   "target": "t:democratisation"
+  },
+  {
+   "source": "w:pirate-enlightenment",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:pirate-enlightenment",
+   "target": "t:history"
+  },
+  {
+   "source": "w:pirate-enlightenment",
+   "target": "t:democratisation"
+  },
+  {
+   "source": "w:pirate-enlightenment",
+   "target": "t:commons"
+  },
+  {
+   "source": "w:codebreaking",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:codebreaking",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "w:codebreaking",
+   "target": "t:mathematics"
+  },
+  {
+   "source": "w:codebreaking",
+   "target": "t:history"
+  },
+  {
+   "source": "w:the-island-at-the-center-of-the-world",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-island-at-the-center-of-the-world",
+   "target": "t:history"
+  },
+  {
+   "source": "w:the-island-at-the-center-of-the-world",
+   "target": "t:cities"
+  },
+  {
+   "source": "w:the-island-at-the-center-of-the-world",
+   "target": "t:europe"
+  },
+  {
+   "source": "w:at-war",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:at-war",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "w:at-war",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:at-war",
+   "target": "t:technology-races"
+  },
+  {
+   "source": "w:future-science",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:future-science",
+   "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "w:future-science",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:future-science",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "w:programming-rust",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:programming-rust",
+   "target": "t:rust"
+  },
+  {
+   "source": "w:programming-rust",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "w:site-reliability-engineering",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:site-reliability-engineering",
+   "target": "t:reliability"
+  },
+  {
+   "source": "w:site-reliability-engineering",
+   "target": "t:observability"
+  },
+  {
+   "source": "w:site-reliability-engineering",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "w:who-we-are-and-how-we-got-here",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:who-we-are-and-how-we-got-here",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:who-we-are-and-how-we-got-here",
+   "target": "t:world-history"
+  },
+  {
+   "source": "w:who-we-are-and-how-we-got-here",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:the-phoenix-project",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-phoenix-project",
+   "target": "t:platform-automation"
+  },
+  {
+   "source": "w:the-phoenix-project",
+   "target": "t:reliability"
+  },
+  {
+   "source": "w:the-phoenix-project",
+   "target": "t:enterprise-architecture"
+  },
+  {
+   "source": "w:foucaults-pendulum",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:foucaults-pendulum",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:foucaults-pendulum",
+   "target": "t:maximalist-novels"
+  },
+  {
+   "source": "w:foucaults-pendulum",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:der-kampf-um-die-deutung-der-neuzeit",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:der-kampf-um-die-deutung-der-neuzeit",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:der-kampf-um-die-deutung-der-neuzeit",
+   "target": "t:history"
+  },
+  {
+   "source": "w:der-kampf-um-die-deutung-der-neuzeit",
+   "target": "t:europe"
+  },
+  {
+   "source": "w:das-tagebuch-der-menschheit",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:das-tagebuch-der-menschheit",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:das-tagebuch-der-menschheit",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:das-tagebuch-der-menschheit",
+   "target": "t:world-history"
+  },
+  {
+   "source": "w:the-art-of-war",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-art-of-war",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:the-art-of-war",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:language-the-cultural-tool",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:language-the-cultural-tool",
+   "target": "t:languages"
+  },
+  {
+   "source": "w:language-the-cultural-tool",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:erkenne-die-welt",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:erkenne-die-welt",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:erkenne-die-welt",
+   "target": "t:history"
+  },
+  {
+   "source": "w:cloud-atlas",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:cloud-atlas",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:cloud-atlas",
+   "target": "t:maximalist-novels"
+  },
+  {
+   "source": "w:the-silk-roads",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-silk-roads",
+   "target": "t:world-history"
+  },
+  {
+   "source": "w:the-silk-roads",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:the-silk-roads",
+   "target": "t:cities"
+  },
+  {
+   "source": "w:die-geschichte-der-kunst",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:die-geschichte-der-kunst",
+   "target": "t:history"
+  },
+  {
+   "source": "w:die-geschichte-der-kunst",
+   "target": "t:world-history"
+  },
+  {
+   "source": "w:die-psychologie-von-c-g-jung",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:die-psychologie-von-c-g-jung",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:ai-2027",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:ai-2027",
+   "target": "t:ai-alignment"
+  },
+  {
+   "source": "w:ai-2027",
+   "target": "t:existential-risk"
+  },
+  {
+   "source": "w:ai-2027",
+   "target": "t:technology-races"
+  },
+  {
+   "source": "w:ai-2027",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:ai-2027",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "a:/articles/the-economics-of-inference/",
+   "target": "w:ai-2027"
+  },
+  {
+   "source": "a:/articles/notes-from-rsac-2026/",
+   "target": "w:ai-2027"
+  },
+  {
+   "source": "a:/articles/how-i-work-these-days/",
+   "target": "w:ai-2027"
+  },
+  {
+   "source": "w:ai-2040-plan-a",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:ai-2040-plan-a",
+   "target": "t:ai-alignment"
+  },
+  {
+   "source": "w:ai-2040-plan-a",
+   "target": "t:existential-risk"
+  },
+  {
+   "source": "w:ai-2040-plan-a",
+   "target": "t:technology-races"
+  },
+  {
+   "source": "w:ai-2040-plan-a",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:ai-2040-plan-a",
+   "target": "t:policy"
+  },
+  {
    "source": "w:enterprise-architecture-as-strategy",
    "target": "h:shelf-backlog"
   },
@@ -5594,6 +6202,62 @@
   {
    "source": "w:the-butchering-art",
    "target": "t:scientific-revolutions"
+  },
+  {
+   "source": "w:deep-dive",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:deep-dive",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "w:deep-dive",
+   "target": "t:open-data"
+  },
+  {
+   "source": "w:deep-dive",
+   "target": "t:privacy"
+  },
+  {
+   "source": "w:palo-alto",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:palo-alto",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:palo-alto",
+   "target": "t:economics"
+  },
+  {
+   "source": "w:palo-alto",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:strategy-a-history",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:strategy-a-history",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:strategy-a-history",
+   "target": "t:history"
+  },
+  {
+   "source": "w:the-lost-art-of-scripture",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-lost-art-of-scripture",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:the-lost-art-of-scripture",
+   "target": "t:history"
   },
   {
    "source": "w:sicp",

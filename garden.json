@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-25T18:47:28+00:00",
+ "generated": "2026-10-25T19:30:23+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -8,7 +8,7 @@
   "review": 1,
   "note": 8,
   "talk": 1,
-  "work": 50,
+  "work": 77,
   "project": 30,
   "topic": 102,
   "link": 268
@@ -1066,6 +1066,293 @@
   },
   {
    "kind": "work",
+   "title": "Ocean",
+   "url": "https://raskell.io/reading/#ocean-earths-last-wilderness",
+   "description": "Earth's Last Wilderness",
+   "date": "2026-10",
+   "topics": [
+    "life-sciences",
+    "commons",
+    "risk"
+   ],
+   "meta": "Book · David Attenborough and Colin Butfield · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Ultimate Hidden Truth of the World",
+   "url": "https://raskell.io/reading/#the-ultimate-hidden-truth-of-the-world",
+   "description": "Essays",
+   "date": "2026-02",
+   "topics": [
+    "philosophy",
+    "economics",
+    "democratisation"
+   ],
+   "meta": "Book · David Graeber · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Pirate Enlightenment, or the Real Libertalia",
+   "url": "https://raskell.io/reading/#pirate-enlightenment",
+   "date": "2025-10",
+   "topics": [
+    "history",
+    "democratisation",
+    "commons"
+   ],
+   "meta": "Book · David Graeber · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Codebreaking",
+   "url": "https://raskell.io/reading/#codebreaking",
+   "description": "A Practical Guide",
+   "date": "2025-04",
+   "topics": [
+    "applied-security",
+    "mathematics",
+    "history"
+   ],
+   "meta": "Book · Elonka Dunin and Klaus Schmeh · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Island at the Center of the World",
+   "url": "https://raskell.io/reading/#the-island-at-the-center-of-the-world",
+   "description": "The Epic Story of Dutch Manhattan and the Forgotten Colony That Shaped America",
+   "date": "2025-01",
+   "topics": [
+    "history",
+    "cities",
+    "europe"
+   ],
+   "meta": "Book · Russell Shorto · Read"
+  },
+  {
+   "kind": "work",
+   "title": "@War",
+   "url": "https://raskell.io/reading/#at-war",
+   "description": "The Rise of the Military-Internet Complex",
+   "date": "2024-09",
+   "topics": [
+    "applied-security",
+    "geopolitics",
+    "technology-races"
+   ],
+   "meta": "Book · Shane Harris · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Future Science",
+   "url": "https://raskell.io/reading/#future-science",
+   "description": "Essays from the Cutting Edge",
+   "date": "2024-05",
+   "topics": [
+    "philosophy-of-science",
+    "life-sciences",
+    "neuroscience"
+   ],
+   "meta": "Book · Max Brockman (editor) · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Programming Rust",
+   "url": "https://raskell.io/reading/#programming-rust",
+   "description": "Fast, Safe Systems Development",
+   "date": "2023",
+   "topics": [
+    "rust",
+    "programming-languages"
+   ],
+   "meta": "Book · Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Site Reliability Engineering",
+   "url": "https://raskell.io/reading/#site-reliability-engineering",
+   "description": "How Google Runs Production Systems",
+   "date": "2023",
+   "topics": [
+    "reliability",
+    "observability",
+    "distributed-systems"
+   ],
+   "meta": "Book · Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Who We Are and How We Got Here",
+   "url": "https://raskell.io/reading/#who-we-are-and-how-we-got-here",
+   "description": "Ancient DNA and the New Science of the Human Past",
+   "date": "2023",
+   "topics": [
+    "life-sciences",
+    "world-history",
+    "history-of-science"
+   ],
+   "meta": "Book · David Reich · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Phoenix Project",
+   "url": "https://raskell.io/reading/#the-phoenix-project",
+   "description": "A Novel about IT, DevOps, and Helping Your Business Win",
+   "date": "2022",
+   "topics": [
+    "platform-automation",
+    "reliability",
+    "enterprise-architecture"
+   ],
+   "meta": "Novel · Gene Kim, Kevin Behr, and George Spafford · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Foucault's Pendulum",
+   "url": "https://raskell.io/reading/#foucaults-pendulum",
+   "date": "2021-01",
+   "topics": [
+    "literature",
+    "maximalist-novels",
+    "religion"
+   ],
+   "meta": "Novel · Umberto Eco · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Der Kampf um die Deutung der Neuzeit",
+   "url": "https://raskell.io/reading/#der-kampf-um-die-deutung-der-neuzeit",
+   "description": "Die geschichtsphilosophische Diskussion in Deutschland vom Ersten Weltkrieg bis zum Mauerfall",
+   "date": "2020-11",
+   "topics": [
+    "philosophy",
+    "history",
+    "europe"
+   ],
+   "meta": "Book · Hauke Ritz · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Das Tagebuch der Menschheit",
+   "url": "https://raskell.io/reading/#das-tagebuch-der-menschheit",
+   "description": "Was die Bibel über unsere Evolution verrät",
+   "date": "2020-08",
+   "topics": [
+    "religion",
+    "life-sciences",
+    "world-history"
+   ],
+   "meta": "Book · Carel van Schaik and Kai Michel · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Art of War",
+   "url": "https://raskell.io/reading/#the-art-of-war",
+   "date": "2018-06",
+   "topics": [
+    "philosophy",
+    "geopolitics"
+   ],
+   "meta": "Book · Sun Tzu · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Language",
+   "url": "https://raskell.io/reading/#language-the-cultural-tool",
+   "description": "The Cultural Tool",
+   "date": "2016-01",
+   "topics": [
+    "languages",
+    "intelligence"
+   ],
+   "meta": "Book · Daniel Everett · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Erkenne die Welt",
+   "url": "https://raskell.io/reading/#erkenne-die-welt",
+   "description": "Eine Geschichte der Philosophie, Band 1",
+   "date": "2015-12",
+   "topics": [
+    "philosophy",
+    "history"
+   ],
+   "meta": "Book · Richard David Precht · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Cloud Atlas",
+   "url": "https://raskell.io/reading/#cloud-atlas",
+   "date": "2015-11",
+   "topics": [
+    "literature",
+    "maximalist-novels"
+   ],
+   "meta": "Novel · David Mitchell · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Silk Roads",
+   "url": "https://raskell.io/reading/#the-silk-roads",
+   "description": "A New History of the World",
+   "date": "2015-09",
+   "topics": [
+    "world-history",
+    "geopolitics",
+    "cities"
+   ],
+   "meta": "Book · Peter Frankopan · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Die Geschichte der Kunst",
+   "url": "https://raskell.io/reading/#die-geschichte-der-kunst",
+   "date": "2014-01",
+   "topics": [
+    "history",
+    "world-history"
+   ],
+   "meta": "Book · E. H. Gombrich · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Die Psychologie von C. G. Jung",
+   "url": "https://raskell.io/reading/#die-psychologie-von-c-g-jung",
+   "date": "2012-06",
+   "topics": [
+    "philosophy"
+   ],
+   "meta": "Book · Jolande Jacobi · Read"
+  },
+  {
+   "kind": "work",
+   "title": "AI 2027",
+   "url": "https://raskell.io/reading/#ai-2027",
+   "date": "2025-04",
+   "topics": [
+    "ai-alignment",
+    "existential-risk",
+    "technology-races",
+    "geopolitics",
+    "intelligence"
+   ],
+   "meta": "Report · Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, and Romeo Dean · Read"
+  },
+  {
+   "kind": "work",
+   "title": "AI 2040: Plan A",
+   "url": "https://raskell.io/reading/#ai-2040-plan-a",
+   "date": "2026-07",
+   "topics": [
+    "ai-alignment",
+    "existential-risk",
+    "technology-races",
+    "geopolitics",
+    "policy"
+   ],
+   "meta": "Report · Thomas Larsen, Romeo Dean, Brendan Halstead, Eli Lifland, Ryan Greenblatt, and Daniel Kokotajlo · Read"
+  },
+  {
+   "kind": "work",
    "title": "Enterprise Architecture as Strategy",
    "url": "https://raskell.io/reading/#enterprise-architecture-as-strategy",
    "description": "Creating a Foundation for Business Execution",
@@ -1285,6 +1572,52 @@
     "scientific-revolutions"
    ],
    "meta": "Book · Lindsey Fitzharris · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Deep Dive",
+   "url": "https://raskell.io/reading/#deep-dive",
+   "description": "Exploring the Real-world Value of Open Source Intelligence",
+   "topics": [
+    "applied-security",
+    "open-data",
+    "privacy"
+   ],
+   "meta": "Book · Rae L. Baker · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Palo Alto",
+   "url": "https://raskell.io/reading/#palo-alto",
+   "description": "A History of California, Capitalism, and the World",
+   "topics": [
+    "history-of-technology",
+    "economics",
+    "geopolitics"
+   ],
+   "meta": "Book · Malcolm Harris · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Strategy",
+   "url": "https://raskell.io/reading/#strategy-a-history",
+   "description": "A History",
+   "topics": [
+    "geopolitics",
+    "history"
+   ],
+   "meta": "Book · Lawrence Freedman · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Lost Art of Scripture",
+   "url": "https://raskell.io/reading/#the-lost-art-of-scripture",
+   "description": "Rescuing the Sacred Texts",
+   "topics": [
+    "religion",
+    "history"
+   ],
+   "meta": "Book · Karen Armstrong · Backlog"
   },
   {
    "kind": "work",
