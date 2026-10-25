@@ -22,6 +22,8 @@
     { key: "topic", label: T("Topics"), test: function (i) { return i.k === "topic"; } },
     { key: "link", label: T("Links"), test: function (i) { return i.k === "link"; } }
   ];
+  // The resource-type icons from the sprite base.html puts on every page (partials/kind_icons.html).
+  function icon(k) { return k && document.getElementById("kicon-" + k) ? '<svg class="kicon" aria-hidden="true" focusable="false"><use href="#kicon-' + k + '"/></svg>' : ""; }
   var WORK_ORDER = { "Reading now": 0, "Up next": 1, "Read": 2, "Backlog": 3, "Set aside": 4 };
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
@@ -81,6 +83,7 @@
       }
       i.badge = i.k === "article" && i.c.indexOf("reviews") >= 0 ? T("Review") :
         i.k === "work" ? T((i.m || "").split(" · ")[0]) : i.k === "link" ? i.dom : T(i.k.charAt(0).toUpperCase() + i.k.slice(1));
+      i.ik = i.k === "article" && i.c.indexOf("reviews") >= 0 ? "review" : i.k === "work" ? (i.m || "").split(" · ")[0].toLowerCase() : i.k;
       i.f = {
         title: (i.t || "").toLowerCase(),
         topics: i.g.map(function (g) { return topicNames[g] || g; }).join(" ").toLowerCase(),
@@ -187,7 +190,7 @@
           var total = c.key === "all" ? items.length : items.filter(c.test).length;
           if (!total) { return ""; }
           var n = c.key === "all" ? matched.length : matched.filter(c.test).length;
-          return '<button type="button" class="facet" data-kind="' + c.key + '" aria-pressed="' + (kind === c.key) + '"' + (n || kind === c.key ? "" : " disabled") + ">" + esc(c.label) + '<span class="facet__n">' + n + "</span></button>";
+          return '<button type="button" class="facet" data-kind="' + c.key + '" aria-pressed="' + (kind === c.key) + '"' + (n || kind === c.key ? "" : " disabled") + ">" + icon(c.key === "work" ? "book" : c.key) + esc(c.label) + '<span class="facet__n">' + n + "</span></button>";
         }).join("");
         chipsEl.hidden = !words.length && !isPage && kind === "all";
         var chip = CHIPS.filter(function (c) { return c.key === kind; })[0] || CHIPS[0];
@@ -203,7 +206,7 @@
         list.innerHTML = shown.slice(0, limit).map(function (i) {
           var ext = i.k === "link" || (i.k === "project" && host(i.u) !== location.hostname.replace(/^www\./, ""));
           return '<li class="garden__item garden__item--' + i.k + '"><a href="' + esc(i.u) + '"' + (ext ? ' rel="noopener" target="_blank"' : "") + ">" +
-            '<span class="garden__kind">' + esc(i.badge) + "</span>" +
+            '<span class="garden__kind">' + icon(i.ik) + esc(i.badge) + "</span>" +
             '<span class="garden__title">' + mark(i.t, words) + (ext ? ' <span class="garden__ext" aria-hidden="true">↗</span>' : "") + "</span>" +
             (i.d ? '<span class="garden__desc">' + mark(i.d, words) + "</span>" : "") +
             (i.k !== "work" && i.m || i.k === "work" ? '<span class="garden__meta">' + esc(i.k === "work" ? (i.m || "").split(" · ").slice(1).join(" · ") : i.m) + (i.y && i.k !== "link" && i.k !== "work" ? " · " + esc(i.y.slice(0, 4)) : "") + "</span>" : "") +
