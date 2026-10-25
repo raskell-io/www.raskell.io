@@ -173,6 +173,9 @@ REVIEWS = {a["review"]: a for a in articles + notes if a["review"]}
 
 
 def month(ym):
+    # "2025-07" -> "July 2025"; a year alone stays a year.
+    if len(ym) == 4:
+        return ym
     return datetime.datetime.strptime(ym, "%Y-%m").strftime("%B %Y") if ym else ""
 
 

@@ -26,9 +26,15 @@ UA = {"User-Agent": "raskell.io reading-covers (https://raskell.io/reading/)"}
 only = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] else None
 
 
-def get(url):
-    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r:
-        return r.read()
+def get(url, tries=2):
+    # Open Library is slow at times: one retry, then the caller reports the work and moves on.
+    for attempt in range(tries):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r:
+                return r.read()
+        except OSError:
+            if attempt == tries - 1:
+                raise
 
 
 def cover_bytes(work):
@@ -57,7 +63,11 @@ for block in re.split(r"^\[\[works\]\]\s*$", text, flags=re.M)[1:]:
     target = os.path.join(OUT, work["id"] + ".avif")
     if work["kind"] not in ("book", "novel") or work["cover_id"] == "none" or (only and work["id"] != only) or (os.path.exists(target) and not only):
         continue
-    data, how = cover_bytes(work)
+    try:
+        data, how = cover_bytes(work)
+    except OSError as err:
+        print("%-40s failed (%s); run again later" % (work["id"], err))
+        continue
     if not data:
         print("%-40s %s" % (work["id"], how))
         continue

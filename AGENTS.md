@@ -76,7 +76,7 @@ deploy, IndexNow.
 6. Remove the `draft` line to publish.
 
 ### A new review
-1. Make sure the work is in `data/reading.toml`; set `status = "read"`, `finished = "YYYY-MM"`, and
+1. Make sure the work is in `data/reading.toml`; set `status = "read"`, `finished = "YYYY-MM"` (or `"YYYY"` when only the year is known), and
    `rating = N` (1 to 10). Fetch its cover with `mise run reading-covers <id>` and check it is the right
    edition; pin a wrong match with `isbn` or `cover_id`, or skip with `cover_id = "none"`.
 2. `mise run review <id> [slug]` writes a draft with `review = "<id>"`, `categories = ["reviews"]`, the

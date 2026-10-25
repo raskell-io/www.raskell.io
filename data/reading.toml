@@ -13,7 +13,8 @@
 #   status    reading (now), next (right after what I am reading), backlog (some day, in no order),
 #             read, or set-aside
 #   started   the month I started (reading), finished the month I finished (read, set-aside), as
-#             "YYYY-MM", shown as "October 2026"; read entries need finished
+#             "YYYY-MM", shown as "October 2026", or "YYYY" when only the year is known;
+#             read entries need finished
 #   topics    tag slugs from data/tags.toml (checked by `mise run tags-check`)
 #   take      one sentence: what it is about for me, or what I made of it
 #   rating    1 to 10, set when there is a review; shown with the review and on the row
@@ -41,6 +42,7 @@ status = "reading"
 topics = ["machine-learning", "reinforcement-learning", "history-of-technology"]
 
 # Read ---------------------------------------------------------------------
+# Works finished in the same month show newest first in the order they appear here (later = more recent).
 
 [[works]]
 id = "the-cauldron"
@@ -53,16 +55,6 @@ url = "https://www.hachette.co.uk/titles/simon-sebag-montefiore/the-cauldron/978
 status = "read"
 finished = "2026-09"
 topics = ["history", "geography"]
-
-[[works]]
-id = "infinite-jest"
-title = "Infinite Jest"
-author = "David Foster Wallace"
-kind = "novel"
-cover = "covers/reading/infinite-jest.avif"
-year = 1996
-status = "read"
-finished = "2025-12"
 
 [[works]]
 id = "guns-germs-and-steel"
@@ -137,6 +129,227 @@ topics = ["neuroscience", "simulation"]
 take = "The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are."
 
 [[works]]
+id = "science-after-babel"
+title = "Science After Babel"
+author = "David Berlinski"
+kind = "book"
+year = 2023
+status = "read"
+finished = "2023"
+
+[[works]]
+id = "network-programming-with-go"
+title = "Network Programming with Go"
+subtitle = "Code Secure and Reliable Network Services from Scratch"
+author = "Adam Woodbeck"
+kind = "book"
+year = 2021
+status = "read"
+finished = "2023"
+topics = ["distributed-systems"]
+
+[[works]]
+id = "elixir-in-action"
+title = "Elixir in Action"
+author = "Saša Jurić"
+kind = "book"
+cover = "covers/reading/elixir-in-action.avif"
+isbn = "9781617295027"
+year = 2019
+edition = "Second edition"
+status = "read"
+finished = "2023"
+topics = ["elixir"]
+
+[[works]]
+id = "crafting-interpreters"
+title = "Crafting Interpreters"
+author = "Robert Nystrom"
+kind = "book"
+cover = "covers/reading/crafting-interpreters.avif"
+year = 2021
+status = "read"
+finished = "2024"
+topics = ["programming-languages"]
+
+[[works]]
+id = "building-a-second-brain"
+title = "Building a Second Brain"
+author = "Tiago Forte"
+kind = "book"
+cover = "covers/reading/building-a-second-brain.avif"
+year = 2022
+status = "read"
+finished = "2022"
+topics = ["knowledge-management"]
+
+[[works]]
+id = "rust-web-programming"
+title = "Rust Web Programming"
+author = "Maxwell Flitton"
+kind = "book"
+cover = "covers/reading/rust-web-programming.avif"
+year = 2021
+status = "read"
+finished = "2022"
+topics = ["rust"]
+
+[[works]]
+id = "programming-webassembly-with-rust"
+title = "Programming WebAssembly with Rust"
+author = "Kevin Hoffman"
+kind = "book"
+year = 2019
+status = "read"
+finished = "2021"
+topics = ["webassembly", "rust"]
+
+[[works]]
+id = "webassembly-the-definitive-guide"
+title = "WebAssembly: The Definitive Guide"
+author = "Brian Sletten"
+kind = "book"
+year = 2021
+status = "read"
+finished = "2021"
+topics = ["webassembly"]
+
+[[works]]
+id = "these-truths"
+title = "These Truths"
+subtitle = "A History of the United States"
+author = "Jill Lepore"
+kind = "book"
+cover = "covers/reading/these-truths.avif"
+year = 2018
+status = "read"
+finished = "2018"
+topics = ["history"]
+
+[[works]]
+id = "jerusalem-the-biography"
+title = "Jerusalem: The Biography"
+author = "Simon Sebag Montefiore"
+kind = "book"
+cover = "covers/reading/jerusalem-the-biography.avif"
+isbn = "9780297852650"
+year = 2011
+status = "read"
+finished = "2017"
+topics = ["history", "geography"]
+
+[[works]]
+id = "freeland"
+title = "Freeland"
+subtitle = "A Social Anticipation"
+author = "Theodor Hertzka"
+kind = "novel"
+cover = "covers/reading/freeland.avif"
+year = 1890
+status = "read"
+finished = "2017"
+topics = ["economics"]
+
+[[works]]
+id = "das-soziale-problem"
+title = "Das soziale Problem"
+author = "Theodor Hertzka"
+kind = "book"
+cover = "covers/reading/das-soziale-problem.avif"
+year = 1912
+status = "read"
+finished = "2017"
+topics = ["economics"]
+
+[[works]]
+id = "the-devils-delusion"
+title = "The Devil's Delusion"
+subtitle = "Atheism and Its Scientific Pretensions"
+author = "David Berlinski"
+kind = "book"
+cover = "covers/reading/the-devils-delusion.avif"
+year = 2008
+status = "read"
+finished = "2016"
+
+[[works]]
+id = "antifragile"
+title = "Antifragile"
+subtitle = "Things That Gain from Disorder"
+author = "Nassim Nicholas Taleb"
+kind = "book"
+isbn = "9780812979688"   # the paperback; the first match was a library copy with a discard sticker
+cover = "covers/reading/antifragile.avif"
+year = 2012
+status = "read"
+finished = "2015"
+topics = ["complex-systems", "economics"]
+
+[[works]]
+id = "demons"
+title = "Demons"
+author = "Fyodor Dostoevsky"
+kind = "novel"
+cover = "covers/reading/demons.avif"
+year = 1872
+status = "read"
+finished = "2012"
+
+[[works]]
+id = "the-brothers-karamazov"
+title = "The Brothers Karamazov"
+author = "Fyodor Dostoevsky"
+kind = "novel"
+cover = "covers/reading/the-brothers-karamazov.avif"
+year = 1880
+status = "read"
+finished = "2011"
+
+[[works]]
+id = "a-little-history-of-the-world"
+title = "A Little History of the World"
+author = "E. H. Gombrich"
+kind = "book"
+cover = "covers/reading/a-little-history-of-the-world.avif"
+year = 1936
+status = "read"
+finished = "2011"
+topics = ["history"]
+
+[[works]]
+id = "crime-and-punishment"
+title = "Crime and Punishment"
+author = "Fyodor Dostoevsky"
+kind = "novel"
+cover = "covers/reading/crime-and-punishment.avif"
+year = 1866
+status = "read"
+finished = "2010"
+
+[[works]]
+id = "infinite-jest"
+title = "Infinite Jest"
+author = "David Foster Wallace"
+kind = "novel"
+cover = "covers/reading/infinite-jest.avif"
+year = 1996
+status = "read"
+finished = "2025-10"   # with The Maximalist Novel, before Guns, Germs, and Steel
+
+[[works]]
+id = "the-maximalist-novel"
+title = "The Maximalist Novel"
+subtitle = "From Thomas Pynchon's Gravity's Rainbow to Roberto Bolaño's 2666"
+author = "Stefano Ercolino"
+kind = "book"
+cover = "covers/reading/the-maximalist-novel.avif"
+isbn = "9781623562915"
+year = 2014
+edition = "Translated from the Italian by Albert Sbragia"
+status = "read"
+finished = "2025-10"   # right after Infinite Jest
+
+[[works]]
 id = "this-is-for-everyone"
 title = "This Is for Everyone"
 subtitle = "The Unfinished Story of the World Wide Web"
@@ -150,7 +363,43 @@ rating = 8
 topics = ["open-web", "history-of-technology", "hypertext", "open-standards", "decentralisation", "open-data", "training-data", "privacy", "data-sovereignty", "attention-economy", "agents"]
 take = "Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all."
 
+[[works]]
+id = "the-invention-of-science"
+title = "The Invention of Science"
+subtitle = "A New History of the Scientific Revolution"
+author = "David Wootton"
+kind = "book"
+cover = "covers/reading/the-invention-of-science.avif"
+year = 2015
+status = "read"
+finished = "2016"
+topics = ["history-of-science"]
+
 # Backlog: suggestions I am weighing, in no fixed order -----------------------
+
+[[works]]
+id = "enterprise-architecture-as-strategy"
+title = "Enterprise Architecture as Strategy"
+subtitle = "Creating a Foundation for Business Execution"
+author = "Jeanne W. Ross, Peter Weill, and David C. Robertson"
+kind = "book"
+cover = "covers/reading/enterprise-architecture-as-strategy.avif"
+year = 2006
+status = "backlog"
+topics = ["platform-automation"]
+suggested_by = "Ralfe Poisson"
+suggested_url = "https://www.linkedin.com/in/ralfe/"
+
+[[works]]
+id = "the-art-of-doing-science-and-engineering"
+title = "The Art of Doing Science and Engineering"
+subtitle = "Learning to Learn"
+author = "Richard W. Hamming"
+kind = "book"
+cover = "covers/reading/the-art-of-doing-science-and-engineering.avif"
+year = 1997
+status = "backlog"
+topics = ["history-of-technology"]
 
 [[works]]
 id = "why-machines-learn"
@@ -365,3 +614,17 @@ year = 2017
 url = "https://www.penguin.co.nz/books/the-butchering-art-9780141983387"
 status = "backlog"
 topics = ["life-sciences", "history-of-science"]
+
+# Set aside ----------------------------------------------------------------
+
+[[works]]
+id = "sicp"
+title = "Structure and Interpretation of Computer Programs"
+author = "Harold Abelson, Gerald Jay Sussman, and Julie Sussman"
+kind = "book"
+cover = "covers/reading/sicp.avif"
+year = 1985
+edition = "Second edition"
+status = "set-aside"
+topics = ["programming-languages"]
+started = "2024"

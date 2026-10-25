@@ -33,7 +33,7 @@ Write the source file(s) per the recipe in `AGENTS.md`. Checklist:
 - [ ] In-body links to related pages (they become map edges and backlinks).
 - [ ] Sources under a `## References` heading when there are several.
 - [ ] Reviews: `extra.review`, `categories = ["reviews"]`, and in `data/reading.toml` `status = "read"`,
-      `finished = "YYYY-MM"`, `rating`. Pages that discuss a work without reviewing it: `extra.reads`.
+      `finished = "YYYY-MM"` (or `"YYYY"`), `rating`. Pages that discuss a work without reviewing it: `extra.reads`.
 - [ ] Works: cover fetched with `mise run reading-covers <id>` and looked at; wrong edition pinned with
       `isbn` or `cover_id`.
 - [ ] Talks: `extra.event`, `extra.venue`, `extra.event_url`; a card on `content/speaking.md`.
