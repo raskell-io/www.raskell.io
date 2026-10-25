@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Raskell - future-of-work</title>
+    <subtitle>Notes on agent platforms, platform automation, edge infrastructure, and applied security. Building automation-first platforms that survive production reality.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/future-of-work/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://raskell.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-10-25T00:00:00+00:00</updated>
+    <id>https://raskell.io/tags/future-of-work/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Citizen entrepreneurs</title>
+        <published>2026-10-25T00:00:00+00:00</published>
+        <updated>2026-10-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/citizen-entrepreneurs/"/>
+        <id>https://raskell.io/notes/citizen-entrepreneurs/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/citizen-entrepreneurs/">&lt;p&gt;A friend of mine, an enterprise architect at a large Swiss energy group, answers &lt;a href=&quot;&#x2F;notes&#x2F;the-tumult-in-between&#x2F;&quot;&gt;the tumult in between&lt;&#x2F;a&gt; with the observation that the same tools that threaten jobs make citizen entrepreneurs possible. An ordinary person can use AI to identify a business opportunity, use AI to build the business, and use AI to operate it. The barrier was never only money; it was the ten different competences a business needs on day one, and those are now available by the hour. He took his own idea seriously enough to build a business idea factory, a system that generates and evaluates opportunities. About a week before we talked, someone else announced a project with the same shape on Hacker News, which he took as confirmation rather than competition.&lt;&#x2F;p&gt;
+&lt;p&gt;I find it the most hopeful reading of &lt;a href=&quot;&#x2F;notes&#x2F;the-window-before-the-utility&#x2F;&quot;&gt;the window&lt;&#x2F;a&gt;, and the one with the most work in it. It assumes the capability really is &lt;a href=&quot;&#x2F;notes&#x2F;a-capability-democratised&#x2F;&quot;&gt;democratised&lt;&#x2F;a&gt;, which I believe, and it assumes people will take it up, which is the part the window is for.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>The move to the city</title>
+        <published>2026-10-25T00:00:00+00:00</published>
+        <updated>2026-10-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/the-move-to-the-city/"/>
+        <id>https://raskell.io/notes/the-move-to-the-city/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/the-move-to-the-city/">&lt;p&gt;The comparison I keep coming back to is the move from the land to the city. The industrial cities of the nineteenth century were dense, dirty and short of everything, sanitation first of all; people got sick in them and died in them. The people still on the land did not want to go, and thought life was better where they were, and for them, in their own lifetimes, it often was. Over generations the move made almost everyone better off, and nobody now argues for going back.&lt;&#x2F;p&gt;
+&lt;p&gt;The thinking today has the same shape. The fear of what AI does to work is legitimate on the timescale of a life, and the long-run reading, that a &lt;a href=&quot;&#x2F;notes&#x2F;a-capability-democratised&#x2F;&quot;&gt;democratised capability&lt;&#x2F;a&gt; ends up better for everyone collectively, is probably also right. Both can be true, and the part that history does not make comfortable is the middle: &lt;a href=&quot;&#x2F;notes&#x2F;the-tumult-in-between&#x2F;&quot;&gt;the tumult in between&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>The tumult in between</title>
+        <published>2026-10-25T00:00:00+00:00</published>
+        <updated>2026-10-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/the-tumult-in-between/"/>
+        <id>https://raskell.io/notes/the-tumult-in-between/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/the-tumult-in-between/">&lt;p&gt;The two answers people reach for are both answers to the end state. Universal basic income is the money-focused one: if the economy produces enough, pay everyone a floor. Basic access to goods and services is the resource-focused one: if things become nearly free, guarantee the things rather than the money. Each has its advocates and each frightens a lot of people, and neither says anything about the interval.&lt;&#x2F;p&gt;
+&lt;p&gt;The interval is the part I cannot see through. If AI really does lead to something like a post-scarcity economy, where most things are virtually free, the jobs go first and the abundance comes later, and in between there is a stretch where people lose their livelihoods at scale with nothing yet in place, and no shared view of where the collective ship is steering. That stretch will be chaotic, and I do not know how long it is. &lt;a href=&quot;&#x2F;notes&#x2F;the-move-to-the-city&#x2F;&quot;&gt;The move to the city&lt;&#x2F;a&gt; says such intervals end well; it does not say they are short. The most constructive response to it I have heard is &lt;a href=&quot;&#x2F;notes&#x2F;citizen-entrepreneurs&#x2F;&quot;&gt;citizen entrepreneurs&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

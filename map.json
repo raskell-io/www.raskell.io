@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-25T17:15:10+00:00",
+ "generated": "2026-10-25T17:55:57+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -10,7 +10,7 @@
    "url": "https://raskell.io/articles/learning-to-play/",
    "meta": "2026-10-25 · 22 min",
    "description": "A chess prodigy's handbook, three old games and one laptop: rebuilding the ideas behind game-playing AI in Rust for a browser on my phone, and measuring them.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/the-web-was-the-training-set/",
@@ -181,7 +181,7 @@
    "url": "https://raskell.io/articles/the-economics-of-inference/",
    "meta": "2026-04-22 · 12 min",
    "description": "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/what-comes-after-the-last-programming-language/",
@@ -328,6 +328,69 @@
    "degree": 4
   },
   {
+   "id": "a:/notes/a-capability-democratised/",
+   "kind": "note",
+   "label": "A capability, democratised",
+   "url": "https://raskell.io/notes/a-capability-democratised/",
+   "meta": "2026-10-25",
+   "description": "Building software took money, a team, or years of training. Now anyone with an idea and a subscription can do it, and nobody predicted what would follow.",
+   "degree": 7
+  },
+  {
+   "id": "a:/notes/citizen-entrepreneurs/",
+   "kind": "note",
+   "label": "Citizen entrepreneurs",
+   "url": "https://raskell.io/notes/citizen-entrepreneurs/",
+   "meta": "2026-10-25",
+   "description": "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory.",
+   "degree": 7
+  },
+  {
+   "id": "a:/notes/ideas-stop-waiting/",
+   "kind": "note",
+   "label": "Ideas stop waiting",
+   "url": "https://raskell.io/notes/ideas-stop-waiting/",
+   "meta": "2026-10-25",
+   "description": "In 2026 the backlog of ideas I carried for years is turning into things that exist. On why this year feels like a window that will not stay open.",
+   "degree": 7
+  },
+  {
+   "id": "a:/notes/power-in-the-good-sense/",
+   "kind": "note",
+   "label": "Power, in the good sense",
+   "url": "https://raskell.io/notes/power-in-the-good-sense/",
+   "meta": "2026-10-25",
+   "description": "The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so.",
+   "degree": 5
+  },
+  {
+   "id": "a:/notes/the-move-to-the-city/",
+   "kind": "note",
+   "label": "The move to the city",
+   "url": "https://raskell.io/notes/the-move-to-the-city/",
+   "meta": "2026-10-25",
+   "description": "Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape.",
+   "degree": 6
+  },
+  {
+   "id": "a:/notes/the-tumult-in-between/",
+   "kind": "note",
+   "label": "The tumult in between",
+   "url": "https://raskell.io/notes/the-tumult-in-between/",
+   "meta": "2026-10-25",
+   "description": "If AI ends in post-scarcity, the dangerous part is the interval: jobs going before goods become nearly free, with no agreed idea of where the ship steers.",
+   "degree": 6
+  },
+  {
+   "id": "a:/notes/the-window-before-the-utility/",
+   "kind": "note",
+   "label": "The window before the utility",
+   "url": "https://raskell.io/notes/the-window-before-the-utility/",
+   "meta": "2026-10-25",
+   "description": "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again.",
+   "degree": 8
+  },
+  {
    "id": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
    "kind": "note",
    "label": "Opus 5.5 is the best Opus since 4.5",
@@ -350,18 +413,18 @@
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 11 pages",
+   "meta": "Concept · 12 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "t:ai-engineering",
    "kind": "tag",
    "label": "AI-assisted engineering",
    "url": "https://raskell.io/tags/ai-engineering/",
-   "meta": "Domain · 10 pages",
+   "meta": "Domain · 13 pages",
    "description": "AI as an engineering tool: coding agents, AI-authored code, and what programming becomes when models write most of it.",
-   "degree": 11
+   "degree": 14
   },
   {
    "id": "t:ai-for-ops",
@@ -404,9 +467,18 @@
    "kind": "tag",
    "label": "Augmentation",
    "url": "https://raskell.io/tags/augmentation/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 7 pages",
    "description": "Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents.",
-   "degree": 8
+   "degree": 12
+  },
+  {
+   "id": "t:cities",
+   "kind": "tag",
+   "label": "Cities",
+   "url": "https://raskell.io/tags/cities/",
+   "meta": "Concept · 1 page",
+   "description": "How cities are planned and how they actually grow: Jerusalem over three thousand years, Brasilia drawn on paper, and the rational city the web was designed against.",
+   "degree": 4
   },
   {
    "id": "t:commons",
@@ -415,7 +487,7 @@
    "url": "https://raskell.io/tags/commons/",
    "meta": "Concept · 1 page",
    "description": "Resources held in common and the rules that keep them so: common land, open protocols, open data, and the web before the platforms.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:compilers",
@@ -454,6 +526,15 @@
    "degree": 4
   },
   {
+   "id": "t:democratisation",
+   "kind": "tag",
+   "label": "Democratisation",
+   "url": "https://raskell.io/tags/democratisation/",
+   "meta": "Concept · 5 pages",
+   "description": "A capability that needed money, a team, or years of training becoming available to anyone: printing, the web, and now building software by describing it.",
+   "degree": 7
+  },
+  {
    "id": "t:developer-tooling",
    "kind": "tag",
    "label": "Developer tooling",
@@ -476,9 +557,9 @@
    "kind": "tag",
    "label": "Economics",
    "url": "https://raskell.io/tags/economics/",
-   "meta": "Concept · 8 pages",
+   "meta": "Concept · 10 pages",
    "description": "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.",
-   "degree": 13
+   "degree": 17
   },
   {
    "id": "t:edge-systems",
@@ -503,9 +584,18 @@
    "kind": "tag",
    "label": "Emergence",
    "url": "https://raskell.io/tags/emergence/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Order nobody designed: reefs, the early web, neuron cultures, and simulated worlds where simple rules add up to behaviour no single part has.",
-   "degree": 7
+   "degree": 8
+  },
+  {
+   "id": "t:entrepreneurship",
+   "kind": "tag",
+   "label": "Entrepreneurship",
+   "url": "https://raskell.io/tags/entrepreneurship/",
+   "meta": "Concept · 1 page",
+   "description": "Finding something worth building and building it: ventures, side projects, and what changes when anyone can spot an opportunity and operate a business with AI.",
+   "degree": 2
   },
   {
    "id": "t:europe",
@@ -533,6 +623,15 @@
    "meta": "Concept · 4 pages",
    "description": "Proofs, verification, and types as specifications, especially once machines write the code.",
    "degree": 6
+  },
+  {
+   "id": "t:future-of-work",
+   "kind": "tag",
+   "label": "Future of work",
+   "url": "https://raskell.io/tags/future-of-work/",
+   "meta": "Concept · 3 pages",
+   "description": "What AI does to jobs and livelihoods: the interval before any post-scarcity economy, basic income against basic access, and who gets through the middle.",
+   "degree": 5
   },
   {
    "id": "t:game-ai",
@@ -575,9 +674,9 @@
    "kind": "tag",
    "label": "History of technology",
    "url": "https://raskell.io/tags/history-of-technology/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:hypertext",
@@ -593,9 +692,9 @@
    "kind": "tag",
    "label": "Inference",
    "url": "https://raskell.io/tags/inference/",
-   "meta": "Concept · 6 pages",
+   "meta": "Concept · 7 pages",
    "description": "Running models in production: routing, cost, hardware, and inference as a metered utility.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:intellectual-property",
@@ -850,6 +949,15 @@
    "degree": 11
   },
   {
+   "id": "t:risk",
+   "kind": "tag",
+   "label": "Risk",
+   "url": "https://raskell.io/tags/risk/",
+   "meta": "Concept · 1 page",
+   "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
+   "degree": 7
+  },
+  {
    "id": "t:rust",
    "kind": "tag",
    "label": "Rust",
@@ -875,6 +983,15 @@
    "meta": "Domain · 1 page",
    "description": "Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.",
    "degree": 6
+  },
+  {
+   "id": "t:social-reform",
+   "kind": "tag",
+   "label": "Social reform",
+   "url": "https://raskell.io/tags/social-reform/",
+   "meta": "Concept · 2 pages",
+   "description": "Plans to redesign society or the economy, from nineteenth-century utopias to high-modernist states and basic income, and what happened when they met people.",
+   "degree": 9
   },
   {
    "id": "t:sovereignty",
@@ -956,15 +1073,6 @@
    "meta": "Concept · no pages yet",
    "description": "Making AI systems pursue what their builders and users actually intend, and what happens when they do not.",
    "degree": 4
-  },
-  {
-   "id": "t:cities",
-   "kind": "tag",
-   "label": "Cities",
-   "url": "https://raskell.io/tags#cities",
-   "meta": "Concept · no pages yet",
-   "description": "How cities are planned and how they actually grow: Jerusalem over three thousand years, Brasilia drawn on paper, and the rational city the web was designed against.",
-   "degree": 3
   },
   {
    "id": "t:complex-systems",
@@ -1165,15 +1273,6 @@
    "degree": 7
   },
   {
-   "id": "t:risk",
-   "kind": "tag",
-   "label": "Risk",
-   "url": "https://raskell.io/tags#risk",
-   "meta": "Concept · no pages yet",
-   "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
-   "degree": 6
-  },
-  {
    "id": "t:scientific-revolutions",
    "kind": "tag",
    "label": "Scientific revolutions",
@@ -1190,15 +1289,6 @@
    "meta": "Concept · no pages yet",
    "description": "A program improving by playing itself: generating its own training data, learning from the outcomes, and testing each generation against the last.",
    "degree": 2
-  },
-  {
-   "id": "t:social-reform",
-   "kind": "tag",
-   "label": "Social reform",
-   "url": "https://raskell.io/tags#social-reform",
-   "meta": "Concept · no pages yet",
-   "description": "Plans to redesign society or the economy, from nineteenth-century utopias to high-modernist states and basic income, and what happened when they met people.",
-   "degree": 6
   },
   {
    "id": "t:tree-search",
@@ -1395,7 +1485,7 @@
    "url": "https://kishi.raskell.io",
    "meta": "Project",
    "description": "Chess, shogi and Go against engines written in Rust and compiled to WebAssembly. They play in the browser on your own device, offline, from novice to full strength, on a quiet boar…",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "p:sango",
@@ -2013,6 +2103,10 @@
  ],
  "links": [
   {
+   "source": "a:/notes/citizen-entrepreneurs/",
+   "target": "t:agents"
+  },
+  {
    "source": "a:/articles/observability-is-not-logging/",
    "target": "t:agents"
   },
@@ -2059,6 +2153,18 @@
   {
    "source": "t:agents",
    "target": "t:ai-platforms"
+  },
+  {
+   "source": "a:/notes/a-capability-democratised/",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "a:/notes/ideas-stop-waiting/",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "a:/notes/power-in-the-good-sense/",
+   "target": "t:ai-engineering"
   },
   {
    "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
@@ -2153,6 +2259,18 @@
    "target": "t:open-web"
   },
   {
+   "source": "a:/notes/ideas-stop-waiting/",
+   "target": "t:augmentation"
+  },
+  {
+   "source": "a:/notes/power-in-the-good-sense/",
+   "target": "t:augmentation"
+  },
+  {
+   "source": "a:/notes/the-window-before-the-utility/",
+   "target": "t:augmentation"
+  },
+  {
    "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
    "target": "t:augmentation"
   },
@@ -2175,6 +2293,14 @@
   {
    "source": "t:augmentation",
    "target": "t:intelligence"
+  },
+  {
+   "source": "a:/notes/the-move-to-the-city/",
+   "target": "t:cities"
+  },
+  {
+   "source": "t:cities",
+   "target": "t:geography"
   },
   {
    "source": "a:/articles/looking-back-on-2025/",
@@ -2253,6 +2379,34 @@
    "target": "t:distributed-systems"
   },
   {
+   "source": "a:/notes/a-capability-democratised/",
+   "target": "t:democratisation"
+  },
+  {
+   "source": "a:/notes/citizen-entrepreneurs/",
+   "target": "t:democratisation"
+  },
+  {
+   "source": "a:/notes/ideas-stop-waiting/",
+   "target": "t:democratisation"
+  },
+  {
+   "source": "a:/notes/power-in-the-good-sense/",
+   "target": "t:democratisation"
+  },
+  {
+   "source": "a:/notes/the-window-before-the-utility/",
+   "target": "t:democratisation"
+  },
+  {
+   "source": "t:democratisation",
+   "target": "t:augmentation"
+  },
+  {
+   "source": "t:democratisation",
+   "target": "t:commons"
+  },
+  {
    "source": "a:/articles/traffic-replay-as-a-security-primitive/",
    "target": "t:developer-tooling"
   },
@@ -2287,6 +2441,14 @@
   {
    "source": "a:/articles/edge-systems-are-the-new-backend/",
    "target": "t:distributed-systems"
+  },
+  {
+   "source": "a:/notes/the-tumult-in-between/",
+   "target": "t:economics"
+  },
+  {
+   "source": "a:/notes/the-window-before-the-utility/",
+   "target": "t:economics"
   },
   {
    "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
@@ -2357,12 +2519,24 @@
    "target": "t:programming-languages"
   },
   {
+   "source": "a:/notes/a-capability-democratised/",
+   "target": "t:emergence"
+  },
+  {
    "source": "a:/articles/looking-back-on-2025/",
    "target": "t:emergence"
   },
   {
    "source": "t:emergence",
    "target": "t:complex-systems"
+  },
+  {
+   "source": "a:/notes/citizen-entrepreneurs/",
+   "target": "t:entrepreneurship"
+  },
+  {
+   "source": "t:entrepreneurship",
+   "target": "t:economics"
   },
   {
    "source": "a:/articles/the-web-was-the-training-set/",
@@ -2419,6 +2593,26 @@
   {
    "source": "t:formal-methods",
    "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/notes/citizen-entrepreneurs/",
+   "target": "t:future-of-work"
+  },
+  {
+   "source": "a:/notes/the-move-to-the-city/",
+   "target": "t:future-of-work"
+  },
+  {
+   "source": "a:/notes/the-tumult-in-between/",
+   "target": "t:future-of-work"
+  },
+  {
+   "source": "t:future-of-work",
+   "target": "t:economics"
+  },
+  {
+   "source": "t:future-of-work",
+   "target": "t:social-reform"
   },
   {
    "source": "a:/articles/learning-to-play/",
@@ -2485,6 +2679,10 @@
    "target": "t:history-of-technology"
   },
   {
+   "source": "a:/notes/the-move-to-the-city/",
+   "target": "t:history-of-technology"
+  },
+  {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "t:history-of-technology"
   },
@@ -2503,6 +2701,10 @@
   {
    "source": "t:hypertext",
    "target": "t:open-web"
+  },
+  {
+   "source": "a:/notes/the-window-before-the-utility/",
+   "target": "t:inference"
   },
   {
    "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
@@ -2861,6 +3063,18 @@
    "target": "t:history-of-technology"
   },
   {
+   "source": "a:/notes/the-tumult-in-between/",
+   "target": "t:risk"
+  },
+  {
+   "source": "t:risk",
+   "target": "t:reliability"
+  },
+  {
+   "source": "t:risk",
+   "target": "t:economics"
+  },
+  {
    "source": "a:/articles/learning-to-play/",
    "target": "t:rust"
   },
@@ -2919,6 +3133,22 @@
   {
    "source": "t:simulation",
    "target": "t:complex-systems"
+  },
+  {
+   "source": "a:/notes/the-move-to-the-city/",
+   "target": "t:social-reform"
+  },
+  {
+   "source": "a:/notes/the-tumult-in-between/",
+   "target": "t:social-reform"
+  },
+  {
+   "source": "t:social-reform",
+   "target": "t:economics"
+  },
+  {
+   "source": "t:social-reform",
+   "target": "t:policy"
   },
   {
    "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
@@ -3053,10 +3283,6 @@
    "target": "t:existential-risk"
   },
   {
-   "source": "t:cities",
-   "target": "t:geography"
-  },
-  {
    "source": "t:ethics",
    "target": "t:philosophy"
   },
@@ -3161,14 +3387,6 @@
    "target": "t:history"
   },
   {
-   "source": "t:risk",
-   "target": "t:reliability"
-  },
-  {
-   "source": "t:risk",
-   "target": "t:economics"
-  },
-  {
    "source": "t:scientific-revolutions",
    "target": "t:philosophy-of-science"
   },
@@ -3183,14 +3401,6 @@
   {
    "source": "t:self-play",
    "target": "t:game-ai"
-  },
-  {
-   "source": "t:social-reform",
-   "target": "t:economics"
-  },
-  {
-   "source": "t:social-reform",
-   "target": "t:policy"
   },
   {
    "source": "t:tree-search",
@@ -3505,6 +3715,50 @@
    "target": "a:/articles/mise-ate-my-makefile/"
   },
   {
+   "source": "a:/notes/a-capability-democratised/",
+   "target": "a:/notes/power-in-the-good-sense/"
+  },
+  {
+   "source": "a:/notes/a-capability-democratised/",
+   "target": "a:/notes/the-move-to-the-city/"
+  },
+  {
+   "source": "a:/notes/a-capability-democratised/",
+   "target": "a:/notes/the-window-before-the-utility/"
+  },
+  {
+   "source": "a:/notes/citizen-entrepreneurs/",
+   "target": "a:/notes/a-capability-democratised/"
+  },
+  {
+   "source": "a:/notes/citizen-entrepreneurs/",
+   "target": "a:/notes/the-tumult-in-between/"
+  },
+  {
+   "source": "a:/notes/citizen-entrepreneurs/",
+   "target": "a:/notes/the-window-before-the-utility/"
+  },
+  {
+   "source": "a:/notes/ideas-stop-waiting/",
+   "target": "a:/articles/learning-to-play/"
+  },
+  {
+   "source": "a:/notes/ideas-stop-waiting/",
+   "target": "a:/notes/power-in-the-good-sense/"
+  },
+  {
+   "source": "a:/notes/ideas-stop-waiting/",
+   "target": "a:/notes/the-window-before-the-utility/"
+  },
+  {
+   "source": "a:/notes/the-move-to-the-city/",
+   "target": "a:/notes/the-tumult-in-between/"
+  },
+  {
+   "source": "a:/notes/the-window-before-the-utility/",
+   "target": "a:/articles/the-economics-of-inference/"
+  },
+  {
    "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
    "target": "a:/articles/the-economics-of-inference/"
   },
@@ -3750,6 +4004,10 @@
   },
   {
    "source": "a:/articles/learning-to-play/",
+   "target": "p:kishi"
+  },
+  {
+   "source": "a:/notes/ideas-stop-waiting/",
    "target": "p:kishi"
   },
   {

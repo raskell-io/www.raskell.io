@@ -1,16 +1,16 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-25T17:15:10+00:00",
+ "generated": "2026-10-25T17:55:57+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "article": 35,
   "review": 1,
-  "note": 1,
+  "note": 8,
   "talk": 1,
   "work": 50,
   "project": 30,
-  "topic": 97,
+  "topic": 100,
   "link": 266
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
@@ -568,6 +568,94 @@
     "open-web"
    ],
    "meta": "1 min"
+  },
+  {
+   "kind": "note",
+   "title": "A capability, democratised",
+   "url": "https://raskell.io/notes/a-capability-democratised/",
+   "description": "Building software took money, a team, or years of training. Now anyone with an idea and a subscription can do it, and nobody predicted what would follow.",
+   "date": "2026-10-25",
+   "topics": [
+    "democratisation",
+    "emergence",
+    "ai-engineering"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Citizen entrepreneurs",
+   "url": "https://raskell.io/notes/citizen-entrepreneurs/",
+   "description": "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory.",
+   "date": "2026-10-25",
+   "topics": [
+    "entrepreneurship",
+    "democratisation",
+    "future-of-work",
+    "agents"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Ideas stop waiting",
+   "url": "https://raskell.io/notes/ideas-stop-waiting/",
+   "description": "In 2026 the backlog of ideas I carried for years is turning into things that exist. On why this year feels like a window that will not stay open.",
+   "date": "2026-10-25",
+   "topics": [
+    "ai-engineering",
+    "augmentation",
+    "democratisation"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Power, in the good sense",
+   "url": "https://raskell.io/notes/power-in-the-good-sense/",
+   "description": "The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so.",
+   "date": "2026-10-25",
+   "topics": [
+    "augmentation",
+    "democratisation",
+    "ai-engineering"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "The move to the city",
+   "url": "https://raskell.io/notes/the-move-to-the-city/",
+   "description": "Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape.",
+   "date": "2026-10-25",
+   "topics": [
+    "history-of-technology",
+    "cities",
+    "future-of-work",
+    "social-reform"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "The tumult in between",
+   "url": "https://raskell.io/notes/the-tumult-in-between/",
+   "description": "If AI ends in post-scarcity, the dangerous part is the interval: jobs going before goods become nearly free, with no agreed idea of where the ship steers.",
+   "date": "2026-10-25",
+   "topics": [
+    "future-of-work",
+    "economics",
+    "risk",
+    "social-reform"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "The window before the utility",
+   "url": "https://raskell.io/notes/the-window-before-the-utility/",
+   "description": "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again.",
+   "date": "2026-10-25",
+   "topics": [
+    "inference",
+    "economics",
+    "augmentation",
+    "democratisation"
+   ]
   },
   {
    "kind": "note",
@@ -1647,7 +1735,7 @@
   {
    "kind": "topic",
    "title": "Cities",
-   "url": "https://raskell.io/tags#cities",
+   "url": "https://raskell.io/tags/cities/",
    "description": "How cities are planned and how they actually grow: Jerusalem over three thousand years, Brasilia drawn on paper, and the rational city the web was designed against.",
    "meta": "Concept"
   },
@@ -1695,6 +1783,13 @@
   },
   {
    "kind": "topic",
+   "title": "Democratisation",
+   "url": "https://raskell.io/tags/democratisation/",
+   "description": "A capability that needed money, a team, or years of training becoming available to anyone: printing, the web, and now building software by describing it.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Developer tooling",
    "url": "https://raskell.io/tags/developer-tooling/",
    "description": "Package managers, build tools, CLIs, and the daily toolchain an engineer actually touches.",
@@ -1737,6 +1832,13 @@
   },
   {
    "kind": "topic",
+   "title": "Entrepreneurship",
+   "url": "https://raskell.io/tags/entrepreneurship/",
+   "description": "Finding something worth building and building it: ventures, side projects, and what changes when anyone can spot an opportunity and operate a business with AI.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Ethics",
    "url": "https://raskell.io/tags#ethics",
    "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
@@ -1775,6 +1877,13 @@
    "title": "Formal methods",
    "url": "https://raskell.io/tags/formal-methods/",
    "description": "Proofs, verification, and types as specifications, especially once machines write the code.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Future of work",
+   "url": "https://raskell.io/tags/future-of-work/",
+   "description": "What AI does to jobs and livelihoods: the interval before any post-scarcity economy, basic income against basic access, and who gets through the middle.",
    "meta": "Concept"
   },
   {
@@ -2151,7 +2260,7 @@
   {
    "kind": "topic",
    "title": "Risk",
-   "url": "https://raskell.io/tags#risk",
+   "url": "https://raskell.io/tags/risk/",
    "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
    "meta": "Concept"
   },
@@ -2193,7 +2302,7 @@
   {
    "kind": "topic",
    "title": "Social reform",
-   "url": "https://raskell.io/tags#social-reform",
+   "url": "https://raskell.io/tags/social-reform/",
    "description": "Plans to redesign society or the economy, from nineteenth-century utopias to high-modernist states and basic income, and what happened when they met people.",
    "meta": "Concept"
   },
