@@ -7,7 +7,20 @@
   var el = document.querySelector("[data-flap]");
   if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
   var words = [el.textContent.trim()].concat(el.getAttribute("data-flap").split("|").map(function (s) { return s.trim(); }).filter(Boolean));
-  var GLYPHS = "abcdefghijklmnopqrstuvwxyz0123456789#%&*+=<>/";
+  // The flaps spin through glyphs of the page's own script: Latin, or for Chinese and Korean the characters of
+  // the board's phrases plus common ones, so a Chinese or Korean board never flashes Latin letters.
+  var LATIN = "abcdefghijklmnopqrstuvwxyz0123456789#%&*+=<>/";
+  var SCRIPT = {
+    zh: "的一是不了人我在有这中大来上国到说们为子和你地出道时年得就那要下以生会自着去之过家学对可里后小心多天能好都然没日于起还发成事只作当想看文无开手用主行方又如前所本见经头面公同三已老从动两长知民样现分将外但身高意进把法此实回理美点月明机房数据平面控制夜班",
+    ko: "가나다라마바사아자차카타파하거너더러머버서어저처커터퍼허고노도로모보소오조초코토포호구누두루무부수우주추쿠투푸후기니디리미비시이지치키티피히한국말글빛길숲별달"
+  };
+  var lang = (document.documentElement.lang || "en").slice(0, 2);
+  var GLYPHS = LATIN;
+  if (SCRIPT[lang]) {
+    var own = words.join("").replace(/[\s.,。、，]/g, "");
+    var set = {};
+    GLYPHS = (own + SCRIPT[lang]).split("").filter(function (c) { return set[c] ? false : (set[c] = true); }).join("");
+  }
   var HOLD = 5200, STEP = 55, STAGGER = 42;
 
   // Accessible text stays the original; the board itself is decoration.

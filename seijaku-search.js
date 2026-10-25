@@ -5,17 +5,22 @@
 (function () {
   "use strict";
 
+  // Interface text in the page's language: base.html sets window.SEIJAKU_I18N (English text -> translation) on
+  // translated pages; anything missing stays English. {name} placeholders are filled by fill().
+  function T(s) { var d = window.SEIJAKU_I18N; return (d && d[s]) || s; }
+  function fill(s, v) { return T(s).replace(/\{(\w+)\}/g, function (m, k) { return k in v ? v[k] : m; }); }
+
   // Filters, in chip order. An item belongs to a chip when `test` says so.
   var CHIPS = [
-    { key: "all", label: "All", test: function () { return true; } },
-    { key: "article", label: "Articles", test: function (i) { return i.k === "article"; } },
-    { key: "review", label: "Reviews", test: function (i) { return i.c.indexOf("reviews") >= 0; } },
-    { key: "note", label: "Notes", test: function (i) { return i.k === "note"; } },
-    { key: "talk", label: "Talks", test: function (i) { return i.k === "talk"; } },
-    { key: "work", label: "Books and papers", test: function (i) { return i.k === "work"; } },
-    { key: "project", label: "Projects", test: function (i) { return i.k === "project"; } },
-    { key: "topic", label: "Topics", test: function (i) { return i.k === "topic"; } },
-    { key: "link", label: "Links", test: function (i) { return i.k === "link"; } }
+    { key: "all", label: T("All"), test: function () { return true; } },
+    { key: "article", label: T("Articles"), test: function (i) { return i.k === "article"; } },
+    { key: "review", label: T("Reviews"), test: function (i) { return i.c.indexOf("reviews") >= 0; } },
+    { key: "note", label: T("Notes"), test: function (i) { return i.k === "note"; } },
+    { key: "talk", label: T("Talks"), test: function (i) { return i.k === "talk"; } },
+    { key: "work", label: T("Books and papers"), test: function (i) { return i.k === "work"; } },
+    { key: "project", label: T("Projects"), test: function (i) { return i.k === "project"; } },
+    { key: "topic", label: T("Topics"), test: function (i) { return i.k === "topic"; } },
+    { key: "link", label: T("Links"), test: function (i) { return i.k === "link"; } }
   ];
   var WORK_ORDER = { "Reading now": 0, "Up next": 1, "Read": 2, "Backlog": 3, "Set aside": 4 };
 
@@ -71,10 +76,11 @@
       i.c = i.c || []; i.g = i.g || [];
       if (i.k === "link") {
         if (!i.t) { i.t = i.d; }
-        i.m = (i.r ? "Reference · " : "") + "cited in " + i.cites.map(function (c) { return c.t; }).slice(0, 2).join(", ") + (i.cites.length > 2 ? " and " + (i.cites.length - 2) + " more" : "");
+        var where = i.cites.map(function (c) { return c.t; }).slice(0, 2).join(", ");
+        i.m = (i.r ? T("Reference") + " · " : "") + (i.cites.length > 2 ? fill("cited in {pages} and {n} more", { pages: where, n: i.cites.length - 2 }) : fill("cited in {pages}", { pages: where }));
       }
-      i.badge = i.k === "article" && i.c.indexOf("reviews") >= 0 ? "Review" :
-        i.k === "work" ? (i.m || "").split(" · ")[0] : i.k === "link" ? i.dom : i.k.charAt(0).toUpperCase() + i.k.slice(1);
+      i.badge = i.k === "article" && i.c.indexOf("reviews") >= 0 ? T("Review") :
+        i.k === "work" ? T((i.m || "").split(" · ")[0]) : i.k === "link" ? i.dom : T(i.k.charAt(0).toUpperCase() + i.k.slice(1));
       i.f = {
         title: (i.t || "").toLowerCase(),
         topics: i.g.map(function (g) { return topicNames[g] || g; }).join(" ").toLowerCase(),
@@ -158,7 +164,7 @@
           // A page the garden index does not know (no search page configured): show it as a plain result.
           if (!items.some(function (i) { return i.u === h.ref; })) {
             var d = ftIndex.documentStore.getDoc(h.ref) || {};
-            var extra = { k: "article", t: d.title || h.ref, u: h.ref, d: d.description || (d.body || "").slice(0, 160), g: [], c: [], y: "", badge: "Page" };
+            var extra = { k: "article", t: d.title || h.ref, u: h.ref, d: d.description || (d.body || "").slice(0, 160), g: [], c: [], y: "", badge: T("Page") };
             extra.f = { title: extra.t.toLowerCase(), topics: "", meta: "", desc: extra.d.toLowerCase(), cites: "" };
             items.push(extra);
           }
@@ -189,11 +195,11 @@
         if (!words.length) { shown.sort(kind === "all" ? byDate : browseOrder); }
         // With no query, the dialog stays quiet until a kind is picked; the page lists everything.
         if (!words.length && !isPage && kind === "all") {
-          list.innerHTML = ""; status.textContent = "Search everything here: articles, books, projects, topics, and every link cited.";
+          list.innerHTML = ""; status.textContent = T("Search everything here: articles, books, projects, topics, and every link cited.");
           more.hidden = true; return;
         }
-        status.textContent = words.length ? (shown.length ? shown.length + (shown.length === 1 ? " result" : " results") : "Nothing found for “" + input.value.trim() + "”" + (kind !== "all" ? " in " + chip.label.toLowerCase() : "") + ".")
-          : shown.length + " " + (kind === "all" ? "entries" : chip.label.toLowerCase());
+        status.textContent = words.length ? (shown.length ? fill(shown.length === 1 ? "{n} result" : "{n} results", { n: shown.length }) : (kind !== "all" ? fill("Nothing found for “{q}” in {kind}.", { q: input.value.trim(), kind: chip.label.toLowerCase() }) : fill("Nothing found for “{q}”.", { q: input.value.trim() })))
+          : shown.length + " " + (kind === "all" ? T("entries") : chip.label.toLowerCase());
         list.innerHTML = shown.slice(0, limit).map(function (i) {
           var ext = i.k === "link" || (i.k === "project" && host(i.u) !== location.hostname.replace(/^www\./, ""));
           return '<li class="garden__item garden__item--' + i.k + '"><a href="' + esc(i.u) + '"' + (ext ? ' rel="noopener" target="_blank"' : "") + ">" +
@@ -217,9 +223,9 @@
 
     function start() {
       if (items) { render(); return; }
-      status.textContent = "Loading…";
+      status.textContent = T("Loading…");
       garden(root.dataset.src).then(function (g) { items = g; render(); }, function () {
-        items = []; status.textContent = "The full index could not load; searching the writing only."; render();
+        items = []; status.textContent = T("The full index could not load; searching the writing only."); render();
       });
     }
 

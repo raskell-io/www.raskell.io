@@ -3,6 +3,11 @@
 // maps (partials/local_map.html) fetch that JSON and mount one page's neighbourhood with SeijakuMap.local().
 (function () {
   "use strict";
+  // Interface text in the page's language: base.html sets window.SEIJAKU_I18N (English text -> translation) on
+  // translated pages; anything missing stays English. {name} placeholders are filled by fill().
+  function T(s) { var d = window.SEIJAKU_I18N; return (d && d[s]) || s; }
+  function fill(s, v) { return T(s).replace(/\{(\w+)\}/g, function (m, k) { return k in v ? v[k] : m; }); }
+
 
 function mount(fig, data, opts) {
   opts = opts || {};
@@ -186,12 +191,12 @@ function mount(fig, data, opts) {
   }
 
   // Selection card -----------------------------------------------------------
-  var KIND_NAME = { article: "Article", note: "Note", talk: "Talk", tag: "Topic", series: "Series", project: "Project", hub: "Group", work: "Reading", category: "Category" };
+  var KIND_NAME = { article: T("Article"), note: T("Note"), talk: T("Talk"), tag: T("Topic"), series: T("Series"), project: T("Project"), hub: T("Group"), work: T("Reading"), category: T("Category") };
   function select(n) {
     sel = n;
     if (!card) { draw(); return; }
     if (!n) { card.hidden = true; draw(); return; }
-    card.querySelector(".map__card-kind").textContent = (n.kind === "hub" && n.of === "work" ? "Shelf" : KIND_NAME[n.kind]) + (n.meta && n.kind !== "project" && n.kind !== "hub" ? " · " + n.meta : "") + " · " + n.deg + " links";
+    card.querySelector(".map__card-kind").textContent = (n.kind === "hub" && n.of === "work" ? T("Shelf") : KIND_NAME[n.kind]) + (n.meta && n.kind !== "project" && n.kind !== "hub" ? " · " + n.meta : "") + " · " + fill(n.deg === 1 ? "{n} link" : "{n} links", { n: n.deg });
     card.querySelector(".map__card-title").textContent = n.label;
     var desc = card.querySelector(".map__card-desc");
     desc.textContent = n.desc || ""; desc.hidden = !n.desc;
@@ -295,7 +300,7 @@ function mount(fig, data, opts) {
     var syncFull = function () {
       var on = isFull();
       fsBtn.setAttribute("aria-pressed", on ? "true" : "false");
-      fsLabel.textContent = on ? "Exit full screen" : "Full screen";
+      fsLabel.textContent = T(on ? "Exit full screen" : "Full screen");
       document.documentElement.classList.toggle("map-is-full", fig.classList.contains("is-full"));
       touched = false;   // re-fit the graph to the new size on the next resize
     };

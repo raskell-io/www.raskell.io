@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko">
+    <title>Raskell - 발표 자료</title>
+    <subtitle>에이전트 플랫폼, 플랫폼 자동화, 엣지 인프라, 응용 보안에 관한 기록입니다. 실제 운영 환경을 견디는 자동화 우선 플랫폼을 만듭니다.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://raskell.io/ko/talks/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://raskell.io/ko/talks/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    
+    <id>https://raskell.io/ko/talks/atom.xml</id>
+</feed>

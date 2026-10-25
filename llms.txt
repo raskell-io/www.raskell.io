@@ -67,6 +67,8 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 - [All beginning is Haskell](https://raskell.io/articles/all-beginning-is-haskell.md) (2023-03-06): How Haskell shaped the way I think about building systems, and why I am still building Haskell tooling years after writing my first monad.
 - [My OpenBSD journey: Getting it virtualized with libvirt (1)](https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1.md) (2023-02-06): A step-by-step guide to running OpenBSD in a libvirt virtual machine on Void Linux, without needing VirtualBox or VMWare. Part 1 of my OpenBSD journey.
 - [Hello and outlook](https://raskell.io/articles/hello-and-outlook.md) (2022-09-20): The first post on raskell.io. What this site is for and what I planned to write about.
+- [글](https://raskell.io/articles/_index.ko.md) (): 플랫폼 자동화, 엣지 인프라, 응용 보안, AI 지원 엔지니어링에 관한 글입니다.
+- [文章](https://raskell.io/articles/_index.zh.md) (): 关于平台自动化、边缘基础设施、应用安全和 AI 辅助工程的文章。
 
 ## Reviews
 
@@ -79,12 +81,16 @@ Reviews of works from the reading log (category: reviews, feed https://raskell.i
 Slide decks; each has a Markdown copy with the words of every slide.
 
 - [I Stopped Writing Most of My Code](https://raskell.io/talks/iat-13-basel.md) (2026-06-10, IT's ABOUT TECH #13): Slide deck for IT's ABOUT TECH #13 in Basel. A 15-minute story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time.
+- [발표 자료](https://raskell.io/talks/_index.ko.md) (): 제가 한 강연의 발표 자료입니다. 모든 자료는 브라우저에서 실행됩니다. 강연, 패널, 팟캐스트의 전체 목록은 강연 페이지에 있습니다.
+- [演讲稿](https://raskell.io/talks/_index.zh.md) (): 我做过的演讲的幻灯片。每套幻灯片都在浏览器中运行；演讲页面列出了全部演讲、圆桌和播客。
 
 ## Notes
 
 Short notes, a paragraph or a page each; some grow into articles.
 
 - [Opus 5.5 is the best Opus since 4.5](https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5.md) (2026-10-24): A month in, Claude Opus 5.5 feels like the next milestone after Opus 4.5: the same jump in what Claude Code can carry, now faster and cheaper per task.
+- [노트](https://raskell.io/notes/_index.ko.md) (): 짧은 노트입니다. 아이디어나 논문, 아직 생각하고 있는 질문에 대해 한 단락이나 한 페이지로 씁니다. 그중 일부는 글로 자라납니다.
+- [笔记](https://raskell.io/notes/_index.zh.md) (): 简短的笔记：用一段话或一页纸，写一个想法、一篇论文，或一个我仍在思考的问题。其中一些会长成文章。
 
 ## Reading
 
@@ -335,13 +341,27 @@ The site is written in English. Some pages are also translated; a translation li
 - [首页](https://raskell.io/zh/): translation of [Home](https://raskell.io/)
 - [关于](https://raskell.io/zh/about/): translation of [About](https://raskell.io/about/)
 - [应用](https://raskell.io/zh/apps/): translation of [Apps](https://raskell.io/apps/)
+- [文章](https://raskell.io/zh/articles/): translation of [Articles](https://raskell.io/articles/)
 - [投资](https://raskell.io/zh/invest/): translation of [Invest](https://raskell.io/invest/)
-- [投资简报](https://raskell.io/zh/pitch/): translation of [Investor briefs](https://raskell.io/pitch/)
+- [许可](https://raskell.io/zh/license/): translation of [Licence](https://raskell.io/license/)
+- [地图](https://raskell.io/zh/map/): translation of [Map](https://raskell.io/map/)
+- [笔记](https://raskell.io/zh/notes/): translation of [Notes](https://raskell.io/notes/)
 - [Arcanist](https://raskell.io/zh/invest/arcanist/): translation of [Arcanist](https://raskell.io/invest/arcanist/)
 - [Archipelag.io](https://raskell.io/zh/invest/archipelag-io/): translation of [Archipelag.io](https://raskell.io/invest/archipelag-io/)
 - [Cyanea](https://raskell.io/zh/invest/cyanea/): translation of [Cyanea](https://raskell.io/invest/cyanea/)
 - [Humankind](https://raskell.io/zh/invest/humankind/): translation of [Humankind](https://raskell.io/invest/humankind/)
+- [隐私](https://raskell.io/zh/privacy/): translation of [Privacy](https://raskell.io/privacy/)
 - [项目](https://raskell.io/zh/projects/): translation of [Projects](https://raskell.io/projects/)
+- [阅读](https://raskell.io/zh/reading/): translation of [Reading](https://raskell.io/reading/)
+- [搜索](https://raskell.io/zh/search/): translation of [Search](https://raskell.io/search/)
+- [演讲](https://raskell.io/zh/speaking/): translation of [Speaking](https://raskell.io/speaking/)
+- [从这里开始](https://raskell.io/zh/start-here/): translation of [Start Here](https://raskell.io/start-here/)
+- [演讲稿](https://raskell.io/zh/talks/): translation of [Talks](https://raskell.io/talks/)
+- [书评](https://raskell.io/zh/categories/reviews/): translation of [书评](https://raskell.io/categories/reviews/)
+- [类别](https://raskell.io/zh/categories/): translation of [类别](https://raskell.io/categories/)
+- [The Agent Platform Handbook](https://raskell.io/zh/series/the-agent-platform-handbook/): translation of [The Agent Platform Handbook](https://raskell.io/series/the-agent-platform-handbook/)
+- [系列](https://raskell.io/zh/series/): translation of [系列](https://raskell.io/series/)
+- [主题](https://raskell.io/zh/tags/): translation of [主题](https://raskell.io/tags/)
 
 ### 한국어 (hreflang `ko`, under /ko/)
 
@@ -349,13 +369,27 @@ The site is written in English. Some pages are also translated; a translation li
 - [홈](https://raskell.io/ko/): translation of [Home](https://raskell.io/)
 - [소개](https://raskell.io/ko/about/): translation of [About](https://raskell.io/about/)
 - [앱](https://raskell.io/ko/apps/): translation of [Apps](https://raskell.io/apps/)
+- [글](https://raskell.io/ko/articles/): translation of [Articles](https://raskell.io/articles/)
 - [투자](https://raskell.io/ko/invest/): translation of [Invest](https://raskell.io/invest/)
-- [투자 소개서](https://raskell.io/ko/pitch/): translation of [Investor briefs](https://raskell.io/pitch/)
+- [라이선스](https://raskell.io/ko/license/): translation of [Licence](https://raskell.io/license/)
+- [지도](https://raskell.io/ko/map/): translation of [Map](https://raskell.io/map/)
+- [노트](https://raskell.io/ko/notes/): translation of [Notes](https://raskell.io/notes/)
 - [Arcanist](https://raskell.io/ko/invest/arcanist/): translation of [Arcanist](https://raskell.io/invest/arcanist/)
 - [Archipelag.io](https://raskell.io/ko/invest/archipelag-io/): translation of [Archipelag.io](https://raskell.io/invest/archipelag-io/)
 - [Cyanea](https://raskell.io/ko/invest/cyanea/): translation of [Cyanea](https://raskell.io/invest/cyanea/)
 - [Humankind](https://raskell.io/ko/invest/humankind/): translation of [Humankind](https://raskell.io/invest/humankind/)
+- [개인정보 보호](https://raskell.io/ko/privacy/): translation of [Privacy](https://raskell.io/privacy/)
 - [프로젝트](https://raskell.io/ko/projects/): translation of [Projects](https://raskell.io/projects/)
+- [독서](https://raskell.io/ko/reading/): translation of [Reading](https://raskell.io/reading/)
+- [검색](https://raskell.io/ko/search/): translation of [Search](https://raskell.io/search/)
+- [강연](https://raskell.io/ko/speaking/): translation of [Speaking](https://raskell.io/speaking/)
+- [여기서 시작](https://raskell.io/ko/start-here/): translation of [Start Here](https://raskell.io/start-here/)
+- [발표 자료](https://raskell.io/ko/talks/): translation of [Talks](https://raskell.io/talks/)
+- [서평](https://raskell.io/ko/categories/reviews/): translation of [서평](https://raskell.io/categories/reviews/)
+- [분류](https://raskell.io/ko/categories/): translation of [분류](https://raskell.io/categories/)
+- [The Agent Platform Handbook](https://raskell.io/ko/series/the-agent-platform-handbook/): translation of [The Agent Platform Handbook](https://raskell.io/series/the-agent-platform-handbook/)
+- [시리즈](https://raskell.io/ko/series/): translation of [시리즈](https://raskell.io/series/)
+- [주제](https://raskell.io/ko/tags/): translation of [주제](https://raskell.io/tags/)
 
 ## For agents
 

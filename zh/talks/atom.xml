@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh">
+    <title>Raskell - 演讲稿</title>
+    <subtitle>关于智能体平台、平台自动化、边缘基础设施与应用安全的笔记。构建能在真实生产环境中站得住的自动化优先平台。</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://raskell.io/zh/talks/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://raskell.io/zh/talks/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    
+    <id>https://raskell.io/zh/talks/atom.xml</id>
+</feed>
