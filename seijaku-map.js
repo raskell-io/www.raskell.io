@@ -286,6 +286,62 @@ function mount(fig, data, opts) {
     });
   });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && sel) { select(null); } });
+
+  // Full screen: the Fullscreen API where it exists; where it does not (iPhone), the map covers the page.
+  var fsBtn = fig.querySelector("[data-fullscreen]");
+  if (fsBtn) {
+    var fsLabel = fsBtn.querySelector("span");
+    var isFull = function () { return document.fullscreenElement === fig || document.webkitFullscreenElement === fig || fig.classList.contains("is-full"); };
+    var syncFull = function () {
+      var on = isFull();
+      fsBtn.setAttribute("aria-pressed", on ? "true" : "false");
+      fsLabel.textContent = on ? "Exit full screen" : "Full screen";
+      document.documentElement.classList.toggle("map-is-full", fig.classList.contains("is-full"));
+      touched = false;   // re-fit the graph to the new size on the next resize
+    };
+    var cover = function (on) { fig.classList.toggle("is-full", on); syncFull(); };
+    fsBtn.addEventListener("click", function () {
+      if (isFull()) {
+        if (document.fullscreenElement) { document.exitFullscreen(); }
+        else if (document.webkitFullscreenElement) { document.webkitExitFullscreen(); }
+        else { cover(false); }
+        return;
+      }
+      if (fig.requestFullscreen) { fig.requestFullscreen().catch(function () { cover(true); }); }
+      else if (fig.webkitRequestFullscreen) { fig.webkitRequestFullscreen(); }
+      else { cover(true); }
+    });
+    document.addEventListener("fullscreenchange", syncFull);
+    document.addEventListener("webkitfullscreenchange", syncFull);
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && fig.classList.contains("is-full")) { cover(false); } });
+  }
+
+  // The kinds legend rests as a stack of chips and fans out into labelled pills: on hover with a mouse, on
+  // keyboard focus, or on a first tap with touch (that tap opens it rather than switching a kind off).
+  var legend = fig.querySelector("[data-legend]");
+  if (legend) {
+    var hoverable = matchMedia("(hover: hover) and (pointer: fine)"), closeTimer = null;
+    var openLegend = function (on) {
+      clearTimeout(closeTimer);
+      legend.classList.toggle("is-open", on);
+      legend.setAttribute("aria-expanded", on ? "true" : "false");
+    };
+    // Each chip overlaps the one before it, so every chip's marker (at its left edge) stays in view.
+    [].forEach.call(legend.querySelectorAll("button"), function (b, i) { b.style.zIndex = i + 1; });
+    legend.classList.add("is-stacked");
+    openLegend(false);
+    legend.addEventListener("mouseenter", function () { if (hoverable.matches) { openLegend(true); } });
+    legend.addEventListener("mouseleave", function () {
+      if (!hoverable.matches || legend.contains(document.activeElement) && legend.querySelector(":focus-visible")) { return; }
+      closeTimer = setTimeout(function () { openLegend(false); }, 250);
+    });
+    legend.addEventListener("focusin", function (e) { if (e.target.matches(":focus-visible")) { openLegend(true); } });
+    legend.addEventListener("focusout", function (e) { if (!legend.contains(e.relatedTarget) && !legend.matches(":hover")) { openLegend(false); } });
+    legend.addEventListener("click", function (e) {
+      if (!legend.classList.contains("is-open")) { e.stopPropagation(); e.preventDefault(); openLegend(true); }
+    }, true);
+    document.addEventListener("pointerdown", function (e) { if (!legend.contains(e.target) && !hoverable.matches) { openLegend(false); } });
+  }
   // Focus a node from outside (e.g. /map/#a:/articles/x/): select it and centre on it.
   function focusOn(id) {
     var n = byId[id]; if (!n || nodes.indexOf(n) < 0) { return; }
