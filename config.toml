@@ -71,6 +71,7 @@ categories_descriptions = { "reviews" = "Reviews of books, papers, and long arti
 categories_deck = "Forms of writing on this site, alongside the topics they cover."
 og_locale = "en_US"
 scheme_toggle = true
+footer_fx = "aurora"   # blooms in the ring colours drifting along the bottom of the footer (CSS only)
 code_copy = true
 portrait = "images/raffael.webp"
 hero_portrait = false   # the homepage shows the face inline next to the name instead (content/_index.md)
