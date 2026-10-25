@@ -112,6 +112,12 @@ name = "Mathematics"
 kind = "domain"
 description = "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof."
 
+[game-ai]
+name = "Game AI"
+kind = "domain"
+description = "Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy."
+broader = ["machine-learning", "games"]
+
 # Concepts -----------------------------------------------------------------
 
 [agents]
@@ -193,6 +199,24 @@ description = "Emergence and collective dynamics: how simple agents, roles, and 
 name = "Reinforcement learning"
 kind = "concept"
 description = "Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill."
+broader = ["machine-learning"]
+
+[self-play]
+name = "Self-play"
+kind = "concept"
+description = "A program improving by playing itself: generating its own training data, learning from the outcomes, and testing each generation against the last."
+broader = ["reinforcement-learning", "game-ai"]
+
+[tree-search]
+name = "Tree search"
+kind = "concept"
+description = "Looking ahead by expanding a tree of moves: minimax and alpha-beta, Monte Carlo tree search, and the pruning and ordering that make them tractable."
+broader = ["game-ai"]
+
+[neural-networks]
+name = "Neural networks"
+kind = "concept"
+description = "Layers of weights that learn a function from examples: architectures, activations, quantisation, and running them where the data is."
 broader = ["machine-learning"]
 
 [neuroscience]
