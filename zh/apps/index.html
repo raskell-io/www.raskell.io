@@ -27,6 +27,113 @@
       "sameAs": ["https://github.com/raffaelschneider","https://x.com/raskelll","https://ch.linkedin.com/in/raffael-e-schneider"]
     },
     {
+      "@type": "CollectionPage",
+      "@id": "https://raskell.io/zh/apps/#collection",
+      "url": "https://raskell.io/zh/apps/",
+      "name": "应用",
+      "description": "可以直接打开使用的东西：用于学习和思考的本地优先工具，以及几个互动世界，从模拟真实世界到游戏。",
+      "inLanguage": "zh-Hans",
+      "isPartOf": { "@id": "https://raskell.io/#website" },
+      "author": { "@id": "https://raskell.io/#person" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": 7,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "item": {
+            "@type": "SoftwareApplication",
+            "@id": "https://raskell.io/projects/#manabi",
+            "name": "Manabi",
+            "description": "一个以阅读为先的语言学习应用，支持中文、日语、韩语和希伯来语。它分别训练识别、发音、听力、语境和回忆，配合间隔重复和预先录制的母语音频。它在浏览器中离线运行，可以作为 PWA 安装。",
+            "url": "https://manabi.raskell.io",
+            "sameAs": ["https://manabi.raskell.io","https://github.com/raskell-io/manabi"],
+            "applicationCategory": "EducationalApplication",
+            "image": "https://raskell.io/brands/manabi.png",
+            "keywords": "local-first, data-sovereignty, typescript, languages",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } },
+          { "@type": "ListItem", "position": 2, "item": {
+            "@type": "SoftwareApplication",
+            "@id": "https://raskell.io/projects/#kurumi",
+            "name": "Kurumi",
+            "description": "一个本地优先、AI 原生的第二大脑。记录笔记、链接和会议，再通过维基链接、反向链接、图谱视图和全文搜索把它们找回来。一切都能离线使用，可选通过 Automerge CRDT 同步，没有厂商锁定。",
+            "url": "https://kurumi.raskell.io",
+            "sameAs": ["https://kurumi.raskell.io","https://github.com/raskell-io/kurumi"],
+            "applicationCategory": "ProductivityApplication",
+            "image": "https://raskell.io/brands/kurumi.png",
+            "keywords": "local-first, data-sovereignty, knowledge-management, distributed-systems, typescript, external-memory",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } },
+          { "@type": "ListItem", "position": 3, "item": {
+            "@type": ["VideoGame", "SoftwareApplication"],
+            "@id": "https://raskell.io/projects/#paw-and-claw",
+            "name": "Paw & Claw",
+            "description": "一款继承《高级战争》精神的回合制策略游戏，交战双方是林地里的军队。浣熊、獾、狮子、小熊猫和鼹鼠争夺每一片灌木丛和每一条小溪。用 Rust 和 Bevy 构建。可以在浏览器里免费玩，也有桌面版。",
+            "url": "https://pawandclaw.raskell.io",
+            "sameAs": ["https://pawandclaw.raskell.io","https://github.com/raskell-io/paw-and-claw"],
+            "applicationCategory": "GameApplication",
+            "image": "https://raskell.io/brands/paw-and-claw.png",
+            "keywords": "games, rust",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } },
+          { "@type": "ListItem", "position": 4, "item": {
+            "@type": ["VideoGame", "SoftwareApplication"],
+            "@id": "https://raskell.io/projects/#kishi",
+            "name": "Kishi",
+            "description": "与用 Rust 编写、编译为 WebAssembly 的引擎下国际象棋、将棋和围棋。引擎在浏览器里、在你自己的设备上离线对弈，棋力从新手到满级，棋盘简洁安静。",
+            "url": "https://kishi.raskell.io",
+            "sameAs": ["https://kishi.raskell.io","https://github.com/raskell-io/kishi"],
+            "applicationCategory": "GameApplication",
+            "image": "https://raskell.io/brands/kishi.svg",
+            "keywords": "games, reinforcement-learning, webassembly, rust",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } },
+          { "@type": "ListItem", "position": 5, "item": {
+            "@type": ["VideoGame", "SoftwareApplication"],
+            "@id": "https://raskell.io/projects/#rainbow-river",
+            "name": "Rainbow River",
+            "description": "一款 32 位掌机风格的钓鱼游戏，灵感来自 The Legend of the River King。沿着河走，读懂水面，用手绘的鱼种填满你的鱼类图鉴。用 Rust 编写，编译为 WebAssembly，是 WASM-AD 的第一张卡带。可以在浏览器里玩。",
+            "url": "https://rainbowriver.raskell.io",
+            "sameAs": ["https://rainbowriver.raskell.io","https://github.com/raskell-io/rainbow-river"],
+            "applicationCategory": "GameApplication",
+            "image": "https://raskell.io/brands/rainbow-river.png",
+            "keywords": "games, webassembly, rust",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } },
+          { "@type": "ListItem", "position": 6, "item": {
+            "@type": "SoftwareApplication",
+            "@id": "https://raskell.io/projects/#terrarium",
+            "name": "Terrarium",
+            "description": "一个社会模拟引擎，由 LLM 驱动的智能体在其中形成涌现的文明。每个智能体都有性格、需求、记忆，以及可能出错的信念。你来设定世界的规则，然后观察市场、等级和联盟如何自行出现。",
+            "url": "https://terrarium.raskell.io",
+            "sameAs": ["https://terrarium.raskell.io","https://github.com/raskell-io/terrarium"],
+            "applicationCategory": "EducationalApplication",
+            "image": "https://raskell.io/brands/terrarium.png",
+            "keywords": "agents, simulation, complex-systems, rust, emergence",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } },
+          { "@type": "ListItem", "position": 7, "item": {
+            "@type": "SoftwareApplication",
+            "@id": "https://raskell.io/projects/#hotaru",
+            "name": "Hotaru",
+            "description": "60 电极阵列上的模拟神经元培养物在你的浏览器里打乒乓，就像 DishBrain 实验那样。只对击中和漏接给出反馈，并没有让它们变得更好；而当球拍朝球移动时就安静下来的输入做到了，页面会把它和对照组并排展示。",
+            "url": "https://hotaru.raskell.io",
+            "sameAs": ["https://hotaru.raskell.io","https://github.com/raskell-io/hotaru"],
+            "applicationCategory": "EducationalApplication",
+            "image": "https://raskell.io/brands/hotaru.png",
+            "keywords": "simulation, complex-systems, webassembly, rust, neuroscience, intelligence, emergence",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } }
+        ]
+      }
+    },
+    {
       "@type": "WebPage",
       "@id": "https://raskell.io/zh/apps/#page",
       "url": "https://raskell.io/zh/apps/",

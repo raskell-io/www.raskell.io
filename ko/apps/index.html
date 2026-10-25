@@ -27,6 +27,113 @@
       "sameAs": ["https://github.com/raffaelschneider","https://x.com/raskelll","https://ch.linkedin.com/in/raffael-e-schneider"]
     },
     {
+      "@type": "CollectionPage",
+      "@id": "https://raskell.io/ko/apps/#collection",
+      "url": "https://raskell.io/ko/apps/",
+      "name": "앱",
+      "description": "바로 열어서 쓸 수 있는 것들입니다. 배우고 생각하기 위한 로컬 우선 도구, 그리고 실제 세계를 흉내 낸 시뮬레이션부터 게임까지 몇 가지 상호작용 세계가 있습니다.",
+      "inLanguage": "ko",
+      "isPartOf": { "@id": "https://raskell.io/#website" },
+      "author": { "@id": "https://raskell.io/#person" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": 7,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "item": {
+            "@type": "SoftwareApplication",
+            "@id": "https://raskell.io/projects/#manabi",
+            "name": "Manabi",
+            "description": "중국어, 일본어, 한국어, 히브리어를 위한 읽기 중심의 언어 학습 앱입니다. 인식, 발음, 듣기, 맥락, 회상을 따로 훈련하며, 간격 반복과 미리 녹음한 원어민 음성을 사용합니다. 브라우저에서 오프라인으로 실행되고 PWA로 설치할 수 있습니다.",
+            "url": "https://manabi.raskell.io",
+            "sameAs": ["https://manabi.raskell.io","https://github.com/raskell-io/manabi"],
+            "applicationCategory": "EducationalApplication",
+            "image": "https://raskell.io/brands/manabi.png",
+            "keywords": "local-first, data-sovereignty, typescript, languages",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } },
+          { "@type": "ListItem", "position": 2, "item": {
+            "@type": "SoftwareApplication",
+            "@id": "https://raskell.io/projects/#kurumi",
+            "name": "Kurumi",
+            "description": "로컬 우선, AI 네이티브 세컨드 브레인입니다. 노트, 링크, 회의를 기록하고, 위키링크, 백링크, 그래프 보기, 전문 검색으로 다시 찾을 수 있습니다. 모든 기능이 오프라인에서 동작하며, Automerge CRDT를 통한 선택적 동기화를 지원하고, 벤더 종속이 없습니다.",
+            "url": "https://kurumi.raskell.io",
+            "sameAs": ["https://kurumi.raskell.io","https://github.com/raskell-io/kurumi"],
+            "applicationCategory": "ProductivityApplication",
+            "image": "https://raskell.io/brands/kurumi.png",
+            "keywords": "local-first, data-sovereignty, knowledge-management, distributed-systems, typescript, external-memory",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } },
+          { "@type": "ListItem", "position": 3, "item": {
+            "@type": ["VideoGame", "SoftwareApplication"],
+            "@id": "https://raskell.io/projects/#paw-and-claw",
+            "name": "Paw & Claw",
+            "description": "어드밴스 워즈의 정신을 이은 턴제 전략 게임으로, 숲속 군대들이 싸웁니다. 너구리, 오소리, 사자, 레서판다, 두더지가 모든 덤불과 개울을 두고 다툽니다. Rust와 Bevy로 만들었습니다. 브라우저에서 무료로 하거나 데스크톱 빌드로 즐길 수 있습니다.",
+            "url": "https://pawandclaw.raskell.io",
+            "sameAs": ["https://pawandclaw.raskell.io","https://github.com/raskell-io/paw-and-claw"],
+            "applicationCategory": "GameApplication",
+            "image": "https://raskell.io/brands/paw-and-claw.png",
+            "keywords": "games, rust",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } },
+          { "@type": "ListItem", "position": 4, "item": {
+            "@type": ["VideoGame", "SoftwareApplication"],
+            "@id": "https://raskell.io/projects/#kishi",
+            "name": "Kishi",
+            "description": "Rust로 작성하고 WebAssembly로 컴파일한 엔진을 상대로 체스, 쇼기, 바둑을 둡니다. 엔진은 브라우저 안에서 여러분의 기기로, 오프라인으로 두며, 초보자 수준부터 최고 실력까지, 조용한 판 위에서 대국합니다.",
+            "url": "https://kishi.raskell.io",
+            "sameAs": ["https://kishi.raskell.io","https://github.com/raskell-io/kishi"],
+            "applicationCategory": "GameApplication",
+            "image": "https://raskell.io/brands/kishi.svg",
+            "keywords": "games, reinforcement-learning, webassembly, rust",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } },
+          { "@type": "ListItem", "position": 5, "item": {
+            "@type": ["VideoGame", "SoftwareApplication"],
+            "@id": "https://raskell.io/projects/#rainbow-river",
+            "name": "Rainbow River",
+            "description": "32비트 휴대용 게임기 스타일의 낚시 게임으로, The Legend of the River King에서 영감을 받았습니다. 강을 따라 걷고, 물을 읽고, 손으로 그린 어종으로 물고기 도감을 채웁니다. Rust로 작성하고 WebAssembly로 컴파일했으며, WASM-AD의 첫 번째 카트리지입니다. 브라우저에서 플레이할 수 있습니다.",
+            "url": "https://rainbowriver.raskell.io",
+            "sameAs": ["https://rainbowriver.raskell.io","https://github.com/raskell-io/rainbow-river"],
+            "applicationCategory": "GameApplication",
+            "image": "https://raskell.io/brands/rainbow-river.png",
+            "keywords": "games, webassembly, rust",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } },
+          { "@type": "ListItem", "position": 6, "item": {
+            "@type": "SoftwareApplication",
+            "@id": "https://raskell.io/projects/#terrarium",
+            "name": "Terrarium",
+            "description": "LLM으로 움직이는 에이전트들이 창발적인 문명을 이루는 사회 시뮬레이션 엔진입니다. 각 에이전트는 성격, 욕구, 기억, 그리고 틀릴 수도 있는 믿음을 가집니다. 여러분이 세계의 규칙을 정하면, 시장과 위계와 동맹이 스스로 생겨나는 모습을 지켜볼 수 있습니다.",
+            "url": "https://terrarium.raskell.io",
+            "sameAs": ["https://terrarium.raskell.io","https://github.com/raskell-io/terrarium"],
+            "applicationCategory": "EducationalApplication",
+            "image": "https://raskell.io/brands/terrarium.png",
+            "keywords": "agents, simulation, complex-systems, rust, emergence",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } },
+          { "@type": "ListItem", "position": 7, "item": {
+            "@type": "SoftwareApplication",
+            "@id": "https://raskell.io/projects/#hotaru",
+            "name": "Hotaru",
+            "description": "60전극 어레이 위의 시뮬레이션된 뉴런 배양체가 DishBrain 실험처럼 브라우저에서 퐁을 합니다. 맞혔을 때와 놓쳤을 때의 피드백만으로는 실력이 늘지 않았습니다. 패들이 공 쪽으로 움직이면 조용해지는 입력은 효과가 있었고, 페이지는 이를 대조군과 나란히 보여 줍니다.",
+            "url": "https://hotaru.raskell.io",
+            "sameAs": ["https://hotaru.raskell.io","https://github.com/raskell-io/hotaru"],
+            "applicationCategory": "EducationalApplication",
+            "image": "https://raskell.io/brands/hotaru.png",
+            "keywords": "simulation, complex-systems, webassembly, rust, neuroscience, intelligence, emergence",
+            "author": { "@id": "https://raskell.io/#person" },
+            "creator": { "@id": "https://raskell.io/#person" }
+          } }
+        ]
+      }
+    },
+    {
       "@type": "WebPage",
       "@id": "https://raskell.io/ko/apps/#page",
       "url": "https://raskell.io/ko/apps/",
