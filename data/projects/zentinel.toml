@@ -13,7 +13,9 @@ accents = ["#f68d31", "#9b4d8a"]   # brand colours, used for the card glow
 
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
+tagline = "基于 Pingora 的安全优先反向代理"
 description = "为守护自由 Web 而构建的安全优先反向代理。基于 Cloudflare Pingora 的 Rust 实现，明确的配置优先于隐藏的默认值，WAF、认证和其他策略运行在隔离的智能体中，因此某个智能体崩溃时代理仍会继续运行。提供 WAF、机器人管理、身份、API 检查和脚本等智能体，从 Rust 到 Haskell 的 SDK，一个纯 Rust 的 ModSecurity 引擎和一个集群控制平面。"
 
 [i18n.ko]
+tagline = "Pingora 기반의 보안 우선 리버스 프록시"
 description = "자유로운 웹을 지키기 위해 만든 보안 우선 리버스 프록시입니다. Cloudflare의 Pingora 위에서 Rust로 동작하며, 숨겨진 기본값보다 명시적인 설정을 택하고, WAF, 인증 및 기타 정책을 격리된 에이전트에서 실행하므로 에이전트가 멈춰도 프록시는 계속 동작합니다. WAF, 봇 관리, 신원, API 검사, 스크립팅을 위한 에이전트, Rust부터 Haskell까지의 SDK, 순수 Rust ModSecurity 엔진, 플릿 컨트롤 플레인을 제공합니다."

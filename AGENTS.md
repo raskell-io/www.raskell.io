@@ -145,13 +145,15 @@ A new kind (say, podcasts or bookmarks) has to be taught to every sink. Touch po
 ## Translations
 
 English is the source language and lives at `/`; Simplified Chinese (`zh`) and Korean (`ko`) live under
-`/zh/` and `/ko/`. Today the homepage, About, Projects, and Apps are translated; everything else is English in
+`/zh/` and `/ko/`. Today the homepage, About, Projects, Apps, Invest, and the investor briefs are translated; everything else is English in
 every language, and the footer's language switch sends readers of an untranslated page to that
 language's home.
 
 - **A page:** add `<name>.<code>.md` beside the source (`content/about.zh.md`, `content/_index.ko.md`) with
   the same front matter and a translated title, description, and body. URLs keep the English names
-  (`/zh/about/`); never set a translated `slug` or `path`. Links inside a translation point to the
+  (`/zh/about/`); never set a translated `slug`. A source with an explicit `path` (the investor briefs,
+  `path = "invest/cyanea"`) needs the language in front of it in the translation (`path = "zh/invest/cyanea"`),
+  because Zola does not prefix an explicit path. Links inside a translation point to the
   English page unless that page is translated too.
 - **Project data:** each `data/projects/<slug>.toml` ends with `[i18n.zh]` and `[i18n.ko]` tables
   (`description`, optionally `title` and `tagline`); the cards use them wherever they appear. A new

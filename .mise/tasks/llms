@@ -10,6 +10,7 @@ This writes, from content/ and data/:
   static/{articles,notes,talks}/<slug>.md  one clean Markdown copy per page, linked from its page head;
                                reviews carry the reviewed work and the rating in their front matter
   static/reading.json          the reading log as data: every work, its status, dates, rating, and review
+  static/<lang>/llms.txt       per translation language: a short index, in that language, of the translated pages
 
 Shortcodes become plain fences, internal links become absolute URLs, drafts are skipped.
 The outputs are build artefacts (gitignored); CI runs this before `zola build`.
@@ -381,6 +382,61 @@ for section, heading in (("projects", "Projects"), ("apps", "Apps")):
         lines += ["## %s" % heading, ""]
         lines += ["- [%s](%s): %s" % (t, u, d) for t, u, d, _ in projects_from(section)]
         lines.append("")
+# Translations: content/**/<name>.<code>.md beside its English source, at /<code>/<english path>/. The languages
+# come from config (extra.seijaku.languages); each gets its own short llms.txt at /<code>/llms.txt.
+LANGS = [dict(re.findall(r'(\w+) = "([^"]*)"', m)) for m in re.findall(r'^\s*\{ (code = "[^}]*)\},?$', config, re.M)]
+LANGS = [l for l in LANGS if l.get("code") and l.get("hreflang")]
+DEFAULT_LANG = (re.search(r'^default_language\s*=\s*"([^"]+)"', config, re.M) or [None, "en"])[1]
+LLMS_I18N = {
+    "zh": {"intro": "raskell.io 是 %s 的个人网站。他是瑞士巴塞尔的一名 AI 架构师。网站以英文为主；下列页面有简体中文版本。文章、笔记、书评和演讲只有英文版。" % AUTHOR,
+           "pages": "已翻译的页面", "english": "英文原文", "index": "完整的英文索引（所有文章、书评、笔记、演讲、阅读记录、主题和项目）"},
+    "ko": {"intro": "raskell.io는 스위스 바젤의 AI 아키텍트 %s의 개인 사이트입니다. 사이트는 주로 영어로 되어 있으며, 아래 페이지는 한국어로 번역되어 있습니다. 글, 노트, 서평, 강연은 영어로만 제공됩니다." % AUTHOR,
+           "pages": "번역된 페이지", "english": "영어 원문", "index": "전체 영어 색인(모든 글, 서평, 노트, 강연, 독서 기록, 주제, 프로젝트)"},
+}
+
+def translations():
+    found = {}
+    for path in sorted(glob.glob("content/**/*.md", recursive=True)):
+        m = re.match(r"content/(.*?)([^/]+)\.([a-z]{2})\.md$", path)
+        if not m or m.group(3) == DEFAULT_LANG or m.group(3) not in [l["code"] for l in LANGS]:
+            continue
+        folder, name, code = m.groups()
+        fm, _ = split_front_matter(open(path).read())
+        if re.search(r"^draft\s*=\s*true", fm, re.M):
+            continue
+        src_fm, _ = split_front_matter(open("content/%s%s.md" % (folder, name)).read())
+        fixed = fm_str(src_fm, "path")
+        rel = fixed.strip("/") if fixed else (folder.strip("/") if name == "_index" else (folder + name).strip("/"))
+        rel = rel + "/" if rel else ""
+        lang_desc = re.search(r'^\[languages\.%s\]\n(?:.*\n)*?description\s*=\s*"([^"]*)"' % code, config, re.M)
+        found.setdefault(code, []).append({"title": fm_str(fm, "title"), "description": fm_str(fm, "description") or (lang_desc.group(1) if lang_desc else ""),
+                                           "url": "%s/%s/%s" % (BASE, code, rel), "source": "%s/%s" % (BASE, rel),
+                                           "source_title": fm_str(src_fm, "title")})
+    return {l["code"]: found[l["code"]] for l in LANGS if l["code"] in found}
+
+TRANSLATED = translations()
+if TRANSLATED:
+    names = {l["code"]: l for l in LANGS}
+    lines += ["## Translations", "",
+              "The site is written in English. Some pages are also translated; a translation lives at the same path under a "
+              "language prefix (/zh/about/ translates /about/), carries hreflang alternates, and is linked from its English "
+              "page. Articles, reviews, notes, and talks are English only. Each language has a short index of its own.", ""]
+    for code, items in TRANSLATED.items():
+        l = names[code]
+        lines += ["### %s (hreflang `%s`, under /%s/)" % (l.get("name", code), l["hreflang"], code), "",
+                  "- [llms.txt in %s](%s/%s/llms.txt)" % (l.get("name", code), BASE, code)]
+        lines += ["- [%s](%s): translation of [%s](%s)" % (t["title"], t["url"], t["source_title"], t["source"]) for t in items]
+        lines.append("")
+    for code, items in TRANSLATED.items():
+        l, words = names[code], LLMS_I18N.get(code)
+        if not words:
+            continue
+        out = ["# Raskell (%s)" % l.get("name", code), "", "> " + words["intro"], "", "## " + words["pages"], ""]
+        out += ["- [%s](%s): %s%s: %s" % (t["title"], t["url"], t["description"] + " " if t["description"] else "", words["english"], t["source"]) for t in items]
+        out += ["", "## English", "", "- [llms.txt](%s/llms.txt): %s" % (BASE, words["index"]), ""]
+        os.makedirs("static/%s" % code, exist_ok=True)
+        open("static/%s/llms.txt" % code, "w").write("\n".join(out))
+
 lines += ["## For agents", "",
           "- Each article and note as Markdown: its URL with `.md` instead of the trailing slash, e.g. %s/articles/the-model-is-a-dependency.md" % BASE,
           "- Each talk as Markdown too, e.g. %s/talks/iat-13-basel.md" % BASE,
@@ -420,5 +476,5 @@ if works:
         full.append("")
 open("static/llms-full.txt", "w").write("\n".join(full))
 
-print("llms: %d articles (%d reviews), %d notes, %d talks, %d works, %d cited links, %d series -> static/llms.txt, llms-full.txt, reading.json, {articles,notes,talks}/*.md"
-      % (len(articles), len(reviews), len(notes), len(talks), len(works), len(cites), len(series)))
+print("llms: %d articles (%d reviews), %d notes, %d talks, %d works, %d cited links, %d series, %d translations -> static/llms.txt, llms-full.txt, reading.json, {articles,notes,talks}/*.md, <lang>/llms.txt"
+      % (len(articles), len(reviews), len(notes), len(talks), len(works), len(cites), len(series), sum(len(v) for v in TRANSLATED.values())))

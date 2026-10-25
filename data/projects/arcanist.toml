@@ -14,7 +14,9 @@ accents = ["#8839ef", "#ea76cb"]   # brand colours, used for the card glow
 
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
+tagline = "用 Rust 写的 Haskell 工具：hx 和 bhc"
 description = "面向 AI 编写代码时代的 Haskell 工具。hx 是用 Rust 写的快速包与项目管理器，bhc 是一个尽可能检查一切的编译器。再加上一个记录哪些内容已被验证的注册中心，它们通向一个公共资源：无论是人还是模型，都不必把同一件事验证两次。"
 
 [i18n.ko]
+tagline = "Rust로 만든 Haskell 도구: hx와 bhc"
 description = "AI가 코드를 쓰는 시대를 위한 Haskell 도구입니다. hx는 Rust로 만든 빠른 패키지 및 프로젝트 관리자이고, bhc는 검사할 수 있는 모든 것을 검사하도록 만든 컴파일러입니다. 무엇이 검증되었는지 기록하는 레지스트리와 함께, 사람이든 모델이든 같은 것을 두 번 검증할 필요가 없는 공유 자원을 향합니다."

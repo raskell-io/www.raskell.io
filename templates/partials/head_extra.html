@@ -41,6 +41,16 @@
 {%- elif page is defined and page.path == "/reading/" %}
 <link rel="alternate" type="application/json" title="The reading log as data" href="{{ get_url(path='reading.json') | safe }}">
 {%- endif %}
+{#- Languages (config extra.seijaku.languages): this page's tag, the site's tags, and this page's translations. -#}
+{%- set langs = config.extra.seijaku.languages | default(value=[]) %}
+{%- set_global ld_tag = lang %}{% set_global ld_tags = [] %}
+{%- for l in langs %}{% if l.code == lang %}{% set_global ld_tag = l.hreflang %}{% endif %}{% set_global ld_tags = ld_tags | concat(with=l.hreflang) %}{% endfor %}
+{%- if page is defined %}{% set cur = page %}{% elif section is defined %}{% set cur = section %}{% else %}{% set cur = false %}{% endif %}
+{%- set ld_translated = cur and cur.translations | length > 1 %}
+{%- set ld_post = false %}{% if page is defined and page.date %}{% if psec == "articles" or psec == "notes" %}{% set ld_post = true %}{% endif %}{% endif %}
+{%- if lang != config.default_language %}
+<link rel="alternate" type="text/markdown" hreflang="{{ ld_tag }}" title="llms.txt ({{ ld_tag }})" href="{{ get_url(path=lang ~ '/llms.txt') | safe }}">
+{%- endif %}
 {%- set base = config.base_url %}
 {%- set here = current_url | default(value=base) %}
 {%- set id_site = base ~ "/#website" %}{% set id_person = base ~ "/#person" %}{% set id_article = here ~ "#article" %}
@@ -60,7 +70,7 @@
       "name": {{ config.title | json_encode | safe }},
       "description": {{ config.description | json_encode | safe }},
       "publisher": { "@id": {{ id_person | json_encode | safe }} },
-      "inLanguage": {{ config.default_language | json_encode | safe }}{% if config.extra.seijaku.license %},
+      "inLanguage": {% if ld_tags | length > 1 %}{{ ld_tags | json_encode | safe }}{% else %}{{ config.default_language | json_encode | safe }}{% endif %}{% if config.extra.seijaku.license %},
       "license": {{ config.extra.seijaku.license.url | json_encode | safe }}{% endif %}{% if config.extra.seijaku.search %},
       "potentialAction": { "@type": "SearchAction", "target": { "@type": "EntryPoint", "urlTemplate": "{{ base }}/search/?q={search_term_string}" }, "query-input": "required name=search_term_string" }{% endif %}
     },
@@ -95,7 +105,7 @@
       "description": {{ page.description | default(value=config.description) | json_encode | safe }},
       "url": {{ here | json_encode | safe }},
       "mainEntityOfPage": {{ here | json_encode | safe }},
-      "inLanguage": {{ config.default_language | json_encode | safe }},
+      "inLanguage": {{ ld_tag | json_encode | safe }},
       "author": { "@id": {{ id_person | json_encode | safe }} },
       "publisher": { "@id": {{ id_person | json_encode | safe }} },
       "datePublished": {{ page.date | date(format="%Y-%m-%dT00:00:00+00:00") | json_encode | safe }}
@@ -255,13 +265,35 @@
       "isPartOf": { "@id": {{ id_site | json_encode | safe }} },
       "hasPart": [{% for a in term.pages %}{ "@type": {% if a.extra.review %}["BlogPosting", "Review"]{% else %}"BlogPosting"{% endif %}, "@id": {{ a.permalink ~ "#article" | json_encode | safe }}, "headline": {{ a.title | json_encode | safe }}, "url": {{ a.permalink | json_encode | safe }}, "datePublished": {{ a.date | date(format="%Y-%m-%dT00:00:00+00:00") | json_encode | safe }} }{% if not loop.last %}, {% endif %}{% endfor %}]
     }
-    {%- elif page is defined and page.path == "/about/" %},
+    {%- elif page is defined and (page.path == "/about/" or page.relative_path is starting_with("about.")) %},
     {
       "@type": "ProfilePage",
       "@id": {{ id_profile | json_encode | safe }},
       "url": {{ here | json_encode | safe }},
       "name": {{ page.title | json_encode | safe }},
+      "inLanguage": {{ ld_tag | json_encode | safe }},
       "mainEntity": { "@id": {{ id_person | json_encode | safe }} }
+    }
+    {%- endif %}
+    {%- if ld_translated and not ld_post %},
+    {
+      "@type": "WebPage",
+      "@id": {{ here ~ "#page" | json_encode | safe }},
+      "url": {{ here | json_encode | safe }},
+      "name": {{ cur.title | json_encode | safe }},
+      {%- if cur.description %}
+      "description": {{ cur.description | json_encode | safe }},
+      {%- endif %}
+      "inLanguage": {{ ld_tag | json_encode | safe }},
+      "isPartOf": { "@id": {{ id_site | json_encode | safe }} },
+      {%- if lang != config.default_language %}
+      {%- for tr in cur.translations %}{% if tr.lang == config.default_language %}
+      "translationOfWork": { "@id": {{ tr.permalink ~ "#page" | json_encode | safe }}, "url": {{ tr.permalink | json_encode | safe }}, "inLanguage": {{ config.default_language | json_encode | safe }} }
+      {%- endif %}{% endfor %}
+      {%- else %}
+      {%- set_global ld_n = 0 %}
+      "workTranslation": [{% for tr in cur.translations %}{% if tr.lang != lang %}{% set_global trtag = tr.lang %}{% for l in langs %}{% if l.code == tr.lang %}{% set_global trtag = l.hreflang %}{% endif %}{% endfor %}{% if ld_n > 0 %}, {% endif %}{ "@id": {{ tr.permalink ~ "#page" | json_encode | safe }}, "url": {{ tr.permalink | json_encode | safe }}, "inLanguage": {{ trtag | json_encode | safe }} }{% set_global ld_n = ld_n + 1 %}{% endif %}{% endfor %}]
+      {%- endif %}
     }
     {%- endif %}
   ]
