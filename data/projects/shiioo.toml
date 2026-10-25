@@ -1,12 +1,16 @@
-title = "Shiioo (CO)"
-description = "The Virtual Company OS. Agentic enterprise orchestrator with DAG workflows, event sourcing, MCP tools, and a categorized skill registry with git import."
+title = "Shiioo"
+description = "A virtual company of AI agents on your Mac, run from your phone. Claude Code, Codex and local models work in their own branches; a rules file decides what they may do alone, the rest reaches you on Telegram as a question, and every step lands in a tamper-evident record. One Rust binary, open source."
 status = "dev"
-links = [ { name = "GitHub", url = "https://github.com/raskell-io/shiioo" } ]
+logo = "brands/shiioo.png"   # the mascot from shiioo.raskell.io
+wordmark = "brands/shiioo-wordmark-light.svg"   # the brandtype, shown beside the logo as the card title (Bricolage Grotesque, as on the site)
+wordmark_dark = "brands/shiioo-wordmark-dark.svg"
+links = [ { name = "Website", url = "https://shiioo.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/shiioo" } ]
 topics = ["agents", "ai-platforms", "ai-for-ops", "platform-automation", "rust"]
+accents = ["#3fc1ad", "#e0a64b"]   # brand colours of shiioo.raskell.io, for the card glow
 
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
-description = "虚拟公司操作系统。一个智能体化的企业编排器，具备 DAG 工作流、事件溯源、MCP 工具，以及支持从 git 导入的分类技能注册中心。"
+description = "一家由 AI 智能体组成的虚拟公司，运行在你的 Mac 上，用手机来管理。Claude Code、Codex 和本地模型在各自的分支里工作；一份规则文件决定它们可以独立做什么，其余的会以问题的形式通过 Telegram 发到你的手机上，每一步都记录在一份防篡改的记录里。一个 Rust 二进制文件，开源。"
 
 [i18n.ko]
-description = "가상 회사 OS입니다. DAG 워크플로, 이벤트 소싱, MCP 도구, 그리고 git에서 가져올 수 있는 분류된 스킬 레지스트리를 갖춘 에이전트 기반 엔터프라이즈 오케스트레이터입니다."
+description = "Mac에서 돌아가고 휴대폰으로 운영하는, AI 에이전트로 이루어진 가상 회사입니다. Claude Code, Codex, 로컬 모델이 각자의 브랜치에서 일하고, 규칙 파일이 혼자 해도 되는 일을 정하며, 나머지는 Telegram으로 질문이 되어 휴대폰에 도착합니다. 모든 단계는 변조를 알아챌 수 있는 기록에 남습니다. Rust 바이너리 하나이며 오픈 소스입니다."

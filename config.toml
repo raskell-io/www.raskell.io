@@ -133,6 +133,53 @@ footer_groups = [
     { name = "Sitemap", url = "/sitemap.xml" },
   ] },
 ]
+# The footer's link groups, column by column (each inner list is one column, top to bottom). The site's own
+# pages first, then the work, then the doors out: three columns of two groups, about ten links each.
+footer_columns = [
+  [
+    { title = "Writing", items = [
+      { name = "Start here", url = "@/start-here.md" },
+      { name = "Articles", url = "@/articles/_index.md" },
+      { name = "Notes", url = "@/notes/_index.md" },
+      { name = "Reviews", url = "/categories/reviews/" },
+      { name = "Talks", url = "@/talks/_index.md" },
+      { name = "The Handbook", url = "/series/the-agent-platform-handbook/" },
+    ] },
+    { title = "Explore", items = [
+      { name = "Map", url = "@/map.md" },
+      { name = "Topics", url = "/tags" },
+      { name = "Series", url = "/series" },
+      { name = "Reading", url = "@/reading.md" },
+      { name = "Search", url = "@/search.md" },
+    ] },
+  ],
+  [
+    { title = "Work", items = [
+      { name = "About", url = "@/about.md" },
+      { name = "Projects", url = "@/projects/_index.md" },
+      { name = "Apps", url = "@/apps/_index.md" },
+      { name = "Speaking", url = "@/speaking.md" },
+      { name = "Invest", url = "@/invest.md" },
+    ] },
+    { title = "Building", items = [
+      { name = "Zentinel", url = "https://zentinelproxy.io" },
+      { name = "Archipelag.io", url = "https://archipelag.io" },
+      { name = "Arcanist.sh", url = "https://arcanist.sh" },
+      { name = "Cyanea", url = "https://cyanea.bio" },
+      { name = "Shiioo", url = "https://shiioo.raskell.io" },
+    ] },
+  ],
+  [
+    { title = "For machines", items = [
+      { name = "RSS feed", url = "/rss.xml" },
+      { name = "llms.txt", url = "/llms.txt" },
+      { name = "llms-full.txt", url = "/llms-full.txt" },
+      { name = "map.json", url = "/map.json" },
+      { name = "Sitemap", url = "/sitemap.xml" },
+    ] },
+    { title = "Elsewhere", social = true },
+  ],
+]
 social = [
   { name = "GitHub", url = "https://github.com/raffaelschneider" },
   { name = "X", url = "https://x.com/raskelll", handle = "@raskelll" },
@@ -170,6 +217,8 @@ Raskell 是我在网络上的一角，也是通往我所构建的一切的入口
 
 [extra.seijaku.i18n.zh.labels]
 # English interface text = its translation. {name} marks a placeholder; %-codes are date formats.
+"Writing" = "写作"
+"Work" = "工作"
 "{n} page" = "{n} 个页面"
 "{n} pages" = "{n} 个页面"
 "On the map" = "地图上"
@@ -414,6 +463,8 @@ Raskell은 웹 위의 제 작은 공간이자, 제가 만드는 모든 것으로
 
 [extra.seijaku.i18n.ko.labels]
 # English interface text = its translation. {name} marks a placeholder; %-codes are date formats.
+"Writing" = "글쓰기"
+"Work" = "작업"
 "{n} page" = "페이지 {n}개"
 "{n} pages" = "페이지 {n}개"
 "On the map" = "지도에서"
