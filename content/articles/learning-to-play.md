@@ -1,7 +1,6 @@
 +++
 title = "Learning to Play"
 date = 2026-10-25
-draft = true
 description = "A chess prodigy's handbook, three old games and one laptop: rebuilding the ideas behind game-playing AI in Rust for a browser on my phone, and measuring them."
 
 [taxonomies]
@@ -12,17 +11,6 @@ author = "Raffael"
 image = "learning-to-play.avif"
 cover = "covers/learning-to-play.avif"
 +++
-
-<!--
-DRAFT NOTES (remove before publish)
-1. The book references are all from the first hundred pages (introduction to chapter 5). The one
-   quotation is Shannon's, as Mallaby quotes it in chapter 1; check it against your copy.
-3. No series taxonomy on purpose: the piece ends with "let's see". Add
-   `series = ["learning-to-play"]` under [taxonomies] when the second piece is published, and the
-   series description is already in config.toml.
-4. `reads = ["the-infinity-machine"]` was dropped from [extra] at your request; add it back if you
-   want the book in the header after all.
--->
 
 This month I have been reading [*The Infinity Machine*](/reading/#the-infinity-machine), Sebastian Mallaby's biography of Demis Hassabis, the chess prodigy from North London who founded DeepMind, the laboratory behind AlphaGo and AlphaFold. I picked it up because I wanted to understand one of the early architects of the AI we now live with, told by someone who had thirty hours of his time, and because almost everything that interests me, games, simulations, the question of what a machine can learn on its own, runs through his story. A hundred pages in, there is a scene I have not been able to put down.
 
