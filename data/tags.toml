@@ -118,6 +118,11 @@ kind = "domain"
 description = "Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy."
 broader = ["machine-learning", "games"]
 
+[enterprise-architecture]
+name = "Enterprise architecture"
+kind = "domain"
+description = "How a company's capabilities, applications, data and infrastructure fit together, who owns what, and how the landscape is changed on purpose."
+
 # Concepts -----------------------------------------------------------------
 
 [agents]
@@ -510,6 +515,12 @@ name = "Entrepreneurship"
 kind = "concept"
 description = "Finding something worth building and building it: ventures, side projects, and what changes when anyone can spot an opportunity and operate a business with AI."
 broader = ["economics"]
+
+[agent-identity]
+name = "Agent identity"
+kind = "concept"
+description = "Agents as principals of their own: identities, entitlements, credentials, budgets and audit trails provisioned like an employee's, with a human sponsor, instead of borrowed rights."
+broader = ["agents", "applied-security"]
 
 # Technologies -------------------------------------------------------------
 
