@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-25T18:15:00+00:00",
+ "generated": "2026-10-25T18:22:36+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -19,7 +19,7 @@
    "url": "https://raskell.io/articles/the-web-was-the-training-set/",
    "meta": "2026-10-24 · 16 min",
    "description": "Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "a:/articles/observability-is-not-logging/",
@@ -46,7 +46,7 @@
    "url": "https://raskell.io/articles/the-bill-is-part-of-the-loop/",
    "meta": "2026-07-18 · 10 min",
    "description": "Every model response already carries its own bill in the usage field, and the loop throws it away. This post reads that field, prices it against a table, and turns cost into a value the loop can see per turn and act on: a metering decorator that needs no loop change, a running ledger, prompt-cache accounting that moves the number the most, and a budget that degrades before it stops. Part eight of The Agent Platform Handbook.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/the-model-is-a-dependency/",
@@ -55,7 +55,7 @@
    "url": "https://raskell.io/articles/the-model-is-a-dependency/",
    "meta": "2026-07-09 · 14 min",
    "description": "Every layer of the harness has existed to put the right tokens in front of one hardcoded model string. This post pulls that string out and makes the model a dependency: why you route a cheap model for easy turns and a strong one for hard turns, what a fallback looks like when a provider is down, and why 'models are commodities' is a claim about your architecture before it is a claim about the market. Part seven of The Agent Platform Handbook.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
@@ -199,7 +199,7 @@
    "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/",
    "meta": "2026-04-16 · 19 min",
    "description": "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
@@ -244,7 +244,7 @@
    "url": "https://raskell.io/articles/how-i-work-these-days/",
    "meta": "2026-03-15 · 10 min",
    "description": "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right.",
-   "degree": 17
+   "degree": 18
   },
   {
    "id": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
@@ -262,7 +262,7 @@
    "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/",
    "meta": "2026-03-08 · 29 min",
    "description": "I migrated two production apps from Kubernetes to a single Hetzner box. The missing piece was not the hardware.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/edge-systems-are-the-new-backend/",
@@ -334,7 +334,7 @@
    "url": "https://raskell.io/notes/a-capability-democratised/",
    "meta": "2026-10-25",
    "description": "Building software took money, a team, or years of training. Now anyone with an idea and a subscription can do it, and nobody predicted what would follow.",
-   "degree": 7
+   "degree": 10
   },
   {
    "id": "a:/notes/citizen-entrepreneurs/",
@@ -343,7 +343,7 @@
    "url": "https://raskell.io/notes/citizen-entrepreneurs/",
    "meta": "2026-10-25",
    "description": "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory.",
-   "degree": 7
+   "degree": 9
   },
   {
    "id": "a:/notes/ideas-stop-waiting/",
@@ -352,7 +352,7 @@
    "url": "https://raskell.io/notes/ideas-stop-waiting/",
    "meta": "2026-10-25",
    "description": "In 2026 the backlog of ideas I carried for years is turning into things that exist. On why this year feels like a window that will not stay open.",
-   "degree": 7
+   "degree": 9
   },
   {
    "id": "a:/notes/power-in-the-good-sense/",
@@ -361,7 +361,7 @@
    "url": "https://raskell.io/notes/power-in-the-good-sense/",
    "meta": "2026-10-25",
    "description": "The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "a:/notes/the-move-to-the-city/",
@@ -370,7 +370,7 @@
    "url": "https://raskell.io/notes/the-move-to-the-city/",
    "meta": "2026-10-25",
    "description": "Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "a:/notes/the-tumult-in-between/",
@@ -379,7 +379,7 @@
    "url": "https://raskell.io/notes/the-tumult-in-between/",
    "meta": "2026-10-25",
    "description": "If AI ends in post-scarcity, the dangerous part is the interval: jobs going before goods become nearly free, with no agreed idea of where the ship steers.",
-   "degree": 6
+   "degree": 9
   },
   {
    "id": "a:/notes/the-window-before-the-utility/",
@@ -388,7 +388,7 @@
    "url": "https://raskell.io/notes/the-window-before-the-utility/",
    "meta": "2026-10-25",
    "description": "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again.",
-   "degree": 8
+   "degree": 11
   },
   {
    "id": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
@@ -413,18 +413,18 @@
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 12 pages",
+   "meta": "Concept · 13 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 20
+   "degree": 21
   },
   {
    "id": "t:ai-engineering",
    "kind": "tag",
    "label": "AI-assisted engineering",
    "url": "https://raskell.io/tags/ai-engineering/",
-   "meta": "Domain · 13 pages",
+   "meta": "Domain · 14 pages",
    "description": "AI as an engineering tool: coding agents, AI-authored code, and what programming becomes when models write most of it.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "t:ai-for-ops",
@@ -467,9 +467,9 @@
    "kind": "tag",
    "label": "Augmentation",
    "url": "https://raskell.io/tags/augmentation/",
-   "meta": "Concept · 7 pages",
+   "meta": "Concept · 8 pages",
    "description": "Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "t:cities",
@@ -485,9 +485,9 @@
    "kind": "tag",
    "label": "The commons",
    "url": "https://raskell.io/tags/commons/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Resources held in common and the rules that keep them so: common land, open protocols, open data, and the web before the platforms.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:compilers",
@@ -598,6 +598,15 @@
    "degree": 2
   },
   {
+   "id": "t:ethics",
+   "kind": "tag",
+   "label": "Ethics",
+   "url": "https://raskell.io/tags/ethics/",
+   "meta": "Concept · 1 page",
+   "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
+   "degree": 8
+  },
+  {
    "id": "t:europe",
    "kind": "tag",
    "label": "Europe",
@@ -674,9 +683,9 @@
    "kind": "tag",
    "label": "History of technology",
    "url": "https://raskell.io/tags/history-of-technology/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:hypertext",
@@ -899,9 +908,9 @@
    "kind": "tag",
    "label": "Policy",
    "url": "https://raskell.io/tags/policy/",
-   "meta": "Domain · 2 pages",
+   "meta": "Domain · 3 pages",
    "description": "Where engineering meets regulation, public institutions, procurement, and national strategy.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:programming-languages",
@@ -1057,6 +1066,15 @@
    "degree": 9
   },
   {
+   "id": "t:world-history",
+   "kind": "tag",
+   "label": "World history",
+   "url": "https://raskell.io/tags/world-history/",
+   "meta": "Concept · 1 page",
+   "description": "History told at the scale of continents and millennia: why societies diverged, and how the world came to look the way it does.",
+   "degree": 6
+  },
+  {
    "id": "t:zola",
    "kind": "tag",
    "label": "Zola",
@@ -1091,15 +1109,6 @@
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
    "degree": 9
-  },
-  {
-   "id": "t:ethics",
-   "kind": "tag",
-   "label": "Ethics",
-   "url": "https://raskell.io/tags#ethics",
-   "meta": "Concept · no pages yet",
-   "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
-   "degree": 7
   },
   {
    "id": "t:evaluation",
@@ -1307,15 +1316,6 @@
    "meta": "Concept · no pages yet",
    "description": "Looking ahead by expanding a tree of moves: minimax and alpha-beta, Monte Carlo tree search, and the pruning and ordering that make them tractable.",
    "degree": 1
-  },
-  {
-   "id": "t:world-history",
-   "kind": "tag",
-   "label": "World history",
-   "url": "https://raskell.io/tags#world-history",
-   "meta": "Concept · no pages yet",
-   "description": "History told at the scale of continents and millennia: why societies diverged, and how the world came to look the way it does.",
-   "degree": 5
   },
   {
    "id": "s:the-agent-platform-handbook",
@@ -1762,7 +1762,7 @@
    "url": "https://raskell.io/reading/#freeland",
    "meta": "Novel · Theodor Hertzka · read 2017",
    "description": "A Social Anticipation",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:das-soziale-problem",
@@ -1770,7 +1770,7 @@
    "label": "Das soziale Problem",
    "url": "https://raskell.io/reading/#das-soziale-problem",
    "meta": "Book · Theodor Hertzka · read 2017",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "w:the-devils-delusion",
@@ -2116,6 +2116,10 @@
    "target": "t:agents"
   },
   {
+   "source": "a:/notes/ideas-stop-waiting/",
+   "target": "t:agents"
+  },
+  {
    "source": "a:/articles/observability-is-not-logging/",
    "target": "t:agents"
   },
@@ -2173,6 +2177,10 @@
   },
   {
    "source": "a:/notes/power-in-the-good-sense/",
+   "target": "t:ai-engineering"
+  },
+  {
+   "source": "a:/notes/the-window-before-the-utility/",
    "target": "t:ai-engineering"
   },
   {
@@ -2268,6 +2276,10 @@
    "target": "t:open-web"
   },
   {
+   "source": "a:/notes/citizen-entrepreneurs/",
+   "target": "t:augmentation"
+  },
+  {
    "source": "a:/notes/ideas-stop-waiting/",
    "target": "t:augmentation"
   },
@@ -2310,6 +2322,10 @@
   {
    "source": "t:cities",
    "target": "t:geography"
+  },
+  {
+   "source": "a:/notes/a-capability-democratised/",
+   "target": "t:commons"
   },
   {
    "source": "a:/articles/looking-back-on-2025/",
@@ -2548,6 +2564,14 @@
    "target": "t:economics"
   },
   {
+   "source": "a:/notes/power-in-the-good-sense/",
+   "target": "t:ethics"
+  },
+  {
+   "source": "t:ethics",
+   "target": "t:philosophy"
+  },
+  {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "t:europe"
   },
@@ -2685,6 +2709,10 @@
   },
   {
    "source": "a:/articles/learning-to-play/",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "a:/notes/a-capability-democratised/",
    "target": "t:history-of-technology"
   },
   {
@@ -2988,6 +3016,10 @@
    "target": "t:platform-automation"
   },
   {
+   "source": "a:/notes/the-tumult-in-between/",
+   "target": "t:policy"
+  },
+  {
    "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
    "target": "t:policy"
   },
@@ -3276,6 +3308,18 @@
    "target": "t:open-web"
   },
   {
+   "source": "a:/notes/the-move-to-the-city/",
+   "target": "t:world-history"
+  },
+  {
+   "source": "t:world-history",
+   "target": "t:history"
+  },
+  {
+   "source": "t:world-history",
+   "target": "t:geography"
+  },
+  {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "t:zola"
   },
@@ -3298,10 +3342,6 @@
   {
    "source": "t:ai-alignment",
    "target": "t:existential-risk"
-  },
-  {
-   "source": "t:ethics",
-   "target": "t:philosophy"
   },
   {
    "source": "t:evaluation",
@@ -3422,14 +3462,6 @@
   {
    "source": "t:tree-search",
    "target": "t:game-ai"
-  },
-  {
-   "source": "t:world-history",
-   "target": "t:history"
-  },
-  {
-   "source": "t:world-history",
-   "target": "t:geography"
   },
   {
    "source": "a:/articles/observability-is-not-logging/",
@@ -3733,6 +3765,10 @@
   },
   {
    "source": "a:/notes/a-capability-democratised/",
+   "target": "a:/articles/the-web-was-the-training-set/"
+  },
+  {
+   "source": "a:/notes/a-capability-democratised/",
    "target": "a:/notes/power-in-the-good-sense/"
   },
   {
@@ -3742,6 +3778,10 @@
   {
    "source": "a:/notes/a-capability-democratised/",
    "target": "a:/notes/the-window-before-the-utility/"
+  },
+  {
+   "source": "a:/notes/citizen-entrepreneurs/",
+   "target": "a:/articles/how-ai-makes-bare-metal-viable-again/"
   },
   {
    "source": "a:/notes/citizen-entrepreneurs/",
@@ -3761,6 +3801,10 @@
   },
   {
    "source": "a:/notes/ideas-stop-waiting/",
+   "target": "a:/articles/how-i-work-these-days/"
+  },
+  {
+   "source": "a:/notes/ideas-stop-waiting/",
    "target": "a:/notes/power-in-the-good-sense/"
   },
   {
@@ -3768,8 +3812,20 @@
    "target": "a:/notes/the-window-before-the-utility/"
   },
   {
+   "source": "a:/notes/power-in-the-good-sense/",
+   "target": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/"
+  },
+  {
    "source": "a:/notes/the-move-to-the-city/",
    "target": "a:/notes/the-tumult-in-between/"
+  },
+  {
+   "source": "a:/notes/the-window-before-the-utility/",
+   "target": "a:/articles/the-bill-is-part-of-the-loop/"
+  },
+  {
+   "source": "a:/notes/the-window-before-the-utility/",
+   "target": "a:/articles/the-model-is-a-dependency/"
   },
   {
    "source": "a:/notes/the-window-before-the-utility/",
@@ -5024,12 +5080,20 @@
    "target": "t:commons"
   },
   {
+   "source": "a:/notes/the-tumult-in-between/",
+   "target": "w:freeland"
+  },
+  {
    "source": "w:das-soziale-problem",
    "target": "h:shelf-read"
   },
   {
    "source": "w:das-soziale-problem",
    "target": "t:social-reform"
+  },
+  {
+   "source": "a:/notes/the-tumult-in-between/",
+   "target": "w:das-soziale-problem"
   },
   {
    "source": "w:the-devils-delusion",
