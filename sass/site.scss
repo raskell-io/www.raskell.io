@@ -199,3 +199,12 @@ svg.chart {
 @media (min-width: 44.01rem) { .hero-home__body h1:has(.hero-term.is-flap) { max-width: 12em; } }
 // The split-flap board is its own signal of life; no cursor after it.
 .hero-home__body h1 .hero-term.is-flap::after { content: none; }
+
+// Chinese and Korean boards: a CJK glyph is about 1em wide, so the cells widen to fit it.
+.hero-term:is(:lang(zh), :lang(ko)) .flap { width: 1.04em; }
+.hero-term:is(:lang(zh), :lang(ko)) .flap--space { width: 0.4em; }
+// Phones: size the board to its longest phrase, 5 cells in Chinese ("实地研究。"), 10 in Korean ("콜드 스토리지에서.").
+@media (max-width: 44rem) {
+  .hero-home__body h1 .hero-term.is-flap:lang(zh) { font-size: calc((100vw - 2 * 9.5vw) / 6.4); }
+  .hero-home__body h1 .hero-term.is-flap:lang(ko) { font-size: calc((100vw - 2 * 9.5vw) / 10.6); }
+}

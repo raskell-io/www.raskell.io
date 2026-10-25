@@ -83,6 +83,14 @@ projects_section = "projects"
 cta = { name = "Start here", url = "@/start-here.md" }
 map = "@/map.md"
 reading = "@/reading.md"
+# Languages: English first (the default, at /), then translations under /<code>/. URLs keep the English
+# names (/zh/about/), because a translation is named after its source file (about.zh.md). Labels and the
+# footer text per language live under [extra.seijaku.i18n.<code>] at the end of this file.
+languages = [
+  { code = "en", name = "English", hreflang = "en", og_locale = "en_US" },
+  { code = "zh", name = "简体中文", hreflang = "zh-Hans", og_locale = "zh_CN" },
+  { code = "ko", name = "한국어", hreflang = "ko", og_locale = "ko_KR" },
+]
 search = "@/search.md"
 reading_data = "data/reading.toml"
 graph_sections = ["articles", "notes", "talks"]
@@ -129,3 +137,44 @@ social = [
   { name = "X", url = "https://x.com/raskelll", handle = "@raskelll" },
   { name = "LinkedIn", url = "https://ch.linkedin.com/in/raffael-e-schneider" },
 ]
+
+# Translations -------------------------------------------------------------------------------------------
+# A page is translated by adding <name>.<code>.md next to <name>.md (content/about.zh.md). Untranslated pages
+# stay in English and the language switch sends readers to that language's home page. Tags, series,
+# categories, feeds, and search exist in English only, so they are switched off for the other languages.
+
+[languages.zh]
+title = "Raskell"
+description = "关于智能体平台、平台自动化、边缘基础设施与应用安全的笔记。构建能在真实生产环境中站得住的自动化优先平台。"
+generate_feeds = false
+build_search_index = false
+taxonomies = []
+
+[languages.ko]
+title = "Raskell"
+description = "에이전트 플랫폼, 플랫폼 자동화, 엣지 인프라, 응용 보안에 관한 기록입니다. 실제 운영 환경을 견디는 자동화 우선 플랫폼을 만듭니다."
+generate_feeds = false
+build_search_index = false
+taxonomies = []
+
+# Interface text per language: labels map the English text to its translation (anything missing stays in
+# English); footer_about and tagline replace the footer's introduction.
+[extra.seijaku.i18n.zh]
+tagline = "(由 Raffael 整理的技术网络空间)"
+footer_about = """
+Raskell 是我在网络上的一角，也是通往我所构建的一切的入口。我在这里写平台自动化、边缘系统、应用安全，以及当 AI 写下大部分代码之后会发生什么变化。
+
+我着迷的项目，从安全优先的反向代理到用 Rust 写的 Haskell 工具，都先在这些页面上以笔记的形式出现，然后才变成真正的东西。这个名字是 rascal × Haskell × Raffael。
+"""
+labels = { "Articles" = "文章", "Projects" = "项目", "Apps" = "应用", "Speaking" = "演讲", "About" = "关于", "Start here" = "从这里开始", "Invest" = "投资", "Map" = "地图", "Topics" = "主题", "Notes" = "笔记", "Reading" = "阅读", "Reviews" = "书评", "Talks" = "演讲稿", "Search" = "搜索", "Series" = "系列", "The Handbook" = "手册", "Building" = "正在构建", "For machines" = "给机器读的", "RSS feed" = "RSS 订阅", "Sitemap" = "站点地图", "Explore" = "浏览", "Index" = "索引", "Elsewhere" = "其他地方", "You are here" = "当前位置", "Home" = "首页", "Text" = "文字", "code" = "代码", "Privacy" = "隐私", "Colour scheme" = "配色", "System" = "跟随系统", "Light" = "浅色", "Dark" = "深色", "Language" = "语言", "Not translated yet; opens the home page" = "尚未翻译，将打开中文首页", "home" = "首页", "Menu" = "菜单", "Read the writing" = "阅读文章", "Explore the map" = "探索地图", "Explore the index" = "浏览索引", "Latest writing" = "最新文章", "All articles" = "全部文章", "The writing on this site is in English." = "本站的文章以英文撰写。", "What I am working on" = "我正在做的事", "by" = "·", "All projects" = "全部项目" }
+
+[extra.seijaku.i18n.ko]
+tagline = "(Raffael이 꾸려 가는 기술 웹 공간)"
+footer_about = """
+Raskell은 웹 위의 제 작은 공간이자, 제가 만드는 모든 것으로 들어가는 문입니다.
+이곳에서는 플랫폼 자동화, 엣지 시스템, 응용 보안, 그리고 AI가 코드 대부분을 쓰게 되면서 달라지는 것들에 대해 씁니다.
+
+보안 우선 리버스 프록시부터 Rust로 만든 Haskell 도구까지, 제가 빠져드는 프로젝트들은 실제로 만들어지기 전에
+먼저 이 페이지에 메모로 등장합니다. 이름은 rascal × Haskell × Raffael입니다.
+"""
+labels = { "Articles" = "글", "Projects" = "프로젝트", "Apps" = "앱", "Speaking" = "강연", "About" = "소개", "Start here" = "여기서 시작", "Invest" = "투자", "Map" = "지도", "Topics" = "주제", "Notes" = "노트", "Reading" = "독서", "Reviews" = "서평", "Talks" = "발표 자료", "Search" = "검색", "Series" = "시리즈", "The Handbook" = "핸드북", "Building" = "만들고 있는 것", "For machines" = "기계를 위한 자료", "RSS feed" = "RSS 피드", "Sitemap" = "사이트맵", "Explore" = "둘러보기", "Index" = "색인", "Elsewhere" = "다른 곳에서", "You are here" = "현재 위치", "Home" = "홈", "Text" = "글", "code" = "코드", "Privacy" = "개인정보", "Colour scheme" = "색상 모드", "System" = "시스템", "Light" = "라이트", "Dark" = "다크", "Language" = "언어", "Not translated yet; opens the home page" = "아직 번역되지 않아 한국어 홈으로 이동합니다", "home" = "홈", "Menu" = "메뉴", "Read the writing" = "글 읽기", "Explore the map" = "지도 둘러보기", "Explore the index" = "색인 보기", "Latest writing" = "최근 글", "All articles" = "모든 글", "The writing on this site is in English." = "이 사이트의 글은 영어로 쓰여 있습니다.", "What I am working on" = "지금 하고 있는 일", "by" = "·", "All projects" = "모든 프로젝트" }
