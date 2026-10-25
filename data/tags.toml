@@ -493,6 +493,24 @@ kind = "concept"
 description = "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Swiss civic projects."
 broader = ["europe"]
 
+[democratisation]
+name = "Democratisation"
+kind = "concept"
+description = "A capability that needed money, a team, or years of training becoming available to anyone: printing, the web, and now building software by describing it."
+broader = ["augmentation", "commons"]
+
+[future-of-work]
+name = "Future of work"
+kind = "concept"
+description = "What AI does to jobs and livelihoods: the interval before any post-scarcity economy, basic income against basic access, and who gets through the middle."
+broader = ["economics", "social-reform"]
+
+[entrepreneurship]
+name = "Entrepreneurship"
+kind = "concept"
+description = "Finding something worth building and building it: ventures, side projects, and what changes when anyone can spot an opportunity and operate a business with AI."
+broader = ["economics"]
+
 # Technologies -------------------------------------------------------------
 
 [webassembly]
