@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-25T09:57:54+00:00",
+ "generated": "2026-10-25T10:01:19+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -949,13 +949,22 @@
    "degree": 6
   },
   {
+   "id": "t:game-ai",
+   "kind": "tag",
+   "label": "Game AI",
+   "url": "https://raskell.io/tags#game-ai",
+   "meta": "Domain · no pages yet",
+   "description": "Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy.",
+   "degree": 4
+  },
+  {
    "id": "t:games",
    "kind": "tag",
    "label": "Games",
    "url": "https://raskell.io/tags#games",
    "meta": "Domain · no pages yet",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:geography",
@@ -1045,7 +1054,7 @@
    "url": "https://raskell.io/tags#machine-learning",
    "meta": "Domain · no pages yet",
    "description": "How models learn from data: the mathematics, the training methods, and what the results can and cannot do.",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "t:mathematics",
@@ -1084,6 +1093,15 @@
    "degree": 7
   },
   {
+   "id": "t:neural-networks",
+   "kind": "tag",
+   "label": "Neural networks",
+   "url": "https://raskell.io/tags#neural-networks",
+   "meta": "Concept · no pages yet",
+   "description": "Layers of weights that learn a function from examples: architectures, activations, quantisation, and running them where the data is.",
+   "degree": 1
+  },
+  {
    "id": "t:philosophy",
    "kind": "tag",
    "label": "Philosophy",
@@ -1117,7 +1135,7 @@
    "url": "https://raskell.io/tags#reinforcement-learning",
    "meta": "Concept · no pages yet",
    "description": "Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:religion",
@@ -1147,6 +1165,15 @@
    "degree": 6
   },
   {
+   "id": "t:self-play",
+   "kind": "tag",
+   "label": "Self-play",
+   "url": "https://raskell.io/tags#self-play",
+   "meta": "Concept · no pages yet",
+   "description": "A program improving by playing itself: generating its own training data, learning from the outcomes, and testing each generation against the last.",
+   "degree": 2
+  },
+  {
    "id": "t:social-reform",
    "kind": "tag",
    "label": "Social reform",
@@ -1154,6 +1181,15 @@
    "meta": "Concept · no pages yet",
    "description": "Plans to redesign society or the economy, from nineteenth-century utopias to high-modernist states and basic income, and what happened when they met people.",
    "degree": 6
+  },
+  {
+   "id": "t:tree-search",
+   "kind": "tag",
+   "label": "Tree search",
+   "url": "https://raskell.io/tags#tree-search",
+   "meta": "Concept · no pages yet",
+   "description": "Looking ahead by expanding a tree of moves: minimax and alpha-beta, Monte Carlo tree search, and the pruning and ordering that make them tractable.",
+   "degree": 1
   },
   {
    "id": "t:webassembly",
@@ -2988,6 +3024,14 @@
    "target": "t:policy"
   },
   {
+   "source": "t:game-ai",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "t:game-ai",
+   "target": "t:games"
+  },
+  {
    "source": "t:geopolitics",
    "target": "t:history"
   },
@@ -3044,6 +3088,10 @@
    "target": "t:open-web"
   },
   {
+   "source": "t:neural-networks",
+   "target": "t:machine-learning"
+  },
+  {
    "source": "t:philosophy-of-science",
    "target": "t:philosophy"
   },
@@ -3088,12 +3136,24 @@
    "target": "t:history-of-science"
   },
   {
+   "source": "t:self-play",
+   "target": "t:reinforcement-learning"
+  },
+  {
+   "source": "t:self-play",
+   "target": "t:game-ai"
+  },
+  {
    "source": "t:social-reform",
    "target": "t:economics"
   },
   {
    "source": "t:social-reform",
    "target": "t:policy"
+  },
+  {
+   "source": "t:tree-search",
+   "target": "t:game-ai"
   },
   {
    "source": "t:webassembly",

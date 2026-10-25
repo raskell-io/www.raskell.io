@@ -202,6 +202,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Philosophy (`philosophy`): Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.
 - Literature (`literature`): Fiction and writing about fiction: novels read for their own sake, and the forms they take.
 - Mathematics (`mathematics`): The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.
+- Game AI (`game-ai`) [within Machine learning, Games]: Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy.
 - Simulation (`simulation`) [within Complex systems]: Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.
 - Games (`games`): Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.
 
@@ -221,6 +222,9 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Self-hosting (`self-hosting`) [within Platform automation, Sovereignty]: Running your own infrastructure, from a single bare-metal box to community-operated compute.
 - Complex systems (`complex-systems`): Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.
 - Reinforcement learning (`reinforcement-learning`) [within Machine learning]: Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill.
+- Self-play (`self-play`) [within Reinforcement learning, Game AI]: A program improving by playing itself: generating its own training data, learning from the outcomes, and testing each generation against the last.
+- Tree search (`tree-search`) [within Game AI]: Looking ahead by expanding a tree of moves: minimax and alpha-beta, Monte Carlo tree search, and the pruning and ordering that make them tractable.
+- Neural networks (`neural-networks`) [within Machine learning]: Layers of weights that learn a function from examples: architectures, activations, quantisation, and running them where the data is.
 - Neuroscience (`neuroscience`) [within Life sciences]: Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.
 - History of science (`history-of-science`) [within History]: How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.
 - History of technology (`history-of-technology`) [within History]: How tools, machines, and networks came to be built, and the choices that shaped them.

@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-25T09:57:54+00:00",
+ "generated": "2026-10-25T10:01:19+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -10,7 +10,7 @@
   "talk": 1,
   "work": 50,
   "project": 30,
-  "topic": 93,
+  "topic": 97,
   "link": 256
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
@@ -1762,6 +1762,13 @@
   },
   {
    "kind": "topic",
+   "title": "Game AI",
+   "url": "https://raskell.io/tags#game-ai",
+   "description": "Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
    "title": "Games",
    "url": "https://raskell.io/tags#games",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
@@ -1972,6 +1979,13 @@
   },
   {
    "kind": "topic",
+   "title": "Neural networks",
+   "url": "https://raskell.io/tags#neural-networks",
+   "description": "Layers of weights that learn a function from examples: architectures, activations, quantisation, and running them where the data is.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Neuroscience",
    "url": "https://raskell.io/tags/neuroscience/",
    "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
@@ -2147,6 +2161,13 @@
   },
   {
    "kind": "topic",
+   "title": "Self-play",
+   "url": "https://raskell.io/tags#self-play",
+   "description": "A program improving by playing itself: generating its own training data, learning from the outcomes, and testing each generation against the last.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Simulation",
    "url": "https://raskell.io/tags/simulation/",
    "description": "Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.",
@@ -2185,6 +2206,13 @@
    "title": "Training data",
    "url": "https://raskell.io/tags/training-data/",
    "description": "What models learn from: web crawls, books, and licensed or unlicensed corpora; who holds what has not been scraped yet, and on what terms.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Tree search",
+   "url": "https://raskell.io/tags#tree-search",
+   "description": "Looking ahead by expanding a tree of moves: minimax and alpha-beta, Monte Carlo tree search, and the pruning and ordering that make them tractable.",
    "meta": "Concept"
   },
   {
