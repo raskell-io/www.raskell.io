@@ -4,7 +4,7 @@ date = 2026-10-15
 description = "A blog shows what I wrote last. The new map on raskell.io shows what I keep coming back to, and it is the start of a public second brain."
 
 [taxonomies]
-tags = ["meta", "knowledge-management", "hypertext", "open-web", "zola"]
+tags = ["meta", "knowledge-management", "hypertext", "open-web", "zola", "external-memory"]
 
 [extra]
 author = "Raffael"

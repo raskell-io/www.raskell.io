@@ -30,6 +30,8 @@ Write the source file(s) per the recipe in `AGENTS.md`. Checklist:
 
 - [ ] Front matter complete; description under 160 characters; `draft = true` until the user says publish.
 - [ ] 3 to 7 topics, the most specific; any new topic added to `data/tags.toml` first, with `broader`.
+      Include at least one idea that joins this piece to something of a different kind (see "Topics are
+      for discovery" in `AGENTS.md`), and only where the text actually discusses it.
 - [ ] In-body links to related pages (they become map edges and backlinks).
 - [ ] Sources under a `## References` heading when there are several.
 - [ ] Reviews: `extra.review`, `categories = ["reviews"]`, and in `data/reading.toml` `status = "read"`,

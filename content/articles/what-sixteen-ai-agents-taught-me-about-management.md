@@ -4,7 +4,7 @@ date = 2026-04-16
 description = "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway."
 
 [taxonomies]
-tags = ["agents", "ai-engineering", "economics"]
+tags = ["agents", "ai-engineering", "economics", "augmentation"]
 
 [extra]
 author = "Raffael"

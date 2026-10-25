@@ -97,6 +97,21 @@ name = "Life sciences"
 kind = "domain"
 description = "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them."
 
+[philosophy]
+name = "Philosophy"
+kind = "domain"
+description = "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God."
+
+[literature]
+name = "Literature"
+kind = "domain"
+description = "Fiction and writing about fiction: novels read for their own sake, and the forms they take."
+
+[mathematics]
+name = "Mathematics"
+kind = "domain"
+description = "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof."
+
 # Concepts -----------------------------------------------------------------
 
 [agents]
@@ -273,6 +288,186 @@ name = "Attention economy"
 kind = "concept"
 description = "Platforms that sell attention and optimise for engagement, what that does to the web and to discourse, and the intention economy proposed in its place."
 broader = ["economics", "open-web"]
+
+[philosophy-of-science]
+name = "Philosophy of science"
+kind = "concept"
+description = "How science produces knowledge, what counts as evidence, and where its methods and claims reach their limits."
+broader = ["philosophy", "history-of-science"]
+
+[ethics]
+name = "Ethics"
+kind = "concept"
+description = "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect."
+broader = ["philosophy"]
+
+[religion]
+name = "Religion"
+kind = "concept"
+description = "Faith, doubt, and the institutions and cities built around belief, as history and as argument."
+broader = ["philosophy", "history"]
+
+[maximalist-novels]
+name = "Maximalist novels"
+kind = "concept"
+description = "Very long, encyclopedic novels that try to hold a whole world: Infinite Jest, The Books of Jacob, and the studies of the form."
+broader = ["literature"]
+
+[intelligence]
+name = "Intelligence"
+kind = "concept"
+description = "What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn."
+broader = ["machine-learning", "neuroscience"]
+
+[risk]
+name = "Risk"
+kind = "concept"
+description = "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production."
+broader = ["reliability", "economics"]
+
+[existential-risk]
+name = "Existential risk"
+kind = "concept"
+description = "Technologies that could end or permanently cripple civilisation, from nuclear weapons to misaligned AI, and how people have tried to contain them."
+broader = ["risk", "policy"]
+
+[ai-alignment]
+name = "AI alignment"
+kind = "concept"
+description = "Making AI systems pursue what their builders and users actually intend, and what happens when they do not."
+broader = ["machine-learning", "existential-risk"]
+
+[legibility]
+name = "Legibility"
+kind = "concept"
+description = "Making a complex system readable from above: what the measure captures, what it erases, and what breaks when the map replaces the territory."
+broader = ["complex-systems", "metrics", "observability"]
+
+[research-labs]
+name = "Research labs"
+kind = "concept"
+description = "The institutions where discovery happens and how they are funded and run: CERN, Bell Labs, ARPA, Los Alamos, DeepMind, and the labs behind modern medicine."
+broader = ["history-of-science", "history-of-technology"]
+
+[medicine]
+name = "Medicine"
+kind = "concept"
+description = "How treatments are discovered, tested, and brought to patients, from antisepsis and sulfa drugs to modern drug design."
+broader = ["life-sciences"]
+
+[compilers]
+name = "Compilers"
+kind = "concept"
+description = "Turning programs into other programs: parsers, interpreters, type checkers, and code generation."
+broader = ["programming-languages"]
+
+[networking]
+name = "Networking"
+kind = "concept"
+description = "How machines talk: packets, protocols, sockets, and the networks from ARPANET to the web that carry them."
+broader = ["distributed-systems", "open-web"]
+
+[geopolitics]
+name = "Geopolitics"
+kind = "concept"
+description = "How geography, empires, and arms shape the balance of power between states and regions, as history."
+broader = ["history", "geography"]
+
+[social-reform]
+name = "Social reform"
+kind = "concept"
+description = "Plans to redesign society or the economy, from nineteenth-century utopias to high-modernist states and basic income, and what happened when they met people."
+broader = ["economics", "policy"]
+
+[world-history]
+name = "World history"
+kind = "concept"
+description = "History told at the scale of continents and millennia: why societies diverged, and how the world came to look the way it does."
+broader = ["history", "geography"]
+
+[emergence]
+name = "Emergence"
+kind = "concept"
+description = "Order nobody designed: reefs, the early web, neuron cultures, and simulated worlds where simple rules add up to behaviour no single part has."
+broader = ["complex-systems"]
+
+[high-modernism]
+name = "High modernism"
+kind = "concept"
+description = "The confidence that society can be planned from above by experts: Le Corbusier's rational city, scientific forestry, and the schemes that failed when they met real life."
+broader = ["legibility", "social-reform"]
+
+[hubris]
+name = "Hubris"
+kind = "concept"
+description = "When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand."
+broader = ["risk", "ethics"]
+
+[commons]
+name = "The commons"
+kind = "concept"
+description = "Resources held in common and the rules that keep them so: common land, open protocols, open data, and the web before the platforms."
+broader = ["open-web", "economics"]
+
+[intellectual-property]
+name = "Intellectual property"
+kind = "concept"
+description = "Patents, copyright, and licences: who owns an invention or a text, from the web given to the public domain to books scraped for training data."
+broader = ["policy", "economics"]
+
+[provenance]
+name = "Provenance"
+kind = "concept"
+description = "Where something came from and who vouches for it: signed media, rights-clear training data, and artifacts that carry their own history."
+broader = ["training-data", "applied-security"]
+
+[external-memory]
+name = "External memory"
+kind = "concept"
+description = "Notes, links, and stores that remember for us: second brains, the web as a shared memory, and what agents write down for their next session."
+broader = ["knowledge-management", "context-engineering"]
+
+[augmentation]
+name = "Augmentation"
+kind = "concept"
+description = "Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents."
+broader = ["ai-engineering", "intelligence"]
+
+[technology-races]
+name = "Technology races"
+kind = "concept"
+description = "Powers racing to build a technology first, from the bomb and its deterrence to frontier AI and the data it needs."
+broader = ["geopolitics", "existential-risk"]
+
+[scientific-revolutions]
+name = "Scientific revolutions"
+kind = "concept"
+description = "Moments when a field's picture of the world changes: the invention of modern science, molecular biology, antisepsis, and the first antibiotics."
+broader = ["philosophy-of-science", "history-of-science"]
+
+[cities]
+name = "Cities"
+kind = "concept"
+description = "How cities are planned and how they actually grow: Jerusalem over three thousand years, Brasilia drawn on paper, and the rational city the web was designed against."
+broader = ["geography"]
+
+[languages]
+name = "Languages and translation"
+kind = "concept"
+description = "Human languages and moving meaning between them: translated novels, learning to read Chinese, Japanese, and Hebrew, and Europe's multilingual text."
+broader = ["literature"]
+
+[europe]
+name = "Europe"
+kind = "concept"
+description = "Europe's place in technology and history: where the web was invented, what it builds and gives away, and the data and capabilities it still holds."
+broader = ["sovereignty", "geography"]
+
+[switzerland]
+name = "Switzerland"
+kind = "concept"
+description = "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Swiss civic projects."
+broader = ["europe"]
 
 # Technologies -------------------------------------------------------------
 

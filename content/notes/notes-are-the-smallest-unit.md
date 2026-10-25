@@ -5,7 +5,7 @@ draft = true
 description = "Why this site now has notes next to articles, and what a note is for."
 
 [taxonomies]
-tags = ["meta", "knowledge-management"]
+tags = ["meta", "knowledge-management", "external-memory"]
 +++
 
 An article is where I work an idea through properly: with code, trade-offs, and the counterarguments. That takes weeks, and most ideas never get there. They sit in a private notes app, half-formed, and nobody sees how they connect to the rest.

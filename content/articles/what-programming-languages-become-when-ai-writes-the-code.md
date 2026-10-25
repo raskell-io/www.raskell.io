@@ -4,7 +4,7 @@ date = 2026-04-11
 description = "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell."
 
 [taxonomies]
-tags = ["ai-engineering", "programming-languages", "formal-methods", "haskell"]
+tags = ["ai-engineering", "programming-languages", "formal-methods", "haskell", "compilers"]
 
 [extra]
 author = "Raffael"

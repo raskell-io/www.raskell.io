@@ -4,7 +4,7 @@ date = 2026-10-24
 description = "A month in, Claude Opus 5.5 feels like the next milestone after Opus 4.5: the same jump in what Claude Code can carry, now faster and cheaper per task."
 
 [taxonomies]
-tags = ["ai-engineering", "inference", "economics"]
+tags = ["ai-engineering", "inference", "economics", "augmentation"]
 +++
 
 | | Opus 4.5 | Opus 5.5 |

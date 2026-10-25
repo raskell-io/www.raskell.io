@@ -3,5 +3,5 @@ description = "Simulated neuron cultures on a 60-electrode array play Pong in yo
 status = "live"
 logo = "brands/hotaru.png"
 links = [ { name = "Run the experiment", url = "https://hotaru.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/hotaru" } ]
-topics = ["simulation", "complex-systems", "webassembly", "rust"]
+topics = ["simulation", "complex-systems", "webassembly", "rust", "neuroscience", "intelligence", "emergence"]
 related = ["terrarium"]

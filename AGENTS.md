@@ -61,6 +61,20 @@ Once registered, content reaches all of these without further work, unless the t
 CI order matters: `tags-check`, `security-txt`, `llms`, `zola build`, `map-json`, `garden-json`, `og`,
 deploy, IndexNow.
 
+## Topics are for discovery
+
+The map is meant to make connections visible that nobody drew by hand, so topics come in two kinds:
+subjects (machine learning, history) and ideas that cut across them (augmentation, hubris, the commons,
+external memory, legibility). Ideas are what make the map interesting.
+
+- Prefer a topic that joins different kinds of things: a book, an article, a project, a talk. A topic only
+  one item uses is a leaf; give it `broader` parents so it still connects.
+- Use `broader` to bridge fields on purpose: Legibility sits under Observability and Metrics, Risk under
+  Reliability, Intelligence under both Machine learning and Neuroscience.
+- Tag an idea only where the work or page actually discusses it; check the text first.
+- For a new book, ask what it is about beyond its subject: which tension, method, institution, or failure
+  mode does it share with something already on the site?
+
 ## Recipes
 
 ### A new article

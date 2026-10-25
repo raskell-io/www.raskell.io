@@ -4,7 +4,7 @@ date = 2026-10-24
 description = "Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply."
 
 [taxonomies]
-tags = ["history-of-technology", "hypertext", "open-standards", "training-data", "decentralisation", "data-sovereignty", "agents"]
+tags = ["history-of-technology", "hypertext", "training-data", "data-sovereignty", "research-labs", "intellectual-property", "europe"]
 categories = ["reviews"]
 
 [extra]

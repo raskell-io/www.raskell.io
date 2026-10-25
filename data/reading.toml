@@ -39,7 +39,7 @@ isbn = "9780593831847"
 year = 2026
 url = "https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296"
 status = "reading"
-topics = ["machine-learning", "reinforcement-learning", "history-of-technology"]
+topics = ["intelligence", "reinforcement-learning", "games", "research-labs", "ai-alignment", "history-of-technology", "technology-races"]
 
 # Read ---------------------------------------------------------------------
 # Works finished in the same month show newest first in the order they appear here (later = more recent).
@@ -54,7 +54,7 @@ year = 2026
 url = "https://www.hachette.co.uk/titles/simon-sebag-montefiore/the-cauldron/9781399634939/"
 status = "read"
 finished = "2026-09"
-topics = ["history", "geography"]
+topics = ["geopolitics", "history"]
 
 [[works]]
 id = "guns-germs-and-steel"
@@ -66,7 +66,7 @@ cover = "covers/reading/guns-germs-and-steel.avif"
 year = 1997
 status = "read"
 finished = "2025-11"
-topics = ["history", "geography"]
+topics = ["world-history", "history-of-technology", "complex-systems"]
 
 [[works]]
 id = "nuclear-war-a-scenario"
@@ -79,6 +79,7 @@ year = 2024
 url = "https://en.wikipedia.org/wiki/Nuclear_War:_A_Scenario"
 status = "read"
 finished = "2025-10"
+topics = ["existential-risk", "geopolitics", "technology-races"]
 
 [[works]]
 id = "jurassic-park"
@@ -89,7 +90,7 @@ cover = "covers/reading/jurassic-park.avif"
 year = 1990
 status = "read"
 finished = "2025-07"
-topics = ["complex-systems"]
+topics = ["literature", "complex-systems", "risk", "life-sciences", "hubris", "emergence"]
 
 [[works]]
 id = "the-books-of-jacob"
@@ -102,6 +103,7 @@ year = 2014
 edition = "Translated from the Polish (Księgi Jakubowe) by Jennifer Croft"
 status = "read"
 finished = "2024-08"
+topics = ["maximalist-novels", "religion", "history", "languages", "europe"]
 
 [[works]]
 id = "from-worm-to-human"
@@ -113,7 +115,7 @@ publisher = "MIT, Boyden Lab (thesis)"
 url = "https://pdf.isaak.net/scaling-emulations"
 status = "read"
 finished = "2026-06"
-topics = ["neuroscience", "distributed-systems", "gpus"]
+topics = ["neuroscience", "intelligence", "simulation", "distributed-systems", "gpus"]
 take = "A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan."
 
 [[works]]
@@ -125,7 +127,7 @@ year = 2025
 url = "https://arxiv.org/abs/2510.15745"
 status = "read"
 finished = "2026-06"
-topics = ["neuroscience", "simulation"]
+topics = ["neuroscience", "intelligence", "simulation"]
 take = "The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are."
 
 [[works]]
@@ -136,6 +138,7 @@ kind = "book"
 year = 2023
 status = "read"
 finished = "2023"
+topics = ["philosophy-of-science"]
 
 [[works]]
 id = "network-programming-with-go"
@@ -146,7 +149,7 @@ kind = "book"
 year = 2021
 status = "read"
 finished = "2023"
-topics = ["distributed-systems"]
+topics = ["networking"]
 
 [[works]]
 id = "elixir-in-action"
@@ -159,7 +162,7 @@ year = 2019
 edition = "Second edition"
 status = "read"
 finished = "2023"
-topics = ["elixir"]
+topics = ["elixir", "distributed-systems", "reliability"]
 
 [[works]]
 id = "crafting-interpreters"
@@ -170,7 +173,7 @@ cover = "covers/reading/crafting-interpreters.avif"
 year = 2021
 status = "read"
 finished = "2024"
-topics = ["programming-languages"]
+topics = ["compilers"]
 
 [[works]]
 id = "building-a-second-brain"
@@ -181,7 +184,7 @@ cover = "covers/reading/building-a-second-brain.avif"
 year = 2022
 status = "read"
 finished = "2022"
-topics = ["knowledge-management"]
+topics = ["knowledge-management", "external-memory"]
 
 [[works]]
 id = "rust-web-programming"
@@ -192,7 +195,7 @@ cover = "covers/reading/rust-web-programming.avif"
 year = 2021
 status = "read"
 finished = "2022"
-topics = ["rust"]
+topics = ["rust", "networking"]
 
 [[works]]
 id = "programming-webassembly-with-rust"
@@ -236,7 +239,7 @@ isbn = "9780297852650"
 year = 2011
 status = "read"
 finished = "2017"
-topics = ["history", "geography"]
+topics = ["religion", "geopolitics", "world-history", "cities"]
 
 [[works]]
 id = "freeland"
@@ -248,7 +251,7 @@ cover = "covers/reading/freeland.avif"
 year = 1890
 status = "read"
 finished = "2017"
-topics = ["economics"]
+topics = ["literature", "social-reform", "commons"]
 
 [[works]]
 id = "das-soziale-problem"
@@ -259,7 +262,7 @@ cover = "covers/reading/das-soziale-problem.avif"
 year = 1912
 status = "read"
 finished = "2017"
-topics = ["economics"]
+topics = ["social-reform"]
 
 [[works]]
 id = "the-devils-delusion"
@@ -271,6 +274,7 @@ cover = "covers/reading/the-devils-delusion.avif"
 year = 2008
 status = "read"
 finished = "2016"
+topics = ["philosophy-of-science", "religion"]
 
 [[works]]
 id = "antifragile"
@@ -283,7 +287,7 @@ cover = "covers/reading/antifragile.avif"
 year = 2012
 status = "read"
 finished = "2015"
-topics = ["complex-systems", "economics"]
+topics = ["risk", "complex-systems"]
 
 [[works]]
 id = "demons"
@@ -294,6 +298,7 @@ cover = "covers/reading/demons.avif"
 year = 1872
 status = "read"
 finished = "2012"
+topics = ["literature", "ethics", "religion"]
 
 [[works]]
 id = "the-brothers-karamazov"
@@ -304,6 +309,7 @@ cover = "covers/reading/the-brothers-karamazov.avif"
 year = 1880
 status = "read"
 finished = "2011"
+topics = ["literature", "ethics", "religion"]
 
 [[works]]
 id = "a-little-history-of-the-world"
@@ -314,7 +320,7 @@ cover = "covers/reading/a-little-history-of-the-world.avif"
 year = 1936
 status = "read"
 finished = "2011"
-topics = ["history"]
+topics = ["world-history"]
 
 [[works]]
 id = "crime-and-punishment"
@@ -325,6 +331,7 @@ cover = "covers/reading/crime-and-punishment.avif"
 year = 1866
 status = "read"
 finished = "2010"
+topics = ["literature", "ethics"]
 
 [[works]]
 id = "infinite-jest"
@@ -335,6 +342,7 @@ cover = "covers/reading/infinite-jest.avif"
 year = 1996
 status = "read"
 finished = "2025-10"   # with The Maximalist Novel, before Guns, Germs, and Steel
+topics = ["maximalist-novels", "attention-economy"]
 
 [[works]]
 id = "the-maximalist-novel"
@@ -348,6 +356,7 @@ year = 2014
 edition = "Translated from the Italian by Albert Sbragia"
 status = "read"
 finished = "2025-10"   # right after Infinite Jest
+topics = ["maximalist-novels", "languages"]
 
 [[works]]
 id = "this-is-for-everyone"
@@ -360,7 +369,7 @@ year = 2025
 status = "read"
 finished = "2025-10"
 rating = 8
-topics = ["open-web", "history-of-technology", "hypertext", "open-standards", "decentralisation", "open-data", "training-data", "privacy", "data-sovereignty", "attention-economy", "agents"]
+topics = ["history-of-technology", "research-labs", "networking", "decentralisation", "training-data", "data-sovereignty", "attention-economy", "agents", "commons", "intellectual-property", "provenance", "external-memory", "emergence", "europe", "switzerland"]
 take = "Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all."
 
 [[works]]
@@ -373,7 +382,7 @@ cover = "covers/reading/the-invention-of-science.avif"
 year = 2015
 status = "read"
 finished = "2016"
-topics = ["history-of-science"]
+topics = ["history-of-science", "philosophy-of-science", "scientific-revolutions"]
 
 # Backlog: suggestions I am weighing, in no fixed order -----------------------
 
@@ -399,7 +408,7 @@ kind = "book"
 cover = "covers/reading/the-art-of-doing-science-and-engineering.avif"
 year = 1997
 status = "backlog"
-topics = ["history-of-technology"]
+topics = ["research-labs", "philosophy-of-science", "history-of-technology"]
 
 [[works]]
 id = "why-machines-learn"
@@ -412,7 +421,7 @@ year = 2024
 edition = "2025 paperback, with the afterword on transformers"
 url = "https://www.penguinrandomhouse.com/books/677608/why-machines-learn-by-anil-ananthaswamy/"
 status = "backlog"
-topics = ["machine-learning"]
+topics = ["machine-learning", "mathematics"]
 
 [[works]]
 id = "the-dream-machine"
@@ -425,7 +434,7 @@ year = 2001
 edition = "Stripe Press"
 url = "https://press.stripe.com/the-dream-machine"
 status = "backlog"
-topics = ["history-of-technology", "open-web"]
+topics = ["history-of-technology", "research-labs", "networking", "augmentation"]
 
 [[works]]
 id = "the-alignment-problem"
@@ -437,7 +446,7 @@ cover = "covers/reading/the-alignment-problem.avif"
 year = 2020
 url = "https://brianchristian.org/the-alignment-problem/"
 status = "backlog"
-topics = ["machine-learning", "evaluation"]
+topics = ["ai-alignment", "ethics", "evaluation", "hubris"]
 
 [[works]]
 id = "ai-a-guide-for-thinking-humans"
@@ -451,7 +460,7 @@ year = 2019
 edition = "2025 edition, with the new preface"
 url = "https://us.macmillan.com/books/9781250404855/artificialintelligence/"
 status = "backlog"
-topics = ["machine-learning"]
+topics = ["intelligence", "machine-learning"]
 
 [[works]]
 id = "deep-thinking"
@@ -465,7 +474,7 @@ isbn = "9781473653504"
 year = 2017
 url = "https://www.hachette.co.uk/titles/garry-kasparov/deep-thinking/9781473653504/"
 status = "backlog"
-topics = ["machine-learning", "games"]
+topics = ["intelligence", "games", "augmentation"]
 
 [[works]]
 id = "understanding-deep-learning"
@@ -476,7 +485,7 @@ isbn = "9780262048644"
 year = 2023
 url = "https://mitpress.mit.edu/9780262048644/understanding-deep-learning/"
 status = "backlog"
-topics = ["machine-learning"]
+topics = ["machine-learning", "mathematics"]
 
 [[works]]
 id = "build-a-large-language-model"
@@ -487,7 +496,7 @@ cover = "covers/reading/build-a-large-language-model.avif"
 year = 2024
 url = "https://www.manning.com/books/build-a-large-language-model-from-scratch"
 status = "backlog"
-topics = ["machine-learning", "inference"]
+topics = ["training-data", "inference"]
 
 [[works]]
 id = "ai-engineering"
@@ -500,7 +509,7 @@ isbn = "9781098166298"
 year = 2025
 url = "https://www.oreilly.com/library/view/ai-engineering/9781098166298/"
 status = "backlog"
-topics = ["ai-platforms", "evaluation"]
+topics = ["ai-platforms", "evaluation", "agents"]
 
 [[works]]
 id = "reinforcement-learning-an-introduction"
@@ -524,7 +533,7 @@ cover_id = "none"   # Open Library only has the cover of the second volume
 year = 2022
 url = "https://probml.github.io/pml-book/book1.html"
 status = "backlog"
-topics = ["machine-learning"]
+topics = ["machine-learning", "mathematics"]
 
 [[works]]
 id = "the-making-of-the-atomic-bomb"
@@ -537,7 +546,7 @@ year = 1986
 edition = "25th anniversary edition"
 url = "https://www.simonandschuster.net/books/The-Making-of-the-Atomic-Bomb/Richard-Rhodes/9781451677614"
 status = "backlog"
-topics = ["history-of-technology"]
+topics = ["history-of-science", "research-labs", "existential-risk", "geopolitics", "ethics", "technology-races", "hubris"]
 
 [[works]]
 id = "seeing-like-a-state"
@@ -550,7 +559,7 @@ isbn = "9780300246759"
 year = 1998
 url = "https://yalebooks.yale.edu/book/9780300252989/seeing-like-a-state/"
 status = "backlog"
-topics = ["complex-systems", "history"]
+topics = ["history", "high-modernism", "hubris", "commons", "cities"]
 
 [[works]]
 id = "a-peace-to-end-all-peace"
@@ -563,7 +572,7 @@ cover_id = "580826"
 year = 1989
 url = "https://academic.macmillan.com/academictrade/9780805088090/apeacetoendallpeace/"
 status = "backlog"
-topics = ["history", "geography"]
+topics = ["geopolitics", "history"]
 
 [[works]]
 id = "the-billion-dollar-molecule"
@@ -576,7 +585,7 @@ isbn = "9780671510572"
 year = 1994
 url = "https://www.simonandschuster.com/books/The-Billion-Dollar-Molecule/Barry-Werth/9780671510572"
 status = "backlog"
-topics = ["life-sciences", "history-of-science"]
+topics = ["medicine", "research-labs", "history-of-science"]
 
 [[works]]
 id = "the-eighth-day-of-creation"
@@ -589,7 +598,7 @@ year = 1979
 edition = "Commemorative edition"
 publisher = "Cold Spring Harbor Laboratory Press"
 status = "backlog"
-topics = ["life-sciences", "history-of-science"]
+topics = ["life-sciences", "research-labs", "history-of-science", "scientific-revolutions"]
 
 [[works]]
 id = "the-demon-under-the-microscope"
@@ -600,7 +609,7 @@ cover = "covers/reading/the-demon-under-the-microscope.avif"
 year = 2006
 url = "https://www.penguinrandomhouse.com/books/73465/the-demon-under-the-microscope-by-thomas-hager/"
 status = "backlog"
-topics = ["life-sciences", "history-of-science"]
+topics = ["medicine", "research-labs", "history-of-science", "scientific-revolutions"]
 
 [[works]]
 id = "the-butchering-art"
@@ -613,7 +622,7 @@ isbn = "9780141983387"
 year = 2017
 url = "https://www.penguin.co.nz/books/the-butchering-art-9780141983387"
 status = "backlog"
-topics = ["life-sciences", "history-of-science"]
+topics = ["medicine", "history-of-science", "scientific-revolutions"]
 
 # Set aside ----------------------------------------------------------------
 
@@ -626,5 +635,5 @@ cover = "covers/reading/sicp.avif"
 year = 1985
 edition = "Second edition"
 status = "set-aside"
-topics = ["programming-languages"]
+topics = ["compilers"]
 started = "2024"

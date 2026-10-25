@@ -4,5 +4,5 @@ status = "live"
 logo = "brands/die-zukunft.png"
 wordmark = "brands/die-zukunft-wordmark.svg"   # the brandtype, shown beside the logo as the card title
 links = [ { name = "Website", url = "https://die-zukunft.ch" }, { name = "GitHub", url = "https://github.com/zukunft-ch" } ]
-topics = ["sovereignty", "policy", "oss"]
+topics = ["sovereignty", "policy", "oss", "social-reform", "switzerland"]
 accents = ["#a855f7", "#06b6d4"]   # brand colours, used for the card glow

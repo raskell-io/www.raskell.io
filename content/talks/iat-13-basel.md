@@ -9,6 +9,9 @@ event = "IT's ABOUT TECH #13"
 event_url = "https://www.swissmadesoftware.org/en/news/2026/iat--13.html"
 venue = "FHNW Aula, Basel"
 event_date_human = "10 June 2026"
+
+[taxonomies]
+tags = ["ai-engineering", "augmentation", "switzerland"]
 +++
 
 <section class="slide slide--title">
