@@ -97,6 +97,12 @@ name = "Life sciences"
 kind = "domain"
 description = "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them."
 
+[game-ai]
+name = "Game AI"
+kind = "domain"
+description = "Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy."
+broader = ["machine-learning", "games"]
+
 [philosophy]
 name = "Philosophy"
 kind = "domain"
@@ -111,12 +117,6 @@ description = "Fiction and writing about fiction: novels read for their own sake
 name = "Mathematics"
 kind = "domain"
 description = "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof."
-
-[game-ai]
-name = "Game AI"
-kind = "domain"
-description = "Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy."
-broader = ["machine-learning", "games"]
 
 [enterprise-architecture]
 name = "Enterprise architecture"

@@ -64,7 +64,7 @@ og_image = "og-default.png"
 og_cards = true                # a generated 1200x630 card per page (mise run og after zola build)
 og_home_title = "Notes from the machine room."
 og_home_meta = "Raffael Schneider · Basel"
-series_descriptions = { "the-agent-platform-handbook" = "Building an agent platform from first principles, one working piece of TypeScript per part." }
+series_descriptions = { "the-agent-platform-handbook" = "Building an agent platform from first principles, one working piece of TypeScript per part.", "learning-to-play" = "How game-playing programs learn, shown on chess, shogi and Go with Kishi: three engines in Rust, trained by self-play on one laptop, measured against engines you can download." }
 # Categories are forms of writing (topics say what a page is about). Every category used in content must be
 # described here; `mise run tags-check` enforces it. Reviews: pages with extra.review, and only those.
 categories_descriptions = { "reviews" = "Reviews of books, papers, and long articles from the reading log: what the work argues, where I was persuaded, and what I made of it." }
