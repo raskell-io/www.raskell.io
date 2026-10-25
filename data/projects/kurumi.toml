@@ -5,6 +5,8 @@ logo = "brands/kurumi.png"
 links = [ { name = "Open app", url = "https://kurumi.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/kurumi" } ]
 topics = ["local-first", "data-sovereignty", "knowledge-management", "distributed-systems", "typescript", "external-memory"]
 
+app_category = "ProductivityApplication"   # schema.org applicationCategory (default DeveloperApplication)
+
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
 description = "一个本地优先、AI 原生的第二大脑。记录笔记、链接和会议，再通过维基链接、反向链接、图谱视图和全文搜索把它们找回来。一切都能离线使用，可选通过 Automerge CRDT 同步，没有厂商锁定。"

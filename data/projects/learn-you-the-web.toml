@@ -5,6 +5,8 @@ logo = "brands/learn-you-the-web.png"
 links = [ { name = "Read online", url = "https://learn-you-the-web.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/learn-you-the-web" } ]
 topics = ["edge-systems"]
 
+schema_type = "Book"   # schema.org type for the JSON-LD on /projects/ and /apps/ (default SoftwareApplication)
+
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
 description = "一本友好的指南，讲 Web 究竟是如何运作的。这一次是真的。HTTP、DNS、TLS，以及把这一切连在一起的协议，不含糊其辞，也不过度简化。"

@@ -12,6 +12,8 @@ pitch = "@/pitch/cyanea.md"   # investor brief, linked from /invest/
 topics = ["oss", "rust", "webassembly", "self-hosting"]
 accents = ["#B9A6FF", "#8BE4F5"]   # brand colours (lavender, jelly cyan), used for the card glow
 
+app_category = "ScientificApplication"   # schema.org applicationCategory (default DeveloperApplication)
+
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
 description = "真正能重新运行的生物信息学笔记本。编写、运行并分享在浏览器中用 WebAssembly 执行的分析，无需安装任何东西。每个笔记本、数据集和输出都是一个可以再次运行的版本化快照。底层是 Rust 分析栈，内置 21 种文件格式。开源，自托管和联邦功能即将推出。"

@@ -6,6 +6,9 @@ logo = "brands/paw-and-claw.png"
 links = [ { name = "Play", url = "https://pawandclaw.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/paw-and-claw" } ]
 topics = ["games", "rust"]
 
+schema_type = "VideoGame"   # schema.org type for the JSON-LD on /projects/ and /apps/ (default SoftwareApplication)
+app_category = "GameApplication"   # schema.org applicationCategory (default DeveloperApplication)
+
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
 description = "一款继承《高级战争》精神的回合制策略游戏，交战双方是林地里的军队。浣熊、獾、狮子、小熊猫和鼹鼠争夺每一片灌木丛和每一条小溪。用 Rust 和 Bevy 构建。可以在浏览器里免费玩，也有桌面版。"

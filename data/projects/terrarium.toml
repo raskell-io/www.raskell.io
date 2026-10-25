@@ -5,6 +5,8 @@ logo = "brands/terrarium.png"
 links = [ { name = "Website", url = "https://terrarium.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/terrarium" } ]
 topics = ["agents", "simulation", "complex-systems", "rust", "emergence"]
 
+app_category = "EducationalApplication"   # schema.org applicationCategory (default DeveloperApplication)
+
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
 description = "一个社会模拟引擎，由 LLM 驱动的智能体在其中形成涌现的文明。每个智能体都有性格、需求、记忆，以及可能出错的信念。你来设定世界的规则，然后观察市场、等级和联盟如何自行出现。"

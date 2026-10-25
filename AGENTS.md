@@ -30,7 +30,7 @@ Every kind of content has exactly one source of truth.
 | Note | `content/notes/<slug>.md` | title, date, description, `tags` | no image, cover, or series; a paragraph or a page |
 | Talk | `content/talks/<slug>.md` with `template = "slide-deck.html"` | title, date, description, `extra.event`, `extra.venue`, `extra.event_url` | slides are HTML sections; assets in `static/talks/<slug>/`; add a card to `content/speaking.md` |
 | Work (book, novel, paper, report, article, essay, journal) | `data/reading.toml`, one `[[works]]` block | id, title, author, kind, status | dates are months, `"YYYY-MM"`; `rating` 1 to 10 when reviewed; cover via `mise run reading-covers <id>` |
-| Project or app | `data/projects/<slug>.toml` | title, description, status, links, topics | listed by adding the slug to a tier in `content/projects/_index.md` or `content/apps/_index.md` |
+| Project or app | `data/projects/<slug>.toml` | title, description, status, links, topics | listed by adding the slug to a tier in `content/projects/_index.md` or `content/apps/_index.md`; `schema_type` (default SoftwareApplication; VideoGame, Book, ResearchProject, Project) and `app_category` (default DeveloperApplication) set its JSON-LD |
 | Topic | `data/tags.toml` | name, kind (domain, concept, technology, site), description | `broader` links it into the graph; define it before using it |
 | Category | `config.toml`, `extra.seijaku.categories_descriptions` | a one-line description | a form of writing, not a subject; today only `reviews` |
 | Series | `taxonomies.series` on each part, `extra.seijaku.series_descriptions` in config | | only for real multi-part reading orders |
@@ -53,7 +53,7 @@ Once registered, content reaches all of these without further work, unless the t
 | `/llms.txt`, `/llms-full.txt`, Markdown copies (`<url>.md` for articles, notes, talks), `/reading.json` | `mise run llms` before the build | content front matter and bodies, `data/reading.toml`, `data/tags.toml`, project tiers |
 | Feeds | Zola | `/rss.xml`, `/atom.xml`, `/articles/rss.xml`, `/notes/rss.xml`, `/talks/rss.xml`, `/categories/reviews/rss.xml`, plus one per topic and series |
 | Social cards `og/<path>.png` | `mise run og` after the build, template `og/card.html` | page title, description, date, cover; reviews get the book cover and rating |
-| JSON-LD | `templates/partials/head_extra.html` (talks: `templates/slide-deck.html`) | BlogPosting and Review (itemReviewed, reviewRating), DefinedTerm topics, the reading log as an ItemList, Datasets for the data files, a SearchAction |
+| JSON-LD | `templates/partials/head_extra.html` (talks: `templates/slide-deck.html`) | BlogPosting and Review (itemReviewed, reviewRating), DefinedTerm topics, every project as an entity on /projects/ and /apps/ (with the author, its site and repository), the reading log as an ItemList, Datasets for the data files, a SearchAction |
 | Discovery files | static, hand-maintained | `static/robots.txt`, `static/ai.txt`, `static/.well-known/api-catalog`, `static/.well-known/auth.md` |
 | WebMCP tools for in-browser agents | `static/js/webmcp.js` | reads llms.txt, the Markdown copies, map.json, garden.json, reading.json |
 | Sitemap, IndexNow ping | Zola; CI on push | every page |
@@ -119,6 +119,10 @@ Covers are fetched once and committed; CI does not fetch them.
 ### A new project or app
 Add `data/projects/<slug>.toml`, then add the slug to a tier in `content/projects/_index.md` or
 `content/apps/_index.md`. Topics come from the same vocabulary. `related` links projects on the map.
+If the project has its own site under *.raskell.io, give it the discovery kit: real `robots.txt`,
+`sitemap.xml` and `llms.txt` files (not the app's HTML fallback), a description and social card, JSON-LD
+naming the author as `https://raskell.io/#person`, a few sentences of text readable without JavaScript, and a
+quiet `rel="author"` link back to https://raskell.io/.
 
 ### A new category
 Describe it in `config.toml` under `categories_descriptions` first; `tags-check` rejects undescribed

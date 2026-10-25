@@ -1,5 +1,5 @@
 title = "WASM-AD"
-description = "A fantasy console standard with 32-bit handheld hardware: tile layers, sprites, palettes, and save RAM, memory-mapped inside the cartridge. A cartridge is a single WebAssembly module. Comes with a written spec, a reference renderer with conformance tests, a Rust SDK, and a web player."
+description = "A fantasy console standard with 32-bit handheld hardware: tile layers, sprites, palettes, and save RAM, memory-mapped inside the cartridge. A cartridge is a single WebAssembly module. Comes with a written spec, a reference renderer with conformance tests, SDKs for Rust, C and C++, Zig, AssemblyScript and Go, and a web player."
 status = "dev"
 logo = "brands/wasm-ad.png"
 links = [ { name = "Website", url = "https://wasmad.raskell.io" }, { name = "Spec", url = "https://wasmad.raskell.io/spec.html" }, { name = "GitHub", url = "https://github.com/raskell-io/wasm-ad" } ]
@@ -8,7 +8,7 @@ related = ["rainbow-river"]
 
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
-description = "一套带有 32 位掌机硬件的幻想主机标准：图块层、精灵、调色板和存档 RAM，全部内存映射在卡带内部。一张卡带就是一个 WebAssembly 模块。附带成文的规范、带一致性测试的参考渲染器、Rust SDK 和网页播放器。"
+description = "一套带有 32 位掌机硬件的幻想主机标准：图块层、精灵、调色板和存档 RAM，全部内存映射在卡带内部。一张卡带就是一个 WebAssembly 模块。附带成文的规范、带一致性测试的参考渲染器、Rust、C 和 C++、Zig、AssemblyScript 与 Go 的 SDK，以及网页播放器。"
 
 [i18n.ko]
-description = "32비트 휴대용 게임기 하드웨어를 갖춘 판타지 콘솔 표준입니다. 타일 레이어, 스프라이트, 팔레트, 세이브 RAM이 카트리지 안에 메모리 매핑되어 있습니다. 카트리지 하나가 WebAssembly 모듈 하나입니다. 문서화된 명세, 적합성 테스트를 갖춘 참조 렌더러, Rust SDK, 웹 플레이어가 함께 제공됩니다."
+description = "32비트 휴대용 게임기 하드웨어를 갖춘 판타지 콘솔 표준입니다. 타일 레이어, 스프라이트, 팔레트, 세이브 RAM이 카트리지 안에 메모리 매핑되어 있습니다. 카트리지 하나가 WebAssembly 모듈 하나입니다. 문서화된 명세, 적합성 테스트를 갖춘 참조 렌더러, Rust, C 및 C++, Zig, AssemblyScript, Go용 SDK, 웹 플레이어가 함께 제공됩니다."

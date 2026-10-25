@@ -265,6 +265,61 @@
       "isPartOf": { "@id": {{ id_site | json_encode | safe }} },
       "hasPart": [{% for a in term.pages %}{ "@type": {% if a.extra.review %}["BlogPosting", "Review"]{% else %}"BlogPosting"{% endif %}, "@id": {{ a.permalink ~ "#article" | json_encode | safe }}, "headline": {{ a.title | json_encode | safe }}, "url": {{ a.permalink | json_encode | safe }}, "datePublished": {{ a.date | date(format="%Y-%m-%dT00:00:00+00:00") | json_encode | safe }} }{% if not loop.last %}, {% endif %}{% endfor %}]
     }
+    {%- elif section is defined and section.extra.tiers is defined %},
+    {#- The projects and apps pages: every project as an entity (data/projects/<slug>.toml) with a stable id on
+        raskell.io, its own site and repository as sameAs, and the author. `schema_type` and `app_category` in
+        the data file pick the schema.org type (default SoftwareApplication, DeveloperApplication). -#}
+    {%- set_global ld_items = [] %}
+    {%- for tier in section.extra.tiers %}{% for slug in tier.projects %}{% set_global ld_items = ld_items | concat(with=slug) %}{% endfor %}{% endfor %}
+    {
+      "@type": "CollectionPage",
+      "@id": {{ here ~ "#collection" | json_encode | safe }},
+      "url": {{ here | json_encode | safe }},
+      "name": {{ section.title | json_encode | safe }},
+      {%- if section.description %}
+      "description": {{ section.description | json_encode | safe }},
+      {%- endif %}
+      "inLanguage": {{ ld_tag | json_encode | safe }},
+      "isPartOf": { "@id": {{ id_site | json_encode | safe }} },
+      "author": { "@id": {{ id_person | json_encode | safe }} },
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": {{ ld_items | length }},
+        "itemListElement": [
+          {%- for slug in ld_items %}{% set p = load_data(path="data/projects/" ~ slug ~ ".toml") %}
+          {%- set pdesc = p.description | default(value="") %}{% if p.i18n is defined and lang in p.i18n and p.i18n[lang].description %}{% set pdesc = p.i18n[lang].description %}{% endif %}
+          {%- set_global purl = "" %}{% set_global psame = [] %}
+          {%- for l in p.links | default(value=[]) %}{% set_global psame = psame | concat(with=l.url) %}{% if not purl and l.name | lower != "github" %}{% set_global purl = l.url %}{% endif %}{% endfor %}
+          {%- if not purl and psame | length > 0 %}{% set_global purl = psame | first %}{% endif %}
+          {%- set st = p.schema_type | default(value="SoftwareApplication") %}
+          {%- set is_app = st == "SoftwareApplication" or st == "VideoGame" %}
+          { "@type": "ListItem", "position": {{ loop.index }}, "item": {
+            "@type": {% if st == "VideoGame" %}["VideoGame", "SoftwareApplication"]{% else %}{{ st | json_encode | safe }}{% endif %},
+            "@id": {{ base ~ "/projects/#" ~ slug | json_encode | safe }},
+            "name": {{ p.title | json_encode | safe }},
+            "description": {{ pdesc | json_encode | safe }},
+            {%- if purl %}
+            "url": {{ purl | json_encode | safe }},
+            {%- endif %}
+            {%- if psame | length > 0 %}
+            "sameAs": {{ psame | json_encode | safe }},
+            {%- endif %}
+            {%- if is_app %}
+            "applicationCategory": {{ p.app_category | default(value="DeveloperApplication") | json_encode | safe }},
+            {%- endif %}
+            {%- if p.logo %}
+            "image": {{ get_url(path=p.logo) | json_encode | safe }},
+            {%- endif %}
+            {%- if p.topics %}
+            "keywords": {{ p.topics | join(sep=", ") | json_encode | safe }},
+            {%- endif %}
+            "author": { "@id": {{ id_person | json_encode | safe }} },
+            "creator": { "@id": {{ id_person | json_encode | safe }} }
+          } }{% if not loop.last %},{% endif %}
+          {%- endfor %}
+        ]
+      }
+    }
     {%- elif page is defined and (page.path == "/about/" or page.relative_path is starting_with("about.")) %},
     {
       "@type": "ProfilePage",

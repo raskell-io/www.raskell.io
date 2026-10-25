@@ -9,6 +9,8 @@ pitch = "@/pitch/humankind.md"   # investor brief, linked from /invest/
 topics = ["sovereignty", "elixir", "rust"]
 accents = ["#2fd8b4", "#9a86ff"]   # brand teal and violet, used for the card glow
 
+app_category = "LifestyleApplication"   # schema.org applicationCategory (default DeveloperApplication)
+
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
 description = "一个跨越世代保存一个人存在感的人类延续平台。Humankind 帮助人们建立一份由声音、故事、记忆、价值观和人与人之间的温情组成的活档案，让一个人的质感在距离、衰老或死亡本会将其抹去之后，依然可以被触及。同意优先，默认保护隐私，并明确区分记录下来的事实、重建和推断。"

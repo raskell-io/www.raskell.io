@@ -7,6 +7,8 @@ links = [ { name = "Website", url = "https://die-zukunft.ch" }, { name = "GitHub
 topics = ["sovereignty", "policy", "oss", "social-reform", "switzerland"]
 accents = ["#a855f7", "#06b6d4"]   # brand colours, used for the card glow
 
+schema_type = "Project"   # schema.org type for the JSON-LD on /projects/ and /apps/ (default SoftwareApplication)
+
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
 description = "一个把工程原则应用于公共生活的瑞士运动：不左也不右。通过开放标准实现数字主权，可审计、可迁移的公共基础设施，以证据为依据的政策，并拥有自己的瑞士联邦数据研究流程。"

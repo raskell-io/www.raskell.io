@@ -5,6 +5,8 @@ logo = "brands/manabi.png"
 links = [ { name = "Open app", url = "https://manabi.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/manabi" } ]
 topics = ["local-first", "data-sovereignty", "typescript", "languages"]
 
+app_category = "EducationalApplication"   # schema.org applicationCategory (default DeveloperApplication)
+
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
 description = "一个以阅读为先的语言学习应用，支持中文、日语、韩语和希伯来语。它分别训练识别、发音、听力、语境和回忆，配合间隔重复和预先录制的母语音频。它在浏览器中离线运行，可以作为 PWA 安装。"

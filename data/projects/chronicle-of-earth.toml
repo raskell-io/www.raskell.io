@@ -7,6 +7,8 @@ topics = ["history", "geography", "knowledge-management", "typescript"]
 stack = ["SvelteKit", "TypeScript", "MapLibre"]
 accents = ["#779aa6", "#9eb69a"]
 
+app_category = "EducationalApplication"   # schema.org applicationCategory (default DeveloperApplication)
+
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
 description = "一部关于历史与地缘政治的互动地图集，从 1900 年到 2026 年开始。早期原型把一个可以放大到村庄和街道的 3D 地球，与一条跨越数天到数十年的时间轴结合在一起。它的数据模型把事件、领土主张、实际控制、来源和不确定性分开记录。历史内容目前还只是一小批草稿；详细底图显示的是当今的地理。"

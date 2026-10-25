@@ -5,6 +5,8 @@ links = [ { name = "GitHub", url = "https://github.com/human-macroscope" } ]
 topics = ["complex-systems", "knowledge-management", "emergence"]
 accents = ["#5b45f2", "#007f78"]   # brand colours, used for the card glow
 
+schema_type = "ResearchProject"   # schema.org type for the JSON-LD on /projects/ and /apps/ (default SoftwareApplication)
+
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
 description = "一个关于人类及人类集体的长期跨学科研究项目，跨越从个人、家庭到机构、文化和文明的各个尺度：个体的特质、角色、关系和文化传递，如何组合成涌现的集体属性。"
