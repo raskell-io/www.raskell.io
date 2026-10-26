@@ -7,8 +7,8 @@ template = "tracks.html"
 title = "10분이 있다면"
 deck = "짧은 입구 세 개입니다. 각각 제가 하는 일의 다른 면을 보여 줍니다."
 items = [
-  { path = "notes/alert-triage-is-a-context-problem.md", note = "본업에서 나온 2분짜리 노트입니다. 동료 한 명과 저는 시끄러운 WAF에 LLM을 붙였습니다. 경보를 조용하게 만든 것은 운영자가 가장 먼저 찾아볼 컨텍스트를 LLM에게 준 일이었습니다." },
-  { path = "notes/a-model-gateway-is-a-reverse-proxy.md", note = "제가 계속 되돌아오는 생각입니다. 에이전트 플랫폼에 필요한 것의 대부분은 새로운 페이로드를 실은 오래된 인프라 작업입니다." },
+  { path = "articles/traffic-replay-as-a-security-primitive.md", note = "운영자의 관점에서 본 응용 보안입니다. 규칙을 촉발한 트래픽을 재현할 수 있기 전까지 WAF 튜닝은 추측에 머뭅니다." },
+  { path = "articles/the-economics-of-inference.md", note = "추론 토큰이 API 호출보다 물, 전기, 가스에 더 가깝게 움직이는 이유와, 그것이 AI 경제에 뜻하는 바를 다룹니다." },
   { url = "https://arcanist.sh/hx/benchmarks/", title = "hx 벤치마크", note = "직접 실행해 볼 수 있는 것으로 엔지니어링을 판단하고 싶다면. hx는 Rust로 만든 Haskell 툴체인이며, 이 페이지에는 테스트 머신, 방법, 한계가 적혀 있습니다." },
 ]
 

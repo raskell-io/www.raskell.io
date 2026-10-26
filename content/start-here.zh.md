@@ -7,8 +7,8 @@ template = "tracks.html"
 title = "如果你有十分钟"
 deck = "三个简短的入口，各自展示我所做之事的一个侧面。"
 items = [
-  { path = "notes/alert-triage-is-a-context-problem.md", note = "一篇来自我日常工作的两分钟笔记。我和一位同事把一个 LLM 接到了一个嘈杂的 WAF 上。真正让告警变少的，是把运维人员首先会去查的上下文交给它。" },
-  { path = "notes/a-model-gateway-is-a-reverse-proxy.md", note = "我反复回到的一个想法：智能体平台需要的大部分东西，都是装着新载荷的老基础设施工作。" },
+  { path = "articles/traffic-replay-as-a-security-primitive.md", note = "从运维者的角度看应用安全：在能够重放触发规则的流量之前，WAF 调优只能靠猜。" },
+  { path = "articles/the-economics-of-inference.md", note = "为什么推理 token 更像水、电和燃气，而不像 API 调用，以及这对 AI 经济意味着什么。" },
   { url = "https://arcanist.sh/hx/benchmarks/", title = "hx 基准测试", note = "让你用可以亲自运行的东西来评判工程质量。hx 是一个用 Rust 写的 Haskell 工具链，这一页写明了测试机器、方法和局限。" },
 ]
 

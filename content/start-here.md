@@ -7,8 +7,8 @@ template = "tracks.html"
 title = "If you have ten minutes"
 deck = "Three short ways in, each showing a different side of what I do."
 items = [
-  { path = "notes/alert-triage-is-a-context-problem.md", note = "A two-minute note from my day job. A colleague and I put an LLM on a noisy WAF. Giving it the context an operator would look up first is what made the alerts quieter." },
-  { path = "notes/a-model-gateway-is-a-reverse-proxy.md", note = "The idea I keep coming back to: most of what an agent platform needs is old infrastructure work with a new payload." },
+  { path = "articles/traffic-replay-as-a-security-primitive.md", note = "Applied security from the operator's side: WAF tuning stays a guessing game until you can replay the traffic that triggered the rule." },
+  { path = "articles/the-economics-of-inference.md", note = "Why inference tokens behave less like API calls and more like water, electricity, and gas, and what that means for the AI economy." },
   { url = "https://arcanist.sh/hx/benchmarks/", title = "The hx benchmarks", note = "For judging the engineering by something you can run. hx is a Haskell toolchain written in Rust, and the page writes down the test machine, the method, and the limits." },
 ]
 
