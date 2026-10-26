@@ -3,9 +3,9 @@ title = "Home"
 
 # "What I am working on" on the homepage. Remove [[extra.now]] blocks to hide the section.
 [[extra.now]]
-name = "The Agent Platform Handbook"
-text = "A series on building an agent platform from first principles. Nine parts are out; part ten, on evaluating agent runs, is in draft."
-url = "/series/the-agent-platform-handbook/"
+name = "Shiioo"
+text = "A virtual company of AI agents on your Mac, run from your phone. Claude Code, Codex and local models work in their own branches; a rules file decides what they may do alone, and the rest reaches you on Telegram as a question."
+url = "https://shiioo.raskell.io"
 
 [[extra.now]]
 name = "Arcanist.sh"
@@ -13,9 +13,9 @@ text = "Haskell tooling in Rust: hx, a fast package manager, and bhc, a compiler
 url = "https://arcanist.sh"
 
 [[extra.now]]
-name = "WASM-AD"
-text = "A fantasy console whose cartridges are WebAssembly modules. Rainbow River, a fishing game, is the first cartridge."
-url = "https://wasmad.raskell.io"
+name = "Archipelag.io"
+text = "Decentralised AI compute on community-operated GPU hosts, in free open beta. Jobs prefer nearby hosts and a chosen region, and every job records where it ran."
+url = "https://archipelag.io"
 
 # Filled in from data/reading.toml: whatever has status "reading".
 [[extra.now]]

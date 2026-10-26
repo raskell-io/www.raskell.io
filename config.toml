@@ -79,6 +79,7 @@ hero_motion = "images/raskell-hero.avif"
 hero_poster = "images/raskell-hero.webp"
 mark = "images/raskell-mark.svg"
 mark_play = true
+now_title = "On my desk"   # the homepage now list's heading
 main_section = "articles"
 projects_section = "projects"
 cta = { name = "Start here", url = "@/start-here.md" }
@@ -281,6 +282,8 @@ Raskell 是我在网络上的一角，也是通往我所构建的一切的入口
 "All articles" = "全部文章"
 "The writing on this site is in English." = "本站的文章以英文撰写。"
 "What I am working on" = "我正在做的事"
+"On my desk" = "案头上的事"
+"Also available in" = "其他语言版本"
 "by" = "·"
 "All projects" = "全部项目"
 "Live" = "已上线"
@@ -527,6 +530,8 @@ Raskell은 웹 위의 제 작은 공간이자, 제가 만드는 모든 것으로
 "All articles" = "모든 글"
 "The writing on this site is in English." = "이 사이트의 글은 영어로 쓰여 있습니다."
 "What I am working on" = "지금 하고 있는 일"
+"On my desk" = "책상 위의 일"
+"Also available in" = "다른 언어 버전"
 "by" = "·"
 "All projects" = "모든 프로젝트"
 "Live" = "운영 중"
