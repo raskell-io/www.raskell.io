@@ -1,7 +1,16 @@
 +++
 title = "Start Here"
-description = "New here? Start with three short pieces, then go deeper along four reading tracks. Each track reads well in order, and each article stands on its own."
+description = "New here? Start with three short pieces, then go deeper along seven reading tracks. Each track reads well in order, and each piece stands on its own."
 template = "tracks.html"
+
+[extra.quick]
+title = "If you have ten minutes"
+deck = "Three short ways in, each showing a different side of what I do."
+items = [
+  { path = "notes/alert-triage-is-a-context-problem.md", note = "A two-minute note from my day job. A colleague and I put an LLM on a noisy WAF. Giving it the context an operator would look up first is what made the alerts quieter." },
+  { path = "notes/a-model-gateway-is-a-reverse-proxy.md", note = "The idea I keep coming back to: most of what an agent platform needs is old infrastructure work with a new payload." },
+  { url = "https://arcanist.sh/hx/benchmarks/", title = "The hx benchmarks", note = "For judging the engineering by something you can run. hx is a Haskell toolchain written in Rust, and the page writes down the test machine, the method, and the limits." },
+]
 
 [[extra.tracks]]
 title = "Edge systems and applied security"
@@ -22,6 +31,36 @@ items = [
 ]
 
 [[extra.tracks]]
+title = "Machines that learn to play"
+deck = "How game-playing programs learn, shown on chess, shogi and Go: the series, the engines you can play against, and the books behind them."
+items = [
+  { path = "articles/learning-to-play.md" },
+  { project = "kishi", note = "The engines from the series, playing chess, shogi and Go in your browser, offline, from novice to full strength." },
+  { work = "reinforcement-learning-an-introduction", note = "The textbook behind self-play: what an engine that learns from its own games is actually doing." },
+  { work = "the-infinity-machine", note = "DeepMind's road from game-playing programs and AlphaGo to the race for general intelligence." },
+]
+
+[[extra.tracks]]
+title = "Brains, emulation, and simulated minds"
+deck = "What it would take to copy a brain into a computer, and what a few thousand simulated neurons already do."
+items = [
+  { path = "articles/brain-emulation-as-an-infrastructure-problem.md" },
+  { work = "from-worm-to-human" },
+  { work = "state-of-brain-emulation-2025" },
+  { project = "hotaru", note = "Simulated neuron cultures on a 60-electrode array play Pong in your browser, and improve only when their input goes quiet as the paddle finds the ball." },
+]
+
+[[extra.tracks]]
+title = "The open web and its data"
+deck = "The web as a gift, as a training set, and as a commons worth keeping open."
+items = [
+  { path = "articles/the-web-was-the-training-set.md" },
+  { path = "articles/the-bottleneck-is-data-and-europe-is-sitting-on-it.md" },
+  { path = "articles/this-site-is-becoming-a-map.md" },
+  { path = "articles/looking-back-on-2025.md", note = "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself." },
+]
+
+[[extra.tracks]]
 title = "Platform automation and operability"
 deck = "Workflows, guardrails, and the tooling that makes shipping sustainable."
 items = [
@@ -36,16 +75,8 @@ deck = "What happens to programming languages when AI writes most of the code, a
 items = [
   { path = "articles/what-programming-languages-become-when-ai-writes-the-code.md", note = "Three futures for the layer between human intent and machine execution, and why I bet on Haskell." },
   { path = "articles/all-beginning-is-haskell.md", note = "How Haskell shaped the way I think about building systems." },
-  { path = "articles/looking-back-on-2025.md", note = "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself." },
+  { path = "articles/why-we-built-a-haskell-package-manager-in-rust.md", note = "hx, a fast Haskell toolchain written in Rust, and why it follows the playbook that modernised Python tooling." },
 ]
 +++
 
-## If you have ten minutes
-
-Three short ways in, each showing a different side of what I do.
-
-- **[Alert triage is a context problem](/notes/alert-triage-is-a-context-problem/)**, a two-minute note from my day job. A colleague and I put an LLM on a noisy WAF. It did not make the alerts quieter on its own. Giving it the context an operator would look up first did.
-- **[A model gateway is a reverse proxy](/notes/a-model-gateway-is-a-reverse-proxy/)**, another short note, and the idea I keep coming back to: most of what an agent platform needs is old infrastructure work with a new payload, and the vocabulary of edge proxies carries over almost unchanged.
-- **[The hx benchmarks](https://arcanist.sh/hx/benchmarks/)**, for judging the engineering by something you can run. hx is a Haskell toolchain written in Rust, and the page writes down the test machine, the method, and the limits. The [longer story](/articles/why-we-built-a-haskell-package-manager-in-rust/) explains why it exists.
-
-The four tracks below go deeper, one subject at a time.
+The seven tracks below go deeper, one subject at a time. A track can mix kinds: an article, the project it describes, and the book worth reading alongside.

@@ -1,7 +1,16 @@
 +++
 title = "여기서 시작"
-description = "처음 오셨나요? 짧은 글 세 편으로 시작한 다음, 네 가지 읽기 트랙을 따라 더 깊이 들어가 보십시오. 각 트랙은 순서대로 읽으면 좋고, 각 글은 따로 읽어도 됩니다."
+description = "처음 오셨나요? 짧은 글 세 편으로 시작한 다음, 일곱 가지 읽기 트랙을 따라 더 깊이 들어가 보십시오. 각 트랙은 순서대로 읽으면 좋고, 각 항목은 따로 읽어도 됩니다."
 template = "tracks.html"
+
+[extra.quick]
+title = "10분이 있다면"
+deck = "짧은 입구 세 개입니다. 각각 제가 하는 일의 다른 면을 보여 줍니다."
+items = [
+  { path = "notes/alert-triage-is-a-context-problem.md", note = "본업에서 나온 2분짜리 노트입니다. 동료 한 명과 저는 시끄러운 WAF에 LLM을 붙였습니다. 경보를 조용하게 만든 것은 운영자가 가장 먼저 찾아볼 컨텍스트를 LLM에게 준 일이었습니다." },
+  { path = "notes/a-model-gateway-is-a-reverse-proxy.md", note = "제가 계속 되돌아오는 생각입니다. 에이전트 플랫폼에 필요한 것의 대부분은 새로운 페이로드를 실은 오래된 인프라 작업입니다." },
+  { url = "https://arcanist.sh/hx/benchmarks/", title = "hx 벤치마크", note = "직접 실행해 볼 수 있는 것으로 엔지니어링을 판단하고 싶다면. hx는 Rust로 만든 Haskell 툴체인이며, 이 페이지에는 테스트 머신, 방법, 한계가 적혀 있습니다." },
+]
 
 [[extra.tracks]]
 title = "엣지 시스템과 응용 보안"
@@ -22,6 +31,36 @@ items = [
 ]
 
 [[extra.tracks]]
+title = "게임을 배우는 기계"
+deck = "게임을 두는 프로그램이 어떻게 배우는지 체스, 쇼기, 바둑으로 보여 줍니다. 연재, 직접 상대할 수 있는 엔진, 그리고 그 뒤에 있는 책입니다."
+items = [
+  { path = "articles/learning-to-play.md", note = "체스 신동의 안내서, 오래된 게임 세 가지, 노트북 한 대. 게임 AI의 아이디어를 Rust로 다시 만들어 휴대전화 브라우저에서 돌리고, 측정합니다." },
+  { project = "kishi" },
+  { work = "reinforcement-learning-an-introduction", note = "자기 대국의 바탕이 되는 교과서입니다. 자기 대국에서 배우는 엔진이 실제로 무엇을 하는지 설명합니다." },
+  { work = "the-infinity-machine", note = "게임을 두는 프로그램과 AlphaGo에서 범용 지능 경쟁에 이르는 DeepMind의 길입니다." },
+]
+
+[[extra.tracks]]
+title = "뇌, 에뮬레이션, 시뮬레이션된 마음"
+deck = "뇌를 컴퓨터에 복사하려면 무엇이 필요한지, 그리고 수천 개의 시뮬레이션된 뉴런이 이미 무엇을 하는지 다룹니다."
+items = [
+  { path = "articles/brain-emulation-as-an-infrastructure-problem.md", note = "MIT 학위논문은 뇌 에뮬레이션이 공학의 영역에 들어섰다고 주장합니다. 인프라로 읽으면, 그 숫자는 여러분의 AI 클러스터가 감당하도록 만들어지지 않은 워크로드를 말해 줍니다." },
+  { work = "from-worm-to-human", note = "뇌 에뮬레이션을 공학 프로그램으로 다루는 학위논문이며, 그 숫자는 용량 계획처럼 읽힙니다." },
+  { work = "state-of-brain-emulation-2025", note = "커넥토믹스, 기록, 모델링이 각각 어디까지 왔고 서로 얼마나 떨어져 있는지에 대한 이 분야 스스로의 조사입니다." },
+  { project = "hotaru" },
+]
+
+[[extra.tracks]]
+title = "열린 웹과 그 데이터"
+deck = "선물로서의 웹, 학습 데이터로서의 웹, 그리고 열린 채로 지킬 가치가 있는 공유지로서의 웹입니다."
+items = [
+  { path = "articles/the-web-was-the-training-set.md", note = "Tim Berners-Lee의 회고록은 프랑스와 스위스에 걸친 연구소에서 한 영국 엔지니어가 프로토콜을 내어 준 이야기입니다. 2026년에 읽으면, AI 데이터 공급의 기원 이야기이기도 합니다." },
+  { path = "articles/the-bottleneck-is-data-and-europe-is-sitting-on-it.md", note = "프런티어 AI에 부족한 것은 컴퓨팅이 아니라 공개된 텍스트입니다. 유럽의 강점은 온라인에 올린 적 없는 고품질 데이터이며, 이를 활용하려면 조율이 필요합니다." },
+  { path = "articles/this-site-is-becoming-a-map.md", note = "블로그는 제가 마지막으로 쓴 것을 보여 줍니다. raskell.io의 새 지도는 제가 계속 되돌아오는 것을 보여 주며, 공개된 두 번째 뇌의 시작입니다." },
+  { path = "articles/looking-back-on-2025.md", note = "오키나와에서 Tim Berners-Lee를 읽은 일, 그리고 AI가 어쩌다 웹을 웹 자신으로부터 구해 낼지도 모르는 이유." },
+]
+
+[[extra.tracks]]
 title = "플랫폼 자동화와 운영 용이성"
 deck = "워크플로, 가드레일, 그리고 출시를 지속 가능하게 만드는 도구."
 items = [
@@ -36,16 +75,8 @@ deck = "AI가 코드 대부분을 쓰게 될 때 프로그래밍 언어에 어�
 items = [
   { path = "articles/what-programming-languages-become-when-ai-writes-the-code.md", note = "사람의 의도와 기계의 실행 사이에 있는 계층의 세 가지 미래, 그리고 제가 Haskell에 거는 이유." },
   { path = "articles/all-beginning-is-haskell.md", note = "Haskell이 시스템을 만드는 일에 대한 제 사고방식을 어떻게 형성했는지." },
-  { path = "articles/looking-back-on-2025.md", note = "오키나와에서 Tim Berners-Lee를 읽은 일, 그리고 AI가 어쩌다 웹을 웹 자신으로부터 구해 낼지도 모르는 이유." },
+  { path = "articles/why-we-built-a-haskell-package-manager-in-rust.md", note = "Rust로 만든 빠른 Haskell 툴체인 hx, 그리고 hx가 Python 도구를 현대화한 방식을 따르는 이유입니다." },
 ]
 +++
 
-## 10분이 있다면 {#if-you-have-ten-minutes}
-
-짧은 입구 세 개입니다. 각각 제가 하는 일의 다른 면을 보여 줍니다.
-
-- **[Alert triage is a context problem](/notes/alert-triage-is-a-context-problem/)**: 본업에서 나온 2분짜리 노트입니다. 동료 한 명과 저는 시끄러운 WAF에 LLM을 붙였습니다. LLM 자체가 경보를 조용하게 만든 것은 아니었습니다. 운영자가 가장 먼저 찾아볼 컨텍스트를 LLM에게 준 것이 경보를 조용하게 만들었습니다.
-- **[A model gateway is a reverse proxy](/notes/a-model-gateway-is-a-reverse-proxy/)**: 또 하나의 짧은 노트이자, 제가 계속 되돌아오는 생각입니다. 에이전트 플랫폼에 필요한 것의 대부분은 새로운 페이로드를 실은 오래된 인프라 작업이며, 엣지 프록시의 어휘는 거의 그대로 옮겨 갑니다.
-- **[hx 벤치마크](https://arcanist.sh/hx/benchmarks/)**: 직접 실행해 볼 수 있는 것으로 엔지니어링을 판단하고 싶다면. hx는 Rust로 만든 Haskell 툴체인이며, 이 페이지에는 테스트 머신, 방법, 한계가 적혀 있습니다. [더 긴 이야기](/articles/why-we-built-a-haskell-package-manager-in-rust/)에서 hx가 왜 존재하는지 설명합니다.
-
-아래의 네 트랙은 한 번에 한 주제씩 더 깊이 들어갑니다.
+아래의 일곱 트랙은 한 번에 한 주제씩 더 깊이 들어갑니다. 트랙에는 여러 종류가 섞일 수 있습니다. 글 한 편, 그 글이 다루는 프로젝트, 그리고 함께 읽을 만한 책입니다.

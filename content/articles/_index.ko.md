@@ -5,6 +5,7 @@ generate_feeds = true
 description = "플랫폼 자동화, 엣지 인프라, 응용 보안, AI 지원 엔지니어링에 관한 글입니다."
 
 [extra]
+show_kinds = true
 facets = ["topic", "technology", "form", "length", "series"]
 +++
 

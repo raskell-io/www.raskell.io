@@ -1,7 +1,16 @@
 +++
 title = "从这里开始"
-description = "第一次来？先读三篇短文，再沿着四条阅读路线深入。每条路线按顺序读最好，每篇文章也都可以单独阅读。"
+description = "第一次来？先读三篇短文，再沿着七条阅读路线深入。每条路线按顺序读最好，每一篇也都可以单独阅读。"
 template = "tracks.html"
+
+[extra.quick]
+title = "如果你有十分钟"
+deck = "三个简短的入口，各自展示我所做之事的一个侧面。"
+items = [
+  { path = "notes/alert-triage-is-a-context-problem.md", note = "一篇来自我日常工作的两分钟笔记。我和一位同事把一个 LLM 接到了一个嘈杂的 WAF 上。真正让告警变少的，是把运维人员首先会去查的上下文交给它。" },
+  { path = "notes/a-model-gateway-is-a-reverse-proxy.md", note = "我反复回到的一个想法：智能体平台需要的大部分东西，都是装着新载荷的老基础设施工作。" },
+  { url = "https://arcanist.sh/hx/benchmarks/", title = "hx 基准测试", note = "让你用可以亲自运行的东西来评判工程质量。hx 是一个用 Rust 写的 Haskell 工具链，这一页写明了测试机器、方法和局限。" },
+]
 
 [[extra.tracks]]
 title = "边缘系统与应用安全"
@@ -22,6 +31,36 @@ items = [
 ]
 
 [[extra.tracks]]
+title = "会学习下棋的机器"
+deck = "游戏程序如何学习，以国际象棋、将棋和围棋为例：这个系列、可以对弈的引擎，以及背后的书。"
+items = [
+  { path = "articles/learning-to-play.md", note = "一本国际象棋神童的手册、三种古老的棋和一台笔记本电脑：用 Rust 重建游戏 AI 背后的思想，在手机浏览器里运行，并加以测量。" },
+  { project = "kishi" },
+  { work = "reinforcement-learning-an-introduction", note = "自我对弈背后的教科书：一个从自己的对局中学习的引擎，究竟在做什么。" },
+  { work = "the-infinity-machine", note = "DeepMind 的道路：从会下棋的程序和 AlphaGo，到通用智能的竞赛。" },
+]
+
+[[extra.tracks]]
+title = "大脑、仿真与模拟的心智"
+deck = "把一个大脑复制进计算机需要什么，以及几千个模拟神经元已经能做到什么。"
+items = [
+  { path = "articles/brain-emulation-as-an-infrastructure-problem.md", note = "一篇 MIT 论文认为，大脑仿真已经进入工程阶段。把它当作基础设施来读，这些数字描述的是一种你的 AI 集群并非为之而建的工作负载。" },
+  { work = "from-worm-to-human", note = "一篇把大脑仿真当作工程计划来写的论文，它的数字读起来像一份容量规划。" },
+  { work = "state-of-brain-emulation-2025", note = "这个领域自己的综述：连接组学、记录和建模各自走到了哪里，彼此还相距多远。" },
+  { project = "hotaru" },
+]
+
+[[extra.tracks]]
+title = "开放的 Web 与它的数据"
+deck = "Web 作为一份礼物、一个训练集，以及一片值得保持开放的公地。"
+items = [
+  { path = "articles/the-web-was-the-training-set.md", note = "Tim Berners-Lee 的回忆录，讲的是一位英国工程师在一个法瑞边境的实验室里把一个协议送了出去。在 2026 年读，它也是 AI 数据来源的起源故事。" },
+  { path = "articles/the-bottleneck-is-data-and-europe-is-sitting-on-it.md", note = "前沿 AI 缺的是公开文本，而不是算力。欧洲的优势在于它从未放到网上的高质量数据。要把它利用起来，需要协调。" },
+  { path = "articles/this-site-is-becoming-a-map.md", note = "博客展示的是我最近写了什么。raskell.io 上的新地图展示的是我一再回到的东西，它也是一个公开的第二大脑的开端。" },
+  { path = "articles/looking-back-on-2025.md", note = "关于在冲绳读 Tim Berners-Lee，以及为什么 AI 也许会意外地把 Web 从它自己手中拯救出来。" },
+]
+
+[[extra.tracks]]
 title = "平台自动化与可运维性"
 deck = "工作流、护栏，以及让交付可持续的工具。"
 items = [
@@ -36,16 +75,8 @@ deck = "当 AI 写下大部分代码时，编程语言会怎样，以及为什�
 items = [
   { path = "articles/what-programming-languages-become-when-ai-writes-the-code.md", note = "人的意图与机器执行之间那一层的三种未来，以及我为什么押注 Haskell。" },
   { path = "articles/all-beginning-is-haskell.md", note = "Haskell 如何塑造了我思考构建系统的方式。" },
-  { path = "articles/looking-back-on-2025.md", note = "关于在冲绳读 Tim Berners-Lee，以及为什么 AI 也许会意外地把 Web 从它自己手中拯救出来。" },
+  { path = "articles/why-we-built-a-haskell-package-manager-in-rust.md", note = "hx，一个用 Rust 写的快速 Haskell 工具链，以及它为什么沿用了让 Python 工具现代化的那套做法。" },
 ]
 +++
 
-## 如果你有十分钟 {#if-you-have-ten-minutes}
-
-三个简短的入口，各自展示我所做之事的一个侧面。
-
-- **[告警分诊是一个上下文问题](/notes/alert-triage-is-a-context-problem/)**，一篇来自我日常工作的两分钟笔记。我和一位同事把一个 LLM 接到了一个嘈杂的 WAF 上。它本身并没有让告警变少。真正起作用的，是把运维人员首先会去查的上下文交给它。
-- **[模型网关就是一个反向代理](/notes/a-model-gateway-is-a-reverse-proxy/)**，另一篇短笔记，也是我反复回到的一个想法：智能体平台需要的大部分东西，都是装着新载荷的老基础设施工作，边缘代理的那套词汇几乎可以原封不动地沿用过来。
-- **[hx 基准测试](https://arcanist.sh/hx/benchmarks/)**，让你用可以亲自运行的东西来评判工程质量。hx 是一个用 Rust 写的 Haskell 工具链，这一页写明了测试机器、方法和局限。[更长的故事](/articles/why-we-built-a-haskell-package-manager-in-rust/)讲了它为什么存在。
-
-下面四条路线会更深入，每次一个主题。
+下面七条路线会更深入，每次一个主题。一条路线可以混合不同的类型：一篇文章、它所描述的项目，以及值得一起读的书。

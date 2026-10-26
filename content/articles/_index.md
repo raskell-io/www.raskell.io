@@ -5,6 +5,7 @@ generate_feeds = true
 description = "Writing about platform automation, edge infrastructure, applied security, and AI-assisted engineering."
 
 [extra]
+show_kinds = true
 facets = ["topic", "technology", "form", "length", "series"]
 +++
 

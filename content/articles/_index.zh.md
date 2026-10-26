@@ -5,6 +5,7 @@ generate_feeds = true
 description = "关于平台自动化、边缘基础设施、应用安全和 AI 辅助工程的文章。"
 
 [extra]
+show_kinds = true
 facets = ["topic", "technology", "form", "length", "series"]
 +++
 
