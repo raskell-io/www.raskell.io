@@ -1,8 +1,17 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-26T14:48:53+00:00",
+ "generated": "2026-10-26T16:26:15+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/a-blueprint-for-the-static-web/",
+   "kind": "article",
+   "label": "After PHP Gate: A Blueprint for the Static Web",
+   "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/",
+   "meta": "2026-10-26 · 26 min",
+   "description": "Last week's PHP flaws reached every server that runs code per request. My blueprint for sites and apps that run none at all.",
+   "degree": 13
+  },
   {
    "id": "a:/articles/learning-to-play/",
    "kind": "article",
@@ -262,7 +271,7 @@
    "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/",
    "meta": "2026-03-08 · 29 min",
    "description": "I migrated two production apps from Kubernetes to a single Hetzner box. The missing piece was not the hardware.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/edge-systems-are-the-new-backend/",
@@ -449,9 +458,9 @@
    "kind": "tag",
    "label": "Applied security",
    "url": "https://raskell.io/tags/applied-security/",
-   "meta": "Domain · 5 pages",
+   "meta": "Domain · 6 pages",
    "description": "Security under production pressure: adversarial input, signal versus noise, and controls that operators can live with.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "t:attention-economy",
@@ -503,9 +512,9 @@
    "kind": "tag",
    "label": "Context engineering",
    "url": "https://raskell.io/tags/context-engineering/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "Deciding what a model sees: pinned context, retrieval, memory, and the conventions that keep them honest.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:data-sovereignty",
@@ -566,9 +575,9 @@
    "kind": "tag",
    "label": "Edge systems",
    "url": "https://raskell.io/tags/edge-systems/",
-   "meta": "Domain · 6 pages",
+   "meta": "Domain · 7 pages",
    "description": "Reverse proxies, policy enforcement, CDNs, and logic that runs close to the user instead of in the backend.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "t:elixir",
@@ -845,9 +854,9 @@
    "kind": "tag",
    "label": "The open web",
    "url": "https://raskell.io/tags/open-web/",
-   "meta": "Domain · 2 pages",
+   "meta": "Domain · 3 pages",
    "description": "The web as a commons: open protocols, small independent sites, and publishing outside the platforms.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "t:openbsd",
@@ -971,9 +980,9 @@
    "kind": "tag",
    "label": "Rust",
    "url": "https://raskell.io/tags/rust/",
-   "meta": "Technology · 8 pages",
+   "meta": "Technology · 9 pages",
    "description": "The systems language most of the projects here are written in.",
-   "degree": 33
+   "degree": 34
   },
   {
    "id": "t:self-hosting",
@@ -1061,9 +1070,9 @@
    "kind": "tag",
    "label": "WebAssembly",
    "url": "https://raskell.io/tags/webassembly/",
-   "meta": "Technology · 1 page",
+   "meta": "Technology · 2 pages",
    "description": "Portable, sandboxed bytecode for running native-speed code in the browser and beyond.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:world-history",
@@ -1079,9 +1088,9 @@
    "kind": "tag",
    "label": "Zola",
    "url": "https://raskell.io/tags/zola/",
-   "meta": "Technology · 1 page",
+   "meta": "Technology · 2 pages",
    "description": "The static site generator this site and several project sites are built with.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:agent-identity",
@@ -1350,7 +1359,7 @@
    "url": "https://archipelag.io",
    "meta": "Project",
    "description": "Decentralized AI compute: AI jobs run on a network of community-operated GPU hosts. Jobs prefer nearby hosts and a preferred region, and every job records where it ran; strict regi…",
-   "degree": 17
+   "degree": 18
   },
   {
    "id": "p:cyanea",
@@ -1359,7 +1368,7 @@
    "url": "https://cyanea.bio",
    "meta": "Project",
    "description": "Bioinformatics notebooks that actually re-run. Write, run, and share analyses that execute in your browser on WebAssembly, with nothing to install. Every notebook, dataset, and out…",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "p:humankind",
@@ -1386,7 +1395,7 @@
    "url": "https://zentinelproxy.io",
    "meta": "Project",
    "description": "Security-first reverse proxy built to guard the free web. Rust on Cloudflare's Pingora, explicit configuration over hidden defaults, and WAF, auth and other policy in isolated agen…",
-   "degree": 23
+   "degree": 24
   },
   {
    "id": "p:hx",
@@ -1422,7 +1431,7 @@
    "url": "https://refrakt.raskell.io",
    "meta": "Project",
    "description": "A convention-first web framework for Gleam. Productive like Phoenix, explicit like Gleam, composable with Wisp and Lustre. Full-stack code generation, CRUD scaffolding, and a batte…",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "p:vela",
@@ -1512,7 +1521,7 @@
    "url": "https://kishi.raskell.io",
    "meta": "Project",
    "description": "Chess, shogi and Go against engines written in Rust and compiled to WebAssembly. They play in the browser on your own device, offline, from novice to full strength, on a quiet boar…",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "p:sango",
@@ -2809,6 +2818,10 @@
    "target": "t:ai-platforms"
   },
   {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "t:applied-security"
+  },
+  {
    "source": "a:/articles/your-agent-wants-root/",
    "target": "t:applied-security"
   },
@@ -2927,6 +2940,10 @@
   {
    "source": "t:compilers",
    "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "t:context-engineering"
   },
   {
    "source": "a:/articles/memory-is-a-write-path/",
@@ -3071,6 +3088,10 @@
   {
    "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
    "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "t:edge-systems"
   },
   {
    "source": "a:/articles/traffic-replay-as-a-security-primitive/",
@@ -3505,6 +3526,10 @@
    "target": "t:open-web"
   },
   {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "t:open-web"
+  },
+  {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "t:open-web"
   },
@@ -3679,6 +3704,10 @@
   {
    "source": "t:risk",
    "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "t:rust"
   },
   {
    "source": "a:/articles/learning-to-play/",
@@ -3865,6 +3894,10 @@
    "target": "t:edge-systems"
   },
   {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "t:webassembly"
+  },
+  {
    "source": "a:/articles/learning-to-play/",
    "target": "t:webassembly"
   },
@@ -3883,6 +3916,10 @@
   {
    "source": "t:world-history",
    "target": "t:geography"
+  },
+  {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "t:zola"
   },
   {
    "source": "a:/articles/this-site-is-becoming-a-map/",
@@ -4067,6 +4104,10 @@
   {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "c:reviews"
+  },
+  {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "a:/articles/how-ai-makes-bare-metal-viable-again/"
   },
   {
    "source": "a:/articles/learning-to-play/",
@@ -4413,6 +4454,10 @@
    "target": "a:/talks/iat-13-basel/"
   },
   {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "p:archipelag-io"
+  },
+  {
    "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
    "target": "p:archipelag-io"
   },
@@ -4451,6 +4496,10 @@
   {
    "source": "a:/talks/iat-13-basel/",
    "target": "p:archipelag-io"
+  },
+  {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "p:cyanea"
   },
   {
    "source": "a:/articles/how-i-work-these-days/",
@@ -4503,6 +4552,10 @@
   {
    "source": "a:/talks/iat-13-basel/",
    "target": "p:arcanist"
+  },
+  {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "p:zentinel"
   },
   {
    "source": "a:/articles/this-site-is-becoming-a-map/",
@@ -4597,6 +4650,10 @@
    "target": "p:shiioo"
   },
   {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "p:refrakt"
+  },
+  {
    "source": "a:/articles/mise-ate-my-makefile/",
    "target": "p:refrakt"
   },
@@ -4655,6 +4712,10 @@
   {
    "source": "a:/articles/learning-to-play/",
    "target": "p:hotaru"
+  },
+  {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "p:kishi"
   },
   {
    "source": "a:/articles/learning-to-play/",

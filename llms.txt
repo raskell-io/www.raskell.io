@@ -31,6 +31,7 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 
 ## Articles
 
+- [After PHP Gate: A Blueprint for the Static Web](https://raskell.io/articles/a-blueprint-for-the-static-web.md) (2026-10-26): Last week's PHP flaws reached every server that runs code per request. My blueprint for sites and apps that run none at all.
 - [Learning to Play](https://raskell.io/articles/learning-to-play.md) (2026-10-25): A chess prodigy's handbook, three old games and one laptop: rebuilding the ideas behind game-playing AI in Rust for a browser on my phone, and measuring them.
 - [The Web Was the Training Set](https://raskell.io/articles/the-web-was-the-training-set.md) (2026-10-24): Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply.
 - [Observability Is Not Logging](https://raskell.io/articles/observability-is-not-logging.md) (2026-10-20): A cost total says nothing about how a run went. This part turns each agent run into a trace: which turn escalated, which tool failed, where the money went.
@@ -226,11 +227,11 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ## Sources cited most
 
-External links cited on more than one page (all 267 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
+External links cited on more than one page (all 285 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
 
-- [Zentinel](https://zentinelproxy.io): cited on 11 pages
-- [Archipelag.io](https://archipelag.io/): cited on 8 pages
-- [Cyanea](https://cyanea.bio/): cited on 5 pages
+- [Zentinel](https://zentinelproxy.io): cited on 12 pages
+- [Archipelag.io](https://archipelag.io): cited on 9 pages
+- [Cyanea](https://cyanea.bio): cited on 6 pages
 - [arcanist.sh](https://arcanist.sh/): cited on 4 pages
 - [Die Zukunft](https://die-zukunft.ch/): cited on 4 pages
 - [companion repository](https://github.com/raskell-io/the-agent-platform-handbook): cited on 4 pages

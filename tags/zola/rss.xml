@@ -7,7 +7,441 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/zola/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Thu, 15 Oct 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Mon, 26 Oct 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>After PHP Gate: A Blueprint for the Static Web</title>
+          <pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/a-blueprint-for-the-static-web/</link>
+          <guid>https://raskell.io/articles/a-blueprint-for-the-static-web/</guid>
+          <description xml:base="https://raskell.io/articles/a-blueprint-for-the-static-web/">&lt;p&gt;Last Wednesday, the PHP project shipped &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.php.net&#x2F;archive&#x2F;2026.php&quot;&gt;four releases in one afternoon&lt;&#x2F;a&gt;.
+PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 fixed two flaws that allow unauthenticated remote code execution, both rated
+critical at CVSS 9.2:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nvd.nist.gov&#x2F;vuln&#x2F;detail&#x2F;CVE-2026-109618&quot;&gt;CVE-2026-109618&lt;&#x2F;a&gt;, “RCE via OOM corruption”
+(&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;php&#x2F;php-src&#x2F;security&#x2F;advisories&#x2F;GHSA-w8hw-w9fx-j79w&quot;&gt;GHSA-w8hw-w9fx-j79w&lt;&#x2F;a&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nvd.nist.gov&#x2F;vuln&#x2F;detail&#x2F;CVE-2026-109619&quot;&gt;CVE-2026-109619&lt;&#x2F;a&gt;, “RCE via stale global state”
+(&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;php&#x2F;php-src&#x2F;security&#x2F;advisories&#x2F;GHSA-6wmf-4rv5-p3rp&quot;&gt;GHSA-6wmf-4rv5-p3rp&lt;&#x2F;a&gt;)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.php.net&#x2F;archive&#x2F;2026.php&quot;&gt;The advisory&lt;&#x2F;a&gt; is short and does not leave much room for interpretation: the
+flaws affect “all PHP installations serving web requests, including PHP-FPM, Apache with mod_php, php-cgi, FrankenPHP
+and LiteSpeed,” and “there are no complete mitigations, updating is the only safe choice.” Details had
+&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;threatlandscape.io&#x2F;blog&#x2F;php-core-rce-cve-2026-109618-109619-leak-ahead-of-embargo&quot;&gt;leaked a day before the embargo lifted&lt;&#x2F;a&gt;,
+honeypots started seeing attempts soon after, and for the rest of the week hosting providers, agencies and WordPress
+admins were patching, checking, and patching again. Most people call the flaws
+&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;threatlandscape.io&#x2F;blog&#x2F;php-core-rce-cve-2026-109618-109619-leak-ahead-of-embargo&quot;&gt;PHP2Shell&lt;&#x2F;a&gt;. I have been
+calling the week PHP Gate.&lt;&#x2F;p&gt;
+&lt;p&gt;The scale is what makes it a gate rather than a bug. PHP runs
+&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;w3techs.com&#x2F;technologies&#x2F;details&#x2F;pl-php&quot;&gt;69.2% of the websites&lt;&#x2F;a&gt; whose server-side language W3Techs can
+identify, and WordPress alone runs &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;w3techs.com&#x2F;technologies&#x2F;details&#x2F;cm-wordpress&quot;&gt;39.6% of all websites&lt;&#x2F;a&gt;. Laravel, MediaWiki (so, Wikipedia), Drupal, Magento: the
+productive web is still, to a large degree, a PHP interpreter that executes for every single request. When the
+interpreter has a hole, every one of those requests is a way in.&lt;&#x2F;p&gt;
+&lt;p&gt;I do not want to pile on PHP. The PHP team handled this well, and the language has carried more of the web than any
+other. What worries me is a habit that goes far beyond PHP: running code on a server, at request time, to produce a
+page that is almost always the same page it produced a second ago. Most of the sites caught up in PHP Gate could
+have been a folder of files, with no runtime for anyone to attack.&lt;&#x2F;p&gt;
+&lt;p&gt;This post is the blueprint I use instead. I looked at every web project I have built over the last few years, about
+forty sites, documentation sites and web apps across several GitHub organisations, and wrote down what they all do.
+The practices turned out to be the same every time. There are two template repositories at the end you can clone.
+The blueprint is not the answer to everything, either, so there is also a section on when a project needs a real
+backend, and what I build those with.&lt;&#x2F;p&gt;
+&lt;p&gt;If “static” and “dynamic” are fuzzy terms for you, read the next section first; it explains them without assuming
+anything. If you build websites for a living, skip ahead to &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;a-blueprint-for-the-static-web&#x2F;#the-shape-of-it&quot;&gt;the shape of it&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;static-and-dynamic-in-plain-words&quot;&gt;Static and dynamic, in plain words&lt;&#x2F;h2&gt;
+&lt;p&gt;Every time you open a web page, your browser asks a computer somewhere (a &lt;strong&gt;server&lt;&#x2F;strong&gt;) for it, and the server sends
+back a file of HTML that the browser draws. The difference between a static and a dynamic website is &lt;em&gt;when that file
+is made&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;A &lt;strong&gt;dynamic&lt;&#x2F;strong&gt; website makes the page at the moment you ask for it. A program on the server (WordPress, written in PHP,
+is the most common one) reads a template, asks a database for the article, fills the article into the template, and
+sends you the result. Then it does the same thing again for the next visitor, and the next, usually producing exactly
+the same page. It is a kitchen that cooks every plate to order, even when everybody orders the same dish.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;dynamic:  you ──► server ──► PHP runs ──► database ──► page is assembled ──► you&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                  (for every visitor, every time)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;A &lt;strong&gt;static&lt;&#x2F;strong&gt; website makes every page once, ahead of time, whenever the content changes. A program called a &lt;strong&gt;static
+site generator&lt;&#x2F;strong&gt; (this site uses one called Zola) reads all the articles and templates and writes out a folder of
+finished HTML files. That folder is copied to a &lt;strong&gt;CDN&lt;&#x2F;strong&gt;, a network of servers around the world that does nothing but
+hand out files quickly from somewhere close to you. When you ask for a page, nothing is cooked. The finished file is
+simply handed over.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;static:   writer ──► build, once per change ──► folder of files ──► CDN&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;          you ──► CDN ──► the finished file ──► you&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                  (nothing runs when you visit)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Static does not mean boring or frozen. A static page can still be interactive, because the interactivity runs in
+&lt;em&gt;your&lt;&#x2F;em&gt; browser: menus, search, maps, even a chess engine. What a static site does not have is a program on a server
+that runs because you visited, which is the part PHP Gate attacked.&lt;&#x2F;p&gt;
+&lt;p&gt;A few more words this post uses, so they do not get in the way later:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Edge&lt;&#x2F;strong&gt; means the CDN’s servers close to the reader. An &lt;strong&gt;edge function&lt;&#x2F;strong&gt; (Cloudflare calls them &lt;strong&gt;Workers&lt;&#x2F;strong&gt;) is a
+small program that runs there, for the rare jobs a file cannot do, like accepting a form.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Build&lt;&#x2F;strong&gt; is the step that turns content and templates into the finished files. It runs when a change is merged, not
+when someone visits.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Backend&lt;&#x2F;strong&gt; is a program on a server that the website talks to: it stores data, checks passwords, takes payments.
+A static site has no backend of its own; an app may still need one.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;WebAssembly&lt;&#x2F;strong&gt; lets code written in languages like Rust run inside the browser, close to the speed of a native
+program.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Agents&lt;&#x2F;strong&gt; are AI assistants that read websites on someone’s behalf. They read static pages especially well.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-idea-in-one-paragraph&quot;&gt;The idea in one paragraph&lt;&#x2F;h2&gt;
+&lt;p&gt;Render at commit time, serve files from the edge, and run code only where it cannot be avoided. A page is built once,
+when a change is merged, and from then on it is a file on a CDN. Logic that must react to a visitor moves to one of
+two places: the visitor’s own browser (JavaScript, or Rust compiled to WebAssembly when the work is heavy), or a small
+edge function that does exactly one job. There is no application server, no database behind the pages, and no
+runtime to patch at two in the morning, because there is nothing running between the request and the file.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-bother&quot;&gt;Why bother&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Security.&lt;&#x2F;strong&gt; A static page cannot be exploited the way PHP Gate was exploited, because a request for it never
+executes anything. The attack surface shrinks to the CDN (which is someone else’s full-time job), the build (which
+runs in a throwaway container on merge, not on request), and whatever edge functions you choose to add. On most of my
+sites that last list has zero or one entries. You still have a supply chain to care about, which is why pinning and
+review matter so much later in this post, but you no longer have an interpreter facing the internet.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Operations.&lt;&#x2F;strong&gt; A static site has no server of its own to patch, scale or restart. During PHP Gate my static sites
+needed nothing from me. A traffic spike is the CDN’s problem, and the CDN was built for it. Rollback is a redeploy of
+the previous commit, a single click in the Pages dashboard.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Speed and cost.&lt;&#x2F;strong&gt; Files from an edge cache are as fast as the web gets, and serving them costs next to nothing:
+Cloudflare Pages hosts a static site on its free plan with up to 20,000 files.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Longevity.&lt;&#x2F;strong&gt; A folder of HTML ages better than almost any other software. Sites I built years ago still render
+exactly as they did, with no framework upgrade, no runtime end of life, no database migration. PHP 8.2 reaches end of
+life on 31 December; a static site has no such date.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Machines.&lt;&#x2F;strong&gt; More of my readers are now agents, and static pages are simple for them to fetch and parse. If you
+also publish each page as Markdown and describe it with structured data, they read it correctly.&lt;&#x2F;p&gt;
+&lt;p&gt;There are real counterarguments:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dynamic features.&lt;&#x2F;strong&gt; Comments, forms, search, accounts, payments. Most of them have a static-friendly form:
+search runs in the browser over a prebuilt index, forms post to an edge function, comments become pull requests or
+issues. Some things genuinely need a server, and then you should run one; the &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;a-blueprint-for-the-static-web&#x2F;#when-you-do-need-a-backend&quot;&gt;next section&lt;&#x2F;a&gt;
+is about those. The point is to run it for those things only, not for every page view.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Editors who do not use Git.&lt;&#x2F;strong&gt; This is the real reason WordPress wins in many organisations, and the blueprint does
+not fully solve it. GitHub’s web editor and issue forms get non-technical contributors surprisingly far, and an
+agent can turn a Word document into a pull request. For a newsroom with forty editors, I would think harder.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Vendor dependence.&lt;&#x2F;strong&gt; I lean on Cloudflare. Everything I deploy is still just files in Git, so moving hosts is an
+afternoon. This site is served by GitHub Pages behind Cloudflare, and every push goes to Codeberg as well as
+GitHub.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Build times.&lt;&#x2F;strong&gt; A large site takes minutes to build, not milliseconds to render. My largest project takes about a
+minute for ten languages; Cloudflare’s build limit is twenty minutes. Precomputing data in separate build steps
+keeps it there.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;when-you-do-need-a-backend&quot;&gt;When you do need a backend&lt;&#x2F;h2&gt;
+&lt;p&gt;Some projects are not websites with a few interactive parts. They are services, and pretending otherwise produces a
+pile of edge functions that slowly turns into a backend nobody designed. These are the signs I look for:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;People have accounts and their own data.&lt;&#x2F;strong&gt; Logins, profiles, private documents, per-user settings that must follow
+them across devices.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Many people write, not just read.&lt;&#x2F;strong&gt; A marketplace, a forum, a booking system, an internal tool where every user
+changes shared state.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Things happen in real time between users.&lt;&#x2F;strong&gt; Chat, collaborative editing, live dashboards, presence.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;The work is heavy, long, or secret.&lt;&#x2F;strong&gt; Jobs that run for minutes, data that cannot be shipped to the browser,
+integrations that need credentials, money moving between parties.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;The data does not fit in a build.&lt;&#x2F;strong&gt; Millions of records that change by the minute cannot be rendered into files
+on every merge.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;When two or more of these are true, I build a backend, and I pick it by the shape of the problem:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;The project&lt;&#x2F;th&gt;&lt;th&gt;What I reach for&lt;&#x2F;th&gt;&lt;th&gt;Why&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;An API: endpoints, data, integrations&lt;&#x2F;td&gt;&lt;td&gt;&lt;strong&gt;Go&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;One static binary, a fast start, modest memory, an excellent standard library for HTTP, and concurrency that is easy to reason about.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;A rich app frontend that renders per user&lt;&#x2F;td&gt;&lt;td&gt;&lt;strong&gt;Next.js&lt;&#x2F;strong&gt;, or a framework like it&lt;&#x2F;td&gt;&lt;td&gt;Server rendering where a page depends on who is looking, static export where it does not, and the largest ecosystem of components and people.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;A service that is distributed by nature: real time, many connections, many nodes&lt;&#x2F;td&gt;&lt;td&gt;&lt;strong&gt;Elixir and Phoenix&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;The BEAM was built for exactly this: lightweight processes, supervision that restarts what fails, clustering, PubSub and LiveView without bolting on extra infrastructure.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;The same, with a type system that catches mistakes at compile time&lt;&#x2F;td&gt;&lt;td&gt;&lt;strong&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;refrakt.raskell.io&quot;&gt;Refrakt&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;My own framework, in Gleam on the BEAM: productive like Phoenix, explicit like Gleam, with generators for the routine parts. Still young; I use it where I can follow its changes.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Two of my own services show the Phoenix row in practice: &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;cyanea.bio&quot;&gt;Cyanea&lt;&#x2F;a&gt; runs Phoenix on SQLite, and
+&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&quot;&gt;Archipelag.io&lt;&#x2F;a&gt; runs Phoenix with Postgres and NATS. Both run on one bare-metal server, which I
+wrote about in &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;how-ai-makes-bare-metal-viable-again&#x2F;&quot;&gt;How AI Makes Bare Metal Viable Again&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Even with a backend, most of the blueprint still applies. A service with a real backend has parts that are just
+content: the landing page, the documentation, the changelog, the legal pages, the blog. Those stay static, on the
+blueprint, and the backend is a separate deployment with a small, well-defined API. The rest of the lessons carry over
+unchanged: agent context first, the data types declared before the code, pinned versions, and as little running at
+request time as the problem allows. And keep the PHP Gate lesson close: a backend is a runtime facing the internet,
+so it needs an owner, an update routine, and the discipline to keep it no bigger than it has to be.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-shape-of-it&quot;&gt;The shape of it&lt;&#x2F;h2&gt;
+&lt;p&gt;Every project of mine, from a one-page product site to a ten-language knowledge base, has the same shape:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  GitHub organisation (one per product)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  ┌────────────────────────────────────────────────────────────┐&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  │ .github   .claude  theme  content   site    app     worker │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  │ profile   context  Zola   Markdown  config  Svelte  edge   │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  │ policies  rules    Tera   + data    build   + Rust  logic  │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  └───────────────────┬──────┬─────────┬───────┬───────┬───────┘&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                      └──────┴─────────┤       │       │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                                       │       │       │    theme and content: submodules,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                                       ▼       ▼       ▼           pinned and reviewed&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                                 ┌───────────────────┐┌─────────┐&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                                 │ Cloudflare Pages  ││ Workers │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                                 │ files at the edge ││ one job │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                                 └─────────┬─────────┘└────┬────┘&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                                           ▼               ▼&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                    readers and agents: HTML, Markdown, JSON-LD, llms.txt&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Content, presentation and distribution live apart. The content repository holds Markdown and data and nothing else.
+The theme repository holds templates and styles. The site repository pins both as git submodules, adds
+configuration, and is the thing Cloudflare builds. Apps get their own repository, and edge functions either live next
+to the site or in their own. Each repository has one job, so each one is small enough to reason about, and an agent
+working in it does not have to load the world.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-practices&quot;&gt;The practices&lt;&#x2F;h2&gt;
+&lt;p&gt;I found eleven practices that every mature project of mine follows, and that the younger ones are converging on.
+They are listed roughly in the order I set them up.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;1-start-with-the-agent-context-before-the-first-line-of-code&quot;&gt;1. Start with the agent context, before the first line of code&lt;&#x2F;h3&gt;
+&lt;p&gt;The first file in every repository is &lt;code&gt;AGENTS.md&lt;&#x2F;code&gt;, and in a Claude Code project &lt;code&gt;CLAUDE.md&lt;&#x2F;code&gt; simply imports it
+(&lt;code&gt;@AGENTS.md&lt;&#x2F;code&gt;) and adds the Claude-specific parts. I write it before any code, as the contract the repository works
+under: the stack, where each kind of content is registered, what is generated and must never be
+edited, how to verify a change, and the rules that always hold. On this site it starts like this:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;markdown&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;The short version: &lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;font-weight: bold;&quot;&gt;**&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;content is registered once, in a source file; everything else is generated.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;font-weight: bold;&quot;&gt;**&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;Never edit a generated file by hand. If a new piece of content does not show up somewhere it should,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;the fix is in the source file or in the generator, not in the output.&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Then come the rules, in &lt;code&gt;.claude&#x2F;rules&#x2F;&lt;&#x2F;code&gt;, one file per kind of task (content, templates, Rust), each scoped to the
+paths it applies to. Then skills, in &lt;code&gt;.claude&#x2F;skills&#x2F;&lt;&#x2F;code&gt;, for the workflows that repeat: add a page end to end, publish
+an article, translate. My most mature project goes further: an organisation-level context repository that every
+repository’s &lt;code&gt;AGENTS.md&lt;&#x2F;code&gt; points to, subagents with restricted tools (the reviewer is read-only and forms its verdict
+before it sees the editor’s report), and an explicit list of changes that require a human.&lt;&#x2F;p&gt;
+&lt;p&gt;Writing it first costs an hour. In return, every later session, mine or an agent’s, starts from the same
+understanding, and the decisions the rest of this list depends on are made before they are needed.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;2-declare-the-ontology-before-you-write-the-content&quot;&gt;2. Declare the ontology before you write the content&lt;&#x2F;h3&gt;
+&lt;p&gt;Every site knows a small number of kinds of thing: articles, notes, projects, talks, books, topics. I declare them up
+front, each with its register (where instances live), its required fields, its allowed values, and the schema.org
+type it becomes for machines. In the blueprint this is &lt;code&gt;data&#x2F;kinds.toml&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span&gt;kinds.article&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;register&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; = &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;content&#x2F;articles&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;required&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; = [&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;title&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;date&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;description&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;taxonomies.topics&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;optional&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; = [&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;updated&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;draft&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;extra.author&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;extra.image&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;jsonld&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; = &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;BlogPosting&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span&gt;kinds.project&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;register&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; = &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;data&#x2F;projects.toml&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;required&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; = [&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;slug&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;title&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;description&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;status&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;url&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;topics&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;jsonld&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; = &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;SoftwareApplication&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;enum&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;status&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; = [&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;live&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;beta&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;early&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;archived&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;A validator enforces it on every pull request, using only the Python standard library so it runs anywhere. Unknown
+fields fail, so a typo in &lt;code&gt;descripton&lt;&#x2F;code&gt; cannot silently drop a page’s description. Topics come from one vocabulary,
+with &lt;code&gt;broader&lt;&#x2F;code&gt; links that turn the vocabulary into a small graph. On this site the same declarations drive the
+&lt;a href=&quot;&#x2F;map&#x2F;&quot;&gt;map&lt;&#x2F;a&gt;, the search index, the JSON-LD and the &lt;a href=&quot;&#x2F;ontology&#x2F;&quot;&gt;ontology page&lt;&#x2F;a&gt; that explains all of it to readers.&lt;&#x2F;p&gt;
+&lt;p&gt;The payoff is that nothing is improvised later. When I add a reading log, a talk, or a new kind of project, the
+question is “what kind is it, and where is it registered,” not “where should I put this file.”&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;3-one-github-organisation-per-product-one-job-per-repository&quot;&gt;3. One GitHub organisation per product, one job per repository&lt;&#x2F;h3&gt;
+&lt;p&gt;A personal account mixes everything. An organisation gives a product its own members, its own secrets, its own
+profile, and room for the repositories it will grow into. I start with the same set:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Repository&lt;&#x2F;th&gt;&lt;th&gt;Job&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;.github&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Organisation profile, shared issue forms, &lt;code&gt;SECURITY.md&lt;&#x2F;code&gt;, contributing guide&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;.claude&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Organisation-wide agent context: rules, skills, decisions, plans&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;theme&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;The Zola theme, versioned on its own&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;content&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Markdown and data, validated in CI&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;site&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Configuration and build, pins theme and content as submodules&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;app&lt;&#x2F;code&gt;, &lt;code&gt;worker&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Only when the product needs them&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Two rules keep this healthy. Submodule URLs are HTTPS, so the Cloudflare build can clone them without SSH keys. And
+the theme is never copied into a site: I found one organisation where five copies of a theme had drifted from the
+original in fourteen to eighteen template files each. A submodule pin makes drift a visible commit instead of an
+invisible fork.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;4-github-is-the-content-store-and-the-moderation-layer&quot;&gt;4. GitHub is the content store and the moderation layer&lt;&#x2F;h3&gt;
+&lt;p&gt;There is no admin panel, because Git already is one. Every change is a pull request with a diff, a review and a
+history. &lt;code&gt;CODEOWNERS&lt;&#x2F;code&gt; says who must approve changes to content, headers and edge code. An issue form collects
+corrections with a required URL and a dropdown for what is wrong. Contributors submit a pull request from a fork, and
+the validator runs before a human looks.&lt;&#x2F;p&gt;
+&lt;p&gt;Reader input lands in the same place. The blueprint’s only edge function takes the feedback form from every page and
+files it as a GitHub issue in the content repository, with mentions defused so nobody can ping your team through your
+own site. Feedback, corrections and contributions all end up in one queue, moderated by the same people with the same
+tools, and nothing a stranger types ever reaches a page without a review.&lt;&#x2F;p&gt;
+&lt;p&gt;Put together, every change follows the same path, whoever starts it:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  reader      ──► feedback form ──► Worker ──► GitHub issue ──► triaged ──┐&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  editor      ──► branch ─────────────────────────────────────────────────┤&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  contributor ──► fork ───────────────────────────────────────────────────┤&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                                                                          │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  ┌───────────────────────────────────────────────────────────────────────┘&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  ▼&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  pull request to the content repository&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  │   CI validates the ontology, builds the site, runs the tests&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  ▼&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  review and approval by CODEOWNERS, then merge to main&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  │   a workflow in the content repository calls the Pages deploy hook&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  ▼&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  Pages rebuilds the site ──► new files on the CDN&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;When content lives in its own repository, one small workflow in it closes the loop: on every push to &lt;code&gt;main&lt;&#x2F;code&gt;, it calls
+the Pages deploy hook, and the site rebuilds with the new content. Without it, a merged correction waits for the
+next unrelated site change.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;5-zola-pinned-through-mise&quot;&gt;5. Zola, pinned, through mise&lt;&#x2F;h3&gt;
+&lt;p&gt;Zola is a single binary with no plugin ecosystem to keep patched, it builds this site in a few seconds, and its Tera
+templates are expressive enough for everything on this list: the map, the JSON-LD, the topic pages, the Markdown
+copies. The one thing to get right is the version. My survey found Zola 0.19, 0.19.2, 0.21, 0.22.1 and 0.23.6 across
+my own sites, and the newest release changed its template engine enough that my templates no longer build on it. So
+the version is pinned in &lt;code&gt;mise.toml&lt;&#x2F;code&gt;, and CI and the Cloudflare build read the same pin:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;toml&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span&gt;tools&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #616E88;&quot;&gt;# 0.23 replaced the template engine; these templates target 0.22.&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #616E88;&quot;&gt;# Upgrade on purpose, in its own change, never because a machine has a newer zola on PATH.&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;zola&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; = &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;0.22.1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;python&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; = &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;3.13.17&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span&gt;tasks.build&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;depends&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; = [&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;check&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;llms&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;security-txt&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;run&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; = &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;zola build&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;mise doubles as the task runner, so &lt;code&gt;mise run check&lt;&#x2F;code&gt;, &lt;code&gt;mise run build&lt;&#x2F;code&gt; and &lt;code&gt;mise run dev&lt;&#x2F;code&gt; mean the same thing on my
+laptop, in CI, on Cloudflare and for an agent.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;6-cloudflare-pages-and-know-its-limits-before-it-tells-you&quot;&gt;6. Cloudflare Pages, and know its limits before it tells you&lt;&#x2F;h3&gt;
+&lt;p&gt;Pages connects to the GitHub repository, builds on every push, and gives every pull request a preview URL. The build
+command is a short script that installs the pinned tools and runs &lt;code&gt;mise run build&lt;&#x2F;code&gt;. Two files in &lt;code&gt;static&#x2F;&lt;&#x2F;code&gt; do the
+rest: &lt;code&gt;_headers&lt;&#x2F;code&gt; for security and caching, &lt;code&gt;_redirects&lt;&#x2F;code&gt; to keep old URLs alive when content moves.&lt;&#x2F;p&gt;
+&lt;p&gt;The limits are generous and still worth checking locally, because the failure is quiet: 25 MiB per file, 20,000 files
+per site on the free plan (100,000 on paid plans), 100 header rules, a twenty-minute build. My most mature project
+keeps an incident log of every time one of these bit, each entry with the local check that would have caught it. The
+blueprint’s build script ends with two of those checks, so an oversized WebAssembly file or a file explosion fails in
+CI instead of at upload:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;big&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;find&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; public -type f -size +25M&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; head&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; -1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; -z&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;$big&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot; ]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; ||&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; echo&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;too large for Pages: &lt;&#x2F;span&gt;&lt;span&gt;$big&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; exit&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt; 1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;n&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;find&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; public -type f&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; wc&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; -l&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; [ &amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;$n&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; -lt&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt; 20000&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; ]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; ||&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; echo&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;too many files for Pages: &lt;&#x2F;span&gt;&lt;span&gt;$n&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; exit&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt; 1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;7-workers-only-for-what-a-file-cannot-do&quot;&gt;7. Workers only for what a file cannot do&lt;&#x2F;h3&gt;
+&lt;p&gt;An edge function is the right tool when something needs state, a secret, or a protocol. My Workers each do one thing:
+accept a form, proxy two country domains onto language prefixes, sync an offline notes app to
+object storage, run a package registry, or serve an MCP server over a static JSON API. They are small, read-only where
+they can be, cached, and hold at most one narrowly scoped secret (&lt;code&gt;wrangler secret put&lt;&#x2F;code&gt;, never the repository).&lt;&#x2F;p&gt;
+&lt;p&gt;The feedback Worker in the blueprint is about sixty lines and does the job a contact form plugin used to do: it checks
+the origin, rate-limits per address, drops bots that fill a hidden field, validates the message, and opens one issue
+with a fine-grained token that can do nothing else. Its tests run with &lt;code&gt;node --test&lt;&#x2F;code&gt; against a stubbed GitHub, so the
+logic is checked without deploying anything.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;8-apps-are-static-too-svelte-prerendered-with-a-service-worker&quot;&gt;8. Apps are static too: Svelte, prerendered, with a service worker&lt;&#x2F;h3&gt;
+&lt;p&gt;When a project is an app rather than a site, I still ship files. SvelteKit with the static adapter prerenders every
+route, and the result deploys to Pages exactly like a Zola site. Svelte compiles away most of its runtime, which
+keeps the bundle small, and its runes keep local state in plain variables.&lt;&#x2F;p&gt;
+&lt;p&gt;Offline support is what makes an app usable on a train or a plane. SvelteKit’s own service worker is enough,
+without a plugin. The pattern I use everywhere: one cache per deploy, named after the build version so a new
+deploy never mixes with an old one; hashed assets cache-first, because their content can never change; pages
+network-first with the cache as the fallback. My language-learning app goes further and picks a strategy per kind of
+data, stale-while-revalidate for dictionary shards and network-only for the user’s own API calls. Only three of my
+apps had a service worker at all. All of them should.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;9-rust-compiled-to-webassembly-for-the-right-reasons&quot;&gt;9. Rust compiled to WebAssembly, for the right reasons&lt;&#x2F;h3&gt;
+&lt;p&gt;When an app needs real computation, a chess engine, a neural simulation, a config validator, I write it in Rust and
+compile it to WebAssembly. The layout is always the same: a core crate with no wasm or JavaScript in it, tested with
+plain &lt;code&gt;cargo test&lt;&#x2F;code&gt;, and a thin crate that exports a C ABI over it. No wasm-bindgen unless a framework needs it. The
+browser reads results straight out of the module’s linear memory. A release profile with fat LTO, one codegen unit
+and &lt;code&gt;panic = &quot;abort&quot;&lt;&#x2F;code&gt;, then &lt;code&gt;wasm-opt&lt;&#x2F;code&gt;, keeps modules small: the blueprint’s is 16 KB, and the build fails if it grows
+past its budget. Heavy work runs in a Web Worker, so the page never freezes.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  main thread               Web Worker                     WebAssembly module&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  ┌──────────────┐          ┌──────────────────┐           ┌──────────────────────┐&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  │ Svelte UI    │ message  │ render.worker.js │ C ABI     │ crates&#x2F;wasm          │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  │              ├─────────►│                  ├──────────►│   numbers in, a      │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  │ never blocks │          │ calls in bands   │           │   pointer out        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  │              │◄─────────┤ of rows          │◄──────────┤                      │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  └──────────────┘ pixels,  └──────────────────┘ reads     │ crates&#x2F;core          │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                   transferred                   linear    │   plain Rust,        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                   not copied                    memory    │   tested natively    │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;                                                           └──────────────────────┘&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;I wanted the blueprint to show the speed-up, so I measured it. It renders the same Mandelbrot image in Rust and in
+JavaScript, side by side, and on that tight floating-point loop Chrome’s JavaScript engine was as fast as
+WebAssembly: 73 ms against 75 to 92 ms. The first WebAssembly run even took 192 ms, because V8 starts WebAssembly in a
+baseline compiler and cannot move a running call onto optimised code, so one long call never gets fast. Rendering in
+bands of rows, many short calls instead of one long one, brought it to parity.&lt;&#x2F;p&gt;
+&lt;p&gt;The reasons to use Rust in the browser lie elsewhere:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;One core, many places.&lt;&#x2F;strong&gt; &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt;’s documentation validates every configuration
+snippet in the browser with the real configuration parser, compiled to WebAssembly from the same crate the proxy
+uses. A snippet that would not load in production shows red on the page. The same Rust that runs in a server or a
+desktop app runs in the tab, tested once.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Types at the boundary.&lt;&#x2F;strong&gt; The only interface between JavaScript and the logic is a handful of typed numbers and a
+pointer. Everything behind it is checked by the compiler.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;The work JavaScript is bad at.&lt;&#x2F;strong&gt; 64-bit integer arithmetic, bit boards, tight memory layouts, threads. Kishi’s
+chess engine is that kind of code.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;10-make-it-legible-to-machines&quot;&gt;10. Make it legible to machines&lt;&#x2F;h3&gt;
+&lt;p&gt;Agents read the web for people now, and a static site is simple for them to read. Every site of mine ships the same
+kit:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;llms.txt&lt;&#x2F;code&gt; at the root, an index of the site in Markdown, and &lt;code&gt;llms-full.txt&lt;&#x2F;code&gt; with the full text.&lt;&#x2F;li&gt;
+&lt;li&gt;A Markdown copy of every page at its URL with &lt;code&gt;.md&lt;&#x2F;code&gt;, linked from the page with
+&lt;code&gt;&amp;lt;link rel=&quot;alternate&quot; type=&quot;text&#x2F;markdown&quot;&amp;gt;&lt;&#x2F;code&gt;, served with &lt;code&gt;Access-Control-Allow-Origin: *&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;JSON-LD on every page, typed by the ontology: BlogPosting, SoftwareApplication, DefinedTerm, Review, Dataset.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;robots.txt&lt;&#x2F;code&gt; with a single group and a Content-Signal line that says what the content may be used for.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;.well-known&#x2F;&lt;&#x2F;code&gt;: &lt;code&gt;security.txt&lt;&#x2F;code&gt; with an expiry that a build step keeps a year ahead, an RFC 9727 API catalog, and an
+&lt;code&gt;auth.md&lt;&#x2F;code&gt; that states nothing needs authentication, so an agent treats a 403 as a fault, not a policy.&lt;&#x2F;li&gt;
+&lt;li&gt;Where it pays off: a WebMCP script that registers in-browser tools only when an agent is present, an MCP server
+over the static JSON API, IndexNow pings after deploy.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;None of this is heavy. It is a few templates and one script that runs before the build, and it means an agent quoting
+your site quotes the page, not a scrape of it.&lt;&#x2F;p&gt;
+&lt;p&gt;The same discipline covers people who use assistive technology: one &lt;code&gt;h1&lt;&#x2F;code&gt;, a skip link, visible focus, labels on
+icon-only buttons and canvases, motion only under &lt;code&gt;prefers-reduced-motion: no-preference&lt;&#x2F;code&gt;, and every page working
+without JavaScript, with scripts adding to it rather than building it.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;11-security-is-mostly-saying-no&quot;&gt;11. Security is mostly saying no&lt;&#x2F;h3&gt;
+&lt;p&gt;A static site gets most of its security from what it does not do, and the rest from a few lines of configuration:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A strict Content Security Policy.&lt;&#x2F;strong&gt; &lt;code&gt;default-src &#x27;none&#x27;&lt;&#x2F;code&gt;, scripts and styles from &lt;code&gt;&#x27;self&#x27;&lt;&#x2F;code&gt; only, no
+&lt;code&gt;unsafe-inline&lt;&#x2F;code&gt;, no &lt;code&gt;unsafe-eval&lt;&#x2F;code&gt;. On a Zola site that is easy: no inline scripts, structured data is a JSON block
+the policy does not touch. On a SvelteKit app, &lt;code&gt;csp.mode = &quot;hash&quot;&lt;&#x2F;code&gt; hashes the framework’s one inline script, and the
+single inline style its screen-reader announcer needs is allowed by its hash with &lt;code&gt;&#x27;unsafe-hashes&#x27;&lt;&#x2F;code&gt;. WebAssembly
+needs &lt;code&gt;&#x27;wasm-unsafe-eval&#x27;&lt;&#x2F;code&gt; and nothing broader.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No third parties.&lt;&#x2F;strong&gt; Self-hosted fonts or the system stack, no CDN scripts, no analytics on the page.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;No secrets in the client.&lt;&#x2F;strong&gt; If a feature needs a key, it is a Worker with one scoped secret, or the user brings
+their own key and it never leaves their browser.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Pinned everything.&lt;&#x2F;strong&gt; Tools in &lt;code&gt;mise.toml&lt;&#x2F;code&gt;, the Rust toolchain in &lt;code&gt;rust-toolchain.toml&lt;&#x2F;code&gt;, npm packages to exact
+versions, GitHub Actions to commit SHAs, with Dependabot proposing the updates as pull requests.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Review as a control.&lt;&#x2F;strong&gt; Nothing reaches &lt;code&gt;main&lt;&#x2F;code&gt; without a pull request, and the people in &lt;code&gt;CODEOWNERS&lt;&#x2F;code&gt; approve
+changes to headers and edge code.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;hands-on-the-blueprint-in-an-afternoon&quot;&gt;Hands-on: the blueprint in an afternoon&lt;&#x2F;h2&gt;
+&lt;p&gt;The two template repositories put all of the above into files:
+&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;blueprint-site&quot;&gt;blueprint-site&lt;&#x2F;a&gt; (Zola, the ontology, the agent context, the machine
+kit, the feedback Worker) and &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;blueprint-app&quot;&gt;blueprint-app&lt;&#x2F;a&gt; (SvelteKit, the service
+worker, the Rust core and its WebAssembly boundary). Both build on a fresh clone. These are the steps, in order.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;1. Create the organisation and its first repositories.&lt;&#x2F;strong&gt; On GitHub, create an organisation for the product, then:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;gh&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; repo create your-org&#x2F;.github --public&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;gh&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; repo create your-org&#x2F;site --public --template raskell-io&#x2F;blueprint-site --clone&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;cd&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; site&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;2. Give it context first.&lt;&#x2F;strong&gt; Edit &lt;code&gt;AGENTS.md&lt;&#x2F;code&gt;: the product in one sentence, the stack table, the registers. Keep
+&lt;code&gt;CLAUDE.md&lt;&#x2F;code&gt; as &lt;code&gt;@AGENTS.md&lt;&#x2F;code&gt; plus what is specific to Claude. Delete the rules you do not need, add the ones you do.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;3. Declare the ontology.&lt;&#x2F;strong&gt; Edit &lt;code&gt;data&#x2F;kinds.toml&lt;&#x2F;code&gt; until it lists every kind your site will have, and
+&lt;code&gt;data&#x2F;topics.toml&lt;&#x2F;code&gt; until it holds your vocabulary. Then run the validator:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;mise&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; install&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;mise&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; run check&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #616E88;&quot;&gt;# check_content: ontology holds&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Then break something on purpose, to see what a mistake looks like. A note with a misspelled field, an undefined
+topic and a file name with capitals gets this:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;content&#x2F;notes&#x2F;Bad_Note.md: file name must be a lowercase slug with hyphens&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;content&#x2F;notes&#x2F;Bad_Note.md: missing required field `description` for a note&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;content&#x2F;notes&#x2F;Bad_Note.md: unknown field `descripton` (a note has date, description, draft, taxonomies.topics, title, updated)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;content&#x2F;notes&#x2F;Bad_Note.md: topic `php` is not defined in data&#x2F;topics.toml&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;check_content: 4 problem(s)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;4. Write, build, look.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;mise&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; run dev&lt;&#x2F;span&gt;&lt;span style=&quot;color: #616E88;&quot;&gt;      # http:&#x2F;&#x2F;127.0.0.1:1111, with drafts&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;mise&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; run build&lt;&#x2F;span&gt;&lt;span style=&quot;color: #616E88;&quot;&gt;    # public&#x2F;: pages, feed, sitemap, llms.txt, .md copies, security.txt&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Open a page, view its source, and find its JSON-LD; open &lt;code&gt;&#x2F;llms.txt&lt;&#x2F;code&gt;; open the page’s URL with &lt;code&gt;.md&lt;&#x2F;code&gt; at the end.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;5. Split the theme and the content into their own repositories&lt;&#x2F;strong&gt; once the site works:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;gh&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; repo create your-org&#x2F;theme --public&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;amp;&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; gh&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; repo create your-org&#x2F;content --public&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; subtree split --prefix=themes&#x2F;blueprint -b theme&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;amp;&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; git&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; push git@github.com:your-org&#x2F;theme.git theme:main&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; subtree split --prefix=content -b content&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;amp;&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; git&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; push git@github.com:your-org&#x2F;content.git content:main&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; rm -r themes&#x2F;blueprint content&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;amp;&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; git&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; commit -m&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;Theme and content move to their own repositories&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; submodule add https:&#x2F;&#x2F;github.com&#x2F;your-org&#x2F;theme.git themes&#x2F;blueprint&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;git&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; submodule add https:&#x2F;&#x2F;github.com&#x2F;your-org&#x2F;content.git content&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;6. Connect Cloudflare Pages.&lt;&#x2F;strong&gt; Workers &amp;amp; Pages, Create, Pages, Connect to Git, pick &lt;code&gt;your-org&#x2F;site&lt;&#x2F;code&gt;. Build command
+&lt;code&gt;bash scripts&#x2F;cf-pages-build.sh&lt;&#x2F;code&gt;, output directory &lt;code&gt;public&lt;&#x2F;code&gt;. Add the custom domain in the project. Create a deploy
+hook under Settings, Builds, and store it as &lt;code&gt;CF_PAGES_DEPLOY_HOOK&lt;&#x2F;code&gt; in the content repository, with the
+&lt;code&gt;rebuild-site&lt;&#x2F;code&gt; workflow from the blueprint.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;7. Deploy the Worker,&lt;&#x2F;strong&gt; if you want reader feedback:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;cd&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; worker&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;npx&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; wrangler secret put GITHUB_TOKEN&lt;&#x2F;span&gt;&lt;span style=&quot;color: #616E88;&quot;&gt;   # fine-grained: Issues read and write, on the content repo only&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;npx&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; wrangler deploy&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;8. Check the headers in production,&lt;&#x2F;strong&gt; because a header that did not apply fails silently:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;curl&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; -sI https:&#x2F;&#x2F;your-domain&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; grep&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; -iE&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;content-security-policy|x-content-type|referrer|link&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;For an app, start from &lt;code&gt;blueprint-app&lt;&#x2F;code&gt; instead: &lt;code&gt;mise run test&lt;&#x2F;code&gt; runs the Rust core’s tests and clippy, &lt;code&gt;mise run build&lt;&#x2F;code&gt; builds the WebAssembly module within its budget and then the static app, and the same Pages setup deploys it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-i-still-get-wrong&quot;&gt;What I still get wrong&lt;&#x2F;h2&gt;
+&lt;p&gt;Writing this meant auditing my own projects, and they do not all follow the list. Most of my product sites have no
+Content Security Policy, and the few that do still allow inline scripts. Several load fonts from Google, which
+contradicts my own theme’s “no external requests.” Zola versions drift across five releases. Some product sites have
+no CI at all and rely on Cloudflare’s build to notice problems. Content pushes in my largest project do not trigger a
+rebuild, and its CSP still carries &lt;code&gt;unsafe-inline&lt;&#x2F;code&gt;. The blueprints are the version where each of those is fixed, and I
+am moving the rest of my projects onto them one by one.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-takeaway&quot;&gt;The takeaway&lt;&#x2F;h2&gt;
+&lt;p&gt;PHP Gate was a week of emergency patching for a large part of the web, and for most of the affected sites, nothing
+about their content needed a server in the first place. The safest runtime is the one you never start. Build your
+pages when you merge, serve them as files, and keep code for the places it actually has to run. When a project truly
+needs a server, give it a real backend, built for the job, and keep everything around it static.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;PHP: &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.php.net&#x2F;archive&#x2F;2026.php&quot;&gt;News archive 2026&lt;&#x2F;a&gt;, the advance notice of 20 October and the security
+releases and advisory of 21 October 2026.&lt;&#x2F;li&gt;
+&lt;li&gt;PHP security advisories &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;php&#x2F;php-src&#x2F;security&#x2F;advisories&#x2F;GHSA-w8hw-w9fx-j79w&quot;&gt;GHSA-w8hw-w9fx-j79w&lt;&#x2F;a&gt;
+(CVE-2026-109618) and &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;php&#x2F;php-src&#x2F;security&#x2F;advisories&#x2F;GHSA-6wmf-4rv5-p3rp&quot;&gt;GHSA-6wmf-4rv5-p3rp&lt;&#x2F;a&gt;
+(CVE-2026-109619).&lt;&#x2F;li&gt;
+&lt;li&gt;NVD: &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nvd.nist.gov&#x2F;vuln&#x2F;detail&#x2F;CVE-2026-109618&quot;&gt;CVE-2026-109618&lt;&#x2F;a&gt; and
+&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;nvd.nist.gov&#x2F;vuln&#x2F;detail&#x2F;CVE-2026-109619&quot;&gt;CVE-2026-109619&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Threat Landscape: &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;threatlandscape.io&#x2F;blog&#x2F;php-core-rce-cve-2026-109618-109619-leak-ahead-of-embargo&quot;&gt;PHP core RCEs CVE-2026-109618 and CVE-2026-109619 leak early&lt;&#x2F;a&gt;,
+on the leak, the name PHP2Shell and the attempts seen afterwards.&lt;&#x2F;li&gt;
+&lt;li&gt;W3Techs: &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;w3techs.com&#x2F;technologies&#x2F;details&#x2F;pl-php&quot;&gt;Usage statistics of PHP&lt;&#x2F;a&gt; and
+&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;w3techs.com&#x2F;technologies&#x2F;details&#x2F;cm-wordpress&quot;&gt;of WordPress&lt;&#x2F;a&gt;, figures as of 26 October 2026.&lt;&#x2F;li&gt;
+&lt;li&gt;Cloudflare: &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;developers.cloudflare.com&#x2F;pages&#x2F;platform&#x2F;limits&#x2F;&quot;&gt;Pages limits&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;llmstxt.org&#x2F;&quot;&gt;llms.txt&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;contentsignals.org&#x2F;&quot;&gt;Content Signals&lt;&#x2F;a&gt;,
+&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.rfc-editor.org&#x2F;rfc&#x2F;rfc9727&quot;&gt;RFC 9727: api-catalog&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.rfc-editor.org&#x2F;rfc&#x2F;rfc9116&quot;&gt;RFC 9116: security.txt&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;&quot;&gt;Zola&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;mise.jdx.dev&#x2F;&quot;&gt;mise&lt;&#x2F;a&gt;, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;svelte.dev&#x2F;docs&#x2F;kit&quot;&gt;SvelteKit&lt;&#x2F;a&gt;,
+&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;rustc&#x2F;platform-support&#x2F;wasm32-unknown-unknown.html&quot;&gt;Rust and WebAssembly&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
       <item>
           <title>This Site Is Becoming a Map</title>
           <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>

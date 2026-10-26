@@ -1,17 +1,17 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-26T14:48:53+00:00",
+ "generated": "2026-10-26T16:26:15+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
-  "article": 35,
+  "article": 36,
   "review": 1,
   "note": 8,
   "talk": 1,
   "work": 109,
   "project": 30,
   "topic": 102,
-  "link": 268
+  "link": 286
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -21,6 +21,23 @@
   "llms": "https://raskell.io/llms.txt"
  },
  "items": [
+  {
+   "kind": "article",
+   "title": "After PHP Gate: A Blueprint for the Static Web",
+   "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/",
+   "description": "Last week's PHP flaws reached every server that runs code per request. My blueprint for sites and apps that run none at all.",
+   "date": "2026-10-26",
+   "topics": [
+    "applied-security",
+    "edge-systems",
+    "open-web",
+    "zola",
+    "webassembly",
+    "rust",
+    "context-engineering"
+   ],
+   "meta": "26 min"
+  },
   {
    "kind": "article",
    "title": "Learning to Play",
@@ -3169,6 +3186,10 @@
    "reference": false,
    "cited_in": [
     {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    },
+    {
      "title": "This Site Is Becoming a Map",
      "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
     },
@@ -3217,10 +3238,14 @@
   {
    "kind": "link",
    "title": "Archipelag.io",
-   "url": "https://archipelag.io/",
+   "url": "https://archipelag.io",
    "domain": "archipelag.io",
    "reference": true,
    "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    },
     {
      "title": "The Economics of Inference",
      "url": "https://raskell.io/articles/the-economics-of-inference/"
@@ -3258,10 +3283,14 @@
   {
    "kind": "link",
    "title": "cyanea.bio",
-   "url": "https://cyanea.bio/",
+   "url": "https://cyanea.bio",
    "domain": "cyanea.bio",
    "reference": false,
    "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    },
     {
      "title": "How I Work These Days",
      "url": "https://raskell.io/articles/how-i-work-these-days/"
@@ -3827,6 +3856,23 @@
   },
   {
    "kind": "link",
+   "title": "mise",
+   "url": "https://mise.jdx.dev/",
+   "domain": "mise.jdx.dev",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    },
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "WASI",
    "url": "https://wasi.dev/",
    "domain": "wasi.dev",
@@ -3856,6 +3902,23 @@
     {
      "title": "Edge Systems Are the New Backend",
      "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Zola",
+   "url": "https://www.getzola.org/",
+   "domain": "getzola.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    },
+    {
+     "title": "Looking back on 2025",
+     "url": "https://raskell.io/articles/looking-back-on-2025/"
     }
    ]
   },
@@ -4233,6 +4296,19 @@
   },
   {
    "kind": "link",
+   "title": "Content Signals",
+   "url": "https://contentsignals.org/",
+   "domain": "contentsignals.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "alacritty_terminal crate",
    "url": "https://crates.io/crates/alacritty_terminal",
    "domain": "crates.io",
@@ -4350,6 +4426,19 @@
   },
   {
    "kind": "link",
+   "title": "Pages limits",
+   "url": "https://developers.cloudflare.com/pages/platform/limits/",
+   "domain": "developers.cloudflare.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "MediaPipe",
    "url": "https://developers.google.com/mediapipe",
    "domain": "developers.google.com",
@@ -4397,6 +4486,19 @@
     {
      "title": "Mise ate my Makefile",
      "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Rust and WebAssembly",
+   "url": "https://doc.rust-lang.org/rustc/platform-support/wasm32-unknown-unknown.html",
+   "domain": "doc.rust-lang.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
     }
    ]
   },
@@ -4831,6 +4933,32 @@
   },
   {
    "kind": "link",
+   "title": "GHSA-6wmf-4rv5-p3rp",
+   "url": "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "GHSA-w8hw-w9fx-j79w",
+   "url": "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Nuclei",
    "url": "https://github.com/projectdiscovery/nuclei",
    "domain": "github.com",
@@ -4839,6 +4967,32 @@
     {
      "title": "Traffic Replay as a Security Primitive",
      "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "blueprint-app",
+   "url": "https://github.com/raskell-io/blueprint-app",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "blueprint-site",
+   "url": "https://github.com/raskell-io/blueprint-site",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
     }
    ]
   },
@@ -5312,6 +5466,19 @@
   },
   {
    "kind": "link",
+   "title": "llms.txt",
+   "url": "https://llmstxt.org/",
+   "domain": "llmstxt.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Locust",
    "url": "https://locust.io/",
    "domain": "locust.io",
@@ -5429,19 +5596,6 @@
   },
   {
    "kind": "link",
-   "title": "Mise",
-   "url": "https://mise.jdx.dev/",
-   "domain": "mise.jdx.dev",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Mise ate my Makefile",
-     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
    "title": "mitmproxy",
    "url": "https://mitmproxy.org/",
    "domain": "mitmproxy.org",
@@ -5554,6 +5708,32 @@
     {
      "title": "This Site Is Becoming a Map",
      "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "CVE-2026-109618",
+   "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109618",
+   "domain": "nvd.nist.gov",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "CVE-2026-109619",
+   "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-109619",
+   "domain": "nvd.nist.gov",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
     }
    ]
   },
@@ -5689,6 +5869,19 @@
   },
   {
    "kind": "link",
+   "title": "Refrakt",
+   "url": "https://refrakt.raskell.io",
+   "domain": "refrakt.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "European Innovation Scoreboard 2025",
    "url": "https://research-and-innovation.ec.europa.eu/knowledge-publications-tools-and-data/publications/all-publications/european-innovation-scoreboard-2025_en",
    "domain": "research-and-innovation.ec.europa.eu",
@@ -5767,6 +5960,19 @@
   },
   {
    "kind": "link",
+   "title": "SvelteKit",
+   "url": "https://svelte.dev/docs/kit",
+   "domain": "svelte.dev",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "tcpreplay",
    "url": "https://tcpreplay.appneta.com/",
    "domain": "tcpreplay.appneta.com",
@@ -5827,6 +6033,19 @@
     {
      "title": "I Stopped Writing Most of My Code",
      "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "PHP core RCEs CVE-2026-109618 and CVE-2026-109619 leak early",
+   "url": "https://threatlandscape.io/blog/php-core-rce-cve-2026-109618-109619-leak-ahead-of-embargo",
+   "domain": "threatlandscape.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
     }
    ]
   },
@@ -5918,6 +6137,32 @@
     {
      "title": "Edge Systems Are the New Backend",
      "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "39.6% of all websites",
+   "url": "https://w3techs.com/technologies/details/cm-wordpress",
+   "domain": "w3techs.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Usage statistics of PHP",
+   "url": "https://w3techs.com/technologies/details/pl-php",
+   "domain": "w3techs.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
     }
    ]
   },
@@ -6248,19 +6493,6 @@
   },
   {
    "kind": "link",
-   "title": "Zola",
-   "url": "https://www.getzola.org/",
-   "domain": "getzola.org",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Looking back on 2025",
-     "url": "https://raskell.io/articles/looking-back-on-2025/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
    "title": "GNU Make",
    "url": "https://www.gnu.org/software/make/",
    "domain": "gnu.org",
@@ -6560,6 +6792,19 @@
   },
   {
    "kind": "link",
+   "title": "four releases in one afternoon",
+   "url": "https://www.php.net/archive/2026.php",
+   "domain": "php.net",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "A Turing test of whether AI chatbots are behaviorally similar to humans",
    "url": "https://www.pnas.org/doi/10.1073/pnas.2313925121",
    "domain": "pnas.org",
@@ -6620,6 +6865,32 @@
     {
      "title": "Source Code Is the New Assembly",
      "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "RFC 9116: security.txt",
+   "url": "https://www.rfc-editor.org/rfc/rfc9116",
+   "domain": "rfc-editor.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "RFC 9727: api-catalog",
+   "url": "https://www.rfc-editor.org/rfc/rfc9727",
+   "domain": "rfc-editor.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
     }
    ]
   },
