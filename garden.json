@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-26T08:36:02+00:00",
+ "generated": "2026-10-26T08:53:04+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -8,7 +8,7 @@
   "review": 1,
   "note": 8,
   "talk": 1,
-  "work": 99,
+  "work": 109,
   "project": 30,
   "topic": 102,
   "link": 268
@@ -1926,6 +1926,127 @@
     "augmentation"
    ],
    "meta": "Novel · Charles Stross · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Gödel, Escher, Bach",
+   "url": "https://raskell.io/reading/#godel-escher-bach",
+   "description": "How meaning and a self can arise from meaningless symbols, through Gödel's incompleteness, Escher's drawings, and Bach's fugues.",
+   "topics": [
+    "intelligence",
+    "mathematics",
+    "emergence",
+    "formal-methods",
+    "philosophy"
+   ],
+   "meta": "Book · Douglas R. Hofstadter · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Chaos",
+   "url": "https://raskell.io/reading/#chaos-making-a-new-science",
+   "description": "The scientists who found order in turbulence, weather, and dripping taps, and founded the science of chaos.",
+   "topics": [
+    "complex-systems",
+    "emergence",
+    "mathematics",
+    "history-of-science"
+   ],
+   "meta": "Book · James Gleick · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Genius",
+   "url": "https://raskell.io/reading/#genius-richard-feynman",
+   "description": "Richard Feynman's life and physics, from Los Alamos and quantum electrodynamics to the Challenger inquiry.",
+   "topics": [
+    "history-of-science",
+    "research-labs"
+   ],
+   "meta": "Book · James Gleick · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Faster",
+   "url": "https://raskell.io/reading/#faster",
+   "description": "How technology sped up daily life, from the elevator door-close button to the minute-by-minute schedule.",
+   "topics": [
+    "attention-economy",
+    "history-of-technology"
+   ],
+   "meta": "Book · James Gleick · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "What Just Happened",
+   "url": "https://raskell.io/reading/#what-just-happened",
+   "description": "Essays from the years the internet arrived in everyday life, on email, search, spam, and digital identity.",
+   "topics": [
+    "open-web",
+    "history-of-technology",
+    "hypertext"
+   ],
+   "meta": "Book · James Gleick · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Isaac Newton",
+   "url": "https://raskell.io/reading/#isaac-newton",
+   "description": "A short life of Newton built from his own notebooks and letters, from alchemy and theology to the laws of motion.",
+   "topics": [
+    "history-of-science",
+    "scientific-revolutions",
+    "mathematics"
+   ],
+   "meta": "Book · James Gleick · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Information",
+   "url": "https://raskell.io/reading/#the-information",
+   "description": "Information from talking drums and the telegraph to Shannon's theory, genes as code, and the flood of data today.",
+   "topics": [
+    "history-of-technology",
+    "mathematics",
+    "languages",
+    "external-memory"
+   ],
+   "meta": "Book · James Gleick · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Time Travel",
+   "url": "https://raskell.io/reading/#time-travel-a-history",
+   "description": "How time travel became an idea, from H. G. Wells onward, and what it says about how we think of time.",
+   "topics": [
+    "philosophy-of-science",
+    "literature"
+   ],
+   "meta": "Book · James Gleick · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Telephone",
+   "url": "https://raskell.io/reading/#the-telephone",
+   "description": "A new history of the telephone and the network it wired around the world; published in November 2026.",
+   "topics": [
+    "history-of-technology",
+    "networking"
+   ],
+   "meta": "Book · James Gleick · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Mathematics and the Unexpected",
+   "url": "https://raskell.io/reading/#mathematics-and-the-unexpected",
+   "description": "Chaos, catastrophe theory, and chance, from Kepler to Thom, and why the future stays hard to predict; one of the inspirations for Ian Malcolm in Jurassic Park.",
+   "topics": [
+    "mathematics",
+    "complex-systems",
+    "risk",
+    "philosophy-of-science"
+   ],
+   "meta": "Book · Ivar Ekeland · Backlog"
   },
   {
    "kind": "work",

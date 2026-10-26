@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-26T08:36:02+00:00",
+ "generated": "2026-10-26T08:53:04+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -460,7 +460,7 @@
    "url": "https://raskell.io/tags/attention-economy/",
    "meta": "Concept · 1 page",
    "description": "Platforms that sell attention and optimise for engagement, what that does to the web and to discourse, and the intention economy proposed in its place.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:augmentation",
@@ -586,7 +586,7 @@
    "url": "https://raskell.io/tags/emergence/",
    "meta": "Concept · 2 pages",
    "description": "Order nobody designed: reefs, the early web, neuron cultures, and simulated worlds where simple rules add up to behaviour no single part has.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "t:entrepreneurship",
@@ -622,7 +622,7 @@
    "url": "https://raskell.io/tags/external-memory/",
    "meta": "Concept · 3 pages",
    "description": "Notes, links, and stores that remember for us: second brains, the web as a shared memory, and what agents write down for their next session.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:formal-methods",
@@ -631,7 +631,7 @@
    "url": "https://raskell.io/tags/formal-methods/",
    "meta": "Concept · 4 pages",
    "description": "Proofs, verification, and types as specifications, especially once machines write the code.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:future-of-work",
@@ -685,7 +685,7 @@
    "url": "https://raskell.io/tags/history-of-technology/",
    "meta": "Concept · 4 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 17
+   "degree": 21
   },
   {
    "id": "t:hypertext",
@@ -694,7 +694,7 @@
    "url": "https://raskell.io/tags/hypertext/",
    "meta": "Concept · 2 pages",
    "description": "Links as the unit of the web: addresses that can point at anything, the read-write web that was intended, and what a graph of documents can do that a tree cannot.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:inference",
@@ -721,7 +721,7 @@
    "url": "https://raskell.io/tags/intelligence/",
    "meta": "Concept · 1 page",
    "description": "What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.",
-   "degree": 17
+   "degree": 18
   },
   {
    "id": "t:isolation",
@@ -757,7 +757,7 @@
    "url": "https://raskell.io/tags/languages/",
    "meta": "Concept · 1 page",
    "description": "Human languages and moving meaning between them: translated novels, learning to read Chinese, Japanese, and Hebrew, and Europe's multilingual text.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:linux",
@@ -847,7 +847,7 @@
    "url": "https://raskell.io/tags/open-web/",
    "meta": "Domain · 2 pages",
    "description": "The web as a commons: open protocols, small independent sites, and publishing outside the platforms.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "t:openbsd",
@@ -955,7 +955,7 @@
    "url": "https://raskell.io/tags/research-labs/",
    "meta": "Concept · 1 page",
    "description": "The institutions where discovery happens and how they are funded and run: CERN, Bell Labs, ARPA, Los Alamos, DeepMind, and the labs behind modern medicine.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "t:risk",
@@ -964,7 +964,7 @@
    "url": "https://raskell.io/tags/risk/",
    "meta": "Concept · 1 page",
    "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:rust",
@@ -1108,7 +1108,7 @@
    "url": "https://raskell.io/tags#complex-systems",
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
-   "degree": 11
+   "degree": 13
   },
   {
    "id": "t:enterprise-architecture",
@@ -1180,7 +1180,7 @@
    "url": "https://raskell.io/tags#history-of-science",
    "meta": "Concept · no pages yet",
    "description": "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.",
-   "degree": 11
+   "degree": 14
   },
   {
    "id": "t:hubris",
@@ -1216,7 +1216,7 @@
    "url": "https://raskell.io/tags#literature",
    "meta": "Domain · no pages yet",
    "description": "Fiction and writing about fiction: novels read for their own sake, and the forms they take.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "t:mathematics",
@@ -1225,7 +1225,7 @@
    "url": "https://raskell.io/tags#mathematics",
    "meta": "Domain · no pages yet",
    "description": "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.",
-   "degree": 5
+   "degree": 10
   },
   {
    "id": "t:maximalist-novels",
@@ -1252,7 +1252,7 @@
    "url": "https://raskell.io/tags#networking",
    "meta": "Concept · no pages yet",
    "description": "How machines talk: packets, protocols, sockets, and the networks from ARPANET to the web that carry them.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:neural-networks",
@@ -1270,7 +1270,7 @@
    "url": "https://raskell.io/tags#philosophy",
    "meta": "Domain · no pages yet",
    "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:philosophy-of-science",
@@ -1279,7 +1279,7 @@
    "url": "https://raskell.io/tags#philosophy-of-science",
    "meta": "Concept · no pages yet",
    "description": "How science produces knowledge, what counts as evidence, and where its methods and claims reach their limits.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "t:privacy",
@@ -1306,7 +1306,7 @@
    "url": "https://raskell.io/tags#scientific-revolutions",
    "meta": "Concept · no pages yet",
    "description": "Moments when a field's picture of the world changes: the invention of modern science, molecular biology, antisepsis, and the first antibiotics.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:self-play",
@@ -2496,6 +2496,96 @@
    "degree": 4
   },
   {
+   "id": "w:godel-escher-bach",
+   "kind": "work",
+   "label": "Gödel, Escher, Bach",
+   "url": "https://raskell.io/reading/#godel-escher-bach",
+   "meta": "Book · Douglas R. Hofstadter · in the backlog",
+   "description": "How meaning and a self can arise from meaningless symbols, through Gödel's incompleteness, Escher's drawings, and Bach's fugues.",
+   "degree": 6
+  },
+  {
+   "id": "w:chaos-making-a-new-science",
+   "kind": "work",
+   "label": "Chaos",
+   "url": "https://raskell.io/reading/#chaos-making-a-new-science",
+   "meta": "Book · James Gleick · in the backlog",
+   "description": "The scientists who found order in turbulence, weather, and dripping taps, and founded the science of chaos.",
+   "degree": 5
+  },
+  {
+   "id": "w:genius-richard-feynman",
+   "kind": "work",
+   "label": "Genius",
+   "url": "https://raskell.io/reading/#genius-richard-feynman",
+   "meta": "Book · James Gleick · in the backlog",
+   "description": "Richard Feynman's life and physics, from Los Alamos and quantum electrodynamics to the Challenger inquiry.",
+   "degree": 3
+  },
+  {
+   "id": "w:faster",
+   "kind": "work",
+   "label": "Faster",
+   "url": "https://raskell.io/reading/#faster",
+   "meta": "Book · James Gleick · in the backlog",
+   "description": "How technology sped up daily life, from the elevator door-close button to the minute-by-minute schedule.",
+   "degree": 3
+  },
+  {
+   "id": "w:what-just-happened",
+   "kind": "work",
+   "label": "What Just Happened",
+   "url": "https://raskell.io/reading/#what-just-happened",
+   "meta": "Book · James Gleick · in the backlog",
+   "description": "Essays from the years the internet arrived in everyday life, on email, search, spam, and digital identity.",
+   "degree": 4
+  },
+  {
+   "id": "w:isaac-newton",
+   "kind": "work",
+   "label": "Isaac Newton",
+   "url": "https://raskell.io/reading/#isaac-newton",
+   "meta": "Book · James Gleick · in the backlog",
+   "description": "A short life of Newton built from his own notebooks and letters, from alchemy and theology to the laws of motion.",
+   "degree": 4
+  },
+  {
+   "id": "w:the-information",
+   "kind": "work",
+   "label": "The Information",
+   "url": "https://raskell.io/reading/#the-information",
+   "meta": "Book · James Gleick · in the backlog",
+   "description": "Information from talking drums and the telegraph to Shannon's theory, genes as code, and the flood of data today.",
+   "degree": 5
+  },
+  {
+   "id": "w:time-travel-a-history",
+   "kind": "work",
+   "label": "Time Travel",
+   "url": "https://raskell.io/reading/#time-travel-a-history",
+   "meta": "Book · James Gleick · in the backlog",
+   "description": "How time travel became an idea, from H. G. Wells onward, and what it says about how we think of time.",
+   "degree": 3
+  },
+  {
+   "id": "w:the-telephone",
+   "kind": "work",
+   "label": "The Telephone",
+   "url": "https://raskell.io/reading/#the-telephone",
+   "meta": "Book · James Gleick · in the backlog",
+   "description": "A new history of the telephone and the network it wired around the world; published in November 2026.",
+   "degree": 3
+  },
+  {
+   "id": "w:mathematics-and-the-unexpected",
+   "kind": "work",
+   "label": "Mathematics and the Unexpected",
+   "url": "https://raskell.io/reading/#mathematics-and-the-unexpected",
+   "meta": "Book · Ivar Ekeland · in the backlog",
+   "description": "Chaos, catastrophe theory, and chance, from Kepler to Thom, and why the future stays hard to predict; one of the inspirations for Ian Malcolm in Jurassic Park.",
+   "degree": 5
+  },
+  {
    "id": "w:sicp",
    "kind": "work",
    "label": "Structure and Interpretation of Computer Programs",
@@ -2518,7 +2608,7 @@
    "label": "Backlog",
    "url": "https://raskell.io/reading/#shelf-backlog",
    "meta": "Shelf",
-   "degree": 45
+   "degree": 55
   },
   {
    "id": "h:shelf-read",
@@ -6889,6 +6979,170 @@
   {
    "source": "w:accelerando",
    "target": "t:augmentation"
+  },
+  {
+   "source": "w:godel-escher-bach",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:godel-escher-bach",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:godel-escher-bach",
+   "target": "t:mathematics"
+  },
+  {
+   "source": "w:godel-escher-bach",
+   "target": "t:emergence"
+  },
+  {
+   "source": "w:godel-escher-bach",
+   "target": "t:formal-methods"
+  },
+  {
+   "source": "w:godel-escher-bach",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:chaos-making-a-new-science",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:chaos-making-a-new-science",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "w:chaos-making-a-new-science",
+   "target": "t:emergence"
+  },
+  {
+   "source": "w:chaos-making-a-new-science",
+   "target": "t:mathematics"
+  },
+  {
+   "source": "w:chaos-making-a-new-science",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:genius-richard-feynman",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:genius-richard-feynman",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:genius-richard-feynman",
+   "target": "t:research-labs"
+  },
+  {
+   "source": "w:faster",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:faster",
+   "target": "t:attention-economy"
+  },
+  {
+   "source": "w:faster",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:what-just-happened",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:what-just-happened",
+   "target": "t:open-web"
+  },
+  {
+   "source": "w:what-just-happened",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:what-just-happened",
+   "target": "t:hypertext"
+  },
+  {
+   "source": "w:isaac-newton",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:isaac-newton",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:isaac-newton",
+   "target": "t:scientific-revolutions"
+  },
+  {
+   "source": "w:isaac-newton",
+   "target": "t:mathematics"
+  },
+  {
+   "source": "w:the-information",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-information",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:the-information",
+   "target": "t:mathematics"
+  },
+  {
+   "source": "w:the-information",
+   "target": "t:languages"
+  },
+  {
+   "source": "w:the-information",
+   "target": "t:external-memory"
+  },
+  {
+   "source": "w:time-travel-a-history",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:time-travel-a-history",
+   "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "w:time-travel-a-history",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:the-telephone",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-telephone",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:the-telephone",
+   "target": "t:networking"
+  },
+  {
+   "source": "w:mathematics-and-the-unexpected",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:mathematics-and-the-unexpected",
+   "target": "t:mathematics"
+  },
+  {
+   "source": "w:mathematics-and-the-unexpected",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "w:mathematics-and-the-unexpected",
+   "target": "t:risk"
+  },
+  {
+   "source": "w:mathematics-and-the-unexpected",
+   "target": "t:philosophy-of-science"
   },
   {
    "source": "w:sicp",

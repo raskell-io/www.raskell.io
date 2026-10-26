@@ -1776,6 +1776,178 @@
    "page": "https://raskell.io/reading/#accelerando"
   },
   {
+   "id": "godel-escher-bach",
+   "title": "Gödel, Escher, Bach",
+   "subtitle": "An Eternal Golden Braid",
+   "author": "Douglas R. Hofstadter",
+   "kind": "book",
+   "year": 1979,
+   "status": "backlog",
+   "topics": [
+    "intelligence",
+    "mathematics",
+    "emergence",
+    "formal-methods",
+    "philosophy"
+   ],
+   "take": "How meaning and a self can arise from meaningless symbols, through Gödel's incompleteness, Escher's drawings, and Bach's fugues.",
+   "cover": "https://raskell.io/covers/reading/godel-escher-bach.avif",
+   "page": "https://raskell.io/reading/#godel-escher-bach"
+  },
+  {
+   "id": "chaos-making-a-new-science",
+   "title": "Chaos",
+   "subtitle": "Making a New Science",
+   "author": "James Gleick",
+   "kind": "book",
+   "year": 1987,
+   "status": "backlog",
+   "topics": [
+    "complex-systems",
+    "emergence",
+    "mathematics",
+    "history-of-science"
+   ],
+   "take": "The scientists who found order in turbulence, weather, and dripping taps, and founded the science of chaos.",
+   "cover": "https://raskell.io/covers/reading/chaos-making-a-new-science.avif",
+   "page": "https://raskell.io/reading/#chaos-making-a-new-science"
+  },
+  {
+   "id": "genius-richard-feynman",
+   "title": "Genius",
+   "subtitle": "The Life and Science of Richard Feynman",
+   "author": "James Gleick",
+   "kind": "book",
+   "year": 1992,
+   "status": "backlog",
+   "topics": [
+    "history-of-science",
+    "research-labs"
+   ],
+   "take": "Richard Feynman's life and physics, from Los Alamos and quantum electrodynamics to the Challenger inquiry.",
+   "cover": "https://raskell.io/covers/reading/genius-richard-feynman.avif",
+   "page": "https://raskell.io/reading/#genius-richard-feynman"
+  },
+  {
+   "id": "faster",
+   "title": "Faster",
+   "subtitle": "The Acceleration of Just About Everything",
+   "author": "James Gleick",
+   "kind": "book",
+   "year": 1999,
+   "status": "backlog",
+   "topics": [
+    "attention-economy",
+    "history-of-technology"
+   ],
+   "take": "How technology sped up daily life, from the elevator door-close button to the minute-by-minute schedule.",
+   "cover": "https://raskell.io/covers/reading/faster.avif",
+   "page": "https://raskell.io/reading/#faster"
+  },
+  {
+   "id": "what-just-happened",
+   "title": "What Just Happened",
+   "subtitle": "A Chronicle from the Information Frontier",
+   "author": "James Gleick",
+   "kind": "book",
+   "year": 2002,
+   "status": "backlog",
+   "topics": [
+    "open-web",
+    "history-of-technology",
+    "hypertext"
+   ],
+   "take": "Essays from the years the internet arrived in everyday life, on email, search, spam, and digital identity.",
+   "cover": "https://raskell.io/covers/reading/what-just-happened.avif",
+   "page": "https://raskell.io/reading/#what-just-happened"
+  },
+  {
+   "id": "isaac-newton",
+   "title": "Isaac Newton",
+   "author": "James Gleick",
+   "kind": "book",
+   "year": 2003,
+   "status": "backlog",
+   "topics": [
+    "history-of-science",
+    "scientific-revolutions",
+    "mathematics"
+   ],
+   "take": "A short life of Newton built from his own notebooks and letters, from alchemy and theology to the laws of motion.",
+   "cover": "https://raskell.io/covers/reading/isaac-newton.avif",
+   "page": "https://raskell.io/reading/#isaac-newton"
+  },
+  {
+   "id": "the-information",
+   "title": "The Information",
+   "subtitle": "A History, a Theory, a Flood",
+   "author": "James Gleick",
+   "kind": "book",
+   "year": 2011,
+   "status": "backlog",
+   "topics": [
+    "history-of-technology",
+    "mathematics",
+    "languages",
+    "external-memory"
+   ],
+   "take": "Information from talking drums and the telegraph to Shannon's theory, genes as code, and the flood of data today.",
+   "cover": "https://raskell.io/covers/reading/the-information.avif",
+   "page": "https://raskell.io/reading/#the-information"
+  },
+  {
+   "id": "time-travel-a-history",
+   "title": "Time Travel",
+   "subtitle": "A History",
+   "author": "James Gleick",
+   "kind": "book",
+   "year": 2016,
+   "status": "backlog",
+   "topics": [
+    "philosophy-of-science",
+    "literature"
+   ],
+   "take": "How time travel became an idea, from H. G. Wells onward, and what it says about how we think of time.",
+   "cover": "https://raskell.io/covers/reading/time-travel-a-history.avif",
+   "page": "https://raskell.io/reading/#time-travel-a-history"
+  },
+  {
+   "id": "the-telephone",
+   "title": "The Telephone",
+   "subtitle": "A New History",
+   "author": "James Gleick",
+   "kind": "book",
+   "year": 2026,
+   "isbn": "9781035056651",
+   "status": "backlog",
+   "topics": [
+    "history-of-technology",
+    "networking"
+   ],
+   "take": "A new history of the telephone and the network it wired around the world; published in November 2026.",
+   "cover": "https://raskell.io/covers/reading/the-telephone.avif",
+   "page": "https://raskell.io/reading/#the-telephone"
+  },
+  {
+   "id": "mathematics-and-the-unexpected",
+   "title": "Mathematics and the Unexpected",
+   "author": "Ivar Ekeland",
+   "kind": "book",
+   "year": 1984,
+   "edition": "Translated from the French (Le Calcul, l'imprévu), University of Chicago Press, 1988",
+   "isbn": "9780226199900",
+   "status": "backlog",
+   "topics": [
+    "mathematics",
+    "complex-systems",
+    "risk",
+    "philosophy-of-science"
+   ],
+   "take": "Chaos, catastrophe theory, and chance, from Kepler to Thom, and why the future stays hard to predict; one of the inspirations for Ian Malcolm in Jurassic Park.",
+   "cover": "https://raskell.io/covers/reading/mathematics-and-the-unexpected.avif",
+   "page": "https://raskell.io/reading/#mathematics-and-the-unexpected"
+  },
+  {
    "id": "sicp",
    "title": "Structure and Interpretation of Computer Programs",
    "author": "Harold Abelson, Gerald Jay Sussman, and Julie Sussman",
