@@ -1461,6 +1461,216 @@
    "page": "https://raskell.io/reading/#deep-learning-foundations-and-concepts"
   },
   {
+   "id": "deep-utopia",
+   "title": "Deep Utopia",
+   "subtitle": "Life and Meaning in a Solved World",
+   "author": "Nick Bostrom",
+   "kind": "book",
+   "year": 2024,
+   "isbn": "9781646871643",
+   "status": "backlog",
+   "topics": [
+    "philosophy",
+    "ethics",
+    "ai-alignment",
+    "future-of-work"
+   ],
+   "cover": "https://raskell.io/covers/reading/deep-utopia.avif",
+   "page": "https://raskell.io/reading/#deep-utopia"
+  },
+  {
+   "id": "slouching-towards-utopia",
+   "title": "Slouching Towards Utopia",
+   "subtitle": "An Economic History of the Twentieth Century",
+   "author": "J. Bradford DeLong",
+   "kind": "book",
+   "year": 2022,
+   "status": "backlog",
+   "topics": [
+    "economics",
+    "world-history",
+    "history-of-technology"
+   ],
+   "cover": "https://raskell.io/covers/reading/slouching-towards-utopia.avif",
+   "page": "https://raskell.io/reading/#slouching-towards-utopia"
+  },
+  {
+   "id": "abundance",
+   "title": "Abundance",
+   "author": "Ezra Klein and Derek Thompson",
+   "kind": "book",
+   "year": 2025,
+   "status": "backlog",
+   "topics": [
+    "economics",
+    "policy",
+    "cities"
+   ],
+   "cover": "https://raskell.io/covers/reading/abundance.avif",
+   "page": "https://raskell.io/reading/#abundance"
+  },
+  {
+   "id": "four-futures",
+   "title": "Four Futures",
+   "subtitle": "Life After Capitalism",
+   "author": "Peter Frase",
+   "kind": "book",
+   "year": 2016,
+   "status": "backlog",
+   "topics": [
+    "economics",
+    "future-of-work",
+    "social-reform"
+   ],
+   "cover": "https://raskell.io/covers/reading/four-futures.avif",
+   "page": "https://raskell.io/reading/#four-futures"
+  },
+  {
+   "id": "economic-possibilities-for-our-grandchildren",
+   "title": "Economic Possibilities for our Grandchildren",
+   "author": "John Maynard Keynes",
+   "kind": "essay",
+   "year": 1930,
+   "url": "http://www.econ.yale.edu/smith/econ116a/keynes1.pdf",
+   "status": "backlog",
+   "topics": [
+    "economics",
+    "future-of-work"
+   ],
+   "page": "https://raskell.io/reading/#economic-possibilities-for-our-grandchildren"
+  },
+  {
+   "id": "from-counterculture-to-cyberculture",
+   "title": "From Counterculture to Cyberculture",
+   "subtitle": "Stewart Brand, the Whole Earth Network, and the Rise of Digital Utopianism",
+   "author": "Fred Turner",
+   "kind": "book",
+   "year": 2006,
+   "status": "backlog",
+   "topics": [
+    "history-of-technology",
+    "decentralisation",
+    "open-web",
+    "commons"
+   ],
+   "cover": "https://raskell.io/covers/reading/from-counterculture-to-cyberculture.avif",
+   "page": "https://raskell.io/reading/#from-counterculture-to-cyberculture"
+  },
+  {
+   "id": "cybernetic-revolutionaries",
+   "title": "Cybernetic Revolutionaries",
+   "subtitle": "Technology and Politics in Allende's Chile",
+   "author": "Eden Medina",
+   "kind": "book",
+   "year": 2011,
+   "isbn": "9780262525961",
+   "status": "backlog",
+   "topics": [
+    "complex-systems",
+    "high-modernism",
+    "history-of-technology",
+    "social-reform"
+   ],
+   "cover": "https://raskell.io/covers/reading/cybernetic-revolutionaries.avif",
+   "page": "https://raskell.io/reading/#cybernetic-revolutionaries"
+  },
+  {
+   "id": "red-plenty",
+   "title": "Red Plenty",
+   "author": "Francis Spufford",
+   "kind": "novel",
+   "year": 2010,
+   "status": "backlog",
+   "topics": [
+    "literature",
+    "high-modernism",
+    "economics",
+    "complex-systems"
+   ],
+   "cover": "https://raskell.io/covers/reading/red-plenty.avif",
+   "page": "https://raskell.io/reading/#red-plenty"
+  },
+  {
+   "id": "to-be-a-machine",
+   "title": "To Be a Machine",
+   "subtitle": "Adventures Among Cyborgs, Utopians, Hackers, and the Futurists Solving the Modest Problem of Death",
+   "author": "Mark O'Connell",
+   "kind": "book",
+   "year": 2017,
+   "status": "backlog",
+   "topics": [
+    "augmentation",
+    "hubris",
+    "neuroscience"
+   ],
+   "cover": "https://raskell.io/covers/reading/to-be-a-machine.avif",
+   "page": "https://raskell.io/reading/#to-be-a-machine"
+  },
+  {
+   "id": "the-age-of-em",
+   "title": "The Age of Em",
+   "subtitle": "Work, Love, and Life when Robots Rule the Earth",
+   "author": "Robin Hanson",
+   "kind": "book",
+   "year": 2016,
+   "isbn": "9780198754626",
+   "status": "backlog",
+   "topics": [
+    "simulation",
+    "neuroscience",
+    "economics",
+    "future-of-work"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-age-of-em.avif",
+   "page": "https://raskell.io/reading/#the-age-of-em"
+  },
+  {
+   "id": "more-everything-forever",
+   "title": "More Everything Forever",
+   "subtitle": "AI Overlords, Space Empires, and Silicon Valley's Crusade to Control the Fate of Humanity",
+   "author": "Adam Becker",
+   "kind": "book",
+   "year": 2025,
+   "status": "backlog",
+   "topics": [
+    "hubris",
+    "existential-risk",
+    "entrepreneurship"
+   ],
+   "cover": "https://raskell.io/covers/reading/more-everything-forever.avif",
+   "page": "https://raskell.io/reading/#more-everything-forever"
+  },
+  {
+   "id": "the-player-of-games",
+   "title": "The Player of Games",
+   "author": "Iain M. Banks",
+   "kind": "novel",
+   "year": 1988,
+   "status": "backlog",
+   "topics": [
+    "literature",
+    "games",
+    "intelligence"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-player-of-games.avif",
+   "page": "https://raskell.io/reading/#the-player-of-games"
+  },
+  {
+   "id": "accelerando",
+   "title": "Accelerando",
+   "author": "Charles Stross",
+   "kind": "novel",
+   "year": 2005,
+   "status": "backlog",
+   "topics": [
+    "literature",
+    "intelligence",
+    "augmentation"
+   ],
+   "cover": "https://raskell.io/covers/reading/accelerando.avif",
+   "page": "https://raskell.io/reading/#accelerando"
+  },
+  {
    "id": "sicp",
    "title": "Structure and Interpretation of Computer Programs",
    "author": "Harold Abelson, Gerald Jay Sussman, and Julie Sussman",

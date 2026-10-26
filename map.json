@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-26T06:23:33+00:00",
+ "generated": "2026-10-26T06:52:55+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -469,7 +469,7 @@
    "url": "https://raskell.io/tags/augmentation/",
    "meta": "Concept · 8 pages",
    "description": "Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents.",
-   "degree": 13
+   "degree": 15
   },
   {
    "id": "t:cities",
@@ -478,7 +478,7 @@
    "url": "https://raskell.io/tags/cities/",
    "meta": "Concept · 1 page",
    "description": "How cities are planned and how they actually grow: Jerusalem over three thousand years, Brasilia drawn on paper, and the rational city the web was designed against.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:commons",
@@ -487,7 +487,7 @@
    "url": "https://raskell.io/tags/commons/",
    "meta": "Concept · 2 pages",
    "description": "Resources held in common and the rules that keep them so: common land, open protocols, open data, and the web before the platforms.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:compilers",
@@ -523,7 +523,7 @@
    "url": "https://raskell.io/tags/decentralisation/",
    "meta": "Concept · 1 page",
    "description": "Many small nodes and no central operator: the web's original shape, and the alternative to platforms that own the users and the data.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:democratisation",
@@ -559,7 +559,7 @@
    "url": "https://raskell.io/tags/economics/",
    "meta": "Concept · 10 pages",
    "description": "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.",
-   "degree": 19
+   "degree": 25
   },
   {
    "id": "t:edge-systems",
@@ -595,7 +595,7 @@
    "url": "https://raskell.io/tags/entrepreneurship/",
    "meta": "Concept · 1 page",
    "description": "Finding something worth building and building it: ventures, side projects, and what changes when anyone can spot an opportunity and operate a business with AI.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:ethics",
@@ -604,7 +604,7 @@
    "url": "https://raskell.io/tags/ethics/",
    "meta": "Concept · 1 page",
    "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:europe",
@@ -640,7 +640,7 @@
    "url": "https://raskell.io/tags/future-of-work/",
    "meta": "Concept · 3 pages",
    "description": "What AI does to jobs and livelihoods: the interval before any post-scarcity economy, basic income against basic access, and who gets through the middle.",
-   "degree": 5
+   "degree": 9
   },
   {
    "id": "t:game-ai",
@@ -658,7 +658,7 @@
    "url": "https://raskell.io/tags/games/",
    "meta": "Domain · 1 page",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:gpus",
@@ -685,7 +685,7 @@
    "url": "https://raskell.io/tags/history-of-technology/",
    "meta": "Concept · 4 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 14
+   "degree": 17
   },
   {
    "id": "t:hypertext",
@@ -721,7 +721,7 @@
    "url": "https://raskell.io/tags/intelligence/",
    "meta": "Concept · 1 page",
    "description": "What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.",
-   "degree": 15
+   "degree": 17
   },
   {
    "id": "t:isolation",
@@ -811,7 +811,7 @@
    "url": "https://raskell.io/tags/neuroscience/",
    "meta": "Concept · 1 page",
    "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "t:observability",
@@ -847,7 +847,7 @@
    "url": "https://raskell.io/tags/open-web/",
    "meta": "Domain · 2 pages",
    "description": "The web as a commons: open protocols, small independent sites, and publishing outside the platforms.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "t:openbsd",
@@ -910,7 +910,7 @@
    "url": "https://raskell.io/tags/policy/",
    "meta": "Domain · 3 pages",
    "description": "Where engineering meets regulation, public institutions, procurement, and national strategy.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:programming-languages",
@@ -991,7 +991,7 @@
    "url": "https://raskell.io/tags/simulation/",
    "meta": "Domain · 1 page",
    "description": "Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:social-reform",
@@ -1000,7 +1000,7 @@
    "url": "https://raskell.io/tags/social-reform/",
    "meta": "Concept · 2 pages",
    "description": "Plans to redesign society or the economy, from nineteenth-century utopias to high-modernist states and basic income, and what happened when they met people.",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "t:sovereignty",
@@ -1072,7 +1072,7 @@
    "url": "https://raskell.io/tags/world-history/",
    "meta": "Concept · 1 page",
    "description": "History told at the scale of continents and millennia: why societies diverged, and how the world came to look the way it does.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:zola",
@@ -1099,7 +1099,7 @@
    "url": "https://raskell.io/tags#ai-alignment",
    "meta": "Concept · no pages yet",
    "description": "Making AI systems pursue what their builders and users actually intend, and what happens when they do not.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:complex-systems",
@@ -1108,7 +1108,7 @@
    "url": "https://raskell.io/tags#complex-systems",
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "t:enterprise-architecture",
@@ -1135,7 +1135,7 @@
    "url": "https://raskell.io/tags#existential-risk",
    "meta": "Concept · no pages yet",
    "description": "Technologies that could end or permanently cripple civilisation, from nuclear weapons to misaligned AI, and how people have tried to contain them.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:geography",
@@ -1162,7 +1162,7 @@
    "url": "https://raskell.io/tags#high-modernism",
    "meta": "Concept · no pages yet",
    "description": "The confidence that society can be planned from above by experts: Le Corbusier's rational city, scientific forestry, and the schemes that failed when they met real life.",
-   "degree": 3
+   "degree": 5
   },
   {
    "id": "t:history",
@@ -1189,7 +1189,7 @@
    "url": "https://raskell.io/tags#hubris",
    "meta": "Concept · no pages yet",
    "description": "When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "t:legibility",
@@ -1216,7 +1216,7 @@
    "url": "https://raskell.io/tags#literature",
    "meta": "Domain · no pages yet",
    "description": "Fiction and writing about fiction: novels read for their own sake, and the forms they take.",
-   "degree": 9
+   "degree": 12
   },
   {
    "id": "t:mathematics",
@@ -1270,7 +1270,7 @@
    "url": "https://raskell.io/tags#philosophy",
    "meta": "Domain · no pages yet",
    "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:philosophy-of-science",
@@ -2347,6 +2347,118 @@
    "degree": 4
   },
   {
+   "id": "w:deep-utopia",
+   "kind": "work",
+   "label": "Deep Utopia",
+   "url": "https://raskell.io/reading/#deep-utopia",
+   "meta": "Book · Nick Bostrom · in the backlog",
+   "description": "Life and Meaning in a Solved World",
+   "degree": 5
+  },
+  {
+   "id": "w:slouching-towards-utopia",
+   "kind": "work",
+   "label": "Slouching Towards Utopia",
+   "url": "https://raskell.io/reading/#slouching-towards-utopia",
+   "meta": "Book · J. Bradford DeLong · in the backlog",
+   "description": "An Economic History of the Twentieth Century",
+   "degree": 4
+  },
+  {
+   "id": "w:abundance",
+   "kind": "work",
+   "label": "Abundance",
+   "url": "https://raskell.io/reading/#abundance",
+   "meta": "Book · Ezra Klein and Derek Thompson · in the backlog",
+   "degree": 4
+  },
+  {
+   "id": "w:four-futures",
+   "kind": "work",
+   "label": "Four Futures",
+   "url": "https://raskell.io/reading/#four-futures",
+   "meta": "Book · Peter Frase · in the backlog",
+   "description": "Life After Capitalism",
+   "degree": 4
+  },
+  {
+   "id": "w:economic-possibilities-for-our-grandchildren",
+   "kind": "work",
+   "label": "Economic Possibilities for our Grandchildren",
+   "url": "https://raskell.io/reading/#economic-possibilities-for-our-grandchildren",
+   "meta": "Essay · John Maynard Keynes · in the backlog",
+   "degree": 3
+  },
+  {
+   "id": "w:from-counterculture-to-cyberculture",
+   "kind": "work",
+   "label": "From Counterculture to Cyberculture",
+   "url": "https://raskell.io/reading/#from-counterculture-to-cyberculture",
+   "meta": "Book · Fred Turner · in the backlog",
+   "description": "Stewart Brand, the Whole Earth Network, and the Rise of Digital Utopianism",
+   "degree": 5
+  },
+  {
+   "id": "w:cybernetic-revolutionaries",
+   "kind": "work",
+   "label": "Cybernetic Revolutionaries",
+   "url": "https://raskell.io/reading/#cybernetic-revolutionaries",
+   "meta": "Book · Eden Medina · in the backlog",
+   "description": "Technology and Politics in Allende's Chile",
+   "degree": 5
+  },
+  {
+   "id": "w:red-plenty",
+   "kind": "work",
+   "label": "Red Plenty",
+   "url": "https://raskell.io/reading/#red-plenty",
+   "meta": "Novel · Francis Spufford · in the backlog",
+   "degree": 5
+  },
+  {
+   "id": "w:to-be-a-machine",
+   "kind": "work",
+   "label": "To Be a Machine",
+   "url": "https://raskell.io/reading/#to-be-a-machine",
+   "meta": "Book · Mark O'Connell · in the backlog",
+   "description": "Adventures Among Cyborgs, Utopians, Hackers, and the Futurists Solving the Modest Problem of Death",
+   "degree": 4
+  },
+  {
+   "id": "w:the-age-of-em",
+   "kind": "work",
+   "label": "The Age of Em",
+   "url": "https://raskell.io/reading/#the-age-of-em",
+   "meta": "Book · Robin Hanson · in the backlog",
+   "description": "Work, Love, and Life when Robots Rule the Earth",
+   "degree": 5
+  },
+  {
+   "id": "w:more-everything-forever",
+   "kind": "work",
+   "label": "More Everything Forever",
+   "url": "https://raskell.io/reading/#more-everything-forever",
+   "meta": "Book · Adam Becker · in the backlog",
+   "description": "AI Overlords, Space Empires, and Silicon Valley's Crusade to Control the Fate of Humanity",
+   "degree": 4
+  },
+  {
+   "id": "w:the-player-of-games",
+   "kind": "work",
+   "label": "The Player of Games",
+   "url": "https://raskell.io/reading/#the-player-of-games",
+   "meta": "Novel · Iain M. Banks · in the backlog",
+   "degree": 4
+  },
+  {
+   "id": "w:accelerando",
+   "kind": "work",
+   "label": "Accelerando",
+   "url": "https://raskell.io/reading/#accelerando",
+   "meta": "Novel · Charles Stross · in the backlog",
+   "degree": 4
+  },
+  {
    "id": "w:sicp",
    "kind": "work",
    "label": "Structure and Interpretation of Computer Programs",
@@ -2368,7 +2480,7 @@
    "label": "Backlog",
    "url": "https://raskell.io/reading/#shelf-backlog",
    "meta": "Shelf",
-   "degree": 32
+   "degree": 45
   },
   {
    "id": "h:shelf-read",
@@ -6515,6 +6627,230 @@
   {
    "source": "w:deep-learning-foundations-and-concepts",
    "target": "t:mathematics"
+  },
+  {
+   "source": "w:deep-utopia",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:deep-utopia",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:deep-utopia",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:deep-utopia",
+   "target": "t:ai-alignment"
+  },
+  {
+   "source": "w:deep-utopia",
+   "target": "t:future-of-work"
+  },
+  {
+   "source": "w:slouching-towards-utopia",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:slouching-towards-utopia",
+   "target": "t:economics"
+  },
+  {
+   "source": "w:slouching-towards-utopia",
+   "target": "t:world-history"
+  },
+  {
+   "source": "w:slouching-towards-utopia",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:abundance",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:abundance",
+   "target": "t:economics"
+  },
+  {
+   "source": "w:abundance",
+   "target": "t:policy"
+  },
+  {
+   "source": "w:abundance",
+   "target": "t:cities"
+  },
+  {
+   "source": "w:four-futures",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:four-futures",
+   "target": "t:economics"
+  },
+  {
+   "source": "w:four-futures",
+   "target": "t:future-of-work"
+  },
+  {
+   "source": "w:four-futures",
+   "target": "t:social-reform"
+  },
+  {
+   "source": "w:economic-possibilities-for-our-grandchildren",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:economic-possibilities-for-our-grandchildren",
+   "target": "t:economics"
+  },
+  {
+   "source": "w:economic-possibilities-for-our-grandchildren",
+   "target": "t:future-of-work"
+  },
+  {
+   "source": "w:from-counterculture-to-cyberculture",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:from-counterculture-to-cyberculture",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:from-counterculture-to-cyberculture",
+   "target": "t:decentralisation"
+  },
+  {
+   "source": "w:from-counterculture-to-cyberculture",
+   "target": "t:open-web"
+  },
+  {
+   "source": "w:from-counterculture-to-cyberculture",
+   "target": "t:commons"
+  },
+  {
+   "source": "w:cybernetic-revolutionaries",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:cybernetic-revolutionaries",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "w:cybernetic-revolutionaries",
+   "target": "t:high-modernism"
+  },
+  {
+   "source": "w:cybernetic-revolutionaries",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:cybernetic-revolutionaries",
+   "target": "t:social-reform"
+  },
+  {
+   "source": "w:red-plenty",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:red-plenty",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:red-plenty",
+   "target": "t:high-modernism"
+  },
+  {
+   "source": "w:red-plenty",
+   "target": "t:economics"
+  },
+  {
+   "source": "w:red-plenty",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "w:to-be-a-machine",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:to-be-a-machine",
+   "target": "t:augmentation"
+  },
+  {
+   "source": "w:to-be-a-machine",
+   "target": "t:hubris"
+  },
+  {
+   "source": "w:to-be-a-machine",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "w:the-age-of-em",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-age-of-em",
+   "target": "t:simulation"
+  },
+  {
+   "source": "w:the-age-of-em",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "w:the-age-of-em",
+   "target": "t:economics"
+  },
+  {
+   "source": "w:the-age-of-em",
+   "target": "t:future-of-work"
+  },
+  {
+   "source": "w:more-everything-forever",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:more-everything-forever",
+   "target": "t:hubris"
+  },
+  {
+   "source": "w:more-everything-forever",
+   "target": "t:existential-risk"
+  },
+  {
+   "source": "w:more-everything-forever",
+   "target": "t:entrepreneurship"
+  },
+  {
+   "source": "w:the-player-of-games",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-player-of-games",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:the-player-of-games",
+   "target": "t:games"
+  },
+  {
+   "source": "w:the-player-of-games",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:accelerando",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:accelerando",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:accelerando",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:accelerando",
+   "target": "t:augmentation"
   },
   {
    "source": "w:sicp",

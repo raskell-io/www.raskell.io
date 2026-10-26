@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-26T06:23:33+00:00",
+ "generated": "2026-10-26T06:52:55+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -8,7 +8,7 @@
   "review": 1,
   "note": 8,
   "talk": 1,
-  "work": 86,
+  "work": 99,
   "project": 30,
   "topic": 102,
   "link": 268
@@ -1734,6 +1734,161 @@
     "mathematics"
    ],
    "meta": "Book · Christopher M. Bishop and Hugh Bishop · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Deep Utopia",
+   "url": "https://raskell.io/reading/#deep-utopia",
+   "description": "Life and Meaning in a Solved World",
+   "topics": [
+    "philosophy",
+    "ethics",
+    "ai-alignment",
+    "future-of-work"
+   ],
+   "meta": "Book · Nick Bostrom · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Slouching Towards Utopia",
+   "url": "https://raskell.io/reading/#slouching-towards-utopia",
+   "description": "An Economic History of the Twentieth Century",
+   "topics": [
+    "economics",
+    "world-history",
+    "history-of-technology"
+   ],
+   "meta": "Book · J. Bradford DeLong · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Abundance",
+   "url": "https://raskell.io/reading/#abundance",
+   "topics": [
+    "economics",
+    "policy",
+    "cities"
+   ],
+   "meta": "Book · Ezra Klein and Derek Thompson · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Four Futures",
+   "url": "https://raskell.io/reading/#four-futures",
+   "description": "Life After Capitalism",
+   "topics": [
+    "economics",
+    "future-of-work",
+    "social-reform"
+   ],
+   "meta": "Book · Peter Frase · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Economic Possibilities for our Grandchildren",
+   "url": "https://raskell.io/reading/#economic-possibilities-for-our-grandchildren",
+   "topics": [
+    "economics",
+    "future-of-work"
+   ],
+   "meta": "Essay · John Maynard Keynes · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "From Counterculture to Cyberculture",
+   "url": "https://raskell.io/reading/#from-counterculture-to-cyberculture",
+   "description": "Stewart Brand, the Whole Earth Network, and the Rise of Digital Utopianism",
+   "topics": [
+    "history-of-technology",
+    "decentralisation",
+    "open-web",
+    "commons"
+   ],
+   "meta": "Book · Fred Turner · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Cybernetic Revolutionaries",
+   "url": "https://raskell.io/reading/#cybernetic-revolutionaries",
+   "description": "Technology and Politics in Allende's Chile",
+   "topics": [
+    "complex-systems",
+    "high-modernism",
+    "history-of-technology",
+    "social-reform"
+   ],
+   "meta": "Book · Eden Medina · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Red Plenty",
+   "url": "https://raskell.io/reading/#red-plenty",
+   "topics": [
+    "literature",
+    "high-modernism",
+    "economics",
+    "complex-systems"
+   ],
+   "meta": "Novel · Francis Spufford · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "To Be a Machine",
+   "url": "https://raskell.io/reading/#to-be-a-machine",
+   "description": "Adventures Among Cyborgs, Utopians, Hackers, and the Futurists Solving the Modest Problem of Death",
+   "topics": [
+    "augmentation",
+    "hubris",
+    "neuroscience"
+   ],
+   "meta": "Book · Mark O'Connell · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Age of Em",
+   "url": "https://raskell.io/reading/#the-age-of-em",
+   "description": "Work, Love, and Life when Robots Rule the Earth",
+   "topics": [
+    "simulation",
+    "neuroscience",
+    "economics",
+    "future-of-work"
+   ],
+   "meta": "Book · Robin Hanson · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "More Everything Forever",
+   "url": "https://raskell.io/reading/#more-everything-forever",
+   "description": "AI Overlords, Space Empires, and Silicon Valley's Crusade to Control the Fate of Humanity",
+   "topics": [
+    "hubris",
+    "existential-risk",
+    "entrepreneurship"
+   ],
+   "meta": "Book · Adam Becker · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Player of Games",
+   "url": "https://raskell.io/reading/#the-player-of-games",
+   "topics": [
+    "literature",
+    "games",
+    "intelligence"
+   ],
+   "meta": "Novel · Iain M. Banks · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Accelerando",
+   "url": "https://raskell.io/reading/#accelerando",
+   "topics": [
+    "literature",
+    "intelligence",
+    "augmentation"
+   ],
+   "meta": "Novel · Charles Stross · Backlog"
   },
   {
    "kind": "work",
