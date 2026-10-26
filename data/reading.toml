@@ -1064,6 +1064,148 @@ year = 2024
 status = "backlog"
 topics = ["neural-networks", "machine-learning", "mathematics"]
 
+[[works]]
+id = "deep-utopia"
+title = "Deep Utopia"
+subtitle = "Life and Meaning in a Solved World"
+author = "Nick Bostrom"
+kind = "book"
+cover = "covers/reading/deep-utopia.avif"
+isbn = "9781646871643"
+year = 2024
+status = "backlog"
+topics = ["philosophy", "ethics", "ai-alignment", "future-of-work"]
+
+[[works]]
+id = "slouching-towards-utopia"
+title = "Slouching Towards Utopia"
+subtitle = "An Economic History of the Twentieth Century"
+author = "J. Bradford DeLong"
+kind = "book"
+cover = "covers/reading/slouching-towards-utopia.avif"
+year = 2022
+status = "backlog"
+topics = ["economics", "world-history", "history-of-technology"]
+
+[[works]]
+id = "abundance"
+title = "Abundance"
+author = "Ezra Klein and Derek Thompson"
+kind = "book"
+cover = "covers/reading/abundance.avif"
+year = 2025
+status = "backlog"
+topics = ["economics", "policy", "cities"]
+
+[[works]]
+id = "four-futures"
+title = "Four Futures"
+subtitle = "Life After Capitalism"
+author = "Peter Frase"
+kind = "book"
+cover = "covers/reading/four-futures.avif"
+year = 2016
+status = "backlog"
+topics = ["economics", "future-of-work", "social-reform"]
+
+[[works]]
+id = "economic-possibilities-for-our-grandchildren"
+title = "Economic Possibilities for our Grandchildren"
+author = "John Maynard Keynes"
+kind = "essay"
+year = 1930
+url = "http://www.econ.yale.edu/smith/econ116a/keynes1.pdf"
+status = "backlog"
+topics = ["economics", "future-of-work"]
+
+[[works]]
+id = "from-counterculture-to-cyberculture"
+title = "From Counterculture to Cyberculture"
+subtitle = "Stewart Brand, the Whole Earth Network, and the Rise of Digital Utopianism"
+author = "Fred Turner"
+kind = "book"
+cover = "covers/reading/from-counterculture-to-cyberculture.avif"
+year = 2006
+status = "backlog"
+topics = ["history-of-technology", "decentralisation", "open-web", "commons"]
+
+[[works]]
+id = "cybernetic-revolutionaries"
+title = "Cybernetic Revolutionaries"
+subtitle = "Technology and Politics in Allende's Chile"
+author = "Eden Medina"
+kind = "book"
+cover = "covers/reading/cybernetic-revolutionaries.avif"
+isbn = "9780262525961"
+year = 2011
+status = "backlog"
+topics = ["complex-systems", "high-modernism", "history-of-technology", "social-reform"]
+
+[[works]]
+id = "red-plenty"
+title = "Red Plenty"
+author = "Francis Spufford"
+kind = "novel"
+cover = "covers/reading/red-plenty.avif"
+year = 2010
+status = "backlog"
+topics = ["literature", "high-modernism", "economics", "complex-systems"]
+
+[[works]]
+id = "to-be-a-machine"
+title = "To Be a Machine"
+subtitle = "Adventures Among Cyborgs, Utopians, Hackers, and the Futurists Solving the Modest Problem of Death"
+author = "Mark O'Connell"
+kind = "book"
+cover = "covers/reading/to-be-a-machine.avif"
+year = 2017
+status = "backlog"
+topics = ["augmentation", "hubris", "neuroscience"]
+
+[[works]]
+id = "the-age-of-em"
+title = "The Age of Em"
+subtitle = "Work, Love, and Life when Robots Rule the Earth"
+author = "Robin Hanson"
+kind = "book"
+cover = "covers/reading/the-age-of-em.avif"
+isbn = "9780198754626"
+year = 2016
+status = "backlog"
+topics = ["simulation", "neuroscience", "economics", "future-of-work"]
+
+[[works]]
+id = "more-everything-forever"
+title = "More Everything Forever"
+subtitle = "AI Overlords, Space Empires, and Silicon Valley's Crusade to Control the Fate of Humanity"
+author = "Adam Becker"
+kind = "book"
+cover_id = "15216534"   # the first search match is a square crop
+cover = "covers/reading/more-everything-forever.avif"
+year = 2025
+status = "backlog"
+topics = ["hubris", "existential-risk", "entrepreneurship"]
+
+[[works]]
+id = "the-player-of-games"
+title = "The Player of Games"
+author = "Iain M. Banks"
+kind = "novel"
+cover = "covers/reading/the-player-of-games.avif"
+year = 1988
+status = "backlog"
+topics = ["literature", "games", "intelligence"]
+
+[[works]]
+id = "accelerando"
+title = "Accelerando"
+author = "Charles Stross"
+kind = "novel"
+cover = "covers/reading/accelerando.avif"
+year = 2005
+status = "backlog"
+topics = ["literature", "intelligence", "augmentation"]
+
 # Set aside ----------------------------------------------------------------
 
 [[works]]
