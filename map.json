@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-25T19:55:18+00:00",
+ "generated": "2026-10-26T06:20:16+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -595,7 +595,7 @@
    "url": "https://raskell.io/tags/entrepreneurship/",
    "meta": "Concept · 1 page",
    "description": "Finding something worth building and building it: ventures, side projects, and what changes when anyone can spot an opportunity and operate a business with AI.",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "t:ethics",
@@ -667,7 +667,7 @@
    "url": "https://raskell.io/tags/gpus/",
    "meta": "Technology · 3 pages",
    "description": "GPUs as the computer: memory shape, partitioning, and the hardware under inference.",
-   "degree": 6
+   "degree": 8
   },
   {
    "id": "t:haskell",
@@ -685,7 +685,7 @@
    "url": "https://raskell.io/tags/history-of-technology/",
    "meta": "Concept · 4 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 12
+   "degree": 14
   },
   {
    "id": "t:hypertext",
@@ -721,7 +721,7 @@
    "url": "https://raskell.io/tags/intelligence/",
    "meta": "Concept · 1 page",
    "description": "What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.",
-   "degree": 12
+   "degree": 15
   },
   {
    "id": "t:isolation",
@@ -757,7 +757,7 @@
    "url": "https://raskell.io/tags/languages/",
    "meta": "Concept · 1 page",
    "description": "Human languages and moving meaning between them: translated novels, learning to read Chinese, Japanese, and Hebrew, and Europe's multilingual text.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:linux",
@@ -784,7 +784,7 @@
    "url": "https://raskell.io/tags/machine-learning/",
    "meta": "Domain · 1 page",
    "description": "How models learn from data: the mathematics, the training methods, and what the results can and cannot do.",
-   "degree": 12
+   "degree": 15
   },
   {
    "id": "t:meta",
@@ -811,7 +811,7 @@
    "url": "https://raskell.io/tags/neuroscience/",
    "meta": "Concept · 1 page",
    "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
-   "degree": 7
+   "degree": 9
   },
   {
    "id": "t:observability",
@@ -910,7 +910,7 @@
    "url": "https://raskell.io/tags/policy/",
    "meta": "Domain · 3 pages",
    "description": "Where engineering meets regulation, public institutions, procurement, and national strategy.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:programming-languages",
@@ -937,7 +937,7 @@
    "url": "https://raskell.io/tags/reinforcement-learning/",
    "meta": "Concept · 1 page",
    "description": "Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:reliability",
@@ -955,7 +955,7 @@
    "url": "https://raskell.io/tags/research-labs/",
    "meta": "Concept · 1 page",
    "description": "The institutions where discovery happens and how they are funded and run: CERN, Bell Labs, ARPA, Los Alamos, DeepMind, and the labs behind modern medicine.",
-   "degree": 11
+   "degree": 13
   },
   {
    "id": "t:risk",
@@ -964,7 +964,7 @@
    "url": "https://raskell.io/tags/risk/",
    "meta": "Concept · 1 page",
    "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:rust",
@@ -1027,7 +1027,7 @@
    "url": "https://raskell.io/tags/technology-races/",
    "meta": "Concept · 1 page",
    "description": "Powers racing to build a technology first, from the bomb and its deterrence to frontier AI and the data it needs.",
-   "degree": 9
+   "degree": 12
   },
   {
    "id": "t:training-data",
@@ -1036,7 +1036,7 @@
    "url": "https://raskell.io/tags/training-data/",
    "meta": "Concept · 2 pages",
    "description": "What models learn from: web crawls, books, and licensed or unlicensed corpora; who holds what has not been scraped yet, and on what terms.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:typescript",
@@ -1099,7 +1099,7 @@
    "url": "https://raskell.io/tags#ai-alignment",
    "meta": "Concept · no pages yet",
    "description": "Making AI systems pursue what their builders and users actually intend, and what happens when they do not.",
-   "degree": 6
+   "degree": 9
   },
   {
    "id": "t:complex-systems",
@@ -1126,7 +1126,7 @@
    "url": "https://raskell.io/tags#evaluation",
    "meta": "Concept · no pages yet",
    "description": "Measuring whether an AI system does the right thing: golden sets, structural checks, LLM-as-judge, and regression suites.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:existential-risk",
@@ -1135,7 +1135,7 @@
    "url": "https://raskell.io/tags#existential-risk",
    "meta": "Concept · no pages yet",
    "description": "Technologies that could end or permanently cripple civilisation, from nuclear weapons to misaligned AI, and how people have tried to contain them.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:geography",
@@ -1153,7 +1153,7 @@
    "url": "https://raskell.io/tags#geopolitics",
    "meta": "Concept · no pages yet",
    "description": "How geography, empires, and arms shape the balance of power between states and regions, as history.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "t:high-modernism",
@@ -1189,7 +1189,7 @@
    "url": "https://raskell.io/tags#hubris",
    "meta": "Concept · no pages yet",
    "description": "When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand.",
-   "degree": 6
+   "degree": 8
   },
   {
    "id": "t:legibility",
@@ -1207,7 +1207,7 @@
    "url": "https://raskell.io/tags#life-sciences",
    "meta": "Domain · no pages yet",
    "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:literature",
@@ -1225,7 +1225,7 @@
    "url": "https://raskell.io/tags#mathematics",
    "meta": "Domain · no pages yet",
    "description": "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:maximalist-novels",
@@ -1261,7 +1261,7 @@
    "url": "https://raskell.io/tags#neural-networks",
    "meta": "Concept · no pages yet",
    "description": "Layers of weights that learn a function from examples: architectures, activations, quantisation, and running them where the data is.",
-   "degree": 1
+   "degree": 3
   },
   {
    "id": "t:philosophy",
@@ -2266,6 +2266,87 @@
    "degree": 3
   },
   {
+   "id": "w:if-anyone-builds-it-everyone-dies",
+   "kind": "work",
+   "label": "If Anyone Builds It, Everyone Dies",
+   "url": "https://raskell.io/reading/#if-anyone-builds-it-everyone-dies",
+   "meta": "Book · Eliezer Yudkowsky and Nate Soares · in the backlog",
+   "description": "Why Superhuman AI Would Kill Us All",
+   "degree": 5
+  },
+  {
+   "id": "w:the-scaling-era",
+   "kind": "work",
+   "label": "The Scaling Era",
+   "url": "https://raskell.io/reading/#the-scaling-era",
+   "meta": "Book · Dwarkesh Patel, with Gavin Leech · in the backlog",
+   "description": "An Oral History of AI, 2019–2025",
+   "degree": 5
+  },
+  {
+   "id": "w:situational-awareness",
+   "kind": "work",
+   "label": "Situational Awareness",
+   "url": "https://raskell.io/reading/#situational-awareness",
+   "meta": "Essay · Leopold Aschenbrenner · in the backlog",
+   "description": "The Decade Ahead",
+   "degree": 5
+  },
+  {
+   "id": "w:empire-of-ai",
+   "kind": "work",
+   "label": "Empire of AI",
+   "url": "https://raskell.io/reading/#empire-of-ai",
+   "meta": "Book · Karen Hao · in the backlog",
+   "description": "Dreams and Nightmares in Sam Altman's OpenAI",
+   "degree": 5
+  },
+  {
+   "id": "w:the-thinking-machine",
+   "kind": "work",
+   "label": "The Thinking Machine",
+   "url": "https://raskell.io/reading/#the-thinking-machine",
+   "meta": "Book · Stephen Witt · in the backlog",
+   "description": "Jensen Huang, Nvidia, and the World's Most Coveted Microchip",
+   "degree": 5
+  },
+  {
+   "id": "w:a-brief-history-of-intelligence",
+   "kind": "work",
+   "label": "A Brief History of Intelligence",
+   "url": "https://raskell.io/reading/#a-brief-history-of-intelligence",
+   "meta": "Book · Max Bennett · in the backlog",
+   "description": "Evolution, AI, and the Five Breakthroughs That Made Our Brains",
+   "degree": 5
+  },
+  {
+   "id": "w:these-strange-new-minds",
+   "kind": "work",
+   "label": "These Strange New Minds",
+   "url": "https://raskell.io/reading/#these-strange-new-minds",
+   "meta": "Book · Christopher Summerfield · in the backlog",
+   "description": "How AI Learned to Talk and What It Means",
+   "degree": 5
+  },
+  {
+   "id": "w:ai-snake-oil",
+   "kind": "work",
+   "label": "AI Snake Oil",
+   "url": "https://raskell.io/reading/#ai-snake-oil",
+   "meta": "Book · Arvind Narayanan and Sayash Kapoor · in the backlog",
+   "description": "What Artificial Intelligence Can Do, What It Can't, and How to Tell the Difference",
+   "degree": 5
+  },
+  {
+   "id": "w:deep-learning-foundations-and-concepts",
+   "kind": "work",
+   "label": "Deep Learning",
+   "url": "https://raskell.io/reading/#deep-learning-foundations-and-concepts",
+   "meta": "Book · Christopher M. Bishop and Hugh Bishop · in the backlog",
+   "description": "Foundations and Concepts",
+   "degree": 4
+  },
+  {
    "id": "w:sicp",
    "kind": "work",
    "label": "Structure and Interpretation of Computer Programs",
@@ -2287,7 +2368,7 @@
    "label": "Backlog",
    "url": "https://raskell.io/reading/#shelf-backlog",
    "meta": "Shelf",
-   "degree": 23
+   "degree": 32
   },
   {
    "id": "h:shelf-read",
@@ -6258,6 +6339,182 @@
   {
    "source": "w:the-lost-art-of-scripture",
    "target": "t:history"
+  },
+  {
+   "source": "w:if-anyone-builds-it-everyone-dies",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:if-anyone-builds-it-everyone-dies",
+   "target": "t:ai-alignment"
+  },
+  {
+   "source": "w:if-anyone-builds-it-everyone-dies",
+   "target": "t:existential-risk"
+  },
+  {
+   "source": "w:if-anyone-builds-it-everyone-dies",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:if-anyone-builds-it-everyone-dies",
+   "target": "t:hubris"
+  },
+  {
+   "source": "w:the-scaling-era",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-scaling-era",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "w:the-scaling-era",
+   "target": "t:research-labs"
+  },
+  {
+   "source": "w:the-scaling-era",
+   "target": "t:ai-alignment"
+  },
+  {
+   "source": "w:the-scaling-era",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:situational-awareness",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:situational-awareness",
+   "target": "t:technology-races"
+  },
+  {
+   "source": "w:situational-awareness",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:situational-awareness",
+   "target": "t:ai-alignment"
+  },
+  {
+   "source": "w:situational-awareness",
+   "target": "t:gpus"
+  },
+  {
+   "source": "w:empire-of-ai",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:empire-of-ai",
+   "target": "t:research-labs"
+  },
+  {
+   "source": "w:empire-of-ai",
+   "target": "t:training-data"
+  },
+  {
+   "source": "w:empire-of-ai",
+   "target": "t:technology-races"
+  },
+  {
+   "source": "w:empire-of-ai",
+   "target": "t:hubris"
+  },
+  {
+   "source": "w:the-thinking-machine",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-thinking-machine",
+   "target": "t:gpus"
+  },
+  {
+   "source": "w:the-thinking-machine",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:the-thinking-machine",
+   "target": "t:entrepreneurship"
+  },
+  {
+   "source": "w:the-thinking-machine",
+   "target": "t:technology-races"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:reinforcement-learning"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:these-strange-new-minds",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:these-strange-new-minds",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:these-strange-new-minds",
+   "target": "t:neural-networks"
+  },
+  {
+   "source": "w:these-strange-new-minds",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "w:these-strange-new-minds",
+   "target": "t:languages"
+  },
+  {
+   "source": "w:ai-snake-oil",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:ai-snake-oil",
+   "target": "t:evaluation"
+  },
+  {
+   "source": "w:ai-snake-oil",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "w:ai-snake-oil",
+   "target": "t:risk"
+  },
+  {
+   "source": "w:ai-snake-oil",
+   "target": "t:policy"
+  },
+  {
+   "source": "w:deep-learning-foundations-and-concepts",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:deep-learning-foundations-and-concepts",
+   "target": "t:neural-networks"
+  },
+  {
+   "source": "w:deep-learning-foundations-and-concepts",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "w:deep-learning-foundations-and-concepts",
+   "target": "t:mathematics"
   },
   {
    "source": "w:sicp",

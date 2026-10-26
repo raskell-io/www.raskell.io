@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-25T19:55:18+00:00",
+ "generated": "2026-10-26T06:20:17+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -8,7 +8,7 @@
   "review": 1,
   "note": 8,
   "talk": 1,
-  "work": 77,
+  "work": 86,
   "project": 30,
   "topic": 102,
   "link": 268
@@ -1618,6 +1618,122 @@
     "history"
    ],
    "meta": "Book · Karen Armstrong · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "If Anyone Builds It, Everyone Dies",
+   "url": "https://raskell.io/reading/#if-anyone-builds-it-everyone-dies",
+   "description": "Why Superhuman AI Would Kill Us All",
+   "topics": [
+    "ai-alignment",
+    "existential-risk",
+    "intelligence",
+    "hubris"
+   ],
+   "meta": "Book · Eliezer Yudkowsky and Nate Soares · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Scaling Era",
+   "url": "https://raskell.io/reading/#the-scaling-era",
+   "description": "An Oral History of AI, 2019–2025",
+   "topics": [
+    "machine-learning",
+    "research-labs",
+    "ai-alignment",
+    "history-of-technology"
+   ],
+   "meta": "Book · Dwarkesh Patel, with Gavin Leech · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Situational Awareness",
+   "url": "https://raskell.io/reading/#situational-awareness",
+   "description": "The Decade Ahead",
+   "topics": [
+    "technology-races",
+    "geopolitics",
+    "ai-alignment",
+    "gpus"
+   ],
+   "meta": "Essay · Leopold Aschenbrenner · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Empire of AI",
+   "url": "https://raskell.io/reading/#empire-of-ai",
+   "description": "Dreams and Nightmares in Sam Altman's OpenAI",
+   "topics": [
+    "research-labs",
+    "training-data",
+    "technology-races",
+    "hubris"
+   ],
+   "meta": "Book · Karen Hao · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Thinking Machine",
+   "url": "https://raskell.io/reading/#the-thinking-machine",
+   "description": "Jensen Huang, Nvidia, and the World's Most Coveted Microchip",
+   "topics": [
+    "gpus",
+    "history-of-technology",
+    "entrepreneurship",
+    "technology-races"
+   ],
+   "meta": "Book · Stephen Witt · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "A Brief History of Intelligence",
+   "url": "https://raskell.io/reading/#a-brief-history-of-intelligence",
+   "description": "Evolution, AI, and the Five Breakthroughs That Made Our Brains",
+   "topics": [
+    "intelligence",
+    "neuroscience",
+    "reinforcement-learning",
+    "life-sciences"
+   ],
+   "meta": "Book · Max Bennett · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "These Strange New Minds",
+   "url": "https://raskell.io/reading/#these-strange-new-minds",
+   "description": "How AI Learned to Talk and What It Means",
+   "topics": [
+    "intelligence",
+    "neural-networks",
+    "neuroscience",
+    "languages"
+   ],
+   "meta": "Book · Christopher Summerfield · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "AI Snake Oil",
+   "url": "https://raskell.io/reading/#ai-snake-oil",
+   "description": "What Artificial Intelligence Can Do, What It Can't, and How to Tell the Difference",
+   "topics": [
+    "evaluation",
+    "machine-learning",
+    "risk",
+    "policy"
+   ],
+   "meta": "Book · Arvind Narayanan and Sayash Kapoor · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Deep Learning",
+   "url": "https://raskell.io/reading/#deep-learning-foundations-and-concepts",
+   "description": "Foundations and Concepts",
+   "topics": [
+    "neural-networks",
+    "machine-learning",
+    "mathematics"
+   ],
+   "meta": "Book · Christopher M. Bishop and Hugh Bishop · Backlog"
   },
   {
    "kind": "work",

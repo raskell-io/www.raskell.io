@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/reading/",
- "generated": "2026-10-25",
+ "generated": "2026-10-26",
  "description": "The reading log of raskell.io by Raffael Schneider: what is being read, what is next, and what has been read.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "works": [
@@ -1301,6 +1301,164 @@
    ],
    "cover": "https://raskell.io/covers/reading/the-lost-art-of-scripture.avif",
    "page": "https://raskell.io/reading/#the-lost-art-of-scripture"
+  },
+  {
+   "id": "if-anyone-builds-it-everyone-dies",
+   "title": "If Anyone Builds It, Everyone Dies",
+   "subtitle": "Why Superhuman AI Would Kill Us All",
+   "author": "Eliezer Yudkowsky and Nate Soares",
+   "kind": "book",
+   "year": 2025,
+   "status": "backlog",
+   "topics": [
+    "ai-alignment",
+    "existential-risk",
+    "intelligence",
+    "hubris"
+   ],
+   "cover": "https://raskell.io/covers/reading/if-anyone-builds-it-everyone-dies.avif",
+   "page": "https://raskell.io/reading/#if-anyone-builds-it-everyone-dies"
+  },
+  {
+   "id": "the-scaling-era",
+   "title": "The Scaling Era",
+   "subtitle": "An Oral History of AI, 2019–2025",
+   "author": "Dwarkesh Patel, with Gavin Leech",
+   "kind": "book",
+   "year": 2025,
+   "publisher": "Stripe Press",
+   "isbn": "9781953953551",
+   "status": "backlog",
+   "topics": [
+    "machine-learning",
+    "research-labs",
+    "ai-alignment",
+    "history-of-technology"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-scaling-era.avif",
+   "page": "https://raskell.io/reading/#the-scaling-era"
+  },
+  {
+   "id": "situational-awareness",
+   "title": "Situational Awareness",
+   "subtitle": "The Decade Ahead",
+   "author": "Leopold Aschenbrenner",
+   "kind": "essay",
+   "year": 2024,
+   "url": "https://situational-awareness.ai/",
+   "status": "backlog",
+   "topics": [
+    "technology-races",
+    "geopolitics",
+    "ai-alignment",
+    "gpus"
+   ],
+   "page": "https://raskell.io/reading/#situational-awareness"
+  },
+  {
+   "id": "empire-of-ai",
+   "title": "Empire of AI",
+   "subtitle": "Dreams and Nightmares in Sam Altman's OpenAI",
+   "author": "Karen Hao",
+   "kind": "book",
+   "year": 2025,
+   "status": "backlog",
+   "topics": [
+    "research-labs",
+    "training-data",
+    "technology-races",
+    "hubris"
+   ],
+   "cover": "https://raskell.io/covers/reading/empire-of-ai.avif",
+   "page": "https://raskell.io/reading/#empire-of-ai"
+  },
+  {
+   "id": "the-thinking-machine",
+   "title": "The Thinking Machine",
+   "subtitle": "Jensen Huang, Nvidia, and the World's Most Coveted Microchip",
+   "author": "Stephen Witt",
+   "kind": "book",
+   "year": 2025,
+   "isbn": "9780593832691",
+   "status": "backlog",
+   "topics": [
+    "gpus",
+    "history-of-technology",
+    "entrepreneurship",
+    "technology-races"
+   ],
+   "cover": "https://raskell.io/covers/reading/the-thinking-machine.avif",
+   "page": "https://raskell.io/reading/#the-thinking-machine"
+  },
+  {
+   "id": "a-brief-history-of-intelligence",
+   "title": "A Brief History of Intelligence",
+   "subtitle": "Evolution, AI, and the Five Breakthroughs That Made Our Brains",
+   "author": "Max Bennett",
+   "kind": "book",
+   "year": 2023,
+   "isbn": "9780063286344",
+   "status": "backlog",
+   "topics": [
+    "intelligence",
+    "neuroscience",
+    "reinforcement-learning",
+    "life-sciences"
+   ],
+   "cover": "https://raskell.io/covers/reading/a-brief-history-of-intelligence.avif",
+   "page": "https://raskell.io/reading/#a-brief-history-of-intelligence"
+  },
+  {
+   "id": "these-strange-new-minds",
+   "title": "These Strange New Minds",
+   "subtitle": "How AI Learned to Talk and What It Means",
+   "author": "Christopher Summerfield",
+   "kind": "book",
+   "year": 2025,
+   "isbn": "9780593831717",
+   "status": "backlog",
+   "topics": [
+    "intelligence",
+    "neural-networks",
+    "neuroscience",
+    "languages"
+   ],
+   "cover": "https://raskell.io/covers/reading/these-strange-new-minds.avif",
+   "page": "https://raskell.io/reading/#these-strange-new-minds"
+  },
+  {
+   "id": "ai-snake-oil",
+   "title": "AI Snake Oil",
+   "subtitle": "What Artificial Intelligence Can Do, What It Can't, and How to Tell the Difference",
+   "author": "Arvind Narayanan and Sayash Kapoor",
+   "kind": "book",
+   "year": 2024,
+   "isbn": "9780691249131",
+   "status": "backlog",
+   "topics": [
+    "evaluation",
+    "machine-learning",
+    "risk",
+    "policy"
+   ],
+   "cover": "https://raskell.io/covers/reading/ai-snake-oil.avif",
+   "page": "https://raskell.io/reading/#ai-snake-oil"
+  },
+  {
+   "id": "deep-learning-foundations-and-concepts",
+   "title": "Deep Learning",
+   "subtitle": "Foundations and Concepts",
+   "author": "Christopher M. Bishop and Hugh Bishop",
+   "kind": "book",
+   "year": 2024,
+   "status": "backlog",
+   "topics": [
+    "neural-networks",
+    "machine-learning",
+    "mathematics"
+   ],
+   "cover": "https://raskell.io/covers/reading/deep-learning-foundations-and-concepts.avif",
+   "page": "https://raskell.io/reading/#deep-learning-foundations-and-concepts"
   },
   {
    "id": "sicp",
