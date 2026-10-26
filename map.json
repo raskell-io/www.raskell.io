@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-26T08:03:10+00:00",
+ "generated": "2026-10-26T08:25:23+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -1619,7 +1619,7 @@
    "label": "The Infinity Machine",
    "url": "https://raskell.io/reading/#the-infinity-machine",
    "meta": "Book · Sebastian Mallaby · reading now",
-   "description": "Demis Hassabis, DeepMind, and the Quest for Superintelligence",
+   "description": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
    "degree": 9
   },
   {
@@ -1628,7 +1628,7 @@
    "label": "The Cauldron",
    "url": "https://raskell.io/reading/#the-cauldron",
    "meta": "Book · Simon Sebag Montefiore · read September 2026",
-   "description": "The Making of the Modern Middle East",
+   "description": "A history of the whole modern Middle East, in all its diversity, from 1900 to the present.",
    "degree": 3
   },
   {
@@ -1637,7 +1637,7 @@
    "label": "Guns, Germs, and Steel",
    "url": "https://raskell.io/reading/#guns-germs-and-steel",
    "meta": "Book · Jared Diamond · read November 2025",
-   "description": "The Fates of Human Societies",
+   "description": "Why some societies came to dominate others: geography, crops, animals, and germs rather than any difference in people.",
    "degree": 4
   },
   {
@@ -1646,6 +1646,7 @@
    "label": "Nuclear War: A Scenario",
    "url": "https://raskell.io/reading/#nuclear-war-a-scenario",
    "meta": "Book · Annie Jacobsen · read October 2025",
+   "description": "A minute-by-minute account of how a nuclear exchange would unfold, built on interviews with the people who plan for one.",
    "degree": 4
   },
   {
@@ -1654,6 +1655,7 @@
    "label": "Jurassic Park",
    "url": "https://raskell.io/reading/#jurassic-park",
    "meta": "Novel · Michael Crichton · read July 2025",
+   "description": "A park of cloned dinosaurs, and a mathematician who uses chaos theory to explain why it cannot stay under control.",
    "degree": 7
   },
   {
@@ -1662,6 +1664,7 @@
    "label": "The Books of Jacob",
    "url": "https://raskell.io/reading/#the-books-of-jacob",
    "meta": "Novel · Olga Tokarczuk · read August 2024",
+   "description": "Jacob Frank, an eighteenth-century self-proclaimed messiah, and the followers who crossed Europe and three religions with him.",
    "degree": 6
   },
   {
@@ -1688,6 +1691,7 @@
    "label": "Science After Babel",
    "url": "https://raskell.io/reading/#science-after-babel",
    "meta": "Book · David Berlinski · read 2023",
+   "description": "Essays that question how much modern science can actually explain, from physics and cosmology to Darwinian biology.",
    "degree": 2
   },
   {
@@ -1696,7 +1700,7 @@
    "label": "Network Programming with Go",
    "url": "https://raskell.io/reading/#network-programming-with-go",
    "meta": "Book · Adam Woodbeck · read 2023",
-   "description": "Code Secure and Reliable Network Services from Scratch",
+   "description": "Network services in Go from the socket up: TCP, UDP, HTTP, TLS, and keeping them secure and observable.",
    "degree": 2
   },
   {
@@ -1705,6 +1709,7 @@
    "label": "Elixir in Action",
    "url": "https://raskell.io/reading/#elixir-in-action",
    "meta": "Book · Saša Jurić · read 2023",
+   "description": "Elixir and the BEAM for building concurrent, fault-tolerant systems with processes, supervisors, and OTP.",
    "degree": 4
   },
   {
@@ -1713,6 +1718,7 @@
    "label": "Crafting Interpreters",
    "url": "https://raskell.io/reading/#crafting-interpreters",
    "meta": "Book · Robert Nystrom · read 2024",
+   "description": "Two complete interpreters for one small language, a tree-walker in Java and a bytecode virtual machine in C.",
    "degree": 2
   },
   {
@@ -1721,6 +1727,7 @@
    "label": "Building a Second Brain",
    "url": "https://raskell.io/reading/#building-a-second-brain",
    "meta": "Book · Tiago Forte · read 2022",
+   "description": "A method for keeping notes outside your head: capture, organise, distil, and express, with the PARA folders.",
    "degree": 3
   },
   {
@@ -1729,6 +1736,7 @@
    "label": "Rust Web Programming",
    "url": "https://raskell.io/reading/#rust-web-programming",
    "meta": "Book · Maxwell Flitton · read 2022",
+   "description": "Building web applications and services in Rust, from routing and databases to authentication and deployment.",
    "degree": 3
   },
   {
@@ -1737,6 +1745,7 @@
    "label": "Programming WebAssembly with Rust",
    "url": "https://raskell.io/reading/#programming-webassembly-with-rust",
    "meta": "Book · Kevin Hoffman · read 2021",
+   "description": "WebAssembly from the raw text format up to Rust modules that run in the browser and beyond it.",
    "degree": 3
   },
   {
@@ -1745,6 +1754,7 @@
    "label": "WebAssembly: The Definitive Guide",
    "url": "https://raskell.io/reading/#webassembly-the-definitive-guide",
    "meta": "Book · Brian Sletten · read 2021",
+   "description": "What WebAssembly is and how to use it from many languages, in the browser, on servers, and through WASI.",
    "degree": 2
   },
   {
@@ -1753,7 +1763,7 @@
    "label": "These Truths",
    "url": "https://raskell.io/reading/#these-truths",
    "meta": "Book · Jill Lepore · read 2018",
-   "description": "A History of the United States",
+   "description": "The history of the United States as a test of the truths in its founding documents: equality, sovereignty, and consent.",
    "degree": 2
   },
   {
@@ -1762,6 +1772,7 @@
    "label": "Jerusalem: The Biography",
    "url": "https://raskell.io/reading/#jerusalem-the-biography",
    "meta": "Book · Simon Sebag Montefiore · read 2017",
+   "description": "Three thousand years of Jerusalem through the empires, faiths, and families that fought over it.",
    "degree": 5
   },
   {
@@ -1770,7 +1781,7 @@
    "label": "Freeland",
    "url": "https://raskell.io/reading/#freeland",
    "meta": "Novel · Theodor Hertzka · read 2017",
-   "description": "A Social Anticipation",
+   "description": "A utopian novel about a colony in East Africa built on free land and free access to capital.",
    "degree": 5
   },
   {
@@ -1779,6 +1790,7 @@
    "label": "Das soziale Problem",
    "url": "https://raskell.io/reading/#das-soziale-problem",
    "meta": "Book · Theodor Hertzka · read 2017",
+   "description": "Hertzka on the social question, the problem his novel Freeland set out to answer.",
    "degree": 3
   },
   {
@@ -1787,7 +1799,7 @@
    "label": "The Devil's Delusion",
    "url": "https://raskell.io/reading/#the-devils-delusion",
    "meta": "Book · David Berlinski · read 2016",
-   "description": "Atheism and Its Scientific Pretensions",
+   "description": "A mathematician's case that the new atheism claims far more scientific authority than science gives it.",
    "degree": 3
   },
   {
@@ -1796,7 +1808,7 @@
    "label": "Antifragile",
    "url": "https://raskell.io/reading/#antifragile",
    "meta": "Book · Nassim Nicholas Taleb · read 2015",
-   "description": "Things That Gain from Disorder",
+   "description": "Things that gain from disorder, and why systems built to avoid all stress grow fragile.",
    "degree": 3
   },
   {
@@ -1805,6 +1817,7 @@
    "label": "Demons",
    "url": "https://raskell.io/reading/#demons",
    "meta": "Novel · Fyodor Dostoevsky · read 2012",
+   "description": "A small revolutionary cell in a provincial Russian town and the ideas that lead it to murder.",
    "degree": 4
   },
   {
@@ -1813,6 +1826,7 @@
    "label": "The Brothers Karamazov",
    "url": "https://raskell.io/reading/#the-brothers-karamazov",
    "meta": "Novel · Fyodor Dostoevsky · read 2011",
+   "description": "Three brothers, their father's murder, and a long argument about faith, doubt, and freedom.",
    "degree": 4
   },
   {
@@ -1821,6 +1835,7 @@
    "label": "A Little History of the World",
    "url": "https://raskell.io/reading/#a-little-history-of-the-world",
    "meta": "Book · E. H. Gombrich · read 2011",
+   "description": "World history written for children in 1935 by a young art historian, from the Stone Age to the twentieth century.",
    "degree": 2
   },
   {
@@ -1829,6 +1844,7 @@
    "label": "Crime and Punishment",
    "url": "https://raskell.io/reading/#crime-and-punishment",
    "meta": "Novel · Fyodor Dostoevsky · read 2010",
+   "description": "A poor former student commits a murder to prove a theory about himself and cannot live with it.",
    "degree": 3
   },
   {
@@ -1837,6 +1853,7 @@
    "label": "Infinite Jest",
    "url": "https://raskell.io/reading/#infinite-jest",
    "meta": "Novel · David Foster Wallace · read October 2025",
+   "description": "A tennis academy, a halfway house, and a film so entertaining it kills, in a near-future North America.",
    "degree": 3
   },
   {
@@ -1845,7 +1862,7 @@
    "label": "The Maximalist Novel",
    "url": "https://raskell.io/reading/#the-maximalist-novel",
    "meta": "Book · Stefano Ercolino · read October 2025",
-   "description": "From Thomas Pynchon's Gravity's Rainbow to Roberto Bolaño's 2666",
+   "description": "A literary study that defines the maximalist novel as a genre, from Gravity's Rainbow and Infinite Jest to 2666.",
    "degree": 3
   },
   {
@@ -1863,7 +1880,7 @@
    "label": "The Invention of Science",
    "url": "https://raskell.io/reading/#the-invention-of-science",
    "meta": "Book · David Wootton · read 2016",
-   "description": "A New History of the Scientific Revolution",
+   "description": "How science was invented between 1572 and 1704, traced through new words such as fact, experiment, and hypothesis.",
    "degree": 4
   },
   {
@@ -1872,7 +1889,7 @@
    "label": "Ocean",
    "url": "https://raskell.io/reading/#ocean-earths-last-wilderness",
    "meta": "Book · David Attenborough and Colin Butfield · read October 2026",
-   "description": "Earth's Last Wilderness",
+   "description": "Life in the ocean, what it has lost, and how protecting the sea lets it recover.",
    "degree": 4
   },
   {
@@ -1881,7 +1898,7 @@
    "label": "The Ultimate Hidden Truth of the World",
    "url": "https://raskell.io/reading/#the-ultimate-hidden-truth-of-the-world",
    "meta": "Book · David Graeber · read February 2026",
-   "description": "Essays",
+   "description": "Essays from across Graeber's career on debt, bureaucracy, play, value, and the freedom to make the world differently.",
    "degree": 4
   },
   {
@@ -1890,6 +1907,7 @@
    "label": "Pirate Enlightenment, or the Real Libertalia",
    "url": "https://raskell.io/reading/#pirate-enlightenment",
    "meta": "Book · David Graeber · read October 2025",
+   "description": "Pirate settlements on Madagascar and the Malagasy experiments in self-government that may have fed the European Enlightenment.",
    "degree": 4
   },
   {
@@ -1898,7 +1916,7 @@
    "label": "Codebreaking",
    "url": "https://raskell.io/reading/#codebreaking",
    "meta": "Book · Elonka Dunin and Klaus Schmeh · read April 2025",
-   "description": "A Practical Guide",
+   "description": "A hands-on guide to breaking classical ciphers and codes, with real cases solved and unsolved.",
    "degree": 4
   },
   {
@@ -1907,7 +1925,7 @@
    "label": "The Island at the Center of the World",
    "url": "https://raskell.io/reading/#the-island-at-the-center-of-the-world",
    "meta": "Book · Russell Shorto · read January 2025",
-   "description": "The Epic Story of Dutch Manhattan and the Forgotten Colony That Shaped America",
+   "description": "Dutch New Amsterdam, rebuilt from its own archives, and the tolerance and trade it left to Manhattan and America.",
    "degree": 4
   },
   {
@@ -1916,7 +1934,7 @@
    "label": "@War",
    "url": "https://raskell.io/reading/#at-war",
    "meta": "Book · Shane Harris · read September 2024",
-   "description": "The Rise of the Military-Internet Complex",
+   "description": "How the NSA, Cyber Command, and private contractors turned the internet into a domain of war.",
    "degree": 4
   },
   {
@@ -1925,7 +1943,7 @@
    "label": "Future Science",
    "url": "https://raskell.io/reading/#future-science",
    "meta": "Book · Max Brockman (editor) · read May 2024",
-   "description": "Essays from the Cutting Edge",
+   "description": "Essays by young scientists on the questions at the front of their fields, from neuroscience to physics.",
    "degree": 4
   },
   {
@@ -1934,7 +1952,7 @@
    "label": "Programming Rust",
    "url": "https://raskell.io/reading/#programming-rust",
    "meta": "Book · Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall · read 2023",
-   "description": "Fast, Safe Systems Development",
+   "description": "Rust for systems programmers: ownership, borrowing, traits, concurrency, and unsafe code, explained in depth.",
    "degree": 3
   },
   {
@@ -1943,7 +1961,7 @@
    "label": "Site Reliability Engineering",
    "url": "https://raskell.io/reading/#site-reliability-engineering",
    "meta": "Book · Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy · read 2023",
-   "description": "How Google Runs Production Systems",
+   "description": "How Google runs production: error budgets, service level objectives, toil, on-call, and postmortems.",
    "degree": 4
   },
   {
@@ -1952,7 +1970,7 @@
    "label": "Who We Are and How We Got Here",
    "url": "https://raskell.io/reading/#who-we-are-and-how-we-got-here",
    "meta": "Book · David Reich · read 2023",
-   "description": "Ancient DNA and the New Science of the Human Past",
+   "description": "What ancient DNA reveals about human prehistory: migrations, mixtures, and populations that no longer exist.",
    "degree": 4
   },
   {
@@ -1961,7 +1979,7 @@
    "label": "The Phoenix Project",
    "url": "https://raskell.io/reading/#the-phoenix-project",
    "meta": "Novel · Gene Kim, Kevin Behr, and George Spafford · read 2022",
-   "description": "A Novel about IT, DevOps, and Helping Your Business Win",
+   "description": "A novel about an IT manager saving a failing project, and the DevOps ideas he learns along the way.",
    "degree": 4
   },
   {
@@ -1970,6 +1988,7 @@
    "label": "Foucault's Pendulum",
    "url": "https://raskell.io/reading/#foucaults-pendulum",
    "meta": "Novel · Umberto Eco · read January 2021",
+   "description": "Three Milan editors invent a secret history of the world as a game, and others begin to take it seriously.",
    "degree": 4
   },
   {
@@ -1978,7 +1997,7 @@
    "label": "Der Kampf um die Deutung der Neuzeit",
    "url": "https://raskell.io/reading/#der-kampf-um-die-deutung-der-neuzeit",
    "meta": "Book · Hauke Ritz · read November 2020",
-   "description": "Die geschichtsphilosophische Diskussion in Deutschland vom Ersten Weltkrieg bis zum Mauerfall",
+   "description": "The German debate in the philosophy of history from the First World War to 1989 about how to understand the modern age.",
    "degree": 4
   },
   {
@@ -1987,7 +2006,7 @@
    "label": "Das Tagebuch der Menschheit",
    "url": "https://raskell.io/reading/#das-tagebuch-der-menschheit",
    "meta": "Book · Carel van Schaik and Kai Michel · read August 2020",
-   "description": "Was die Bibel über unsere Evolution verrät",
+   "description": "The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution.",
    "degree": 4
   },
   {
@@ -1996,6 +2015,7 @@
    "label": "The Art of War",
    "url": "https://raskell.io/reading/#the-art-of-war",
    "meta": "Book · Sun Tzu · read June 2018",
+   "description": "An ancient Chinese treatise on strategy: deception, terrain, knowing yourself and the enemy, and winning without fighting.",
    "degree": 3
   },
   {
@@ -2004,7 +2024,7 @@
    "label": "Language",
    "url": "https://raskell.io/reading/#language-the-cultural-tool",
    "meta": "Book · Daniel Everett · read January 2016",
-   "description": "The Cultural Tool",
+   "description": "Language as a cultural invention rather than an innate grammar, argued from the Pirahã of the Amazon.",
    "degree": 3
   },
   {
@@ -2013,7 +2033,7 @@
    "label": "Erkenne die Welt",
    "url": "https://raskell.io/reading/#erkenne-die-welt",
    "meta": "Book · Richard David Precht · read December 2015",
-   "description": "Eine Geschichte der Philosophie, Band 1",
+   "description": "The first volume of Precht's history of philosophy, from the pre-Socratics to the end of the Middle Ages.",
    "degree": 3
   },
   {
@@ -2022,6 +2042,7 @@
    "label": "Cloud Atlas",
    "url": "https://raskell.io/reading/#cloud-atlas",
    "meta": "Novel · David Mitchell · read November 2015",
+   "description": "Six stories nested inside each other, from a nineteenth-century Pacific voyage to a far future after the fall.",
    "degree": 3
   },
   {
@@ -2030,7 +2051,7 @@
    "label": "The Silk Roads",
    "url": "https://raskell.io/reading/#the-silk-roads",
    "meta": "Book · Peter Frankopan · read September 2015",
-   "description": "A New History of the World",
+   "description": "World history told from the trade routes between East and West rather than from Europe.",
    "degree": 4
   },
   {
@@ -2039,6 +2060,7 @@
    "label": "Die Geschichte der Kunst",
    "url": "https://raskell.io/reading/#die-geschichte-der-kunst",
    "meta": "Book · E. H. Gombrich · read January 2014",
+   "description": "Gombrich's history of art from the cave paintings to the modern era, the German edition of The Story of Art.",
    "degree": 3
   },
   {
@@ -2047,6 +2069,7 @@
    "label": "Die Psychologie von C. G. Jung",
    "url": "https://raskell.io/reading/#die-psychologie-von-c-g-jung",
    "meta": "Book · Jolande Jacobi · read June 2012",
+   "description": "An introduction to Jung's analytical psychology by one of his closest collaborators, with a foreword by Jung.",
    "degree": 2
   },
   {
@@ -2055,6 +2078,7 @@
    "label": "AI 2027",
    "url": "https://raskell.io/reading/#ai-2027",
    "meta": "Report · Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, and Romeo Dean · read April 2025",
+   "description": "A month-by-month scenario of AI progress to superintelligence by 2027, with two endings: a race and a slowdown.",
    "degree": 9
   },
   {
@@ -2063,6 +2087,7 @@
    "label": "AI 2040: Plan A",
    "url": "https://raskell.io/reading/#ai-2040-plan-a",
    "meta": "Report · Thomas Larsen, Romeo Dean, Brendan Halstead, Eli Lifland, Ryan Greenblatt, and Daniel Kokotajlo · read July 2026",
+   "description": "A recommended path rather than a forecast: the United States and China slow down, verify each other, and make a deal.",
    "degree": 6
   },
   {
@@ -2071,7 +2096,7 @@
    "label": "Enterprise Architecture as Strategy",
    "url": "https://raskell.io/reading/#enterprise-architecture-as-strategy",
    "meta": "Book · Jeanne W. Ross, Peter Weill, and David C. Robertson · in the backlog",
-   "description": "Creating a Foundation for Business Execution",
+   "description": "Enterprise architecture as the foundation for execution: an operating model first, then the systems that serve it.",
    "degree": 2
   },
   {
@@ -2080,7 +2105,7 @@
    "label": "The Art of Doing Science and Engineering",
    "url": "https://raskell.io/reading/#the-art-of-doing-science-and-engineering",
    "meta": "Book · Richard W. Hamming · in the backlog",
-   "description": "Learning to Learn",
+   "description": "Hamming's course on how to do great work in science and engineering, and how to keep learning.",
    "degree": 4
   },
   {
@@ -2089,7 +2114,7 @@
    "label": "Why Machines Learn",
    "url": "https://raskell.io/reading/#why-machines-learn",
    "meta": "Book · Anil Ananthaswamy · in the backlog",
-   "description": "The Elegant Math Behind Modern AI",
+   "description": "The mathematics behind machine learning, from the perceptron to deep networks, with the people who found it.",
    "degree": 3
   },
   {
@@ -2098,6 +2123,7 @@
    "label": "The Dream Machine",
    "url": "https://raskell.io/reading/#the-dream-machine",
    "meta": "Book · M. Mitchell Waldrop · in the backlog",
+   "description": "How ARPA funding and a small group of researchers led from batch processing to interactive computing and the networks that followed.",
    "degree": 5
   },
   {
@@ -2106,7 +2132,7 @@
    "label": "The Alignment Problem",
    "url": "https://raskell.io/reading/#the-alignment-problem",
    "meta": "Book · Brian Christian · in the backlog",
-   "description": "Machine Learning and Human Values",
+   "description": "How machine learning systems come to do what we did not intend, and the research trying to fix it.",
    "degree": 5
   },
   {
@@ -2115,7 +2141,7 @@
    "label": "Artificial Intelligence",
    "url": "https://raskell.io/reading/#ai-a-guide-for-thinking-humans",
    "meta": "Book · Melanie Mitchell · in the backlog",
-   "description": "A Guide for Thinking Humans",
+   "description": "What AI can and cannot do, from vision to language, by a researcher who studies analogy and abstraction.",
    "degree": 3
   },
   {
@@ -2124,7 +2150,7 @@
    "label": "Deep Thinking",
    "url": "https://raskell.io/reading/#deep-thinking",
    "meta": "Book · Garry Kasparov · in the backlog",
-   "description": "Where Machine Intelligence Ends and Human Creativity Begins",
+   "description": "Kasparov on his matches against Deep Blue and what machine intelligence means for human creativity.",
    "degree": 4
   },
   {
@@ -2133,6 +2159,7 @@
    "label": "Understanding Deep Learning",
    "url": "https://raskell.io/reading/#understanding-deep-learning",
    "meta": "Book · Simon J. D. Prince · in the backlog",
+   "description": "A modern textbook on deep learning, from the basics through transformers, diffusion models, and reinforcement learning.",
    "degree": 3
   },
   {
@@ -2141,6 +2168,7 @@
    "label": "Build a Large Language Model (From Scratch)",
    "url": "https://raskell.io/reading/#build-a-large-language-model",
    "meta": "Book · Sebastian Raschka · in the backlog",
+   "description": "Building a GPT-style language model step by step in PyTorch, from tokens and attention to pretraining and fine-tuning.",
    "degree": 3
   },
   {
@@ -2149,7 +2177,7 @@
    "label": "AI Engineering",
    "url": "https://raskell.io/reading/#ai-engineering",
    "meta": "Book · Chip Huyen · in the backlog",
-   "description": "Building Applications with Foundation Models",
+   "description": "Building applications on foundation models: evaluation, prompting, retrieval, agents, fine-tuning, and serving.",
    "degree": 4
   },
   {
@@ -2158,6 +2186,7 @@
    "label": "Reinforcement Learning: An Introduction",
    "url": "https://raskell.io/reading/#reinforcement-learning-an-introduction",
    "meta": "Book · Richard S. Sutton and Andrew G. Barto · in the backlog",
+   "description": "The standard text on reinforcement learning: bandits, dynamic programming, temporal difference learning, and policy gradients.",
    "degree": 3
   },
   {
@@ -2166,6 +2195,7 @@
    "label": "Probabilistic Machine Learning: An Introduction",
    "url": "https://raskell.io/reading/#probabilistic-machine-learning",
    "meta": "Book · Kevin P. Murphy · in the backlog",
+   "description": "Machine learning from a probabilistic point of view, the first of Murphy's two volumes.",
    "degree": 3
   },
   {
@@ -2174,6 +2204,7 @@
    "label": "The Making of the Atomic Bomb",
    "url": "https://raskell.io/reading/#the-making-of-the-atomic-bomb",
    "meta": "Book · Richard Rhodes · in the backlog",
+   "description": "The history of the atomic bomb from the physics of the atom to Hiroshima, and the scientists who built it.",
    "degree": 8
   },
   {
@@ -2182,7 +2213,7 @@
    "label": "Seeing Like a State",
    "url": "https://raskell.io/reading/#seeing-like-a-state",
    "meta": "Book · James C. Scott · in the backlog",
-   "description": "How Certain Schemes to Improve the Human Condition Have Failed",
+   "description": "Why grand state plans fail when they make the world legible and simple, and ignore local, practical knowledge.",
    "degree": 6
   },
   {
@@ -2191,7 +2222,7 @@
    "label": "A Peace to End All Peace",
    "url": "https://raskell.io/reading/#a-peace-to-end-all-peace",
    "meta": "Book · David Fromkin · in the backlog",
-   "description": "The Fall of the Ottoman Empire and the Creation of the Modern Middle East",
+   "description": "How the Allies broke up the Ottoman Empire after the First World War and drew the borders of the modern Middle East.",
    "degree": 3
   },
   {
@@ -2200,7 +2231,7 @@
    "label": "The Billion-Dollar Molecule",
    "url": "https://raskell.io/reading/#the-billion-dollar-molecule",
    "meta": "Book · Barry Werth · in the backlog",
-   "description": "The Quest for the Perfect Drug",
+   "description": "Inside Vertex Pharmaceuticals in its early years, as it tried to design drugs from the structure of proteins.",
    "degree": 4
   },
   {
@@ -2209,7 +2240,7 @@
    "label": "The Eighth Day of Creation",
    "url": "https://raskell.io/reading/#the-eighth-day-of-creation",
    "meta": "Book · Horace Freeland Judson · in the backlog",
-   "description": "The Makers of the Revolution in Biology",
+   "description": "The founding of molecular biology, from the structure of DNA to the genetic code, from the scientists themselves.",
    "degree": 5
   },
   {
@@ -2218,6 +2249,7 @@
    "label": "The Demon Under the Microscope",
    "url": "https://raskell.io/reading/#the-demon-under-the-microscope",
    "meta": "Book · Thomas Hager · in the backlog",
+   "description": "Gerhard Domagk and the discovery of the sulfa drugs, the first medicines that beat bacterial infection.",
    "degree": 5
   },
   {
@@ -2226,7 +2258,7 @@
    "label": "The Butchering Art",
    "url": "https://raskell.io/reading/#the-butchering-art",
    "meta": "Book · Lindsey Fitzharris · in the backlog",
-   "description": "Joseph Lister's Quest to Transform the Grisly World of Victorian Medicine",
+   "description": "Joseph Lister and the fight to make surgery safe through antisepsis, in the hospitals of Victorian Britain.",
    "degree": 4
   },
   {
@@ -2235,7 +2267,7 @@
    "label": "Deep Dive",
    "url": "https://raskell.io/reading/#deep-dive",
    "meta": "Book · Rae L. Baker · in the backlog",
-   "description": "Exploring the Real-world Value of Open Source Intelligence",
+   "description": "Methods and tools for open source intelligence: finding, checking, and connecting what people and organisations leave online.",
    "degree": 4
   },
   {
@@ -2244,7 +2276,7 @@
    "label": "Palo Alto",
    "url": "https://raskell.io/reading/#palo-alto",
    "meta": "Book · Malcolm Harris · in the backlog",
-   "description": "A History of California, Capitalism, and the World",
+   "description": "The history of Silicon Valley as a history of capitalism, from railroads and eugenics to the tech industry.",
    "degree": 4
   },
   {
@@ -2253,7 +2285,7 @@
    "label": "Strategy",
    "url": "https://raskell.io/reading/#strategy-a-history",
    "meta": "Book · Lawrence Freedman · in the backlog",
-   "description": "A History",
+   "description": "Strategy from the Bible and the Greeks to military, revolutionary, and business strategy today.",
    "degree": 3
   },
   {
@@ -2262,7 +2294,7 @@
    "label": "The Lost Art of Scripture",
    "url": "https://raskell.io/reading/#the-lost-art-of-scripture",
    "meta": "Book · Karen Armstrong · in the backlog",
-   "description": "Rescuing the Sacred Texts",
+   "description": "How sacred texts were once read as practice and ritual rather than as literal truth, across the world's religions.",
    "degree": 3
   },
   {
@@ -2271,7 +2303,7 @@
    "label": "If Anyone Builds It, Everyone Dies",
    "url": "https://raskell.io/reading/#if-anyone-builds-it-everyone-dies",
    "meta": "Book · Eliezer Yudkowsky and Nate Soares · in the backlog",
-   "description": "Why Superhuman AI Would Kill Us All",
+   "description": "The case that superhuman AI built with current methods would end humanity, and why the authors want it stopped.",
    "degree": 5
   },
   {
@@ -2280,7 +2312,7 @@
    "label": "The Scaling Era",
    "url": "https://raskell.io/reading/#the-scaling-era",
    "meta": "Book · Dwarkesh Patel, with Gavin Leech · in the backlog",
-   "description": "An Oral History of AI, 2019–2025",
+   "description": "An oral history of the years when scaling models became the path to AI, in the words of the people building them.",
    "degree": 5
   },
   {
@@ -2289,7 +2321,7 @@
    "label": "Situational Awareness",
    "url": "https://raskell.io/reading/#situational-awareness",
    "meta": "Essay · Leopold Aschenbrenner · in the backlog",
-   "description": "The Decade Ahead",
+   "description": "An essay series arguing that AGI may arrive by 2027 and set off a national-security race for superintelligence.",
    "degree": 5
   },
   {
@@ -2298,7 +2330,7 @@
    "label": "Empire of AI",
    "url": "https://raskell.io/reading/#empire-of-ai",
    "meta": "Book · Karen Hao · in the backlog",
-   "description": "Dreams and Nightmares in Sam Altman's OpenAI",
+   "description": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
    "degree": 5
   },
   {
@@ -2307,7 +2339,7 @@
    "label": "The Thinking Machine",
    "url": "https://raskell.io/reading/#the-thinking-machine",
    "meta": "Book · Stephen Witt · in the backlog",
-   "description": "Jensen Huang, Nvidia, and the World's Most Coveted Microchip",
+   "description": "Jensen Huang and how Nvidia bet the company on the chips that made modern AI possible.",
    "degree": 5
   },
   {
@@ -2316,7 +2348,7 @@
    "label": "A Brief History of Intelligence",
    "url": "https://raskell.io/reading/#a-brief-history-of-intelligence",
    "meta": "Book · Max Bennett · in the backlog",
-   "description": "Evolution, AI, and the Five Breakthroughs That Made Our Brains",
+   "description": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it.",
    "degree": 5
   },
   {
@@ -2325,7 +2357,7 @@
    "label": "These Strange New Minds",
    "url": "https://raskell.io/reading/#these-strange-new-minds",
    "meta": "Book · Christopher Summerfield · in the backlog",
-   "description": "How AI Learned to Talk and What It Means",
+   "description": "How large language models learned to talk, and what they are and are not, by a neuroscientist who has worked at DeepMind.",
    "degree": 5
   },
   {
@@ -2334,7 +2366,7 @@
    "label": "AI Snake Oil",
    "url": "https://raskell.io/reading/#ai-snake-oil",
    "meta": "Book · Arvind Narayanan and Sayash Kapoor · in the backlog",
-   "description": "What Artificial Intelligence Can Do, What It Can't, and How to Tell the Difference",
+   "description": "Which kinds of AI work and which are sold as working, with tools to tell the difference.",
    "degree": 5
   },
   {
@@ -2343,7 +2375,7 @@
    "label": "Deep Learning",
    "url": "https://raskell.io/reading/#deep-learning-foundations-and-concepts",
    "meta": "Book · Christopher M. Bishop and Hugh Bishop · in the backlog",
-   "description": "Foundations and Concepts",
+   "description": "A textbook on the core ideas of deep learning, from probability and neural networks to transformers and diffusion.",
    "degree": 4
   },
   {
@@ -2352,7 +2384,7 @@
    "label": "Deep Utopia",
    "url": "https://raskell.io/reading/#deep-utopia",
    "meta": "Book · Nick Bostrom · in the backlog",
-   "description": "Life and Meaning in a Solved World",
+   "description": "What people would live for once superintelligence has solved every practical problem.",
    "degree": 5
   },
   {
@@ -2361,7 +2393,7 @@
    "label": "Slouching Towards Utopia",
    "url": "https://raskell.io/reading/#slouching-towards-utopia",
    "meta": "Book · J. Bradford DeLong · in the backlog",
-   "description": "An Economic History of the Twentieth Century",
+   "description": "The economic history of 1870 to 2010, when humanity first escaped scarcity and still did not reach utopia.",
    "degree": 4
   },
   {
@@ -2370,6 +2402,7 @@
    "label": "Abundance",
    "url": "https://raskell.io/reading/#abundance",
    "meta": "Book · Ezra Klein and Derek Thompson · in the backlog",
+   "description": "Why rich countries fail to build the housing, energy, and infrastructure they can afford, and how to change that.",
    "degree": 4
   },
   {
@@ -2378,7 +2411,7 @@
    "label": "Four Futures",
    "url": "https://raskell.io/reading/#four-futures",
    "meta": "Book · Peter Frase · in the backlog",
-   "description": "Life After Capitalism",
+   "description": "Four possible futures after capitalism, from abundance or scarcity crossed with equality or hierarchy.",
    "degree": 4
   },
   {
@@ -2387,6 +2420,7 @@
    "label": "Economic Possibilities for our Grandchildren",
    "url": "https://raskell.io/reading/#economic-possibilities-for-our-grandchildren",
    "meta": "Essay · John Maynard Keynes · in the backlog",
+   "description": "Keynes's 1930 prediction that a century of growth would solve the economic problem and leave us with leisure.",
    "degree": 3
   },
   {
@@ -2395,7 +2429,7 @@
    "label": "From Counterculture to Cyberculture",
    "url": "https://raskell.io/reading/#from-counterculture-to-cyberculture",
    "meta": "Book · Fred Turner · in the backlog",
-   "description": "Stewart Brand, the Whole Earth Network, and the Rise of Digital Utopianism",
+   "description": "How Stewart Brand and the Whole Earth network turned the counterculture into Silicon Valley's belief in networks.",
    "degree": 5
   },
   {
@@ -2404,7 +2438,7 @@
    "label": "Cybernetic Revolutionaries",
    "url": "https://raskell.io/reading/#cybernetic-revolutionaries",
    "meta": "Book · Eden Medina · in the backlog",
-   "description": "Technology and Politics in Allende's Chile",
+   "description": "Project Cybersyn, the attempt in Allende's Chile to run the economy with cybernetics and a telex network.",
    "degree": 5
   },
   {
@@ -2413,6 +2447,7 @@
    "label": "Red Plenty",
    "url": "https://raskell.io/reading/#red-plenty",
    "meta": "Novel · Francis Spufford · in the backlog",
+   "description": "A novel about the Soviet dream of planning the economy into abundance with mathematics and computers.",
    "degree": 5
   },
   {
@@ -2421,7 +2456,7 @@
    "label": "To Be a Machine",
    "url": "https://raskell.io/reading/#to-be-a-machine",
    "meta": "Book · Mark O'Connell · in the backlog",
-   "description": "Adventures Among Cyborgs, Utopians, Hackers, and the Futurists Solving the Modest Problem of Death",
+   "description": "A journalist among transhumanists: cryonics, mind uploading, cyborgs, and the people who want to end death.",
    "degree": 4
   },
   {
@@ -2430,7 +2465,7 @@
    "label": "The Age of Em",
    "url": "https://raskell.io/reading/#the-age-of-em",
    "meta": "Book · Robin Hanson · in the backlog",
-   "description": "Work, Love, and Life when Robots Rule the Earth",
+   "description": "An economist works out what a world run by emulated human brains would look like, in detail.",
    "degree": 5
   },
   {
@@ -2439,7 +2474,7 @@
    "label": "More Everything Forever",
    "url": "https://raskell.io/reading/#more-everything-forever",
    "meta": "Book · Adam Becker · in the backlog",
-   "description": "AI Overlords, Space Empires, and Silicon Valley's Crusade to Control the Fate of Humanity",
+   "description": "A critique of the futures tech billionaires want: superintelligence, space colonies, and living forever.",
    "degree": 4
   },
   {
@@ -2448,6 +2483,7 @@
    "label": "The Player of Games",
    "url": "https://raskell.io/reading/#the-player-of-games",
    "meta": "Novel · Iain M. Banks · in the backlog",
+   "description": "A game player from the Culture, a post-scarcity civilisation, is sent to play for an empire's throne.",
    "degree": 4
   },
   {
@@ -2456,6 +2492,7 @@
    "label": "Accelerando",
    "url": "https://raskell.io/reading/#accelerando",
    "meta": "Novel · Charles Stross · in the backlog",
+   "description": "The singularity across three generations of one family, from present-day hackers to post-human minds.",
    "degree": 4
   },
   {
@@ -2464,6 +2501,7 @@
    "label": "Structure and Interpretation of Computer Programs",
    "url": "https://raskell.io/reading/#sicp",
    "meta": "Book · Harold Abelson, Gerald Jay Sussman, and Julie Sussman · set aside",
+   "description": "The classic MIT course on programming as abstraction, built in Scheme, up to writing interpreters and compilers.",
    "degree": 2
   },
   {

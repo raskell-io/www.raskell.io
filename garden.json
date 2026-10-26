@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-26T08:03:10+00:00",
+ "generated": "2026-10-26T08:25:23+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -695,7 +695,7 @@
    "kind": "work",
    "title": "The Infinity Machine",
    "url": "https://raskell.io/reading/#the-infinity-machine",
-   "description": "Demis Hassabis, DeepMind, and the Quest for Superintelligence",
+   "description": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
    "topics": [
     "intelligence",
     "reinforcement-learning",
@@ -711,7 +711,7 @@
    "kind": "work",
    "title": "The Cauldron",
    "url": "https://raskell.io/reading/#the-cauldron",
-   "description": "The Making of the Modern Middle East",
+   "description": "A history of the whole modern Middle East, in all its diversity, from 1900 to the present.",
    "date": "2026-09",
    "topics": [
     "geopolitics",
@@ -723,7 +723,7 @@
    "kind": "work",
    "title": "Guns, Germs, and Steel",
    "url": "https://raskell.io/reading/#guns-germs-and-steel",
-   "description": "The Fates of Human Societies",
+   "description": "Why some societies came to dominate others: geography, crops, animals, and germs rather than any difference in people.",
    "date": "2025-11",
    "topics": [
     "world-history",
@@ -736,6 +736,7 @@
    "kind": "work",
    "title": "Nuclear War: A Scenario",
    "url": "https://raskell.io/reading/#nuclear-war-a-scenario",
+   "description": "A minute-by-minute account of how a nuclear exchange would unfold, built on interviews with the people who plan for one.",
    "date": "2025-10",
    "topics": [
     "existential-risk",
@@ -748,6 +749,7 @@
    "kind": "work",
    "title": "Jurassic Park",
    "url": "https://raskell.io/reading/#jurassic-park",
+   "description": "A park of cloned dinosaurs, and a mathematician who uses chaos theory to explain why it cannot stay under control.",
    "date": "2025-07",
    "topics": [
     "literature",
@@ -763,6 +765,7 @@
    "kind": "work",
    "title": "The Books of Jacob",
    "url": "https://raskell.io/reading/#the-books-of-jacob",
+   "description": "Jacob Frank, an eighteenth-century self-proclaimed messiah, and the followers who crossed Europe and three religions with him.",
    "date": "2024-08",
    "topics": [
     "maximalist-novels",
@@ -805,6 +808,7 @@
    "kind": "work",
    "title": "Science After Babel",
    "url": "https://raskell.io/reading/#science-after-babel",
+   "description": "Essays that question how much modern science can actually explain, from physics and cosmology to Darwinian biology.",
    "date": "2023",
    "topics": [
     "philosophy-of-science"
@@ -815,7 +819,7 @@
    "kind": "work",
    "title": "Network Programming with Go",
    "url": "https://raskell.io/reading/#network-programming-with-go",
-   "description": "Code Secure and Reliable Network Services from Scratch",
+   "description": "Network services in Go from the socket up: TCP, UDP, HTTP, TLS, and keeping them secure and observable.",
    "date": "2023",
    "topics": [
     "networking"
@@ -826,6 +830,7 @@
    "kind": "work",
    "title": "Elixir in Action",
    "url": "https://raskell.io/reading/#elixir-in-action",
+   "description": "Elixir and the BEAM for building concurrent, fault-tolerant systems with processes, supervisors, and OTP.",
    "date": "2023",
    "topics": [
     "elixir",
@@ -838,6 +843,7 @@
    "kind": "work",
    "title": "Crafting Interpreters",
    "url": "https://raskell.io/reading/#crafting-interpreters",
+   "description": "Two complete interpreters for one small language, a tree-walker in Java and a bytecode virtual machine in C.",
    "date": "2024",
    "topics": [
     "compilers"
@@ -848,6 +854,7 @@
    "kind": "work",
    "title": "Building a Second Brain",
    "url": "https://raskell.io/reading/#building-a-second-brain",
+   "description": "A method for keeping notes outside your head: capture, organise, distil, and express, with the PARA folders.",
    "date": "2022",
    "topics": [
     "knowledge-management",
@@ -859,6 +866,7 @@
    "kind": "work",
    "title": "Rust Web Programming",
    "url": "https://raskell.io/reading/#rust-web-programming",
+   "description": "Building web applications and services in Rust, from routing and databases to authentication and deployment.",
    "date": "2022",
    "topics": [
     "rust",
@@ -870,6 +878,7 @@
    "kind": "work",
    "title": "Programming WebAssembly with Rust",
    "url": "https://raskell.io/reading/#programming-webassembly-with-rust",
+   "description": "WebAssembly from the raw text format up to Rust modules that run in the browser and beyond it.",
    "date": "2021",
    "topics": [
     "webassembly",
@@ -881,6 +890,7 @@
    "kind": "work",
    "title": "WebAssembly: The Definitive Guide",
    "url": "https://raskell.io/reading/#webassembly-the-definitive-guide",
+   "description": "What WebAssembly is and how to use it from many languages, in the browser, on servers, and through WASI.",
    "date": "2021",
    "topics": [
     "webassembly"
@@ -891,7 +901,7 @@
    "kind": "work",
    "title": "These Truths",
    "url": "https://raskell.io/reading/#these-truths",
-   "description": "A History of the United States",
+   "description": "The history of the United States as a test of the truths in its founding documents: equality, sovereignty, and consent.",
    "date": "2018",
    "topics": [
     "history"
@@ -902,6 +912,7 @@
    "kind": "work",
    "title": "Jerusalem: The Biography",
    "url": "https://raskell.io/reading/#jerusalem-the-biography",
+   "description": "Three thousand years of Jerusalem through the empires, faiths, and families that fought over it.",
    "date": "2017",
    "topics": [
     "religion",
@@ -915,7 +926,7 @@
    "kind": "work",
    "title": "Freeland",
    "url": "https://raskell.io/reading/#freeland",
-   "description": "A Social Anticipation",
+   "description": "A utopian novel about a colony in East Africa built on free land and free access to capital.",
    "date": "2017",
    "topics": [
     "literature",
@@ -928,6 +939,7 @@
    "kind": "work",
    "title": "Das soziale Problem",
    "url": "https://raskell.io/reading/#das-soziale-problem",
+   "description": "Hertzka on the social question, the problem his novel Freeland set out to answer.",
    "date": "2017",
    "topics": [
     "social-reform"
@@ -938,7 +950,7 @@
    "kind": "work",
    "title": "The Devil's Delusion",
    "url": "https://raskell.io/reading/#the-devils-delusion",
-   "description": "Atheism and Its Scientific Pretensions",
+   "description": "A mathematician's case that the new atheism claims far more scientific authority than science gives it.",
    "date": "2016",
    "topics": [
     "philosophy-of-science",
@@ -950,7 +962,7 @@
    "kind": "work",
    "title": "Antifragile",
    "url": "https://raskell.io/reading/#antifragile",
-   "description": "Things That Gain from Disorder",
+   "description": "Things that gain from disorder, and why systems built to avoid all stress grow fragile.",
    "date": "2015",
    "topics": [
     "risk",
@@ -962,6 +974,7 @@
    "kind": "work",
    "title": "Demons",
    "url": "https://raskell.io/reading/#demons",
+   "description": "A small revolutionary cell in a provincial Russian town and the ideas that lead it to murder.",
    "date": "2012",
    "topics": [
     "literature",
@@ -974,6 +987,7 @@
    "kind": "work",
    "title": "The Brothers Karamazov",
    "url": "https://raskell.io/reading/#the-brothers-karamazov",
+   "description": "Three brothers, their father's murder, and a long argument about faith, doubt, and freedom.",
    "date": "2011",
    "topics": [
     "literature",
@@ -986,6 +1000,7 @@
    "kind": "work",
    "title": "A Little History of the World",
    "url": "https://raskell.io/reading/#a-little-history-of-the-world",
+   "description": "World history written for children in 1935 by a young art historian, from the Stone Age to the twentieth century.",
    "date": "2011",
    "topics": [
     "world-history"
@@ -996,6 +1011,7 @@
    "kind": "work",
    "title": "Crime and Punishment",
    "url": "https://raskell.io/reading/#crime-and-punishment",
+   "description": "A poor former student commits a murder to prove a theory about himself and cannot live with it.",
    "date": "2010",
    "topics": [
     "literature",
@@ -1007,6 +1023,7 @@
    "kind": "work",
    "title": "Infinite Jest",
    "url": "https://raskell.io/reading/#infinite-jest",
+   "description": "A tennis academy, a halfway house, and a film so entertaining it kills, in a near-future North America.",
    "date": "2025-10",
    "topics": [
     "maximalist-novels",
@@ -1018,7 +1035,7 @@
    "kind": "work",
    "title": "The Maximalist Novel",
    "url": "https://raskell.io/reading/#the-maximalist-novel",
-   "description": "From Thomas Pynchon's Gravity's Rainbow to Roberto Bolaño's 2666",
+   "description": "A literary study that defines the maximalist novel as a genre, from Gravity's Rainbow and Infinite Jest to 2666.",
    "date": "2025-10",
    "topics": [
     "maximalist-novels",
@@ -1055,7 +1072,7 @@
    "kind": "work",
    "title": "The Invention of Science",
    "url": "https://raskell.io/reading/#the-invention-of-science",
-   "description": "A New History of the Scientific Revolution",
+   "description": "How science was invented between 1572 and 1704, traced through new words such as fact, experiment, and hypothesis.",
    "date": "2016",
    "topics": [
     "history-of-science",
@@ -1068,7 +1085,7 @@
    "kind": "work",
    "title": "Ocean",
    "url": "https://raskell.io/reading/#ocean-earths-last-wilderness",
-   "description": "Earth's Last Wilderness",
+   "description": "Life in the ocean, what it has lost, and how protecting the sea lets it recover.",
    "date": "2026-10",
    "topics": [
     "life-sciences",
@@ -1081,7 +1098,7 @@
    "kind": "work",
    "title": "The Ultimate Hidden Truth of the World",
    "url": "https://raskell.io/reading/#the-ultimate-hidden-truth-of-the-world",
-   "description": "Essays",
+   "description": "Essays from across Graeber's career on debt, bureaucracy, play, value, and the freedom to make the world differently.",
    "date": "2026-02",
    "topics": [
     "philosophy",
@@ -1094,6 +1111,7 @@
    "kind": "work",
    "title": "Pirate Enlightenment, or the Real Libertalia",
    "url": "https://raskell.io/reading/#pirate-enlightenment",
+   "description": "Pirate settlements on Madagascar and the Malagasy experiments in self-government that may have fed the European Enlightenment.",
    "date": "2025-10",
    "topics": [
     "history",
@@ -1106,7 +1124,7 @@
    "kind": "work",
    "title": "Codebreaking",
    "url": "https://raskell.io/reading/#codebreaking",
-   "description": "A Practical Guide",
+   "description": "A hands-on guide to breaking classical ciphers and codes, with real cases solved and unsolved.",
    "date": "2025-04",
    "topics": [
     "applied-security",
@@ -1119,7 +1137,7 @@
    "kind": "work",
    "title": "The Island at the Center of the World",
    "url": "https://raskell.io/reading/#the-island-at-the-center-of-the-world",
-   "description": "The Epic Story of Dutch Manhattan and the Forgotten Colony That Shaped America",
+   "description": "Dutch New Amsterdam, rebuilt from its own archives, and the tolerance and trade it left to Manhattan and America.",
    "date": "2025-01",
    "topics": [
     "history",
@@ -1132,7 +1150,7 @@
    "kind": "work",
    "title": "@War",
    "url": "https://raskell.io/reading/#at-war",
-   "description": "The Rise of the Military-Internet Complex",
+   "description": "How the NSA, Cyber Command, and private contractors turned the internet into a domain of war.",
    "date": "2024-09",
    "topics": [
     "applied-security",
@@ -1145,7 +1163,7 @@
    "kind": "work",
    "title": "Future Science",
    "url": "https://raskell.io/reading/#future-science",
-   "description": "Essays from the Cutting Edge",
+   "description": "Essays by young scientists on the questions at the front of their fields, from neuroscience to physics.",
    "date": "2024-05",
    "topics": [
     "philosophy-of-science",
@@ -1158,7 +1176,7 @@
    "kind": "work",
    "title": "Programming Rust",
    "url": "https://raskell.io/reading/#programming-rust",
-   "description": "Fast, Safe Systems Development",
+   "description": "Rust for systems programmers: ownership, borrowing, traits, concurrency, and unsafe code, explained in depth.",
    "date": "2023",
    "topics": [
     "rust",
@@ -1170,7 +1188,7 @@
    "kind": "work",
    "title": "Site Reliability Engineering",
    "url": "https://raskell.io/reading/#site-reliability-engineering",
-   "description": "How Google Runs Production Systems",
+   "description": "How Google runs production: error budgets, service level objectives, toil, on-call, and postmortems.",
    "date": "2023",
    "topics": [
     "reliability",
@@ -1183,7 +1201,7 @@
    "kind": "work",
    "title": "Who We Are and How We Got Here",
    "url": "https://raskell.io/reading/#who-we-are-and-how-we-got-here",
-   "description": "Ancient DNA and the New Science of the Human Past",
+   "description": "What ancient DNA reveals about human prehistory: migrations, mixtures, and populations that no longer exist.",
    "date": "2023",
    "topics": [
     "life-sciences",
@@ -1196,7 +1214,7 @@
    "kind": "work",
    "title": "The Phoenix Project",
    "url": "https://raskell.io/reading/#the-phoenix-project",
-   "description": "A Novel about IT, DevOps, and Helping Your Business Win",
+   "description": "A novel about an IT manager saving a failing project, and the DevOps ideas he learns along the way.",
    "date": "2022",
    "topics": [
     "platform-automation",
@@ -1209,6 +1227,7 @@
    "kind": "work",
    "title": "Foucault's Pendulum",
    "url": "https://raskell.io/reading/#foucaults-pendulum",
+   "description": "Three Milan editors invent a secret history of the world as a game, and others begin to take it seriously.",
    "date": "2021-01",
    "topics": [
     "literature",
@@ -1221,7 +1240,7 @@
    "kind": "work",
    "title": "Der Kampf um die Deutung der Neuzeit",
    "url": "https://raskell.io/reading/#der-kampf-um-die-deutung-der-neuzeit",
-   "description": "Die geschichtsphilosophische Diskussion in Deutschland vom Ersten Weltkrieg bis zum Mauerfall",
+   "description": "The German debate in the philosophy of history from the First World War to 1989 about how to understand the modern age.",
    "date": "2020-11",
    "topics": [
     "philosophy",
@@ -1234,7 +1253,7 @@
    "kind": "work",
    "title": "Das Tagebuch der Menschheit",
    "url": "https://raskell.io/reading/#das-tagebuch-der-menschheit",
-   "description": "Was die Bibel über unsere Evolution verrät",
+   "description": "The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution.",
    "date": "2020-08",
    "topics": [
     "religion",
@@ -1247,6 +1266,7 @@
    "kind": "work",
    "title": "The Art of War",
    "url": "https://raskell.io/reading/#the-art-of-war",
+   "description": "An ancient Chinese treatise on strategy: deception, terrain, knowing yourself and the enemy, and winning without fighting.",
    "date": "2018-06",
    "topics": [
     "philosophy",
@@ -1258,7 +1278,7 @@
    "kind": "work",
    "title": "Language",
    "url": "https://raskell.io/reading/#language-the-cultural-tool",
-   "description": "The Cultural Tool",
+   "description": "Language as a cultural invention rather than an innate grammar, argued from the Pirahã of the Amazon.",
    "date": "2016-01",
    "topics": [
     "languages",
@@ -1270,7 +1290,7 @@
    "kind": "work",
    "title": "Erkenne die Welt",
    "url": "https://raskell.io/reading/#erkenne-die-welt",
-   "description": "Eine Geschichte der Philosophie, Band 1",
+   "description": "The first volume of Precht's history of philosophy, from the pre-Socratics to the end of the Middle Ages.",
    "date": "2015-12",
    "topics": [
     "philosophy",
@@ -1282,6 +1302,7 @@
    "kind": "work",
    "title": "Cloud Atlas",
    "url": "https://raskell.io/reading/#cloud-atlas",
+   "description": "Six stories nested inside each other, from a nineteenth-century Pacific voyage to a far future after the fall.",
    "date": "2015-11",
    "topics": [
     "literature",
@@ -1293,7 +1314,7 @@
    "kind": "work",
    "title": "The Silk Roads",
    "url": "https://raskell.io/reading/#the-silk-roads",
-   "description": "A New History of the World",
+   "description": "World history told from the trade routes between East and West rather than from Europe.",
    "date": "2015-09",
    "topics": [
     "world-history",
@@ -1306,6 +1327,7 @@
    "kind": "work",
    "title": "Die Geschichte der Kunst",
    "url": "https://raskell.io/reading/#die-geschichte-der-kunst",
+   "description": "Gombrich's history of art from the cave paintings to the modern era, the German edition of The Story of Art.",
    "date": "2014-01",
    "topics": [
     "history",
@@ -1317,6 +1339,7 @@
    "kind": "work",
    "title": "Die Psychologie von C. G. Jung",
    "url": "https://raskell.io/reading/#die-psychologie-von-c-g-jung",
+   "description": "An introduction to Jung's analytical psychology by one of his closest collaborators, with a foreword by Jung.",
    "date": "2012-06",
    "topics": [
     "philosophy"
@@ -1327,6 +1350,7 @@
    "kind": "work",
    "title": "AI 2027",
    "url": "https://raskell.io/reading/#ai-2027",
+   "description": "A month-by-month scenario of AI progress to superintelligence by 2027, with two endings: a race and a slowdown.",
    "date": "2025-04",
    "topics": [
     "ai-alignment",
@@ -1341,6 +1365,7 @@
    "kind": "work",
    "title": "AI 2040: Plan A",
    "url": "https://raskell.io/reading/#ai-2040-plan-a",
+   "description": "A recommended path rather than a forecast: the United States and China slow down, verify each other, and make a deal.",
    "date": "2026-07",
    "topics": [
     "ai-alignment",
@@ -1355,7 +1380,7 @@
    "kind": "work",
    "title": "Enterprise Architecture as Strategy",
    "url": "https://raskell.io/reading/#enterprise-architecture-as-strategy",
-   "description": "Creating a Foundation for Business Execution",
+   "description": "Enterprise architecture as the foundation for execution: an operating model first, then the systems that serve it.",
    "topics": [
     "platform-automation"
    ],
@@ -1365,7 +1390,7 @@
    "kind": "work",
    "title": "The Art of Doing Science and Engineering",
    "url": "https://raskell.io/reading/#the-art-of-doing-science-and-engineering",
-   "description": "Learning to Learn",
+   "description": "Hamming's course on how to do great work in science and engineering, and how to keep learning.",
    "topics": [
     "research-labs",
     "philosophy-of-science",
@@ -1377,7 +1402,7 @@
    "kind": "work",
    "title": "Why Machines Learn",
    "url": "https://raskell.io/reading/#why-machines-learn",
-   "description": "The Elegant Math Behind Modern AI",
+   "description": "The mathematics behind machine learning, from the perceptron to deep networks, with the people who found it.",
    "topics": [
     "machine-learning",
     "mathematics"
@@ -1388,6 +1413,7 @@
    "kind": "work",
    "title": "The Dream Machine",
    "url": "https://raskell.io/reading/#the-dream-machine",
+   "description": "How ARPA funding and a small group of researchers led from batch processing to interactive computing and the networks that followed.",
    "topics": [
     "history-of-technology",
     "research-labs",
@@ -1400,7 +1426,7 @@
    "kind": "work",
    "title": "The Alignment Problem",
    "url": "https://raskell.io/reading/#the-alignment-problem",
-   "description": "Machine Learning and Human Values",
+   "description": "How machine learning systems come to do what we did not intend, and the research trying to fix it.",
    "topics": [
     "ai-alignment",
     "ethics",
@@ -1413,7 +1439,7 @@
    "kind": "work",
    "title": "Artificial Intelligence",
    "url": "https://raskell.io/reading/#ai-a-guide-for-thinking-humans",
-   "description": "A Guide for Thinking Humans",
+   "description": "What AI can and cannot do, from vision to language, by a researcher who studies analogy and abstraction.",
    "topics": [
     "intelligence",
     "machine-learning"
@@ -1424,7 +1450,7 @@
    "kind": "work",
    "title": "Deep Thinking",
    "url": "https://raskell.io/reading/#deep-thinking",
-   "description": "Where Machine Intelligence Ends and Human Creativity Begins",
+   "description": "Kasparov on his matches against Deep Blue and what machine intelligence means for human creativity.",
    "topics": [
     "intelligence",
     "games",
@@ -1436,6 +1462,7 @@
    "kind": "work",
    "title": "Understanding Deep Learning",
    "url": "https://raskell.io/reading/#understanding-deep-learning",
+   "description": "A modern textbook on deep learning, from the basics through transformers, diffusion models, and reinforcement learning.",
    "topics": [
     "machine-learning",
     "mathematics"
@@ -1446,6 +1473,7 @@
    "kind": "work",
    "title": "Build a Large Language Model (From Scratch)",
    "url": "https://raskell.io/reading/#build-a-large-language-model",
+   "description": "Building a GPT-style language model step by step in PyTorch, from tokens and attention to pretraining and fine-tuning.",
    "topics": [
     "training-data",
     "inference"
@@ -1456,7 +1484,7 @@
    "kind": "work",
    "title": "AI Engineering",
    "url": "https://raskell.io/reading/#ai-engineering",
-   "description": "Building Applications with Foundation Models",
+   "description": "Building applications on foundation models: evaluation, prompting, retrieval, agents, fine-tuning, and serving.",
    "topics": [
     "ai-platforms",
     "evaluation",
@@ -1468,6 +1496,7 @@
    "kind": "work",
    "title": "Reinforcement Learning: An Introduction",
    "url": "https://raskell.io/reading/#reinforcement-learning-an-introduction",
+   "description": "The standard text on reinforcement learning: bandits, dynamic programming, temporal difference learning, and policy gradients.",
    "topics": [
     "reinforcement-learning",
     "machine-learning"
@@ -1478,6 +1507,7 @@
    "kind": "work",
    "title": "Probabilistic Machine Learning: An Introduction",
    "url": "https://raskell.io/reading/#probabilistic-machine-learning",
+   "description": "Machine learning from a probabilistic point of view, the first of Murphy's two volumes.",
    "topics": [
     "machine-learning",
     "mathematics"
@@ -1488,6 +1518,7 @@
    "kind": "work",
    "title": "The Making of the Atomic Bomb",
    "url": "https://raskell.io/reading/#the-making-of-the-atomic-bomb",
+   "description": "The history of the atomic bomb from the physics of the atom to Hiroshima, and the scientists who built it.",
    "topics": [
     "history-of-science",
     "research-labs",
@@ -1503,7 +1534,7 @@
    "kind": "work",
    "title": "Seeing Like a State",
    "url": "https://raskell.io/reading/#seeing-like-a-state",
-   "description": "How Certain Schemes to Improve the Human Condition Have Failed",
+   "description": "Why grand state plans fail when they make the world legible and simple, and ignore local, practical knowledge.",
    "topics": [
     "history",
     "high-modernism",
@@ -1517,7 +1548,7 @@
    "kind": "work",
    "title": "A Peace to End All Peace",
    "url": "https://raskell.io/reading/#a-peace-to-end-all-peace",
-   "description": "The Fall of the Ottoman Empire and the Creation of the Modern Middle East",
+   "description": "How the Allies broke up the Ottoman Empire after the First World War and drew the borders of the modern Middle East.",
    "topics": [
     "geopolitics",
     "history"
@@ -1528,7 +1559,7 @@
    "kind": "work",
    "title": "The Billion-Dollar Molecule",
    "url": "https://raskell.io/reading/#the-billion-dollar-molecule",
-   "description": "The Quest for the Perfect Drug",
+   "description": "Inside Vertex Pharmaceuticals in its early years, as it tried to design drugs from the structure of proteins.",
    "topics": [
     "medicine",
     "research-labs",
@@ -1540,7 +1571,7 @@
    "kind": "work",
    "title": "The Eighth Day of Creation",
    "url": "https://raskell.io/reading/#the-eighth-day-of-creation",
-   "description": "The Makers of the Revolution in Biology",
+   "description": "The founding of molecular biology, from the structure of DNA to the genetic code, from the scientists themselves.",
    "topics": [
     "life-sciences",
     "research-labs",
@@ -1553,6 +1584,7 @@
    "kind": "work",
    "title": "The Demon Under the Microscope",
    "url": "https://raskell.io/reading/#the-demon-under-the-microscope",
+   "description": "Gerhard Domagk and the discovery of the sulfa drugs, the first medicines that beat bacterial infection.",
    "topics": [
     "medicine",
     "research-labs",
@@ -1565,7 +1597,7 @@
    "kind": "work",
    "title": "The Butchering Art",
    "url": "https://raskell.io/reading/#the-butchering-art",
-   "description": "Joseph Lister's Quest to Transform the Grisly World of Victorian Medicine",
+   "description": "Joseph Lister and the fight to make surgery safe through antisepsis, in the hospitals of Victorian Britain.",
    "topics": [
     "medicine",
     "history-of-science",
@@ -1577,7 +1609,7 @@
    "kind": "work",
    "title": "Deep Dive",
    "url": "https://raskell.io/reading/#deep-dive",
-   "description": "Exploring the Real-world Value of Open Source Intelligence",
+   "description": "Methods and tools for open source intelligence: finding, checking, and connecting what people and organisations leave online.",
    "topics": [
     "applied-security",
     "open-data",
@@ -1589,7 +1621,7 @@
    "kind": "work",
    "title": "Palo Alto",
    "url": "https://raskell.io/reading/#palo-alto",
-   "description": "A History of California, Capitalism, and the World",
+   "description": "The history of Silicon Valley as a history of capitalism, from railroads and eugenics to the tech industry.",
    "topics": [
     "history-of-technology",
     "economics",
@@ -1601,7 +1633,7 @@
    "kind": "work",
    "title": "Strategy",
    "url": "https://raskell.io/reading/#strategy-a-history",
-   "description": "A History",
+   "description": "Strategy from the Bible and the Greeks to military, revolutionary, and business strategy today.",
    "topics": [
     "geopolitics",
     "history"
@@ -1612,7 +1644,7 @@
    "kind": "work",
    "title": "The Lost Art of Scripture",
    "url": "https://raskell.io/reading/#the-lost-art-of-scripture",
-   "description": "Rescuing the Sacred Texts",
+   "description": "How sacred texts were once read as practice and ritual rather than as literal truth, across the world's religions.",
    "topics": [
     "religion",
     "history"
@@ -1623,7 +1655,7 @@
    "kind": "work",
    "title": "If Anyone Builds It, Everyone Dies",
    "url": "https://raskell.io/reading/#if-anyone-builds-it-everyone-dies",
-   "description": "Why Superhuman AI Would Kill Us All",
+   "description": "The case that superhuman AI built with current methods would end humanity, and why the authors want it stopped.",
    "topics": [
     "ai-alignment",
     "existential-risk",
@@ -1636,7 +1668,7 @@
    "kind": "work",
    "title": "The Scaling Era",
    "url": "https://raskell.io/reading/#the-scaling-era",
-   "description": "An Oral History of AI, 2019–2025",
+   "description": "An oral history of the years when scaling models became the path to AI, in the words of the people building them.",
    "topics": [
     "machine-learning",
     "research-labs",
@@ -1649,7 +1681,7 @@
    "kind": "work",
    "title": "Situational Awareness",
    "url": "https://raskell.io/reading/#situational-awareness",
-   "description": "The Decade Ahead",
+   "description": "An essay series arguing that AGI may arrive by 2027 and set off a national-security race for superintelligence.",
    "topics": [
     "technology-races",
     "geopolitics",
@@ -1662,7 +1694,7 @@
    "kind": "work",
    "title": "Empire of AI",
    "url": "https://raskell.io/reading/#empire-of-ai",
-   "description": "Dreams and Nightmares in Sam Altman's OpenAI",
+   "description": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
    "topics": [
     "research-labs",
     "training-data",
@@ -1675,7 +1707,7 @@
    "kind": "work",
    "title": "The Thinking Machine",
    "url": "https://raskell.io/reading/#the-thinking-machine",
-   "description": "Jensen Huang, Nvidia, and the World's Most Coveted Microchip",
+   "description": "Jensen Huang and how Nvidia bet the company on the chips that made modern AI possible.",
    "topics": [
     "gpus",
     "history-of-technology",
@@ -1688,7 +1720,7 @@
    "kind": "work",
    "title": "A Brief History of Intelligence",
    "url": "https://raskell.io/reading/#a-brief-history-of-intelligence",
-   "description": "Evolution, AI, and the Five Breakthroughs That Made Our Brains",
+   "description": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it.",
    "topics": [
     "intelligence",
     "neuroscience",
@@ -1701,7 +1733,7 @@
    "kind": "work",
    "title": "These Strange New Minds",
    "url": "https://raskell.io/reading/#these-strange-new-minds",
-   "description": "How AI Learned to Talk and What It Means",
+   "description": "How large language models learned to talk, and what they are and are not, by a neuroscientist who has worked at DeepMind.",
    "topics": [
     "intelligence",
     "neural-networks",
@@ -1714,7 +1746,7 @@
    "kind": "work",
    "title": "AI Snake Oil",
    "url": "https://raskell.io/reading/#ai-snake-oil",
-   "description": "What Artificial Intelligence Can Do, What It Can't, and How to Tell the Difference",
+   "description": "Which kinds of AI work and which are sold as working, with tools to tell the difference.",
    "topics": [
     "evaluation",
     "machine-learning",
@@ -1727,7 +1759,7 @@
    "kind": "work",
    "title": "Deep Learning",
    "url": "https://raskell.io/reading/#deep-learning-foundations-and-concepts",
-   "description": "Foundations and Concepts",
+   "description": "A textbook on the core ideas of deep learning, from probability and neural networks to transformers and diffusion.",
    "topics": [
     "neural-networks",
     "machine-learning",
@@ -1739,7 +1771,7 @@
    "kind": "work",
    "title": "Deep Utopia",
    "url": "https://raskell.io/reading/#deep-utopia",
-   "description": "Life and Meaning in a Solved World",
+   "description": "What people would live for once superintelligence has solved every practical problem.",
    "topics": [
     "philosophy",
     "ethics",
@@ -1752,7 +1784,7 @@
    "kind": "work",
    "title": "Slouching Towards Utopia",
    "url": "https://raskell.io/reading/#slouching-towards-utopia",
-   "description": "An Economic History of the Twentieth Century",
+   "description": "The economic history of 1870 to 2010, when humanity first escaped scarcity and still did not reach utopia.",
    "topics": [
     "economics",
     "world-history",
@@ -1764,6 +1796,7 @@
    "kind": "work",
    "title": "Abundance",
    "url": "https://raskell.io/reading/#abundance",
+   "description": "Why rich countries fail to build the housing, energy, and infrastructure they can afford, and how to change that.",
    "topics": [
     "economics",
     "policy",
@@ -1775,7 +1808,7 @@
    "kind": "work",
    "title": "Four Futures",
    "url": "https://raskell.io/reading/#four-futures",
-   "description": "Life After Capitalism",
+   "description": "Four possible futures after capitalism, from abundance or scarcity crossed with equality or hierarchy.",
    "topics": [
     "economics",
     "future-of-work",
@@ -1787,6 +1820,7 @@
    "kind": "work",
    "title": "Economic Possibilities for our Grandchildren",
    "url": "https://raskell.io/reading/#economic-possibilities-for-our-grandchildren",
+   "description": "Keynes's 1930 prediction that a century of growth would solve the economic problem and leave us with leisure.",
    "topics": [
     "economics",
     "future-of-work"
@@ -1797,7 +1831,7 @@
    "kind": "work",
    "title": "From Counterculture to Cyberculture",
    "url": "https://raskell.io/reading/#from-counterculture-to-cyberculture",
-   "description": "Stewart Brand, the Whole Earth Network, and the Rise of Digital Utopianism",
+   "description": "How Stewart Brand and the Whole Earth network turned the counterculture into Silicon Valley's belief in networks.",
    "topics": [
     "history-of-technology",
     "decentralisation",
@@ -1810,7 +1844,7 @@
    "kind": "work",
    "title": "Cybernetic Revolutionaries",
    "url": "https://raskell.io/reading/#cybernetic-revolutionaries",
-   "description": "Technology and Politics in Allende's Chile",
+   "description": "Project Cybersyn, the attempt in Allende's Chile to run the economy with cybernetics and a telex network.",
    "topics": [
     "complex-systems",
     "high-modernism",
@@ -1823,6 +1857,7 @@
    "kind": "work",
    "title": "Red Plenty",
    "url": "https://raskell.io/reading/#red-plenty",
+   "description": "A novel about the Soviet dream of planning the economy into abundance with mathematics and computers.",
    "topics": [
     "literature",
     "high-modernism",
@@ -1835,7 +1870,7 @@
    "kind": "work",
    "title": "To Be a Machine",
    "url": "https://raskell.io/reading/#to-be-a-machine",
-   "description": "Adventures Among Cyborgs, Utopians, Hackers, and the Futurists Solving the Modest Problem of Death",
+   "description": "A journalist among transhumanists: cryonics, mind uploading, cyborgs, and the people who want to end death.",
    "topics": [
     "augmentation",
     "hubris",
@@ -1847,7 +1882,7 @@
    "kind": "work",
    "title": "The Age of Em",
    "url": "https://raskell.io/reading/#the-age-of-em",
-   "description": "Work, Love, and Life when Robots Rule the Earth",
+   "description": "An economist works out what a world run by emulated human brains would look like, in detail.",
    "topics": [
     "simulation",
     "neuroscience",
@@ -1860,7 +1895,7 @@
    "kind": "work",
    "title": "More Everything Forever",
    "url": "https://raskell.io/reading/#more-everything-forever",
-   "description": "AI Overlords, Space Empires, and Silicon Valley's Crusade to Control the Fate of Humanity",
+   "description": "A critique of the futures tech billionaires want: superintelligence, space colonies, and living forever.",
    "topics": [
     "hubris",
     "existential-risk",
@@ -1872,6 +1907,7 @@
    "kind": "work",
    "title": "The Player of Games",
    "url": "https://raskell.io/reading/#the-player-of-games",
+   "description": "A game player from the Culture, a post-scarcity civilisation, is sent to play for an empire's throne.",
    "topics": [
     "literature",
     "games",
@@ -1883,6 +1919,7 @@
    "kind": "work",
    "title": "Accelerando",
    "url": "https://raskell.io/reading/#accelerando",
+   "description": "The singularity across three generations of one family, from present-day hackers to post-human minds.",
    "topics": [
     "literature",
     "intelligence",
@@ -1894,6 +1931,7 @@
    "kind": "work",
    "title": "Structure and Interpretation of Computer Programs",
    "url": "https://raskell.io/reading/#sicp",
+   "description": "The classic MIT course on programming as abstraction, built in Scheme, up to writing interpreters and compilers.",
    "date": "2024",
    "topics": [
     "compilers"

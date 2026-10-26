@@ -23,6 +23,7 @@
     "history-of-technology",
     "technology-races"
    ],
+   "take": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
    "cover": "https://raskell.io/covers/reading/the-infinity-machine.avif",
    "page": "https://raskell.io/reading/#the-infinity-machine"
   },
@@ -41,6 +42,7 @@
     "geopolitics",
     "history"
    ],
+   "take": "A history of the whole modern Middle East, in all its diversity, from 1900 to the present.",
    "cover": "https://raskell.io/covers/reading/the-cauldron.avif",
    "page": "https://raskell.io/reading/#the-cauldron"
   },
@@ -58,6 +60,7 @@
     "history-of-technology",
     "complex-systems"
    ],
+   "take": "Why some societies came to dominate others: geography, crops, animals, and germs rather than any difference in people.",
    "cover": "https://raskell.io/covers/reading/guns-germs-and-steel.avif",
    "page": "https://raskell.io/reading/#guns-germs-and-steel"
   },
@@ -76,6 +79,7 @@
     "geopolitics",
     "technology-races"
    ],
+   "take": "A minute-by-minute account of how a nuclear exchange would unfold, built on interviews with the people who plan for one.",
    "cover": "https://raskell.io/covers/reading/nuclear-war-a-scenario.avif",
    "page": "https://raskell.io/reading/#nuclear-war-a-scenario"
   },
@@ -95,6 +99,7 @@
     "hubris",
     "emergence"
    ],
+   "take": "A park of cloned dinosaurs, and a mathematician who uses chaos theory to explain why it cannot stay under control.",
    "cover": "https://raskell.io/covers/reading/jurassic-park.avif",
    "page": "https://raskell.io/reading/#jurassic-park"
   },
@@ -115,6 +120,7 @@
     "languages",
     "europe"
    ],
+   "take": "Jacob Frank, an eighteenth-century self-proclaimed messiah, and the followers who crossed Europe and three religions with him.",
    "cover": "https://raskell.io/covers/reading/the-books-of-jacob.avif",
    "page": "https://raskell.io/reading/#the-books-of-jacob"
   },
@@ -136,6 +142,7 @@
     "gpus"
    ],
    "take": "A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan.",
+   "cover": "https://raskell.io/covers/reading/from-worm-to-human.avif",
    "page": "https://raskell.io/reading/#from-worm-to-human"
   },
   {
@@ -153,6 +160,7 @@
     "simulation"
    ],
    "take": "The field's own survey of where connectomics, recording, and modelling stand, and how far apart they still are.",
+   "cover": "https://raskell.io/covers/reading/state-of-brain-emulation-2025.avif",
    "page": "https://raskell.io/reading/#state-of-brain-emulation-2025"
   },
   {
@@ -167,6 +175,7 @@
    "topics": [
     "philosophy-of-science"
    ],
+   "take": "Essays that question how much modern science can actually explain, from physics and cosmology to Darwinian biology.",
    "cover": "https://raskell.io/covers/reading/science-after-babel.avif",
    "page": "https://raskell.io/reading/#science-after-babel"
   },
@@ -183,6 +192,7 @@
    "topics": [
     "networking"
    ],
+   "take": "Network services in Go from the socket up: TCP, UDP, HTTP, TLS, and keeping them secure and observable.",
    "cover": "https://raskell.io/covers/reading/network-programming-with-go.avif",
    "page": "https://raskell.io/reading/#network-programming-with-go"
   },
@@ -201,6 +211,7 @@
     "distributed-systems",
     "reliability"
    ],
+   "take": "Elixir and the BEAM for building concurrent, fault-tolerant systems with processes, supervisors, and OTP.",
    "cover": "https://raskell.io/covers/reading/elixir-in-action.avif",
    "page": "https://raskell.io/reading/#elixir-in-action"
   },
@@ -215,12 +226,14 @@
    "topics": [
     "compilers"
    ],
+   "take": "Two complete interpreters for one small language, a tree-walker in Java and a bytecode virtual machine in C.",
    "cover": "https://raskell.io/covers/reading/crafting-interpreters.avif",
    "page": "https://raskell.io/reading/#crafting-interpreters"
   },
   {
    "id": "building-a-second-brain",
    "title": "Building a Second Brain",
+   "subtitle": "A Proven Method to Organize Your Digital Life and Unlock Your Creative Potential",
    "author": "Tiago Forte",
    "kind": "book",
    "year": 2022,
@@ -230,6 +243,7 @@
     "knowledge-management",
     "external-memory"
    ],
+   "take": "A method for keeping notes outside your head: capture, organise, distil, and express, with the PARA folders.",
    "cover": "https://raskell.io/covers/reading/building-a-second-brain.avif",
    "page": "https://raskell.io/reading/#building-a-second-brain"
   },
@@ -245,6 +259,7 @@
     "rust",
     "networking"
    ],
+   "take": "Building web applications and services in Rust, from routing and databases to authentication and deployment.",
    "cover": "https://raskell.io/covers/reading/rust-web-programming.avif",
    "page": "https://raskell.io/reading/#rust-web-programming"
   },
@@ -261,6 +276,7 @@
     "webassembly",
     "rust"
    ],
+   "take": "WebAssembly from the raw text format up to Rust modules that run in the browser and beyond it.",
    "cover": "https://raskell.io/covers/reading/programming-webassembly-with-rust.avif",
    "page": "https://raskell.io/reading/#programming-webassembly-with-rust"
   },
@@ -276,6 +292,7 @@
    "topics": [
     "webassembly"
    ],
+   "take": "What WebAssembly is and how to use it from many languages, in the browser, on servers, and through WASI.",
    "cover": "https://raskell.io/covers/reading/webassembly-the-definitive-guide.avif",
    "page": "https://raskell.io/reading/#webassembly-the-definitive-guide"
   },
@@ -291,6 +308,7 @@
    "topics": [
     "history"
    ],
+   "take": "The history of the United States as a test of the truths in its founding documents: equality, sovereignty, and consent.",
    "cover": "https://raskell.io/covers/reading/these-truths.avif",
    "page": "https://raskell.io/reading/#these-truths"
   },
@@ -309,6 +327,7 @@
     "world-history",
     "cities"
    ],
+   "take": "Three thousand years of Jerusalem through the empires, faiths, and families that fought over it.",
    "cover": "https://raskell.io/covers/reading/jerusalem-the-biography.avif",
    "page": "https://raskell.io/reading/#jerusalem-the-biography"
   },
@@ -326,6 +345,7 @@
     "social-reform",
     "commons"
    ],
+   "take": "A utopian novel about a colony in East Africa built on free land and free access to capital.",
    "cover": "https://raskell.io/covers/reading/freeland.avif",
    "page": "https://raskell.io/reading/#freeland"
   },
@@ -340,6 +360,7 @@
    "topics": [
     "social-reform"
    ],
+   "take": "Hertzka on the social question, the problem his novel Freeland set out to answer.",
    "cover": "https://raskell.io/covers/reading/das-soziale-problem.avif",
    "page": "https://raskell.io/reading/#das-soziale-problem"
   },
@@ -356,6 +377,7 @@
     "philosophy-of-science",
     "religion"
    ],
+   "take": "A mathematician's case that the new atheism claims far more scientific authority than science gives it.",
    "cover": "https://raskell.io/covers/reading/the-devils-delusion.avif",
    "page": "https://raskell.io/reading/#the-devils-delusion"
   },
@@ -373,6 +395,7 @@
     "risk",
     "complex-systems"
    ],
+   "take": "Things that gain from disorder, and why systems built to avoid all stress grow fragile.",
    "cover": "https://raskell.io/covers/reading/antifragile.avif",
    "page": "https://raskell.io/reading/#antifragile"
   },
@@ -389,6 +412,7 @@
     "ethics",
     "religion"
    ],
+   "take": "A small revolutionary cell in a provincial Russian town and the ideas that lead it to murder.",
    "cover": "https://raskell.io/covers/reading/demons.avif",
    "page": "https://raskell.io/reading/#demons"
   },
@@ -405,6 +429,7 @@
     "ethics",
     "religion"
    ],
+   "take": "Three brothers, their father's murder, and a long argument about faith, doubt, and freedom.",
    "cover": "https://raskell.io/covers/reading/the-brothers-karamazov.avif",
    "page": "https://raskell.io/reading/#the-brothers-karamazov"
   },
@@ -419,6 +444,7 @@
    "topics": [
     "world-history"
    ],
+   "take": "World history written for children in 1935 by a young art historian, from the Stone Age to the twentieth century.",
    "cover": "https://raskell.io/covers/reading/a-little-history-of-the-world.avif",
    "page": "https://raskell.io/reading/#a-little-history-of-the-world"
   },
@@ -434,6 +460,7 @@
     "literature",
     "ethics"
    ],
+   "take": "A poor former student commits a murder to prove a theory about himself and cannot live with it.",
    "cover": "https://raskell.io/covers/reading/crime-and-punishment.avif",
    "page": "https://raskell.io/reading/#crime-and-punishment"
   },
@@ -449,6 +476,7 @@
     "maximalist-novels",
     "attention-economy"
    ],
+   "take": "A tennis academy, a halfway house, and a film so entertaining it kills, in a near-future North America.",
    "cover": "https://raskell.io/covers/reading/infinite-jest.avif",
    "page": "https://raskell.io/reading/#infinite-jest"
   },
@@ -467,6 +495,7 @@
     "maximalist-novels",
     "languages"
    ],
+   "take": "A literary study that defines the maximalist novel as a genre, from Gravity's Rainbow and Infinite Jest to 2666.",
    "cover": "https://raskell.io/covers/reading/the-maximalist-novel.avif",
    "page": "https://raskell.io/reading/#the-maximalist-novel"
   },
@@ -520,6 +549,7 @@
     "philosophy-of-science",
     "scientific-revolutions"
    ],
+   "take": "How science was invented between 1572 and 1704, traced through new words such as fact, experiment, and hypothesis.",
    "cover": "https://raskell.io/covers/reading/the-invention-of-science.avif",
    "page": "https://raskell.io/reading/#the-invention-of-science"
   },
@@ -537,6 +567,7 @@
     "commons",
     "risk"
    ],
+   "take": "Life in the ocean, what it has lost, and how protecting the sea lets it recover.",
    "cover": "https://raskell.io/covers/reading/ocean-earths-last-wilderness.avif",
    "page": "https://raskell.io/reading/#ocean-earths-last-wilderness"
   },
@@ -555,6 +586,7 @@
     "economics",
     "democratisation"
    ],
+   "take": "Essays from across Graeber's career on debt, bureaucracy, play, value, and the freedom to make the world differently.",
    "cover": "https://raskell.io/covers/reading/the-ultimate-hidden-truth-of-the-world.avif",
    "page": "https://raskell.io/reading/#the-ultimate-hidden-truth-of-the-world"
   },
@@ -571,6 +603,7 @@
     "democratisation",
     "commons"
    ],
+   "take": "Pirate settlements on Madagascar and the Malagasy experiments in self-government that may have fed the European Enlightenment.",
    "cover": "https://raskell.io/covers/reading/pirate-enlightenment.avif",
    "page": "https://raskell.io/reading/#pirate-enlightenment"
   },
@@ -588,6 +621,7 @@
     "mathematics",
     "history"
    ],
+   "take": "A hands-on guide to breaking classical ciphers and codes, with real cases solved and unsolved.",
    "cover": "https://raskell.io/covers/reading/codebreaking.avif",
    "page": "https://raskell.io/reading/#codebreaking"
   },
@@ -605,6 +639,7 @@
     "cities",
     "europe"
    ],
+   "take": "Dutch New Amsterdam, rebuilt from its own archives, and the tolerance and trade it left to Manhattan and America.",
    "cover": "https://raskell.io/covers/reading/the-island-at-the-center-of-the-world.avif",
    "page": "https://raskell.io/reading/#the-island-at-the-center-of-the-world"
   },
@@ -622,6 +657,7 @@
     "geopolitics",
     "technology-races"
    ],
+   "take": "How the NSA, Cyber Command, and private contractors turned the internet into a domain of war.",
    "cover": "https://raskell.io/covers/reading/at-war.avif",
    "page": "https://raskell.io/reading/#at-war"
   },
@@ -639,6 +675,7 @@
     "life-sciences",
     "neuroscience"
    ],
+   "take": "Essays by young scientists on the questions at the front of their fields, from neuroscience to physics.",
    "cover": "https://raskell.io/covers/reading/future-science.avif",
    "page": "https://raskell.io/reading/#future-science"
   },
@@ -656,6 +693,7 @@
     "rust",
     "programming-languages"
    ],
+   "take": "Rust for systems programmers: ownership, borrowing, traits, concurrency, and unsafe code, explained in depth.",
    "cover": "https://raskell.io/covers/reading/programming-rust.avif",
    "page": "https://raskell.io/reading/#programming-rust"
   },
@@ -674,6 +712,7 @@
     "observability",
     "distributed-systems"
    ],
+   "take": "How Google runs production: error budgets, service level objectives, toil, on-call, and postmortems.",
    "cover": "https://raskell.io/covers/reading/site-reliability-engineering.avif",
    "page": "https://raskell.io/reading/#site-reliability-engineering"
   },
@@ -691,6 +730,7 @@
     "world-history",
     "history-of-science"
    ],
+   "take": "What ancient DNA reveals about human prehistory: migrations, mixtures, and populations that no longer exist.",
    "cover": "https://raskell.io/covers/reading/who-we-are-and-how-we-got-here.avif",
    "page": "https://raskell.io/reading/#who-we-are-and-how-we-got-here"
   },
@@ -708,6 +748,7 @@
     "reliability",
     "enterprise-architecture"
    ],
+   "take": "A novel about an IT manager saving a failing project, and the DevOps ideas he learns along the way.",
    "cover": "https://raskell.io/covers/reading/the-phoenix-project.avif",
    "page": "https://raskell.io/reading/#the-phoenix-project"
   },
@@ -725,6 +766,7 @@
     "maximalist-novels",
     "religion"
    ],
+   "take": "Three Milan editors invent a secret history of the world as a game, and others begin to take it seriously.",
    "cover": "https://raskell.io/covers/reading/foucaults-pendulum.avif",
    "page": "https://raskell.io/reading/#foucaults-pendulum"
   },
@@ -743,6 +785,7 @@
     "history",
     "europe"
    ],
+   "take": "The German debate in the philosophy of history from the First World War to 1989 about how to understand the modern age.",
    "cover": "https://raskell.io/covers/reading/der-kampf-um-die-deutung-der-neuzeit.avif",
    "page": "https://raskell.io/reading/#der-kampf-um-die-deutung-der-neuzeit"
   },
@@ -761,6 +804,7 @@
     "life-sciences",
     "world-history"
    ],
+   "take": "The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution.",
    "cover": "https://raskell.io/covers/reading/das-tagebuch-der-menschheit.avif",
    "page": "https://raskell.io/reading/#das-tagebuch-der-menschheit"
   },
@@ -775,6 +819,7 @@
     "philosophy",
     "geopolitics"
    ],
+   "take": "An ancient Chinese treatise on strategy: deception, terrain, knowing yourself and the enemy, and winning without fighting.",
    "cover": "https://raskell.io/covers/reading/the-art-of-war.avif",
    "page": "https://raskell.io/reading/#the-art-of-war"
   },
@@ -791,6 +836,7 @@
     "languages",
     "intelligence"
    ],
+   "take": "Language as a cultural invention rather than an innate grammar, argued from the Pirahã of the Amazon.",
    "cover": "https://raskell.io/covers/reading/language-the-cultural-tool.avif",
    "page": "https://raskell.io/reading/#language-the-cultural-tool"
   },
@@ -807,6 +853,7 @@
     "philosophy",
     "history"
    ],
+   "take": "The first volume of Precht's history of philosophy, from the pre-Socratics to the end of the Middle Ages.",
    "cover": "https://raskell.io/covers/reading/erkenne-die-welt.avif",
    "page": "https://raskell.io/reading/#erkenne-die-welt"
   },
@@ -822,6 +869,7 @@
     "literature",
     "maximalist-novels"
    ],
+   "take": "Six stories nested inside each other, from a nineteenth-century Pacific voyage to a far future after the fall.",
    "cover": "https://raskell.io/covers/reading/cloud-atlas.avif",
    "page": "https://raskell.io/reading/#cloud-atlas"
   },
@@ -839,6 +887,7 @@
     "geopolitics",
     "cities"
    ],
+   "take": "World history told from the trade routes between East and West rather than from Europe.",
    "cover": "https://raskell.io/covers/reading/the-silk-roads.avif",
    "page": "https://raskell.io/reading/#the-silk-roads"
   },
@@ -854,6 +903,7 @@
     "history",
     "world-history"
    ],
+   "take": "Gombrich's history of art from the cave paintings to the modern era, the German edition of The Story of Art.",
    "cover": "https://raskell.io/covers/reading/die-geschichte-der-kunst.avif",
    "page": "https://raskell.io/reading/#die-geschichte-der-kunst"
   },
@@ -868,6 +918,7 @@
    "topics": [
     "philosophy"
    ],
+   "take": "An introduction to Jung's analytical psychology by one of his closest collaborators, with a foreword by Jung.",
    "cover": "https://raskell.io/covers/reading/die-psychologie-von-c-g-jung.avif",
    "page": "https://raskell.io/reading/#die-psychologie-von-c-g-jung"
   },
@@ -887,6 +938,7 @@
     "geopolitics",
     "intelligence"
    ],
+   "take": "A month-by-month scenario of AI progress to superintelligence by 2027, with two endings: a race and a slowdown.",
    "cover": "https://raskell.io/covers/reading/ai-2027.avif",
    "page": "https://raskell.io/reading/#ai-2027"
   },
@@ -906,6 +958,7 @@
     "geopolitics",
     "policy"
    ],
+   "take": "A recommended path rather than a forecast: the United States and China slow down, verify each other, and make a deal.",
    "cover": "https://raskell.io/covers/reading/ai-2040-plan-a.avif",
    "page": "https://raskell.io/reading/#ai-2040-plan-a"
   },
@@ -920,6 +973,7 @@
    "topics": [
     "platform-automation"
    ],
+   "take": "Enterprise architecture as the foundation for execution: an operating model first, then the systems that serve it.",
    "cover": "https://raskell.io/covers/reading/enterprise-architecture-as-strategy.avif",
    "page": "https://raskell.io/reading/#enterprise-architecture-as-strategy"
   },
@@ -936,6 +990,7 @@
     "philosophy-of-science",
     "history-of-technology"
    ],
+   "take": "Hamming's course on how to do great work in science and engineering, and how to keep learning.",
    "cover": "https://raskell.io/covers/reading/the-art-of-doing-science-and-engineering.avif",
    "page": "https://raskell.io/reading/#the-art-of-doing-science-and-engineering"
   },
@@ -953,12 +1008,14 @@
     "machine-learning",
     "mathematics"
    ],
+   "take": "The mathematics behind machine learning, from the perceptron to deep networks, with the people who found it.",
    "cover": "https://raskell.io/covers/reading/why-machines-learn.avif",
    "page": "https://raskell.io/reading/#why-machines-learn"
   },
   {
    "id": "the-dream-machine",
    "title": "The Dream Machine",
+   "subtitle": "J. C. R. Licklider and the Revolution That Made Computing Personal",
    "author": "M. Mitchell Waldrop",
    "kind": "book",
    "year": 2001,
@@ -972,6 +1029,7 @@
     "networking",
     "augmentation"
    ],
+   "take": "How ARPA funding and a small group of researchers led from batch processing to interactive computing and the networks that followed.",
    "cover": "https://raskell.io/covers/reading/the-dream-machine.avif",
    "page": "https://raskell.io/reading/#the-dream-machine"
   },
@@ -990,6 +1048,7 @@
     "evaluation",
     "hubris"
    ],
+   "take": "How machine learning systems come to do what we did not intend, and the research trying to fix it.",
    "cover": "https://raskell.io/covers/reading/the-alignment-problem.avif",
    "page": "https://raskell.io/reading/#the-alignment-problem"
   },
@@ -1008,6 +1067,7 @@
     "intelligence",
     "machine-learning"
    ],
+   "take": "What AI can and cannot do, from vision to language, by a researcher who studies analogy and abstraction.",
    "cover": "https://raskell.io/covers/reading/ai-a-guide-for-thinking-humans.avif",
    "page": "https://raskell.io/reading/#ai-a-guide-for-thinking-humans"
   },
@@ -1026,6 +1086,7 @@
     "games",
     "augmentation"
    ],
+   "take": "Kasparov on his matches against Deep Blue and what machine intelligence means for human creativity.",
    "cover": "https://raskell.io/covers/reading/deep-thinking.avif",
    "page": "https://raskell.io/reading/#deep-thinking"
   },
@@ -1042,6 +1103,7 @@
     "machine-learning",
     "mathematics"
    ],
+   "take": "A modern textbook on deep learning, from the basics through transformers, diffusion models, and reinforcement learning.",
    "cover": "https://raskell.io/covers/reading/understanding-deep-learning.avif",
    "page": "https://raskell.io/reading/#understanding-deep-learning"
   },
@@ -1057,6 +1119,7 @@
     "training-data",
     "inference"
    ],
+   "take": "Building a GPT-style language model step by step in PyTorch, from tokens and attention to pretraining and fine-tuning.",
    "cover": "https://raskell.io/covers/reading/build-a-large-language-model.avif",
    "page": "https://raskell.io/reading/#build-a-large-language-model"
   },
@@ -1075,6 +1138,7 @@
     "evaluation",
     "agents"
    ],
+   "take": "Building applications on foundation models: evaluation, prompting, retrieval, agents, fine-tuning, and serving.",
    "cover": "https://raskell.io/covers/reading/ai-engineering.avif",
    "page": "https://raskell.io/reading/#ai-engineering"
   },
@@ -1092,6 +1156,7 @@
     "reinforcement-learning",
     "machine-learning"
    ],
+   "take": "The standard text on reinforcement learning: bandits, dynamic programming, temporal difference learning, and policy gradients.",
    "cover": "https://raskell.io/covers/reading/reinforcement-learning-an-introduction.avif",
    "page": "https://raskell.io/reading/#reinforcement-learning-an-introduction"
   },
@@ -1101,12 +1166,15 @@
    "author": "Kevin P. Murphy",
    "kind": "book",
    "year": 2022,
+   "isbn": "9780262046824",
    "url": "https://probml.github.io/pml-book/book1.html",
    "status": "backlog",
    "topics": [
     "machine-learning",
     "mathematics"
    ],
+   "take": "Machine learning from a probabilistic point of view, the first of Murphy's two volumes.",
+   "cover": "https://raskell.io/covers/reading/probabilistic-machine-learning.avif",
    "page": "https://raskell.io/reading/#probabilistic-machine-learning"
   },
   {
@@ -1128,6 +1196,7 @@
     "technology-races",
     "hubris"
    ],
+   "take": "The history of the atomic bomb from the physics of the atom to Hiroshima, and the scientists who built it.",
    "cover": "https://raskell.io/covers/reading/the-making-of-the-atomic-bomb.avif",
    "page": "https://raskell.io/reading/#the-making-of-the-atomic-bomb"
   },
@@ -1148,6 +1217,7 @@
     "commons",
     "cities"
    ],
+   "take": "Why grand state plans fail when they make the world legible and simple, and ignore local, practical knowledge.",
    "cover": "https://raskell.io/covers/reading/seeing-like-a-state.avif",
    "page": "https://raskell.io/reading/#seeing-like-a-state"
   },
@@ -1164,6 +1234,7 @@
     "geopolitics",
     "history"
    ],
+   "take": "How the Allies broke up the Ottoman Empire after the First World War and drew the borders of the modern Middle East.",
    "cover": "https://raskell.io/covers/reading/a-peace-to-end-all-peace.avif",
    "page": "https://raskell.io/reading/#a-peace-to-end-all-peace"
   },
@@ -1182,6 +1253,7 @@
     "research-labs",
     "history-of-science"
    ],
+   "take": "Inside Vertex Pharmaceuticals in its early years, as it tried to design drugs from the structure of proteins.",
    "cover": "https://raskell.io/covers/reading/the-billion-dollar-molecule.avif",
    "page": "https://raskell.io/reading/#the-billion-dollar-molecule"
   },
@@ -1201,12 +1273,14 @@
     "history-of-science",
     "scientific-revolutions"
    ],
+   "take": "The founding of molecular biology, from the structure of DNA to the genetic code, from the scientists themselves.",
    "cover": "https://raskell.io/covers/reading/the-eighth-day-of-creation.avif",
    "page": "https://raskell.io/reading/#the-eighth-day-of-creation"
   },
   {
    "id": "the-demon-under-the-microscope",
    "title": "The Demon Under the Microscope",
+   "subtitle": "From Battlefield Hospitals to Nazi Labs, One Doctor's Heroic Search for the World's First Miracle Drug",
    "author": "Thomas Hager",
    "kind": "book",
    "year": 2006,
@@ -1218,6 +1292,7 @@
     "history-of-science",
     "scientific-revolutions"
    ],
+   "take": "Gerhard Domagk and the discovery of the sulfa drugs, the first medicines that beat bacterial infection.",
    "cover": "https://raskell.io/covers/reading/the-demon-under-the-microscope.avif",
    "page": "https://raskell.io/reading/#the-demon-under-the-microscope"
   },
@@ -1236,6 +1311,7 @@
     "history-of-science",
     "scientific-revolutions"
    ],
+   "take": "Joseph Lister and the fight to make surgery safe through antisepsis, in the hospitals of Victorian Britain.",
    "cover": "https://raskell.io/covers/reading/the-butchering-art.avif",
    "page": "https://raskell.io/reading/#the-butchering-art"
   },
@@ -1253,6 +1329,7 @@
     "open-data",
     "privacy"
    ],
+   "take": "Methods and tools for open source intelligence: finding, checking, and connecting what people and organisations leave online.",
    "cover": "https://raskell.io/covers/reading/deep-dive.avif",
    "page": "https://raskell.io/reading/#deep-dive"
   },
@@ -1269,6 +1346,7 @@
     "economics",
     "geopolitics"
    ],
+   "take": "The history of Silicon Valley as a history of capitalism, from railroads and eugenics to the tech industry.",
    "cover": "https://raskell.io/covers/reading/palo-alto.avif",
    "page": "https://raskell.io/reading/#palo-alto"
   },
@@ -1284,6 +1362,7 @@
     "geopolitics",
     "history"
    ],
+   "take": "Strategy from the Bible and the Greeks to military, revolutionary, and business strategy today.",
    "cover": "https://raskell.io/covers/reading/strategy-a-history.avif",
    "page": "https://raskell.io/reading/#strategy-a-history"
   },
@@ -1299,6 +1378,7 @@
     "religion",
     "history"
    ],
+   "take": "How sacred texts were once read as practice and ritual rather than as literal truth, across the world's religions.",
    "cover": "https://raskell.io/covers/reading/the-lost-art-of-scripture.avif",
    "page": "https://raskell.io/reading/#the-lost-art-of-scripture"
   },
@@ -1316,6 +1396,7 @@
     "intelligence",
     "hubris"
    ],
+   "take": "The case that superhuman AI built with current methods would end humanity, and why the authors want it stopped.",
    "cover": "https://raskell.io/covers/reading/if-anyone-builds-it-everyone-dies.avif",
    "page": "https://raskell.io/reading/#if-anyone-builds-it-everyone-dies"
   },
@@ -1335,6 +1416,7 @@
     "ai-alignment",
     "history-of-technology"
    ],
+   "take": "An oral history of the years when scaling models became the path to AI, in the words of the people building them.",
    "cover": "https://raskell.io/covers/reading/the-scaling-era.avif",
    "page": "https://raskell.io/reading/#the-scaling-era"
   },
@@ -1353,6 +1435,8 @@
     "ai-alignment",
     "gpus"
    ],
+   "take": "An essay series arguing that AGI may arrive by 2027 and set off a national-security race for superintelligence.",
+   "cover": "https://raskell.io/covers/reading/situational-awareness.avif",
    "page": "https://raskell.io/reading/#situational-awareness"
   },
   {
@@ -1369,6 +1453,7 @@
     "technology-races",
     "hubris"
    ],
+   "take": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
    "cover": "https://raskell.io/covers/reading/empire-of-ai.avif",
    "page": "https://raskell.io/reading/#empire-of-ai"
   },
@@ -1387,6 +1472,7 @@
     "entrepreneurship",
     "technology-races"
    ],
+   "take": "Jensen Huang and how Nvidia bet the company on the chips that made modern AI possible.",
    "cover": "https://raskell.io/covers/reading/the-thinking-machine.avif",
    "page": "https://raskell.io/reading/#the-thinking-machine"
   },
@@ -1405,6 +1491,7 @@
     "reinforcement-learning",
     "life-sciences"
    ],
+   "take": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it.",
    "cover": "https://raskell.io/covers/reading/a-brief-history-of-intelligence.avif",
    "page": "https://raskell.io/reading/#a-brief-history-of-intelligence"
   },
@@ -1423,6 +1510,7 @@
     "neuroscience",
     "languages"
    ],
+   "take": "How large language models learned to talk, and what they are and are not, by a neuroscientist who has worked at DeepMind.",
    "cover": "https://raskell.io/covers/reading/these-strange-new-minds.avif",
    "page": "https://raskell.io/reading/#these-strange-new-minds"
   },
@@ -1441,6 +1529,7 @@
     "risk",
     "policy"
    ],
+   "take": "Which kinds of AI work and which are sold as working, with tools to tell the difference.",
    "cover": "https://raskell.io/covers/reading/ai-snake-oil.avif",
    "page": "https://raskell.io/reading/#ai-snake-oil"
   },
@@ -1457,6 +1546,7 @@
     "machine-learning",
     "mathematics"
    ],
+   "take": "A textbook on the core ideas of deep learning, from probability and neural networks to transformers and diffusion.",
    "cover": "https://raskell.io/covers/reading/deep-learning-foundations-and-concepts.avif",
    "page": "https://raskell.io/reading/#deep-learning-foundations-and-concepts"
   },
@@ -1475,6 +1565,7 @@
     "ai-alignment",
     "future-of-work"
    ],
+   "take": "What people would live for once superintelligence has solved every practical problem.",
    "cover": "https://raskell.io/covers/reading/deep-utopia.avif",
    "page": "https://raskell.io/reading/#deep-utopia"
   },
@@ -1491,6 +1582,7 @@
     "world-history",
     "history-of-technology"
    ],
+   "take": "The economic history of 1870 to 2010, when humanity first escaped scarcity and still did not reach utopia.",
    "cover": "https://raskell.io/covers/reading/slouching-towards-utopia.avif",
    "page": "https://raskell.io/reading/#slouching-towards-utopia"
   },
@@ -1506,6 +1598,7 @@
     "policy",
     "cities"
    ],
+   "take": "Why rich countries fail to build the housing, energy, and infrastructure they can afford, and how to change that.",
    "cover": "https://raskell.io/covers/reading/abundance.avif",
    "page": "https://raskell.io/reading/#abundance"
   },
@@ -1522,6 +1615,7 @@
     "future-of-work",
     "social-reform"
    ],
+   "take": "Four possible futures after capitalism, from abundance or scarcity crossed with equality or hierarchy.",
    "cover": "https://raskell.io/covers/reading/four-futures.avif",
    "page": "https://raskell.io/reading/#four-futures"
   },
@@ -1531,12 +1625,15 @@
    "author": "John Maynard Keynes",
    "kind": "essay",
    "year": 1930,
+   "edition": "Collected in Essays in Persuasion (1931)",
    "url": "http://www.econ.yale.edu/smith/econ116a/keynes1.pdf",
    "status": "backlog",
    "topics": [
     "economics",
     "future-of-work"
    ],
+   "take": "Keynes's 1930 prediction that a century of growth would solve the economic problem and leave us with leisure.",
+   "cover": "https://raskell.io/covers/reading/economic-possibilities-for-our-grandchildren.avif",
    "page": "https://raskell.io/reading/#economic-possibilities-for-our-grandchildren"
   },
   {
@@ -1553,6 +1650,7 @@
     "open-web",
     "commons"
    ],
+   "take": "How Stewart Brand and the Whole Earth network turned the counterculture into Silicon Valley's belief in networks.",
    "cover": "https://raskell.io/covers/reading/from-counterculture-to-cyberculture.avif",
    "page": "https://raskell.io/reading/#from-counterculture-to-cyberculture"
   },
@@ -1571,6 +1669,7 @@
     "history-of-technology",
     "social-reform"
    ],
+   "take": "Project Cybersyn, the attempt in Allende's Chile to run the economy with cybernetics and a telex network.",
    "cover": "https://raskell.io/covers/reading/cybernetic-revolutionaries.avif",
    "page": "https://raskell.io/reading/#cybernetic-revolutionaries"
   },
@@ -1587,6 +1686,7 @@
     "economics",
     "complex-systems"
    ],
+   "take": "A novel about the Soviet dream of planning the economy into abundance with mathematics and computers.",
    "cover": "https://raskell.io/covers/reading/red-plenty.avif",
    "page": "https://raskell.io/reading/#red-plenty"
   },
@@ -1603,6 +1703,7 @@
     "hubris",
     "neuroscience"
    ],
+   "take": "A journalist among transhumanists: cryonics, mind uploading, cyborgs, and the people who want to end death.",
    "cover": "https://raskell.io/covers/reading/to-be-a-machine.avif",
    "page": "https://raskell.io/reading/#to-be-a-machine"
   },
@@ -1621,6 +1722,7 @@
     "economics",
     "future-of-work"
    ],
+   "take": "An economist works out what a world run by emulated human brains would look like, in detail.",
    "cover": "https://raskell.io/covers/reading/the-age-of-em.avif",
    "page": "https://raskell.io/reading/#the-age-of-em"
   },
@@ -1637,6 +1739,7 @@
     "existential-risk",
     "entrepreneurship"
    ],
+   "take": "A critique of the futures tech billionaires want: superintelligence, space colonies, and living forever.",
    "cover": "https://raskell.io/covers/reading/more-everything-forever.avif",
    "page": "https://raskell.io/reading/#more-everything-forever"
   },
@@ -1652,6 +1755,7 @@
     "games",
     "intelligence"
    ],
+   "take": "A game player from the Culture, a post-scarcity civilisation, is sent to play for an empire's throne.",
    "cover": "https://raskell.io/covers/reading/the-player-of-games.avif",
    "page": "https://raskell.io/reading/#the-player-of-games"
   },
@@ -1667,6 +1771,7 @@
     "intelligence",
     "augmentation"
    ],
+   "take": "The singularity across three generations of one family, from present-day hackers to post-human minds.",
    "cover": "https://raskell.io/covers/reading/accelerando.avif",
    "page": "https://raskell.io/reading/#accelerando"
   },
@@ -1682,6 +1787,7 @@
    "topics": [
     "compilers"
    ],
+   "take": "The classic MIT course on programming as abstraction, built in Scheme, up to writing interpreters and compilers.",
    "cover": "https://raskell.io/covers/reading/sicp.avif",
    "page": "https://raskell.io/reading/#sicp"
   }
