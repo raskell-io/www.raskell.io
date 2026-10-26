@@ -3,6 +3,8 @@
 // maps (partials/local_map.html) fetch that JSON and mount one page's neighbourhood with SeijakuMap.local().
 (function () {
   "use strict";
+  // Where the theme's static files are served: the folder this script came from (any base URL, any cache-busting query).
+  var ASSETS = ((document.currentScript && document.currentScript.src) || "").replace(/[^/]*$/, "");
   // Interface text in the page's language: base.html sets window.SEIJAKU_I18N (English text -> translation) on
   // translated pages; anything missing stays English. {name} placeholders are filled by fill().
   function T(s) { var d = window.SEIJAKU_I18N; return (d && d[s]) || s; }
@@ -17,17 +19,37 @@ function mount(fig, data, opts) {
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   var font = getComputedStyle(document.body).fontFamily;
 
+  // Every node is the same disc, ringed in its kind's colour and carrying its kind's icon (the sprite of
+  // partials/kind_icons.html, the same icons as the labels across the site); the size grows with the links.
   var STYLE = {
-    article: { fill: "#f4f0df", base: 2.6, grow: 0.9 },
-    note: { fill: "#f4f0df", square: true, base: 2.2, grow: 0.8 },
-    talk: { fill: "#efd093", base: 3, grow: 0.9 },
-    tag: { fill: "#72d7dc", base: 3.2, grow: 1.45 },
-    series: { fill: "#efd093", base: 5, grow: 1.1 },
-    category: { fill: null, ring: "#efd093", square: true, base: 4.4, grow: 0.9 },
-    project: { fill: null, ring: "#efd093", base: 4.4, grow: 1.1 },
-    work: { fill: null, ring: "#a9e8e9", diamond: true, base: 3.4, grow: 0.9 },
-    hub: { fill: null, ring: "#f4f0df", base: 6, grow: 0.5 }
+    article: { color: "#f4f0df", base: 4.2, grow: 0.9 },
+    note: { color: "#f4f0df", base: 3.8, grow: 0.8 },
+    talk: { color: "#efd093", base: 4.4, grow: 0.9 },
+    tag: { color: "#72d7dc", base: 4.2, grow: 1.45 },
+    series: { color: "#efd093", base: 6, grow: 1.1 },
+    category: { color: "#efd093", base: 5.6, grow: 0.9 },
+    project: { color: "#efd093", base: 5.6, grow: 1.1 },
+    work: { color: "#a9e8e9", base: 4.6, grow: 0.9 },
+    hub: { color: "#f4f0df", base: 7, grow: 0.5 }
   };
+  // The icon for a node: reviews and the kind of each work are told apart; shelves of works and groups of projects.
+  function iconOf(n) {
+    if (n.kind === "article") { return n.review ? "review" : "article"; }
+    if (n.kind === "tag") { return "topic"; }
+    if (n.kind === "work") { return (n.meta || "").split(" · ")[0].toLowerCase() || "book"; }
+    if (n.kind === "hub") { return n.of === "work" ? "journal" : "group"; }
+    return n.kind;
+  }
+  // Icons as Path2D, read once from the sprite; each part keeps its opacity (the duotone layer is faint).
+  var ICONS = {};
+  function icon(k) {
+    if (k in ICONS) { return ICONS[k]; }
+    var sym = document.getElementById("kicon-" + k), parts = null;
+    if (sym && window.Path2D) {
+      parts = [].map.call(sym.querySelectorAll("path"), function (p) { return { path: new Path2D(p.getAttribute("d")), d: p.getAttribute("d"), alpha: parseFloat(p.getAttribute("opacity") || "1") }; });
+    }
+    return (ICONS[k] = parts);
+  }
   var REST = { tag: 46, series: 40, category: 52, talk: 60, project: 58, work: 54, article: 64, note: 56, hub: 70, tagtag: 62 };
 
   // Nodes and links ---------------------------------------------------------
@@ -98,7 +120,10 @@ function mount(fig, data, opts) {
   var hidden = {}, hover = null, sel = null;
   // Group hubs travel with the projects toggle, shelves (of: "work") with the reading toggle.
   function visible(n) { return !hidden[n.kind === "hub" ? n.of || "project" : n.kind]; }
-  function fit(animate) {
+  // The fitted view, then `steps` clicks of + on top (opts.zoom: the map page opens a little closer than the whole
+  // graph). The fit button shows the whole graph and keeps it so (fitSteps = 0).
+  var fitSteps = opts.zoom || 0;
+  function fit(animate, steps) {
     var x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
     nodes.forEach(function (n) {
       if (!visible(n)) { return; }
@@ -107,6 +132,7 @@ function mount(fig, data, opts) {
     if (x0 === Infinity) { return; }
     var padTop = view.padTop, pad = 28;
     var s = Math.min((W - pad * 2) / (x1 - x0), (H - padTop - pad) / (y1 - y0), 2.4);
+    if (steps) { s = Math.min(6, s * Math.pow(1.35, steps)); }
     var nx = W / 2 - ((x0 + x1) / 2) * s, ny = padTop + (H - padTop - pad) / 2 - ((y0 + y1) / 2) * s;
     if (!animate || reduce) { scale = s; tx = nx; ty = ny; return; }
     var s0 = scale, x0v = tx, y0v = ty, t0 = performance.now();
@@ -126,7 +152,7 @@ function mount(fig, data, opts) {
     var r = canvas.getBoundingClientRect();
     dpr = window.devicePixelRatio || 1; W = r.width; H = r.height;
     canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
-    if (!touched) { fit(false); }
+    if (!touched) { fit(false, fitSteps); }
     draw();
   }
 
@@ -148,11 +174,20 @@ function mount(fig, data, opts) {
       if (!visible(n)) { return; }
       var st = STYLE[n.kind];
       ctx.globalAlpha = lit(n) ? 1 : 0.18;
-      ctx.beginPath();
-      if (st.square) { ctx.rect(n.x - n.r, n.y - n.r, n.r * 2, n.r * 2); }
-      else if (st.diamond) { var q = n.r * 1.25; ctx.moveTo(n.x, n.y - q); ctx.lineTo(n.x + q, n.y); ctx.lineTo(n.x, n.y + q); ctx.lineTo(n.x - q, n.y); ctx.closePath(); } else { ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); }
-      if (st.fill) { ctx.fillStyle = st.fill; ctx.fill(); }
-      else { ctx.fillStyle = "#0b1412"; ctx.fill(); ctx.lineWidth = 1.6; ctx.strokeStyle = st.ring; ctx.stroke(); ctx.lineWidth = 1 / scale; }
+      var na = ctx.globalAlpha;
+      ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = "#0b1412"; ctx.fill();
+      ctx.lineWidth = Math.max(0.9, n.r * 0.16); ctx.strokeStyle = st.color; ctx.stroke(); ctx.lineWidth = 1 / scale;
+      // The icon once the disc is big enough on screen to read it; a small dot of the kind's colour before that.
+      var parts = icon(iconOf(n));
+      if (parts && n.r * scale >= 5) {
+        var s = n.r * 1.18;
+        ctx.save(); ctx.translate(n.x - s / 2, n.y - s / 2); ctx.scale(s / 256, s / 256); ctx.fillStyle = st.color;
+        parts.forEach(function (pt) { ctx.globalAlpha = na * pt.alpha; ctx.fill(pt.path); });
+        ctx.restore(); ctx.globalAlpha = na;
+      } else {
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r * 0.38, 0, Math.PI * 2); ctx.fillStyle = st.color; ctx.fill();
+      }
       if (n === hover || n === sel || n === focus) {
         ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 3 / scale + 1.5, 0, Math.PI * 2);
         ctx.lineWidth = (n === focus ? 2.2 : 1.5) / scale; ctx.strokeStyle = n === focus ? "#efd093" : "#f4f0df"; ctx.stroke(); ctx.lineWidth = 1 / scale;
@@ -162,8 +197,9 @@ function mount(fig, data, opts) {
     labels();
   }
   // Labels in screen space at a fixed size; busiest first, and a label that would overlap one already drawn is skipped.
-  function labels() {
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  // Which labels show and where (screen space, fixed size, busiest first; one that would overlap a label already
+  // placed is skipped). Laid out once, then drawn on the canvas, or written into an SVG by exportSvg().
+  function labelItems() {
     var list = nodes.filter(function (n) {
       if (!visible(n)) { return false; }
       if (n === hover || n === sel || n === focus) { return true; }
@@ -174,19 +210,27 @@ function mount(fig, data, opts) {
     }).sort(function (a, b) {
       return (b === hover || b === sel || b === focus) - (a === hover || a === sel || a === focus) || b.deg - a.deg;
     });
-    var boxes = [];
+    var boxes = [], items = [];
     list.forEach(function (n) {
       var big = n.kind !== "article" && n.kind !== "note" && n.kind !== "talk";
-      ctx.font = (big ? "500 " : "400 ") + (big ? 13 : 12) + "px " + font;
+      var f = (big ? "500 " : "400 ") + (big ? 13 : 12) + "px " + font;
+      ctx.font = f;
       var text = n.label.length > 42 ? n.label.slice(0, 40) + "…" : n.label;
       var w = ctx.measureText(text).width, x = Math.max(4, Math.min(W - w - 4, n.x * scale + tx - w / 2)), y = (n.y + n.r) * scale + ty + 6;   // kept inside the canvas
       var box = [x - 3, y - 2, x + w + 3, y + 15];
       var clash = boxes.some(function (o) { return box[0] < o[2] && box[2] > o[0] && box[1] < o[3] && box[3] > o[1]; });
       if (clash && n !== hover && n !== sel) { return; }
       boxes.push(box);
-      ctx.fillStyle = "rgba(11, 20, 18, 0.72)"; ctx.fillRect(box[0], box[1], box[2] - box[0], box[3] - box[1]);
-      ctx.fillStyle = n === focus ? "#efd093" : n.kind === "tag" ? "#a9e8e9" : n.kind === "article" || n.kind === "note" || n.kind === "talk" ? "rgba(244, 240, 223, 0.86)" : n.kind === "hub" ? "#f4f0df" : n.kind === "work" ? "#a9e8e9" : "#efd093";
-      ctx.textBaseline = "top"; ctx.fillText(text, x, y);
+      var color = n === focus ? "#efd093" : n.kind === "tag" ? "#a9e8e9" : n.kind === "article" || n.kind === "note" || n.kind === "talk" ? "rgba(244, 240, 223, 0.86)" : n.kind === "hub" ? "#f4f0df" : n.kind === "work" ? "#a9e8e9" : "#efd093";
+      items.push({ text: text, x: x, y: y, box: box, big: big, font: f, color: color });
+    });
+    return items;
+  }
+  function labels() {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    labelItems().forEach(function (l) {
+      ctx.fillStyle = "rgba(11, 20, 18, 0.72)"; ctx.fillRect(l.box[0], l.box[1], l.box[2] - l.box[0], l.box[3] - l.box[1]);
+      ctx.font = l.font; ctx.fillStyle = l.color; ctx.textBaseline = "top"; ctx.fillText(l.text, l.x, l.y);
     });
   }
 
@@ -278,7 +322,7 @@ function mount(fig, data, opts) {
   fig.querySelectorAll("[data-zoom]").forEach(function (b) {
     b.addEventListener("click", function () {
       var z = b.getAttribute("data-zoom");
-      if (z === "fit") { touched = false; fit(true); } else { zoomAt(z === "in" ? 1.35 : 1 / 1.35, W / 2, H / 2); }
+      if (z === "fit") { touched = false; fitSteps = 0; fit(true); } else { zoomAt(z === "in" ? 1.35 : 1 / 1.35, W / 2, H / 2); }
     });
   });
   fig.querySelectorAll("[data-kind]").forEach(function (b) {
@@ -361,34 +405,146 @@ function mount(fig, data, opts) {
     setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
   }
   var base = (location.hostname || "site").replace(/^www\./, "").replace(/\W+/g, "-") + "-map";
-  // The whole graph, fitted, on the map's own ground at 3200 x 2000; filters and selection apply as shown.
-  function exportPng() {
+  // The whole graph, fitted, on the map's own ground at 1600 x 1000 (rendered at 2x); filters and selection apply as
+  // shown. `paint` runs with the export view in place and the live view restored afterwards.
+  function withExportView(paint) {
     var keep = { ctx: ctx, W: W, H: H, dpr: dpr, scale: scale, tx: tx, ty: ty, view: view };
-    var off = document.createElement("canvas");
-    off.width = 3200; off.height = 2000;
-    ctx = off.getContext("2d"); W = 1600; H = 1000; dpr = 2; view = { padTop: 36, bg: "#0b1412" };
-    fit(false); draw();
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.font = "500 13px " + font; ctx.fillStyle = "rgba(244, 240, 223, 0.55)"; ctx.textBaseline = "alphabetic";
-    ctx.fillText(location.host + location.pathname + " · " + new Date().toISOString().slice(0, 10), 24, H - 20);
-    ctx = keep.ctx; W = keep.W; H = keep.H; dpr = keep.dpr; scale = keep.scale; tx = keep.tx; ty = keep.ty; view = keep.view;
-    draw();
-    off.toBlob(function (b) { if (b) { save(b, base + ".png"); } }, "image/png");
+    W = 1600; H = 1000; view = { padTop: 36, bg: "#0b1412" };
+    fit(false);
+    try { return paint(); } finally {
+      ctx = keep.ctx; W = keep.W; H = keep.H; dpr = keep.dpr; scale = keep.scale; tx = keep.tx; ty = keep.ty; view = keep.view;
+      draw();
+    }
   }
-  // Everything on the map (not just what is shown): nodes with their degree, and links as source/target pairs.
-  function exportJson() {
+  var stamp = function () { return location.host + location.pathname + " · " + new Date().toISOString().slice(0, 10); };
+  function renderCanvas() {
+    return withExportView(function () {
+      var off = document.createElement("canvas");
+      off.width = 3200; off.height = 2000;
+      ctx = off.getContext("2d"); dpr = 2;
+      draw();
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.font = "500 13px " + font; ctx.fillStyle = "rgba(244, 240, 223, 0.55)"; ctx.textBaseline = "alphabetic";
+      ctx.fillText(stamp(), 24, H - 20);
+      return off;
+    });
+  }
+  function exportPng() {
+    renderCanvas().toBlob(function (b) { if (b) { save(b, base + ".png"); } }, "image/png");
+  }
+  // AVIF: the browser's own encoder when it has one; otherwise libavif compiled to WebAssembly (the single-threaded
+  // codec of @jsquash/avif 2.1.1, Apache-2.0), served from the theme's static/vendor/avif/ and loaded only when
+  // someone asks for an AVIF, so the export never calls a third party.
+  var AVIF_CODEC = ASSETS + "vendor/avif/";
+  var AVIF_OPTIONS = { quality: 62, qualityAlpha: -1, denoiseLevel: 0, tileColsLog2: 0, tileRowsLog2: 0, speed: 7, subsample: 1, chromaDeltaQ: false, sharpness: 0, tune: 0, enableSharpYUV: false, bitDepth: 8, lossless: false };
+  var avifModule = null;
+  function avifEncode(data) {
+    if (!avifModule) {
+      avifModule = import(AVIF_CODEC + "avif_enc.js").then(function (m) {
+        return m.default({ noInitialRun: true, locateFile: function (f) { return AVIF_CODEC + f; } });
+      });
+    }
+    return avifModule.then(function (mod) {
+      var out = mod.encode(new Uint8Array(data.data.buffer), data.width, data.height, AVIF_OPTIONS);
+      if (!out) { throw new Error("AVIF encoding failed"); }
+      return out.buffer;
+    });
+  }
+  function exportAvif(btn) {
+    var off = renderCanvas();
+    off.toBlob(function (b) {
+      var menu = btn && btn.closest("details");
+      if (b && b.type === "image/avif") { save(b, base + ".avif"); if (menu) { menu.open = false; } return; }
+      var label = btn ? btn.innerHTML : "";
+      if (btn) { btn.disabled = true; btn.innerHTML = T("Encoding…") + " <small>AVIF</small>"; }
+      var data = off.getContext("2d").getImageData(0, 0, off.width, off.height);
+      avifEncode(data).then(function (buf) {
+        save(new Blob([buf], { type: "image/avif" }), base + ".avif");
+      }).catch(function () {
+        if (btn) { btn.innerHTML = T("AVIF failed, saving PNG") + " <small>PNG</small>"; }
+        off.toBlob(function (p) { if (p) { save(p, base + ".png"); } }, "image/png");
+      }).then(function () {
+        if (btn) { setTimeout(function () { btn.disabled = false; btn.innerHTML = label; if (menu) { menu.open = false; } }, 1200); }
+      });
+    }, "image/avif");
+  }
+  // SVG: the same picture as vectors; links as lines, each node its disc and icon (the sprite's path data), and the
+  // same labels as the image, set in the site's own font, embedded (the two weights the labels use), so the file
+  // looks the same wherever it is opened.
+  var SVG_FONTS = [["geist-regular.woff2", 400], ["geist-medium.woff2", 500]], fontCss = null;
+  function embeddedFonts() {
+    if (!fontCss) {
+      fontCss = Promise.all(SVG_FONTS.map(function (f) {
+        return fetch(ASSETS + "fonts/" + f[0]).then(function (r) { if (!r.ok) { throw new Error(f[0]); } return r.blob(); }).then(function (b) {
+          return new Promise(function (ok) { var fr = new FileReader(); fr.onload = function () { ok(fr.result.split(",")[1]); }; fr.readAsDataURL(b); });
+        }).then(function (b64) {
+          return '@font-face { font-family: "Seijaku Sans"; font-weight: ' + f[1] + '; src: url(data:font/woff2;base64,' + b64 + ') format("woff2"); }';
+        });
+      })).then(function (rules) { return rules.join("\n"); }).catch(function () { fontCss = null; return ""; });
+    }
+    return fontCss;
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function r2(v) { return Math.round(v * 100) / 100; }
+  function exportSvg() {
+    var svg = withExportView(function () {
+      var off = document.createElement("canvas"); ctx = off.getContext("2d"); dpr = 1;   // a context only to measure labels
+      var X = function (v) { return r2(v * scale + tx); }, Y = function (v) { return r2(v * scale + ty); };
+      var o = ['<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + " " + H + '" font-family="' + esc('"Seijaku Sans", ' + font) + '">',
+        "<!--FONTS-->", '<rect width="100%" height="100%" fill="#0b1412"/>', '<g stroke-width="1">'];
+      links.forEach(function (l) {
+        if (!visible(l.a) || !visible(l.b)) { return; }
+        var on = sel && (l.a === sel || l.b === sel);
+        o.push('<line x1="' + X(l.a.x) + '" y1="' + Y(l.a.y) + '" x2="' + X(l.b.x) + '" y2="' + Y(l.b.y) + '" stroke="' + (on ? "rgba(114, 215, 220, 0.75)" : sel ? "rgba(244, 240, 223, 0.04)" : "rgba(244, 240, 223, 0.13)") + '"/>');
+      });
+      o.push("</g>");
+      nodes.forEach(function (n) {
+        if (!visible(n)) { return; }
+        var st = STYLE[n.kind], r = n.r * scale, cx = X(n.x), cy = Y(n.y), parts = icon(iconOf(n));
+        o.push('<g' + (lit(n) ? "" : ' opacity="0.18"') + ">");
+        o.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + r2(r) + '" fill="#0b1412" stroke="' + st.color + '" stroke-width="' + r2(Math.max(0.9, n.r * 0.16) * scale) + '"/>');
+        if (parts && r >= 5) {
+          var s = r * 1.18;
+          o.push('<g transform="translate(' + r2(cx - s / 2) + " " + r2(cy - s / 2) + ") scale(" + r2(s / 256 * 1000) / 1000 + ')" fill="' + st.color + '">');
+          parts.forEach(function (pt) { o.push('<path d="' + pt.d + '"' + (pt.alpha < 1 ? ' opacity="' + pt.alpha + '"' : "") + "/>"); });
+          o.push("</g>");
+        } else {
+          o.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + r2(r * 0.38) + '" fill="' + st.color + '"/>');
+        }
+        o.push("</g>");
+      });
+      labelItems().forEach(function (l) {
+        o.push('<rect x="' + r2(l.box[0]) + '" y="' + r2(l.box[1]) + '" width="' + r2(l.box[2] - l.box[0]) + '" height="' + r2(l.box[3] - l.box[1]) + '" fill="rgba(11, 20, 18, 0.72)"/>');
+        o.push('<text x="' + r2(l.x) + '" y="' + r2(l.y) + '" dominant-baseline="hanging" font-size="' + (l.big ? 13 : 12) + '" font-weight="' + (l.big ? 500 : 400) + '" fill="' + l.color + '">' + esc(l.text) + "</text>");
+      });
+      o.push('<text x="24" y="' + (H - 20) + '" font-size="13" font-weight="500" fill="rgba(244, 240, 223, 0.55)">' + esc(stamp()) + "</text>");
+      o.push("</svg>");
+      return o.join("\n");
+    });
+    embeddedFonts().then(function (css) {
+      var out = svg.replace("<!--FONTS-->", css ? "<defs><style>\n" + css + "\n</style></defs>" : "");
+      save(new Blob([out + "\n"], { type: "image/svg+xml" }), base + ".svg");
+    });
+  }
+  // Everything on the map (not just what is shown): nodes with their degree, and links as source/target pairs; the
+  // same shape as /map.json.
+  function graphJson() {
     var out = {
-      source: location.href,
+      source: location.origin + location.pathname,
       generated: new Date().toISOString(),
       nodes: nodes.map(function (n) { return { id: n.id, kind: n.kind, label: n.label, url: n.url, meta: n.meta, description: n.desc || undefined, degree: n.deg }; }),
       links: links.map(function (l) { return { source: l.a.id, target: l.b.id }; })
     };
-    save(new Blob([JSON.stringify(out, null, 2) + "\n"], { type: "application/json" }), base + ".json");
+    return JSON.stringify(out, null, 1) + "\n";
   }
-  fig.querySelectorAll("[data-export]").forEach(function (b) {
+  function exportJson() { save(new Blob([graphJson()], { type: "application/json" }), base + ".json"); }
+  // The export menu sits in the figure or, on the map page, under it ([data-map-tools="<figure id>"]).
+  var tools = fig.id ? document.querySelector('[data-map-tools="' + fig.id + '"]') : null;
+  [].concat([].slice.call(fig.querySelectorAll("[data-export]")), tools ? [].slice.call(tools.querySelectorAll("[data-export]")) : []).forEach(function (b) {
     b.addEventListener("click", function () {
-      if (b.getAttribute("data-export") === "png") { exportPng(); } else { exportJson(); }
-      var d = b.closest("details"); if (d) { d.open = false; }
+      var f = b.getAttribute("data-export");
+      if (f === "png") { exportPng(); } else if (f === "avif") { exportAvif(b); } else if (f === "svg") { exportSvg(); } else { exportJson(); }
+      var d = b.closest("details"); if (d && f !== "avif") { d.open = false; }
     });
   });
 
@@ -399,7 +555,7 @@ function mount(fig, data, opts) {
     running = true;
     (function frame() {
       tick(); tick();
-      if (!touched) { fit(false); }
+      if (!touched) { fit(false, fitSteps); }
       draw();
       if (alpha > 0.004) { requestAnimationFrame(frame); } else { running = false; }
     })();
@@ -410,7 +566,7 @@ function mount(fig, data, opts) {
   if (!reduce) { run(); }
   fig.classList.add("is-ready");
   if (opts.select) { setTimeout(function () { if (reduce || !running) { focusOn(opts.select); } else { var w = setInterval(function () { if (!running) { clearInterval(w); focusOn(opts.select); } }, 120); } }, 60); }
-  return { focusOn: focusOn };
+  return { focusOn: focusOn, json: graphJson };
 }
 
 // One node's neighbourhood: the node, everything linked to it, and the links among those.
@@ -452,7 +608,21 @@ var fig = document.querySelector("[data-map]");
 var src = document.getElementById("map-data");
 if (fig && src) {
   var hash = decodeURIComponent(location.hash.slice(1));
-  mount(fig, JSON.parse(src.textContent), { select: hash || null });
+  var api = mount(fig, JSON.parse(src.textContent), { select: hash || null, zoom: 2 });
+  // The graph as data under the map: fill the code block, and copy the JSON or the URL of /map.json.
+  var code = document.querySelector("[data-map-json]"), json = api.json();
+  if (code) { code.textContent = json; }
+  document.querySelectorAll("[data-copy]").forEach(function (b) {
+    var span = b.querySelector("span") || b, label = span.textContent;
+    b.addEventListener("click", function () {
+      var text = b.getAttribute("data-copy") === "url" ? b.getAttribute("data-url") : json;
+      if (!navigator.clipboard) { return; }
+      navigator.clipboard.writeText(text).then(function () {
+        span.textContent = b.getAttribute("data-done") || "Copied"; b.classList.add("is-done");
+        setTimeout(function () { span.textContent = label; b.classList.remove("is-done"); }, 1600);
+      });
+    });
+  });
 }
 // End-of-page maps load when their <details> opens (they may also be open from the start).
 document.querySelectorAll("[data-localmap]").forEach(function (d) {
