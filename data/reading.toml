@@ -959,6 +959,111 @@ year = 2019
 status = "backlog"
 topics = ["religion", "history"]
 
+[[works]]
+id = "if-anyone-builds-it-everyone-dies"
+title = "If Anyone Builds It, Everyone Dies"
+subtitle = "Why Superhuman AI Would Kill Us All"
+author = "Eliezer Yudkowsky and Nate Soares"
+kind = "book"
+cover = "covers/reading/if-anyone-builds-it-everyone-dies.avif"
+year = 2025
+status = "backlog"
+topics = ["ai-alignment", "existential-risk", "intelligence", "hubris"]
+
+[[works]]
+id = "the-scaling-era"
+title = "The Scaling Era"
+subtitle = "An Oral History of AI, 2019–2025"
+author = "Dwarkesh Patel, with Gavin Leech"
+kind = "book"
+cover = "covers/reading/the-scaling-era.avif"
+isbn = "9781953953551"
+year = 2025
+publisher = "Stripe Press"
+status = "backlog"
+topics = ["machine-learning", "research-labs", "ai-alignment", "history-of-technology"]
+
+[[works]]
+id = "situational-awareness"
+title = "Situational Awareness"
+subtitle = "The Decade Ahead"
+author = "Leopold Aschenbrenner"
+kind = "essay"
+year = 2024
+url = "https://situational-awareness.ai/"
+status = "backlog"
+topics = ["technology-races", "geopolitics", "ai-alignment", "gpus"]
+
+[[works]]
+id = "empire-of-ai"
+title = "Empire of AI"
+subtitle = "Dreams and Nightmares in Sam Altman's OpenAI"
+author = "Karen Hao"
+kind = "book"
+cover = "covers/reading/empire-of-ai.avif"
+year = 2025
+status = "backlog"
+topics = ["research-labs", "training-data", "technology-races", "hubris"]
+
+[[works]]
+id = "the-thinking-machine"
+title = "The Thinking Machine"
+subtitle = "Jensen Huang, Nvidia, and the World's Most Coveted Microchip"
+author = "Stephen Witt"
+kind = "book"
+cover = "covers/reading/the-thinking-machine.avif"
+isbn = "9780593832691"
+year = 2025
+status = "backlog"
+topics = ["gpus", "history-of-technology", "entrepreneurship", "technology-races"]
+
+[[works]]
+id = "a-brief-history-of-intelligence"
+title = "A Brief History of Intelligence"
+subtitle = "Evolution, AI, and the Five Breakthroughs That Made Our Brains"
+author = "Max Bennett"
+kind = "book"
+cover = "covers/reading/a-brief-history-of-intelligence.avif"
+isbn = "9780063286344"
+year = 2023
+status = "backlog"
+topics = ["intelligence", "neuroscience", "reinforcement-learning", "life-sciences"]
+
+[[works]]
+id = "these-strange-new-minds"
+title = "These Strange New Minds"
+subtitle = "How AI Learned to Talk and What It Means"
+author = "Christopher Summerfield"
+kind = "book"
+cover = "covers/reading/these-strange-new-minds.avif"
+isbn = "9780593831717"
+year = 2025
+status = "backlog"
+topics = ["intelligence", "neural-networks", "neuroscience", "languages"]
+
+[[works]]
+id = "ai-snake-oil"
+title = "AI Snake Oil"
+subtitle = "What Artificial Intelligence Can Do, What It Can't, and How to Tell the Difference"
+author = "Arvind Narayanan and Sayash Kapoor"
+kind = "book"
+cover = "covers/reading/ai-snake-oil.avif"
+isbn = "9780691249131"
+year = 2024
+status = "backlog"
+topics = ["evaluation", "machine-learning", "risk", "policy"]
+
+[[works]]
+id = "deep-learning-foundations-and-concepts"
+title = "Deep Learning"
+subtitle = "Foundations and Concepts"
+author = "Christopher M. Bishop and Hugh Bishop"
+kind = "book"
+cover = "covers/reading/deep-learning-foundations-and-concepts.avif"
+year = 2024
+status = "backlog"
+topics = ["neural-networks", "machine-learning", "mathematics"]
+
 # Set aside ----------------------------------------------------------------
 
 [[works]]
