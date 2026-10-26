@@ -135,7 +135,7 @@ A new kind (say, podcasts or bookmarks) has to be taught to every sink. Touch po
 - Register: a section in `content/` or a data file in `data/`, with its fields documented at the top.
 - Validation: `.mise/tasks/tags-check` (topics used, required fields, allowed values).
 - Map: `graph_data.html` (node kind and edges), `static/seijaku-map.js` (`STYLE`, `REST`, `KIND_NAME`),
-  `map.html` (legend button), `sass/components/_map.scss` (legend swatch).
+  `map.html` (legend button with the kind's icon), `sass/components/_map.scss` (legend colour).
 - Search: `garden_data.html` (rows), `static/seijaku-search.js` (a chip in `CHIPS`, badge, browse order),
   `.mise/tasks/garden-json`.
 - Machine copies: `.mise/tasks/llms` (llms.txt section, llms-full.txt, Markdown copies, a JSON file if
@@ -152,7 +152,7 @@ A new kind (say, podcasts or bookmarks) has to be taught to every sink. Touch po
 English is the source language and lives at `/`; Simplified Chinese (`zh`) and Korean (`ko`) live under
 `/zh/` and `/ko/`. Every page the navigation, footer, and indexes link to exists in all three languages, so a
 reader never drops back into English chrome: home, about, projects, apps, invest and the investor briefs,
-speaking, start here, search, map, reading, licence, privacy, and the articles, notes, and talks indexes.
+speaking, start here, search, map, ontology, reading, licence, privacy, and the articles, notes, and talks indexes.
 The writing itself (articles, reviews, notes, talks) is English only; translated lists show it in English
 inside the translated page. Topics are translated: names, definitions, and a page per topic in every language.
 

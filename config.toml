@@ -84,6 +84,7 @@ main_section = "articles"
 projects_section = "projects"
 cta = { name = "Start here", url = "@/start-here.md" }
 map = "@/map.md"
+ontology = "@/ontology.md"   # the key to kinds, icons, colours and relations; linked from the map
 reading = "@/reading.md"
 # Languages: English first (the default, at /), then translations under /<code>/. URLs keep the English
 # names (/zh/about/), because a translation is named after its source file (about.zh.md). Labels and the
@@ -148,6 +149,7 @@ footer_columns = [
     ] },
     { title = "Explore", items = [
       { name = "Map", url = "@/map.md" },
+      { name = "Ontology", url = "@/ontology.md" },
       { name = "Topics", url = "/tags" },
       { name = "Series", url = "/series" },
       { name = "Reading", url = "@/reading.md" },
@@ -247,6 +249,25 @@ Raskell 是我在网络上的一角，也是通往我所构建的一切的入口
 "Start here" = "从这里开始"
 "Invest" = "投资"
 "Map" = "地图"
+"Ontology" = "本体"
+"kinds" = "种类"
+"relations" = "关系"
+"How to read the map" = "怎样读这张地图"
+"Every icon, colour, and line on the map, explained on one page." = "地图上的每个图标、每种颜色和每条线，都在一页里讲清楚。"
+"Open the ontology" = "打开本体"
+"The map as data" = "作为数据的地图"
+"Every node and link on the map as JSON, the same as map.json. Copy it into an agent, or give the agent the URL." = "地图上的每个节点和每条连线，以 JSON 形式给出，与 map.json 相同。可以把它复制给智能体，也可以把网址交给智能体。"
+"Copy JSON" = "复制 JSON"
+"Copy URL" = "复制网址"
+"Copied" = "已复制"
+"copy" = "复制"
+"copied" = "已复制"
+"Image, smaller" = "图片，更小"
+"Vector" = "矢量图"
+"Encoding…" = "编码中…"
+"AVIF failed, saving PNG" = "AVIF 失败，改存 PNG"
+"The graph appears here once the map has loaded." = "地图加载完成后，图数据会显示在这里。"
+"The reading log" = "阅读记录"
 "Topics" = "主题"
 "Notes" = "笔记"
 "Reading" = "阅读"
@@ -498,6 +519,25 @@ Raskell은 웹 위의 제 작은 공간이자, 제가 만드는 모든 것으로
 "Start here" = "여기서 시작"
 "Invest" = "투자"
 "Map" = "지도"
+"Ontology" = "온톨로지"
+"kinds" = "종류"
+"relations" = "관계"
+"How to read the map" = "지도를 읽는 법"
+"Every icon, colour, and line on the map, explained on one page." = "지도 위의 모든 아이콘, 색, 선을 한 페이지에서 설명합니다."
+"Open the ontology" = "온톨로지 열기"
+"The map as data" = "데이터로서의 지도"
+"Every node and link on the map as JSON, the same as map.json. Copy it into an agent, or give the agent the URL." = "지도의 모든 노드와 링크를 map.json과 같은 JSON으로 보여 줍니다. 에이전트에 복사해 넣거나, 에이전트에게 URL을 건네십시오."
+"Copy JSON" = "JSON 복사"
+"Copy URL" = "URL 복사"
+"Copied" = "복사됨"
+"copy" = "복사"
+"copied" = "복사됨"
+"Image, smaller" = "이미지, 더 작게"
+"Vector" = "벡터"
+"Encoding…" = "인코딩 중…"
+"AVIF failed, saving PNG" = "AVIF 실패, PNG로 저장"
+"The graph appears here once the map has loaded." = "지도가 로드되면 그래프가 여기에 나타납니다."
+"The reading log" = "읽기 기록"
 "Topics" = "주제"
 "Notes" = "노트"
 "Reading" = "독서"
