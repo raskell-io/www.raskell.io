@@ -40,6 +40,7 @@ year = 2026
 url = "https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296"
 status = "reading"
 topics = ["intelligence", "reinforcement-learning", "games", "research-labs", "ai-alignment", "history-of-technology", "technology-races"]
+take = "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence."
 
 # Read ---------------------------------------------------------------------
 # Works finished in the same month show newest first in the order they appear here (later = more recent).
@@ -57,6 +58,7 @@ url = "https://www.hachette.co.uk/titles/simon-sebag-montefiore/the-cauldron/978
 status = "read"
 finished = "2026-09"
 topics = ["geopolitics", "history"]
+take = "A history of the whole modern Middle East, in all its diversity, from 1900 to the present."
 
 [[works]]
 id = "guns-germs-and-steel"
@@ -69,6 +71,7 @@ year = 1997
 status = "read"
 finished = "2025-11"
 topics = ["world-history", "history-of-technology", "complex-systems"]
+take = "Why some societies came to dominate others: geography, crops, animals, and germs rather than any difference in people."
 
 [[works]]
 id = "nuclear-war-a-scenario"
@@ -82,6 +85,7 @@ url = "https://en.wikipedia.org/wiki/Nuclear_War:_A_Scenario"
 status = "read"
 finished = "2025-10"
 topics = ["existential-risk", "geopolitics", "technology-races"]
+take = "A minute-by-minute account of how a nuclear exchange would unfold, built on interviews with the people who plan for one."
 
 [[works]]
 id = "jurassic-park"
@@ -93,6 +97,7 @@ year = 1990
 status = "read"
 finished = "2025-07"
 topics = ["literature", "complex-systems", "risk", "life-sciences", "hubris", "emergence"]
+take = "A park of cloned dinosaurs, and a mathematician who uses chaos theory to explain why it cannot stay under control."
 
 [[works]]
 id = "the-books-of-jacob"
@@ -106,12 +111,14 @@ edition = "Translated from the Polish (Księgi Jakubowe) by Jennifer Croft"
 status = "read"
 finished = "2024-08"
 topics = ["maximalist-novels", "religion", "history", "languages", "europe"]
+take = "Jacob Frank, an eighteenth-century self-proclaimed messiah, and the followers who crossed Europe and three religions with him."
 
 [[works]]
 id = "from-worm-to-human"
 title = "From Worm to Human: Scaling Brain Emulation"
 author = "Isaak Freeman"
 kind = "paper"
+cover = "covers/reading/from-worm-to-human.avif"
 year = 2026
 publisher = "MIT, Boyden Lab (thesis)"
 url = "https://pdf.isaak.net/scaling-emulations"
@@ -125,6 +132,7 @@ id = "state-of-brain-emulation-2025"
 title = "State of Brain Emulation Report 2025"
 author = "Zanichelli, Schons, Freeman, Shiu, and Arkhipov"
 kind = "report"
+cover = "covers/reading/state-of-brain-emulation-2025.avif"
 year = 2025
 url = "https://arxiv.org/abs/2510.15745"
 status = "read"
@@ -143,6 +151,7 @@ year = 2023
 status = "read"
 finished = "2023"
 topics = ["philosophy-of-science"]
+take = "Essays that question how much modern science can actually explain, from physics and cosmology to Darwinian biology."
 
 [[works]]
 id = "network-programming-with-go"
@@ -156,6 +165,7 @@ year = 2021
 status = "read"
 finished = "2023"
 topics = ["networking"]
+take = "Network services in Go from the socket up: TCP, UDP, HTTP, TLS, and keeping them secure and observable."
 
 [[works]]
 id = "elixir-in-action"
@@ -169,6 +179,7 @@ edition = "Second edition"
 status = "read"
 finished = "2023"
 topics = ["elixir", "distributed-systems", "reliability"]
+take = "Elixir and the BEAM for building concurrent, fault-tolerant systems with processes, supervisors, and OTP."
 
 [[works]]
 id = "crafting-interpreters"
@@ -180,10 +191,12 @@ year = 2021
 status = "read"
 finished = "2024"
 topics = ["compilers"]
+take = "Two complete interpreters for one small language, a tree-walker in Java and a bytecode virtual machine in C."
 
 [[works]]
 id = "building-a-second-brain"
 title = "Building a Second Brain"
+subtitle = "A Proven Method to Organize Your Digital Life and Unlock Your Creative Potential"
 author = "Tiago Forte"
 kind = "book"
 cover = "covers/reading/building-a-second-brain.avif"
@@ -191,6 +204,7 @@ year = 2022
 status = "read"
 finished = "2022"
 topics = ["knowledge-management", "external-memory"]
+take = "A method for keeping notes outside your head: capture, organise, distil, and express, with the PARA folders."
 
 [[works]]
 id = "rust-web-programming"
@@ -202,6 +216,7 @@ year = 2021
 status = "read"
 finished = "2022"
 topics = ["rust", "networking"]
+take = "Building web applications and services in Rust, from routing and databases to authentication and deployment."
 
 [[works]]
 id = "programming-webassembly-with-rust"
@@ -214,6 +229,7 @@ year = 2019
 status = "read"
 finished = "2021"
 topics = ["webassembly", "rust"]
+take = "WebAssembly from the raw text format up to Rust modules that run in the browser and beyond it."
 
 [[works]]
 id = "webassembly-the-definitive-guide"
@@ -226,6 +242,7 @@ year = 2021
 status = "read"
 finished = "2021"
 topics = ["webassembly"]
+take = "What WebAssembly is and how to use it from many languages, in the browser, on servers, and through WASI."
 
 [[works]]
 id = "these-truths"
@@ -238,6 +255,7 @@ year = 2018
 status = "read"
 finished = "2018"
 topics = ["history"]
+take = "The history of the United States as a test of the truths in its founding documents: equality, sovereignty, and consent."
 
 [[works]]
 id = "jerusalem-the-biography"
@@ -250,6 +268,7 @@ year = 2011
 status = "read"
 finished = "2017"
 topics = ["religion", "geopolitics", "world-history", "cities"]
+take = "Three thousand years of Jerusalem through the empires, faiths, and families that fought over it."
 
 [[works]]
 id = "freeland"
@@ -262,6 +281,7 @@ year = 1890
 status = "read"
 finished = "2017"
 topics = ["literature", "social-reform", "commons"]
+take = "A utopian novel about a colony in East Africa built on free land and free access to capital."
 
 [[works]]
 id = "das-soziale-problem"
@@ -273,6 +293,7 @@ year = 1912
 status = "read"
 finished = "2017"
 topics = ["social-reform"]
+take = "Hertzka on the social question, the problem his novel Freeland set out to answer."
 
 [[works]]
 id = "the-devils-delusion"
@@ -285,6 +306,7 @@ year = 2008
 status = "read"
 finished = "2016"
 topics = ["philosophy-of-science", "religion"]
+take = "A mathematician's case that the new atheism claims far more scientific authority than science gives it."
 
 [[works]]
 id = "antifragile"
@@ -298,6 +320,7 @@ year = 2012
 status = "read"
 finished = "2015"
 topics = ["risk", "complex-systems"]
+take = "Things that gain from disorder, and why systems built to avoid all stress grow fragile."
 
 [[works]]
 id = "demons"
@@ -309,6 +332,7 @@ year = 1872
 status = "read"
 finished = "2012"
 topics = ["literature", "ethics", "religion"]
+take = "A small revolutionary cell in a provincial Russian town and the ideas that lead it to murder."
 
 [[works]]
 id = "the-brothers-karamazov"
@@ -320,6 +344,7 @@ year = 1880
 status = "read"
 finished = "2011"
 topics = ["literature", "ethics", "religion"]
+take = "Three brothers, their father's murder, and a long argument about faith, doubt, and freedom."
 
 [[works]]
 id = "a-little-history-of-the-world"
@@ -331,6 +356,7 @@ year = 1936
 status = "read"
 finished = "2011"
 topics = ["world-history"]
+take = "World history written for children in 1935 by a young art historian, from the Stone Age to the twentieth century."
 
 [[works]]
 id = "crime-and-punishment"
@@ -342,6 +368,7 @@ year = 1866
 status = "read"
 finished = "2010"
 topics = ["literature", "ethics"]
+take = "A poor former student commits a murder to prove a theory about himself and cannot live with it."
 
 [[works]]
 id = "infinite-jest"
@@ -353,6 +380,7 @@ year = 1996
 status = "read"
 finished = "2025-10"   # with The Maximalist Novel, before Guns, Germs, and Steel
 topics = ["maximalist-novels", "attention-economy"]
+take = "A tennis academy, a halfway house, and a film so entertaining it kills, in a near-future North America."
 
 [[works]]
 id = "the-maximalist-novel"
@@ -367,6 +395,7 @@ edition = "Translated from the Italian by Albert Sbragia"
 status = "read"
 finished = "2025-10"   # right after Infinite Jest
 topics = ["maximalist-novels", "languages"]
+take = "A literary study that defines the maximalist novel as a genre, from Gravity's Rainbow and Infinite Jest to 2666."
 
 [[works]]
 id = "this-is-for-everyone"
@@ -393,6 +422,7 @@ year = 2015
 status = "read"
 finished = "2016"
 topics = ["history-of-science", "philosophy-of-science", "scientific-revolutions"]
+take = "How science was invented between 1572 and 1704, traced through new words such as fact, experiment, and hypothesis."
 
 [[works]]
 id = "ocean-earths-last-wilderness"
@@ -405,6 +435,7 @@ year = 2025
 status = "read"
 finished = "2026-10"
 topics = ["life-sciences", "commons", "risk"]
+take = "Life in the ocean, what it has lost, and how protecting the sea lets it recover."
 
 [[works]]
 id = "the-ultimate-hidden-truth-of-the-world"
@@ -418,6 +449,7 @@ edition = "Edited by Nika Dubrovsky"
 status = "read"
 finished = "2026-02"
 topics = ["philosophy", "economics", "democratisation"]
+take = "Essays from across Graeber's career on debt, bureaucracy, play, value, and the freedom to make the world differently."
 
 [[works]]
 id = "pirate-enlightenment"
@@ -430,6 +462,7 @@ year = 2023
 status = "read"
 finished = "2025-10"
 topics = ["history", "democratisation", "commons"]
+take = "Pirate settlements on Madagascar and the Malagasy experiments in self-government that may have fed the European Enlightenment."
 
 [[works]]
 id = "codebreaking"
@@ -442,6 +475,7 @@ year = 2020
 status = "read"
 finished = "2025-04"
 topics = ["applied-security", "mathematics", "history"]
+take = "A hands-on guide to breaking classical ciphers and codes, with real cases solved and unsolved."
 
 [[works]]
 id = "the-island-at-the-center-of-the-world"
@@ -454,6 +488,7 @@ year = 2004
 status = "read"
 finished = "2025-01"
 topics = ["history", "cities", "europe"]
+take = "Dutch New Amsterdam, rebuilt from its own archives, and the tolerance and trade it left to Manhattan and America."
 
 [[works]]
 id = "at-war"
@@ -467,6 +502,7 @@ year = 2014
 status = "read"
 finished = "2024-09"
 topics = ["applied-security", "geopolitics", "technology-races"]
+take = "How the NSA, Cyber Command, and private contractors turned the internet into a domain of war."
 
 [[works]]
 id = "future-science"
@@ -480,6 +516,7 @@ year = 2011
 status = "read"
 finished = "2024-05"
 topics = ["philosophy-of-science", "life-sciences", "neuroscience"]
+take = "Essays by young scientists on the questions at the front of their fields, from neuroscience to physics."
 
 [[works]]
 id = "programming-rust"
@@ -493,6 +530,7 @@ edition = "Second edition"
 status = "read"
 finished = "2023"
 topics = ["rust", "programming-languages"]
+take = "Rust for systems programmers: ownership, borrowing, traits, concurrency, and unsafe code, explained in depth."
 
 [[works]]
 id = "site-reliability-engineering"
@@ -506,6 +544,7 @@ url = "https://sre.google/sre-book/table-of-contents/"
 status = "read"
 finished = "2023"
 topics = ["reliability", "observability", "distributed-systems"]
+take = "How Google runs production: error budgets, service level objectives, toil, on-call, and postmortems."
 
 [[works]]
 id = "who-we-are-and-how-we-got-here"
@@ -518,6 +557,7 @@ year = 2018
 status = "read"
 finished = "2023"
 topics = ["life-sciences", "world-history", "history-of-science"]
+take = "What ancient DNA reveals about human prehistory: migrations, mixtures, and populations that no longer exist."
 
 [[works]]
 id = "the-phoenix-project"
@@ -530,6 +570,7 @@ year = 2013
 status = "read"
 finished = "2022"
 topics = ["platform-automation", "reliability", "enterprise-architecture"]
+take = "A novel about an IT manager saving a failing project, and the DevOps ideas he learns along the way."
 
 [[works]]
 id = "foucaults-pendulum"
@@ -542,6 +583,7 @@ year = 1988
 status = "read"
 finished = "2021-01"
 topics = ["literature", "maximalist-novels", "religion"]
+take = "Three Milan editors invent a secret history of the world as a game, and others begin to take it seriously."
 
 [[works]]
 id = "der-kampf-um-die-deutung-der-neuzeit"
@@ -555,6 +597,7 @@ publisher = "Wilhelm Fink"
 status = "read"
 finished = "2020-11"
 topics = ["philosophy", "history", "europe"]
+take = "The German debate in the philosophy of history from the First World War to 1989 about how to understand the modern age."
 
 [[works]]
 id = "das-tagebuch-der-menschheit"
@@ -568,6 +611,7 @@ year = 2016
 status = "read"
 finished = "2020-08"
 topics = ["religion", "life-sciences", "world-history"]
+take = "The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution."
 
 [[works]]
 id = "the-art-of-war"
@@ -578,6 +622,7 @@ cover = "covers/reading/the-art-of-war.avif"
 status = "read"
 finished = "2018-06"
 topics = ["philosophy", "geopolitics"]
+take = "An ancient Chinese treatise on strategy: deception, terrain, knowing yourself and the enemy, and winning without fighting."
 
 [[works]]
 id = "language-the-cultural-tool"
@@ -591,6 +636,7 @@ year = 2012
 status = "read"
 finished = "2016-01"
 topics = ["languages", "intelligence"]
+take = "Language as a cultural invention rather than an innate grammar, argued from the Pirahã of the Amazon."
 
 [[works]]
 id = "erkenne-die-welt"
@@ -603,6 +649,7 @@ year = 2015
 status = "read"
 finished = "2015-12"
 topics = ["philosophy", "history"]
+take = "The first volume of Precht's history of philosophy, from the pre-Socratics to the end of the Middle Ages."
 
 [[works]]
 id = "cloud-atlas"
@@ -614,6 +661,7 @@ year = 2004
 status = "read"
 finished = "2015-11"
 topics = ["literature", "maximalist-novels"]
+take = "Six stories nested inside each other, from a nineteenth-century Pacific voyage to a far future after the fall."
 
 [[works]]
 id = "the-silk-roads"
@@ -626,6 +674,7 @@ year = 2015
 status = "read"
 finished = "2015-09"
 topics = ["world-history", "geopolitics", "cities"]
+take = "World history told from the trade routes between East and West rather than from Europe."
 
 [[works]]
 id = "die-geschichte-der-kunst"
@@ -637,6 +686,7 @@ year = 1950
 status = "read"
 finished = "2014-01"
 topics = ["history", "world-history"]
+take = "Gombrich's history of art from the cave paintings to the modern era, the German edition of The Story of Art."
 
 [[works]]
 id = "die-psychologie-von-c-g-jung"
@@ -648,6 +698,7 @@ year = 1940
 status = "read"
 finished = "2012-06"
 topics = ["philosophy"]
+take = "An introduction to Jung's analytical psychology by one of his closest collaborators, with a foreword by Jung."
 
 [[works]]
 id = "ai-2027"
@@ -660,6 +711,7 @@ url = "https://ai-2027.com/"
 status = "read"
 finished = "2025-04"
 topics = ["ai-alignment", "existential-risk", "technology-races", "geopolitics", "intelligence"]
+take = "A month-by-month scenario of AI progress to superintelligence by 2027, with two endings: a race and a slowdown."
 
 [[works]]
 id = "ai-2040-plan-a"
@@ -672,6 +724,7 @@ url = "https://ai-2040.com/"
 status = "read"
 finished = "2026-07"
 topics = ["ai-alignment", "existential-risk", "technology-races", "geopolitics", "policy"]
+take = "A recommended path rather than a forecast: the United States and China slow down, verify each other, and make a deal."
 
 # Backlog: suggestions I am weighing, in no fixed order -----------------------
 
@@ -685,6 +738,7 @@ cover = "covers/reading/enterprise-architecture-as-strategy.avif"
 year = 2006
 status = "backlog"
 topics = ["platform-automation"]
+take = "Enterprise architecture as the foundation for execution: an operating model first, then the systems that serve it."
 suggested_by = "Ralfe Poisson"
 suggested_url = "https://www.linkedin.com/in/ralfe/"
 
@@ -698,6 +752,7 @@ cover = "covers/reading/the-art-of-doing-science-and-engineering.avif"
 year = 1997
 status = "backlog"
 topics = ["research-labs", "philosophy-of-science", "history-of-technology"]
+take = "Hamming's course on how to do great work in science and engineering, and how to keep learning."
 
 [[works]]
 id = "why-machines-learn"
@@ -711,10 +766,12 @@ edition = "2025 paperback, with the afterword on transformers"
 url = "https://www.penguinrandomhouse.com/books/677608/why-machines-learn-by-anil-ananthaswamy/"
 status = "backlog"
 topics = ["machine-learning", "mathematics"]
+take = "The mathematics behind machine learning, from the perceptron to deep networks, with the people who found it."
 
 [[works]]
 id = "the-dream-machine"
 title = "The Dream Machine"
+subtitle = "J. C. R. Licklider and the Revolution That Made Computing Personal"
 author = "M. Mitchell Waldrop"
 kind = "book"
 cover = "covers/reading/the-dream-machine.avif"
@@ -724,6 +781,7 @@ edition = "Stripe Press"
 url = "https://press.stripe.com/the-dream-machine"
 status = "backlog"
 topics = ["history-of-technology", "research-labs", "networking", "augmentation"]
+take = "How ARPA funding and a small group of researchers led from batch processing to interactive computing and the networks that followed."
 
 [[works]]
 id = "the-alignment-problem"
@@ -736,6 +794,7 @@ year = 2020
 url = "https://brianchristian.org/the-alignment-problem/"
 status = "backlog"
 topics = ["ai-alignment", "ethics", "evaluation", "hubris"]
+take = "How machine learning systems come to do what we did not intend, and the research trying to fix it."
 
 [[works]]
 id = "ai-a-guide-for-thinking-humans"
@@ -750,6 +809,7 @@ edition = "2025 edition, with the new preface"
 url = "https://us.macmillan.com/books/9781250404855/artificialintelligence/"
 status = "backlog"
 topics = ["intelligence", "machine-learning"]
+take = "What AI can and cannot do, from vision to language, by a researcher who studies analogy and abstraction."
 
 [[works]]
 id = "deep-thinking"
@@ -764,6 +824,7 @@ year = 2017
 url = "https://www.hachette.co.uk/titles/garry-kasparov/deep-thinking/9781473653504/"
 status = "backlog"
 topics = ["intelligence", "games", "augmentation"]
+take = "Kasparov on his matches against Deep Blue and what machine intelligence means for human creativity."
 
 [[works]]
 id = "understanding-deep-learning"
@@ -776,6 +837,7 @@ year = 2023
 url = "https://mitpress.mit.edu/9780262048644/understanding-deep-learning/"
 status = "backlog"
 topics = ["machine-learning", "mathematics"]
+take = "A modern textbook on deep learning, from the basics through transformers, diffusion models, and reinforcement learning."
 
 [[works]]
 id = "build-a-large-language-model"
@@ -787,6 +849,7 @@ year = 2024
 url = "https://www.manning.com/books/build-a-large-language-model-from-scratch"
 status = "backlog"
 topics = ["training-data", "inference"]
+take = "Building a GPT-style language model step by step in PyTorch, from tokens and attention to pretraining and fine-tuning."
 
 [[works]]
 id = "ai-engineering"
@@ -800,6 +863,7 @@ year = 2025
 url = "https://www.oreilly.com/library/view/ai-engineering/9781098166298/"
 status = "backlog"
 topics = ["ai-platforms", "evaluation", "agents"]
+take = "Building applications on foundation models: evaluation, prompting, retrieval, agents, fine-tuning, and serving."
 
 [[works]]
 id = "reinforcement-learning-an-introduction"
@@ -813,17 +877,20 @@ edition = "Second edition"
 url = "https://mitpress.mit.edu/9780262039246/reinforcement-learning/"
 status = "backlog"
 topics = ["reinforcement-learning", "machine-learning"]
+take = "The standard text on reinforcement learning: bandits, dynamic programming, temporal difference learning, and policy gradients."
 
 [[works]]
 id = "probabilistic-machine-learning"
 title = "Probabilistic Machine Learning: An Introduction"
 author = "Kevin P. Murphy"
 kind = "book"
-cover_id = "none"   # Open Library only has the cover of the second volume
+cover = "covers/reading/probabilistic-machine-learning.avif"
+isbn = "9780262046824"
 year = 2022
 url = "https://probml.github.io/pml-book/book1.html"
 status = "backlog"
 topics = ["machine-learning", "mathematics"]
+take = "Machine learning from a probabilistic point of view, the first of Murphy's two volumes."
 
 [[works]]
 id = "the-making-of-the-atomic-bomb"
@@ -837,6 +904,7 @@ edition = "25th anniversary edition"
 url = "https://www.simonandschuster.net/books/The-Making-of-the-Atomic-Bomb/Richard-Rhodes/9781451677614"
 status = "backlog"
 topics = ["history-of-science", "research-labs", "existential-risk", "geopolitics", "ethics", "technology-races", "hubris"]
+take = "The history of the atomic bomb from the physics of the atom to Hiroshima, and the scientists who built it."
 
 [[works]]
 id = "seeing-like-a-state"
@@ -850,6 +918,7 @@ year = 1998
 url = "https://yalebooks.yale.edu/book/9780300252989/seeing-like-a-state/"
 status = "backlog"
 topics = ["history", "high-modernism", "hubris", "commons", "cities"]
+take = "Why grand state plans fail when they make the world legible and simple, and ignore local, practical knowledge."
 
 [[works]]
 id = "a-peace-to-end-all-peace"
@@ -863,6 +932,7 @@ year = 1989
 url = "https://academic.macmillan.com/academictrade/9780805088090/apeacetoendallpeace/"
 status = "backlog"
 topics = ["geopolitics", "history"]
+take = "How the Allies broke up the Ottoman Empire after the First World War and drew the borders of the modern Middle East."
 
 [[works]]
 id = "the-billion-dollar-molecule"
@@ -876,6 +946,7 @@ year = 1994
 url = "https://www.simonandschuster.com/books/The-Billion-Dollar-Molecule/Barry-Werth/9780671510572"
 status = "backlog"
 topics = ["medicine", "research-labs", "history-of-science"]
+take = "Inside Vertex Pharmaceuticals in its early years, as it tried to design drugs from the structure of proteins."
 
 [[works]]
 id = "the-eighth-day-of-creation"
@@ -889,10 +960,12 @@ edition = "Commemorative edition"
 publisher = "Cold Spring Harbor Laboratory Press"
 status = "backlog"
 topics = ["life-sciences", "research-labs", "history-of-science", "scientific-revolutions"]
+take = "The founding of molecular biology, from the structure of DNA to the genetic code, from the scientists themselves."
 
 [[works]]
 id = "the-demon-under-the-microscope"
 title = "The Demon Under the Microscope"
+subtitle = "From Battlefield Hospitals to Nazi Labs, One Doctor's Heroic Search for the World's First Miracle Drug"
 author = "Thomas Hager"
 kind = "book"
 cover = "covers/reading/the-demon-under-the-microscope.avif"
@@ -900,6 +973,7 @@ year = 2006
 url = "https://www.penguinrandomhouse.com/books/73465/the-demon-under-the-microscope-by-thomas-hager/"
 status = "backlog"
 topics = ["medicine", "research-labs", "history-of-science", "scientific-revolutions"]
+take = "Gerhard Domagk and the discovery of the sulfa drugs, the first medicines that beat bacterial infection."
 
 [[works]]
 id = "the-butchering-art"
@@ -913,6 +987,7 @@ year = 2017
 url = "https://www.penguin.co.nz/books/the-butchering-art-9780141983387"
 status = "backlog"
 topics = ["medicine", "history-of-science", "scientific-revolutions"]
+take = "Joseph Lister and the fight to make surgery safe through antisepsis, in the hospitals of Victorian Britain."
 
 [[works]]
 id = "deep-dive"
@@ -925,6 +1000,7 @@ isbn = "9781119933243"
 year = 2023
 status = "backlog"
 topics = ["applied-security", "open-data", "privacy"]
+take = "Methods and tools for open source intelligence: finding, checking, and connecting what people and organisations leave online."
 
 [[works]]
 id = "palo-alto"
@@ -936,6 +1012,7 @@ cover = "covers/reading/palo-alto.avif"
 year = 2023
 status = "backlog"
 topics = ["history-of-technology", "economics", "geopolitics"]
+take = "The history of Silicon Valley as a history of capitalism, from railroads and eugenics to the tech industry."
 
 [[works]]
 id = "strategy-a-history"
@@ -947,6 +1024,7 @@ cover = "covers/reading/strategy-a-history.avif"
 year = 2013
 status = "backlog"
 topics = ["geopolitics", "history"]
+take = "Strategy from the Bible and the Greeks to military, revolutionary, and business strategy today."
 
 [[works]]
 id = "the-lost-art-of-scripture"
@@ -958,6 +1036,7 @@ cover = "covers/reading/the-lost-art-of-scripture.avif"
 year = 2019
 status = "backlog"
 topics = ["religion", "history"]
+take = "How sacred texts were once read as practice and ritual rather than as literal truth, across the world's religions."
 
 [[works]]
 id = "if-anyone-builds-it-everyone-dies"
@@ -969,6 +1048,7 @@ cover = "covers/reading/if-anyone-builds-it-everyone-dies.avif"
 year = 2025
 status = "backlog"
 topics = ["ai-alignment", "existential-risk", "intelligence", "hubris"]
+take = "The case that superhuman AI built with current methods would end humanity, and why the authors want it stopped."
 
 [[works]]
 id = "the-scaling-era"
@@ -982,6 +1062,7 @@ year = 2025
 publisher = "Stripe Press"
 status = "backlog"
 topics = ["machine-learning", "research-labs", "ai-alignment", "history-of-technology"]
+take = "An oral history of the years when scaling models became the path to AI, in the words of the people building them."
 
 [[works]]
 id = "situational-awareness"
@@ -989,10 +1070,12 @@ title = "Situational Awareness"
 subtitle = "The Decade Ahead"
 author = "Leopold Aschenbrenner"
 kind = "essay"
+cover = "covers/reading/situational-awareness.avif"
 year = 2024
 url = "https://situational-awareness.ai/"
 status = "backlog"
 topics = ["technology-races", "geopolitics", "ai-alignment", "gpus"]
+take = "An essay series arguing that AGI may arrive by 2027 and set off a national-security race for superintelligence."
 
 [[works]]
 id = "empire-of-ai"
@@ -1004,6 +1087,7 @@ cover = "covers/reading/empire-of-ai.avif"
 year = 2025
 status = "backlog"
 topics = ["research-labs", "training-data", "technology-races", "hubris"]
+take = "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them."
 
 [[works]]
 id = "the-thinking-machine"
@@ -1016,6 +1100,7 @@ isbn = "9780593832691"
 year = 2025
 status = "backlog"
 topics = ["gpus", "history-of-technology", "entrepreneurship", "technology-races"]
+take = "Jensen Huang and how Nvidia bet the company on the chips that made modern AI possible."
 
 [[works]]
 id = "a-brief-history-of-intelligence"
@@ -1028,6 +1113,7 @@ isbn = "9780063286344"
 year = 2023
 status = "backlog"
 topics = ["intelligence", "neuroscience", "reinforcement-learning", "life-sciences"]
+take = "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it."
 
 [[works]]
 id = "these-strange-new-minds"
@@ -1040,6 +1126,7 @@ isbn = "9780593831717"
 year = 2025
 status = "backlog"
 topics = ["intelligence", "neural-networks", "neuroscience", "languages"]
+take = "How large language models learned to talk, and what they are and are not, by a neuroscientist who has worked at DeepMind."
 
 [[works]]
 id = "ai-snake-oil"
@@ -1052,6 +1139,7 @@ isbn = "9780691249131"
 year = 2024
 status = "backlog"
 topics = ["evaluation", "machine-learning", "risk", "policy"]
+take = "Which kinds of AI work and which are sold as working, with tools to tell the difference."
 
 [[works]]
 id = "deep-learning-foundations-and-concepts"
@@ -1063,6 +1151,7 @@ cover = "covers/reading/deep-learning-foundations-and-concepts.avif"
 year = 2024
 status = "backlog"
 topics = ["neural-networks", "machine-learning", "mathematics"]
+take = "A textbook on the core ideas of deep learning, from probability and neural networks to transformers and diffusion."
 
 [[works]]
 id = "deep-utopia"
@@ -1075,6 +1164,7 @@ isbn = "9781646871643"
 year = 2024
 status = "backlog"
 topics = ["philosophy", "ethics", "ai-alignment", "future-of-work"]
+take = "What people would live for once superintelligence has solved every practical problem."
 
 [[works]]
 id = "slouching-towards-utopia"
@@ -1086,6 +1176,7 @@ cover = "covers/reading/slouching-towards-utopia.avif"
 year = 2022
 status = "backlog"
 topics = ["economics", "world-history", "history-of-technology"]
+take = "The economic history of 1870 to 2010, when humanity first escaped scarcity and still did not reach utopia."
 
 [[works]]
 id = "abundance"
@@ -1096,6 +1187,7 @@ cover = "covers/reading/abundance.avif"
 year = 2025
 status = "backlog"
 topics = ["economics", "policy", "cities"]
+take = "Why rich countries fail to build the housing, energy, and infrastructure they can afford, and how to change that."
 
 [[works]]
 id = "four-futures"
@@ -1107,16 +1199,20 @@ cover = "covers/reading/four-futures.avif"
 year = 2016
 status = "backlog"
 topics = ["economics", "future-of-work", "social-reform"]
+take = "Four possible futures after capitalism, from abundance or scarcity crossed with equality or hierarchy."
 
 [[works]]
 id = "economic-possibilities-for-our-grandchildren"
 title = "Economic Possibilities for our Grandchildren"
 author = "John Maynard Keynes"
 kind = "essay"
+cover = "covers/reading/economic-possibilities-for-our-grandchildren.avif"
 year = 1930
+edition = "Collected in Essays in Persuasion (1931)"   # the cover is that collection's
 url = "http://www.econ.yale.edu/smith/econ116a/keynes1.pdf"
 status = "backlog"
 topics = ["economics", "future-of-work"]
+take = "Keynes's 1930 prediction that a century of growth would solve the economic problem and leave us with leisure."
 
 [[works]]
 id = "from-counterculture-to-cyberculture"
@@ -1128,6 +1224,7 @@ cover = "covers/reading/from-counterculture-to-cyberculture.avif"
 year = 2006
 status = "backlog"
 topics = ["history-of-technology", "decentralisation", "open-web", "commons"]
+take = "How Stewart Brand and the Whole Earth network turned the counterculture into Silicon Valley's belief in networks."
 
 [[works]]
 id = "cybernetic-revolutionaries"
@@ -1140,6 +1237,7 @@ isbn = "9780262525961"
 year = 2011
 status = "backlog"
 topics = ["complex-systems", "high-modernism", "history-of-technology", "social-reform"]
+take = "Project Cybersyn, the attempt in Allende's Chile to run the economy with cybernetics and a telex network."
 
 [[works]]
 id = "red-plenty"
@@ -1150,6 +1248,7 @@ cover = "covers/reading/red-plenty.avif"
 year = 2010
 status = "backlog"
 topics = ["literature", "high-modernism", "economics", "complex-systems"]
+take = "A novel about the Soviet dream of planning the economy into abundance with mathematics and computers."
 
 [[works]]
 id = "to-be-a-machine"
@@ -1161,6 +1260,7 @@ cover = "covers/reading/to-be-a-machine.avif"
 year = 2017
 status = "backlog"
 topics = ["augmentation", "hubris", "neuroscience"]
+take = "A journalist among transhumanists: cryonics, mind uploading, cyborgs, and the people who want to end death."
 
 [[works]]
 id = "the-age-of-em"
@@ -1173,6 +1273,7 @@ isbn = "9780198754626"
 year = 2016
 status = "backlog"
 topics = ["simulation", "neuroscience", "economics", "future-of-work"]
+take = "An economist works out what a world run by emulated human brains would look like, in detail."
 
 [[works]]
 id = "more-everything-forever"
@@ -1185,6 +1286,7 @@ cover = "covers/reading/more-everything-forever.avif"
 year = 2025
 status = "backlog"
 topics = ["hubris", "existential-risk", "entrepreneurship"]
+take = "A critique of the futures tech billionaires want: superintelligence, space colonies, and living forever."
 
 [[works]]
 id = "the-player-of-games"
@@ -1195,6 +1297,7 @@ cover = "covers/reading/the-player-of-games.avif"
 year = 1988
 status = "backlog"
 topics = ["literature", "games", "intelligence"]
+take = "A game player from the Culture, a post-scarcity civilisation, is sent to play for an empire's throne."
 
 [[works]]
 id = "accelerando"
@@ -1205,6 +1308,7 @@ cover = "covers/reading/accelerando.avif"
 year = 2005
 status = "backlog"
 topics = ["literature", "intelligence", "augmentation"]
+take = "The singularity across three generations of one family, from present-day hackers to post-human minds."
 
 # Set aside ----------------------------------------------------------------
 
@@ -1218,4 +1322,5 @@ year = 1985
 edition = "Second edition"
 status = "set-aside"
 topics = ["compilers"]
+take = "The classic MIT course on programming as abstraction, built in Scheme, up to writing interpreters and compilers."
 started = "2024"
