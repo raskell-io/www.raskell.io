@@ -1,17 +1,17 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-26T16:26:15+00:00",
+ "generated": "2026-10-29T19:27:42+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
+  "review": 2,
   "article": 36,
-  "review": 1,
   "note": 8,
   "talk": 1,
   "work": 109,
   "project": 30,
   "topic": 102,
-  "link": 286
+  "link": 287
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -21,6 +21,26 @@
   "llms": "https://raskell.io/llms.txt"
  },
  "items": [
+  {
+   "kind": "review",
+   "title": "Win Everything, Control No One",
+   "url": "https://raskell.io/articles/win-everything-control-no-one/",
+   "description": "Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it.",
+   "date": "2026-10-29",
+   "topics": [
+    "intelligence",
+    "reinforcement-learning",
+    "games",
+    "research-labs",
+    "ai-alignment",
+    "history-of-technology",
+    "technology-races"
+   ],
+   "categories": [
+    "reviews"
+   ],
+   "meta": "17 min"
+  },
   {
    "kind": "article",
    "title": "After PHP Gate: A Blueprint for the Static Web",
@@ -710,22 +730,6 @@
   },
   {
    "kind": "work",
-   "title": "The Infinity Machine",
-   "url": "https://raskell.io/reading/#the-infinity-machine",
-   "description": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
-   "topics": [
-    "intelligence",
-    "reinforcement-learning",
-    "games",
-    "research-labs",
-    "ai-alignment",
-    "history-of-technology",
-    "technology-races"
-   ],
-   "meta": "Book · Sebastian Mallaby · Reading now"
-  },
-  {
-   "kind": "work",
    "title": "The Cauldron",
    "url": "https://raskell.io/reading/#the-cauldron",
    "description": "A history of the whole modern Middle East, in all its diversity, from 1900 to the present.",
@@ -1110,6 +1114,23 @@
     "risk"
    ],
    "meta": "Book · David Attenborough and Colin Butfield · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Infinity Machine",
+   "url": "https://raskell.io/articles/win-everything-control-no-one/",
+   "description": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
+   "date": "2026-10",
+   "topics": [
+    "intelligence",
+    "reinforcement-learning",
+    "games",
+    "research-labs",
+    "ai-alignment",
+    "history-of-technology",
+    "technology-races"
+   ],
+   "meta": "Book · Sebastian Mallaby · Read"
   },
   {
    "kind": "work",
@@ -2481,7 +2502,7 @@
   {
    "kind": "topic",
    "title": "AI alignment",
-   "url": "https://raskell.io/tags#ai-alignment",
+   "url": "https://raskell.io/tags/ai-alignment/",
    "description": "Making AI systems pursue what their builders and users actually intend, and what happens when they do not.",
    "meta": "Concept"
   },
@@ -3856,6 +3877,40 @@
   },
   {
    "kind": "link",
+   "title": "neuron culture",
+   "url": "https://hotaru.raskell.io",
+   "domain": "hotaru.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Win Everything, Control No One",
+     "url": "https://raskell.io/articles/win-everything-control-no-one/"
+    },
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "kishi.raskell.io",
+   "url": "https://kishi.raskell.io",
+   "domain": "kishi.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Win Everything, Control No One",
+     "url": "https://raskell.io/articles/win-everything-control-no-one/"
+    },
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "mise",
    "url": "https://mise.jdx.dev/",
    "domain": "mise.jdx.dev",
@@ -4226,6 +4281,19 @@
     {
      "title": "Brain Emulation, Read as an Infrastructure Problem",
      "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "a site about it",
+   "url": "https://broodwar.live",
+   "domain": "broodwar.live",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Win Everything, Control No One",
+     "url": "https://raskell.io/articles/win-everything-control-no-one/"
     }
    ]
   },
@@ -5206,19 +5274,6 @@
   },
   {
    "kind": "link",
-   "title": "neuron culture",
-   "url": "https://hotaru.raskell.io",
-   "domain": "hotaru.raskell.io",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Learning to Play",
-     "url": "https://raskell.io/articles/learning-to-play/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
    "title": "LumiOpen/Poro-34B",
    "url": "https://huggingface.co/LumiOpen/Poro-34B",
    "domain": "huggingface.co",
@@ -5357,19 +5412,6 @@
     {
      "title": "Traffic Replay as a Security Primitive",
      "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "kishi.raskell.io",
-   "url": "https://kishi.raskell.io",
-   "domain": "kishi.raskell.io",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Learning to Play",
-     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ]
   },

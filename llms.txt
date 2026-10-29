@@ -31,6 +31,7 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 
 ## Articles
 
+- [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one.md) (2026-10-29): Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it.
 - [After PHP Gate: A Blueprint for the Static Web](https://raskell.io/articles/a-blueprint-for-the-static-web.md) (2026-10-26): Last week's PHP flaws reached every server that runs code per request. My blueprint for sites and apps that run none at all.
 - [Learning to Play](https://raskell.io/articles/learning-to-play.md) (2026-10-25): A chess prodigy's handbook, three old games and one laptop: rebuilding the ideas behind game-playing AI in Rust for a browser on my phone, and measuring them.
 - [The Web Was the Training Set](https://raskell.io/articles/the-web-was-the-training-set.md) (2026-10-24): Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply.
@@ -75,6 +76,7 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 
 Reviews of works from the reading log (category: reviews, feed https://raskell.io/categories/reviews/rss.xml). Each Markdown copy names the reviewed work and the rating in its front matter.
 
+- [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one.md) (2026-10-29): review of *The Infinity Machine* by Sebastian Mallaby (book, 2026), rated 8.5/10. Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it.
 - [The Web Was the Training Set](https://raskell.io/articles/the-web-was-the-training-set.md) (2026-10-24): review of *This Is for Everyone* by Tim Berners-Lee (book, 2025), rated 8/10. Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply.
 
 ## Talks
@@ -89,11 +91,11 @@ Slide decks; each has a Markdown copy with the words of every slide.
 
 Short notes, a paragraph or a page each; some grow into articles.
 
+- [The move to the city](https://raskell.io/notes/the-move-to-the-city.md) (2026-10-25): Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape.
 - [Ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting.md) (2026-10-25): In 2026 the backlog of ideas I carried for years is turning into things that exist. On why this year feels like a window that will not stay open.
 - [The tumult in between](https://raskell.io/notes/the-tumult-in-between.md) (2026-10-25): If AI ends in post-scarcity, the dangerous part is the interval: jobs going before goods become nearly free, with no agreed idea of where the ship steers.
-- [The move to the city](https://raskell.io/notes/the-move-to-the-city.md) (2026-10-25): Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape.
-- [Power, in the good sense](https://raskell.io/notes/power-in-the-good-sense.md) (2026-10-25): The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so.
 - [A capability, democratised](https://raskell.io/notes/a-capability-democratised.md) (2026-10-25): Building software took money, a team, or years of training. Now anyone with an idea and a subscription can do it, and nobody predicted what would follow.
+- [Power, in the good sense](https://raskell.io/notes/power-in-the-good-sense.md) (2026-10-25): The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so.
 - [The window before the utility](https://raskell.io/notes/the-window-before-the-utility.md) (2026-10-25): Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again.
 - [Citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs.md) (2026-10-25): My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory.
 - [Opus 5.5 is the best Opus since 4.5](https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5.md) (2026-10-24): A month in, Claude Opus 5.5 feels like the next milestone after Opus 4.5: the same jump in what Claude Code can carry, now faster and cheaper per task.
@@ -103,10 +105,6 @@ Short notes, a paragraph or a page each; some grow into articles.
 ## Reading
 
 The reading log at https://raskell.io/reading/ (as data: [reading.json](https://raskell.io/reading.json)): books, papers, and long articles, with the month finished, a rating out of 10 where there is a review, and the review.
-
-### Reading now
-
-- [The Infinity Machine](https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296), Sebastian Mallaby (book): Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.
 
 ### Backlog
 
@@ -169,6 +167,7 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 ### Read
 
 - Ocean, David Attenborough and Colin Butfield (book, finished October 2026): Life in the ocean, what it has lost, and how protecting the sea lets it recover.
+- [The Infinity Machine](https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296), Sebastian Mallaby (book, finished October 2026, rated 8.5/10): Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence. Review: [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one.md)
 - [The Cauldron](https://www.hachette.co.uk/titles/simon-sebag-montefiore/the-cauldron/9781399634939/), Simon Sebag Montefiore (book, finished September 2026): A history of the whole modern Middle East, in all its diversity, from 1900 to the present.
 - [AI 2040: Plan A](https://ai-2040.com/), Thomas Larsen, Romeo Dean, Brendan Halstead, Eli Lifland, Ryan Greenblatt, and Daniel Kokotajlo (report, finished July 2026): A recommended path rather than a forecast: the United States and China slow down, verify each other, and make a deal.
 - [From Worm to Human: Scaling Brain Emulation](https://pdf.isaak.net/scaling-emulations), Isaak Freeman (paper, finished June 2026): A thesis that treats brain emulation as an engineering programme, and whose numbers read like a capacity plan.
@@ -227,7 +226,7 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ## Sources cited most
 
-External links cited on more than one page (all 285 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
+External links cited on more than one page (all 286 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
 
 - [Zentinel](https://zentinelproxy.io): cited on 12 pages
 - [Archipelag.io](https://archipelag.io): cited on 9 pages

@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-10-26T16:26:15+00:00",
+ "generated": "2026-10-29T19:27:42+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 286,
+ "count": 287,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -681,6 +681,40 @@
    "citations": 2
   },
   {
+   "url": "https://hotaru.raskell.io",
+   "title": "neuron culture",
+   "domain": "hotaru.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Win Everything, Control No One",
+     "url": "https://raskell.io/articles/win-everything-control-no-one/"
+    },
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ],
+   "citations": 2
+  },
+  {
+   "url": "https://kishi.raskell.io",
+   "title": "kishi.raskell.io",
+   "domain": "kishi.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Win Everything, Control No One",
+     "url": "https://raskell.io/articles/win-everything-control-no-one/"
+    },
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ],
+   "citations": 2
+  },
+  {
    "url": "https://mise.jdx.dev/",
    "title": "mise",
    "domain": "mise.jdx.dev",
@@ -1051,6 +1085,19 @@
     {
      "title": "Brain Emulation, Read as an Infrastructure Problem",
      "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://broodwar.live",
+   "title": "a site about it",
+   "domain": "broodwar.live",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Win Everything, Control No One",
+     "url": "https://raskell.io/articles/win-everything-control-no-one/"
     }
    ],
    "citations": 1
@@ -2031,19 +2078,6 @@
    "citations": 1
   },
   {
-   "url": "https://hotaru.raskell.io",
-   "title": "neuron culture",
-   "domain": "hotaru.raskell.io",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Learning to Play",
-     "url": "https://raskell.io/articles/learning-to-play/"
-    }
-   ],
-   "citations": 1
-  },
-  {
    "url": "https://huggingface.co/LumiOpen/Poro-34B",
    "title": "LumiOpen/Poro-34B",
    "domain": "huggingface.co",
@@ -2182,19 +2216,6 @@
     {
      "title": "Traffic Replay as a Security Primitive",
      "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
-    }
-   ],
-   "citations": 1
-  },
-  {
-   "url": "https://kishi.raskell.io",
-   "title": "kishi.raskell.io",
-   "domain": "kishi.raskell.io",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Learning to Play",
-     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ],
    "citations": 1
