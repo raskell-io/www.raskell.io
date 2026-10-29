@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-29T19:27:42+00:00",
+ "generated": "2026-10-29T19:30:27+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -730,6 +730,22 @@
   },
   {
    "kind": "work",
+   "title": "The Infinity Machine",
+   "url": "https://raskell.io/articles/win-everything-control-no-one/",
+   "description": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
+   "topics": [
+    "intelligence",
+    "reinforcement-learning",
+    "games",
+    "research-labs",
+    "ai-alignment",
+    "history-of-technology",
+    "technology-races"
+   ],
+   "meta": "Book · Sebastian Mallaby · Reading now"
+  },
+  {
+   "kind": "work",
    "title": "The Cauldron",
    "url": "https://raskell.io/reading/#the-cauldron",
    "description": "A history of the whole modern Middle East, in all its diversity, from 1900 to the present.",
@@ -1114,23 +1130,6 @@
     "risk"
    ],
    "meta": "Book · David Attenborough and Colin Butfield · Read"
-  },
-  {
-   "kind": "work",
-   "title": "The Infinity Machine",
-   "url": "https://raskell.io/articles/win-everything-control-no-one/",
-   "description": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
-   "date": "2026-10",
-   "topics": [
-    "intelligence",
-    "reinforcement-learning",
-    "games",
-    "research-labs",
-    "ai-alignment",
-    "history-of-technology",
-    "technology-races"
-   ],
-   "meta": "Book · Sebastian Mallaby · Read"
   },
   {
    "kind": "work",

@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-29T19:27:42+00:00",
+ "generated": "2026-10-29T19:30:27+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -1632,6 +1632,15 @@
    "degree": 5
   },
   {
+   "id": "w:the-infinity-machine",
+   "kind": "work",
+   "label": "The Infinity Machine",
+   "url": "https://raskell.io/articles/win-everything-control-no-one/",
+   "meta": "Book · Sebastian Mallaby · reading now",
+   "description": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
+   "degree": 10
+  },
+  {
    "id": "w:the-cauldron",
    "kind": "work",
    "label": "The Cauldron",
@@ -1900,15 +1909,6 @@
    "meta": "Book · David Attenborough and Colin Butfield · read October 2026",
    "description": "Life in the ocean, what it has lost, and how protecting the sea lets it recover.",
    "degree": 4
-  },
-  {
-   "id": "w:the-infinity-machine",
-   "kind": "work",
-   "label": "The Infinity Machine",
-   "url": "https://raskell.io/articles/win-everything-control-no-one/",
-   "meta": "Book · Sebastian Mallaby · read October 2026",
-   "description": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
-   "degree": 10
   },
   {
    "id": "w:the-ultimate-hidden-truth-of-the-world",
@@ -2613,6 +2613,14 @@
    "degree": 2
   },
   {
+   "id": "h:shelf-reading",
+   "kind": "hub",
+   "label": "Reading now",
+   "url": "https://raskell.io/reading/#shelf-reading",
+   "meta": "Shelf",
+   "degree": 1
+  },
+  {
    "id": "h:shelf-backlog",
    "kind": "hub",
    "label": "Backlog",
@@ -2626,7 +2634,7 @@
    "label": "Read",
    "url": "https://raskell.io/reading/#shelf-read",
    "meta": "Shelf",
-   "degree": 53
+   "degree": 52
   },
   {
    "id": "h:shelf-set-aside",
@@ -5455,6 +5463,46 @@
    "target": "h:apps-play"
   },
   {
+   "source": "w:the-infinity-machine",
+   "target": "h:shelf-reading"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:reinforcement-learning"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:games"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:research-labs"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:ai-alignment"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:technology-races"
+  },
+  {
+   "source": "a:/articles/win-everything-control-no-one/",
+   "target": "w:the-infinity-machine"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "w:the-infinity-machine"
+  },
+  {
    "source": "w:the-cauldron",
    "target": "h:shelf-read"
   },
@@ -5945,46 +5993,6 @@
   {
    "source": "w:ocean-earths-last-wilderness",
    "target": "t:risk"
-  },
-  {
-   "source": "w:the-infinity-machine",
-   "target": "h:shelf-read"
-  },
-  {
-   "source": "w:the-infinity-machine",
-   "target": "t:intelligence"
-  },
-  {
-   "source": "w:the-infinity-machine",
-   "target": "t:reinforcement-learning"
-  },
-  {
-   "source": "w:the-infinity-machine",
-   "target": "t:games"
-  },
-  {
-   "source": "w:the-infinity-machine",
-   "target": "t:research-labs"
-  },
-  {
-   "source": "w:the-infinity-machine",
-   "target": "t:ai-alignment"
-  },
-  {
-   "source": "w:the-infinity-machine",
-   "target": "t:history-of-technology"
-  },
-  {
-   "source": "w:the-infinity-machine",
-   "target": "t:technology-races"
-  },
-  {
-   "source": "a:/articles/win-everything-control-no-one/",
-   "target": "w:the-infinity-machine"
-  },
-  {
-   "source": "a:/articles/the-web-was-the-training-set/",
-   "target": "w:the-infinity-machine"
   },
   {
    "source": "w:the-ultimate-hidden-truth-of-the-world",
