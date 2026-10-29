@@ -17,7 +17,7 @@
 #             read entries need finished
 #   topics    tag slugs from data/tags.toml (checked by `mise run tags-check`)
 #   take      one sentence: what it is about for me, or what I made of it
-#   rating    1 to 10, set when there is a review; shown with the review and on the row
+#   rating    1 to 10, half steps allowed (8.5), set when there is a review; shown with the review and on the row
 #   suggested_by, suggested_url, suggested_note
 #             credit for a reader who suggested the work: name, a link to them, and why (optional)
 #
@@ -27,20 +27,6 @@
 # queue, top first; read: newest finished first, whatever the order here).
 
 # Reading now --------------------------------------------------------------
-
-[[works]]
-id = "the-infinity-machine"
-title = "The Infinity Machine"
-subtitle = "Demis Hassabis, DeepMind, and the Quest for Superintelligence"
-author = "Sebastian Mallaby"
-kind = "book"
-cover = "covers/reading/the-infinity-machine.avif"
-isbn = "9780593831847"
-year = 2026
-url = "https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296"
-status = "reading"
-topics = ["intelligence", "reinforcement-learning", "games", "research-labs", "ai-alignment", "history-of-technology", "technology-races"]
-take = "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence."
 
 # Read ---------------------------------------------------------------------
 # Works finished in the same month show newest first in the order they appear here (later = more recent).
@@ -436,6 +422,22 @@ status = "read"
 finished = "2026-10"
 topics = ["life-sciences", "commons", "risk"]
 take = "Life in the ocean, what it has lost, and how protecting the sea lets it recover."
+
+[[works]]
+id = "the-infinity-machine"
+title = "The Infinity Machine"
+subtitle = "Demis Hassabis, DeepMind, and the Quest for Superintelligence"
+author = "Sebastian Mallaby"
+kind = "book"
+cover = "covers/reading/the-infinity-machine.avif"
+isbn = "9780593831847"
+year = 2026
+url = "https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296"
+status = "read"
+finished = "2026-10"
+rating = 8.5
+topics = ["intelligence", "reinforcement-learning", "games", "research-labs", "ai-alignment", "history-of-technology", "technology-races"]
+take = "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence."
 
 [[works]]
 id = "the-ultimate-hidden-truth-of-the-world"

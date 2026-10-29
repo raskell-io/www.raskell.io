@@ -49,8 +49,11 @@ def fm_list(fm, key):
 
 
 def fm_num(fm, key):
-    m = re.search(r"^%s\s*=\s*(\d+)\s*(#.*)?$" % key, fm, re.M)
-    return int(m.group(1)) if m else None
+    m = re.search(r"^%s\s*=\s*(\d+(?:\.\d+)?)\s*(#.*)?$" % key, fm, re.M)
+    if not m:
+        return None
+    n = float(m.group(1))
+    return int(n) if n.is_integer() else n
 
 
 def fm_date(fm, key):
@@ -200,7 +203,7 @@ def article_markdown(a):
         if w["year"]:
             head.append("review_of_year: %d" % w["year"])
         if w["rating"]:
-            head.append("rating: %d/10" % w["rating"])
+            head.append("rating: %s/10" % w["rating"])
     if a["event"]:
         head.append('event: "%s"' % a["event"].replace('"', '\\"'))
     if a["venue"]:
@@ -295,7 +298,7 @@ if reviews:
         w = WORKS[a["review"]]
         lines.append("- [%s](%s) (%s): review of *%s* by %s (%s%s)%s. %s" % (
             a["title"], a["md"], a["date"], w["title"], w["author"], w["kind"], ", %d" % w["year"] if w["year"] else "",
-            ", rated %d/10" % w["rating"] if w["rating"] else "", a["description"]))
+            ", rated %s/10" % w["rating"] if w["rating"] else "", a["description"]))
     lines.append("")
 if talks:
     lines += ["## Talks", "", "Slide decks; each has a Markdown copy with the words of every slide.", ""]
@@ -324,7 +327,7 @@ if works:
         for w in shelf:
             line = "- %s, %s (%s%s%s)" % ("[%s](%s)" % (w["title"], w["url"]) if w["url"] else w["title"], w["author"], w["kind"],
                                          ", finished %s" % month(w["finished"]) if w["finished"] else "",
-                                         ", rated %d/10" % w["rating"] if w["rating"] else "")
+                                         ", rated %s/10" % w["rating"] if w["rating"] else "")
             if w["take"]:
                 line += ": " + w["take"]
             if w["id"] in REVIEWS:
@@ -475,7 +478,7 @@ if works:
             continue
         full += ["## %s" % title, ""]
         for w in shelf:
-            bits = [w["kind"]] + ([str(w["year"])] if w["year"] else []) + (["finished " + month(w["finished"])] if w["finished"] else []) + (["rated %d/10" % w["rating"]] if w["rating"] else [])
+            bits = [w["kind"]] + ([str(w["year"])] if w["year"] else []) + (["finished " + month(w["finished"])] if w["finished"] else []) + (["rated %s/10" % w["rating"]] if w["rating"] else [])
             full.append("- *%s*%s by %s (%s)%s%s" % (w["title"], ": " + w["subtitle"] if w["subtitle"] else "", w["author"], ", ".join(bits),
                                                   ". " + w["take"].rstrip(".") if w["take"] else "",
                                                   ". Review: " + REVIEWS[w["id"]]["url"] if w["id"] in REVIEWS else ""))
