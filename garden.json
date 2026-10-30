@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-29T19:30:27+00:00",
+ "generated": "2026-10-30T06:16:48+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -8,7 +8,7 @@
   "article": 36,
   "note": 8,
   "talk": 1,
-  "work": 109,
+  "work": 110,
   "project": 30,
   "topic": 102,
   "link": 287
@@ -1977,6 +1977,18 @@
     "philosophy"
    ],
    "meta": "Book · Douglas R. Hofstadter · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Structure and Interpretation of Computer Programs",
+   "url": "https://raskell.io/reading/#structure-and-interpretation-of-computer-programs",
+   "description": "MIT's introduction to programming through Scheme: abstraction with procedures and data, state, streams, and interpreters and compilers written in the language they interpret.",
+   "topics": [
+    "programming-languages",
+    "compilers",
+    "mathematics"
+   ],
+   "meta": "Book · Harold Abelson and Gerald Jay Sussman, with Julie Sussman · Backlog"
   },
   {
    "kind": "work",

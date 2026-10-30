@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/reading/",
- "generated": "2026-10-29",
+ "generated": "2026-10-30",
  "description": "The reading log of raskell.io by Raffael Schneider: what is being read, what is next, and what has been read.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "works": [
@@ -1799,6 +1799,24 @@
    "take": "How meaning and a self can arise from meaningless symbols, through Gödel's incompleteness, Escher's drawings, and Bach's fugues.",
    "cover": "https://raskell.io/covers/reading/godel-escher-bach.avif",
    "page": "https://raskell.io/reading/#godel-escher-bach"
+  },
+  {
+   "id": "structure-and-interpretation-of-computer-programs",
+   "title": "Structure and Interpretation of Computer Programs",
+   "author": "Harold Abelson and Gerald Jay Sussman, with Julie Sussman",
+   "kind": "book",
+   "year": 1985,
+   "isbn": "9780262510875",
+   "url": "https://sicp.mitpress.mit.edu",
+   "status": "backlog",
+   "topics": [
+    "programming-languages",
+    "compilers",
+    "mathematics"
+   ],
+   "take": "MIT's introduction to programming through Scheme: abstraction with procedures and data, state, streams, and interpreters and compilers written in the language they interpret.",
+   "cover": "https://raskell.io/covers/reading/structure-and-interpretation-of-computer-programs.avif",
+   "page": "https://raskell.io/reading/#structure-and-interpretation-of-computer-programs"
   },
   {
    "id": "chaos-making-a-new-science",

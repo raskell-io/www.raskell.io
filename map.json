@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-29T19:30:27+00:00",
+ "generated": "2026-10-30T06:16:48+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -523,7 +523,7 @@
    "url": "https://raskell.io/tags/compilers/",
    "meta": "Concept · 5 pages",
    "description": "Turning programs into other programs: parsers, interpreters, type checkers, and code generation.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:context-engineering",
@@ -946,7 +946,7 @@
    "url": "https://raskell.io/tags/programming-languages/",
    "meta": "Domain · 7 pages",
    "description": "Languages, type systems, compilers, and how executable intent gets written down.",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "t:provenance",
@@ -1243,7 +1243,7 @@
    "url": "https://raskell.io/tags#mathematics",
    "meta": "Domain · no pages yet",
    "description": "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:maximalist-novels",
@@ -2523,6 +2523,15 @@
    "degree": 6
   },
   {
+   "id": "w:structure-and-interpretation-of-computer-programs",
+   "kind": "work",
+   "label": "Structure and Interpretation of Computer Programs",
+   "url": "https://raskell.io/reading/#structure-and-interpretation-of-computer-programs",
+   "meta": "Book · Harold Abelson and Gerald Jay Sussman, with Julie Sussman · in the backlog",
+   "description": "MIT's introduction to programming through Scheme: abstraction with procedures and data, state, streams, and interpreters and compilers written in the language they interpret.",
+   "degree": 4
+  },
+  {
    "id": "w:chaos-making-a-new-science",
    "kind": "work",
    "label": "Chaos",
@@ -2626,7 +2635,7 @@
    "label": "Backlog",
    "url": "https://raskell.io/reading/#shelf-backlog",
    "meta": "Shelf",
-   "degree": 55
+   "degree": 56
   },
   {
    "id": "h:shelf-read",
@@ -7129,6 +7138,22 @@
   {
    "source": "w:godel-escher-bach",
    "target": "t:philosophy"
+  },
+  {
+   "source": "w:structure-and-interpretation-of-computer-programs",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:structure-and-interpretation-of-computer-programs",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "w:structure-and-interpretation-of-computer-programs",
+   "target": "t:compilers"
+  },
+  {
+   "source": "w:structure-and-interpretation-of-computer-programs",
+   "target": "t:mathematics"
   },
   {
    "source": "w:chaos-making-a-new-science",
