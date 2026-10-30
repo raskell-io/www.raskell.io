@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-10-30T06:16:48+00:00",
+ "generated": "2026-10-30T17:17:59+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 287,
+ "count": 308,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -190,6 +190,31 @@
    "citations": 4
   },
   {
+   "url": "https://github.com/raskell-io/shiioo",
+   "title": "github.com/raskell-io/shiioo",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    },
+    {
+     "title": "What Sixteen AI Agents Taught Me About Management",
+     "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
+    },
+    {
+     "title": "Mise ate my Makefile",
+     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    },
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ],
+   "citations": 4
+  },
+  {
    "url": "https://github.com/raskell-io/the-agent-platform-handbook",
    "title": "the-agent-platform-handbook",
    "domain": "github.com",
@@ -278,22 +303,22 @@
    "citations": 3
   },
   {
-   "url": "https://github.com/raskell-io/shiioo",
-   "title": "shiioo: Virtual Company OS",
-   "domain": "github.com",
-   "reference": true,
+   "url": "https://kishi.raskell.io",
+   "title": "kishi.raskell.io",
+   "domain": "kishi.raskell.io",
+   "reference": false,
    "cited_in": [
     {
-     "title": "What Sixteen AI Agents Taught Me About Management",
-     "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
     },
     {
-     "title": "Mise ate my Makefile",
-     "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+     "title": "Win Everything, Control No One",
+     "url": "https://raskell.io/articles/win-everything-control-no-one/"
     },
     {
-     "title": "All beginning is Haskell",
-     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ],
    "citations": 3
@@ -455,6 +480,40 @@
     {
      "title": "How I Work These Days",
      "url": "https://raskell.io/articles/how-i-work-these-days/"
+    }
+   ],
+   "citations": 2
+  },
+  {
+   "url": "https://github.com/openclaw/openclaw",
+   "title": "OpenClaw: Personal AI agent framework",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    },
+    {
+     "title": "What Sixteen AI Agents Taught Me About Management",
+     "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
+    }
+   ],
+   "citations": 2
+  },
+  {
+   "url": "https://github.com/raskell-io/kage",
+   "title": "kage: Local-first agentic work orchestrator",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    },
+    {
+     "title": "What Sixteen AI Agents Taught Me About Management",
+     "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
     }
    ],
    "citations": 2
@@ -698,23 +757,6 @@
    "citations": 2
   },
   {
-   "url": "https://kishi.raskell.io",
-   "title": "kishi.raskell.io",
-   "domain": "kishi.raskell.io",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Win Everything, Control No One",
-     "url": "https://raskell.io/articles/win-everything-control-no-one/"
-    },
-    {
-     "title": "Learning to Play",
-     "url": "https://raskell.io/articles/learning-to-play/"
-    }
-   ],
-   "citations": 2
-  },
-  {
    "url": "https://mise.jdx.dev/",
    "title": "mise",
    "domain": "mise.jdx.dev",
@@ -864,6 +906,19 @@
     {
      "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
      "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://aiweekly.co/alerts/nvidia-launches-64gb-dgx-spark-at-4999-as-128gb-hits-6950",
+   "title": "Nvidia launches 64GB DGX Spark at $4,999 as 128GB hits $6,950",
+   "domain": "aiweekly.co",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
     }
    ],
    "citations": 1
@@ -1046,6 +1101,19 @@
     {
      "title": "The tumult in between",
      "url": "https://raskell.io/notes/the-tumult-in-between/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://blog.invidelabs.com/m5-ultra-mac-studio-local-ai/",
+   "title": "M5 Ultra Mac Studio raises AI bandwidth to 1.2TB/s",
+   "domain": "blog.invidelabs.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
     }
    ],
    "citations": 1
@@ -1376,6 +1444,19 @@
    "citations": 1
   },
   {
+   "url": "https://docs.anthropic.com/en/docs/claude-code",
+   "title": "Claude Code",
+   "domain": "docs.anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://docs.haskellstack.org/",
    "title": "Stack",
    "domain": "docs.haskellstack.org",
@@ -1384,6 +1465,19 @@
     {
      "title": "All beginning is Haskell",
      "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://docs.nvidia.com/dgx/dgx-spark/hardware.html",
+   "title": "DGX Spark hardware overview",
+   "domain": "docs.nvidia.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
     }
    ],
    "citations": 1
@@ -1740,6 +1834,19 @@
    "citations": 1
   },
   {
+   "url": "https://github.com/cberner/redb",
+   "title": "redb",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://github.com/coconut-os/coconutOS",
    "title": "github.com/coconut-os/coconutOS",
    "domain": "github.com",
@@ -1761,6 +1868,19 @@
     {
      "title": "Traffic Replay as a Security Primitive",
      "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://github.com/google/ax",
+   "title": "github.com/google/ax",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
     }
    ],
    "citations": 1
@@ -1792,14 +1912,40 @@
    "citations": 1
   },
   {
-   "url": "https://github.com/openclaw/openclaw",
-   "title": "OpenClaw: Personal AI agent framework",
+   "url": "https://github.com/ml-explore/mlx",
+   "title": "MLX",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://github.com/ogulcancelik/herdr",
+   "title": "github.com/ogulcancelik/herdr",
    "domain": "github.com",
    "reference": true,
    "cited_in": [
     {
-     "title": "What Sixteen AI Agents Taught Me About Management",
-     "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://github.com/openai/codex",
+   "title": "Codex",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
     }
    ],
    "citations": 1
@@ -1870,19 +2016,6 @@
    "citations": 1
   },
   {
-   "url": "https://github.com/raskell-io/kage",
-   "title": "kage: Local-first agentic work orchestrator",
-   "domain": "github.com",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "What Sixteen AI Agents Taught Me About Management",
-     "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
-    }
-   ],
-   "citations": 1
-  },
-  {
    "url": "https://github.com/raskell-io/kishi",
    "title": "on GitHub",
    "domain": "github.com",
@@ -1930,6 +2063,58 @@
     {
      "title": "This Site Is Becoming a Map",
      "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://github.com/raskell-io/shiioo-legacy",
+   "title": "github.com/raskell-io/shiioo-legacy",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://github.com/raskell-io/shiioo/blob/main/docs/adr/0008-personal-workforce-not-managed-cloud.md",
+   "title": "ADR-0008",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://github.com/raskell-io/shiioo/blob/main/docs/design/desk.md",
+   "title": "the desk design",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://github.com/raskell-io/shiioo/blob/main/docs/positioning.md",
+   "title": "positioning",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
     }
    ],
    "citations": 1
@@ -2325,6 +2510,19 @@
    "citations": 1
   },
   {
+   "url": "https://lmstudio.ai",
+   "title": "LM Studio",
+   "domain": "lmstudio.ai",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://locust.io/",
    "title": "Locust",
    "domain": "locust.io",
@@ -2424,6 +2622,19 @@
     {
      "title": "This Site Is Becoming a Map",
      "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://mariadb.com/bsl11/",
+   "title": "Business Source License",
+   "domain": "mariadb.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
     }
    ],
    "citations": 1
@@ -2606,6 +2817,32 @@
     {
      "title": "What Comes After the Last Programming Language",
      "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://nvidianews.nvidia.com/news/openshell-reference-architecture",
+   "title": "OpenShell Reference Architecture for Safe AI Agents",
+   "domain": "nvidianews.nvidia.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://ollama.com",
+   "title": "Ollama",
+   "domain": "ollama.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
     }
    ],
    "citations": 1
@@ -2814,6 +3051,19 @@
     {
      "title": "After PHP Gate: A Blueprint for the Static Web",
      "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://tailscale.com",
+   "title": "Tailscale",
+   "domain": "tailscale.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
     }
    ],
    "citations": 1
@@ -3157,6 +3407,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.apple.com/mac-studio/specs/",
+   "title": "Mac Studio tech specs",
+   "domain": "apple.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.apply.computer-shogi.org/wcsc28/appeal/the_end_of_genesis_T.N.K.evolution_turbo_type_D/nnue.pdf",
    "title": "Efficiently Updatable Neural-Network-based Evaluation Functions for Computer Shogi",
    "domain": "apply.computer-shogi.org",
@@ -3191,6 +3454,19 @@
     {
      "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
      "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.businesstoday.in/technology/news/story/the-lobster-sheds-its-shell-for-the-third-time-as-clawdbot-becomes-openclaw-513650-2026-01-30",
+   "title": "Clawdbot becomes OpenClaw",
+   "domain": "businesstoday.in",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
     }
    ],
    "citations": 1
@@ -3789,6 +4065,19 @@
     {
      "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
      "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.storagereview.com/news/nvidia-dgx-spark-64gb-october-23-4999-two-units-cluster-to-128gb",
+   "title": "NVIDIA DGX Spark 64GB, October 23, $4,999",
+   "domain": "storagereview.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
     }
    ],
    "citations": 1

@@ -31,6 +31,7 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 
 ## Articles
 
+- [Shiioo, Re-imagined, and the Home AI Lab It Runs On](https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab.md) (2026-10-30): How I re-imagined Shiioo with what 2026 taught me about agent systems, and why my local setup moves to a Mac Studio and DGX Sparks.
 - [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one.md) (2026-10-29): Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it.
 - [After PHP Gate: A Blueprint for the Static Web](https://raskell.io/articles/a-blueprint-for-the-static-web.md) (2026-10-26): Last week's PHP flaws reached every server that runs code per request. My blueprint for sites and apps that run none at all.
 - [Learning to Play](https://raskell.io/articles/learning-to-play.md) (2026-10-25): A chess prodigy's handbook, three old games and one laptop: rebuilding the ideas behind game-playing AI in Rust for a browser on my phone, and measuring them.
@@ -230,18 +231,19 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ## Sources cited most
 
-External links cited on more than one page (all 286 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
+External links cited on more than one page (all 307 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
 
 - [Zentinel](https://zentinelproxy.io): cited on 12 pages
 - [Archipelag.io](https://archipelag.io): cited on 9 pages
 - [Cyanea](https://cyanea.bio): cited on 6 pages
 - [arcanist.sh](https://arcanist.sh/): cited on 4 pages
 - [Die Zukunft](https://die-zukunft.ch/): cited on 4 pages
+- [Shiioo](https://github.com/raskell-io/shiioo): cited on 4 pages
 - [companion repository](https://github.com/raskell-io/the-agent-platform-handbook): cited on 4 pages
 - [AI 2027](https://ai-2027.com/): cited on 3 pages
 - [Pingora](https://github.com/cloudflare/pingora): cited on 3 pages
 - [Conflux](https://github.com/raskell-io/conflux): cited on 3 pages
-- [shiioo](https://github.com/raskell-io/shiioo): cited on 3 pages
+- [Kishi](https://kishi.raskell.io): cited on 3 pages
 - [Vera](https://veralang.dev/): cited on 3 pages
 - [Void Linux](https://voidlinux.org/): cited on 3 pages
 - [catalogue of languages built for agents to write](https://agentlanguages.dev): cited on 2 pages
@@ -251,7 +253,6 @@ External links cited on more than one page (all 286 are searchable at https://ra
 - [Void Linux Handbook: XBPS](https://docs.voidlinux.org/xbps/index.html): cited on 2 pages
 - [fly.io](https://fly.io): cited on 2 pages
 - [Ghostty terminal emulator](https://ghostty.org): cited on 2 pages
-- [Kurumi](https://github.com/raskell-io/kurumi): cited on 2 pages
 
 ## Topics
 
