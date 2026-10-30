@@ -1324,6 +1324,19 @@ topics = ["intelligence", "mathematics", "emergence", "formal-methods", "philoso
 take = "How meaning and a self can arise from meaningless symbols, through Gödel's incompleteness, Escher's drawings, and Bach's fugues."
 
 [[works]]
+id = "structure-and-interpretation-of-computer-programs"
+title = "Structure and Interpretation of Computer Programs"
+author = "Harold Abelson and Gerald Jay Sussman, with Julie Sussman"
+kind = "book"
+cover = "covers/reading/structure-and-interpretation-of-computer-programs.avif"
+isbn = "9780262510875"
+year = 1985
+url = "https://sicp.mitpress.mit.edu"
+status = "backlog"
+topics = ["programming-languages", "compilers", "mathematics"]
+take = "MIT's introduction to programming through Scheme: abstraction with procedures and data, state, streams, and interpreters and compilers written in the language they interpret."
+
+[[works]]
 id = "chaos-making-a-new-science"
 title = "Chaos"
 subtitle = "Making a New Science"
