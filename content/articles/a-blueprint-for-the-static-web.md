@@ -1,7 +1,7 @@
 +++
 title = "After PHP Gate: A Blueprint for the Static Web"
 date = 2026-10-26
-description = "Last week's PHP flaws reached every server that runs code per request. My blueprint for sites and apps that run none at all."
+description = "Last week's PHP flaws reached every PHP installation serving web requests. My blueprint for sites and apps that run no code per request at all."
 
 [taxonomies]
 tags = ["applied-security", "edge-systems", "open-web", "zola", "webassembly", "rust", "context-engineering"]

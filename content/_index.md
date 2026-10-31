@@ -1,6 +1,11 @@
 +++
 title = "Home"
 
+# "Selected writing" on the homepage: three pieces that show different sides of the work, above the latest
+# writing and left out of it. Translated pages show their translation. Remove the line to hide the section.
+[extra]
+selected = ["articles/learning-to-play.md", "articles/the-river-and-the-canal.md", "articles/win-everything-control-no-one.md"]
+
 # "What I am working on" on the homepage. Remove [[extra.now]] blocks to hide the section.
 [[extra.now]]
 name = "Shiioo"

@@ -1,11 +1,11 @@
 +++
 title = "여기서 시작"
-description = "처음 오셨나요? 짧은 글 세 편으로 시작한 다음, 일곱 가지 읽기 트랙을 따라 더 깊이 들어가 보십시오. 각 트랙은 순서대로 읽으면 좋고, 각 항목은 따로 읽어도 됩니다."
+description = "처음 오셨나요? 글 세 편으로 시작한 다음, 일곱 가지 읽기 트랙을 따라 더 깊이 들어가 보십시오. 각 트랙은 순서대로 읽으면 좋고, 각 항목은 따로 읽어도 됩니다."
 template = "tracks.html"
 
 [extra.quick]
-title = "10분이 있다면"
-deck = "짧은 입구 세 개입니다. 각각 제가 하는 일의 다른 면을 보여 줍니다."
+title = "세 가지 출발점"
+deck = "출발점 세 개입니다. 각각 제가 하는 일의 다른 면을 보여 줍니다."
 items = [
   { path = "articles/traffic-replay-as-a-security-primitive.md", note = "운영자의 관점에서 본 응용 보안입니다. 규칙을 촉발한 트래픽을 재현할 수 있기 전까지 WAF 튜닝은 추측에 머뭅니다." },
   { path = "articles/the-economics-of-inference.md", note = "추론 토큰이 API 호출보다 물, 전기, 가스에 더 가깝게 움직이는 이유와, 그것이 AI 경제에 뜻하는 바를 다룹니다." },

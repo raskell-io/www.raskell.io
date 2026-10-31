@@ -1,11 +1,11 @@
 +++
 title = "从这里开始"
-description = "第一次来？先读三篇短文，再沿着七条阅读路线深入。每条路线按顺序读最好，每一篇也都可以单独阅读。"
+description = "第一次来？先读三篇文章，再沿着七条阅读路线深入。每条路线按顺序读最好，每一篇也都可以单独阅读。"
 template = "tracks.html"
 
 [extra.quick]
-title = "如果你有十分钟"
-deck = "三个简短的入口，各自展示我所做之事的一个侧面。"
+title = "三个切入点"
+deck = "三个起点，各自展示我所做之事的一个侧面。"
 items = [
   { path = "articles/traffic-replay-as-a-security-primitive.md", note = "从运维者的角度看应用安全：在能够重放触发规则的流量之前，WAF 调优只能靠猜。" },
   { path = "articles/the-economics-of-inference.md", note = "为什么推理 token 更像水、电和燃气，而不像 API 调用，以及这对 AI 经济意味着什么。" },

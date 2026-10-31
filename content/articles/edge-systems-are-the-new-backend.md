@@ -260,11 +260,11 @@ Client A (offline)     Client B (offline)
     │                      │
     └──────┐      ┌────────┘
            ▼      ▼
-      ┌──────────────┐
+      ┌───────────────┐
       │ Sync service  │  (thin, stateless)
       │ (persistence  │
       │  + relay)     │
-      └──────────────┘
+      └───────────────┘
 ```
 
 The sync service is not a backend. It stores operations and relays them between clients. It does not run business logic. It does not validate (the CRDT handles consistency). It does not transform (the merge function is built into the data type). It is a persistence layer with a WebSocket attached.
@@ -308,15 +308,15 @@ I take this further than most. All of my projects are CDN-first, even the ones w
 But the CDN-first pattern also applies to applications that have real backends. Cyanea has a Phoenix/Elixir backend that manages datasets, user accounts, and collaboration. But the public-facing surface, the landing pages, category pages, trending spaces and protocols and datasets, is statically generated. The backend exports JSON snapshots of its database objects on a timed interval. A static site generator picks up those snapshots and rebuilds the public pages: what labs are active, which protocols are trending, which datasets were recently published. The result is a set of HTML pages sitting on a CDN that stay current without depending on the backend being up at the moment a visitor arrives.
 
 ```
-┌──────────────────┐     JSON export      ┌──────────────┐
-│  Cyanea Backend  │ ──── (interval) ────> │  Static Site  │
+┌──────────────────┐     JSON export       ┌───────────────┐
+│  Cyanea Backend  │ ──── (interval) ────▶ │  Static Site  │
 │  (Phoenix/BEAM)  │                       │  Generator    │
 │                  │                       │  (Zola)       │
 │  - datasets      │                       │               │
 │  - protocols     │                       │  → CDN edge   │
 │  - labs          │                       │    nodes      │
 │  - spaces        │                       │               │
-└──────────────────┘                       └──────────────┘
+└──────────────────┘                       └───────────────┘
          │                                        │
          │ dynamic app                    static pages
          ▼                                        ▼
@@ -410,23 +410,23 @@ Five years ago, the stack was: browser (thin) renders server-generated HTML, bac
 The stack now:
 
 ```
-┌─────────────────────────────────────────────────────┐
+┌──────────────────────────────────────────────────────┐
 │ Client                                               │
 │ WASM │ WebGPU │ Web Workers │ Service Workers │ CRDT │
 │ (compute, render, offline, local state)              │
-└────────────────────┬────────────────────────────────┘
+└────────────────────┬─────────────────────────────────┘
                      │
-┌────────────────────┴────────────────────────────────┐
+┌────────────────────┴─────────────────────────────────┐
 │ Edge                                                 │
 │ Proxy │ Workers │ Containers │ KV │ Durable Objects  │
 │ (auth, WAF, routing, SSR, API aggregation, policy)   │
-└────────────────────┬────────────────────────────────┘
+└────────────────────┬─────────────────────────────────┘
                      │
-┌────────────────────┴────────────────────────────────┐
+┌────────────────────┴─────────────────────────────────┐
 │ Backend                                              │
-│ Database │ Sync relay │ Event log │ Batch processing  │
+│ Database │ Sync relay │ Event log │ Batch processing │
 │ (persistence, coordination, async compute)           │
-└─────────────────────────────────────────────────────┘
+└──────────────────────────────────────────────────────┘
 ```
 
 The client is fat. The edge is fat. The backend is thin. The center of gravity moved to both ends simultaneously.

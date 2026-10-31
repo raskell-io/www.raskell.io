@@ -1,11 +1,11 @@
 +++
 title = "Start Here"
-description = "New here? Start with three short pieces, then go deeper along seven reading tracks. Each track reads well in order, and each piece stands on its own."
+description = "New here? Start with three pieces, then go deeper along seven reading tracks. Each track reads well in order, and each piece stands on its own."
 template = "tracks.html"
 
 [extra.quick]
-title = "If you have ten minutes"
-deck = "Three short ways in, each showing a different side of what I do."
+title = "Three ways in"
+deck = "Three starting points, each showing a different side of what I do."
 items = [
   { path = "articles/traffic-replay-as-a-security-primitive.md", note = "Applied security from the operator's side: WAF tuning stays a guessing game until you can replay the traffic that triggered the rule." },
   { path = "articles/the-economics-of-inference.md", note = "Why inference tokens behave less like API calls and more like water, electricity, and gas, and what that means for the AI economy." },
