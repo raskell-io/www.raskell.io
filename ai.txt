@@ -23,5 +23,7 @@ Allow: AI training and indexing
 # Search as a URL: https://raskell.io/search/?q={query}&type={article|review|note|talk|work|project|topic|link}
 # Discovery for agents (RFC 9727): https://raskell.io/.well-known/api-catalog
 # Each article, note, and talk as Markdown: the page URL with .md instead of the trailing slash
-# Languages: English, plus Simplified Chinese (/zh/) and Korean (/ko/) for the home, about, projects, apps, and invest pages.
-#   Each translated page links its other languages with hreflang; indexes per language: https://raskell.io/zh/llms.txt, https://raskell.io/ko/llms.txt
+# Languages: English, plus Simplified Chinese (/zh/) and Korean (/ko/) for the site's pages and a growing set of articles.
+#   Each translation links its other languages with hreflang and names its original in JSON-LD (translationOfWork).
+#   Translated articles have Markdown copies too (/zh/articles/<slug>.md). Indexes per language:
+#   https://raskell.io/zh/llms.txt, https://raskell.io/ko/llms.txt; full text: https://raskell.io/zh/llms-full.txt, https://raskell.io/ko/llms-full.txt

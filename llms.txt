@@ -421,21 +421,22 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 
 ## Translations
 
-The site is written in English. Some pages are also translated; a translation lives at the same path under a language prefix (/zh/about/ translates /about/), carries hreflang alternates, and is linked from its English page. Articles, reviews, notes, and talks are English only. Each language has a short index of its own.
+The site is written in English. Some articles and pages are also translated; a translation lives at the same path under a language prefix (/zh/about/ translates /about/), carries hreflang alternates and translationOfWork in its JSON-LD, and is linked from its English page. A translated article has its own Markdown copy (/zh/articles/<slug>.md). Untranslated writing is English only. Each language has a short index and a full-text file of its own.
 
 ### 简体中文 (hreflang `zh-Hans`, under /zh/)
 
 - [llms.txt in 简体中文](https://raskell.io/zh/llms.txt)
+- [llms-full.txt in 简体中文](https://raskell.io/zh/llms-full.txt): every translated article in full
 - [首页](https://raskell.io/zh/): translation of [Home](https://raskell.io/)
 - [关于](https://raskell.io/zh/about/): translation of [About](https://raskell.io/about/)
 - [应用](https://raskell.io/zh/apps/): translation of [Apps](https://raskell.io/apps/)
 - [文章](https://raskell.io/zh/articles/): translation of [Articles](https://raskell.io/articles/)
-- [学会下棋](https://raskell.io/zh/articles/learning-to-play/): translation of [Learning to Play](https://raskell.io/articles/learning-to-play/)
-- [推理的经济学](https://raskell.io/zh/articles/the-economics-of-inference/): translation of [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/)
-- [河流与运河](https://raskell.io/zh/articles/the-river-and-the-canal/): translation of [The River and the Canal](https://raskell.io/articles/the-river-and-the-canal/)
-- [智能体究竟是什么](https://raskell.io/zh/articles/what-an-agent-actually-is/): translation of [What an Agent Actually Is](https://raskell.io/articles/what-an-agent-actually-is/)
-- [最后一门编程语言，也许不是给人用的](https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code/): translation of [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/)
-- [赢下一切，不控制任何人](https://raskell.io/zh/articles/win-everything-control-no-one/): translation of [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/)
+- [学会下棋](https://raskell.io/zh/articles/learning-to-play/): translation of [Learning to Play](https://raskell.io/articles/learning-to-play/) ([Markdown](https://raskell.io/zh/articles/learning-to-play.md))
+- [推理的经济学](https://raskell.io/zh/articles/the-economics-of-inference/): translation of [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/) ([Markdown](https://raskell.io/zh/articles/the-economics-of-inference.md))
+- [河流与运河](https://raskell.io/zh/articles/the-river-and-the-canal/): translation of [The River and the Canal](https://raskell.io/articles/the-river-and-the-canal/) ([Markdown](https://raskell.io/zh/articles/the-river-and-the-canal.md))
+- [智能体究竟是什么](https://raskell.io/zh/articles/what-an-agent-actually-is/): translation of [What an Agent Actually Is](https://raskell.io/articles/what-an-agent-actually-is/) ([Markdown](https://raskell.io/zh/articles/what-an-agent-actually-is.md))
+- [最后一门编程语言，也许不是给人用的](https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code/): translation of [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/) ([Markdown](https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code.md))
+- [赢下一切，不控制任何人](https://raskell.io/zh/articles/win-everything-control-no-one/): translation of [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/) ([Markdown](https://raskell.io/zh/articles/win-everything-control-no-one.md))
 - [投资](https://raskell.io/zh/invest/): translation of [Invest](https://raskell.io/invest/)
 - [许可](https://raskell.io/zh/license/): translation of [Licence](https://raskell.io/license/)
 - [地图](https://raskell.io/zh/map/): translation of [Map](https://raskell.io/map/)
@@ -461,16 +462,17 @@ The site is written in English. Some pages are also translated; a translation li
 ### 한국어 (hreflang `ko`, under /ko/)
 
 - [llms.txt in 한국어](https://raskell.io/ko/llms.txt)
+- [llms-full.txt in 한국어](https://raskell.io/ko/llms-full.txt): every translated article in full
 - [홈](https://raskell.io/ko/): translation of [Home](https://raskell.io/)
 - [소개](https://raskell.io/ko/about/): translation of [About](https://raskell.io/about/)
 - [앱](https://raskell.io/ko/apps/): translation of [Apps](https://raskell.io/apps/)
 - [글](https://raskell.io/ko/articles/): translation of [Articles](https://raskell.io/articles/)
-- [두는 법을 배우기](https://raskell.io/ko/articles/learning-to-play/): translation of [Learning to Play](https://raskell.io/articles/learning-to-play/)
-- [추론의 경제학](https://raskell.io/ko/articles/the-economics-of-inference/): translation of [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/)
-- [강과 운하](https://raskell.io/ko/articles/the-river-and-the-canal/): translation of [The River and the Canal](https://raskell.io/articles/the-river-and-the-canal/)
-- [에이전트란 실제로 무엇인가](https://raskell.io/ko/articles/what-an-agent-actually-is/): translation of [What an Agent Actually Is](https://raskell.io/articles/what-an-agent-actually-is/)
-- [마지막 프로그래밍 언어는 인간을 위한 것이 아닐지도 모릅니다](https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code/): translation of [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/)
-- [모든 것을 이기되, 아무도 통제하지 않기](https://raskell.io/ko/articles/win-everything-control-no-one/): translation of [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/)
+- [두는 법을 배우기](https://raskell.io/ko/articles/learning-to-play/): translation of [Learning to Play](https://raskell.io/articles/learning-to-play/) ([Markdown](https://raskell.io/ko/articles/learning-to-play.md))
+- [추론의 경제학](https://raskell.io/ko/articles/the-economics-of-inference/): translation of [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/) ([Markdown](https://raskell.io/ko/articles/the-economics-of-inference.md))
+- [강과 운하](https://raskell.io/ko/articles/the-river-and-the-canal/): translation of [The River and the Canal](https://raskell.io/articles/the-river-and-the-canal/) ([Markdown](https://raskell.io/ko/articles/the-river-and-the-canal.md))
+- [에이전트란 실제로 무엇인가](https://raskell.io/ko/articles/what-an-agent-actually-is/): translation of [What an Agent Actually Is](https://raskell.io/articles/what-an-agent-actually-is/) ([Markdown](https://raskell.io/ko/articles/what-an-agent-actually-is.md))
+- [마지막 프로그래밍 언어는 인간을 위한 것이 아닐지도 모릅니다](https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code/): translation of [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/) ([Markdown](https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code.md))
+- [모든 것을 이기되, 아무도 통제하지 않기](https://raskell.io/ko/articles/win-everything-control-no-one/): translation of [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/) ([Markdown](https://raskell.io/ko/articles/win-everything-control-no-one.md))
 - [투자](https://raskell.io/ko/invest/): translation of [Invest](https://raskell.io/invest/)
 - [라이선스](https://raskell.io/ko/license/): translation of [Licence](https://raskell.io/license/)
 - [지도](https://raskell.io/ko/map/): translation of [Map](https://raskell.io/map/)
@@ -497,6 +499,7 @@ The site is written in English. Some pages are also translated; a translation li
 
 - Each article and note as Markdown: its URL with `.md` instead of the trailing slash, e.g. https://raskell.io/articles/the-model-is-a-dependency.md
 - Each talk as Markdown too, e.g. https://raskell.io/talks/iat-13-basel.md
+- Each translated article as Markdown in its language, e.g. https://raskell.io/zh/articles/the-river-and-the-canal.md (see Translations)
 - [map.json](https://raskell.io/map.json): the site graph (articles, notes, talks, topics with definitions, series, categories, works from the reading log, projects, and their links)
 - [garden.json](https://raskell.io/garden.json): the search index as data: every article, review, note, talk, work, project, topic, and cited link, with kinds, topics, and dates
 - [links.json](https://raskell.io/links.json): every external link the writing cites, with the pages that cite it and whether it is a reference

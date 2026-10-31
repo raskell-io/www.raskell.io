@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://raskell.io/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/"/>
     </url>
     <url>
         <loc>https://raskell.io/about/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/about/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/about/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/about/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/about/"/>
     </url>
     <url>
         <loc>https://raskell.io/apps/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/apps/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/apps/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/apps/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/apps/"/>
     </url>
     <url>
         <loc>https://raskell.io/articles/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/"/>
     </url>
     <url>
         <loc>https://raskell.io/articles/a-blueprint-for-the-static-web/</loc>
@@ -55,6 +71,10 @@
     <url>
         <loc>https://raskell.io/articles/learning-to-play/</loc>
         <lastmod>2026-10-25</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/learning-to-play/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/learning-to-play/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/learning-to-play/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/learning-to-play/"/>
     </url>
     <url>
         <loc>https://raskell.io/articles/looking-back-on-2025/</loc>
@@ -107,6 +127,10 @@
     <url>
         <loc>https://raskell.io/articles/the-economics-of-inference/</loc>
         <lastmod>2026-04-22</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/the-economics-of-inference/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/the-economics-of-inference/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/the-economics-of-inference/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/the-economics-of-inference/"/>
     </url>
     <url>
         <loc>https://raskell.io/articles/the-field-exists-now/</loc>
@@ -123,6 +147,10 @@
     <url>
         <loc>https://raskell.io/articles/the-river-and-the-canal/</loc>
         <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/the-river-and-the-canal/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/the-river-and-the-canal/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/the-river-and-the-canal/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/the-river-and-the-canal/"/>
     </url>
     <url>
         <loc>https://raskell.io/articles/the-web-was-the-training-set/</loc>
@@ -143,6 +171,10 @@
     <url>
         <loc>https://raskell.io/articles/what-an-agent-actually-is/</loc>
         <lastmod>2026-06-02</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/what-an-agent-actually-is/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/what-an-agent-actually-is/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/what-an-agent-actually-is/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/what-an-agent-actually-is/"/>
     </url>
     <url>
         <loc>https://raskell.io/articles/what-comes-after-the-last-programming-language/</loc>
@@ -151,6 +183,10 @@
     <url>
         <loc>https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/</loc>
         <lastmod>2026-04-11</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"/>
     </url>
     <url>
         <loc>https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/</loc>
@@ -167,6 +203,10 @@
     <url>
         <loc>https://raskell.io/articles/win-everything-control-no-one/</loc>
         <lastmod>2026-10-29</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/win-everything-control-no-one/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/win-everything-control-no-one/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/win-everything-control-no-one/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/win-everything-control-no-one/"/>
     </url>
     <url>
         <loc>https://raskell.io/articles/your-agent-wants-root/</loc>
@@ -174,474 +214,1037 @@
     </url>
     <url>
         <loc>https://raskell.io/categories/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/categories/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/categories/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/categories/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/categories/"/>
     </url>
     <url>
         <loc>https://raskell.io/categories/reviews/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/categories/reviews/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/categories/reviews/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/categories/reviews/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/categories/reviews/"/>
     </url>
     <url>
         <loc>https://raskell.io/invest/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/"/>
     </url>
     <url>
         <loc>https://raskell.io/invest/arcanist/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/arcanist/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/arcanist/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/arcanist/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/arcanist/"/>
     </url>
     <url>
         <loc>https://raskell.io/invest/archipelag-io/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/archipelag-io/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/archipelag-io/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/archipelag-io/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/archipelag-io/"/>
     </url>
     <url>
         <loc>https://raskell.io/invest/cyanea/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/cyanea/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/cyanea/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/cyanea/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/cyanea/"/>
     </url>
     <url>
         <loc>https://raskell.io/invest/humankind/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/humankind/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/humankind/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/humankind/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/humankind/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/about/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/about/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/about/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/about/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/about/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/apps/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/apps/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/apps/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/apps/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/apps/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/articles/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/articles/learning-to-play/</loc>
         <lastmod>2026-10-25</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/learning-to-play/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/learning-to-play/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/learning-to-play/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/learning-to-play/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/articles/the-economics-of-inference/</loc>
         <lastmod>2026-04-22</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/the-economics-of-inference/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/the-economics-of-inference/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/the-economics-of-inference/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/the-economics-of-inference/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/articles/the-river-and-the-canal/</loc>
         <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/the-river-and-the-canal/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/the-river-and-the-canal/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/the-river-and-the-canal/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/the-river-and-the-canal/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/articles/what-an-agent-actually-is/</loc>
         <lastmod>2026-06-02</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/what-an-agent-actually-is/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/what-an-agent-actually-is/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/what-an-agent-actually-is/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/what-an-agent-actually-is/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code/</loc>
         <lastmod>2026-04-11</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/articles/win-everything-control-no-one/</loc>
         <lastmod>2026-10-29</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/win-everything-control-no-one/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/win-everything-control-no-one/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/win-everything-control-no-one/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/win-everything-control-no-one/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/categories/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/categories/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/categories/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/categories/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/categories/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/categories/reviews/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/categories/reviews/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/categories/reviews/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/categories/reviews/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/categories/reviews/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/invest/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/invest/arcanist/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/arcanist/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/arcanist/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/arcanist/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/arcanist/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/invest/archipelag-io/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/archipelag-io/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/archipelag-io/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/archipelag-io/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/archipelag-io/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/invest/cyanea/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/cyanea/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/cyanea/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/cyanea/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/cyanea/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/invest/humankind/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/humankind/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/humankind/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/humankind/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/humankind/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/license/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/license/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/license/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/license/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/license/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/map/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/map/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/map/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/map/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/map/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/notes/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/notes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/notes/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/notes/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/notes/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/ontology/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/ontology/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/ontology/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/ontology/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/ontology/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/privacy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/privacy/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/projects/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/projects/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/projects/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/projects/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/projects/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/reading/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/reading/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/reading/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/reading/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/reading/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/search/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/search/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/search/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/search/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/search/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/series/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/series/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/series/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/series/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/series/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/series/the-agent-platform-handbook/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/series/the-agent-platform-handbook/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/series/the-agent-platform-handbook/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/series/the-agent-platform-handbook/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/series/the-agent-platform-handbook/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/speaking/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/speaking/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/speaking/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/speaking/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/speaking/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/start-here/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/start-here/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/start-here/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/start-here/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/start-here/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/abstraction/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/abstraction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/abstraction/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/abstraction/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/abstraction/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/agent-identity/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/agent-identity/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/agent-identity/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/agents/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/agents/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/agents/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/agents/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/agents/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/ai-alignment/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ai-alignment/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ai-alignment/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ai-alignment/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ai-alignment/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/ai-engineering/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ai-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ai-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ai-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ai-engineering/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/ai-for-ops/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ai-for-ops/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ai-for-ops/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ai-for-ops/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ai-for-ops/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/ai-platforms/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ai-platforms/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ai-platforms/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ai-platforms/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ai-platforms/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/applied-security/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/applied-security/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/applied-security/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/applied-security/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/applied-security/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/attention-economy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/attention-economy/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/attention-economy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/attention-economy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/attention-economy/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/augmentation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/augmentation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/augmentation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/augmentation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/augmentation/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/cities/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/cities/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/cities/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/cities/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/cities/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/commons/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/commons/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/commons/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/commons/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/commons/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/compilers/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/compilers/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/compilers/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/compilers/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/compilers/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/complex-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/complex-systems/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/complex-systems/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/context-engineering/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/context-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/context-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/context-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/context-engineering/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/cryptocurrency/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/cryptocurrency/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/cryptocurrency/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/cryptocurrency/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/cryptocurrency/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/data-sovereignty/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/data-sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/data-sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/data-sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/data-sovereignty/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/decentralisation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/decentralisation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/decentralisation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/decentralisation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/decentralisation/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/democratisation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/democratisation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/democratisation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/democratisation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/democratisation/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/determinism/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/determinism/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/determinism/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/determinism/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/determinism/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/developer-tooling/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/developer-tooling/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/developer-tooling/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/developer-tooling/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/developer-tooling/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/distributed-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/distributed-systems/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/distributed-systems/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/distributed-systems/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/distributed-systems/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/durable-execution/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/durable-execution/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/durable-execution/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/durable-execution/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/durable-execution/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/economics/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/economics/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/economics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/economics/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/economics/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/edge-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/edge-systems/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/edge-systems/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/edge-systems/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/edge-systems/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/elixir/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/elixir/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/elixir/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/elixir/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/elixir/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/emergence/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/emergence/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/emergence/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/emergence/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/emergence/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/enterprise-architecture/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/enterprise-architecture/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/enterprise-architecture/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/entrepreneurship/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/entrepreneurship/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/entrepreneurship/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/entrepreneurship/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/entrepreneurship/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/ethics/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ethics/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ethics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ethics/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ethics/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/europe/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/europe/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/europe/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/europe/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/europe/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/evaluation/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/evaluation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/evaluation/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/existential-risk/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/existential-risk/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/existential-risk/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/external-memory/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/external-memory/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/external-memory/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/external-memory/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/external-memory/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/factories/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/factories/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/factories/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/factories/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/factories/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/finance/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/finance/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/finance/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/finance/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/finance/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/formal-methods/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/formal-methods/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/formal-methods/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/formal-methods/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/formal-methods/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/fractals/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/fractals/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/fractals/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/fractals/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/fractals/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/future-of-work/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/future-of-work/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/future-of-work/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/future-of-work/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/future-of-work/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/game-ai/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/game-ai/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/game-ai/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/game-ai/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/game-ai/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/games/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/games/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/games/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/games/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/games/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/geography/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/geography/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/geography/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/geopolitics/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/geopolitics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/geopolitics/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/gpus/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/gpus/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/gpus/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/gpus/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/gpus/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/haskell/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/haskell/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/haskell/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/haskell/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/haskell/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/high-modernism/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/high-modernism/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/high-modernism/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/history-of-science/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/history-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/history-of-science/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/history-of-technology/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/history-of-technology/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/history-of-technology/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/history-of-technology/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/history-of-technology/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/history/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/history/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/history/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/hubris/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/hubris/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/hubris/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/hypertext/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/hypertext/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/hypertext/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/hypertext/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/hypertext/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/inference/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/inference/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/inference/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/inference/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/inference/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/insurance/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/insurance/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/insurance/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/insurance/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/insurance/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/intellectual-property/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/intellectual-property/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/intellectual-property/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/intellectual-property/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/intellectual-property/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/intelligence/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/intelligence/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/intelligence/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/intelligence/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/intelligence/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/isolation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/isolation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/isolation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/isolation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/isolation/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/knowledge-management/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/knowledge-management/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/knowledge-management/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/knowledge-management/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/knowledge-management/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/kubernetes/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/kubernetes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/kubernetes/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/kubernetes/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/kubernetes/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/languages/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/languages/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/languages/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/languages/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/languages/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/legibility/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/legibility/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/legibility/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/legibility/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/legibility/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/life-sciences/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/life-sciences/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/life-sciences/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/linux/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/linux/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/linux/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/linux/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/linux/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/literature/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/literature/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/literature/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/local-first/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/local-first/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/local-first/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/local-first/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/local-first/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/machine-learning/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/machine-learning/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/machine-learning/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/machine-learning/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/machine-learning/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/mathematics/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/mathematics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/mathematics/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/maximalist-novels/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/maximalist-novels/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/maximalist-novels/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/medicine/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/medicine/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/medicine/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/meta/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/meta/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/meta/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/meta/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/meta/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/metrics/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/metrics/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/metrics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/metrics/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/metrics/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/networking/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/networking/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/networking/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/neural-networks/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/neural-networks/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/neural-networks/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/neuroscience/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/neuroscience/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/neuroscience/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/neuroscience/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/neuroscience/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/observability/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/observability/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/observability/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/observability/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/observability/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/open-data/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/open-data/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/open-data/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/open-data/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/open-data/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/open-standards/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/open-standards/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/open-standards/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/open-standards/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/open-standards/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/open-web/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/open-web/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/open-web/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/open-web/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/open-web/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/openbsd/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/openbsd/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/openbsd/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/openbsd/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/openbsd/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/opentelemetry/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/opentelemetry/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/opentelemetry/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/opentelemetry/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/opentelemetry/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/operating-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/operating-systems/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/operating-systems/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/operating-systems/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/operating-systems/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/oss/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/oss/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/oss/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/oss/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/oss/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/philosophy-of-science/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/philosophy-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/philosophy-of-science/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/philosophy/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/philosophy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/philosophy/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/pingora/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/pingora/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/pingora/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/pingora/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/pingora/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/platform-automation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/platform-automation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/platform-automation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/platform-automation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/platform-automation/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/policy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/policy/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/policy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/policy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/policy/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/post-scarcity/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/post-scarcity/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/post-scarcity/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/post-scarcity/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/post-scarcity/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/privacy/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/privacy/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/programming-languages/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/programming-languages/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/programming-languages/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/programming-languages/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/programming-languages/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/provenance/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/provenance/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/provenance/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/provenance/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/provenance/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/reinforcement-learning/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/reinforcement-learning/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/reinforcement-learning/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/reinforcement-learning/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/reinforcement-learning/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/reliability/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/reliability/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/reliability/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/reliability/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/reliability/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/religion/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/religion/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/religion/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/research-labs/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/research-labs/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/research-labs/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/research-labs/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/research-labs/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/risk/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/risk/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/risk/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/risk/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/risk/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/rust/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/rust/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/rust/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/rust/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/rust/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/science-fiction/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/science-fiction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/science-fiction/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/science-fiction/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/science-fiction/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/scientific-revolutions/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/scientific-revolutions/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/scientific-revolutions/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/self-hosting/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/self-hosting/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/self-hosting/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/self-hosting/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/self-hosting/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/self-play/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/self-play/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/self-play/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/simulation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/simulation/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/social-reform/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/social-reform/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/social-reform/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/social-reform/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/social-reform/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/sovereignty/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/sovereignty/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/switzerland/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/switzerland/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/switzerland/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/switzerland/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/switzerland/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/technology-races/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/technology-races/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/technology-races/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/technology-races/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/technology-races/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/training-data/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/training-data/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/training-data/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/training-data/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/training-data/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/tree-search/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/tree-search/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/tree-search/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/trust/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/trust/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/trust/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/trust/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/trust/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/typescript/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/typescript/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/typescript/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/typescript/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/typescript/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/waf/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/waf/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/waf/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/waf/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/waf/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/webassembly/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/webassembly/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/webassembly/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/webassembly/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/webassembly/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/world-history/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/world-history/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/world-history/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/world-history/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/world-history/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/zola/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/zola/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/zola/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/zola/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/zola/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/talks/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/talks/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/talks/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/talks/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/talks/"/>
     </url>
     <url>
         <loc>https://raskell.io/license/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/license/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/license/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/license/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/license/"/>
     </url>
     <url>
         <loc>https://raskell.io/map/</loc>
-    </url>
-    <url>
-        <loc>https://raskell.io/markdown-syntax/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/map/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/map/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/map/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/map/"/>
     </url>
     <url>
         <loc>https://raskell.io/notes/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/notes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/notes/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/notes/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/notes/"/>
     </url>
     <url>
         <loc>https://raskell.io/notes/a-capability-democratised/</loc>
@@ -681,300 +1284,696 @@
     </url>
     <url>
         <loc>https://raskell.io/ontology/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/ontology/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/ontology/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/ontology/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/ontology/"/>
     </url>
     <url>
         <loc>https://raskell.io/privacy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/privacy/"/>
     </url>
     <url>
         <loc>https://raskell.io/projects/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/projects/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/projects/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/projects/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/projects/"/>
     </url>
     <url>
         <loc>https://raskell.io/reading/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/reading/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/reading/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/reading/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/reading/"/>
     </url>
     <url>
         <loc>https://raskell.io/search/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/search/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/search/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/search/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/search/"/>
     </url>
     <url>
         <loc>https://raskell.io/series/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/series/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/series/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/series/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/series/"/>
     </url>
     <url>
         <loc>https://raskell.io/series/the-agent-platform-handbook/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/series/the-agent-platform-handbook/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/series/the-agent-platform-handbook/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/series/the-agent-platform-handbook/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/series/the-agent-platform-handbook/"/>
     </url>
     <url>
         <loc>https://raskell.io/speaking/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/speaking/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/speaking/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/speaking/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/speaking/"/>
     </url>
     <url>
         <loc>https://raskell.io/start-here/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/start-here/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/start-here/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/start-here/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/start-here/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/abstraction/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/abstraction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/abstraction/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/abstraction/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/abstraction/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/agents/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/agents/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/agents/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/agents/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/agents/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/ai-alignment/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ai-alignment/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ai-alignment/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ai-alignment/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ai-alignment/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/ai-engineering/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ai-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ai-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ai-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ai-engineering/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/ai-for-ops/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ai-for-ops/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ai-for-ops/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ai-for-ops/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ai-for-ops/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/ai-platforms/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ai-platforms/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ai-platforms/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ai-platforms/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ai-platforms/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/applied-security/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/applied-security/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/applied-security/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/applied-security/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/applied-security/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/attention-economy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/attention-economy/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/attention-economy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/attention-economy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/attention-economy/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/augmentation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/augmentation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/augmentation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/augmentation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/augmentation/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/cities/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/cities/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/cities/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/cities/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/cities/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/commons/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/commons/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/commons/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/commons/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/commons/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/compilers/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/compilers/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/compilers/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/compilers/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/compilers/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/context-engineering/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/context-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/context-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/context-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/context-engineering/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/cryptocurrency/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/cryptocurrency/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/cryptocurrency/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/cryptocurrency/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/cryptocurrency/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/data-sovereignty/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/data-sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/data-sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/data-sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/data-sovereignty/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/decentralisation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/decentralisation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/decentralisation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/decentralisation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/decentralisation/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/democratisation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/democratisation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/democratisation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/democratisation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/democratisation/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/determinism/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/determinism/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/determinism/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/determinism/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/determinism/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/developer-tooling/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/developer-tooling/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/developer-tooling/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/developer-tooling/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/developer-tooling/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/distributed-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/distributed-systems/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/distributed-systems/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/distributed-systems/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/distributed-systems/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/durable-execution/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/durable-execution/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/durable-execution/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/durable-execution/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/durable-execution/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/economics/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/economics/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/economics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/economics/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/economics/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/edge-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/edge-systems/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/edge-systems/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/edge-systems/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/edge-systems/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/elixir/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/elixir/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/elixir/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/elixir/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/elixir/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/emergence/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/emergence/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/emergence/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/emergence/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/emergence/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/entrepreneurship/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/entrepreneurship/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/entrepreneurship/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/entrepreneurship/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/entrepreneurship/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/ethics/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ethics/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ethics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ethics/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ethics/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/europe/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/europe/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/europe/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/europe/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/europe/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/external-memory/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/external-memory/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/external-memory/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/external-memory/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/external-memory/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/factories/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/factories/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/factories/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/factories/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/factories/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/finance/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/finance/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/finance/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/finance/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/finance/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/formal-methods/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/formal-methods/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/formal-methods/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/formal-methods/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/formal-methods/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/fractals/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/fractals/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/fractals/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/fractals/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/fractals/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/future-of-work/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/future-of-work/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/future-of-work/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/future-of-work/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/future-of-work/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/game-ai/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/game-ai/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/game-ai/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/game-ai/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/game-ai/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/games/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/games/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/games/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/games/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/games/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/gpus/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/gpus/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/gpus/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/gpus/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/gpus/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/haskell/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/haskell/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/haskell/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/haskell/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/haskell/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/history-of-technology/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/history-of-technology/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/history-of-technology/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/history-of-technology/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/history-of-technology/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/hypertext/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/hypertext/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/hypertext/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/hypertext/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/hypertext/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/inference/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/inference/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/inference/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/inference/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/inference/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/insurance/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/insurance/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/insurance/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/insurance/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/insurance/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/intellectual-property/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/intellectual-property/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/intellectual-property/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/intellectual-property/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/intellectual-property/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/intelligence/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/intelligence/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/intelligence/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/intelligence/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/intelligence/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/isolation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/isolation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/isolation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/isolation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/isolation/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/knowledge-management/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/knowledge-management/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/knowledge-management/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/knowledge-management/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/knowledge-management/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/kubernetes/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/kubernetes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/kubernetes/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/kubernetes/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/kubernetes/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/languages/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/languages/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/languages/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/languages/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/languages/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/legibility/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/legibility/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/legibility/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/legibility/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/legibility/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/linux/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/linux/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/linux/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/linux/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/linux/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/local-first/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/local-first/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/local-first/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/local-first/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/local-first/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/machine-learning/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/machine-learning/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/machine-learning/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/machine-learning/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/machine-learning/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/meta/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/meta/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/meta/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/meta/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/meta/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/metrics/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/metrics/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/metrics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/metrics/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/metrics/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/neuroscience/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/neuroscience/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/neuroscience/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/neuroscience/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/neuroscience/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/observability/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/observability/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/observability/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/observability/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/observability/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/open-data/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/open-data/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/open-data/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/open-data/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/open-data/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/open-standards/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/open-standards/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/open-standards/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/open-standards/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/open-standards/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/open-web/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/open-web/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/open-web/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/open-web/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/open-web/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/openbsd/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/openbsd/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/openbsd/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/openbsd/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/openbsd/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/opentelemetry/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/opentelemetry/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/opentelemetry/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/opentelemetry/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/opentelemetry/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/operating-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/operating-systems/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/operating-systems/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/operating-systems/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/operating-systems/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/oss/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/oss/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/oss/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/oss/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/oss/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/pingora/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/pingora/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/pingora/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/pingora/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/pingora/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/platform-automation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/platform-automation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/platform-automation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/platform-automation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/platform-automation/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/policy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/policy/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/policy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/policy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/policy/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/post-scarcity/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/post-scarcity/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/post-scarcity/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/post-scarcity/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/post-scarcity/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/programming-languages/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/programming-languages/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/programming-languages/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/programming-languages/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/programming-languages/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/provenance/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/provenance/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/provenance/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/provenance/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/provenance/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/reinforcement-learning/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/reinforcement-learning/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/reinforcement-learning/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/reinforcement-learning/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/reinforcement-learning/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/reliability/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/reliability/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/reliability/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/reliability/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/reliability/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/research-labs/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/research-labs/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/research-labs/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/research-labs/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/research-labs/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/risk/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/risk/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/risk/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/risk/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/risk/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/rust/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/rust/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/rust/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/rust/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/rust/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/science-fiction/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/science-fiction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/science-fiction/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/science-fiction/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/science-fiction/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/self-hosting/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/self-hosting/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/self-hosting/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/self-hosting/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/self-hosting/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/simulation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/simulation/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/social-reform/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/social-reform/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/social-reform/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/social-reform/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/social-reform/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/sovereignty/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/sovereignty/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/switzerland/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/switzerland/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/switzerland/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/switzerland/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/switzerland/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/technology-races/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/technology-races/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/technology-races/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/technology-races/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/technology-races/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/training-data/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/training-data/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/training-data/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/training-data/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/training-data/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/trust/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/trust/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/trust/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/trust/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/trust/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/typescript/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/typescript/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/typescript/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/typescript/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/typescript/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/waf/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/waf/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/waf/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/waf/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/waf/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/webassembly/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/webassembly/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/webassembly/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/webassembly/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/webassembly/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/world-history/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/world-history/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/world-history/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/world-history/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/world-history/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/zola/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/zola/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/zola/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/zola/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/zola/"/>
     </url>
     <url>
         <loc>https://raskell.io/talks/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/talks/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/talks/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/talks/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/talks/"/>
     </url>
     <url>
         <loc>https://raskell.io/talks/iat-13-basel/</loc>
@@ -982,440 +1981,966 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/about/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/about/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/about/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/about/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/about/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/apps/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/apps/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/apps/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/apps/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/apps/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/articles/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/articles/learning-to-play/</loc>
         <lastmod>2026-10-25</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/learning-to-play/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/learning-to-play/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/learning-to-play/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/learning-to-play/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/articles/the-economics-of-inference/</loc>
         <lastmod>2026-04-22</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/the-economics-of-inference/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/the-economics-of-inference/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/the-economics-of-inference/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/the-economics-of-inference/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/articles/the-river-and-the-canal/</loc>
         <lastmod>2026-10-31</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/the-river-and-the-canal/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/the-river-and-the-canal/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/the-river-and-the-canal/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/the-river-and-the-canal/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/articles/what-an-agent-actually-is/</loc>
         <lastmod>2026-06-02</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/what-an-agent-actually-is/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/what-an-agent-actually-is/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/what-an-agent-actually-is/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/what-an-agent-actually-is/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code/</loc>
         <lastmod>2026-04-11</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/articles/win-everything-control-no-one/</loc>
         <lastmod>2026-10-29</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/win-everything-control-no-one/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/win-everything-control-no-one/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/win-everything-control-no-one/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/win-everything-control-no-one/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/categories/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/categories/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/categories/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/categories/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/categories/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/categories/reviews/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/categories/reviews/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/categories/reviews/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/categories/reviews/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/categories/reviews/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/invest/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/invest/arcanist/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/arcanist/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/arcanist/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/arcanist/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/arcanist/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/invest/archipelag-io/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/archipelag-io/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/archipelag-io/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/archipelag-io/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/archipelag-io/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/invest/cyanea/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/cyanea/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/cyanea/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/cyanea/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/cyanea/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/invest/humankind/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/humankind/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/humankind/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/invest/humankind/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/invest/humankind/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/license/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/license/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/license/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/license/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/license/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/map/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/map/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/map/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/map/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/map/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/notes/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/notes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/notes/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/notes/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/notes/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/ontology/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/ontology/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/ontology/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/ontology/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/ontology/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/privacy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/privacy/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/projects/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/projects/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/projects/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/projects/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/projects/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/reading/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/reading/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/reading/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/reading/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/reading/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/search/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/search/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/search/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/search/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/search/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/series/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/series/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/series/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/series/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/series/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/series/the-agent-platform-handbook/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/series/the-agent-platform-handbook/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/series/the-agent-platform-handbook/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/series/the-agent-platform-handbook/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/series/the-agent-platform-handbook/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/speaking/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/speaking/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/speaking/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/speaking/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/speaking/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/start-here/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/start-here/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/start-here/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/start-here/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/start-here/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/abstraction/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/abstraction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/abstraction/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/abstraction/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/abstraction/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/agent-identity/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/agent-identity/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/agent-identity/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/agents/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/agents/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/agents/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/agents/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/agents/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/ai-alignment/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ai-alignment/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ai-alignment/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ai-alignment/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ai-alignment/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/ai-engineering/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ai-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ai-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ai-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ai-engineering/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/ai-for-ops/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ai-for-ops/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ai-for-ops/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ai-for-ops/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ai-for-ops/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/ai-platforms/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ai-platforms/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ai-platforms/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ai-platforms/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ai-platforms/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/applied-security/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/applied-security/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/applied-security/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/applied-security/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/applied-security/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/attention-economy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/attention-economy/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/attention-economy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/attention-economy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/attention-economy/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/augmentation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/augmentation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/augmentation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/augmentation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/augmentation/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/cities/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/cities/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/cities/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/cities/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/cities/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/commons/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/commons/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/commons/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/commons/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/commons/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/compilers/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/compilers/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/compilers/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/compilers/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/compilers/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/complex-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/complex-systems/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/complex-systems/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/context-engineering/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/context-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/context-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/context-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/context-engineering/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/cryptocurrency/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/cryptocurrency/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/cryptocurrency/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/cryptocurrency/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/cryptocurrency/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/data-sovereignty/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/data-sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/data-sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/data-sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/data-sovereignty/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/decentralisation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/decentralisation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/decentralisation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/decentralisation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/decentralisation/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/democratisation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/democratisation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/democratisation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/democratisation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/democratisation/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/determinism/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/determinism/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/determinism/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/determinism/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/determinism/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/developer-tooling/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/developer-tooling/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/developer-tooling/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/developer-tooling/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/developer-tooling/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/distributed-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/distributed-systems/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/distributed-systems/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/distributed-systems/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/distributed-systems/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/durable-execution/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/durable-execution/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/durable-execution/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/durable-execution/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/durable-execution/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/economics/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/economics/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/economics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/economics/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/economics/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/edge-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/edge-systems/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/edge-systems/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/edge-systems/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/edge-systems/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/elixir/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/elixir/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/elixir/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/elixir/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/elixir/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/emergence/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/emergence/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/emergence/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/emergence/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/emergence/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/enterprise-architecture/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/enterprise-architecture/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/enterprise-architecture/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/entrepreneurship/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/entrepreneurship/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/entrepreneurship/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/entrepreneurship/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/entrepreneurship/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/ethics/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/ethics/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/ethics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/ethics/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/ethics/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/europe/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/europe/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/europe/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/europe/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/europe/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/evaluation/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/evaluation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/evaluation/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/existential-risk/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/existential-risk/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/existential-risk/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/external-memory/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/external-memory/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/external-memory/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/external-memory/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/external-memory/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/factories/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/factories/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/factories/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/factories/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/factories/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/finance/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/finance/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/finance/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/finance/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/finance/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/formal-methods/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/formal-methods/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/formal-methods/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/formal-methods/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/formal-methods/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/fractals/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/fractals/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/fractals/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/fractals/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/fractals/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/future-of-work/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/future-of-work/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/future-of-work/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/future-of-work/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/future-of-work/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/game-ai/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/game-ai/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/game-ai/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/game-ai/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/game-ai/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/games/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/games/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/games/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/games/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/games/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/geography/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/geography/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/geography/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/geopolitics/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/geopolitics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/geopolitics/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/gpus/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/gpus/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/gpus/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/gpus/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/gpus/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/haskell/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/haskell/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/haskell/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/haskell/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/haskell/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/high-modernism/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/high-modernism/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/high-modernism/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/history-of-science/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/history-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/history-of-science/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/history-of-technology/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/history-of-technology/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/history-of-technology/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/history-of-technology/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/history-of-technology/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/history/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/history/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/history/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/hubris/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/hubris/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/hubris/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/hypertext/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/hypertext/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/hypertext/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/hypertext/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/hypertext/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/inference/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/inference/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/inference/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/inference/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/inference/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/insurance/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/insurance/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/insurance/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/insurance/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/insurance/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/intellectual-property/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/intellectual-property/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/intellectual-property/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/intellectual-property/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/intellectual-property/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/intelligence/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/intelligence/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/intelligence/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/intelligence/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/intelligence/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/isolation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/isolation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/isolation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/isolation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/isolation/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/knowledge-management/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/knowledge-management/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/knowledge-management/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/knowledge-management/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/knowledge-management/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/kubernetes/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/kubernetes/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/kubernetes/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/kubernetes/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/kubernetes/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/languages/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/languages/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/languages/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/languages/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/languages/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/legibility/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/legibility/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/legibility/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/legibility/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/legibility/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/life-sciences/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/life-sciences/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/life-sciences/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/linux/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/linux/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/linux/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/linux/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/linux/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/literature/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/literature/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/literature/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/local-first/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/local-first/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/local-first/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/local-first/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/local-first/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/machine-learning/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/machine-learning/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/machine-learning/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/machine-learning/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/machine-learning/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/mathematics/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/mathematics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/mathematics/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/maximalist-novels/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/maximalist-novels/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/maximalist-novels/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/medicine/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/medicine/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/medicine/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/meta/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/meta/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/meta/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/meta/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/meta/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/metrics/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/metrics/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/metrics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/metrics/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/metrics/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/networking/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/networking/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/networking/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/neural-networks/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/neural-networks/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/neural-networks/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/neuroscience/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/neuroscience/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/neuroscience/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/neuroscience/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/neuroscience/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/observability/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/observability/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/observability/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/observability/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/observability/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/open-data/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/open-data/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/open-data/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/open-data/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/open-data/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/open-standards/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/open-standards/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/open-standards/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/open-standards/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/open-standards/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/open-web/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/open-web/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/open-web/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/open-web/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/open-web/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/openbsd/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/openbsd/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/openbsd/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/openbsd/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/openbsd/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/opentelemetry/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/opentelemetry/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/opentelemetry/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/opentelemetry/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/opentelemetry/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/operating-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/operating-systems/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/operating-systems/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/operating-systems/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/operating-systems/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/oss/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/oss/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/oss/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/oss/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/oss/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/philosophy-of-science/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/philosophy-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/philosophy-of-science/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/philosophy/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/philosophy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/philosophy/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/pingora/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/pingora/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/pingora/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/pingora/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/pingora/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/platform-automation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/platform-automation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/platform-automation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/platform-automation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/platform-automation/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/policy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/policy/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/policy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/policy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/policy/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/post-scarcity/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/post-scarcity/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/post-scarcity/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/post-scarcity/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/post-scarcity/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/privacy/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/privacy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/privacy/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/programming-languages/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/programming-languages/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/programming-languages/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/programming-languages/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/programming-languages/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/provenance/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/provenance/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/provenance/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/provenance/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/provenance/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/reinforcement-learning/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/reinforcement-learning/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/reinforcement-learning/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/reinforcement-learning/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/reinforcement-learning/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/reliability/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/reliability/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/reliability/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/reliability/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/reliability/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/religion/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/religion/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/religion/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/research-labs/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/research-labs/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/research-labs/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/research-labs/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/research-labs/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/risk/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/risk/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/risk/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/risk/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/risk/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/rust/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/rust/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/rust/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/rust/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/rust/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/science-fiction/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/science-fiction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/science-fiction/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/science-fiction/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/science-fiction/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/scientific-revolutions/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/scientific-revolutions/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/scientific-revolutions/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/self-hosting/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/self-hosting/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/self-hosting/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/self-hosting/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/self-hosting/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/self-play/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/self-play/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/self-play/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/simulation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/simulation/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/social-reform/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/social-reform/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/social-reform/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/social-reform/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/social-reform/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/sovereignty/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/sovereignty/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/sovereignty/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/switzerland/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/switzerland/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/switzerland/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/switzerland/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/switzerland/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/technology-races/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/technology-races/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/technology-races/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/technology-races/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/technology-races/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/training-data/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/training-data/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/training-data/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/training-data/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/training-data/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/tree-search/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/tree-search/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/tree-search/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/trust/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/trust/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/trust/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/trust/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/trust/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/typescript/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/typescript/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/typescript/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/typescript/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/typescript/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/waf/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/waf/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/waf/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/waf/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/waf/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/webassembly/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/webassembly/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/webassembly/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/webassembly/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/webassembly/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/world-history/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/world-history/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/world-history/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/world-history/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/world-history/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/zola/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/zola/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/zola/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/zola/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/zola/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/talks/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/talks/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/talks/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/talks/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/talks/"/>
     </url>
 </urlset>

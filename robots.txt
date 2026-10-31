@@ -11,3 +11,5 @@ Sitemap: https://raskell.io/sitemap.xml
 # https://raskell.io/map.json (the site graph), https://raskell.io/garden.json (the search index: articles,
 # reviews, talks, books, projects, topics, cited links), https://raskell.io/links.json (every cited source),
 # https://raskell.io/reading.json (the reading log), https://raskell.io/.well-known/api-catalog (discovery).
+# In Chinese and Korean: https://raskell.io/zh/llms.txt, https://raskell.io/ko/llms.txt (and llms-full.txt beside each);
+# every translation carries hreflang alternates and is listed with them in the sitemap.

@@ -1,6 +1,16 @@
 # Raskell (한국어)
 
-> raskell.io는 스위스 바젤의 AI 아키텍트 Raffael Schneider의 개인 사이트입니다. 사이트는 주로 영어로 되어 있으며, 아래 페이지는 한국어로 번역되어 있습니다. 글, 노트, 서평, 강연은 영어로만 제공됩니다.
+> raskell.io는 스위스 바젤의 AI 아키텍트 Raffael Schneider의 개인 사이트입니다. 사이트는 주로 영어로 되어 있으며, 아래 글과 페이지는 한국어로 번역되어 있습니다. 그 밖의 글, 노트, 서평, 강연은 영어로만 제공됩니다. 번역된 글마다 Markdown 사본이 있습니다(주소 끝의 슬래시를 .md로 바꾸면 됩니다).
+
+## 번역된 글
+
+- [강과 운하](https://raskell.io/ko/articles/the-river-and-the-canal/) (2026-10-31): 에이전트는 험준한 세계를 탐색하고, 워크플로는 그 탐색이 남긴 것입니다. 체스, 스타크래프트, 바닷속 공장, 그리고 제가 엔진을 만드는 이유에 관하여. Markdown: https://raskell.io/ko/articles/the-river-and-the-canal.md · 영어 원문: https://raskell.io/articles/the-river-and-the-canal/
+- [모든 것을 이기되, 아무도 통제하지 않기](https://raskell.io/ko/articles/win-everything-control-no-one/) (2026-10-29): Sebastian Mallaby가 쓴 Demis Hassabis 전기는 제가 아는 가장 좋은 현대 AI의 역사이며, 통제를 싫어하면서도 통제를 행사하는 한 사람에 대한 정직한 연구입니다. Markdown: https://raskell.io/ko/articles/win-everything-control-no-one.md · 영어 원문: https://raskell.io/articles/win-everything-control-no-one/
+- [두는 법을 배우기](https://raskell.io/ko/articles/learning-to-play/) (2026-10-25): 체스 신동이 읽은 핸드북, 오래된 세 가지 게임, 그리고 노트북 한 대. 게임 AI의 바탕이 된 아이디어를 휴대폰 브라우저에서 돌아가도록 Rust로 다시 만들고 측정한 기록입니다. Markdown: https://raskell.io/ko/articles/learning-to-play.md · 영어 원문: https://raskell.io/articles/learning-to-play/
+- [에이전트란 실제로 무엇인가](https://raskell.io/ko/articles/what-an-agent-actually-is/) (2026-06-02): AI 에이전트는 업계에서 가장 많은 뜻을 떠안은 단어입니다. 그 해부학과 계보, 그리고 Bun 위의 TypeScript 약 200줄로 만든 동작하는 구현을 다룹니다. The Agent Platform Handbook의 첫 번째 편입니다. Markdown: https://raskell.io/ko/articles/what-an-agent-actually-is.md · 영어 원문: https://raskell.io/articles/what-an-agent-actually-is/
+- [추론의 경제학](https://raskell.io/ko/articles/the-economics-of-inference/) (2026-04-22): 추론 토큰은 API 호출이 아닙니다. 소비되고, 가치를 만들고, 전력 소모와 상관관계가 있는 계량 자원입니다. AI 이후 세계의 경제학은 소프트웨어보다 물, 전기, 가스에 더 가깝습니다. Markdown: https://raskell.io/ko/articles/the-economics-of-inference.md · 영어 원문: https://raskell.io/articles/the-economics-of-inference/
+- [마지막 프로그래밍 언어는 인간을 위한 것이 아닐지도 모릅니다](https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code/) (2026-04-11): AI가 코드의 주된 작성자가 될 때 프로그래밍 언어가 맞이할 세 가지 미래, 그리고 제가 Haskell에 거는 이유. Markdown: https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code.md · 영어 원문: https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/
+- [llms-full.txt](https://raskell.io/ko/llms-full.txt): 번역된 모든 글의 전문(Markdown)
 
 ## 번역된 페이지
 
@@ -8,12 +18,6 @@
 - [소개](https://raskell.io/ko/about/): Raffael은 바젤의 AI 아키텍트로, 엔터프라이즈 AI와 에이전트 플랫폼, 엣지 시스템, 응용 보안을 다룹니다. 영어 원문: https://raskell.io/about/
 - [앱](https://raskell.io/ko/apps/): 바로 열어서 쓸 수 있는 것들입니다. 배우고 생각하기 위한 로컬 우선 도구, 그리고 실제 세계를 흉내 낸 시뮬레이션부터 게임까지 몇 가지 상호작용 세계가 있습니다. 영어 원문: https://raskell.io/apps/
 - [글](https://raskell.io/ko/articles/): 플랫폼 자동화, 엣지 인프라, 응용 보안, AI 지원 엔지니어링에 관한 글입니다. 영어 원문: https://raskell.io/articles/
-- [두는 법을 배우기](https://raskell.io/ko/articles/learning-to-play/): 체스 신동이 읽은 핸드북, 오래된 세 가지 게임, 그리고 노트북 한 대. 게임 AI의 바탕이 된 아이디어를 휴대폰 브라우저에서 돌아가도록 Rust로 다시 만들고 측정한 기록입니다. 영어 원문: https://raskell.io/articles/learning-to-play/
-- [추론의 경제학](https://raskell.io/ko/articles/the-economics-of-inference/): 추론 토큰은 API 호출이 아닙니다. 소비되고, 가치를 만들고, 전력 소모와 상관관계가 있는 계량 자원입니다. AI 이후 세계의 경제학은 소프트웨어보다 물, 전기, 가스에 더 가깝습니다. 영어 원문: https://raskell.io/articles/the-economics-of-inference/
-- [강과 운하](https://raskell.io/ko/articles/the-river-and-the-canal/): 에이전트는 험준한 세계를 탐색하고, 워크플로는 그 탐색이 남긴 것입니다. 체스, 스타크래프트, 바닷속 공장, 그리고 제가 엔진을 만드는 이유에 관하여. 영어 원문: https://raskell.io/articles/the-river-and-the-canal/
-- [에이전트란 실제로 무엇인가](https://raskell.io/ko/articles/what-an-agent-actually-is/): AI 에이전트는 업계에서 가장 많은 뜻을 떠안은 단어입니다. 그 해부학과 계보, 그리고 Bun 위의 TypeScript 약 200줄로 만든 동작하는 구현을 다룹니다. The Agent Platform Handbook의 첫 번째 편입니다. 영어 원문: https://raskell.io/articles/what-an-agent-actually-is/
-- [마지막 프로그래밍 언어는 인간을 위한 것이 아닐지도 모릅니다](https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code/): AI가 코드의 주된 작성자가 될 때 프로그래밍 언어가 맞이할 세 가지 미래, 그리고 제가 Haskell에 거는 이유. 영어 원문: https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/
-- [모든 것을 이기되, 아무도 통제하지 않기](https://raskell.io/ko/articles/win-everything-control-no-one/): Sebastian Mallaby가 쓴 Demis Hassabis 전기는 제가 아는 가장 좋은 현대 AI의 역사이며, 통제를 싫어하면서도 통제를 행사하는 한 사람에 대한 정직한 연구입니다. 영어 원문: https://raskell.io/articles/win-everything-control-no-one/
 - [투자](https://raskell.io/ko/invest/): 엔젤 및 벤처 투자에 열려 있는 벤처와, GitHub Sponsors, Open Collective, Ko-fi로 후원할 수 있는 오픈 소스 프로젝트입니다. 영어 원문: https://raskell.io/invest/
 - [라이선스](https://raskell.io/ko/license/): raskell.io의 글, 코드, 이미지로 무엇을 할 수 있는지 설명합니다. 영어 원문: https://raskell.io/license/
 - [지도](https://raskell.io/ko/map/): 이 사이트의 모든 글, 노트, 주제, 시리즈, 프로젝트, 그리고 제가 읽은 책과 논문을 하나의 그래프로 그렸습니다. 점 하나를 골라 실마리를 따라가 보십시오. 영어 원문: https://raskell.io/map/

@@ -1,0 +1,434 @@
+---
+title: "河流与运河"
+url: https://raskell.io/zh/articles/the-river-and-the-canal/
+author: Raffael Schneider
+date: 2026-10-31
+description: "智能体在崎岖的世界里探索；工作流是探索留下的东西。国际象棋、星际争霸、海底的工厂，以及我为什么要造一台引擎。"
+tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance]
+lang: zh-Hans
+translation_of: https://raskell.io/articles/the-river-and-the-canal/
+---
+
+# 河流与运河
+
+## 简而言之
+
+智能体最擅长探索开放、迷雾重重的问题；确定性工作流最擅长重复已知的问题。银行、保险公司这类贩卖「始终如一」的企业，依赖的是后者。 计算的每一层都让又一件事变得可预测，好让人们不必再去想它；一个包揽一切的智能体编排器，是第一个把思考重新交还回来的层。 行得通的设计是一座元工厂：智能体去探索，把行之有效的做法写成工作流，由确定性引擎来运行；世界变了，再由智能体修复或退役它。 工作流里仍然可以包含有边界的智能体步骤，就像运河上的船闸：判断留在需要它的地方，其余部分则可审计、可重复、成本低廉。 并非一切都应变成流程：边缘的智能体会一直留下，因为迷雾永远不会完全散去。
+
+*开始之前说明一下：这篇文章和本站大多数文章不同。它是一篇哲学随笔，而不是技术文章，篇幅也长，大约需要四十五分钟读完。它从一张照片开始，以一台工作流引擎的名字结束，中间经过分形、游戏、宇宙学、一个世纪以来关于组织的思考、一个来自 4chan 的故事，以及一份你周一就能用上的实地指南。比起我在这里写过的任何文章，它更是一张我如何思考的地图。如果你只想看实用的部分，可以[直接跳到实地指南](#a-field-guide)。*
+
+我写这篇文章的咖啡馆墙上挂着一张照片，是摄影师 Armin Grässl 的作品[*Whispering Current*](https://www.armingraessl.ch/collection/006-whispering-current)。他自己的图注开头是「在巨大的岩石之间，水流开辟出自己的道路」，照片拍的正是这个：一条山间河流漫过满是岩石的河床，激荡处泛白，积聚处幽暗，身后的松树渐渐消融在雾中。这条河没有哪两米的水流是一样的。在任何我们能理解的意义上，水都不知道自己要去哪里。它试探每一道缝隙，填满每一处凹陷，一块岩石接一块岩石地，在无人规划过的地形中找到一条路。
+
+我一再看它，因为它回答了一个我坐在书桌前答不出的问题。几周前，我开始用 Rust 写一个持久化工作流引擎，属于 [Temporal](https://temporal.io/) 和 [Restate](https://restate.dev/) 那一类，暂定名叫 *tsumugi*。这是个合理的项目。一个自成一体、从库起步、再成长为集群的引擎是有用的，我在一份很长的设计说明里写下了理由。但那份说明一直绕着一个问题打转，却始终没有回答它：既然智能体就能把活干了，2026 年为什么还会有人需要工作流引擎？
+
+构建在 [Claude Code](https://www.anthropic.com/claude-code) 这类框架上的智能体，恰恰擅长那条河所做的事。给它一个目标，再加上一个陌生的代码库、一次失败的部署或一个含糊的请求，它就会试探、失败、调整，然后找到出路。如果这就是工作的新形态，那么工作流引擎，连同它固定的步骤和对确定性的坚持，看起来就像是为一个正在终结的世界准备的工具。
+
+我不这么认为，但答案最终比这个项目大得多。它也以这个项目的新名字收尾，而这个名字，我是在这篇文章里找到的。
+
+## 一切皆分形 {#everything-is-a-fractal}
+
+再凑近看那条河，它又做了另一件事。水流绕过一块大石的样式，会在较小的石头周围重复，又在石头之间的卵石周围重复。河后的树分叉的方式和河流分叉的方式一样，枝条又再分叉。Benoit Mandelbrot（曼德博）在 1982 年出版的[《大自然的分形几何学》](https://en.wikipedia.org/wiki/The_Fractal_Geometry_of_Nature)开篇，写下了让这种观看方式广为人知的一句话：「云不是球体，山不是圆锥，海岸线不是圆，树皮并不光滑，闪电也不沿直线行进。」自然是粗糙的，而它的粗糙在不同尺度上看起来彼此相似。这种[自相似性](https://en.wikipedia.org/wiki/Self-similarity)，正是[分形](https://en.wikipedia.org/wiki/Fractal)的含义。
+
+这是我怀抱最久的一个想法，比本站上任何一个项目都久，它贯穿接下来的一切；我把一个较短的版本写成了一则笔记，[一切皆分形](https://raskell.io/notes/everything-is-a-fractal/)。我认为我们很可能生活在一个在时间和空间上都没有边界的世界里，向每个方向无尽延伸；在这样的世界里，分形是最自然的形状：同样的模式在每一个尺度上重现，没有最大的实例，也没有最小的实例。宇宙学家给这个想法的强版本起了名字，叫[分形宇宙学](https://en.wikipedia.org/wiki/Fractal_cosmology)，即物质在所有尺度上都呈分形分布的假说。这是少数派的立场；大多数宇宙学家对星系巡天数据的解读是，宇宙在几亿光年以上的尺度上会变得均匀。所以，我把这个无限的、分形的世界当作一种工作直觉来持有，而不是一个我能在物理研讨会上辩护的主张。但作为一种关于观念、组织和机器如何运作的直觉，它从未让我失望。
+
+和我这一代的许多人一样，我是通过《侏罗纪公园》接触到它的。Michael Crichton 的 [1990 年小说](https://en.wikipedia.org/wiki/Jurassic_Park_(novel))是我最喜欢的书之一，它围绕混沌理论展开；当时大多数读者如果接触过混沌理论，也是通过 James Gleick 1987 年的[《混沌：开创新科学》](https://en.wikipedia.org/wiki/Chaos:_Making_a_New_Science)。Crichton 笔下的数学家 [Ian Malcolm](https://en.wikipedia.org/wiki/Ian_Malcolm_(character)) 的形象，部分就来自 Gleick。小说不是分成「部」，而是分成「迭代」，每一次迭代都以同一个分形的图开头，即[海威龙形曲线](https://en.wikipedia.org/wiki/Dragon_curve)，每一次都比上一次多折叠一点。在 1993 年的电影里，Malcolm 说出了那句人人都记得的台词：「生命，呃，总会找到出路。」这又是那条河。
+
+我从这一切中得到的，是一个关于观念的观念。最著名的分形[曼德博集合](https://en.wikipedia.org/wiki/Mandelbrot_set)，来自一条反复应用的极小规则：取一个数，平方，加上一个常数，重复。迭代简单的东西，会产生丰富程度没有上限的东西。我认为好的想法也是这样运作的，在科学、工程、商业以及我所知道的每一门手艺里都是如此。最好的想法很少是飞跃。它们是在前人基础上的小小迭代，一个简单的改进，恰好加入足够的新意，让一种新的行为涌现出来，然后它们就成为其他所有人在其上构建的那一层。[Stuart Kauffman](https://en.wikipedia.org/wiki/Stuart_Kauffman) 把这类下一步所构成的空间称为*邻近可能*：在任何时刻，只有某些步骤离现存的事物只有一步之遥；Steven Johnson 后来用这个说法作为他那本探讨好想法从何而来的书的开篇。Michael Tomasello 把这个机制的另一半描述为[棘轮](https://en.wikipedia.org/wiki/Ratchet_effect)：每一代人都保留上一代建造的东西，再添上一点，而得到的进步不会倒退。
+
+正是这个棘轮，让进步给人那样的感觉。一层一旦存在，我们就对它视而不见。没有人会为自来水、函数调用或搜索引擎惊叹，也没有人能回到它们出现之前的世界。AI 现在也在同一个棘轮上。无论人们怎么看它，总会有人迈出下一步，再下一步，而这一层终将变得寻常。
+
+我的思考往往是这样运作的：融合的、收敛的，从截然不同的地方汲取想法，直到发现它们其实是同一个想法在不同尺度上的样子。这篇文章就是一个例子。分形会不断回来：在游戏里，在企业里，在编排器里，在海底的工厂里，也在那台引擎的名字里。
+
+## 两种游戏 {#two-kinds-of-games}
+
+我一直在读 Sebastian Mallaby 的《无限机器》（*The Infinity Machine*），这本书写的是 Demis Hassabis 和 DeepMind，我[在这里写过书评](https://raskell.io/articles/win-everything-control-no-one/)。在第十三章，围棋和国际象棋的胜利之后，DeepMind 转向《星际争霸 II》，Mallaby 描述了为什么这是一类不同的问题：
+
+> 星际争霸与其说像棋盘游戏，不如说更像人类的生活经验：一条连绵不断的选择与子选择之流，有些涉及长期规划，有些更为紧迫，而这一切又因不完全信息的迷雾而更加令人困惑。
+
+国际象棋是最纯粹的封闭游戏。棋盘完全可见，规则永不改变，双方轮流走子，终局有明确定义：将死，或者和棋。一切可能发生的事，原则上都事先可知。星际争霸恰恰相反。你只能看到你的单位看得到的东西，其余部分的名字就叫[战争迷雾](https://en.wikipedia.org/wiki/Fog_of_war)。没有什么会等你的回合，而什么算赢，取决于对手此刻正在做什么。DeepMind 最终确实造出了 [AlphaStar](https://en.wikipedia.org/wiki/AlphaStar_(software))，按 Mallaby 的记述，到 2019 年 10 月，它在对阵排位人类玩家的比赛中赢下了 99.8% 的对局；但这需要另一种机器：一台学会在不确定中行动的机器，而不是一台在已知的树中搜索的机器。
+
+我玩过很多星际争霸。对我来说，这两种游戏的区别不是纸上谈兵。在国际象棋里，你可以是对的。在星际争霸里，你只能比对手错得少一点，并且比他快那么一点。星际争霸还以国际象棋所没有的方式呈现出分形。Mallaby 说的「选择与子选择」是准确的：同一个问题，也就是在迷雾中、在时间不够时做决定，会在每一个时间尺度上重复，从整局游戏的经济，一直到某一秒里某一个单位的移动。
+
+### 第三种游戏 {#the-third-game}
+
+与此同时，在大洋彼岸，另一个实验室正在下另一种赌注。2017 年，Google 的一个团队在一篇题为[〈Attention Is All You Need〉](https://arxiv.org/abs/1706.03762)的论文中提出了 [transformer](https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture))。Mallaby 描述了 Ilya Sutskever 读到这篇论文时从椅子上跳起来的情景。OpenAI 把 transformer 对准了语言：一个[生成式预训练 transformer](https://en.wikipedia.org/wiki/Generative_pre-trained_transformer)，也就是 GPT，被训练来续写文本。GPT-2 于 2019 年 2 月问世，那时 DeepMind 正深陷于星际争霸之中；2022 年底，它的对话式后代 [ChatGPT](https://en.wikipedia.org/wiki/ChatGPT) 轰动了全世界。
+
+DeepMind 也有 transformer；AlphaStar 就是在它之上构建的。DeepMind 缺少的，是相信语言才是值得去玩的那场游戏的信念。Mallaby 对原因说得很直白：「在语言建模这件事上，Hassabis 的品味出了偏差，原因包括他对没有根基的符号的怀疑、他对游戏的热爱，以及他的预设：人类经验比互联网上所有的文本更加多样，或许也更加宏大。」Hassabis 本人对此倒是很大度：「你看，你不可能每次都当诺查丹玛斯。」
+
+在我看来，这与其说是技术上的失误，不如说是哲学上的失误。语言是第三种地形，既不是国际象棋，也不是星际争霸：它是人类用符号建造起来的世界，用来描述、压缩和协调另外两种。合同、法律、流程、代码、文档、Linux 机器上的 shell。Hassabis 押注智能将在游戏和物理世界中赢得，而第一批通用智能体却是通过文本到来的。
+
+并非所有人都认为这就有了定论。[Yann LeCun](https://en.wikipedia.org/wiki/Yann_LeCun) 多年来一直主张，语言模型单靠自己无法达到人类水平的智能，因为人和动物是通过在现实中行动来了解现实的，而不是通过阅读。他于 2025 年 11 月离开 Meta，创办了 [AMI](https://techcrunch.com/2026/01/23/whos-behind-ami-labs-yann-lecuns-world-model-startup/)，这家公司在 2026 年融资略高于十亿美元，用于构建世界模型；它的使命宣言说，真正的智能「并不始于语言。它始于世界。」在他看来，今天的智能体生活在一个由编程语言、解释器和终端会话构成的狭窄世界里，而真正的迷雾在别处。
+
+他的立场背后有一个古老的观察。1988 年，机器人学家 Hans Moravec 在《心智儿童》（*Mind Children*）中指出，让计算机在智力测验或跳棋上表现得像成年人相对容易，而要让它们具备一岁孩子的感知和行动能力却非常困难。我们觉得难的东西，符号和逻辑，对机器来说却很容易。我们觉得毫不费力的东西，比如走过河床而不滑倒，反倒成了难题。这个观察被称为[莫拉维克悖论](https://en.wikipedia.org/wiki/Moravec%27s_paradox)。
+
+我认为 Hassabis 的批评者和 LeCun 都说对了一些东西，而这个区分正好贯穿整篇文章。我所写的智能体，探索的是符号世界内部的迷雾：陌生的代码库、含义模糊的文档、没有文档的 API。那个世界有规则，但规则如此之多、执行得如此松散，以至于从内部看，它表现得就像星际争霸。照片里的那条河，以及终有一天必须渡过它的机器人，需要的是 LeCun 正在构建的东西。但那些贩卖「始终如一」的企业，银行、保险公司和行政机构，几乎已经完全生活在符号世界里了。它们的产品是合同，它们的工厂是流程。那恰恰是语言智能体最强的地形，也恰恰是为什么「它们应该留下什么」这个问题在那里如此重要。
+
+## 风险与不确定性 {#risk-and-uncertainty}
+
+国际象棋和星际争霸之间的区别，在经济学里有一个古老得多的名字。1921 年，Frank Knight 出版了[《风险、不确定性与利润》](https://www.econlib.org/library/Knight/knRUP.html)，划出了一条至今仍然有用的界线。**风险**是可以度量的不确定性：在单个案例中你不知道会发生什么，但你知道许多相似案例的分布。而 Knight 严格意义上的**不确定性**（[奈特不确定性](https://en.wikipedia.org/wiki/Knightian_uncertainty)），是无法度量的那一种，因为根本不存在一组有意义的相似案例可供计数。风险原则上可以投保，不确定性不能。Knight 还认为，在竞争性经济中，利润来自不确定性而不是风险，因为可度量的风险会被定价，然后在竞争中被消磨殆尽。
+
+带着这两种游戏再读一遍。保险公司实实在在就是一台把风险变成流程的机器。它接手那些对每个客户来说都不可预测的事件，比如水管爆裂、车祸或自行车被盗，让它们在总体上变得可预测，然后用一个每次都相同的流程去处理每一件。企业家、研究者和机器人工程师生活在 Knight 那条线的另一侧。他们的利润如果有，也来自在无人能度量胜算的地方行动得当。
+
+这就赋予了两种游戏一层经济含义。封闭游戏是风险可以度量的游戏，所以正确的回应是流程。开放游戏是不确定性无法度量的游戏，所以正确的回应是判断、探索和适应。两者都有价值，但不是同一种价值。
+
+## 两种企业 {#two-kinds-of-businesses}
+
+一旦你看清了这两种游戏，企业就会出人意料地清晰分成两类。
+
+银行、保险公司、税务局、土地登记处、养老基金，以及加密货币经纪商这样的新来者，卖的都是某种抽象的东西。你摸不到一份保单。客户买的是一个承诺：当某些条件满足时，某件事会以某种方式发生，每一次、对每一个人、持续几十年。这类企业的价值就在于它的始终如一。一项理赔如果因为当天的心情不同而处理得不同，那不是特色，而是产品失灵。
+
+德国社会学家 [Niklas Luhmann](https://en.wikipedia.org/wiki/Niklas_Luhmann)（卢曼）为此给出了一个精确的名字。在 1968 年的《信任》（*Vertrauen*，英译本收入 *Trust and Power*，即《信任与权力》）中，他把信任描述为一种化简复杂性的方式：你无法核实一切，所以你决定依赖什么。他区分了**人格信任**，即对你认识的某个人的信任，和**系统信任**，即对货币、银行这类制度的信任，你依赖它们，却不认识其中的任何人。没有人是因为信任柜员才信任自己的银行。他们信任银行，是因为他们相信无论柜员是谁，这个系统都会以同样的方式运作。[Max Weber](https://en.wikipedia.org/wiki/Max_Weber)（马克斯·韦伯）早半个世纪就针对[科层制](https://en.wikipedia.org/wiki/Bureaucracy)提出了同样的观点：它的力量，以及它的正当性来源，在于可计算性，即统一地、不问对象是谁地适用规则。科层制就是一个承诺：你可以预测它会做什么。
+
+加密货币经纪商是这一点最新也最极端的版本。它的客户被要求信任代码本身，也就是[智能合约](https://en.wikipedia.org/wiki/Smart_contract)；在最纯粹的情形下，流程确定到可以在公共账本上运行，任何人都能重放它。无论你如何看待这个行业，它都是对这个原则的一次惊人示范：当人格信任完全缺席时，确定性就必须承担一切。
+
+另一些企业则与物理世界讨价还价：机器人、能源、航天、农业、医疗，以及任何一个研究实验室。它们脚下的地形在变。昨天还能用的机械臂，今天遇到一个略微弯曲的零件。钻机遇到无人预料到的岩层。它们的价值在于当场适应，而一个不能变通的流程是一种负担。
+
+大多数真实的公司两者兼有，而分界线穿过的是部门，而不是公司之间。保险公司的理赔部门在下国际象棋，它的产品开发在打星际争霸。而这个模式在每一个部门内部又会重复：银行是由流程组成的流程，每个部门都是整个公司所作承诺的一个缩小版，一直到那张每次都必须以同样方式填写的单张表格。这两类问题在性质上不同，它们需要不同种类的机器。
+
+## 两种机器 {#two-kinds-of-machines}
+
+这个区分也比看上去更古老。1960 年，[Herbert Simon](https://en.wikipedia.org/wiki/Herbert_A._Simon)（赫伯特·西蒙）在《管理决策新科学》（*The New Science of Management Decision*）中区分了**程序化决策**，即组织用既定流程处理的那些例行的、重复的决策，和**非程序化决策**，即需要解决问题的那些新颖的、无结构的决策。他把两者看作一个连续统的两端，而不是两个盒子，并预期程序化的一端会被计算机接管。对于非程序化的一端，他那个时代的计算机几乎无能为力。
+
+六十四年后，2024 年 12 月，Anthropic 发表了一篇名为[〈Building effective agents〉](https://www.anthropic.com/engineering/building-effective-agents)的简短指南，为语言模型划出了几乎同样的界线：「工作流是通过预先定义的代码路径来编排 LLM 和工具的系统。而智能体则是由 LLM 动态主导自身流程和工具使用的系统。」它的建议很冷静：「对于定义明确的任务，工作流提供可预测性和一致性；而当需要大规模的灵活性和由模型驱动的决策时，智能体是更好的选择。」它也直白地点出了代价：「智能体的自主性意味着更高的成本，以及错误不断累积的可能。」
+
+于是，一边是确定性机器：工作流引擎、流程引擎、调度器，以及在更宽泛的意义上，每一个曾经写下过流程的科层机构。给定相同的输入，它们做相同的事；出了问题，你可以一步一步重放发生了什么。另一边是智能体，在 2026 年指的是在循环中使用工具的语言模型，而它们也一直指人。给它们一个目标，它们就会找到办法，而每一次的办法都不一样。这个区分很古老。新鲜的是，机器第一次在 Simon 所说的非程序化那一端变得擅长。
+
+把两类问题和两类机器放在一起，你会得到四个格子，其中两个是错误：
+
+| | **确定性机器**（流程、工作流） | **智能体机器**（在运行时探索） |
+|---|---|---|
+| **封闭问题**（风险可度量、规则已知、终点明确） | 保险公司的理赔流程：通过始终如一建立信任 | 昂贵的即兴发挥；大多数时候是对的，但没有人说得清它为什么那样做 |
+| **开放问题**（不确定性、迷雾、变化的地形） | 脆弱的自动化，碰到第一块意料之外的石头就崩溃 | 探索者：通过试错找到一条路 |
+
+左下角的格子是企业自动化的历史：僵硬的流程铺在凌乱的现实之上，随之而来的是没完没了的例外处理。右上角的格子是此刻的风险。智能体现在已经好到让人忍不住把一切都交给它们，包括封闭游戏；而一个下国际象棋的智能体，通常也会下出说得过去的棋。但「通常」和「说得过去」并不是客户从保险公司那里买的东西。
+
+算术是无情的。假设一个智能体在一个二十步的流程中，每一步做对的概率是 95%，这已经非常好了。二十步全部做对的概率是 0.95 的二十次方，约为 36%。每步 99% 时，约为 82%。对于那些确定性的步骤，确定性工作流没有这个问题；这就是为什么对于一整个流程，有用的问题从来不是「智能体还是工作流」，而是哪些步骤需要判断，哪些不需要。
+
+还有解释的问题。智能体的对话记录显示了它说自己在想什么，这是有用的。但推理来自没有人能读懂的权重。你可以检查它说了什么，却无法检查它为什么这么说，也无法确定它明天会不会说同样的话。对于封闭游戏，客户、审计师和监管者都期待同一个问题得到同一个答案，单凭这一点是不够的。
+
+## 一切向来都是编排器 {#everything-was-always-an-orchestrator}
+
+我职业生涯的大部分时间都花在了这样或那样的编排层上；回头看，每一层都是一种让又一件事变得确定的方式，好让它上面的人不必再为它操心。[Alfred North Whitehead](https://en.wikipedia.org/wiki/Alfred_North_Whitehead)（怀特海）在 1911 年的《数学导论》（*An Introduction to Mathematics*）中用一句话道出了普遍原理：「文明的进步，在于扩大我们无需思考就能完成的重要操作的数量。」每一个编排器都是一台实现怀特海这句话的机器。
+
+| 层 | 工作单元 | 它让什么变得确定 | 不确定性去了哪里 |
+|---|---|---|---|
+| 单体应用 | 函数调用 | 单个进程内的控制流 | 进入代码，由接口、类型和 ABI 维系 |
+| 微服务 | 服务 | 归属和部署边界 | 进入服务之间的网络 |
+| Kubernetes、Nomad | 容器、作业 | 调度位置、重启、期望状态 | 进入调和循环和配置 |
+| WebAssembly 函数平台 | 函数 | 极小单元的隔离性和可移植性 | 进入函数的组合方式 |
+| 工作流引擎 | 步骤 | 流程的顺序、持久性和历史 | 进入步骤体，它们可能运行不止一次 |
+| microVM 中的智能体运行时 | 任务 | 沙箱，此外几乎没有 | 进入模型 |
+
+当年我很喜欢 [Nomad](https://www.nomadproject.io/)，因为它把这种抽象表达得如此直白：你描述一个作业，调度器就让它成真。[Kubernetes](https://kubernetes.io/) 做的是同样的事，只是仪式更多。WebAssembly 平台把这个想法推得更远。我密切关注过 [wasmCloud](https://wasmcloud.com/)，它提出，一个应用不过是一些小函数，编译成可移植的格式，放到任何有空间的地方。这些层中的每一层都只是转移了复杂性，而没有消除它。[微服务](https://en.wikipedia.org/wiki/Microservices)并没有让系统更简单；它把难点从一个程序内部的接口挪到了许多程序之间的网络上，这也是为什么我们随后需要服务网格、链路追踪，以及[不只是日志的可观测性](https://raskell.io/articles/observability-is-not-logging/)。
+
+把这张表当作一个分形来读。每一行都在高一个尺度上做同一个动作：把下一层中不确定的东西变得可预测，让上面的人不必再去想它。而每一行一旦稳定下来，就变得不可见。如今没有人再去想函数调用，很少有人去想自己的容器跑在哪台机器上；再过几年，几乎没有人会去想自己软件底下的持久化工作流。这既是 Tomasello 的棘轮，也是怀特海的那句话。
+
+最后一行在性质上不同。最近我听了一场推介，一家大型咨询公司介绍了它在内部如何运行智能体：一个类似 Kubernetes 的编排器，管理安全的 microVM，每台 microVM 里运行一个编码智能体框架，喂给它描述作业、任务或待招职位的 Markdown 上下文。那是一场不错的推介，和我自己做过的东西很接近。[Kage](https://github.com/raskell-io/kage) 是一个本地优先的智能体工作编排器。Shiioo 在[它的第二种形态](https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/)中运行着一家由智能体组成的小型虚拟公司，由一份规则文件决定它们可以独自做什么；而[有组织架构图的十六个智能体](https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/)那次实验让我明白，这件事会多快变得复杂。我也从[《你的智能体想要 root 权限》](https://raskell.io/articles/your-agent-wants-root/)中知道，这项工作有多大一部分仅仅是把这样一个运行时关好。
+
+之前的每一层都把不确定的东西变得可预测，让上面那一层可以不假思索地依赖它。一个包揽一切的智能体编排器做的恰恰相反。它把公司花了几十年变成流程的工作，交还给一个即兴发挥的东西。对于开放问题，这完全正确。对于封闭问题，它却把那些企业真正在卖的唯一一样东西拱手让了出去，并且把怀特海的那句话倒过来用：它扩大了需要思考的操作的数量。
+
+那么，我们应该为一切构建智能体编排器吗？我持怀疑态度。总会有一大片问题空间在本质上是确定性的，因为一个成熟流程所建立的信任本身就有价值。
+
+## 探索与利用 {#exploration-and-exploitation}
+
+如果智能体不是一切问题的答案，它们仍然是某个新问题的答案，而组织理论为它起了名字。1991 年，James March 发表了[〈组织学习中的探索与利用〉](https://doi.org/10.1287/orsc.2.1.71)（Exploration and Exploitation in Organizational Learning），这是该领域被引用最多的论文之一。探索是对新可能性的搜寻：实验、变异、冒险。利用是对已知事物的精进：效率、执行、可靠。每个组织都需要两者，而两者争夺同样稀缺的资源。March 的警告是：精进利用快于精进探索的适应过程，往往在短期内显得有效，在长期内却自我毁灭。组织会向利用漂移，因为利用的回报更近、更确定，也更容易度量。
+
+[同样的权衡](https://en.wikipedia.org/wiki/Exploration%E2%80%93exploitation_dilemma)位于[强化学习](https://en.wikipedia.org/wiki/Reinforcement_learning)的核心，而强化学习正是 DeepMind 自己的领域。一个只利用已知的智能体永远找不到更好的策略；一个只探索的智能体永远收不到奖励。AlphaGo 和 AlphaStar 的意义不止一端，其中之一，就是它们对这个困境给出了极其精巧的回答。这个权衡同样是分形的。它出现在单个智能体决定是否尝试一条新命令时，出现在一个团队决定重写还是打补丁时，出现在一家公司决定是否开发新产品时，也出现在一个行业决定押注游戏还是语言时。
+
+智能体改变了探索的价格。在历史的大部分时间里，探索是昂贵的。它需要熟练的人、时间和对失败的容忍，这也是 March 笔下的组织会远离它的原因。语言智能体让符号世界里的探索变得便宜。一个智能体可以在一夜之间对一个陌生的集成尝试十种方法，读完一次监管变更涉及的每一份文件，或者处理完一整批没有任何流程覆盖的怪异案例。与此同时，利用向来是确定性机器所擅长的。
+
+这就提示了一种任何一方都无法单独做到的分工。智能体探索，工作流利用。设计上的问题在于两者之间的接口：智能体通过探索学到的东西，如何变成工作流可以利用的东西；以及一个已经失效的工作流，如何被交还给探索。
+
+## 惯例是公司的记忆 {#routines-are-the-memory-of-a-company}
+
+Richard Nelson 和 [Sidney Winter](https://en.wikipedia.org/wiki/Sidney_G._Winter) 在 1982 年的《经济变迁的演化理论》（*An Evolutionary Theory of Economic Change*）中回答了这个问题的一部分，这本书是[演化经济学](https://en.wikipedia.org/wiki/Evolutionary_economics)的奠基之作。他们认为，理解企业行为的最佳方式是通过它的**惯例**：它做事的那些规律的、可预测的模式。惯例在组织中扮演的角色，就像基因在生物学中扮演的角色。惯例是组织的记忆，是组织年复一年复制自身行为的方式；而经济变迁，正是通过搜寻新惯例并在其中进行选择而发生的。
+
+惯例的弱点，正如 Nelson 和 Winter 所知，在于它们存放的地方。一个组织的大部分惯例存放在执行它们的人的脑子里，一部分写进了流程和手册，大部分没有。我在《IT Intelligence》中把这称为部落知识：没有人写下来的显性知识，以及或许没有人能写下来的隐性知识。
+
+工作流引擎改变了惯例存放的地方。一个被编码成工作流的惯例，不再是对人们应该做什么的描述。它就是做这件事的东西本身，而每一次执行都会留下一份日志，确切记录发生了什么。组织的记忆同时变得可执行、可检查；这意味着一家公司可以读自己的惯例，比较它们，用过去的案例测试它们，并有意识地修改它们，而不是在访谈和工作坊里去发现它们。
+
+直到最近，缺少的是之前那一步：把一个惯例变成工作流，需要一位人类分析师、一位开发者和一个漫长的项目。野中郁次郎（Ikujiro Nonaka）和竹内弘高（Hirotaka Takeuchi）把从隐性知识到显性知识的这一步称为*外化*，它是他们 [SECI 模型](https://en.wikipedia.org/wiki/SECI_model_of_knowledge_dimensions)的一部分，而它一直是组织学习中缓慢而昂贵的那部分。智能体现在可以迈出这一步了：它们可以观察、探索、尝试，然后写下来。
+
+## 海底的工厂 {#the-factory-under-the-sea}
+
+现在绕一段路，这段路也说明了我是怎样读互联网的。
+
+我读 4chan，也读 UFO 学，读的心态大致和别人读科幻小说一样：不是当作报告，而是当作一个奇异的、有时相当出色的思想实验来源。一个被称为 UFOAnon 的匿名发帖者，曾经写过[一个很长的帖子](https://imgur.com/a/4chan-whistleblower-NXjWQaN)，声称要解释非人类飞行器如何在地球周围运作。其中大部分我都归入虚构。但其中有一个意象一直留在我心里，因为它是一段极好的工程想象。
+
+在这个故事里，海底有一座工厂。它不停放舰队。它按需建造飞行器，每一架都为单一任务而设计：一架用于采矿，一架用于运输，一架用于运送活物，一架用于类似观光的用途。一架飞行器为它的任务而造，执行任务，返回，然后被拆解。不需要的东西一样也不留。工厂本身是唯一永久的东西。
+
+无论你怎么看待这个来源，这个设计都是令人信服的，而理由与外星人毫无关系。它正是一个文明在制造东西几乎免费之后会建造的东西。如果制造不花任何成本，你就不会再去维护那些样样都做、样样做不好的通用机器，而是开始生产专门造来把一件事做好、然后就消失的机器。科幻小说给这种状态起了名字，叫[后稀缺](https://raskell.io/tags/post-scarcity/)，而它最著名的描绘是 Iain M. Banks 的[「文明」系列](https://en.wikipedia.org/wiki/The_Culture)；据 Mallaby 的记述，Hassabis 正是读着这个系列长大的。
+
+这个想法也有体面的渊源。20 世纪 40 年代，John von Neumann（冯·诺依曼）在纸上设计了一台[通用构造器](https://en.wikipedia.org/wiki/Von_Neumann_universal_constructor)：一台位于[元胞自动机](https://en.wikipedia.org/wiki/Cellular_automaton)之中的机器，能根据任何机器的描述把它造出来，包括它自己的副本。他的设计有三个部分：**描述**，即一份蓝图；**构造器**，按照描述建造任何东西；以及**复制器**，复制描述本身。冯·诺依曼去世后，Arthur Burks 完成了这项工作，于 1966 年以《自复制自动机理论》（*Theory of Self-Reproducing Automata*）为名出版。这种分离很关键。因为描述与执行它的机器是分开的，描述可以改变、积累、演化，而构造器保持不变。
+
+软件在那个世界里已经生活了几十年。复制一个程序、一个容器镜像或一个编译好的二进制文件，成本几乎为零，这就是为什么我们早已习惯用工厂、模板和模式来思考，而不是用单个的制品。面向对象设计中的[工厂](https://en.wikipedia.org/wiki/Factory_method_pattern)模式和[策略](https://en.wikipedia.org/wiki/Strategy_pattern)模式，就是同一个想法的小型家常版本。
+
+我想，这才是这个故事让我信服的最深层原因：它是分形的。源代码里的工厂模式，即一个以制造其他对象为工作的对象，与一座制造汽车的工厂是同一个想法，也与一座按需制造飞行器、或制造其他工厂的工厂是同一个想法。冯·诺依曼的构造器又是同一个想法，只是高了一层抽象。一个在三四个尺度上都成立的模式很少是偶然的。它通常意味着你发现了世界是如何组装起来的某种东西。2026 年改变的是，工厂现在会思考了：它可以自己写描述。
+
+## 元工厂 {#the-meta-factory}
+
+把这些碎片拼起来。智能体是探索者：它们在迷雾中处于最佳状态，在没有人解决过的问题里找到一条路。工作流是惯例：它们在已知的地面上处于最佳状态，每次都做同样的事，留下任何人都能读的历史。在两者之间选一个，才是错误。更好的设计是把两者连接起来，让探索者找到的东西变成惯例。
+
+*The meta-factory*
+
+```text
+   ┌──────────────────────────────┐
+   │ the rugged world:            │
+   │ open, foggy, changing        │
+   └───────────────┬──────────────┘
+                   ▼
+   ┌──────────────────────────────┐
+   │ an agent explores            │  trial and error, at runtime
+   └───────────────┬──────────────┘
+                   │  a path is found, and it will be needed again
+                   ▼
+   ┌──────────────────────────────┐
+   │ the agent writes a workflow  │  typed, validated, simulated
+   │                              │  against past cases, reviewed
+   └───────────────┬──────────────┘
+                   ▼
+   ┌──────────────────────────────┐
+   │ a deterministic engine       │  journaled, replayable, auditable;
+   │ runs it                      │  may contain bounded agent steps
+   └───────────────┬──────────────┘
+                   ▼
+   ┌──────────────────────────────┐
+   │ observe                      │  exceptions, drift, new fog
+   └───────┬──────────────┬───────┘
+           ▼              ▼
+        repaired         retired
+       by an agent      when the mission is over
+```
+
+用冯·诺依曼的术语来说，工作流定义是描述，引擎是构造器，版本管理是复制器。用那个故事的术语来说，智能体是海底的工厂，工作流是它造出的飞行器。
+
+面对一种新的理赔、一份新的监管报告或一个新的集成，智能体会像任何能干的人那样，琢磨出该怎么做。如果这项工作是一次性的，事情就到此为止。如果它会重复出现，智能体就会做一个好员工在第三次解决同一件事之后会做的事：把流程写下来。在这里，写下来意味着为确定性引擎产出一份工作流定义，它可以被校验、用过去的案例模拟、由人审阅，并被纳入版本管理。从那以后，这个流程就在引擎上运行，每次都一样，每一次运行都会留下一份日志，确切显示发生了什么。当世界发生变化、工作流开始产生例外时，智能体会去调查并提出修复方案。当任务结束时，工作流就被退役，就像一架飞行器返回去被拆解。
+
+有两个细节让这不只是一张图。
+
+第一，工作流可以包含判断，而不必放弃自己的形状。有些步骤确实需要智能体：阅读一份无结构的文件，起草一封信，判断一个怪异的案例是否符合某条规则。这些步骤可以是工作流内部的智能体调用，其输入和输出都记入日志，其范围有边界。我把它们想象成运河上的[船闸](https://en.wikipedia.org/wiki/Lock_(water_navigation))：在一条原本笔直的水道里，那些允许水位升降的受控节点。前面的算术解释了这一点为什么重要。一个包含两个有边界的智能体步骤和十八个确定性步骤的二十步流程，失败的频率远低于连续二十个智能体步骤；而当它确实失败时，你知道是哪一道船闸漏了水。
+
+第二，这是关于组织的最古老的想法，应用在一种新的工作者身上。人几乎什么都能做；这正是人的价值所在，也正是人难以依赖的原因。公司一向用同样的方式回应：流程、层级、指令、清单、培训。凡是工作可重复的地方，它们就把能干之人的即兴发挥变成流程；凡是工作不可重复的地方，就为判断留出空间。今天，公司正试图用政策、护栏和治理框架来约束智能体，这是同一个动作，只是换了一套词汇。元工厂把它再往前推了一步。你不只是用「它不可以做什么」的规则来约束智能体，而是让它去做它擅长的事，也就是探索，再让它把结果交给一台擅长另一件事的机器，也就是重复。
+
+### 每个尺度上的同一个循环 {#the-same-loop-at-every-scale}
+
+元工厂是一个在每个尺度上重复的循环。一个流程里包含智能体在其中探索的船闸；那个智能体本身可能又运行一个小流程；流程被组合成更大的流程；而一个部门，从足够远的地方看，就是一家公司曾经一路探索出来的一个流程。
+
+| 尺度 | 由什么来探索 | 什么被结晶下来 |
+|---|---|---|
+| 单个步骤 | 一个阅读一份异常文件的智能体 | 一个答案，记入日志 |
+| 一个流程 | 处理它未覆盖案例的智能体 | 一条新规则或新分支 |
+| 一个部门 | 处理新类型工作的智能体和人 | 新的流程 |
+| 一家公司 | 试探新市场的人和智能体 | 新的产品和部门 |
+| 一个行业 | 彼此竞争的公司 | 标准、监管、共享基础设施 |
+
+同一组动词在每一行都适用：探索、结晶、运行、观察、修复、退役。这正是它成为一种设计而不是一句口号的原因。一个在某个尺度上支持这个循环的引擎，就能在所有尺度上支持它，只要工作流能包含智能体，而智能体能启动工作流。
+
+### 一个精心打造的流程是什么样子 {#what-a-crafted-procedure-looks-like}
+
+假设一家保险公司的理赔智能体不断遇到水损理赔，客户的照片要么缺失，要么无法使用。在手工处理了几十个这样的案例之后，一个智能体提出了一个流程。它可能是这个样子：
+
+```python
+# procedures/claims/water_damage_photo_evidence.star (illustrative)
+PROCEDURE = {
+    "name": "claims/water-damage-photo-evidence",
+    "version": 3,
+    "origin": {"explored_by": "agent/claims-explorer", "cases_studied": 37},
+}
+# Approval and replay evidence travel with the file, in a signed record:
+#   replayed against 412 closed claims, 0 divergences from human outcomes;
+#   approved by the claims process owner on 2026-10-12.
+
+def run(claim):
+    docs = agent("classify_documents", claim["documents"],   # a lock: bounded judgement, journaled
+                 prompt = "prompts/classify-documents.md",
+                 output_schema = "DocumentClassification",
+                 budget_tokens = 20000)
+
+    coverage = step("coverage.water_damage@v7", claim)
+
+    if docs["missing_photos"]:
+        step("notify.customer", {"template": "claims/missing-photos", "to": claim["customer"]})
+        photos = wait(signal("photos_received"), timeout = days(14))
+        if photos == None:
+            escalate("no-photos", claim)
+
+    if claim["amount"] > 5000 or docs["confidence"] < 0.8:
+        escalate("manual-review", claim)
+    return call("claims/settle@v2", claim, coverage)
+```
+
+它是用 [Starlark](https://github.com/bazelbuild/starlark) 写的，这是 Python 的一种小方言，为那些每次都必须给出相同答案的构建系统而设计。它的解释器没有时钟、没有随机数、没有网络，也没有文件；脚本接触外部世界的唯一途径是引擎提供的函数，而每一次这样的调用都会记入日志。所以引擎可以精确地重放它，而一个人仍然能在一分钟内读懂它。
+
+元工厂中每一个要紧的特性，都在这寥寥几行里清晰可见。这个流程记录了自己的来历：哪个智能体探索出了它，研究了多少案例，谁批准了它。在任何人信任它之前，它已经用数百个已结案的理赔重放过。它只有一处允许模型做判断，并为这一处设定了预算，也为它的答案规定了 schema。其余的一切都是步骤、消息和等待，由确定性引擎每次以同样的方式运行。它还有一个版本号，这意味着它可以被替换、比较和退役。
+
+## 实地指南 {#a-field-guide}
+
+哲学只有在改变决策时才有用。在一家既有智能体又有工作流引擎、并想把两者都用好的公司里，我会这样应用它。
+
+### 什么时候把工作留给智能体，什么时候把它结晶下来 {#when-to-leave-work-to-an-agent-and-when-to-crystallise-it}
+
+| 信号 | 留给智能体 | 结晶为工作流 |
+|---|---|---|
+| 频率 | 一次，或很少 | 每周一次或更频繁 |
+| 案例之间的差异 | 高：每个案例都不同 | 低：案例形状相同 |
+| 结果出错的代价 | 低，可逆 | 高，面向客户，受监管 |
+| 事后解释的需要 | 有则更好 | 必需：审计师、监管者、法庭、客户 |
+| 每次运行的成本 | 作为一次性开销可以接受 | 在成千上万次运行中累积起来 |
+| 地形的稳定性 | 每月都在变 | 以季度计保持稳定 |
+
+没有哪一行单独起决定作用。一个罕见但代价极高的案例，可能仍然值得一个流程；一个频繁但差异极大的案例，也许由一个配有一份严格清单的智能体来处理更好。但当大多数行都指向右边时，让智能体每次都去做这项工作，就是一种成本和风险，而工作流本可以消除它。
+
+### 一个精心打造的流程的生命周期 {#the-lifecycle-of-a-crafted-procedure}
+
+1. **探索**。智能体直接处理新类型的工作，由人审阅结果。每个案例都被记录下来，附带足以重放的上下文。
+2. **提议**。当某个模式反复出现时，智能体根据它处理过的案例起草一份工作流定义，并标出仍然需要判断的步骤。
+3. **验证**。草案用过去的案例重放。凡是它与人或智能体以前的做法有分歧的地方，要么解释分歧，要么修正草案。
+4. **批准**。一位负责该流程的具名人员批准它。批准记录在流程本身之中，就像上面的例子那样。
+5. **运行**。引擎确定性地运行它。其中的智能体步骤受预算和输出 schema 的约束。
+6. **观察**。按流程、按版本跟踪例外、升级、超时和每次运行的成本。
+7. **修复或退役**。当例外增多时，流程被交回给智能体调查。当这项工作消失时，流程被退役，其历史被保留。
+
+### 度量什么 {#what-to-measure}
+
+- **结晶率**：一个季度内，有多少重复性工作从智能体转移到了流程。
+- **每个流程的例外率**：需要升级处理的运行所占的比例。例外增多是地形已经改变的最早信号。
+- **重放分歧**：当一个流程被修改时，它现在会对多少过去的案例做出不同的处理。
+- **每次运行的成本**：token 和算力，与只用智能体的方案相比较。
+- **修复时间**：一个失灵的流程在智能体和人把它修好之前，会坏多久。
+- **退役率**：没有人再运行的流程。一家从不让任何东西退役的公司，正在积累僵尸。
+
+### 为什么监管者会喜欢它 {#why-regulators-will-like-it}
+
+在受监管的行业里，这种设计也正是监管者前进的方向。[欧盟《人工智能法》要求](https://artificialintelligenceact.eu/article/12/)高风险 AI 系统在技术上允许在其整个生命周期内自动记录事件，并要求部署者保存这些日志。工作流引擎天然就会产生这样的记录：每一个步骤、每一个输入、每一次智能体调用及其答案，按顺序排列，可以重放。一个自由工作的智能体产生的是一份对话记录，聊胜于无，但要审计、比较和复现都难得多。受监管的工作早已要求这样的可追溯性，而要做到这一点，最便宜的途径就是把智能体包裹在流程之中。
+
+### 它如何失败 {#how-it-fails}
+
+- **过早结晶**。在地形还没被理解之前就把某件事变成流程，结果是脆弱的工作流和没完没了的例外：也就是表格左下角的那一格。
+- **僵尸流程**。没有人负责、也没有人理解的工作流，仍在运行，只因为没有人敢让它退役。
+- **船闸内的智能体漂移**。一次模型更新改变了某个有边界的智能体步骤的行为。用过去的案例重放是防线，而且每当模型变化时都必须运行，而不只是在流程变化时。
+- **橡皮图章式批准**。人们没读就批准智能体写的流程。流程必须足够简短易读，批准才有意义。
+- **指标上的[古德哈特定律](https://en.wikipedia.org/wiki/Goodhart%27s_law)**。为了优化结晶率，把本该留给智能体的东西也结晶下来。
+
+## 运河与它的警示 {#the-canal-and-its-warning}
+
+人类一向这样对待地貌。看看 Grässl 照片里的那条河，再看看任何一座城市：我们建造立方体、球体、直线和直角，这些形状从不出现在地形中，因为它们服务于一个理念。运河就是一条被告知该做什么的河。它按时刻表运送驳船，这是一条山间河流永远做不到的。
+
+用 Mandelbrot 的术语说，运河是[欧几里得](https://en.wikipedia.org/wiki/Euclidean_geometry)的，河流是分形的。欧几里得给了我们直线、平面和光滑的曲线，它们易于建造、度量和信任。自然给了我们每个尺度上的粗糙，而大部分信息都在粗糙之中。一家公司两种几何都需要；当它相信光滑的那一种可以取代粗糙的那一种时，它就会出错。
+
+这里有一个警示，我取自 James C. Scott 的[《国家的视角》](https://en.wikipedia.org/wiki/Seeing_Like_a_State)，我在《IT Intelligence》里也倚重过这本书。Scott 展示了那些把清晰可辨的秩序强加给复杂系统的计划，从规划的森林到规划的城市，往往会摧毁让原有系统得以运转的实践知识。他把这种知识称为 *mētis*（米提斯）：熟悉某一个港口的领航员的技艺，或者熟悉某一块田地的农民的技艺。把每一条河都改成运河，你就失去了河流所做的事：泛滥平原、鱼群，以及水所找到的、没有哪个工程师会画出来的那些路。
+
+Weber 从科层制内部看到了同样的危险。让它值得信任的可计算性，也可能让它变得不近人情：当程序上的正确压倒了实质上的公正时就是如此。他为这种终局所用的意象，通常译作[铁笼](https://en.wikipedia.org/wiki/Iron_cage)，比他的大多数其他说法都流传得更久。March 则从学习的角度看到了它：一个只懂利用的组织，会变得非常擅长解决去年的问题，然后失败。
+
+元工厂必须尊重这三重警示。并非一切都应该变成工作流。边缘那些正在探索的智能体，是这幅图景中永久的一部分，而不是一切实现自动化之前的一个阶段，因为迷雾永远不会完全散去。掌握着 mētis 的人也不会被流程取代。他们的角色会改变：他们成为决定什么值得变成流程的人，阅读并批准智能体提议的人，以及察觉河流已经改道的人。
+
+我追求的平衡，是一张运河网，旁边仍有一条野性的河流奔涌，还有人，以及智能体，知道什么时候该挖一条新运河，什么时候该填掉一条旧的。
+
+## 这对组织意味着什么 {#what-this-means-for-organisations}
+
+如果这幅图景是对的，那么对于那些主要生活在符号世界里的公司，也就是大多数公司，就会引出几点推论。
+
+**流程负责人变成编辑**。今天，流程负责人维护着描述人们应该做什么的文档，并希望它与人们实际做的相符。在元工厂里，负责人审阅智能体提议的流程，批准版本，阅读例外报告，并决定什么时候让某样东西退役。这更接近编辑工作而不是行政工作，它需要那些既懂业务、又足够懂流程语言、能够批判性地阅读它的人。
+
+**组织架构图开始看起来像一组惯例**。中层管理所做的很多事情，是协调执行惯例的人，并处理例外。当惯例在引擎上运行、例外先交给智能体再交给人时，协调层会缩小，编辑层会扩大。我在《架构师现在做什么》（What the architect does now）中从架构师的角度写过同样的转变。
+
+**信任从人转移到流程，并且必须重新赢得**。Luhmann 的系统信任一直是对流程的信任。新的是，流程现在可以由机器来写了。只有当来历可见、批准是真实的、历史可以重放时，客户和监管者才会把系统信任延伸到智能体写的流程上。这才是整个设想得以成立的条件，比任何技术细节都更关键。
+
+**探索成为一项预算科目**。如果智能体让探索变得便宜，一家公司就负担得起在每个部门的边缘持续探索，而且也应该这样做。March 所说的向利用漂移，部分是一个成本问题。现在，这个借口已经没那么站得住了。
+
+## 这对引擎意味着什么 {#what-this-means-for-the-engine}
+
+如果元工厂是对的，那么智能体时代的工作流引擎，与其说是一个碰巧用 Rust 写成的 Temporal 替代品，不如说是那个由智能体为之撰写描述的构造器，而这改变了它必须擅长的东西。
+
+- **流程是智能体能写、人能读的制品**。定义要能由模型产出，由 schema 校验，由模拟器用过去的案例运行，由人一次读完审阅，并且把自己的来历包含在内。
+- **可以证明的确定性**。重放不只是用于崩溃后的恢复：它是你向审计师展示发生了什么的方式，是你检查一个修复后的流程在旧案例上是否仍与旧流程行为一致的方式，也是你发现一次模型更新改变了某个智能体步骤的方式。
+- **有边界的智能体步骤是一等概念**。调用模型的步骤，把模型的完整答案记入日志，这样一次崩溃永远不会让它运行两次、计费两次；它强制执行预算和输出 schema，并可以用记录下来的答案重放。
+- **诞生与消亡是日常操作**。版本、批准、部署、排空和退役，因为专门打造的流程本来就是要来来去去的。
+- **例外是一种信号**。升级和超时既是错误，也是数据：它们告诉智能体地形在哪里发生了变化。
+- **小到可以无处不在**。它可以是笔记本电脑上单个二进制文件里的一个库，必要时再成长为集群，因为工厂应该能把飞行器放到任何有工作的地方。
+
+### 检查工厂造出的东西 {#checking-what-the-factory-makes}
+
+一座工厂的可信程度，取决于它的检验。如果智能体来写流程，并且很快也来写这些流程赖以运行的引擎和运行时，那么就必须有某种东西来检查它们的工作，而不依赖于对智能体的信任。这就是我正在构建的另一个项目 [Arcanist](https://arcanist.sh/) 及其[巴塞尔 Haskell 编译器](https://arcanist.sh/bhc/)（BHC）背后的赌注：当生成代码变得便宜时，正确性必须是可检查的。或者如 Arcanist 网站所说：「模型不需要是对的。它需要是可检查的。」
+
+Haskell 在这里之所以重要，其理由贯穿整篇文章。Haskell 中的纯函数在构造上就是确定性的：给定相同的输入，它返回相同的结果，而有副作用的代码必须在类型中声明这些副作用。这正是持久化执行引擎必须在工作流代码和步骤体之间划出的那条线：前者必须完全一致地重放，后者则与外部世界交谈。Temporal 这类引擎在运行时强制这条线，即在事后检测非确定性。类型系统则可以在代码运行之前就强制它。BHC 仍处于 beta 阶段，它在不同的运行时配置下把同一份 Haskell 源代码编译成原生代码和 WebAssembly，项目把每一种配置描述为「你的代码与它运行于其上的运行时之间的一份契约」；按它自己的测量，243 个测试程序中已有 236 个在 WebAssembly 上产生与原生版本逐字节相同的输出。
+
+更宽泛的赌注是，这样的编译器可以在 AI 辅助的工程中发挥关键作用。智能体写代码；编译器验证可以被验证的部分；一个注册表记录检查过什么，这样无论是人还是模型，都不必把同一件事检查两次；最终得到的是一个工作负载、一个运行时或一台引擎，它的行为之所以可信，靠的不是写它的人的名声，而是别的理由。这又是元工厂，只是低了一个尺度：智能体探索，结果结晶成某种刚性的东西，而一位检验员守在门口。关于验证的一面，我写在[《只需写一次的证明》](https://raskell.io/articles/the-proof-you-only-have-to-write-once/)里；关于工具，写在[《我们为什么用 Rust 写了一个 Haskell 包管理器》](https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/)里；关于代码成为编译下降（lowering）的目标，写在[《源代码是新的汇编》](https://raskell.io/articles/semantic-artifacts-and-meaning-engines/)里。Aqueduct 的流程目前用 Starlark 编写，这种语言的解释器根本看不到时钟或随机数。它们将来是否会用一种 BHC 这样的编译器能够检查的语言来写，我还不知道。这是我最好奇的方向。
+
+### 名字 {#the-name}
+
+写设计说明时，我几乎是偶然地给这个项目起了个暂定名：*tsumugi*（紡ぎ），日语里把原始纤维纺成线的意思。这是个美丽的词，我用了好几个星期。但一个名字应该在你脑海里放进一幅画面，而对日本以外的大多数人来说，这个名字做不到。我需要的那幅画面早已在这篇文章里了。它就是那个让运河跨越山谷的东西。
+
+这台引擎名叫 **Aqueduct**（引水渠）。
+
+罗马人建造引水渠，把水从远方的泉源引入城市，跨越数十公里无人能改变的地形。在铺下第一块石头之前，必须有人走遍这片土地，在群山之间找出一条路线，让水一路平缓下降。尼姆的引水渠在[加尔桥](https://en.wikipedia.org/wiki/Pont_du_Gard)处跨越加尔东河，全长约五十公里，而它的源头只比终点处尼姆城中的水池高出十七米。探索在先，缓慢而粗糙。它留下的，是一条几个世纪里每天都以同样方式流淌的水道。
+
+加尔桥也是分形的：三层拱，同一种形式反复出现，每一层承托着它上面的那一层。引擎也应该这样运作：步骤由工作流承载，工作流由更大的工作流承载，流程由整个公司的惯例承载，每一层都建立在它下面的那一层之上。
+
+运河与引水渠终于相遇了。1805 年，Thomas Telford 和 William Jessop 在威尔士建成了[庞特斯沃斯特渡槽](https://en.wikipedia.org/wiki/Pontcysyllte_Aqueduct)，这是一条架在石墩上的铁槽，把兰戈伦运河托举在迪河上方三十九米处。至今仍有船只从上面驶过。这就是我心中引擎的样子。不是河流，也不是运河，而是那个让运河得以跨越崎岖世界而不被冲走的结构，在建造它的人离去很久之后依然屹立。
+
+罗马人还给我们留下了一位懂得这一点的管理者。公元 97 年，皇帝涅尔瓦（Nerva）任命 [Sextus Julius Frontinus](https://en.wikipedia.org/wiki/Sextus_Julius_Frontinus)（弗朗提努斯）为罗马的水务专员，Frontinus 随后写下了《论罗马城的供水》（*De aquaeductu*），一份关于这座城市的供水系统实际如何运作的官方报告：九条引水渠各自从哪里引水，每条输送多少水，以及使用和维护它们的规则。Nelson 和 Winter 想必会把它认作一组惯例的书面记忆。Frontinus 为他的引水渠感到自豪，他也知道是什么让它们与纪念碑不同：「有如此众多不可或缺的建筑承载着如此多的水，若你愿意，不妨拿它们与那些闲置的金字塔，或希腊人那些虽然著名却毫无用处的作品相比！」（[第一卷第 16 节](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Frontinus/De_Aquis/Bennett/1*.html)，据 Charles E. Bennett 的英译本）
+
+我宁愿建造引水渠，而不是金字塔。纪念碑被人赞叹；引水渠被人依赖，直到最终没有人再去想它。阿格里帕（Agrippa）于公元前 19 年建成的[处女水道](https://en.wikipedia.org/wiki/Aqua_Virgo)，至今仍以文艺复兴时期修复后的「处女泉水道」（Acqua Vergine）之名流淌，为特雷维喷泉供水。这就是我希望这台引擎拥有的那种意义：不是被人注意到，而是在没有人再记得是谁建造它之后很久，仍然在输送着水。
+
+## 结语 {#closing}
+
+Whitehead 说，文明的进步在于扩大我们无需思考就能完成的重要操作的数量。在历史的大部分时间里，此前的思考是由人来完成的，缓慢而昂贵，而他们变成惯例的那些操作，存放在手册和记忆之中。现在，探索可以由机器来完成，这些机器在符号世界中寻找路径的能力惊人；而惯例可以运行在每次都做同样的事、并且确切记得自己做过什么的机器上。
+
+智能体在崎岖的世界里找到路。工作流是我们为那些值得再走一遍的路所保留下来的东西：写了下来，可重复，可检查，并且因为它们不即兴发挥而值得信任。在智能体上做得好的公司，既不会是让智能体包揽一切的公司，也不会是禁止智能体的公司，而会是那些让智能体去探索、再把它们的发现变成流程、运行在一个可读的运行时之上的公司，并且它们记得给河流留下一些野性。
+
+如果世界真像我猜想的那样没有边界，这个模式就不会在这里终结。没有最后一层，只有下一次迭代：智能体在我们已知的边缘探索，流程保存值得保存的东西，两者都成为下一层立足的地面，直到我们不再注意到它们。Crichton 把他的小说分成迭代，因为那是一个关于系统的故事，这些系统不断展开，超出任何人能够控制的界限。这也是同一类故事。生命总会找到出路，河流也是。我们要做的，是决定它的哪些路值得保留，并建造承载它们的引水渠。
+
+## 参考文献 {#references}
+
+关于游戏、语言和 AI：
+
+- Sebastian Mallaby, *The Infinity Machine: Demis Hassabis, DeepMind, and the Quest to Build a Mind*, Penguin Press, 2026，第十三章，关于星际争霸、AlphaStar 和对语言的押注。
+- Ashish Vaswani and colleagues, [Attention Is All You Need](https://arxiv.org/abs/1706.03762), 2017，提出 transformer 的论文。
+- 关于 Yann LeCun 的世界模型公司 AMI：[TechCrunch, Who's behind AMI Labs](https://techcrunch.com/2026/01/23/whos-behind-ami-labs-yann-lecuns-world-model-startup/) 以及 [eWeek 关于 10.3 亿美元融资的报道](https://eweek.com/news/meta-ai-yann-lecun-ami-world-models-startup)。
+- Hans Moravec, *Mind Children: The Future of Robot and Human Intelligence*, Harvard University Press, 1988；另见[莫拉维克悖论](https://en.wikipedia.org/wiki/Moravec%27s_paradox)。
+- Anthropic, [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents), 19 December 2024.
+
+关于分形、迭代和观念：
+
+- Benoit B. Mandelbrot, *The Fractal Geometry of Nature*, W. H. Freeman, 1982.
+- James Gleick, *Chaos: Making a New Science*, Viking, 1987.
+- Michael Crichton, *Jurassic Park*, Alfred A. Knopf, 1990，以及 Steven Spielberg 执导的 1993 年同名电影；关于小说中的迭代，见[海威龙形曲线](https://en.wikipedia.org/wiki/Dragon_curve)。
+- [分形宇宙学](https://en.wikipedia.org/wiki/Fractal_cosmology)，包括星系巡天数据所支持的大尺度均匀性论证。
+- Stuart Kauffman, *At Home in the Universe*, Oxford University Press, 1995，以及 Steven Johnson, *Where Good Ideas Come From*, Riverhead, 2010，关于邻近可能。
+- Michael Tomasello, *The Cultural Origins of Human Cognition*, Harvard University Press, 1999，关于棘轮效应。
+
+关于风险、信任和组织：
+
+- Frank H. Knight, [*Risk, Uncertainty, and Profit*](https://www.econlib.org/library/Knight/knRUP.html), 1921.
+- Niklas Luhmann, *Trust and Power*, Polity；关于信任的论文最初于 1968 年以德文 *Vertrauen* 为题发表。
+- Max Weber, *Economy and Society*，关于科层制和法理型权威。
+- Herbert A. Simon, *The New Science of Management Decision*, Harper and Brothers, 1960.
+- James G. March, "Exploration and Exploitation in Organizational Learning", *Organization Science* 2(1), 1991, pp. 71 to 87, [doi:10.1287/orsc.2.1.71](https://doi.org/10.1287/orsc.2.1.71).
+- Richard R. Nelson and Sidney G. Winter, *An Evolutionary Theory of Economic Change*, Belknap Press of Harvard University Press, 1982.
+- Ikujiro Nonaka and Hirotaka Takeuchi, *The Knowledge-Creating Company*, Oxford University Press, 1995.
+- James C. Scott, *Seeing Like a State*, Yale University Press, 1998.
+- Alfred North Whitehead, *An Introduction to Mathematics*, 1911.
+
+关于工厂和机器：
+
+- John von Neumann, *Theory of Self-Reproducing Automata*, edited and completed by Arthur W. Burks, University of Illinois Press, 1966；另见 [Von Neumann universal constructor](https://en.wikipedia.org/wiki/Von_Neumann_universal_constructor)。
+- Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides, *Design Patterns: Elements of Reusable Object-Oriented Software*, Addison-Wesley, 1994，关于工厂模式和策略模式。
+- UFOAnon，那个讲述海底工厂的 4chan 匿名帖子，[收录于 imgur](https://imgur.com/a/4chan-whistleblower-NXjWQaN)，供好奇者一读。请把它当作虚构来读。
+- [Temporal](https://temporal.io/) 和 [Restate](https://restate.dev/)，持久化执行引擎。
+- [Arcanist](https://arcanist.sh/)，为 AI 编写代码的时代打造的 Haskell 工具，及其[巴塞尔 Haskell 编译器](https://arcanist.sh/bhc/)。
+- [Kubernetes](https://kubernetes.io/)、[HashiCorp Nomad](https://www.nomadproject.io/) 和 [wasmCloud](https://wasmcloud.com/)，编排器。
+
+关于监管：
+
+- Regulation (EU) 2024/1689, the AI Act, [Article 12, record-keeping](https://artificialintelligenceact.eu/article/12/).
+
+关于引水渠：
+
+- Sextus Julius Frontinus, *De aquaeductu*, around AD 97 to 100, translated by Charles E. Bennett, Loeb Classical Library, 1925, [on LacusCurtius](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Frontinus/De_Aquis/Bennett/1*.html).
+- [Pont du Gard](https://en.wikipedia.org/wiki/Pont_du_Gard)、[Pontcysyllte Aqueduct](https://en.wikipedia.org/wiki/Pontcysyllte_Aqueduct) 和 [Aqua Virgo](https://en.wikipedia.org/wiki/Aqua_Virgo)。
+- [The Starlark language specification](https://github.com/bazelbuild/starlark/blob/master/spec.md).
+
+关于那张照片：
+
+- Armin Grässl, [*006 Whispering Current*](https://www.armingraessl.ch/collection/006-whispering-current)，摄影作品，出自他的 Transforming Spaces 系列。

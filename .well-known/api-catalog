@@ -12,18 +12,30 @@
           "href": "https://raskell.io/zh/llms.txt",
           "type": "text/markdown",
           "hreflang": "zh-Hans",
-          "title": "llms.txt in Simplified Chinese: the pages translated into Chinese"
+          "title": "llms.txt in Simplified Chinese: the articles and pages translated into Chinese"
         },
         {
           "href": "https://raskell.io/ko/llms.txt",
           "type": "text/markdown",
           "hreflang": "ko",
-          "title": "llms.txt in Korean: the pages translated into Korean"
+          "title": "llms.txt in Korean: the articles and pages translated into Korean"
         },
         {
           "href": "https://raskell.io/llms-full.txt",
           "type": "text/markdown",
           "title": "Every article, review, note, and talk in full, as Markdown, then the reading log"
+        },
+        {
+          "href": "https://raskell.io/zh/llms-full.txt",
+          "type": "text/markdown",
+          "hreflang": "zh-Hans",
+          "title": "Every article translated into Simplified Chinese, in full, as Markdown"
+        },
+        {
+          "href": "https://raskell.io/ko/llms-full.txt",
+          "type": "text/markdown",
+          "hreflang": "ko",
+          "title": "Every article translated into Korean, in full, as Markdown"
         },
         {
           "href": "https://raskell.io/map.json",
