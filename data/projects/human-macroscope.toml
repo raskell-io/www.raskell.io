@@ -1,15 +1,22 @@
 title = "Human Macroscope"
-description = "A long-term interdisciplinary research project on humans and human collectives across scales, from individuals and families to institutions, cultures, and civilizations: how individual traits, roles, relations, and cultural transmission combine into emergent collective properties."
-status = "early"
-links = [ { name = "GitHub", url = "https://github.com/human-macroscope" } ]
-topics = ["complex-systems", "knowledge-management", "emergence"]
-accents = ["#5b45f2", "#007f78"]   # brand colours, used for the card glow
+logo = "brands/human-macroscope.svg"
+logo_dark = "brands/human-macroscope-dark.svg"
+wordmark = "brands/human-macroscope-wordmark-light.svg"   # the brandtype, shown beside the logo as the card title
+wordmark_dark = "brands/human-macroscope-wordmark-dark.svg"
+description = "A long-term interdisciplinary research project on humans and human collectives across scales: how individual traits, roles, relations, institutions, and cultural transmission combine into collective properties over time. Its website zooms through one illustrated world, from a single person to a town's history, and includes an encyclopedia that quotes every working term from the research glossary. Models and evidence maps are drafts, open to criticism."
+status = "dev"
+status_label = "Draft research, website preview"
+links = [ { name = "Website preview", url = "https://human-macroscope.github.io/" }, { name = "Encyclopedia", url = "https://human-macroscope.github.io/encyclopedia/" }, { name = "GitHub", url = "https://github.com/human-macroscope" } ]
+topics = ["complex-systems", "emergence", "philosophy-of-science", "provenance", "legibility", "knowledge-management", "zola"]
+stack = ["Zola", "Sass", "SVG", "Ruby"]
+related = ["chronicle-of-earth"]
+accents = ["#5b45f2", "#806bff"]   # brand colours (person violet), used for the card glow
 
 schema_type = "ResearchProject"   # schema.org type for the JSON-LD on /projects/ and /apps/ (default SoftwareApplication)
 
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
-description = "一个关于人类及人类集体的长期跨学科研究项目，跨越从个人、家庭到机构、文化和文明的各个尺度：个体的特质、角色、关系和文化传递，如何组合成涌现的集体属性。"
+description = "一个关于人类及人类集体的长期跨学科研究项目，跨越多个尺度：个体的特质、角色、关系、制度和文化传递，如何随时间组合成集体属性。它的网站在同一个插画世界中缩放，从一个人一直到一座小镇的历史，并附有一部百科全书，逐字引用研究术语表中的每一个工作术语。模型和证据地图仍是草稿，欢迎批评。"
 
 [i18n.ko]
-description = "개인과 가족에서 제도, 문화, 문명에 이르기까지 여러 규모에 걸쳐 인간과 인간 집단을 다루는 장기적인 학제 간 연구 프로젝트입니다. 개인의 특성, 역할, 관계, 문화적 전승이 어떻게 결합해 창발적인 집단적 속성이 되는지를 탐구합니다."
+description = "여러 규모에 걸쳐 인간과 인간 집단을 다루는 장기적인 학제 간 연구 프로젝트입니다. 개인의 특성, 역할, 관계, 제도, 문화적 전승이 시간이 흐르며 어떻게 집단적 속성으로 결합되는지를 탐구합니다. 웹사이트는 하나의 일러스트 세계를 확대하고 축소하며 한 사람에서 한 마을의 역사까지 보여 주고, 연구 용어집의 모든 작업 용어를 그대로 인용하는 백과사전을 담고 있습니다. 모델과 근거 지도는 아직 초안이며 비판에 열려 있습니다."
