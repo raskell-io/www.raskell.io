@@ -187,13 +187,17 @@ names, definitions, and a page per topic in every language.
 - **A translated article:** `<slug>.zh.md` / `<slug>.ko.md` beside the English one, with the same `[extra]`
   (author, image, cover, reads, review) and a translated title, description, `in_short`, and body, but no
   `[taxonomies]` table: the theme takes topics, series, and categories from the English page. Headings keep
-  their English anchors; links, code, and diagrams stay byte-identical. It shares the English social card and
-  is left out of llms.txt and the Markdown copies.
+  their English anchors; links, code, and diagrams stay byte-identical. It shares the English social card,
+  gets BlogPosting JSON-LD in its language with `translationOfWork` (the original lists `workTranslation`),
+  a Markdown copy at `/<code>/articles/<slug>.md`, and a place in `/<code>/llms.txt` and `/<code>/llms-full.txt`.
 - **A language:** a `[languages.<code>]` block (with `build_search_index = false` and `taxonomies = []`),
   an entry in `extra.seijaku.languages` (native name, hreflang, og_locale), an `i18n` table with labels,
   the pages above, and a script set in `static/js/split-flap.js` for the homepage board.
+- **For crawlers:** every page links its versions with hreflang (x-default is English), the sitemap lists
+  the same alternates (theme `sitemap.xml`), and robots.txt, ai.txt, auth.md, and the api-catalog point to the
+  per-language llms files. The map knows a translation by its original's path.
 - **English only, by design:** untranslated writing, feeds, the full-text search index (translated pages
-  search the English one), map.json, llms-full.txt, Markdown copies, and social cards.
+  search the English one), map.json, the main llms-full.txt, and social cards.
 - **Check:** after a build, no link on a `/zh/` or `/ko/` page should leave its language except to
   English-only content; a broken page in the language is a 404 for that reader.
 - Translations follow the writing rules: no em or en dashes; Korean in the formal 합니다체. Chinese

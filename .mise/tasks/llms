@@ -10,7 +10,11 @@ This writes, from content/ and data/:
   static/{articles,notes,talks}/<slug>.md  one clean Markdown copy per page, linked from its page head;
                                reviews carry the reviewed work and the rating in their front matter
   static/reading.json          the reading log as data: every work, its status, dates, rating, and review
-  static/<lang>/llms.txt       per translation language: a short index, in that language, of the translated pages
+  static/<lang>/llms.txt       per translation language: a short index, in that language, of the translated
+                               articles and pages
+  static/<lang>/llms-full.txt  per translation language: every translated article in full, in that language
+  static/<lang>/{articles,notes,talks}/<slug>.md  a Markdown copy of each translation, with its language
+                               and the original it translates in the front matter
 
 Shortcodes become plain fences, internal links become absolute URLs, drafts are skipped.
 The outputs are build artefacts (gitignored); CI runs this before `zola build`.
@@ -208,13 +212,16 @@ def article_markdown(a):
             head.append("review_of_year: %d" % w["year"])
         if w["rating"]:
             head.append("rating: %s/10" % w["rating"])
+    if a.get("lang"):
+        head.append("lang: %s" % a["lang"])
+        head.append("translation_of: %s" % a["original"])
     if a["event"]:
         head.append('event: "%s"' % a["event"].replace('"', '\\"'))
     if a["venue"]:
         head.append('venue: "%s"' % a["venue"].replace('"', '\\"'))
     head += ["---", "", "# " + a["title"], ""]
     if a["in_short"]:
-        head += ["## In short", "", " ".join(a["in_short"]), ""]
+        head += ["## " + a.get("in_short_label", "In short"), "", " ".join(a["in_short"]), ""]
     head += [a["body"], ""]
     return "\n".join(head)
 
@@ -398,11 +405,39 @@ LANGS = [dict(re.findall(r'(\w+) = "([^"]*)"', m)) for m in re.findall(r'^\s*\{ 
 LANGS = [l for l in LANGS if l.get("code") and l.get("hreflang")]
 DEFAULT_LANG = (re.search(r'^default_language\s*=\s*"([^"]+)"', config, re.M) or [None, "en"])[1]
 LLMS_I18N = {
-    "zh": {"intro": "raskell.io 是 %s 的个人网站。他是瑞士巴塞尔的一名 AI 架构师。网站以英文为主；下列页面有简体中文版本。文章、笔记、书评和演讲只有英文版。" % AUTHOR,
-           "pages": "已翻译的页面", "english": "英文原文", "index": "完整的英文索引（所有文章、书评、笔记、演讲、阅读记录、主题和项目）"},
-    "ko": {"intro": "raskell.io는 스위스 바젤의 AI 아키텍트 %s의 개인 사이트입니다. 사이트는 주로 영어로 되어 있으며, 아래 페이지는 한국어로 번역되어 있습니다. 글, 노트, 서평, 강연은 영어로만 제공됩니다." % AUTHOR,
-           "pages": "번역된 페이지", "english": "영어 원문", "index": "전체 영어 색인(모든 글, 서평, 노트, 강연, 독서 기록, 주제, 프로젝트)"},
+    "zh": {"intro": "raskell.io 是 %s 的个人网站。他是瑞士巴塞尔的一名 AI 架构师。网站以英文为主；下列文章和页面有简体中文版本，其余文章、笔记、书评和演讲只有英文版。每篇译文都有一份 Markdown 副本（网址把结尾的斜杠换成 .md）。" % AUTHOR,
+           "articles": "已翻译的文章", "pages": "已翻译的页面", "english": "英文原文", "markdown": "Markdown",
+           "full": "所有已翻译文章的全文（Markdown）", "index": "完整的英文索引（所有文章、书评、笔记、演讲、阅读记录、主题和项目）",
+           "in_short": "简而言之", "full_title": "Raskell：简体中文译文全文"},
+    "ko": {"intro": "raskell.io는 스위스 바젤의 AI 아키텍트 %s의 개인 사이트입니다. 사이트는 주로 영어로 되어 있으며, 아래 글과 페이지는 한국어로 번역되어 있습니다. 그 밖의 글, 노트, 서평, 강연은 영어로만 제공됩니다. 번역된 글마다 Markdown 사본이 있습니다(주소 끝의 슬래시를 .md로 바꾸면 됩니다)." % AUTHOR,
+           "articles": "번역된 글", "pages": "번역된 페이지", "english": "영어 원문", "markdown": "Markdown",
+           "full": "번역된 모든 글의 전문(Markdown)", "index": "전체 영어 색인(모든 글, 서평, 노트, 강연, 독서 기록, 주제, 프로젝트)",
+           "in_short": "요약", "full_title": "Raskell: 한국어 번역 전문"},
 }
+
+# Translated writing: content/<section>/<slug>.<code>.md beside a published English original. Topics, series, and
+# categories come from the original (a translation has no taxonomies of its own).
+SECTIONS = {"articles": articles, "notes": notes, "talks": talks}
+def translated_writing(code, hreflang):
+    out = []
+    for section, originals in SECTIONS.items():
+        by_slug = {a["slug"]: a for a in originals}
+        for path in glob.glob("content/%s/*.%s.md" % (section, code)):
+            name = os.path.basename(path)[:-len(".%s.md" % code)]
+            if name == "_index" or name not in by_slug:
+                continue
+            fm, body = split_front_matter(open(path).read())
+            if re.search(r"^draft\s*=\s*true", fm, re.M):
+                continue
+            orig = by_slug[name]
+            e = entry(section, name, fm, body)
+            e.update(tags=orig["tags"], series=orig["series"], categories=orig["categories"], lang=hreflang,
+                     original=orig["url"], url="%s/%s/%s/%s/" % (BASE, code, section, name),
+                     md="%s/%s/%s/%s.md" % (BASE, code, section, name),
+                     in_short_label=LLMS_I18N.get(code, {}).get("in_short", "In short"))
+            out.append(e)
+    out.sort(key=lambda a: a["date"], reverse=True)
+    return out
 
 def translations():
     found = {}
@@ -431,31 +466,59 @@ def translations():
     return {l["code"]: found[l["code"]] for l in LANGS if l["code"] in found}
 
 TRANSLATED = translations()
+WRITING = {l["code"]: translated_writing(l["code"], l["hreflang"]) for l in LANGS if l["code"] != DEFAULT_LANG}
+for code, items in WRITING.items():
+    for section in SECTIONS:
+        for old in glob.glob("static/%s/%s/*.md" % (code, section)):
+            os.remove(old)
+    for a in items:
+        os.makedirs("static/%s/%s" % (code, a["section"]), exist_ok=True)
+        with open("static/%s/%s/%s.md" % (code, a["section"], a["slug"]), "w") as f:
+            f.write(article_markdown(a))
 if TRANSLATED:
     names = {l["code"]: l for l in LANGS}
     lines += ["## Translations", "",
-              "The site is written in English. Some pages are also translated; a translation lives at the same path under a "
-              "language prefix (/zh/about/ translates /about/), carries hreflang alternates, and is linked from its English "
-              "page. Articles, reviews, notes, and talks are English only. Each language has a short index of its own.", ""]
+              "The site is written in English. Some articles and pages are also translated; a translation lives at the same "
+              "path under a language prefix (/zh/about/ translates /about/), carries hreflang alternates and "
+              "translationOfWork in its JSON-LD, and is linked from its English page. A translated article has its own "
+              "Markdown copy (/zh/articles/<slug>.md). Untranslated writing is English only. Each language has a short "
+              "index and a full-text file of its own.", ""]
     for code, items in TRANSLATED.items():
         l = names[code]
         lines += ["### %s (hreflang `%s`, under /%s/)" % (l.get("name", code), l["hreflang"], code), "",
                   "- [llms.txt in %s](%s/%s/llms.txt)" % (l.get("name", code), BASE, code)]
-        lines += ["- [%s](%s): translation of [%s](%s)" % (t["title"], t["url"], t["source_title"], t["source"]) for t in items]
+        if WRITING.get(code):
+            lines.append("- [llms-full.txt in %s](%s/%s/llms-full.txt): every translated article in full" % (l.get("name", code), BASE, code))
+        md_of = {a["url"]: a["md"] for a in WRITING.get(code, [])}
+        lines += ["- [%s](%s): translation of [%s](%s)%s" % (t["title"], t["url"], t["source_title"], t["source"],
+                  " ([Markdown](%s))" % md_of[t["url"]] if t["url"] in md_of else "") for t in items]
         lines.append("")
     for code, items in TRANSLATED.items():
         l, words = names[code], LLMS_I18N.get(code)
         if not words:
             continue
-        out = ["# Raskell (%s)" % l.get("name", code), "", "> " + words["intro"], "", "## " + words["pages"], ""]
-        out += ["- [%s](%s): %s%s: %s" % (t["title"], t["url"], t["description"] + " " if t["description"] else "", words["english"], t["source"]) for t in items]
+        writing = WRITING.get(code, [])
+        md_urls = {a["url"] for a in writing}
+        out = ["# Raskell (%s)" % l.get("name", code), "", "> " + words["intro"], ""]
+        if writing:
+            out += ["## " + words["articles"], ""]
+            out += ["- [%s](%s) (%s): %s %s: %s · %s: %s" % (a["title"], a["url"], a["date"], a["description"], words["markdown"], a["md"], words["english"], a["original"]) for a in writing]
+            out += ["- [llms-full.txt](%s/%s/llms-full.txt): %s" % (BASE, code, words["full"]), ""]
+        out += ["## " + words["pages"], ""]
+        out += ["- [%s](%s): %s%s: %s" % (t["title"], t["url"], t["description"] + " " if t["description"] else "", words["english"], t["source"]) for t in items if t["url"] not in md_urls]
         out += ["", "## English", "", "- [llms.txt](%s/llms.txt): %s" % (BASE, words["index"]), ""]
         os.makedirs("static/%s" % code, exist_ok=True)
         open("static/%s/llms.txt" % code, "w").write("\n".join(out))
+        if writing:
+            full_l = ["# " + words["full_title"], "", "> " + words["intro"], ""]
+            for a in writing:
+                full_l += ["", "=" * 80, "", article_markdown(a)]
+            open("static/%s/llms-full.txt" % code, "w").write("\n".join(full_l))
 
 lines += ["## For agents", "",
           "- Each article and note as Markdown: its URL with `.md` instead of the trailing slash, e.g. %s/articles/the-model-is-a-dependency.md" % BASE,
           "- Each talk as Markdown too, e.g. %s/talks/iat-13-basel.md" % BASE,
+          "- Each translated article as Markdown in its language, e.g. %s/zh/articles/the-river-and-the-canal.md (see Translations)" % BASE,
           "- [map.json](%s/map.json): the site graph (articles, notes, talks, topics with definitions, series, categories, works from the reading log, projects, and their links)" % BASE,
           "- [garden.json](%s/garden.json): the search index as data: every article, review, note, talk, work, project, topic, and cited link, with kinds, topics, and dates" % BASE,
           "- [links.json](%s/links.json): every external link the writing cites, with the pages that cite it and whether it is a reference" % BASE,

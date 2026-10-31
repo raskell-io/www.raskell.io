@@ -1,7 +1,18 @@
 {#- Site-specific head tags, included by the seijaku base layout. -#}
+{%- import "macros/i18n.html" as i18n %}
+{#- A translation (<slug>.<lang>.md) has no taxonomies of its own: `ldsrc` is its original, which supplies the
+    topics, series, and social card. `psec` is the section (articles, notes) past any language prefix, and
+    `lpre` the prefix itself ("" in the default language, "zh/" in Chinese). -#}
+{%- set_global ldsrc = false %}{% set lpre = "" %}
+{%- if lang != config.default_language %}{% set lpre = lang ~ "/" %}{% if page is defined %}{% for tr in page.translations %}{% if tr.lang == config.default_language %}{% set_global ldsrc = get_page(path=page.relative_path | replace(from="." ~ lang ~ ".md", to=".md")) %}{% endif %}{% endfor %}{% endif %}{% endif %}
+{%- if page is defined %}{% if ldsrc %}{% set ptags = ldsrc.taxonomies.tags | default(value=[]) %}{% set pseries = ldsrc.taxonomies.series | default(value=[]) %}{% set ppath = ldsrc.path %}{% else %}{% set ptags = page.taxonomies.tags | default(value=[]) %}{% set pseries = page.taxonomies.series | default(value=[]) %}{% set ppath = page.path %}{% endif %}{% endif %}
+{%- set tagdata = load_data(path=config.extra.seijaku.tag_data | default(value="data/tags.toml"), required=false) %}
+{%- set tagnames = false %}{% if lang != config.default_language %}{% set tagnames = load_data(path="data/tags." ~ lang ~ ".toml", required=false) %}{% endif %}
 <meta name="author" content="{{ config.extra.author }}">
-{%- if page is defined and page.taxonomies.tags %}
-<meta name="keywords" content="{{ page.taxonomies.tags | join(sep=', ') }}">
+{%- if page is defined and ptags %}
+<meta name="keywords" content="{% for t in ptags %}{% if tagnames and t in tagnames and tagnames[t].name %}{{ tagnames[t].name }}{% elif tagdata and t in tagdata %}{{ tagdata[t].name }}{% else %}{{ t }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}">
+{%- elif config.extra.seijaku.i18n and lang in config.extra.seijaku.i18n and config.extra.seijaku.i18n[lang].keywords %}
+<meta name="keywords" content="{{ config.extra.seijaku.i18n[lang].keywords }}">
 {%- elif config.extra.keywords %}
 <meta name="keywords" content="{{ config.extra.keywords }}">
 {%- endif %}
@@ -29,9 +40,10 @@
 <link rel="license" href="{{ config.extra.seijaku.license.url }}">
 {%- endif %}
 <link rel="api-catalog" href="{{ get_url(path='.well-known/api-catalog') | safe }}">
-{%- if page is defined %}{% set psec = page.components | first | default(value="") %}{% else %}{% set psec = "" %}{% endif %}
+{%- if page is defined %}{% set psec = ppath | trim_start_matches(pat="/") | split(pat="/") | first %}{% else %}{% set psec = "" %}{% endif %}
 {%- if page is defined and page.date and (psec == "articles" or psec == "notes") %}
-<link rel="alternate" type="text/markdown" title="{{ page.title }} (Markdown)" href="{{ get_url(path=psec ~ '/' ~ page.slug ~ '.md') | safe }}">
+{%- set_global md_tag = lang %}{% for l in config.extra.seijaku.languages | default(value=[]) %}{% if l.code == lang %}{% set_global md_tag = l.hreflang %}{% endif %}{% endfor %}
+<link rel="alternate" type="text/markdown" hreflang="{{ md_tag }}" title="{{ page.title }} (Markdown)" href="{{ get_url(path=lpre ~ psec ~ '/' ~ page.slug ~ '.md') | safe }}">
 {%- endif %}
 {%- if page is defined and page.path == "/map/" %}
 <link rel="alternate" type="application/json" title="Site map graph" href="{{ get_url(path='map.json') | safe }}">
@@ -55,7 +67,6 @@
 {%- set here = current_url | default(value=base) %}
 {%- set id_site = base ~ "/#website" %}{% set id_person = base ~ "/#person" %}{% set id_article = here ~ "#article" %}
 {%- set url_home = base ~ "/" %}{% set url_articles = base ~ "/articles/" %}{% set id_profile = here ~ "#profile" %}
-{%- set tagdata = load_data(path=config.extra.seijaku.tag_data | default(value="data/tags.toml"), required=false) %}
 {%- set id_termset = base ~ "/tags/#term-set" %}{% set url_tags = base ~ "/tags/" %}{% set url_notes = base ~ "/notes/" %}{% set id_webpage = here ~ "#webpage" %}{% set id_dataset = here ~ "#dataset" %}
 {%- set socials = [] %}
 {%- for s in config.extra.seijaku.social | default(value=[]) %}{% set_global socials = socials | concat(with=s.url) %}{% endfor %}
@@ -115,21 +126,26 @@
       {%- if page.updated %},
       "dateModified": {{ page.updated | date(format="%Y-%m-%dT00:00:00+00:00") | json_encode | safe }}
       {%- endif %}
-      {%- if page.taxonomies.tags %},
-      "keywords": {{ page.taxonomies.tags | join(sep=", ") | json_encode | safe }}
+      {%- if ptags %},
+      "keywords": {% set_global kw = [] %}{% for t in ptags %}{% if tagnames and t in tagnames and tagnames[t].name %}{% set_global kw = kw | concat(with=tagnames[t].name) %}{% elif tagdata and t in tagdata %}{% set_global kw = kw | concat(with=tagdata[t].name) %}{% else %}{% set_global kw = kw | concat(with=t) %}{% endif %}{% endfor %}{{ kw | join(sep=", ") | json_encode | safe }}
       {%- endif %}
       {%- if page.word_count %},
       "wordCount": {{ page.word_count }}
       {%- endif %}
-      {%- if page.components | first == "notes" %},
+      {%- if psec == "notes" %},
       "articleSection": "Notes"
       {%- else %},
       "articleSection": "Articles"
       {%- endif %}
-      {%- if page.taxonomies.series %}{% set s = page.taxonomies.series | first %},
-      "isPartOf": { "@type": "CreativeWorkSeries", "name": {{ s | replace(from="-", to=" ") | title | json_encode | safe }}, "url": {{ get_taxonomy_url(kind="series", name=s) | json_encode | safe }} }
+      {%- if pseries %}{% set s = pseries | first %}{% set s_url = i18n::tax_url(tax="series", term=s, lang=lang, base=config.default_language, config_base=config.base_url) %}{% if not s_url %}{% set s_url = get_taxonomy_url(kind="series", name=s, lang=config.default_language) %}{% endif %},
+      "isPartOf": { "@type": "CreativeWorkSeries", "name": {{ s | replace(from="-", to=" ") | title | json_encode | safe }}, "url": {{ s_url | json_encode | safe }} }
+      {%- endif %}
+      {%- if ldsrc %},
+      "translationOfWork": { "@id": {{ ldsrc.permalink ~ "#article" | json_encode | safe }}, "url": {{ ldsrc.permalink | json_encode | safe }}, "inLanguage": {{ config.default_language | json_encode | safe }} }
+      {%- elif page.translations | length > 1 %}{% set_global ld_n = 0 %},
+      "workTranslation": [{% for tr in page.translations %}{% if tr.lang != lang %}{% set_global trtag = tr.lang %}{% for l in langs %}{% if l.code == tr.lang %}{% set_global trtag = l.hreflang %}{% endif %}{% endfor %}{% if ld_n > 0 %}, {% endif %}{ "@id": {{ tr.permalink ~ "#article" | json_encode | safe }}, "url": {{ tr.permalink | json_encode | safe }}, "inLanguage": {{ trtag | json_encode | safe }} }{% set_global ld_n = ld_n + 1 %}{% endif %}{% endfor %}]
       {%- endif %},
-      "encoding": { "@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": {{ get_url(path=psec ~ '/' ~ page.slug ~ '.md') | json_encode | safe }} },
+      "encoding": { "@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": {{ get_url(path=lpre ~ psec ~ '/' ~ page.slug ~ '.md') | json_encode | safe }} },
       "isAccessibleForFree": true
       {%- if page.extra.review %}{% set rdata = load_data(path="data/reading.toml", required=false) %}
       {%- if rdata %}{% for w in rdata.works %}{% if w.id == page.extra.review %}{% if w.kind == "book" or w.kind == "novel" %}{% set wtype = "Book" %}{% elif w.kind == "paper" or w.kind == "report" %}{% set wtype = "ScholarlyArticle" %}{% else %}{% set wtype = "CreativeWork" %}{% endif %},
@@ -143,12 +159,12 @@
       {%- if psec == "articles" and page.reading_time %},
       "timeRequired": "PT{{ page.reading_time }}M"
       {%- endif %}
-      {%- if page.taxonomies.tags %},
-      "about": [{% for t in page.taxonomies.tags %}{% set turl = get_taxonomy_url(kind="tags", name=t) %}{ "@type": "DefinedTerm", "@id": {{ turl | json_encode | safe }}, "name": {% if tagdata and t in tagdata %}{{ tagdata[t].name | json_encode | safe }}{% else %}{{ t | json_encode | safe }}{% endif %}, "termCode": {{ t | json_encode | safe }}, "inDefinedTermSet": { "@id": {{ id_termset | json_encode | safe }} } }{% if not loop.last %}, {% endif %}{% endfor %}]
+      {%- if ptags %},
+      "about": [{% for t in ptags %}{% if lpre %}{% set turl = base ~ "/" ~ lpre ~ "tags/" ~ t ~ "/" %}{% else %}{% set turl = get_taxonomy_url(kind="tags", name=t) %}{% endif %}{ "@type": "DefinedTerm", "@id": {{ turl | json_encode | safe }}, "name": {% if tagnames and t in tagnames and tagnames[t].name %}{{ tagnames[t].name | json_encode | safe }}{% elif tagdata and t in tagdata %}{{ tagdata[t].name | json_encode | safe }}{% else %}{{ t | json_encode | safe }}{% endif %}, "termCode": {{ t | json_encode | safe }}, "inDefinedTermSet": { "@id": {{ id_termset | json_encode | safe }} } }{% if not loop.last %}, {% endif %}{% endfor %}]
       {%- endif %}
       {%- if page.extra.og_image %},
       "image": {{ get_url(path=page.extra.og_image) | json_encode | safe }}
-      {%- elif config.extra.seijaku.og_cards %}{% set card_path = page.path | trim_start_matches(pat="/") | trim_end_matches(pat="/") %},
+      {%- elif config.extra.seijaku.og_cards %}{% set card_path = ppath | trim_start_matches(pat="/") | trim_end_matches(pat="/") %},
       "image": {{ get_url(path="og/" ~ card_path ~ ".png") | json_encode | safe }}
       {%- elif page.extra.image %},
       "image": {{ get_url(path=page.extra.image) | json_encode | safe }}
@@ -157,8 +173,9 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ url_home | json_encode | safe }} },
-        { "@type": "ListItem", "position": 2, "name": {% if psec == "notes" %}"Notes"{% else %}"Articles"{% endif %}, "item": {% if psec == "notes" %}{{ url_notes | json_encode | safe }}{% else %}{{ url_articles | json_encode | safe }}{% endif %} },
+        {%- if lpre %}{% set bpath = psec ~ "/_index." ~ lang ~ ".md" %}{% else %}{% set bpath = psec ~ "/_index.md" %}{% endif %}{% set bsec = get_section(path=bpath, required=false) %}
+        { "@type": "ListItem", "position": 1, "name": {{ config.title | json_encode | safe }}, "item": {{ base ~ "/" ~ lpre | json_encode | safe }} },
+        { "@type": "ListItem", "position": 2, "name": {% if bsec %}{{ bsec.title | json_encode | safe }}{% elif psec == "notes" %}"Notes"{% else %}"Articles"{% endif %}, "item": {{ base ~ "/" ~ lpre ~ psec ~ "/" | json_encode | safe }} },
         { "@type": "ListItem", "position": 3, "name": {{ page.title | json_encode | safe }}, "item": {{ here | json_encode | safe }} }
       ]
     },
@@ -167,6 +184,7 @@
       "@id": {{ id_webpage | json_encode | safe }},
       "url": {{ here | json_encode | safe }},
       "name": {{ page.title | json_encode | safe }},
+      "inLanguage": {{ ld_tag | json_encode | safe }},
       "isPartOf": { "@id": {{ id_site | json_encode | safe }} },
       "mainEntity": { "@id": {{ id_article | json_encode | safe }} },
       "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["[data-ai-summary]", ".prose > p:first-of-type"] }

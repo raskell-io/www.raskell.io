@@ -13,7 +13,7 @@
   function collapse(s) { return String(s || "").replace(/\s+/g, " ").trim(); }
   function meta(name) { var m = document.querySelector('meta[name="' + name + '"]'); return m ? m.getAttribute("content") : null; }
   function sameSite(u) { var url = new URL(u, ORIGIN); if (url.origin !== ORIGIN) { throw new Error("Only raskell.io URLs"); } return url; }
-  function mdUrl(u) { var url = sameSite(u); var m = url.pathname.match(/^\/(articles|notes|talks)\/([^/]+)\/?$/); return m ? ORIGIN + "/" + m[1] + "/" + m[2] + ".md" : null; }
+  function mdUrl(u) { var url = sameSite(u); var m = url.pathname.match(/^\/((?:[a-z]{2}\/)?)(articles|notes|talks)\/([^/]+)\/?$/); return m ? ORIGIN + "/" + m[1] + m[2] + "/" + m[3] + ".md" : null; }
   function json(path) { return fetch(ORIGIN + path).then(function (r) { if (!r.ok) { throw new Error(path + " " + r.status); } return r.json(); }); }
   // The garden index: garden.json when published, else the inline index on the search page.
   var gardenP = null;

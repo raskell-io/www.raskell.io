@@ -211,6 +211,7 @@ taxonomies = []
 # Interface text per language: labels map the English text to its translation (anything missing stays in
 # English); footer_about and tagline replace the footer's introduction.
 [extra.seijaku.i18n.zh]
+keywords = "平台自动化, 边缘系统, 应用安全, 开放标准, Rust, DevOps, 基础设施"
 tagline = "(由 Raffael 整理的技术网络空间)"
 footer_about = """
 Raskell 是我在网络上的一角，也是通往我所构建的一切的入口。我在这里写平台自动化、边缘系统、应用安全，以及当 AI 写下大部分代码之后会发生什么变化。
@@ -487,6 +488,7 @@ Raskell 是我在网络上的一角，也是通往我所构建的一切的入口
 "{n} chapters" = "{n} 章"
 
 [extra.seijaku.i18n.ko]
+keywords = "플랫폼 자동화, 엣지 시스템, 애플리케이션 보안, 개방형 표준, Rust, DevOps, 인프라"
 tagline = "(Raffael이 꾸려 가는 기술 웹 공간)"
 footer_about = """
 Raskell은 웹 위의 제 작은 공간이자, 제가 만드는 모든 것으로 들어가는 문입니다.
