@@ -1,6 +1,6 @@
 +++
 title = "Three Parts and No Brain"
-date = 2026-11-01
+date = 2026-11-05
 draft = true
 description = "What a chess program is made of, and how far a hand-written one gets against the computer opponent on lichess, before any learning starts."
 

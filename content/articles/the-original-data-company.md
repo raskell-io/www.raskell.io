@@ -1,6 +1,6 @@
 +++
 title = "The Original Data Company"
-date = 2026-11-07
+date = 2026-11-01
 draft = true
 description = "Insurers say they are not tech companies. Yet an insurer sells a prediction wrapped in a promise, and has since a 1693 life table: the original data company."
 
@@ -21,7 +21,7 @@ in_short = [
 
 "We are not a tech company." I have heard the sentence in meetings at the insurer I work for, which since a recent merger is also a bank, and before that at a bank where I worked, said by smart, experienced people, usually as a reason: for why a platform does not need to be built in-house, why engineering is a cost to be contained, why the interesting work happens somewhere else. Every time, I am baffled, because I think the opposite is true. An insurer is not a financial company that happens to use technology. It is a technology company that happens to hold a balance sheet, and in a precise sense it is the oldest data company there is.
 
-This post is the argument for that. It builds on [The River and the Canal](/articles/the-river-and-the-canal/), which ended with the observation that banks and insurers sell sameness, and on a note about why [trust is earned by sameness](/notes/trust-is-earned-by-sameness/). It is not a post about monetary politics, although it starts with money, because money is where the abstraction begins.
+This post is the argument for that. It builds on [The River and the Canal](/articles/the-river-and-the-canal/), which ended with the observation that banks and insurers sell sameness, and on a note about why trust is earned by sameness. It is not a post about monetary politics, although it starts with money, because money is where the abstraction begins.
 
 ## Abstract businesses
 
@@ -168,7 +168,7 @@ I think it makes them financial companies too, which is not the same thing. Capi
 If an insurer is a technology company, a few things follow, and none of them requires hoodies.
 
 - **Own the models.** Pricing, underwriting, claims triage and capital models are the product. Outsourcing them is outsourcing the business.
-- **Own the data, and the context around it.** Including the data about your own systems, which is the argument of [IT Intelligence](/articles/it-intelligence/): a company that cannot answer questions about itself cannot build reliable technology on top of itself.
+- **Own the data, and the context around it.** Including the data about your own systems, which is the argument of IT Intelligence: a company that cannot answer questions about itself cannot build reliable technology on top of itself.
 - **Treat engineers, actuaries and data scientists as one craft.** They are doing the same thing with different tools: turning uncertainty into procedure.
 - **Make procedures first-class.** Claims and underwriting procedures are code, whether they are written down in a manual or in a workflow engine. Treat them like code: versioned, tested against past cases, replayable.
 - **Go where the sensors are.** Partner with the companies that see the road, the home and the body, or become one.
