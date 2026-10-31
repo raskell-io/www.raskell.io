@@ -1555,7 +1555,7 @@ Separate concerns: hx-plugins, hx-lsp, hx-warnings, hx-telemetry&lt;&#x2F;code&g
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  - protocols     │                       │  → CDN edge   │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  - labs          │                       │    nodes      │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;│  - spaces        │                       │               │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;└──────────────────┘                       └───────────────┘&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;└────────┬─────────┘                       └──────┬────────┘&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;         │                                        │&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;         │ dynamic app                    static pages&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;         ▼                                        ▼&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;

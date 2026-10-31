@@ -9391,7 +9391,7 @@ But the CDN-first pattern also applies to applications that have real backends. 
 │  - protocols     │                       │  → CDN edge   │
 │  - labs          │                       │    nodes      │
 │  - spaces        │                       │               │
-└──────────────────┘                       └───────────────┘
+└────────┬─────────┘                       └──────┬────────┘
          │                                        │
          │ dynamic app                    static pages
          ▼                                        ▼
