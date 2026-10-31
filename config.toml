@@ -90,9 +90,9 @@ reading = "@/reading.md"
 # names (/zh/about/), because a translation is named after its source file (about.zh.md). Labels and the
 # footer text per language live under [extra.seijaku.i18n.<code>] at the end of this file.
 languages = [
-  { code = "en", name = "English", hreflang = "en", og_locale = "en_US" },
-  { code = "zh", name = "简体中文", hreflang = "zh-Hans", og_locale = "zh_CN" },
-  { code = "ko", name = "한국어", hreflang = "ko", og_locale = "ko_KR" },
+  { code = "en", name = "English", mark = "EN", hreflang = "en", og_locale = "en_US" },
+  { code = "zh", name = "简体中文", mark = "中", hreflang = "zh-Hans", og_locale = "zh_CN" },
+  { code = "ko", name = "한국어", mark = "한", hreflang = "ko", og_locale = "ko_KR" },
 ]
 search = "@/search.md"
 reading_data = "data/reading.toml"
