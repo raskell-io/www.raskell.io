@@ -315,4 +315,742 @@
 </content>
         
     </entry>
+    <entry xml:lang="zh">
+        <title>赢下一切，不控制任何人</title>
+        <published>2026-10-29T00:00:00+00:00</published>
+        <updated>2026-10-29T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/zh/articles/win-everything-control-no-one/"/>
+        <id>https://raskell.io/zh/articles/win-everything-control-no-one/</id>
+        
+        <content type="html" xml:base="https://raskell.io/zh/articles/win-everything-control-no-one/">&lt;p&gt;&lt;em&gt;The Infinity Machine&lt;&#x2F;em&gt; 开篇的场景与 Demis Hassabis 毫无关系。2015 年，在皇家学会的一场讲座之后，Nick Bostrom 问 Geoffrey Hinton：既然他认为政治体制会用 AI 来恐吓民众，为什么还要继续做 AI 研究？Hinton 回答说，他可以搬出那些常见的理由，「但事实是，发现的前景实在太诱人了。」Mallaby 说这个故事一直萦绕在他心头，它也为整本书定下了问题：如果打造这项技术的人明白其中的危险，他们为什么还要造它？他们是什么样的人，这又是否重要？&lt;&#x2F;p&gt;
+&lt;p&gt;他的回答是一部 Demis Hassabis 的传记，同时也是我读过的、关于 AI 如何从下棋打游戏的程序走到今天的最好的叙述。我给它打 8.5 分（满分 10 分）。想了解这项技术背后的人、驱动他们的是什么，以及为什么似乎没有人能让它停下来，这本书是必读的。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-the-book-is&quot;&gt;这本书讲的是什么&lt;&#x2F;h2&gt;
+&lt;p&gt;这本书做了两件事。它讲述一个人的一生：Hassabis 四岁时看父亲下棋，几周之内就能赢过大人；十三岁成为国际象棋大师；上大学前在 Bullfrog 当游戏设计师；一家失败的游戏工作室；神经科学博士；DeepMind；卖给 Google；AlphaGo；AlphaFold；诺贝尔奖；以及 ChatGPT 之后的手忙脚乱。它还通过观念来讲述这个领域的历史，按观念出现的先后顺序。Mallaby 在三年里与 Hassabis 相处了大约三十个小时，并采访了他身边一百多人，所以对手们和与他闹翻的人都能用自己的话发声。&lt;&#x2F;p&gt;
+&lt;p&gt;书名来自剑桥。Hassabis 和他的朋友 David Silver 曾设想一台能在近乎无限的数据中找出规律的机器；后来 Hassabis 招揽 Mustafa Suleyman 时说，一台无限机器将拥有无限的潜力（第 2 章和第 4 章）。这个说法背后是归纳问题：符号 AI 从未解决它，而本书其余部分看着深度学习和强化学习一点一点地解决了它。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-history-of-ai-told-in-the-right-order&quot;&gt;一部按正确顺序讲述的 AI 史&lt;&#x2F;h2&gt;
+&lt;p&gt;Mallaby 把技术讲两遍，一遍用类比，一遍讲机制。例如：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;图像网络如何学习&lt;&#x2F;strong&gt;（第 6 章）。最前面几层找出边缘和色块，后面几层找出曲线和纹理，更深的层找出爪子的轮廓，最后几层说出「猫」。然后是机制：权重、偏置，六千万个参数被一点点调整，直到输入与输出对得上。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;为什么 Atari 智能体需要经验回放&lt;&#x2F;strong&gt;（第 6 章）。一个图像分类器如果被喂入一叠排好序的照片，前面全是猫，就会断定一切都是猫。一个困在游戏某个角落的智能体也有同样的问题。把经验存下来再随机抽样，就解决了这个问题；Hassabis 从中看到了海马体在睡眠中所做的事。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;为什么 Atari 智能体需要第二个网络&lt;&#x2F;strong&gt;（第 6 章）。一个不断给自己的估计添加乐观成分的智能体，就像一个在人行道上捡到几张百元钞票的人，断定自己只要走上一个月就能成为亿万富翁。Mallaby 为解决办法找的比喻是一位网球教练，他先观察一阵再给建议：一个网络用冻结的权重去玩，另一个网络学习，经过一段时间的学习之后才把心得交接过去。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;AlphaGo 作为两种思维&lt;&#x2F;strong&gt;（第 9 章）。策略网络提出着法，就像强手一眼看出的那样；价值网络评判局面；树搜索负责缓慢而审慎的部分。Mallaby 把它们对应到 Kahneman 的系统一和系统二。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;残差网络&lt;&#x2F;strong&gt;（第 12 章）。深层网络会像传话游戏一样把信号传走样；跳跃连接是绕过中间层的快车道。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Transformer&lt;&#x2F;strong&gt;（第 12 章）。嵌入是一张有数百个维度的语言地图；注意力就像知道要看懂这一集犯罪剧，需要回想前面哪一集；中间还绕道 Henri Bergson，谈时间是注意力而非序列。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;这些解释不需要任何背景知识，也不居高临下。顺序同样重要：每一章都展示了上一次突破让什么成为可能，又做不到什么，所以从 ImageNet 到 Atari，到 AlphaGo，到 AlphaZero，到 Transformer，到 AlphaFold，再到推理模型，这条链读起来是一个完整的论证。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-feud-at-the-centre&quot;&gt;处于中心的纷争&lt;&#x2F;h2&gt;
+&lt;p&gt;把这段历史串起来的线索，是强化学习与深度学习之间的竞争。它起初是地理上的：Hinton 的深度学习派在多伦多，Richard Sutton 的强化学习派在阿尔伯塔，彼此几乎不说话。强化学习理论家 Csaba Szepesvári 承认神经网络在实践中有效，但他不愿使用，因为他无法就它们证明任何东西；Hinton 对想把两者结合起来的学生 Vlad Mnih 说：「我试过了，行不通。」Mnih 去了伦敦，还是做了，结果就是那个 Atari 智能体（第 6 章）。&lt;&#x2F;p&gt;
+&lt;p&gt;从那以后，书中展示了钟摆来回摆动，而且从不让任何一方长久获胜：&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;时期&lt;&#x2F;th&gt;&lt;th&gt;谁看起来是对的&lt;&#x2F;th&gt;&lt;th&gt;发生了什么&lt;&#x2F;th&gt;&lt;th&gt;另一方的贡献&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;2006 年至 2012 年&lt;&#x2F;td&gt;&lt;td&gt;深度学习&lt;&#x2F;td&gt;&lt;td&gt;Hinton 的深度信念网络，然后是图形芯片，然后是 Alex Krizhevsky 在自己卧室里训练、赢下 ImageNet；他的三人公司以 4400 万美元卖给 Google（第 4 章和第 6 章）&lt;&#x2F;td&gt;&lt;td&gt;暂时没有：两个阵营几乎不交流&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;2013 年&lt;&#x2F;td&gt;&lt;td&gt;第一次两者都对&lt;&#x2F;td&gt;&lt;td&gt;DeepMind 的 Atari 智能体仅凭像素和分数学会了几十款游戏；当《打砖块》里的隧道出现时，NIPS 会场一片寂静（第 6 章）&lt;&#x2F;td&gt;&lt;td&gt;来自深度学习的卷积网络负责看屏幕；来自强化学习的 Q 学习、经验回放，以及让估计保持诚实的第二个网络&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;2014 年至 2016 年&lt;&#x2F;td&gt;&lt;td&gt;强化学习&lt;&#x2F;td&gt;&lt;td&gt;AlphaGo 以五比零击败樊麾，又以四比一击败李世石，留下了第 37 手（第 9 章）&lt;&#x2F;td&gt;&lt;td&gt;充当直觉的策略网络和价值网络属于深度学习，最初用 15 万盘人类棋谱训练&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;2017 年&lt;&#x2F;td&gt;&lt;td&gt;强化学习，而且声势浩大&lt;&#x2F;td&gt;&lt;td&gt;AlphaZero 只靠自我对弈学会了围棋、国际象棋和将棋，完全不用人类棋谱（第 12 章）&lt;&#x2F;td&gt;&lt;td&gt;一个来自微软的残差网络，深到足以把 AlphaGo 的两个网络合而为一&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;2017 年至 2019 年&lt;&#x2F;td&gt;&lt;td&gt;深度学习&lt;&#x2F;td&gt;&lt;td&gt;LeCun 把强化学习称为「蛋糕上的樱桃」；Transformer 和 GPT 从无标注文本中学习，这抽掉了强化学习的两大卖点：无需人类标注就能学习，以及自己生成数据（第 12 章）&lt;&#x2F;td&gt;&lt;td&gt;很少，直到后训练出现&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;2017 年至 2020 年&lt;&#x2F;td&gt;&lt;td&gt;单靠哪一方都不行&lt;&#x2F;td&gt;&lt;td&gt;Gaia，一个供智能体使用的模拟自然世界，失败了；AlphaStar 对《星际争霸 II》内置 AI 的胜率因为一个 Transformer 从 10% 跃升到 84%，然后强化学习把它对排位人类玩家的胜率推到 99.8%；一个纯自我对弈的星际争霸智能体始终没能起步（第 13 章）&lt;&#x2F;td&gt;&lt;td&gt;每一方都需要另一方，哪一方都无法单独做到&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;2018 年至 2020 年&lt;&#x2F;td&gt;&lt;td&gt;深度学习，加上生物学&lt;&#x2F;td&gt;&lt;td&gt;AlphaFold 起初是一个强化学习项目，最后却靠基本放弃强化学习而获胜；Hassabis 说：「蛋白质折叠不是双人游戏。」（第 15 章）&lt;&#x2F;td&gt;&lt;td&gt;第一版 AlphaFold 里有一个搜索步骤，之后就没有了；决定性的想法来自进化和 Transformer&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;2022 年至 2023 年&lt;&#x2F;td&gt;&lt;td&gt;深度学习，由强化学习驯服&lt;&#x2F;td&gt;&lt;td&gt;ChatGPT 和 DeepMind 未发布的 Sparrow 都是靠基于人类反馈的强化学习才变得可用；Silver 把机器强化学习引入 Gemini 的尝试陷入停滞，因为没有人能为一首好俳句写出奖励函数（第 16 章至第 18 章）&lt;&#x2F;td&gt;&lt;td&gt;人类评分员提供了过去由游戏分数提供的奖励&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;2024 年以后&lt;&#x2F;td&gt;&lt;td&gt;再次是强化学习&lt;&#x2F;td&gt;&lt;td&gt;来自有正确答案的数学和逻辑题的奖励，教会模型一步一步推理：OpenAI 的 o1、Gemini Flash Thinking、DeepSeek 的 R1-Zero；AlphaProof 拿下奥林匹克数学竞赛银牌；Silver 和 Sutton 宣告「经验时代」到来（第 19 章和第 20 章）&lt;&#x2F;td&gt;&lt;td&gt;被训练的语言模型属于深度学习；强化学习如今运行在它们之上，奖励黑客（reward hacking）也是&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;书中每一次真正的突破都结合了两种方法，而在任何时刻看起来错了的一方，通常只是在等待另一方的下一次进展。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-deepmind-got-wrong&quot;&gt;DeepMind 错在哪里&lt;&#x2F;h2&gt;
+&lt;p&gt;Mallaby 是一位怀有同情的传记作者，但他没有掩盖 DeepMind 的错误。DeepMind 2010 年的商业计划书否定了它所说的那种错误观念，即语言就是表达出来的智能。Hassabis 相信，一个模型必须在世界中行动才能理解世界，他多年来一直误判 GPT。他也承认这一点：「你不可能每次都是诺查丹玛斯。」（第 13 章）&lt;&#x2F;p&gt;
+&lt;p&gt;后来他解释了原因。他原以为人类行为的空间近乎无限；结果互联网上大约十四万亿个词就涵盖了其中大部分。他把互联网比作工业革命恰好在地下找到的煤和石油：没有人是为了 AI 建造它的，它本来也不一定存在。我在评论 Tim Berners-Lee 的回忆录时从另一个方向提出过同样的论点，见&lt;a href=&quot;&#x2F;articles&#x2F;the-web-was-the-training-set&#x2F;&quot;&gt;网络就是训练集&lt;&#x2F;a&gt;；而 Hassabis 是从实验室内部得出这个结论的。&lt;&#x2F;p&gt;
+&lt;p&gt;其他错误是组织层面的。Google 陷入了施乐 PARC 的困境：它发明了 Transformer，却无法在不危及搜索业务的情况下发布聊天机器人。DeepMind 陷入了贝尔实验室的困境：一种为开放式探索而建立的文化，在道路已经明朗时却无法转向工程。DeepMind 有一个聊天机器人 Sparrow，带有二十三条行为规则和网络搜索功能，ChatGPT 发布时它已几乎准备就绪，却始终没有发布（第 16 章和第 17 章）。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-people&quot;&gt;那些人&lt;&#x2F;h2&gt;
+&lt;p&gt;Peter Thiel 投资 DeepMind，是因为它看起来既反主流又便宜，但他从未真正相信它，还差点让它把钱烧光（第 7 章）。Elon Musk 承诺出钱，在壁橱里打了一通电话，试图为特斯拉或 SpaceX 收购 DeepMind，后来在坐过 DeepMind 自己的安全委员会之后，又联合创办了与之对抗的 OpenAI（第 8 章和第 10 章）。Mark Zuckerberg 在一顿晚餐上失去了 DeepMind，因为 Hassabis 注意到他对虚拟现实和 3D 打印的兴奋程度不亚于对 AI，随后他聘请 Yann LeCun 来挖 DeepMind 的人（第 8 章）。Larry Page 因为 Musk 偏爱人类胜过机器，称他为「物种主义者」（第 10 章）。Sam Altman 主要是通过对手的眼睛被看到的，他出场时是那个在 2015 年写下阻止人类发展 AI「几乎肯定不」可能的人，然后他比任何人都更卖力地证明了这一点。Dario Amodei 以安全研究员的身份出现，他推动了 GPT-2 的规模化，后来离开并创办了 Anthropic。&lt;&#x2F;p&gt;
+&lt;p&gt;Mustafa Suleyman 的故事读来最令人难受。他是 Hassabis 弟弟的朋友，后来成了联合创始人。他为英国国家医疗服务体系 NHS 做的医疗工作很出色（Streams 应用把未被察觉的紧急肾病病例比例从 12.4% 降到 3.3%，第 11 章），却被一篇小报上关于数据的报道扼杀了。他为让 DeepMind 接受独立监督而进行的努力持续了三年，最终失败（第 14 章）。接着是一场霸凌调查、一次休假，以及彭博社的一个标题，这段友谊就此结束。Mallaby 让两个人都讲了自己的说法。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-it-cannot-be-governed&quot;&gt;为什么它无法被治理&lt;&#x2F;h2&gt;
+&lt;p&gt;读完这本书，我比以前更加确信，AI 停不下来，也无法被治理，至少眼下如此。这是我的结论，但书中提供了大部分证据。每一次从行业内部治理它的尝试都失败了，而政府来得太晚，带来的只是自愿承诺：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;伦理与安全委员会&lt;&#x2F;strong&gt;是 Google 收购 DeepMind 时同意设立的，只在 SpaceX 开过一次会。它的几位嘉宾随后创办或资助了一家竞争对手实验室。Hassabis 说：「我们所谓的顾问其实是我们的对手。」（第 10 章）&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;独立小组&lt;&#x2F;strong&gt;负责监督 DeepMind Health，在 Google 吸收医疗团队时被解散（第 14 章）。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Project Mario&lt;&#x2F;strong&gt;，为一个由三名 Google 董事、三名 DeepMind 董事和三名独立董事组成董事会的 DeepMind 进行了三年谈判，最后一无所获。Reid Hoffman 承诺向一个独立出去的 DeepMind 投入十亿美元，但这件事从未发生（第 14 章）。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;OpenAI 的非营利董事会&lt;&#x2F;strong&gt;解雇了 Altman，结果只撑了五天（第 18 章）。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;暂停公开信&lt;&#x2F;strong&gt;在 2023 年获得了一千多人签名，但没有一家领先实验室的负责人签字。Hassabis 的反对意见站得住脚：在芯片和数据中心持续进步的同时暂停模型，就等于把下一场竞赛交给暂停结束时算力最多的人（第 18 章）。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;到 2025 年，Hassabis 得出结论：「安全不在于治理结构」，你所能做的最多是在谈判桌上占有一席之地。Mallaby 称之为「一副单薄的安慰脚手架」，并承认这可能已是现有的最好选择。这两点我都同意他的看法。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-parts-i-recognised&quot;&gt;我熟悉的那些部分&lt;&#x2F;h2&gt;
+&lt;p&gt;第 3 章有一句话，说 Hassabis 有一种「想玩、想赢点什么、赢什么都行的强烈渴望」，他的第一家游戏工作室曾试图用梦幻足球和星际争霸来满足这种渴望。当一位同事终于在桌上足球上赢了他时，他宣称自己的灵魂着了火。我笑了，因为我认得这种感觉。我年轻时在国际象棋俱乐部下过棋，星际争霸至今仍是我最喜欢的策略游戏，而我对韩国《母巢之战》圈子的关注程度，足以让我为它做了&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;broodwar.live&quot;&gt;一个网站&lt;&#x2F;a&gt;。所以，关于 AlphaStar 的章节，以及关于 AlphaGo 在韩国两亿观众面前对阵李世石的章节，对我来说是一种大多数 AI 史都没有的切身体验。&lt;&#x2F;p&gt;
+&lt;p&gt;那些游戏也是如此。我很喜欢 Peter Molyneux 的 &lt;em&gt;Black &amp;amp; White&lt;&#x2F;em&gt;，后来又喜欢 &lt;em&gt;Fable&lt;&#x2F;em&gt;；Hassabis 参与过 &lt;em&gt;Black &amp;amp; White&lt;&#x2F;em&gt; 的早期设计，因为在这款游戏里，生物第一次会根据玩家的拍打和抚摸改变自身的规则，这是商业游戏里的一个小型强化学习系统（第 2 章）。在那之前，他十几岁时就为 &lt;em&gt;Theme Park&lt;&#x2F;em&gt; 打造了模拟游客，他们吃了咸薯条会口渴，坐了过山车会吐。书中从那些模拟世界画了一条直线，连到 Gaia（DeepMind 模拟生物圈的尝试），也连到 Hassabis 对康威生命游戏和涌现的着迷：把简单的部件组合在一起，就会出现任何部件都不具备的性质。这正是我在自己的模拟中不断回到的问题，从 &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;hotaru.raskell.io&quot;&gt;Hotaru&lt;&#x2F;a&gt;，一个学会玩 Pong 的模拟神经元培养物，到 &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;kishi.raskell.io&quot;&gt;Kishi&lt;&#x2F;a&gt; 里的引擎。Kishi 下国际象棋、将棋和围棋，正是 AlphaZero 学会的那三种棋，而 &lt;a href=&quot;&#x2F;articles&#x2F;learning-to-play&#x2F;&quot;&gt;Learning to Play&lt;&#x2F;a&gt; 系列则是我对第 9 章和第 12 章那些问题的小规模版本。Hassabis 还曾登上英国将棋排名的榜首。&lt;&#x2F;p&gt;
+&lt;p&gt;他想要的未来和我想要的很接近：用计算解决生物学，由机器人和自动化来干活，以及富足。他是读 Iain Banks 的「文明」系列小说长大的，在第 7 章里他走得比业内大多数人都远。他怀疑全民基本收入是否是答案，更倾向于他所说的全民基本供给：住房、教育、医疗和出行，达到今天百万富翁所享受的水平，免费提供给每个公民，而想要一辆法拉利的人，可以去工作。Silver 在第 20 章末尾提出把获得 AI 协助列为一项人权。两者都算不上计划，但都比大多数政策辩论更适合作为起点。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;winning-without-controlling&quot;&gt;赢而不控制&lt;&#x2F;h2&gt;
+&lt;p&gt;Mallaby 在整本书中始终关注 Hassabis 的两个特质，而这两个特质恰好我也有。他好胜到了凶猛的地步：Hinton 说他是自己见过的唯一一个比 Hinton 还好胜的人。而从第 2 章开始，他就坚持说自己不想控制任何人，说「操纵或控制别人真的很糟糕」，并把这一价值观追溯到他母亲的教会。他似乎也不在乎钱。十八岁时，为了去剑桥读书，他拒绝兑现 Molyneux 给他的一张 50 万英镑的支票。出售 DeepMind 时，他和 Suleyman 先谈研究预算，再谈价格；在尾声中，他说给他多少钱他也不会拿诺贝尔奖去换。他开一辆十年车龄的奥迪，唯一的奢侈是一张利物浦的季票。&lt;&#x2F;p&gt;
+&lt;p&gt;Mallaby 检验了关于控制的说法，而证据有正有反：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 Elixir，Hassabis 的「绝地控心术」把一个团队鼓舞到了听不进诚实反馈的地步。他后来说：「谁能想到，你真的会把人鼓舞得太过头？」（第 3 章）一位心理学家告诉 Mallaby，有魅力的人无论多么努力，都无法避免支配他人。&lt;&#x2F;li&gt;
+&lt;li&gt;在 Elixir 时他拒绝了风险投资，因为让出一半公司就意味着被控制。在 DeepMind，他拿的股份是他的科学联合创始人的九倍，因为他想掌控使命（第 5 章）。&lt;&#x2F;li&gt;
+&lt;li&gt;他厌恶两个方向的支配：他不愿支配别人，也不愿被别人支配。当 Suleyman 挑战他的方向时，他让一场调查去做本该由一次谈话完成的事（第 14 章）。&lt;&#x2F;li&gt;
+&lt;li&gt;在尾声中，Mallaby 直截了当地向他提出：「他一再告诉我，他不想控制别人。然而他确实控制着人。」Hassabis 回答说，他行使的是一种不情愿的权力，因为他想做的事需要庞大的团队。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;对任何喜欢赢、又不喜欢权力的人来说，这是一个警告：前一个特质会把你放到不得不行使权力的位置上，而那正是后一个特质想要回避的。Hassabis 的回答是，权力作为做事的手段可以接受，但永远不能成为目的，这个回答是对的。但这本书表明，要让权力始终只是手段，需要多大的自律。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;where-it-falls-short&quot;&gt;不足之处&lt;&#x2F;h2&gt;
+&lt;p&gt;我扣下的那半分，主要是因为距离感。Mallaby 在引言里、在给出证据之前，就宣布了他的结论：Hassabis 是「正派而有公心的」；虽然书中确实检验了这一点，但在大多数争议上，最后的发言权都归 Hassabis。OpenAI 和 Anthropic 是从外部被看到的，主要通过离开它们或与它们竞争的人，所以 Altman 几乎完全是由他的对手描绘的。而且 Mallaby 在一些本可以只做报道的地方发表了议论：他对批评 DeepMind Health 的独立小组很严厉，在关于 Gemini 基准测试的争论中对 DeepMind 很宽容，还一度说 DeepSeek 的 R1-Zero「实际上」是有自我意识的，而他给出的证据并不支持这个说法。&lt;&#x2F;p&gt;
+&lt;p&gt;最后几章读起来也像新闻快讯。它们匆匆掠过已经过时的基准测试和产品名称，缺少写剑桥、Elixir 和 AlphaGo 那几章的从容。对于一本 2026 年写完、讲述一场仍在进行的竞赛的书来说，这也许无法避免，而这些都不改变我的推荐。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;who-should-read-it&quot;&gt;谁应该读它&lt;&#x2F;h2&gt;
+&lt;p&gt;它适合任何想通过造就了过去十五年 AI 的那些人来理解这段历史的读者，书中还顺带把概念讲清楚了。不需要技术背景；即使你有，这些解释的顺序和类比也依然值得一读。它和&lt;a href=&quot;&#x2F;reading&#x2F;&quot;&gt;我的阅读记录&lt;&#x2F;a&gt;里的那些预测（比如 &lt;em&gt;AI 2027&lt;&#x2F;em&gt;）很搭：那些预测描述的是事情可能走向何方，而这本书展示的是谁在驾驶、为什么驾驶，以及包括驾驶者在内，任何人对路线的掌控是多么有限。&lt;&#x2F;p&gt;
+&lt;p&gt;全书以 Hassabis 坐在一家酒吧里结束，他说，看着自己的梦想成真，本该感觉很美妙，但并没有，因为一切都在疯狂地往前赶。他依然乐观。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh">
+        <title>学会下棋</title>
+        <published>2026-10-25T00:00:00+00:00</published>
+        <updated>2026-10-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/zh/articles/learning-to-play/"/>
+        <id>https://raskell.io/zh/articles/learning-to-play/</id>
+        
+        <content type="html" xml:base="https://raskell.io/zh/articles/learning-to-play/">&lt;p&gt;这个月我在读 &lt;a href=&quot;&#x2F;reading&#x2F;#the-infinity-machine&quot;&gt;&lt;em&gt;The Infinity Machine&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;，这是 Sebastian Mallaby 为 Demis Hassabis 写的传记。Hassabis 是来自北伦敦的国际象棋神童，创立了 DeepMind，也就是 AlphaGo 和 AlphaFold 背后的那家实验室。我拿起这本书，是因为我想了解我们如今身处其中的这种 AI 的早期缔造者之一，而讲述者曾与他相处了三十个小时；也因为几乎所有让我感兴趣的东西，游戏、模拟、机器能独自学会什么这个问题，都贯穿在他的故事里。读到一百页左右，有一个场景让我一直放不下。&lt;&#x2F;p&gt;
+&lt;p&gt;那是 1988 年，Hassabis 十二岁。他用下棋赢来的奖金买了一台 Commodore Amiga 500，又在查令十字街上的大书店 Foyles 里找到一本薄薄的平装书：David Levy 的 &lt;em&gt;The Chess Computer Handbook&lt;&#x2F;em&gt;。他一口气读完了。Levy 讲解了一个国际象棋程序如何由三个部分构成。棋盘必须变成数字。需要一个函数来审视局面，判断谁占优。还需要一个搜索来尝试各种走法，以及对这些走法的应着，再到对应着的应着，并剪掉明显糟糕的分支，因为这棵树生长的速度比任何计算机能跟上的都快。Hassabis 试着把它做出来，发现 Amiga 根本跑不动国际象棋，于是改写了一个黑白棋程序，赢了他五岁的弟弟。&lt;&#x2F;p&gt;
+&lt;p&gt;读到这里我放下了书，一部分是因为我在那个男孩身上隐约看到了自己，另一部分是因为我意识到了两件事。第一，这三个部分至今仍是一个国际象棋程序的全部。三十八年后，世界上最强的引擎依然是：数字化的棋盘、一个评估函数，以及一个带剪枝的树搜索；变化在于，评估函数如今是由机器学出来的，而不是由人写出来的，而机器是通过与自己对弈学会它的。第二，我桌上那台笔记本电脑的内存是那台 Amiga 的三万倍，而我从未亲手构建过这三个部分。&lt;&#x2F;p&gt;
+&lt;p&gt;所以这个月我动手了。我用 Rust 写了三个棋类引擎，分别对应国际象棋、日本将棋和围棋，把它们编译成 WebAssembly，让它们能在我手机的浏览器里对弈，还搭建了一个训练循环，目标是让其中一个变得比我手工所能做到的更强。应用在 &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;kishi.raskell.io&quot;&gt;kishi.raskell.io&lt;&#x2F;a&gt;，代码在 &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;kishi&quot;&gt;GitHub 上&lt;&#x2F;a&gt;。这篇文章讲的是：为什么是这三种棋，为什么用这些工具，以及当书里的思想遇上一台普通机器时发生了什么。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-book-the-man-and-the-lab&quot;&gt;这本书、这个人和这家实验室&lt;&#x2F;h2&gt;
+&lt;p&gt;Mallaby 本行并不是科技作者。他曾任《金融时报》特约编辑，两次入围普利策奖决选，现为外交关系委员会高级研究员；他此前的书都与钱有关：写对冲基金的《富可敌国》，写 Alan Greenspan 的 &lt;em&gt;The Man Who Knew&lt;&#x2F;em&gt;，写风险投资的 &lt;em&gt;The Power Law&lt;&#x2F;em&gt;。事实证明这正是合适的背景。&lt;em&gt;The Infinity Machine&lt;&#x2F;em&gt; 既是一部传记，也是一部公司史，建立在与 Hassabis 约三十小时的谈话和对他身边一百多人的访谈之上；它认真追问一个人为什么要去构建一项自己都认为危险的技术，就像认真追问如何构建一样。这本书今年早些时候出版。我读得很慢，AlphaGo 那几章还在后面，我发现自己并不介意，因为我宁愿在自己那个版本跑起来之后再去读它们。&lt;&#x2F;p&gt;
+&lt;p&gt;如果你不关注这个领域：Hassabis 是这个领域如今视为元老的人物，年仅五十岁。他 1976 年生于芬奇利，母亲是新加坡华人，父亲是希腊族塞浦路斯人；十三岁时成为国际象棋大师，是世界上同龄棋手中排名第二的。十六岁时，他在游戏工作室 Bullfrog 参与编写了 &lt;em&gt;Theme Park&lt;&#x2F;em&gt;，这款游戏卖出了数百万份。他在剑桥读计算机科学，自己经营了一家游戏工作室七年，然后回到大学攻读神经科学博士，因为他认为，要造出一台智能机器，唯一的路是先理解现存的唯一实例。2010 年，在罗素广场的一间阁楼里，他与 Shane Legg 和 Mustafa Suleyman 创立了 DeepMind；那时，这个领域里几乎没有人相信他们设想的东西是可能的。第一笔真正的资金来自 Peter Thiel 的一支基金，其合伙人给这门科学打了 A+，给商业模式打了 F。&lt;&#x2F;p&gt;
+&lt;p&gt;DeepMind 的构想是人工智能领域的曼哈顿计划，而它的方法正是把这本书与这篇文章联系起来的东西。它押注的是把 2010 年时都不受青睐的两个分支结合起来：深度学习，即 Geoffrey Hinton 捍卫了四分之一个世纪的多层神经网络；以及强化学习，即程序从自身行动的后果中学习，而不是从标注好的样本中学习；再在其上加入神经科学的思想。试验场是游戏，因为游戏有可以完整写下的规则，也有可以直接从棋盘上读出的分数。2013 年展示的第一个成果，是一个只凭像素就学会玩 Atari 游戏的智能体。Google 在 2014 年收购了这家公司。2016 年 AlphaGo 在首尔击败李世石；2017 年，它的继任者 AlphaZero 仅凭规则和与自己的对局，用同一个算法学会了国际象棋、将棋和围棋，并在每一种棋上都击败了当时最强的程序。这正是本文的三种棋，顺序也一样，而自我对弈就是我搭建的那个循环。随后是 2020 年的 AlphaFold，然后是两亿个蛋白质的预测结构，再然后是 2024 年的诺贝尔化学奖。就连公司名字都是一个三重致敬：致敬深度学习，致敬 Deep Blue，也致敬 Deep Thought，即《银河系漫游指南》里那台被要求给出终极答案的计算机。&lt;&#x2F;p&gt;
+&lt;p&gt;我为什么读它？一部分是显而易见的原因：我的工作就是做 AI 平台，想从内部了解这场革命的缔造者之一的故事，而这本书恰恰提供了这些，甚至更多。一部分是因为那些相似之处，它们一次次让我猝不及防：一个把模拟偷偷塞进主题公园的游戏设计师，一个路过棋盘就忍不住想赢一局的竞争者，一个把世界看作信息、把心智看作构建现实而非记录现实之物的人。我在其中认出的部分，多到让我有些不自在。还有一部分是因为那份信念。Hassabis 在几乎没有人相信人工智能的时候就相信它，这种信念被书中坦率地称为近乎宗教，而他是对的。故事里贯穿着一条超人类主义的线索，从他在 Bullfrog 时读的 Iain Banks 小说，到 DeepMind 找到第一位投资人的奇点峰会，而他对这种思想的加州版本始终保持着一种冷淡的英式距离。我自己也有一条这样的线索，角度不同，来路也不同，那是另一篇文章的题目。在这里只需说一句：我读这本书时并不是一个怀疑论者。&lt;&#x2F;p&gt;
+&lt;p&gt;在开头那些篇章里，比神童故事更吸引我的，是游戏如何一再成为入口。Hassabis 通过国际象棋学会了编程。他的第一个智能程序下的是黑白棋。在剑桥，他跟一位教授学了围棋，又把将棋下到了英国排名的顶端。他的朋友 David Silver，后来领导了 AlphaGo 的工作，是在他们的游戏公司倒闭后，在法国南部读了一本强化学习教科书，才走进这个领域的。Mallaby 把这条线追溯到 Claude Shannon 1950 年关于编程让计算机下国际象棋的论文，而 Levy 的手册正是把这篇论文介绍给了那个十二岁的少年。Shannon 写道，国际象棋程序本身没有实际意义，但掌握一种棋类或许可以成为「攻克其他性质相似、意义更重大的问题的楔子」。这句话已有七十六年历史，至今仍是我所知道的、为花一个月研究棋类辩护的最好的一句话。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;my-own-games&quot;&gt;我自己的棋&lt;&#x2F;h2&gt;
+&lt;p&gt;我自己的国际象棋故事要小得多。我十几岁出头加入了一家国际象棋俱乐部，参加地区比赛，在其中几场里成绩不错：远不至于让一位国际象棋专栏作家穿过大厅去找我父亲谈话（Hassabis 六岁时就有人这样做过），如果不是这本书把我们俩放进了同一家书店，我也绝不会把自己和他的经历写进同一段。但这项游戏一直留在了我身边。有人邀我下棋，我从不推辞；最近一次是今年在旧金山的联合广场，对手是一位同事兼朋友。我对那种棋子高及膝盖的大型户外棋盘情有独钟，我喜欢的有两处，一处在卢塞恩，一处就在巴塞尔的莱茵河畔。坐火车时，我用手机在 lichess 上下棋。我也比预想中更享受这项游戏在 2020 年代意外获得的第二次生命：一部讲述虚构神童的电视剧让人们纷纷去买棋盘，特级大师们变成了主播，观众多到任何比赛大厅都容纳不下。我没料到会这样，也没什么可抱怨的。&lt;&#x2F;p&gt;
+&lt;p&gt;我游戏生活的另一半，是德语里所说的 Aufbauspiele，即建造类游戏：Anno、Die Siedler、整个大亨类游戏，凡是让你铺设一个有规则的世界、然后看它运转的东西都算。Hassabis 的 &lt;em&gt;Theme Park&lt;&#x2F;em&gt; 就是其中之一，这让那一章读起来格外亲切。薯条放多了盐，游客就会口渴，多买饮料；过山车太快，乘客就会呕吐：这正是我玩这类游戏所追求的那种机制。我最喜欢那些试图模仿现实、让一套厚重的规则自己生成无人编写的故事的游戏，这就是我热爱 Dwarf Fortress 的原因，也是我不断构建自己的模拟的原因，从&lt;a href=&quot;&#x2F;articles&#x2F;brain-emulation-as-an-infrastructure-problem&#x2F;&quot;&gt;一皿在刺激下学习的神经元&lt;&#x2F;a&gt;，到一个任其演化的&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;terrarium.raskell.io&quot;&gt;生态缸&lt;&#x2F;a&gt;。从这个角度看，一个国际象棋引擎是最小的值得构建的模拟：一个有规则的完整世界，而其中有一个必须学习的智能体。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-games-and-why-these-three&quot;&gt;为什么是棋类，为什么是这三种&lt;&#x2F;h2&gt;
+&lt;p&gt;Shannon 的观点很务实。像国际象棋这样的游戏，规则可以完整写下，结果可以毫无争议地从棋盘上读出，而它的深度无论怎样研究都未曾穷尽。这样的组合很罕见。大多数现实问题规则模糊、结果有争议，也没有衡量标准。一种棋类给你一间实验室，新想法可以在一个下午内接受检验，对手是几个世纪积累的人类知识，而答案是一个数字。&lt;&#x2F;p&gt;
+&lt;p&gt;这个领域的历史也恰好是沿着国际象棋、将棋和围棋这三种棋依次展开的，而每一种都打破了在前一种上行之有效的方法。这就是我三种都选、而不是只选一种的原因。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;国际象棋&lt;&#x2F;strong&gt;大约在六世纪起源于印度北部，当时叫恰图兰卡，经由波斯传入欧洲，并在十五世纪末的西班牙和意大利定型为现代形式，有了长距离行走的后和象。它是 Shannon 选中的棋，是 Levy 的手册所讲授的棋，也是搜索加评估这一经典方法为之打造的棋。1997 年，IBM 的 Deep Blue 击败了 Garry Kasparov，靠的是在专用芯片上每秒搜索两亿个局面，评估函数由人编写和调校。这是三个部分的胜利，却让所有期待洞见的人失望：机器赢在看得更远，而不是理解得更多。从 Levy 那一章开始，有意思的问题一直是：评估函数能否学出来，而不是写出来。对国际象棋而言，这个问题在 2018 到 2020 年间得到了回答，答案是一个住在引擎内层循环里的小型神经网络。它叫 NNUE，而它并不是为国际象棋发明的。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;将棋&lt;&#x2F;strong&gt;是同一家族的日本分支。它在十一世纪前经由中国和东南亚传入日本，到十六世纪形成现在的样子，并在德川幕府时期成为一种制度，幕府给最好的棋手发放俸禄；名人这一至今仍为将棋冠军加冕的头衔，第一次授予是在 1612 年。如今日本有数百万人下将棋，有职业体系，有电视转播的头衔战，还有一位年轻的明星藤井聪太，他在 2023 年、二十一岁时同时持有全部八大头衔。棋盘是九乘九，每方有八种共二十枚棋子，大多数棋子走到对方的三行内就会升变。有一条规则让它成了另一种游戏。被吃掉的棋子会换边，进入吃子方的手中，之后可以作为一步棋打入几乎任何空格。没有棋子会永久离开棋盘，所以这种棋永远不会像国际象棋那样逐渐简化。典型的一手大约有八十种走法可选，而国际象棋是三十五种；对局更长，残局是双方的竞速，而不是技术性的消耗战。对程序员来说，打入让评估函数难以手写得多，这就是学习最先在这里发生的原因。2006 年，Bonanza 改变了电脑将棋，它是第一个评估函数根据职业棋谱拟合、而非手工调校的程序。2017 年，Ponanza 击败了现任名人佐藤天彦；2018 年，那须悠发表了那个网络设计，两年后 Stockfish 把它用在了国际象棋上。我所追寻的那个想法，就来自将棋。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;围棋&lt;&#x2F;strong&gt;比两者都古老，也比两者都简单。它源自中国，至少已有两千五百年历史，与琴、书、画并列为文人的四艺；它在八世纪前传入日本，江户时代的职业棋手家族由幕府供养；在韩国它也根基深厚，在那里叫作 baduk。规则写在一张卡片上就够了。两名棋手轮流把黑白棋子放在十九乘十九棋盘的交叉点上。一块棋如果周围没有空点，就会被提走。终局时，围住更多地盘的一方获胜，后手的白方会得到几目补偿。从这些规则中诞生的，是一种每一手都有约二百五十种选择、一局两三百手、而且没有人能手工为局面打分的游戏。Levy 的三个部分在这里失效了。在围棋里向前看四步的搜索几乎什么都看不到，也没有任何公式能在叶节点上判断谁在领先。围棋是这个领域里所有人（包括 Hassabis）都称为大挑战的那种棋，也是 DeepMind 想要展示实力时选中的棋。2000 年代后期的程序用蒙特卡洛树搜索取代了国际象棋的方法：它把成千上万盘随机对局下到终局，统计谁赢；这让程序达到了强业余水平，然后就停滞了。AlphaGo 保留了这种搜索，又给了它两个神经网络，一个提议走法，一个评判局面，先用人类棋谱训练，再用它自己的对局训练；2016 年 3 月，它以四比一击败了李世石。&lt;&#x2F;p&gt;
+&lt;p&gt;所以：一种棋，经典方法行得通，网络取代了评估函数；一种棋，同样的方法捉襟见肘，网络在这里被发明出来；一种棋，方法失效，网络必须亲自引导搜索。三者合在一起，就是这个领域四十年历史的一门速成课，而每一种都可以拿任何人都能下载的对手来测量。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-i-built-it-rather-than-read-about-it&quot;&gt;为什么我要亲手构建，而不只是读读而已&lt;&#x2F;h2&gt;
+&lt;p&gt;Hassabis 喜欢引用 Feynman 那句话：我造不出来的东西，我就不理解。这也是这个项目真正的原因。AlphaGo 的论文和 Stockfish 关于 NNUE 的文章我都读过不止一遍。那些图示我能讲解。但我说不出 K 是什么，说不出为什么一个在相同搜索深度下获胜的网络会在相同用时下落败，也说不出一代自我对弈要耗费一台笔记本电脑多少小时的寿命，因为这些正是论文略去不提的东西，而学会它们的唯一办法就是为之付出代价。读这本书让这道鸿沟变得令人不安，而那种让我去造生态缸的冲动，也想让那个有规则、有学习者在其中的世界，在我自己的机器上运行起来。&lt;&#x2F;p&gt;
+&lt;p&gt;另一个原因是，原料第一次全都摆在了我的桌上。思想已经发表，参考实现都是开源的。笔记本电脑是一台 MacBook Pro，Apple M4 芯片，十个核心，十六 GB 内存，它不是研究用的机器，通用计算能力却超过了当年的 Deep Blue。我手机上的浏览器现在能运行带向量指令和真正线程的编译代码。至于写代码本身，原本要耗去一整个冬天的晚上，借助编码智能体只用了几天：由我决定构建什么，大部分代码由智能体来敲。这一点属于方法的一部分：智能体写代码，两个引擎之间的对局决定代码好不好，而对局并不在乎代码是谁写的。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-rust-and-not-pytorch&quot;&gt;为什么用 Rust，而不是 PyTorch&lt;&#x2F;h2&gt;
+&lt;p&gt;2026 年做机器学习，显而易见的方式是 Python 和 PyTorch；如果目标是一个在服务器上回答问题的模型，我也会用它们。但目标是我手机上的一个对手，在浏览器标签页里，离线运行，这决定了后面的一切。&lt;&#x2F;p&gt;
+&lt;p&gt;国际象棋的评估函数是在搜索内部被调用的，每秒大约一百万次，在单个核心上，没有批处理，而不是每个请求调用一次。住在那里的网络不可能是 API 背后的一个模型。它必须是用引擎自身语言写成的几百行算术，在整数上运行，并且随着走棋增量更新，而不是从头重新计算，这正是 NNUE 的全部诀窍。换句话说，推理部分无论如何都得手写。手写完之后，训练器就是同样的算术反过来跑，面对一百万个参数和几乎全为零的输入，它同样只需要几百行。亲手写它，也让我发现了框架本会对我隐藏的东西：一个我凭猜测而非拟合得出的常数，把一个会赢的网络变成了一个会输的网络，而如果用框架，我不会知道为什么。&lt;&#x2F;p&gt;
+&lt;p&gt;Rust 是我在这个网站上写所有东西用的语言，从&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;hotaru.raskell.io&quot;&gt;神经元培养&lt;&#x2F;a&gt;到&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;wasmad.raskell.io&quot;&gt;幻想游戏机&lt;&#x2F;a&gt;都是，对引擎而言它也是合适的工具，理由是常见的那些：在每秒运行一百万次的循环里没有垃圾回收器，能控制内存布局，编译器还能从与原生二进制相同的源码生成带向量指令的 WebAssembly。从笔记本电脑上的自我对弈到手机上的每一步棋，都是同一种语言，在同一个仓库里，而网页应用没有构建步骤。代价也要坦白说。在 CPU 上训练一个小型稀疏网络没问题。但如果围棋网络最终成为一个有数百万稠密参数的卷积网络，十个核心上的 Rust 会很慢，到时我就得决定，是写一个 Metal 内核，还是承认这正是笔记本电脑研究与 GPU 相遇的地方。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-webassembly&quot;&gt;为什么用 WebAssembly&lt;&#x2F;h2&gt;
+&lt;p&gt;因为手机才是重点。住在服务器上的对手不属于我；应用商店里的对手要由别人来批准。一个我添加到主屏幕上的网页，能在飞机上使用，运行的二进制与我笔记本电脑上的完全相同，这才是我想要的版本，而在 2026 年，浏览器做得到。WebAssembly 支持 128 位向量指令已经有一段时间了，而 Safari 现在允许页面在线程之间共享内存，只要它带着正确的隔离响应头提供服务，所以我手机上的国际象棋引擎能用四个核心搜索。免费国际象棋网站 Lichess 也是用同样的方式为它的分析棋盘运行 Stockfish，这在我动手之前就证明了这条路是可行的。&lt;&#x2F;p&gt;
+&lt;p&gt;这个约束对设计的塑造也超过了任何一篇论文。一个必须随网页下载、在手机上运行的网络必须很小；Kishi 的国际象棋网络是 820 KB，编译进了引擎的二进制文件里。一个必须在浏览器标签页里运行的搜索必须节俭。代码里每一个看起来像是品味的决定，其实都是手机在对某样东西说不。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-happened&quot;&gt;结果如何&lt;&#x2F;h2&gt;
+&lt;p&gt;国际象棋引擎最先完成：位棋盘，一个带有一系列常见剪枝启发式方法的搜索，以及一个借用一套知名的棋子位置表的手写评估函数。对手是按 lichess 配置其电脑对手的方式设置的 Stockfish，每个级别二十局，单核：它以十九比一击败 4 级，以十三比七击败 6 级，以半比十九个半输给 7 级。如果你和 lichess 的电脑下过棋，就能据此给它定位：一个扎实的俱乐部棋手，离顶尖还差得很远。&lt;&#x2F;p&gt;
+&lt;p&gt;然后是那个循环。引擎从随机开局与自己对弈了五十二分钟，从五万七千盘对局中产生了 560 万个局面，每个局面都标注了搜索对它的判断以及那盘棋的结果。用这些局面训练一个网络只花了不到二十分钟；在双方被允许查看相同数量局面的条件下，它比它所取代的手写评估函数强 85 个等级分，误差正负 32。而当双方被允许使用相同的毫秒数时，两者打成平手，因为网络评估每个局面的成本是手写评估的两倍半。这一句话就是这类学习的全部问题所在，而在拿到这些数字之前，我并不理解它。&lt;&#x2F;p&gt;
+&lt;p&gt;将棋有了自己的引擎，结构相同，评估函数也是手写的；它以二十比零击败 Fairy-Stockfish 最弱的设置，以二比十八输给中等设置。围棋用的是 2000 年代后期的方法，即蒙特卡洛树搜索，加上旧程序 MoGo 的棋形模式；对阵最低级别的 GNU Go、每步一秒时，它十盘赢三盘。三个引擎都能在手机上下。在最高级别上，只有国际象棋引擎是我会称为令人满意的对手，而这还是用手写评估函数的结果，因为训练出来的网络还没有在棋钟上赢得自己的位置。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-this-opened-up&quot;&gt;由此打开的问题&lt;&#x2F;h2&gt;
+&lt;p&gt;我开始时只有一个问题：我能否构建 Levy 的三个部分。而这个月结束时，我有了五个更好的问题。&lt;&#x2F;p&gt;
+&lt;p&gt;国际象棋网络在相同搜索下获胜，在相同用时下打平。经过更多代的自我对弈，随着它学习所用的对局越来越强，这会改变吗？还是说，一个笔记本电脑大小的网络永远要为自身的成本买单？我写下这些文字时，循环正在以低优先级运行，好让笔记本电脑仍然能用。为什么一个常数会让结果相差 176 个等级分，这又说明了一个学习得来的组件与它所接入的手工调校系统之间是一种怎样的契约？一旦网络能看到王的位置（那须的原始设计做到了，我的还没有），同样的循环在将棋上是否行得通？围棋需要第二种循环，由搜索来教网络该看哪些走法，而我不知道一台笔记本电脑能在完整的十九路棋盘上训练出什么；书中 AlphaGo 那几章我就快读到了，它们会告诉我 2016 年需要什么，而我想知道的是 2026 年在一台商店里买来的机器上需要什么。而在这一切之下：一个引擎的棋力，从原生二进制到手机浏览器标签页的这一趟旅程中能保留多少，线程又能挽回多少？&lt;&#x2F;p&gt;
+&lt;p&gt;每一个问题都是几天的工作和几个数字，我已经开始在仓库里记&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;kishi&#x2F;blob&#x2F;main&#x2F;docs&#x2F;study&#x2F;notebook.md&quot;&gt;一本笔记&lt;&#x2F;a&gt;，好让数字一出来就被记下，失败的也包括在内。如果答案和问题一样有趣，这也许会成为几篇文章中的第一篇，一次一个想法，先是国际象棋，然后是将棋，再然后是围棋。且看吧。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;参考资料&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Sebastian Mallaby, &lt;em&gt;The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence&lt;&#x2F;em&gt; (Penguin Press, 2026)，第 1 至 5 章。&lt;&#x2F;li&gt;
+&lt;li&gt;Claude Shannon, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.computerhistory.org&#x2F;chess&#x2F;doc-431614f6d9b4e&#x2F;&quot;&gt;Programming a Computer for Playing Chess&lt;&#x2F;a&gt;, &lt;em&gt;Philosophical Magazine&lt;&#x2F;em&gt; (1950).&lt;&#x2F;li&gt;
+&lt;li&gt;David Levy, &lt;em&gt;The Chess Computer Handbook&lt;&#x2F;em&gt; (Batsford, 1984).&lt;&#x2F;li&gt;
+&lt;li&gt;Yu Nasu, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.apply.computer-shogi.org&#x2F;wcsc28&#x2F;appeal&#x2F;the_end_of_genesis_T.N.K.evolution_turbo_type_D&#x2F;nnue.pdf&quot;&gt;Efficiently Updatable Neural-Network-based Evaluation Functions for Computer Shogi&lt;&#x2F;a&gt; (2018，日文)；Stockfish, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;stockfishchess.org&#x2F;blog&#x2F;2020&#x2F;introducing-nnue-evaluation&#x2F;&quot;&gt;Introducing NNUE Evaluation&lt;&#x2F;a&gt; (2020).&lt;&#x2F;li&gt;
+&lt;li&gt;David Silver 等, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.nature.com&#x2F;articles&#x2F;nature16961&quot;&gt;Mastering the game of Go with deep neural networks and tree search&lt;&#x2F;a&gt;, &lt;em&gt;Nature&lt;&#x2F;em&gt; (2016).&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;kishi&quot;&gt;Kishi&lt;&#x2F;a&gt;：引擎、训练循环，以及记录每一次运行的笔记。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh">
+        <title>智能体究竟是什么</title>
+        <published>2026-06-02T00:00:00+00:00</published>
+        <updated>2026-06-02T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/zh/articles/what-an-agent-actually-is/"/>
+        <id>https://raskell.io/zh/articles/what-an-agent-actually-is/</id>
+        
+        <content type="html" xml:base="https://raskell.io/zh/articles/what-an-agent-actually-is/">&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;The Agent Platform Handbook. From Loop to Platform.&lt;&#x2F;em&gt; 的第 1 篇。这个系列共 22 篇，从单个循环一路走到生产级平台，覆盖整个智能体技术栈。下一篇：&lt;a href=&quot;&#x2F;articles&#x2F;your-agent-wants-root&#x2F;&quot;&gt;Your Agent Wants Root&lt;&#x2F;a&gt;。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;如果你在同一天开三个会，会听到 &lt;em&gt;agent&lt;&#x2F;em&gt;（智能体）这个词被用来指三种不同的东西。供应商用它指一个带 logo 的聊天窗口。平台团队用它指一个带重试的工作流。安全负责人用它指一个长期运行、拿着你看不见的凭证的进程。这些人都不算完全错。但他们说的不是同一件东西。&lt;&#x2F;p&gt;
+&lt;p&gt;这是一个系列的第一篇，这个系列从单个智能体循环一直讲到生产级平台。在谈隔离、工具、身份或编排之前，我们得先就架构图正中间那个东西到底是什么达成一致。所以我们会先给它下定义，勾勒它的结构，回顾业界走到今天的路径，然后用 Bun 上大约两百行 TypeScript 写出一个能运行的智能体。&lt;&#x2F;p&gt;
+&lt;p&gt;读完这篇，这个抽象名词就会变成一个你能运行的具体文件。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;a-working-definition&quot;&gt;一个可用的定义&lt;&#x2F;h2&gt;
+&lt;p&gt;智能体是具备五项属性的软件。去掉任何一项，你得到的就是别的东西。&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;目标。&lt;&#x2F;strong&gt; 不是单条提示词，而是系统试图满足的一个目标状态、一段任务描述或一个问题陈述。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;模型。&lt;&#x2F;strong&gt; 一个或多个推理引擎，把当前状态加上目标转换成下一步行动。如今这几乎总是一个大语言模型。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;上下文。&lt;&#x2F;strong&gt; 模型在用户输入之外能读到的信息：系统提示词、文档、之前的对话轮次、环境状态、配置文件。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;工具。&lt;&#x2F;strong&gt; 一组有限的、具名的、带副作用的操作，模型被允许调用它们。读一个文件，执行一条 shell 命令，调用一个 API。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;循环。&lt;&#x2F;strong&gt; 模型选一个工具，工具运行，结果重新进入上下文，模型再选。当目标达成、预算耗尽或触发停止条件时，循环结束。&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;在生产环境里通常还有第六项属性，&lt;strong&gt;记忆&lt;&#x2F;strong&gt;，也就是在循环结束后仍然保留的状态。我们会在&lt;a href=&quot;&#x2F;articles&#x2F;memory-is-a-write-path&#x2F;&quot;&gt;第六篇&lt;&#x2F;a&gt;把记忆当作单独的一层来讲，这第一个智能体则保持无状态。&lt;&#x2F;p&gt;
+&lt;p&gt;五项属性齐全的系统就是智能体。只有四项的系统是另一种值得命名的东西。聊天窗口有目标、模型、上下文和循环，但没有工具，所以它是聊天机器人。CI 流水线有目标、上下文、工具和循环，但没有模型，所以它是工作流。一次函数调用有目标、模型、上下文和一个工具，但没有循环，所以它是一次性补全。有了循环，行为才是开放式的。有了工具，循环才有意义。&lt;&#x2F;p&gt;
+&lt;p&gt;迄今交付过的每一个智能体，架构图都长这样。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;The agent loop&quot;&gt;                          +--------------+
+                          |    Goal      |
+                          | (user task)  |
+                          +-------+------+
+                                  |
+                                  v
+   +------------+         +---------------+         +------------+
+   |  Context   +--------&amp;gt;|     Model     |&amp;lt;--------+   Memory   |
+   | docs, env, |         | next action?  |         | (optional) |
+   | prior turns|         +-------+-------+         +------------+
+   +------------+                 |
+                                  | tool call
+                                  v
+                          +---------------+
+                          |   Tool        |
+                          | shell, http,  |
+                          | file, custom  |
+                          +-------+-------+
+                                  |
+                                  | result
+                                  v
+                          +---------------+
+                          |    Runtime    |
+                          | (where the    |
+                          |  side effect  |
+                          |  happens)     |
+                          +-------+-------+
+                                  |
+                                  v
+                       +----------+----------+
+                       | done? --no--&amp;gt; loop  |
+                       |   |                 |
+                       |  yes                |
+                       |   v                 |
+                       | return              |
+                       +---------------------+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;这张图故意画得很小。这个系列几乎每一篇都会重画它，并展开其中一个组件。第二篇展开运行时。第三篇展开工具。第四篇展开上下文。第六篇展开记忆。第七篇展开模型。系列末尾的收官篇把它们全部组装成一套参考架构。&lt;&#x2F;p&gt;
+&lt;p&gt;把这张图记在脑子里。我们还会回到它。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-we-got-here&quot;&gt;我们是怎么走到这里的&lt;&#x2F;h2&gt;
+&lt;p&gt;这一节剩下的部分可以当背景读；如果前两小节讲的你都亲身经历过，可以跳过。第三小节讲 2024 到 2026 年这一段，无论如何都值得一读，因为它解释了为什么你身边每个人突然都在用 &lt;em&gt;agent&lt;&#x2F;em&gt; 这个词。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-old-ai&quot;&gt;老派 AI&lt;&#x2F;h3&gt;
+&lt;p&gt;软件智能体这个想法比现代大语言模型早了大约五十年。Terry Winograd 在 1970 年做的 SHRDLU，是一个接收自然语言指令、在模拟的积木世界里规划动作、执行动作并更新内部状态的程序。它有目标、有世界模型、有一组工具，也有循环。它就是一个智能体。它在积木世界里运行得很漂亮，可你一走出那个世界它就垮了，因为世界模型是手写的，语言理解也很脆弱。&lt;&#x2F;p&gt;
+&lt;p&gt;整个 1980 和 1990 年代，这个想法换着名字一再回来。专家系统把业务逻辑包进推理规则里。由 Bratman 等人形式化的「信念、愿望、意图」（Belief-Desire-Intention）架构，给了智能体一个明确的认知模型：它相信什么，它想要什么，它接下来打算做什么。那时有好论文，有能运行的系统，也有上市的产品。它们共同缺少的，是一个可用的语言模型。你可以用形式逻辑或结构化的 DSL 来指定智能体的目标。你没法说一句「帮我订张机票」就让它解析明白。&lt;&#x2F;p&gt;
+&lt;p&gt;这个时代的教训是，这套架构几十年来一直是对的。瓶颈在模型。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-chat-era&quot;&gt;聊天时代&lt;&#x2F;h3&gt;
+&lt;p&gt;GPT-3 在 2020 年出现，ChatGPT 在 2022 年底出现，语言这道瓶颈被打破了。你终于可以用英语写下一个目标，系统会连贯地回应。业界的第一反应，是把这项能力包进一个聊天窗口里拿去卖。那不是智能体。它没有循环，没有工具，模型对它所处的世界什么也做不了。它是一个非常好的自动补全，外加对这段对话的记忆。&lt;&#x2F;p&gt;
+&lt;p&gt;直到有人问出那个显而易见的下一个问题，智能体模式才回来。既然模型能读写英语，我们又能让它调用函数，那能不能把循环闭合，让它去行动？&lt;&#x2F;p&gt;
+&lt;p&gt;2022 年底到 2023 年初，两篇论文和两个爆红的演示回答了这个问题。&lt;&#x2F;p&gt;
+&lt;p&gt;论文先到。Yao 等人在 2022 年 10 月发表的 &lt;em&gt;ReAct: Synergizing Reasoning and Acting in Language Models&lt;&#x2F;em&gt; 表明，把推理步骤和工具使用步骤交替进行，效果好于单独使用其中任何一种。这份蓝图小到能写在一张餐巾纸上：思考，行动，观察，重复。此后交付的几乎每一个智能体，都把它当成了事实上的标准模式。&lt;&#x2F;p&gt;
+&lt;p&gt;演示在 2023 年初到来。Toran Bruce Richards 在 2023 年 3 月发布的 Auto-GPT，把 GPT-4 包进的正是这个循环，并让它无人值守地运行。它的演示效果惊艳，实际却一直出故障。几周后，Yohei Nakajima 的 BabyAGI 用大约一百行 Python 做了同样的事。两者都不是生产级的。但两者都让从没读过 ReAct 论文的人看懂了这个想法。Auto-GPT 之后，你可以这样解释智能体：「想象一个 ChatGPT，但它会一直做下去，直到任务完成。」这是营销上的突破，不是工程上的突破，但想法正是靠营销传播的。&lt;&#x2F;p&gt;
+&lt;p&gt;随后到来的工程突破，是 OpenAI 在 2023 年 6 月推出的函数调用 API。你不必再从自由行文里解析出「模型想调用 &lt;code&gt;search(query)&lt;&#x2F;code&gt;」，而是用 JSON schema 声明你的工具，模型则返回一个结构化的工具调用。Anthropic 的 &lt;code&gt;tool_use&lt;&#x2F;code&gt; 也按同样的模式上线。有了函数调用，智能体循环不再是一个正则表达式问题，而开始成为一个软件问题。我们会在&lt;a href=&quot;&#x2F;articles&#x2F;tools-how-agents-actually-do-things&#x2F;&quot;&gt;第三篇&lt;&#x2F;a&gt;回到这一点。&lt;&#x2F;p&gt;
+&lt;p&gt;2023 年这一波催生了第一批真正的框架：2022 年 10 月的 LangChain，2023 年底的 AutoGen，2024 年的 CrewAI 和 LangGraph。它们比拼的是抽象。有的赢了，有的输了。我们会在后面的文章里评点它们。眼下要说的是，到 2024 年年中，构建一个智能体已经是一道 Python 或 TypeScript 练习题，而不再是一个研究项目。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-2025-to-2026-bundling&quot;&gt;2025 到 2026 年的打包&lt;&#x2F;h3&gt;
+&lt;p&gt;正是在这里，&lt;em&gt;agent&lt;&#x2F;em&gt; 这个词不再是一个研究术语，而成了一个产品类别。这分两波发生。&lt;&#x2F;p&gt;
+&lt;p&gt;第一波面向构建者。2025 年初，Anthropic 推出了 Claude Code，一个在你的笔记本电脑上运行的命令行智能体，能编辑文件、执行 shell 命令，还能派生子智能体。OpenAI 把 Codex 重新推出，作为一个真正的智能体，而不再是一个补全接口。开源社区做出了 OpenCode 和五六个相近的项目（aider、continue、opencoder），给同样的形态提供了不绑定供应商的界面。这些在技术上都不新。循环就是 ReAct 循环。工具就是 &lt;code&gt;bash&lt;&#x2F;code&gt; 和 &lt;code&gt;edit&lt;&#x2F;code&gt;。新的是打包：循环、工具和运行时一起到来，装在一个三十秒就能装好的二进制文件里。这一出来，每个基础设施和平台工程师在一周之内，笔记本上就都有了一个能用的智能体。&lt;&#x2F;p&gt;
+&lt;p&gt;接下来发生的事，我写在了 &lt;a href=&quot;&#x2F;articles&#x2F;what-sixteen-ai-agents-taught-me-about-management&#x2F;&quot;&gt;What Sixteen AI Agents Taught Me About Management&lt;&#x2F;a&gt; 里。构建者一旦有了能用的智能体，就想同时跑不止一个。一旦跑了不止一个，就撞上了协调问题。一旦撞上协调问题，就发现智能体编排其实是一个套着软件外壳的管理问题。&lt;&#x2F;p&gt;
+&lt;p&gt;第二波面向助理场景，它彻底冲出了开发者的圈子。OpenClaw 在 2026 年初发布，第一周就在 GitHub 上突破了十万颗星。Hermes 紧随其后，走的是同一条路。两者都把智能体模式交给了不写代码的人。一项调研任务。一份合同审阅。一次日程协商。同样的循环，换了不同的工具和不同的上下文。企业里的买家不再是开发者工具团队，而变成了任何一条有工作流的业务线。&lt;&#x2F;p&gt;
+&lt;p&gt;截至 2026 年年中，市场就处在这个位置。每个工程组织都有构建者在本地跑编程智能体。每个业务组织都有人在试点助理智能体。几乎没有哪个组织在这一切底下有一个连贯的平台。这个系列的目的，就是填上这道缺口。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;build-one&quot;&gt;动手写一个&lt;&#x2F;h2&gt;
+&lt;p&gt;要明白智能体是什么，就动手写一个。下面的代码是一个完整、能运行的智能体，用 Bun 上的 TypeScript 写成，大约两百行。它从命令行读取一个目标，带着一个小小的工具注册表调用 Anthropic 的 API，执行工具调用，把结果送回去，并在模型完成或迭代预算耗尽时停止。&lt;&#x2F;p&gt;
+&lt;p&gt;要跟着做，你需要三样东西。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;bun --version          # 1.1 or newer&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;echo $ANTHROPIC_API_KEY  # any valid key&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;bun add @anthropic-ai&#x2F;sdk&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;本文的完整源码在 &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;raskell-io&#x2F;the-agent-platform-handbook&quot;&gt;&lt;code&gt;the-agent-platform-handbook&lt;&#x2F;code&gt;&lt;&#x2F;a&gt; 的 &lt;code&gt;post-01&lt;&#x2F;code&gt; 标签下。如果你更愿意在编辑器里读代码，可以克隆下来，运行 &lt;code&gt;bun agent.ts &quot;list the three largest files under &#x2F;etc&quot;&lt;&#x2F;code&gt;。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-tool-interface&quot;&gt;工具接口&lt;&#x2F;h3&gt;
+&lt;p&gt;最值得先定义的最小单元是工具。一个工具有名字、一段模型能读的描述、一个描述输入的 JSON schema，以及一个执行副作用并返回字符串的函数。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #616E88;&quot;&gt;&#x2F;&#x2F; tools.ts&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;export type&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; Tool&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  name&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; string&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  description&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; string&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  input_schema&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    type&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;object&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    properties&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; Record&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; unknown&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    required&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;?:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; string&lt;&#x2F;span&gt;&lt;span&gt;[]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;  }&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;  run&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; (&lt;&#x2F;span&gt;&lt;span&gt;input&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; Record&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; unknown&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; Promise&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;这就是全部的契约。&lt;code&gt;run&lt;&#x2F;code&gt; 函数返回字符串，因为模型会把结果当作文本来读。如果你的工具返回结构化数据，就用 &lt;code&gt;JSON.stringify&lt;&#x2F;code&gt; 序列化，让模型自己去解析。等我们在&lt;a href=&quot;&#x2F;articles&#x2F;tools-how-agents-actually-do-things&#x2F;&quot;&gt;第三篇&lt;&#x2F;a&gt;更仔细地看结构化输出时，会重新审视这个选择。&lt;&#x2F;p&gt;
+&lt;p&gt;shell 工具是你能交给智能体的最有用的单个工具，它长这样。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #616E88;&quot;&gt;&#x2F;&#x2F; tools.ts (continued)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;export const&lt;&#x2F;span&gt;&lt;span&gt; shell&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; Tool&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  name&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;shell&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  description&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;    &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;Run a shell command in the current working directory and return its stdout, stderr, and exit code as JSON.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  input_schema&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    type&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;object&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    properties&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      command&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        type&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        description&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;The shell command to run. Runs under `sh -c`.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;      },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;    },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    required&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;command&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;  run&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; async&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; ({&lt;&#x2F;span&gt;&lt;span&gt; command&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; })&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;    const&lt;&#x2F;span&gt;&lt;span&gt; proc&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; Bun&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;spawn&lt;&#x2F;span&gt;&lt;span&gt;([&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;sh&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;-c&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; String&lt;&#x2F;span&gt;&lt;span&gt;(command)]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;, {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      stdout&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;pipe&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      stderr&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;pipe&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;    }&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;    const&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; [&lt;&#x2F;span&gt;&lt;span&gt;stdout&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; stderr&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; = await&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; Promise&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;all&lt;&#x2F;span&gt;&lt;span&gt;([&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;      new&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; Response&lt;&#x2F;span&gt;&lt;span&gt;(proc&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;stdout)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;text&lt;&#x2F;span&gt;&lt;span&gt;()&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;      new&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; Response&lt;&#x2F;span&gt;&lt;span&gt;(proc&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;stderr)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;text&lt;&#x2F;span&gt;&lt;span&gt;()&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    ])&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;    const&lt;&#x2F;span&gt;&lt;span&gt; code&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; = await&lt;&#x2F;span&gt;&lt;span&gt; proc&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;exited&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;    return&lt;&#x2F;span&gt;&lt;span&gt; JSON&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;stringify&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;{&lt;&#x2F;span&gt;&lt;span&gt; code&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; stdout&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; stderr&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; }&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;  },&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;有几点值得注意。描述是写给模型看的，不是写给你看的。要具体写明工具做什么、返回什么、有哪些限制。JSON schema 是模型在决定要不要调用这个工具时看到的契约。Bun 的 &lt;code&gt;Bun.spawn&lt;&#x2F;code&gt; 返回的是流，所以我们把 stdout 和 stderr 都读出来，连同退出码合成一个模型可以据此推理的 JSON 载荷。&lt;&#x2F;p&gt;
+&lt;p&gt;这个工具会执行任何 shell 命令。这极其不安全。不要部署它。我们会用&lt;a href=&quot;&#x2F;articles&#x2F;your-agent-wants-root&#x2F;&quot;&gt;第二篇&lt;&#x2F;a&gt;解释为什么，以及该怎么办。对于在你自己笔记本上、单用户、单目录的演示来说，它没问题。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-loop&quot;&gt;循环&lt;&#x2F;h3&gt;
+&lt;p&gt;循环是大多数讲解匆匆带过的部分。我们慢慢来。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #616E88;&quot;&gt;&#x2F;&#x2F; agent.ts&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span&gt; Anthropic&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; from&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;@anthropic-ai&#x2F;sdk&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;import type&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;span&gt; MessageParam&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; ToolResultBlockParam&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; }&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; from&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;@anthropic-ai&#x2F;sdk&#x2F;resources&#x2F;messages&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;import&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;span&gt; shell&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; type&lt;&#x2F;span&gt;&lt;span&gt; Tool&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; }&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; from&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;.&#x2F;tools&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;const&lt;&#x2F;span&gt;&lt;span&gt; client&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; = new&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; Anthropic&lt;&#x2F;span&gt;&lt;span&gt;()&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;const&lt;&#x2F;span&gt;&lt;span&gt; tools&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; Tool&lt;&#x2F;span&gt;&lt;span&gt;[]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; [shell]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;const&lt;&#x2F;span&gt;&lt;span&gt; SYSTEM_PROMPT&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; `&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;You are a careful command-line assistant.&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;You have access to a shell tool. Use it to investigate the user&amp;#39;s&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;request and answer concretely. When you have the answer, stop calling&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;tools and reply in plain text.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;`&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;我们引入 SDK，注册一个工具，再写一段系统提示词。系统提示词是第一块不属于用户输入的上下文。我们会用&lt;a href=&quot;&#x2F;articles&#x2F;context-is-the-product&#x2F;&quot;&gt;第四篇&lt;&#x2F;a&gt;讲如何把它发展成一套真正的上下文策略。眼下它只是一段话，告诉模型该如何表现。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #616E88;&quot;&gt;&#x2F;&#x2F; agent.ts (continued)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;async function&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; step&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;messages&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; MessageParam&lt;&#x2F;span&gt;&lt;span&gt;[]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;) {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;  return&lt;&#x2F;span&gt;&lt;span&gt; client&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;messages&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;create&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    model&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;claude-sonnet-4-6&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    max_tokens&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt; 4096&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    system&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; SYSTEM_PROMPT&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    tools&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; tools&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;map&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;({&lt;&#x2F;span&gt;&lt;span&gt; run&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; ...&lt;&#x2F;span&gt;&lt;span&gt;t&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; })&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; t)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    messages&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;  }&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;每一次调用模型都是一个 &lt;code&gt;step&lt;&#x2F;code&gt;。我们发出去的工具列表只有 schema，从不包括 &lt;code&gt;run&lt;&#x2F;code&gt; 函数，所以要把它去掉。模型返回的消息要么是最终的文本回答，要么是调用一个或多个工具的请求。&lt;&#x2F;p&gt;
+&lt;p&gt;循环本身五十行。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #616E88;&quot;&gt;&#x2F;&#x2F; agent.ts (continued)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;export async function&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; run&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;goal&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; string&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; maxIterations&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt; 10&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;) {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;  const&lt;&#x2F;span&gt;&lt;span&gt; messages&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; MessageParam&lt;&#x2F;span&gt;&lt;span&gt;[]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;{&lt;&#x2F;span&gt;&lt;span&gt; role&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;user&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;span&gt; content&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; goal&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; }&lt;&#x2F;span&gt;&lt;span&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;  for&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;let&lt;&#x2F;span&gt;&lt;span&gt; i&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt; 0&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span&gt; i&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; &amp;lt;&lt;&#x2F;span&gt;&lt;span&gt; maxIterations&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span&gt; i&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;++&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;    const&lt;&#x2F;span&gt;&lt;span&gt; response&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; = await&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; step&lt;&#x2F;span&gt;&lt;span&gt;(messages)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    messages&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;{&lt;&#x2F;span&gt;&lt;span&gt; role&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;assistant&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;span&gt; content&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; response&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;content&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; }&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;    if&lt;&#x2F;span&gt;&lt;span&gt; (response&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;stop_reason&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; ===&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;end_turn&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;      const&lt;&#x2F;span&gt;&lt;span&gt; text&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; response&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;content&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;        .&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;filter&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;type&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; ===&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;text&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;        .&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;map&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; (b&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; as&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;span&gt; text&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; string&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; }&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;text)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;        .&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;join&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #EBCB8B;&quot;&gt;\n&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      console&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;(text)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;      return;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;    if&lt;&#x2F;span&gt;&lt;span&gt; (response&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;stop_reason&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; !==&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;tool_use&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;      throw new&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; Error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;`&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;unexpected stop reason: &lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;${&lt;&#x2F;span&gt;&lt;span&gt;response&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;stop_reason&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;}`&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;    const&lt;&#x2F;span&gt;&lt;span&gt; toolResults&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; ToolResultBlockParam&lt;&#x2F;span&gt;&lt;span&gt;[]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; []&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;    for&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;const&lt;&#x2F;span&gt;&lt;span&gt; block&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; of&lt;&#x2F;span&gt;&lt;span&gt; response&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;content)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;      if&lt;&#x2F;span&gt;&lt;span&gt; (block&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;type&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; !==&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;tool_use&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; continue;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;      const&lt;&#x2F;span&gt;&lt;span&gt; tool&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; tools&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;find&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;t&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; t&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;name&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; ===&lt;&#x2F;span&gt;&lt;span&gt; block&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;name)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;      if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span&gt;tool)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        toolResults&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;          type&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;tool_result&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;          tool_use_id&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; block&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;id&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;          content&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: `&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;unknown tool: &lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;${&lt;&#x2F;span&gt;&lt;span&gt;block&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;name&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;}`,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;          is_error&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; true&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;        }&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;        continue;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;      }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      console&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;`&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;${&lt;&#x2F;span&gt;&lt;span&gt;block&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;name&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;} ${&lt;&#x2F;span&gt;&lt;span&gt;JSON&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;stringify&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;block&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;input&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;)}`&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;      try&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;        const&lt;&#x2F;span&gt;&lt;span&gt; result&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; = await&lt;&#x2F;span&gt;&lt;span&gt; tool&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;run&lt;&#x2F;span&gt;&lt;span&gt;(block&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;input&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; as&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; Record&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt;string&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color: #8FBCBB;&quot;&gt; unknown&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        toolResults&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;{&lt;&#x2F;span&gt;&lt;span&gt; type&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;tool_result&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;span&gt; tool_use_id&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; block&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;id&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; content&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; result&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; }&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;      }&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; catch&lt;&#x2F;span&gt;&lt;span&gt; (err)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        toolResults&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;          type&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;tool_result&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;          tool_use_id&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; block&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;id&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;          content&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; String&lt;&#x2F;span&gt;&lt;span&gt;(err)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;          is_error&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; true&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;        }&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;      }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    messages&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;{&lt;&#x2F;span&gt;&lt;span&gt; role&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;user&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;span&gt; content&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; toolResults&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; }&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;  }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  console&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;`&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;iteration limit (&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;${&lt;&#x2F;span&gt;&lt;span&gt;maxIterations&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;) reached&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;`&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;从头走一遍。我们把目标作为第一条用户消息。我们调用模型。我们把模型的回复追加到对话里。如果模型给出 &lt;code&gt;end_turn&lt;&#x2F;code&gt;，我们打印最终文本并返回。如果模型给出 &lt;code&gt;tool_use&lt;&#x2F;code&gt;，我们找到它请求的工具，运行它，并把结果作为一个用户角色的 &lt;code&gt;tool_result&lt;&#x2F;code&gt; 块追加进去。模型在下一轮看到结果，再决定做什么。&lt;&#x2F;p&gt;
+&lt;p&gt;带 &lt;code&gt;maxIterations&lt;&#x2F;code&gt; 的 &lt;code&gt;for&lt;&#x2F;code&gt; 循环，是这个智能体和无休止运行之间唯一的屏障。我们会在&lt;a href=&quot;&#x2F;articles&#x2F;the-bill-is-part-of-the-loop&#x2F;&quot;&gt;第八篇&lt;&#x2F;a&gt;用相当篇幅讨论迭代次数是不是合适的预算单位。它不是，但它最简单。先从最简单的开始。&lt;&#x2F;p&gt;
+&lt;p&gt;入口只有两行。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #616E88;&quot;&gt;&#x2F;&#x2F; agent.ts (continued)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;const&lt;&#x2F;span&gt;&lt;span&gt; goal&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span&gt; process&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;argv&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;slice&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;join&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot; &amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; (&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span&gt;goal)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  console&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;error&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;usage: bun agent.ts &amp;#39;&amp;lt;goal&amp;gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  process&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;exit&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;await&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; run&lt;&#x2F;span&gt;&lt;span&gt;(goal)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;这就是整个智能体。算上 import 和系统提示词，大约一百四十行代码。按我们开头的定义，它是一个真正的智能体。它有目标、模型、上下文（系统提示词和不断增长的消息列表）、工具（一个）和循环（带 &lt;code&gt;maxIterations&lt;&#x2F;code&gt; 的 &lt;code&gt;for&lt;&#x2F;code&gt;）。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;running-it&quot;&gt;运行它&lt;&#x2F;h3&gt;
+&lt;p&gt;一小段运行记录能让循环变得具体。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;$ bun agent.ts &amp;quot;what is the largest TypeScript file under src and what does it do?&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;gt; shell {&amp;quot;command&amp;quot;:&amp;quot;find src -name &amp;#39;*.ts&amp;#39; -type f -printf &amp;#39;%s %p\n&amp;#39; | sort -nr | head -5&amp;quot;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;gt; shell {&amp;quot;command&amp;quot;:&amp;quot;wc -l src&#x2F;agent.ts&amp;quot;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&amp;gt; shell {&amp;quot;command&amp;quot;:&amp;quot;head -40 src&#x2F;agent.ts&amp;quot;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;The largest TypeScript file under src is src&#x2F;agent.ts at 4837 bytes&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;(150 lines). It implements an agent loop against the Anthropic Messages&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;API. It defines a single shell tool, sends the user&amp;#39;s goal to the model,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;executes any tool calls the model requests, feeds the results back, and&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;stops when the model returns an end_turn response or the iteration&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;budget of 10 steps is exhausted.&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;以 &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; 开头的行是智能体的工具调用，由循环里的 &lt;code&gt;console.error&lt;&#x2F;code&gt; 记录下来。最后一段是模型的 &lt;code&gt;end_turn&lt;&#x2F;code&gt; 文本。三次工具调用，一个最终回答，一个闭合的循环。&lt;&#x2F;p&gt;
+&lt;p&gt;你有了一个智能体。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-most-agent-demos-are-not-agents&quot;&gt;为什么大多数智能体演示都不是智能体&lt;&#x2F;h2&gt;
+&lt;p&gt;既然定义已经具体，你手里也有了一个能运行的例子，「什么是智能体、什么不是」这个问题就变得有用了。诚实的答案在这张表里。&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;系统&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: center&quot;&gt;目标&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: center&quot;&gt;模型&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: center&quot;&gt;上下文&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: center&quot;&gt;工具&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: center&quot;&gt;循环&lt;&#x2F;th&gt;&lt;th&gt;结论&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;ChatGPT，2022 年上线时&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;N&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;聊天机器人&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;今天的 ChatGPT（浏览、代码、文件）&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;智能体&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Cursor 的行内编辑&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;N&lt;&#x2F;td&gt;&lt;td&gt;补全&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;一个 GitHub Actions 工作流&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;N&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;工作流&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;纯检索增强聊天&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;N&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;聊天机器人+RAG&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;一次函数调用 API 请求&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;N&lt;&#x2F;td&gt;&lt;td&gt;工具调用&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;终端里的 Claude Code&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;智能体&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;本文的脚本&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;智能体&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Auto-GPT、BabyAGI&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;智能体&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;OpenClaw&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;智能体&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;带一个 LLM 步骤的 Temporal 工作流&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: center&quot;&gt;Y&lt;&#x2F;td&gt;&lt;td&gt;智能体&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;前两行是同一个产品，相隔两年。ChatGPT 在 2022 年 11 月上线时，是一个没有工具的聊天窗口。如今同一个网页界面能浏览实时网络、在沙箱运行时里执行 Python、转换和阅读 PDF、生成图片。它跨过了那条线。有意思的是，面向用户的说法并没有变。它仍然被叫作聊天机器人。按我们采用的定义，它是一个智能体。边界在营销话术底下悄悄移动了。&lt;&#x2F;p&gt;
+&lt;p&gt;这就是接下来两年整个行业里可以预期的模式。每个聊天产品都会悄悄长出工具。每个工作流产品都会悄悄长出模型。名称会落后于架构一两年。如果你只听名称，就会错过一个系统变成需要你换一种方式去治理的东西的那一刻。&lt;&#x2F;p&gt;
+&lt;p&gt;纯 RAG 那一行是没有跨线的那一个。一个只充实自身上下文的检索增强聊天，并没有获得真正意义上的工具。模型无法根据它找到的东西决定去做点不同的事。它只是从更丰富的上下文里作答。有用，有时非常出色，但不是智能体。一旦同一个系统获得了「换个查询再搜一次」或「去取这份文档」这样的工具，它就是了。&lt;&#x2F;p&gt;
+&lt;p&gt;带 LLM 的 Temporal 那一行，有意思的地方恰好相反。它是一个智能体。它也是一个工作流。这两个类别并不互斥。后面会有一篇文章解释，为什么几乎每个智能体的生产版本，最后都会被包进一个持久化工作流里。&lt;&#x2F;p&gt;
+&lt;p&gt;这张表的意义不在于为这个词把关，而在于指出概念上的区别。聊天机器人的失败在于知道得不够。智能体的失败在于做错了事。一旦你的系统能够行动，失败模式就变了，你对运维人员所负的责任也随之改变。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;failure-modes&quot;&gt;失败模式&lt;&#x2F;h2&gt;
+&lt;p&gt;上面的脚本，你最初运行的十次都会正常工作。它的有些失败模式显而易见。有些只有在生产环境里才看得到。下面是诚实的清单，大致按你遇到它们的顺序排列。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;伪装成进展的无限循环。&lt;&#x2F;strong&gt; 模型可以一直调用工具而永不收敛。&lt;code&gt;maxIterations = 10&lt;&#x2F;code&gt; 今天能把你从自己的演示里救出来。明天有人问一个更难的问题时，它就救不了你了。真正的预算是基于 token 或挂钟时间的，而不是基于步数。我们会在&lt;a href=&quot;&#x2F;articles&#x2F;the-bill-is-part-of-the-loop&#x2F;&quot;&gt;第八篇&lt;&#x2F;a&gt;好好解决这个问题。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;成本失控。&lt;&#x2F;strong&gt; 每一次迭代都是一次完整的模型调用，以整个对话为输入。token 成本大致随步数呈平方增长，因为每个新轮次都要把之前的所有轮次重新发一遍。一个十步的循环，花费超过一步调用的十倍。提示词缓存有帮助。在便宜的轮次换用更小的模型帮助更大。我们会用&lt;a href=&quot;&#x2F;articles&#x2F;the-bill-is-part-of-the-loop&#x2F;&quot;&gt;第八篇&lt;&#x2F;a&gt;来讲这个。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;谎报成功。&lt;&#x2F;strong&gt; 模型可能声称完成了任务，却并没有真正验证。shell 工具不检查答案是否正确。你问「你做了 X 吗？」，可能得到「做了」，而真相是「我试了，失败了，我放弃了」。评测（eval）就是为此存在的。后面有一篇文章会讲它。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;损坏的工具输出。&lt;&#x2F;strong&gt; 如果一个工具返回一兆字节的二进制数据，模型会噎住或者产生幻觉。工具输出需要经过摘要、截断或按 schema 整形。智能体不会替你做这件事。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;没有隔离。&lt;&#x2F;strong&gt; 如果模型认定 &lt;code&gt;rm -rf $HOME&lt;&#x2F;code&gt; 是正确的命令，shell 工具就会执行它。模型不会经常这么认定。但至少会有一次。这是下一篇的主题。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;隐藏状态。&lt;&#x2F;strong&gt; 每一次工具调用都会对运行时产生副作用。文件被创建。网络请求被发出。数据库行被插入。对话日志一样也记录不到。你可以重放模型的推理过程。你无法重放它推理时所面对的那个世界。严肃的系统靠幂等性和持久化执行来处理这一点。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;并发边界情况。&lt;&#x2F;strong&gt; 这个循环是顺序执行的。模型可以在一轮里请求多个工具，上面的例子会按顺序运行它们。如果其中两个工具都要写同一个文件，你就有了一个模型看不见的 bug。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;这些都不是不去构建智能体的理由。它们是这个系列其余部分存在的理由。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-this-post-left-out-on-purpose&quot;&gt;这篇刻意略去的内容&lt;&#x2F;h2&gt;
+&lt;p&gt;长文也仍然会略去一些东西。下面是有意的省略，以及会接手它们的文章。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;隔离。&lt;&#x2F;strong&gt; shell 工具很危险。在&lt;a href=&quot;&#x2F;articles&#x2F;your-agent-wants-root&#x2F;&quot;&gt;第二篇：Your Agent Wants Root&lt;&#x2F;a&gt; 里解决。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;真正的工具注册表。&lt;&#x2F;strong&gt; 一个工具只是演示。一个有用的智能体有四个到十几个工具。在&lt;a href=&quot;&#x2F;articles&#x2F;tools-how-agents-actually-do-things&#x2F;&quot;&gt;第三篇&lt;&#x2F;a&gt;里讲。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;上下文策略。&lt;&#x2F;strong&gt; 系统提示词只有一段话。真实的系统从磁盘加载上下文，并按任务来塑造它。在&lt;a href=&quot;&#x2F;articles&#x2F;context-is-the-product&#x2F;&quot;&gt;第四篇&lt;&#x2F;a&gt;和&lt;a href=&quot;&#x2F;articles&#x2F;retrieval-is-a-tool-not-a-layer&#x2F;&quot;&gt;第五篇&lt;&#x2F;a&gt;里讲。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;跨会话的记忆。&lt;&#x2F;strong&gt; 智能体在两次运行之间会忘掉一切。在&lt;a href=&quot;&#x2F;articles&#x2F;memory-is-a-write-path&#x2F;&quot;&gt;第六篇&lt;&#x2F;a&gt;里讲。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;模型选择。&lt;&#x2F;strong&gt; 我们把模型写死了。生产环境里的智能体会做路由。在&lt;a href=&quot;&#x2F;articles&#x2F;the-model-is-a-dependency&#x2F;&quot;&gt;第七篇&lt;&#x2F;a&gt;里讲。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;工具协议。&lt;&#x2F;strong&gt; 这里的工具接口是自定义的。业界已经汇聚到 MCP 上。在后面的一篇文章里讲。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;框架。&lt;&#x2F;strong&gt; 我们是从零写的。关于框架的讨论在系列后面。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;身份、评测、持久性、经济性、治理。&lt;&#x2F;strong&gt; 全部在第四和第五部分。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;如果你读一下这个系列的目录，就能看出它的形状：系列中其余的每一篇，都在修补你刚刚构建的这个智能体的一个局限。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;where-this-lands-in-the-platform&quot;&gt;它在平台中的位置&lt;&#x2F;h2&gt;
+&lt;p&gt;本文开头那张图，是最终参考架构里最小的那个方框。智能体循环位于运行时之内。运行时位于一个集群之内。集群位于一个具备身份、可观测性、治理和控制平面的平台之内。系列结束时我们得到的形状，和开始时的形状一模一样，只是放大到了企业规模，每个组件都被展开，各自有了生产级的完整讲述。&lt;&#x2F;p&gt;
+&lt;p&gt;你可以用一条规则把整个系列装进脑子里。每一篇增加技术栈的一层，并解释为什么下面那一层单靠自己是不够的。&lt;&#x2F;p&gt;
+&lt;p&gt;往上一层是运行时。你刚刚交给前沿模型的 shell 工具，是一把上了膛的枪。下周我们讲怎样把它指向安全的地方。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;next&quot;&gt;下一篇&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;第 2 篇：&lt;a href=&quot;&#x2F;articles&#x2F;your-agent-wants-root&#x2F;&quot;&gt;Your Agent Wants Root&lt;&#x2F;a&gt;。&lt;&#x2F;strong&gt; 为什么一个 Docker 容器不够，以及 Firecracker、gVisor 和 Kata 实际上解决了什么。周四发布。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh">
+        <title>推理的经济学</title>
+        <published>2026-04-22T00:00:00+00:00</published>
+        <updated>2026-04-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/zh/articles/the-economics-of-inference/"/>
+        <id>https://raskell.io/zh/articles/the-economics-of-inference/</id>
+        
+        <content type="html" xml:base="https://raskell.io/zh/articles/the-economics-of-inference/">&lt;p&gt;在&lt;a href=&quot;&#x2F;articles&#x2F;what-sixteen-ai-agents-taught-me-about-management&#x2F;&quot;&gt;上一篇文章&lt;&#x2F;a&gt;里，我讲了 2025 年圣诞节期间把十六个 AI 智能体当作一家虚拟公司来运行的经历。架构行得通，协调模型也行得通。行不通的是经济账。我的 token 预算几天之内就蒸发了，不是因为智能体没有产出，而是因为每一次协调、每一次状态更新、每一次上报，都在消耗一种计量的资源，而我补充它的速度跟不上。&lt;&#x2F;p&gt;
+&lt;p&gt;当时，我把这当作一个预算问题。我的个人订阅撑不住智能体之间相互通信的开销。一家拥有 API 访问权限和真金白银预算的企业，就不会受到同样的约束。这个说法没错，但把问题看小了。&lt;&#x2F;p&gt;
+&lt;p&gt;我当时实际经历的，是在一个人加十六个终端窗格的尺度上，一件大得多的事情。我体验到的是作为公用事业的推理。一种被消耗的物理资源，就像我开灯时消耗电，拧开水龙头时消耗水一样。&lt;&#x2F;p&gt;
+&lt;p&gt;这个视角会彻底改变你思考 AI 经济学的方式。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-makes-something-a-utility&quot;&gt;什么让一样东西成为公用事业&lt;&#x2F;h2&gt;
+&lt;p&gt;公用事业具有一组共同的属性，使它们有别于普通的商品和服务。它们不是可有可无的，现代生活依赖它们。它们是被持续消耗的，而不是一次性购买的。它们的生产和输送需要庞大的物理基础设施。它们是计量的，按消耗的单位计价。它们的供应链受制于地理、地缘政治和监管。它们的成本结构主要由建设和维护基础设施的资本支出决定，而不是由多输送一个单位的边际成本决定。&lt;&#x2F;p&gt;
+&lt;p&gt;水、电、天然气、电信，这是四种传统的公用事业。每一个现代经济体都建立在它们之上。它们的可得性、可靠性和成本，决定了在某个司法辖区里什么是可能的。你不会在电网不可靠的地方建晶圆厂，也不会在冷却用水供应没有保障的地方运营数据中心。公用事业这一层是地基，地基之上的一切都受限于地基能承载多少。&lt;&#x2F;p&gt;
+&lt;p&gt;推理正在一一获得这些属性。&lt;&#x2F;p&gt;
+&lt;p&gt;它被持续消耗。每一次智能体交互、每一次模型调用、每一个生成的 token，都是一个消耗单位。我的十六个智能体在协调时，消耗推理的方式就像工厂车间消耗电：稳定，可度量，并且与正在完成的工作量成正比。&lt;&#x2F;p&gt;
+&lt;p&gt;它需要庞大的物理基础设施。运行前沿模型的数据中心，是眼下全世界在建的资本最密集的设施之一。它们需要先进的芯片、巨量的电力、用于冷却的水，以及物理安保。它们不是软件项目，而是工业项目。&lt;&#x2F;p&gt;
+&lt;p&gt;它按单位计量和计价。每一家主要的推理提供商都按 token 收费：输入 token、输出 token，有时不同能力档位的费率还不一样。计费模式本身已经是公用事业的计费模式。用多少，付多少。&lt;&#x2F;p&gt;
+&lt;p&gt;它的供应链受制于地理和地缘政治。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;chips-data-talent-energy&quot;&gt;芯片、数据、人才、能源&lt;&#x2F;h2&gt;
+&lt;p&gt;在 RSAC 2026 上，我旁听了一场座谈，台上是四位前 NSA 局长和美国网络司令部司令。Paul Nakasone 阐述了他认为在这个时代决定一个国家战略潜力的四个因素。不是 GDP，也不是军事实力，而是四样东西：芯片、数据、人才和能源。&lt;&#x2F;p&gt;
+&lt;p&gt;我当时&lt;a href=&quot;&#x2F;articles&#x2F;notes-from-rsac-2026&#x2F;&quot;&gt;写过这件事&lt;&#x2F;a&gt;。但自从 shiioo 那次经历以来，我一直在换一个角度思考这四个因素。Nakasone 谈的是国家实力，我谈的是一种公用事业的供应链。&lt;&#x2F;p&gt;
+&lt;p&gt;每一种公用事业都有一条供应链，决定了谁能生产它、成本多少、依赖什么。对电来说，供应链是燃料（煤、天然气、铀、阳光、风）、发电基础设施（电厂、涡轮机、光伏板）、输电（电网）和配电（通到你插座的最后一公里）。对水来说，则是水源（河流、含水层、海水淡化）、处理、输送（管道、水泵）和分配。&lt;&#x2F;p&gt;
+&lt;p&gt;对推理来说，供应链就是 Nakasone 的四个因素。&lt;&#x2F;p&gt;
+&lt;p&gt;芯片是发电能力。先进的 GPU，具体说是绝大部分由台湾的台积电（TSMC）制造、主要由美国的 NVIDIA 设计的前沿芯片，就是推理经济的涡轮机。没有它们，你就无法以有竞争力的成本生产推理。这种制造能力在全球范围内集中于一个地缘政治上存在争议的岛屿上的单一设施，相当于全世界的电力都依赖一座发电厂。这是一个会让基础设施规划者夜不能寐的单点故障。&lt;&#x2F;p&gt;
+&lt;p&gt;能源是燃料。前沿推理如今以吉瓦而不是兆瓦来衡量。一个大规模推理集群的耗电量超过一座小城市。&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;ai-2027.com&#x2F;&quot;&gt;AI 2027&lt;&#x2F;a&gt; 情景预测，到 2026 年全球 AI 数据中心的耗电量将达到 38 GW，而这个数字还在沿着一条毫无放缓迹象的曲线上升。没有电就无法运行推理，而电力基础设施也无法一夜建成。拥有廉价、充足、可靠能源的司法辖区，具备一种结构性优势，这是再巧妙的软件也弥补不了的。&lt;&#x2F;p&gt;
+&lt;p&gt;数据是原材料，是模型学习的来源，是让推理有意义而不是随机的基底。谁拥有数据，在什么法律约束下可以使用，数据有多多样、多有代表性，这些共同决定了你能生产的推理的质量和适用范围。&lt;&#x2F;p&gt;
+&lt;p&gt;人才是运营队伍。不只是设计模型的研究人员，还有建造基础设施的工程师、维持其运转的运维人员，以及守护它的安全专家。这是每一种公用事业都依赖的人力资本层，它集中在少数几个地理集群里，原因和石化工程人才集中在炼油厂附近一样。&lt;&#x2F;p&gt;
+&lt;p&gt;把它铺开来看，推理的供应链结构和任何成熟的公用事业都一样。战略上的含义也随之而来。&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;供应链层级&lt;&#x2F;th&gt;&lt;th&gt;电&lt;&#x2F;th&gt;&lt;th&gt;水&lt;&#x2F;th&gt;&lt;th&gt;推理&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;原始投入&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;燃料（天然气、铀、阳光）&lt;&#x2F;td&gt;&lt;td&gt;水源（河流、含水层）&lt;&#x2F;td&gt;&lt;td&gt;数据（训练语料）&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;生产&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;电厂、涡轮机&lt;&#x2F;td&gt;&lt;td&gt;水处理厂&lt;&#x2F;td&gt;&lt;td&gt;GPU、数据中心&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;输送&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;电网&lt;&#x2F;td&gt;&lt;td&gt;管道、水泵&lt;&#x2F;td&gt;&lt;td&gt;网络、API 端点&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;生产所需燃料&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;一次能源&lt;&#x2F;td&gt;&lt;td&gt;泵水用电&lt;&#x2F;td&gt;&lt;td&gt;电力（38+ GW）&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;关键瓶颈&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;电网容量、许可&lt;&#x2F;td&gt;&lt;td&gt;水权、干旱&lt;&#x2F;td&gt;&lt;td&gt;芯片制造（TSMC）&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;地缘政治风险&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;管道政治、OPEC&lt;&#x2F;td&gt;&lt;td&gt;跨境河流&lt;&#x2F;td&gt;&lt;td&gt;台湾、出口管制&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;这个类比不是隐喻，而是对结构的描述。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-ai-2027-got-right-about-the-economics&quot;&gt;AI 2027 在经济学上说对了什么&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;ai-2027.com&#x2F;&quot;&gt;AI 2027&lt;&#x2F;a&gt; 情景由 Daniel Kokotajlo、Scott Alexander、Thomas Larsen、Eli Lifland 和 Romeo Dean 撰写，是一份推测性的时间线。作者们很小心地把它定位为推测。但其中的经济预测有一种我反复回想的特质：它们把 AI 算力当作一种工业资源，而不是一种软件产品。&lt;&#x2F;p&gt;
+&lt;p&gt;他们的情景追踪了全球 AI 数据中心支出达到万亿美元量级的过程。它描绘了前沿算力在各国之间的分布：美国通过其企业掌握大约 70%，中国约为 12%。它预测的耗电量数字，是公用事业规划者而不是软件工程师会认为切中要害的。&lt;&#x2F;p&gt;
+&lt;p&gt;这种视角有用之处不在于具体数字，而在于类别。当你以万亿计来预测 AI 支出、以数十吉瓦计来预测耗电量时，你描述的不是一个软件行业，而是一场公用事业的大建设。资本支出的模式、基础设施的时间线、监管问题、地缘政治竞争，所有这些都对应着历史上各国围绕能源基础设施、电信基础设施和工业产能展开竞争的方式。&lt;&#x2F;p&gt;
+&lt;p&gt;AI 2027 的作者们预测，AI 系统加速 AI 研究的反馈回路，会压缩能力增长的时间线。他们给出的具体日期是否成立，没有那么重要，重要的是这个结构性观察：如果能力沿着一条陡峭的曲线增长，而这种能力所需的物理基础设施却沿着一条平缓得多的曲线增长，那么 AI 真正的约束就不是软件，而是基础设施，是公用事业这一层。&lt;&#x2F;p&gt;
+&lt;p&gt;这正是我在 shiioo 上以个人尺度经历过的。软件行得通，编排模型也行得通。耗尽的是物理资源：token，也就是推理，也就是算力，也就是芯片和电力。瓶颈不是架构，瓶颈是那块电表。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-this-means-for-post-ai-systems&quot;&gt;这对后 AI 系统意味着什么&lt;&#x2F;h2&gt;
+&lt;p&gt;如果推理是一种公用事业，那么每一个依赖推理的系统都是公用事业的用户。这会改变你设计这些系统的方式。&lt;&#x2F;p&gt;
+&lt;p&gt;我构建 shiioo 的时候，把 token 消耗当作需要管理的预算。那是个人开发者的视角：我有固定的配额，得花得明智。但如果把视野拉远到企业或国家，视角就变了。你管理的不是预算，而是对一种公用事业的依赖。&lt;&#x2F;p&gt;
+&lt;p&gt;问题变成了基础设施问题。你需要多少推理容量？它从哪里来？你的提供商宕机了会怎样？在可用性和吞吐量上，你有什么合同保障？主要供应中断时，你的后备方案是什么？你是否拥有任何自己的发电能力，还是完全依赖外部提供商？&lt;&#x2F;p&gt;
+&lt;p&gt;这些正是企业在电、水、电信方面会问的问题。它们也开始在推理方面问这些问题了，尽管大多数还没有用这个视角来看待。&lt;&#x2F;p&gt;
+&lt;p&gt;能顺利度过这场转变的组织，是那些认清推理究竟是什么的组织：一种与耗电量挂钩的消耗性资源，需要物理基础设施，并以信息的情境化和评估的形式创造价值。后 AI 系统每一次与另一个系统或与人沟通，都在消耗推理。每一条智能体之间的消息、每一次模型评估、每一个生成的回复，都是从一种计量供应中取出的一个单位，而这种供应背后有真实的物理成本。&lt;&#x2F;p&gt;
+&lt;p&gt;由此引出的影响有好几个方向。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;定价将向公用事业模式靠拢。&lt;&#x2F;strong&gt; 按 token 计价已经是常态，但行业将转向公用事业所用的更精细的定价结构：阶梯费率、分时定价、容量预留、现货市场。其中一些已经开始出现。随着企业开始像对待能源支出那样对待推理支出，把它当作一项需要专门采购和优化的主要运营成本，这一趋势会加速。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;主权将变得重要。&lt;&#x2F;strong&gt; 如果推理是一种公用事业，那么依赖外国提供商供应推理，就和依赖外国供应能源属于同一类战略弱点。欧洲在俄罗斯天然气上学到了这一课。你能否在自己的司法辖区内、在自己的基础设施上、在自己的法律框架下运行推理工作负载，这不是关于数据驻留的抽象顾虑，而是基础设施主权的问题。这就是我构建 &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&#x2F;&quot;&gt;Archipelag.io&lt;&#x2F;a&gt; 的原因，也是我认为欧洲关于算力主权的讨论需要从政策文件走向物理基础设施的原因。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;效率将成为一门工程学科。&lt;&#x2F;strong&gt; 电便宜而充足的时候，没有人为能效做优化。电变贵之后，围绕它诞生了一整门工程学科。推理也会如此。眼下，大多数使用推理的系统都用得大手大脚：塞满的上下文窗口、冗长的提示词、重复的调用。当推理成本成为一个不可忽视的开支项目，为 token 效率做优化就会像为能效做优化一样平常。我在 shiioo 那篇文章里描述的结构化通信协议，用类型化的消息取代自由形式的对话，就是一个早期的例子。每一个 token 都应该承载信息，而不是客套。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;计量与可观测性将必不可少。&lt;&#x2F;strong&gt; 你无法管理一种你无法度量的公用事业。企业需要推理可观测性，就像它们需要电力监控和网络监控一样：对消耗的实时可见性，把成本归属到具体的工作负载和团队，对意外的用量激增做异常检测，并基于历史模式做容量规划。这方面的工具如今几乎还不存在。几年之内，它会成为一个可观的市场。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-meter-is-the-message&quot;&gt;电表即信息&lt;&#x2F;h2&gt;
+&lt;p&gt;圣诞节期间 token 用光时，我的第一反应是沮丧。第二反应是换一种方式思考架构：为 token 效率而设计，把廉价的通信路由给更便宜的模型。但第三个反应，也是在我心里停留最久的那个，是认出了它。&lt;&#x2F;p&gt;
+&lt;p&gt;我认出了这个问题的形状。它不是一个新形状，而是我遇到过的每一种公用事业约束的形状。是「基础设施就是瓶颈」的形状，是「资源有限且计量，你得考虑自己的消耗」的形状，是「供应链是地缘政治的」的形状。&lt;&#x2F;p&gt;
+&lt;p&gt;Nakasone 的四个因素，芯片、数据、人才、能源，不只是评估国家实力的框架，它们是生产推理的物料清单。掌控这份物料清单的国家、企业和个人，将拥有同样的结构性优势：就像工业时代能源丰富的国家，信息时代带宽丰富的国家那样。&lt;&#x2F;p&gt;
+&lt;p&gt;第五种公用事业已经到来。只是现在还足够早，大多数人仍以为自己买的是软件。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;参考文献&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;&#x2F;articles&#x2F;what-sixteen-ai-agents-taught-me-about-management&#x2F;&quot;&gt;What Sixteen AI Agents Taught Me About Management&lt;&#x2F;a&gt;：本文的前篇&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;&#x2F;articles&#x2F;notes-from-rsac-2026&#x2F;&quot;&gt;Notes from RSAC 2026&lt;&#x2F;a&gt;：Paul Nakasone 的四个因素与地缘政治维度&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;ai-2027.com&#x2F;&quot;&gt;AI 2027&lt;&#x2F;a&gt;：Kokotajlo、Alexander、Larsen、Lifland 和 Dean 的情景研究&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;archipelag.io&#x2F;&quot;&gt;Archipelag.io&lt;&#x2F;a&gt;：去中心化、主权优先的 AI 算力网络&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;&#x2F;articles&#x2F;how-i-work-these-days&#x2F;&quot;&gt;How I Work These Days&lt;&#x2F;a&gt;：我最早写到转向智能体驱动开发的地方&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh">
+        <title>最后一门编程语言，也许不是给人用的</title>
+        <published>2026-04-11T00:00:00+00:00</published>
+        <updated>2026-04-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code/"/>
+        <id>https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code/</id>
+        
+        <content type="html" xml:base="https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code/">&lt;p&gt;今天早上，我站在书桌前，喝着兑得很淡的速溶咖啡，做着每天早上处理完高优先级邮件和通知之后都会做的事：花三十分钟看 HackerNews。这是一个我限定时长、从不跳过的仪式。我每天都去办公室，无论是在那张书桌前还是在家里的书桌前，早晨都一样：咖啡，站姿，首页。&lt;&#x2F;p&gt;
+&lt;p&gt;要把握湾区、科技与科学的脉搏，了解一夜之间冒出了哪些激发思考的想法，HackerNews 仍然是最好的途径之一。我也订阅了几份精选的新闻通讯，但这些年我发现，只要你懂得从低信号中筛出高信号，HN 反正已经涵盖了它们的大部分内容。我每天都能就一个不同的链接写点什么。大多数早晨我忍住了。今天早上没有。&lt;&#x2F;p&gt;
+&lt;p&gt;一个链接吸引了我的注意。&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;veralang.dev&#x2F;&quot;&gt;Vera&lt;&#x2F;a&gt;，一门新的编程语言，「设计给机器来写，而不是给人类写」。静态类型，纯函数式，编译为 WebAssembly，用微软的 Z3 求解器做契约验证。它的吉祥物是一只雪貂。我喜欢技术项目用动物当吉祥物：Rust 有螃蟹 Ferris，Go 有地鼠，&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&#x2F;&quot;&gt;Zentinel&lt;&#x2F;a&gt; 有守护犬 Shisa。雪貂是个好选择。&lt;&#x2F;p&gt;
+&lt;p&gt;但让我停下滚动的不是吉祥物。我停下来，是因为另一个人得出了我早在十二月就得出的同一个结论：传统编程语言并不适应这项新技术的能力，有些东西必须改变。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-christmas-realization&quot;&gt;圣诞节的领悟&lt;&#x2F;h2&gt;
+&lt;p&gt;从 2025 年 5 月 Anthropic 首次推出 Claude Code 起，我就是它的付费用户。命令行的取向一下子就让我觉得对路，尽管早期的速率限制和模型质量让我意犹未尽。到 2025 年 12 月，我已经升级到 Max 订阅，正在休假，而 Anthropic 那个月把每日额度放得很宽。我把这些年积攒下的每一个想法都拿出来烧。有些不错，有些很糟。但它们终于都能以从前不可能的方式得到检验，因为我可以和一个跟得上节奏的模型结对编程。我在&lt;a href=&quot;&#x2F;articles&#x2F;how-i-work-these-days&#x2F;&quot;&gt;《我如今的工作方式》&lt;&#x2F;a&gt;里更完整地写过这种转变，简短的版本是：2025 年末，是我的抱负与执行之间的关系发生根本改变的时候。堤坝决口了。在笔记本里躺了多年的想法，几天之内就开始变成真正的软件。&lt;&#x2F;p&gt;
+&lt;p&gt;正是在某个深夜的会话里，在一场关于编译器设计的 Claude Code 对话深处，一个想法成形了。我当时在构建 &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;hx&#x2F;&quot;&gt;hx&lt;&#x2F;a&gt;，思考 AI 会如何改变人们写 Haskell 的方式，然后意识到这个问题比 Haskell 大得多。智能体辅助的软件开发正在接近一个临界点：输出语言本身，也就是我们用来表达信息应当如何被处理的那个中间层，将发生根本的改变。&lt;&#x2F;p&gt;
+&lt;p&gt;这不是一个抽象的观察。软件的历史就是抽象层不断累积的历史，每一层都让下一代程序员可以忽略上一代必须掌握的东西。&lt;&#x2F;p&gt;
+&lt;p&gt;一切始于机器码。原始的操作码，每种 CPU 架构都不一样。想写软件，你就得背下指令集，再手工把它们写出来。人们出版厚厚的参考手册，也有工程师能把整个指令集架构装在脑子里。其中一些人至今还在，其中一些人至今仍对那套方法深信不疑。&lt;&#x2F;p&gt;
+&lt;p&gt;然后，汇编器给这些操作码起了人类可读的名字。写 &lt;code&gt;MOV AX, BX&lt;&#x2F;code&gt;，而不是 &lt;code&gt;89 D8&lt;&#x2F;code&gt;。你仍然在为特定的架构写代码，仍然以寄存器来思考，但现在你能读懂自己写的东西了。第一层抽象并不是一种新能力，而是可读性。&lt;&#x2F;p&gt;
+&lt;p&gt;然后 C 出现了，给了我们一层可移植的硬件抽象。你不再以寄存器思考，而开始以函数和指针思考。C 编译成特定架构的汇编，但你不必关心是哪种架构。一门语言，多个目标。参考手册的内容从指令集转向了语言规范。&lt;&#x2F;p&gt;
+&lt;p&gt;然后，解释器和虚拟机又加了一层。JVM、Python、Perl。你不再思考内存布局，而开始思考对象、迭代器、垃圾回收。抽象更厚了，反馈循环更快了，受众也从硬件工程师扩大到任何会写脚本的人。&lt;&#x2F;p&gt;
+&lt;p&gt;然后，IDE 改变了你与语言本身打交道的方式。语法高亮、自动补全、集成调试器、重构工具。你不再把整套 API 都记在脑子里，因为编辑器替你记着。语言没有变，但使用它的认知成本下降了。IntelliSense 不是一项语言特性，而是一层对程序员记忆的抽象。&lt;&#x2F;p&gt;
+&lt;p&gt;然后，互联网改变了代码流动的方式。开源仓库、包管理器、共享库。你不再一切从零写起，而开始用别人造好的零件来组装。参考资料从印刷的书本转向了网络文档、维基和教程。&lt;&#x2F;p&gt;
+&lt;p&gt;然后，StackOverflow 改变了人们学习的方式。你不再从头到尾读手册，而是搜索自己遇到的具体问题，找到一个已经解决过它的人。知识层本身变成了一层抽象。你不需要理解整个系统，只需要找到正确的答案，再把它改到适合你的情境。StackOverflow 从没编译过一行代码，但它是介于人类困惑与可运行软件之间的一个中间层，而且对普通开发者的生产力来说，它可以说比同一个十年里发布的任何语言特性都更重要。&lt;&#x2F;p&gt;
+&lt;p&gt;而现在，StackOverflow 正在退潮。不是因为答案变差了，而是因为下一层抽象到来了。AI 编程智能体做着 StackOverflow 做过的事，为已知问题找到已知的解法，但它们也做着 StackOverflow 从来做不到的事：综合出新的解法，跨文件把握项目上下文，从意图描述生成可运行的代码。这个模式和之前的每一次过渡都一样。每一层都让前一层变得不那么不可或缺，不是通过取代它，而是把它吸收进一层更高的抽象。&lt;&#x2F;p&gt;
+&lt;p&gt;编程语言一向由写它的人塑造。汇编由以寄存器和操作码思考的硬件工程师塑造。C 由需要一层可移植内存抽象的系统程序员塑造。Python 由想把事情做完、又不想和语法较劲的人塑造。COBOL 由希望代码读起来像英语的业务分析师塑造。每一门语言都带着它预设作者的指纹。如果 AI 成为代码的主要作者，那么顺理成章，语言就应当适应这位新作者的长处和短处。这并不是对这个模式的背离，而正是这个模式本身，在做它一直在做的事。&lt;&#x2F;p&gt;
+&lt;p&gt;我一再回到三种具体的可能性，也就是中间层可能演化的三种方式。确切地说，它们不是相互竞争的愿景，更像是时间线上的三个点。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;make-the-language-explicit-enough-for-machines&quot;&gt;让语言显式到足以让机器使用&lt;&#x2F;h2&gt;
+&lt;p&gt;任何真正花时间用过编程智能体的人，都见过这种失败模式。你让 LLM 写一个 Python 函数。输出看起来很合理，能通过 lint，变量名也说得过去，结构遵循常见的模式。然后它在运行时失败了，原因是某个模型没有跟踪到的微妙的隐式行为：一个在多次调用之间被共享的可变默认参数；一个在第二次迭代时被悄无声息地耗尽的生成器；一个返回 &lt;code&gt;None&lt;&#x2F;code&gt; 而不是抛出异常的方法，只因为某个库作者觉得那样更「Pythonic」。模型在算法上没有错，错的是对语言隐藏行为的把握。&lt;&#x2F;p&gt;
+&lt;p&gt;这正是 Vera 试图解决的问题，也是我曾经考虑过的第一种思路。拿 Go 的简单和显式，再往前推一步，设计一门语言，让每一条指令、每一个方法、每一种设计模式都尽可能没有歧义。没有隐式行为，没有命名歧义，没有风格选择。每件事只有一种规范的写法，这样 LLM 就不必浪费推理 token 去琢磨该从十七种有效方案里选哪一种。&lt;&#x2F;p&gt;
+&lt;p&gt;这门语言需要出色的编译器诊断。不只是「第 47 行类型不匹配」，而是模型能够解析、理解并立即据此行动的结构化反馈。Rust 和 Elixir 已经为人类把这件事做得很好。要做得更好，而且是为机器而做。&lt;&#x2F;p&gt;
+&lt;p&gt;流水线是这样的：&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Explicit language feedback loop&quot;&gt;+-------+     prompt      +-------+    explicit     +-----------+
+| Human | -------------&amp;gt;  |  LLM  | -------------&amp;gt;  | Verifying |
++-------+                 +-------+    source       | Compiler  |
+                             ^                      +-----------+
+                             |                           |
+                             |   structured error        |
+                             |   + suggested fix         |
+                             +---------------------------+
+                                                         |
+                                                    verified
+                                                         |
+                                                         v
+                                                  [correct program]&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;关键在于反馈循环。编译器不只是拒绝坏代码，它还用模型能据以行动的方式解释错在哪里，并给出具体的修复建议。模型重新生成，编译器重新检查。你通过迭代收敛到正确的代码，而这个循环有多紧，取决于语言有多没有歧义、错误信息有多可操作。&lt;&#x2F;p&gt;
+&lt;p&gt;Vera 正是这个想法，而且执行得很坚决。一个函数看起来是这样的：&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot;&gt;&lt;code data-lang=&quot;vera&quot;&gt;public fn safe_divide(@Int, @Int -&amp;gt; @Int)
+  requires(@Int.1 != 0)
+  ensures(@Int.result == @Int.0 &amp;#x2F; @Int.1)
+  effects(pure)
+{
+  @Int.0 &amp;#x2F; @Int.1
+}&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;完全没有变量名。参数用 De Bruijn 槽位记法，按类型和位置索引来引用。&lt;code&gt;@Int.0&lt;&#x2F;code&gt; 是最近绑定的整数，&lt;code&gt;@Int.1&lt;&#x2F;code&gt; 是它之前的那一个。每个函数都必须声明前置条件（&lt;code&gt;requires&lt;&#x2F;code&gt;）、后置条件（&lt;code&gt;ensures&lt;&#x2F;code&gt;）和副作用（&lt;code&gt;effects&lt;&#x2F;code&gt;）。编译器尽可能用 Z3 静态地验证契约，对编译期无法判定的部分则退回到运行时检查。&lt;&#x2F;p&gt;
+&lt;p&gt;这个设计原则很犀利：模型不需要是对的，它需要是可检查的。语言把有效程序的空间约束得如此之紧，以至于编译器能在执行前抓住错误，并用自然语言解释它们。除以零不是运行时异常，而是在编译期间就被捕获的契约违反。&lt;&#x2F;p&gt;
+&lt;p&gt;可以这样想。传统语言是一片开阔的田野。你可以往任何方向走，可能走到有用的地方，也可能走下悬崖。Vera 是一条有护栏的引导路径。你只能朝某些方向走，每当你试图迈出路径，就有一块路牌准确地告诉你该往哪里走。开阔田野上的 LLM 会四处游荡，引导路径上的 LLM 会收敛。&lt;&#x2F;p&gt;
+&lt;p&gt;早期的基准测试结果很有意思，虽然好坏参半。Kimi K2.5 据说能写出完美的 Vera 代码，在 VeraBench 上得了 100%，超过了它自己在 Python 和 TypeScript 上的分数。其他模型就没那么好了。Claude Opus 4 在 Vera 上得 88%，在 Python 上得 96%。Vera 团队对这种差异很坦诚，这一点我很欣赏。&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=47696263&quot;&gt;HackerNews 上的讨论&lt;&#x2F;a&gt;很冷清，只有十二个赞、三条怀疑的评论，这说明这场讨论还处在多么早的阶段。更广泛的开发者社区还没有认真对待这个想法。这会改变的。&lt;&#x2F;p&gt;
+&lt;p&gt;但有件事让我不安：为机器迭代求解的方式去优化语言。再看一遍那张流水线图。LLM 仍然在生成一步一步的指令。它仍然在描述「如何」做事，只是去掉了歧义，把契约写明了。机器仍然按顺序推理整个过程。你减少了反馈循环中的噪声，却没有改变信号的本质。模型仍然在写菜谱，只是更精确的菜谱。&lt;&#x2F;p&gt;
+&lt;p&gt;如果完全不再写菜谱呢？&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;describe-what-not-how&quot;&gt;描述「是什么」，而不是「怎么做」&lt;&#x2F;h2&gt;
+&lt;p&gt;第二个想法从一个不同的前提出发。与其让 AI 更容易正确地写出过程式代码，不如改变你让 AI 表达的东西。&lt;&#x2F;p&gt;
+&lt;p&gt;具体一点。假设你需要在日志里找出最近的十个服务器错误。用过程式语言，你会这样描述这个过程：&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;python&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;errors&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; =&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; []&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span&gt; entry&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; in&lt;&#x2F;span&gt;&lt;span&gt; log_entries&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;    if&lt;&#x2F;span&gt;&lt;span&gt; entry&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;status&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; &amp;gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt; 500&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;        errors&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;append&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;({&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;            &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;:&lt;&#x2F;span&gt;&lt;span&gt; entry&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;timestamp&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;            &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;path&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;:&lt;&#x2F;span&gt;&lt;span&gt; entry&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;path&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;            &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;code&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;:&lt;&#x2F;span&gt;&lt;span&gt; entry&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span&gt;status&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;        })&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;errors&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;sort&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;key&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;=lambda&lt;&#x2F;span&gt;&lt;span&gt; e&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; e&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;[&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;time&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;],&lt;&#x2F;span&gt;&lt;span&gt; reverse&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;=True&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;return&lt;&#x2F;span&gt;&lt;span&gt; errors&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;[:&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;你在告诉机器：创建一个空列表；遍历每一条记录；检查一个条件；如果匹配，就构造一个字典并追加进去；然后按某个键对累积的列表排序；然后取前十个元素。每一步都是一条指令。机器必须跟踪可变的列表、迭代状态、排序和切片。而如果你有任何一步写错，其他步骤仍可能成功，产出看起来正确、实则暗藏错误的结果。漏掉一个 &lt;code&gt;reverse=True&lt;&#x2F;code&gt;，你就会悄无声息地拿到最旧的错误，而不是最近的。&lt;&#x2F;p&gt;
+&lt;p&gt;同样的事，用 Haskell 写：&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;haskell&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;recentErrors&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; ::&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;LogEntry&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; -&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;ErrorSummary&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;recentErrors &lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    take &lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt;10&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;  .&lt;&#x2F;span&gt;&lt;span&gt; sortBy &lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;flip compare &lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;`&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;on&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;`&lt;&#x2F;span&gt;&lt;span&gt; time&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;  .&lt;&#x2F;span&gt;&lt;span&gt; map toSummary&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;  .&lt;&#x2F;span&gt;&lt;span&gt; filter isServerError&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;从下往上读：筛选出服务器错误，把每一条转换成摘要，按时间降序排序，取十个。没有可变的累加器，没有循环变量，没有中间状态。你不是在描述一个过程，而是在描述输入与输出之间的关系。这个函数说的是结果「是」什么，而不是如何一步一步把它算出来。&lt;&#x2F;p&gt;
+&lt;p&gt;顶部的类型签名 &lt;code&gt;[LogEntry] -&amp;gt; [ErrorSummary]&lt;&#x2F;code&gt; 是编译器强制执行的契约。如果 &lt;code&gt;toSummary&lt;&#x2F;code&gt; 返回了错误的类型，如果 &lt;code&gt;isServerError&lt;&#x2F;code&gt; 接受的不是 &lt;code&gt;LogEntry&lt;&#x2F;code&gt;，如果你不小心把函数按一个无法通过类型检查的顺序组合起来，编译器会在程序运行之前就拒绝它。不是在运行时给出一句含糊的「object has no attribute」，而是在编译时给出精确的类型错误，准确地告诉你哪一块对不上。&lt;&#x2F;p&gt;
+&lt;p&gt;这个区别对 AI 来说极其重要。想想 LLM 在两种情况下各自实际需要跟踪什么：&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Procedural vs declarative complexity&quot;&gt;Procedural (Vera, Python, Go)          Declarative (Haskell)
+================================       ================================
+- mutable variables and their          - input type
+  current state at each step           - output type
+- loop iteration progress              - which transformations to compose
+- conditional branching outcomes       - whether types align
+- order of side effects
+- implicit language behaviors
+- names and what they refer to&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;过程式的模型要求 AI 在脑子里模拟执行。声明式的模型要求 AI 描述一个变换，再让编译器去验证它。前者撞上的是 LLM 的弱点（跨越许多步骤跟踪状态），后者发挥的是它的长处（识别并生成满足形式约束的模式）。&lt;&#x2F;p&gt;
+&lt;p&gt;流水线发生了根本的变化：&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Type-driven proof pipeline&quot;&gt;+-------+     prompt      +-------+   type sigs      +-----------+
+| Human | -------------&amp;gt;  |  LLM  | -------------&amp;gt;    | Compiler  |
++-------+                 +-------+   pure exprs      +-----------+
+                                                           |
+                                                      types align?
+                                                        &amp;#x2F;      \
+                                                      yes       no
+                                                      |          |
+                                                      v          v
+                                              [proven correct]  [precise type error:
+                                                                 &amp;quot;Expected LogEntry,
+                                                                  got String at ...]&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;在一切顺利的情况下，根本不需要反馈循环。如果类型对得上，那么就类型系统所跟踪的那些性质而言，程序在构造上就是正确的。编译器不是在和模型来回迭代，它是在检查一个证明。&lt;&#x2F;p&gt;
+&lt;p&gt;这就是我押注的思路。这也是这个博客存在的原因。&lt;&#x2F;p&gt;
+&lt;p&gt;Raskell，这个网站背后的名字，是 Rascal（指的是浣熊，也就是我的吉祥物）和 Haskell 的合成词。我爱了这门语言很多年，因为它描述事物的方式优雅得接近数学证明。是 QED，而不是 TODO。当你写下一个类型良好的 Haskell 函数，你写的不只是代码，而是一份证明，证明某个变换是有效的，而编译器就是证明检查器。&lt;&#x2F;p&gt;
+&lt;p&gt;但热爱 Haskell 和在生产中交付 Haskell 是两种不同的体验，两者之间的差距主要在工具上。这个生态的碎片化，已经让人们沮丧了十多年。&lt;code&gt;cabal&lt;&#x2F;code&gt;、&lt;code&gt;stack&lt;&#x2F;code&gt;、&lt;code&gt;ghcup&lt;&#x2F;code&gt;，三个工具做着相互重叠的工作，对依赖该如何运作各有主张。如果你从 Python 过来，想象一下 &lt;code&gt;pip&lt;&#x2F;code&gt;、&lt;code&gt;poetry&lt;&#x2F;code&gt; 和 &lt;code&gt;pyenv&lt;&#x2F;code&gt; 都是各自独立开发的，锁文件格式不同，解析算法不同，还时不时互不兼容。当年的 Haskell 就是这样。构建很慢，错误信息从有帮助到晦涩难懂不等。运行时假定一种性能特征适用于所有场景。如果你想把 Haskell 用于边缘函数、嵌入式系统、GPU 加速的数值计算，你花在和工具链较劲上的时间，和写实际代码的时间一样多。&lt;&#x2F;p&gt;
+&lt;p&gt;语言是对的，周边的基础设施不对。&lt;&#x2F;p&gt;
+&lt;p&gt;于是我开始构建 &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&quot;&gt;arcanist.sh&lt;&#x2F;a&gt;，采用 &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;astral.sh&quot;&gt;astral.sh&lt;&#x2F;a&gt; 为 Python 工具链带来的同一种思路。astral.sh 发布 &lt;code&gt;uv&lt;&#x2F;code&gt; 和 &lt;code&gt;ruff&lt;&#x2F;code&gt; 时表明，你可以拿一个工具已经根深蒂固的成熟生态，用 Rust 从零重建开发者体验，让一切都快得多、也连贯得多。我想为 Haskell 做同样的事。arcanist.sh 下有两个项目。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;hx&#x2F;&quot;&gt;hx&lt;&#x2F;a&gt; 是一个快速、有主见的新一代 Haskell 工具链，用 Rust 构建。一个工具取代那套碎片化的组合。按项目锁定的托管编译器版本。带指纹校验的确定性 TOML 锁文件。冷构建比 cabal 快 5.6 倍，增量重建快 7.8 倍。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;curl&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; -fsSL https:&#x2F;&#x2F;arcanist.sh&#x2F;install.sh&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; sh&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;hx&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; new my-app&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;amp;&amp;amp;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; cd&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; my-app&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;hx&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; run&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;不用 ghcup，不用 stack，不用 cabal-install。只要 &lt;code&gt;hx&lt;&#x2F;code&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;bhc&#x2F;&quot;&gt;BHC&lt;&#x2F;a&gt;，即 Basel Haskell Compiler（巴塞尔 Haskell 编译器），走得更远。它是一个用 Rust 编写、从零开始的 Haskell 编译器，不是 GHC 的分支，以 Haskell 2026 Platform 规范为目标。它使用 LLVM 生成本地代码，并提供六种在编译时选择的运行时配置：&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;配置&lt;&#x2F;th&gt;&lt;th&gt;设计用途&lt;&#x2F;th&gt;&lt;th&gt;关键特性&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;default&lt;&#x2F;td&gt;&lt;td&gt;通用应用&lt;&#x2F;td&gt;&lt;td&gt;惰性求值，GC 管理，与 GHC 兼容的语义&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;server&lt;&#x2F;td&gt;&lt;td&gt;后端服务&lt;&#x2F;td&gt;&lt;td&gt;结构化并发，自动取消，可观测性钩子&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;numeric&lt;&#x2F;td&gt;&lt;td&gt;机器学习与科学计算&lt;&#x2F;td&gt;&lt;td&gt;严格数值，张量降级，SIMD，GPU 后端（CUDA&#x2F;ROCm）&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;edge&lt;&#x2F;td&gt;&lt;td&gt;WASM 与 CDN worker&lt;&#x2F;td&gt;&lt;td&gt;极小体积，不经 LLVM 直接生成 WASM&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;realtime&lt;&#x2F;td&gt;&lt;td&gt;游戏、音频、机器人&lt;&#x2F;td&gt;&lt;td&gt;GC 停顿有上限，低于 1ms，arena 分配&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;embedded&lt;&#x2F;td&gt;&lt;td&gt;裸机、微控制器&lt;&#x2F;td&gt;&lt;td&gt;完全没有 GC，静态分配，面向 ARM Cortex-M 等目标&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;同样的 Haskell 源代码，根据你在构建什么，得到不同的运行时契约。你的安全策略引擎用 server 配置编译，得到带追踪的结构化并发。你的张量流水线用 numeric 配置编译，得到 GPU 加速。你的边缘函数编译成 WASM，跑在 Cloudflare Workers 上。同一门语言，同样的类型安全，不同的性能包络。&lt;&#x2F;p&gt;
+&lt;p&gt;这项工作背后的信念很具体。当 AI 写代码时，存活下来的语言不是为过程式的显式性而优化的那一门，而是通过描述事物是什么、而非如何计算它，带来一致性与纯粹性的那一门。AI 极其擅长生成满足形式约束的表达式。而读起来像证明的源代码能经受住时间。它能经受住维护者的倦怠。它能经受住这样一个事实：三年之后，没有人记得一个函数为什么被写成那样。类型记得。证明以一种过程式代码永远做不到的方式自我说明，因为类型编码了意图。&lt;&#x2F;p&gt;
+&lt;p&gt;Vera 和 arcanist.sh 接受同一个前提：中间层正在改变。它们分歧在于它应当朝哪个方向改变。Vera 优化的是减少生成循环中的错误，这有价值。但 hx 和 BHC 优化的是让生成的代码在构造上就是正确的，因为语言本身在结构层面约束了有效程序的样子。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;skip-the-language-entirely&quot;&gt;完全跳过语言&lt;&#x2F;h2&gt;
+&lt;p&gt;第三种可能性，是我在深夜会想、却还没有具体项目的那一种。暂时还没有。它也是我觉得最迷人、也最令人不安的那一种。&lt;&#x2F;p&gt;
+&lt;p&gt;如果 AI 根本不再写源代码呢？&lt;&#x2F;p&gt;
+&lt;p&gt;要理解这为什么可信，不妨看看源代码究竟是什么。它不是最终产品，从来都不是。源代码是一组由编译器转换成机器码的指令。机器码才是硬件执行的东西。源代码之所以存在，是因为人类需要在自己的意图和硅片之间有一层抽象。我们以「给这个列表排序」或「拒绝未授权的请求」这样的概念来思考，CPU 则以寄存器移动、内存加载和条件跳转来思考。源代码弥合了这道鸿沟。&lt;&#x2F;p&gt;
+&lt;p&gt;但那座桥是为人类作者建造的。如果作者不再是人类，这座桥的用途就变了。它变成一条审计线索，一种让人类阅读和核实 AI 产出了什么的方式。它不再是创作的媒介，而是一层透明层。&lt;&#x2F;p&gt;
+&lt;p&gt;我看到这会分两个截然不同的阶段展开。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;phase-one-ai-targets-existing-machine-code&quot;&gt;第一阶段：AI 以现有机器码为目标&lt;&#x2F;h3&gt;
+&lt;p&gt;第一阶段比大多数人以为的更近，而且在概念上很直接。我们已经在用源代码训练模型。如果我们也大量地用编译产物来训练它们，会怎样？用二进制文件、目标文件、中间表示，也就是编译器的实际输出？&lt;&#x2F;p&gt;
+&lt;p&gt;想想编译器做的事。它接收源代码，按照定义明确的确定性规则，把它转换成机器指令。源代码的模式与输出的模式之间存在映射。C 里的一个 &lt;code&gt;for&lt;&#x2F;code&gt; 循环，在 x86 上变成一串特定的比较、分支和递增指令。函数调用遵循特定的调用约定。内存分配遵循特定的系统调用模式。这些映射是可以学会的。它们是模式，而模式识别恰恰是 LLM 最擅长的。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;Skipping the source layer&quot;&gt;Today:
+human intent → prompt → LLM → source code → compiler → x86&amp;#x2F;ARM → CPU
+
+Phase one:
+human intent → prompt → LLM → x86&amp;#x2F;ARM directly → CPU
+                                (trained on source +
+                                 compiled artifact pairs)&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;在这个阶段，模型跳过源代码层，直接生成机器码。不是传统意义上的「编译」，而是因为它已经把模式学得足够好，能从意图描述产出有效的可执行文件。就像一个流利的译者不会有意识地去解析语法规则，而是直接从意思产出正确的句子。&lt;&#x2F;p&gt;
+&lt;p&gt;这听起来很激进，直到你想起我们早已信任那些我们从不阅读其输出的编译器。你上一次检查 &lt;code&gt;gcc -O3&lt;&#x2F;code&gt; 的汇编输出、核实它是否正确编译了你的 C 程序，是什么时候？你信任编译器。你测试生成的二进制文件的行为。你不审计中间表示。如果 AI 能产出通过同样行为测试的二进制文件，那么「AI 生成的机器码」与「编译器生成的机器码」之间的实际差别，就成了一个信任校准的问题，而不是根本可能性的问题。&lt;&#x2F;p&gt;
+&lt;p&gt;我一再回到的类比是航空。早期的飞行员手动驾驶，理解飞机上的每一个机械系统。电传操纵改变了这一点。飞行员传达意图（爬升、转弯、保持高度），计算机把它转换成舵面的动作。飞行员不会为每一阵风手动调整副翼和升降舵。他们信任这个系统。他们核实的是结果（高度、航向、空速），而不是中间步骤。后语言编程的第一阶段，就是软件的电传操纵。&lt;&#x2F;p&gt;
+&lt;p&gt;如果这听起来像是空想，想想这周发生的事。Anthropic 宣布了 &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.anthropic.com&#x2F;glasswing&quot;&gt;Project Glasswing&lt;&#x2F;a&gt;，一个包括 AWS、Apple、Google、Microsoft、NVIDIA、CrowdStrike、Palo Alto Networks、Linux 基金会等在内的联盟，旨在用 AI 保护世界上最关键的软件。Anthropic 的 CEO Dario Amodei 说得很直白：&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「AI 模型的编程能力已经达到这样的水平：在发现和利用软件漏洞方面，除了最顶尖的人类之外，它们可以超越所有人。」&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;他给出的证据是：「在 OpenBSD 中，我们发现了一个已经存在 27 年的 bug。」&lt;&#x2F;p&gt;
+&lt;p&gt;想想这意味着什么。OpenBSD 是世界上审计得最仔细的代码库之一。几十年来，一些当世最一丝不苟的系统程序员以安全为重点对它进行人工审查。而一个 AI 模型找到了每一位人类审查者都错过了二十七年的东西。如果 AI 对现有代码的理解深到能找出人类找不到的漏洞，那么它对代码的理解也深到能在不以人类可读源代码为中间步骤的情况下生成代码。问题不再是 AI 是否在结构层面理解代码。这个问题这周已经有了答案。问题是它接下来会拿这种理解做什么。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;phase-two-a-new-kind-of-machine&quot;&gt;第二阶段：一种新的机器&lt;&#x2F;h3&gt;
+&lt;p&gt;第二阶段更远，也更具推测性。但我认为事情最终会走到那里。&lt;&#x2F;p&gt;
+&lt;p&gt;如果 AI 在生成供机器执行的代码，而没有人需要阅读它，那么这些代码就没有理由以为人类理解而设计的指令集为目标。x86 和 ARM 在设计时都假定，至少偶尔会有人去看这些指令。它们有助记符，遵循让反汇编成为可能的约定，组织成大致对应于人类能理解的操作的指令。&lt;&#x2F;p&gt;
+&lt;p&gt;但如果执行目标是从零开始为 AI 生成的代码设计的呢？一个消费新型字节码的虚拟机或运行时。不为人类可读性优化，不为手写汇编优化，纯粹为执行密度和机器生成优化。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;AI-native execution target&quot;&gt;Phase two:
+human intent → prompt → AI → dense symbolic bytecode → AI-native VM
+                               (opaque to humans,         |
+                                optimized for machine     v
+                                generation + execution)  [result]&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;我一直在想信息密度。汉字把意义编码在单个符号里，每个符号承载的语义分量远远超过拉丁字母的单词。一个字就能表示一个用英语需要一整个短语才能表达的概念。当一个系统是为能原生处理高密度符号的读者设计的，表示就会被压缩。它变得更高效，代价是对不属于设计受众的读者更不友好。&lt;&#x2F;p&gt;
+&lt;p&gt;AI 原生字节码可以遵循同样的原则。每条指令可以编码复杂的复合操作，而这些操作用传统指令表达需要几十条。这种字节码的密度会让现在的机器码显得啰嗦。反编译或分析时完全不透明。不是故意混淆，只是天生无法被人类认知理解，就像训练好的神经网络的权重无法被理解一样，尽管它们编码着真实而有效的知识。&lt;&#x2F;p&gt;
+&lt;p&gt;运行这种字节码的虚拟机本身也会是另一种系统。不是传统意义上的栈机或寄存器机，可能更接近一个数据流引擎，字节码描述的是变换图，而不是顺序的指令。可以把它想成两种做法的差别：一种是给人逐个路口的驾驶指引（向北走，左转，继续开两英里），另一种是递给他一张标好目的地的地图。字节码就是地图，虚拟机自己找出路线。&lt;&#x2F;p&gt;
+&lt;p&gt;我想坦白我们现在在哪里。我们还没到第一阶段。2026 年 4 月还没有。当前的模型仍然需要中间层。当它们能一步一步推理时，产出的代码更好。它们受益于类型系统、契约和显式的错误信息。第一种和第二种思路不只是可行，而且眼下是必需的。&lt;&#x2F;p&gt;
+&lt;p&gt;但轨迹是看得见的。模型每一代都更擅长生成正确的程序。形式化验证正变得更实用。硬件正变得更便宜。「描述意图的提示词」与「正确的可执行输出」之间的差距正在缩小。当用足够多的「源代码加二进制」配对训练出来的模型能够可靠地产出正确的可执行文件时，第一阶段就会到来。当有人问出这个问题时，第二阶段就会到来：如果模型已经在生成二进制文件，我们为什么还要以一个为已经不再写代码的物种设计的指令集为目标？&lt;&#x2F;p&gt;
+&lt;p&gt;到某个时候，中间层会变成可选的。而可选的东西，只要时间足够，就会退化成遗迹。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-this-means&quot;&gt;这意味着什么&lt;&#x2F;h2&gt;
+&lt;p&gt;我不认为这三种思路在相互竞争。它们是时间线上的三个点，而这条时间线讲的是中间层不断收缩的故事。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo diagram&quot;&gt;&lt;code data-lang=&quot;diagram&quot; data-title=&quot;The intermediate layer timeline&quot;&gt;Near term          Medium term           Long term
+(now)              (2-5 years)           (5-15 years)
+
+Explicit           Declarative           Post-language
+languages          languages             (AI-native targets)
+(Vera)             (Haskell + BHC)
+
+Reduce noise  --&amp;gt;  Change the signal --&amp;gt; Remove the layer
+in the loop        entirely              entirely
+
+HOW, but           WHAT, verified        Intent to
+unambiguous        by types              execution&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;近期，像 Vera 这样的显式语言通过约束生成空间、提供机器可读的诊断，让 AI 生成的代码更可靠。这在今天就有用。如果你现在正在构建一条 AI 编程流水线，下个季度就要交付，这种思路行得通。&lt;&#x2F;p&gt;
+&lt;p&gt;中期，像 Haskell 这样的声明式语言，尤其是配上现代工具链和现代运行时，让 AI 生成的代码在构造上就是正确的。类型系统在根本层面承担了繁重的验证工作。存活下来的代码，是描述不变量而不是描述过程的代码。这就是我用 arcanist.sh 为之构建的时代。&lt;&#x2F;p&gt;
+&lt;p&gt;长期来看，语言会消失。先是消失在由 AI 直接生成的现有机器码里，然后消失在从底层起就为 AI 生成而设计的新执行格式里。定义了软件工程七十年的中间层，会变成一个实现细节。&lt;&#x2F;p&gt;
+&lt;p&gt;最后这种可能性让一些人不舒服。我在十二月第一次想到它时，也觉得不舒服。它意味着我们所知的编程这门手艺，对语法的娴熟，对惯用法的掌握，对优雅实现的直觉，会变得不再像一项核心技能，而更像会操作一台手动车床。在合适的场合有价值，困难的情况仍然需要，但不再是大多数软件被构建出来的主要方式。&lt;&#x2F;p&gt;
+&lt;p&gt;这以前发生过。曾经有一段时间，每个程序员都懂汇编。然后 C 把它抽象掉了，大多数程序员不再阅读机器码。然后 Python 和 JavaScript 把 C 抽象掉了，大多数程序员不再思考内存管理。每一次，前一层都没有消失，而是成了专家的领域，由他们维护着其他所有人立足其上的基础设施。同样的事会发生在源代码身上。它不会消失，它会专门化。&lt;&#x2F;p&gt;
+&lt;p&gt;我仍然每天写代码，仍然以类型来思考。我仍然在构建 hx 和 BHC，因为我相信那个中期的未来既真实又漫长，而 Haskell 的长处恰恰是那个未来所需要的：纯函数，强类型，可证明的正确性。在一个由 AI 编写实现的世界里，这些不是奢侈品，而是承重结构。但我做这件事时，一只眼睛望着地平线，知道我所投入的这个中间层，正如其名：只是中间的一层。&lt;&#x2F;p&gt;
+&lt;p&gt;构建 Vera 的人看到了和我一样的东西，大概也是在差不多的时候。他们选择了第一种思路，我选择了第二种。总有一天，会有人去构建第三种。到那时，我们都得弄清楚，当没有人再写程序时，我们所说的「编程」到底是什么意思。&lt;&#x2F;p&gt;
+&lt;p&gt;我已经对答案感到好奇了。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
 </feed>
