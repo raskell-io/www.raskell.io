@@ -5,7 +5,7 @@ draft = true
 description = "How to build an Enterprise Context Platform from open source parts: ontology, connectors, workflows, store, API, MCP and UI, in one repository you can run."
 
 [taxonomies]
-tags = ["enterprise-architecture", "context-engineering", "agents", "provenance", "oss", "platform-automation", "knowledge-management"]
+tags = ["enterprise-architecture", "context-engineering", "agents", "provenance", "oss", "durable-execution", "knowledge-management"]
 
 [extra]
 author = "Raffael"
@@ -28,32 +28,33 @@ The seed data is deliberately messy. Names differ between systems, two applicati
 ## The shape of the system
 
 {% diagram(title="it-intelligence, the reference implementation") %}
+   ┌────────────────────────┐
+   │ seed/ or real sources  │
+   └────────────┬───────────┘
+                ▼
+   ┌────────────────────────┐
+   │ connectors (Go)        │
+   └────────────┬───────────┘
+                ▼
+   ┌────────────────────────┐     ┌──────────────────────┐
+   │ Temporal workflows:    │ ──▶ │ PostgreSQL:          │
+   │ ingest, resolve,       │     │ observations,        │
+   │ score, build           │     │ entities, edges,     │
+   └────────────┬───────────┘     │ scorecards,          │
+                │ LLM calls       │ artifacts            │
+                ▼                 └──────────┬───────────┘
+   ┌────────────────────────┐                │
+   │ resolver (pluggable    │                │
+   │ model provider)        │                │
+   └────────────────────────┘                ▼
+   ┌──────────────────┐      ┌──────────────────────────┐
+   │ web (Next.js)    │ ◀──▶ │ api (Go): REST, MCP,     │
+   └──────────────────┘      │ artifacts                │
+                             └─────┬──────────────┬─────┘
+                                   ▲              ▲
+                     coding agents (MCP)   other systems (REST)
 
-   seed/ or real sources
-          |
-          v
-   +-------------+     +---------------------+     +------------------+
-   | connectors  | --> |  Temporal workflows | --> |   PostgreSQL     |
-   | (Go)        |     |  ingest, resolve,   |     |   observations   |
-   +-------------+     |  score, build       |     |   entities       |
-                       +----------+----------+     |   edges          |
-                                  |                |   scorecards     |
-                                  | LLM calls      |   artifacts      |
-                                  v                +--------+---------+
-                       +---------------------+              |
-                       | resolver (pluggable |              |
-                       | model provider)     |              |
-                       +---------------------+              |
-                                                            v
-   +------------------+      +---------------------------------------+
-   | web (Next.js)    | <--> |  api (Go): REST  +  MCP  +  artifacts |
-   +------------------+      +---------------------------------------+
-                                     ^                  ^
-                                     |                  |
-                          coding agents (MCP)    other systems (REST)
-
-   ontology/  (LinkML)  -->  generated types, SQL, JSON Schema, OWL, docs
-
+   ontology/ (LinkML) ──▶ generated types, SQL, JSON Schema, OWL, docs
 {% end %}
 
 Six moving parts, and one file that sits above all of them. I will go through them in the order you would build them, which is not the order data flows through them. The ontology comes first, because everything else is generated from it or validated against it.

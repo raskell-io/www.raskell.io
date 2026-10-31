@@ -25,18 +25,21 @@ For the last while I was an Enterprise Solution Architect for agentic AI and AI 
 On paper that is a clean chain.
 
 {% diagram(title="The chain as it is drawn") %}
-
-   corporate strategy
-          |
-          v
-   enterprise architecture  ----  capabilities, principles, target landscape
-          |
-          v
-   solution architecture    ----  directives, policies, reference designs
-          |
-          v
-   10+ market units         ----  actual systems, actual teams, actual budgets
-
+   ┌──────────────────────────┐
+   │ corporate strategy       │
+   └─────────────┬────────────┘
+                 ▼
+   ┌──────────────────────────┐
+   │ enterprise architecture  │  capabilities, principles, target landscape
+   └─────────────┬────────────┘
+                 ▼
+   ┌──────────────────────────┐
+   │ solution architecture    │  directives, policies, reference designs
+   └─────────────┬────────────┘
+                 ▼
+   ┌──────────────────────────┐
+   │ 10+ market units         │  actual systems, actual teams, actual budgets
+   └──────────────────────────┘
 {% end %}
 
 In practice each arrow is a translation done by people, in documents, at different speeds: strategy moves yearly, capability maps when someone has time, solution designs per project, and the systems themselves daily. By the time a capability has been interpreted by ten market units, you have ten interpretations, and no cheap way to see where they diverge.
@@ -56,16 +59,23 @@ The other one is, in hindsight, a small Enterprise Context Platform, scoped to t
 I formalised every data structure in the squad's domain as a **manifest**: a declarative, Git-persisted description of an exposure, a WAF policy, a CDN configuration, a DNS record, and how they related. On top of the manifests sat three layers:
 
 {% diagram(title="The web delivery self-service, one squad's scope") %}
-
-   Next.js frontend           Go API backend           Temporal workflows        Git
-   ----------------           --------------           ------------------        ---
-   self-service portal  --->  control plane     --->   create, adjust,    --->   manifests
-   learn what is exposed      validates requests       remove resources          (source of
-   and how, order changes     starts workflows         do the operator work      truth)
-                                                                |
-                                                                v
-                                                  WAF, CDN, ingress proxies, DNS
-
+   ┌──────────────────────────┐
+   │ Next.js frontend         │  self-service portal: see what is
+   │                          │  exposed and how, order changes
+   └─────────────┬────────────┘
+                 ▼
+   ┌──────────────────────────┐
+   │ Go API backend           │  control plane: validates requests,
+   │                          │  starts workflows
+   └─────────────┬────────────┘
+                 ▼
+   ┌──────────────────────────┐
+   │ Temporal workflows       │  create, adjust and remove resources,
+   │                          │  do the operator work
+   └──────┬────────────┬──────┘
+          ▼            ▼
+    manifests in Git    WAF, CDN, ingress proxies, DNS
+    (source of truth)
 {% end %}
 
 The portal was a facade over the manifests. A team could look up its service and see, in one place, through which perimeter it was reachable, which WAF rules applied, how the CDN cached and forwarded, and which DNS records pointed where, without ever needing an account with the CDN vendor. When they wanted a change, they ordered it in the portal. The Go backend acted as the control plane, validated the request and started a Temporal workflow, and the workflow did what a human operator used to do: update the manifest in Git, apply the change to the WAF, the CDN, the proxies and the DNS, check the result and roll back if needed. Over time, the workflows took over practically all of the operational work that had needed dedicated operators.
@@ -180,24 +190,19 @@ An EA repository is a curated description of the landscape, maintained by archit
 The platform I started building has three layers, and the middle one is the point.
 
 {% diagram(title="Enterprise Context Platform") %}
-
-   SOURCES                       CONTEXT MODEL                  SURFACES
-   -------                       -------------                  --------
-
-   EA repository ------+
-   data catalogue -----+        +---------------------+        Web UI (explore the graph)
-   ITSM and CMDB ------+        |   entities          |
-   source code --------+------> |   relationships     | -----> REST API
-   container platform -+ ingest |   provenance        |
-   observability ------+        |   confidence        | -----> MCP endpoints (agents)
-   integration --------+        +----------+----------+
-   WAF / exposure -----+                   |                  Artifacts:
-   CDN ----------------+                   v                   architecture analysis
-                                  analytics over the model     business cases
-                                                               solution diagrams
-                                                               EA diagrams
-                                                               ADRs
-
+   SOURCES                 CONTEXT MODEL              SURFACES
+   EA repository ─────┐
+   data catalogue ────┤    ┌────────────────────┐
+   ITSM and CMDB ─────┤    │ entities           │ ──▶ Web UI
+   source code ───────┼──▶ │ relationships      │ ──▶ REST API
+   container platform ┤    │ provenance         │ ──▶ MCP, for agents
+   observability ─────┤    │ confidence         │
+   integration ───────┤    └─────────┬──────────┘
+   WAF and exposure ──┤              ▼
+   CDN ───────────────┘     analytics over the model
+            ingest                   ▼
+                            artifacts: analyses, business
+                            cases, diagrams, ADRs
 {% end %}
 
 **Ingestion.** Each source gets a connector. Some of it is static and deterministic: a namespace on the container platform is a namespace, a team on the source code platform is a team, an application in the EA repository has an ID. Some of it needs help. Mapping a repository called `pol-adm-svc-v2` to the application "Policy Administration" in the EA repository is a judgement call, and that is where the ingestion is AI-assisted: a model proposes the link from names, READMEs, owners, deployment labels and descriptions, and records how confident it is and why.
@@ -278,11 +283,24 @@ Some of it is a **primary source**: the Context Model is the authoritative place
 Over time, more data moves from secondary to primary. When a data set is curated, scored highly and used everywhere through the model, and the original tool adds nothing but a second place to maintain it, the sensible thing is to declare the Context Model authoritative for it and retire the copy.
 
 {% diagram(title="How a data set changes standing") %}
-
-   ingested            scored and           curated by its        declared
-   from source  --->   connected     --->   owner, used     --->  primary in the
-   (secondary)         in the model         through the model     Context Model
-
+   ┌──────────────────────────┐
+   │ ingested from a source   │  secondary: the source wins
+   └─────────────┬────────────┘
+                 ▼
+   ┌──────────────────────────┐
+   │ scored and connected     │
+   │ in the model             │
+   └─────────────┬────────────┘
+                 ▼
+   ┌──────────────────────────┐
+   │ curated by its owner,    │
+   │ used through the model   │
+   └─────────────┬────────────┘
+                 ▼
+   ┌──────────────────────────┐
+   │ declared primary in      │  an explicit decision, with
+   │ the Context Model        │  an owner and a date
+   └──────────────────────────┘
 {% end %}
 
 The move is always an explicit decision, made per data set, with an owner and a date, so everyone knows where to correct a fact.
