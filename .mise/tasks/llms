@@ -124,6 +124,9 @@ def load(section):
     for path in glob.glob("content/%s/*.md" % section):
         if path.endswith("_index.md"):
             continue
+        # Translations (<slug>.<lang>.md) are copies of a page in another language, not pages of their own.
+        if re.search(r"\.[a-z]{2}\.md$", path):
+            continue
         fm, body = split_front_matter(open(path).read())
         if re.search(r"^draft\s*=\s*true", fm, re.M):
             continue
