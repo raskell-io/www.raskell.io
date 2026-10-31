@@ -11,6 +11,12 @@ tags = ["operating-systems", "openbsd", "linux"]
 author = "Raffael"
 image = "openbsd-libvirt.avif"
 cover = "covers/openbsd-libvirt.avif"
+in_short = [
+  "After moving from Arch to Void Linux, my long fascination with the BSDs led me to start running OpenBSD, beginning with a virtual machine rather than bare metal.",
+  "I compare Void and OpenBSD, noting shared traits like open source and security focus, and differences in licence, philosophy, package management and init system.",
+  "OpenBSD stands out for its security focus under Theo de Raadt and for tools adopted elsewhere, such as OpenSSH, and features like pledge and unveil.",
+  "The guide shows that libvirt with QEMU is enough to run OpenBSD without VirtualBox or VMware: install the packages, fetch and verify the ISO, define the machine with virt-install, and connect over VNC.",
+]
 +++
 
 ## Void Linux as my daily driver

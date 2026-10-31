@@ -9,6 +9,13 @@ tags = ["enterprise-architecture", "context-engineering", "agents", "provenance"
 
 [extra]
 author = "Raffael"
+in_short = [
+  "This is a reference implementation of the IT intelligence platform from my earlier post, in one open source repository with a deliberately messy fictional company, the Kestrel Group, inside it.",
+  "The ontology comes first and everything is generated from or validated against it, and observations from sources are kept separate from the entities the model concludes from them.",
+  "Every relationship is a row with a basis, a confidence and a source, and identity resolution runs from shared keys to rules to model inference, with uncertain links queued for the owning team to confirm.",
+  "Workflows run ingestion durably, sources are scored in public, and one Go binary serves REST and an MCP server whose small, entity-centric answers always carry their provenance.",
+  "The order of the layers matters more than the tools; the database, workflow engine, frontend and model provider are choices you can revisit, and the reference is honest about the gaps it leaves.",
+]
 +++
 
 <!-- TODO(Raffael): the repository linked throughout (github.com/raskell-io/it-intelligence) has to exist before this is published. Name, layout and snippets below are the proposal; align them with the real repo once it is built. -->

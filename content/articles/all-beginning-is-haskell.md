@@ -11,6 +11,13 @@ tags = ["programming-languages", "haskell", "developer-tooling", "compilers"]
 author = "Raffael"
 image = "all-beginning-is-haskell.avif"
 cover = "covers/all-beginning-is-haskell.avif"
+in_short = [
+  "Haskell rewired how I think about software, not because it is the best language for every task, but because it teaches programs as compositions of well-typed transformations.",
+  "Its most valuable lesson for me is that types are design tools: algebraic data types make illegal states unrepresentable, and I use the same pattern in Rust constantly.",
+  "Monads matter less for being clever than for making effects explicit and composable in the type signature, an idea that shapes how I use Result in Rust.",
+  "The language is excellent but its tooling has gaps, which is why I am building *hx*, a Haskell toolchain CLI in Rust, and *bhc*, an experimental compiler without a garbage collector.",
+  "My Rust projects, *Conflux*, *Zentinel* and *Shiioo*, carry Haskell ideas such as merge laws, monoids and folds over events, and I believe really learning Haskell makes you a better engineer in any language.",
+]
 +++
 
 This site is called raskell.io. That is not an accident.

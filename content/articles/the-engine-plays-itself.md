@@ -10,6 +10,13 @@ series = ["learning-to-play"]
 
 [extra]
 author = "Raffael"
+in_short = [
+  "With no games database and no budget, *Kishi* makes its own training data: the engine plays itself, records positions and its search scores, and writes each game result back onto every position.",
+  "This counts as reinforcement learning because every label comes from the engine's own play, with a training target that blends the search score with the actual game result as the corrective signal.",
+  "The first network lost badly despite good training and validation loss, because the scaling constant K was set to the half-remembered 400 from the Elo formula instead of being fitted to the data.",
+  "Refitting K to the games turned a losing network into a winning one, a swing of 176 Elo; the scale of a model output is part of its interface, and only the arena could see that contract.",
+  "Generation 1 beats the hand-written evaluation at equal nodes, but at equal time it is roughly level because the network makes each node slower, so the app still plays the table.",
+]
 +++
 
 <!--

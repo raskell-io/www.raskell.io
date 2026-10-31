@@ -12,6 +12,13 @@ author = "Raffael"
 image = "it-intelligence.avif"
 cover = "covers/it-intelligence.avif"
 reads = ["enterprise-architecture-as-strategy", "seeing-like-a-state"]
+in_short = [
+  "Companies built business intelligence to know how they sell, but cannot cheaply answer what IT they have, who owns it and how it connects; I call that missing layer IT intelligence.",
+  "The facts sit in separate systems of record, and the knowledge between them is lost to tribal knowledge and silos, which research on tacit knowledge, information politics and knowledge hiding helps explain.",
+  "The Enterprise Context Platform I am building ingests every source, scores it for accuracy, and resolves it into an ontology of entities with provenance and confidence, served through a web UI, REST and MCP.",
+  "IT context should be open by default and built on open source, because agents without it explore expensively, duplicate work and guess, while a shared model turns rediscovery into a lookup.",
+  "As agents write more code and work moves up a level of abstraction, organisations built around scarce implementation capacity become the next bottleneck and will have to change shape.",
+]
 +++
 
 Ask a large company how many insurance policies it sold in Germany last quarter and you get an answer in seconds, with a chart, a trend line and a breakdown by channel. Ask the same company which applications process customer health data, who owns them, which clusters they run on and which of them already call a language model, and you get a meeting, then a spreadsheet, then a second meeting because the spreadsheet disagrees with the CMDB.

@@ -10,6 +10,13 @@ tags = ["meta", "knowledge-management", "hypertext", "open-web", "zola", "extern
 author = "Raffael"
 image = "this-site-is-becoming-a-map.avif"
 cover = "covers/this-site-is-becoming-a-map.avif"
+in_short = [
+  "A blog is a timeline that works for news and badly for ideas, so raskell.io now has a map that draws articles, topics, series and projects as one graph.",
+  "Every edge comes from a deliberate act, a tag, a series, a link or a named project, and is computed at build time, which avoids the meaningless hairball of similarity-based graph views.",
+  "The map already showed me two centres of gravity, platform automation and AI engineering, how much *Zentinel* holds together, an isolated corner of older Linux and BSD posts, and projects I never wrote about.",
+  "It is the first piece of a public second brain: short notes beside long articles, notes that grow, the sources that shaped me, a path from private *Kurumi* notes, and a garden agents can read.",
+  "The map can be exported as an image or as JSON, and a missing link between two pieces is usually a post I should write.",
+]
 +++
 
 A blog is a timeline. The newest post sits on top, everything else slides down, and after a while the only way to find the post from last spring is to remember roughly when you read it. That works for news. It works badly for ideas, because ideas do not arrive in date order. Two posts written months apart can be circling the same problem, and nothing on a timeline tells you that.

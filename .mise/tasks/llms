@@ -145,6 +145,7 @@ def entry(section, slug, fm, body):
         "categories": fm_list(fm, "categories"),
         "review": fm_str(fm, "review"),
         "reads": fm_list(fm, "reads"),
+        "in_short": fm_list(fm, "in_short"),
         "event": fm_str(fm, "event"),
         "venue": fm_str(fm, "venue"),
         "section": section,
@@ -166,7 +167,7 @@ def parse_works():
     out = []
     for block in re.split(r"^\[\[works\]\]\s*$", open("data/reading.toml").read(), flags=re.M)[1:]:
         w = {k: fm_str(block, k) for k in ("id", "title", "subtitle", "author", "kind", "edition", "publisher", "isbn",
-                                          "url", "status", "started", "finished", "take", "cover")}
+                                          "url", "status", "started", "finished", "about", "take", "cover")}
         w["year"], w["rating"], w["topics"] = fm_num(block, "year"), fm_num(block, "rating"), fm_list(block, "topics")
         out.append(w)
     return out
@@ -208,7 +209,10 @@ def article_markdown(a):
         head.append('event: "%s"' % a["event"].replace('"', '\\"'))
     if a["venue"]:
         head.append('venue: "%s"' % a["venue"].replace('"', '\\"'))
-    head += ["---", "", "# " + a["title"], "", a["body"], ""]
+    head += ["---", "", "# " + a["title"], ""]
+    if a["in_short"]:
+        head += ["## In short", "", " ".join(a["in_short"]), ""]
+    head += [a["body"], ""]
     return "\n".join(head)
 
 
@@ -344,7 +348,7 @@ reading_json = {
         "id": w["id"], "title": w["title"], "subtitle": w["subtitle"] or None, "author": w["author"], "kind": w["kind"],
         "year": w["year"], "edition": w["edition"] or None, "publisher": w["publisher"] or None, "isbn": w["isbn"] or None,
         "url": w["url"] or None, "status": w["status"], "started": w["started"] or None, "finished": w["finished"] or None,
-        "rating": w["rating"], "topics": w["topics"] or None, "take": w["take"] or None,
+        "rating": w["rating"], "topics": w["topics"] or None, "about": w["about"] or None, "take": w["take"] or None,
         "cover": "%s/%s" % (BASE, w["cover"]) if w["cover"] else None, "page": "%s/reading/#%s" % (BASE, w["id"]),
         "review": {"title": REVIEWS[w["id"]]["title"], "url": REVIEWS[w["id"]]["url"], "markdown": REVIEWS[w["id"]]["md"]} if w["id"] in REVIEWS else None,
     }.items() if v is not None} for w in works],

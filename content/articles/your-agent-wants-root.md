@@ -11,6 +11,13 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "your-agent-wants-root.avif"
 cover = "covers/your-agent-wants-root.avif"
+in_short = [
+  "An agent with a shell tool is arbitrary code execution behind a friendly interface, so the defence is not better prompts but a fence around the runtime that bounds the cost of a bad call.",
+  "The agent threat model is different because the model chooses the action, tool results are an injection surface, and the blast radius grows with every additional agent.",
+  "A default Docker container shares the host kernel and has generous defaults; hardened Docker is enough only for single-tenant, low-stakes work, and riskier workloads need gVisor, Firecracker or Kata underneath.",
+  "Part two of the handbook wraps the shell tool in a hardened container with gVisor, changing only the runtime below the tool while the agent loop stays exactly the same.",
+  "Isolation is necessary but not sufficient: egress policy, persistent state, tool-level approval, identity and budgets remain separate problems for later posts.",
+]
 +++
 
 > Part 2 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [What an Agent Actually Is](/articles/what-an-agent-actually-is/). Next: Tools, How Agents Actually Do Things.

@@ -10,6 +10,13 @@ tags = ["insurance", "finance", "cryptocurrency", "trust", "machine-learning", "
 [extra]
 author = "Raffael"
 reads = ["debt", "the-black-swan", "antifragile", "skin-in-the-game", "geld-aus-dem-nichts", "wer-regiert-das-geld"]
+in_short = [
+  "Insurers and banks that say they are not tech companies misunderstand their own product: an insurer is a technology company that happens to hold a balance sheet, and the oldest data company there is.",
+  "Money, policies and accounts are abstract records of trust, and I define technology as the formalisation of trust into procedure, something that happens the same way every time and can be checked.",
+  "Halley's 1693 life table already had the whole architecture of insurance: a collected dataset, a model fitted to it, and a price derived from the model; underwriting, pricing, reserving and capital modelling are all prediction.",
+  "The data that defines risk is moving into cars, phones, wearables and buildings, so whoever sees the road can price the risk best, and agents fit the symbolic world insurers already live in.",
+  "Capital, float and regulation make the promise credible but do not decide who wins, so insurers should own their models and data, treat procedures as code, and let agents explore while keeping what works.",
+]
 +++
 
 "We are not a tech company." I have heard the sentence in meetings at the insurer I work for, which since a recent merger is also a bank, and before that at a bank where I worked, said by smart, experienced people, usually as a reason: for why a platform does not need to be built in-house, why engineering is a cost to be contained, why the interesting work happens somewhere else. Every time, I am baffled, because I think the opposite is true. An insurer is not a financial company that happens to use technology. It is a technology company that happens to hold a balance sheet, and in a precise sense it is the oldest data company there is.

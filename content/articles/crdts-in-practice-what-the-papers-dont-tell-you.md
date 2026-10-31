@@ -9,6 +9,13 @@ tags = ["distributed-systems", "local-first", "determinism", "reliability", "rus
 
 [extra]
 author = "Raffael"
+in_short = [
+  "Managing infrastructure config with one Git branch per environment caused drift, false conflicts and load-bearing merge order, so I built *Conflux*, a CRDT engine in Rust, to let many writers merge without conflicts.",
+  "The mathematical guarantees hold, but clocks drift, so a last writer wins field can pick the wrong write, and a merge can be conflict-free and still semantically wrong.",
+  "Choosing the right CRDT type for each field and logging every merge decision makes semantic conflicts less likely and visible when they happen.",
+  "State grows forever without compaction, which needs every replica's watermark, so a replica offline past an expiry window must rejoin from scratch, a tradeoff of correctness for practicality.",
+  "Schema changes are the problem nobody warns you about; I would start with fewer types and build compaction and schema evolution in from day one, because conflict-free does not mean problem-free.",
+]
 +++
 
 If you have managed infrastructure config across multiple environments, you know the pattern. You have a Git repository. It holds runtime configuration for your services. There is a `dev` branch, a `staging` branch, and a `production` branch. Each branch represents the state of a different environment. When you want to promote a config change from dev to production, you merge the branch.

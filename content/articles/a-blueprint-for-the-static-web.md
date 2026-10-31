@@ -10,6 +10,13 @@ tags = ["applied-security", "edge-systems", "open-web", "zola", "webassembly", "
 author = "Raffael"
 image = "a-blueprint-for-the-static-web.avif"
 cover = "covers/a-blueprint-for-the-static-web.avif"
+in_short = [
+  "PHP Gate, two critical remote code execution flaws in every PHP installation serving web requests, showed the risk of running code on a server for each request to produce a page that is almost always the same.",
+  "My blueprint is to render at commit time, serve files from the edge, and run code only where it cannot be avoided: in the visitor's browser or in a small edge function that does one job.",
+  "Across about forty of my own projects I found the same eleven practices, from writing the agent context and declaring the ontology first to pinned tools, machine-legible pages and a strict Content Security Policy.",
+  "Some projects genuinely need a backend, such as those with accounts, many writers or real-time collaboration, and then I pick Go, Next.js, Phoenix or Refrakt by the shape of the problem while keeping the rest static.",
+  "The safest runtime is the one you never start; two template repositories, *blueprint-site* and *blueprint-app*, put the practices into files, and I admit my own sites do not all follow them yet.",
+]
 +++
 
 Last Wednesday, the PHP project shipped [four releases in one afternoon](https://www.php.net/archive/2026.php).
@@ -99,7 +106,8 @@ A few more words this post uses, so they do not get in the way later:
 Render at commit time, serve files from the edge, and run code only where it cannot be avoided. A page is built once,
 when a change is merged, and from then on it is a file on a CDN. Logic that must react to a visitor moves to one of
 two places: the visitor's own browser (JavaScript, or Rust compiled to WebAssembly when the work is heavy), or a small
-edge function that does exactly one job. There is no application server, no database behind the pages, and no
+edge function that does exactly one job, the pattern I described in
+[Edge Systems Are the New Backend](@/articles/edge-systems-are-the-new-backend.md). There is no application server, no database behind the pages, and no
 runtime to patch at two in the morning, because there is nothing running between the request and the file.
 
 ## Why bother
@@ -253,7 +261,8 @@ enum.status = ["live", "beta", "early", "archived"]
 A validator enforces it on every pull request, using only the Python standard library so it runs anywhere. Unknown
 fields fail, so a typo in `descripton` cannot silently drop a page's description. Topics come from one vocabulary,
 with `broader` links that turn the vocabulary into a small graph. On this site the same declarations drive the
-[map](/map/), the search index, the JSON-LD and the [ontology page](/ontology/) that explains all of it to readers.
+[map](/map/) (the story of how it came about is in [This Site Is Becoming a Map](@/articles/this-site-is-becoming-a-map.md)),
+the search index, the JSON-LD and the [ontology page](/ontology/) that explains all of it to readers.
 
 The payoff is that nothing is improvised later. When I add a reading log, a talk, or a new kind of project, the
 question is "what kind is it, and where is it registered," not "where should I put this file."
@@ -354,8 +363,9 @@ n=$(find public -type f | wc -l); [ "$n" -lt 20000 ] || { echo "too many files f
 ### 7. Workers only for what a file cannot do
 
 An edge function is the right tool when something needs state, a secret, or a protocol. My Workers each do one thing:
-accept a form, proxy two country domains onto language prefixes, sync an offline notes app to
-object storage, run a package registry, or serve an MCP server over a static JSON API. They are small, read-only where
+accept a form, proxy two country domains onto language prefixes, sync [Kurumi](https://kurumi.raskell.io), an offline
+notes app, to object storage, run [Arcanist](https://arcanist.sh)'s package registry, or serve an MCP server over a
+static JSON API. They are small, read-only where
 they can be, cached, and hold at most one narrowly scoped secret (`wrangler secret put`, never the repository).
 
 The feedback Worker in the blueprint is about sixty lines and does the job a contact form plugin used to do: it checks
@@ -372,14 +382,14 @@ keeps the bundle small, and its runes keep local state in plain variables.
 Offline support is what makes an app usable on a train or a plane. SvelteKit's own service worker is enough,
 without a plugin. The pattern I use everywhere: one cache per deploy, named after the build version so a new
 deploy never mixes with an old one; hashed assets cache-first, because their content can never change; pages
-network-first with the cache as the fallback. My language-learning app goes further and picks a strategy per kind of
+network-first with the cache as the fallback. My language-learning app, [Manabi](https://manabi.raskell.io), goes further and picks a strategy per kind of
 data, stale-while-revalidate for dictionary shards and network-only for the user's own API calls. Only three of my
 apps had a service worker at all. All of them should.
 
 ### 9. Rust compiled to WebAssembly, for the right reasons
 
-When an app needs real computation, a chess engine, a neural simulation, a config validator, I write it in Rust and
-compile it to WebAssembly. The layout is always the same: a core crate with no wasm or JavaScript in it, tested with
+When an app needs real computation, a chess engine, a neural simulation like [Hotaru](https://hotaru.raskell.io), a
+config validator, I write it in Rust and compile it to WebAssembly. The layout is always the same: a core crate with no wasm or JavaScript in it, tested with
 plain `cargo test`, and a thin crate that exports a C ABI over it. No wasm-bindgen unless a framework needs it. The
 browser reads results straight out of the module's linear memory. A release profile with fat LTO, one codegen unit
 and `panic = "abort"`, then `wasm-opt`, keeps modules small: the blueprint's is 16 KB, and the build fails if it grows
@@ -407,13 +417,15 @@ bands of rows, many short calls instead of one long one, brought it to parity.
 The reasons to use Rust in the browser lie elsewhere:
 
 - **One core, many places.** [Zentinel](https://zentinelproxy.io)'s documentation validates every configuration
-  snippet in the browser with the real configuration parser, compiled to WebAssembly from the same crate the proxy
+  snippet in the browser with the real configuration parser (the proxy itself is the subject of
+  [What Zentinel Is Really Optimizing For](@/articles/what-zentinel-is-really-optimizing-for.md)), compiled to WebAssembly from the same crate the proxy
   uses. A snippet that would not load in production shows red on the page. The same Rust that runs in a server or a
   desktop app runs in the tab, tested once.
 - **Types at the boundary.** The only interface between JavaScript and the logic is a handful of typed numbers and a
   pointer. Everything behind it is checked by the compiler.
-- **The work JavaScript is bad at.** 64-bit integer arithmetic, bit boards, tight memory layouts, threads. Kishi's
-  chess engine is that kind of code.
+- **The work JavaScript is bad at.** 64-bit integer arithmetic, bit boards, tight memory layouts, threads.
+  [Kishi](https://kishi.raskell.io)'s chess engine is that kind of code; [Learning to Play](@/articles/learning-to-play.md)
+  is the long story of building it.
 
 ### 10. Make it legible to machines
 

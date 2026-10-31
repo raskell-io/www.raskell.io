@@ -11,6 +11,12 @@ tags = ["operating-systems", "linux"]
 author = "Raffael"
 image = "void-disk-usage.avif"
 cover = "covers/void-disk-usage.avif"
+in_short = [
+  "My Void Linux root partition had quietly filled to 85 percent after almost two years of use, and I wanted a fix without babysitting the system.",
+  "Running xbps-remove -O to clean obsolete packages from the cache freed almost half of the used space on its own.",
+  "Removing orphaned dependencies with xbps-remove -o and purging old kernels with vkpurge freed more, though keeping an old kernel around is a sensible safety net.",
+  "The root partition dropped to 33 percent, and the episode renewed my faith in Void: simple, well-documented utilities whose answers a single search can find.",
+]
 +++
 
 ## Monday morning surprise

@@ -10,6 +10,13 @@ tags = ["applied-security", "ai-for-ops", "agents", "policy", "sovereignty"]
 author = "Raffael"
 image = "notes-from-rsac-2026.avif"
 cover = "covers/notes-from-rsac-2026.avif"
+in_short = [
+  "My third RSA Conference was my first as a speaker, and the AI conversation had narrowed from what is possible to how to architect systems around autonomous agents and non-human identities.",
+  "Most of the conference agreed that a human in the loop is an operational bottleneck against machine-speed attackers; I think the human should become a supervisor who sets policy, not a gatekeeper.",
+  "Paul Nakasone named chips, data, talent and energy as the factors of national potential, and Europe and Switzerland are behind on all four, which is why I co-founded Die Zukunft and built Archipelag.io.",
+  "The biggest risk I see is institutional inertia: organisations that outsource AI to vendors instead of building internal capability and compute will fall further behind every quarter.",
+  "Good vendors present their tools as force multipliers for competent teams, but real security remains hands-on work of knowing your own systems, and that cannot be fully outsourced.",
+]
 +++
 
 I am writing this about two weeks after RSAC 2026 closed. In between, my coworkers and I drove down the West Coast, through Big Sur to LA, then out to Las Vegas for Easter weekend. That was deliberate. Not the route, exactly, but the space. The conference gave me a lot to process, and I have learned over the years that I process better when I am moving, when I am not sitting at a desk trying to force conclusions out of raw impressions.

@@ -11,6 +11,13 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "context-is-the-product.avif"
 cover = "covers/context-is-the-product.avif"
+in_short = [
+  "Models are close to commodities that you can swap at the loop boundary, while context about your project is the part that is yours and what makes an agent good at your work.",
+  "An agent draws on static, dynamic and persistent context, and static context is the layer most teams skip even though it decides whether retrieval and memory can work at all.",
+  "The industry moved from long system prompts through retrieval and long context windows to per-project files, and a directory beats a single file because it reduces conflicts, adds structure and allows scoping.",
+  "The harness gains a small loader that reads a .AGENTS directory in priority order, caps it with a byte budget, marks truncation visibly and wraps each source so the model can cite it.",
+  "Retrieval alone is not enough because it misses rare rules and cross-cutting concerns, so the right design is static context for rules, retrieval for the corpus and tools for live state.",
+]
 +++
 
 > Part 4 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Tools: How Agents Actually Do Things](/articles/tools-how-agents-actually-do-things/). Next: [Retrieval Is a Tool, Not a Layer](/articles/retrieval-is-a-tool-not-a-layer/).

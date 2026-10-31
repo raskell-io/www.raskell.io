@@ -10,6 +10,13 @@ tags = ["agents", "inference", "self-hosting", "local-first", "gpus", "economics
 author = "Raffael"
 image = "shiioo-reimagined-and-a-home-ai-lab.avif"
 cover = "covers/shiioo-reimagined-and-a-home-ai-lab.avif"
+in_short = [
+  "The first *Shiioo* modelled agents as a company with roles, squads and approval boards, but it described my work badly, hid a fragile core, and spent about 40 percent of tokens on agents talking to each other.",
+  "The re-imagined *Shiioo* is a personal agent workforce for one owner: an append-only, hash-chained event log as the only state, leases with fencing tokens, rules before every tool call, and work handed out from a phone.",
+  "It hires existing harnesses such as Claude Code and Codex, run headless in their own git worktrees, instead of writing agent personas, so each improvement in the agents arrives the day it ships.",
+  "A Mac Studio with 256 GB becomes the always-on office for local models, with DGX Sparks planned as CUDA nodes, so subscriptions pay for serious software work and cheap thinking runs on electricity.",
+  "The lessons are to build the record before the features, build for the user you are, and hire agents rather than write them; the hardware speeds are still ceilings from arithmetic, not measurements.",
+]
 +++
 
 I work on a lot of things at the same time. At any moment there are more than ten active projects: open source tools, a few early ventures, sites like this one, and passion projects like a [chess engine](/articles/learning-to-play/) and a simulated neuron culture. None of them is big, and all of them want the same evenings. I have used Claude Code since May 2025, but for most of that year it was AI-assisted development: me at the keyboard, the model helping. Then Anthropic released Claude Opus 4.5 on 24 November 2025, and inside Claude Code it was the first model I trusted with a task while I did something else. Over November and December the work changed shape, and since then most of it has gone through agents I delegate to rather than work beside.

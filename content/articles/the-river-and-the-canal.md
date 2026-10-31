@@ -11,6 +11,13 @@ author = "Raffael"
 image = "the-river-and-the-canal.avif"
 cover = "covers/the-river-and-the-canal.avif"
 reads = ["the-infinity-machine", "seeing-like-a-state", "jurassic-park"]
+in_short = [
+  "Agents are best at exploring open, foggy problems; deterministic workflows are best at repeating known ones, and businesses that sell sameness, like banks and insurers, depend on the second.",
+  "Every layer of computing made one more thing predictable so people could stop thinking about it; an agent orchestrator for everything is the first layer that hands the thinking back.",
+  "The design that works is a meta-factory: agents explore, write down what works as a workflow, a deterministic engine runs it, and agents repair or retire it when the world changes.",
+  "Workflows can still contain bounded agent steps, like locks in a canal, which keeps judgement where it is needed and makes the rest auditable, repeatable and cheap.",
+  "Not everything should become a procedure: the agents at the edge stay, because the fog never lifts completely.",
+]
 +++
 
 *A note before you start: this is a different kind of post from most on this site. It is a philosophical essay rather than a technical one, and a long read, around forty-five minutes. It starts with a photograph and ends with the name of a workflow engine, and in between it goes through fractals, games, cosmology, a century of thinking about organisations, a story from 4chan, and a field guide you can use on Monday. It is also, more than anything else I have written here, a map of how I think. If you want only the practical part, [skip to the field guide](#a-field-guide).*

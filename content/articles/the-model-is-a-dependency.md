@@ -11,6 +11,13 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "the-model-is-a-dependency.avif"
 cover = "covers/the-model-is-a-dependency.avif"
+in_short = [
+  "The model was the one hardcoded string in the harness, even though its cost, availability and capability are all outside your control, so it is the riskiest line rather than a harmless one.",
+  "Putting a small Model interface between the loop and the provider means a router, a fallback chain or a test fixture all look the same to the loop; models are commodities only if nothing above the interface knows the provider.",
+  "Routing by turn sends routine digestion to a cheap model and escalates to a strong one after a tool error, an honest proxy for difficulty that costs nothing and is easy to reason about.",
+  "Fallback sits below the SDK retries and only fails over on server and connection errors, because retrying a malformed request on a second provider just breaks our own bug twice.",
+  "The boundary is drawn but much behind it is still open: responses are not normalised, cost is logged but not budgeted, routing fights the prompt cache, and prompts are not portable across model families.",
+]
 +++
 
 > Part 7 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Memory Is a Write Path](/articles/memory-is-a-write-path/). Next: [The Bill Is Part of the Loop](/articles/the-bill-is-part-of-the-loop/).

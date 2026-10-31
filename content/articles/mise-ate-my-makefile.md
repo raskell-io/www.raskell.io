@@ -11,6 +11,13 @@ tags = ["developer-tooling", "platform-automation", "rust"]
 author = "Raffael"
 image = "mise-ate-make.avif"
 cover = "covers/mise-ate-make.avif"
+in_short = [
+  "Across around forty repositories in many languages, Makefiles, asdf, direnv and scattered scripts had become a maintenance burden that broke across platforms and could not declare tool dependencies.",
+  "Nix solved a harder problem than I have and was too steep for contributors, while asdf was slow, had uneven plugins and still needed Make on top for tasks.",
+  "Mise is a single Rust binary that pins tool versions, loads environment variables and defines discoverable tasks with dependencies, all in one TOML file per project.",
+  "The real payoff is a consistent contract in every repository: clone, run mise install, list tasks, then run dev or test, whatever the underlying language or build system.",
+  "Mise does not replace file-level build tools and is younger and less familiar than Make, so I migrate incrementally, starting with the daily tasks and deleting the Makefile last.",
+]
 +++
 
 I maintain around forty repositories across four GitHub organizations. [Zentinel](https://zentinelproxy.io) alone accounts for over thirty: the core proxy, a Rust SDK, and a growing collection of agents for WAF inspection, auth, rate limiting, GraphQL security, and a dozen other edge concerns. [Archipelag.io](https://archipelag.io) spans an Elixir coordinator, a Rust node agent, Python and TypeScript SDKs, mobile agents in Kotlin and Swift, and infrastructure-as-code repos. [Cyanea](https://cyanea.bio) is Elixir with Rust NIFs and a separate Rust bioinformatics library. Then there are the standalone tools: [Conflux](https://github.com/raskell-io/conflux) (Rust CRDT engine), [Sango](https://github.com/raskell-io/sango) (Rust edge diagnostics CLI), [Shiioo](https://github.com/raskell-io/shiioo) (Rust agentic orchestrator), [Vela](https://github.com/raskell-io/vela) (Rust bare-metal deployment), [Refrakt](https://github.com/raskell-io/refrakt) (Gleam web framework), [Kurumi](https://github.com/raskell-io/kurumi) (Svelte local-first app), and this site you are reading (Zola).

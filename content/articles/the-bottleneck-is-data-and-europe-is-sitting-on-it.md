@@ -15,6 +15,13 @@ related = [
     "the-economics-of-inference",
     "archipelag-io-distributed-compute-from-mining-rigs-to-open-beta",
 ]
+in_short = [
+  "The AI race is usually framed around hardware, but the binding constraint is increasingly clean, rights-clear, high-quality text, and the public web has largely been consumed.",
+  "The behaviour of the largest labs, including taking legal risk with shadow libraries and paying large settlements, is the clearest signal that the remaining high-quality text has become the scarce input.",
+  "Europe holds much of what was never put online: centuries of books, newspapers, archives and scientific records, plus aligned multilingual legal and parliamentary text that incumbents undersample.",
+  "Turning that latent asset into a strategic one is a coordination problem, not a technical one; the legal containers, such as the Article 3 text and data mining exception and the data spaces, exist but are unfilled.",
+  "I would build an open European training-data commons on the *Common Corpus* template, fund digitisation as infrastructure, license collectively and tie it to sovereign compute, aiming for sovereign capability rather than winning the race.",
+]
 +++
 
 The public conversation about who wins in AI is almost entirely a conversation about hardware. Who has the most accelerators, who controls the fabs, whose export-control list bites whose supply chain. That conversation is real, and I have spent enough time on the compute side to take it seriously. It is also, increasingly, the wrong place to look for the binding constraint.

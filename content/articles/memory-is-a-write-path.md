@@ -11,6 +11,13 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "memory-is-a-write-path.avif"
 cover = "covers/memory-is-a-write-path.avif"
+in_short = [
+  "Retrieval is safe because a bad read costs one turn, but a bad memory becomes a false premise loaded into every future session, so the real problem is letting an agent write its own ground truth.",
+  "Session memory is already solved by the message array in the loop; only cross-session memory needs building, and it must be written for a future reader who has none of the current context.",
+  "The store is one small markdown file per fact, with a one-line description pinned on every turn and a body pulled on demand through a memory_search tool that reuses the BM25 retriever.",
+  "The agent can only write into its own memory directory, never the project's read-only context, and the prompt frames its memories as fallible notes to verify rather than authoritative rules.",
+  "Slugged names make overwriting the correction path, a size cap keeps memories to single facts, and the index is regenerated from the files so it cannot drift; forgetting and conflict resolution remain unsolved.",
+]
 +++
 
 > Part 6 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Retrieval Is a Tool, Not a Layer](/articles/retrieval-is-a-tool-not-a-layer/). Next: The Model Is a Dependency.

@@ -10,6 +10,13 @@ tags = ["game-ai", "machine-learning", "reinforcement-learning", "games", "rust"
 author = "Raffael"
 image = "learning-to-play.avif"
 cover = "covers/learning-to-play.avif"
+in_short = [
+  "Reading *The Infinity Machine*, I was struck that the three parts in the chess handbook a young Demis Hassabis read are still the whole of a chess program, except that evaluation is now learned.",
+  "Chess, shogi and Go trace the history of game AI: the classical method works in chess, strains in shogi where the NNUE network was invented, and fails in Go without networks guiding search.",
+  "I built engines for all three in Rust, compiled to WebAssembly so they play offline on my phone, because a network inside the search has to be small, hand-written arithmetic.",
+  "My self-play network beat the hand-written chess evaluation at equal search depth but only drew at equal time, because it costs more per position.",
+  "The month left me with better questions than I started with, and I am keeping a notebook of every run, failures included, that may become a series.",
+]
 +++
 
 This month I have been reading [*The Infinity Machine*](/reading/#the-infinity-machine), Sebastian Mallaby's biography of Demis Hassabis, the chess prodigy from North London who founded DeepMind, the laboratory behind AlphaGo and AlphaFold. I picked it up because I wanted to understand one of the early architects of the AI we now live with, told by someone who had thirty hours of his time, and because almost everything that interests me, games, simulations, the question of what a machine can learn on its own, runs through his story. A hundred pages in, there is a scene I have not been able to put down.

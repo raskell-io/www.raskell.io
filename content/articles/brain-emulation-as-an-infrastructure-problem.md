@@ -15,6 +15,13 @@ related = [
     "the-economics-of-inference",
     "how-ai-makes-bare-metal-viable-again",
 ]
+in_short = [
+  "Isaak Freeman's MIT thesis reframes brain emulation as an engineering problem with identifiable bottlenecks, because connectomics, functional imaging and simulation have all advanced enough together.",
+  "Read as infrastructure, the interesting part of its compute estimates is the shape of the gap: today's AI clusters overshoot on interconnect, undershoot on per-GPU memory and land roughly right on compute.",
+  "Brains are local and spikes are sparse, so emulation needs every synapse resident in fast memory but little bandwidth between GPUs, the opposite shape of the clusters built for LLMs.",
+  "This fits my wider argument that each new important workload exposes a substrate built for something else; LLM inference exposed the wrong scheduler, and brain emulation exposes the wrong memory shape.",
+  "If emulation is a second path to advanced AI, it asks for a different machine than transformer scaling, so betting on a single substrate roadmap quietly assumes the other path stays marginal.",
+]
 +++
 
 Someone sent me an MIT thesis this week. [*From Worm to Human: Scaling Brain Emulation*](https://pdf.isaak.net/scaling-emulations), by Isaak Freeman, submitted March 2026 in the Boyden Lab.

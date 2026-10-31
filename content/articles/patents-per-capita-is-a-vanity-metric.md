@@ -10,6 +10,13 @@ tags = ["metrics", "policy", "sovereignty", "economics", "switzerland", "intelle
 author = "Raffael"
 image = "patents-per-capita-is-a-vanity-metric.avif"
 cover = "covers/patents-per-capita-is-a-vanity-metric.avif"
+in_short = [
+  "Switzerland has topped the Global Innovation Index for fifteen years, but the index is built from lagging indicators that measure yesterday well and say little about tomorrow.",
+  "Switzerland ranks first on creative outputs yet weakest on human capital and research, the pillar most predictive of the next decade.",
+  "On leading inputs the picture is less flattering: Korea files roughly three times as many patents per capita, Sweden out-invests on research spending, and the European scoreboard score has slipped slightly.",
+  "An engineer would instead instrument the substrate: onshore production, supply-chain proximity, time-to-compute, vendor concentration, talent flux and energy and fabrication capacity, especially sovereign AI compute.",
+  "Switzerland is fine today, but to stay ahead it should onshore high-value production, build sovereign compute and require open standards, optimising for the substrate rather than the score.",
+]
 +++
 
 It is the first of May, Labour Day. A holiday explicitly about work, which makes it a good day to ask whether the work that gets counted is the work that actually matters.

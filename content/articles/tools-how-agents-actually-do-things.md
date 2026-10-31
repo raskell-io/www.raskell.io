@@ -11,6 +11,13 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "tools-how-agents-actually-do-things.avif"
 cover = "covers/tools-how-agents-actually-do-things.avif"
+in_short = [
+  "Function calling solved the parsing problem, since the model now talks JSON, so the engineering that remains is the registry, the schemas and the contract between what the model sees and what code runs.",
+  "The harness grows a small registry and four tools, where tools never throw but return a tagged result, outputs are capped per tool, and parallel tool calls run together with Promise.all.",
+  "Good tool design means one tool per concept, descriptions written for the model with inputs, errors and when to use it, errors returned as data, and allow-lists enforced in the handler rather than the prompt.",
+  "The failure modes to expect include tool sprawl, description rot, hallucinated arguments and tools, output explosion, repeated side effects on retry, concurrent races and secrets leaking into error messages.",
+  "This layer does not settle where tool definitions live, which tools a task needs, or who may call them; those belong to later posts on MCP, context, permissions and identity.",
+]
 +++
 
 > Part 3 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Your Agent Wants Root](/articles/your-agent-wants-root/). Next: Context Is the Product.

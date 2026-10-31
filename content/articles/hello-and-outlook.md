@@ -11,6 +11,11 @@ tags = ["meta", "oss", "open-web"]
 author = "Raffael"
 image = "hello-world.avif"
 cover = "covers/hello-world.avif"
+in_short = [
+  "This first post introduces raskell.io as a place to document real work and share patterns other engineers can use, not thought leadership or personal branding.",
+  "The original plan was to write about Linux and BSD systems such as Void and OpenBSD, open-source tooling, platform automation and whatever hard problem I was stuck on.",
+  "Looking back from 2026, the scope grew to include edge systems and AI-assisted engineering, held together by one thread: systems under pressure and the tools that keep them running.",
+]
 +++
 
 ## Hello world

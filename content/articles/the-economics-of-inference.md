@@ -10,6 +10,12 @@ tags = ["inference", "economics", "sovereignty", "edge-systems", "gpus"]
 author = "Raffael"
 image = "the-economics-of-inference.avif"
 cover = "covers/the-economics-of-inference.avif"
+in_short = [
+  "Running out of tokens with sixteen agents was not a budget problem but my first experience of inference as a utility: consumed continuously, metered per unit and backed by heavy physical infrastructure.",
+  "Inference has the supply chain of a mature utility, built on chips, data, talent and energy, with bottlenecks in chip fabrication and geopolitical risks around Taiwan and export controls.",
+  "If capability grows faster than the physical infrastructure behind it, the binding constraint on AI is not software but the utility layer; the bottleneck was the meter.",
+  "Expect utility-style pricing, sovereignty concerns like those Europe learned with Russian gas, token efficiency as an engineering discipline, and metering and observability as essential tooling.",
+]
 +++
 
 In the [previous article](/articles/what-sixteen-ai-agents-taught-me-about-management/), I described running sixteen AI agents as a virtual company over Christmas 2025. The architecture worked. The coordination model worked. What did not work was the economics. My token budget evaporated in days, not because the agents were unproductive, but because every act of coordination, every status update, every escalation consumed a metered resource that I could not replenish fast enough.

@@ -11,6 +11,13 @@ tags = ["edge-systems", "applied-security", "distributed-systems", "local-first"
 author = "Raffael"
 image = "edge-systems-are-the-new-backend.avif"
 cover = "covers/edge-systems-are-the-new-backend.avif"
+in_short = [
+  "Business logic is migrating in two directions at once, up to the edge and down to the client, leaving the traditional backend as a thin persistence layer.",
+  "Cross-cutting concerns such as authentication, WAF inspection, rate limiting, validation and trace origin belong at the edge, run as crash-isolated agents with explicit failure modes and bounded resources.",
+  "Edge Workers and edge containers take compute that needs request context but not deep application state, while data gravity remains the hard problem.",
+  "In the browser, WebAssembly, WebGPU, Service Workers and CRDTs let the client compute, work offline and own its data, with the server reduced to storing and relaying operations.",
+  "The backend keeps coordination, multi-service transactions, heavy joins and batch work, and small teams with simple needs should not adopt this architecture before they have a reason to.",
+]
 +++
 
 A request arrives at your system. In the next 50 milliseconds, before any application code runs, this happens: TLS termination, route matching, WAF inspection against 285 detection rules, JWT validation, rate limit evaluation, request body validation against a JSON schema, and trace context generation. The request either dies at the edge or arrives at your backend pre-authenticated, pre-validated, and pre-authorized.

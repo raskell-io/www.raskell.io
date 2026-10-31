@@ -11,6 +11,13 @@ tags = ["ai-engineering", "developer-tooling", "rust", "augmentation"]
 author = "Raffael"
 image = "how-i-work-these-days.avif"
 cover = "covers/how-i-work-these-days.avif"
+in_short = [
+  "I had followed machine learning since 2020 and saw ChatGPT 3.5 as a historical shift, yet I still underestimated how fast it would become useful for building software.",
+  "Claude Code did not impress me at first, but with Opus 4.5 over the Christmas break of 2025 it became a tool I could genuinely build with.",
+  "Zentinel, a reverse proxy I had wanted for years, was the proof; after it, a backlog of long-held ideas such as Cyanea and Archipelag.io started moving.",
+  "My days now run across voice conversations with ChatGPT, several parallel Claude Code agents in Ghostty and Apple hardware, often adding up to close to sixteen hours.",
+  "The real change is that the lag between thought and execution collapsed, and the weight of unrealised ideas shrank; I am the happiest I have been, and I suspect we are still early.",
+]
 +++
 
 If you had asked me a few years ago what kind of shift would truly change software again, I would probably have said something vague about machine learning becoming more useful, more accessible, more integrated into normal tooling. I would not have said that within a few years I would be spending large parts of my day in conversation with models, building products at a pace that used to feel unrealistic for one person.

@@ -10,6 +10,13 @@ tags = ["applied-security", "waf", "edge-systems", "reliability", "determinism",
 author = "Raffael"
 image = "traffic-replay-as-a-security-primitive.avif"
 cover = "covers/traffic-replay-as-a-security-primitive.avif"
+in_short = [
+  "WAF tuning is guesswork because the traffic that triggered a rule is gone and logs are incomplete, so engineers change stateful edge systems without being able to reproduce their inputs.",
+  "Deterministic replay means capturing real requests, from browser HAR files or a proxy mirror, and re-executing them in order, with URL rewriting, cookie stripping and header mutation done correctly.",
+  "The real value is a behavioural diff between environments, comparing status codes, WAF decisions and security headers, which turns a rule change from a guess into evidence.",
+  "As a primitive it supports safe rule iteration, drift detection, regression tests for edge config, incident reproduction and compliance evidence, while existing tools each cover only capture, replay or analysis.",
+  "*Ushio* is my Rust CLI that composes capture, replay and diff for CI, and the deeper shift is that the security engineer observes what the WAF does instead of guessing.",
+]
 +++
 
 If you have ever tuned a WAF rule, you know the cycle. A rule triggers on legitimate traffic. You get paged. You look at the logs, which tell you the rule ID and the request path but not enough to reproduce what happened. You loosen the rule based on your best guess. You deploy. You wait. Next week, you get paged again, either because the rule is still too aggressive or because you loosened it too far and now something is getting through.

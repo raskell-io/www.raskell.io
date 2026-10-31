@@ -10,6 +10,13 @@ series = ["learning-to-play"]
 
 [extra]
 author = "Raffael"
+in_short = [
+  "Before any learning starts, I built Kishi's chess engine from the three parts Levy described: the board as numbers, an evaluation that says who is better, and a search that looks ahead.",
+  "The bitboard representation is checked by perft on every change, and the hand-written PeSTO evaluation holds almost none of the chess; the strength lives in the search and its pile of tuned statistical bets.",
+  "Measuring strength honestly is the hardest part: matches need paired openings, equal search budgets and stated margins of error, and a small positive result without proof means keep it and do not claim it.",
+  "Against a rebuilt version of the lichess computer, Kishi with its hand-written evaluation on one core sits between level 6 and level 7, with wide margins that I report rather than leave off.",
+  "The same construction gives a fair club opponent in shogi, while Go needs random playouts instead, and this baseline is the opponent every trained neural network in the project will have to beat.",
+]
 +++
 
 <!--

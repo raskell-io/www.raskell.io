@@ -11,6 +11,13 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "observability-is-not-logging.avif"
 cover = "covers/observability-is-not-logging.avif"
+in_short = [
+  "A cost total says nothing about how a run went; observability means being able to reconstruct what the system did, and for an agent that requires traces, not flat logs.",
+  "The unit of an agent is the turn, and a run is a tree of spans: a small tracer treats runs and turns as nested scopes and model and tool calls as leaves, so parallel tools stay siblings.",
+  "Tracing wraps the model interface and tool dispatch as decorators, so the loop barely changes, and the example trace shows most of the bill came from one escalation's cache write.",
+  "When you need storage, queries or a UI, swap in OpenTelemetry behind the same calls and use the GenAI conventions, while expecting their experimental attribute names to shift.",
+  "Do not put full prompts on spans, sample at the tail rather than the head, and remember that a trace shows what happened but not whether the run was correct.",
+]
 +++
 
 > Part 9 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [The Bill Is Part of the Loop](/articles/the-bill-is-part-of-the-loop/). Next: Evaluation Closes the Loop.

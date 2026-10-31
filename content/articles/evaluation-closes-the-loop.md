@@ -10,6 +10,13 @@ series = ["the-agent-platform-handbook"]
 
 [extra]
 author = "Raffael"
+in_short = [
+  "A trace shows what an agent did but not whether it was right, so this part of the handbook adds evaluation: written expectations that every run is checked against.",
+  "The golden set is a small versioned file of cases, kept small enough to read every failure, and cases should pin facts that only change when behaviour should change.",
+  "Each run faces four checks from strict to loose: tools used, calls that must never happen, required strings, and an LLM judge whose biases mean it should never stand alone.",
+  "Each case runs three times and passes on a majority, and a regression mode fails the build when any case that passed at the baseline now fails.",
+  "Bad answers from real use become new cases with one command, so the suite grows from actual failures and resists overfitting to the cases I tuned against.",
+]
 +++
 
 <!--

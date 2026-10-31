@@ -15,6 +15,13 @@ related = [
     "semantic-artifacts-and-meaning-engines",
     "the-economics-of-inference",
 ]
+in_short = [
+  "Programming languages have always been shaped by who writes them, so if AI becomes the primary author of code, the intermediate layer between intent and machine will change.",
+  "The first future is explicit languages like *Vera*, which remove ambiguity and give machine-readable compiler feedback, but the model is still writing step-by-step recipes.",
+  "The second future, the one I bet on with hx and BHC, is declarative languages like Haskell, where the model describes what a result is and the type checker verifies it like a proof.",
+  "The third future skips source code entirely: models first generate existing machine code directly, then later target dense execution formats designed for machines rather than human readers.",
+  "These are points on a timeline rather than rivals, and source code will not vanish but specialise, the way assembly became the domain of people who maintain the infrastructure.",
+]
 +++
 
 This morning I was standing at my desk, drinking watered-down instant coffee, doing what I do every morning after triaging the high-alert emails and notifications: thirty minutes of HackerNews. It is a ritual I time-box and never skip. I go to the office every day, and whether I am at that desk or at my home desk, the morning is the same. Coffee, posture, front page.

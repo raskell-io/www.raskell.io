@@ -15,6 +15,13 @@ related = [
     "what-programming-languages-become-when-ai-writes-the-code",
     "why-we-built-a-haskell-package-manager-in-rust",
 ]
+in_short = [
+  "Programming languages were writing systems for an era when humans had to author syntax; once generation is cheap, the scarce resource is not syntax but semantic stability.",
+  "Code is a lossy compression of intent, and we spend tests, documentation, decision records and runbooks patching the loss; with cheap generation, the uncompressed intent is what we should author.",
+  "I call the new unit of software a semantic artifact: intent-first, structured, content-addressed, explicit about effects, verifiable, reproducible and explainable, with code as only one rendering of it.",
+  "A meaning engine elaborates, verifies, plans, lowers, executes and explains such artifacts; most pieces already exist in Vera, BHC, Dafny, Lean, Koka, MLIR, Wasm, Nix, PROV-O and Unison, and the synthesis is what is missing.",
+  "Source code does not vanish but demotes, as assembly did; builders can start now with semantic sidecars, deterministic replay, explicit effects and investment in IRs rather than syntax.",
+]
 +++
 
 In [The Last Programming Language Might Not Be for Humans](/articles/what-programming-languages-become-when-ai-writes-the-code/), I argued that if AI becomes the primary author of code, the source language has to bend around that author. In [What Comes After the Last Programming Language](/articles/what-comes-after-the-last-programming-language/), I extended the argument one layer down: even the operating system still assumes a human is writing CPU-centric instruction streams, and that assumption has an expiration date.

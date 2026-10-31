@@ -10,6 +10,13 @@ series = ["learning-to-play"]
 
 [extra]
 author = "Raffael"
+in_short = [
+  "A chess engine calls its evaluation about a million times a second, so a learned replacement must answer in well under a microsecond on a CPU, which is what led to NNUE.",
+  "Kishi's network is the hand-written piece-square table with one hidden layer of 512 units added, so pieces can interact, and the board is fed in twice, once from each side's view, with shared weights.",
+  "The design is efficiently updatable: a move changes only a few inputs, so the engine adds and subtracts two rows of weights instead of recomputing, and the hidden layer costs almost nothing per node.",
+  "Quantising the first layer to integers suits browser SIMD, while keeping the output layer in floats cut the error from about 12 centipawns to about 2, in an 820 KB network embedded in the WebAssembly module.",
+  "The network makes each node about two and a half times slower than the table, so it must be better by enough to make up for seeing fewer positions, a question later parts of the series answer.",
+]
 +++
 
 <!--

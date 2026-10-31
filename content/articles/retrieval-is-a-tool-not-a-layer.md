@@ -11,6 +11,13 @@ series = ["the-agent-platform-handbook"]
 author = "Raffael"
 image = "retrieval-is-a-tool-not-a-layer.avif"
 cover = "covers/retrieval-is-a-tool-not-a-layer.avif"
+in_short = [
+  "Loading the whole .AGENTS/ directory into every turn stops scaling as it grows, and the fix is not a separate retrieval layer with a vector store but a search tool in the existing registry.",
+  "Context splits into a tiny pinned set of cross-cutting rules loaded every turn and a searchable corpus the agent pulls on demand through a context_search tool listed in a manifest.",
+  "The retriever chunks markdown by heading and ranks sections with BM25 in memory, with no database, no embedding model and no extra system to operate.",
+  "Embeddings solve vocabulary mismatch, which matters for large corpora you do not control, but for a small corpus you wrote yourself you can fix mismatch by editing the words.",
+  "Because retrieval sits behind a tool boundary, the implementation can later grow an embedding index without the agent or the loop noticing anything.",
+]
 +++
 
 > Part 5 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Context Is the Product](/articles/context-is-the-product/). Next: [Memory Is a Write Path](/articles/memory-is-a-write-path/).
