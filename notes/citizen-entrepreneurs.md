@@ -4,7 +4,7 @@ url: https://raskell.io/notes/citizen-entrepreneurs/
 author: Raffael Schneider
 date: 2026-10-25
 description: "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory."
-tags: [entrepreneurship, democratisation, future-of-work, agents, augmentation]
+tags: [entrepreneurship, democratisation, future-of-work, agents, augmentation, factories]
 ---
 
 # Citizen entrepreneurs

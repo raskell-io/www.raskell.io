@@ -4,7 +4,7 @@ url: https://raskell.io/articles/what-programming-languages-become-when-ai-write
 author: Raffael Schneider
 date: 2026-04-11
 description: "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell."
-tags: [ai-engineering, programming-languages, formal-methods, haskell, compilers]
+tags: [ai-engineering, programming-languages, abstraction, formal-methods, haskell, compilers]
 ---
 
 # The Last Programming Language Might Not Be for Humans

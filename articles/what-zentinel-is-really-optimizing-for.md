@@ -4,7 +4,7 @@ url: https://raskell.io/articles/what-zentinel-is-really-optimizing-for/
 author: Raffael Schneider
 date: 2026-03-22
 description: "Every major proxy was a product of its time. Zentinel is built for this one: safety, operability, and the operator's ability to sleep."
-tags: [edge-systems, applied-security, waf, isolation, reliability, observability, rust, pingora]
+tags: [edge-systems, applied-security, waf, isolation, trust, observability, rust, pingora]
 ---
 
 # What Zentinel Is Really Optimizing For

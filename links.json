@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-10-31T08:45:17+00:00",
+ "generated": "2026-10-31T10:28:08+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 308,
+ "count": 364,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -143,8 +143,12 @@
    "url": "https://arcanist.sh/",
    "title": "arcanist.sh",
    "domain": "arcanist.sh",
-   "reference": false,
+   "reference": true,
    "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    },
     {
      "title": "The Field Exists Now",
      "url": "https://raskell.io/articles/the-field-exists-now/"
@@ -162,7 +166,7 @@
      "url": "https://raskell.io/talks/iat-13-basel/"
     }
    ],
-   "citations": 4
+   "citations": 5
   },
   {
    "url": "https://die-zukunft.ch/",
@@ -261,6 +265,27 @@
    "citations": 3
   },
   {
+   "url": "https://arcanist.sh/bhc/",
+   "title": "Basel Haskell Compiler",
+   "domain": "arcanist.sh",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    },
+    {
+     "title": "Why We Built a Haskell Package Manager in Rust",
+     "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/"
+    },
+    {
+     "title": "The Last Programming Language Might Not Be for Humans",
+     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    }
+   ],
+   "citations": 3
+  },
+  {
    "url": "https://github.com/cloudflare/pingora",
    "title": "Pingora",
    "domain": "github.com",
@@ -298,6 +323,27 @@
     {
      "title": "All beginning is Haskell",
      "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ],
+   "citations": 3
+  },
+  {
+   "url": "https://github.com/raskell-io/kage",
+   "title": "kage: Local-first agentic work orchestrator",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    },
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    },
+    {
+     "title": "What Sixteen AI Agents Taught Me About Management",
+     "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
     }
    ],
    "citations": 3
@@ -383,23 +429,6 @@
    "citations": 2
   },
   {
-   "url": "https://arcanist.sh/bhc/",
-   "title": "BHC",
-   "domain": "arcanist.sh",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Why We Built a Haskell Package Manager in Rust",
-     "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/"
-    },
-    {
-     "title": "The Last Programming Language Might Not Be for Humans",
-     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
-    }
-   ],
-   "citations": 2
-  },
-  {
    "url": "https://arcanist.sh/hx/",
    "title": "hx",
    "domain": "arcanist.sh",
@@ -451,6 +480,23 @@
    "citations": 2
   },
   {
+   "url": "https://en.wikipedia.org/wiki/Fractal_cosmology",
+   "title": "fractal cosmology",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    },
+    {
+     "title": "Everything is a fractal",
+     "url": "https://raskell.io/notes/everything-is-a-fractal/"
+    }
+   ],
+   "citations": 2
+  },
+  {
    "url": "https://fly.io",
    "title": "fly.io",
    "domain": "fly.io",
@@ -487,23 +533,6 @@
   {
    "url": "https://github.com/openclaw/openclaw",
    "title": "OpenClaw: Personal AI agent framework",
-   "domain": "github.com",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
-     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
-    },
-    {
-     "title": "What Sixteen AI Agents Taught Me About Management",
-     "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
-    }
-   ],
-   "citations": 2
-  },
-  {
-   "url": "https://github.com/raskell-io/kage",
-   "title": "kage: Local-first agentic work orchestrator",
    "domain": "github.com",
    "reference": true,
    "cited_in": [
@@ -825,6 +854,23 @@
    "citations": 2
   },
   {
+   "url": "https://www.nomadproject.io/",
+   "title": "HashiCorp Nomad",
+   "domain": "nomadproject.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    },
+    {
+     "title": "How AI Makes Bare Metal Viable Again",
+     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ],
+   "citations": 2
+  },
+  {
    "url": "https://www.openbsd.org/",
    "title": "OpenBSD",
    "domain": "openbsd.org",
@@ -971,6 +1017,32 @@
     {
      "title": "The Proof You Only Have to Write Once",
      "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://artificialintelligenceact.eu/article/12/",
+   "title": "Article 12, record-keeping",
+   "domain": "artificialintelligenceact.eu",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/1706.03762",
+   "title": "“Attention Is All You Need”",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ],
    "citations": 1
@@ -1535,6 +1607,19 @@
    "citations": 1
   },
   {
+   "url": "https://doi.org/10.1287/orsc.2.1.71",
+   "title": "“Exploration and Exploitation in Organizational Learning”",
+   "domain": "doi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://ec.europa.eu/assets/rtd/ris/2025/ec_rtd_ris-regional-profile-ch.pdf",
    "title": "Regional Innovation Scoreboard 2025 — Switzerland profile",
    "domain": "ec.europa.eu",
@@ -1543,6 +1628,32 @@
     {
      "title": "Patents Per Capita Is a Vanity Metric",
      "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Alfred_North_Whitehead",
+   "title": "Alfred North Whitehead",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/AlphaStar_(software)",
+   "title": "AlphaStar",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ],
    "citations": 1
@@ -1561,6 +1672,71 @@
    "citations": 1
   },
   {
+   "url": "https://en.wikipedia.org/wiki/Bureaucracy",
+   "title": "bureaucracy",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Cellular_automaton",
+   "title": "cellular automaton",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Chaos:_Making_a_New_Science",
+   "title": "Chaos: Making a New Science",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/ChatGPT",
+   "title": "ChatGPT",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Dragon_curve",
+   "title": "Heighway dragon curve",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://en.wikipedia.org/wiki/Enshittification",
    "title": "Enshittification",
    "domain": "en.wikipedia.org",
@@ -1569,6 +1745,110 @@
     {
      "title": "Looking back on 2025",
      "url": "https://raskell.io/articles/looking-back-on-2025/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Euclidean_geometry",
+   "title": "Euclidean",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Evolutionary_economics",
+   "title": "evolutionary economics",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Exploration%E2%80%93exploitation_dilemma",
+   "title": "same trade-off",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Factory_method_pattern",
+   "title": "factory",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Fog_of_war",
+   "title": "fog of war",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Fractal",
+   "title": "fractal",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Generative_pre-trained_transformer",
+   "title": "generative, pre-trained transformer",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Goodhart%27s_law",
+   "title": "Goodhart’s law",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ],
    "citations": 1
@@ -1587,6 +1867,19 @@
    "citations": 1
   },
   {
+   "url": "https://en.wikipedia.org/wiki/Herbert_A._Simon",
+   "title": "Herbert Simon",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system",
    "title": "Hindley-Milner type system",
    "domain": "en.wikipedia.org",
@@ -1600,6 +1893,58 @@
    "citations": 1
   },
   {
+   "url": "https://en.wikipedia.org/wiki/Ian_Malcolm_(character)",
+   "title": "Ian Malcolm",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Iron_cage",
+   "title": "iron cage",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Jurassic_Park_(novel)",
+   "title": "1990 novel",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Knightian_uncertainty",
+   "title": "Knightian uncertainty",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://en.wikipedia.org/wiki/Lambda_calculus",
    "title": "Lambda calculus",
    "domain": "en.wikipedia.org",
@@ -1608,6 +1953,240 @@
     {
      "title": "All beginning is Haskell",
      "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Lock_(water_navigation)",
+   "title": "locks",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Mandelbrot_set",
+   "title": "Mandelbrot set",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Max_Weber",
+   "title": "Max Weber",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Microservices",
+   "title": "Microservices",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Moravec%27s_paradox",
+   "title": "Moravec’s paradox",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Niklas_Luhmann",
+   "title": "Niklas Luhmann",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Ratchet_effect",
+   "title": "a ratchet",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Reinforcement_learning",
+   "title": "reinforcement learning",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/SECI_model_of_knowledge_dimensions",
+   "title": "SECI model",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Seeing_Like_a_State",
+   "title": "Seeing Like a State",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Self-similarity",
+   "title": "self-similarity",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Sidney_G._Winter",
+   "title": "Sidney Winter",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Smart_contract",
+   "title": "smart contracts",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Spinning_(textiles)",
+   "title": "Spinning",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Strategy_pattern",
+   "title": "strategy",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Stuart_Kauffman",
+   "title": "Stuart Kauffman",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/The_Culture",
+   "title": "Culture",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/The_Fractal_Geometry_of_Nature",
+   "title": "The Fractal Geometry of Nature",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ],
    "citations": 1
@@ -1634,6 +2213,45 @@
     {
      "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
      "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)",
+   "title": "transformer",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Von_Neumann_universal_constructor",
+   "title": "Von Neumann universal constructor",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Yann_LeCun",
+   "title": "Yann LeCun",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ],
    "citations": 1
@@ -1725,6 +2343,19 @@
     {
      "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
      "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://eweek.com/news/meta-ai-yann-lecun-ami-world-models-startup",
+   "title": "eWeek on the $1.03 billion round",
+   "domain": "eweek.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ],
    "citations": 1
@@ -2367,6 +2998,19 @@
    "citations": 1
   },
   {
+   "url": "https://imgur.com/a/4chan-whistleblower-NXjWQaN",
+   "title": "collected on imgur",
+   "domain": "imgur.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://indieweb.org/",
    "title": "IndieWeb",
    "domain": "indieweb.org",
@@ -2414,6 +3058,19 @@
     {
      "title": "Source Code Is the New Assembly",
      "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://kubernetes.io/",
+   "title": "Kubernetes",
+   "domain": "kubernetes.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ],
    "citations": 1
@@ -2978,6 +3635,19 @@
    "citations": 1
   },
   {
+   "url": "https://restate.dev/",
+   "title": "Restate",
+   "domain": "restate.dev",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://sel4.systems/",
    "title": "seL4",
    "domain": "sel4.systems",
@@ -3090,6 +3760,32 @@
     {
      "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
      "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://techcrunch.com/2026/01/23/whos-behind-ami-labs-yann-lecuns-world-model-startup/",
+   "title": "TechCrunch, Who’s behind AMI Labs",
+   "domain": "techcrunch.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://temporal.io/",
+   "title": "Temporal",
+   "domain": "temporal.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ],
    "citations": 1
@@ -3277,6 +3973,19 @@
    "citations": 1
   },
   {
+   "url": "https://wasmcloud.com/",
+   "title": "wasmCloud",
+   "domain": "wasmcloud.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://why-openbsd.rocks/",
    "title": "Why OpenBSD Rocks",
    "domain": "why-openbsd.rocks",
@@ -3368,6 +4077,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.anthropic.com/claude-code",
+   "title": "Claude Code",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.anthropic.com/claude-opus-5-5",
    "title": "Introducing Claude Opus 5.5",
    "domain": "anthropic.com",
@@ -3376,6 +4098,19 @@
     {
      "title": "Opus 5.5 is the best Opus since 4.5",
      "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.anthropic.com/engineering/building-effective-agents",
+   "title": "“Building effective agents”",
+   "domain": "anthropic.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ],
    "citations": 1
@@ -3428,6 +4163,19 @@
     {
      "title": "Learning to Play",
      "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.armingraessl.ch/collection/006-whispering-current",
+   "title": "006 Whispering Current",
+   "domain": "armingraessl.ch",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ],
    "citations": 1
@@ -3545,6 +4293,19 @@
     {
      "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
      "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.econlib.org/library/Knight/knRUP.html",
+   "title": "Risk, Uncertainty, and Profit",
+   "domain": "econlib.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ],
    "citations": 1
@@ -3779,19 +4540,6 @@
     {
      "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
      "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
-    }
-   ],
-   "citations": 1
-  },
-  {
-   "url": "https://www.nomadproject.io/",
-   "title": "Nomad",
-   "domain": "nomadproject.io",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "How AI Makes Bare Metal Viable Again",
-     "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
     }
    ],
    "citations": 1

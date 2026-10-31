@@ -4,7 +4,7 @@ url: https://raskell.io/articles/traffic-replay-as-a-security-primitive/
 author: Raffael Schneider
 date: 2026-04-27
 description: "WAF tuning is a guessing game because you cannot reproduce the traffic that triggered the rule. Deterministic replay changes that."
-tags: [applied-security, waf, edge-systems, reliability, developer-tooling]
+tags: [applied-security, waf, edge-systems, reliability, determinism, developer-tooling]
 ---
 
 # Traffic Replay as a Security Primitive

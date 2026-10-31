@@ -31,6 +31,7 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 
 ## Articles
 
+- [The River and the Canal](https://raskell.io/articles/the-river-and-the-canal.md) (2026-10-31): Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine.
 - [Shiioo, Re-imagined, and the Home AI Lab It Runs On](https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab.md) (2026-10-30): How I re-imagined Shiioo with what 2026 taught me about agent systems, and why my local setup moves to a Mac Studio and DGX Sparks.
 - [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one.md) (2026-10-29): Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it.
 - [After PHP Gate: A Blueprint for the Static Web](https://raskell.io/articles/a-blueprint-for-the-static-web.md) (2026-10-26): Last week's PHP flaws reached every server that runs code per request. My blueprint for sites and apps that run none at all.
@@ -92,6 +93,7 @@ Slide decks; each has a Markdown copy with the words of every slide.
 
 Short notes, a paragraph or a page each; some grow into articles.
 
+- [Everything is a fractal](https://raskell.io/notes/everything-is-a-fractal.md) (2026-10-31): The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world.
 - [The move to the city](https://raskell.io/notes/the-move-to-the-city.md) (2026-10-25): Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape.
 - [Ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting.md) (2026-10-25): In 2026 the backlog of ideas I carried for years is turning into things that exist. On why this year feels like a window that will not stay open.
 - [The tumult in between](https://raskell.io/notes/the-tumult-in-between.md) (2026-10-25): If AI ends in post-scarcity, the dangerous part is the interval: jobs going before goods become nearly free, with no agreed idea of where the ship steers.
@@ -231,28 +233,28 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ## Sources cited most
 
-External links cited on more than one page (all 307 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
+External links cited on more than one page (all 363 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
 
 - [Zentinel](https://zentinelproxy.io): cited on 12 pages
 - [Archipelag.io](https://archipelag.io): cited on 9 pages
 - [Cyanea](https://cyanea.bio): cited on 6 pages
-- [arcanist.sh](https://arcanist.sh/): cited on 4 pages
+- [Arcanist](https://arcanist.sh/): cited on 5 pages
 - [Die Zukunft](https://die-zukunft.ch/): cited on 4 pages
 - [Shiioo](https://github.com/raskell-io/shiioo): cited on 4 pages
 - [companion repository](https://github.com/raskell-io/the-agent-platform-handbook): cited on 4 pages
 - [AI 2027](https://ai-2027.com/): cited on 3 pages
+- [Basel Haskell Compiler](https://arcanist.sh/bhc/): cited on 3 pages
 - [Pingora](https://github.com/cloudflare/pingora): cited on 3 pages
 - [Conflux](https://github.com/raskell-io/conflux): cited on 3 pages
+- [Kage](https://github.com/raskell-io/kage): cited on 3 pages
 - [Kishi](https://kishi.raskell.io): cited on 3 pages
 - [Vera](https://veralang.dev/): cited on 3 pages
 - [Void Linux](https://voidlinux.org/): cited on 3 pages
 - [catalogue of languages built for agents to write](https://agentlanguages.dev): cited on 2 pages
-- [BHC](https://arcanist.sh/bhc/): cited on 2 pages
 - [hx](https://arcanist.sh/hx/): cited on 2 pages
 - [astral.sh](https://astral.sh): cited on 2 pages
 - [Void Linux Handbook: XBPS](https://docs.voidlinux.org/xbps/index.html): cited on 2 pages
-- [fly.io](https://fly.io): cited on 2 pages
-- [Ghostty terminal emulator](https://ghostty.org): cited on 2 pages
+- [fractal cosmology](https://en.wikipedia.org/wiki/Fractal_cosmology): cited on 2 pages
 
 ## Topics
 
@@ -352,6 +354,12 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Future of work (`future-of-work`) [within Economics, Social reform]: What AI does to jobs and livelihoods: the interval before any post-scarcity economy, basic income against basic access, and who gets through the middle.
 - Entrepreneurship (`entrepreneurship`) [within Economics]: Finding something worth building and building it: ventures, side projects, and what changes when anyone can spot an opportunity and operate a business with AI.
 - Agent identity (`agent-identity`) [within Agents, Applied security]: Agents as principals of their own: identities, entitlements, credentials, budgets and audit trails provisioned like an employee's, with a human sponsor, instead of borrowed rights.
+- Fractals (`fractals`) [within Complex systems, Mathematics]: Self-similar patterns that repeat at every scale, from rivers and coastlines to software, organisations and ideas; the lens behind much of this site.
+- Abstraction (`abstraction`) [within Programming languages, History of technology]: Layers that let people stop thinking about the layer below, from assembly and programming languages to orchestrators and agents, and how each new layer becomes the ground for the next.
+- Post-scarcity (`post-scarcity`) [within Economics, Future of work]: What changes when making things costs next to nothing: copied software, AI labour, mission-built machines, and the economies and societies that might follow.
+- Determinism (`determinism`) [within Reliability, Philosophy]: Machines and institutions that do the same thing every time, what that sameness is worth, and where it breaks against an open world.
+- Trust (`trust`) [within Risk, Economics]: Personal trust and system trust: why people rely on banks, procedures and software they cannot inspect, and how that reliance is earned.
+- Factories (`factories`) [within Platform automation, Complex systems]: Machines that make machines: the factory pattern in code, real plants, universal constructors, and purpose-built things made on demand.
 
 ### Technologies
 
@@ -367,6 +375,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Linux (`linux`) [within Operating systems]: Linux distributions and system administration, Void Linux in particular.
 - OpenBSD (`openbsd`) [within Operating systems]: OpenBSD and the BSD approach to correctness and simplicity.
 - Zola (`zola`) [within The open web]: The static site generator this site and several project sites are built with.
+- Durable execution (`durable-execution`) [within Distributed systems, Platform automation]: Workflow engines that keep long-running processes alive through crashes and deployments, with a journal of every step: Temporal, Restate and their kin.
 
 ### This site
 

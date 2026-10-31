@@ -1,8 +1,17 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-31T08:45:16+00:00",
+ "generated": "2026-10-31T10:28:08+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/the-river-and-the-canal/",
+   "kind": "article",
+   "label": "The River and the Canal",
+   "url": "https://raskell.io/articles/the-river-and-the-canal/",
+   "meta": "2026-10-31 · 48 min",
+   "description": "Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine.",
+   "degree": 25
+  },
   {
    "id": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
    "kind": "article",
@@ -10,7 +19,7 @@
    "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/",
    "meta": "2026-10-30 · 25 min",
    "description": "How I re-imagined Shiioo with what 2026 taught me about agent systems, and why my local setup moves to a Mac Studio and DGX Sparks.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/win-everything-control-no-one/",
@@ -19,7 +28,7 @@
    "url": "https://raskell.io/articles/win-everything-control-no-one/",
    "meta": "2026-10-29 · 17 min",
    "description": "Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it.",
-   "degree": 14
+   "degree": 16
   },
   {
    "id": "a:/articles/a-blueprint-for-the-static-web/",
@@ -55,7 +64,7 @@
    "url": "https://raskell.io/articles/observability-is-not-logging/",
    "meta": "2026-10-20 · 15 min",
    "description": "A cost total says nothing about how a run went. This part turns each agent run into a trace: which turn escalated, which tool failed, where the money went.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "a:/articles/this-site-is-becoming-a-map/",
@@ -118,7 +127,7 @@
    "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/",
    "meta": "2026-06-19 · 13 min",
    "description": "Generation is cheap, so verification is the bottleneck — and we throw the verification away every time. What if a proof, once written, could be named, shared, and vouched for? A content-addressed commons for verified Haskell, and the move I left for after the semantic-artifact trilogy.",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "a:/articles/retrieval-is-a-tool-not-a-layer/",
@@ -136,7 +145,7 @@
    "url": "https://raskell.io/articles/context-is-the-product/",
    "meta": "2026-06-13 · 26 min",
    "description": "Models are commodities. Context is not. The sources of context an agent draws on, why retrieval alone is not enough, and a minimal .AGENTS/ convention that loads context from disk into the same harness we have been building. Part four of The Agent Platform Handbook.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "a:/articles/tools-how-agents-actually-do-things/",
@@ -154,7 +163,7 @@
    "url": "https://raskell.io/articles/your-agent-wants-root/",
    "meta": "2026-06-05 · 16 min",
    "description": "An agent with a shell tool is arbitrary code execution with a friendly face. A short tour of why Docker alone is not enough, what Firecracker, gVisor, and Kata actually solve, and a hardened sandbox you can wrap the post-one agent in today. Part two of The Agent Platform Handbook.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "a:/articles/what-an-agent-actually-is/",
@@ -163,7 +172,7 @@
    "url": "https://raskell.io/articles/what-an-agent-actually-is/",
    "meta": "2026-06-02 · 19 min",
    "description": "AI agent is the most overloaded word in the industry. This is the anatomy, the lineage, and a working implementation in roughly two hundred lines of TypeScript on Bun. Part one of The Agent Platform Handbook.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/the-field-exists-now/",
@@ -181,7 +190,7 @@
    "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/",
    "meta": "2026-05-07 · 27 min",
    "description": "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target.",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "a:/articles/patents-per-capita-is-a-vanity-metric/",
@@ -199,7 +208,7 @@
    "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/",
    "meta": "2026-04-27 · 12 min",
    "description": "WAF tuning is a guessing game because you cannot reproduce the traffic that triggered the rule. Deterministic replay changes that.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/articles/the-economics-of-inference/",
@@ -217,7 +226,7 @@
    "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/",
    "meta": "2026-04-19 · 23 min",
    "description": "If AI generates machine code directly, why are we still running operating systems designed for humans? The answer might be an inference-native OS.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
@@ -226,7 +235,7 @@
    "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/",
    "meta": "2026-04-16 · 19 min",
    "description": "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
@@ -235,7 +244,7 @@
    "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/",
    "meta": "2026-04-13 · 19 min",
    "description": "hx is a fast, opinionated Haskell toolchain built in Rust, following the playbook astral.sh used to modernize Python.",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
@@ -244,7 +253,7 @@
    "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/",
    "meta": "2026-04-11 · 26 min",
    "description": "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "a:/articles/notes-from-rsac-2026/",
@@ -355,6 +364,15 @@
    "degree": 4
   },
   {
+   "id": "a:/notes/everything-is-a-fractal/",
+   "kind": "note",
+   "label": "Everything is a fractal",
+   "url": "https://raskell.io/notes/everything-is-a-fractal/",
+   "meta": "2026-10-31",
+   "description": "The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world.",
+   "degree": 5
+  },
+  {
    "id": "a:/notes/a-capability-democratised/",
    "kind": "note",
    "label": "A capability, democratised",
@@ -370,7 +388,7 @@
    "url": "https://raskell.io/notes/citizen-entrepreneurs/",
    "meta": "2026-10-25",
    "description": "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/notes/ideas-stop-waiting/",
@@ -406,7 +424,7 @@
    "url": "https://raskell.io/notes/the-tumult-in-between/",
    "meta": "2026-10-25",
    "description": "If AI ends in post-scarcity, the dangerous part is the interval: jobs going before goods become nearly free, with no agreed idea of where the ship steers.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/notes/the-window-before-the-utility/",
@@ -436,13 +454,22 @@
    "degree": 15
   },
   {
+   "id": "t:abstraction",
+   "kind": "tag",
+   "label": "Abstraction",
+   "url": "https://raskell.io/tags/abstraction/",
+   "meta": "Concept · 5 pages",
+   "description": "Layers that let people stop thinking about the layer below, from assembly and programming languages to orchestrators and agents, and how each new layer becomes the ground for the next.",
+   "degree": 7
+  },
+  {
    "id": "t:agents",
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 14 pages",
+   "meta": "Concept · 15 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 22
+   "degree": 23
   },
   {
    "id": "t:ai-alignment",
@@ -571,6 +598,15 @@
    "degree": 9
   },
   {
+   "id": "t:determinism",
+   "kind": "tag",
+   "label": "Determinism",
+   "url": "https://raskell.io/tags/determinism/",
+   "meta": "Concept · 4 pages",
+   "description": "Machines and institutions that do the same thing every time, what that sameness is worth, and where it breaks against an open world.",
+   "degree": 6
+  },
+  {
    "id": "t:developer-tooling",
    "kind": "tag",
    "label": "Developer tooling",
@@ -586,7 +622,16 @@
    "url": "https://raskell.io/tags/distributed-systems/",
    "meta": "Domain · 3 pages",
    "description": "Replication, coordination, and consistency across machines that fail independently.",
-   "degree": 12
+   "degree": 13
+  },
+  {
+   "id": "t:durable-execution",
+   "kind": "tag",
+   "label": "Durable execution",
+   "url": "https://raskell.io/tags/durable-execution/",
+   "meta": "Technology · 2 pages",
+   "description": "Workflow engines that keep long-running processes alive through crashes and deployments, with a journal of every step: Temporal, Restate and their kin.",
+   "degree": 4
   },
   {
    "id": "t:economics",
@@ -620,9 +665,9 @@
    "kind": "tag",
    "label": "Emergence",
    "url": "https://raskell.io/tags/emergence/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Order nobody designed: reefs, the early web, neuron cultures, and simulated worlds where simple rules add up to behaviour no single part has.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:entrepreneurship",
@@ -661,6 +706,15 @@
    "degree": 9
   },
   {
+   "id": "t:factories",
+   "kind": "tag",
+   "label": "Factories",
+   "url": "https://raskell.io/tags/factories/",
+   "meta": "Concept · 2 pages",
+   "description": "Machines that make machines: the factory pattern in code, real plants, universal constructors, and purpose-built things made on demand.",
+   "degree": 4
+  },
+  {
    "id": "t:formal-methods",
    "kind": "tag",
    "label": "Formal methods",
@@ -668,6 +722,15 @@
    "meta": "Concept · 4 pages",
    "description": "Proofs, verification, and types as specifications, especially once machines write the code.",
    "degree": 7
+  },
+  {
+   "id": "t:fractals",
+   "kind": "tag",
+   "label": "Fractals",
+   "url": "https://raskell.io/tags/fractals/",
+   "meta": "Concept · 2 pages",
+   "description": "Self-similar patterns that repeat at every scale, from rivers and coastlines to software, organisations and ideas; the lens behind much of this site.",
+   "degree": 4
   },
   {
    "id": "t:future-of-work",
@@ -683,9 +746,9 @@
    "kind": "tag",
    "label": "Game AI",
    "url": "https://raskell.io/tags/game-ai/",
-   "meta": "Domain · 1 page",
+   "meta": "Domain · 2 pages",
    "description": "Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:games",
@@ -710,9 +773,9 @@
    "kind": "tag",
    "label": "Haskell",
    "url": "https://raskell.io/tags/haskell/",
-   "meta": "Technology · 6 pages",
+   "meta": "Technology · 7 pages",
    "description": "The language that shaped how I think about types, effects, and correctness.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:history-of-technology",
@@ -721,7 +784,7 @@
    "url": "https://raskell.io/tags/history-of-technology/",
    "meta": "Concept · 5 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 22
+   "degree": 23
   },
   {
    "id": "t:hypertext",
@@ -794,6 +857,15 @@
    "meta": "Concept · 1 page",
    "description": "Human languages and moving meaning between them: translated novels, learning to read Chinese, Japanese, and Hebrew, and Europe's multilingual text.",
    "degree": 8
+  },
+  {
+   "id": "t:legibility",
+   "kind": "tag",
+   "label": "Legibility",
+   "url": "https://raskell.io/tags/legibility/",
+   "meta": "Concept · 1 page",
+   "description": "Making a complex system readable from above: what the measure captures, what it erases, and what breaks when the map replaces the territory.",
+   "degree": 5
   },
   {
    "id": "t:linux",
@@ -937,7 +1009,7 @@
    "url": "https://raskell.io/tags/platform-automation/",
    "meta": "Domain · 2 pages",
    "description": "Self-service, guardrails, deployment, and the tooling that keeps operating software sustainable.",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "t:policy",
@@ -949,11 +1021,20 @@
    "degree": 11
   },
   {
+   "id": "t:post-scarcity",
+   "kind": "tag",
+   "label": "Post-scarcity",
+   "url": "https://raskell.io/tags/post-scarcity/",
+   "meta": "Concept · 3 pages",
+   "description": "What changes when making things costs next to nothing: copied software, AI labour, mission-built machines, and the economies and societies that might follow.",
+   "degree": 10
+  },
+  {
    "id": "t:programming-languages",
    "kind": "tag",
    "label": "Programming languages",
    "url": "https://raskell.io/tags/programming-languages/",
-   "meta": "Domain · 7 pages",
+   "meta": "Domain · 6 pages",
    "description": "Languages, type systems, compilers, and how executable intent gets written down.",
    "degree": 19
   },
@@ -980,7 +1061,7 @@
    "kind": "tag",
    "label": "Reliability",
    "url": "https://raskell.io/tags/reliability/",
-   "meta": "Domain · 3 pages",
+   "meta": "Domain · 2 pages",
    "description": "Failure modes, operability, and keeping systems up when the inputs and the dependencies misbehave.",
    "degree": 10
   },
@@ -1000,7 +1081,7 @@
    "url": "https://raskell.io/tags/risk/",
    "meta": "Concept · 1 page",
    "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:rust",
@@ -1075,6 +1156,15 @@
    "degree": 7
   },
   {
+   "id": "t:trust",
+   "kind": "tag",
+   "label": "Trust",
+   "url": "https://raskell.io/tags/trust/",
+   "meta": "Concept · 3 pages",
+   "description": "Personal trust and system trust: why people rely on banks, procedures and software they cannot inspect, and how that reliance is earned.",
+   "degree": 5
+  },
+  {
    "id": "t:typescript",
    "kind": "tag",
    "label": "TypeScript",
@@ -1135,7 +1225,7 @@
    "url": "https://raskell.io/tags#complex-systems",
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
-   "degree": 13
+   "degree": 15
   },
   {
    "id": "t:enterprise-architecture",
@@ -1219,15 +1309,6 @@
    "degree": 10
   },
   {
-   "id": "t:legibility",
-   "kind": "tag",
-   "label": "Legibility",
-   "url": "https://raskell.io/tags#legibility",
-   "meta": "Concept · no pages yet",
-   "description": "Making a complex system readable from above: what the measure captures, what it erases, and what breaks when the map replaces the territory.",
-   "degree": 4
-  },
-  {
    "id": "t:life-sciences",
    "kind": "tag",
    "label": "Life sciences",
@@ -1252,7 +1333,7 @@
    "url": "https://raskell.io/tags#mathematics",
    "meta": "Domain · no pages yet",
    "description": "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:maximalist-novels",
@@ -1297,7 +1378,7 @@
    "url": "https://raskell.io/tags#philosophy",
    "meta": "Domain · no pages yet",
    "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:philosophy-of-science",
@@ -1404,7 +1485,7 @@
    "url": "https://arcanist.sh",
    "meta": "Project",
    "description": "Haskell tooling for the age of AI-authored code. hx is a fast package and project manager written in Rust, and bhc is a compiler built to check everything it can. With a registry t…",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "p:zentinel",
@@ -1431,7 +1512,7 @@
    "url": "https://arcanist.sh/bhc/",
    "meta": "Project",
    "description": "The Basel Haskell Compiler, a clean-slate compiler for the Haskell you already write. Written in Rust, it compiles to native code through LLVM and to WebAssembly, with a runtime pr…",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "p:shiioo",
@@ -1440,7 +1521,7 @@
    "url": "https://shiioo.raskell.io",
    "meta": "Project",
    "description": "A virtual company of AI agents on your Mac, run from your phone. Claude Code, Codex and local models work in their own branches; a rules file decides what they may do alone, the re…",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "p:refrakt",
@@ -1647,7 +1728,7 @@
    "url": "https://raskell.io/articles/win-everything-control-no-one/",
    "meta": "Book · Sebastian Mallaby · reading now",
    "description": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "w:the-cauldron",
@@ -2241,7 +2322,7 @@
    "url": "https://raskell.io/reading/#seeing-like-a-state",
    "meta": "Book · James C. Scott · in the backlog",
    "description": "Why grand state plans fail when they make the world legible and simple, and ignore local, practical knowledge.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "w:a-peace-to-end-all-peace",
@@ -2421,7 +2502,7 @@
    "url": "https://raskell.io/reading/#slouching-towards-utopia",
    "meta": "Book · J. Bradford DeLong · in the backlog",
    "description": "The economic history of 1870 to 2010, when humanity first escaped scarcity and still did not reach utopia.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:abundance",
@@ -2511,7 +2592,7 @@
    "url": "https://raskell.io/reading/#the-player-of-games",
    "meta": "Novel · Iain M. Banks · in the backlog",
    "description": "A game player from the Culture, a post-scarcity civilisation, is sent to play for an empire's throne.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:accelerando",
@@ -2712,6 +2793,38 @@
   }
  ],
  "links": [
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:abstraction"
+  },
+  {
+   "source": "a:/notes/everything-is-a-fractal/",
+   "target": "t:abstraction"
+  },
+  {
+   "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
+   "target": "t:abstraction"
+  },
+  {
+   "source": "a:/articles/what-comes-after-the-last-programming-language/",
+   "target": "t:abstraction"
+  },
+  {
+   "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "target": "t:abstraction"
+  },
+  {
+   "source": "t:abstraction",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "t:abstraction",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:agents"
+  },
   {
    "source": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
    "target": "t:agents"
@@ -3057,6 +3170,30 @@
    "target": "t:commons"
   },
   {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:determinism"
+  },
+  {
+   "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
+   "target": "t:determinism"
+  },
+  {
+   "source": "a:/articles/traffic-replay-as-a-security-primitive/",
+   "target": "t:determinism"
+  },
+  {
+   "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "target": "t:determinism"
+  },
+  {
+   "source": "t:determinism",
+   "target": "t:reliability"
+  },
+  {
+   "source": "t:determinism",
+   "target": "t:philosophy"
+  },
+  {
    "source": "a:/articles/traffic-replay-as-a-security-primitive/",
    "target": "t:developer-tooling"
   },
@@ -3091,6 +3228,22 @@
   {
    "source": "a:/articles/edge-systems-are-the-new-backend/",
    "target": "t:distributed-systems"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:durable-execution"
+  },
+  {
+   "source": "a:/articles/what-an-agent-actually-is/",
+   "target": "t:durable-execution"
+  },
+  {
+   "source": "t:durable-execution",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "t:durable-execution",
+   "target": "t:platform-automation"
   },
   {
    "source": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
@@ -3177,6 +3330,10 @@
    "target": "t:programming-languages"
   },
   {
+   "source": "a:/notes/everything-is-a-fractal/",
+   "target": "t:emergence"
+  },
+  {
    "source": "a:/notes/a-capability-democratised/",
    "target": "t:emergence"
   },
@@ -3241,6 +3398,22 @@
    "target": "t:context-engineering"
   },
   {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:factories"
+  },
+  {
+   "source": "a:/notes/citizen-entrepreneurs/",
+   "target": "t:factories"
+  },
+  {
+   "source": "t:factories",
+   "target": "t:platform-automation"
+  },
+  {
+   "source": "t:factories",
+   "target": "t:complex-systems"
+  },
+  {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
    "target": "t:formal-methods"
   },
@@ -3261,6 +3434,22 @@
    "target": "t:programming-languages"
   },
   {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:fractals"
+  },
+  {
+   "source": "a:/notes/everything-is-a-fractal/",
+   "target": "t:fractals"
+  },
+  {
+   "source": "t:fractals",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "t:fractals",
+   "target": "t:mathematics"
+  },
+  {
    "source": "a:/notes/citizen-entrepreneurs/",
    "target": "t:future-of-work"
   },
@@ -3279,6 +3468,10 @@
   {
    "source": "t:future-of-work",
    "target": "t:social-reform"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:game-ai"
   },
   {
    "source": "a:/articles/learning-to-play/",
@@ -3319,6 +3512,10 @@
   {
    "source": "t:gpus",
    "target": "t:inference"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:haskell"
   },
   {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
@@ -3505,6 +3702,22 @@
    "target": "t:literature"
   },
   {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:legibility"
+  },
+  {
+   "source": "t:legibility",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "t:legibility",
+   "target": "t:metrics"
+  },
+  {
+   "source": "t:legibility",
+   "target": "t:observability"
+  },
+  {
    "source": "a:/articles/disk-space-void-linux-maintenance/",
    "target": "t:linux"
   },
@@ -3689,15 +3902,31 @@
    "target": "t:policy"
   },
   {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:post-scarcity"
+  },
+  {
+   "source": "a:/articles/win-everything-control-no-one/",
+   "target": "t:post-scarcity"
+  },
+  {
+   "source": "a:/notes/the-tumult-in-between/",
+   "target": "t:post-scarcity"
+  },
+  {
+   "source": "t:post-scarcity",
+   "target": "t:economics"
+  },
+  {
+   "source": "t:post-scarcity",
+   "target": "t:future-of-work"
+  },
+  {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
    "target": "t:programming-languages"
   },
   {
    "source": "a:/articles/the-field-exists-now/",
-   "target": "t:programming-languages"
-  },
-  {
-   "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
    "target": "t:programming-languages"
   },
   {
@@ -3750,10 +3979,6 @@
   },
   {
    "source": "a:/articles/traffic-replay-as-a-security-primitive/",
-   "target": "t:reliability"
-  },
-  {
-   "source": "a:/articles/what-zentinel-is-really-optimizing-for/",
    "target": "t:reliability"
   },
   {
@@ -3929,6 +4154,26 @@
    "target": "t:machine-learning"
   },
   {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:trust"
+  },
+  {
+   "source": "a:/articles/the-proof-you-only-have-to-write-once/",
+   "target": "t:trust"
+  },
+  {
+   "source": "a:/articles/what-zentinel-is-really-optimizing-for/",
+   "target": "t:trust"
+  },
+  {
+   "source": "t:trust",
+   "target": "t:risk"
+  },
+  {
+   "source": "t:trust",
+   "target": "t:economics"
+  },
+  {
    "source": "a:/articles/observability-is-not-logging/",
    "target": "t:typescript"
   },
@@ -4073,18 +4318,6 @@
    "target": "t:ethics"
   },
   {
-   "source": "t:legibility",
-   "target": "t:complex-systems"
-  },
-  {
-   "source": "t:legibility",
-   "target": "t:metrics"
-  },
-  {
-   "source": "t:legibility",
-   "target": "t:observability"
-  },
-  {
    "source": "t:maximalist-novels",
    "target": "t:literature"
   },
@@ -4191,6 +4424,42 @@
   {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "c:reviews"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "a:/articles/win-everything-control-no-one/"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "a:/articles/observability-is-not-logging/"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "a:/articles/the-proof-you-only-have-to-write-once/"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "a:/articles/your-agent-wants-root/"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "a:/articles/semantic-artifacts-and-meaning-engines/"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "a:/notes/everything-is-a-fractal/"
   },
   {
    "source": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
@@ -4477,6 +4746,10 @@
    "target": "a:/articles/mise-ate-my-makefile/"
   },
   {
+   "source": "a:/notes/everything-is-a-fractal/",
+   "target": "a:/articles/context-is-the-product/"
+  },
+  {
    "source": "a:/notes/a-capability-democratised/",
    "target": "a:/articles/the-web-was-the-training-set/"
   },
@@ -4637,6 +4910,10 @@
    "target": "p:humankind"
   },
   {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "p:arcanist"
+  },
+  {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
    "target": "p:arcanist"
   },
@@ -4733,12 +5010,20 @@
    "target": "p:hx"
   },
   {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "p:bhc"
+  },
+  {
    "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
    "target": "p:bhc"
   },
   {
    "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
    "target": "p:bhc"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "p:shiioo"
   },
   {
    "source": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
@@ -5559,6 +5844,10 @@
   {
    "source": "w:the-infinity-machine",
    "target": "t:technology-races"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "w:the-infinity-machine"
   },
   {
    "source": "a:/articles/win-everything-control-no-one/",
@@ -6633,6 +6922,10 @@
    "target": "t:cities"
   },
   {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "w:seeing-like-a-state"
+  },
+  {
    "source": "w:a-peace-to-end-all-peace",
    "target": "h:shelf-backlog"
   },
@@ -6966,7 +7259,7 @@
   },
   {
    "source": "w:deep-utopia",
-   "target": "t:future-of-work"
+   "target": "t:post-scarcity"
   },
   {
    "source": "w:slouching-towards-utopia",
@@ -6983,6 +7276,10 @@
   {
    "source": "w:slouching-towards-utopia",
    "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:slouching-towards-utopia",
+   "target": "t:post-scarcity"
   },
   {
    "source": "w:abundance",
@@ -7006,7 +7303,7 @@
   },
   {
    "source": "w:four-futures",
-   "target": "t:economics"
+   "target": "t:post-scarcity"
   },
   {
    "source": "w:four-futures",
@@ -7082,7 +7379,7 @@
   },
   {
    "source": "w:red-plenty",
-   "target": "t:economics"
+   "target": "t:post-scarcity"
   },
   {
    "source": "w:red-plenty",
@@ -7155,6 +7452,10 @@
   {
    "source": "w:the-player-of-games",
    "target": "t:intelligence"
+  },
+  {
+   "source": "w:the-player-of-games",
+   "target": "t:post-scarcity"
   },
   {
    "source": "w:accelerando",

@@ -4,7 +4,7 @@ url: https://raskell.io/articles/what-comes-after-the-last-programming-language/
 author: Raffael Schneider
 date: 2026-04-19
 description: "If AI generates machine code directly, why are we still running operating systems designed for humans? The answer might be an inference-native OS."
-tags: [operating-systems, inference, gpus, isolation, programming-languages, ai-engineering]
+tags: [operating-systems, inference, gpus, isolation, programming-languages, abstraction, ai-engineering]
 ---
 
 # What Comes After the Last Programming Language
