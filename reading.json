@@ -5,33 +5,23 @@
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "works": [
   {
-   "id": "the-infinity-machine",
-   "title": "The Infinity Machine",
-   "subtitle": "Demis Hassabis, DeepMind, and the Quest for Superintelligence",
-   "author": "Sebastian Mallaby",
+   "id": "empire-of-ai",
+   "title": "Empire of AI",
+   "subtitle": "Dreams and Nightmares in Sam Altman's OpenAI",
+   "author": "Karen Hao",
    "kind": "book",
-   "year": 2026,
-   "isbn": "9780593831847",
-   "url": "https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296",
+   "year": 2025,
    "status": "reading",
-   "rating": 8.5,
+   "started": "2026-10",
    "topics": [
-    "intelligence",
-    "reinforcement-learning",
-    "games",
     "research-labs",
-    "ai-alignment",
-    "history-of-technology",
-    "technology-races"
+    "training-data",
+    "technology-races",
+    "hubris"
    ],
-   "take": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
-   "cover": "https://raskell.io/covers/reading/the-infinity-machine.avif",
-   "page": "https://raskell.io/reading/#the-infinity-machine",
-   "review": {
-    "title": "Win Everything, Control No One",
-    "url": "https://raskell.io/articles/win-everything-control-no-one/",
-    "markdown": "https://raskell.io/articles/win-everything-control-no-one.md"
-   }
+   "take": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
+   "cover": "https://raskell.io/covers/reading/empire-of-ai.avif",
+   "page": "https://raskell.io/reading/#empire-of-ai"
   },
   {
    "id": "the-cauldron",
@@ -669,6 +659,36 @@
    "take": "Life in the ocean, what it has lost, and how protecting the sea lets it recover.",
    "cover": "https://raskell.io/covers/reading/ocean-earths-last-wilderness.avif",
    "page": "https://raskell.io/reading/#ocean-earths-last-wilderness"
+  },
+  {
+   "id": "the-infinity-machine",
+   "title": "The Infinity Machine",
+   "subtitle": "Demis Hassabis, DeepMind, and the Quest for Superintelligence",
+   "author": "Sebastian Mallaby",
+   "kind": "book",
+   "year": 2026,
+   "isbn": "9780593831847",
+   "url": "https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296",
+   "status": "read",
+   "finished": "2026-10",
+   "rating": 8.5,
+   "topics": [
+    "intelligence",
+    "reinforcement-learning",
+    "games",
+    "research-labs",
+    "ai-alignment",
+    "history-of-technology",
+    "technology-races"
+   ],
+   "take": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
+   "cover": "https://raskell.io/covers/reading/the-infinity-machine.avif",
+   "page": "https://raskell.io/reading/#the-infinity-machine",
+   "review": {
+    "title": "Win Everything, Control No One",
+    "url": "https://raskell.io/articles/win-everything-control-no-one/",
+    "markdown": "https://raskell.io/articles/win-everything-control-no-one.md"
+   }
   },
   {
    "id": "the-ultimate-hidden-truth-of-the-world",
@@ -1537,24 +1557,6 @@
    "take": "An essay series arguing that AGI may arrive by 2027 and set off a national-security race for superintelligence.",
    "cover": "https://raskell.io/covers/reading/situational-awareness.avif",
    "page": "https://raskell.io/reading/#situational-awareness"
-  },
-  {
-   "id": "empire-of-ai",
-   "title": "Empire of AI",
-   "subtitle": "Dreams and Nightmares in Sam Altman's OpenAI",
-   "author": "Karen Hao",
-   "kind": "book",
-   "year": 2025,
-   "status": "backlog",
-   "topics": [
-    "research-labs",
-    "training-data",
-    "technology-races",
-    "hubris"
-   ],
-   "take": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
-   "cover": "https://raskell.io/covers/reading/empire-of-ai.avif",
-   "page": "https://raskell.io/reading/#empire-of-ai"
   },
   {
    "id": "the-thinking-machine",

@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-31T11:39:48+00:00",
+ "generated": "2026-10-31T13:18:26+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -1758,13 +1758,13 @@
    "degree": 5
   },
   {
-   "id": "w:the-infinity-machine",
+   "id": "w:empire-of-ai",
    "kind": "work",
-   "label": "The Infinity Machine",
-   "url": "https://raskell.io/articles/win-everything-control-no-one/",
-   "meta": "Book · Sebastian Mallaby · reading now",
-   "description": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
-   "degree": 11
+   "label": "Empire of AI",
+   "url": "https://raskell.io/reading/#empire-of-ai",
+   "meta": "Book · Karen Hao · reading now",
+   "description": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
+   "degree": 5
   },
   {
    "id": "w:the-cauldron",
@@ -2080,6 +2080,15 @@
    "meta": "Book · David Attenborough and Colin Butfield · read October 2026",
    "description": "Life in the ocean, what it has lost, and how protecting the sea lets it recover.",
    "degree": 4
+  },
+  {
+   "id": "w:the-infinity-machine",
+   "kind": "work",
+   "label": "The Infinity Machine",
+   "url": "https://raskell.io/articles/win-everything-control-no-one/",
+   "meta": "Book · Sebastian Mallaby · read October 2026",
+   "description": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
+   "degree": 11
   },
   {
    "id": "w:the-ultimate-hidden-truth-of-the-world",
@@ -2514,15 +2523,6 @@
    "degree": 5
   },
   {
-   "id": "w:empire-of-ai",
-   "kind": "work",
-   "label": "Empire of AI",
-   "url": "https://raskell.io/reading/#empire-of-ai",
-   "meta": "Book · Karen Hao · in the backlog",
-   "description": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
-   "degree": 5
-  },
-  {
    "id": "w:the-thinking-machine",
    "kind": "work",
    "label": "The Thinking Machine",
@@ -2806,7 +2806,7 @@
    "label": "Backlog",
    "url": "https://raskell.io/reading/#shelf-backlog",
    "meta": "Shelf",
-   "degree": 56
+   "degree": 55
   },
   {
    "id": "h:shelf-read",
@@ -2814,7 +2814,7 @@
    "label": "Read",
    "url": "https://raskell.io/reading/#shelf-read",
    "meta": "Shelf",
-   "degree": 57
+   "degree": 58
   },
   {
    "id": "h:shelf-set-aside",
@@ -5931,48 +5931,24 @@
    "target": "h:apps-play"
   },
   {
-   "source": "w:the-infinity-machine",
+   "source": "w:empire-of-ai",
    "target": "h:shelf-reading"
   },
   {
-   "source": "w:the-infinity-machine",
-   "target": "t:intelligence"
-  },
-  {
-   "source": "w:the-infinity-machine",
-   "target": "t:reinforcement-learning"
-  },
-  {
-   "source": "w:the-infinity-machine",
-   "target": "t:games"
-  },
-  {
-   "source": "w:the-infinity-machine",
+   "source": "w:empire-of-ai",
    "target": "t:research-labs"
   },
   {
-   "source": "w:the-infinity-machine",
-   "target": "t:ai-alignment"
+   "source": "w:empire-of-ai",
+   "target": "t:training-data"
   },
   {
-   "source": "w:the-infinity-machine",
-   "target": "t:history-of-technology"
-  },
-  {
-   "source": "w:the-infinity-machine",
+   "source": "w:empire-of-ai",
    "target": "t:technology-races"
   },
   {
-   "source": "a:/articles/the-river-and-the-canal/",
-   "target": "w:the-infinity-machine"
-  },
-  {
-   "source": "a:/articles/win-everything-control-no-one/",
-   "target": "w:the-infinity-machine"
-  },
-  {
-   "source": "a:/articles/the-web-was-the-training-set/",
-   "target": "w:the-infinity-machine"
+   "source": "w:empire-of-ai",
+   "target": "t:hubris"
   },
   {
    "source": "w:the-cauldron",
@@ -6553,6 +6529,50 @@
   {
    "source": "w:ocean-earths-last-wilderness",
    "target": "t:risk"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:reinforcement-learning"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:games"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:research-labs"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:ai-alignment"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:technology-races"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "w:the-infinity-machine"
+  },
+  {
+   "source": "a:/articles/win-everything-control-no-one/",
+   "target": "w:the-infinity-machine"
+  },
+  {
+   "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "w:the-infinity-machine"
   },
   {
    "source": "w:the-ultimate-hidden-truth-of-the-world",
@@ -7329,26 +7349,6 @@
   {
    "source": "w:situational-awareness",
    "target": "t:gpus"
-  },
-  {
-   "source": "w:empire-of-ai",
-   "target": "h:shelf-backlog"
-  },
-  {
-   "source": "w:empire-of-ai",
-   "target": "t:research-labs"
-  },
-  {
-   "source": "w:empire-of-ai",
-   "target": "t:training-data"
-  },
-  {
-   "source": "w:empire-of-ai",
-   "target": "t:technology-races"
-  },
-  {
-   "source": "w:empire-of-ai",
-   "target": "t:hubris"
   },
   {
    "source": "w:the-thinking-machine",
