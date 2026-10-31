@@ -4,7 +4,7 @@ date = 2026-10-29
 description = "Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it."
 
 [taxonomies]
-tags = ["intelligence", "reinforcement-learning", "games", "research-labs", "ai-alignment", "history-of-technology", "technology-races"]
+tags = ["intelligence", "reinforcement-learning", "games", "research-labs", "ai-alignment", "history-of-technology", "technology-races", "post-scarcity"]
 categories = ["reviews"]
 
 [extra]

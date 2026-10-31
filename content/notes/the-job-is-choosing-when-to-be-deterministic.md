@@ -5,7 +5,7 @@ draft = true
 description = "Prompt engineering, context engineering, harness engineering: three names in three years for one job, moving context assembly from model calls into code."
 
 [taxonomies]
-tags = ["context-engineering", "agents", "ai-platforms", "ai-engineering"]
+tags = ["context-engineering", "agents", "determinism", "ai-platforms", "ai-engineering"]
 +++
 
 Drew Breunig's state-of-the-field talk at AGNTCon, written up on his site, has the cleanest account I have read of why the vocabulary keeps changing while the work does not. In 2023 choosing what the model sees was prompt engineering, done by hand. In 2025 it was context engineering, done by the system, which assembled the context dynamically. In 2026 it is harness engineering, because the fixes have moved out of the context and into code around the model. Three names, one job: moving the assembly of context from probabilistic model calls to deterministic code, one piece at a time, and deciding each time which side of that line a decision belongs on.

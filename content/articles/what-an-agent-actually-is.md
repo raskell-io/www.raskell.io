@@ -4,7 +4,7 @@ date = 2026-06-02
 description = "AI agent is the most overloaded word in the industry. This is the anatomy, the lineage, and a working implementation in roughly two hundred lines of TypeScript on Bun. Part one of The Agent Platform Handbook."
 
 [taxonomies]
-tags = ["agents", "ai-platforms", "typescript"]
+tags = ["agents", "ai-platforms", "durable-execution", "typescript"]
 series = ["the-agent-platform-handbook"]
 
 [extra]

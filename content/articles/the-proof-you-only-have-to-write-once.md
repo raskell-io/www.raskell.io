@@ -5,7 +5,7 @@ description = "Generation is cheap, so verification is the bottleneck — and we
 draft = false
 
 [taxonomies]
-tags = ["formal-methods", "programming-languages", "ai-engineering", "oss", "haskell", "compilers"]
+tags = ["formal-methods", "programming-languages", "ai-engineering", "oss", "trust", "haskell", "compilers"]
 
 [extra]
 author = "Raffael"

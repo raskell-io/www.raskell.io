@@ -4,7 +4,7 @@ date = 2026-05-07
 description = "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target."
 
 [taxonomies]
-tags = ["ai-engineering", "programming-languages", "formal-methods", "haskell", "compilers", "provenance"]
+tags = ["ai-engineering", "abstraction", "determinism", "formal-methods", "haskell", "compilers", "provenance"]
 
 [extra]
 author = "Raffael"

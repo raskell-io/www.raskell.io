@@ -1164,7 +1164,7 @@ cover = "covers/reading/deep-utopia.avif"
 isbn = "9781646871643"
 year = 2024
 status = "backlog"
-topics = ["philosophy", "ethics", "ai-alignment", "future-of-work"]
+topics = ["philosophy", "ethics", "ai-alignment", "post-scarcity"]
 take = "What people would live for once superintelligence has solved every practical problem."
 
 [[works]]
@@ -1176,7 +1176,7 @@ kind = "book"
 cover = "covers/reading/slouching-towards-utopia.avif"
 year = 2022
 status = "backlog"
-topics = ["economics", "world-history", "history-of-technology"]
+topics = ["economics", "world-history", "history-of-technology", "post-scarcity"]
 take = "The economic history of 1870 to 2010, when humanity first escaped scarcity and still did not reach utopia."
 
 [[works]]
@@ -1199,7 +1199,7 @@ kind = "book"
 cover = "covers/reading/four-futures.avif"
 year = 2016
 status = "backlog"
-topics = ["economics", "future-of-work", "social-reform"]
+topics = ["post-scarcity", "future-of-work", "social-reform"]
 take = "Four possible futures after capitalism, from abundance or scarcity crossed with equality or hierarchy."
 
 [[works]]
@@ -1248,7 +1248,7 @@ kind = "novel"
 cover = "covers/reading/red-plenty.avif"
 year = 2010
 status = "backlog"
-topics = ["literature", "high-modernism", "economics", "complex-systems"]
+topics = ["literature", "high-modernism", "post-scarcity", "complex-systems"]
 take = "A novel about the Soviet dream of planning the economy into abundance with mathematics and computers."
 
 [[works]]
@@ -1297,7 +1297,7 @@ kind = "novel"
 cover = "covers/reading/the-player-of-games.avif"
 year = 1988
 status = "backlog"
-topics = ["literature", "games", "intelligence"]
+topics = ["literature", "games", "intelligence", "post-scarcity"]
 take = "A game player from the Culture, a post-scarcity civilisation, is sent to play for an empire's throne."
 
 [[works]]

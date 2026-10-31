@@ -4,7 +4,7 @@ date = 2026-03-22
 description = "Every major proxy was a product of its time. Zentinel is built for this one: safety, operability, and the operator's ability to sleep."
 
 [taxonomies]
-tags = ["edge-systems", "applied-security", "waf", "isolation", "reliability", "observability", "rust", "pingora"]
+tags = ["edge-systems", "applied-security", "waf", "isolation", "trust", "observability", "rust", "pingora"]
 
 [extra]
 author = "Raffael"

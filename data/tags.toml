@@ -522,6 +522,42 @@ kind = "concept"
 description = "Agents as principals of their own: identities, entitlements, credentials, budgets and audit trails provisioned like an employee's, with a human sponsor, instead of borrowed rights."
 broader = ["agents", "applied-security"]
 
+[fractals]
+name = "Fractals"
+kind = "concept"
+description = "Self-similar patterns that repeat at every scale, from rivers and coastlines to software, organisations and ideas; the lens behind much of this site."
+broader = ["complex-systems", "mathematics"]
+
+[abstraction]
+name = "Abstraction"
+kind = "concept"
+description = "Layers that let people stop thinking about the layer below, from assembly and programming languages to orchestrators and agents, and how each new layer becomes the ground for the next."
+broader = ["programming-languages", "history-of-technology"]
+
+[post-scarcity]
+name = "Post-scarcity"
+kind = "concept"
+description = "What changes when making things costs next to nothing: copied software, AI labour, mission-built machines, and the economies and societies that might follow."
+broader = ["economics", "future-of-work"]
+
+[determinism]
+name = "Determinism"
+kind = "concept"
+description = "Machines and institutions that do the same thing every time, what that sameness is worth, and where it breaks against an open world."
+broader = ["reliability", "philosophy"]
+
+[trust]
+name = "Trust"
+kind = "concept"
+description = "Personal trust and system trust: why people rely on banks, procedures and software they cannot inspect, and how that reliance is earned."
+broader = ["risk", "economics"]
+
+[factories]
+name = "Factories"
+kind = "concept"
+description = "Machines that make machines: the factory pattern in code, real plants, universal constructors, and purpose-built things made on demand."
+broader = ["platform-automation", "complex-systems"]
+
 # Technologies -------------------------------------------------------------
 
 [webassembly]
@@ -595,6 +631,12 @@ name = "Zola"
 kind = "technology"
 description = "The static site generator this site and several project sites are built with."
 broader = ["open-web"]
+
+[durable-execution]
+name = "Durable execution"
+kind = "technology"
+description = "Workflow engines that keep long-running processes alive through crashes and deployments, with a journal of every step: Temporal, Restate and their kin."
+broader = ["distributed-systems", "platform-automation"]
 
 # This site ----------------------------------------------------------------
 
