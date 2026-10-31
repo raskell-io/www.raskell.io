@@ -199,7 +199,7 @@ EA 리포지토리는 아키텍트가 아키텍트를 위해 관리하는, 큐�
    data catalogue ────┤    ┌────────────────────┐
    ITSM and CMDB ─────┤    │ entities           │ ──▶ Web UI
    source code ───────┼──▶ │ relationships      │ ──▶ REST API
-   container platform ┤    │ provenance         │ ──▶ MCP, for agents
+   container platform─┤    │ provenance         │ ──▶ MCP, for agents
    observability ─────┤    │ confidence         │
    integration ───────┤    └─────────┬──────────┘
    WAF and exposure ──┤              ▼

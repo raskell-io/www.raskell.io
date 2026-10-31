@@ -202,7 +202,7 @@ The platform I started building has three layers, and the middle one is the poin
    data catalogue ────┤    ┌────────────────────┐
    ITSM and CMDB ─────┤    │ entities           │ ──▶ Web UI
    source code ───────┼──▶ │ relationships      │ ──▶ REST API
-   container platform ┤    │ provenance         │ ──▶ MCP, for agents
+   container platform─┤    │ provenance         │ ──▶ MCP, for agents
    observability ─────┤    │ confidence         │
    integration ───────┤    └─────────┬──────────┘
    WAF and exposure ──┤              ▼

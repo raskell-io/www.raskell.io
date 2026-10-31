@@ -199,7 +199,7 @@ EA 仓库是对版图的一份精心整理的描述，由架构师为架构师�
    data catalogue ────┤    ┌────────────────────┐
    ITSM and CMDB ─────┤    │ entities           │ ──▶ Web UI
    source code ───────┼──▶ │ relationships      │ ──▶ REST API
-   container platform ┤    │ provenance         │ ──▶ MCP, for agents
+   container platform─┤    │ provenance         │ ──▶ MCP, for agents
    observability ─────┤    │ confidence         │
    integration ───────┤    └─────────┬──────────┘
    WAF and exposure ──┤              ▼
