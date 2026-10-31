@@ -89,7 +89,9 @@ for path in glob.glob("content/**/*.md", recursive=True):
             errors += 1
             print("undefined category %-16s used in %s (describe it in config.toml categories_descriptions)" % (c, path))
     reviews = bool(re.search(r'^review\s*=\s*"', text, re.M))
-    if reviews != ("reviews" in cats) and not re.search(r"^draft\s*=\s*true", text, re.M):
+    # A translation (<slug>.zh.md) has no taxonomies; its category comes from the original.
+    translation = re.search(r"\.[a-z]{2}\.md$", path)
+    if not translation and reviews != ("reviews" in cats) and not re.search(r"^draft\s*=\s*true", text, re.M):
         errors += 1
         print("%s: %s" % (path, "reviews a work but is not in the reviews category" if reviews else "in the reviews category without extra.review"))
 

@@ -153,8 +153,9 @@ English is the source language and lives at `/`; Simplified Chinese (`zh`) and K
 `/zh/` and `/ko/`. Every page the navigation, footer, and indexes link to exists in all three languages, so a
 reader never drops back into English chrome: home, about, projects, apps, invest and the investor briefs,
 speaking, start here, search, map, ontology, reading, licence, privacy, and the articles, notes, and talks indexes.
-The writing itself (articles, reviews, notes, talks) is English only; translated lists show it in English
-inside the translated page. Topics are translated: names, definitions, and a page per topic in every language.
+Most of the writing (articles, reviews, notes, talks) is English only; translated lists show it in English
+inside the translated page, and swap in a translation where an article has one. Topics are translated:
+names, definitions, and a page per topic in every language.
 
 - **A page:** add `<name>.<code>.md` beside the source (`content/about.zh.md`, `content/_index.ko.md`) with
   the same front matter and a translated title, description, and body. URLs keep the English names
@@ -183,11 +184,16 @@ inside the translated page. Topics are translated: names, definitions, and a pag
   line. `{name}` marks a placeholder (`"{n} of {total}"`), and `%`-codes are date formats (`"%b %d"`). The same
   labels reach the search, map, and filter scripts as `window.SEIJAKU_I18N`. A new string in a template
   or script needs its label in each language, or it shows in English.
+- **A translated article:** `<slug>.zh.md` / `<slug>.ko.md` beside the English one, with the same `[extra]`
+  (author, image, cover, reads, review) and a translated title, description, `in_short`, and body, but no
+  `[taxonomies]` table: the theme takes topics, series, and categories from the English page. Headings keep
+  their English anchors; links, code, and diagrams stay byte-identical. It shares the English social card and
+  is left out of llms.txt and the Markdown copies.
 - **A language:** a `[languages.<code>]` block (with `build_search_index = false` and `taxonomies = []`),
   an entry in `extra.seijaku.languages` (native name, hreflang, og_locale), an `i18n` table with labels,
   the pages above, and a script set in `static/js/split-flap.js` for the homepage board.
-- **English only, by design:** the writing, feeds, the full-text search index (translated pages search the
-  English one), map.json, llms-full.txt, Markdown copies, and social cards.
+- **English only, by design:** untranslated writing, feeds, the full-text search index (translated pages
+  search the English one), map.json, llms-full.txt, Markdown copies, and social cards.
 - **Check:** after a build, no link on a `/zh/` or `/ko/` page should leave its language except to
   English-only content; a broken page in the language is a 404 for that reader.
 - Translations follow the writing rules: no em or en dashes; Korean in the formal 합니다체. Chinese

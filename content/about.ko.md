@@ -20,7 +20,7 @@ portrait_alt = "Raffael"
 
 일 밖에서는 보안과 AI가 만나는 지점에서 자동화 우선 플랫폼과 엣지 시스템을 만들고, 그 밖에도 많은 것을 만듭니다. 프로그래밍 언어 도구, 로컬 우선 앱, 시뮬레이션, 게임 같은 것들입니다. 오랫동안 제 아이디어는 시도해 볼 시간이 없어서 공책 속에만 머물렀습니다. AI가 병목을 코드 작성에서 무엇을 만들 가치가 있는지 정하는 일로 옮겨 놓았기 때문에, 이제는 아이디어를 작고 실제적인 형태로 내놓고 어떤 것이 살아남는지 지켜봅니다. 이곳의 글은 제 개인의 견해이며 고용주의 입장이 아닙니다.
 
-<p class="equation" role="math" aria-label="raskell은 rascal 곱하기 Haskell 곱하기 Raffael, 너구리 마스코트 포함"><span class="math"><var>raskell</var><span class="mrel">=</span><var>rascal</var><span class="mbin">×</span><var>Haskell</var><span class="mbin">×</span><var>Raffael</var></span><span class="math-text">(너구리 마스코트 포함)</span></p>
+<p class="equation" role="math" aria-label="raskell은 rascal 곱하기 Haskell 곱하기 Raffael, 라쿤 마스코트 포함"><span class="math"><var>raskell</var><span class="mrel">=</span><var>rascal</var><span class="mbin">×</span><var>Haskell</var><span class="mbin">×</span><var>Raffael</var></span><span class="math-text">(라쿤 마스코트 포함)</span></p>
 
 사람을 돕는 기술. 기본은 단순하게, 필요할 때는 정밀하게.
 
