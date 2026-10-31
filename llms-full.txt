@@ -11,7 +11,7 @@ url: https://raskell.io/articles/the-river-and-the-canal/
 author: Raffael Schneider
 date: 2026-10-31
 description: "Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine."
-tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, haskell]
+tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance]
 ---
 
 # The River and the Canal
@@ -426,7 +426,7 @@ url: https://raskell.io/notes/everything-is-a-fractal/
 author: Raffael Schneider
 date: 2026-10-31
 description: "The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world."
-tags: [fractals, abstraction, emergence]
+tags: [fractals, abstraction, emergence, science-fiction]
 ---
 
 # Everything is a fractal
@@ -8210,7 +8210,7 @@ url: https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-r
 author: Raffael Schneider
 date: 2026-03-13
 description: "From watching Ethereum miners in 2016 to building a decentralized compute network in open beta. Architecture, conviction, and the long road."
-tags: [distributed-systems, edge-systems, sovereignty, inference, isolation, self-hosting, elixir, rust]
+tags: [distributed-systems, edge-systems, sovereignty, inference, isolation, self-hosting, cryptocurrency, elixir, rust]
 ---
 
 # Archipelag.io Is in Open Beta: Here's Why I Built It
@@ -10351,19 +10351,23 @@ From https://raskell.io/reading/ (as data: https://raskell.io/reading.json).
 - *Science After Babel* by David Berlinski (book, 2023, finished 2023). Essays that question how much modern science can actually explain, from physics and cosmology to Darwinian biology
 - *Network Programming with Go*: Code Secure and Reliable Network Services from Scratch by Adam Woodbeck (book, 2021, finished 2023). Network services in Go from the socket up: TCP, UDP, HTTP, TLS, and keeping them secure and observable
 - *Elixir in Action* by Saša Jurić (book, 2019, finished 2023). Elixir and the BEAM for building concurrent, fault-tolerant systems with processes, supervisors, and OTP
+- *Wer regiert das Geld?*: Banken, Demokratie und Täuschung by Paul Schreyer (book, 2016, finished 2023). Who may create money and who decides how it is used, read as a question of power and democracy
 - *Programming Rust*: Fast, Safe Systems Development by Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall (book, 2021, finished 2023). Rust for systems programmers: ownership, borrowing, traits, concurrency, and unsafe code, explained in depth
 - *Site Reliability Engineering*: How Google Runs Production Systems by Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy (book, 2016, finished 2023). How Google runs production: error budgets, service level objectives, toil, on-call, and postmortems
 - *Who We Are and How We Got Here*: Ancient DNA and the New Science of the Human Past by David Reich (book, 2018, finished 2023). What ancient DNA reveals about human prehistory: migrations, mixtures, and populations that no longer exist
 - *Building a Second Brain*: A Proven Method to Organize Your Digital Life and Unlock Your Creative Potential by Tiago Forte (book, 2022, finished 2022). A method for keeping notes outside your head: capture, organise, distil, and express, with the PARA folders
 - *Rust Web Programming* by Maxwell Flitton (book, 2021, finished 2022). Building web applications and services in Rust, from routing and databases to authentication and deployment
+- *Skin in the Game*: Hidden Asymmetries in Daily Life by Nassim Nicholas Taleb (book, 2018, finished 2022). Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers
 - *The Phoenix Project*: A Novel about IT, DevOps, and Helping Your Business Win by Gene Kim, Kevin Behr, and George Spafford (novel, 2013, finished 2022). A novel about an IT manager saving a failing project, and the DevOps ideas he learns along the way
 - *Foucault's Pendulum* by Umberto Eco (novel, 1988, finished January 2021). Three Milan editors invent a secret history of the world as a game, and others begin to take it seriously
 - *Programming WebAssembly with Rust* by Kevin Hoffman (book, 2019, finished 2021). WebAssembly from the raw text format up to Rust modules that run in the browser and beyond it
 - *WebAssembly: The Definitive Guide* by Brian Sletten (book, 2021, finished 2021). What WebAssembly is and how to use it from many languages, in the browser, on servers, and through WASI
 - *Der Kampf um die Deutung der Neuzeit*: Die geschichtsphilosophische Diskussion in Deutschland vom Ersten Weltkrieg bis zum Mauerfall by Hauke Ritz (book, 2014, finished November 2020). The German debate in the philosophy of history from the First World War to 1989 about how to understand the modern age
 - *Das Tagebuch der Menschheit*: Was die Bibel über unsere Evolution verrät by Carel van Schaik and Kai Michel (book, 2016, finished August 2020). The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution
+- *Debt*: The First 5,000 Years by David Graeber (book, 2011, finished 2019). Credit came before coins: five thousand years of debt, and why money was a record of trust long before it was metal
 - *The Art of War* by Sun Tzu (book, finished June 2018). An ancient Chinese treatise on strategy: deception, terrain, knowing yourself and the enemy, and winning without fighting
 - *These Truths*: A History of the United States by Jill Lepore (book, 2018, finished 2018). The history of the United States as a test of the truths in its founding documents: equality, sovereignty, and consent
+- *The Black Swan*: The Impact of the Highly Improbable by Nassim Nicholas Taleb (book, 2007, finished 2018). Rare, high-impact events that nobody predicted and everybody explains afterwards, and why models break exactly where it matters
 - *Jerusalem: The Biography* by Simon Sebag Montefiore (book, 2011, finished 2017). Three thousand years of Jerusalem through the empires, faiths, and families that fought over it
 - *Freeland*: A Social Anticipation by Theodor Hertzka (novel, 1890, finished 2017). A utopian novel about a colony in East Africa built on free land and free access to capital
 - *Das soziale Problem* by Theodor Hertzka (book, 1912, finished 2017). Hertzka on the social question, the problem his novel Freeland set out to answer
@@ -10374,6 +10378,7 @@ From https://raskell.io/reading/ (as data: https://raskell.io/reading.json).
 - *Cloud Atlas* by David Mitchell (novel, 2004, finished November 2015). Six stories nested inside each other, from a nineteenth-century Pacific voyage to a far future after the fall
 - *The Silk Roads*: A New History of the World by Peter Frankopan (book, 2015, finished September 2015). World history told from the trade routes between East and West rather than from Europe
 - *Antifragile*: Things That Gain from Disorder by Nassim Nicholas Taleb (book, 2012, finished 2015). Things that gain from disorder, and why systems built to avoid all stress grow fragile
+- *Geld aus dem Nichts*: Wie Banken Wachstum ermöglichen und Krisen verursachen by Mathias Binswanger (book, 2015, finished 2015). How commercial banks create money by lending, and what that means for growth and for crises
 - *Die Geschichte der Kunst* by E. H. Gombrich (book, 1950, finished January 2014). Gombrich's history of art from the cave paintings to the modern era, the German edition of The Story of Art
 - *Die Psychologie von C. G. Jung* by Jolande Jacobi (book, 1940, finished June 2012). An introduction to Jung's analytical psychology by one of his closest collaborators, with a foreword by Jung
 - *Demons* by Fyodor Dostoevsky (novel, 1872, finished 2012). A small revolutionary cell in a provincial Russian town and the ideas that lead it to murder

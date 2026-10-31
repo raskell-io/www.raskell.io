@@ -197,19 +197,23 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 - Science After Babel, David Berlinski (book, finished 2023): Essays that question how much modern science can actually explain, from physics and cosmology to Darwinian biology.
 - Network Programming with Go, Adam Woodbeck (book, finished 2023): Network services in Go from the socket up: TCP, UDP, HTTP, TLS, and keeping them secure and observable.
 - Elixir in Action, Saša Jurić (book, finished 2023): Elixir and the BEAM for building concurrent, fault-tolerant systems with processes, supervisors, and OTP.
+- Wer regiert das Geld?, Paul Schreyer (book, finished 2023): Who may create money and who decides how it is used, read as a question of power and democracy.
 - Programming Rust, Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall (book, finished 2023): Rust for systems programmers: ownership, borrowing, traits, concurrency, and unsafe code, explained in depth.
 - [Site Reliability Engineering](https://sre.google/sre-book/table-of-contents/), Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy (book, finished 2023): How Google runs production: error budgets, service level objectives, toil, on-call, and postmortems.
 - Who We Are and How We Got Here, David Reich (book, finished 2023): What ancient DNA reveals about human prehistory: migrations, mixtures, and populations that no longer exist.
 - Building a Second Brain, Tiago Forte (book, finished 2022): A method for keeping notes outside your head: capture, organise, distil, and express, with the PARA folders.
 - Rust Web Programming, Maxwell Flitton (book, finished 2022): Building web applications and services in Rust, from routing and databases to authentication and deployment.
+- Skin in the Game, Nassim Nicholas Taleb (book, finished 2022): Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers.
 - The Phoenix Project, Gene Kim, Kevin Behr, and George Spafford (novel, finished 2022): A novel about an IT manager saving a failing project, and the DevOps ideas he learns along the way.
 - Foucault's Pendulum, Umberto Eco (novel, finished January 2021): Three Milan editors invent a secret history of the world as a game, and others begin to take it seriously.
 - Programming WebAssembly with Rust, Kevin Hoffman (book, finished 2021): WebAssembly from the raw text format up to Rust modules that run in the browser and beyond it.
 - WebAssembly: The Definitive Guide, Brian Sletten (book, finished 2021): What WebAssembly is and how to use it from many languages, in the browser, on servers, and through WASI.
 - Der Kampf um die Deutung der Neuzeit, Hauke Ritz (book, finished November 2020): The German debate in the philosophy of history from the First World War to 1989 about how to understand the modern age.
 - Das Tagebuch der Menschheit, Carel van Schaik and Kai Michel (book, finished August 2020): The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution.
+- Debt, David Graeber (book, finished 2019): Credit came before coins: five thousand years of debt, and why money was a record of trust long before it was metal.
 - The Art of War, Sun Tzu (book, finished June 2018): An ancient Chinese treatise on strategy: deception, terrain, knowing yourself and the enemy, and winning without fighting.
 - These Truths, Jill Lepore (book, finished 2018): The history of the United States as a test of the truths in its founding documents: equality, sovereignty, and consent.
+- The Black Swan, Nassim Nicholas Taleb (book, finished 2018): Rare, high-impact events that nobody predicted and everybody explains afterwards, and why models break exactly where it matters.
 - Jerusalem: The Biography, Simon Sebag Montefiore (book, finished 2017): Three thousand years of Jerusalem through the empires, faiths, and families that fought over it.
 - Freeland, Theodor Hertzka (novel, finished 2017): A utopian novel about a colony in East Africa built on free land and free access to capital.
 - Das soziale Problem, Theodor Hertzka (book, finished 2017): Hertzka on the social question, the problem his novel Freeland set out to answer.
@@ -220,6 +224,7 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 - Cloud Atlas, David Mitchell (novel, finished November 2015): Six stories nested inside each other, from a nineteenth-century Pacific voyage to a far future after the fall.
 - The Silk Roads, Peter Frankopan (book, finished September 2015): World history told from the trade routes between East and West rather than from Europe.
 - Antifragile, Nassim Nicholas Taleb (book, finished 2015): Things that gain from disorder, and why systems built to avoid all stress grow fragile.
+- Geld aus dem Nichts, Mathias Binswanger (book, finished 2015): How commercial banks create money by lending, and what that means for growth and for crises.
 - Die Geschichte der Kunst, E. H. Gombrich (book, finished January 2014): Gombrich's history of art from the cave paintings to the modern era, the German edition of The Story of Art.
 - Die Psychologie von C. G. Jung, Jolande Jacobi (book, finished June 2012): An introduction to Jung's analytical psychology by one of his closest collaborators, with a foreword by Jung.
 - Demons, Fyodor Dostoevsky (novel, finished 2012): A small revolutionary cell in a provincial Russian town and the ideas that lead it to murder.
@@ -284,6 +289,9 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Literature (`literature`): Fiction and writing about fiction: novels read for their own sake, and the forms they take.
 - Mathematics (`mathematics`): The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.
 - Enterprise architecture (`enterprise-architecture`): How a company's capabilities, applications, data and infrastructure fit together, who owns what, and how the landscape is changed on purpose.
+- Finance (`finance`) [within Economics]: Banks, insurers, money and credit: abstract businesses that sell kept promises, allocate a society's resources and turn trust into procedure.
+- Cryptocurrency (`cryptocurrency`) [within Finance, Decentralisation]: Bitcoin, blockchains and distributed ledgers: the attempt to formalise money and trust so completely that no institution is needed, and the institutions that grew back around it.
+- Insurance (`insurance`) [within Finance, Risk]: Pooling risk across many so that misfortune does not ruin the few: predictions wrapped in promises, from Halley's life table to cars that price their own drivers.
 - Simulation (`simulation`) [within Complex systems]: Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.
 - Games (`games`): Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.
 
@@ -323,6 +331,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Philosophy of science (`philosophy-of-science`) [within Philosophy, History of science]: How science produces knowledge, what counts as evidence, and where its methods and claims reach their limits.
 - Ethics (`ethics`) [within Philosophy]: Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.
 - Religion (`religion`) [within Philosophy, History]: Faith, doubt, and the institutions and cities built around belief, as history and as argument.
+- Science fiction (`science-fiction`) [within Literature]: Fiction as a thought experiment: cloned dinosaurs and chaos theory, post-scarcity civilisations, singularities, and stories from the internet read in the same spirit.
 - Maximalist novels (`maximalist-novels`) [within Literature]: Very long, encyclopedic novels that try to hold a whole world: Infinite Jest, The Books of Jacob, and the studies of the form.
 - Intelligence (`intelligence`) [within Machine learning, Neuroscience]: What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.
 - Risk (`risk`) [within Reliability, Economics]: Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.

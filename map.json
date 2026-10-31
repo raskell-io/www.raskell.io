@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-31T10:28:08+00:00",
+ "generated": "2026-10-31T11:39:48+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -10,7 +10,7 @@
    "url": "https://raskell.io/articles/the-river-and-the-canal/",
    "meta": "2026-10-31 · 48 min",
    "description": "Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine.",
-   "degree": 25
+   "degree": 27
   },
   {
    "id": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
@@ -289,7 +289,7 @@
    "url": "https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
    "meta": "2026-03-13 · 23 min",
    "description": "From watching Ethereum miners in 2016 to building a decentralized compute network in open beta. Architecture, conviction, and the long road.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/how-ai-makes-bare-metal-viable-again/",
@@ -370,7 +370,7 @@
    "url": "https://raskell.io/notes/everything-is-a-fractal/",
    "meta": "2026-10-31",
    "description": "The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "a:/notes/a-capability-democratised/",
@@ -571,6 +571,15 @@
    "degree": 6
   },
   {
+   "id": "t:cryptocurrency",
+   "kind": "tag",
+   "label": "Cryptocurrency",
+   "url": "https://raskell.io/tags/cryptocurrency/",
+   "meta": "Domain · 1 page",
+   "description": "Bitcoin, blockchains and distributed ledgers: the attempt to formalise money and trust so completely that no institution is needed, and the institutions that grew back around it.",
+   "degree": 3
+  },
+  {
    "id": "t:data-sovereignty",
    "kind": "tag",
    "label": "Data sovereignty",
@@ -586,7 +595,7 @@
    "url": "https://raskell.io/tags/decentralisation/",
    "meta": "Concept · 1 page",
    "description": "Many small nodes and no central operator: the web's original shape, and the alternative to platforms that own the users and the data.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:democratisation",
@@ -640,7 +649,7 @@
    "url": "https://raskell.io/tags/economics/",
    "meta": "Concept · 11 pages",
    "description": "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.",
-   "degree": 26
+   "degree": 27
   },
   {
    "id": "t:edge-systems",
@@ -685,7 +694,7 @@
    "url": "https://raskell.io/tags/ethics/",
    "meta": "Concept · 1 page",
    "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:europe",
@@ -715,6 +724,15 @@
    "degree": 4
   },
   {
+   "id": "t:finance",
+   "kind": "tag",
+   "label": "Finance",
+   "url": "https://raskell.io/tags/finance/",
+   "meta": "Domain · 1 page",
+   "description": "Banks, insurers, money and credit: abstract businesses that sell kept promises, allocate a society's resources and turn trust into procedure.",
+   "degree": 7
+  },
+  {
    "id": "t:formal-methods",
    "kind": "tag",
    "label": "Formal methods",
@@ -730,7 +748,7 @@
    "url": "https://raskell.io/tags/fractals/",
    "meta": "Concept · 2 pages",
    "description": "Self-similar patterns that repeat at every scale, from rivers and coastlines to software, organisations and ideas; the lens behind much of this site.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:future-of-work",
@@ -773,9 +791,9 @@
    "kind": "tag",
    "label": "Haskell",
    "url": "https://raskell.io/tags/haskell/",
-   "meta": "Technology · 7 pages",
+   "meta": "Technology · 6 pages",
    "description": "The language that shaped how I think about types, effects, and correctness.",
-   "degree": 11
+   "degree": 10
   },
   {
    "id": "t:history-of-technology",
@@ -803,6 +821,15 @@
    "meta": "Concept · 8 pages",
    "description": "Running models in production: routing, cost, hardware, and inference as a metered utility.",
    "degree": 13
+  },
+  {
+   "id": "t:insurance",
+   "kind": "tag",
+   "label": "Insurance",
+   "url": "https://raskell.io/tags/insurance/",
+   "meta": "Domain · 1 page",
+   "description": "Pooling risk across many so that misfortune does not ruin the few: predictions wrapped in promises, from Halley's life table to cars that price their own drivers.",
+   "degree": 3
   },
   {
    "id": "t:intellectual-property",
@@ -1018,7 +1045,7 @@
    "url": "https://raskell.io/tags/policy/",
    "meta": "Domain · 3 pages",
    "description": "Where engineering meets regulation, public institutions, procurement, and national strategy.",
-   "degree": 11
+   "degree": 13
   },
   {
    "id": "t:post-scarcity",
@@ -1081,7 +1108,7 @@
    "url": "https://raskell.io/tags/risk/",
    "meta": "Concept · 1 page",
    "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
-   "degree": 11
+   "degree": 14
   },
   {
    "id": "t:rust",
@@ -1091,6 +1118,15 @@
    "meta": "Technology · 10 pages",
    "description": "The systems language most of the projects here are written in.",
    "degree": 35
+  },
+  {
+   "id": "t:science-fiction",
+   "kind": "tag",
+   "label": "Science fiction",
+   "url": "https://raskell.io/tags/science-fiction/",
+   "meta": "Concept · 1 page",
+   "description": "Fiction as a thought experiment: cloned dinosaurs and chaos theory, post-scarcity civilisations, singularities, and stories from the internet read in the same spirit.",
+   "degree": 5
   },
   {
    "id": "t:self-hosting",
@@ -1126,7 +1162,7 @@
    "url": "https://raskell.io/tags/sovereignty/",
    "meta": "Domain · 4 pages",
    "description": "Who controls compute, data, and infrastructure, and in which jurisdiction; Europe's position in particular.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:switzerland",
@@ -1162,7 +1198,7 @@
    "url": "https://raskell.io/tags/trust/",
    "meta": "Concept · 3 pages",
    "description": "Personal trust and system trust: why people rely on banks, procedures and software they cannot inspect, and how that reliance is earned.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "t:typescript",
@@ -1198,7 +1234,7 @@
    "url": "https://raskell.io/tags/world-history/",
    "meta": "Concept · 1 page",
    "description": "History told at the scale of continents and millennia: why societies diverged, and how the world came to look the way it does.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:zola",
@@ -1225,7 +1261,7 @@
    "url": "https://raskell.io/tags#complex-systems",
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "t:enterprise-architecture",
@@ -1324,7 +1360,7 @@
    "url": "https://raskell.io/tags#literature",
    "meta": "Domain · no pages yet",
    "description": "Fiction and writing about fiction: novels read for their own sake, and the forms they take.",
-   "degree": 13
+   "degree": 11
   },
   {
    "id": "t:mathematics",
@@ -1387,7 +1423,7 @@
    "url": "https://raskell.io/tags#philosophy-of-science",
    "meta": "Concept · no pages yet",
    "description": "How science produces knowledge, what counts as evidence, and where its methods and claims reach their limits.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:privacy",
@@ -1764,7 +1800,7 @@
    "url": "https://raskell.io/reading/#jurassic-park",
    "meta": "Novel · Michael Crichton · read July 2025",
    "description": "A park of cloned dinosaurs, and a mathematician who uses chaos theory to explain why it cannot stay under control.",
-   "degree": 7
+   "degree": 10
   },
   {
    "id": "w:the-books-of-jacob",
@@ -1918,6 +1954,51 @@
    "meta": "Book · Nassim Nicholas Taleb · read 2015",
    "description": "Things that gain from disorder, and why systems built to avoid all stress grow fragile.",
    "degree": 3
+  },
+  {
+   "id": "w:debt",
+   "kind": "work",
+   "label": "Debt",
+   "url": "https://raskell.io/reading/#debt",
+   "meta": "Book · David Graeber · read 2019",
+   "description": "Credit came before coins: five thousand years of debt, and why money was a record of trust long before it was metal.",
+   "degree": 4
+  },
+  {
+   "id": "w:the-black-swan",
+   "kind": "work",
+   "label": "The Black Swan",
+   "url": "https://raskell.io/reading/#the-black-swan",
+   "meta": "Book · Nassim Nicholas Taleb · read 2018",
+   "description": "Rare, high-impact events that nobody predicted and everybody explains afterwards, and why models break exactly where it matters.",
+   "degree": 4
+  },
+  {
+   "id": "w:skin-in-the-game",
+   "kind": "work",
+   "label": "Skin in the Game",
+   "url": "https://raskell.io/reading/#skin-in-the-game",
+   "meta": "Book · Nassim Nicholas Taleb · read 2022",
+   "description": "Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers.",
+   "degree": 4
+  },
+  {
+   "id": "w:geld-aus-dem-nichts",
+   "kind": "work",
+   "label": "Geld aus dem Nichts",
+   "url": "https://raskell.io/reading/#geld-aus-dem-nichts",
+   "meta": "Book · Mathias Binswanger · read 2015",
+   "description": "How commercial banks create money by lending, and what that means for growth and for crises.",
+   "degree": 3
+  },
+  {
+   "id": "w:wer-regiert-das-geld",
+   "kind": "work",
+   "label": "Wer regiert das Geld?",
+   "url": "https://raskell.io/reading/#wer-regiert-das-geld",
+   "meta": "Book · Paul Schreyer · read 2023",
+   "description": "Who may create money and who decides how it is used, read as a question of power and democracy.",
+   "degree": 4
   },
   {
    "id": "w:demons",
@@ -2733,7 +2814,7 @@
    "label": "Read",
    "url": "https://raskell.io/reading/#shelf-read",
    "meta": "Shelf",
-   "degree": 52
+   "degree": 57
   },
   {
    "id": "h:shelf-set-aside",
@@ -3118,6 +3199,18 @@
    "target": "t:agents"
   },
   {
+   "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
+   "target": "t:cryptocurrency"
+  },
+  {
+   "source": "t:cryptocurrency",
+   "target": "t:finance"
+  },
+  {
+   "source": "t:cryptocurrency",
+   "target": "t:decentralisation"
+  },
+  {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "t:data-sovereignty"
   },
@@ -3414,6 +3507,14 @@
    "target": "t:complex-systems"
   },
   {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:finance"
+  },
+  {
+   "source": "t:finance",
+   "target": "t:economics"
+  },
+  {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
    "target": "t:formal-methods"
   },
@@ -3514,10 +3615,6 @@
    "target": "t:inference"
   },
   {
-   "source": "a:/articles/the-river-and-the-canal/",
-   "target": "t:haskell"
-  },
-  {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
    "target": "t:haskell"
   },
@@ -3616,6 +3713,18 @@
   {
    "source": "t:inference",
    "target": "t:ai-platforms"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:insurance"
+  },
+  {
+   "source": "t:insurance",
+   "target": "t:finance"
+  },
+  {
+   "source": "t:insurance",
+   "target": "t:risk"
   },
   {
    "source": "a:/articles/the-web-was-the-training-set/",
@@ -4052,6 +4161,14 @@
   {
    "source": "t:rust",
    "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/notes/everything-is-a-fractal/",
+   "target": "t:science-fiction"
+  },
+  {
+   "source": "t:science-fiction",
+   "target": "t:literature"
   },
   {
    "source": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
@@ -5907,7 +6024,7 @@
   },
   {
    "source": "w:jurassic-park",
-   "target": "t:literature"
+   "target": "t:science-fiction"
   },
   {
    "source": "w:jurassic-park",
@@ -5928,6 +6045,18 @@
   {
    "source": "w:jurassic-park",
    "target": "t:emergence"
+  },
+  {
+   "source": "w:jurassic-park",
+   "target": "t:fractals"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "w:jurassic-park"
+  },
+  {
+   "source": "a:/notes/everything-is-a-fractal/",
+   "target": "w:jurassic-park"
   },
   {
    "source": "w:the-books-of-jacob",
@@ -6168,6 +6297,82 @@
   {
    "source": "w:antifragile",
    "target": "t:complex-systems"
+  },
+  {
+   "source": "w:debt",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:debt",
+   "target": "t:finance"
+  },
+  {
+   "source": "w:debt",
+   "target": "t:world-history"
+  },
+  {
+   "source": "w:debt",
+   "target": "t:trust"
+  },
+  {
+   "source": "w:the-black-swan",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-black-swan",
+   "target": "t:risk"
+  },
+  {
+   "source": "w:the-black-swan",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "w:the-black-swan",
+   "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "w:skin-in-the-game",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:skin-in-the-game",
+   "target": "t:risk"
+  },
+  {
+   "source": "w:skin-in-the-game",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:skin-in-the-game",
+   "target": "t:trust"
+  },
+  {
+   "source": "w:geld-aus-dem-nichts",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:geld-aus-dem-nichts",
+   "target": "t:finance"
+  },
+  {
+   "source": "w:geld-aus-dem-nichts",
+   "target": "t:policy"
+  },
+  {
+   "source": "w:wer-regiert-das-geld",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:wer-regiert-das-geld",
+   "target": "t:finance"
+  },
+  {
+   "source": "w:wer-regiert-das-geld",
+   "target": "t:policy"
+  },
+  {
+   "source": "w:wer-regiert-das-geld",
+   "target": "t:sovereignty"
   },
   {
    "source": "w:demons",
@@ -7443,7 +7648,7 @@
   },
   {
    "source": "w:the-player-of-games",
-   "target": "t:literature"
+   "target": "t:science-fiction"
   },
   {
    "source": "w:the-player-of-games",
@@ -7463,7 +7668,7 @@
   },
   {
    "source": "w:accelerando",
-   "target": "t:literature"
+   "target": "t:science-fiction"
   },
   {
    "source": "w:accelerando",

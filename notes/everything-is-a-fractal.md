@@ -4,7 +4,7 @@ url: https://raskell.io/notes/everything-is-a-fractal/
 author: Raffael Schneider
 date: 2026-10-31
 description: "The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world."
-tags: [fractals, abstraction, emergence]
+tags: [fractals, abstraction, emergence, science-fiction]
 ---
 
 # Everything is a fractal

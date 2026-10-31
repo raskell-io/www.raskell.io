@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-31T10:28:08+00:00",
+ "generated": "2026-10-31T11:39:49+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -8,9 +8,9 @@
   "review": 2,
   "note": 9,
   "talk": 1,
-  "work": 110,
+  "work": 115,
   "project": 30,
-  "topic": 109,
+  "topic": 113,
   "link": 364
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
@@ -38,7 +38,8 @@
     "factories",
     "post-scarcity",
     "legibility",
-    "haskell"
+    "finance",
+    "insurance"
    ],
    "meta": "48 min"
   },
@@ -531,6 +532,7 @@
     "inference",
     "isolation",
     "self-hosting",
+    "cryptocurrency",
     "elixir",
     "rust"
    ],
@@ -661,7 +663,8 @@
    "topics": [
     "fractals",
     "abstraction",
-    "emergence"
+    "emergence",
+    "science-fiction"
    ]
   },
   {
@@ -849,12 +852,13 @@
    "description": "A park of cloned dinosaurs, and a mathematician who uses chaos theory to explain why it cannot stay under control.",
    "date": "2025-07",
    "topics": [
-    "literature",
+    "science-fiction",
     "complex-systems",
     "risk",
     "life-sciences",
     "hubris",
-    "emergence"
+    "emergence",
+    "fractals"
    ],
    "meta": "Novel · Michael Crichton · Read"
   },
@@ -1066,6 +1070,70 @@
     "complex-systems"
    ],
    "meta": "Book · Nassim Nicholas Taleb · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Debt",
+   "url": "https://raskell.io/reading/#debt",
+   "description": "Credit came before coins: five thousand years of debt, and why money was a record of trust long before it was metal.",
+   "date": "2019",
+   "topics": [
+    "finance",
+    "world-history",
+    "trust"
+   ],
+   "meta": "Book · David Graeber · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Black Swan",
+   "url": "https://raskell.io/reading/#the-black-swan",
+   "description": "Rare, high-impact events that nobody predicted and everybody explains afterwards, and why models break exactly where it matters.",
+   "date": "2018",
+   "topics": [
+    "risk",
+    "complex-systems",
+    "philosophy-of-science"
+   ],
+   "meta": "Book · Nassim Nicholas Taleb · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Skin in the Game",
+   "url": "https://raskell.io/reading/#skin-in-the-game",
+   "description": "Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers.",
+   "date": "2022",
+   "topics": [
+    "risk",
+    "ethics",
+    "trust"
+   ],
+   "meta": "Book · Nassim Nicholas Taleb · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Geld aus dem Nichts",
+   "url": "https://raskell.io/reading/#geld-aus-dem-nichts",
+   "description": "How commercial banks create money by lending, and what that means for growth and for crises.",
+   "date": "2015",
+   "topics": [
+    "finance",
+    "policy"
+   ],
+   "meta": "Book · Mathias Binswanger · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Wer regiert das Geld?",
+   "url": "https://raskell.io/reading/#wer-regiert-das-geld",
+   "description": "Who may create money and who decides how it is used, read as a question of power and democracy.",
+   "date": "2023",
+   "topics": [
+    "finance",
+    "policy",
+    "sovereignty"
+   ],
+   "meta": "Book · Paul Schreyer · Read"
   },
   {
    "kind": "work",
@@ -2007,7 +2075,7 @@
    "url": "https://raskell.io/reading/#the-player-of-games",
    "description": "A game player from the Culture, a post-scarcity civilisation, is sent to play for an empire's throne.",
    "topics": [
-    "literature",
+    "science-fiction",
     "games",
     "intelligence",
     "post-scarcity"
@@ -2020,7 +2088,7 @@
    "url": "https://raskell.io/reading/#accelerando",
    "description": "The singularity across three generations of one family, from present-day hackers to post-human minds.",
    "topics": [
-    "literature",
+    "science-fiction",
     "intelligence",
     "augmentation"
    ],
@@ -2665,6 +2733,13 @@
   },
   {
    "kind": "topic",
+   "title": "Cryptocurrency",
+   "url": "https://raskell.io/tags/cryptocurrency/",
+   "description": "Bitcoin, blockchains and distributed ledgers: the attempt to formalise money and trust so completely that no institution is needed, and the institutions that grew back around it.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
    "title": "Data sovereignty",
    "url": "https://raskell.io/tags/data-sovereignty/",
    "description": "Control over one's own data: pods, portability, and the right to choose the software and the agent that reads it; the personal counterpart of national sovereignty.",
@@ -2798,6 +2873,13 @@
   },
   {
    "kind": "topic",
+   "title": "Finance",
+   "url": "https://raskell.io/tags/finance/",
+   "description": "Banks, insurers, money and credit: abstract businesses that sell kept promises, allocate a society's resources and turn trust into procedure.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
    "title": "Formal methods",
    "url": "https://raskell.io/tags/formal-methods/",
    "description": "Proofs, verification, and types as specifications, especially once machines write the code.",
@@ -2907,6 +2989,13 @@
    "url": "https://raskell.io/tags/inference/",
    "description": "Running models in production: routing, cost, hardware, and inference as a metered utility.",
    "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Insurance",
+   "url": "https://raskell.io/tags/insurance/",
+   "description": "Pooling risk across many so that misfortune does not ruin the few: predictions wrapped in promises, from Halley's life table to cars that price their own drivers.",
+   "meta": "Domain"
   },
   {
    "kind": "topic",
@@ -3208,6 +3297,13 @@
    "url": "https://raskell.io/tags/rust/",
    "description": "The systems language most of the projects here are written in.",
    "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "Science fiction",
+   "url": "https://raskell.io/tags/science-fiction/",
+   "description": "Fiction as a thought experiment: cloned dinosaurs and chaos theory, post-scarcity civilisations, singularities, and stories from the internet read in the same spirit.",
+   "meta": "Concept"
   },
   {
    "kind": "topic",

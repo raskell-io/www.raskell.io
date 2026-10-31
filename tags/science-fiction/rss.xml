@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Raskell - science-fiction</title>
+      <link>https://raskell.io</link>
+      <description>Notes on agent platforms, platform automation, edge infrastructure, and applied security. Building automation-first platforms that survive production reality.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://raskell.io/tags/science-fiction/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sat, 31 Oct 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Everything is a fractal</title>
+          <pubDate>Sat, 31 Oct 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/everything-is-a-fractal/</link>
+          <guid>https://raskell.io/notes/everything-is-a-fractal/</guid>
+          <description xml:base="https://raskell.io/notes/everything-is-a-fractal/">&lt;p&gt;The idea I have carried longest, longer than any project on this site, is that everything is a fractal. Benoit Mandelbrot opened &lt;em&gt;The Fractal Geometry of Nature&lt;&#x2F;em&gt; in 1982 with the sentence that made the idea famous: “Clouds are not spheres, mountains are not cones, coastlines are not circles, and bark is not smooth, nor does lightning travel in a straight line.” Nature is rough, and the roughness looks alike at every scale: the eddies around a boulder repeat around the pebbles beside it. I find it very likely that we live in a world without limits in time or space, and in such a world the fractal is the most natural shape there is, with no largest and no smallest instance. Cosmologists who believe in large-scale smoothness outnumber those who argue for &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Fractal_cosmology&quot;&gt;fractal cosmology&lt;&#x2F;a&gt;, so I hold that part as an intuition rather than a claim. It reached me, like many people of my generation, through &lt;em&gt;Jurassic Park&lt;&#x2F;em&gt;: Crichton built the novel on chaos theory, which most readers had met through James Gleick’s &lt;em&gt;Chaos&lt;&#x2F;em&gt;, and divided it into “iterations”, each opening with the same dragon curve, a little more folded than the last.&lt;&#x2F;p&gt;
+&lt;p&gt;What I use it for is a heuristic. When a pattern holds at one scale, it may be a coincidence. When it holds at three or four, it is usually something real about how the world is put together, and worth building on. My own work keeps proving the point back to me. The context an agent needs for one repository, in &lt;a href=&quot;&#x2F;articles&#x2F;context-is-the-product&#x2F;&quot;&gt;Context Is the Product&lt;&#x2F;a&gt;, is the same problem as the context a whole company needs, in IT Intelligence, and this site, which publishes every page again for machines, is the same idea at the scale of one person. The factory pattern in code, a plant that builds cars and a factory that builds purpose-made craft are one idea at three scales. And the loop at the centre of &lt;a href=&quot;&#x2F;articles&#x2F;the-river-and-the-canal&#x2F;&quot;&gt;The River and the Canal&lt;&#x2F;a&gt;, explore and then crystallise, runs the same way inside a single agent step, a procedure, a department and an industry.&lt;&#x2F;p&gt;
+&lt;p&gt;It also shapes how I think progress happens. The most famous fractal, the Mandelbrot set, comes from one tiny rule repeated: square a number, add a constant, do it again. Good ideas seem to work the same way. They are small iterations on what came before, a simple change that lets something new emerge, which then becomes the layer the next iteration stands on, until nobody notices it any more. If the world really has no edges, there is no last iteration either. That is the most hopeful thing I know.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
