@@ -1,17 +1,22 @@
 title = "Chronicle of Earth"
-description = "An interactive atlas of history and geopolitics, starting with 1900–2026. An early prototype pairs a 3D globe that zooms down to villages and streets with a timeline spanning days to decades. Its data model keeps events, territorial claims, control, sources, and uncertainty distinct. Historical coverage is still a small draft collection; detailed base maps show present-day geography."
+logo = "brands/chronicle-of-earth.svg"
+logo_dark = "brands/chronicle-of-earth-dark.svg"
+wordmark = "brands/chronicle-of-earth-wordmark-light.svg"   # the brandtype, shown beside the logo as the card title
+wordmark_dark = "brands/chronicle-of-earth-wordmark-dark.svg"
+description = "An evidence-linked historical atlas, starting with 1900–2026: choose a place and a date, see what changed, and inspect the evidence behind every assertion. Control, territorial claims and recognition stay separate, disagreement is preserved, and coverage gaps are shown as gaps. The website's globe travels through the record, showing how far each entry has been verified. An early prototype zooms from globe to village; every historical record is still an unreviewed draft."
 status = "dev"
-status_label = "Early prototype"
-links = [ { name = "GitHub", url = "https://github.com/chronicle-of-earth" } ]
-topics = ["history", "geography", "knowledge-management", "typescript"]
-stack = ["SvelteKit", "TypeScript", "MapLibre"]
-accents = ["#779aa6", "#9eb69a"]
+status_label = "Early prototype, website preview"
+links = [ { name = "Website preview", url = "https://chronicle-of-earth.github.io/" }, { name = "Method", url = "https://chronicle-of-earth.github.io/method/" }, { name = "GitHub", url = "https://github.com/chronicle-of-earth" } ]
+topics = ["history", "geopolitics", "geography", "provenance", "legibility", "knowledge-management", "typescript"]
+stack = ["SvelteKit", "TypeScript", "MapLibre", "Zola"]
+related = ["human-macroscope"]
+accents = ["#a8823a", "#d2b26c"]   # brand colours (brass), used for the card glow
 
 app_category = "EducationalApplication"   # schema.org applicationCategory (default DeveloperApplication)
 
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
-description = "一部关于历史与地缘政治的互动地图集，从 1900 年到 2026 年开始。早期原型把一个可以放大到村庄和街道的 3D 地球，与一条跨越数天到数十年的时间轴结合在一起。它的数据模型把事件、领土主张、实际控制、来源和不确定性分开记录。历史内容目前还只是一小批草稿；详细底图显示的是当今的地理。"
+description = "一部以证据为基础的历史地图集，从 1900 年到 2026 年开始：选择一个地点和一个日期，看看发生了什么变化，并查看每一项论断背后的证据。实际控制、领土主张和外交承认分开记录，分歧被保留下来，覆盖空白就以空白呈现。网站上的地球会依次走过记录中的每一条，显示每条记录已经核实到哪一步。早期原型可以从整个地球放大到村庄；所有历史记录目前都还是未经审核的草稿。"
 
 [i18n.ko]
-description = "역사와 지정학을 다루는 인터랙티브 지도책으로, 1900년부터 2026년까지에서 시작합니다. 초기 프로토타입은 마을과 거리까지 확대되는 3D 지구본과 며칠에서 수십 년에 이르는 타임라인을 짝지었습니다. 데이터 모델은 사건, 영토 주장, 실효 지배, 출처, 불확실성을 구분해 기록합니다. 역사 데이터는 아직 작은 초안 모음이며, 상세 기본 지도는 현재의 지리를 보여 줍니다."
+description = "근거에 연결된 역사 지도책으로, 1900년부터 2026년까지에서 시작합니다. 장소와 날짜를 고르면 무엇이 바뀌었는지 보고, 모든 주장 뒤에 있는 근거를 살펴볼 수 있습니다. 실효 지배, 영토 주장, 국가 승인은 따로 기록하고, 견해 차이는 그대로 보존하며, 다루지 못한 공백은 공백으로 보여 줍니다. 웹사이트의 지구본은 기록을 하나씩 따라가며 각 항목이 어디까지 검증되었는지 보여 줍니다. 초기 프로토타입은 지구 전체에서 마을까지 확대되며, 모든 역사 기록은 아직 검토되지 않은 초안입니다."
