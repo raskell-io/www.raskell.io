@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-31T17:27:36+00:00",
+ "generated": "2026-10-31T17:46:18+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -8,7 +8,7 @@
   "review": 2,
   "note": 9,
   "talk": 1,
-  "work": 115,
+  "work": 127,
   "project": 30,
   "topic": 136,
   "link": 370
@@ -2197,6 +2197,156 @@
     "transhumanism"
    ],
    "meta": "Novel · Charles Stross · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Dispossessed",
+   "url": "https://raskell.io/reading/#the-dispossessed",
+   "description": "Two societies built on opposite answers to property, seen through one physicist who belongs fully to neither.",
+   "topics": [
+    "science-fiction",
+    "utopias",
+    "abundance",
+    "physics"
+   ],
+   "meta": "Novel · Ursula K. Le Guin · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Gravity's Rainbow",
+   "url": "https://raskell.io/reading/#gravitys-rainbow",
+   "description": "The V-2 rocket as the centre of a web of war, industry, and paranoia, and the canonical maximalist novel.",
+   "topics": [
+    "maximalist-novels",
+    "geopolitics",
+    "history-of-technology",
+    "hubris"
+   ],
+   "meta": "Novel · Thomas Pynchon · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Against the Day",
+   "url": "https://raskell.io/reading/#against-the-day",
+   "description": "Mathematicians, anarchists, and balloonists in the decades before the First World War, at about 1,100 pages.",
+   "topics": [
+    "maximalist-novels",
+    "history-of-science",
+    "mathematics",
+    "utopias"
+   ],
+   "meta": "Novel · Thomas Pynchon · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Recognitions",
+   "url": "https://raskell.io/reading/#the-recognitions",
+   "description": "Forgery, authenticity, and money in the art world, which reads differently now that machines produce convincing copies.",
+   "topics": [
+    "maximalist-novels",
+    "provenance",
+    "intellectual-property",
+    "money"
+   ],
+   "meta": "Novel · William Gaddis · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "2666",
+   "url": "https://raskell.io/reading/#2666",
+   "description": "Five linked books that close in on a city of unsolved murders, and one of the central maximalist novels.",
+   "topics": [
+    "maximalist-novels",
+    "literature"
+   ],
+   "meta": "Novel · Roberto Bolaño · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Cryptonomicon",
+   "url": "https://raskell.io/reading/#cryptonomicon",
+   "description": "Codebreaking in the Second World War and a data haven in the 1990s, told by someone who enjoys explaining how things work.",
+   "topics": [
+    "applied-security",
+    "money",
+    "history-of-technology",
+    "surveillance"
+   ],
+   "meta": "Novel · Neal Stephenson · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Name of the Rose",
+   "url": "https://raskell.io/reading/#the-name-of-the-rose",
+   "description": "A murder mystery in a medieval library, about who controls knowledge and what it is allowed to say.",
+   "topics": [
+    "literature",
+    "external-memory",
+    "religion"
+   ],
+   "meta": "Novel · Umberto Eco · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Das Glasperlenspiel",
+   "url": "https://raskell.io/reading/#das-glasperlenspiel",
+   "description": "A game that connects every field of knowledge, and the man who masters it and then leaves.",
+   "topics": [
+    "literature",
+    "games",
+    "mathematics",
+    "philosophy"
+   ],
+   "meta": "Novel · Hermann Hesse · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Solaris",
+   "url": "https://raskell.io/reading/#solaris",
+   "description": "An intelligence that resists every attempt at interpretation, and what that failure reveals about the people trying.",
+   "topics": [
+    "science-fiction",
+    "intelligence"
+   ],
+   "meta": "Novel · Stanisław Lem · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "A Canticle for Leibowitz",
+   "url": "https://raskell.io/reading/#a-canticle-for-leibowitz",
+   "description": "How knowledge survives a collapse, turns into relics, and returns with the same dangers.",
+   "topics": [
+    "science-fiction",
+    "external-memory",
+    "religion",
+    "existential-risk"
+   ],
+   "meta": "Novel · Walter M. Miller Jr. · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Andromeda Strain",
+   "url": "https://raskell.io/reading/#the-andromeda-strain",
+   "description": "A scientific investigation of an unknown organism, told almost as a case file.",
+   "topics": [
+    "science-fiction",
+    "life-sciences",
+    "risk",
+    "hubris"
+   ],
+   "meta": "Novel · Michael Crichton · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "Airframe",
+   "url": "https://raskell.io/reading/#airframe",
+   "description": "An incident investigation in a complex system, where the popular explanation arrives before the evidence.",
+   "topics": [
+    "reliability",
+    "observability",
+    "complex-systems"
+   ],
+   "meta": "Novel · Michael Crichton · Backlog"
   },
   {
    "kind": "work",

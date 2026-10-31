@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-31T17:27:36+00:00",
+ "generated": "2026-10-31T17:46:18+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -469,7 +469,7 @@
    "url": "https://raskell.io/tags/abundance/",
    "meta": "Concept · 1 page",
    "description": "Making what is scarce plentiful on purpose: building homes, energy, and compute until they are cheap, and the politics of supply that gets there.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:agents",
@@ -523,7 +523,7 @@
    "url": "https://raskell.io/tags/applied-security/",
    "meta": "Domain · 6 pages",
    "description": "Security under production pressure: adversarial input, signal versus noise, and controls that operators can live with.",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "t:attention-economy",
@@ -757,7 +757,7 @@
    "url": "https://raskell.io/tags/external-memory/",
    "meta": "Concept · 3 pages",
    "description": "Notes, links, and stores that remember for us: second brains, the web as a shared memory, and what agents write down for their next session.",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "t:factories",
@@ -820,7 +820,7 @@
    "url": "https://raskell.io/tags/games/",
    "meta": "Domain · 2 pages",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "t:go-game",
@@ -856,7 +856,7 @@
    "url": "https://raskell.io/tags/history-of-technology/",
    "meta": "Concept · 5 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 24
+   "degree": 26
   },
   {
    "id": "t:hypertext",
@@ -892,7 +892,7 @@
    "url": "https://raskell.io/tags/intellectual-property/",
    "meta": "Concept · 3 pages",
    "description": "Patents, copyright, and licences: who owns an invention or a text, from the web given to the public domain to books scraped for training data.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:intelligence",
@@ -901,7 +901,7 @@
    "url": "https://raskell.io/tags/intelligence/",
    "meta": "Concept · 2 pages",
    "description": "What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.",
-   "degree": 19
+   "degree": 20
   },
   {
    "id": "t:isolation",
@@ -1009,7 +1009,7 @@
    "url": "https://raskell.io/tags/observability/",
    "meta": "Concept · 3 pages",
    "description": "Seeing what a running system does: traces, metering, glass-box infrastructure, and what not to log.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:open-data",
@@ -1081,7 +1081,7 @@
    "url": "https://raskell.io/tags/physics/",
    "meta": "Domain · 1 page",
    "description": "The laws of matter, energy, space and time, and the people who found them, from Newton to the bomb to cosmology.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:pingora",
@@ -1135,7 +1135,7 @@
    "url": "https://raskell.io/tags/provenance/",
    "meta": "Concept · 2 pages",
    "description": "Where something came from and who vouches for it: signed media, rights-clear training data, and artifacts that carry their own history.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:reinforcement-learning",
@@ -1153,7 +1153,7 @@
    "url": "https://raskell.io/tags/reliability/",
    "meta": "Domain · 2 pages",
    "description": "Failure modes, operability, and keeping systems up when the inputs and the dependencies misbehave.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:research-labs",
@@ -1171,7 +1171,7 @@
    "url": "https://raskell.io/tags/risk/",
    "meta": "Concept · 1 page",
    "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "t:rust",
@@ -1189,7 +1189,7 @@
    "url": "https://raskell.io/tags/science-fiction/",
    "meta": "Concept · 1 page",
    "description": "Fiction as a thought experiment: cloned dinosaurs and chaos theory, post-scarcity civilisations, singularities, and stories from the internet read in the same spirit.",
-   "degree": 5
+   "degree": 9
   },
   {
    "id": "t:self-hosting",
@@ -1261,7 +1261,7 @@
    "url": "https://raskell.io/tags/surveillance/",
    "meta": "Concept · 1 page",
    "description": "Watching people at scale, by states and by platforms: intelligence agencies, tracking for advertising, and what it costs those being watched.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:switzerland",
@@ -1378,7 +1378,7 @@
    "url": "https://raskell.io/tags#complex-systems",
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "t:cybernetics",
@@ -1423,7 +1423,7 @@
    "url": "https://raskell.io/tags#existential-risk",
    "meta": "Concept · no pages yet",
    "description": "Technologies that could end or permanently cripple civilisation, from nuclear weapons to misaligned AI, and how people have tried to contain them.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:forecasting",
@@ -1450,7 +1450,7 @@
    "url": "https://raskell.io/tags#geopolitics",
    "meta": "Concept · no pages yet",
    "description": "How geography, empires, and arms shape the balance of power between states and regions, as history.",
-   "degree": 20
+   "degree": 21
   },
   {
    "id": "t:high-modernism",
@@ -1477,7 +1477,7 @@
    "url": "https://raskell.io/tags#history-of-science",
    "meta": "Concept · no pages yet",
    "description": "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "t:hubris",
@@ -1486,7 +1486,7 @@
    "url": "https://raskell.io/tags#hubris",
    "meta": "Concept · no pages yet",
    "description": "When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand.",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "t:life-sciences",
@@ -1495,7 +1495,7 @@
    "url": "https://raskell.io/tags#life-sciences",
    "meta": "Domain · no pages yet",
    "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "t:literature",
@@ -1504,7 +1504,7 @@
    "url": "https://raskell.io/tags#literature",
    "meta": "Domain · no pages yet",
    "description": "Fiction and writing about fiction: novels read for their own sake, and the forms they take.",
-   "degree": 11
+   "degree": 14
   },
   {
    "id": "t:mathematics",
@@ -1513,7 +1513,7 @@
    "url": "https://raskell.io/tags#mathematics",
    "meta": "Domain · no pages yet",
    "description": "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.",
-   "degree": 14
+   "degree": 16
   },
   {
    "id": "t:maximalist-novels",
@@ -1522,7 +1522,7 @@
    "url": "https://raskell.io/tags#maximalist-novels",
    "meta": "Concept · no pages yet",
    "description": "Very long, encyclopedic novels that try to hold a whole world: Infinite Jest, The Books of Jacob, and the studies of the form.",
-   "degree": 6
+   "degree": 10
   },
   {
    "id": "t:medicine",
@@ -1540,7 +1540,7 @@
    "url": "https://raskell.io/tags#money",
    "meta": "Concept · no pages yet",
    "description": "What money is and who creates it: debt and credit, banks that create money by lending, central banks, and attempts to do without them.",
-   "degree": 6
+   "degree": 8
   },
   {
    "id": "t:mortality",
@@ -1576,7 +1576,7 @@
    "url": "https://raskell.io/tags#philosophy",
    "meta": "Domain · no pages yet",
    "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "t:philosophy-of-science",
@@ -1612,7 +1612,7 @@
    "url": "https://raskell.io/tags#religion",
    "meta": "Concept · no pages yet",
    "description": "Faith, doubt, and the institutions and cities built around belief, as history and as argument.",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "t:scientific-revolutions",
@@ -1675,7 +1675,7 @@
    "url": "https://raskell.io/tags#utopias",
    "meta": "Concept · no pages yet",
    "description": "Designs for a better society, imagined or attempted: colonies, planned economies, post-scarcity civilisations, and what became of them.",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "s:the-agent-platform-handbook",
@@ -2892,6 +2892,114 @@
    "degree": 5
   },
   {
+   "id": "w:the-dispossessed",
+   "kind": "work",
+   "label": "The Dispossessed",
+   "url": "https://raskell.io/reading/#the-dispossessed",
+   "meta": "Novel · Ursula K. Le Guin · in the backlog",
+   "description": "Two societies built on opposite answers to property, seen through one physicist who belongs fully to neither.",
+   "degree": 5
+  },
+  {
+   "id": "w:gravitys-rainbow",
+   "kind": "work",
+   "label": "Gravity's Rainbow",
+   "url": "https://raskell.io/reading/#gravitys-rainbow",
+   "meta": "Novel · Thomas Pynchon · in the backlog",
+   "description": "The V-2 rocket as the centre of a web of war, industry, and paranoia, and the canonical maximalist novel.",
+   "degree": 5
+  },
+  {
+   "id": "w:against-the-day",
+   "kind": "work",
+   "label": "Against the Day",
+   "url": "https://raskell.io/reading/#against-the-day",
+   "meta": "Novel · Thomas Pynchon · in the backlog",
+   "description": "Mathematicians, anarchists, and balloonists in the decades before the First World War, at about 1,100 pages.",
+   "degree": 5
+  },
+  {
+   "id": "w:the-recognitions",
+   "kind": "work",
+   "label": "The Recognitions",
+   "url": "https://raskell.io/reading/#the-recognitions",
+   "meta": "Novel · William Gaddis · in the backlog",
+   "description": "Forgery, authenticity, and money in the art world, which reads differently now that machines produce convincing copies.",
+   "degree": 5
+  },
+  {
+   "id": "w:2666",
+   "kind": "work",
+   "label": "2666",
+   "url": "https://raskell.io/reading/#2666",
+   "meta": "Novel · Roberto Bolaño · in the backlog",
+   "description": "Five linked books that close in on a city of unsolved murders, and one of the central maximalist novels.",
+   "degree": 3
+  },
+  {
+   "id": "w:cryptonomicon",
+   "kind": "work",
+   "label": "Cryptonomicon",
+   "url": "https://raskell.io/reading/#cryptonomicon",
+   "meta": "Novel · Neal Stephenson · in the backlog",
+   "description": "Codebreaking in the Second World War and a data haven in the 1990s, told by someone who enjoys explaining how things work.",
+   "degree": 5
+  },
+  {
+   "id": "w:the-name-of-the-rose",
+   "kind": "work",
+   "label": "The Name of the Rose",
+   "url": "https://raskell.io/reading/#the-name-of-the-rose",
+   "meta": "Novel · Umberto Eco · in the backlog",
+   "description": "A murder mystery in a medieval library, about who controls knowledge and what it is allowed to say.",
+   "degree": 4
+  },
+  {
+   "id": "w:das-glasperlenspiel",
+   "kind": "work",
+   "label": "Das Glasperlenspiel",
+   "url": "https://raskell.io/reading/#das-glasperlenspiel",
+   "meta": "Novel · Hermann Hesse · in the backlog",
+   "description": "A game that connects every field of knowledge, and the man who masters it and then leaves.",
+   "degree": 5
+  },
+  {
+   "id": "w:solaris",
+   "kind": "work",
+   "label": "Solaris",
+   "url": "https://raskell.io/reading/#solaris",
+   "meta": "Novel · Stanisław Lem · in the backlog",
+   "description": "An intelligence that resists every attempt at interpretation, and what that failure reveals about the people trying.",
+   "degree": 3
+  },
+  {
+   "id": "w:a-canticle-for-leibowitz",
+   "kind": "work",
+   "label": "A Canticle for Leibowitz",
+   "url": "https://raskell.io/reading/#a-canticle-for-leibowitz",
+   "meta": "Novel · Walter M. Miller Jr. · in the backlog",
+   "description": "How knowledge survives a collapse, turns into relics, and returns with the same dangers.",
+   "degree": 5
+  },
+  {
+   "id": "w:the-andromeda-strain",
+   "kind": "work",
+   "label": "The Andromeda Strain",
+   "url": "https://raskell.io/reading/#the-andromeda-strain",
+   "meta": "Novel · Michael Crichton · in the backlog",
+   "description": "A scientific investigation of an unknown organism, told almost as a case file.",
+   "degree": 5
+  },
+  {
+   "id": "w:airframe",
+   "kind": "work",
+   "label": "Airframe",
+   "url": "https://raskell.io/reading/#airframe",
+   "meta": "Novel · Michael Crichton · in the backlog",
+   "description": "An incident investigation in a complex system, where the popular explanation arrives before the evidence.",
+   "degree": 4
+  },
+  {
    "id": "w:godel-escher-bach",
    "kind": "work",
    "label": "Gödel, Escher, Bach",
@@ -3013,7 +3121,7 @@
    "label": "Backlog",
    "url": "https://raskell.io/reading/#shelf-backlog",
    "meta": "Shelf",
-   "degree": 55
+   "degree": 67
   },
   {
    "id": "h:shelf-read",
@@ -8536,6 +8644,222 @@
   {
    "source": "w:accelerando",
    "target": "t:transhumanism"
+  },
+  {
+   "source": "w:the-dispossessed",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-dispossessed",
+   "target": "t:science-fiction"
+  },
+  {
+   "source": "w:the-dispossessed",
+   "target": "t:utopias"
+  },
+  {
+   "source": "w:the-dispossessed",
+   "target": "t:abundance"
+  },
+  {
+   "source": "w:the-dispossessed",
+   "target": "t:physics"
+  },
+  {
+   "source": "w:gravitys-rainbow",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:gravitys-rainbow",
+   "target": "t:maximalist-novels"
+  },
+  {
+   "source": "w:gravitys-rainbow",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:gravitys-rainbow",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:gravitys-rainbow",
+   "target": "t:hubris"
+  },
+  {
+   "source": "w:against-the-day",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:against-the-day",
+   "target": "t:maximalist-novels"
+  },
+  {
+   "source": "w:against-the-day",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:against-the-day",
+   "target": "t:mathematics"
+  },
+  {
+   "source": "w:against-the-day",
+   "target": "t:utopias"
+  },
+  {
+   "source": "w:the-recognitions",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-recognitions",
+   "target": "t:maximalist-novels"
+  },
+  {
+   "source": "w:the-recognitions",
+   "target": "t:provenance"
+  },
+  {
+   "source": "w:the-recognitions",
+   "target": "t:intellectual-property"
+  },
+  {
+   "source": "w:the-recognitions",
+   "target": "t:money"
+  },
+  {
+   "source": "w:2666",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:2666",
+   "target": "t:maximalist-novels"
+  },
+  {
+   "source": "w:2666",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:cryptonomicon",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:cryptonomicon",
+   "target": "t:applied-security"
+  },
+  {
+   "source": "w:cryptonomicon",
+   "target": "t:money"
+  },
+  {
+   "source": "w:cryptonomicon",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "w:cryptonomicon",
+   "target": "t:surveillance"
+  },
+  {
+   "source": "w:the-name-of-the-rose",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-name-of-the-rose",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:the-name-of-the-rose",
+   "target": "t:external-memory"
+  },
+  {
+   "source": "w:the-name-of-the-rose",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:das-glasperlenspiel",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:das-glasperlenspiel",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:das-glasperlenspiel",
+   "target": "t:games"
+  },
+  {
+   "source": "w:das-glasperlenspiel",
+   "target": "t:mathematics"
+  },
+  {
+   "source": "w:das-glasperlenspiel",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:solaris",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:solaris",
+   "target": "t:science-fiction"
+  },
+  {
+   "source": "w:solaris",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:a-canticle-for-leibowitz",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:a-canticle-for-leibowitz",
+   "target": "t:science-fiction"
+  },
+  {
+   "source": "w:a-canticle-for-leibowitz",
+   "target": "t:external-memory"
+  },
+  {
+   "source": "w:a-canticle-for-leibowitz",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:a-canticle-for-leibowitz",
+   "target": "t:existential-risk"
+  },
+  {
+   "source": "w:the-andromeda-strain",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-andromeda-strain",
+   "target": "t:science-fiction"
+  },
+  {
+   "source": "w:the-andromeda-strain",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:the-andromeda-strain",
+   "target": "t:risk"
+  },
+  {
+   "source": "w:the-andromeda-strain",
+   "target": "t:hubris"
+  },
+  {
+   "source": "w:airframe",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:airframe",
+   "target": "t:reliability"
+  },
+  {
+   "source": "w:airframe",
+   "target": "t:observability"
+  },
+  {
+   "source": "w:airframe",
+   "target": "t:complex-systems"
   },
   {
    "source": "w:godel-escher-bach",
