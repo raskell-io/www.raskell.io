@@ -1487,6 +1487,165 @@ about = "A novel made of nine linked stories, first published in Asimov's Scienc
 take = "The singularity across three generations of one family, from present-day hackers to post-human minds."
 
 [[works]]
+id = "the-dispossessed"
+title = "The Dispossessed"
+subtitle = "An Ambiguous Utopia"
+author = "Ursula K. Le Guin"
+kind = "novel"
+cover = "covers/reading/the-dispossessed.avif"
+year = 1974
+url = "https://www.ursulakleguin.com/dispossessed"
+status = "backlog"
+topics = ["science-fiction", "utopias", "abundance", "physics"]
+about = "Shevek, a physicist from the anarchist moon Anarres, travels to the wealthy, propertied planet Urras to finish a theory of time that his own society cannot support. The novel alternates between the two worlds and shows each one's freedoms and constraints from the inside, without letting either become the simple ideal."
+take = "Two societies built on opposite answers to property, seen through one physicist who belongs fully to neither."
+
+[[works]]
+id = "gravitys-rainbow"
+title = "Gravity's Rainbow"
+author = "Thomas Pynchon"
+kind = "novel"
+cover = "covers/reading/gravitys-rainbow.avif"
+year = 1973
+url = "https://www.penguinrandomhouse.com/books/299800/gravitys-rainbow-classics-deluxe-edition-by-thomas-pynchon/9780143039945/"
+status = "backlog"
+topics = ["maximalist-novels", "geopolitics", "history-of-technology", "hubris"]
+about = "London in 1944 is under V-2 attack, and an American lieutenant, Tyrone Slothrop, seems to anticipate where the rockets will fall. The search for a particular rocket then spreads across the chaos of postwar Germany, through intelligence agencies, cartels, and a vast cast, in a novel that keeps asking whether the connections it shows are real or imposed."
+take = "The V-2 rocket as the centre of a web of war, industry, and paranoia, and the canonical maximalist novel."
+
+[[works]]
+id = "against-the-day"
+title = "Against the Day"
+author = "Thomas Pynchon"
+kind = "novel"
+cover = "covers/reading/against-the-day.avif"
+year = 2006
+url = "https://www.penguinrandomhouse.com/books/293011/against-the-day-by-thomas-pynchon/"
+status = "backlog"
+topics = ["maximalist-novels", "history-of-science", "mathematics", "utopias"]
+about = "A novel that runs from the 1893 Chicago World's Fair to the years after the First World War, following a crew of boy balloonists, the family of a murdered anarchist miner, mathematicians, inventors, and spies. It moves between adventure-story pastiche and history, and keeps returning to science, light, and the violence of the age."
+take = "Mathematicians, anarchists, and balloonists in the decades before the First World War, at about 1,100 pages."
+
+[[works]]
+id = "the-recognitions"
+title = "The Recognitions"
+author = "William Gaddis"
+kind = "novel"
+cover = "covers/reading/the-recognitions.avif"
+year = 1955
+url = "https://www.nyrb.com/products/the-recognitions"
+status = "backlog"
+topics = ["maximalist-novels", "provenance", "intellectual-property", "money"]
+about = "Wyatt Gwyon, the son of a New England minister, becomes a painter who forges Flemish old masters. Around him the novel assembles a crowded world of New York art dealers, critics, and counterfeiters, and asks what makes a work authentic when copies are perfect and value is a matter of belief."
+take = "Forgery, authenticity, and money in the art world, which reads differently now that machines produce convincing copies."
+
+[[works]]
+id = "2666"
+title = "2666"
+author = "Roberto Bolaño"
+kind = "novel"
+cover = "covers/reading/2666.avif"
+year = 2004
+isbn = "9780374100148"   # the first English edition (Farrar, Straus and Giroux, 2008), translated by Natasha Wimmer
+cover_id = "7020480"
+status = "backlog"
+topics = ["maximalist-novels", "literature"]
+about = "A novel in five parts, published after the author's death. It begins with European critics searching for a reclusive German novelist and converges on a fictional city on the Mexican border, where hundreds of women are being murdered while institutions look away."
+take = "Five linked books that close in on a city of unsolved murders, and one of the central maximalist novels."
+
+[[works]]
+id = "cryptonomicon"
+title = "Cryptonomicon"
+author = "Neal Stephenson"
+kind = "novel"
+cover = "covers/reading/cryptonomicon.avif"
+year = 1999
+url = "https://www.nealstephenson.com/cryptonomicon.html"
+status = "backlog"
+topics = ["applied-security", "money", "history-of-technology", "surveillance"]
+about = "Two stories run in parallel: codebreakers in the Second World War working to hide the fact that the Allies can read enemy traffic, and their descendants in the late 1990s trying to build a data haven in Southeast Asia. Cryptography, gold, and the question of who can see what tie the two together."
+take = "Codebreaking in the Second World War and a data haven in the 1990s, told by someone who enjoys explaining how things work."
+
+[[works]]
+id = "the-name-of-the-rose"
+title = "The Name of the Rose"
+author = "Umberto Eco"
+kind = "novel"
+cover = "covers/reading/the-name-of-the-rose.avif"
+year = 1980
+url = "https://www.penguinrandomhouse.com/books/44869/the-name-of-the-rose-by-umberto-eco-translated-by-william-weaver-introduction-by-david-lodge/"
+status = "backlog"
+topics = ["literature", "external-memory", "religion"]
+about = "In 1327, the Franciscan William of Baskerville and his novice Adso arrive at a Benedictine abbey in northern Italy where monks are dying one after another. The deaths lead to the abbey's labyrinthine library and to a book that someone wants kept from being read."
+take = "A murder mystery in a medieval library, about who controls knowledge and what it is allowed to say."
+
+[[works]]
+id = "das-glasperlenspiel"
+title = "Das Glasperlenspiel"
+author = "Hermann Hesse"
+kind = "novel"
+cover = "covers/reading/das-glasperlenspiel.avif"
+year = 1943
+status = "backlog"
+topics = ["literature", "games", "mathematics", "philosophy"]
+about = "In a future province called Castalia, an order of scholars plays a game that relates mathematics, music, and every other discipline to one another. The novel follows Josef Knecht, who rises to become master of the game and then questions whether such a life can stay apart from the world outside."
+take = "A game that connects every field of knowledge, and the man who masters it and then leaves."
+
+[[works]]
+id = "solaris"
+title = "Solaris"
+author = "Stanisław Lem"
+kind = "novel"
+cover = "covers/reading/solaris.avif"
+year = 1961
+isbn = "9788363471415"   # Bill Johnston's translation from the Polish; the title search found a Turkish edition
+cover_id = "8757816"
+url = "https://english.lem.pl/works/novels/solaris"
+status = "backlog"
+topics = ["science-fiction", "intelligence"]
+about = "Kris Kelvin arrives at a research station above a planet covered by an ocean that may be a single living mind. Generations of scientists have failed to understand it, and the ocean answers the newcomers by giving form to their own memories."
+take = "An intelligence that resists every attempt at interpretation, and what that failure reveals about the people trying."
+
+[[works]]
+id = "a-canticle-for-leibowitz"
+title = "A Canticle for Leibowitz"
+author = "Walter M. Miller Jr."
+kind = "novel"
+cover = "covers/reading/a-canticle-for-leibowitz.avif"
+year = 1959
+url = "https://www.penguinrandomhouse.com/books/114888/a-canticle-for-leibowitz-by-walter-m-miller-jr/"
+status = "backlog"
+topics = ["science-fiction", "external-memory", "religion", "existential-risk"]
+about = "After a nuclear war, an order of monks in the American desert preserves the scraps of scientific knowledge that survived, without understanding most of them. Across three parts spanning many centuries, civilisation rebuilds, recovers its science, and heads toward the same catastrophe again."
+take = "How knowledge survives a collapse, turns into relics, and returns with the same dangers."
+
+[[works]]
+id = "the-andromeda-strain"
+title = "The Andromeda Strain"
+author = "Michael Crichton"
+kind = "novel"
+cover = "covers/reading/the-andromeda-strain.avif"
+year = 1969
+url = "https://michaelcrichton.com/works/the-andromeda-strain/"
+status = "backlog"
+topics = ["science-fiction", "life-sciences", "risk", "hubris"]
+about = "A military satellite falls near a small town in Arizona, and nearly everyone there dies. A team of scientists studies the organism it brought back in a sealed underground laboratory, in a novel written in the style of a technical report."
+take = "A scientific investigation of an unknown organism, told almost as a case file."
+
+[[works]]
+id = "airframe"
+title = "Airframe"
+author = "Michael Crichton"
+kind = "novel"
+cover = "covers/reading/airframe.avif"
+year = 1996
+url = "https://michaelcrichton.com/works/airframe/"
+status = "backlog"
+topics = ["reliability", "observability", "complex-systems"]
+about = "An airliner suffers a violent in-flight incident that kills and injures passengers, and a quality assurance manager at the manufacturer has days to find the cause. She works through flight data, maintenance records, and competing explanations while the press and the company push for a simpler story."
+take = "An incident investigation in a complex system, where the popular explanation arrives before the evidence."
+
+[[works]]
 id = "godel-escher-bach"
 title = "Gödel, Escher, Bach"
 subtitle = "An Eternal Golden Braid"
