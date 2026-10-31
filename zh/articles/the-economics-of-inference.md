@@ -4,7 +4,7 @@ url: https://raskell.io/zh/articles/the-economics-of-inference/
 author: Raffael Schneider
 date: 2026-04-22
 description: "推理 token 不是 API 调用，而是一种计量的资源：被消耗，创造价值，并与耗电量挂钩。后 AI 世界的经济学不像软件，更像水、电和燃气。"
-tags: [inference, economics, sovereignty, edge-systems, gpus]
+tags: [inference, economics, sovereignty, edge-systems, gpus, energy, semiconductors]
 lang: zh-Hans
 translation_of: https://raskell.io/articles/the-economics-of-inference/
 ---

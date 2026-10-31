@@ -4,7 +4,7 @@ url: https://raskell.io/zh/articles/what-programming-languages-become-when-ai-wr
 author: Raffael Schneider
 date: 2026-04-11
 description: "当 AI 成为代码的主要作者，编程语言的三种未来，以及我为什么押注 Haskell。"
-tags: [ai-engineering, programming-languages, abstraction, formal-methods, haskell, compilers]
+tags: [ai-engineering, programming-languages, abstraction, formal-methods, haskell, compilers, type-systems]
 lang: zh-Hans
 translation_of: https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/
 ---

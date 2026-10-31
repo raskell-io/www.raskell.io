@@ -4,7 +4,7 @@ url: https://raskell.io/ko/articles/the-economics-of-inference/
 author: Raffael Schneider
 date: 2026-04-22
 description: "추론 토큰은 API 호출이 아닙니다. 소비되고, 가치를 만들고, 전력 소모와 상관관계가 있는 계량 자원입니다. AI 이후 세계의 경제학은 소프트웨어보다 물, 전기, 가스에 더 가깝습니다."
-tags: [inference, economics, sovereignty, edge-systems, gpus]
+tags: [inference, economics, sovereignty, edge-systems, gpus, energy, semiconductors]
 lang: ko
 translation_of: https://raskell.io/articles/the-economics-of-inference/
 ---

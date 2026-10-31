@@ -4,7 +4,7 @@ url: https://raskell.io/articles/the-economics-of-inference/
 author: Raffael Schneider
 date: 2026-04-22
 description: "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas."
-tags: [inference, economics, sovereignty, edge-systems, gpus]
+tags: [inference, economics, sovereignty, edge-systems, gpus, energy, semiconductors]
 ---
 
 # The Economics of Inference

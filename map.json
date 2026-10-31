@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-31T17:25:13+00:00",
+ "generated": "2026-10-31T17:27:36+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -10,7 +10,7 @@
    "url": "https://raskell.io/articles/the-river-and-the-canal/",
    "meta": "2026-10-31 · 51 min",
    "description": "Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine.",
-   "degree": 27
+   "degree": 30
   },
   {
    "id": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
@@ -19,7 +19,7 @@
    "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/",
    "meta": "2026-10-30 · 25 min",
    "description": "How I re-imagined Shiioo with what 2026 taught me about agent systems, and why my local setup moves to a Mac Studio and DGX Sparks.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/win-everything-control-no-one/",
@@ -28,7 +28,7 @@
    "url": "https://raskell.io/articles/win-everything-control-no-one/",
    "meta": "2026-10-29 · 17 min",
    "description": "Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it.",
-   "degree": 16
+   "degree": 20
   },
   {
    "id": "a:/articles/a-blueprint-for-the-static-web/",
@@ -46,7 +46,7 @@
    "url": "https://raskell.io/articles/learning-to-play/",
    "meta": "2026-10-25 · 22 min",
    "description": "A chess prodigy's handbook, three old games and one laptop: rebuilding the ideas behind game-playing AI in Rust for a browser on my phone, and measuring them.",
-   "degree": 16
+   "degree": 19
   },
   {
    "id": "a:/articles/the-web-was-the-training-set/",
@@ -100,7 +100,7 @@
    "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
    "meta": "2026-06-30 · 34 min",
    "description": "Frontier AI is running short on public text, not compute. Europe's edge is the high-quality data it never put online. Capturing it needs coordination.",
-   "degree": 13
+   "degree": 15
   },
   {
    "id": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
@@ -127,7 +127,7 @@
    "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/",
    "meta": "2026-06-19 · 13 min",
    "description": "Generation is cheap, so verification is the bottleneck — and we throw the verification away every time. What if a proof, once written, could be named, shared, and vouched for? A content-addressed commons for verified Haskell, and the move I left for after the semantic-artifact trilogy.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/retrieval-is-a-tool-not-a-layer/",
@@ -181,7 +181,7 @@
    "url": "https://raskell.io/articles/the-field-exists-now/",
    "meta": "2026-05-22 · 7 min",
    "description": "Alasdair Allan's agentlanguages.dev catalogue turns AI-oriented programming languages from a loose set of experiments into a field with camps, disagreements, and testable claims.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/articles/semantic-artifacts-and-meaning-engines/",
@@ -190,7 +190,7 @@
    "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/",
    "meta": "2026-05-07 · 27 min",
    "description": "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/patents-per-capita-is-a-vanity-metric/",
@@ -199,7 +199,7 @@
    "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/",
    "meta": "2026-05-01 · 23 min",
    "description": "Switzerland tops the Global Innovation Index for the fifteenth year running. As an engineer, that should make you suspicious of the metric, not proud of the country.",
-   "degree": 11
+   "degree": 14
   },
   {
    "id": "a:/articles/traffic-replay-as-a-security-primitive/",
@@ -217,7 +217,7 @@
    "url": "https://raskell.io/articles/the-economics-of-inference/",
    "meta": "2026-04-22 · 12 min",
    "description": "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas.",
-   "degree": 15
+   "degree": 17
   },
   {
    "id": "a:/articles/what-comes-after-the-last-programming-language/",
@@ -244,7 +244,7 @@
    "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/",
    "meta": "2026-04-13 · 19 min",
    "description": "hx is a fast, opinionated Haskell toolchain built in Rust, following the playbook astral.sh used to modernize Python.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
@@ -253,7 +253,7 @@
    "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/",
    "meta": "2026-04-11 · 26 min",
    "description": "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell.",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "a:/articles/notes-from-rsac-2026/",
@@ -262,7 +262,7 @@
    "url": "https://raskell.io/articles/notes-from-rsac-2026/",
    "meta": "2026-04-09 · 23 min",
    "description": "Third time at RSA Conference, first time as a speaker. What I saw, what I heard, and what I am still processing.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/what-zentinel-is-really-optimizing-for/",
@@ -316,7 +316,7 @@
    "url": "https://raskell.io/articles/looking-back-on-2025/",
    "meta": "2025-12-31 · 7 min",
    "description": "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "a:/articles/mise-ate-my-makefile/",
@@ -343,7 +343,7 @@
    "url": "https://raskell.io/articles/all-beginning-is-haskell/",
    "meta": "2023-03-06 · 10 min",
    "description": "How Haskell shaped the way I think about building systems, and why I am still building Haskell tooling years after writing my first monad.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/",
@@ -370,7 +370,7 @@
    "url": "https://raskell.io/notes/everything-is-a-fractal/",
    "meta": "2026-10-31",
    "description": "The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world.",
-   "degree": 7
+   "degree": 9
   },
   {
    "id": "a:/notes/a-capability-democratised/",
@@ -424,7 +424,7 @@
    "url": "https://raskell.io/notes/the-tumult-in-between/",
    "meta": "2026-10-25",
    "description": "If AI ends in post-scarcity, the dangerous part is the interval: jobs going before goods become nearly free, with no agreed idea of where the ship steers.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "a:/notes/the-window-before-the-utility/",
@@ -433,7 +433,7 @@
    "url": "https://raskell.io/notes/the-window-before-the-utility/",
    "meta": "2026-10-25",
    "description": "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
@@ -461,6 +461,15 @@
    "meta": "Concept · 5 pages",
    "description": "Layers that let people stop thinking about the layer below, from assembly and programming languages to orchestrators and agents, and how each new layer becomes the ground for the next.",
    "degree": 7
+  },
+  {
+   "id": "t:abundance",
+   "kind": "tag",
+   "label": "Abundance",
+   "url": "https://raskell.io/tags/abundance/",
+   "meta": "Concept · 1 page",
+   "description": "Making what is scarce plentiful on purpose: building homes, energy, and compute until they are cheap, and the politics of supply that gets there.",
+   "degree": 9
   },
   {
    "id": "t:agents",
@@ -532,7 +541,34 @@
    "url": "https://raskell.io/tags/augmentation/",
    "meta": "Concept · 8 pages",
    "description": "Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents.",
-   "degree": 15
+   "degree": 16
+  },
+  {
+   "id": "t:chaos-theory",
+   "kind": "tag",
+   "label": "Chaos theory",
+   "url": "https://raskell.io/tags/chaos-theory/",
+   "meta": "Concept · 1 page",
+   "description": "How simple deterministic rules produce behaviour nobody can predict: sensitive dependence, strange attractors, and the limits of forecasting.",
+   "degree": 7
+  },
+  {
+   "id": "t:chess",
+   "kind": "tag",
+   "label": "Chess",
+   "url": "https://raskell.io/tags/chess/",
+   "meta": "Domain · 3 pages",
+   "description": "The game that served as the benchmark of machine intelligence for seventy years, from Shannon's paper to Deep Blue and engines that learn.",
+   "degree": 7
+  },
+  {
+   "id": "t:china",
+   "kind": "tag",
+   "label": "China",
+   "url": "https://raskell.io/tags/china/",
+   "meta": "Concept · 2 pages",
+   "description": "China in history and in technology: the Silk Roads and Sun Tzu, its share of patents and research, its race with the United States, and its language.",
+   "degree": 10
   },
   {
    "id": "t:cities",
@@ -577,7 +613,7 @@
    "url": "https://raskell.io/tags/cryptocurrency/",
    "meta": "Domain · 1 page",
    "description": "Bitcoin, blockchains and distributed ledgers: the attempt to formalise money and trust so completely that no institution is needed, and the institutions that grew back around it.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:data-sovereignty",
@@ -649,7 +685,7 @@
    "url": "https://raskell.io/tags/economics/",
    "meta": "Concept · 11 pages",
    "description": "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.",
-   "degree": 27
+   "degree": 29
   },
   {
    "id": "t:edge-systems",
@@ -677,6 +713,15 @@
    "meta": "Concept · 3 pages",
    "description": "Order nobody designed: reefs, the early web, neuron cultures, and simulated worlds where simple rules add up to behaviour no single part has.",
    "degree": 11
+  },
+  {
+   "id": "t:energy",
+   "kind": "tag",
+   "label": "Energy",
+   "url": "https://raskell.io/tags/energy/",
+   "meta": "Domain · 3 pages",
+   "description": "Electricity as the input to everything else: the power behind compute, the grids and plants that supply it, and what it costs.",
+   "degree": 5
   },
   {
    "id": "t:entrepreneurship",
@@ -712,7 +757,7 @@
    "url": "https://raskell.io/tags/external-memory/",
    "meta": "Concept · 3 pages",
    "description": "Notes, links, and stores that remember for us: second brains, the web as a shared memory, and what agents write down for their next session.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:factories",
@@ -730,7 +775,7 @@
    "url": "https://raskell.io/tags/finance/",
    "meta": "Domain · 1 page",
    "description": "Banks, insurers, money and credit: abstract businesses that sell kept promises, allocate a society's resources and turn trust into procedure.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:formal-methods",
@@ -739,7 +784,7 @@
    "url": "https://raskell.io/tags/formal-methods/",
    "meta": "Concept · 4 pages",
    "description": "Proofs, verification, and types as specifications, especially once machines write the code.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:fractals",
@@ -748,7 +793,7 @@
    "url": "https://raskell.io/tags/fractals/",
    "meta": "Concept · 2 pages",
    "description": "Self-similar patterns that repeat at every scale, from rivers and coastlines to software, organisations and ideas; the lens behind much of this site.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "t:future-of-work",
@@ -775,7 +820,16 @@
    "url": "https://raskell.io/tags/games/",
    "meta": "Domain · 2 pages",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
-   "degree": 10
+   "degree": 15
+  },
+  {
+   "id": "t:go-game",
+   "kind": "tag",
+   "label": "Go",
+   "url": "https://raskell.io/tags/go-game/",
+   "meta": "Domain · 3 pages",
+   "description": "The board game whose positions resisted hand-written evaluation until AlphaGo, and the clearest case for learned intuition guiding search.",
+   "degree": 6
   },
   {
    "id": "t:gpus",
@@ -784,7 +838,7 @@
    "url": "https://raskell.io/tags/gpus/",
    "meta": "Technology · 4 pages",
    "description": "GPUs as the computer: memory shape, partitioning, and the hardware under inference.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:haskell",
@@ -802,7 +856,7 @@
    "url": "https://raskell.io/tags/history-of-technology/",
    "meta": "Concept · 5 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 23
+   "degree": 24
   },
   {
    "id": "t:hypertext",
@@ -1021,6 +1075,15 @@
    "degree": 8
   },
   {
+   "id": "t:physics",
+   "kind": "tag",
+   "label": "Physics",
+   "url": "https://raskell.io/tags/physics/",
+   "meta": "Domain · 1 page",
+   "description": "The laws of matter, energy, space and time, and the people who found them, from Newton to the bomb to cosmology.",
+   "degree": 7
+  },
+  {
    "id": "t:pingora",
    "kind": "tag",
    "label": "Pingora",
@@ -1045,7 +1108,7 @@
    "url": "https://raskell.io/tags/policy/",
    "meta": "Domain · 3 pages",
    "description": "Where engineering meets regulation, public institutions, procurement, and national strategy.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "t:post-scarcity",
@@ -1054,7 +1117,7 @@
    "url": "https://raskell.io/tags/post-scarcity/",
    "meta": "Concept · 3 pages",
    "description": "What changes when making things costs next to nothing: copied software, AI labour, mission-built machines, and the economies and societies that might follow.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:programming-languages",
@@ -1063,7 +1126,7 @@
    "url": "https://raskell.io/tags/programming-languages/",
    "meta": "Domain · 6 pages",
    "description": "Languages, type systems, compilers, and how executable intent gets written down.",
-   "degree": 19
+   "degree": 20
   },
   {
    "id": "t:provenance",
@@ -1108,7 +1171,7 @@
    "url": "https://raskell.io/tags/risk/",
    "meta": "Concept · 1 page",
    "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "t:rust",
@@ -1138,6 +1201,24 @@
    "degree": 8
   },
   {
+   "id": "t:semiconductors",
+   "kind": "tag",
+   "label": "Semiconductors",
+   "url": "https://raskell.io/tags/semiconductors/",
+   "meta": "Domain · 3 pages",
+   "description": "Chips and the factories that make them: fabrication, the few companies and places that can do it, and why nations compete for them.",
+   "degree": 5
+  },
+  {
+   "id": "t:shogi",
+   "kind": "tag",
+   "label": "Shogi",
+   "url": "https://raskell.io/tags/shogi/",
+   "meta": "Domain · 2 pages",
+   "description": "Japanese chess, where captured pieces return to the board, and where the NNUE networks now inside every strong chess engine were invented.",
+   "degree": 4
+  },
+  {
    "id": "t:simulation",
    "kind": "tag",
    "label": "Simulation",
@@ -1153,7 +1234,7 @@
    "url": "https://raskell.io/tags/social-reform/",
    "meta": "Concept · 2 pages",
    "description": "Plans to redesign society or the economy, from nineteenth-century utopias to high-modernist states and basic income, and what happened when they met people.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:sovereignty",
@@ -1163,6 +1244,24 @@
    "meta": "Domain · 4 pages",
    "description": "Who controls compute, data, and infrastructure, and in which jurisdiction; Europe's position in particular.",
    "degree": 12
+  },
+  {
+   "id": "t:starcraft",
+   "kind": "tag",
+   "label": "StarCraft",
+   "url": "https://raskell.io/tags/starcraft/",
+   "meta": "Domain · 2 pages",
+   "description": "The real-time strategy game, Brood War above all: hidden information, thousands of decisions a minute, and the next benchmark after board games.",
+   "degree": 5
+  },
+  {
+   "id": "t:surveillance",
+   "kind": "tag",
+   "label": "Surveillance",
+   "url": "https://raskell.io/tags/surveillance/",
+   "meta": "Concept · 1 page",
+   "description": "Watching people at scale, by states and by platforms: intelligence agencies, tracking for advertising, and what it costs those being watched.",
+   "degree": 3
   },
   {
    "id": "t:switzerland",
@@ -1201,6 +1300,15 @@
    "degree": 7
   },
   {
+   "id": "t:type-systems",
+   "kind": "tag",
+   "label": "Type systems",
+   "url": "https://raskell.io/tags/type-systems/",
+   "meta": "Concept · 6 pages",
+   "description": "Types as a cheap, mechanical proof that code does what it says, and why they matter more once machines write the code.",
+   "degree": 9
+  },
+  {
    "id": "t:typescript",
    "kind": "tag",
    "label": "TypeScript",
@@ -1208,6 +1316,15 @@
    "meta": "Technology · 8 pages",
    "description": "TypeScript on Bun, the language of the Agent Platform Handbook code.",
    "degree": 12
+  },
+  {
+   "id": "t:united-states",
+   "kind": "tag",
+   "label": "United States",
+   "url": "https://raskell.io/tags/united-states/",
+   "meta": "Concept · 2 pages",
+   "description": "America's place in technology and power: where the frontier labs and chips are, its founding ideas, and its race with China.",
+   "degree": 13
   },
   {
    "id": "t:waf",
@@ -1261,7 +1378,16 @@
    "url": "https://raskell.io/tags#complex-systems",
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
-   "degree": 16
+   "degree": 18
+  },
+  {
+   "id": "t:cybernetics",
+   "kind": "tag",
+   "label": "Cybernetics",
+   "url": "https://raskell.io/tags#cybernetics",
+   "meta": "Domain · no pages yet",
+   "description": "The science of control and feedback in machines, organisms, and organisations, and the attempts to run economies and societies with it.",
+   "degree": 5
   },
   {
    "id": "t:enterprise-architecture",
@@ -1282,6 +1408,15 @@
    "degree": 5
   },
   {
+   "id": "t:evolution",
+   "kind": "tag",
+   "label": "Evolution",
+   "url": "https://raskell.io/tags#evolution",
+   "meta": "Concept · no pages yet",
+   "description": "Change by variation and selection, in genes, brains, and populations, and the arguments over how much it explains.",
+   "degree": 5
+  },
+  {
    "id": "t:existential-risk",
    "kind": "tag",
    "label": "Existential risk",
@@ -1291,13 +1426,22 @@
    "degree": 10
   },
   {
+   "id": "t:forecasting",
+   "kind": "tag",
+   "label": "Forecasting",
+   "url": "https://raskell.io/tags#forecasting",
+   "meta": "Concept · no pages yet",
+   "description": "Saying what will happen and how sure you are: scenarios, predictions that fail, and the events nobody priced in.",
+   "degree": 11
+  },
+  {
    "id": "t:geography",
    "kind": "tag",
    "label": "Geography",
    "url": "https://raskell.io/tags#geography",
    "meta": "Domain · no pages yet",
    "description": "Places, terrain, borders, and spatial data, and how their relationships change over time.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "t:geopolitics",
@@ -1306,7 +1450,7 @@
    "url": "https://raskell.io/tags#geopolitics",
    "meta": "Concept · no pages yet",
    "description": "How geography, empires, and arms shape the balance of power between states and regions, as history.",
-   "degree": 17
+   "degree": 20
   },
   {
    "id": "t:high-modernism",
@@ -1351,7 +1495,7 @@
    "url": "https://raskell.io/tags#life-sciences",
    "meta": "Domain · no pages yet",
    "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
-   "degree": 9
+   "degree": 12
   },
   {
    "id": "t:literature",
@@ -1369,7 +1513,7 @@
    "url": "https://raskell.io/tags#mathematics",
    "meta": "Domain · no pages yet",
    "description": "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.",
-   "degree": 12
+   "degree": 14
   },
   {
    "id": "t:maximalist-novels",
@@ -1388,6 +1532,24 @@
    "meta": "Concept · no pages yet",
    "description": "How treatments are discovered, tested, and brought to patients, from antisepsis and sulfa drugs to modern drug design.",
    "degree": 4
+  },
+  {
+   "id": "t:money",
+   "kind": "tag",
+   "label": "Money",
+   "url": "https://raskell.io/tags#money",
+   "meta": "Concept · no pages yet",
+   "description": "What money is and who creates it: debt and credit, banks that create money by lending, central banks, and attempts to do without them.",
+   "degree": 6
+  },
+  {
+   "id": "t:mortality",
+   "kind": "tag",
+   "label": "Mortality",
+   "url": "https://raskell.io/tags#mortality",
+   "meta": "Concept · no pages yet",
+   "description": "That everyone dies: priced in life insurance, resisted by those who want to end death, and answered by keeping a person's voice and stories.",
+   "degree": 3
   },
   {
    "id": "t:networking",
@@ -1414,7 +1576,7 @@
    "url": "https://raskell.io/tags#philosophy",
    "meta": "Domain · no pages yet",
    "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
-   "degree": 11
+   "degree": 14
   },
   {
    "id": "t:philosophy-of-science",
@@ -1432,7 +1594,16 @@
    "url": "https://raskell.io/tags#privacy",
    "meta": "Concept · no pages yet",
    "description": "Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place.",
-   "degree": 4
+   "degree": 5
+  },
+  {
+   "id": "t:probability",
+   "kind": "tag",
+   "label": "Probability",
+   "url": "https://raskell.io/tags#probability",
+   "meta": "Concept · no pages yet",
+   "description": "Chance made countable: the law of large numbers behind insurance, error margins on a measurement, and tails that are fatter than they look.",
+   "degree": 5
   },
   {
    "id": "t:religion",
@@ -1462,6 +1633,33 @@
    "degree": 2
   },
   {
+   "id": "t:strategy",
+   "kind": "tag",
+   "label": "Strategy",
+   "url": "https://raskell.io/tags#strategy",
+   "meta": "Concept · no pages yet",
+   "description": "Winning against an opponent who adapts: in war, in business, and in games, from Sun Tzu to real-time strategy.",
+   "degree": 5
+  },
+  {
+   "id": "t:synthetic-biology",
+   "kind": "tag",
+   "label": "Synthetic biology",
+   "url": "https://raskell.io/tags#synthetic-biology",
+   "meta": "Domain · no pages yet",
+   "description": "Engineering living systems: designing molecules and organisms, growing neurons on chips, and the software that reads and writes biology.",
+   "degree": 5
+  },
+  {
+   "id": "t:transhumanism",
+   "kind": "tag",
+   "label": "Transhumanism",
+   "url": "https://raskell.io/tags#transhumanism",
+   "meta": "Concept · no pages yet",
+   "description": "The hope of outgrowing the human body and mind through technology: the singularity, mind uploading, ending death, and the critics of all three.",
+   "degree": 7
+  },
+  {
    "id": "t:tree-search",
    "kind": "tag",
    "label": "Tree search",
@@ -1469,6 +1667,15 @@
    "meta": "Concept · no pages yet",
    "description": "Looking ahead by expanding a tree of moves: minimax and alpha-beta, Monte Carlo tree search, and the pruning and ordering that make them tractable.",
    "degree": 1
+  },
+  {
+   "id": "t:utopias",
+   "kind": "tag",
+   "label": "Utopias",
+   "url": "https://raskell.io/tags#utopias",
+   "meta": "Concept · no pages yet",
+   "description": "Designs for a better society, imagined or attempted: colonies, planned economies, post-scarcity civilisations, and what became of them.",
+   "degree": 10
   },
   {
    "id": "s:the-agent-platform-handbook",
@@ -1503,7 +1710,7 @@
    "url": "https://cyanea.bio",
    "meta": "Project",
    "description": "Bioinformatics notebooks that actually re-run. Write, run, and share analyses that execute in your browser on WebAssembly, with nothing to install. Every notebook, dataset, and out…",
-   "degree": 11
+   "degree": 13
   },
   {
    "id": "p:humankind",
@@ -1512,7 +1719,7 @@
    "url": "https://humankind.plus",
    "meta": "Project",
    "description": "Human continuity platform for preserving presence across generations. Humankind helps people build a living archive of voice, stories, memories, values, and relational warmth so th…",
-   "degree": 6
+   "degree": 8
   },
   {
    "id": "p:arcanist",
@@ -1584,7 +1791,7 @@
    "url": "https://broodwar.live",
    "meta": "Project",
    "description": "The community platform for StarCraft: Brood War competitive play, a basketball-reference.com for Brood War. Profiles for 150 pro players in English and Korean, build orders for eve…",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "p:die-zukunft",
@@ -1647,7 +1854,7 @@
    "url": "https://hotaru.raskell.io",
    "meta": "Project",
    "description": "Simulated neuron cultures on a 60-electrode array play Pong in your browser, as in the DishBrain experiment. Feedback for hits and misses alone did not make them better. Input that…",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "p:kishi",
@@ -1656,7 +1863,7 @@
    "url": "https://kishi.raskell.io",
    "meta": "Project",
    "description": "Chess, shogi and Go against engines written in Rust and compiled to WebAssembly. They play in the browser on your own device, offline, from novice to full strength, on a quiet boar…",
-   "degree": 11
+   "degree": 14
   },
   {
    "id": "p:sango",
@@ -1728,7 +1935,7 @@
    "url": "https://manabi.raskell.io",
    "meta": "Project",
    "description": "A reading-first language-learning app for Chinese, Japanese, Korean, and Hebrew. It trains recognition, pronunciation, listening, context, and recall separately, with spaced repeti…",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "p:kurumi",
@@ -1791,7 +1998,7 @@
    "url": "https://raskell.io/reading/#nuclear-war-a-scenario",
    "meta": "Book · Annie Jacobsen · read October 2025",
    "description": "A minute-by-minute account of how a nuclear exchange would unfold, built on interviews with the people who plan for one.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:jurassic-park",
@@ -1800,7 +2007,7 @@
    "url": "https://raskell.io/reading/#jurassic-park",
    "meta": "Novel · Michael Crichton · read July 2025",
    "description": "A park of cloned dinosaurs, and a mathematician who uses chaos theory to explain why it cannot stay under control.",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "w:the-books-of-jacob",
@@ -1836,7 +2043,7 @@
    "url": "https://raskell.io/reading/#science-after-babel",
    "meta": "Book · David Berlinski · read 2023",
    "description": "Essays that question how much modern science can actually explain, from physics and cosmology to Darwinian biology.",
-   "degree": 2
+   "degree": 4
   },
   {
    "id": "w:network-programming-with-go",
@@ -1908,7 +2115,7 @@
    "url": "https://raskell.io/reading/#these-truths",
    "meta": "Book · Jill Lepore · read 2018",
    "description": "The history of the United States as a test of the truths in its founding documents: equality, sovereignty, and consent.",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "w:jerusalem-the-biography",
@@ -1926,7 +2133,7 @@
    "url": "https://raskell.io/reading/#freeland",
    "meta": "Novel · Theodor Hertzka · read 2017",
    "description": "A utopian novel about a colony in East Africa built on free land and free access to capital.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "w:das-soziale-problem",
@@ -1935,7 +2142,7 @@
    "url": "https://raskell.io/reading/#das-soziale-problem",
    "meta": "Book · Theodor Hertzka · read 2017",
    "description": "Hertzka on the social question, the problem his novel Freeland set out to answer.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "w:the-devils-delusion",
@@ -1953,7 +2160,7 @@
    "url": "https://raskell.io/reading/#antifragile",
    "meta": "Book · Nassim Nicholas Taleb · read 2015",
    "description": "Things that gain from disorder, and why systems built to avoid all stress grow fragile.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "w:debt",
@@ -1962,7 +2169,7 @@
    "url": "https://raskell.io/reading/#debt",
    "meta": "Book · David Graeber · read 2019",
    "description": "Credit came before coins: five thousand years of debt, and why money was a record of trust long before it was metal.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:the-black-swan",
@@ -1971,7 +2178,7 @@
    "url": "https://raskell.io/reading/#the-black-swan",
    "meta": "Book · Nassim Nicholas Taleb · read 2018",
    "description": "Rare, high-impact events that nobody predicted and everybody explains afterwards, and why models break exactly where it matters.",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "w:skin-in-the-game",
@@ -1989,7 +2196,7 @@
    "url": "https://raskell.io/reading/#geld-aus-dem-nichts",
    "meta": "Book · Mathias Binswanger · read 2015",
    "description": "How commercial banks create money by lending, and what that means for growth and for crises.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "w:wer-regiert-das-geld",
@@ -1998,7 +2205,7 @@
    "url": "https://raskell.io/reading/#wer-regiert-das-geld",
    "meta": "Book · Paul Schreyer · read 2023",
    "description": "Who may create money and who decides how it is used, read as a question of power and democracy.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:demons",
@@ -2088,7 +2295,7 @@
    "url": "https://raskell.io/articles/win-everything-control-no-one/",
    "meta": "Book · Sebastian Mallaby · read October 2026",
    "description": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
-   "degree": 11
+   "degree": 13
   },
   {
    "id": "w:the-ultimate-hidden-truth-of-the-world",
@@ -2106,7 +2313,7 @@
    "url": "https://raskell.io/reading/#pirate-enlightenment",
    "meta": "Book · David Graeber · read October 2025",
    "description": "Pirate settlements on Madagascar and the Malagasy experiments in self-government that may have fed the European Enlightenment.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:codebreaking",
@@ -2124,7 +2331,7 @@
    "url": "https://raskell.io/reading/#the-island-at-the-center-of-the-world",
    "meta": "Book · Russell Shorto · read January 2025",
    "description": "Dutch New Amsterdam, rebuilt from its own archives, and the tolerance and trade it left to Manhattan and America.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:at-war",
@@ -2133,7 +2340,7 @@
    "url": "https://raskell.io/reading/#at-war",
    "meta": "Book · Shane Harris · read September 2024",
    "description": "How the NSA, Cyber Command, and private contractors turned the internet into a domain of war.",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "w:future-science",
@@ -2142,7 +2349,7 @@
    "url": "https://raskell.io/reading/#future-science",
    "meta": "Book · Max Brockman (editor) · read May 2024",
    "description": "Essays by young scientists on the questions at the front of their fields, from neuroscience to physics.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:programming-rust",
@@ -2151,7 +2358,7 @@
    "url": "https://raskell.io/reading/#programming-rust",
    "meta": "Book · Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall · read 2023",
    "description": "Rust for systems programmers: ownership, borrowing, traits, concurrency, and unsafe code, explained in depth.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "w:site-reliability-engineering",
@@ -2169,7 +2376,7 @@
    "url": "https://raskell.io/reading/#who-we-are-and-how-we-got-here",
    "meta": "Book · David Reich · read 2023",
    "description": "What ancient DNA reveals about human prehistory: migrations, mixtures, and populations that no longer exist.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:the-phoenix-project",
@@ -2205,7 +2412,7 @@
    "url": "https://raskell.io/reading/#das-tagebuch-der-menschheit",
    "meta": "Book · Carel van Schaik and Kai Michel · read August 2020",
    "description": "The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:the-art-of-war",
@@ -2214,7 +2421,7 @@
    "url": "https://raskell.io/reading/#the-art-of-war",
    "meta": "Book · Sun Tzu · read June 2018",
    "description": "An ancient Chinese treatise on strategy: deception, terrain, knowing yourself and the enemy, and winning without fighting.",
-   "degree": 3
+   "degree": 5
   },
   {
    "id": "w:language-the-cultural-tool",
@@ -2250,7 +2457,7 @@
    "url": "https://raskell.io/reading/#the-silk-roads",
    "meta": "Book · Peter Frankopan · read September 2015",
    "description": "World history told from the trade routes between East and West rather than from Europe.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:die-geschichte-der-kunst",
@@ -2277,7 +2484,7 @@
    "url": "https://raskell.io/reading/#ai-2027",
    "meta": "Report · Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, and Romeo Dean · read April 2025",
    "description": "A month-by-month scenario of AI progress to superintelligence by 2027, with two endings: a race and a slowdown.",
-   "degree": 9
+   "degree": 12
   },
   {
    "id": "w:ai-2040-plan-a",
@@ -2286,7 +2493,7 @@
    "url": "https://raskell.io/reading/#ai-2040-plan-a",
    "meta": "Report · Thomas Larsen, Romeo Dean, Brendan Halstead, Eli Lifland, Ryan Greenblatt, and Daniel Kokotajlo · read July 2026",
    "description": "A recommended path rather than a forecast: the United States and China slow down, verify each other, and make a deal.",
-   "degree": 6
+   "degree": 9
   },
   {
    "id": "w:enterprise-architecture-as-strategy",
@@ -2313,7 +2520,7 @@
    "url": "https://raskell.io/reading/#why-machines-learn",
    "meta": "Book · Anil Ananthaswamy · in the backlog",
    "description": "The mathematics behind machine learning, from the perceptron to deep networks, with the people who found it.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "w:the-dream-machine",
@@ -2349,7 +2556,7 @@
    "url": "https://raskell.io/reading/#deep-thinking",
    "meta": "Book · Garry Kasparov · in the backlog",
    "description": "Kasparov on his matches against Deep Blue and what machine intelligence means for human creativity.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:understanding-deep-learning",
@@ -2394,7 +2601,7 @@
    "url": "https://raskell.io/reading/#probabilistic-machine-learning",
    "meta": "Book · Kevin P. Murphy · in the backlog",
    "description": "Machine learning from a probabilistic point of view, the first of Murphy's two volumes.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "w:the-making-of-the-atomic-bomb",
@@ -2403,7 +2610,7 @@
    "url": "https://raskell.io/reading/#the-making-of-the-atomic-bomb",
    "meta": "Book · Richard Rhodes · in the backlog",
    "description": "The history of the atomic bomb from the physics of the atom to Hiroshima, and the scientists who built it.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "w:seeing-like-a-state",
@@ -2430,7 +2637,7 @@
    "url": "https://raskell.io/reading/#the-billion-dollar-molecule",
    "meta": "Book · Barry Werth · in the backlog",
    "description": "Inside Vertex Pharmaceuticals in its early years, as it tried to design drugs from the structure of proteins.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:the-eighth-day-of-creation",
@@ -2475,7 +2682,7 @@
    "url": "https://raskell.io/reading/#palo-alto",
    "meta": "Book · Malcolm Harris · in the backlog",
    "description": "The history of Silicon Valley as a history of capitalism, from railroads and eugenics to the tech industry.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:strategy-a-history",
@@ -2484,7 +2691,7 @@
    "url": "https://raskell.io/reading/#strategy-a-history",
    "meta": "Book · Lawrence Freedman · in the backlog",
    "description": "Strategy from the Bible and the Greeks to military, revolutionary, and business strategy today.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "w:the-lost-art-of-scripture",
@@ -2520,7 +2727,7 @@
    "url": "https://raskell.io/reading/#situational-awareness",
    "meta": "Essay · Leopold Aschenbrenner · in the backlog",
    "description": "An essay series arguing that AGI may arrive by 2027 and set off a national-security race for superintelligence.",
-   "degree": 5
+   "degree": 8
   },
   {
    "id": "w:the-thinking-machine",
@@ -2529,7 +2736,7 @@
    "url": "https://raskell.io/reading/#the-thinking-machine",
    "meta": "Book · Stephen Witt · in the backlog",
    "description": "Jensen Huang and how Nvidia bet the company on the chips that made modern AI possible.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "w:a-brief-history-of-intelligence",
@@ -2538,7 +2745,7 @@
    "url": "https://raskell.io/reading/#a-brief-history-of-intelligence",
    "meta": "Book · Max Bennett · in the backlog",
    "description": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "w:these-strange-new-minds",
@@ -2556,7 +2763,7 @@
    "url": "https://raskell.io/reading/#ai-snake-oil",
    "meta": "Book · Arvind Narayanan and Sayash Kapoor · in the backlog",
    "description": "Which kinds of AI work and which are sold as working, with tools to tell the difference.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "w:deep-learning-foundations-and-concepts",
@@ -2574,7 +2781,7 @@
    "url": "https://raskell.io/reading/#deep-utopia",
    "meta": "Book · Nick Bostrom · in the backlog",
    "description": "What people would live for once superintelligence has solved every practical problem.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "w:slouching-towards-utopia",
@@ -2583,7 +2790,7 @@
    "url": "https://raskell.io/reading/#slouching-towards-utopia",
    "meta": "Book · J. Bradford DeLong · in the backlog",
    "description": "The economic history of 1870 to 2010, when humanity first escaped scarcity and still did not reach utopia.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "w:abundance",
@@ -2592,7 +2799,7 @@
    "url": "https://raskell.io/reading/#abundance",
    "meta": "Book · Ezra Klein and Derek Thompson · in the backlog",
    "description": "Why rich countries fail to build the housing, energy, and infrastructure they can afford, and how to change that.",
-   "degree": 4
+   "degree": 7
   },
   {
    "id": "w:four-futures",
@@ -2601,7 +2808,7 @@
    "url": "https://raskell.io/reading/#four-futures",
    "meta": "Book · Peter Frase · in the backlog",
    "description": "Four possible futures after capitalism, from abundance or scarcity crossed with equality or hierarchy.",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "w:economic-possibilities-for-our-grandchildren",
@@ -2610,7 +2817,7 @@
    "url": "https://raskell.io/reading/#economic-possibilities-for-our-grandchildren",
    "meta": "Essay · John Maynard Keynes · in the backlog",
    "description": "Keynes's 1930 prediction that a century of growth would solve the economic problem and leave us with leisure.",
-   "degree": 3
+   "degree": 6
   },
   {
    "id": "w:from-counterculture-to-cyberculture",
@@ -2619,7 +2826,7 @@
    "url": "https://raskell.io/reading/#from-counterculture-to-cyberculture",
    "meta": "Book · Fred Turner · in the backlog",
    "description": "How Stewart Brand and the Whole Earth network turned the counterculture into Silicon Valley's belief in networks.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "w:cybernetic-revolutionaries",
@@ -2628,7 +2835,7 @@
    "url": "https://raskell.io/reading/#cybernetic-revolutionaries",
    "meta": "Book · Eden Medina · in the backlog",
    "description": "Project Cybersyn, the attempt in Allende's Chile to run the economy with cybernetics and a telex network.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "w:red-plenty",
@@ -2637,7 +2844,7 @@
    "url": "https://raskell.io/reading/#red-plenty",
    "meta": "Novel · Francis Spufford · in the backlog",
    "description": "A novel about the Soviet dream of planning the economy into abundance with mathematics and computers.",
-   "degree": 5
+   "degree": 8
   },
   {
    "id": "w:to-be-a-machine",
@@ -2646,7 +2853,7 @@
    "url": "https://raskell.io/reading/#to-be-a-machine",
    "meta": "Book · Mark O'Connell · in the backlog",
    "description": "A journalist among transhumanists: cryonics, mind uploading, cyborgs, and the people who want to end death.",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "w:the-age-of-em",
@@ -2655,7 +2862,7 @@
    "url": "https://raskell.io/reading/#the-age-of-em",
    "meta": "Book · Robin Hanson · in the backlog",
    "description": "An economist works out what a world run by emulated human brains would look like, in detail.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "w:more-everything-forever",
@@ -2664,7 +2871,7 @@
    "url": "https://raskell.io/reading/#more-everything-forever",
    "meta": "Book · Adam Becker · in the backlog",
    "description": "A critique of the futures tech billionaires want: superintelligence, space colonies, and living forever.",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "w:the-player-of-games",
@@ -2673,7 +2880,7 @@
    "url": "https://raskell.io/reading/#the-player-of-games",
    "meta": "Novel · Iain M. Banks · in the backlog",
    "description": "A game player from the Culture, a post-scarcity civilisation, is sent to play for an empire's throne.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "w:accelerando",
@@ -2682,7 +2889,7 @@
    "url": "https://raskell.io/reading/#accelerando",
    "meta": "Novel · Charles Stross · in the backlog",
    "description": "The singularity across three generations of one family, from present-day hackers to post-human minds.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:godel-escher-bach",
@@ -2709,7 +2916,7 @@
    "url": "https://raskell.io/reading/#chaos-making-a-new-science",
    "meta": "Book · James Gleick · in the backlog",
    "description": "The scientists who found order in turbulence, weather, and dripping taps, and founded the science of chaos.",
-   "degree": 5
+   "degree": 8
   },
   {
    "id": "w:genius-richard-feynman",
@@ -2718,7 +2925,7 @@
    "url": "https://raskell.io/reading/#genius-richard-feynman",
    "meta": "Book · James Gleick · in the backlog",
    "description": "Richard Feynman's life and physics, from Los Alamos and quantum electrodynamics to the Challenger inquiry.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "w:faster",
@@ -2745,7 +2952,7 @@
    "url": "https://raskell.io/reading/#isaac-newton",
    "meta": "Book · James Gleick · in the backlog",
    "description": "A short life of Newton built from his own notebooks and letters, from alchemy and theology to the laws of motion.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:the-information",
@@ -2781,7 +2988,7 @@
    "url": "https://raskell.io/reading/#mathematics-and-the-unexpected",
    "meta": "Book · Ivar Ekeland · in the backlog",
    "description": "Chaos, catastrophe theory, and chance, from Kepler to Thom, and why the future stays hard to predict; one of the inspirations for Ian Malcolm in Jurassic Park.",
-   "degree": 5
+   "degree": 8
   },
   {
    "id": "w:sicp",
@@ -2901,6 +3108,18 @@
   {
    "source": "t:abstraction",
    "target": "t:history-of-technology"
+  },
+  {
+   "source": "a:/notes/the-tumult-in-between/",
+   "target": "t:abundance"
+  },
+  {
+   "source": "t:abundance",
+   "target": "t:economics"
+  },
+  {
+   "source": "t:abundance",
+   "target": "t:policy"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
@@ -3131,6 +3350,50 @@
    "target": "t:intelligence"
   },
   {
+   "source": "a:/notes/everything-is-a-fractal/",
+   "target": "t:chaos-theory"
+  },
+  {
+   "source": "t:chaos-theory",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "t:chaos-theory",
+   "target": "t:mathematics"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:chess"
+  },
+  {
+   "source": "a:/articles/win-everything-control-no-one/",
+   "target": "t:chess"
+  },
+  {
+   "source": "a:/articles/learning-to-play/",
+   "target": "t:chess"
+  },
+  {
+   "source": "t:chess",
+   "target": "t:games"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "t:china"
+  },
+  {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "t:china"
+  },
+  {
+   "source": "t:china",
+   "target": "t:geography"
+  },
+  {
+   "source": "t:china",
+   "target": "t:geopolitics"
+  },
+  {
    "source": "a:/notes/the-move-to-the-city/",
    "target": "t:cities"
   },
@@ -3209,6 +3472,10 @@
   {
    "source": "t:cryptocurrency",
    "target": "t:decentralisation"
+  },
+  {
+   "source": "t:cryptocurrency",
+   "target": "t:money"
   },
   {
    "source": "a:/articles/the-web-was-the-training-set/",
@@ -3439,6 +3706,22 @@
    "target": "t:complex-systems"
   },
   {
+   "source": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
+   "target": "t:energy"
+  },
+  {
+   "source": "a:/notes/the-window-before-the-utility/",
+   "target": "t:energy"
+  },
+  {
+   "source": "a:/articles/the-economics-of-inference/",
+   "target": "t:energy"
+  },
+  {
+   "source": "t:energy",
+   "target": "t:economics"
+  },
+  {
    "source": "a:/notes/citizen-entrepreneurs/",
    "target": "t:entrepreneurship"
   },
@@ -3551,6 +3834,10 @@
    "target": "t:mathematics"
   },
   {
+   "source": "t:fractals",
+   "target": "t:chaos-theory"
+  },
+  {
    "source": "a:/notes/citizen-entrepreneurs/",
    "target": "t:future-of-work"
   },
@@ -3595,6 +3882,22 @@
    "target": "t:games"
   },
   {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:go-game"
+  },
+  {
+   "source": "a:/articles/win-everything-control-no-one/",
+   "target": "t:go-game"
+  },
+  {
+   "source": "a:/articles/learning-to-play/",
+   "target": "t:go-game"
+  },
+  {
+   "source": "t:go-game",
+   "target": "t:games"
+  },
+  {
    "source": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
    "target": "t:gpus"
   },
@@ -3613,6 +3916,10 @@
   {
    "source": "t:gpus",
    "target": "t:inference"
+  },
+  {
+   "source": "t:gpus",
+   "target": "t:semiconductors"
   },
   {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
@@ -3975,6 +4282,10 @@
    "target": "t:open-web"
   },
   {
+   "source": "a:/notes/everything-is-a-fractal/",
+   "target": "t:physics"
+  },
+  {
    "source": "a:/articles/what-zentinel-is-really-optimizing-for/",
    "target": "t:pingora"
   },
@@ -4024,7 +4335,7 @@
   },
   {
    "source": "t:post-scarcity",
-   "target": "t:economics"
+   "target": "t:abundance"
   },
   {
    "source": "t:post-scarcity",
@@ -4191,6 +4502,30 @@
    "target": "t:sovereignty"
   },
   {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "t:semiconductors"
+  },
+  {
+   "source": "a:/articles/the-economics-of-inference/",
+   "target": "t:semiconductors"
+  },
+  {
+   "source": "a:/articles/notes-from-rsac-2026/",
+   "target": "t:semiconductors"
+  },
+  {
+   "source": "a:/articles/win-everything-control-no-one/",
+   "target": "t:shogi"
+  },
+  {
+   "source": "a:/articles/learning-to-play/",
+   "target": "t:shogi"
+  },
+  {
+   "source": "t:shogi",
+   "target": "t:games"
+  },
+  {
    "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
    "target": "t:simulation"
   },
@@ -4229,6 +4564,30 @@
   {
    "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
    "target": "t:sovereignty"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "t:starcraft"
+  },
+  {
+   "source": "a:/articles/win-everything-control-no-one/",
+   "target": "t:starcraft"
+  },
+  {
+   "source": "t:starcraft",
+   "target": "t:games"
+  },
+  {
+   "source": "t:starcraft",
+   "target": "t:strategy"
+  },
+  {
+   "source": "a:/articles/looking-back-on-2025/",
+   "target": "t:surveillance"
+  },
+  {
+   "source": "t:surveillance",
+   "target": "t:privacy"
   },
   {
    "source": "a:/talks/iat-13-basel/",
@@ -4291,6 +4650,38 @@
    "target": "t:economics"
   },
   {
+   "source": "a:/articles/the-proof-you-only-have-to-write-once/",
+   "target": "t:type-systems"
+  },
+  {
+   "source": "a:/articles/the-field-exists-now/",
+   "target": "t:type-systems"
+  },
+  {
+   "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
+   "target": "t:type-systems"
+  },
+  {
+   "source": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
+   "target": "t:type-systems"
+  },
+  {
+   "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "target": "t:type-systems"
+  },
+  {
+   "source": "a:/articles/all-beginning-is-haskell/",
+   "target": "t:type-systems"
+  },
+  {
+   "source": "t:type-systems",
+   "target": "t:programming-languages"
+  },
+  {
+   "source": "t:type-systems",
+   "target": "t:formal-methods"
+  },
+  {
    "source": "a:/articles/observability-is-not-logging/",
    "target": "t:typescript"
   },
@@ -4325,6 +4716,22 @@
   {
    "source": "t:typescript",
    "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
+   "target": "t:united-states"
+  },
+  {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "t:united-states"
+  },
+  {
+   "source": "t:united-states",
+   "target": "t:geography"
+  },
+  {
+   "source": "t:united-states",
+   "target": "t:geopolitics"
   },
   {
    "source": "a:/articles/traffic-replay-as-a-security-primitive/",
@@ -4391,6 +4798,14 @@
    "target": "t:applied-security"
   },
   {
+   "source": "t:cybernetics",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "t:cybernetics",
+   "target": "t:history-of-technology"
+  },
+  {
    "source": "t:evaluation",
    "target": "t:agents"
   },
@@ -4399,12 +4814,20 @@
    "target": "t:metrics"
   },
   {
+   "source": "t:evolution",
+   "target": "t:life-sciences"
+  },
+  {
    "source": "t:existential-risk",
    "target": "t:risk"
   },
   {
    "source": "t:existential-risk",
    "target": "t:policy"
+  },
+  {
+   "source": "t:forecasting",
+   "target": "t:risk"
   },
   {
    "source": "t:geopolitics",
@@ -4443,6 +4866,18 @@
    "target": "t:life-sciences"
   },
   {
+   "source": "t:money",
+   "target": "t:economics"
+  },
+  {
+   "source": "t:money",
+   "target": "t:finance"
+  },
+  {
+   "source": "t:mortality",
+   "target": "t:philosophy"
+  },
+  {
    "source": "t:networking",
    "target": "t:distributed-systems"
   },
@@ -4471,6 +4906,10 @@
    "target": "t:sovereignty"
   },
   {
+   "source": "t:probability",
+   "target": "t:mathematics"
+  },
+  {
    "source": "t:religion",
    "target": "t:philosophy"
   },
@@ -4495,8 +4934,32 @@
    "target": "t:game-ai"
   },
   {
+   "source": "t:strategy",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "t:synthetic-biology",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "t:transhumanism",
+   "target": "t:augmentation"
+  },
+  {
+   "source": "t:transhumanism",
+   "target": "t:philosophy"
+  },
+  {
    "source": "t:tree-search",
    "target": "t:game-ai"
+  },
+  {
+   "source": "t:utopias",
+   "target": "t:social-reform"
+  },
+  {
+   "source": "t:utopias",
+   "target": "t:philosophy"
   },
   {
    "source": "a:/articles/observability-is-not-logging/",
@@ -5391,6 +5854,14 @@
    "target": "t:self-hosting"
   },
   {
+   "source": "p:cyanea",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "p:cyanea",
+   "target": "t:synthetic-biology"
+  },
+  {
    "source": "p:humankind",
    "target": "h:projects-venture"
   },
@@ -5405,6 +5876,14 @@
   {
    "source": "p:humankind",
    "target": "t:rust"
+  },
+  {
+   "source": "p:humankind",
+   "target": "t:mortality"
+  },
+  {
+   "source": "p:humankind",
+   "target": "t:external-memory"
   },
   {
    "source": "p:arcanist",
@@ -5585,6 +6064,14 @@
   {
    "source": "p:broodwar-live",
    "target": "t:rust"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "t:starcraft"
+  },
+  {
+   "source": "p:broodwar-live",
+   "target": "t:games"
   },
   {
    "source": "p:die-zukunft",
@@ -5784,6 +6271,10 @@
   },
   {
    "source": "p:hotaru",
+   "target": "t:synthetic-biology"
+  },
+  {
+   "source": "p:hotaru",
    "target": "p:terrarium"
   },
   {
@@ -5805,6 +6296,18 @@
   {
    "source": "p:kishi",
    "target": "t:rust"
+  },
+  {
+   "source": "p:kishi",
+   "target": "t:chess"
+  },
+  {
+   "source": "p:kishi",
+   "target": "t:shogi"
+  },
+  {
+   "source": "p:kishi",
+   "target": "t:go-game"
   },
   {
    "source": "p:sango",
@@ -5925,6 +6428,10 @@
   {
    "source": "p:manabi",
    "target": "t:languages"
+  },
+  {
+   "source": "p:manabi",
+   "target": "t:china"
   },
   {
    "source": "p:kurumi",
@@ -6059,6 +6566,10 @@
    "target": "t:technology-races"
   },
   {
+   "source": "w:nuclear-war-a-scenario",
+   "target": "t:united-states"
+  },
+  {
    "source": "w:jurassic-park",
    "target": "h:shelf-read"
   },
@@ -6089,6 +6600,14 @@
   {
    "source": "w:jurassic-park",
    "target": "t:fractals"
+  },
+  {
+   "source": "w:jurassic-park",
+   "target": "t:synthetic-biology"
+  },
+  {
+   "source": "w:jurassic-park",
+   "target": "t:chaos-theory"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
@@ -6179,6 +6698,14 @@
    "target": "t:philosophy-of-science"
   },
   {
+   "source": "w:science-after-babel",
+   "target": "t:physics"
+  },
+  {
+   "source": "w:science-after-babel",
+   "target": "t:evolution"
+  },
+  {
    "source": "w:network-programming-with-go",
    "target": "h:shelf-read"
   },
@@ -6263,6 +6790,10 @@
    "target": "t:history"
   },
   {
+   "source": "w:these-truths",
+   "target": "t:united-states"
+  },
+  {
    "source": "w:jerusalem-the-biography",
    "target": "h:shelf-read"
   },
@@ -6299,6 +6830,10 @@
    "target": "t:commons"
   },
   {
+   "source": "w:freeland",
+   "target": "t:utopias"
+  },
+  {
    "source": "a:/notes/the-tumult-in-between/",
    "target": "w:freeland"
   },
@@ -6309,6 +6844,10 @@
   {
    "source": "w:das-soziale-problem",
    "target": "t:social-reform"
+  },
+  {
+   "source": "w:das-soziale-problem",
+   "target": "t:utopias"
   },
   {
    "source": "a:/notes/the-tumult-in-between/",
@@ -6339,6 +6878,10 @@
    "target": "t:complex-systems"
   },
   {
+   "source": "w:antifragile",
+   "target": "t:forecasting"
+  },
+  {
    "source": "w:debt",
    "target": "h:shelf-read"
   },
@@ -6355,6 +6898,10 @@
    "target": "t:trust"
   },
   {
+   "source": "w:debt",
+   "target": "t:money"
+  },
+  {
    "source": "w:the-black-swan",
    "target": "h:shelf-read"
   },
@@ -6369,6 +6916,14 @@
   {
    "source": "w:the-black-swan",
    "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "w:the-black-swan",
+   "target": "t:forecasting"
+  },
+  {
+   "source": "w:the-black-swan",
+   "target": "t:probability"
   },
   {
    "source": "w:skin-in-the-game",
@@ -6399,6 +6954,10 @@
    "target": "t:policy"
   },
   {
+   "source": "w:geld-aus-dem-nichts",
+   "target": "t:money"
+  },
+  {
    "source": "w:wer-regiert-das-geld",
    "target": "h:shelf-read"
   },
@@ -6413,6 +6972,10 @@
   {
    "source": "w:wer-regiert-das-geld",
    "target": "t:sovereignty"
+  },
+  {
+   "source": "w:wer-regiert-das-geld",
+   "target": "t:money"
   },
   {
    "source": "w:demons",
@@ -6627,6 +7190,14 @@
    "target": "t:technology-races"
   },
   {
+   "source": "w:the-infinity-machine",
+   "target": "t:chess"
+  },
+  {
+   "source": "w:the-infinity-machine",
+   "target": "t:go-game"
+  },
+  {
    "source": "a:/articles/the-river-and-the-canal/",
    "target": "w:the-infinity-machine"
   },
@@ -6671,6 +7242,10 @@
    "target": "t:commons"
   },
   {
+   "source": "w:pirate-enlightenment",
+   "target": "t:utopias"
+  },
+  {
    "source": "w:codebreaking",
    "target": "h:shelf-read"
   },
@@ -6703,6 +7278,10 @@
    "target": "t:europe"
   },
   {
+   "source": "w:the-island-at-the-center-of-the-world",
+   "target": "t:united-states"
+  },
+  {
    "source": "w:at-war",
    "target": "h:shelf-read"
   },
@@ -6717,6 +7296,14 @@
   {
    "source": "w:at-war",
    "target": "t:technology-races"
+  },
+  {
+   "source": "w:at-war",
+   "target": "t:united-states"
+  },
+  {
+   "source": "w:at-war",
+   "target": "t:surveillance"
   },
   {
    "source": "w:future-science",
@@ -6735,6 +7322,10 @@
    "target": "t:neuroscience"
   },
   {
+   "source": "w:future-science",
+   "target": "t:physics"
+  },
+  {
    "source": "w:programming-rust",
    "target": "h:shelf-read"
   },
@@ -6745,6 +7336,10 @@
   {
    "source": "w:programming-rust",
    "target": "t:programming-languages"
+  },
+  {
+   "source": "w:programming-rust",
+   "target": "t:type-systems"
   },
   {
    "source": "w:site-reliability-engineering",
@@ -6777,6 +7372,10 @@
   {
    "source": "w:who-we-are-and-how-we-got-here",
    "target": "t:history-of-science"
+  },
+  {
+   "source": "w:who-we-are-and-how-we-got-here",
+   "target": "t:evolution"
   },
   {
    "source": "w:the-phoenix-project",
@@ -6843,6 +7442,10 @@
    "target": "t:world-history"
   },
   {
+   "source": "w:das-tagebuch-der-menschheit",
+   "target": "t:evolution"
+  },
+  {
    "source": "w:the-art-of-war",
    "target": "h:shelf-read"
   },
@@ -6853,6 +7456,14 @@
   {
    "source": "w:the-art-of-war",
    "target": "t:geopolitics"
+  },
+  {
+   "source": "w:the-art-of-war",
+   "target": "t:china"
+  },
+  {
+   "source": "w:the-art-of-war",
+   "target": "t:strategy"
   },
   {
    "source": "w:language-the-cultural-tool",
@@ -6907,6 +7518,10 @@
    "target": "t:cities"
   },
   {
+   "source": "w:the-silk-roads",
+   "target": "t:china"
+  },
+  {
    "source": "w:die-geschichte-der-kunst",
    "target": "h:shelf-read"
   },
@@ -6951,6 +7566,18 @@
    "target": "t:intelligence"
   },
   {
+   "source": "w:ai-2027",
+   "target": "t:forecasting"
+  },
+  {
+   "source": "w:ai-2027",
+   "target": "t:united-states"
+  },
+  {
+   "source": "w:ai-2027",
+   "target": "t:china"
+  },
+  {
    "source": "a:/articles/the-economics-of-inference/",
    "target": "w:ai-2027"
   },
@@ -6987,6 +7614,18 @@
    "target": "t:policy"
   },
   {
+   "source": "w:ai-2040-plan-a",
+   "target": "t:forecasting"
+  },
+  {
+   "source": "w:ai-2040-plan-a",
+   "target": "t:united-states"
+  },
+  {
+   "source": "w:ai-2040-plan-a",
+   "target": "t:china"
+  },
+  {
    "source": "w:enterprise-architecture-as-strategy",
    "target": "h:shelf-backlog"
   },
@@ -7021,6 +7660,10 @@
   {
    "source": "w:why-machines-learn",
    "target": "t:mathematics"
+  },
+  {
+   "source": "w:why-machines-learn",
+   "target": "t:probability"
   },
   {
    "source": "w:the-dream-machine",
@@ -7091,6 +7734,10 @@
    "target": "t:augmentation"
   },
   {
+   "source": "w:deep-thinking",
+   "target": "t:chess"
+  },
+  {
    "source": "w:understanding-deep-learning",
    "target": "h:shelf-backlog"
   },
@@ -7155,6 +7802,10 @@
    "target": "t:mathematics"
   },
   {
+   "source": "w:probabilistic-machine-learning",
+   "target": "t:probability"
+  },
+  {
    "source": "w:the-making-of-the-atomic-bomb",
    "target": "h:shelf-backlog"
   },
@@ -7185,6 +7836,10 @@
   {
    "source": "w:the-making-of-the-atomic-bomb",
    "target": "t:hubris"
+  },
+  {
+   "source": "w:the-making-of-the-atomic-bomb",
+   "target": "t:physics"
   },
   {
    "source": "w:seeing-like-a-state",
@@ -7241,6 +7896,10 @@
   {
    "source": "w:the-billion-dollar-molecule",
    "target": "t:history-of-science"
+  },
+  {
+   "source": "w:the-billion-dollar-molecule",
+   "target": "t:synthetic-biology"
   },
   {
    "source": "w:the-eighth-day-of-creation",
@@ -7331,6 +7990,10 @@
    "target": "t:geopolitics"
   },
   {
+   "source": "w:palo-alto",
+   "target": "t:united-states"
+  },
+  {
    "source": "w:strategy-a-history",
    "target": "h:shelf-backlog"
   },
@@ -7341,6 +8004,10 @@
   {
    "source": "w:strategy-a-history",
    "target": "t:history"
+  },
+  {
+   "source": "w:strategy-a-history",
+   "target": "t:strategy"
   },
   {
    "source": "w:the-lost-art-of-scripture",
@@ -7415,6 +8082,18 @@
    "target": "t:gpus"
   },
   {
+   "source": "w:situational-awareness",
+   "target": "t:forecasting"
+  },
+  {
+   "source": "w:situational-awareness",
+   "target": "t:united-states"
+  },
+  {
+   "source": "w:situational-awareness",
+   "target": "t:china"
+  },
+  {
    "source": "w:the-thinking-machine",
    "target": "h:shelf-backlog"
   },
@@ -7435,6 +8114,10 @@
    "target": "t:technology-races"
   },
   {
+   "source": "w:the-thinking-machine",
+   "target": "t:semiconductors"
+  },
+  {
    "source": "w:a-brief-history-of-intelligence",
    "target": "h:shelf-backlog"
   },
@@ -7453,6 +8136,10 @@
   {
    "source": "w:a-brief-history-of-intelligence",
    "target": "t:life-sciences"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:evolution"
   },
   {
    "source": "w:these-strange-new-minds",
@@ -7495,6 +8182,10 @@
    "target": "t:policy"
   },
   {
+   "source": "w:ai-snake-oil",
+   "target": "t:forecasting"
+  },
+  {
    "source": "w:deep-learning-foundations-and-concepts",
    "target": "h:shelf-backlog"
   },
@@ -7531,6 +8222,14 @@
    "target": "t:post-scarcity"
   },
   {
+   "source": "w:deep-utopia",
+   "target": "t:transhumanism"
+  },
+  {
+   "source": "w:deep-utopia",
+   "target": "t:utopias"
+  },
+  {
    "source": "w:slouching-towards-utopia",
    "target": "h:shelf-backlog"
   },
@@ -7551,6 +8250,14 @@
    "target": "t:post-scarcity"
   },
   {
+   "source": "w:slouching-towards-utopia",
+   "target": "t:abundance"
+  },
+  {
+   "source": "w:slouching-towards-utopia",
+   "target": "t:utopias"
+  },
+  {
    "source": "w:abundance",
    "target": "h:shelf-backlog"
   },
@@ -7565,6 +8272,18 @@
   {
    "source": "w:abundance",
    "target": "t:cities"
+  },
+  {
+   "source": "w:abundance",
+   "target": "t:abundance"
+  },
+  {
+   "source": "w:abundance",
+   "target": "t:united-states"
+  },
+  {
+   "source": "w:abundance",
+   "target": "t:energy"
   },
   {
    "source": "w:four-futures",
@@ -7583,6 +8302,14 @@
    "target": "t:social-reform"
   },
   {
+   "source": "w:four-futures",
+   "target": "t:abundance"
+  },
+  {
+   "source": "w:four-futures",
+   "target": "t:utopias"
+  },
+  {
    "source": "w:economic-possibilities-for-our-grandchildren",
    "target": "h:shelf-backlog"
   },
@@ -7593,6 +8320,18 @@
   {
    "source": "w:economic-possibilities-for-our-grandchildren",
    "target": "t:future-of-work"
+  },
+  {
+   "source": "w:economic-possibilities-for-our-grandchildren",
+   "target": "t:forecasting"
+  },
+  {
+   "source": "w:economic-possibilities-for-our-grandchildren",
+   "target": "t:post-scarcity"
+  },
+  {
+   "source": "w:economic-possibilities-for-our-grandchildren",
+   "target": "t:abundance"
   },
   {
    "source": "w:from-counterculture-to-cyberculture",
@@ -7615,6 +8354,10 @@
    "target": "t:commons"
   },
   {
+   "source": "w:from-counterculture-to-cyberculture",
+   "target": "t:cybernetics"
+  },
+  {
    "source": "w:cybernetic-revolutionaries",
    "target": "h:shelf-backlog"
   },
@@ -7633,6 +8376,10 @@
   {
    "source": "w:cybernetic-revolutionaries",
    "target": "t:social-reform"
+  },
+  {
+   "source": "w:cybernetic-revolutionaries",
+   "target": "t:cybernetics"
   },
   {
    "source": "w:red-plenty",
@@ -7655,6 +8402,18 @@
    "target": "t:complex-systems"
   },
   {
+   "source": "w:red-plenty",
+   "target": "t:abundance"
+  },
+  {
+   "source": "w:red-plenty",
+   "target": "t:cybernetics"
+  },
+  {
+   "source": "w:red-plenty",
+   "target": "t:utopias"
+  },
+  {
    "source": "w:to-be-a-machine",
    "target": "h:shelf-backlog"
   },
@@ -7669,6 +8428,14 @@
   {
    "source": "w:to-be-a-machine",
    "target": "t:neuroscience"
+  },
+  {
+   "source": "w:to-be-a-machine",
+   "target": "t:transhumanism"
+  },
+  {
+   "source": "w:to-be-a-machine",
+   "target": "t:mortality"
   },
   {
    "source": "w:the-age-of-em",
@@ -7691,6 +8458,14 @@
    "target": "t:future-of-work"
   },
   {
+   "source": "w:the-age-of-em",
+   "target": "t:forecasting"
+  },
+  {
+   "source": "w:the-age-of-em",
+   "target": "t:transhumanism"
+  },
+  {
    "source": "w:more-everything-forever",
    "target": "h:shelf-backlog"
   },
@@ -7705,6 +8480,14 @@
   {
    "source": "w:more-everything-forever",
    "target": "t:entrepreneurship"
+  },
+  {
+   "source": "w:more-everything-forever",
+   "target": "t:transhumanism"
+  },
+  {
+   "source": "w:more-everything-forever",
+   "target": "t:physics"
   },
   {
    "source": "w:the-player-of-games",
@@ -7727,6 +8510,14 @@
    "target": "t:post-scarcity"
   },
   {
+   "source": "w:the-player-of-games",
+   "target": "t:utopias"
+  },
+  {
+   "source": "w:the-player-of-games",
+   "target": "t:strategy"
+  },
+  {
    "source": "w:accelerando",
    "target": "h:shelf-backlog"
   },
@@ -7741,6 +8532,10 @@
   {
    "source": "w:accelerando",
    "target": "t:augmentation"
+  },
+  {
+   "source": "w:accelerando",
+   "target": "t:transhumanism"
   },
   {
    "source": "w:godel-escher-bach",
@@ -7803,6 +8598,18 @@
    "target": "t:history-of-science"
   },
   {
+   "source": "w:chaos-making-a-new-science",
+   "target": "t:chaos-theory"
+  },
+  {
+   "source": "w:chaos-making-a-new-science",
+   "target": "t:fractals"
+  },
+  {
+   "source": "w:chaos-making-a-new-science",
+   "target": "t:forecasting"
+  },
+  {
    "source": "w:genius-richard-feynman",
    "target": "h:shelf-backlog"
   },
@@ -7813,6 +8620,10 @@
   {
    "source": "w:genius-richard-feynman",
    "target": "t:research-labs"
+  },
+  {
+   "source": "w:genius-richard-feynman",
+   "target": "t:physics"
   },
   {
    "source": "w:faster",
@@ -7857,6 +8668,10 @@
   {
    "source": "w:isaac-newton",
    "target": "t:mathematics"
+  },
+  {
+   "source": "w:isaac-newton",
+   "target": "t:physics"
   },
   {
    "source": "w:the-information",
@@ -7921,6 +8736,18 @@
   {
    "source": "w:mathematics-and-the-unexpected",
    "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "w:mathematics-and-the-unexpected",
+   "target": "t:chaos-theory"
+  },
+  {
+   "source": "w:mathematics-and-the-unexpected",
+   "target": "t:forecasting"
+  },
+  {
+   "source": "w:mathematics-and-the-unexpected",
+   "target": "t:probability"
   },
   {
    "source": "w:sicp",

@@ -11,7 +11,7 @@ url: https://raskell.io/ko/articles/the-river-and-the-canal/
 author: Raffael Schneider
 date: 2026-10-31
 description: "에이전트는 험준한 세계를 탐색하고, 워크플로는 그 탐색이 남긴 것입니다. 체스, 스타크래프트, 바닷속 공장, 그리고 제가 엔진을 만드는 이유에 관하여."
-tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance]
+tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance, chess, go-game, starcraft]
 lang: ko
 translation_of: https://raskell.io/articles/the-river-and-the-canal/
 ---
@@ -449,7 +449,7 @@ url: https://raskell.io/ko/articles/win-everything-control-no-one/
 author: Raffael Schneider
 date: 2026-10-29
 description: "Sebastian Mallaby가 쓴 Demis Hassabis 전기는 제가 아는 가장 좋은 현대 AI의 역사이며, 통제를 싫어하면서도 통제를 행사하는 한 사람에 대한 정직한 연구입니다."
-tags: [intelligence, reinforcement-learning, games, research-labs, ai-alignment, history-of-technology, technology-races, post-scarcity]
+tags: [intelligence, reinforcement-learning, games, research-labs, ai-alignment, history-of-technology, technology-races, post-scarcity, chess, shogi, go-game, starcraft]
 categories: [reviews]
 review_of: "The Infinity Machine"
 review_of_author: "Sebastian Mallaby"
@@ -577,7 +577,7 @@ url: https://raskell.io/ko/articles/learning-to-play/
 author: Raffael Schneider
 date: 2026-10-25
 description: "체스 신동이 읽은 핸드북, 오래된 세 가지 게임, 그리고 노트북 한 대. 게임 AI의 바탕이 된 아이디어를 휴대폰 브라우저에서 돌아가도록 Rust로 다시 만들고 측정한 기록입니다."
-tags: [game-ai, machine-learning, reinforcement-learning, games, rust, webassembly, history-of-technology]
+tags: [game-ai, machine-learning, reinforcement-learning, games, rust, webassembly, history-of-technology, chess, shogi, go-game]
 lang: ko
 translation_of: https://raskell.io/articles/learning-to-play/
 ---
@@ -1085,7 +1085,7 @@ url: https://raskell.io/ko/articles/the-economics-of-inference/
 author: Raffael Schneider
 date: 2026-04-22
 description: "추론 토큰은 API 호출이 아닙니다. 소비되고, 가치를 만들고, 전력 소모와 상관관계가 있는 계량 자원입니다. AI 이후 세계의 경제학은 소프트웨어보다 물, 전기, 가스에 더 가깝습니다."
-tags: [inference, economics, sovereignty, edge-systems, gpus]
+tags: [inference, economics, sovereignty, edge-systems, gpus, energy, semiconductors]
 lang: ko
 translation_of: https://raskell.io/articles/the-economics-of-inference/
 ---
@@ -1212,7 +1212,7 @@ url: https://raskell.io/ko/articles/what-programming-languages-become-when-ai-wr
 author: Raffael Schneider
 date: 2026-04-11
 description: "AI가 코드의 주된 작성자가 될 때 프로그래밍 언어가 맞이할 세 가지 미래, 그리고 제가 Haskell에 거는 이유."
-tags: [ai-engineering, programming-languages, abstraction, formal-methods, haskell, compilers]
+tags: [ai-engineering, programming-languages, abstraction, formal-methods, haskell, compilers, type-systems]
 lang: ko
 translation_of: https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/
 ---

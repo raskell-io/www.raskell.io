@@ -4,7 +4,7 @@ url: https://raskell.io/articles/learning-to-play/
 author: Raffael Schneider
 date: 2026-10-25
 description: "A chess prodigy's handbook, three old games and one laptop: rebuilding the ideas behind game-playing AI in Rust for a browser on my phone, and measuring them."
-tags: [game-ai, machine-learning, reinforcement-learning, games, rust, webassembly, history-of-technology]
+tags: [game-ai, machine-learning, reinforcement-learning, games, rust, webassembly, history-of-technology, chess, shogi, go-game]
 ---
 
 # Learning to Play

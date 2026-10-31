@@ -4,7 +4,7 @@ url: https://raskell.io/ko/articles/what-programming-languages-become-when-ai-wr
 author: Raffael Schneider
 date: 2026-04-11
 description: "AI가 코드의 주된 작성자가 될 때 프로그래밍 언어가 맞이할 세 가지 미래, 그리고 제가 Haskell에 거는 이유."
-tags: [ai-engineering, programming-languages, abstraction, formal-methods, haskell, compilers]
+tags: [ai-engineering, programming-languages, abstraction, formal-methods, haskell, compilers, type-systems]
 lang: ko
 translation_of: https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/
 ---

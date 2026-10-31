@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-31T17:25:13+00:00",
+ "generated": "2026-10-31T17:27:36+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -10,7 +10,7 @@
   "talk": 1,
   "work": 115,
   "project": 30,
-  "topic": 113,
+  "topic": 136,
   "link": 370
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
@@ -39,7 +39,10 @@
     "post-scarcity",
     "legibility",
     "finance",
-    "insurance"
+    "insurance",
+    "chess",
+    "go-game",
+    "starcraft"
    ],
    "meta": "51 min"
   },
@@ -56,7 +59,8 @@
     "local-first",
     "gpus",
     "economics",
-    "rust"
+    "rust",
+    "energy"
    ],
    "meta": "25 min"
   },
@@ -74,7 +78,11 @@
     "ai-alignment",
     "history-of-technology",
     "technology-races",
-    "post-scarcity"
+    "post-scarcity",
+    "chess",
+    "shogi",
+    "go-game",
+    "starcraft"
    ],
    "categories": [
     "reviews"
@@ -111,7 +119,10 @@
     "games",
     "rust",
     "webassembly",
-    "history-of-technology"
+    "history-of-technology",
+    "chess",
+    "shogi",
+    "go-game"
    ],
    "meta": "22 min"
   },
@@ -211,7 +222,9 @@
     "intellectual-property",
     "provenance",
     "languages",
-    "technology-races"
+    "technology-races",
+    "united-states",
+    "china"
    ],
    "meta": "34 min"
   },
@@ -259,7 +272,8 @@
     "oss",
     "trust",
     "haskell",
-    "compilers"
+    "compilers",
+    "type-systems"
    ],
    "meta": "13 min"
   },
@@ -341,7 +355,8 @@
     "ai-engineering",
     "formal-methods",
     "haskell",
-    "compilers"
+    "compilers",
+    "type-systems"
    ],
    "meta": "7 min"
   },
@@ -358,7 +373,8 @@
     "formal-methods",
     "haskell",
     "compilers",
-    "provenance"
+    "provenance",
+    "type-systems"
    ],
    "meta": "27 min"
   },
@@ -374,7 +390,10 @@
     "sovereignty",
     "economics",
     "switzerland",
-    "intellectual-property"
+    "intellectual-property",
+    "united-states",
+    "china",
+    "semiconductors"
    ],
    "meta": "23 min"
   },
@@ -405,7 +424,9 @@
     "economics",
     "sovereignty",
     "edge-systems",
-    "gpus"
+    "gpus",
+    "energy",
+    "semiconductors"
    ],
    "meta": "12 min"
   },
@@ -452,7 +473,8 @@
     "determinism",
     "oss",
     "haskell",
-    "rust"
+    "rust",
+    "type-systems"
    ],
    "meta": "19 min"
   },
@@ -468,7 +490,8 @@
     "abstraction",
     "formal-methods",
     "haskell",
-    "compilers"
+    "compilers",
+    "type-systems"
    ],
    "meta": "26 min"
   },
@@ -483,7 +506,8 @@
     "ai-for-ops",
     "agents",
     "policy",
-    "sovereignty"
+    "sovereignty",
+    "semiconductors"
    ],
    "meta": "23 min"
   },
@@ -585,7 +609,8 @@
     "edge-systems",
     "meta",
     "commons",
-    "emergence"
+    "emergence",
+    "surveillance"
    ],
    "meta": "7 min"
   },
@@ -624,7 +649,8 @@
     "programming-languages",
     "haskell",
     "developer-tooling",
-    "compilers"
+    "compilers",
+    "type-systems"
    ],
    "meta": "10 min"
   },
@@ -664,7 +690,9 @@
     "fractals",
     "abstraction",
     "emergence",
-    "science-fiction"
+    "science-fiction",
+    "chaos-theory",
+    "physics"
    ]
   },
   {
@@ -748,7 +776,8 @@
     "economics",
     "risk",
     "social-reform",
-    "policy"
+    "policy",
+    "abundance"
    ]
   },
   {
@@ -762,7 +791,8 @@
     "economics",
     "augmentation",
     "democratisation",
-    "ai-engineering"
+    "ai-engineering",
+    "energy"
    ]
   },
   {
@@ -839,7 +869,8 @@
    "topics": [
     "existential-risk",
     "geopolitics",
-    "technology-races"
+    "technology-races",
+    "united-states"
    ],
    "meta": "Book · Annie Jacobsen · Read"
   },
@@ -856,7 +887,9 @@
     "life-sciences",
     "hubris",
     "emergence",
-    "fractals"
+    "fractals",
+    "synthetic-biology",
+    "chaos-theory"
    ],
    "meta": "Novel · Michael Crichton · Read"
   },
@@ -910,7 +943,9 @@
    "description": "Essays that question how much modern science can actually explain, from physics and cosmology to Darwinian biology.",
    "date": "2023",
    "topics": [
-    "philosophy-of-science"
+    "philosophy-of-science",
+    "physics",
+    "evolution"
    ],
    "meta": "Book · David Berlinski · Read"
   },
@@ -1003,7 +1038,8 @@
    "description": "The history of the United States as a test of the truths in its founding documents: equality, sovereignty, and consent.",
    "date": "2018",
    "topics": [
-    "history"
+    "history",
+    "united-states"
    ],
    "meta": "Book · Jill Lepore · Read"
   },
@@ -1030,7 +1066,8 @@
    "topics": [
     "literature",
     "social-reform",
-    "commons"
+    "commons",
+    "utopias"
    ],
    "meta": "Novel · Theodor Hertzka · Read"
   },
@@ -1041,7 +1078,8 @@
    "description": "Hertzka on the social question, the problem his novel Freeland set out to answer.",
    "date": "2017",
    "topics": [
-    "social-reform"
+    "social-reform",
+    "utopias"
    ],
    "meta": "Book · Theodor Hertzka · Read"
   },
@@ -1065,7 +1103,8 @@
    "date": "2015",
    "topics": [
     "risk",
-    "complex-systems"
+    "complex-systems",
+    "forecasting"
    ],
    "meta": "Book · Nassim Nicholas Taleb · Read"
   },
@@ -1078,7 +1117,8 @@
    "topics": [
     "finance",
     "world-history",
-    "trust"
+    "trust",
+    "money"
    ],
    "meta": "Book · David Graeber · Read"
   },
@@ -1091,7 +1131,9 @@
    "topics": [
     "risk",
     "complex-systems",
-    "philosophy-of-science"
+    "philosophy-of-science",
+    "forecasting",
+    "probability"
    ],
    "meta": "Book · Nassim Nicholas Taleb · Read"
   },
@@ -1116,7 +1158,8 @@
    "date": "2015",
    "topics": [
     "finance",
-    "policy"
+    "policy",
+    "money"
    ],
    "meta": "Book · Mathias Binswanger · Read"
   },
@@ -1129,7 +1172,8 @@
    "topics": [
     "finance",
     "policy",
-    "sovereignty"
+    "sovereignty",
+    "money"
    ],
    "meta": "Book · Paul Schreyer · Read"
   },
@@ -1270,7 +1314,9 @@
     "research-labs",
     "ai-alignment",
     "history-of-technology",
-    "technology-races"
+    "technology-races",
+    "chess",
+    "go-game"
    ],
    "meta": "Book · Sebastian Mallaby · Read"
   },
@@ -1296,7 +1342,8 @@
    "topics": [
     "history",
     "democratisation",
-    "commons"
+    "commons",
+    "utopias"
    ],
    "meta": "Book · David Graeber · Read"
   },
@@ -1322,7 +1369,8 @@
    "topics": [
     "history",
     "cities",
-    "europe"
+    "europe",
+    "united-states"
    ],
    "meta": "Book · Russell Shorto · Read"
   },
@@ -1335,7 +1383,9 @@
    "topics": [
     "applied-security",
     "geopolitics",
-    "technology-races"
+    "technology-races",
+    "united-states",
+    "surveillance"
    ],
    "meta": "Book · Shane Harris · Read"
   },
@@ -1348,7 +1398,8 @@
    "topics": [
     "philosophy-of-science",
     "life-sciences",
-    "neuroscience"
+    "neuroscience",
+    "physics"
    ],
    "meta": "Book · Max Brockman (editor) · Read"
   },
@@ -1360,7 +1411,8 @@
    "date": "2023",
    "topics": [
     "rust",
-    "programming-languages"
+    "programming-languages",
+    "type-systems"
    ],
    "meta": "Book · Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall · Read"
   },
@@ -1386,7 +1438,8 @@
    "topics": [
     "life-sciences",
     "world-history",
-    "history-of-science"
+    "history-of-science",
+    "evolution"
    ],
    "meta": "Book · David Reich · Read"
   },
@@ -1438,7 +1491,8 @@
    "topics": [
     "religion",
     "life-sciences",
-    "world-history"
+    "world-history",
+    "evolution"
    ],
    "meta": "Book · Carel van Schaik and Kai Michel · Read"
   },
@@ -1450,7 +1504,9 @@
    "date": "2018-06",
    "topics": [
     "philosophy",
-    "geopolitics"
+    "geopolitics",
+    "china",
+    "strategy"
    ],
    "meta": "Book · Sun Tzu · Read"
   },
@@ -1499,7 +1555,8 @@
    "topics": [
     "world-history",
     "geopolitics",
-    "cities"
+    "cities",
+    "china"
    ],
    "meta": "Book · Peter Frankopan · Read"
   },
@@ -1537,7 +1594,10 @@
     "existential-risk",
     "technology-races",
     "geopolitics",
-    "intelligence"
+    "intelligence",
+    "forecasting",
+    "united-states",
+    "china"
    ],
    "meta": "Report · Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, and Romeo Dean · Read"
   },
@@ -1552,7 +1612,10 @@
     "existential-risk",
     "technology-races",
     "geopolitics",
-    "policy"
+    "policy",
+    "forecasting",
+    "united-states",
+    "china"
    ],
    "meta": "Report · Thomas Larsen, Romeo Dean, Brendan Halstead, Eli Lifland, Ryan Greenblatt, and Daniel Kokotajlo · Read"
   },
@@ -1585,7 +1648,8 @@
    "description": "The mathematics behind machine learning, from the perceptron to deep networks, with the people who found it.",
    "topics": [
     "machine-learning",
-    "mathematics"
+    "mathematics",
+    "probability"
    ],
    "meta": "Book · Anil Ananthaswamy · Backlog"
   },
@@ -1634,7 +1698,8 @@
    "topics": [
     "intelligence",
     "games",
-    "augmentation"
+    "augmentation",
+    "chess"
    ],
    "meta": "Book · Garry Kasparov · Backlog"
   },
@@ -1690,7 +1755,8 @@
    "description": "Machine learning from a probabilistic point of view, the first of Murphy's two volumes.",
    "topics": [
     "machine-learning",
-    "mathematics"
+    "mathematics",
+    "probability"
    ],
    "meta": "Book · Kevin P. Murphy · Backlog"
   },
@@ -1706,7 +1772,8 @@
     "geopolitics",
     "ethics",
     "technology-races",
-    "hubris"
+    "hubris",
+    "physics"
    ],
    "meta": "Book · Richard Rhodes · Backlog"
   },
@@ -1743,7 +1810,8 @@
    "topics": [
     "medicine",
     "research-labs",
-    "history-of-science"
+    "history-of-science",
+    "synthetic-biology"
    ],
    "meta": "Book · Barry Werth · Backlog"
   },
@@ -1805,7 +1873,8 @@
    "topics": [
     "history-of-technology",
     "economics",
-    "geopolitics"
+    "geopolitics",
+    "united-states"
    ],
    "meta": "Book · Malcolm Harris · Backlog"
   },
@@ -1816,7 +1885,8 @@
    "description": "Strategy from the Bible and the Greeks to military, revolutionary, and business strategy today.",
    "topics": [
     "geopolitics",
-    "history"
+    "history",
+    "strategy"
    ],
    "meta": "Book · Lawrence Freedman · Backlog"
   },
@@ -1866,7 +1936,10 @@
     "technology-races",
     "geopolitics",
     "ai-alignment",
-    "gpus"
+    "gpus",
+    "forecasting",
+    "united-states",
+    "china"
    ],
    "meta": "Essay · Leopold Aschenbrenner · Backlog"
   },
@@ -1879,7 +1952,8 @@
     "gpus",
     "history-of-technology",
     "entrepreneurship",
-    "technology-races"
+    "technology-races",
+    "semiconductors"
    ],
    "meta": "Book · Stephen Witt · Backlog"
   },
@@ -1892,7 +1966,8 @@
     "intelligence",
     "neuroscience",
     "reinforcement-learning",
-    "life-sciences"
+    "life-sciences",
+    "evolution"
    ],
    "meta": "Book · Max Bennett · Backlog"
   },
@@ -1918,7 +1993,8 @@
     "evaluation",
     "machine-learning",
     "risk",
-    "policy"
+    "policy",
+    "forecasting"
    ],
    "meta": "Book · Arvind Narayanan and Sayash Kapoor · Backlog"
   },
@@ -1943,7 +2019,9 @@
     "philosophy",
     "ethics",
     "ai-alignment",
-    "post-scarcity"
+    "post-scarcity",
+    "transhumanism",
+    "utopias"
    ],
    "meta": "Book · Nick Bostrom · Backlog"
   },
@@ -1956,7 +2034,9 @@
     "economics",
     "world-history",
     "history-of-technology",
-    "post-scarcity"
+    "post-scarcity",
+    "abundance",
+    "utopias"
    ],
    "meta": "Book · J. Bradford DeLong · Backlog"
   },
@@ -1968,7 +2048,10 @@
    "topics": [
     "economics",
     "policy",
-    "cities"
+    "cities",
+    "abundance",
+    "united-states",
+    "energy"
    ],
    "meta": "Book · Ezra Klein and Derek Thompson · Backlog"
   },
@@ -1980,7 +2063,9 @@
    "topics": [
     "post-scarcity",
     "future-of-work",
-    "social-reform"
+    "social-reform",
+    "abundance",
+    "utopias"
    ],
    "meta": "Book · Peter Frase · Backlog"
   },
@@ -1991,7 +2076,10 @@
    "description": "Keynes's 1930 prediction that a century of growth would solve the economic problem and leave us with leisure.",
    "topics": [
     "economics",
-    "future-of-work"
+    "future-of-work",
+    "forecasting",
+    "post-scarcity",
+    "abundance"
    ],
    "meta": "Essay · John Maynard Keynes · Backlog"
   },
@@ -2004,7 +2092,8 @@
     "history-of-technology",
     "decentralisation",
     "open-web",
-    "commons"
+    "commons",
+    "cybernetics"
    ],
    "meta": "Book · Fred Turner · Backlog"
   },
@@ -2017,7 +2106,8 @@
     "complex-systems",
     "high-modernism",
     "history-of-technology",
-    "social-reform"
+    "social-reform",
+    "cybernetics"
    ],
    "meta": "Book · Eden Medina · Backlog"
   },
@@ -2030,7 +2120,10 @@
     "literature",
     "high-modernism",
     "post-scarcity",
-    "complex-systems"
+    "complex-systems",
+    "abundance",
+    "cybernetics",
+    "utopias"
    ],
    "meta": "Novel · Francis Spufford · Backlog"
   },
@@ -2042,7 +2135,9 @@
    "topics": [
     "augmentation",
     "hubris",
-    "neuroscience"
+    "neuroscience",
+    "transhumanism",
+    "mortality"
    ],
    "meta": "Book · Mark O'Connell · Backlog"
   },
@@ -2055,7 +2150,9 @@
     "simulation",
     "neuroscience",
     "economics",
-    "future-of-work"
+    "future-of-work",
+    "forecasting",
+    "transhumanism"
    ],
    "meta": "Book · Robin Hanson · Backlog"
   },
@@ -2067,7 +2164,9 @@
    "topics": [
     "hubris",
     "existential-risk",
-    "entrepreneurship"
+    "entrepreneurship",
+    "transhumanism",
+    "physics"
    ],
    "meta": "Book · Adam Becker · Backlog"
   },
@@ -2080,7 +2179,9 @@
     "science-fiction",
     "games",
     "intelligence",
-    "post-scarcity"
+    "post-scarcity",
+    "utopias",
+    "strategy"
    ],
    "meta": "Novel · Iain M. Banks · Backlog"
   },
@@ -2092,7 +2193,8 @@
    "topics": [
     "science-fiction",
     "intelligence",
-    "augmentation"
+    "augmentation",
+    "transhumanism"
    ],
    "meta": "Novel · Charles Stross · Backlog"
   },
@@ -2131,7 +2233,10 @@
     "complex-systems",
     "emergence",
     "mathematics",
-    "history-of-science"
+    "history-of-science",
+    "chaos-theory",
+    "fractals",
+    "forecasting"
    ],
    "meta": "Book · James Gleick · Backlog"
   },
@@ -2142,7 +2247,8 @@
    "description": "Richard Feynman's life and physics, from Los Alamos and quantum electrodynamics to the Challenger inquiry.",
    "topics": [
     "history-of-science",
-    "research-labs"
+    "research-labs",
+    "physics"
    ],
    "meta": "Book · James Gleick · Backlog"
   },
@@ -2177,7 +2283,8 @@
    "topics": [
     "history-of-science",
     "scientific-revolutions",
-    "mathematics"
+    "mathematics",
+    "physics"
    ],
    "meta": "Book · James Gleick · Backlog"
   },
@@ -2225,7 +2332,10 @@
     "mathematics",
     "complex-systems",
     "risk",
-    "philosophy-of-science"
+    "philosophy-of-science",
+    "chaos-theory",
+    "forecasting",
+    "probability"
    ],
    "meta": "Book · Ivar Ekeland · Backlog"
   },
@@ -2264,7 +2374,9 @@
     "oss",
     "rust",
     "webassembly",
-    "self-hosting"
+    "self-hosting",
+    "life-sciences",
+    "synthetic-biology"
    ],
    "meta": "Ventures · Projects"
   },
@@ -2276,7 +2388,9 @@
    "topics": [
     "sovereignty",
     "elixir",
-    "rust"
+    "rust",
+    "mortality",
+    "external-memory"
    ],
    "meta": "Ventures · Projects"
   },
@@ -2383,7 +2497,9 @@
    "topics": [
     "zola",
     "elixir",
-    "rust"
+    "rust",
+    "starcraft",
+    "games"
    ],
    "meta": "Flagship and serious builds · Projects"
   },
@@ -2486,7 +2602,8 @@
     "rust",
     "neuroscience",
     "intelligence",
-    "emergence"
+    "emergence",
+    "synthetic-biology"
    ],
    "meta": "Labs / passion projects · Projects"
   },
@@ -2499,7 +2616,10 @@
     "games",
     "reinforcement-learning",
     "webassembly",
-    "rust"
+    "rust",
+    "chess",
+    "shogi",
+    "go-game"
    ],
    "meta": "Labs / passion projects · Projects"
   },
@@ -2593,7 +2713,8 @@
     "local-first",
     "data-sovereignty",
     "typescript",
-    "languages"
+    "languages",
+    "china"
    ],
    "meta": "Tools · Apps"
   },
@@ -2640,6 +2761,13 @@
    "title": "Abstraction",
    "url": "https://raskell.io/tags/abstraction/",
    "description": "Layers that let people stop thinking about the layer below, from assembly and programming languages to orchestrators and agents, and how each new layer becomes the ground for the next.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Abundance",
+   "url": "https://raskell.io/tags/abundance/",
+   "description": "Making what is scarce plentiful on purpose: building homes, energy, and compute until they are cheap, and the politics of supply that gets there.",
    "meta": "Concept"
   },
   {
@@ -2707,6 +2835,27 @@
   },
   {
    "kind": "topic",
+   "title": "Chaos theory",
+   "url": "https://raskell.io/tags/chaos-theory/",
+   "description": "How simple deterministic rules produce behaviour nobody can predict: sensitive dependence, strange attractors, and the limits of forecasting.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Chess",
+   "url": "https://raskell.io/tags/chess/",
+   "description": "The game that served as the benchmark of machine intelligence for seventy years, from Shannon's paper to Deep Blue and engines that learn.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "China",
+   "url": "https://raskell.io/tags/china/",
+   "description": "China in history and in technology: the Silk Roads and Sun Tzu, its share of patents and research, its race with the United States, and its language.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Cities",
    "url": "https://raskell.io/tags/cities/",
    "description": "How cities are planned and how they actually grow: Jerusalem over three thousand years, Brasilia drawn on paper, and the rational city the web was designed against.",
@@ -2745,6 +2894,13 @@
    "title": "Cryptocurrency",
    "url": "https://raskell.io/tags/cryptocurrency/",
    "description": "Bitcoin, blockchains and distributed ledgers: the attempt to formalise money and trust so completely that no institution is needed, and the institutions that grew back around it.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Cybernetics",
+   "url": "https://raskell.io/tags#cybernetics",
+   "description": "The science of control and feedback in machines, organisms, and organisations, and the attempts to run economies and societies with it.",
    "meta": "Domain"
   },
   {
@@ -2826,6 +2982,13 @@
   },
   {
    "kind": "topic",
+   "title": "Energy",
+   "url": "https://raskell.io/tags/energy/",
+   "description": "Electricity as the input to everything else: the power behind compute, the grids and plants that supply it, and what it costs.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
    "title": "Enterprise architecture",
    "url": "https://raskell.io/tags#enterprise-architecture",
    "description": "How a company's capabilities, applications, data and infrastructure fit together, who owns what, and how the landscape is changed on purpose.",
@@ -2861,6 +3024,13 @@
   },
   {
    "kind": "topic",
+   "title": "Evolution",
+   "url": "https://raskell.io/tags#evolution",
+   "description": "Change by variation and selection, in genes, brains, and populations, and the arguments over how much it explains.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Existential risk",
    "url": "https://raskell.io/tags#existential-risk",
    "description": "Technologies that could end or permanently cripple civilisation, from nuclear weapons to misaligned AI, and how people have tried to contain them.",
@@ -2886,6 +3056,13 @@
    "url": "https://raskell.io/tags/finance/",
    "description": "Banks, insurers, money and credit: abstract businesses that sell kept promises, allocate a society's resources and turn trust into procedure.",
    "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Forecasting",
+   "url": "https://raskell.io/tags#forecasting",
+   "description": "Saying what will happen and how sure you are: scenarios, predictions that fail, and the events nobody priced in.",
+   "meta": "Concept"
   },
   {
    "kind": "topic",
@@ -2935,6 +3112,13 @@
    "url": "https://raskell.io/tags#geopolitics",
    "description": "How geography, empires, and arms shape the balance of power between states and regions, as history.",
    "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Go",
+   "url": "https://raskell.io/tags/go-game/",
+   "description": "The board game whose positions resisted hand-written evaluation until AlphaGo, and the clearest case for learned intuition guiding search.",
+   "meta": "Domain"
   },
   {
    "kind": "topic",
@@ -3127,6 +3311,20 @@
   },
   {
    "kind": "topic",
+   "title": "Money",
+   "url": "https://raskell.io/tags#money",
+   "description": "What money is and who creates it: debt and credit, banks that create money by lending, central banks, and attempts to do without them.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Mortality",
+   "url": "https://raskell.io/tags#mortality",
+   "description": "That everyone dies: priced in life insurance, resisted by those who want to end death, and answered by keeping a person's voice and stories.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Networking",
    "url": "https://raskell.io/tags#networking",
    "description": "How machines talk: packets, protocols, sockets, and the networks from ARPANET to the web that carry them.",
@@ -3218,6 +3416,13 @@
   },
   {
    "kind": "topic",
+   "title": "Physics",
+   "url": "https://raskell.io/tags/physics/",
+   "description": "The laws of matter, energy, space and time, and the people who found them, from Newton to the bomb to cosmology.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
    "title": "Pingora",
    "url": "https://raskell.io/tags/pingora/",
    "description": "Cloudflare's Rust framework for building proxies, the base of Zentinel.",
@@ -3249,6 +3454,13 @@
    "title": "Privacy",
    "url": "https://raskell.io/tags#privacy",
    "description": "Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Probability",
+   "url": "https://raskell.io/tags#probability",
+   "description": "Chance made countable: the law of large numbers behind insurance, error margins on a measurement, and tails that are fatter than they look.",
    "meta": "Concept"
   },
   {
@@ -3337,6 +3549,20 @@
   },
   {
    "kind": "topic",
+   "title": "Semiconductors",
+   "url": "https://raskell.io/tags/semiconductors/",
+   "description": "Chips and the factories that make them: fabrication, the few companies and places that can do it, and why nations compete for them.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Shogi",
+   "url": "https://raskell.io/tags/shogi/",
+   "description": "Japanese chess, where captured pieces return to the board, and where the NNUE networks now inside every strong chess engine were invented.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
    "title": "Simulation",
    "url": "https://raskell.io/tags/simulation/",
    "description": "Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.",
@@ -3358,10 +3584,38 @@
   },
   {
    "kind": "topic",
+   "title": "StarCraft",
+   "url": "https://raskell.io/tags/starcraft/",
+   "description": "The real-time strategy game, Brood War above all: hidden information, thousands of decisions a minute, and the next benchmark after board games.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Strategy",
+   "url": "https://raskell.io/tags#strategy",
+   "description": "Winning against an opponent who adapts: in war, in business, and in games, from Sun Tzu to real-time strategy.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Surveillance",
+   "url": "https://raskell.io/tags/surveillance/",
+   "description": "Watching people at scale, by states and by platforms: intelligence agencies, tracking for advertising, and what it costs those being watched.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Switzerland",
    "url": "https://raskell.io/tags/switzerland/",
    "description": "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Swiss civic projects.",
    "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Synthetic biology",
+   "url": "https://raskell.io/tags#synthetic-biology",
+   "description": "Engineering living systems: designing molecules and organisms, growing neurons on chips, and the software that reads and writes biology.",
+   "meta": "Domain"
   },
   {
    "kind": "topic",
@@ -3375,6 +3629,13 @@
    "title": "Training data",
    "url": "https://raskell.io/tags/training-data/",
    "description": "What models learn from: web crawls, books, and licensed or unlicensed corpora; who holds what has not been scraped yet, and on what terms.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Transhumanism",
+   "url": "https://raskell.io/tags#transhumanism",
+   "description": "The hope of outgrowing the human body and mind through technology: the singularity, mind uploading, ending death, and the critics of all three.",
    "meta": "Concept"
   },
   {
@@ -3393,10 +3654,31 @@
   },
   {
    "kind": "topic",
+   "title": "Type systems",
+   "url": "https://raskell.io/tags/type-systems/",
+   "description": "Types as a cheap, mechanical proof that code does what it says, and why they matter more once machines write the code.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "TypeScript",
    "url": "https://raskell.io/tags/typescript/",
    "description": "TypeScript on Bun, the language of the Agent Platform Handbook code.",
    "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "United States",
+   "url": "https://raskell.io/tags/united-states/",
+   "description": "America's place in technology and power: where the frontier labs and chips are, its founding ideas, and its race with China.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Utopias",
+   "url": "https://raskell.io/tags#utopias",
+   "description": "Designs for a better society, imagined or attempted: colonies, planned economies, post-scarcity civilisations, and what became of them.",
+   "meta": "Concept"
   },
   {
    "kind": "topic",

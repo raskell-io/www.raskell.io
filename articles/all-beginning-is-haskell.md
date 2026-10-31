@@ -5,7 +5,7 @@ author: Raffael Schneider
 date: 2023-03-06
 updated: 2026-03-09
 description: "How Haskell shaped the way I think about building systems, and why I am still building Haskell tooling years after writing my first monad."
-tags: [programming-languages, haskell, developer-tooling, compilers]
+tags: [programming-languages, haskell, developer-tooling, compilers, type-systems]
 ---
 
 # All beginning is Haskell

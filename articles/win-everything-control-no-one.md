@@ -4,7 +4,7 @@ url: https://raskell.io/articles/win-everything-control-no-one/
 author: Raffael Schneider
 date: 2026-10-29
 description: "Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it."
-tags: [intelligence, reinforcement-learning, games, research-labs, ai-alignment, history-of-technology, technology-races, post-scarcity]
+tags: [intelligence, reinforcement-learning, games, research-labs, ai-alignment, history-of-technology, technology-races, post-scarcity, chess, shogi, go-game, starcraft]
 categories: [reviews]
 review_of: "The Infinity Machine"
 review_of_author: "Sebastian Mallaby"

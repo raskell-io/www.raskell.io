@@ -4,7 +4,7 @@ url: https://raskell.io/articles/the-river-and-the-canal/
 author: Raffael Schneider
 date: 2026-10-31
 description: "Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine."
-tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance]
+tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance, chess, go-game, starcraft]
 ---
 
 # The River and the Canal

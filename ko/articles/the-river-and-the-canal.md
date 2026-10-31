@@ -4,7 +4,7 @@ url: https://raskell.io/ko/articles/the-river-and-the-canal/
 author: Raffael Schneider
 date: 2026-10-31
 description: "에이전트는 험준한 세계를 탐색하고, 워크플로는 그 탐색이 남긴 것입니다. 체스, 스타크래프트, 바닷속 공장, 그리고 제가 엔진을 만드는 이유에 관하여."
-tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance]
+tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance, chess, go-game, starcraft]
 lang: ko
 translation_of: https://raskell.io/articles/the-river-and-the-canal/
 ---

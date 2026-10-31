@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Raskell - united-states</title>
+      <link>https://raskell.io</link>
+      <description>Notes on agent platforms, platform automation, edge infrastructure, and applied security. Building automation-first platforms that survive production reality.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://raskell.io/tags/united-states/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Tue, 30 Jun 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>The Bottleneck Is Data, and Europe Is Sitting on It</title>
+          <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/</link>
+          <guid>https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/</guid>
+          <description xml:base="https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/">&lt;p&gt;The public conversation about who wins in AI is almost entirely a conversation about hardware. Who has the most accelerators, who controls the fabs, whose export-control list bites whose supply chain. That conversation is real, and I have spent enough time on the compute side to take it seriously. It is also, increasingly, the wrong place to look for the binding constraint.&lt;&#x2F;p&gt;
+&lt;p&gt;The people running the largest labs have been saying so out loud. At NeurIPS in December 2024, Ilya Sutskever told a packed room that “pre-training as we know it will unquestionably end,” for the blunt reason that “compute is growing through better hardware, better algorithms and larger clusters, but the data is not growing, because we have but one internet.” He called data “the fossil fuel of AI” and said the field had “achieved peak data.” A month later Elon Musk said the cumulative sum of human knowledge usable for training had been “exhausted” the previous year. Strip away the showmanship and the claim underneath is an engineering claim about a substrate running short.&lt;&#x2F;p&gt;
+&lt;p&gt;I want to take that claim seriously and follow it to where it leads, which is not where the hardware conversation goes. If the scarce input is high-quality data, then the interesting question is who holds the data that has not already been consumed. The answer, for a large and specific category of it, is Europe. Not because Europe planned it that way, but because Europe wrote and printed and catalogued for five centuries and then, for the most part, never put the result on the open web.&lt;&#x2F;p&gt;</description>
+      </item>
+      <item>
+          <title>Patents Per Capita Is a Vanity Metric</title>
+          <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/</link>
+          <guid>https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/</guid>
+          <description xml:base="https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/">&lt;p&gt;It is the first of May, Labour Day. A holiday explicitly about work, which makes it a good day to ask whether the work that gets counted is the work that actually matters.&lt;&#x2F;p&gt;
+&lt;p&gt;Earlier this week I posted on LinkedIn about how Swiss innovation rankings tend to be illustrated with photos of Zurich, even though Basel produces a meaningful share of what those rankings reward. It performed better than most of my other shares there. Some of the feedback agreed. Some pushed back. Almost all of it stayed inside the same frame the rankings themselves set: which Swiss city deserves credit for the score. That is not the question I find interesting. The question I find interesting is what the score is measuring in the first place, and whether it is the score we should be optimising for. The LinkedIn format is not the right place to work that out. A long-form post on a Labour Day morning is.&lt;&#x2F;p&gt;
+&lt;p&gt;Switzerland topped the Global Innovation Index in 2025 for the fifteenth year in a row. The index is published annually by the World Intellectual Property Organization, the United Nations agency that administers the international patent system, and it ranks roughly 140 economies on how innovative they are. The 2025 press release went out in September. The country celebrated. Zurich’s skyline got photographed again. Roche and Novartis, the two Basel-headquartered pharmaceutical giants, were name-checked. ETH Zurich and EPFL, the country’s two federal technical universities, got their nods. The framing was the usual one: small country, outsized output, durable lead.&lt;&#x2F;p&gt;
+&lt;p&gt;I am Swiss. I am from Basel. I build infrastructure for a living, which means I spend a lot of time staring at dashboards that report how systems are performing in production. A number that sits at the top of a leaderboard for fifteen consecutive years should make any engineer who watches dashboards suspicious before it makes them proud. The metrics that look the smoothest the longest are usually the ones telling you the least about what is happening right now.&lt;&#x2F;p&gt;
+&lt;p&gt;This post is about why “most innovative country” is a vanity metric: a number that is real, and countable, and correlated with success, but that should not be the thing you optimise for. The Global Innovation Index measures yesterday extremely well. It does not measure today, and it tells you almost nothing about tomorrow.&lt;&#x2F;p&gt;</description>
+      </item>
+    </channel>
+</rss>

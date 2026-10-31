@@ -4,7 +4,7 @@ url: https://raskell.io/zh/articles/learning-to-play/
 author: Raffael Schneider
 date: 2026-10-25
 description: "一位国际象棋神童读过的手册、三种古老的棋类和一台笔记本电脑：用 Rust 重建博弈 AI 背后的思想，让它在我手机的浏览器里运行，并加以测量。"
-tags: [game-ai, machine-learning, reinforcement-learning, games, rust, webassembly, history-of-technology]
+tags: [game-ai, machine-learning, reinforcement-learning, games, rust, webassembly, history-of-technology, chess, shogi, go-game]
 lang: zh-Hans
 translation_of: https://raskell.io/articles/learning-to-play/
 ---

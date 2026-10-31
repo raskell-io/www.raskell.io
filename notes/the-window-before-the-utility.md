@@ -4,7 +4,7 @@ url: https://raskell.io/notes/the-window-before-the-utility/
 author: Raffael Schneider
 date: 2026-10-25
 description: "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again."
-tags: [inference, economics, augmentation, democratisation, ai-engineering]
+tags: [inference, economics, augmentation, democratisation, ai-engineering, energy]
 ---
 
 # The window before the utility

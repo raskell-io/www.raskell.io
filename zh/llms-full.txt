@@ -11,7 +11,7 @@ url: https://raskell.io/zh/articles/the-river-and-the-canal/
 author: Raffael Schneider
 date: 2026-10-31
 description: "智能体在崎岖的世界里探索；工作流是探索留下的东西。国际象棋、星际争霸、海底的工厂，以及我为什么要造一台引擎。"
-tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance]
+tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance, chess, go-game, starcraft]
 lang: zh-Hans
 translation_of: https://raskell.io/articles/the-river-and-the-canal/
 ---
@@ -449,7 +449,7 @@ url: https://raskell.io/zh/articles/win-everything-control-no-one/
 author: Raffael Schneider
 date: 2026-10-29
 description: "Sebastian Mallaby 为 Demis Hassabis 写的传记，是我所知最好的现代 AI 史，也是对一个厌恶控制却又行使控制的人的坦诚研究。"
-tags: [intelligence, reinforcement-learning, games, research-labs, ai-alignment, history-of-technology, technology-races, post-scarcity]
+tags: [intelligence, reinforcement-learning, games, research-labs, ai-alignment, history-of-technology, technology-races, post-scarcity, chess, shogi, go-game, starcraft]
 categories: [reviews]
 review_of: "The Infinity Machine"
 review_of_author: "Sebastian Mallaby"
@@ -577,7 +577,7 @@ url: https://raskell.io/zh/articles/learning-to-play/
 author: Raffael Schneider
 date: 2026-10-25
 description: "一位国际象棋神童读过的手册、三种古老的棋类和一台笔记本电脑：用 Rust 重建博弈 AI 背后的思想，让它在我手机的浏览器里运行，并加以测量。"
-tags: [game-ai, machine-learning, reinforcement-learning, games, rust, webassembly, history-of-technology]
+tags: [game-ai, machine-learning, reinforcement-learning, games, rust, webassembly, history-of-technology, chess, shogi, go-game]
 lang: zh-Hans
 translation_of: https://raskell.io/articles/learning-to-play/
 ---
@@ -1085,7 +1085,7 @@ url: https://raskell.io/zh/articles/the-economics-of-inference/
 author: Raffael Schneider
 date: 2026-04-22
 description: "推理 token 不是 API 调用，而是一种计量的资源：被消耗，创造价值，并与耗电量挂钩。后 AI 世界的经济学不像软件，更像水、电和燃气。"
-tags: [inference, economics, sovereignty, edge-systems, gpus]
+tags: [inference, economics, sovereignty, edge-systems, gpus, energy, semiconductors]
 lang: zh-Hans
 translation_of: https://raskell.io/articles/the-economics-of-inference/
 ---
@@ -1212,7 +1212,7 @@ url: https://raskell.io/zh/articles/what-programming-languages-become-when-ai-wr
 author: Raffael Schneider
 date: 2026-04-11
 description: "当 AI 成为代码的主要作者，编程语言的三种未来，以及我为什么押注 Haskell。"
-tags: [ai-engineering, programming-languages, abstraction, formal-methods, haskell, compilers]
+tags: [ai-engineering, programming-languages, abstraction, formal-methods, haskell, compilers, type-systems]
 lang: zh-Hans
 translation_of: https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/
 ---

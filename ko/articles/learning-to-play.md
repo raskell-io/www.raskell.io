@@ -4,7 +4,7 @@ url: https://raskell.io/ko/articles/learning-to-play/
 author: Raffael Schneider
 date: 2026-10-25
 description: "체스 신동이 읽은 핸드북, 오래된 세 가지 게임, 그리고 노트북 한 대. 게임 AI의 바탕이 된 아이디어를 휴대폰 브라우저에서 돌아가도록 Rust로 다시 만들고 측정한 기록입니다."
-tags: [game-ai, machine-learning, reinforcement-learning, games, rust, webassembly, history-of-technology]
+tags: [game-ai, machine-learning, reinforcement-learning, games, rust, webassembly, history-of-technology, chess, shogi, go-game]
 lang: ko
 translation_of: https://raskell.io/articles/learning-to-play/
 ---

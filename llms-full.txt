@@ -11,7 +11,7 @@ url: https://raskell.io/articles/the-river-and-the-canal/
 author: Raffael Schneider
 date: 2026-10-31
 description: "Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine."
-tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance]
+tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance, chess, go-game, starcraft]
 ---
 
 # The River and the Canal
@@ -447,7 +447,7 @@ url: https://raskell.io/notes/everything-is-a-fractal/
 author: Raffael Schneider
 date: 2026-10-31
 description: "The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world."
-tags: [fractals, abstraction, emergence, science-fiction]
+tags: [fractals, abstraction, emergence, science-fiction, chaos-theory, physics]
 ---
 
 # Everything is a fractal
@@ -467,7 +467,7 @@ url: https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/
 author: Raffael Schneider
 date: 2026-10-30
 description: "How I re-imagined Shiioo with what 2026 taught me about agent systems, and why my local setup moves to a Mac Studio and DGX Sparks."
-tags: [agents, inference, self-hosting, local-first, gpus, economics, rust]
+tags: [agents, inference, self-hosting, local-first, gpus, economics, rust, energy]
 ---
 
 # Shiioo, Re-imagined, and the Home AI Lab It Runs On
@@ -697,7 +697,7 @@ url: https://raskell.io/articles/win-everything-control-no-one/
 author: Raffael Schneider
 date: 2026-10-29
 description: "Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it."
-tags: [intelligence, reinforcement-learning, games, research-labs, ai-alignment, history-of-technology, technology-races, post-scarcity]
+tags: [intelligence, reinforcement-learning, games, research-labs, ai-alignment, history-of-technology, technology-races, post-scarcity, chess, shogi, go-game, starcraft]
 categories: [reviews]
 review_of: "The Infinity Machine"
 review_of_author: "Sebastian Mallaby"
@@ -1403,7 +1403,7 @@ url: https://raskell.io/articles/learning-to-play/
 author: Raffael Schneider
 date: 2026-10-25
 description: "A chess prodigy's handbook, three old games and one laptop: rebuilding the ideas behind game-playing AI in Rust for a browser on my phone, and measuring them."
-tags: [game-ai, machine-learning, reinforcement-learning, games, rust, webassembly, history-of-technology]
+tags: [game-ai, machine-learning, reinforcement-learning, games, rust, webassembly, history-of-technology, chess, shogi, go-game]
 ---
 
 # Learning to Play
@@ -1546,7 +1546,7 @@ url: https://raskell.io/notes/the-tumult-in-between/
 author: Raffael Schneider
 date: 2026-10-25
 description: "If AI ends in post-scarcity, the dangerous part is the interval: jobs going before goods become nearly free, with no agreed idea of where the ship steers."
-tags: [post-scarcity, future-of-work, economics, risk, social-reform, policy]
+tags: [post-scarcity, future-of-work, economics, risk, social-reform, policy, abundance]
 ---
 
 # The tumult in between
@@ -1604,7 +1604,7 @@ url: https://raskell.io/notes/the-window-before-the-utility/
 author: Raffael Schneider
 date: 2026-10-25
 description: "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again."
-tags: [inference, economics, augmentation, democratisation, ai-engineering]
+tags: [inference, economics, augmentation, democratisation, ai-engineering, energy]
 ---
 
 # The window before the utility
@@ -2586,7 +2586,7 @@ url: https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on
 author: Raffael Schneider
 date: 2026-06-30
 description: "Frontier AI is running short on public text, not compute. Europe's edge is the high-quality data it never put online. Capturing it needs coordination."
-tags: [training-data, open-data, europe, intellectual-property, provenance, languages, technology-races]
+tags: [training-data, open-data, europe, intellectual-property, provenance, languages, technology-races, united-states, china]
 ---
 
 # The Bottleneck Is Data, and Europe Is Sitting on It
@@ -3250,7 +3250,7 @@ url: https://raskell.io/articles/the-proof-you-only-have-to-write-once/
 author: Raffael Schneider
 date: 2026-06-19
 description: "Generation is cheap, so verification is the bottleneck — and we throw the verification away every time. What if a proof, once written, could be named, shared, and vouched for? A content-addressed commons for verified Haskell, and the move I left for after the semantic-artifact trilogy."
-tags: [formal-methods, programming-languages, ai-engineering, oss, trust, haskell, compilers]
+tags: [formal-methods, programming-languages, ai-engineering, oss, trust, haskell, compilers, type-systems]
 ---
 
 # The Proof You Only Have to Write Once
@@ -5513,7 +5513,7 @@ url: https://raskell.io/articles/the-field-exists-now/
 author: Raffael Schneider
 date: 2026-05-22
 description: "Alasdair Allan's agentlanguages.dev catalogue turns AI-oriented programming languages from a loose set of experiments into a field with camps, disagreements, and testable claims."
-tags: [programming-languages, ai-engineering, formal-methods, haskell, compilers]
+tags: [programming-languages, ai-engineering, formal-methods, haskell, compilers, type-systems]
 ---
 
 # The Field Exists Now
@@ -5665,7 +5665,7 @@ url: https://raskell.io/articles/semantic-artifacts-and-meaning-engines/
 author: Raffael Schneider
 date: 2026-05-07
 description: "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target."
-tags: [ai-engineering, abstraction, determinism, formal-methods, haskell, compilers, provenance]
+tags: [ai-engineering, abstraction, determinism, formal-methods, haskell, compilers, provenance, type-systems]
 ---
 
 # Source Code Is the New Assembly
@@ -6061,7 +6061,7 @@ url: https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/
 author: Raffael Schneider
 date: 2026-05-01
 description: "Switzerland tops the Global Innovation Index for the fifteenth year running. As an engineer, that should make you suspicious of the metric, not proud of the country."
-tags: [metrics, policy, sovereignty, economics, switzerland, intellectual-property]
+tags: [metrics, policy, sovereignty, economics, switzerland, intellectual-property, united-states, china, semiconductors]
 ---
 
 # Patents Per Capita Is a Vanity Metric
@@ -6453,7 +6453,7 @@ url: https://raskell.io/articles/the-economics-of-inference/
 author: Raffael Schneider
 date: 2026-04-22
 description: "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas."
-tags: [inference, economics, sovereignty, edge-systems, gpus]
+tags: [inference, economics, sovereignty, edge-systems, gpus, energy, semiconductors]
 ---
 
 # The Economics of Inference
@@ -7185,7 +7185,7 @@ url: https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/
 author: Raffael Schneider
 date: 2026-04-13
 description: "hx is a fast, opinionated Haskell toolchain built in Rust, following the playbook astral.sh used to modernize Python."
-tags: [developer-tooling, programming-languages, determinism, oss, haskell, rust]
+tags: [developer-tooling, programming-languages, determinism, oss, haskell, rust, type-systems]
 ---
 
 # Why We Built a Haskell Package Manager in Rust
@@ -7512,7 +7512,7 @@ url: https://raskell.io/articles/what-programming-languages-become-when-ai-write
 author: Raffael Schneider
 date: 2026-04-11
 description: "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell."
-tags: [ai-engineering, programming-languages, abstraction, formal-methods, haskell, compilers]
+tags: [ai-engineering, programming-languages, abstraction, formal-methods, haskell, compilers, type-systems]
 ---
 
 # The Last Programming Language Might Not Be for Humans
@@ -7843,7 +7843,7 @@ url: https://raskell.io/articles/notes-from-rsac-2026/
 author: Raffael Schneider
 date: 2026-04-09
 description: "Third time at RSA Conference, first time as a speaker. What I saw, what I heard, and what I am still processing."
-tags: [applied-security, ai-for-ops, agents, policy, sovereignty]
+tags: [applied-security, ai-for-ops, agents, policy, sovereignty, semiconductors]
 ---
 
 # Notes from RSAC 2026
@@ -9566,7 +9566,7 @@ author: Raffael Schneider
 date: 2025-12-31
 updated: 2026-03-08
 description: "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself."
-tags: [decentralisation, attention-economy, open-standards, edge-systems, meta, commons, emergence]
+tags: [decentralisation, attention-economy, open-standards, edge-systems, meta, commons, emergence, surveillance]
 ---
 
 # Looking back on 2025
@@ -9984,7 +9984,7 @@ author: Raffael Schneider
 date: 2023-03-06
 updated: 2026-03-09
 description: "How Haskell shaped the way I think about building systems, and why I am still building Haskell tooling years after writing my first monad."
-tags: [programming-languages, haskell, developer-tooling, compilers]
+tags: [programming-languages, haskell, developer-tooling, compilers, type-systems]
 ---
 
 # All beginning is Haskell

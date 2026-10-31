@@ -4,7 +4,7 @@ url: https://raskell.io/zh/articles/the-river-and-the-canal/
 author: Raffael Schneider
 date: 2026-10-31
 description: "智能体在崎岖的世界里探索；工作流是探索留下的东西。国际象棋、星际争霸、海底的工厂，以及我为什么要造一台引擎。"
-tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance]
+tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, trust, factories, post-scarcity, legibility, finance, insurance, chess, go-game, starcraft]
 lang: zh-Hans
 translation_of: https://raskell.io/articles/the-river-and-the-canal/
 ---
