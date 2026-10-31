@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-10-31T13:56:35+00:00",
+ "generated": "2026-10-31T15:51:55+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 364,
+ "count": 370,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -1718,6 +1718,19 @@
    "citations": 1
   },
   {
+   "url": "https://en.wikipedia.org/wiki/Aqua_Virgo",
+   "title": "Aqua Virgo",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://en.wikipedia.org/wiki/Bureaucracy",
    "title": "bureaucracy",
    "domain": "en.wikipedia.org",
@@ -2082,6 +2095,32 @@
    "citations": 1
   },
   {
+   "url": "https://en.wikipedia.org/wiki/Pont_du_Gard",
+   "title": "Pont du Gard",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Pontcysyllte_Aqueduct",
+   "title": "Pontcysyllte Aqueduct",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://en.wikipedia.org/wiki/Ratchet_effect",
    "title": "a ratchet",
    "domain": "en.wikipedia.org",
@@ -2147,6 +2186,19 @@
    "citations": 1
   },
   {
+   "url": "https://en.wikipedia.org/wiki/Sextus_Julius_Frontinus",
+   "title": "Sextus Julius Frontinus",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://en.wikipedia.org/wiki/Sidney_G._Winter",
    "title": "Sidney Winter",
    "domain": "en.wikipedia.org",
@@ -2162,19 +2214,6 @@
   {
    "url": "https://en.wikipedia.org/wiki/Smart_contract",
    "title": "smart contracts",
-   "domain": "en.wikipedia.org",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "The River and the Canal",
-     "url": "https://raskell.io/articles/the-river-and-the-canal/"
-    }
-   ],
-   "citations": 1
-  },
-  {
-   "url": "https://en.wikipedia.org/wiki/Spinning_(textiles)",
-   "title": "Spinning",
    "domain": "en.wikipedia.org",
    "reference": false,
    "cited_in": [
@@ -2493,6 +2532,32 @@
     {
      "title": "Archipelag.io Is in Open Beta: Here's Why I Built It",
      "url": "https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://github.com/bazelbuild/starlark",
+   "title": "Starlark",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://github.com/bazelbuild/starlark/blob/master/spec.md",
+   "title": "The Starlark language specification",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ],
    "citations": 1
@@ -3585,6 +3650,19 @@
     {
      "title": "Brain Emulation, Read as an Infrastructure Problem",
      "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Frontinus/De_Aquis/Bennett/1*.html",
+   "title": "on LacusCurtius",
+   "domain": "penelope.uchicago.edu",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ],
    "citations": 1

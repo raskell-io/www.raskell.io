@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-31T13:56:35+00:00",
+ "generated": "2026-10-31T15:51:55+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -11,7 +11,7 @@
   "work": 115,
   "project": 30,
   "topic": 113,
-  "link": 364
+  "link": 370
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -41,7 +41,7 @@
     "finance",
     "insurance"
    ],
-   "meta": "48 min"
+   "meta": "51 min"
   },
   {
    "kind": "article",
@@ -5134,6 +5134,19 @@
   },
   {
    "kind": "link",
+   "title": "Aqua Virgo",
+   "url": "https://en.wikipedia.org/wiki/Aqua_Virgo",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "bureaucracy",
    "url": "https://en.wikipedia.org/wiki/Bureaucracy",
    "domain": "en.wikipedia.org",
@@ -5498,6 +5511,32 @@
   },
   {
    "kind": "link",
+   "title": "Pont du Gard",
+   "url": "https://en.wikipedia.org/wiki/Pont_du_Gard",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Pontcysyllte Aqueduct",
+   "url": "https://en.wikipedia.org/wiki/Pontcysyllte_Aqueduct",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "a ratchet",
    "url": "https://en.wikipedia.org/wiki/Ratchet_effect",
    "domain": "en.wikipedia.org",
@@ -5563,6 +5602,19 @@
   },
   {
    "kind": "link",
+   "title": "Sextus Julius Frontinus",
+   "url": "https://en.wikipedia.org/wiki/Sextus_Julius_Frontinus",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Sidney Winter",
    "url": "https://en.wikipedia.org/wiki/Sidney_G._Winter",
    "domain": "en.wikipedia.org",
@@ -5578,19 +5630,6 @@
    "kind": "link",
    "title": "smart contracts",
    "url": "https://en.wikipedia.org/wiki/Smart_contract",
-   "domain": "en.wikipedia.org",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "The River and the Canal",
-     "url": "https://raskell.io/articles/the-river-and-the-canal/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "Spinning",
-   "url": "https://en.wikipedia.org/wiki/Spinning_(textiles)",
    "domain": "en.wikipedia.org",
    "reference": false,
    "cited_in": [
@@ -5909,6 +5948,32 @@
     {
      "title": "Archipelag.io Is in Open Beta: Here's Why I Built It",
      "url": "https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Starlark",
+   "url": "https://github.com/bazelbuild/starlark",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The Starlark language specification",
+   "url": "https://github.com/bazelbuild/starlark/blob/master/spec.md",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ]
   },
@@ -7001,6 +7066,19 @@
     {
      "title": "Brain Emulation, Read as an Infrastructure Problem",
      "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "on LacusCurtius",
+   "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Frontinus/De_Aquis/Bennett/1*.html",
+   "domain": "penelope.uchicago.edu",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
     }
    ]
   },

@@ -21,7 +21,7 @@ I keep looking at it, because it answers a question I could not answer at my des
 
 Agents built on harnesses like [Claude Code](https://www.anthropic.com/claude-code) are remarkable at exactly what that river does. Give one a goal and an unfamiliar codebase, a broken deployment or a vague request, and it probes, fails, adjusts and finds a way through. If that is the new shape of work, a workflow engine, with its fixed steps and its insistence on determinism, looks like a tool for a world that is ending.
 
-I do not think it is, but the answer turned out to be much bigger than the project. It also ends with the project's name, which knew what the project was about before I did.
+I do not think it is, but the answer turned out to be much bigger than the project. It also ends with the project's new name, which I found in the essay itself.
 
 ## Everything is a fractal
 
@@ -226,38 +226,39 @@ The same verbs work at every row: explore, crystallise, run, observe, repair, re
 
 Suppose an insurer's claims agents keep encountering water damage claims where the customer's photos are missing or unusable. After working through a few dozen such cases by hand, an agent proposes a procedure. It might look like this:
 
-```yaml
-# procedures/claims/water-damage-photo-evidence.yaml (illustrative)
-procedure: water-damage-photo-evidence
-version: 3
-origin:
-  explored_by: agent/claims-explorer
-  cases_studied: 37
-  replayed_against: 412 closed claims, 0 divergences from human outcomes
-  approved_by: claims-process-owner
-  approved_at: 2026-10-12
-steps:
-  - id: classify_documents
-    kind: agent                  # a lock: bounded judgement, journaled
-    budget_tokens: 20000
-    output_schema: DocumentClassification
-  - id: check_coverage
-    kind: rule
-    rule: coverage.water_damage.v7
-  - id: request_missing_photos
-    when: classify_documents.missing_photos
-    kind: message
-    template: claims/missing-photos
-  - id: wait_for_customer
-    kind: wait
-    timeout: 14d
-    on_timeout: escalate
-  - id: settle_or_escalate
-    kind: rule
-    escalate_if: amount > 5000 or classify_documents.confidence < 0.8
+```python
+# procedures/claims/water_damage_photo_evidence.star (illustrative)
+PROCEDURE = {
+    "name": "claims/water-damage-photo-evidence",
+    "version": 3,
+    "origin": {"explored_by": "agent/claims-explorer", "cases_studied": 37},
+}
+# Approval and replay evidence travel with the file, in a signed record:
+#   replayed against 412 closed claims, 0 divergences from human outcomes;
+#   approved by the claims process owner on 2026-10-12.
+
+def run(claim):
+    docs = agent("classify_documents", claim["documents"],   # a lock: bounded judgement, journaled
+                 prompt = "prompts/classify-documents.md",
+                 output_schema = "DocumentClassification",
+                 budget_tokens = 20000)
+
+    coverage = step("coverage.water_damage@v7", claim)
+
+    if docs["missing_photos"]:
+        step("notify.customer", {"template": "claims/missing-photos", "to": claim["customer"]})
+        photos = wait(signal("photos_received"), timeout = days(14))
+        if photos == None:
+            escalate("no-photos", claim)
+
+    if claim["amount"] > 5000 or docs["confidence"] < 0.8:
+        escalate("manual-review", claim)
+    return call("claims/settle@v2", claim, coverage)
 ```
 
-Every property of the meta-factory that matters is visible in those few lines. The procedure records where it came from: which agent explored it, how many cases, who approved it. It was replayed against hundreds of closed claims before anyone trusted it. It contains exactly one place where a model is allowed to judge, with a budget and a schema for its answer. Everything else is rules, messages and waits, which a deterministic engine runs the same way every time. And it has a version number, which means it can be replaced, compared and retired.
+It is written in [Starlark](https://github.com/bazelbuild/starlark), a small dialect of Python built for build systems that must give the same answer every time. Its interpreter has no clock, no random numbers, no network and no files; the only way the script can touch the world is through the engine's functions, and every one of those calls is journaled. So the engine can replay it exactly, and a person can still read it in a minute.
+
+Every property of the meta-factory that matters is visible in those few lines. The procedure records where it came from: which agent explored it, how many cases, who approved it. It was replayed against hundreds of closed claims before anyone trusted it. It contains exactly one place where a model is allowed to judge, with a budget and a schema for its answer. Everything else is steps, messages and waits, which a deterministic engine runs the same way every time. And it has a version number, which means it can be replaced, compared and retired.
 
 ## A field guide
 
@@ -350,13 +351,23 @@ A factory is only as trustworthy as its inspection. If agents write procedures, 
 
 Haskell matters here for a reason that runs through this whole essay. A pure function in Haskell is deterministic by construction: given the same inputs it returns the same result, and code with side effects has to declare them in its type. That is exactly the line a durable execution engine has to draw between workflow code, which must replay identically, and step bodies, which talk to the world. Engines like Temporal enforce that line at runtime, by detecting non-determinism after the fact. A type system can enforce it before the code ever runs. BHC, still in beta, compiles the same Haskell source to native code and to WebAssembly under different runtime profiles, each of which the project describes as "a contract between your code and the runtime it runs on", and by its own measurement 236 of 243 test programs already produce byte-for-byte the same output on WebAssembly as natively.
 
-The broader bet is that a compiler like this can become instrumental in AI-assisted engineering. Agents write the code; the compiler verifies what can be verified; a registry records what was checked, so that nobody, human or model, has to check the same thing twice; and the result is a workload, a runtime or an engine whose behaviour can be trusted for reasons other than the reputation of whoever wrote it. It is the meta-factory again, one scale down: agents explore, the result crystallises into something rigid, and an inspector stands at the gate. I wrote about the verification side in [The Proof You Only Have to Write Once](https://raskell.io/articles/the-proof-you-only-have-to-write-once/), about the tooling in [Why We Built a Haskell Package Manager in Rust](https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/), and about code becoming a lowering target in [Source Code Is the New Assembly](https://raskell.io/articles/semantic-artifacts-and-meaning-engines/). Whether tsumugi's procedures will one day be written in a language that a compiler like BHC can check, I do not know yet. It is the direction I am most curious about.
+The broader bet is that a compiler like this can become instrumental in AI-assisted engineering. Agents write the code; the compiler verifies what can be verified; a registry records what was checked, so that nobody, human or model, has to check the same thing twice; and the result is a workload, a runtime or an engine whose behaviour can be trusted for reasons other than the reputation of whoever wrote it. It is the meta-factory again, one scale down: agents explore, the result crystallises into something rigid, and an inspector stands at the gate. I wrote about the verification side in [The Proof You Only Have to Write Once](https://raskell.io/articles/the-proof-you-only-have-to-write-once/), about the tooling in [Why We Built a Haskell Package Manager in Rust](https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/), and about code becoming a lowering target in [Source Code Is the New Assembly](https://raskell.io/articles/semantic-artifacts-and-meaning-engines/). Aqueduct's procedures are written in Starlark for now, a language whose interpreter simply cannot see a clock or a random number. Whether they will one day be written in a language that a compiler like BHC can check, I do not know yet. It is the direction I am most curious about.
 
 ### The name
 
-When I wrote the design brief, I gave the project a working name almost by accident. *Tsumugi* (紡ぎ) is Japanese for spinning: the work of taking raw fibre, tangled and irregular, and drawing it out into a thread that holds. I picked it because it sounded right for an engine that weaves many small durable threads of execution. Only in this café did I notice that it describes the whole idea. The raw fibre is what agents bring back from the fog. The thread is the procedure. The engine is the wheel.
+When I wrote the design brief, I gave the project a working name almost by accident: *tsumugi* (紡ぎ), Japanese for spinning raw fibre into thread. It is a beautiful word, and I kept it for weeks. But a name should put a picture in your head, and for most people outside Japan this one does not. The picture I needed was already in this essay. It is the thing that carries a canal across a valley.
 
-[Spinning](https://en.wikipedia.org/wiki/Spinning_(textiles)) is fractal, too. Fibres are twisted into a single yarn, single yarns are twisted together into a plied yarn, plied yarns into cord, cord into rope: the same motion at a larger scale each time, and each layer stronger than the one inside it. That is how the engine should work as well: steps twisted into workflows, workflows into larger workflows, procedures into the routines of a whole company. I am keeping the name.
+The engine is called **Aqueduct**.
+
+The Romans built aqueducts to bring water from distant springs into their cities, across tens of kilometres of terrain that nobody could change. Before a single stone was laid, someone had to walk the ground and find a route through the hills that kept the water falling gently the whole way. The aqueduct of Nîmes, which crosses the river Gardon on the [Pont du Gard](https://en.wikipedia.org/wiki/Pont_du_Gard), runs for about fifty kilometres, and its source lies only seventeen metres higher than the basin in Nîmes where it ends. The exploring came first, and it was slow and rough. What it left behind was a channel that ran the same way every day for centuries.
+
+The Pont du Gard is fractal too: three tiers of arches, the same form repeated, each tier carrying the one above it. That is how the engine should work: steps carried by workflows, workflows by larger workflows, procedures by the routines of a whole company, each layer resting on the one beneath.
+
+Canals and aqueducts eventually met. In 1805 Thomas Telford and William Jessop finished the [Pontcysyllte Aqueduct](https://en.wikipedia.org/wiki/Pontcysyllte_Aqueduct) in Wales, an iron trough on stone piers that carries the Llangollen Canal thirty-nine metres above the river Dee. Boats still cross it. That is the picture I have of the engine. Not the river and not the canal, but the structure that lets a canal cross the rugged world without being swept away, and that is still standing long after the people who built it.
+
+The Romans also left us an administrator who understood this. In the year 97 the emperor Nerva made [Sextus Julius Frontinus](https://en.wikipedia.org/wiki/Sextus_Julius_Frontinus) the water commissioner of Rome, and Frontinus wrote *De aquaeductu*, an official report on how the city's water system actually worked: where each of its nine aqueducts came from, how much water each one delivered, and the rules for using and maintaining them. Nelson and Winter would have recognised it as the written memory of a set of routines. Frontinus was proud of his aqueducts, and he knew what set them apart from monuments: "With such an array of indispensable structures carrying so many waters, compare, if you will, the idle Pyramids or the useless, though famous, works of the Greeks!" ([Book I, 16](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Frontinus/De_Aquis/Bennett/1*.html), in Charles E. Bennett's translation)
+
+I would rather build the aqueduct than the pyramid. A monument is admired; an aqueduct is relied on, until eventually nobody thinks about it at all. The [Aqua Virgo](https://en.wikipedia.org/wiki/Aqua_Virgo), which Agrippa completed in 19 BC, still runs as the Acqua Vergine, its Renaissance restoration, and feeds the Trevi Fountain. That is the kind of relevance I want for this engine: not to be noticed, but to still be carrying water long after anyone remembers who built it.
 
 ## Closing
 
@@ -364,7 +375,7 @@ Whitehead said that civilisation advances by extending the number of important o
 
 Agents find the path through the rugged world. Workflows are what we keep of the paths worth walking again: written down, repeatable, inspectable, and trusted because they do not improvise. The companies that do well with agents will be neither the ones that let agents do everything nor the ones that forbid them, but the ones that let agents explore and then turn what they find into procedure, on a runtime that can be read, and that remember to leave some of the river wild.
 
-If the world is as unbounded as I suspect, the pattern does not end there. There is no final layer, only the next iteration: agents exploring at the edge of what we know, procedures keeping what was worth keeping, and both becoming the ground the next layer stands on, until we stop noticing them. Crichton divided his novel into iterations because it was a story about systems that keep unfolding past the point where anyone controls them. This is the same kind of story. Life finds a way, and so does the river. Our part is to decide which of its paths are worth keeping.
+If the world is as unbounded as I suspect, the pattern does not end there. There is no final layer, only the next iteration: agents exploring at the edge of what we know, procedures keeping what was worth keeping, and both becoming the ground the next layer stands on, until we stop noticing them. Crichton divided his novel into iterations because it was a story about systems that keep unfolding past the point where anyone controls them. This is the same kind of story. Life finds a way, and so does the river. Our part is to decide which of its paths are worth keeping, and to build the aqueducts that carry them.
 
 ## References
 
@@ -409,6 +420,12 @@ On factories and machines:
 On regulation:
 
 - Regulation (EU) 2024/1689, the AI Act, [Article 12, record-keeping](https://artificialintelligenceact.eu/article/12/).
+
+On aqueducts:
+
+- Sextus Julius Frontinus, *De aquaeductu*, around AD 97 to 100, translated by Charles E. Bennett, Loeb Classical Library, 1925, [on LacusCurtius](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Frontinus/De_Aquis/Bennett/1*.html).
+- [Pont du Gard](https://en.wikipedia.org/wiki/Pont_du_Gard), [Pontcysyllte Aqueduct](https://en.wikipedia.org/wiki/Pontcysyllte_Aqueduct) and [Aqua Virgo](https://en.wikipedia.org/wiki/Aqua_Virgo).
+- [The Starlark language specification](https://github.com/bazelbuild/starlark/blob/master/spec.md).
 
 On the photograph:
 
