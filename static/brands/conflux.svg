@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Conflux">
+  <title>Conflux</title>
+  <rect width="512" height="512" rx="112.64" fill="#181926"/>
+  <g fill="none" stroke-width="38" stroke-linecap="round">
+    <path d="M142 100 C142 214 256 220 256 312" stroke="#c6a0f6"/>
+    <path d="M370 100 C370 214 256 220 256 312" stroke="#8bd5ca"/>
+    <path d="M256 100 V312" stroke="#8aadf4"/>
+    <path d="M256 300 V346" stroke="#cad3f5"/>
+  </g>
+  <circle cx="256" cy="392" r="34" fill="none" stroke="#cad3f5" stroke-width="22"/>
+</svg>

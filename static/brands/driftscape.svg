@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Driftscape">
+  <title>Driftscape</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1a3a"/>
+      <stop offset="1" stop-color="#3d2c5e"/>
+    </linearGradient>
+    <clipPath id="tile"><rect width="512" height="512" rx="112.64"/></clipPath>
+  </defs>
+  <g clip-path="url(#tile)">
+    <rect width="512" height="512" fill="url(#sky)"/>
+    <circle cx="318" cy="236" r="78" fill="#ffd3a1"/>
+    <path d="M0 262 C90 222 170 222 256 256 C342 290 422 290 512 248 V512 H0 Z" fill="#f29e8e"/>
+    <path d="M0 326 C96 292 176 296 262 326 C348 356 428 352 512 316 V512 H0 Z" fill="#d06f96"/>
+    <path d="M0 398 C92 370 180 374 264 396 C350 418 430 414 512 388 V512 H0 Z" fill="#7d5bbd"/>
+  </g>
+</svg>

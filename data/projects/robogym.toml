@@ -1,8 +1,12 @@
 title = "robogym"
 description = "Rust/Bevy PWA for training robotic agents. Democratizing robotics through browser-based simulation."
 status = "early"
+logo = "brands/robogym.svg"
+wordmark = "brands/robogym-wordmark-light.svg"   # the brandtype, shown beside the logo as the card title
+wordmark_dark = "brands/robogym-wordmark-dark.svg"
 links = [ { name = "GitHub", url = "https://github.com/raskell-io/robogym" } ]
 topics = ["rust"]
+accents = ["#ff8a3d", "#4cc9f0"]   # brand colours (joint orange, floor cyan), used for the card glow
 
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
