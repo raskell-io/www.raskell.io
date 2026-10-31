@@ -72,6 +72,10 @@ description = "模型如何从数据中学习：其中的数学、训练方法�
 name = "生命科学"
 description = "生物学与医学：生命系统如何运作，以及我们如何学会测量、建模和治疗它们。"
 
+[synthetic-biology]
+name = "合成生物学"
+description = "以工程方法改造生命系统：设计分子与生物体，在芯片上培养神经元，以及读写生物信息的软件。"
+
 [game-ai]
 name = "游戏 AI"
 description = "会玩游戏的程序：搜索、评估、学习得到的网络，以及如何衡量它们的棋力，从国际象棋引擎到围棋和即时战略游戏。"
@@ -153,6 +157,10 @@ description = "运行自己的基础设施，从一台裸金属服务器到由�
 [complex-systems]
 name = "复杂系统"
 description = "涌现与集体动力学：简单的个体、角色和规则如何汇聚成市场、制度与社会。"
+
+[cybernetics]
+name = "控制论"
+description = "关于机器、生物与组织中控制与反馈的科学，以及用它来管理经济与社会的种种尝试。"
 
 [reinforcement-learning]
 name = "强化学习"
@@ -362,6 +370,10 @@ description = "本站写作所在的国家：日内瓦的 CERN、巴塞尔、被
 name = "分形"
 description = "在每个尺度上重复出现的自相似模式，从河流和海岸线到软件、组织和想法；这是贯穿本站许多文章的视角。"
 
+[chaos-theory]
+name = "混沌理论"
+description = "简单的确定性规则如何产生无人能够预测的行为：对初始条件的敏感依赖、奇怪吸引子，以及预测的极限。"
+
 [abstraction]
 name = "抽象"
 description = "让人们不必再思考下层的层次：从汇编和编程语言到编排器和智能体，以及每一个新层如何成为下一层的基础。"
@@ -369,6 +381,14 @@ description = "让人们不必再思考下层的层次：从汇编和编程语�
 [post-scarcity]
 name = "后稀缺"
 description = "当制造东西几乎不再花费成本时会改变什么：被复制的软件、AI 劳动、为任务而造的机器，以及可能随之而来的经济与社会。"
+
+[transhumanism]
+name = "超人类主义"
+description = "借助技术超越人类身体与心智的愿望：奇点、意识上传、终结死亡，以及对这三者的批评。"
+
+[abundance]
+name = "丰裕"
+description = "有意让稀缺之物变得充裕：把住房、能源和算力建到足够便宜，以及实现这一点所需的供给政治。"
 
 [determinism]
 name = "确定性"
@@ -435,6 +455,98 @@ description = "构建本站和若干项目网站所用的静态网站生成器�
 [durable-execution]
 name = "持久执行"
 description = "在崩溃和部署中让长时间运行的流程保持存活、并记录每一步的工作流引擎：Temporal、Restate 及其同类。"
+
+[enterprise-architecture]
+name = "企业架构"
+description = "一家公司的能力、应用、数据和基础设施如何组合在一起，谁负责什么，以及如何有意识地改变整个 IT 版图。"
+
+[democratisation]
+name = "普及化"
+description = "过去需要资金、团队或多年训练才能获得的能力，变得人人可用：印刷术、万维网，以及如今靠描述来构建软件。"
+
+[future-of-work]
+name = "工作的未来"
+description = "AI 对工作和生计的影响：任何后稀缺经济到来之前的过渡期，基本收入与基本服务之争，以及谁能熬过中间这一段。"
+
+[entrepreneurship]
+name = "创业"
+description = "找到值得构建的东西并把它做出来：创业公司、业余项目，以及当任何人都能借助 AI 发现机会并经营一门生意时会发生的变化。"
+
+[agent-identity]
+name = "智能体身份"
+description = "把智能体当作独立的主体：像为员工那样为它配置身份、权限、凭据、预算和审计记录，并由一位人类担保，而不是借用别人的权限。"
+
+[physics]
+name = "物理学"
+description = "关于物质、能量、空间与时间的定律，以及发现它们的人，从牛顿到原子弹，再到宇宙学。"
+
+[energy]
+name = "能源"
+description = "作为一切之输入的电力：算力背后的电，供应它的电网与电厂，以及它的成本。"
+
+[semiconductors]
+name = "半导体"
+description = "芯片以及制造芯片的工厂：制程，少数能够做到的公司与地方，以及各国为何争夺它们。"
+
+[chess]
+name = "国际象棋"
+description = "七十年来一直充当机器智能基准的棋类，从香农的论文到深蓝，再到会学习的引擎。"
+
+[shogi]
+name = "将棋"
+description = "日本的象棋，吃掉的棋子可以重新放回棋盘；如今每个强大国际象棋引擎里的 NNUE 网络就是在这里发明的。"
+
+[go-game]
+name = "围棋"
+description = "在 AlphaGo 出现之前，其局面一直无法用手写评估函数衡量的棋类，也是习得的直觉引导搜索的最清楚例证。"
+
+[starcraft]
+name = "星际争霸"
+description = "即时战略游戏，尤其是《母巢之战》：信息不完全、每分钟成千上万个决策，也是棋类之后的下一个基准。"
+
+[type-systems]
+name = "类型系统"
+description = "类型是一种廉价、机械的证明，表明代码确实做了它声称要做的事；以及为什么当代码由机器编写时，它们变得更加重要。"
+
+[forecasting]
+name = "预测"
+description = "说出将会发生什么、以及你有多确定：情景推演、落空的预测，以及没有人计入价格的事件。"
+
+[probability]
+name = "概率"
+description = "让偶然变得可以计算：保险背后的大数定律、测量结果的误差范围，以及比看上去更厚的尾部。"
+
+[money]
+name = "货币"
+description = "货币是什么、由谁创造：债务与信用，通过放贷创造货币的银行，中央银行，以及绕开它们的种种尝试。"
+
+[utopias]
+name = "乌托邦"
+description = "关于更好社会的设计，无论是想象的还是付诸实践的：殖民地、计划经济、后稀缺文明，以及它们后来的结局。"
+
+[evolution]
+name = "进化"
+description = "通过变异与选择发生的变化，发生在基因、大脑与种群之中，以及关于它能解释多少的争论。"
+
+[surveillance]
+name = "监控"
+description = "国家和平台对人的大规模监视：情报机构、为广告而进行的追踪，以及被监视者为此付出的代价。"
+
+[mortality]
+name = "死亡"
+description = "人人都会死：寿险为它定价，想要终结死亡的人抗拒它，而保存一个人的声音与故事则是对它的一种回应。"
+
+[strategy]
+name = "战略"
+description = "战胜一个会随之调整的对手：在战争中、在商业中、在游戏中，从孙子到即时战略游戏。"
+
+[united-states]
+name = "美国"
+description = "美国在技术与权力中的位置：前沿实验室与芯片所在之地、它的建国理念，以及它与中国的竞赛。"
+
+[china]
+name = "中国"
+description = "历史与技术中的中国：丝绸之路与孙子，它在专利与研究中的份额，它与美国的竞赛，以及它的语言。"
 
 # This site ----------------------------------------------------------------
 

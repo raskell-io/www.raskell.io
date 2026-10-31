@@ -9,7 +9,7 @@ wordmark_dark = "brands/cyanea-wordmark-dark.svg"
 featured = true
 links = [ { name = "Website", url = "https://cyanea.bio" }, { name = "Docs", url = "https://docs.cyanea.bio" }, { name = "GitHub", url = "https://github.com/cyanea-bio" } ]
 pitch = "@/pitch/cyanea.md"   # investor brief, linked from /invest/
-topics = ["oss", "rust", "webassembly", "self-hosting"]
+topics = ["oss", "rust", "webassembly", "self-hosting", "life-sciences", "synthetic-biology"]
 accents = ["#B9A6FF", "#8BE4F5"]   # brand colours (lavender, jelly cyan), used for the card glow
 
 app_category = "ScientificApplication"   # schema.org applicationCategory (default DeveloperApplication)

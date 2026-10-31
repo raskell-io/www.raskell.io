@@ -5,7 +5,7 @@ draft = true
 description = "Insurers say they are not tech companies. Yet an insurer sells a prediction wrapped in a promise, and has since a 1693 life table: the original data company."
 
 [taxonomies]
-tags = ["insurance", "finance", "cryptocurrency", "trust", "machine-learning", "history-of-technology", "determinism"]
+tags = ["insurance", "finance", "cryptocurrency", "trust", "machine-learning", "history-of-technology", "determinism", "fractals", "money", "probability", "surveillance", "mortality"]
 
 [extra]
 author = "Raffael"

@@ -5,7 +5,7 @@ draft = false
 description = "Alasdair Allan's agentlanguages.dev catalogue turns AI-oriented programming languages from a loose set of experiments into a field with camps, disagreements, and testable claims."
 
 [taxonomies]
-tags = ["programming-languages", "ai-engineering", "formal-methods", "haskell", "compilers"]
+tags = ["programming-languages", "ai-engineering", "formal-methods", "haskell", "compilers", "type-systems"]
 
 [extra]
 author = "Raffael"

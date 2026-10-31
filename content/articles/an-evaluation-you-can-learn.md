@@ -5,7 +5,7 @@ draft = true
 description = "NNUE from scratch: a piece-square table with a hidden layer, updated two rows at a time, quantised to integers, fast enough for a million calls a second."
 
 [taxonomies]
-tags = ["game-ai", "neural-networks", "machine-learning", "rust"]
+tags = ["game-ai", "neural-networks", "machine-learning", "rust", "chess", "shogi"]
 series = ["learning-to-play"]
 
 [extra]

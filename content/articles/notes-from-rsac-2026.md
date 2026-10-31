@@ -4,7 +4,7 @@ date = 2026-04-09
 description = "Third time at RSA Conference, first time as a speaker. What I saw, what I heard, and what I am still processing."
 
 [taxonomies]
-tags = ["applied-security", "ai-for-ops", "agents", "policy", "sovereignty"]
+tags = ["applied-security", "ai-for-ops", "agents", "policy", "sovereignty", "semiconductors"]
 
 [extra]
 author = "Raffael"

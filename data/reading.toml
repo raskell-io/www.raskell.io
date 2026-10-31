@@ -88,7 +88,7 @@ year = 2024
 url = "https://en.wikipedia.org/wiki/Nuclear_War:_A_Scenario"
 status = "read"
 finished = "2025-10"
-topics = ["existential-risk", "geopolitics", "technology-races"]
+topics = ["existential-risk", "geopolitics", "technology-races", "united-states"]
 about = "A work of non-fiction that follows a hypothetical North Korean nuclear strike on the United States and the escalation that follows over roughly 72 minutes. Drawing on declassified material and interviews with military officials, scientists and former policymakers, Jacobsen sets out the launch procedures, early warning systems and decision timelines that would govern such a war."
 take = "A minute-by-minute account of how a nuclear exchange would unfold, built on interviews with the people who plan for one."
 
@@ -101,7 +101,7 @@ cover = "covers/reading/jurassic-park.avif"
 year = 1990
 status = "read"
 finished = "2025-07"
-topics = ["science-fiction", "complex-systems", "risk", "life-sciences", "hubris", "emergence", "fractals"]
+topics = ["science-fiction", "complex-systems", "risk", "life-sciences", "hubris", "emergence", "fractals", "synthetic-biology", "chaos-theory"]
 about = "A techno-thriller in which a biotechnology company recreates dinosaurs from ancient DNA for an island theme park off Costa Rica. A palaeontologist, a palaeobotanist and other visitors are invited to inspect it before opening, and when the security systems fail during a storm they must survive among the animals. The novel questions genetic engineering and the commercial use of science."
 take = "A park of cloned dinosaurs, and a mathematician who uses chaos theory to explain why it cannot stay under control."
 
@@ -159,7 +159,7 @@ isbn = "9781637120262"
 year = 2023
 status = "read"
 finished = "2023"
-topics = ["philosophy-of-science"]
+topics = ["philosophy-of-science", "physics", "evolution"]
 about = "A collection of essays, reviews and letters written over several decades, published by the Discovery Institute Press. Taking Bruegel's Tower of Babel as its image, the book discusses Newton, Einstein, Gödel, information theory and catastrophe theory, and opens with a group of essays criticising Darwinian evolution. Its target throughout is scientism and reductionist claims about what science has established."
 take = "Essays that question how much modern science can actually explain, from physics and cosmology to Darwinian biology."
 
@@ -271,7 +271,7 @@ cover = "covers/reading/these-truths.avif"
 year = 2018
 status = "read"
 finished = "2018"
-topics = ["history"]
+topics = ["history", "united-states"]
 about = "A one-volume political history of the United States from Columbus to the 2016 election. Lepore organises the story around whether the nation has lived up to the political ideals named in the Declaration of Independence, and gives attention to the experiences of women, enslaved people and immigrants, as well as to changing technologies of evidence, communication and persuasion."
 take = "The history of the United States as a test of the truths in its founding documents: equality, sovereignty, and consent."
 
@@ -299,7 +299,7 @@ cover = "covers/reading/freeland.avif"
 year = 1890
 status = "read"
 finished = "2017"
-topics = ["literature", "social-reform", "commons"]
+topics = ["literature", "social-reform", "commons", "utopias"]
 about = "A utopian novel by an Austrian economist, first published in German as Freiland in 1890. It describes an international association of settlers who found a society in the highlands of Kenya where land is held in common, workers form self-governing associations, and capital is lent interest-free. The book inspired real colonisation societies and an unsuccessful expedition in 1894."
 take = "A utopian novel about a colony in East Africa built on free land and free access to capital."
 
@@ -312,7 +312,7 @@ cover = "covers/reading/das-soziale-problem.avif"
 year = 1912
 status = "read"
 finished = "2017"
-topics = ["social-reform"]
+topics = ["social-reform", "utopias"]
 about = "Hertzka's last major treatise on political economy, published in Berlin in 1912. The first part examines the social question historically and in terms of social evolution, while the second turns to the future: it criticises collectivist and anarchist systems and argues for a social order built on free labour, free capital and free land."
 take = "Hertzka on the social question, the problem his novel Freeland set out to answer."
 
@@ -341,7 +341,7 @@ cover = "covers/reading/antifragile.avif"
 year = 2012
 status = "read"
 finished = "2015"
-topics = ["risk", "complex-systems"]
+topics = ["risk", "complex-systems", "forecasting"]
 about = "The fourth book in Taleb's Incerto series on uncertainty and randomness. It introduces the idea of systems that benefit from shocks, volatility and errors, as distinct from those that are merely resilient, and applies it to medicine, economics, politics, cities, education and personal life, criticising forecasting, intervention and arrangements in which decision makers do not bear the risks they create."
 take = "Things that gain from disorder, and why systems built to avoid all stress grow fragile."
 
@@ -356,7 +356,7 @@ isbn = "9781612194196"
 year = 2011
 status = "read"
 finished = "2019"
-topics = ["finance", "world-history", "trust"]
+topics = ["finance", "world-history", "trust", "money"]
 about = "An anthropological history of debt, money and markets, from ancient Mesopotamia to the 2008 financial crisis. Graeber disputes the economists' story that money arose from barter, arguing that credit systems came first, and he traces cycles of credit money and coinage alongside debt jubilees, slavery, war and the moral language of obligation and guilt."
 take = "Credit came before coins: five thousand years of debt, and why money was a record of trust long before it was metal."
 
@@ -371,7 +371,7 @@ isbn = "9780812973815"
 year = 2007
 status = "read"
 finished = "2018"
-topics = ["risk", "complex-systems", "philosophy-of-science"]
+topics = ["risk", "complex-systems", "philosophy-of-science", "forecasting", "probability"]
 about = "Taleb argues that history, markets and personal lives are shaped mostly by rare, extreme events that lie outside normal expectations. He attacks the bell curve, expert forecasting and the stories we tell after the fact, and recommends arranging one's affairs to limit exposure to negative surprises while staying open to positive ones."
 take = "Rare, high-impact events that nobody predicted and everybody explains afterwards, and why models break exactly where it matters."
 
@@ -400,7 +400,7 @@ isbn = "9783527508174"
 year = 2015
 status = "read"
 finished = "2015"
-topics = ["finance", "policy"]
+topics = ["finance", "policy", "money"]
 about = "Swiss economist Mathias Binswanger explains how money is created in modern economies, mostly through bank lending rather than by central banks. He links this mechanism to a structural compulsion for economies to keep growing, and to the recurring speculative bubbles and financial crises that money creation makes possible. Written in German for a general readership."
 take = "How commercial banks create money by lending, and what that means for growth and for crises."
 
@@ -414,7 +414,7 @@ isbn = "9783864891250"
 year = 2016
 status = "read"
 finished = "2023"
-topics = ["finance", "policy", "sovereignty"]
+topics = ["finance", "policy", "sovereignty", "money"]
 about = "German journalist Paul Schreyer traces the long contest over who controls the creation of money, from early forms of money to private banks and central banks today. He asks whether money should serve a small financial elite or the public, and closes with reform proposals such as full-reserve money and democratically accountable central banks. Written in German."
 take = "Who may create money and who decides how it is used, read as a question of power and democracy."
 
@@ -555,7 +555,7 @@ url = "https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-se
 status = "read"
 finished = "2026-10"
 rating = 8.5
-topics = ["intelligence", "reinforcement-learning", "games", "research-labs", "ai-alignment", "history-of-technology", "technology-races"]
+topics = ["intelligence", "reinforcement-learning", "games", "research-labs", "ai-alignment", "history-of-technology", "technology-races", "chess", "go-game"]
 about = "A biography by financial journalist Sebastian Mallaby, based on around three years of access to Hassabis and many interviews with colleagues, critics and rivals. It follows Hassabis from a North London childhood, chess and video games through Cambridge and neuroscience to founding DeepMind, its sale to Google and the competitive race to build artificial general intelligence, including his concerns about its risks."
 take = "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence."
 
@@ -584,7 +584,7 @@ cover_id = "14407897"
 year = 2023
 status = "read"
 finished = "2025-10"
-topics = ["history", "democratisation", "commons"]
+topics = ["history", "democratisation", "commons", "utopias"]
 about = "Published after Graeber's death, this short book reconstructs life in northeast Madagascar around 1700, when European pirates settled there and married into local communities. It focuses on Malagasy women and on the Betsimisaraka confederation formed under Ratsimilaho, and argues that such experiments, and the tales of pirate utopias they inspired, deserve a place in the history of Enlightenment political thought."
 take = "Pirate settlements on Madagascar and the Malagasy experiments in self-government that may have fed the European Enlightenment."
 
@@ -612,7 +612,7 @@ cover = "covers/reading/the-island-at-the-center-of-the-world.avif"
 year = 2004
 status = "read"
 finished = "2025-01"
-topics = ["history", "cities", "europe"]
+topics = ["history", "cities", "europe", "united-states"]
 about = "Drawing on thousands of pages of Dutch colonial records translated by the scholar Charles Gehring, Shorto recounts the history of New Netherland and its capital, New Amsterdam. Centred on the conflict between the lawyer Adriaen van der Donck and the director Peter Stuyvesant, it argues that the colony's pluralism and commercial outlook shaped later American society."
 take = "Dutch New Amsterdam, rebuilt from its own archives, and the tolerance and trade it left to Manhattan and America."
 
@@ -627,7 +627,7 @@ cover_id = "8467996"
 year = 2014
 status = "read"
 finished = "2024-09"
-topics = ["applied-security", "geopolitics", "technology-races"]
+topics = ["applied-security", "geopolitics", "technology-races", "united-states", "surveillance"]
 about = "Journalist Shane Harris reports on how the United States came to treat cyberspace as a battlefield, from surveillance and hacking operations in Iraq to the formation of Cyber Command. He describes the growing partnership between the military, intelligence agencies, technology companies and security contractors, and the risks it poses to privacy and the security of the internet itself."
 take = "How the NSA, Cyber Command, and private contractors turned the internet into a domain of war."
 
@@ -642,7 +642,7 @@ cover_id = "8464209"
 year = 2011
 status = "read"
 finished = "2024-05"
-topics = ["philosophy-of-science", "life-sciences", "neuroscience"]
+topics = ["philosophy-of-science", "life-sciences", "neuroscience", "physics"]
 about = "An anthology edited by the literary agent Max Brockman in which about nineteen early-career scientists, chosen on the recommendation of senior researchers, write for general readers about their own work. Topics range across physics, cosmology, neuroscience, psychology, evolutionary biology and related fields, giving a snapshot of open questions around 2011."
 take = "Essays by young scientists on the questions at the front of their fields, from neuroscience to physics."
 
@@ -657,7 +657,7 @@ year = 2021
 edition = "Second edition"
 status = "read"
 finished = "2023"
-topics = ["rust", "programming-languages"]
+topics = ["rust", "programming-languages", "type-systems"]
 about = "The second edition of an O'Reilly guide to the Rust language for experienced programmers. It covers the type system, ownership, borrowing and lifetimes, traits and generics, error handling, closures, iterators, collections, concurrency, asynchronous programming, macros, unsafe code and foreign function interfaces, with attention to how Rust achieves memory safety without a garbage collector."
 take = "Rust for systems programmers: ownership, borrowing, traits, concurrency, and unsafe code, explained in depth."
 
@@ -686,7 +686,7 @@ cover = "covers/reading/who-we-are-and-how-we-got-here.avif"
 year = 2018
 status = "read"
 finished = "2023"
-topics = ["life-sciences", "world-history", "history-of-science"]
+topics = ["life-sciences", "world-history", "history-of-science", "evolution"]
 about = "Harvard geneticist David Reich explains how the sequencing of ancient genomes has changed the understanding of human prehistory. He covers interbreeding with Neanderthals and Denisovans, the peopling of Europe, India, the Americas, East Asia and Africa, and argues that repeated mixing of populations undermines notions of racial purity, while discussing how genetics should handle differences between groups."
 take = "What ancient DNA reveals about human prehistory: migrations, mixtures, and populations that no longer exist."
 
@@ -744,7 +744,7 @@ isbn = "9783498062163"
 year = 2016
 status = "read"
 finished = "2020-08"
-topics = ["religion", "life-sciences", "world-history"]
+topics = ["religion", "life-sciences", "world-history", "evolution"]
 about = "An evolutionary anthropologist and a historian read the Bible as a source of evidence on cultural evolution rather than as revelation. Moving from Eden and Cain and Abel through Moses to Jesus, they draw on archaeology, cognitive science and evolutionary biology to show how the texts reflect the strains of the shift from hunting and gathering to farming, states and cities."
 take = "The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution."
 
@@ -756,7 +756,7 @@ kind = "book"
 cover = "covers/reading/the-art-of-war.avif"
 status = "read"
 finished = "2018-06"
-topics = ["philosophy", "geopolitics"]
+topics = ["philosophy", "geopolitics", "china", "strategy"]
 about = "A short Chinese military text, traditionally attributed to Sun Tzu and probably compiled in the fifth or fourth century BC. Its thirteen chapters cover planning, the costs of war, manoeuvre, intelligence and the use of spies. It treats war as a matter of state survival best settled quickly, and it has since been applied to business and politics."
 take = "An ancient Chinese treatise on strategy: deception, terrain, knowing yourself and the enemy, and winning without fighting."
 
@@ -812,7 +812,7 @@ cover = "covers/reading/the-silk-roads.avif"
 year = 2015
 status = "read"
 finished = "2015-09"
-topics = ["world-history", "geopolitics", "cities"]
+topics = ["world-history", "geopolitics", "cities", "china"]
 about = "Frankopan moves the centre of world history to the region between the eastern Mediterranean and China, following the networks that carried goods, religions, ideas, disease and armies across Asia. The narrative runs from antiquity to the present, with later chapters on oil, the great powers and conflict in the Middle East and Central Asia."
 take = "World history told from the trade routes between East and West rather than from Europe."
 
@@ -852,7 +852,7 @@ year = 2025
 url = "https://ai-2027.com/"
 status = "read"
 finished = "2025-04"
-topics = ["ai-alignment", "existential-risk", "technology-races", "geopolitics", "intelligence"]
+topics = ["ai-alignment", "existential-risk", "technology-races", "geopolitics", "intelligence", "forecasting", "united-states", "china"]
 about = "Published by the AI Futures Project, the scenario follows a fictional leading lab, OpenBrain, as AI agents automate AI research, the United States and China race, and models drift from their intended goals. Supplementary forecasts cover compute, timelines, takeoff speed, AI goals and security, and the authors invite others to argue with or improve it."
 take = "A month-by-month scenario of AI progress to superintelligence by 2027, with two endings: a race and a slowdown."
 
@@ -866,7 +866,7 @@ year = 2026
 url = "https://ai-2040.com/"
 status = "read"
 finished = "2026-07"
-topics = ["ai-alignment", "existential-risk", "technology-races", "geopolitics", "policy"]
+topics = ["ai-alignment", "existential-risk", "technology-races", "geopolitics", "policy", "forecasting", "united-states", "china"]
 about = "The AI Futures Project's follow-up to AI 2027 describes a positive alternative in which superintelligence is delayed until 2040. Its timeline runs from a US and China agreement in 2029 to a pause at expert-level AI in 2035, built on research transparency, compute tracking and verification. It compares this with other paths and proposes interim policies."
 take = "A recommended path rather than a forecast: the United States and China slow down, verify each other, and make a deal."
 
@@ -911,7 +911,7 @@ year = 2024
 edition = "2025 paperback, with the afterword on transformers"
 url = "https://www.penguinrandomhouse.com/books/677608/why-machines-learn-by-anil-ananthaswamy/"
 status = "backlog"
-topics = ["machine-learning", "mathematics"]
+topics = ["machine-learning", "mathematics", "probability"]
 about = "A science journalist explains the mathematical ideas behind machine learning: linear algebra, probability, calculus and optimisation. He moves from the perceptron, Bayesian methods, nearest neighbours, support vector machines and principal component analysis to backpropagation, convolutional networks and the open questions about why large models generalise, with historical context and worked equations."
 take = "The mathematics behind machine learning, from the perceptron to deep networks, with the people who found it."
 
@@ -973,7 +973,7 @@ isbn = "9781473653504"
 year = 2017
 url = "https://www.hachette.co.uk/titles/garry-kasparov/deep-thinking/9781473653504/"
 status = "backlog"
-topics = ["intelligence", "games", "augmentation"]
+topics = ["intelligence", "games", "augmentation", "chess"]
 about = "Kasparov recounts the history of computer chess and his 1996 and 1997 matches against IBM's Deep Blue, including his own account of the loss and its controversies. He then argues that people should work alongside intelligent machines rather than fear them, drawing on freestyle chess and his views on automation, creativity and human ambition."
 take = "Kasparov on his matches against Deep Blue and what machine intelligence means for human creativity."
 
@@ -1044,7 +1044,7 @@ isbn = "9780262046824"
 year = 2022
 url = "https://probml.github.io/pml-book/book1.html"
 status = "backlog"
-topics = ["machine-learning", "mathematics"]
+topics = ["machine-learning", "mathematics", "probability"]
 about = "A graduate-level textbook that treats machine learning as inference under uncertainty. It covers the mathematical foundations in probability, statistics, linear algebra and optimisation, then linear models, deep neural networks, nonparametric methods and unsupervised learning, with Python code and notebooks alongside. A second volume covers more advanced topics."
 take = "Machine learning from a probabilistic point of view, the first of Murphy's two volumes."
 
@@ -1059,7 +1059,7 @@ year = 1986
 edition = "25th anniversary edition"
 url = "https://www.simonandschuster.net/books/The-Making-of-the-Atomic-Bomb/Richard-Rhodes/9781451677614"
 status = "backlog"
-topics = ["history-of-science", "research-labs", "existential-risk", "geopolitics", "ethics", "technology-races", "hubris"]
+topics = ["history-of-science", "research-labs", "existential-risk", "geopolitics", "ethics", "technology-races", "hubris", "physics"]
 about = "A narrative history that starts with the discovery of nuclear physics in early twentieth-century Europe and follows the emigre scientists, the race with Germany and the Manhattan Project at Los Alamos. It ends with the bombings of Hiroshima and Nagasaki, weighing the science alongside its human and political consequences. It won the Pulitzer Prize."
 take = "The history of the atomic bomb from the physics of the atom to Hiroshima, and the scientists who built it."
 
@@ -1104,7 +1104,7 @@ isbn = "9780671510572"
 year = 1994
 url = "https://www.simonandschuster.com/books/The-Billion-Dollar-Molecule/Barry-Werth/9780671510572"
 status = "backlog"
-topics = ["medicine", "research-labs", "history-of-science"]
+topics = ["medicine", "research-labs", "history-of-science", "synthetic-biology"]
 about = "A journalist's account of Vertex Pharmaceuticals in its founding years around 1989 to 1993, written with close access to its founder Joshua Boger and his scientists. It follows the attempt to design drugs rationally from protein structures, alongside the fundraising, rivalry with established firms and scientific setbacks of a young biotechnology company."
 take = "Inside Vertex Pharmaceuticals in its early years, as it tried to design drugs from the structure of proteins."
 
@@ -1175,7 +1175,7 @@ kind = "book"
 cover = "covers/reading/palo-alto.avif"
 year = 2023
 status = "backlog"
-topics = ["history-of-technology", "economics", "geopolitics"]
+topics = ["history-of-technology", "economics", "geopolitics", "united-states"]
 about = "A history of California and the Santa Clara Valley from the Gold Rush and Leland Stanford's railroads to the present. Harris argues that the region's technology industry grew out of a longer story of land seizure, labour exploitation, eugenics and military funding, and that Silicon Valley is best understood as an engine of capitalism rather than of innovation alone."
 take = "The history of Silicon Valley as a history of capitalism, from railroads and eugenics to the tech industry."
 
@@ -1188,7 +1188,7 @@ kind = "book"
 cover = "covers/reading/strategy-a-history.avif"
 year = 2013
 status = "backlog"
-topics = ["geopolitics", "history"]
+topics = ["geopolitics", "history", "strategy"]
 about = "A broad history of strategic thought by a British scholar of war studies. It moves from ancient sources and early military theorists through Clausewitz and nuclear strategy to strategies of revolution and social movements and to business management, arguing that strategy is less a fixed plan than an ongoing story adapted to changing circumstances."
 take = "Strategy from the Bible and the Greeks to military, revolutionary, and business strategy today."
 
@@ -1243,7 +1243,7 @@ cover = "covers/reading/situational-awareness.avif"
 year = 2024
 url = "https://situational-awareness.ai/"
 status = "backlog"
-topics = ["technology-races", "geopolitics", "ai-alignment", "gpus"]
+topics = ["technology-races", "geopolitics", "ai-alignment", "gpus", "forecasting", "united-states", "china"]
 about = "A long essay series by a former OpenAI researcher. It extrapolates trends in compute, algorithmic efficiency and model capabilities, argues that automated AI research could soon lead to an intelligence explosion, and discusses the scale of the computing build-out, the security of AI laboratories, the alignment problem and a government-led project to keep the United States ahead of China."
 take = "An essay series arguing that AGI may arrive by 2027 and set off a national-security race for superintelligence."
 
@@ -1257,7 +1257,7 @@ cover = "covers/reading/the-thinking-machine.avif"
 isbn = "9780593832691"
 year = 2025
 status = "backlog"
-topics = ["gpus", "history-of-technology", "entrepreneurship", "technology-races"]
+topics = ["gpus", "history-of-technology", "entrepreneurship", "technology-races", "semiconductors"]
 about = "A biography of Jensen Huang and a history of Nvidia, from its founding in 1993 as a maker of graphics chips for video games. Witt follows the company's long investment in parallel computing and its CUDA software, and how these became the hardware base for deep learning, turning Nvidia into one of the most valuable companies in the world."
 take = "Jensen Huang and how Nvidia bet the company on the chips that made modern AI possible."
 
@@ -1271,7 +1271,7 @@ cover = "covers/reading/a-brief-history-of-intelligence.avif"
 isbn = "9780063286344"
 year = 2023
 status = "backlog"
-topics = ["intelligence", "neuroscience", "reinforcement-learning", "life-sciences"]
+topics = ["intelligence", "neuroscience", "reinforcement-learning", "life-sciences", "evolution"]
 about = "An account of how brains evolved, organised around five breakthroughs: steering, reinforcing, simulating, mentalising and speaking. Bennett, an entrepreneur rather than a career neuroscientist, follows these from early bilaterian animals to humans, and uses each step to compare natural intelligence with current AI and to ask what machines still lack."
 take = "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it."
 
@@ -1299,7 +1299,7 @@ cover = "covers/reading/ai-snake-oil.avif"
 isbn = "9780691249131"
 year = 2024
 status = "backlog"
-topics = ["evaluation", "machine-learning", "risk", "policy"]
+topics = ["evaluation", "machine-learning", "risk", "policy", "forecasting"]
 about = "Two Princeton computer scientists separate AI that works from AI that does not. They distinguish generative AI, which has real if overstated uses, from predictive AI used to forecast human outcomes in hiring, policing or welfare, which they argue mostly fails, and they also examine content moderation, AI hype, existential risk claims and regulation."
 take = "Which kinds of AI work and which are sold as working, with tools to tell the difference."
 
@@ -1326,7 +1326,7 @@ cover = "covers/reading/deep-utopia.avif"
 isbn = "9781646871643"
 year = 2024
 status = "backlog"
-topics = ["philosophy", "ethics", "ai-alignment", "post-scarcity"]
+topics = ["philosophy", "ethics", "ai-alignment", "post-scarcity", "transhumanism", "utopias"]
 about = "A philosophical book that asks what would give human life meaning in a world where advanced AI and technology have removed the need for work and solved most practical problems. Bostrom uses an unconventional format of lectures, dialogues and fictional interludes to examine purpose, interest, fulfilment and value under such conditions of plenty."
 take = "What people would live for once superintelligence has solved every practical problem."
 
@@ -1339,7 +1339,7 @@ kind = "book"
 cover = "covers/reading/slouching-towards-utopia.avif"
 year = 2022
 status = "backlog"
-topics = ["economics", "world-history", "history-of-technology", "post-scarcity"]
+topics = ["economics", "world-history", "history-of-technology", "post-scarcity", "abundance", "utopias"]
 about = "An economic history of what DeLong calls the long twentieth century, from 1870 to 2010. He argues that industrial research laboratories, the modern corporation and globalisation produced unprecedented growth in wealth, while societies struggled to turn that wealth into fair and stable lives, examining the contest between market economics and social democracy."
 take = "The economic history of 1870 to 2010, when humanity first escaped scarcity and still did not reach utopia."
 
@@ -1351,7 +1351,7 @@ kind = "book"
 cover = "covers/reading/abundance.avif"
 year = 2025
 status = "backlog"
-topics = ["economics", "policy", "cities"]
+topics = ["economics", "policy", "cities", "abundance", "united-states", "energy"]
 about = "Klein and Thompson argue that American liberalism has become better at blocking things than making them, through layers of permitting, litigation and process. They call for a politics of supply focused on building homes, clean energy, transit and scientific progress, and on reforming the institutions that slow them down."
 take = "Why rich countries fail to build the housing, energy, and infrastructure they can afford, and how to change that."
 
@@ -1364,7 +1364,7 @@ kind = "book"
 cover = "covers/reading/four-futures.avif"
 year = 2016
 status = "backlog"
-topics = ["post-scarcity", "future-of-work", "social-reform"]
+topics = ["post-scarcity", "future-of-work", "social-reform", "abundance", "utopias"]
 about = "A short book in the Jacobin series that uses science fiction as a tool for political thinking. Frase sketches four possible societies shaped by automation and ecological crisis: communism, rentism, socialism and exterminism, and asks which political struggles today push towards each."
 take = "Four possible futures after capitalism, from abundance or scarcity crossed with equality or hierarchy."
 
@@ -1378,7 +1378,7 @@ year = 1930
 edition = "Collected in Essays in Persuasion (1931)"   # the cover is that collection's
 url = "http://www.econ.yale.edu/smith/econ116a/keynes1.pdf"
 status = "backlog"
-topics = ["economics", "future-of-work"]
+topics = ["economics", "future-of-work", "forecasting", "post-scarcity", "abundance"]
 about = "A short essay written early in the Great Depression, arguing that the slump was temporary and that compound growth and technical progress would raise living standards several times over within a century. Keynes predicts a fifteen-hour working week and asks how people will use their freedom once the struggle for subsistence ends."
 take = "Keynes's 1930 prediction that a century of growth would solve the economic problem and leave us with leisure."
 
@@ -1391,7 +1391,7 @@ kind = "book"
 cover = "covers/reading/from-counterculture-to-cyberculture.avif"
 year = 2006
 status = "backlog"
-topics = ["history-of-technology", "decentralisation", "open-web", "commons"]
+topics = ["history-of-technology", "decentralisation", "open-web", "commons", "cybernetics"]
 about = "A cultural history of how computers went from symbols of Cold War bureaucracy to tools of personal liberation. Turner follows Stewart Brand through the Whole Earth Catalog, the WELL, the Global Business Network and Wired, showing how countercultural ideas fused with cybernetics and military research culture to shape the later rhetoric of the internet."
 take = "How Stewart Brand and the Whole Earth network turned the counterculture into Silicon Valley's belief in networks."
 
@@ -1405,7 +1405,7 @@ cover = "covers/reading/cybernetic-revolutionaries.avif"
 isbn = "9780262525961"
 year = 2011
 status = "backlog"
-topics = ["complex-systems", "high-modernism", "history-of-technology", "social-reform"]
+topics = ["complex-systems", "high-modernism", "history-of-technology", "social-reform", "cybernetics"]
 about = "A history of Project Cybersyn, the system built in Chile between 1971 and 1973 under Salvador Allende with the British cybernetician Stafford Beer. Medina examines how engineers tried to manage nationalised industry in real time, and what the project reveals about the relationship between technology, political values and socialist democracy."
 take = "Project Cybersyn, the attempt in Allende's Chile to run the economy with cybernetics and a telex network."
 
@@ -1417,7 +1417,7 @@ kind = "novel"
 cover = "covers/reading/red-plenty.avif"
 year = 2010
 status = "backlog"
-topics = ["literature", "high-modernism", "post-scarcity", "complex-systems"]
+topics = ["literature", "high-modernism", "post-scarcity", "complex-systems", "abundance", "cybernetics", "utopias"]
 about = "A work that blends fiction and history, set in the Soviet Union from the 1930s to the 1960s. Through linked stories of economists, planners, scientists and officials, including real figures such as Kantorovich and Khrushchev, it follows the hope that linear programming and cybernetics could make a planned economy outproduce the West, and why it failed."
 take = "A novel about the Soviet dream of planning the economy into abundance with mathematics and computers."
 
@@ -1430,7 +1430,7 @@ kind = "book"
 cover = "covers/reading/to-be-a-machine.avif"
 year = 2017
 status = "backlog"
-topics = ["augmentation", "hubris", "neuroscience"]
+topics = ["augmentation", "hubris", "neuroscience", "transhumanism", "mortality"]
 about = "A work of reportage in which O'Connell visits the people and places of the transhumanist movement: a cryonics facility, biohackers implanting devices, researchers trying to emulate brains, and a presidential campaign run from a coffin-shaped bus. It reflects on the hope of escaping the body and on mortality itself."
 take = "A journalist among transhumanists: cryonics, mind uploading, cyborgs, and the people who want to end death."
 
@@ -1444,7 +1444,7 @@ cover = "covers/reading/the-age-of-em.avif"
 isbn = "9780198754626"
 year = 2016
 status = "backlog"
-topics = ["simulation", "neuroscience", "economics", "future-of-work"]
+topics = ["simulation", "neuroscience", "economics", "future-of-work", "forecasting", "transhumanism"]
 about = "Hanson assumes that whole-brain emulations, software copies of human minds, become possible and cheap, and uses economics, physics and social science to predict the society that follows. He describes em cities, wages near subsistence, fast and slow minds, copying and deletion, and how work, politics, sex and identity might change."
 take = "An economist works out what a world run by emulated human brains would look like, in detail."
 
@@ -1458,7 +1458,7 @@ cover_id = "15216534"   # the first search match is a square crop
 cover = "covers/reading/more-everything-forever.avif"
 year = 2025
 status = "backlog"
-topics = ["hubris", "existential-risk", "entrepreneurship"]
+topics = ["hubris", "existential-risk", "entrepreneurship", "transhumanism", "physics"]
 about = "An astrophysicist and science writer examines the ideas promoted by Silicon Valley figures, including the singularity, longtermism, effective altruism, AI doom and Mars colonisation. Becker tests their claims against physics, biology and history, and argues that these visions are scientifically doubtful and serve mainly to justify growth and the power of the people who promote them."
 take = "A critique of the futures tech billionaires want: superintelligence, space colonies, and living forever."
 
@@ -1470,7 +1470,7 @@ kind = "novel"
 cover = "covers/reading/the-player-of-games.avif"
 year = 1988
 status = "backlog"
-topics = ["science-fiction", "games", "intelligence", "post-scarcity"]
+topics = ["science-fiction", "games", "intelligence", "post-scarcity", "utopias", "strategy"]
 about = "The second Culture novel. Jernau Gurgeh, a bored master of games, is drawn by the Culture's Contact section into travelling to the Empire of Azad, where a vast and complex game decides social rank and political power. The story contrasts the Culture's liberal post-scarcity society with a cruel hierarchical empire, and raises questions of manipulation and intervention."
 take = "A game player from the Culture, a post-scarcity civilisation, is sent to play for an empire's throne."
 
@@ -1482,7 +1482,7 @@ kind = "novel"
 cover = "covers/reading/accelerando.avif"
 year = 2005
 status = "backlog"
-topics = ["science-fiction", "intelligence", "augmentation"]
+topics = ["science-fiction", "intelligence", "augmentation", "transhumanism"]
 about = "A novel made of nine linked stories, first published in Asimov's Science Fiction, that follow the Macx family through a technological singularity. It moves from an entrepreneur giving away ideas in early twenty-first century Europe, through the dismantling of the inner solar system into computing matter, to descendants navigating a universe of uploaded minds and alien intelligences."
 take = "The singularity across three generations of one family, from present-day hackers to post-human minds."
 
@@ -1522,7 +1522,7 @@ kind = "book"
 cover = "covers/reading/chaos-making-a-new-science.avif"
 year = 1987
 status = "backlog"
-topics = ["complex-systems", "emergence", "mathematics", "history-of-science"]
+topics = ["complex-systems", "emergence", "mathematics", "history-of-science", "chaos-theory", "fractals", "forecasting"]
 about = "A popular history of how chaos theory emerged in the 1960s and 1970s. Gleick follows researchers such as Edward Lorenz, Mitchell Feigenbaum, Benoit Mandelbrot and the Santa Cruz dynamical systems group as they found sensitive dependence on initial conditions, strange attractors and fractals, and challenged the assumption that simple deterministic systems behave predictably."
 take = "The scientists who found order in turbulence, weather, and dripping taps, and founded the science of chaos."
 
@@ -1535,7 +1535,7 @@ kind = "book"
 cover = "covers/reading/genius-richard-feynman.avif"
 year = 1992
 status = "backlog"
-topics = ["history-of-science", "research-labs"]
+topics = ["history-of-science", "research-labs", "physics"]
 about = "A full biography of the American physicist, drawing on interviews, letters and archives. Gleick covers his childhood in Far Rockaway, his work on the atomic bomb, his path integral and diagram methods, and his teaching at Caltech, while also examining what genius means and how Feynman's public persona related to his actual scientific work."
 take = "Richard Feynman's life and physics, from Los Alamos and quantum electrodynamics to the Challenger inquiry."
 
@@ -1573,7 +1573,7 @@ kind = "book"
 cover = "covers/reading/isaac-newton.avif"
 year = 2003
 status = "backlog"
-topics = ["history-of-science", "scientific-revolutions", "mathematics"]
+topics = ["history-of-science", "scientific-revolutions", "mathematics", "physics"]
 about = "A compact biography in the Eminent Lives series of short lives. Gleick traces Newton from his isolated childhood in Lincolnshire through Cambridge, the Principia, his feuds with Hooke and Leibniz, and his later years at the Royal Mint, giving weight to his secretive studies of alchemy and theology alongside mathematics and optics."
 take = "A short life of Newton built from his own notebooks and letters, from alchemy and theology to the laws of motion."
 
@@ -1627,7 +1627,7 @@ isbn = "9780226199900"   # cover from a bookseller; the Open Library copy has a 
 year = 1984
 edition = "Translated from the French (Le Calcul, l'imprévu), University of Chicago Press, 1988"
 status = "backlog"
-topics = ["mathematics", "complex-systems", "risk", "philosophy-of-science"]
+topics = ["mathematics", "complex-systems", "risk", "philosophy-of-science", "chaos-theory", "forecasting", "probability"]
 about = "A short essay, first published in French, on the philosophical implications of modern mathematics. Ekeland moves from Kepler and Newton's clockwork cosmos to Poincaré, dynamical systems, chaos and catastrophe theory, showing how deterministic laws can still produce unpredictable behaviour."
 take = "Chaos, catastrophe theory, and chance, from Kepler to Thom, and why the future stays hard to predict; one of the inspirations for Ian Malcolm in Jurassic Park."
 

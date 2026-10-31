@@ -6,7 +6,7 @@ logo_wide = true
 logo_mono = true
 links = [ { name = "Website", url = "https://humankind.plus" }, { name = "GitHub", url = "https://github.com/humankind-plus" } ]
 pitch = "@/pitch/humankind.md"   # investor brief, linked from /invest/
-topics = ["sovereignty", "elixir", "rust"]
+topics = ["sovereignty", "elixir", "rust", "mortality", "external-memory"]
 accents = ["#2fd8b4", "#9a86ff"]   # brand teal and violet, used for the card glow
 
 app_category = "LifestyleApplication"   # schema.org applicationCategory (default DeveloperApplication)

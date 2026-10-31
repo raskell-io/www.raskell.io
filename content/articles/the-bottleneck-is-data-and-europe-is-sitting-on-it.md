@@ -4,7 +4,7 @@ date = 2026-06-30
 description = "Frontier AI is running short on public text, not compute. Europe's edge is the high-quality data it never put online. Capturing it needs coordination."
 
 [taxonomies]
-tags = ["training-data", "open-data", "europe", "intellectual-property", "provenance", "languages", "technology-races"]
+tags = ["training-data", "open-data", "europe", "intellectual-property", "provenance", "languages", "technology-races", "united-states", "china"]
 
 [extra]
 author = "Raffael"

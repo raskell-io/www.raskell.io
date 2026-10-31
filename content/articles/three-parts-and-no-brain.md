@@ -5,7 +5,7 @@ draft = true
 description = "What a chess program is made of, and how far a hand-written one gets against the computer opponent on lichess, before any learning starts."
 
 [taxonomies]
-tags = ["game-ai", "tree-search", "games", "rust", "metrics"]
+tags = ["game-ai", "tree-search", "games", "rust", "metrics", "probability", "chess", "shogi", "go-game"]
 series = ["learning-to-play"]
 
 [extra]

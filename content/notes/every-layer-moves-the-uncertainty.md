@@ -5,7 +5,7 @@ draft = true
 description = "Each new layer in computing makes one thing predictable and pushes the uncertainty somewhere else. The useful question about a new layer is where it went."
 
 [taxonomies]
-tags = ["abstraction", "determinism", "platform-automation", "history-of-technology"]
+tags = ["abstraction", "determinism", "platform-automation", "history-of-technology", "forecasting"]
 +++
 
 Every layer I have worked with in computing made one thing predictable so that the people above it could stop thinking about it. The function call made control flow predictable, microservices made ownership predictable, Kubernetes made placement predictable, workflow engines made the order and history of a process predictable. None of them removed uncertainty. Each one moved it: into interfaces, into the network, into reconciliation loops, into step bodies that may run twice. The table in [The River and the Canal](/articles/the-river-and-the-canal/) follows the move layer by layer, and [Source Code Is the New Assembly](/articles/semantic-artifacts-and-meaning-engines/) follows it down through programming languages.

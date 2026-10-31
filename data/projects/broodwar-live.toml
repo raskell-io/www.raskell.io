@@ -4,7 +4,7 @@ status = "live"
 logo = "brands/broodwar-live.png"
 logo_wide = true
 links = [ { name = "Open site", url = "https://broodwar.live" }, { name = "GitHub", url = "https://github.com/broodwar-live" } ]
-topics = ["zola", "elixir", "rust"]
+topics = ["zola", "elixir", "rust", "starcraft", "games"]
 
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]

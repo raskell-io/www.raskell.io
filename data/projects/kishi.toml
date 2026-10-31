@@ -6,7 +6,7 @@ logo = "brands/kishi.svg"
 wordmark = "brands/kishi-wordmark-light.svg"   # the brandtype, shown beside the logo as the card title
 wordmark_dark = "brands/kishi-wordmark-dark.svg"
 links = [ { name = "Play", url = "https://kishi.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/kishi" } ]
-topics = ["games", "reinforcement-learning", "webassembly", "rust"]
+topics = ["games", "reinforcement-learning", "webassembly", "rust", "chess", "shogi", "go-game"]
 accents = ["#c8553d", "#ece6d9"]   # brand colours, used for the card glow
 
 schema_type = "VideoGame"   # schema.org type for the JSON-LD on /projects/ and /apps/ (default SoftwareApplication)

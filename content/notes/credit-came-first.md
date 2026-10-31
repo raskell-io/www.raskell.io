@@ -5,7 +5,7 @@ draft = true
 description = "Money did not start as coins replacing barter. Records of who owes what came thousands of years earlier. Money is, and always was, a record of trust."
 
 [taxonomies]
-tags = ["finance", "trust", "world-history"]
+tags = ["finance", "trust", "world-history", "money"]
 
 [extra]
 reads = ["debt"]

@@ -4,7 +4,7 @@ date = 2026-05-01
 description = "Switzerland tops the Global Innovation Index for the fifteenth year running. As an engineer, that should make you suspicious of the metric, not proud of the country."
 
 [taxonomies]
-tags = ["metrics", "policy", "sovereignty", "economics", "switzerland", "intellectual-property"]
+tags = ["metrics", "policy", "sovereignty", "economics", "switzerland", "intellectual-property", "united-states", "china", "semiconductors"]
 
 [extra]
 author = "Raffael"

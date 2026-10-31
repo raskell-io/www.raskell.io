@@ -4,7 +4,7 @@ date = 2026-10-25
 description = "If AI ends in post-scarcity, the dangerous part is the interval: jobs going before goods become nearly free, with no agreed idea of where the ship steers."
 
 [taxonomies]
-tags = ["post-scarcity", "future-of-work", "economics", "risk", "social-reform", "policy"]
+tags = ["post-scarcity", "future-of-work", "economics", "risk", "social-reform", "policy", "abundance"]
 
 [extra]
 reads = ["freeland", "das-soziale-problem"]

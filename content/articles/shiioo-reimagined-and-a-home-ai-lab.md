@@ -4,7 +4,7 @@ date = 2026-10-30
 description = "How I re-imagined Shiioo with what 2026 taught me about agent systems, and why my local setup moves to a Mac Studio and DGX Sparks."
 
 [taxonomies]
-tags = ["agents", "inference", "self-hosting", "local-first", "gpus", "economics", "rust"]
+tags = ["agents", "inference", "self-hosting", "local-first", "gpus", "economics", "rust", "energy"]
 
 [extra]
 author = "Raffael"

@@ -5,7 +5,7 @@ draft = true
 description = "Self-play as reinforcement learning: the engine makes its own training data, a network learns to predict the outcome, and one unfitted constant cost 176 Elo."
 
 [taxonomies]
-tags = ["game-ai", "self-play", "reinforcement-learning", "training-data", "rust"]
+tags = ["game-ai", "self-play", "reinforcement-learning", "training-data", "rust", "probability", "chess", "shogi"]
 series = ["learning-to-play"]
 
 [extra]

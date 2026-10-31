@@ -4,7 +4,7 @@ date = 2026-10-31
 description = "The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world."
 
 [taxonomies]
-tags = ["fractals", "abstraction", "emergence", "science-fiction"]
+tags = ["fractals", "abstraction", "emergence", "science-fiction", "chaos-theory", "physics"]
 
 [extra]
 reads = ["jurassic-park"]

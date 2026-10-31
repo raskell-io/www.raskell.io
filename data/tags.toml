@@ -97,6 +97,12 @@ name = "Life sciences"
 kind = "domain"
 description = "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them."
 
+[synthetic-biology]
+name = "Synthetic biology"
+kind = "domain"
+description = "Engineering living systems: designing molecules and organisms, growing neurons on chips, and the software that reads and writes biology."
+broader = ["life-sciences"]
+
 [game-ai]
 name = "Game AI"
 kind = "domain"
@@ -133,13 +139,53 @@ broader = ["economics"]
 name = "Cryptocurrency"
 kind = "domain"
 description = "Bitcoin, blockchains and distributed ledgers: the attempt to formalise money and trust so completely that no institution is needed, and the institutions that grew back around it."
-broader = ["finance", "decentralisation"]
+broader = ["finance", "decentralisation", "money"]
 
 [insurance]
 name = "Insurance"
 kind = "domain"
 description = "Pooling risk across many so that misfortune does not ruin the few: predictions wrapped in promises, from Halley's life table to cars that price their own drivers."
 broader = ["finance", "risk"]
+
+[physics]
+name = "Physics"
+kind = "domain"
+description = "The laws of matter, energy, space and time, and the people who found them, from Newton to the bomb to cosmology."
+
+[energy]
+name = "Energy"
+kind = "domain"
+description = "Electricity as the input to everything else: the power behind compute, the grids and plants that supply it, and what it costs."
+broader = ["economics"]
+
+[semiconductors]
+name = "Semiconductors"
+kind = "domain"
+description = "Chips and the factories that make them: fabrication, the few companies and places that can do it, and why nations compete for them."
+
+[chess]
+name = "Chess"
+kind = "domain"
+description = "The game that served as the benchmark of machine intelligence for seventy years, from Shannon's paper to Deep Blue and engines that learn."
+broader = ["games"]
+
+[shogi]
+name = "Shogi"
+kind = "domain"
+description = "Japanese chess, where captured pieces return to the board, and where the NNUE networks now inside every strong chess engine were invented."
+broader = ["games"]
+
+[go-game]
+name = "Go"
+kind = "domain"
+description = "The board game whose positions resisted hand-written evaluation until AlphaGo, and the clearest case for learned intuition guiding search."
+broader = ["games"]
+
+[starcraft]
+name = "StarCraft"
+kind = "domain"
+description = "The real-time strategy game, Brood War above all: hidden information, thousands of decisions a minute, and the next benchmark after board games."
+broader = ["games", "strategy"]
 
 # Concepts -----------------------------------------------------------------
 
@@ -217,6 +263,12 @@ broader = ["platform-automation", "sovereignty"]
 name = "Complex systems"
 kind = "concept"
 description = "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies."
+
+[cybernetics]
+name = "Cybernetics"
+kind = "domain"
+description = "The science of control and feedback in machines, organisms, and organisations, and the attempts to run economies and societies with it."
+broader = ["complex-systems", "history-of-technology"]
 
 [reinforcement-learning]
 name = "Reinforcement learning"
@@ -550,6 +602,12 @@ broader = ["agents", "applied-security"]
 name = "Fractals"
 kind = "concept"
 description = "Self-similar patterns that repeat at every scale, from rivers and coastlines to software, organisations and ideas; the lens behind much of this site."
+broader = ["complex-systems", "mathematics", "chaos-theory"]
+
+[chaos-theory]
+name = "Chaos theory"
+kind = "concept"
+description = "How simple deterministic rules produce behaviour nobody can predict: sensitive dependence, strange attractors, and the limits of forecasting."
 broader = ["complex-systems", "mathematics"]
 
 [abstraction]
@@ -562,7 +620,19 @@ broader = ["programming-languages", "history-of-technology"]
 name = "Post-scarcity"
 kind = "concept"
 description = "What changes when making things costs next to nothing: copied software, AI labour, mission-built machines, and the economies and societies that might follow."
-broader = ["economics", "future-of-work"]
+broader = ["abundance", "future-of-work"]
+
+[transhumanism]
+name = "Transhumanism"
+kind = "concept"
+description = "The hope of outgrowing the human body and mind through technology: the singularity, mind uploading, ending death, and the critics of all three."
+broader = ["augmentation", "philosophy"]
+
+[abundance]
+name = "Abundance"
+kind = "concept"
+description = "Making what is scarce plentiful on purpose: building homes, energy, and compute until they are cheap, and the politics of supply that gets there."
+broader = ["economics", "policy"]
 
 [determinism]
 name = "Determinism"
@@ -581,6 +651,72 @@ name = "Factories"
 kind = "concept"
 description = "Machines that make machines: the factory pattern in code, real plants, universal constructors, and purpose-built things made on demand."
 broader = ["platform-automation", "complex-systems"]
+
+[type-systems]
+name = "Type systems"
+kind = "concept"
+description = "Types as a cheap, mechanical proof that code does what it says, and why they matter more once machines write the code."
+broader = ["programming-languages", "formal-methods"]
+
+[forecasting]
+name = "Forecasting"
+kind = "concept"
+description = "Saying what will happen and how sure you are: scenarios, predictions that fail, and the events nobody priced in."
+broader = ["risk"]
+
+[probability]
+name = "Probability"
+kind = "concept"
+description = "Chance made countable: the law of large numbers behind insurance, error margins on a measurement, and tails that are fatter than they look."
+broader = ["mathematics"]
+
+[money]
+name = "Money"
+kind = "concept"
+description = "What money is and who creates it: debt and credit, banks that create money by lending, central banks, and attempts to do without them."
+broader = ["economics", "finance"]
+
+[utopias]
+name = "Utopias"
+kind = "concept"
+description = "Designs for a better society, imagined or attempted: colonies, planned economies, post-scarcity civilisations, and what became of them."
+broader = ["social-reform", "philosophy"]
+
+[evolution]
+name = "Evolution"
+kind = "concept"
+description = "Change by variation and selection, in genes, brains, and populations, and the arguments over how much it explains."
+broader = ["life-sciences"]
+
+[surveillance]
+name = "Surveillance"
+kind = "concept"
+description = "Watching people at scale, by states and by platforms: intelligence agencies, tracking for advertising, and what it costs those being watched."
+broader = ["privacy"]
+
+[mortality]
+name = "Mortality"
+kind = "concept"
+description = "That everyone dies: priced in life insurance, resisted by those who want to end death, and answered by keeping a person's voice and stories."
+broader = ["philosophy"]
+
+[strategy]
+name = "Strategy"
+kind = "concept"
+description = "Winning against an opponent who adapts: in war, in business, and in games, from Sun Tzu to real-time strategy."
+broader = ["geopolitics"]
+
+[united-states]
+name = "United States"
+kind = "concept"
+description = "America's place in technology and power: where the frontier labs and chips are, its founding ideas, and its race with China."
+broader = ["geography", "geopolitics"]
+
+[china]
+name = "China"
+kind = "concept"
+description = "China in history and in technology: the Silk Roads and Sun Tzu, its share of patents and research, its race with the United States, and its language."
+broader = ["geography", "geopolitics"]
 
 # Technologies -------------------------------------------------------------
 
@@ -636,7 +772,7 @@ broader = ["platform-automation"]
 name = "GPUs"
 kind = "technology"
 description = "GPUs as the computer: memory shape, partitioning, and the hardware under inference."
-broader = ["inference"]
+broader = ["inference", "semiconductors"]
 
 [linux]
 name = "Linux"

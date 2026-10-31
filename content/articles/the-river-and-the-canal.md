@@ -4,7 +4,7 @@ date = 2026-10-31
 description = "Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine."
 
 [taxonomies]
-tags = ["agents", "game-ai", "fractals", "abstraction", "determinism", "durable-execution", "trust", "factories", "post-scarcity", "legibility", "finance", "insurance"]
+tags = ["agents", "game-ai", "fractals", "abstraction", "determinism", "durable-execution", "trust", "factories", "post-scarcity", "legibility", "finance", "insurance", "chess", "go-game", "starcraft"]
 
 [extra]
 author = "Raffael"
