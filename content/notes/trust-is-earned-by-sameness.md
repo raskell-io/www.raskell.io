@@ -5,7 +5,7 @@ draft = true
 description = "Banks, procedures and compilers are trusted for sameness: consistency over time, integrity throughout. When machines write the procedures, it has to be shown."
 
 [taxonomies]
-tags = ["trust", "determinism", "provenance", "formal-methods"]
+tags = ["trust", "determinism", "provenance", "formal-methods", "finance"]
 +++
 
 Niklas Luhmann separated personal trust, in someone you know, from system trust, in institutions you rely on without knowing anyone inside them. Nobody trusts their bank because they trust the clerk; they trust it because it behaves the same way regardless of the clerk. System trust is earned by sameness, and the things we trust most in computing earn it the same way: a compiler that turns the same source into the same binary, a lockfile that resolves to the same dependencies, a workflow that replays to the same result.
