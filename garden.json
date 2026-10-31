@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-31T17:07:00+00:00",
+ "generated": "2026-10-31T17:22:57+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -2420,11 +2420,14 @@
   {
    "kind": "project",
    "title": "Chronicle of Earth",
-   "url": "https://github.com/chronicle-of-earth",
-   "description": "An interactive atlas of history and geopolitics, starting with 1900–2026. An early prototype pairs a 3D globe that zooms down to villages and streets with a timeline spanning days to decades. Its data model keeps events, territorial claims, control, sources, and uncertainty distinct. Historical coverage is still a small draft collection; detailed base maps show present-day geography.",
+   "url": "https://chronicle-of-earth.github.io/",
+   "description": "An evidence-linked historical atlas, starting with 1900–2026: choose a place and a date, see what changed, and inspect the evidence behind every assertion. Control, territorial claims and recognition stay separate, disagreement is preserved, and coverage gaps are shown as gaps. The website's globe travels through the record, showing how far each entry has been verified. An early prototype zooms from globe to village; every historical record is still an unreviewed draft.",
    "topics": [
     "history",
+    "geopolitics",
     "geography",
+    "provenance",
+    "legibility",
     "knowledge-management",
     "typescript"
    ],

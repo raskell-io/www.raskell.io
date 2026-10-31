@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-31T17:07:00+00:00",
+ "generated": "2026-10-31T17:22:56+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -892,7 +892,7 @@
    "url": "https://raskell.io/tags/legibility/",
    "meta": "Concept · 1 page",
    "description": "Making a complex system readable from above: what the measure captures, what it erases, and what breaks when the map replaces the territory.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:linux",
@@ -1072,7 +1072,7 @@
    "url": "https://raskell.io/tags/provenance/",
    "meta": "Concept · 2 pages",
    "description": "Where something came from and who vouches for it: signed media, rights-clear training data, and artifacts that carry their own history.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:reinforcement-learning",
@@ -1306,7 +1306,7 @@
    "url": "https://raskell.io/tags#geopolitics",
    "meta": "Concept · no pages yet",
    "description": "How geography, empires, and arms shape the balance of power between states and regions, as history.",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "t:high-modernism",
@@ -1608,10 +1608,10 @@
    "id": "p:chronicle-of-earth",
    "kind": "project",
    "label": "Chronicle of Earth",
-   "url": "https://github.com/chronicle-of-earth",
+   "url": "https://chronicle-of-earth.github.io/",
    "meta": "Project",
-   "description": "An interactive atlas of history and geopolitics, starting with 1900–2026. An early prototype pairs a 3D globe that zooms down to villages and streets with a timeline spanning days …",
-   "degree": 6
+   "description": "An evidence-linked historical atlas, starting with 1900–2026: choose a place and a date, see what changed, and inspect the evidence behind every assertion. Control, territorial cla…",
+   "degree": 9
   },
   {
    "id": "p:wasm-ad",
@@ -5656,7 +5656,19 @@
   },
   {
    "source": "p:chronicle-of-earth",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "p:chronicle-of-earth",
    "target": "t:geography"
+  },
+  {
+   "source": "p:chronicle-of-earth",
+   "target": "t:provenance"
+  },
+  {
+   "source": "p:chronicle-of-earth",
+   "target": "t:legibility"
   },
   {
    "source": "p:chronicle-of-earth",
