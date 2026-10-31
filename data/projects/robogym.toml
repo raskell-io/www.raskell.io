@@ -6,7 +6,7 @@ wordmark = "brands/robogym-wordmark-light.svg"   # the brandtype, shown beside t
 wordmark_dark = "brands/robogym-wordmark-dark.svg"
 links = [ { name = "GitHub", url = "https://github.com/raskell-io/robogym" } ]
 topics = ["rust"]
-accents = ["#ff8a3d", "#4cc9f0"]   # brand colours (joint orange, floor cyan), used for the card glow
+accents = ["#ff8a3d", "#8fb3cc"]   # brand colours (learned path, episodes), used for the card glow
 
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]

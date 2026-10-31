@@ -6,7 +6,7 @@ wordmark = "brands/conflux-wordmark-light.svg"   # the brandtype, shown beside t
 wordmark_dark = "brands/conflux-wordmark-dark.svg"
 links = [ { name = "GitHub", url = "https://github.com/raskell-io/conflux" } ]
 topics = ["distributed-systems", "local-first", "rust"]
-accents = ["#c6a0f6", "#8bd5ca"]   # brand colours (mauve, teal), used for the card glow
+accents = ["#f2a65a", "#b49cf0"]   # brand colours (two of the rope's strands), used for the card glow
 
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]

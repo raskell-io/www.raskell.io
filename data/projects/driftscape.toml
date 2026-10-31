@@ -6,7 +6,7 @@ wordmark = "brands/driftscape-wordmark-light.svg"   # the brandtype, shown besid
 wordmark_dark = "brands/driftscape-wordmark-dark.svg"
 links = [ { name = "GitHub", url = "https://github.com/raskell-io/driftscape" } ]
 topics = ["elixir"]
-accents = ["#f29e8e", "#7d5bbd"]   # brand colours (dusk coral, violet), used for the card glow
+accents = ["#dc8a9b", "#7d5bbd"]   # brand colours (contour rose, violet), used for the card glow
 
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
