@@ -15,6 +15,10 @@ rating: 8.5/10
 
 # Win Everything, Control No One
 
+## In short
+
+Sebastian Mallaby's *The Infinity Machine* is a biography of Demis Hassabis and the best history of modern AI I know; I give it 8.5 out of 10. It explains each idea twice, with an analogy and then the mechanism, and tells the field as a long feud between reinforcement learning and deep learning in which every real breakthrough combines both. It is honest about DeepMind's mistakes, from misjudging language models to failing to ship its chatbot, and its record of failed governance attempts convinced me AI cannot be stopped or governed for now. Its central portrait is a man who is fiercely competitive and says he hates control, yet exercises it; the lesson is that power must stay a means to the work, which takes discipline. It falls short on distance, giving Hassabis the last word and seeing rivals from outside, and its final chapters read like dispatches, but it is required reading for understanding the people behind AI.
+
 *The Infinity Machine* opens with a scene that has nothing to do with Demis Hassabis. In 2015, after a talk at the Royal Society, Nick Bostrom asks Geoffrey Hinton why he keeps doing AI research if he thinks political systems will use it to terrorise people. Hinton answers that he could give the usual arguments, "but the truth is that the prospect of discovery is too sweet." Mallaby says the story haunted him, and it sets the question for the whole book: if the people building this technology understand the danger, why do they build it anyway, and does it matter what kind of people they are?
 
 His answer is a biography of Demis Hassabis, and it is also the best account I have read of how AI got from game-playing programs to where it is now. I give it 8.5 out of 10. It is required reading for anyone who wants to understand the people behind this technology, what drives them, and why nobody seems able to stop it.

@@ -9,6 +9,10 @@ tags: [operating-systems, inference, gpus, isolation, programming-languages, abs
 
 # What Comes After the Last Programming Language
 
+## In short
+
+Every production operating system still assumes the unit of work is a sequence of CPU instructions written by a human, while the most important workload today, AI inference, runs on the GPU. The GPU became a general-purpose computer by accident, through graphics, mining and machine learning, yet the OS still treats it as a peripheral it cannot schedule, see or properly isolate. An inference-native OS would replace processes with shards that own VRAM partitions and compute slices, with hardware isolation through the IOMMU instead of trust in a userspace driver. My proof of concept, *coconutOS*, is a capability-based Rust microkernel with no root, GPU ASLR and pledge and unveil for GPUs, and it boots and runs a transformer forward pass. I do not know whether this exact form will win, but running multi-tenant inference on operating systems built for sequential CPU programs is a mismatch that will become less tolerable.
+
 In [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/), I described three futures for programming languages as AI becomes the primary author of code. Explicit languages for machines. Declarative languages where types are proofs. And ultimately, no language at all, where AI generates machine code directly and the intermediate layer disappears.
 
 I left something out. There is a fourth possibility, and it goes deeper than the language.

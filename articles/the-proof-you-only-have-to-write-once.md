@@ -9,6 +9,10 @@ tags: [formal-methods, programming-languages, ai-engineering, oss, trust, haskel
 
 # The Proof You Only Have to Write Once
 
+## In short
+
+If generation is cheap and verification is the bottleneck, then re-verifying the same function in every agent session is the waste, yet today we throw every proof away when the task closes. I propose a content-addressed commons of manifests: a verified definition named by its hash, with an evidence bundle that marks what was established and what was only asserted, plus who vouched for it. A manifest is named by meaning and contract together, so the same source compiled under different BHC runtime profiles yields different manifests, much as a proof only holds relative to its axioms. Type classes seem to break content addressing, but hashing the elaborated form, where instance dictionaries become explicit arguments, makes them ordinary dependencies; one normalisation pass is the main missing piece. Agents would cite a vouched manifest before generating code, review attention would move to what is actually new, and the durable asset of software would become the verification rather than the text.
+
 I have watched an agent write the same date parser four times this week.
 
 Not one project. Four. Four sessions, four chats, four little functions that come out looking almost exactly like this:

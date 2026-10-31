@@ -10,6 +10,10 @@ tags: [platform-automation, self-hosting, ai-engineering, economics, kubernetes,
 
 # How AI Makes Bare Metal Viable Again
 
+## In short
+
+I moved two pre-revenue Phoenix apps from Kubernetes on DigitalOcean, via fly.io, to a single EUR 38 a month Hetzner auction server with far more capacity than they need. Bare metal was always cheap; what made it hard was the operational work of proxying, TLS, supervision and zero-downtime deploys, which is why the cloud bundle won. With Claude Code I built Vela, a single Rust binary that deploys over SSH and handles the proxy, auto-TLS, process supervision, blue-green or sequential deploys and services like Postgres and NATS. AI makes bespoke operational tooling cheap enough that the cloud's bundle matters less, leaving compute and bandwidth, where bare metal is drastically cheaper. This does not suit multi-region needs, elastic scaling, teams without operational basics or large teams needing standard guardrails; its sweet spot is small teams needing reliability rather than scale.
+
 I was paying over two hundred dollars a month to run two apps that had zero paying users.
 
 Not because the apps were complex. Not because they needed high availability across regions. Because I was running Kubernetes on DigitalOcean, and Kubernetes has opinions about how much infrastructure you need. A control plane. Worker nodes. Load balancers. Persistent volumes. Managed databases. Each line item modest on its own, adding up to a bill that felt absurd for two Phoenix applications in their bootstrapping phase.

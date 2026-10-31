@@ -10,6 +10,10 @@ series: the-agent-platform-handbook
 
 # The Model Is a Dependency
 
+## In short
+
+The model was the one hardcoded string in the harness, even though its cost, availability and capability are all outside your control, so it is the riskiest line rather than a harmless one. Putting a small Model interface between the loop and the provider means a router, a fallback chain or a test fixture all look the same to the loop; models are commodities only if nothing above the interface knows the provider. Routing by turn sends routine digestion to a cheap model and escalates to a strong one after a tool error, an honest proxy for difficulty that costs nothing and is easy to reason about. Fallback sits below the SDK retries and only fails over on server and connection errors, because retrying a malformed request on a second provider just breaks our own bug twice. The boundary is drawn but much behind it is still open: responses are not normalised, cost is logged but not budgeted, routing fights the prompt cache, and prompts are not portable across model families.
+
 > Part 7 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Memory Is a Write Path](https://raskell.io/articles/memory-is-a-write-path/). Next: [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop/).
 
 [Post six](https://raskell.io/articles/memory-is-a-write-path/) gave the agent a write path. A `memory.ts` module lets it save durable facts into a directory it cannot escape, indexed by the same BM25 ranker that powers retrieval, pinned and searched the same way, and walled off from the project context it must not corrupt. The harness sits at tag [`post-06`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-06): a loop, a registry, four sandboxed tools, parallel dispatch, a pinned context layer, a lexical retriever, and an agent-owned memory. Six posts of machinery, all of it pointed at one thing.

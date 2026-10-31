@@ -10,6 +10,10 @@ series: the-agent-platform-handbook
 
 # The Bill Is Part of the Loop
 
+## In short
+
+Every model response already carries an exact usage record of input, output, cache write and cache read tokens, yet the loop reads past it and cost only appears later on an aggregated invoice. Pricing that usage against a small per-model table and metering it through a decorator on the model interface gives a per-turn, per-model ledger without changing the loop itself. The first thing the ledger revealed was not a cheaper model but a stable prompt prefix the agent was paying to resend each turn; caching it moves the bill more than routing does. A budget decorator gives the ledger authority: past a soft threshold it forces the cheap model, and at the hard cap it stops the run with a partial answer instead of a runaway bill. The trade-off is that degrading under a soft cap buys a bounded bill rather than a good outcome, and a task that truly needs the strong model may quietly do worse.
+
 > Part 8 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [The Model Is a Dependency](https://raskell.io/articles/the-model-is-a-dependency/). Next: [Observability Is Not Logging](https://raskell.io/articles/observability-is-not-logging/).
 
 [Post seven](https://raskell.io/articles/the-model-is-a-dependency/) pulled the model out of a hardcoded string and made it a dependency the loop can route and fail over. A `Model` is now an interface: `complete(request)` returns a response, and the loop neither knows nor cares whether a cheap model, a strong model, a router, or a fallback chain produced it. The harness sits at tag [`post-07`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-07).

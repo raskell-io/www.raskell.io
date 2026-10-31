@@ -10,6 +10,10 @@ tags: [decentralisation, attention-economy, open-standards, edge-systems, meta, 
 
 # Looking back on 2025
 
+## In short
+
+Reading Tim Berners-Lee in Okinawa, I saw the web he imagined as a coral reef: many small nodes on open protocols, resilient through diversity, redundancy and local adaptation. What we built instead resembles industrial aquaculture, a handful of platforms that control attention, so publishing is free but being found has become expensive. AI floods the web with cheap content, but that may be the fever that breaks the infection: when assistants surface answers directly, platform gatekeeping weakens and provenance, accuracy and usefulness start to matter more. The architecture I want is static content at the origin, edge functions that personalise anonymously, and agents that find things by relevance, with no surveillance and no platform dependency. The transition will not be clean and platforms will resist, but small, independent, distributed systems like this site and my edge tools are the bet I am making.
+
 I spent part of this year on the shores of Okinawa. The water there is something else entirely, this impossible azure that shifts to turquoise in the shallows, so clear you can see the coral formations from the surface. I found myself thinking about systems while I was there, the way you do when you're floating in salt water with nothing pressing to attend to.
 
 Between swims, I read Tim Berners-Lee's "This is for everyone." I've been building web software for over a decade now, and I thought I understood what the web was. But reading TBL's words while watching that reef ecosystem do its thing, thousands of species in constant exchange, no central coordinator, just emergent complexity from simple rules, something shifted in how I saw it all.

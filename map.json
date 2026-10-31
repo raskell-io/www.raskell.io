@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-31T13:23:10+00:00",
+ "generated": "2026-10-31T13:54:13+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -35,9 +35,9 @@
    "kind": "article",
    "label": "After PHP Gate: A Blueprint for the Static Web",
    "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/",
-   "meta": "2026-10-26 · 26 min",
+   "meta": "2026-10-26 · 27 min",
    "description": "Last week's PHP flaws reached every server that runs code per request. My blueprint for sites and apps that run none at all.",
-   "degree": 13
+   "degree": 21
   },
   {
    "id": "a:/articles/learning-to-play/",
@@ -46,7 +46,7 @@
    "url": "https://raskell.io/articles/learning-to-play/",
    "meta": "2026-10-25 · 22 min",
    "description": "A chess prodigy's handbook, three old games and one laptop: rebuilding the ideas behind game-playing AI in Rust for a browser on my phone, and measuring them.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "a:/articles/the-web-was-the-training-set/",
@@ -73,7 +73,7 @@
    "url": "https://raskell.io/articles/this-site-is-becoming-a-map/",
    "meta": "2026-10-15 · 9 min",
    "description": "A blog shows what I wrote last. The new map on raskell.io shows what I keep coming back to, and it is the start of a public second brain.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/the-bill-is-part-of-the-loop/",
@@ -271,7 +271,7 @@
    "url": "https://raskell.io/articles/what-zentinel-is-really-optimizing-for/",
    "meta": "2026-03-22 · 18 min",
    "description": "Every major proxy was a product of its time. Zentinel is built for this one: safety, operability, and the operator's ability to sleep.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/how-i-work-these-days/",
@@ -307,7 +307,7 @@
    "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/",
    "meta": "2026-02-11 · 30 min",
    "description": "Auth, policy, and business logic are migrating to the edge. The traditional backend is becoming a persistence layer.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "a:/articles/looking-back-on-2025/",
@@ -1521,7 +1521,7 @@
    "url": "https://arcanist.sh",
    "meta": "Project",
    "description": "Haskell tooling for the age of AI-authored code. hx is a fast package and project manager written in Rust, and bhc is a compiler built to check everything it can. With a registry t…",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "p:zentinel",
@@ -1647,7 +1647,7 @@
    "url": "https://hotaru.raskell.io",
    "meta": "Project",
    "description": "Simulated neuron cultures on a 60-electrode array play Pong in your browser, as in the DishBrain experiment. Feedback for hits and misses alone did not make them better. Input that…",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "p:kishi",
@@ -1728,7 +1728,7 @@
    "url": "https://manabi.raskell.io",
    "meta": "Project",
    "description": "A reading-first language-learning app for Chinese, Japanese, Korean, and Hebrew. It trains recognition, pronunciation, listening, context, and recall separately, with spaced repeti…",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "p:kurumi",
@@ -1737,7 +1737,7 @@
    "url": "https://kurumi.raskell.io",
    "meta": "Project",
    "description": "A local-first, AI-native second brain. Capture notes, links, and meetings, then find them again through wikilinks, backlinks, a graph view, and full-text search. Everything works o…",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "p:paw-and-claw",
@@ -4600,7 +4600,23 @@
   },
   {
    "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "a:/articles/learning-to-play/"
+  },
+  {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "a:/articles/this-site-is-becoming-a-map/"
+  },
+  {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "a:/articles/what-zentinel-is-really-optimizing-for/"
+  },
+  {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
    "target": "a:/articles/how-ai-makes-bare-metal-viable-again/"
+  },
+  {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "a:/articles/edge-systems-are-the-new-backend/"
   },
   {
    "source": "a:/articles/learning-to-play/",
@@ -5031,6 +5047,10 @@
    "target": "p:arcanist"
   },
   {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "p:arcanist"
+  },
+  {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
    "target": "p:arcanist"
   },
@@ -5231,6 +5251,10 @@
    "target": "p:hotaru"
   },
   {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "p:hotaru"
+  },
+  {
    "source": "a:/articles/learning-to-play/",
    "target": "p:hotaru"
   },
@@ -5287,8 +5311,16 @@
    "target": "p:ushio"
   },
   {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "p:manabi"
+  },
+  {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "p:manabi"
+  },
+  {
+   "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "p:kurumi"
   },
   {
    "source": "a:/articles/this-site-is-becoming-a-map/",

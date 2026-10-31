@@ -10,6 +10,10 @@ series: the-agent-platform-handbook
 
 # Context Is the Product
 
+## In short
+
+Models are close to commodities that you can swap at the loop boundary, while context about your project is the part that is yours and what makes an agent good at your work. An agent draws on static, dynamic and persistent context, and static context is the layer most teams skip even though it decides whether retrieval and memory can work at all. The industry moved from long system prompts through retrieval and long context windows to per-project files, and a directory beats a single file because it reduces conflicts, adds structure and allows scoping. The harness gains a small loader that reads a .AGENTS directory in priority order, caps it with a byte budget, marks truncation visibly and wraps each source so the model can cite it. Retrieval alone is not enough because it misses rare rules and cross-cutting concerns, so the right design is static context for rules, retrieval for the corpus and tools for live state.
+
 > Part 4 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Tools: How Agents Actually Do Things](https://raskell.io/articles/tools-how-agents-actually-do-things/). Next: [Retrieval Is a Tool, Not a Layer](https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/).
 
 In [post one](https://raskell.io/articles/what-an-agent-actually-is/) we built the agent harness: a loop, a one-tool registry, a system prompt, a dispatcher, and an iteration budget. In [post two](https://raskell.io/articles/your-agent-wants-root/) we slid a sandboxed runtime underneath the shell tool without touching the loop. In [post three](https://raskell.io/articles/tools-how-agents-actually-do-things/) we promoted the registry into a real toolbox and let the model call several tools in one turn. The harness sits at tag [`post-03`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-03) today: a loop, a registry, four sandboxed tools, parallel dispatch, output caps, error envelopes. The pieces fit. The agent answers concrete questions about the directory it is pointed at.

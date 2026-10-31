@@ -236,7 +236,8 @@ program.&lt;&#x2F;li&gt;
 &lt;p&gt;Render at commit time, serve files from the edge, and run code only where it cannot be avoided. A page is built once,
 when a change is merged, and from then on it is a file on a CDN. Logic that must react to a visitor moves to one of
 two places: the visitor’s own browser (JavaScript, or Rust compiled to WebAssembly when the work is heavy), or a small
-edge function that does exactly one job. There is no application server, no database behind the pages, and no
+edge function that does exactly one job, the pattern I described in
+&lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;edge-systems-are-the-new-backend&#x2F;&quot;&gt;Edge Systems Are the New Backend&lt;&#x2F;a&gt;. There is no application server, no database behind the pages, and no
 runtime to patch at two in the morning, because there is nothing running between the request and the file.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;why-bother&quot;&gt;Why bother&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;strong&gt;Security.&lt;&#x2F;strong&gt; A static page cannot be exploited the way PHP Gate was exploited, because a request for it never
@@ -358,7 +359,8 @@ type it becomes for machines. In the blueprint this is &lt;code&gt;data&#x2F;kin
 &lt;p&gt;A validator enforces it on every pull request, using only the Python standard library so it runs anywhere. Unknown
 fields fail, so a typo in &lt;code&gt;descripton&lt;&#x2F;code&gt; cannot silently drop a page’s description. Topics come from one vocabulary,
 with &lt;code&gt;broader&lt;&#x2F;code&gt; links that turn the vocabulary into a small graph. On this site the same declarations drive the
-&lt;a href=&quot;&#x2F;map&#x2F;&quot;&gt;map&lt;&#x2F;a&gt;, the search index, the JSON-LD and the &lt;a href=&quot;&#x2F;ontology&#x2F;&quot;&gt;ontology page&lt;&#x2F;a&gt; that explains all of it to readers.&lt;&#x2F;p&gt;
+&lt;a href=&quot;&#x2F;map&#x2F;&quot;&gt;map&lt;&#x2F;a&gt; (the story of how it came about is in &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;this-site-is-becoming-a-map&#x2F;&quot;&gt;This Site Is Becoming a Map&lt;&#x2F;a&gt;),
+the search index, the JSON-LD and the &lt;a href=&quot;&#x2F;ontology&#x2F;&quot;&gt;ontology page&lt;&#x2F;a&gt; that explains all of it to readers.&lt;&#x2F;p&gt;
 &lt;p&gt;The payoff is that nothing is improvised later. When I add a reading log, a talk, or a new kind of project, the
 question is “what kind is it, and where is it registered,” not “where should I put this file.”&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;3-one-github-organisation-per-product-one-job-per-repository&quot;&gt;3. One GitHub organisation per product, one job per repository&lt;&#x2F;h3&gt;
@@ -431,8 +433,9 @@ CI instead of at upload:&lt;&#x2F;p&gt;
 &lt;pre class=&quot;giallo&quot; style=&quot;color: #D8DEE9; background-color: #2E3440;&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;big&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;find&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; public -type f -size +25M&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; head&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; -1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; [&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; -z&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;$big&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot; ]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; ||&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; echo&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;too large for Pages: &lt;&#x2F;span&gt;&lt;span&gt;$big&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; exit&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt; 1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;n&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;$(&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt;find&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; public -type f&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; |&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; wc&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt; -l&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; [ &amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;$n&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; -lt&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt; 20000&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; ]&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt; ||&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; {&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; echo&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #A3BE8C;&quot;&gt;too many files for Pages: &lt;&#x2F;span&gt;&lt;span&gt;$n&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #88C0D0;&quot;&gt; exit&lt;&#x2F;span&gt;&lt;span style=&quot;color: #B48EAD;&quot;&gt; 1&lt;&#x2F;span&gt;&lt;span style=&quot;color: #81A1C1;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color: #ECEFF4;&quot;&gt; }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;7-workers-only-for-what-a-file-cannot-do&quot;&gt;7. Workers only for what a file cannot do&lt;&#x2F;h3&gt;
 &lt;p&gt;An edge function is the right tool when something needs state, a secret, or a protocol. My Workers each do one thing:
-accept a form, proxy two country domains onto language prefixes, sync an offline notes app to
-object storage, run a package registry, or serve an MCP server over a static JSON API. They are small, read-only where
+accept a form, proxy two country domains onto language prefixes, sync &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;kurumi.raskell.io&quot;&gt;Kurumi&lt;&#x2F;a&gt;, an offline
+notes app, to object storage, run &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&quot;&gt;Arcanist&lt;&#x2F;a&gt;’s package registry, or serve an MCP server over a
+static JSON API. They are small, read-only where
 they can be, cached, and hold at most one narrowly scoped secret (&lt;code&gt;wrangler secret put&lt;&#x2F;code&gt;, never the repository).&lt;&#x2F;p&gt;
 &lt;p&gt;The feedback Worker in the blueprint is about sixty lines and does the job a contact form plugin used to do: it checks
 the origin, rate-limits per address, drops bots that fill a hidden field, validates the message, and opens one issue
@@ -445,12 +448,12 @@ keeps the bundle small, and its runes keep local state in plain variables.&lt;&#
 &lt;p&gt;Offline support is what makes an app usable on a train or a plane. SvelteKit’s own service worker is enough,
 without a plugin. The pattern I use everywhere: one cache per deploy, named after the build version so a new
 deploy never mixes with an old one; hashed assets cache-first, because their content can never change; pages
-network-first with the cache as the fallback. My language-learning app goes further and picks a strategy per kind of
+network-first with the cache as the fallback. My language-learning app, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;manabi.raskell.io&quot;&gt;Manabi&lt;&#x2F;a&gt;, goes further and picks a strategy per kind of
 data, stale-while-revalidate for dictionary shards and network-only for the user’s own API calls. Only three of my
 apps had a service worker at all. All of them should.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;9-rust-compiled-to-webassembly-for-the-right-reasons&quot;&gt;9. Rust compiled to WebAssembly, for the right reasons&lt;&#x2F;h3&gt;
-&lt;p&gt;When an app needs real computation, a chess engine, a neural simulation, a config validator, I write it in Rust and
-compile it to WebAssembly. The layout is always the same: a core crate with no wasm or JavaScript in it, tested with
+&lt;p&gt;When an app needs real computation, a chess engine, a neural simulation like &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;hotaru.raskell.io&quot;&gt;Hotaru&lt;&#x2F;a&gt;, a
+config validator, I write it in Rust and compile it to WebAssembly. The layout is always the same: a core crate with no wasm or JavaScript in it, tested with
 plain &lt;code&gt;cargo test&lt;&#x2F;code&gt;, and a thin crate that exports a C ABI over it. No wasm-bindgen unless a framework needs it. The
 browser reads results straight out of the module’s linear memory. A release profile with fat LTO, one codegen unit
 and &lt;code&gt;panic = &quot;abort&quot;&lt;&#x2F;code&gt;, then &lt;code&gt;wasm-opt&lt;&#x2F;code&gt;, keeps modules small: the blueprint’s is 16 KB, and the build fails if it grows
@@ -473,13 +476,15 @@ bands of rows, many short calls instead of one long one, brought it to parity.&l
 &lt;p&gt;The reasons to use Rust in the browser lie elsewhere:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;One core, many places.&lt;&#x2F;strong&gt; &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zentinelproxy.io&quot;&gt;Zentinel&lt;&#x2F;a&gt;’s documentation validates every configuration
-snippet in the browser with the real configuration parser, compiled to WebAssembly from the same crate the proxy
+snippet in the browser with the real configuration parser (the proxy itself is the subject of
+&lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;what-zentinel-is-really-optimizing-for&#x2F;&quot;&gt;What Zentinel Is Really Optimizing For&lt;&#x2F;a&gt;), compiled to WebAssembly from the same crate the proxy
 uses. A snippet that would not load in production shows red on the page. The same Rust that runs in a server or a
 desktop app runs in the tab, tested once.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Types at the boundary.&lt;&#x2F;strong&gt; The only interface between JavaScript and the logic is a handful of typed numbers and a
 pointer. Everything behind it is checked by the compiler.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;strong&gt;The work JavaScript is bad at.&lt;&#x2F;strong&gt; 64-bit integer arithmetic, bit boards, tight memory layouts, threads. Kishi’s
-chess engine is that kind of code.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;The work JavaScript is bad at.&lt;&#x2F;strong&gt; 64-bit integer arithmetic, bit boards, tight memory layouts, threads.
+&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;kishi.raskell.io&quot;&gt;Kishi&lt;&#x2F;a&gt;’s chess engine is that kind of code; &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;learning-to-play&#x2F;&quot;&gt;Learning to Play&lt;&#x2F;a&gt;
+is the long story of building it.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h3 id=&quot;10-make-it-legible-to-machines&quot;&gt;10. Make it legible to machines&lt;&#x2F;h3&gt;
 &lt;p&gt;Agents read the web for people now, and a static site is simple for them to read. Every site of mine ships the same

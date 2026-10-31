@@ -10,6 +10,10 @@ series: the-agent-platform-handbook
 
 # Tools: How Agents Actually Do Things
 
+## In short
+
+Function calling solved the parsing problem, since the model now talks JSON, so the engineering that remains is the registry, the schemas and the contract between what the model sees and what code runs. The harness grows a small registry and four tools, where tools never throw but return a tagged result, outputs are capped per tool, and parallel tool calls run together with Promise.all. Good tool design means one tool per concept, descriptions written for the model with inputs, errors and when to use it, errors returned as data, and allow-lists enforced in the handler rather than the prompt. The failure modes to expect include tool sprawl, description rot, hallucinated arguments and tools, output explosion, repeated side effects on retry, concurrent races and secrets leaking into error messages. This layer does not settle where tool definitions live, which tools a task needs, or who may call them; those belong to later posts on MCP, context, permissions and identity.
+
 > Part 3 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Your Agent Wants Root](https://raskell.io/articles/your-agent-wants-root/). Next: Context Is the Product.
 
 In [post one](https://raskell.io/articles/what-an-agent-actually-is/) we built the agent harness: a loop, a one-tool registry, a system prompt, a dispatcher, an iteration budget. In [post two](https://raskell.io/articles/your-agent-wants-root/) we slid a sandboxed runtime under the shell tool without touching the loop. The harness stands today at tag [`post-02`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-02) of [`the-agent-platform-handbook`](https://github.com/raskell-io/the-agent-platform-handbook): four files, one tool, fenced. The loop works. The runtime is fenced. The agent is still mostly useless, because one tool means the model can either run a shell command or do nothing. Every real agent has a toolbox.

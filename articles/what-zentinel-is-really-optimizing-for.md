@@ -9,6 +9,10 @@ tags: [edge-systems, applied-security, waf, isolation, trust, observability, rus
 
 # What Zentinel Is Really Optimizing For
 
+## In short
+
+Every major proxy was built for the problem of its era, and the cost of building one pushed them all towards generality, so none was designed around the operator reasoning about failure. Zentinel is built for one thing: an operator should be able to predict what the proxy will do under any condition, with bounded queues, explicit timeouts and atomic reloads. Its central design choice is process isolation, so security agents like the WAF run in separate processes with their own limits, circuit breakers and declared failure modes per route. It could only exist now, because agentic development let one person build bespoke infrastructure on Pingora in months, work that used to require a team and years. Because it is open and written in Rust, the same configuration code runs in the browser, so operators can verify its behaviour themselves before it touches production.
+
 The clearest way I can describe the motivation behind Zentinel is this: I got tired of not trusting the thing that stood between my users and the internet.
 
 Not because the proxies I ran were bad. They were not. I have genuine respect for the engineering in Nginx, HAProxy, Envoy. I learned a lot from operating them, and I mean that sincerely. But over years of running these systems in production, a pattern kept repeating, and it was always some version of the same story: the proxy did something I could not predict from reading its configuration.

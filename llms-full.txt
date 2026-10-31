@@ -16,6 +16,10 @@ tags: [agents, game-ai, fractals, abstraction, determinism, durable-execution, t
 
 # The River and the Canal
 
+## In short
+
+Agents are best at exploring open, foggy problems; deterministic workflows are best at repeating known ones, and businesses that sell sameness, like banks and insurers, depend on the second. Every layer of computing made one more thing predictable so people could stop thinking about it; an agent orchestrator for everything is the first layer that hands the thinking back. The design that works is a meta-factory: agents explore, write down what works as a workflow, a deterministic engine runs it, and agents repair or retire it when the world changes. Workflows can still contain bounded agent steps, like locks in a canal, which keeps judgement where it is needed and makes the rest auditable, repeatable and cheap. Not everything should become a procedure: the agents at the edge stay, because the fog never lifts completely.
+
 *A note before you start: this is a different kind of post from most on this site. It is a philosophical essay rather than a technical one, and a long read, around forty-five minutes. It starts with a photograph and ends with the name of a workflow engine, and in between it goes through fractals, games, cosmology, a century of thinking about organisations, a story from 4chan, and a field guide you can use on Monday. It is also, more than anything else I have written here, a map of how I think. If you want only the practical part, [skip to the field guide](#a-field-guide).*
 
 There is a photograph on the wall of the café where I am writing this. It is [*Whispering Current*](https://www.armingraessl.ch/collection/006-whispering-current) by the photographer Armin Grässl. His own caption begins "Among massive rocks, the water carves its way", which is what it shows: a mountain river running over a bed of rocks, white where it breaks and dark where it pools, with pine trees dissolving into fog behind it. No two metres of that river behave the same way. The water does not know where it is going in any sense we would recognise. It tries every gap, fills every hollow, and finds a path through terrain that nobody planned, one rock at a time.
@@ -451,6 +455,10 @@ tags: [agents, inference, self-hosting, local-first, gpus, economics, rust]
 
 # Shiioo, Re-imagined, and the Home AI Lab It Runs On
 
+## In short
+
+The first *Shiioo* modelled agents as a company with roles, squads and approval boards, but it described my work badly, hid a fragile core, and spent about 40 percent of tokens on agents talking to each other. The re-imagined *Shiioo* is a personal agent workforce for one owner: an append-only, hash-chained event log as the only state, leases with fencing tokens, rules before every tool call, and work handed out from a phone. It hires existing harnesses such as Claude Code and Codex, run headless in their own git worktrees, instead of writing agent personas, so each improvement in the agents arrives the day it ships. A Mac Studio with 256 GB becomes the always-on office for local models, with DGX Sparks planned as CUDA nodes, so subscriptions pay for serious software work and cheap thinking runs on electricity. The lessons are to build the record before the features, build for the user you are, and hire agents rather than write them; the hardware speeds are still ceilings from arithmetic, not measurements.
+
 I work on a lot of things at the same time. At any moment there are more than ten active projects: open source tools, a few early ventures, sites like this one, and passion projects like a [chess engine](https://raskell.io/articles/learning-to-play/) and a simulated neuron culture. None of them is big, and all of them want the same evenings. I have used Claude Code since May 2025, but for most of that year it was AI-assisted development: me at the keyboard, the model helping. Then Anthropic released Claude Opus 4.5 on 24 November 2025, and inside Claude Code it was the first model I trusted with a task while I did something else. Over November and December the work changed shape, and since then most of it has gone through agents I delegate to rather than work beside.
 
 In April I wrote two articles about where that leads. The [first](https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/) was about running sixteen agents in parallel over Christmas with Shiioo, a tool I built to organise them, and how it all worked until the token budget ran out. The [second](https://raskell.io/articles/the-economics-of-inference/) zoomed out from my desk to the economy and ended on one line: the bottleneck was not the architecture, the bottleneck was the meter.
@@ -683,6 +691,10 @@ rating: 8.5/10
 
 # Win Everything, Control No One
 
+## In short
+
+Sebastian Mallaby's *The Infinity Machine* is a biography of Demis Hassabis and the best history of modern AI I know; I give it 8.5 out of 10. It explains each idea twice, with an analogy and then the mechanism, and tells the field as a long feud between reinforcement learning and deep learning in which every real breakthrough combines both. It is honest about DeepMind's mistakes, from misjudging language models to failing to ship its chatbot, and its record of failed governance attempts convinced me AI cannot be stopped or governed for now. Its central portrait is a man who is fiercely competitive and says he hates control, yet exercises it; the lesson is that power must stay a means to the work, which takes discipline. It falls short on distance, giving Hassabis the last word and seeing rivals from outside, and its final chapters read like dispatches, but it is required reading for understanding the people behind AI.
+
 *The Infinity Machine* opens with a scene that has nothing to do with Demis Hassabis. In 2015, after a talk at the Royal Society, Nick Bostrom asks Geoffrey Hinton why he keeps doing AI research if he thinks political systems will use it to terrorise people. Hinton answers that he could give the usual arguments, "but the truth is that the prospect of discovery is too sweet." Mallaby says the story haunted him, and it sets the question for the whole book: if the people building this technology understand the danger, why do they build it anyway, and does it matter what kind of people they are?
 
 His answer is a biography of Demis Hassabis, and it is also the best account I have read of how AI got from game-playing programs to where it is now. I give it 8.5 out of 10. It is required reading for anyone who wants to understand the people behind this technology, what drives them, and why nobody seems able to stop it.
@@ -799,6 +811,10 @@ tags: [applied-security, edge-systems, open-web, zola, webassembly, rust, contex
 
 # After PHP Gate: A Blueprint for the Static Web
 
+## In short
+
+PHP Gate, two critical remote code execution flaws in every PHP installation serving web requests, showed the risk of running code on a server for each request to produce a page that is almost always the same. My blueprint is to render at commit time, serve files from the edge, and run code only where it cannot be avoided: in the visitor's browser or in a small edge function that does one job. Across about forty of my own projects I found the same eleven practices, from writing the agent context and declaring the ontology first to pinned tools, machine-legible pages and a strict Content Security Policy. Some projects genuinely need a backend, such as those with accounts, many writers or real-time collaboration, and then I pick Go, Next.js, Phoenix or Refrakt by the shape of the problem while keeping the rest static. The safest runtime is the one you never start; two template repositories, *blueprint-site* and *blueprint-app*, put the practices into files, and I admit my own sites do not all follow them yet.
+
 Last Wednesday, the PHP project shipped [four releases in one afternoon](https://www.php.net/archive/2026.php).
 PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 fixed two flaws that allow unauthenticated remote code execution, both rated
 critical at CVSS 9.2:
@@ -886,7 +902,8 @@ A few more words this post uses, so they do not get in the way later:
 Render at commit time, serve files from the edge, and run code only where it cannot be avoided. A page is built once,
 when a change is merged, and from then on it is a file on a CDN. Logic that must react to a visitor moves to one of
 two places: the visitor's own browser (JavaScript, or Rust compiled to WebAssembly when the work is heavy), or a small
-edge function that does exactly one job. There is no application server, no database behind the pages, and no
+edge function that does exactly one job, the pattern I described in
+[Edge Systems Are the New Backend](https://raskell.io/articles/edge-systems-are-the-new-backend/). There is no application server, no database behind the pages, and no
 runtime to patch at two in the morning, because there is nothing running between the request and the file.
 
 ## Why bother
@@ -1040,7 +1057,8 @@ enum.status = ["live", "beta", "early", "archived"]
 A validator enforces it on every pull request, using only the Python standard library so it runs anywhere. Unknown
 fields fail, so a typo in `descripton` cannot silently drop a page's description. Topics come from one vocabulary,
 with `broader` links that turn the vocabulary into a small graph. On this site the same declarations drive the
-[map](https://raskell.io/map/), the search index, the JSON-LD and the [ontology page](https://raskell.io/ontology/) that explains all of it to readers.
+[map](https://raskell.io/map/) (the story of how it came about is in [This Site Is Becoming a Map](https://raskell.io/articles/this-site-is-becoming-a-map/)),
+the search index, the JSON-LD and the [ontology page](https://raskell.io/ontology/) that explains all of it to readers.
 
 The payoff is that nothing is improvised later. When I add a reading log, a talk, or a new kind of project, the
 question is "what kind is it, and where is it registered," not "where should I put this file."
@@ -1141,8 +1159,9 @@ n=$(find public -type f | wc -l); [ "$n" -lt 20000 ] || { echo "too many files f
 ### 7. Workers only for what a file cannot do
 
 An edge function is the right tool when something needs state, a secret, or a protocol. My Workers each do one thing:
-accept a form, proxy two country domains onto language prefixes, sync an offline notes app to
-object storage, run a package registry, or serve an MCP server over a static JSON API. They are small, read-only where
+accept a form, proxy two country domains onto language prefixes, sync [Kurumi](https://kurumi.raskell.io), an offline
+notes app, to object storage, run [Arcanist](https://arcanist.sh)'s package registry, or serve an MCP server over a
+static JSON API. They are small, read-only where
 they can be, cached, and hold at most one narrowly scoped secret (`wrangler secret put`, never the repository).
 
 The feedback Worker in the blueprint is about sixty lines and does the job a contact form plugin used to do: it checks
@@ -1159,14 +1178,14 @@ keeps the bundle small, and its runes keep local state in plain variables.
 Offline support is what makes an app usable on a train or a plane. SvelteKit's own service worker is enough,
 without a plugin. The pattern I use everywhere: one cache per deploy, named after the build version so a new
 deploy never mixes with an old one; hashed assets cache-first, because their content can never change; pages
-network-first with the cache as the fallback. My language-learning app goes further and picks a strategy per kind of
+network-first with the cache as the fallback. My language-learning app, [Manabi](https://manabi.raskell.io), goes further and picks a strategy per kind of
 data, stale-while-revalidate for dictionary shards and network-only for the user's own API calls. Only three of my
 apps had a service worker at all. All of them should.
 
 ### 9. Rust compiled to WebAssembly, for the right reasons
 
-When an app needs real computation, a chess engine, a neural simulation, a config validator, I write it in Rust and
-compile it to WebAssembly. The layout is always the same: a core crate with no wasm or JavaScript in it, tested with
+When an app needs real computation, a chess engine, a neural simulation like [Hotaru](https://hotaru.raskell.io), a
+config validator, I write it in Rust and compile it to WebAssembly. The layout is always the same: a core crate with no wasm or JavaScript in it, tested with
 plain `cargo test`, and a thin crate that exports a C ABI over it. No wasm-bindgen unless a framework needs it. The
 browser reads results straight out of the module's linear memory. A release profile with fat LTO, one codegen unit
 and `panic = "abort"`, then `wasm-opt`, keeps modules small: the blueprint's is 16 KB, and the build fails if it grows
@@ -1194,13 +1213,15 @@ bands of rows, many short calls instead of one long one, brought it to parity.
 The reasons to use Rust in the browser lie elsewhere:
 
 - **One core, many places.** [Zentinel](https://zentinelproxy.io)'s documentation validates every configuration
-  snippet in the browser with the real configuration parser, compiled to WebAssembly from the same crate the proxy
+  snippet in the browser with the real configuration parser (the proxy itself is the subject of
+  [What Zentinel Is Really Optimizing For](https://raskell.io/articles/what-zentinel-is-really-optimizing-for/)), compiled to WebAssembly from the same crate the proxy
   uses. A snippet that would not load in production shows red on the page. The same Rust that runs in a server or a
   desktop app runs in the tab, tested once.
 - **Types at the boundary.** The only interface between JavaScript and the logic is a handful of typed numbers and a
   pointer. Everything behind it is checked by the compiler.
-- **The work JavaScript is bad at.** 64-bit integer arithmetic, bit boards, tight memory layouts, threads. Kishi's
-  chess engine is that kind of code.
+- **The work JavaScript is bad at.** 64-bit integer arithmetic, bit boards, tight memory layouts, threads.
+  [Kishi](https://kishi.raskell.io)'s chess engine is that kind of code; [Learning to Play](https://raskell.io/articles/learning-to-play/)
+  is the long story of building it.
 
 ### 10. Make it legible to machines
 
@@ -1369,6 +1390,10 @@ tags: [game-ai, machine-learning, reinforcement-learning, games, rust, webassemb
 ---
 
 # Learning to Play
+
+## In short
+
+Reading *The Infinity Machine*, I was struck that the three parts in the chess handbook a young Demis Hassabis read are still the whole of a chess program, except that evaluation is now learned. Chess, shogi and Go trace the history of game AI: the classical method works in chess, strains in shogi where the NNUE network was invented, and fails in Go without networks guiding search. I built engines for all three in Rust, compiled to WebAssembly so they play offline on my phone, because a network inside the search has to be small, hand-written arithmetic. My self-play network beat the hand-written chess evaluation at equal search depth but only drew at equal time, because it costs more per position. The month left me with better questions than I started with, and I am keeping a notebook of every run, failures included, that may become a series.
 
 This month I have been reading [*The Infinity Machine*](https://raskell.io/reading/#the-infinity-machine), Sebastian Mallaby's biography of Demis Hassabis, the chess prodigy from North London who founded DeepMind, the laboratory behind AlphaGo and AlphaFold. I picked it up because I wanted to understand one of the early architects of the AI we now live with, told by someone who had thirty hours of his time, and because almost everything that interests me, games, simulations, the question of what a machine can learn on its own, runs through his story. A hundred pages in, there is a scene I have not been able to put down.
 
@@ -1609,6 +1634,10 @@ rating: 8/10
 
 # The Web Was the Training Set
 
+## In short
+
+Tim Berners-Lee's *This Is for Everyone* is a memoir, a history of the web and a manifesto for data sovereignty, and its last line, that the web provided the data for AI, is its real thesis. The book is strongest as geography, showing the web came out of CERN and Switzerland, and that releasing it into the public domain was right while Europe had no plan for what came after. The web worked as a corpus because of its design: documents with stable addresses, marked-up text and explicit links, so the commons was the dataset before anyone called it one. I add a consequence the book does not reach: what was never put on the web is not in the models, which is why European archives and records hold the next increment of quality. Solid pods make the data yours but not the agent yours; I give the book 8 out of 10 for first-rate history, an important AI idea left undeveloped, and Solid chapters that read like a prospectus.
+
 I read *This Is for Everyone* on the shore in Okinawa in the autumn of 2025 and wrote about it that winter in [Looking back on 2025](https://raskell.io/articles/looking-back-on-2025/). That piece was about reefs and the open web. This one is about a sentence I read past the first time and cannot get out of my head a year later, after twelve months of building agent platforms for a living. It is the last line of the last chapter: "AI had aced the Imitation Game, and the web provided the data that made it possible."
 
 Berners-Lee writes it as a coda. I think it is the thesis of the book, and I think he undersells it.
@@ -1732,6 +1761,10 @@ series: the-agent-platform-handbook
 ---
 
 # Observability Is Not Logging
+
+## In short
+
+A cost total says nothing about how a run went; observability means being able to reconstruct what the system did, and for an agent that requires traces, not flat logs. The unit of an agent is the turn, and a run is a tree of spans: a small tracer treats runs and turns as nested scopes and model and tool calls as leaves, so parallel tools stay siblings. Tracing wraps the model interface and tool dispatch as decorators, so the loop barely changes, and the example trace shows most of the bill came from one escalation's cache write. When you need storage, queries or a UI, swap in OpenTelemetry behind the same calls and use the GenAI conventions, while expecting their experimental attribute names to shift. Do not put full prompts on spans, sample at the tail rather than the head, and remember that a trace shows what happened but not whether the run was correct.
 
 > Part 9 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop/). Next: Evaluation Closes the Loop.
 
@@ -1965,6 +1998,10 @@ tags: [meta, knowledge-management, hypertext, open-web, zola, external-memory]
 
 # This Site Is Becoming a Map
 
+## In short
+
+A blog is a timeline that works for news and badly for ideas, so raskell.io now has a map that draws articles, topics, series and projects as one graph. Every edge comes from a deliberate act, a tag, a series, a link or a named project, and is computed at build time, which avoids the meaningless hairball of similarity-based graph views. The map already showed me two centres of gravity, platform automation and AI engineering, how much *Zentinel* holds together, an isolated corner of older Linux and BSD posts, and projects I never wrote about. It is the first piece of a public second brain: short notes beside long articles, notes that grow, the sources that shaped me, a path from private *Kurumi* notes, and a garden agents can read. The map can be exported as an image or as JSON, and a missing link between two pieces is usually a post I should write.
+
 A blog is a timeline. The newest post sits on top, everything else slides down, and after a while the only way to find the post from last spring is to remember roughly when you read it. That works for news. It works badly for ideas, because ideas do not arrive in date order. Two posts written months apart can be circling the same problem, and nothing on a timeline tells you that.
 
 This site now has a second way in. The [map](https://raskell.io/map/) draws everything here as one graph: every article, every topic, every series, and every project, with a line wherever two of them are actually connected. It is the first piece of something I have wanted for a long time, and this post is about what it is, what it already showed me, and where I want to take it.
@@ -2058,6 +2095,10 @@ series: the-agent-platform-handbook
 ---
 
 # The Bill Is Part of the Loop
+
+## In short
+
+Every model response already carries an exact usage record of input, output, cache write and cache read tokens, yet the loop reads past it and cost only appears later on an aggregated invoice. Pricing that usage against a small per-model table and metering it through a decorator on the model interface gives a per-turn, per-model ledger without changing the loop itself. The first thing the ledger revealed was not a cheaper model but a stable prompt prefix the agent was paying to resend each turn; caching it moves the bill more than routing does. A budget decorator gives the ledger authority: past a soft threshold it forces the cheap model, and at the hard cap it stops the run with a partial answer instead of a runaway bill. The trade-off is that degrading under a soft cap buys a bounded bill rather than a good outcome, and a task that truly needs the strong model may quietly do worse.
 
 > Part 8 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [The Model Is a Dependency](https://raskell.io/articles/the-model-is-a-dependency/). Next: [Observability Is Not Logging](https://raskell.io/articles/observability-is-not-logging/).
 
@@ -2317,6 +2358,10 @@ series: the-agent-platform-handbook
 
 # The Model Is a Dependency
 
+## In short
+
+The model was the one hardcoded string in the harness, even though its cost, availability and capability are all outside your control, so it is the riskiest line rather than a harmless one. Putting a small Model interface between the loop and the provider means a router, a fallback chain or a test fixture all look the same to the loop; models are commodities only if nothing above the interface knows the provider. Routing by turn sends routine digestion to a cheap model and escalates to a strong one after a tool error, an honest proxy for difficulty that costs nothing and is easy to reason about. Fallback sits below the SDK retries and only fails over on server and connection errors, because retrying a malformed request on a second provider just breaks our own bug twice. The boundary is drawn but much behind it is still open: responses are not normalised, cost is logged but not budgeted, routing fights the prompt cache, and prompts are not portable across model families.
+
 > Part 7 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Memory Is a Write Path](https://raskell.io/articles/memory-is-a-write-path/). Next: [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop/).
 
 [Post six](https://raskell.io/articles/memory-is-a-write-path/) gave the agent a write path. A `memory.ts` module lets it save durable facts into a directory it cannot escape, indexed by the same BM25 ranker that powers retrieval, pinned and searched the same way, and walled off from the project context it must not corrupt. The harness sits at tag [`post-06`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-06): a loop, a registry, four sandboxed tools, parallel dispatch, a pinned context layer, a lexical retriever, and an agent-owned memory. Six posts of machinery, all of it pointed at one thing.
@@ -2528,6 +2573,10 @@ tags: [training-data, open-data, europe, intellectual-property, provenance, lang
 ---
 
 # The Bottleneck Is Data, and Europe Is Sitting on It
+
+## In short
+
+The AI race is usually framed around hardware, but the binding constraint is increasingly clean, rights-clear, high-quality text, and the public web has largely been consumed. The behaviour of the largest labs, including taking legal risk with shadow libraries and paying large settlements, is the clearest signal that the remaining high-quality text has become the scarce input. Europe holds much of what was never put online: centuries of books, newspapers, archives and scientific records, plus aligned multilingual legal and parliamentary text that incumbents undersample. Turning that latent asset into a strategic one is a coordination problem, not a technical one; the legal containers, such as the Article 3 text and data mining exception and the data spaces, exist but are unfilled. I would build an open European training-data commons on the *Common Corpus* template, fund digitisation as infrastructure, license collectively and tie it to sovereign compute, aiming for sovereign capability rather than winning the race.
 
 The public conversation about who wins in AI is almost entirely a conversation about hardware. Who has the most accelerators, who controls the fabs, whose export-control list bites whose supply chain. That conversation is real, and I have spent enough time on the compute side to take it seriously. It is also, increasingly, the wrong place to look for the binding constraint.
 
@@ -2763,6 +2812,10 @@ tags: [distributed-systems, inference, gpus, neuroscience, intelligence, simulat
 
 # Brain Emulation, Read as an Infrastructure Problem
 
+## In short
+
+Isaak Freeman's MIT thesis reframes brain emulation as an engineering problem with identifiable bottlenecks, because connectomics, functional imaging and simulation have all advanced enough together. Read as infrastructure, the interesting part of its compute estimates is the shape of the gap: today's AI clusters overshoot on interconnect, undershoot on per-GPU memory and land roughly right on compute. Brains are local and spikes are sparse, so emulation needs every synapse resident in fast memory but little bandwidth between GPUs, the opposite shape of the clusters built for LLMs. This fits my wider argument that each new important workload exposes a substrate built for something else; LLM inference exposed the wrong scheduler, and brain emulation exposes the wrong memory shape. If emulation is a second path to advanced AI, it asks for a different machine than transformer scaling, so betting on a single substrate roadmap quietly assumes the other path stays marginal.
+
 Someone sent me an MIT thesis this week. [*From Worm to Human: Scaling Brain Emulation*](https://pdf.isaak.net/scaling-emulations), by Isaak Freeman, submitted March 2026 in the Boyden Lab.
 
 I read things like this fairly often. Brain emulation is nowhere near my field, but I keep more intellectual pet topics than I have time for, most of them with no obvious connection to the platform and infrastructure work that is supposedly my lane. I follow them because they are interesting, not because I can see the use up front. In my experience the payoff is almost always there. It just shows up late, and from a direction I did not predict. Connectomics has been one of them for years, a slow background read I never expected to need. Most of the time that kind of reading stays in its own compartment, a detour I do not ask to earn its keep. Every so often a detour walks straight into the problem I am actually paid to think about, and I find I have been circling the same question from two directions without noticing. This thesis was one of those times.
@@ -2874,6 +2927,10 @@ series: the-agent-platform-handbook
 ---
 
 # Memory Is a Write Path
+
+## In short
+
+Retrieval is safe because a bad read costs one turn, but a bad memory becomes a false premise loaded into every future session, so the real problem is letting an agent write its own ground truth. Session memory is already solved by the message array in the loop; only cross-session memory needs building, and it must be written for a future reader who has none of the current context. The store is one small markdown file per fact, with a one-line description pinned on every turn and a body pulled on demand through a memory_search tool that reuses the BM25 retriever. The agent can only write into its own memory directory, never the project's read-only context, and the prompt frames its memories as fallible notes to verify rather than authoritative rules. Slugged names make overwriting the correction path, a size cap keeps memories to single facts, and the index is regenerated from the files so it cannot drift; forgetting and conflict resolution remain unsolved.
 
 > Part 6 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Retrieval Is a Tool, Not a Layer](https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/). Next: The Model Is a Dependency.
 
@@ -3181,6 +3238,10 @@ tags: [formal-methods, programming-languages, ai-engineering, oss, trust, haskel
 
 # The Proof You Only Have to Write Once
 
+## In short
+
+If generation is cheap and verification is the bottleneck, then re-verifying the same function in every agent session is the waste, yet today we throw every proof away when the task closes. I propose a content-addressed commons of manifests: a verified definition named by its hash, with an evidence bundle that marks what was established and what was only asserted, plus who vouched for it. A manifest is named by meaning and contract together, so the same source compiled under different BHC runtime profiles yields different manifests, much as a proof only holds relative to its axioms. Type classes seem to break content addressing, but hashing the elaborated form, where instance dictionaries become explicit arguments, makes them ordinary dependencies; one normalisation pass is the main missing piece. Agents would cite a vouched manifest before generating code, review attention would move to what is actually new, and the durable asset of software would become the verification rather than the text.
+
 I have watched an agent write the same date parser four times this week.
 
 Not one project. Four. Four sessions, four chats, four little functions that come out looking almost exactly like this:
@@ -3337,6 +3398,10 @@ series: the-agent-platform-handbook
 ---
 
 # Retrieval Is a Tool, Not a Layer
+
+## In short
+
+Loading the whole .AGENTS/ directory into every turn stops scaling as it grows, and the fix is not a separate retrieval layer with a vector store but a search tool in the existing registry. Context splits into a tiny pinned set of cross-cutting rules loaded every turn and a searchable corpus the agent pulls on demand through a context_search tool listed in a manifest. The retriever chunks markdown by heading and ranks sections with BM25 in memory, with no database, no embedding model and no extra system to operate. Embeddings solve vocabulary mismatch, which matters for large corpora you do not control, but for a small corpus you wrote yourself you can fix mismatch by editing the words. Because retrieval sits behind a tool boundary, the implementation can later grow an embedding index without the agent or the loop noticing anything.
 
 > Part 5 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Context Is the Product](https://raskell.io/articles/context-is-the-product/). Next: [Memory Is a Write Path](https://raskell.io/articles/memory-is-a-write-path/).
 
@@ -3676,6 +3741,10 @@ series: the-agent-platform-handbook
 ---
 
 # Context Is the Product
+
+## In short
+
+Models are close to commodities that you can swap at the loop boundary, while context about your project is the part that is yours and what makes an agent good at your work. An agent draws on static, dynamic and persistent context, and static context is the layer most teams skip even though it decides whether retrieval and memory can work at all. The industry moved from long system prompts through retrieval and long context windows to per-project files, and a directory beats a single file because it reduces conflicts, adds structure and allows scoping. The harness gains a small loader that reads a .AGENTS directory in priority order, caps it with a byte budget, marks truncation visibly and wraps each source so the model can cite it. Retrieval alone is not enough because it misses rare rules and cross-cutting concerns, so the right design is static context for rules, retrieval for the corpus and tools for live state.
 
 > Part 4 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Tools: How Agents Actually Do Things](https://raskell.io/articles/tools-how-agents-actually-do-things/). Next: [Retrieval Is a Tool, Not a Layer](https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/).
 
@@ -4340,6 +4409,10 @@ series: the-agent-platform-handbook
 
 # Tools: How Agents Actually Do Things
 
+## In short
+
+Function calling solved the parsing problem, since the model now talks JSON, so the engineering that remains is the registry, the schemas and the contract between what the model sees and what code runs. The harness grows a small registry and four tools, where tools never throw but return a tagged result, outputs are capped per tool, and parallel tool calls run together with Promise.all. Good tool design means one tool per concept, descriptions written for the model with inputs, errors and when to use it, errors returned as data, and allow-lists enforced in the handler rather than the prompt. The failure modes to expect include tool sprawl, description rot, hallucinated arguments and tools, output explosion, repeated side effects on retry, concurrent races and secrets leaking into error messages. This layer does not settle where tool definitions live, which tools a task needs, or who may call them; those belong to later posts on MCP, context, permissions and identity.
+
 > Part 3 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Your Agent Wants Root](https://raskell.io/articles/your-agent-wants-root/). Next: Context Is the Product.
 
 In [post one](https://raskell.io/articles/what-an-agent-actually-is/) we built the agent harness: a loop, a one-tool registry, a system prompt, a dispatcher, an iteration budget. In [post two](https://raskell.io/articles/your-agent-wants-root/) we slid a sandboxed runtime under the shell tool without touching the loop. The harness stands today at tag [`post-02`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-02) of [`the-agent-platform-handbook`](https://github.com/raskell-io/the-agent-platform-handbook): four files, one tool, fenced. The loop works. The runtime is fenced. The agent is still mostly useless, because one tool means the model can either run a shell command or do nothing. Every real agent has a toolbox.
@@ -4743,6 +4816,10 @@ series: the-agent-platform-handbook
 
 # Your Agent Wants Root
 
+## In short
+
+An agent with a shell tool is arbitrary code execution behind a friendly interface, so the defence is not better prompts but a fence around the runtime that bounds the cost of a bad call. The agent threat model is different because the model chooses the action, tool results are an injection surface, and the blast radius grows with every additional agent. A default Docker container shares the host kernel and has generous defaults; hardened Docker is enough only for single-tenant, low-stakes work, and riskier workloads need gVisor, Firecracker or Kata underneath. Part two of the handbook wraps the shell tool in a hardened container with gVisor, changing only the runtime below the tool while the agent loop stays exactly the same. Isolation is necessary but not sufficient: egress policy, persistent state, tool-level approval, identity and budgets remain separate problems for later posts.
+
 > Part 2 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [What an Agent Actually Is](https://raskell.io/articles/what-an-agent-actually-is/). Next: Tools, How Agents Actually Do Things.
 
 In [post one](https://raskell.io/articles/what-an-agent-actually-is/) we did not just define what an agent is. We built one. A working harness in roughly one hundred and fifty lines of TypeScript on Bun: a loop, a one-tool registry, a system prompt, a dispatcher, and an iteration budget.
@@ -5023,6 +5100,10 @@ series: the-agent-platform-handbook
 ---
 
 # What an Agent Actually Is
+
+## In short
+
+An agent is software with five properties, a goal, a model, context, tools and a loop; drop one and you have a chatbot, a workflow or a one-shot completion instead. The architecture has been right since SHRDLU and the BDI work; the missing piece was a usable model of language, and function calling then turned the loop into a software problem. Between 2025 and 2026 coding agents and then assistant agents bundled loop, tools and runtime together, yet almost no organisation has a coherent platform underneath them, which this series sets out to close. I build a working agent in TypeScript on Bun with one shell tool and an iteration budget, and show that labels lag the architecture as chat products quietly grow tools. A chatbot fails by being uninformed while an agent fails by acting wrong, with failure modes like runaway loops and cost, false claims of success, no isolation and hidden state that later posts address.
 
 > Part 1 of *The Agent Platform Handbook. From Loop to Platform.* A 22-post series that walks the agent stack from a single loop to a production platform. Next: [Your Agent Wants Root](https://raskell.io/articles/your-agent-wants-root/).
 
@@ -5420,6 +5501,10 @@ tags: [programming-languages, ai-engineering, formal-methods, haskell, compilers
 
 # The Field Exists Now
 
+## In short
+
+Alasdair Allan's catalogue at agentlanguages.dev turns programming languages designed for AI agents from scattered experiments into a field with camps, disagreements and claims that can be tested. His taxonomy of syntactic, verification and orchestration camps is more honest than my earlier timeline, and it shows Vera and BHC as adjacent verification bets rather than sequential steps. The verification camp is crowded because plausible code is cheap and often wrong; the generator does not need to be trusted, but the artifact needs to be checkable. BHC and hx bet that Haskell already has the semantic density agents need, and that the missing pieces are tooling, diagnostics, runtime control and compilation strategy. The catalogue does not show which camp is right, only that the pressure from changed authorship is real, so the useful argument now is about which claims survive measurement.
+
 Alasdair Allan, the creator of [Vera](https://veralang.dev/), has started a public catalogue at [agentlanguages.dev](https://agentlanguages.dev/): programming languages designed for AI agents to write.
 
 When he mentioned it to me on LinkedIn, the count was twenty-one. When I checked, the site already listed twenty-eight. That pace is the point.
@@ -5567,6 +5652,10 @@ tags: [ai-engineering, abstraction, determinism, formal-methods, haskell, compil
 ---
 
 # Source Code Is the New Assembly
+
+## In short
+
+Programming languages were writing systems for an era when humans had to author syntax; once generation is cheap, the scarce resource is not syntax but semantic stability. Code is a lossy compression of intent, and we spend tests, documentation, decision records and runbooks patching the loss; with cheap generation, the uncompressed intent is what we should author. I call the new unit of software a semantic artifact: intent-first, structured, content-addressed, explicit about effects, verifiable, reproducible and explainable, with code as only one rendering of it. A meaning engine elaborates, verifies, plans, lowers, executes and explains such artifacts; most pieces already exist in Vera, BHC, Dafny, Lean, Koka, MLIR, Wasm, Nix, PROV-O and Unison, and the synthesis is what is missing. Source code does not vanish but demotes, as assembly did; builders can start now with semantic sidecars, deterministic replay, explicit effects and investment in IRs rather than syntax.
 
 In [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/), I argued that if AI becomes the primary author of code, the source language has to bend around that author. In [What Comes After the Last Programming Language](https://raskell.io/articles/what-comes-after-the-last-programming-language/), I extended the argument one layer down: even the operating system still assumes a human is writing CPU-centric instruction streams, and that assumption has an expiration date.
 
@@ -5960,6 +6049,10 @@ tags: [metrics, policy, sovereignty, economics, switzerland, intellectual-proper
 
 # Patents Per Capita Is a Vanity Metric
 
+## In short
+
+Switzerland has topped the Global Innovation Index for fifteen years, but the index is built from lagging indicators that measure yesterday well and say little about tomorrow. Switzerland ranks first on creative outputs yet weakest on human capital and research, the pillar most predictive of the next decade. On leading inputs the picture is less flattering: Korea files roughly three times as many patents per capita, Sweden out-invests on research spending, and the European scoreboard score has slipped slightly. An engineer would instead instrument the substrate: onshore production, supply-chain proximity, time-to-compute, vendor concentration, talent flux and energy and fabrication capacity, especially sovereign AI compute. Switzerland is fine today, but to stay ahead it should onshore high-value production, build sovereign compute and require open standards, optimising for the substrate rather than the score.
+
 It is the first of May, Labour Day. A holiday explicitly about work, which makes it a good day to ask whether the work that gets counted is the work that actually matters.
 
 Earlier this week I posted on LinkedIn about how Swiss innovation rankings tend to be illustrated with photos of Zurich, even though Basel produces a meaningful share of what those rankings reward. It performed better than most of my other shares there. Some of the feedback agreed. Some pushed back. Almost all of it stayed inside the same frame the rankings themselves set: which Swiss city deserves credit for the score. That is not the question I find interesting. The question I find interesting is what the score is measuring in the first place, and whether it is the score we should be optimising for. The LinkedIn format is not the right place to work that out. A long-form post on a Labour Day morning is.
@@ -6174,6 +6267,10 @@ tags: [applied-security, waf, edge-systems, reliability, determinism, developer-
 
 # Traffic Replay as a Security Primitive
 
+## In short
+
+WAF tuning is guesswork because the traffic that triggered a rule is gone and logs are incomplete, so engineers change stateful edge systems without being able to reproduce their inputs. Deterministic replay means capturing real requests, from browser HAR files or a proxy mirror, and re-executing them in order, with URL rewriting, cookie stripping and header mutation done correctly. The real value is a behavioural diff between environments, comparing status codes, WAF decisions and security headers, which turns a rule change from a guess into evidence. As a primitive it supports safe rule iteration, drift detection, regression tests for edge config, incident reproduction and compliance evidence, while existing tools each cover only capture, replay or analysis. *Ushio* is my Rust CLI that composes capture, replay and diff for CI, and the deeper shift is that the security engineer observes what the WAF does instead of guessing.
+
 If you have ever tuned a WAF rule, you know the cycle. A rule triggers on legitimate traffic. You get paged. You look at the logs, which tell you the rule ID and the request path but not enough to reproduce what happened. You loosen the rule based on your best guess. You deploy. You wait. Next week, you get paged again, either because the rule is still too aggressive or because you loosened it too far and now something is getting through.
 
 The problem is not the WAF. The problem is that you are tuning a stateful, context-dependent system without the ability to reproduce the inputs that caused the behavior you are trying to change. You are debugging blind.
@@ -6344,6 +6441,10 @@ tags: [inference, economics, sovereignty, edge-systems, gpus]
 
 # The Economics of Inference
 
+## In short
+
+Running out of tokens with sixteen agents was not a budget problem but my first experience of inference as a utility: consumed continuously, metered per unit and backed by heavy physical infrastructure. Inference has the supply chain of a mature utility, built on chips, data, talent and energy, with bottlenecks in chip fabrication and geopolitical risks around Taiwan and export controls. If capability grows faster than the physical infrastructure behind it, the binding constraint on AI is not software but the utility layer; the bottleneck was the meter. Expect utility-style pricing, sovereignty concerns like those Europe learned with Russian gas, token efficiency as an engineering discipline, and metering and observability as essential tooling.
+
 In the [previous article](https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/), I described running sixteen AI agents as a virtual company over Christmas 2025. The architecture worked. The coordination model worked. What did not work was the economics. My token budget evaporated in days, not because the agents were unproductive, but because every act of coordination, every status update, every escalation consumed a metered resource that I could not replenish fast enough.
 
 At the time, I framed this as a budget problem. My consumer subscription could not sustain the overhead of agent-to-agent communication. An enterprise with API access and a real budget would not have the same constraint. That framing was correct, but it was also too small.
@@ -6464,6 +6565,10 @@ tags: [operating-systems, inference, gpus, isolation, programming-languages, abs
 ---
 
 # What Comes After the Last Programming Language
+
+## In short
+
+Every production operating system still assumes the unit of work is a sequence of CPU instructions written by a human, while the most important workload today, AI inference, runs on the GPU. The GPU became a general-purpose computer by accident, through graphics, mining and machine learning, yet the OS still treats it as a peripheral it cannot schedule, see or properly isolate. An inference-native OS would replace processes with shards that own VRAM partitions and compute slices, with hardware isolation through the IOMMU instead of trust in a userspace driver. My proof of concept, *coconutOS*, is a capability-based Rust microkernel with no root, GPU ASLR and pledge and unveil for GPUs, and it boots and runs a transformer forward pass. I do not know whether this exact form will win, but running multi-tenant inference on operating systems built for sequential CPU programs is a mismatch that will become less tolerable.
 
 In [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/), I described three futures for programming languages as AI becomes the primary author of code. Explicit languages for machines. Declarative languages where types are proofs. And ultimately, no language at all, where AI generates machine code directly and the intermediate layer disappears.
 
@@ -6704,6 +6809,10 @@ tags: [agents, ai-engineering, economics, augmentation]
 ---
 
 # What Sixteen AI Agents Taught Me About Management
+
+## In short
+
+Running sixteen Claude Code agents in parallel over a holiday week taught me that managing AI agents is a management problem, not a technical one. My first tool, *kage*, made the sessions visible but could not stop independent agents from producing conflicting work, because I was the only point of integration. My second tool, *shiioo*, modelled agents as employees with roles, squads, leads and escalation paths, and it worked, but agent-to-agent coordination consumed most of the token budget. Next time I would use typed minimal messages between agents, treat the token budget as a first-class resource, and route low-stakes chatter to cheaper models. For enterprises the coordination overhead is cheap compared with human coordination, so the winners will treat agent orchestration as organisational design, a skill good managers already have.
 
 Over the 2025 Christmas holidays I had sixteen AI agents running in parallel across four macOS workspaces. Each workspace held four Ghostty terminal panes, each pane running its own Claude Code instance, each instance working on a different piece of a different project. I was on Anthropic's 20x Max subscription, and during the holiday period the token limits were generous enough that I could burn through context at a rate I had never attempted before. The everyday version of this setup is the one I described in [How I Work These Days](https://raskell.io/articles/how-i-work-these-days/); this was that setup pushed to its limit.
 
@@ -7064,6 +7173,10 @@ tags: [developer-tooling, programming-languages, determinism, oss, haskell, rust
 
 # Why We Built a Haskell Package Manager in Rust
 
+## In short
+
+Haskell is not niche if AI becomes the primary author of code; it is early, because languages built for formal correctness suit that future, but its tooling has held it back. Haskell setup is split across ghcup, Cabal and Stack, while other ecosystems have converged on one tool, so I followed the astral.sh playbook: wrap first, tame second, replace last. hx is written in Rust to escape the bootstrap problem and runtime overhead of tools written in Haskell, and it ships as a single static binary. It brings one TOML configuration, deterministic lockfiles, per-project compiler pinning, a fast native resolver and build mode, and errors with concrete fixes; *BHC* adds runtime profiles for different targets. This is a bet that may be wrong, but fast tooling, deterministic lockfiles and structured errors are good infrastructure design whether or not Haskell has a revival.
+
 Why would anyone invest serious engineering effort into Haskell tooling in 2026? Haskell is a niche language. It has been a niche language for thirty years. Most companies do not use it. Most developers have never written a line of it. If you are going to pour months of work into building a package manager and toolchain from scratch, in Rust no less, the obvious question is: why not just use Rust?
 
 The answer is the same one I gave in [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/): the way we write software is changing. AI is becoming the primary author of code, and the languages that will matter most in that future are not the ones optimized for human typing speed. They are the ones optimized for formal correctness, composability, and provability. Haskell is not niche in that framing. It is early.
@@ -7386,6 +7499,10 @@ tags: [ai-engineering, programming-languages, abstraction, formal-methods, haske
 ---
 
 # The Last Programming Language Might Not Be for Humans
+
+## In short
+
+Programming languages have always been shaped by who writes them, so if AI becomes the primary author of code, the intermediate layer between intent and machine will change. The first future is explicit languages like *Vera*, which remove ambiguity and give machine-readable compiler feedback, but the model is still writing step-by-step recipes. The second future, the one I bet on with hx and BHC, is declarative languages like Haskell, where the model describes what a result is and the type checker verifies it like a proof. The third future skips source code entirely: models first generate existing machine code directly, then later target dense execution formats designed for machines rather than human readers. These are points on a timeline rather than rivals, and source code will not vanish but specialise, the way assembly became the domain of people who maintain the infrastructure.
 
 This morning I was standing at my desk, drinking watered-down instant coffee, doing what I do every morning after triaging the high-alert emails and notifications: thirty minutes of HackerNews. It is a ritual I time-box and never skip. I go to the office every day, and whether I am at that desk or at my home desk, the morning is the same. Coffee, posture, front page.
 
@@ -7714,6 +7831,10 @@ tags: [applied-security, ai-for-ops, agents, policy, sovereignty]
 
 # Notes from RSAC 2026
 
+## In short
+
+My third RSA Conference was my first as a speaker, and the AI conversation had narrowed from what is possible to how to architect systems around autonomous agents and non-human identities. Most of the conference agreed that a human in the loop is an operational bottleneck against machine-speed attackers; I think the human should become a supervisor who sets policy, not a gatekeeper. Paul Nakasone named chips, data, talent and energy as the factors of national potential, and Europe and Switzerland are behind on all four, which is why I co-founded Die Zukunft and built Archipelag.io. The biggest risk I see is institutional inertia: organisations that outsource AI to vendors instead of building internal capability and compute will fall further behind every quarter. Good vendors present their tools as force multipliers for competent teams, but real security remains hands-on work of knowing your own systems, and that cannot be fully outsourced.
+
 I am writing this about two weeks after RSAC 2026 closed. In between, my coworkers and I drove down the West Coast, through Big Sur to LA, then out to Las Vegas for Easter weekend. That was deliberate. Not the route, exactly, but the space. The conference gave me a lot to process, and I have learned over the years that I process better when I am moving, when I am not sitting at a desk trying to force conclusions out of raw impressions.
 
 So here is what I took away. Not a session-by-session recap. Not a vendor roundup. Just the things that are still with me now that the noise has faded and the Pacific Coast Highway is behind me.
@@ -7867,6 +7988,10 @@ tags: [edge-systems, applied-security, waf, isolation, trust, observability, rus
 ---
 
 # What Zentinel Is Really Optimizing For
+
+## In short
+
+Every major proxy was built for the problem of its era, and the cost of building one pushed them all towards generality, so none was designed around the operator reasoning about failure. Zentinel is built for one thing: an operator should be able to predict what the proxy will do under any condition, with bounded queues, explicit timeouts and atomic reloads. Its central design choice is process isolation, so security agents like the WAF run in separate processes with their own limits, circuit breakers and declared failure modes per route. It could only exist now, because agentic development let one person build bespoke infrastructure on Pingora in months, work that used to require a team and years. Because it is open and written in Rust, the same configuration code runs in the browser, so operators can verify its behaviour themselves before it touches production.
 
 The clearest way I can describe the motivation behind Zentinel is this: I got tired of not trusting the thing that stood between my users and the internet.
 
@@ -8094,6 +8219,10 @@ tags: [ai-engineering, developer-tooling, rust, augmentation]
 
 # How I Work These Days
 
+## In short
+
+I had followed machine learning since 2020 and saw ChatGPT 3.5 as a historical shift, yet I still underestimated how fast it would become useful for building software. Claude Code did not impress me at first, but with Opus 4.5 over the Christmas break of 2025 it became a tool I could genuinely build with. Zentinel, a reverse proxy I had wanted for years, was the proof; after it, a backlog of long-held ideas such as Cyanea and Archipelag.io started moving. My days now run across voice conversations with ChatGPT, several parallel Claude Code agents in Ghostty and Apple hardware, often adding up to close to sixteen hours. The real change is that the lag between thought and execution collapsed, and the weight of unrealised ideas shrank; I am the happiest I have been, and I suspect we are still early.
+
 If you had asked me a few years ago what kind of shift would truly change software again, I would probably have said something vague about machine learning becoming more useful, more accessible, more integrated into normal tooling. I would not have said that within a few years I would be spending large parts of my day in conversation with models, building products at a pace that used to feel unrealistic for one person.
 
 But that is where I am now, and the path here did not start with ChatGPT. It started earlier.
@@ -8214,6 +8343,10 @@ tags: [distributed-systems, edge-systems, sovereignty, inference, isolation, sel
 ---
 
 # Archipelag.io Is in Open Beta: Here's Why I Built It
+
+## In short
+
+Watching people turn gaming rigs into Ethereum mining infrastructure in Glarus in 2016 convinced me that ordinary people will run compute at home for the right incentive. *Archipelag.io* treats idle home compute as a coordination problem, not a technology one: a marketplace with a trust model, billing and reputation, with no blockchain and no tokens. The coordinator is Elixir and Phoenix on the BEAM, the node agent is Rust with sandboxed Docker containers and WebAssembly modules, and NATS JetStream carries jobs and streamed output. I was wrong about GPUs being niche and early about WebAssembly, and it was WebGPU turning every modern browser into a possible compute node that finally pushed me to build it. The open beta uses only virtual credits so we can learn what we do not know yet, such as routing quality, onboarding friction, karma calibration and the balance of supply and demand.
 
 There is an abandoned factory building in Glarus, a small town wedged between mountains in eastern Switzerland. In 2016, the building was loud. Not machinery-loud, fan-loud. Rows of bare motherboards bolted to open-air frames, each bristling with GPUs and daisy-chained power supplies. The air tasted like warm dust and ozone. Cables ran everywhere, held in place by zip ties and optimism. This was an Ethereum mining operation, and I was standing in the middle of it, watching people I knew convert their gaming rigs, hardware they loved, into money-printing machines.
 
@@ -8508,6 +8641,10 @@ tags: [platform-automation, self-hosting, ai-engineering, economics, kubernetes,
 ---
 
 # How AI Makes Bare Metal Viable Again
+
+## In short
+
+I moved two pre-revenue Phoenix apps from Kubernetes on DigitalOcean, via fly.io, to a single EUR 38 a month Hetzner auction server with far more capacity than they need. Bare metal was always cheap; what made it hard was the operational work of proxying, TLS, supervision and zero-downtime deploys, which is why the cloud bundle won. With Claude Code I built Vela, a single Rust binary that deploys over SSH and handles the proxy, auto-TLS, process supervision, blue-green or sequential deploys and services like Postgres and NATS. AI makes bespoke operational tooling cheap enough that the cloud's bundle matters less, leaving compute and bandwidth, where bare metal is drastically cheaper. This does not suit multi-region needs, elastic scaling, teams without operational basics or large teams needing standard guardrails; its sweet spot is small teams needing reliability rather than scale.
 
 I was paying over two hundred dollars a month to run two apps that had zero paying users.
 
@@ -8936,6 +9073,10 @@ tags: [edge-systems, applied-security, distributed-systems, local-first, waf, ru
 ---
 
 # Edge Systems Are the New Backend
+
+## In short
+
+Business logic is migrating in two directions at once, up to the edge and down to the client, leaving the traditional backend as a thin persistence layer. Cross-cutting concerns such as authentication, WAF inspection, rate limiting, validation and trace origin belong at the edge, run as crash-isolated agents with explicit failure modes and bounded resources. Edge Workers and edge containers take compute that needs request context but not deep application state, while data gravity remains the hard problem. In the browser, WebAssembly, WebGPU, Service Workers and CRDTs let the client compute, work offline and own its data, with the server reduced to storing and relaying operations. The backend keeps coordination, multi-service transactions, heavy joins and batch work, and small teams with simple needs should not adopt this architecture before they have a reason to.
 
 A request arrives at your system. In the next 50 milliseconds, before any application code runs, this happens: TLS termination, route matching, WAF inspection against 285 detection rules, JWT validation, rate limit evaluation, request body validation against a JSON schema, and trace context generation. The request either dies at the edge or arrives at your backend pre-authenticated, pre-validated, and pre-authorized.
 
@@ -9413,6 +9554,10 @@ tags: [decentralisation, attention-economy, open-standards, edge-systems, meta, 
 
 # Looking back on 2025
 
+## In short
+
+Reading Tim Berners-Lee in Okinawa, I saw the web he imagined as a coral reef: many small nodes on open protocols, resilient through diversity, redundancy and local adaptation. What we built instead resembles industrial aquaculture, a handful of platforms that control attention, so publishing is free but being found has become expensive. AI floods the web with cheap content, but that may be the fever that breaks the infection: when assistants surface answers directly, platform gatekeeping weakens and provenance, accuracy and usefulness start to matter more. The architecture I want is static content at the origin, edge functions that personalise anonymously, and agents that find things by relevance, with no surveillance and no platform dependency. The transition will not be clean and platforms will resist, but small, independent, distributed systems like this site and my edge tools are the bet I am making.
+
 I spent part of this year on the shores of Okinawa. The water there is something else entirely, this impossible azure that shifts to turquoise in the shallows, so clear you can see the coral formations from the surface. I found myself thinking about systems while I was there, the way you do when you're floating in salt water with nothing pressing to attend to.
 
 Between swims, I read Tim Berners-Lee's "This is for everyone." I've been building web software for over a decade now, and I thought I understood what the web was. But reading TBL's words while watching that reef ecosystem do its thing, thousands of species in constant exchange, no central coordinator, just emergent complexity from simple rules, something shifted in how I saw it all.
@@ -9483,6 +9628,10 @@ tags: [developer-tooling, platform-automation, rust]
 ---
 
 # Mise ate my Makefile
+
+## In short
+
+Across around forty repositories in many languages, Makefiles, asdf, direnv and scattered scripts had become a maintenance burden that broke across platforms and could not declare tool dependencies. Nix solved a harder problem than I have and was too steep for contributors, while asdf was slow, had uneven plugins and still needed Make on top for tasks. Mise is a single Rust binary that pins tool versions, loads environment variables and defines discoverable tasks with dependencies, all in one TOML file per project. The real payoff is a consistent contract in every repository: clone, run mise install, list tasks, then run dev or test, whatever the underlying language or build system. Mise does not replace file-level build tools and is younger and less familiar than Make, so I migrate incrementally, starting with the daily tasks and deleting the Makefile last.
 
 I maintain around forty repositories across four GitHub organizations. [Zentinel](https://zentinelproxy.io) alone accounts for over thirty: the core proxy, a Rust SDK, and a growing collection of agents for WAF inspection, auth, rate limiting, GraphQL security, and a dozen other edge concerns. [Archipelag.io](https://archipelag.io) spans an Elixir coordinator, a Rust node agent, Python and TypeScript SDKs, mobile agents in Kotlin and Swift, and infrastructure-as-code repos. [Cyanea](https://cyanea.bio) is Elixir with Rust NIFs and a separate Rust bioinformatics library. Then there are the standalone tools: [Conflux](https://github.com/raskell-io/conflux) (Rust CRDT engine), [Sango](https://github.com/raskell-io/sango) (Rust edge diagnostics CLI), [Shiioo](https://github.com/raskell-io/shiioo) (Rust agentic orchestrator), [Vela](https://github.com/raskell-io/vela) (Rust bare-metal deployment), [Refrakt](https://github.com/raskell-io/refrakt) (Gleam web framework), [Kurumi](https://github.com/raskell-io/kurumi) (Svelte local-first app), and this site you are reading (Zola).
 
@@ -9718,6 +9867,10 @@ tags: [operating-systems, linux]
 
 # Disk space maintenance on Void Linux
 
+## In short
+
+My Void Linux root partition had quietly filled to 85 percent after almost two years of use, and I wanted a fix without babysitting the system. Running xbps-remove -O to clean obsolete packages from the cache freed almost half of the used space on its own. Removing orphaned dependencies with xbps-remove -o and purging old kernels with vkpurge freed more, though keeping an old kernel around is a sensible safety net. The root partition dropped to 33 percent, and the episode renewed my faith in Void: simple, well-documented utilities whose answers a single search can find.
+
 ## Monday morning surprise
 
 As I spent most time doing stuff with my computer rather than configuring my beloved Linux distribution, Void Linux (the same machine that runs the OpenBSD guests from [my OpenBSD journey](https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/)), I have developed the tendency to not really bother about Void at all until something crucial becomes unusable. After almost two years of having switched from Arch to Void, I have actually never encountered any major problem and felt I had made the right decision.
@@ -9818,6 +9971,10 @@ tags: [programming-languages, haskell, developer-tooling, compilers]
 ---
 
 # All beginning is Haskell
+
+## In short
+
+Haskell rewired how I think about software, not because it is the best language for every task, but because it teaches programs as compositions of well-typed transformations. Its most valuable lesson for me is that types are design tools: algebraic data types make illegal states unrepresentable, and I use the same pattern in Rust constantly. Monads matter less for being clever than for making effects explicit and composable in the type signature, an idea that shapes how I use Result in Rust. The language is excellent but its tooling has gaps, which is why I am building *hx*, a Haskell toolchain CLI in Rust, and *bhc*, an experimental compiler without a garbage collector. My Rust projects, *Conflux*, *Zentinel* and *Shiioo*, carry Haskell ideas such as merge laws, monoids and folds over events, and I believe really learning Haskell makes you a better engineer in any language.
 
 This site is called raskell.io. That is not an accident.
 
@@ -9962,6 +10119,10 @@ tags: [operating-systems, openbsd, linux]
 ---
 
 # My OpenBSD journey: Getting it virtualized with libvirt (1)
+
+## In short
+
+After moving from Arch to Void Linux, my long fascination with the BSDs led me to start running OpenBSD, beginning with a virtual machine rather than bare metal. I compare Void and OpenBSD, noting shared traits like open source and security focus, and differences in licence, philosophy, package management and init system. OpenBSD stands out for its security focus under Theo de Raadt and for tools adopted elsewhere, such as OpenSSH, and features like pledge and unveil. The guide shows that libvirt with QEMU is enough to run OpenBSD without VirtualBox or VMware: install the packages, fetch and verify the ISO, define the machine with virt-install, and connect over VNC.
 
 ## Void Linux as my daily driver
 
@@ -10142,6 +10303,10 @@ tags: [meta, oss, open-web]
 ---
 
 # Hello and outlook
+
+## In short
+
+This first post introduces raskell.io as a place to document real work and share patterns other engineers can use, not thought leadership or personal branding. The original plan was to write about Linux and BSD systems such as Void and OpenBSD, open-source tooling, platform automation and whatever hard problem I was stuck on. Looking back from 2026, the scope grew to include edge systems and AI-assisted engineering, held together by one thread: systems under pressure and the tools that keep them running.
 
 ## Hello world
 

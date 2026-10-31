@@ -10,6 +10,10 @@ series: the-agent-platform-handbook
 
 # Retrieval Is a Tool, Not a Layer
 
+## In short
+
+Loading the whole .AGENTS/ directory into every turn stops scaling as it grows, and the fix is not a separate retrieval layer with a vector store but a search tool in the existing registry. Context splits into a tiny pinned set of cross-cutting rules loaded every turn and a searchable corpus the agent pulls on demand through a context_search tool listed in a manifest. The retriever chunks markdown by heading and ranks sections with BM25 in memory, with no database, no embedding model and no extra system to operate. Embeddings solve vocabulary mismatch, which matters for large corpora you do not control, but for a small corpus you wrote yourself you can fix mismatch by editing the words. Because retrieval sits behind a tool boundary, the implementation can later grow an embedding index without the agent or the loop noticing anything.
+
 > Part 5 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Context Is the Product](https://raskell.io/articles/context-is-the-product/). Next: [Memory Is a Write Path](https://raskell.io/articles/memory-is-a-write-path/).
 
 [Post four](https://raskell.io/articles/context-is-the-product/) gave the harness a context layer. A `context.ts` module reads markdown files from a `.AGENTS/` directory at startup, applies a byte budget, wraps each file in a `<context path="...">` block, and concatenates the whole thing under the core prompt. The agent now arrives at every turn knowing what the project is, how to talk about it, and what it is not allowed to do. The harness sits at tag [`post-04`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-04): a loop, a registry, four sandboxed tools, parallel dispatch, and a static context loader.

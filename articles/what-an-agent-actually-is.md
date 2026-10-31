@@ -10,6 +10,10 @@ series: the-agent-platform-handbook
 
 # What an Agent Actually Is
 
+## In short
+
+An agent is software with five properties, a goal, a model, context, tools and a loop; drop one and you have a chatbot, a workflow or a one-shot completion instead. The architecture has been right since SHRDLU and the BDI work; the missing piece was a usable model of language, and function calling then turned the loop into a software problem. Between 2025 and 2026 coding agents and then assistant agents bundled loop, tools and runtime together, yet almost no organisation has a coherent platform underneath them, which this series sets out to close. I build a working agent in TypeScript on Bun with one shell tool and an iteration budget, and show that labels lag the architecture as chat products quietly grow tools. A chatbot fails by being uninformed while an agent fails by acting wrong, with failure modes like runaway loops and cost, false claims of success, no isolation and hidden state that later posts address.
+
 > Part 1 of *The Agent Platform Handbook. From Loop to Platform.* A 22-post series that walks the agent stack from a single loop to a production platform. Next: [Your Agent Wants Root](https://raskell.io/articles/your-agent-wants-root/).
 
 If you sit in three meetings on the same day, you will hear the word *agent* used to mean three different things. A vendor will use it to mean a chat window with a logo. A platform team will use it to mean a workflow with a retry. A security lead will use it to mean a long-running process with credentials you cannot see. None of those people are entirely wrong. None of them are talking about the same thing.

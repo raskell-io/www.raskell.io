@@ -9,6 +9,10 @@ tags: [developer-tooling, programming-languages, determinism, oss, haskell, rust
 
 # Why We Built a Haskell Package Manager in Rust
 
+## In short
+
+Haskell is not niche if AI becomes the primary author of code; it is early, because languages built for formal correctness suit that future, but its tooling has held it back. Haskell setup is split across ghcup, Cabal and Stack, while other ecosystems have converged on one tool, so I followed the astral.sh playbook: wrap first, tame second, replace last. hx is written in Rust to escape the bootstrap problem and runtime overhead of tools written in Haskell, and it ships as a single static binary. It brings one TOML configuration, deterministic lockfiles, per-project compiler pinning, a fast native resolver and build mode, and errors with concrete fixes; *BHC* adds runtime profiles for different targets. This is a bet that may be wrong, but fast tooling, deterministic lockfiles and structured errors are good infrastructure design whether or not Haskell has a revival.
+
 Why would anyone invest serious engineering effort into Haskell tooling in 2026? Haskell is a niche language. It has been a niche language for thirty years. Most companies do not use it. Most developers have never written a line of it. If you are going to pour months of work into building a package manager and toolchain from scratch, in Rust no less, the obvious question is: why not just use Rust?
 
 The answer is the same one I gave in [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/): the way we write software is changing. AI is becoming the primary author of code, and the languages that will matter most in that future are not the ones optimized for human typing speed. They are the ones optimized for formal correctness, composability, and provability. Haskell is not niche in that framing. It is early.

@@ -9,6 +9,10 @@ tags: [distributed-systems, edge-systems, sovereignty, inference, isolation, sel
 
 # Archipelag.io Is in Open Beta: Here's Why I Built It
 
+## In short
+
+Watching people turn gaming rigs into Ethereum mining infrastructure in Glarus in 2016 convinced me that ordinary people will run compute at home for the right incentive. *Archipelag.io* treats idle home compute as a coordination problem, not a technology one: a marketplace with a trust model, billing and reputation, with no blockchain and no tokens. The coordinator is Elixir and Phoenix on the BEAM, the node agent is Rust with sandboxed Docker containers and WebAssembly modules, and NATS JetStream carries jobs and streamed output. I was wrong about GPUs being niche and early about WebAssembly, and it was WebGPU turning every modern browser into a possible compute node that finally pushed me to build it. The open beta uses only virtual credits so we can learn what we do not know yet, such as routing quality, onboarding friction, karma calibration and the balance of supply and demand.
+
 There is an abandoned factory building in Glarus, a small town wedged between mountains in eastern Switzerland. In 2016, the building was loud. Not machinery-loud, fan-loud. Rows of bare motherboards bolted to open-air frames, each bristling with GPUs and daisy-chained power supplies. The air tasted like warm dust and ozone. Cables ran everywhere, held in place by zip ties and optimism. This was an Ethereum mining operation, and I was standing in the middle of it, watching people I knew convert their gaming rigs, hardware they loved, into money-printing machines.
 
 I was there because Vitalik Buterin had decided to visit. He had flown in on a private jet to Geneva, driven up in a black limousine with tinted windows, and walked into this dusty, chaotic space to see what Swiss miners were building. It was surreal. The creator of Ethereum, stepping over power cables in an industrial ruin, nodding at rack after rack of GPUs humming away at proof-of-work hashes. I do not think he was impressed by the elegance of the setup. Nobody was. But something about that scene stuck with me.

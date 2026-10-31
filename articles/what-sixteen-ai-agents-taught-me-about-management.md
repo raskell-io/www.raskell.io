@@ -9,6 +9,10 @@ tags: [agents, ai-engineering, economics, augmentation]
 
 # What Sixteen AI Agents Taught Me About Management
 
+## In short
+
+Running sixteen Claude Code agents in parallel over a holiday week taught me that managing AI agents is a management problem, not a technical one. My first tool, *kage*, made the sessions visible but could not stop independent agents from producing conflicting work, because I was the only point of integration. My second tool, *shiioo*, modelled agents as employees with roles, squads, leads and escalation paths, and it worked, but agent-to-agent coordination consumed most of the token budget. Next time I would use typed minimal messages between agents, treat the token budget as a first-class resource, and route low-stakes chatter to cheaper models. For enterprises the coordination overhead is cheap compared with human coordination, so the winners will treat agent orchestration as organisational design, a skill good managers already have.
+
 Over the 2025 Christmas holidays I had sixteen AI agents running in parallel across four macOS workspaces. Each workspace held four Ghostty terminal panes, each pane running its own Claude Code instance, each instance working on a different piece of a different project. I was on Anthropic's 20x Max subscription, and during the holiday period the token limits were generous enough that I could burn through context at a rate I had never attempted before. The everyday version of this setup is the one I described in [How I Work These Days](https://raskell.io/articles/how-i-work-these-days/); this was that setup pushed to its limit.
 
 It was the most productive week of my engineering life. It was also the week I learned that managing AI agents is, at its core, a management problem. Not a technical one.

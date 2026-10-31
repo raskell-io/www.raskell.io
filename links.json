@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-10-31T13:23:10+00:00",
+ "generated": "2026-10-31T13:54:13+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
  "count": 364,
  "links": [
@@ -107,6 +107,39 @@
    "citations": 9
   },
   {
+   "url": "https://arcanist.sh/",
+   "title": "arcanist.sh",
+   "domain": "arcanist.sh",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    },
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    },
+    {
+     "title": "The Field Exists Now",
+     "url": "https://raskell.io/articles/the-field-exists-now/"
+    },
+    {
+     "title": "Why We Built a Haskell Package Manager in Rust",
+     "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/"
+    },
+    {
+     "title": "The Last Programming Language Might Not Be for Humans",
+     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    },
+    {
+     "title": "I Stopped Writing Most of My Code",
+     "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ],
+   "citations": 6
+  },
+  {
    "url": "https://cyanea.bio",
    "title": "cyanea.bio",
    "domain": "cyanea.bio",
@@ -138,35 +171,6 @@
     }
    ],
    "citations": 6
-  },
-  {
-   "url": "https://arcanist.sh/",
-   "title": "arcanist.sh",
-   "domain": "arcanist.sh",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "The River and the Canal",
-     "url": "https://raskell.io/articles/the-river-and-the-canal/"
-    },
-    {
-     "title": "The Field Exists Now",
-     "url": "https://raskell.io/articles/the-field-exists-now/"
-    },
-    {
-     "title": "Why We Built a Haskell Package Manager in Rust",
-     "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/"
-    },
-    {
-     "title": "The Last Programming Language Might Not Be for Humans",
-     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
-    },
-    {
-     "title": "I Stopped Writing Most of My Code",
-     "url": "https://raskell.io/talks/iat-13-basel/"
-    }
-   ],
-   "citations": 5
   },
   {
    "url": "https://die-zukunft.ch/",
@@ -239,6 +243,31 @@
     {
      "title": "What an Agent Actually Is",
      "url": "https://raskell.io/articles/what-an-agent-actually-is/"
+    }
+   ],
+   "citations": 4
+  },
+  {
+   "url": "https://kishi.raskell.io",
+   "title": "kishi.raskell.io",
+   "domain": "kishi.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    },
+    {
+     "title": "Win Everything, Control No One",
+     "url": "https://raskell.io/articles/win-everything-control-no-one/"
+    },
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    },
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ],
    "citations": 4
@@ -349,18 +378,18 @@
    "citations": 3
   },
   {
-   "url": "https://kishi.raskell.io",
-   "title": "kishi.raskell.io",
-   "domain": "kishi.raskell.io",
+   "url": "https://hotaru.raskell.io",
+   "title": "neuron culture",
+   "domain": "hotaru.raskell.io",
    "reference": false,
    "cited_in": [
     {
-     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
-     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
-    },
-    {
      "title": "Win Everything, Control No One",
      "url": "https://raskell.io/articles/win-everything-control-no-one/"
+    },
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
     },
     {
      "title": "Learning to Play",
@@ -769,18 +798,35 @@
    "citations": 2
   },
   {
-   "url": "https://hotaru.raskell.io",
-   "title": "neuron culture",
-   "domain": "hotaru.raskell.io",
+   "url": "https://kurumi.raskell.io",
+   "title": "Kurumi",
+   "domain": "kurumi.raskell.io",
    "reference": false,
    "cited_in": [
     {
-     "title": "Win Everything, Control No One",
-     "url": "https://raskell.io/articles/win-everything-control-no-one/"
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
     },
     {
-     "title": "Learning to Play",
-     "url": "https://raskell.io/articles/learning-to-play/"
+     "title": "This Site Is Becoming a Map",
+     "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ],
+   "citations": 2
+  },
+  {
+   "url": "https://manabi.raskell.io",
+   "title": "Manabi",
+   "domain": "manabi.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    },
+    {
+     "title": "This Site Is Becoming a Map",
+     "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
     }
    ],
    "citations": 2
@@ -3076,19 +3122,6 @@
    "citations": 1
   },
   {
-   "url": "https://kurumi.raskell.io",
-   "title": "Kurumi",
-   "domain": "kurumi.raskell.io",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "This Site Is Becoming a Map",
-     "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
-    }
-   ],
-   "citations": 1
-  },
-  {
    "url": "https://law.justia.com/cases/federal/district-courts/california/candce/3:2023cv03417/415175/598/",
    "title": "Opinion (Justia, Doc. 598)",
    "domain": "law.justia.com",
@@ -3266,19 +3299,6 @@
     {
      "title": "Disk space maintenance on Void Linux",
      "url": "https://raskell.io/articles/disk-space-void-linux-maintenance/"
-    }
-   ],
-   "citations": 1
-  },
-  {
-   "url": "https://manabi.raskell.io",
-   "title": "Manabi",
-   "domain": "manabi.raskell.io",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "This Site Is Becoming a Map",
-     "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
     }
    ],
    "citations": 1

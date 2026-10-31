@@ -10,6 +10,10 @@ tags: [operating-systems, linux]
 
 # Disk space maintenance on Void Linux
 
+## In short
+
+My Void Linux root partition had quietly filled to 85 percent after almost two years of use, and I wanted a fix without babysitting the system. Running xbps-remove -O to clean obsolete packages from the cache freed almost half of the used space on its own. Removing orphaned dependencies with xbps-remove -o and purging old kernels with vkpurge freed more, though keeping an old kernel around is a sensible safety net. The root partition dropped to 33 percent, and the episode renewed my faith in Void: simple, well-documented utilities whose answers a single search can find.
+
 ## Monday morning surprise
 
 As I spent most time doing stuff with my computer rather than configuring my beloved Linux distribution, Void Linux (the same machine that runs the OpenBSD guests from [my OpenBSD journey](https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/)), I have developed the tendency to not really bother about Void at all until something crucial becomes unusable. After almost two years of having switched from Arch to Void, I have actually never encountered any major problem and felt I had made the right decision.

@@ -9,6 +9,10 @@ tags: [programming-languages, ai-engineering, formal-methods, haskell, compilers
 
 # The Field Exists Now
 
+## In short
+
+Alasdair Allan's catalogue at agentlanguages.dev turns programming languages designed for AI agents from scattered experiments into a field with camps, disagreements and claims that can be tested. His taxonomy of syntactic, verification and orchestration camps is more honest than my earlier timeline, and it shows Vera and BHC as adjacent verification bets rather than sequential steps. The verification camp is crowded because plausible code is cheap and often wrong; the generator does not need to be trusted, but the artifact needs to be checkable. BHC and hx bet that Haskell already has the semantic density agents need, and that the missing pieces are tooling, diagnostics, runtime control and compilation strategy. The catalogue does not show which camp is right, only that the pressure from changed authorship is real, so the useful argument now is about which claims survive measurement.
+
 Alasdair Allan, the creator of [Vera](https://veralang.dev/), has started a public catalogue at [agentlanguages.dev](https://agentlanguages.dev/): programming languages designed for AI agents to write.
 
 When he mentioned it to me on LinkedIn, the count was twenty-one. When I checked, the site already listed twenty-eight. That pace is the point.

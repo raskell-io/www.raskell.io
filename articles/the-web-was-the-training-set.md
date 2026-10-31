@@ -15,6 +15,10 @@ rating: 8/10
 
 # The Web Was the Training Set
 
+## In short
+
+Tim Berners-Lee's *This Is for Everyone* is a memoir, a history of the web and a manifesto for data sovereignty, and its last line, that the web provided the data for AI, is its real thesis. The book is strongest as geography, showing the web came out of CERN and Switzerland, and that releasing it into the public domain was right while Europe had no plan for what came after. The web worked as a corpus because of its design: documents with stable addresses, marked-up text and explicit links, so the commons was the dataset before anyone called it one. I add a consequence the book does not reach: what was never put on the web is not in the models, which is why European archives and records hold the next increment of quality. Solid pods make the data yours but not the agent yours; I give the book 8 out of 10 for first-rate history, an important AI idea left undeveloped, and Solid chapters that read like a prospectus.
+
 I read *This Is for Everyone* on the shore in Okinawa in the autumn of 2025 and wrote about it that winter in [Looking back on 2025](https://raskell.io/articles/looking-back-on-2025/). That piece was about reefs and the open web. This one is about a sentence I read past the first time and cannot get out of my head a year later, after twelve months of building agent platforms for a living. It is the last line of the last chapter: "AI had aced the Imitation Game, and the web provided the data that made it possible."
 
 Berners-Lee writes it as a coda. I think it is the thesis of the book, and I think he undersells it.

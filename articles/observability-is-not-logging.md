@@ -10,6 +10,10 @@ series: the-agent-platform-handbook
 
 # Observability Is Not Logging
 
+## In short
+
+A cost total says nothing about how a run went; observability means being able to reconstruct what the system did, and for an agent that requires traces, not flat logs. The unit of an agent is the turn, and a run is a tree of spans: a small tracer treats runs and turns as nested scopes and model and tool calls as leaves, so parallel tools stay siblings. Tracing wraps the model interface and tool dispatch as decorators, so the loop barely changes, and the example trace shows most of the bill came from one escalation's cache write. When you need storage, queries or a UI, swap in OpenTelemetry behind the same calls and use the GenAI conventions, while expecting their experimental attribute names to shift. Do not put full prompts on spans, sample at the tail rather than the head, and remember that a trace shows what happened but not whether the run was correct.
+
 > Part 9 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop/). Next: Evaluation Closes the Loop.
 
 [Post eight](https://raskell.io/articles/the-bill-is-part-of-the-loop/) taught the loop to read its own bill. Every response carries a `usage` object, a price table turns it into dollars, and a ledger accumulates the total, attributed to the run that caused it. The harness sits at tag [`post-08`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-08): a loop, a router, a fallback chain, a meter, and a budget that degrades before it stops.

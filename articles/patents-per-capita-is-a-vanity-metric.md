@@ -9,6 +9,10 @@ tags: [metrics, policy, sovereignty, economics, switzerland, intellectual-proper
 
 # Patents Per Capita Is a Vanity Metric
 
+## In short
+
+Switzerland has topped the Global Innovation Index for fifteen years, but the index is built from lagging indicators that measure yesterday well and say little about tomorrow. Switzerland ranks first on creative outputs yet weakest on human capital and research, the pillar most predictive of the next decade. On leading inputs the picture is less flattering: Korea files roughly three times as many patents per capita, Sweden out-invests on research spending, and the European scoreboard score has slipped slightly. An engineer would instead instrument the substrate: onshore production, supply-chain proximity, time-to-compute, vendor concentration, talent flux and energy and fabrication capacity, especially sovereign AI compute. Switzerland is fine today, but to stay ahead it should onshore high-value production, build sovereign compute and require open standards, optimising for the substrate rather than the score.
+
 It is the first of May, Labour Day. A holiday explicitly about work, which makes it a good day to ask whether the work that gets counted is the work that actually matters.
 
 Earlier this week I posted on LinkedIn about how Swiss innovation rankings tend to be illustrated with photos of Zurich, even though Basel produces a meaningful share of what those rankings reward. It performed better than most of my other shares there. Some of the feedback agreed. Some pushed back. Almost all of it stayed inside the same frame the rankings themselves set: which Swiss city deserves credit for the score. That is not the question I find interesting. The question I find interesting is what the score is measuring in the first place, and whether it is the score we should be optimising for. The LinkedIn format is not the right place to work that out. A long-form post on a Labour Day morning is.
