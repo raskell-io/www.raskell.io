@@ -97,7 +97,7 @@ cover = "covers/reading/jurassic-park.avif"
 year = 1990
 status = "read"
 finished = "2025-07"
-topics = ["literature", "complex-systems", "risk", "life-sciences", "hubris", "emergence"]
+topics = ["science-fiction", "complex-systems", "risk", "life-sciences", "hubris", "emergence", "fractals"]
 take = "A park of cloned dinosaurs, and a mathematician who uses chaos theory to explain why it cannot stay under control."
 
 [[works]]
@@ -322,6 +322,74 @@ status = "read"
 finished = "2015"
 topics = ["risk", "complex-systems"]
 take = "Things that gain from disorder, and why systems built to avoid all stress grow fragile."
+
+[[works]]
+id = "debt"
+title = "Debt"
+subtitle = "The First 5,000 Years"
+author = "David Graeber"
+kind = "book"
+cover = "covers/reading/debt.avif"
+isbn = "9781612194196"
+year = 2011
+status = "read"
+finished = "2019"
+topics = ["finance", "world-history", "trust"]
+take = "Credit came before coins: five thousand years of debt, and why money was a record of trust long before it was metal."
+
+[[works]]
+id = "the-black-swan"
+title = "The Black Swan"
+subtitle = "The Impact of the Highly Improbable"
+author = "Nassim Nicholas Taleb"
+kind = "book"
+cover = "covers/reading/the-black-swan.avif"
+isbn = "9780812973815"
+year = 2007
+status = "read"
+finished = "2018"
+topics = ["risk", "complex-systems", "philosophy-of-science"]
+take = "Rare, high-impact events that nobody predicted and everybody explains afterwards, and why models break exactly where it matters."
+
+[[works]]
+id = "skin-in-the-game"
+title = "Skin in the Game"
+subtitle = "Hidden Asymmetries in Daily Life"
+author = "Nassim Nicholas Taleb"
+kind = "book"
+cover = "covers/reading/skin-in-the-game.avif"
+isbn = "9780241247488"
+year = 2018
+status = "read"
+finished = "2022"
+topics = ["risk", "ethics", "trust"]
+take = "Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers."
+
+[[works]]
+id = "geld-aus-dem-nichts"
+title = "Geld aus dem Nichts"
+subtitle = "Wie Banken Wachstum ermöglichen und Krisen verursachen"
+author = "Mathias Binswanger"
+kind = "book"
+isbn = "9783527508174"
+year = 2015
+status = "read"
+finished = "2015"
+topics = ["finance", "policy"]
+take = "How commercial banks create money by lending, and what that means for growth and for crises."
+
+[[works]]
+id = "wer-regiert-das-geld"
+title = "Wer regiert das Geld?"
+subtitle = "Banken, Demokratie und Täuschung"
+author = "Paul Schreyer"
+kind = "book"
+isbn = "9783864891250"
+year = 2016
+status = "read"
+finished = "2023"
+topics = ["finance", "policy", "sovereignty"]
+take = "Who may create money and who decides how it is used, read as a question of power and democracy."
 
 [[works]]
 id = "demons"
@@ -1297,7 +1365,7 @@ kind = "novel"
 cover = "covers/reading/the-player-of-games.avif"
 year = 1988
 status = "backlog"
-topics = ["literature", "games", "intelligence", "post-scarcity"]
+topics = ["science-fiction", "games", "intelligence", "post-scarcity"]
 take = "A game player from the Culture, a post-scarcity civilisation, is sent to play for an empire's throne."
 
 [[works]]
@@ -1308,7 +1376,7 @@ kind = "novel"
 cover = "covers/reading/accelerando.avif"
 year = 2005
 status = "backlog"
-topics = ["literature", "intelligence", "augmentation"]
+topics = ["science-fiction", "intelligence", "augmentation"]
 take = "The singularity across three generations of one family, from present-day hackers to post-human minds."
 
 [[works]]

@@ -4,7 +4,7 @@ date = 2026-03-13
 description = "From watching Ethereum miners in 2016 to building a decentralized compute network in open beta. Architecture, conviction, and the long road."
 
 [taxonomies]
-tags = ["distributed-systems", "edge-systems", "sovereignty", "inference", "isolation", "self-hosting", "elixir", "rust"]
+tags = ["distributed-systems", "edge-systems", "sovereignty", "inference", "isolation", "self-hosting", "cryptocurrency", "elixir", "rust"]
 
 [extra]
 author = "Raffael"

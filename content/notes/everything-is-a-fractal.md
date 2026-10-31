@@ -4,7 +4,10 @@ date = 2026-10-31
 description = "The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world."
 
 [taxonomies]
-tags = ["fractals", "abstraction", "emergence"]
+tags = ["fractals", "abstraction", "emergence", "science-fiction"]
+
+[extra]
+reads = ["jurassic-park"]
 +++
 
 The idea I have carried longest, longer than any project on this site, is that everything is a fractal. Benoit Mandelbrot opened *The Fractal Geometry of Nature* in 1982 with the sentence that made the idea famous: "Clouds are not spheres, mountains are not cones, coastlines are not circles, and bark is not smooth, nor does lightning travel in a straight line." Nature is rough, and the roughness looks alike at every scale: the eddies around a boulder repeat around the pebbles beside it. I find it very likely that we live in a world without limits in time or space, and in such a world the fractal is the most natural shape there is, with no largest and no smallest instance. Cosmologists who believe in large-scale smoothness outnumber those who argue for [fractal cosmology](https://en.wikipedia.org/wiki/Fractal_cosmology), so I hold that part as an intuition rather than a claim. It reached me, like many people of my generation, through *Jurassic Park*: Crichton built the novel on chaos theory, which most readers had met through James Gleick's *Chaos*, and divided it into "iterations", each opening with the same dragon curve, a little more folded than the last.

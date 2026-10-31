@@ -123,6 +123,24 @@ name = "Enterprise architecture"
 kind = "domain"
 description = "How a company's capabilities, applications, data and infrastructure fit together, who owns what, and how the landscape is changed on purpose."
 
+[finance]
+name = "Finance"
+kind = "domain"
+description = "Banks, insurers, money and credit: abstract businesses that sell kept promises, allocate a society's resources and turn trust into procedure."
+broader = ["economics"]
+
+[cryptocurrency]
+name = "Cryptocurrency"
+kind = "domain"
+description = "Bitcoin, blockchains and distributed ledgers: the attempt to formalise money and trust so completely that no institution is needed, and the institutions that grew back around it."
+broader = ["finance", "decentralisation"]
+
+[insurance]
+name = "Insurance"
+kind = "domain"
+description = "Pooling risk across many so that misfortune does not ruin the few: predictions wrapped in promises, from Halley's life table to cars that price their own drivers."
+broader = ["finance", "risk"]
+
 # Concepts -----------------------------------------------------------------
 
 [agents]
@@ -335,6 +353,12 @@ name = "Religion"
 kind = "concept"
 description = "Faith, doubt, and the institutions and cities built around belief, as history and as argument."
 broader = ["philosophy", "history"]
+
+[science-fiction]
+name = "Science fiction"
+kind = "concept"
+description = "Fiction as a thought experiment: cloned dinosaurs and chaos theory, post-scarcity civilisations, singularities, and stories from the internet read in the same spirit."
+broader = ["literature"]
 
 [maximalist-novels]
 name = "Maximalist novels"

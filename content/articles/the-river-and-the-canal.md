@@ -4,13 +4,13 @@ date = 2026-10-31
 description = "Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine."
 
 [taxonomies]
-tags = ["agents", "game-ai", "fractals", "abstraction", "determinism", "durable-execution", "trust", "factories", "post-scarcity", "legibility", "haskell"]
+tags = ["agents", "game-ai", "fractals", "abstraction", "determinism", "durable-execution", "trust", "factories", "post-scarcity", "legibility", "finance", "insurance"]
 
 [extra]
 author = "Raffael"
 image = "the-river-and-the-canal.avif"
 cover = "covers/the-river-and-the-canal.avif"
-reads = ["the-infinity-machine", "seeing-like-a-state"]
+reads = ["the-infinity-machine", "seeing-like-a-state", "jurassic-park"]
 +++
 
 *A note before you start: this is a different kind of post from most on this site. It is a philosophical essay rather than a technical one, and a long read, around forty-five minutes. It starts with a photograph and ends with the name of a workflow engine, and in between it goes through fractals, games, cosmology, a century of thinking about organisations, a story from 4chan, and a field guide you can use on Monday. It is also, more than anything else I have written here, a map of how I think. If you want only the practical part, [skip to the field guide](#a-field-guide).*
