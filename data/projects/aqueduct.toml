@@ -1,0 +1,20 @@
+title = "Aqueduct"
+description = "A durable execution engine in Rust, built for the procedures agents write and people approve. Every step is journaled before it counts, so a run survives crashes, restarts and week long waits, and replays to the same result. Procedures are written in Starlark or Rust, and the engine is tested by deterministic simulation and by killing it at every point."
+status = "early"
+logo = "brands/aqueduct.svg"
+wordmark = "brands/aqueduct-wordmark-light.svg"   # the brandtype, shown beside the logo as the card title (Syne, lowercase)
+wordmark_dark = "brands/aqueduct-wordmark-dark.svg"
+links = [ { name = "GitHub", url = "https://github.com/raskell-io/aqueduct" }, { name = "The essay", url = "https://raskell.io/articles/the-river-and-the-canal/" } ]
+tagline = "Durable execution for procedures agents write"   # short line for support cards
+topics = ["durable-execution", "distributed-systems", "reliability", "determinism", "simulation", "agents", "rust"]
+related = ["shiioo"]
+accents = ["#5ee7df", "#3b82f6"]   # the brand's water gradient, used for the card glow
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+tagline = "为智能体编写的流程提供持久执行"
+description = "一个用 Rust 编写的持久执行引擎，为智能体编写、人工批准的流程而构建。每一步在生效之前都会先写入日志，因此一次运行能够在崩溃、重启和长达数周的等待之后继续，并且重放时得到相同的结果。流程可以用 Starlark 或 Rust 编写，引擎通过确定性模拟以及在每一个时间点强行终止来进行测试。"
+
+[i18n.ko]
+tagline = "에이전트가 작성한 절차를 위한 지속 실행"
+description = "에이전트가 작성하고 사람이 승인한 절차를 위해 만든, Rust로 작성된 지속 실행 엔진입니다. 모든 단계는 효력을 갖기 전에 먼저 저널에 기록되므로, 실행은 충돌, 재시작, 몇 주에 걸친 대기를 견디고, 다시 재생해도 같은 결과에 이릅니다. 절차는 Starlark 또는 Rust로 작성하며, 엔진은 결정적 시뮬레이션과 모든 지점에서 강제로 종료하는 방식으로 테스트합니다."
