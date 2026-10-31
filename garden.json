@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-31T17:46:18+00:00",
+ "generated": "2026-10-31T18:00:10+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -93,7 +93,7 @@
    "kind": "article",
    "title": "After PHP Gate: A Blueprint for the Static Web",
    "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/",
-   "description": "Last week's PHP flaws reached every server that runs code per request. My blueprint for sites and apps that run none at all.",
+   "description": "Last week's PHP flaws reached every PHP installation serving web requests. My blueprint for sites and apps that run no code per request at all.",
    "date": "2026-10-26",
    "topics": [
     "applied-security",

@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-31T17:46:18+00:00",
+ "generated": "2026-10-31T18:00:10+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -36,7 +36,7 @@
    "label": "After PHP Gate: A Blueprint for the Static Web",
    "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/",
    "meta": "2026-10-26 · 27 min",
-   "description": "Last week's PHP flaws reached every server that runs code per request. My blueprint for sites and apps that run none at all.",
+   "description": "Last week's PHP flaws reached every PHP installation serving web requests. My blueprint for sites and apps that run no code per request at all.",
    "degree": 21
   },
   {
