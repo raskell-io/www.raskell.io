@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-31T16:33:30+00:00",
+ "generated": "2026-10-31T16:36:02+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -892,7 +892,7 @@
    "url": "https://raskell.io/tags/legibility/",
    "meta": "Concept · 1 page",
    "description": "Making a complex system readable from above: what the measure captures, what it erases, and what breaks when the map replaces the territory.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:linux",
@@ -1072,7 +1072,7 @@
    "url": "https://raskell.io/tags/provenance/",
    "meta": "Concept · 2 pages",
    "description": "Where something came from and who vouches for it: signed media, rights-clear training data, and artifacts that carry their own history.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:reinforcement-learning",
@@ -1243,7 +1243,7 @@
    "url": "https://raskell.io/tags/zola/",
    "meta": "Technology · 2 pages",
    "description": "The static site generator this site and several project sites are built with.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:agent-identity",
@@ -1423,7 +1423,7 @@
    "url": "https://raskell.io/tags#philosophy-of-science",
    "meta": "Concept · no pages yet",
    "description": "How science produces knowledge, what counts as evidence, and where its methods and claims reach their limits.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:privacy",
@@ -1599,10 +1599,10 @@
    "id": "p:human-macroscope",
    "kind": "project",
    "label": "Human Macroscope",
-   "url": "https://github.com/human-macroscope",
+   "url": "https://human-macroscope.github.io/",
    "meta": "Project",
-   "description": "A long-term interdisciplinary research project on humans and human collectives across scales, from individuals and families to institutions, cultures, and civilizations: how indivi…",
-   "degree": 4
+   "description": "A long-term interdisciplinary research project on humans and human collectives across scales: how individual traits, roles, relations, institutions, and cultural transmission combi…",
+   "degree": 9
   },
   {
    "id": "p:chronicle-of-earth",
@@ -1611,7 +1611,7 @@
    "url": "https://github.com/chronicle-of-earth",
    "meta": "Project",
    "description": "An interactive atlas of history and geopolitics, starting with 1900–2026. An early prototype pairs a 3D globe that zooms down to villages and streets with a timeline spanning days …",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "p:wasm-ad",
@@ -5620,11 +5620,31 @@
   },
   {
    "source": "p:human-macroscope",
+   "target": "t:emergence"
+  },
+  {
+   "source": "p:human-macroscope",
+   "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "p:human-macroscope",
+   "target": "t:provenance"
+  },
+  {
+   "source": "p:human-macroscope",
+   "target": "t:legibility"
+  },
+  {
+   "source": "p:human-macroscope",
    "target": "t:knowledge-management"
   },
   {
    "source": "p:human-macroscope",
-   "target": "t:emergence"
+   "target": "t:zola"
+  },
+  {
+   "source": "p:human-macroscope",
+   "target": "p:chronicle-of-earth"
   },
   {
    "source": "p:chronicle-of-earth",

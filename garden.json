@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-31T16:33:30+00:00",
+ "generated": "2026-10-31T16:36:02+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -2404,12 +2404,16 @@
   {
    "kind": "project",
    "title": "Human Macroscope",
-   "url": "https://github.com/human-macroscope",
-   "description": "A long-term interdisciplinary research project on humans and human collectives across scales, from individuals and families to institutions, cultures, and civilizations: how individual traits, roles, relations, and cultural transmission combine into emergent collective properties.",
+   "url": "https://human-macroscope.github.io/",
+   "description": "A long-term interdisciplinary research project on humans and human collectives across scales: how individual traits, roles, relations, institutions, and cultural transmission combine into collective properties over time. Its website zooms through one illustrated world, from a single person to a town's history, and includes an encyclopedia that quotes every working term from the research glossary. Models and evidence maps are drafts, open to criticism.",
    "topics": [
     "complex-systems",
+    "emergence",
+    "philosophy-of-science",
+    "provenance",
+    "legibility",
     "knowledge-management",
-    "emergence"
+    "zola"
    ],
    "meta": "Civic and research · Projects"
   },
