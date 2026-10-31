@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="robogym">
+  <title>robogym</title>
+  <defs><clipPath id="tile"><rect width="512" height="512" rx="112.64"/></clipPath></defs>
+  <g clip-path="url(#tile)">
+    <rect width="512" height="512" fill="#1a1a2e"/>
+    <g stroke="#4cc9f0" stroke-width="4" opacity="0.28">
+      <path d="M0 420 H512 M0 456 H512 M0 494 H512"/>
+      <path d="M256 400 V512 M176 400 L120 512 M336 400 L392 512 M96 400 L-16 512 M416 400 L528 512"/>
+    </g>
+    <path d="M150 420 L172 372 H252 L274 420 Z" fill="#e6e9f2"/>
+    <g fill="none" stroke="#e6e9f2" stroke-width="40" stroke-linecap="round">
+      <path d="M212 360 L190 220"/>
+      <path d="M190 220 L338 160"/>
+    </g>
+    <g fill="none" stroke="#ff8a3d" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M352 150 L392 120 L412 142"/>
+      <path d="M352 150 L384 196 L410 186"/>
+    </g>
+    <circle cx="212" cy="360" r="28" fill="#ff8a3d"/>
+    <circle cx="190" cy="220" r="28" fill="#ff8a3d"/>
+    <circle cx="344" cy="156" r="22" fill="#ff8a3d"/>
+  </g>
+</svg>

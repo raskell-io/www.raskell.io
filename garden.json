@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-10-31T18:00:10+00:00",
+ "generated": "2026-10-31T18:09:24+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -9,7 +9,7 @@
   "note": 9,
   "talk": 1,
   "work": 127,
-  "project": 30,
+  "project": 31,
   "topic": 136,
   "link": 370
  },
@@ -2610,6 +2610,22 @@
     "ai-platforms",
     "ai-for-ops",
     "platform-automation",
+    "rust"
+   ],
+   "meta": "Flagship and serious builds · Projects"
+  },
+  {
+   "kind": "project",
+   "title": "Aqueduct",
+   "url": "https://github.com/raskell-io/aqueduct",
+   "description": "A durable execution engine in Rust, built for the procedures agents write and people approve. Every step is journaled before it counts, so a run survives crashes, restarts and week long waits, and replays to the same result. Procedures are written in Starlark or Rust, and the engine is tested by deterministic simulation and by killing it at every point.",
+   "topics": [
+    "durable-execution",
+    "distributed-systems",
+    "reliability",
+    "determinism",
+    "simulation",
+    "agents",
     "rust"
    ],
    "meta": "Flagship and serious builds · Projects"

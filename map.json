@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-31T18:00:10+00:00",
+ "generated": "2026-10-31T18:09:24+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -10,7 +10,7 @@
    "url": "https://raskell.io/articles/the-river-and-the-canal/",
    "meta": "2026-10-31 · 51 min",
    "description": "Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine.",
-   "degree": 30
+   "degree": 31
   },
   {
    "id": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
@@ -478,7 +478,7 @@
    "url": "https://raskell.io/tags/agents/",
    "meta": "Concept · 15 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 23
+   "degree": 24
   },
   {
    "id": "t:ai-alignment",
@@ -649,7 +649,7 @@
    "url": "https://raskell.io/tags/determinism/",
    "meta": "Concept · 4 pages",
    "description": "Machines and institutions that do the same thing every time, what that sameness is worth, and where it breaks against an open world.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:developer-tooling",
@@ -667,7 +667,7 @@
    "url": "https://raskell.io/tags/distributed-systems/",
    "meta": "Domain · 3 pages",
    "description": "Replication, coordination, and consistency across machines that fail independently.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "t:durable-execution",
@@ -676,7 +676,7 @@
    "url": "https://raskell.io/tags/durable-execution/",
    "meta": "Technology · 2 pages",
    "description": "Workflow engines that keep long-running processes alive through crashes and deployments, with a journal of every step: Temporal, Restate and their kin.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:economics",
@@ -1153,7 +1153,7 @@
    "url": "https://raskell.io/tags/reliability/",
    "meta": "Domain · 2 pages",
    "description": "Failure modes, operability, and keeping systems up when the inputs and the dependencies misbehave.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:research-labs",
@@ -1180,7 +1180,7 @@
    "url": "https://raskell.io/tags/rust/",
    "meta": "Technology · 10 pages",
    "description": "The systems language most of the projects here are written in.",
-   "degree": 35
+   "degree": 36
   },
   {
    "id": "t:science-fiction",
@@ -1225,7 +1225,7 @@
    "url": "https://raskell.io/tags/simulation/",
    "meta": "Domain · 1 page",
    "description": "Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:social-reform",
@@ -1764,7 +1764,16 @@
    "url": "https://shiioo.raskell.io",
    "meta": "Project",
    "description": "A virtual company of AI agents on your Mac, run from your phone. Claude Code, Codex and local models work in their own branches; a rules file decides what they may do alone, the re…",
-   "degree": 12
+   "degree": 13
+  },
+  {
+   "id": "p:aqueduct",
+   "kind": "project",
+   "label": "Aqueduct",
+   "url": "https://github.com/raskell-io/aqueduct",
+   "meta": "Project",
+   "description": "A durable execution engine in Rust, built for the procedures agents write and people approve. Every step is journaled before it counts, so a run survives crashes, restarts and week…",
+   "degree": 10
   },
   {
    "id": "p:refrakt",
@@ -3153,7 +3162,7 @@
    "label": "Flagship and serious builds",
    "url": "https://raskell.io/projects/#tier-flagship",
    "meta": "Group",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "h:projects-civic",
@@ -5754,6 +5763,10 @@
    "target": "p:shiioo"
   },
   {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "p:aqueduct"
+  },
+  {
    "source": "a:/articles/a-blueprint-for-the-static-web/",
    "target": "p:refrakt"
   },
@@ -6120,6 +6133,42 @@
   {
    "source": "p:shiioo",
    "target": "t:rust"
+  },
+  {
+   "source": "p:aqueduct",
+   "target": "h:projects-flagship"
+  },
+  {
+   "source": "p:aqueduct",
+   "target": "t:durable-execution"
+  },
+  {
+   "source": "p:aqueduct",
+   "target": "t:distributed-systems"
+  },
+  {
+   "source": "p:aqueduct",
+   "target": "t:reliability"
+  },
+  {
+   "source": "p:aqueduct",
+   "target": "t:determinism"
+  },
+  {
+   "source": "p:aqueduct",
+   "target": "t:simulation"
+  },
+  {
+   "source": "p:aqueduct",
+   "target": "t:agents"
+  },
+  {
+   "source": "p:aqueduct",
+   "target": "t:rust"
+  },
+  {
+   "source": "p:aqueduct",
+   "target": "p:shiioo"
   },
   {
    "source": "p:refrakt",
