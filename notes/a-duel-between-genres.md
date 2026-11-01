@@ -1,5 +1,5 @@
 ---
-title: "A duel between genres"
+title: "Future Cop: L.A.P.D., a duel between genres"
 url: https://raskell.io/notes/a-duel-between-genres/
 author: Raffael Schneider
 date: 2026-11-01
@@ -7,7 +7,7 @@ description: "Future Cop: L.A.P.D. had a one-against-one mode where you were the
 tags: [game-design, strategy]
 ---
 
-# A duel between genres
+# Future Cop: L.A.P.D., a duel between genres
 
 One of the most fun things I played on the PlayStation was a side mode in a game about police robots. [Future Cop: L.A.P.D.](https://en.wikipedia.org/wiki/Future_Cop:_LAPD) came out in 1998, set in a Los Angeles of 2098, and next to its campaign it had a mode called Precinct Assault. Two players, one arena, one base each. You pilot the X1-Alpha, a machine that switches between a fast hover car and a slow, heavily armed walking mech. You drive out to capture turrets and outposts, you spend what they earn on hovertanks that roll toward the other base on their own, and you buy helicopters to shoot down the tanks coming at yours. The first tank to break into a base ends the match.
 

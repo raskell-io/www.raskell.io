@@ -1,5 +1,5 @@
 ---
-title: "Orders for the week"
+title: "Gangsters: Organized Crime, orders for the week"
 url: https://raskell.io/notes/orders-for-the-week/
 author: Raffael Schneider
 date: 2026-11-01
@@ -7,7 +7,7 @@ description: "Gangsters: Organized Crime had you plan a week of orders and then 
 tags: [game-design, strategy, simulation]
 ---
 
-# Orders for the week
+# Gangsters: Organized Crime, orders for the week
 
 The other game I keep coming back to from 1998 is [Gangsters: Organized Crime](https://en.wikipedia.org/wiki/Gangsters:_Organized_Crime), by Hothouse Creations for Eidos. It is set in New Temperance, a fictional suburb of Chicago during Prohibition, and you start as a small-time crime boss with a handful of hoods and a lot of ambition.
 
