@@ -1,5 +1,5 @@
 +++
-title = "Orders for the week"
+title = "Gangsters: Organized Crime, orders for the week"
 date = 2026-11-01
 description = "Gangsters: Organized Crime had you plan a week of orders and then watch the city carry them out. I have not played anything like it since."
 

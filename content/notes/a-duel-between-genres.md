@@ -1,5 +1,5 @@
 +++
-title = "A duel between genres"
+title = "Future Cop: L.A.P.D., a duel between genres"
 date = 2026-11-01
 description = "Future Cop: L.A.P.D. had a one-against-one mode where you were the soldier and the general at once. I have not found a game since that does it."
 
