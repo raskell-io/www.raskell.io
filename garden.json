@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-01T07:33:19+00:00",
+ "generated": "2026-11-01T08:15:46+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -8,9 +8,9 @@
   "review": 2,
   "note": 9,
   "talk": 1,
-  "work": 127,
+  "work": 153,
   "project": 31,
-  "topic": 136,
+  "topic": 137,
   "link": 391
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
@@ -1509,7 +1509,7 @@
    "title": "Das Tagebuch der Menschheit",
    "url": "https://raskell.io/reading/#das-tagebuch-der-menschheit",
    "description": "The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution.",
-   "date": "2020-08",
+   "date": "2019",
    "topics": [
     "religion",
     "life-sciences",
@@ -1537,7 +1537,7 @@
    "title": "Language",
    "url": "https://raskell.io/reading/#language-the-cultural-tool",
    "description": "Language as a cultural invention rather than an innate grammar, argued from the Pirahã of the Amazon.",
-   "date": "2016-01",
+   "date": "2012",
    "topics": [
     "languages",
     "intelligence"
@@ -1601,7 +1601,8 @@
    "description": "An introduction to Jung's analytical psychology by one of his closest collaborators, with a foreword by Jung.",
    "date": "2012-06",
    "topics": [
-    "philosophy"
+    "philosophy",
+    "psychology"
    ],
    "meta": "Book · Jolande Jacobi · Read"
   },
@@ -1640,6 +1641,314 @@
     "china"
    ],
    "meta": "Report · Thomas Larsen, Romeo Dean, Brendan Halstead, Eli Lifland, Ryan Greenblatt, and Daniel Kokotajlo · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Ancient Egyptian Literature",
+   "url": "https://raskell.io/reading/#ancient-egyptian-literature",
+   "description": "Three thousand years of Egyptian writing in translation, from tomb inscriptions and wisdom teachings to tales and hymns.",
+   "date": "2024-12",
+   "topics": [
+    "literature",
+    "history",
+    "religion",
+    "world-history"
+   ],
+   "meta": "Book · Miriam Lichtheim (ed.) · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Der Kult",
+   "url": "https://raskell.io/reading/#der-kult",
+   "description": "The pandemic years read as a cult in the making, and how ordinary people are drawn into it.",
+   "date": "2022-01",
+   "topics": [
+    "philosophy",
+    "policy",
+    "history"
+   ],
+   "meta": "Book · Gunnar Kaiser · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Return of the God Hypothesis",
+   "url": "https://raskell.io/reading/#return-of-the-god-hypothesis",
+   "description": "The case that cosmology, fine-tuning and the information in DNA point to a mind behind the universe.",
+   "date": "2025-01",
+   "topics": [
+    "religion",
+    "philosophy-of-science",
+    "physics",
+    "life-sciences"
+   ],
+   "meta": "Book · Stephen C. Meyer · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Die Angst der Eliten",
+   "url": "https://raskell.io/reading/#die-angst-der-eliten",
+   "description": "Who fears democracy, and how the rule of the people came to be kept within limits.",
+   "date": "2022",
+   "topics": [
+    "history",
+    "policy",
+    "social-reform"
+   ],
+   "meta": "Book · Paul Schreyer · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Chronik einer angekündigten Krise",
+   "url": "https://raskell.io/reading/#chronik-einer-angekuendigten-krise",
+   "description": "The pandemic response as a scenario rehearsed for twenty years before the virus arrived.",
+   "date": "2020",
+   "topics": [
+    "policy",
+    "medicine",
+    "geopolitics",
+    "risk",
+    "forecasting"
+   ],
+   "meta": "Book · Paul Schreyer · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Extraterrestrial",
+   "url": "https://raskell.io/reading/#extraterrestrial",
+   "description": "An interstellar visitor in 2017, and the case that it was made by someone else.",
+   "date": "2021",
+   "topics": [
+    "physics",
+    "intelligence",
+    "philosophy-of-science"
+   ],
+   "meta": "Book · Avi Loeb · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Die Befreiung der Schweiz",
+   "url": "https://raskell.io/reading/#die-befreiung-der-schweiz",
+   "description": "The case for an unconditional basic income in Switzerland, from the people who put it to a vote.",
+   "date": "2012",
+   "topics": [
+    "social-reform",
+    "switzerland",
+    "future-of-work",
+    "policy"
+   ],
+   "meta": "Book · Christian Müller and Daniel Straub · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Beyond Order",
+   "url": "https://raskell.io/reading/#beyond-order",
+   "description": "Twelve more rules, this time about the risk of too much order rather than too little.",
+   "date": "2021",
+   "topics": [
+    "philosophy",
+    "ethics",
+    "psychology"
+   ],
+   "meta": "Book · Jordan B. Peterson · Read"
+  },
+  {
+   "kind": "work",
+   "title": "12 Rules for Life",
+   "url": "https://raskell.io/reading/#12-rules-for-life",
+   "description": "Personal responsibility as an answer to chaos, told through lobsters, Bible stories and clinical cases.",
+   "date": "2020",
+   "topics": [
+    "philosophy",
+    "ethics",
+    "religion",
+    "evolution",
+    "psychology"
+   ],
+   "meta": "Book · Jordan B. Peterson · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Hermeneutics",
+   "url": "https://raskell.io/reading/#hermeneutics",
+   "description": "Interpretation goes all the way down: a short history of hermeneutics and why facts never speak for themselves.",
+   "date": "2019",
+   "topics": [
+    "philosophy",
+    "philosophy-of-science"
+   ],
+   "meta": "Book · John D. Caputo · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Der überflüssige Mensch",
+   "url": "https://raskell.io/reading/#der-ueberfluessige-mensch",
+   "description": "On an economy that no longer needs many of the people living in it, and how that is talked about.",
+   "date": "2013",
+   "topics": [
+    "ethics",
+    "social-reform",
+    "geopolitics",
+    "future-of-work"
+   ],
+   "meta": "Book · Ilija Trojanow · Read"
+  },
+  {
+   "kind": "work",
+   "title": "God",
+   "url": "https://raskell.io/reading/#god-a-human-history",
+   "description": "How humans made God in their own image, from cave paintings to monotheism.",
+   "date": "2017",
+   "topics": [
+    "religion",
+    "world-history",
+    "philosophy",
+    "evolution"
+   ],
+   "meta": "Book · Reza Aslan · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Du sollst nicht funktionieren",
+   "url": "https://raskell.io/reading/#du-sollst-nicht-funktionieren",
+   "description": "Against self-optimisation: a case for living rather than functioning.",
+   "date": "2014",
+   "topics": [
+    "philosophy",
+    "ethics"
+   ],
+   "meta": "Book · Ariadne von Schirach · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Vererbung",
+   "url": "https://raskell.io/reading/#vererbung",
+   "description": "How heredity became a biological concept, from theories of generation to the genome.",
+   "date": "2015",
+   "topics": [
+    "history-of-science",
+    "life-sciences",
+    "evolution"
+   ],
+   "meta": "Book · Hans-Jörg Rheinberger and Staffan Müller-Wille · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Maps of Meaning",
+   "url": "https://raskell.io/reading/#maps-of-meaning",
+   "description": "Myths as maps for action, between order and chaos, the dense groundwork for his later books.",
+   "date": "2022",
+   "topics": [
+    "philosophy",
+    "religion",
+    "neuroscience",
+    "psychology"
+   ],
+   "meta": "Book · Jordan B. Peterson · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Nietzsche",
+   "url": "https://raskell.io/reading/#nietzsche-safranski",
+   "description": "A biography of Nietzsche told through his ideas rather than his days.",
+   "date": "2013",
+   "topics": [
+    "philosophy",
+    "ethics",
+    "religion"
+   ],
+   "meta": "Book · Rüdiger Safranski · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Philosophy and Social Hope",
+   "url": "https://raskell.io/reading/#philosophy-and-social-hope",
+   "description": "Pragmatism as a public philosophy: drop the quest for certainty and put hope for a better society in its place.",
+   "date": "2011",
+   "topics": [
+    "philosophy",
+    "social-reform",
+    "ethics"
+   ],
+   "meta": "Book · Richard Rorty · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Liebe",
+   "url": "https://raskell.io/reading/#liebe",
+   "description": "Love examined through biology, brain research and philosophy, and why none of them alone explains it.",
+   "date": "2009",
+   "topics": [
+    "philosophy",
+    "evolution",
+    "neuroscience",
+    "psychology"
+   ],
+   "meta": "Book · Richard David Precht · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Man and His Symbols",
+   "url": "https://raskell.io/reading/#man-and-his-symbols",
+   "description": "Jung's own introduction to the unconscious, dreams and symbols, written with his closest collaborators for readers without training.",
+   "date": "2010",
+   "topics": [
+    "philosophy",
+    "religion",
+    "psychology"
+   ],
+   "meta": "Book · C. G. Jung, Marie-Louise von Franz, Joseph L. Henderson, Jolande Jacobi and Aniela Jaffé · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Psychological Types",
+   "url": "https://raskell.io/reading/#psychological-types",
+   "description": "Jung's theory of introversion, extraversion and the four functions, the basis of later typologies such as the Myers-Briggs Type Indicator.",
+   "date": "2010",
+   "topics": [
+    "philosophy",
+    "religion",
+    "psychology"
+   ],
+   "meta": "Book · C. G. Jung · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Library",
+   "url": "https://raskell.io/reading/#the-library-a-fragile-history",
+   "description": "Two thousand years of libraries, and how often their collections were lost, dispersed or rebuilt.",
+   "date": "2025-02",
+   "topics": [
+    "history",
+    "external-memory",
+    "world-history"
+   ],
+   "meta": "Book · Andrew Pettegree and Arthur der Weduwen · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Magicians of the Gods",
+   "url": "https://raskell.io/reading/#magicians-of-the-gods",
+   "description": "Hancock's case for a lost Ice Age civilisation destroyed by a comet, revisited with Göbekli Tepe.",
+   "date": "2017",
+   "topics": [
+    "world-history",
+    "history",
+    "religion"
+   ],
+   "meta": "Book · Graham Hancock · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Fingerprints of the Gods",
+   "url": "https://raskell.io/reading/#fingerprints-of-the-gods",
+   "description": "Hancock's argument for a lost civilisation before recorded history, from the Andes to Giza.",
+   "date": "2018",
+   "topics": [
+    "world-history",
+    "history",
+    "geography"
+   ],
+   "meta": "Book · Graham Hancock · Read"
   },
   {
    "kind": "work",
@@ -2369,6 +2678,43 @@
     "complex-systems"
    ],
    "meta": "Novel · Michael Crichton · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Code Breaker",
+   "url": "https://raskell.io/reading/#the-code-breaker",
+   "description": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
+   "topics": [
+    "life-sciences",
+    "synthetic-biology",
+    "history-of-science",
+    "ethics",
+    "medicine"
+   ],
+   "meta": "Book · Walter Isaacson · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Rise and Fall of the Dinosaurs",
+   "url": "https://raskell.io/reading/#the-rise-and-fall-of-the-dinosaurs",
+   "description": "The dinosaurs from their origins to the asteroid, as recent fossil discoveries have rewritten the story.",
+   "topics": [
+    "evolution",
+    "life-sciences",
+    "history-of-science"
+   ],
+   "meta": "Book · Steve Brusatte · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Story of Birds",
+   "url": "https://raskell.io/reading/#the-story-of-birds",
+   "description": "Birds as the dinosaurs that survived, from their feathered ancestors to the species alive now.",
+   "topics": [
+    "evolution",
+    "life-sciences"
+   ],
+   "meta": "Book · Steve Brusatte · Backlog"
   },
   {
    "kind": "work",
@@ -3664,6 +4010,13 @@
    "url": "https://raskell.io/tags/provenance/",
    "description": "Where something came from and who vouches for it: signed media, rights-clear training data, and artifacts that carry their own history.",
    "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Psychology",
+   "url": "https://raskell.io/tags#psychology",
+   "description": "How minds work and what people make of their lives: personality and types, the unconscious and its symbols, meaning, order and chaos.",
+   "meta": "Domain"
   },
   {
    "kind": "topic",

@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-01T07:33:18+00:00",
+ "generated": "2026-11-01T08:15:46+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -748,7 +748,7 @@
    "url": "https://raskell.io/tags/ethics/",
    "meta": "Concept · 1 page",
    "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
-   "degree": 10
+   "degree": 17
   },
   {
    "id": "t:europe",
@@ -766,7 +766,7 @@
    "url": "https://raskell.io/tags/external-memory/",
    "meta": "Concept · 3 pages",
    "description": "Notes, links, and stores that remember for us: second brains, the web as a shared memory, and what agents write down for their next session.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "t:factories",
@@ -811,7 +811,7 @@
    "url": "https://raskell.io/tags/future-of-work/",
    "meta": "Concept · 3 pages",
    "description": "What AI does to jobs and livelihoods: the interval before any post-scarcity economy, basic income against basic access, and who gets through the middle.",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "t:game-ai",
@@ -910,7 +910,7 @@
    "url": "https://raskell.io/tags/intelligence/",
    "meta": "Concept · 2 pages",
    "description": "What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.",
-   "degree": 20
+   "degree": 21
   },
   {
    "id": "t:isolation",
@@ -1027,7 +1027,7 @@
    "url": "https://raskell.io/tags/neuroscience/",
    "meta": "Concept · 1 page",
    "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
-   "degree": 11
+   "degree": 13
   },
   {
    "id": "t:observability",
@@ -1108,7 +1108,7 @@
    "url": "https://raskell.io/tags/physics/",
    "meta": "Domain · 1 page",
    "description": "The laws of matter, energy, space and time, and the people who found them, from Newton to the bomb to cosmology.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "t:pingora",
@@ -1135,7 +1135,7 @@
    "url": "https://raskell.io/tags/policy/",
    "meta": "Domain · 3 pages",
    "description": "Where engineering meets regulation, public institutions, procurement, and national strategy.",
-   "degree": 14
+   "degree": 18
   },
   {
    "id": "t:post-scarcity",
@@ -1207,7 +1207,7 @@
    "url": "https://raskell.io/tags/risk/",
    "meta": "Concept · 1 page",
    "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "t:rust",
@@ -1270,7 +1270,7 @@
    "url": "https://raskell.io/tags/social-reform/",
    "meta": "Concept · 2 pages",
    "description": "Plans to redesign society or the economy, from nineteenth-century utopias to high-modernist states and basic income, and what happened when they met people.",
-   "degree": 12
+   "degree": 16
   },
   {
    "id": "t:sovereignty",
@@ -1306,7 +1306,7 @@
    "url": "https://raskell.io/tags/switzerland/",
    "meta": "Concept · 2 pages",
    "description": "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Swiss civic projects.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:technology-races",
@@ -1387,7 +1387,7 @@
    "url": "https://raskell.io/tags/world-history/",
    "meta": "Concept · 1 page",
    "description": "History told at the scale of continents and millennia: why societies diverged, and how the world came to look the way it does.",
-   "degree": 12
+   "degree": 17
   },
   {
    "id": "t:zola",
@@ -1450,7 +1450,7 @@
    "url": "https://raskell.io/tags#evolution",
    "meta": "Concept · no pages yet",
    "description": "Change by variation and selection, in genes, brains, and populations, and the arguments over how much it explains.",
-   "degree": 5
+   "degree": 11
   },
   {
    "id": "t:existential-risk",
@@ -1468,7 +1468,7 @@
    "url": "https://raskell.io/tags#forecasting",
    "meta": "Concept · no pages yet",
    "description": "Saying what will happen and how sure you are: scenarios, predictions that fail, and the events nobody priced in.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:geography",
@@ -1477,7 +1477,7 @@
    "url": "https://raskell.io/tags#geography",
    "meta": "Domain · no pages yet",
    "description": "Places, terrain, borders, and spatial data, and how their relationships change over time.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:geopolitics",
@@ -1486,7 +1486,7 @@
    "url": "https://raskell.io/tags#geopolitics",
    "meta": "Concept · no pages yet",
    "description": "How geography, empires, and arms shape the balance of power between states and regions, as history.",
-   "degree": 21
+   "degree": 23
   },
   {
    "id": "t:high-modernism",
@@ -1504,7 +1504,7 @@
    "url": "https://raskell.io/tags#history",
    "meta": "Domain · no pages yet",
    "description": "Events, institutions, and societies through time, with attention to sources, competing accounts, and uncertainty.",
-   "degree": 19
+   "degree": 25
   },
   {
    "id": "t:history-of-science",
@@ -1513,7 +1513,7 @@
    "url": "https://raskell.io/tags#history-of-science",
    "meta": "Concept · no pages yet",
    "description": "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.",
-   "degree": 15
+   "degree": 18
   },
   {
    "id": "t:hubris",
@@ -1531,7 +1531,7 @@
    "url": "https://raskell.io/tags#life-sciences",
    "meta": "Domain · no pages yet",
    "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
-   "degree": 13
+   "degree": 18
   },
   {
    "id": "t:literature",
@@ -1540,7 +1540,7 @@
    "url": "https://raskell.io/tags#literature",
    "meta": "Domain · no pages yet",
    "description": "Fiction and writing about fiction: novels read for their own sake, and the forms they take.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "t:mathematics",
@@ -1567,7 +1567,7 @@
    "url": "https://raskell.io/tags#medicine",
    "meta": "Concept · no pages yet",
    "description": "How treatments are discovered, tested, and brought to patients, from antisepsis and sulfa drugs to modern drug design.",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "t:networking",
@@ -1594,7 +1594,7 @@
    "url": "https://raskell.io/tags#philosophy",
    "meta": "Domain · no pages yet",
    "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
-   "degree": 15
+   "degree": 27
   },
   {
    "id": "t:philosophy-of-science",
@@ -1603,7 +1603,7 @@
    "url": "https://raskell.io/tags#philosophy-of-science",
    "meta": "Concept · no pages yet",
    "description": "How science produces knowledge, what counts as evidence, and where its methods and claims reach their limits.",
-   "degree": 12
+   "degree": 15
   },
   {
    "id": "t:privacy",
@@ -1615,13 +1615,22 @@
    "degree": 5
   },
   {
+   "id": "t:psychology",
+   "kind": "tag",
+   "label": "Psychology",
+   "url": "https://raskell.io/tags#psychology",
+   "meta": "Domain · no pages yet",
+   "description": "How minds work and what people make of their lives: personality and types, the unconscious and its symbols, meaning, order and chaos.",
+   "degree": 7
+  },
+  {
    "id": "t:religion",
    "kind": "tag",
    "label": "Religion",
    "url": "https://raskell.io/tags#religion",
    "meta": "Concept · no pages yet",
    "description": "Faith, doubt, and the institutions and cities built around belief, as history and as argument.",
-   "degree": 12
+   "degree": 21
   },
   {
    "id": "t:scientific-revolutions",
@@ -1657,7 +1666,7 @@
    "url": "https://raskell.io/tags#synthetic-biology",
    "meta": "Domain · no pages yet",
    "description": "Engineering living systems: designing molecules and organisms, growing neurons on chips, and the software that reads and writes biology.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:transhumanism",
@@ -2428,7 +2437,7 @@
    "kind": "work",
    "label": "Das Tagebuch der Menschheit",
    "url": "https://raskell.io/reading/#das-tagebuch-der-menschheit",
-   "meta": "Book · Carel van Schaik and Kai Michel · read August 2020",
+   "meta": "Book · Carel van Schaik and Kai Michel · read 2019",
    "description": "The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution.",
    "degree": 5
   },
@@ -2446,7 +2455,7 @@
    "kind": "work",
    "label": "Language",
    "url": "https://raskell.io/reading/#language-the-cultural-tool",
-   "meta": "Book · Daniel Everett · read January 2016",
+   "meta": "Book · Daniel Everett · read 2012",
    "description": "Language as a cultural invention rather than an innate grammar, argued from the Pirahã of the Amazon.",
    "degree": 3
   },
@@ -2493,7 +2502,7 @@
    "url": "https://raskell.io/reading/#die-psychologie-von-c-g-jung",
    "meta": "Book · Jolande Jacobi · read June 2012",
    "description": "An introduction to Jung's analytical psychology by one of his closest collaborators, with a foreword by Jung.",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "w:ai-2027",
@@ -2512,6 +2521,213 @@
    "meta": "Report · Thomas Larsen, Romeo Dean, Brendan Halstead, Eli Lifland, Ryan Greenblatt, and Daniel Kokotajlo · read July 2026",
    "description": "A recommended path rather than a forecast: the United States and China slow down, verify each other, and make a deal.",
    "degree": 9
+  },
+  {
+   "id": "w:ancient-egyptian-literature",
+   "kind": "work",
+   "label": "Ancient Egyptian Literature",
+   "url": "https://raskell.io/reading/#ancient-egyptian-literature",
+   "meta": "Book · Miriam Lichtheim (ed.) · read December 2024",
+   "description": "Three thousand years of Egyptian writing in translation, from tomb inscriptions and wisdom teachings to tales and hymns.",
+   "degree": 5
+  },
+  {
+   "id": "w:der-kult",
+   "kind": "work",
+   "label": "Der Kult",
+   "url": "https://raskell.io/reading/#der-kult",
+   "meta": "Book · Gunnar Kaiser · read January 2022",
+   "description": "The pandemic years read as a cult in the making, and how ordinary people are drawn into it.",
+   "degree": 4
+  },
+  {
+   "id": "w:return-of-the-god-hypothesis",
+   "kind": "work",
+   "label": "Return of the God Hypothesis",
+   "url": "https://raskell.io/reading/#return-of-the-god-hypothesis",
+   "meta": "Book · Stephen C. Meyer · read January 2025",
+   "description": "The case that cosmology, fine-tuning and the information in DNA point to a mind behind the universe.",
+   "degree": 5
+  },
+  {
+   "id": "w:die-angst-der-eliten",
+   "kind": "work",
+   "label": "Die Angst der Eliten",
+   "url": "https://raskell.io/reading/#die-angst-der-eliten",
+   "meta": "Book · Paul Schreyer · read 2022",
+   "description": "Who fears democracy, and how the rule of the people came to be kept within limits.",
+   "degree": 4
+  },
+  {
+   "id": "w:chronik-einer-angekuendigten-krise",
+   "kind": "work",
+   "label": "Chronik einer angekündigten Krise",
+   "url": "https://raskell.io/reading/#chronik-einer-angekuendigten-krise",
+   "meta": "Book · Paul Schreyer · read 2020",
+   "description": "The pandemic response as a scenario rehearsed for twenty years before the virus arrived.",
+   "degree": 6
+  },
+  {
+   "id": "w:extraterrestrial",
+   "kind": "work",
+   "label": "Extraterrestrial",
+   "url": "https://raskell.io/reading/#extraterrestrial",
+   "meta": "Book · Avi Loeb · read 2021",
+   "description": "An interstellar visitor in 2017, and the case that it was made by someone else.",
+   "degree": 4
+  },
+  {
+   "id": "w:die-befreiung-der-schweiz",
+   "kind": "work",
+   "label": "Die Befreiung der Schweiz",
+   "url": "https://raskell.io/reading/#die-befreiung-der-schweiz",
+   "meta": "Book · Christian Müller and Daniel Straub · read 2012",
+   "description": "The case for an unconditional basic income in Switzerland, from the people who put it to a vote.",
+   "degree": 5
+  },
+  {
+   "id": "w:beyond-order",
+   "kind": "work",
+   "label": "Beyond Order",
+   "url": "https://raskell.io/reading/#beyond-order",
+   "meta": "Book · Jordan B. Peterson · read 2021",
+   "description": "Twelve more rules, this time about the risk of too much order rather than too little.",
+   "degree": 4
+  },
+  {
+   "id": "w:12-rules-for-life",
+   "kind": "work",
+   "label": "12 Rules for Life",
+   "url": "https://raskell.io/reading/#12-rules-for-life",
+   "meta": "Book · Jordan B. Peterson · read 2020",
+   "description": "Personal responsibility as an answer to chaos, told through lobsters, Bible stories and clinical cases.",
+   "degree": 6
+  },
+  {
+   "id": "w:hermeneutics",
+   "kind": "work",
+   "label": "Hermeneutics",
+   "url": "https://raskell.io/reading/#hermeneutics",
+   "meta": "Book · John D. Caputo · read 2019",
+   "description": "Interpretation goes all the way down: a short history of hermeneutics and why facts never speak for themselves.",
+   "degree": 3
+  },
+  {
+   "id": "w:der-ueberfluessige-mensch",
+   "kind": "work",
+   "label": "Der überflüssige Mensch",
+   "url": "https://raskell.io/reading/#der-ueberfluessige-mensch",
+   "meta": "Book · Ilija Trojanow · read 2013",
+   "description": "On an economy that no longer needs many of the people living in it, and how that is talked about.",
+   "degree": 5
+  },
+  {
+   "id": "w:god-a-human-history",
+   "kind": "work",
+   "label": "God",
+   "url": "https://raskell.io/reading/#god-a-human-history",
+   "meta": "Book · Reza Aslan · read 2017",
+   "description": "How humans made God in their own image, from cave paintings to monotheism.",
+   "degree": 5
+  },
+  {
+   "id": "w:du-sollst-nicht-funktionieren",
+   "kind": "work",
+   "label": "Du sollst nicht funktionieren",
+   "url": "https://raskell.io/reading/#du-sollst-nicht-funktionieren",
+   "meta": "Book · Ariadne von Schirach · read 2014",
+   "description": "Against self-optimisation: a case for living rather than functioning.",
+   "degree": 3
+  },
+  {
+   "id": "w:vererbung",
+   "kind": "work",
+   "label": "Vererbung",
+   "url": "https://raskell.io/reading/#vererbung",
+   "meta": "Book · Hans-Jörg Rheinberger and Staffan Müller-Wille · read 2015",
+   "description": "How heredity became a biological concept, from theories of generation to the genome.",
+   "degree": 4
+  },
+  {
+   "id": "w:maps-of-meaning",
+   "kind": "work",
+   "label": "Maps of Meaning",
+   "url": "https://raskell.io/reading/#maps-of-meaning",
+   "meta": "Book · Jordan B. Peterson · read 2022",
+   "description": "Myths as maps for action, between order and chaos, the dense groundwork for his later books.",
+   "degree": 5
+  },
+  {
+   "id": "w:nietzsche-safranski",
+   "kind": "work",
+   "label": "Nietzsche",
+   "url": "https://raskell.io/reading/#nietzsche-safranski",
+   "meta": "Book · Rüdiger Safranski · read 2013",
+   "description": "A biography of Nietzsche told through his ideas rather than his days.",
+   "degree": 4
+  },
+  {
+   "id": "w:philosophy-and-social-hope",
+   "kind": "work",
+   "label": "Philosophy and Social Hope",
+   "url": "https://raskell.io/reading/#philosophy-and-social-hope",
+   "meta": "Book · Richard Rorty · read 2011",
+   "description": "Pragmatism as a public philosophy: drop the quest for certainty and put hope for a better society in its place.",
+   "degree": 4
+  },
+  {
+   "id": "w:liebe",
+   "kind": "work",
+   "label": "Liebe",
+   "url": "https://raskell.io/reading/#liebe",
+   "meta": "Book · Richard David Precht · read 2009",
+   "description": "Love examined through biology, brain research and philosophy, and why none of them alone explains it.",
+   "degree": 5
+  },
+  {
+   "id": "w:man-and-his-symbols",
+   "kind": "work",
+   "label": "Man and His Symbols",
+   "url": "https://raskell.io/reading/#man-and-his-symbols",
+   "meta": "Book · C. G. Jung, Marie-Louise von Franz, Joseph L. Henderson, Jolande Jacobi and Aniela Jaffé · read 2010",
+   "description": "Jung's own introduction to the unconscious, dreams and symbols, written with his closest collaborators for readers without training.",
+   "degree": 4
+  },
+  {
+   "id": "w:psychological-types",
+   "kind": "work",
+   "label": "Psychological Types",
+   "url": "https://raskell.io/reading/#psychological-types",
+   "meta": "Book · C. G. Jung · read 2010",
+   "description": "Jung's theory of introversion, extraversion and the four functions, the basis of later typologies such as the Myers-Briggs Type Indicator.",
+   "degree": 4
+  },
+  {
+   "id": "w:the-library-a-fragile-history",
+   "kind": "work",
+   "label": "The Library",
+   "url": "https://raskell.io/reading/#the-library-a-fragile-history",
+   "meta": "Book · Andrew Pettegree and Arthur der Weduwen · read February 2025",
+   "description": "Two thousand years of libraries, and how often their collections were lost, dispersed or rebuilt.",
+   "degree": 4
+  },
+  {
+   "id": "w:magicians-of-the-gods",
+   "kind": "work",
+   "label": "Magicians of the Gods",
+   "url": "https://raskell.io/reading/#magicians-of-the-gods",
+   "meta": "Book · Graham Hancock · read 2017",
+   "description": "Hancock's case for a lost Ice Age civilisation destroyed by a comet, revisited with Göbekli Tepe.",
+   "degree": 4
+  },
+  {
+   "id": "w:fingerprints-of-the-gods",
+   "kind": "work",
+   "label": "Fingerprints of the Gods",
+   "url": "https://raskell.io/reading/#fingerprints-of-the-gods",
+   "meta": "Book · Graham Hancock · read 2018",
+   "description": "Hancock's argument for a lost civilisation before recorded history, from the Andes to Giza.",
+   "degree": 4
   },
   {
    "id": "w:enterprise-architecture-as-strategy",
@@ -3018,6 +3234,33 @@
    "degree": 4
   },
   {
+   "id": "w:the-code-breaker",
+   "kind": "work",
+   "label": "The Code Breaker",
+   "url": "https://raskell.io/reading/#the-code-breaker",
+   "meta": "Book · Walter Isaacson · in the backlog",
+   "description": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
+   "degree": 6
+  },
+  {
+   "id": "w:the-rise-and-fall-of-the-dinosaurs",
+   "kind": "work",
+   "label": "The Rise and Fall of the Dinosaurs",
+   "url": "https://raskell.io/reading/#the-rise-and-fall-of-the-dinosaurs",
+   "meta": "Book · Steve Brusatte · in the backlog",
+   "description": "The dinosaurs from their origins to the asteroid, as recent fossil discoveries have rewritten the story.",
+   "degree": 4
+  },
+  {
+   "id": "w:the-story-of-birds",
+   "kind": "work",
+   "label": "The Story of Birds",
+   "url": "https://raskell.io/reading/#the-story-of-birds",
+   "meta": "Book · Steve Brusatte · in the backlog",
+   "description": "Birds as the dinosaurs that survived, from their feathered ancestors to the species alive now.",
+   "degree": 3
+  },
+  {
    "id": "w:godel-escher-bach",
    "kind": "work",
    "label": "Gödel, Escher, Bach",
@@ -3139,7 +3382,7 @@
    "label": "Backlog",
    "url": "https://raskell.io/reading/#shelf-backlog",
    "meta": "Shelf",
-   "degree": 67
+   "degree": 70
   },
   {
    "id": "h:shelf-read",
@@ -3147,7 +3390,7 @@
    "label": "Read",
    "url": "https://raskell.io/reading/#shelf-read",
    "meta": "Shelf",
-   "degree": 58
+   "degree": 81
   },
   {
    "id": "h:shelf-set-aside",
@@ -7788,6 +8031,10 @@
    "target": "t:philosophy"
   },
   {
+   "source": "w:die-psychologie-von-c-g-jung",
+   "target": "t:psychology"
+  },
+  {
    "source": "w:ai-2027",
    "target": "h:shelf-read"
   },
@@ -7870,6 +8117,410 @@
   {
    "source": "w:ai-2040-plan-a",
    "target": "t:china"
+  },
+  {
+   "source": "w:ancient-egyptian-literature",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:ancient-egyptian-literature",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:ancient-egyptian-literature",
+   "target": "t:history"
+  },
+  {
+   "source": "w:ancient-egyptian-literature",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:ancient-egyptian-literature",
+   "target": "t:world-history"
+  },
+  {
+   "source": "w:der-kult",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:der-kult",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:der-kult",
+   "target": "t:policy"
+  },
+  {
+   "source": "w:der-kult",
+   "target": "t:history"
+  },
+  {
+   "source": "w:return-of-the-god-hypothesis",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:return-of-the-god-hypothesis",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:return-of-the-god-hypothesis",
+   "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "w:return-of-the-god-hypothesis",
+   "target": "t:physics"
+  },
+  {
+   "source": "w:return-of-the-god-hypothesis",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:die-angst-der-eliten",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:die-angst-der-eliten",
+   "target": "t:history"
+  },
+  {
+   "source": "w:die-angst-der-eliten",
+   "target": "t:policy"
+  },
+  {
+   "source": "w:die-angst-der-eliten",
+   "target": "t:social-reform"
+  },
+  {
+   "source": "w:chronik-einer-angekuendigten-krise",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:chronik-einer-angekuendigten-krise",
+   "target": "t:policy"
+  },
+  {
+   "source": "w:chronik-einer-angekuendigten-krise",
+   "target": "t:medicine"
+  },
+  {
+   "source": "w:chronik-einer-angekuendigten-krise",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:chronik-einer-angekuendigten-krise",
+   "target": "t:risk"
+  },
+  {
+   "source": "w:chronik-einer-angekuendigten-krise",
+   "target": "t:forecasting"
+  },
+  {
+   "source": "w:extraterrestrial",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:extraterrestrial",
+   "target": "t:physics"
+  },
+  {
+   "source": "w:extraterrestrial",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:extraterrestrial",
+   "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "w:die-befreiung-der-schweiz",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:die-befreiung-der-schweiz",
+   "target": "t:social-reform"
+  },
+  {
+   "source": "w:die-befreiung-der-schweiz",
+   "target": "t:switzerland"
+  },
+  {
+   "source": "w:die-befreiung-der-schweiz",
+   "target": "t:future-of-work"
+  },
+  {
+   "source": "w:die-befreiung-der-schweiz",
+   "target": "t:policy"
+  },
+  {
+   "source": "w:beyond-order",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:beyond-order",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:beyond-order",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:beyond-order",
+   "target": "t:psychology"
+  },
+  {
+   "source": "w:12-rules-for-life",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:12-rules-for-life",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:12-rules-for-life",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:12-rules-for-life",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:12-rules-for-life",
+   "target": "t:evolution"
+  },
+  {
+   "source": "w:12-rules-for-life",
+   "target": "t:psychology"
+  },
+  {
+   "source": "w:hermeneutics",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:hermeneutics",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:hermeneutics",
+   "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "w:der-ueberfluessige-mensch",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:der-ueberfluessige-mensch",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:der-ueberfluessige-mensch",
+   "target": "t:social-reform"
+  },
+  {
+   "source": "w:der-ueberfluessige-mensch",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:der-ueberfluessige-mensch",
+   "target": "t:future-of-work"
+  },
+  {
+   "source": "w:god-a-human-history",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:god-a-human-history",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:god-a-human-history",
+   "target": "t:world-history"
+  },
+  {
+   "source": "w:god-a-human-history",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:god-a-human-history",
+   "target": "t:evolution"
+  },
+  {
+   "source": "w:du-sollst-nicht-funktionieren",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:du-sollst-nicht-funktionieren",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:du-sollst-nicht-funktionieren",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:vererbung",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:vererbung",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:vererbung",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:vererbung",
+   "target": "t:evolution"
+  },
+  {
+   "source": "w:maps-of-meaning",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:maps-of-meaning",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:maps-of-meaning",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:maps-of-meaning",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "w:maps-of-meaning",
+   "target": "t:psychology"
+  },
+  {
+   "source": "w:nietzsche-safranski",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:nietzsche-safranski",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:nietzsche-safranski",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:nietzsche-safranski",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:philosophy-and-social-hope",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:philosophy-and-social-hope",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:philosophy-and-social-hope",
+   "target": "t:social-reform"
+  },
+  {
+   "source": "w:philosophy-and-social-hope",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:liebe",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:liebe",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:liebe",
+   "target": "t:evolution"
+  },
+  {
+   "source": "w:liebe",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "w:liebe",
+   "target": "t:psychology"
+  },
+  {
+   "source": "w:man-and-his-symbols",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:man-and-his-symbols",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:man-and-his-symbols",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:man-and-his-symbols",
+   "target": "t:psychology"
+  },
+  {
+   "source": "w:psychological-types",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:psychological-types",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:psychological-types",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:psychological-types",
+   "target": "t:psychology"
+  },
+  {
+   "source": "w:the-library-a-fragile-history",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-library-a-fragile-history",
+   "target": "t:history"
+  },
+  {
+   "source": "w:the-library-a-fragile-history",
+   "target": "t:external-memory"
+  },
+  {
+   "source": "w:the-library-a-fragile-history",
+   "target": "t:world-history"
+  },
+  {
+   "source": "w:magicians-of-the-gods",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:magicians-of-the-gods",
+   "target": "t:world-history"
+  },
+  {
+   "source": "w:magicians-of-the-gods",
+   "target": "t:history"
+  },
+  {
+   "source": "w:magicians-of-the-gods",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:fingerprints-of-the-gods",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:fingerprints-of-the-gods",
+   "target": "t:world-history"
+  },
+  {
+   "source": "w:fingerprints-of-the-gods",
+   "target": "t:history"
+  },
+  {
+   "source": "w:fingerprints-of-the-gods",
+   "target": "t:geography"
   },
   {
    "source": "w:enterprise-architecture-as-strategy",
@@ -8998,6 +9649,58 @@
   {
    "source": "w:airframe",
    "target": "t:complex-systems"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "t:synthetic-biology"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "t:medicine"
+  },
+  {
+   "source": "w:the-rise-and-fall-of-the-dinosaurs",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-rise-and-fall-of-the-dinosaurs",
+   "target": "t:evolution"
+  },
+  {
+   "source": "w:the-rise-and-fall-of-the-dinosaurs",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:the-rise-and-fall-of-the-dinosaurs",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:the-story-of-birds",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-story-of-birds",
+   "target": "t:evolution"
+  },
+  {
+   "source": "w:the-story-of-birds",
+   "target": "t:life-sciences"
   },
   {
    "source": "w:godel-escher-bach",

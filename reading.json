@@ -990,7 +990,7 @@
    "year": 2016,
    "isbn": "9783498062163",
    "status": "read",
-   "finished": "2020-08",
+   "finished": "2019",
    "topics": [
     "religion",
     "life-sciences",
@@ -1028,7 +1028,7 @@
    "kind": "book",
    "year": 2012,
    "status": "read",
-   "finished": "2016-01",
+   "finished": "2012",
    "topics": [
     "languages",
     "intelligence"
@@ -1119,7 +1119,8 @@
    "status": "read",
    "finished": "2012-06",
    "topics": [
-    "philosophy"
+    "philosophy",
+    "psychology"
    ],
    "about": "First published in 1940, this book sets out Jung's analytical psychology in a systematic form. Jacobi explains the structure of the psyche, the attitude and function types, the personal and collective unconscious, archetypes, symbols and complexes, and then the practical side of the theory, centred on the process of individuation. Later editions include diagrams and an account of Jung's method.",
    "take": "An introduction to Jung's analytical psychology by one of his closest collaborators, with a foreword by Jung.",
@@ -1173,6 +1174,469 @@
    "take": "A recommended path rather than a forecast: the United States and China slow down, verify each other, and make a deal.",
    "cover": "https://raskell.io/covers/reading/ai-2040-plan-a.avif",
    "page": "https://raskell.io/reading/#ai-2040-plan-a"
+  },
+  {
+   "id": "ancient-egyptian-literature",
+   "title": "Ancient Egyptian Literature",
+   "subtitle": "A Book of Readings",
+   "author": "Miriam Lichtheim (ed.)",
+   "kind": "book",
+   "year": 1973,
+   "isbn": "9780520248427",
+   "status": "read",
+   "finished": "2024-12",
+   "topics": [
+    "literature",
+    "history",
+    "religion",
+    "world-history"
+   ],
+   "about": "A three-volume anthology of ancient Egyptian texts translated by the Egyptologist Miriam Lichtheim: The Old and Middle Kingdoms (1973), The New Kingdom (1976) and The Late Period (1980). It gathers royal and biographical inscriptions, instructions in wisdom, tales, hymns, laments and mortuary texts, each with an introduction and notes on its setting.",
+   "take": "Three thousand years of Egyptian writing in translation, from tomb inscriptions and wisdom teachings to tales and hymns.",
+   "cover": "https://raskell.io/covers/reading/ancient-egyptian-literature.avif",
+   "page": "https://raskell.io/reading/#ancient-egyptian-literature"
+  },
+  {
+   "id": "der-kult",
+   "title": "Der Kult",
+   "subtitle": "Über die Viralität des Bösen",
+   "author": "Gunnar Kaiser",
+   "kind": "book",
+   "year": 2022,
+   "isbn": "9783967890280",
+   "status": "read",
+   "finished": "2022-01",
+   "topics": [
+    "philosophy",
+    "policy",
+    "history"
+   ],
+   "about": "German writer and philosopher Gunnar Kaiser argues that the response to the COVID-19 pandemic in Germany took on the features of a cult and of a totalitarian movement. He examines how ordinary people come to take part in what he calls the virality of evil, and what it takes to resist it. Written in German.",
+   "take": "The pandemic years read as a cult in the making, and how ordinary people are drawn into it.",
+   "cover": "https://raskell.io/covers/reading/der-kult.avif",
+   "page": "https://raskell.io/reading/#der-kult"
+  },
+  {
+   "id": "return-of-the-god-hypothesis",
+   "title": "Return of the God Hypothesis",
+   "subtitle": "Three Scientific Discoveries That Reveal the Mind Behind the Universe",
+   "author": "Stephen C. Meyer",
+   "kind": "book",
+   "year": 2021,
+   "isbn": "9780062071507",
+   "status": "read",
+   "finished": "2025-01",
+   "topics": [
+    "religion",
+    "philosophy-of-science",
+    "physics",
+    "life-sciences"
+   ],
+   "about": "Stephen C. Meyer, a philosopher of science and proponent of intelligent design, argues that three findings point to a designing mind: that the universe had a beginning, that its physical constants are finely tuned for life, and that living cells depend on complex genetic information. He compares theism with materialist and pantheist explanations and proposes that theism explains these findings best.",
+   "take": "The case that cosmology, fine-tuning and the information in DNA point to a mind behind the universe.",
+   "cover": "https://raskell.io/covers/reading/return-of-the-god-hypothesis.avif",
+   "page": "https://raskell.io/reading/#return-of-the-god-hypothesis"
+  },
+  {
+   "id": "die-angst-der-eliten",
+   "title": "Die Angst der Eliten",
+   "subtitle": "Wer fürchtet die Demokratie?",
+   "author": "Paul Schreyer",
+   "kind": "book",
+   "year": 2018,
+   "isbn": "9783864892097",
+   "status": "read",
+   "finished": "2022",
+   "topics": [
+    "history",
+    "policy",
+    "social-reform"
+   ],
+   "about": "German journalist Paul Schreyer examines how political and economic elites have dealt with democracy, and argues that the representative system was shaped to limit the influence of ordinary citizens. He asks who holds power in practice and what real popular rule would require. Written in German.",
+   "take": "Who fears democracy, and how the rule of the people came to be kept within limits.",
+   "cover": "https://raskell.io/covers/reading/die-angst-der-eliten.avif",
+   "page": "https://raskell.io/reading/#die-angst-der-eliten"
+  },
+  {
+   "id": "chronik-einer-angekuendigten-krise",
+   "title": "Chronik einer angekündigten Krise",
+   "subtitle": "Wie ein Virus die Welt verändern konnte",
+   "author": "Paul Schreyer",
+   "kind": "book",
+   "year": 2020,
+   "isbn": "9783864893162",
+   "status": "read",
+   "finished": "2020",
+   "topics": [
+    "policy",
+    "medicine",
+    "geopolitics",
+    "risk",
+    "forecasting"
+   ],
+   "about": "Paul Schreyer traces two decades of pandemic planning and simulation exercises held by governments, foundations and security institutions before 2020. He argues that the response to COVID-19 followed scenarios that had been rehearsed in advance, and that the crisis was shaped as much by these political decisions as by the virus itself. Written in German.",
+   "take": "The pandemic response as a scenario rehearsed for twenty years before the virus arrived.",
+   "cover": "https://raskell.io/covers/reading/chronik-einer-angekuendigten-krise.avif",
+   "page": "https://raskell.io/reading/#chronik-einer-angekuendigten-krise"
+  },
+  {
+   "id": "extraterrestrial",
+   "title": "Extraterrestrial",
+   "subtitle": "The First Sign of Intelligent Life Beyond Earth",
+   "author": "Avi Loeb",
+   "kind": "book",
+   "year": 2021,
+   "isbn": "9780358278146",
+   "status": "read",
+   "finished": "2021",
+   "topics": [
+    "physics",
+    "intelligence",
+    "philosophy-of-science"
+   ],
+   "about": "Harvard astrophysicist Avi Loeb discusses 'Oumuamua, the first known interstellar object, observed passing through the solar system in 2017. He argues that its shape and its acceleration away from the Sun are best explained if it is an artificial object such as a light sail, and calls on science to take the search for extraterrestrial technology seriously.",
+   "take": "An interstellar visitor in 2017, and the case that it was made by someone else.",
+   "cover": "https://raskell.io/covers/reading/extraterrestrial.avif",
+   "page": "https://raskell.io/reading/#extraterrestrial"
+  },
+  {
+   "id": "die-befreiung-der-schweiz",
+   "title": "Die Befreiung der Schweiz",
+   "subtitle": "Über das bedingungslose Grundeinkommen",
+   "author": "Christian Müller and Daniel Straub",
+   "kind": "book",
+   "year": 2012,
+   "isbn": "9783857916731",
+   "status": "read",
+   "finished": "2012",
+   "topics": [
+    "social-reform",
+    "switzerland",
+    "future-of-work",
+    "policy"
+   ],
+   "about": "A short book by two of the initiators of the Swiss popular initiative for an unconditional basic income, published by Limmat in Zürich. The authors argue that an income paid to everyone without conditions would free people to choose their work and would change how Switzerland thinks about labour, welfare and freedom. It includes conversations about the idea with Endo Anaconda, Ina Praetorius, Peter A. Fischer, Gudrun Sander, Rosmarie Zapfl, Klaus W. Wellershoff and Peter von Matt.",
+   "take": "The case for an unconditional basic income in Switzerland, from the people who put it to a vote.",
+   "cover": "https://raskell.io/covers/reading/die-befreiung-der-schweiz.avif",
+   "page": "https://raskell.io/reading/#die-befreiung-der-schweiz"
+  },
+  {
+   "id": "beyond-order",
+   "title": "Beyond Order",
+   "subtitle": "12 More Rules for Life",
+   "author": "Jordan B. Peterson",
+   "kind": "book",
+   "year": 2021,
+   "isbn": "9780241407622",
+   "status": "read",
+   "finished": "2021",
+   "topics": [
+    "philosophy",
+    "ethics",
+    "psychology"
+   ],
+   "about": "The sequel to 12 Rules for Life, offering twelve further rules for living. Where the first book stressed the dangers of chaos, Peterson argues here that too much order, rigid rules and ideological certainty are equally dangerous, and that a meaningful life is lived on the border between the two, drawing on clinical cases, myth, literature and his own experience.",
+   "take": "Twelve more rules, this time about the risk of too much order rather than too little.",
+   "cover": "https://raskell.io/covers/reading/beyond-order.avif",
+   "page": "https://raskell.io/reading/#beyond-order"
+  },
+  {
+   "id": "12-rules-for-life",
+   "title": "12 Rules for Life",
+   "subtitle": "An Antidote to Chaos",
+   "author": "Jordan B. Peterson",
+   "kind": "book",
+   "year": 2018,
+   "isbn": "9780241351635",
+   "status": "read",
+   "finished": "2020",
+   "topics": [
+    "philosophy",
+    "ethics",
+    "religion",
+    "evolution",
+    "psychology"
+   ],
+   "about": "The Canadian clinical psychologist sets out twelve rules for living, from standing up straight to telling the truth. Peterson argues that order and chaos are basic categories of experience and that personal responsibility gives life meaning, drawing on evolutionary biology, clinical practice, biblical stories and literature.",
+   "take": "Personal responsibility as an answer to chaos, told through lobsters, Bible stories and clinical cases.",
+   "cover": "https://raskell.io/covers/reading/12-rules-for-life.avif",
+   "page": "https://raskell.io/reading/#12-rules-for-life"
+  },
+  {
+   "id": "hermeneutics",
+   "title": "Hermeneutics",
+   "subtitle": "Facts and Interpretation in the Age of Information",
+   "author": "John D. Caputo",
+   "kind": "book",
+   "year": 2018,
+   "isbn": "9780241257852",
+   "status": "read",
+   "finished": "2019",
+   "topics": [
+    "philosophy",
+    "philosophy-of-science"
+   ],
+   "about": "An introduction to hermeneutics, the theory of interpretation, in the Pelican series. Caputo traces it from Schleiermacher and Dilthey through Heidegger and Gadamer to Derrida and his own radical hermeneutics, and argues that there are no uninterpreted facts, so that interpretation reaches all the way down, from reading texts to science, ethics and life in the information age.",
+   "take": "Interpretation goes all the way down: a short history of hermeneutics and why facts never speak for themselves.",
+   "cover": "https://raskell.io/covers/reading/hermeneutics.avif",
+   "page": "https://raskell.io/reading/#hermeneutics"
+  },
+  {
+   "id": "der-ueberfluessige-mensch",
+   "title": "Der überflüssige Mensch",
+   "author": "Ilija Trojanow",
+   "kind": "book",
+   "year": 2013,
+   "isbn": "9783701716135",
+   "status": "read",
+   "finished": "2013",
+   "topics": [
+    "ethics",
+    "social-reform",
+    "geopolitics",
+    "future-of-work"
+   ],
+   "about": "A short essay published by Residenz in its series Unruhe bewahren. Trojanow argues that the global economy increasingly treats large numbers of people as superfluous, neither needed as workers nor as consumers, and examines how talk of overpopulation, poverty and disposability shapes how wealthy societies regard them.",
+   "take": "On an economy that no longer needs many of the people living in it, and how that is talked about.",
+   "cover": "https://raskell.io/covers/reading/der-ueberfluessige-mensch.avif",
+   "page": "https://raskell.io/reading/#der-ueberfluessige-mensch"
+  },
+  {
+   "id": "god-a-human-history",
+   "title": "God",
+   "subtitle": "A Human History",
+   "author": "Reza Aslan",
+   "kind": "book",
+   "year": 2017,
+   "isbn": "9780553394726",
+   "status": "read",
+   "finished": "2017",
+   "topics": [
+    "religion",
+    "world-history",
+    "philosophy",
+    "evolution"
+   ],
+   "about": "A history of how humans have imagined the divine, from prehistoric cave art and animism through the gods of Mesopotamia and Egypt to the monotheism of Judaism, Christianity and Islam. Aslan argues that people have always made God in their own image, giving the divine human traits, and closes by proposing a form of pantheism in which God is identified with all of existence.",
+   "take": "How humans made God in their own image, from cave paintings to monotheism.",
+   "cover": "https://raskell.io/covers/reading/god-a-human-history.avif",
+   "page": "https://raskell.io/reading/#god-a-human-history"
+  },
+  {
+   "id": "du-sollst-nicht-funktionieren",
+   "title": "Du sollst nicht funktionieren",
+   "subtitle": "Für eine neue Lebenskunst",
+   "author": "Ariadne von Schirach",
+   "kind": "book",
+   "year": 2014,
+   "isbn": "9783608503135",
+   "status": "read",
+   "finished": "2014",
+   "topics": [
+    "philosophy",
+    "ethics"
+   ],
+   "about": "An essay by the German philosopher and journalist, published by Tropen. Von Schirach argues that a culture of self-optimisation, permanent performance and economic usefulness asks people to function like machines, and makes the case for a renewed art of living built on freedom, relationships and meaning rather than efficiency.",
+   "take": "Against self-optimisation: a case for living rather than functioning.",
+   "cover": "https://raskell.io/covers/reading/du-sollst-nicht-funktionieren.avif",
+   "page": "https://raskell.io/reading/#du-sollst-nicht-funktionieren"
+  },
+  {
+   "id": "vererbung",
+   "title": "Vererbung",
+   "subtitle": "Geschichte und Kultur eines biologischen Konzepts",
+   "author": "Hans-Jörg Rheinberger and Staffan Müller-Wille",
+   "kind": "book",
+   "year": 2009,
+   "isbn": "9783596170630",
+   "status": "read",
+   "finished": "2015",
+   "topics": [
+    "history-of-science",
+    "life-sciences",
+    "evolution"
+   ],
+   "about": "A history of the concept of heredity by two historians of biology. It follows premodern theories of generation, the rise of heredity to a central place in nineteenth-century biology, and the development of classical and molecular genetics in the twentieth century, ending with an outlook on genome research.",
+   "take": "How heredity became a biological concept, from theories of generation to the genome.",
+   "cover": "https://raskell.io/covers/reading/vererbung.avif",
+   "page": "https://raskell.io/reading/#vererbung"
+  },
+  {
+   "id": "maps-of-meaning",
+   "title": "Maps of Meaning",
+   "subtitle": "The Architecture of Belief",
+   "author": "Jordan B. Peterson",
+   "kind": "book",
+   "year": 1999,
+   "isbn": "9780415922227",
+   "status": "read",
+   "finished": "2022",
+   "topics": [
+    "philosophy",
+    "religion",
+    "neuroscience",
+    "psychology"
+   ],
+   "about": "Peterson's first book, an academic work combining mythology, religion, literature and neuropsychology. He proposes that myths and religious stories encode a shared structure for acting in the world, framed as the known and the unknown, order and chaos, and the hero who mediates between them, and connects this to how the brain responds to novelty and threat.",
+   "take": "Myths as maps for action, between order and chaos, the dense groundwork for his later books.",
+   "cover": "https://raskell.io/covers/reading/maps-of-meaning.avif",
+   "page": "https://raskell.io/reading/#maps-of-meaning"
+  },
+  {
+   "id": "nietzsche-safranski",
+   "title": "Nietzsche",
+   "subtitle": "Biographie seines Denkens",
+   "author": "Rüdiger Safranski",
+   "kind": "book",
+   "year": 2000,
+   "isbn": "9783596151813",
+   "status": "read",
+   "finished": "2013",
+   "topics": [
+    "philosophy",
+    "ethics",
+    "religion"
+   ],
+   "about": "Safranski follows the development of Nietzsche's thought through the course of his life, from his early devotion to Schopenhauer and Wagner and The Birth of Tragedy to the free spirit, Zarathustra, the will to power and the eternal recurrence, up to his collapse in 1889. As its German subtitle, Biographie seines Denkens, says, it is a biography of the thinking more than of the life.",
+   "take": "A biography of Nietzsche told through his ideas rather than his days.",
+   "cover": "https://raskell.io/covers/reading/nietzsche-safranski.avif",
+   "page": "https://raskell.io/reading/#nietzsche-safranski"
+  },
+  {
+   "id": "philosophy-and-social-hope",
+   "title": "Philosophy and Social Hope",
+   "author": "Richard Rorty",
+   "kind": "book",
+   "year": 1999,
+   "isbn": "9780140262889",
+   "status": "read",
+   "finished": "2011",
+   "topics": [
+    "philosophy",
+    "social-reform",
+    "ethics"
+   ],
+   "about": "A collection of essays and lectures in which Rorty sets out his pragmatism for a general readership, opening with the autobiographical essay Trotsky and the Wild Orchids. He argues that philosophy should give up the search for truth as correspondence with reality and for fixed foundations of morality, and should instead serve the hope for a freer and more just society, with liberal democracy and human rights defended without metaphysical grounds.",
+   "take": "Pragmatism as a public philosophy: drop the quest for certainty and put hope for a better society in its place.",
+   "cover": "https://raskell.io/covers/reading/philosophy-and-social-hope.avif",
+   "page": "https://raskell.io/reading/#philosophy-and-social-hope"
+  },
+  {
+   "id": "liebe",
+   "title": "Liebe",
+   "subtitle": "Ein unordentliches Gefühl",
+   "author": "Richard David Precht",
+   "kind": "book",
+   "year": 2009,
+   "isbn": "9783442311842",
+   "status": "read",
+   "finished": "2009",
+   "topics": [
+    "philosophy",
+    "evolution",
+    "neuroscience",
+    "psychology"
+   ],
+   "about": "Precht asks what love is and examines the answers given by evolutionary biology, psychology, brain research, sociology and philosophy. He argues that no single discipline can explain love, and traces how the romantic ideal of love developed.",
+   "take": "Love examined through biology, brain research and philosophy, and why none of them alone explains it.",
+   "cover": "https://raskell.io/covers/reading/liebe.avif",
+   "page": "https://raskell.io/reading/#liebe"
+  },
+  {
+   "id": "man-and-his-symbols",
+   "title": "Man and His Symbols",
+   "author": "C. G. Jung, Marie-Louise von Franz, Joseph L. Henderson, Jolande Jacobi and Aniela Jaffé",
+   "kind": "book",
+   "year": 1964,
+   "isbn": "9780440351832",
+   "status": "read",
+   "finished": "2010",
+   "topics": [
+    "philosophy",
+    "religion",
+    "psychology"
+   ],
+   "about": "An illustrated introduction to Jung's psychology written for general readers, planned by Jung shortly before his death in 1961 and completed under the editorship of Marie-Louise von Franz. Jung's opening essay, Approaching the Unconscious, is followed by chapters from his collaborators on ancient myths and modern man, the process of individuation, symbolism in the visual arts and symbols in an individual analysis, with dreams as the common thread.",
+   "take": "Jung's own introduction to the unconscious, dreams and symbols, written with his closest collaborators for readers without training.",
+   "cover": "https://raskell.io/covers/reading/man-and-his-symbols.avif",
+   "page": "https://raskell.io/reading/#man-and-his-symbols"
+  },
+  {
+   "id": "psychological-types",
+   "title": "Psychological Types",
+   "author": "C. G. Jung",
+   "kind": "book",
+   "year": 1921,
+   "isbn": "9780691018133",
+   "status": "read",
+   "finished": "2010",
+   "topics": [
+    "philosophy",
+    "religion",
+    "psychology"
+   ],
+   "about": "First published in German in 1921 as Psychologische Typen, the book introduces the attitudes of introversion and extraversion and the four functions of thinking, feeling, sensation and intuition. Much of it traces the problem of types through the history of thought, from early Christian theology and medieval disputes to Schiller, Nietzsche and poetry, before a general description of the types and a long chapter of definitions.",
+   "take": "Jung's theory of introversion, extraversion and the four functions, the basis of later typologies such as the Myers-Briggs Type Indicator.",
+   "cover": "https://raskell.io/covers/reading/psychological-types.avif",
+   "page": "https://raskell.io/reading/#psychological-types"
+  },
+  {
+   "id": "the-library-a-fragile-history",
+   "title": "The Library",
+   "subtitle": "A Fragile History",
+   "author": "Andrew Pettegree and Arthur der Weduwen",
+   "kind": "book",
+   "year": 2021,
+   "isbn": "9781541600775",
+   "status": "read",
+   "finished": "2025-02",
+   "topics": [
+    "history",
+    "external-memory",
+    "world-history"
+   ],
+   "about": "A history of libraries from the collections of the ancient world to the digital age, covering private and princely collections, monastic, university and subscription libraries and the public library. The authors show that collections were repeatedly broken up, sold, neglected or destroyed in war, and that the purpose of libraries and the people they served have changed many times.",
+   "take": "Two thousand years of libraries, and how often their collections were lost, dispersed or rebuilt.",
+   "cover": "https://raskell.io/covers/reading/the-library-a-fragile-history.avif",
+   "page": "https://raskell.io/reading/#the-library-a-fragile-history"
+  },
+  {
+   "id": "magicians-of-the-gods",
+   "title": "Magicians of the Gods",
+   "author": "Graham Hancock",
+   "kind": "book",
+   "year": 2015,
+   "isbn": "9781444779677",
+   "status": "read",
+   "finished": "2017",
+   "topics": [
+    "world-history",
+    "history",
+    "religion"
+   ],
+   "about": "The sequel to Fingerprints of the Gods. Hancock argues that an advanced civilisation of the last Ice Age was destroyed around 12,800 years ago by fragments of a comet, the event linked to the onset of the Younger Dryas cold period, and that survivors passed on their knowledge to hunter-gatherers. He draws on sites such as Göbekli Tepe and on flood myths and legends of civilising sages to support this claim.",
+   "take": "Hancock's case for a lost Ice Age civilisation destroyed by a comet, revisited with Göbekli Tepe.",
+   "cover": "https://raskell.io/covers/reading/magicians-of-the-gods.avif",
+   "page": "https://raskell.io/reading/#magicians-of-the-gods"
+  },
+  {
+   "id": "fingerprints-of-the-gods",
+   "title": "Fingerprints of the Gods",
+   "author": "Graham Hancock",
+   "kind": "book",
+   "year": 1995,
+   "isbn": "9780517887295",
+   "status": "read",
+   "finished": "2018",
+   "topics": [
+    "world-history",
+    "history",
+    "geography"
+   ],
+   "about": "Hancock proposes that an advanced civilisation existed during the last Ice Age and was wiped out by a global catastrophe, leaving traces in later cultures. He cites old maps said to show Antarctica without ice, monuments in the Andes, Mexico and Egypt, astronomical knowledge encoded in myths, and widespread flood stories, and adopts the theory of earth crust displacement to explain the disappearance.",
+   "take": "Hancock's argument for a lost civilisation before recorded history, from the Andes to Giza.",
+   "cover": "https://raskell.io/covers/reading/fingerprints-of-the-gods.avif",
+   "page": "https://raskell.io/reading/#fingerprints-of-the-gods"
   },
   {
    "id": "enterprise-architecture-as-strategy",
@@ -2276,6 +2740,64 @@
    "take": "An incident investigation in a complex system, where the popular explanation arrives before the evidence.",
    "cover": "https://raskell.io/covers/reading/airframe.avif",
    "page": "https://raskell.io/reading/#airframe"
+  },
+  {
+   "id": "the-code-breaker",
+   "title": "The Code Breaker",
+   "subtitle": "Jennifer Doudna, Gene Editing, and the Future of the Human Race",
+   "author": "Walter Isaacson",
+   "kind": "book",
+   "year": 2021,
+   "isbn": "9781982115852",
+   "status": "backlog",
+   "topics": [
+    "life-sciences",
+    "synthetic-biology",
+    "history-of-science",
+    "ethics",
+    "medicine"
+   ],
+   "about": "A biography of biochemist Jennifer Doudna and an account of how CRISPR, a bacterial defence against viruses, was turned into a tool for editing genes. Isaacson follows the research race and the patent dispute between laboratories, the use of the technique against disease and during the COVID-19 pandemic, and the ethical questions raised by editing human embryos.",
+   "take": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
+   "cover": "https://raskell.io/covers/reading/the-code-breaker.avif",
+   "page": "https://raskell.io/reading/#the-code-breaker"
+  },
+  {
+   "id": "the-rise-and-fall-of-the-dinosaurs",
+   "title": "The Rise and Fall of the Dinosaurs",
+   "subtitle": "A New History of a Lost World",
+   "author": "Steve Brusatte",
+   "kind": "book",
+   "year": 2018,
+   "isbn": "9780062490421",
+   "status": "backlog",
+   "topics": [
+    "evolution",
+    "life-sciences",
+    "history-of-science"
+   ],
+   "about": "Palaeontologist Steve Brusatte tells the history of the dinosaurs from their origins after the end-Permian extinction, through their spread across the Triassic, Jurassic and Cretaceous, to the asteroid impact that ended their reign 66 million years ago. He draws on recent fossil finds and his own fieldwork, and shows how birds descend from feathered dinosaurs.",
+   "take": "The dinosaurs from their origins to the asteroid, as recent fossil discoveries have rewritten the story.",
+   "cover": "https://raskell.io/covers/reading/the-rise-and-fall-of-the-dinosaurs.avif",
+   "page": "https://raskell.io/reading/#the-rise-and-fall-of-the-dinosaurs"
+  },
+  {
+   "id": "the-story-of-birds",
+   "title": "The Story of Birds",
+   "subtitle": "A New History from Their Dinosaur Origins to the Present",
+   "author": "Steve Brusatte",
+   "kind": "book",
+   "year": 2026,
+   "isbn": "9780063349711",
+   "status": "backlog",
+   "topics": [
+    "evolution",
+    "life-sciences"
+   ],
+   "about": "Steve Brusatte traces the evolution of birds from small feathered carnivorous dinosaurs, through their survival of the mass extinction that ended the age of dinosaurs, to the diversity of living species. He argues that dinosaurs were more bird-like than commonly imagined, and closes with the threats birds face today.",
+   "take": "Birds as the dinosaurs that survived, from their feathered ancestors to the species alive now.",
+   "cover": "https://raskell.io/covers/reading/the-story-of-birds.avif",
+   "page": "https://raskell.io/reading/#the-story-of-birds"
   },
   {
    "id": "godel-escher-bach",

@@ -10622,6 +10622,9 @@ From https://raskell.io/reading/ (as data: https://raskell.io/reading.json).
 - *A Canticle for Leibowitz* by Walter M. Miller Jr. (novel, 1959). How knowledge survives a collapse, turns into relics, and returns with the same dangers
 - *The Andromeda Strain* by Michael Crichton (novel, 1969). A scientific investigation of an unknown organism, told almost as a case file
 - *Airframe* by Michael Crichton (novel, 1996). An incident investigation in a complex system, where the popular explanation arrives before the evidence
+- *The Code Breaker*: Jennifer Doudna, Gene Editing, and the Future of the Human Race by Walter Isaacson (book, 2021). How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her
+- *The Rise and Fall of the Dinosaurs*: A New History of a Lost World by Steve Brusatte (book, 2018). The dinosaurs from their origins to the asteroid, as recent fossil discoveries have rewritten the story
+- *The Story of Birds*: A New History from Their Dinosaur Origins to the Present by Steve Brusatte (book, 2026). Birds as the dinosaurs that survived, from their feathered ancestors to the species alive now
 - *Gödel, Escher, Bach*: An Eternal Golden Braid by Douglas R. Hofstadter (book, 1979). How meaning and a self can arise from meaningless symbols, through Gödel's incompleteness, Escher's drawings, and Bach's fugues
 - *Structure and Interpretation of Computer Programs* by Harold Abelson and Gerald Jay Sussman, with Julie Sussman (book, 1985). MIT's introduction to programming through Scheme: abstraction with procedures and data, state, streams, and interpreters and compilers written in the language they interpret
 - *Chaos*: Making a New Science by James Gleick (book, 1987). The scientists who found order in turbulence, weather, and dripping taps, and founded the science of chaos
@@ -10652,7 +10655,10 @@ From https://raskell.io/reading/ (as data: https://raskell.io/reading.json).
 - *Jurassic Park* by Michael Crichton (novel, 1990, finished July 2025). A park of cloned dinosaurs, and a mathematician who uses chaos theory to explain why it cannot stay under control
 - *Codebreaking*: A Practical Guide by Elonka Dunin and Klaus Schmeh (book, 2020, finished April 2025). A hands-on guide to breaking classical ciphers and codes, with real cases solved and unsolved
 - *AI 2027* by Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, and Romeo Dean (report, 2025, finished April 2025). A month-by-month scenario of AI progress to superintelligence by 2027, with two endings: a race and a slowdown
+- *The Library*: A Fragile History by Andrew Pettegree and Arthur der Weduwen (book, 2021, finished February 2025). Two thousand years of libraries, and how often their collections were lost, dispersed or rebuilt
 - *The Island at the Center of the World*: The Epic Story of Dutch Manhattan and the Forgotten Colony That Shaped America by Russell Shorto (book, 2004, finished January 2025). Dutch New Amsterdam, rebuilt from its own archives, and the tolerance and trade it left to Manhattan and America
+- *Return of the God Hypothesis*: Three Scientific Discoveries That Reveal the Mind Behind the Universe by Stephen C. Meyer (book, 2021, finished January 2025). The case that cosmology, fine-tuning and the information in DNA point to a mind behind the universe
+- *Ancient Egyptian Literature*: A Book of Readings by Miriam Lichtheim (ed.) (book, 1973, finished December 2024). Three thousand years of Egyptian writing in translation, from tomb inscriptions and wisdom teachings to tales and hymns
 - *@War*: The Rise of the Military-Internet Complex by Shane Harris (book, 2014, finished September 2024). How the NSA, Cyber Command, and private contractors turned the internet into a domain of war
 - *The Books of Jacob* by Olga Tokarczuk (novel, 2014, finished August 2024). Jacob Frank, an eighteenth-century self-proclaimed messiah, and the followers who crossed Europe and three religions with him
 - *Future Science*: Essays from the Cutting Edge by Max Brockman (editor) (book, 2011, finished May 2024). Essays by young scientists on the questions at the front of their fields, from neuroscience to physics
@@ -10664,23 +10670,33 @@ From https://raskell.io/reading/ (as data: https://raskell.io/reading.json).
 - *Programming Rust*: Fast, Safe Systems Development by Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall (book, 2021, finished 2023). Rust for systems programmers: ownership, borrowing, traits, concurrency, and unsafe code, explained in depth
 - *Site Reliability Engineering*: How Google Runs Production Systems by Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy (book, 2016, finished 2023). How Google runs production: error budgets, service level objectives, toil, on-call, and postmortems
 - *Who We Are and How We Got Here*: Ancient DNA and the New Science of the Human Past by David Reich (book, 2018, finished 2023). What ancient DNA reveals about human prehistory: migrations, mixtures, and populations that no longer exist
+- *Der Kult*: Über die Viralität des Bösen by Gunnar Kaiser (book, 2022, finished January 2022). The pandemic years read as a cult in the making, and how ordinary people are drawn into it
 - *Building a Second Brain*: A Proven Method to Organize Your Digital Life and Unlock Your Creative Potential by Tiago Forte (book, 2022, finished 2022). A method for keeping notes outside your head: capture, organise, distil, and express, with the PARA folders
 - *Rust Web Programming* by Maxwell Flitton (book, 2021, finished 2022). Building web applications and services in Rust, from routing and databases to authentication and deployment
 - *Skin in the Game*: Hidden Asymmetries in Daily Life by Nassim Nicholas Taleb (book, 2018, finished 2022). Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers
 - *The Phoenix Project*: A Novel about IT, DevOps, and Helping Your Business Win by Gene Kim, Kevin Behr, and George Spafford (novel, 2013, finished 2022). A novel about an IT manager saving a failing project, and the DevOps ideas he learns along the way
+- *Die Angst der Eliten*: Wer fürchtet die Demokratie? by Paul Schreyer (book, 2018, finished 2022). Who fears democracy, and how the rule of the people came to be kept within limits
+- *Maps of Meaning*: The Architecture of Belief by Jordan B. Peterson (book, 1999, finished 2022). Myths as maps for action, between order and chaos, the dense groundwork for his later books
 - *Foucault's Pendulum* by Umberto Eco (novel, 1988, finished January 2021). Three Milan editors invent a secret history of the world as a game, and others begin to take it seriously
 - *Programming WebAssembly with Rust* by Kevin Hoffman (book, 2019, finished 2021). WebAssembly from the raw text format up to Rust modules that run in the browser and beyond it
 - *WebAssembly: The Definitive Guide* by Brian Sletten (book, 2021, finished 2021). What WebAssembly is and how to use it from many languages, in the browser, on servers, and through WASI
+- *Extraterrestrial*: The First Sign of Intelligent Life Beyond Earth by Avi Loeb (book, 2021, finished 2021). An interstellar visitor in 2017, and the case that it was made by someone else
+- *Beyond Order*: 12 More Rules for Life by Jordan B. Peterson (book, 2021, finished 2021). Twelve more rules, this time about the risk of too much order rather than too little
 - *Der Kampf um die Deutung der Neuzeit*: Die geschichtsphilosophische Diskussion in Deutschland vom Ersten Weltkrieg bis zum Mauerfall by Hauke Ritz (book, 2014, finished November 2020). The German debate in the philosophy of history from the First World War to 1989 about how to understand the modern age
-- *Das Tagebuch der Menschheit*: Was die Bibel über unsere Evolution verrät by Carel van Schaik and Kai Michel (book, 2016, finished August 2020). The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution
+- *Chronik einer angekündigten Krise*: Wie ein Virus die Welt verändern konnte by Paul Schreyer (book, 2020, finished 2020). The pandemic response as a scenario rehearsed for twenty years before the virus arrived
+- *12 Rules for Life*: An Antidote to Chaos by Jordan B. Peterson (book, 2018, finished 2020). Personal responsibility as an answer to chaos, told through lobsters, Bible stories and clinical cases
 - *Debt*: The First 5,000 Years by David Graeber (book, 2011, finished 2019). Credit came before coins: five thousand years of debt, and why money was a record of trust long before it was metal
+- *Das Tagebuch der Menschheit*: Was die Bibel über unsere Evolution verrät by Carel van Schaik and Kai Michel (book, 2016, finished 2019). The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution
+- *Hermeneutics*: Facts and Interpretation in the Age of Information by John D. Caputo (book, 2018, finished 2019). Interpretation goes all the way down: a short history of hermeneutics and why facts never speak for themselves
 - *The Art of War* by Sun Tzu (book, finished June 2018). An ancient Chinese treatise on strategy: deception, terrain, knowing yourself and the enemy, and winning without fighting
 - *These Truths*: A History of the United States by Jill Lepore (book, 2018, finished 2018). The history of the United States as a test of the truths in its founding documents: equality, sovereignty, and consent
 - *The Black Swan*: The Impact of the Highly Improbable by Nassim Nicholas Taleb (book, 2007, finished 2018). Rare, high-impact events that nobody predicted and everybody explains afterwards, and why models break exactly where it matters
+- *Fingerprints of the Gods* by Graham Hancock (book, 1995, finished 2018). Hancock's argument for a lost civilisation before recorded history, from the Andes to Giza
 - *Jerusalem: The Biography* by Simon Sebag Montefiore (book, 2011, finished 2017). Three thousand years of Jerusalem through the empires, faiths, and families that fought over it
 - *Freeland*: A Social Anticipation by Theodor Hertzka (novel, 1890, finished 2017). A utopian novel about a colony in East Africa built on free land and free access to capital
 - *Das soziale Problem* by Theodor Hertzka (book, 1912, finished 2017). Hertzka on the social question, the problem his novel Freeland set out to answer
-- *Language*: The Cultural Tool by Daniel Everett (book, 2012, finished January 2016). Language as a cultural invention rather than an innate grammar, argued from the Pirahã of the Amazon
+- *God*: A Human History by Reza Aslan (book, 2017, finished 2017). How humans made God in their own image, from cave paintings to monotheism
+- *Magicians of the Gods* by Graham Hancock (book, 2015, finished 2017). Hancock's case for a lost Ice Age civilisation destroyed by a comet, revisited with Göbekli Tepe
 - *The Devil's Delusion*: Atheism and Its Scientific Pretensions by David Berlinski (book, 2008, finished 2016). A mathematician's case that the new atheism claims far more scientific authority than science gives it
 - *The Invention of Science*: A New History of the Scientific Revolution by David Wootton (book, 2015, finished 2016). How science was invented between 1572 and 1704, traced through new words such as fact, experiment, and hypothesis
 - *Erkenne die Welt*: Eine Geschichte der Philosophie, Band 1 by Richard David Precht (book, 2015, finished December 2015). The first volume of Precht's history of philosophy, from the pre-Socratics to the end of the Middle Ages
@@ -10688,12 +10704,22 @@ From https://raskell.io/reading/ (as data: https://raskell.io/reading.json).
 - *The Silk Roads*: A New History of the World by Peter Frankopan (book, 2015, finished September 2015). World history told from the trade routes between East and West rather than from Europe
 - *Antifragile*: Things That Gain from Disorder by Nassim Nicholas Taleb (book, 2012, finished 2015). Things that gain from disorder, and why systems built to avoid all stress grow fragile
 - *Geld aus dem Nichts*: Wie Banken Wachstum ermöglichen und Krisen verursachen by Mathias Binswanger (book, 2015, finished 2015). How commercial banks create money by lending, and what that means for growth and for crises
+- *Vererbung*: Geschichte und Kultur eines biologischen Konzepts by Hans-Jörg Rheinberger and Staffan Müller-Wille (book, 2009, finished 2015). How heredity became a biological concept, from theories of generation to the genome
 - *Die Geschichte der Kunst* by E. H. Gombrich (book, 1950, finished January 2014). Gombrich's history of art from the cave paintings to the modern era, the German edition of The Story of Art
+- *Du sollst nicht funktionieren*: Für eine neue Lebenskunst by Ariadne von Schirach (book, 2014, finished 2014). Against self-optimisation: a case for living rather than functioning
+- *Der überflüssige Mensch* by Ilija Trojanow (book, 2013, finished 2013). On an economy that no longer needs many of the people living in it, and how that is talked about
+- *Nietzsche*: Biographie seines Denkens by Rüdiger Safranski (book, 2000, finished 2013). A biography of Nietzsche told through his ideas rather than his days
 - *Die Psychologie von C. G. Jung* by Jolande Jacobi (book, 1940, finished June 2012). An introduction to Jung's analytical psychology by one of his closest collaborators, with a foreword by Jung
 - *Demons* by Fyodor Dostoevsky (novel, 1872, finished 2012). A small revolutionary cell in a provincial Russian town and the ideas that lead it to murder
+- *Language*: The Cultural Tool by Daniel Everett (book, 2012, finished 2012). Language as a cultural invention rather than an innate grammar, argued from the Pirahã of the Amazon
+- *Die Befreiung der Schweiz*: Über das bedingungslose Grundeinkommen by Christian Müller and Daniel Straub (book, 2012, finished 2012). The case for an unconditional basic income in Switzerland, from the people who put it to a vote
 - *The Brothers Karamazov* by Fyodor Dostoevsky (novel, 1880, finished 2011). Three brothers, their father's murder, and a long argument about faith, doubt, and freedom
 - *A Little History of the World* by E. H. Gombrich (book, 1936, finished 2011). World history written for children in 1935 by a young art historian, from the Stone Age to the twentieth century
+- *Philosophy and Social Hope* by Richard Rorty (book, 1999, finished 2011). Pragmatism as a public philosophy: drop the quest for certainty and put hope for a better society in its place
 - *Crime and Punishment* by Fyodor Dostoevsky (novel, 1866, finished 2010). A poor former student commits a murder to prove a theory about himself and cannot live with it
+- *Man and His Symbols* by C. G. Jung, Marie-Louise von Franz, Joseph L. Henderson, Jolande Jacobi and Aniela Jaffé (book, 1964, finished 2010). Jung's own introduction to the unconscious, dreams and symbols, written with his closest collaborators for readers without training
+- *Psychological Types* by C. G. Jung (book, 1921, finished 2010). Jung's theory of introversion, extraversion and the four functions, the basis of later typologies such as the Myers-Briggs Type Indicator
+- *Liebe*: Ein unordentliches Gefühl by Richard David Precht (book, 2009, finished 2009). Love examined through biology, brain research and philosophy, and why none of them alone explains it
 
 ## Set aside
 

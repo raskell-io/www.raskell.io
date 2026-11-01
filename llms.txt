@@ -166,6 +166,9 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 - [A Canticle for Leibowitz](https://www.penguinrandomhouse.com/books/114888/a-canticle-for-leibowitz-by-walter-m-miller-jr/), Walter M. Miller Jr. (novel): How knowledge survives a collapse, turns into relics, and returns with the same dangers.
 - [The Andromeda Strain](https://michaelcrichton.com/works/the-andromeda-strain/), Michael Crichton (novel): A scientific investigation of an unknown organism, told almost as a case file.
 - [Airframe](https://michaelcrichton.com/works/airframe/), Michael Crichton (novel): An incident investigation in a complex system, where the popular explanation arrives before the evidence.
+- The Code Breaker, Walter Isaacson (book): How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.
+- The Rise and Fall of the Dinosaurs, Steve Brusatte (book): The dinosaurs from their origins to the asteroid, as recent fossil discoveries have rewritten the story.
+- The Story of Birds, Steve Brusatte (book): Birds as the dinosaurs that survived, from their feathered ancestors to the species alive now.
 - Gödel, Escher, Bach, Douglas R. Hofstadter (book): How meaning and a self can arise from meaningless symbols, through Gödel's incompleteness, Escher's drawings, and Bach's fugues.
 - [Structure and Interpretation of Computer Programs](https://sicp.mitpress.mit.edu), Harold Abelson and Gerald Jay Sussman, with Julie Sussman (book): MIT's introduction to programming through Scheme: abstraction with procedures and data, state, streams, and interpreters and compilers written in the language they interpret.
 - Chaos, James Gleick (book): The scientists who found order in turbulence, weather, and dripping taps, and founded the science of chaos.
@@ -196,7 +199,10 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 - Jurassic Park, Michael Crichton (novel, finished July 2025): A park of cloned dinosaurs, and a mathematician who uses chaos theory to explain why it cannot stay under control.
 - Codebreaking, Elonka Dunin and Klaus Schmeh (book, finished April 2025): A hands-on guide to breaking classical ciphers and codes, with real cases solved and unsolved.
 - [AI 2027](https://ai-2027.com/), Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, and Romeo Dean (report, finished April 2025): A month-by-month scenario of AI progress to superintelligence by 2027, with two endings: a race and a slowdown.
+- The Library, Andrew Pettegree and Arthur der Weduwen (book, finished February 2025): Two thousand years of libraries, and how often their collections were lost, dispersed or rebuilt.
 - The Island at the Center of the World, Russell Shorto (book, finished January 2025): Dutch New Amsterdam, rebuilt from its own archives, and the tolerance and trade it left to Manhattan and America.
+- Return of the God Hypothesis, Stephen C. Meyer (book, finished January 2025): The case that cosmology, fine-tuning and the information in DNA point to a mind behind the universe.
+- Ancient Egyptian Literature, Miriam Lichtheim (ed.) (book, finished December 2024): Three thousand years of Egyptian writing in translation, from tomb inscriptions and wisdom teachings to tales and hymns.
 - @War, Shane Harris (book, finished September 2024): How the NSA, Cyber Command, and private contractors turned the internet into a domain of war.
 - The Books of Jacob, Olga Tokarczuk (novel, finished August 2024): Jacob Frank, an eighteenth-century self-proclaimed messiah, and the followers who crossed Europe and three religions with him.
 - Future Science, Max Brockman (editor) (book, finished May 2024): Essays by young scientists on the questions at the front of their fields, from neuroscience to physics.
@@ -208,23 +214,33 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 - Programming Rust, Jim Blandy, Jason Orendorff, and Leonora F. S. Tindall (book, finished 2023): Rust for systems programmers: ownership, borrowing, traits, concurrency, and unsafe code, explained in depth.
 - [Site Reliability Engineering](https://sre.google/sre-book/table-of-contents/), Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy (book, finished 2023): How Google runs production: error budgets, service level objectives, toil, on-call, and postmortems.
 - Who We Are and How We Got Here, David Reich (book, finished 2023): What ancient DNA reveals about human prehistory: migrations, mixtures, and populations that no longer exist.
+- Der Kult, Gunnar Kaiser (book, finished January 2022): The pandemic years read as a cult in the making, and how ordinary people are drawn into it.
 - Building a Second Brain, Tiago Forte (book, finished 2022): A method for keeping notes outside your head: capture, organise, distil, and express, with the PARA folders.
 - Rust Web Programming, Maxwell Flitton (book, finished 2022): Building web applications and services in Rust, from routing and databases to authentication and deployment.
 - Skin in the Game, Nassim Nicholas Taleb (book, finished 2022): Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers.
 - The Phoenix Project, Gene Kim, Kevin Behr, and George Spafford (novel, finished 2022): A novel about an IT manager saving a failing project, and the DevOps ideas he learns along the way.
+- Die Angst der Eliten, Paul Schreyer (book, finished 2022): Who fears democracy, and how the rule of the people came to be kept within limits.
+- Maps of Meaning, Jordan B. Peterson (book, finished 2022): Myths as maps for action, between order and chaos, the dense groundwork for his later books.
 - Foucault's Pendulum, Umberto Eco (novel, finished January 2021): Three Milan editors invent a secret history of the world as a game, and others begin to take it seriously.
 - Programming WebAssembly with Rust, Kevin Hoffman (book, finished 2021): WebAssembly from the raw text format up to Rust modules that run in the browser and beyond it.
 - WebAssembly: The Definitive Guide, Brian Sletten (book, finished 2021): What WebAssembly is and how to use it from many languages, in the browser, on servers, and through WASI.
+- Extraterrestrial, Avi Loeb (book, finished 2021): An interstellar visitor in 2017, and the case that it was made by someone else.
+- Beyond Order, Jordan B. Peterson (book, finished 2021): Twelve more rules, this time about the risk of too much order rather than too little.
 - Der Kampf um die Deutung der Neuzeit, Hauke Ritz (book, finished November 2020): The German debate in the philosophy of history from the First World War to 1989 about how to understand the modern age.
-- Das Tagebuch der Menschheit, Carel van Schaik and Kai Michel (book, finished August 2020): The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution.
+- Chronik einer angekündigten Krise, Paul Schreyer (book, finished 2020): The pandemic response as a scenario rehearsed for twenty years before the virus arrived.
+- 12 Rules for Life, Jordan B. Peterson (book, finished 2020): Personal responsibility as an answer to chaos, told through lobsters, Bible stories and clinical cases.
 - Debt, David Graeber (book, finished 2019): Credit came before coins: five thousand years of debt, and why money was a record of trust long before it was metal.
+- Das Tagebuch der Menschheit, Carel van Schaik and Kai Michel (book, finished 2019): The Bible read as a record of how people coped with settled life, property, and disease, seen through evolution.
+- Hermeneutics, John D. Caputo (book, finished 2019): Interpretation goes all the way down: a short history of hermeneutics and why facts never speak for themselves.
 - The Art of War, Sun Tzu (book, finished June 2018): An ancient Chinese treatise on strategy: deception, terrain, knowing yourself and the enemy, and winning without fighting.
 - These Truths, Jill Lepore (book, finished 2018): The history of the United States as a test of the truths in its founding documents: equality, sovereignty, and consent.
 - The Black Swan, Nassim Nicholas Taleb (book, finished 2018): Rare, high-impact events that nobody predicted and everybody explains afterwards, and why models break exactly where it matters.
+- Fingerprints of the Gods, Graham Hancock (book, finished 2018): Hancock's argument for a lost civilisation before recorded history, from the Andes to Giza.
 - Jerusalem: The Biography, Simon Sebag Montefiore (book, finished 2017): Three thousand years of Jerusalem through the empires, faiths, and families that fought over it.
 - Freeland, Theodor Hertzka (novel, finished 2017): A utopian novel about a colony in East Africa built on free land and free access to capital.
 - Das soziale Problem, Theodor Hertzka (book, finished 2017): Hertzka on the social question, the problem his novel Freeland set out to answer.
-- Language, Daniel Everett (book, finished January 2016): Language as a cultural invention rather than an innate grammar, argued from the Pirahã of the Amazon.
+- God, Reza Aslan (book, finished 2017): How humans made God in their own image, from cave paintings to monotheism.
+- Magicians of the Gods, Graham Hancock (book, finished 2017): Hancock's case for a lost Ice Age civilisation destroyed by a comet, revisited with Göbekli Tepe.
 - The Devil's Delusion, David Berlinski (book, finished 2016): A mathematician's case that the new atheism claims far more scientific authority than science gives it.
 - The Invention of Science, David Wootton (book, finished 2016): How science was invented between 1572 and 1704, traced through new words such as fact, experiment, and hypothesis.
 - Erkenne die Welt, Richard David Precht (book, finished December 2015): The first volume of Precht's history of philosophy, from the pre-Socratics to the end of the Middle Ages.
@@ -232,12 +248,22 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 - The Silk Roads, Peter Frankopan (book, finished September 2015): World history told from the trade routes between East and West rather than from Europe.
 - Antifragile, Nassim Nicholas Taleb (book, finished 2015): Things that gain from disorder, and why systems built to avoid all stress grow fragile.
 - Geld aus dem Nichts, Mathias Binswanger (book, finished 2015): How commercial banks create money by lending, and what that means for growth and for crises.
+- Vererbung, Hans-Jörg Rheinberger and Staffan Müller-Wille (book, finished 2015): How heredity became a biological concept, from theories of generation to the genome.
 - Die Geschichte der Kunst, E. H. Gombrich (book, finished January 2014): Gombrich's history of art from the cave paintings to the modern era, the German edition of The Story of Art.
+- Du sollst nicht funktionieren, Ariadne von Schirach (book, finished 2014): Against self-optimisation: a case for living rather than functioning.
+- Der überflüssige Mensch, Ilija Trojanow (book, finished 2013): On an economy that no longer needs many of the people living in it, and how that is talked about.
+- Nietzsche, Rüdiger Safranski (book, finished 2013): A biography of Nietzsche told through his ideas rather than his days.
 - Die Psychologie von C. G. Jung, Jolande Jacobi (book, finished June 2012): An introduction to Jung's analytical psychology by one of his closest collaborators, with a foreword by Jung.
 - Demons, Fyodor Dostoevsky (novel, finished 2012): A small revolutionary cell in a provincial Russian town and the ideas that lead it to murder.
+- Language, Daniel Everett (book, finished 2012): Language as a cultural invention rather than an innate grammar, argued from the Pirahã of the Amazon.
+- Die Befreiung der Schweiz, Christian Müller and Daniel Straub (book, finished 2012): The case for an unconditional basic income in Switzerland, from the people who put it to a vote.
 - The Brothers Karamazov, Fyodor Dostoevsky (novel, finished 2011): Three brothers, their father's murder, and a long argument about faith, doubt, and freedom.
 - A Little History of the World, E. H. Gombrich (book, finished 2011): World history written for children in 1935 by a young art historian, from the Stone Age to the twentieth century.
+- Philosophy and Social Hope, Richard Rorty (book, finished 2011): Pragmatism as a public philosophy: drop the quest for certainty and put hope for a better society in its place.
 - Crime and Punishment, Fyodor Dostoevsky (novel, finished 2010): A poor former student commits a murder to prove a theory about himself and cannot live with it.
+- Man and His Symbols, C. G. Jung, Marie-Louise von Franz, Joseph L. Henderson, Jolande Jacobi and Aniela Jaffé (book, finished 2010): Jung's own introduction to the unconscious, dreams and symbols, written with his closest collaborators for readers without training.
+- Psychological Types, C. G. Jung (book, finished 2010): Jung's theory of introversion, extraversion and the four functions, the basis of later typologies such as the Myers-Briggs Type Indicator.
+- Liebe, Richard David Precht (book, finished 2009): Love examined through biology, brain research and philosophy, and why none of them alone explains it.
 
 ### Set aside
 
@@ -307,6 +333,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Shogi (`shogi`) [within Games]: Japanese chess, where captured pieces return to the board, and where the NNUE networks now inside every strong chess engine were invented.
 - Go (`go-game`) [within Games]: The board game whose positions resisted hand-written evaluation until AlphaGo, and the clearest case for learned intuition guiding search.
 - StarCraft (`starcraft`) [within Games, Strategy]: The real-time strategy game, Brood War above all: hidden information, thousands of decisions a minute, and the next benchmark after board games.
+- Psychology (`psychology`): How minds work and what people make of their lives: personality and types, the unconscious and its symbols, meaning, order and chaos.
 - Cybernetics (`cybernetics`) [within Complex systems, History of technology]: The science of control and feedback in machines, organisms, and organisations, and the attempts to run economies and societies with it.
 - Simulation (`simulation`) [within Complex systems]: Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.
 - Games (`games`): Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.
