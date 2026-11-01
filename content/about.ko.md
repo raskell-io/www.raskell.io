@@ -28,6 +28,8 @@ portrait_alt = "Raffael"
 
 제 아이디어는 대부분 읽기에서 시작합니다. 책, 논문, 긴 글이며, 그중 많은 것이 제 분야와 멀리 떨어져 있습니다. 지금 읽는 것, 다음에 읽을 것, 이미 읽은 것을 [독서 기록](@/reading.ko.md)에 남기고, 어떤 책에 대해 구체적으로 할 말이 있을 때 서평을 씁니다.
 
+또 하나의 실마리가 있습니다. 제 대부분의 프로젝트보다 오래되었고, 기계와는 더 멀리 떨어져 있습니다. 저는 10년 넘게 [Personality Café Basel](https://www.meetup.com/personality-cafe-basel/)이라는 성격 유형론 모임을 이끌었습니다. 에니어그램, MBTI, 인지 기능으로 읽는 융의 유형, 그리고 제가 덜 확신하는 점성술까지 다뤘습니다. 또한 [The Great Awakening Basel](https://www.meetup.com/the-great-awakening-basel)을 세워 지금도 이끌고 있습니다. 종교와 영성, 대안 역사, 그리고 주류 논의가 흔히 비켜 가는 질문들처럼 변두리의 생각을 다루는 모임입니다. 두 모임 모두에서 제 관심을 붙드는 것은 어느 하나의 답이라기보다 그 밑에 있는 질문입니다. 한 사람에 대한 것이든 세계에 대한 것이든, 하나의 모델이 얼마나 많은 것을 담아낼 수 있고 무엇을 놓치는가 하는 질문입니다. 이는 제가 오늘 함께 일하는 모델들에게 던지는 질문과 크게 다르지 않습니다.
+
 ## 하는 일 {#what-i-do}
 
 {% tiles() %}
@@ -55,6 +57,8 @@ portrait_alt = "Raffael"
 {% panel(eyebrow="강연, 패널, 팟캐스트", title="최근에는 RSAC 2026과 바젤에서.", links=["강연과 일정|@/speaking.ko.md"]) %}
 플랫폼 자동화, 엣지 시스템, 응용 보안, 그리고 AI가 코드 대부분을 쓰게 되면서 달라지는 것들.
 {% end %}
+
+저는 또한 [Cloud Native Basel](https://www.meetup.com/cloudnativebasel/)을 세우고 운영했습니다. 바젤과 그 주변에서 Kubernetes와 클라우드 네이티브 인프라 위에서 무언가를 만드는 사람들을 위한 모임입니다.
 
 ## 연락 {#contact}
 

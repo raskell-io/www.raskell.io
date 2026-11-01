@@ -28,6 +28,8 @@ portrait_alt = "Raffael"
 
 我的大多数想法都始于阅读：书、论文和长文，其中很多离我的领域很远。我有一份[阅读记录](@/reading.zh.md)，记下我正在读、接下来要读和已经读过的东西；当我对一本书有具体的话要说时，就会写一篇书评。
 
+还有另一条线索，比我的大多数项目都更久远，也离机器更远。十多年来，我主持着 [Personality Café Basel](https://www.meetup.com/personality-cafe-basel/)，一个关于人格类型学的聚会：九型人格、MBTI、通过认知功能来理解的荣格类型，以及我不太信服的占星。我还创办并至今主持着 [The Great Awakening Basel](https://www.meetup.com/the-great-awakening-basel)，一个讨论边缘思想的聚会：宗教与灵性、另类历史，以及主流讨论往往略过的问题。在这两个聚会里，吸引我的与其说是某一个答案，不如说是答案背后的问题：一个模型，无论是关于一个人还是关于世界的模型，能捕捉到多少，又遗漏了什么。这和我今天对自己所用的那些模型提出的问题并没有多大不同。
+
 ## 我做什么 {#what-i-do}
 
 {% tiles() %}
@@ -55,6 +57,8 @@ portrait_alt = "Raffael"
 {% panel(eyebrow="演讲、圆桌、播客", title="最近一次在 RSAC 2026 和巴塞尔。", links=["演讲与档期|@/speaking.zh.md"]) %}
 平台自动化、边缘系统、应用安全，以及当 AI 写下大部分代码之后会发生什么变化。
 {% end %}
+
+我还创办并组织过 [Cloud Native Basel](https://www.meetup.com/cloudnativebasel/)，一个面向巴塞尔及周边、基于 Kubernetes 和云原生基础设施进行构建的人的聚会。
 
 ## 联系 {#contact}
 

@@ -28,6 +28,8 @@ I like hard problems. The kind where latency, reliability, risk, and people all 
 
 Most of my ideas start with reading: books, papers, and long articles, many of them far from my field. I keep a [reading log](@/reading.md) of what I am reading, what is next, and what I have read, and I review a book when I have something specific to say about it.
 
+There is another thread, older than most of my projects and further from machines. For more than ten years I ran [Personality Café Basel](https://www.meetup.com/personality-cafe-basel/), a meetup about personality typology: the Enneagram, MBTI, Jung's types read through their cognitive functions, and, with less conviction on my part, astrology. I also founded and still lead [The Great Awakening Basel](https://www.meetup.com/the-great-awakening-basel), a meetup for ideas from the fringe: religion and spirituality, alternative history, and the questions mainstream debate tends to leave out. In both, what holds my interest is less any single answer than the question underneath: how much a model, of a person or of the world, can capture, and what it leaves out. It is not so different from the question I ask about the models I work with today.
+
 ## What I do
 
 {% tiles() %}
@@ -55,6 +57,8 @@ I run several early-stage ventures and flagship builds, alongside a steady strea
 {% panel(eyebrow="Talks, panels, podcasts", title="Most recently at RSAC 2026 and in Basel.", links=["Talks and availability|@/speaking.md"]) %}
 Platform automation, edge systems, applied security, and what changes when AI writes most of the code.
 {% end %}
+
+I also founded and organised [Cloud Native Basel](https://www.meetup.com/cloudnativebasel/), a meetup for people building on Kubernetes and cloud native infrastructure in and around Basel.
 
 ## Contact
 
