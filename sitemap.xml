@@ -870,8 +870,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/game-design/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/game-design/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/game-design/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/game-design/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/game-design/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/game-theory/</loc>
@@ -1412,8 +1414,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/strategy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/strategy/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/strategy/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/strategy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/strategy/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/surveillance/</loc>
@@ -1557,6 +1561,10 @@
         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
+        <loc>https://raskell.io/notes/a-duel-between-genres/</loc>
+        <lastmod>2026-11-01</lastmod>
+    </url>
+    <url>
         <loc>https://raskell.io/notes/citizen-entrepreneurs/</loc>
         <lastmod>2026-10-25</lastmod>
     </url>
@@ -1571,6 +1579,10 @@
     <url>
         <loc>https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/</loc>
         <lastmod>2026-10-24</lastmod>
+    </url>
+    <url>
+        <loc>https://raskell.io/notes/orders-for-the-week/</loc>
+        <lastmod>2026-11-01</lastmod>
     </url>
     <url>
         <loc>https://raskell.io/notes/power-in-the-good-sense/</loc>
@@ -1948,6 +1960,13 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/game-ai/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/game-ai/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/game-ai/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/tags/game-design/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/game-design/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/game-design/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/game-design/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/game-design/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/games/</loc>
@@ -2340,6 +2359,13 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/starcraft/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/starcraft/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/starcraft/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/tags/strategy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/strategy/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/strategy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/strategy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/strategy/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/surveillance/</loc>
@@ -3026,8 +3052,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/game-design/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/game-design/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/game-design/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/game-design/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/game-design/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/game-theory/</loc>
@@ -3568,8 +3596,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/strategy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/strategy/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/strategy/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/strategy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/strategy/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/surveillance/</loc>

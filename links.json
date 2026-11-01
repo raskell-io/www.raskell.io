@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-01T12:21:50+00:00",
+ "generated": "2026-11-01T14:07:35+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 411,
+ "count": 414,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -2322,6 +2322,32 @@
    "citations": 1
   },
   {
+   "url": "https://en.wikipedia.org/wiki/Future_Cop:_LAPD",
+   "title": "Future Cop: L.A.P.D.",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "A duel between genres",
+     "url": "https://raskell.io/notes/a-duel-between-genres/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Gangsters:_Organized_Crime",
+   "title": "Gangsters: Organized Crime",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Orders for the week",
+     "url": "https://raskell.io/notes/orders-for-the-week/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://en.wikipedia.org/wiki/Generative_pre-trained_transformer",
    "title": "generative, pre-trained transformer",
    "domain": "en.wikipedia.org",
@@ -2369,6 +2395,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Herzog_Zwei",
+   "title": "Herzog Zwei",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "A duel between genres",
+     "url": "https://raskell.io/notes/a-duel-between-genres/"
     }
    ],
    "citations": 1

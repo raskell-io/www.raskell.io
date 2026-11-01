@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-01T12:21:50+00:00",
+ "generated": "2026-11-01T14:07:35+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -370,6 +370,24 @@
    "url": "https://raskell.io/articles/hello-and-outlook/",
    "meta": "2022-09-20 · 1 min",
    "description": "The first post on raskell.io. What this site is for and what I planned to write about.",
+   "degree": 4
+  },
+  {
+   "id": "a:/notes/a-duel-between-genres/",
+   "kind": "note",
+   "label": "A duel between genres",
+   "url": "https://raskell.io/notes/a-duel-between-genres/",
+   "meta": "2026-11-01",
+   "description": "Future Cop: L.A.P.D. had a one-against-one mode where you were the soldier and the general at once. I have not found a game since that does it.",
+   "degree": 3
+  },
+  {
+   "id": "a:/notes/orders-for-the-week/",
+   "kind": "note",
+   "label": "Orders for the week",
+   "url": "https://raskell.io/notes/orders-for-the-week/",
+   "meta": "2026-11-01",
+   "description": "Gangsters: Organized Crime had you plan a week of orders and then watch the city carry them out. I have not played anything like it since.",
    "degree": 4
   },
   {
@@ -850,6 +868,15 @@
    "degree": 6
   },
   {
+   "id": "t:game-design",
+   "kind": "tag",
+   "label": "Game design",
+   "url": "https://raskell.io/tags/game-design/",
+   "meta": "Concept · 2 pages",
+   "description": "Making games: rules that are fun to play, worlds that reward attention, and games that model something larger than themselves.",
+   "degree": 8
+  },
+  {
    "id": "t:games",
    "kind": "tag",
    "label": "Games",
@@ -1313,9 +1340,9 @@
    "kind": "tag",
    "label": "Simulation",
    "url": "https://raskell.io/tags/simulation/",
-   "meta": "Domain · 1 page",
+   "meta": "Domain · 2 pages",
    "description": "Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:social-reform",
@@ -1352,6 +1379,15 @@
    "meta": "Domain · 2 pages",
    "description": "The real-time strategy game, Brood War above all: hidden information, thousands of decisions a minute, and the next benchmark after board games.",
    "degree": 5
+  },
+  {
+   "id": "t:strategy",
+   "kind": "tag",
+   "label": "Strategy",
+   "url": "https://raskell.io/tags/strategy/",
+   "meta": "Concept · 2 pages",
+   "description": "Winning against an opponent who adapts: in war, in business, and in games, from Sun Tzu to real-time strategy.",
+   "degree": 9
   },
   {
    "id": "t:surveillance",
@@ -1586,15 +1622,6 @@
    "meta": "Concept · no pages yet",
    "description": "Saying what will happen and how sure you are: scenarios, predictions that fail, and the events nobody priced in.",
    "degree": 12
-  },
-  {
-   "id": "t:game-design",
-   "kind": "tag",
-   "label": "Game design",
-   "url": "https://raskell.io/tags#game-design",
-   "meta": "Concept · no pages yet",
-   "description": "Making games: rules that are fun to play, worlds that reward attention, and games that model something larger than themselves.",
-   "degree": 6
   },
   {
    "id": "t:game-theory",
@@ -1856,15 +1883,6 @@
    "meta": "Concept · no pages yet",
    "description": "A program improving by playing itself: generating its own training data, learning from the outcomes, and testing each generation against the last.",
    "degree": 2
-  },
-  {
-   "id": "t:strategy",
-   "kind": "tag",
-   "label": "Strategy",
-   "url": "https://raskell.io/tags#strategy",
-   "meta": "Concept · no pages yet",
-   "description": "Winning against an opponent who adapts: in war, in business, and in games, from Sun Tzu to real-time strategy.",
-   "degree": 7
   },
   {
    "id": "t:synthetic-biology",
@@ -4479,6 +4497,18 @@
    "target": "t:games"
   },
   {
+   "source": "a:/notes/a-duel-between-genres/",
+   "target": "t:game-design"
+  },
+  {
+   "source": "a:/notes/orders-for-the-week/",
+   "target": "t:game-design"
+  },
+  {
+   "source": "t:game-design",
+   "target": "t:games"
+  },
+  {
    "source": "a:/articles/win-everything-control-no-one/",
    "target": "t:games"
   },
@@ -5227,6 +5257,10 @@
    "target": "t:games"
   },
   {
+   "source": "a:/notes/orders-for-the-week/",
+   "target": "t:simulation"
+  },
+  {
    "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
    "target": "t:simulation"
   },
@@ -5289,6 +5323,18 @@
   {
    "source": "t:starcraft",
    "target": "t:strategy"
+  },
+  {
+   "source": "a:/notes/a-duel-between-genres/",
+   "target": "t:strategy"
+  },
+  {
+   "source": "a:/notes/orders-for-the-week/",
+   "target": "t:strategy"
+  },
+  {
+   "source": "t:strategy",
+   "target": "t:geopolitics"
   },
   {
    "source": "a:/articles/the-original-data-company/",
@@ -5587,10 +5633,6 @@
    "target": "t:risk"
   },
   {
-   "source": "t:game-design",
-   "target": "t:games"
-  },
-  {
    "source": "t:game-theory",
    "target": "t:mathematics"
   },
@@ -5741,10 +5783,6 @@
   {
    "source": "t:self-play",
    "target": "t:game-ai"
-  },
-  {
-   "source": "t:strategy",
-   "target": "t:geopolitics"
   },
   {
    "source": "t:synthetic-biology",
@@ -6165,6 +6203,10 @@
   {
    "source": "a:/articles/all-beginning-is-haskell/",
    "target": "a:/articles/mise-ate-my-makefile/"
+  },
+  {
+   "source": "a:/notes/orders-for-the-week/",
+   "target": "a:/notes/a-duel-between-genres/"
   },
   {
    "source": "a:/notes/who-contributed-to-ai/",

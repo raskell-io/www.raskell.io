@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-01T12:21:50+00:00",
+ "generated": "2026-11-01T14:07:35+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "article": 39,
   "review": 2,
-  "note": 10,
+  "note": 12,
   "talk": 1,
   "dataset": 1,
   "work": 153,
   "project": 31,
   "topic": 159,
-  "link": 411
+  "link": 414
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -708,6 +708,29 @@
     "open-web"
    ],
    "meta": "1 min"
+  },
+  {
+   "kind": "note",
+   "title": "A duel between genres",
+   "url": "https://raskell.io/notes/a-duel-between-genres/",
+   "description": "Future Cop: L.A.P.D. had a one-against-one mode where you were the soldier and the general at once. I have not found a game since that does it.",
+   "date": "2026-11-01",
+   "topics": [
+    "game-design",
+    "strategy"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Orders for the week",
+   "url": "https://raskell.io/notes/orders-for-the-week/",
+   "description": "Gangsters: Organized Crime had you plan a week of orders and then watch the city carry them out. I have not played anything like it since.",
+   "date": "2026-11-01",
+   "topics": [
+    "game-design",
+    "strategy",
+    "simulation"
+   ]
   },
   {
    "kind": "note",
@@ -3808,7 +3831,7 @@
   {
    "kind": "topic",
    "title": "Game design",
-   "url": "https://raskell.io/tags#game-design",
+   "url": "https://raskell.io/tags/game-design/",
    "description": "Making games: rules that are fun to play, worlds that reward attention, and games that model something larger than themselves.",
    "meta": "Concept"
   },
@@ -4410,7 +4433,7 @@
   {
    "kind": "topic",
    "title": "Strategy",
-   "url": "https://raskell.io/tags#strategy",
+   "url": "https://raskell.io/tags/strategy/",
    "description": "Winning against an opponent who adapts: in war, in business, and in games, from Sun Tzu to real-time strategy.",
    "meta": "Concept"
   },
@@ -6852,6 +6875,32 @@
   },
   {
    "kind": "link",
+   "title": "Future Cop: L.A.P.D.",
+   "url": "https://en.wikipedia.org/wiki/Future_Cop:_LAPD",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "A duel between genres",
+     "url": "https://raskell.io/notes/a-duel-between-genres/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Gangsters: Organized Crime",
+   "url": "https://en.wikipedia.org/wiki/Gangsters:_Organized_Crime",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Orders for the week",
+     "url": "https://raskell.io/notes/orders-for-the-week/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "generative, pre-trained transformer",
    "url": "https://en.wikipedia.org/wiki/Generative_pre-trained_transformer",
    "domain": "en.wikipedia.org",
@@ -6899,6 +6948,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Herzog Zwei",
+   "url": "https://en.wikipedia.org/wiki/Herzog_Zwei",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "A duel between genres",
+     "url": "https://raskell.io/notes/a-duel-between-genres/"
     }
    ]
   },
