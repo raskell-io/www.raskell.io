@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-10-31T20:01:26+00:00",
+ "generated": "2026-11-01T07:15:55+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 370,
+ "count": 391,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -883,6 +883,23 @@
    "citations": 2
   },
   {
+   "url": "https://www.econlib.org/library/Knight/knRUP.html",
+   "title": "Risk, Uncertainty, and Profit",
+   "domain": "econlib.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
+    },
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 2
+  },
+  {
    "url": "https://www.getzola.org/",
    "title": "Zola",
    "domain": "getzola.org",
@@ -1224,6 +1241,19 @@
    "citations": 1
   },
   {
+   "url": "https://bitcoin.org/bitcoin.pdf",
+   "title": "“Bitcoin: A Peer-to-Peer Electronic Cash System”",
+   "domain": "bitcoin.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://blog.invidelabs.com/m5-ultra-mac-studio-local-ai/",
    "title": "M5 Ultra Mac Studio raises AI bandwidth to 1.2TB/s",
    "domain": "blog.invidelabs.com",
@@ -1245,6 +1275,19 @@
     {
      "title": "All beginning is Haskell",
      "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://blog.myfico.com/history-of-the-fico-score/",
+   "title": "The History of the FICO Score",
+   "domain": "blog.myfico.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
     }
    ],
    "citations": 1
@@ -1310,6 +1353,19 @@
     {
      "title": "I Stopped Writing Most of My Code",
      "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://comma.ai/",
+   "title": "comma.ai",
+   "domain": "comma.ai",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
     }
    ],
    "citations": 1
@@ -1679,6 +1735,19 @@
    "citations": 1
   },
   {
+   "url": "https://en.bitcoin.it/wiki/Genesis_block",
+   "title": "The Bitcoin genesis block",
+   "domain": "en.bitcoin.it",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://en.wikipedia.org/wiki/Alfred_North_Whitehead",
    "title": "Alfred North Whitehead",
    "domain": "en.wikipedia.org",
@@ -1713,6 +1782,19 @@
     {
      "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
      "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Antifragile_(book)",
+   "title": "Antifragile",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
     }
    ],
    "citations": 1
@@ -1778,6 +1860,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Debt:_The_First_5000_Years",
+   "title": "Debt: The First 5,000 Years",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
     }
    ],
    "citations": 1
@@ -2017,6 +2112,19 @@
    "citations": 1
   },
   {
+   "url": "https://en.wikipedia.org/wiki/Lloyd%27s_of_London",
+   "title": "Lloyd’s of London",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://en.wikipedia.org/wiki/Lock_(water_navigation)",
    "title": "locks",
    "domain": "en.wikipedia.org",
@@ -2025,6 +2133,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Luis_de_Sant%C3%A1ngel",
+   "title": "Luis de Santángel",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
     }
    ],
    "citations": 1
@@ -2147,6 +2268,19 @@
    "citations": 1
   },
   {
+   "url": "https://en.wikipedia.org/wiki/Risk_pool",
+   "title": "Risk pool",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://en.wikipedia.org/wiki/SECI_model_of_knowledge_dimensions",
    "title": "SECI model",
    "domain": "en.wikipedia.org",
@@ -2155,6 +2289,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/SHA-2",
+   "title": "SHA-2 family designed by the NSA",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
     }
    ],
    "citations": 1
@@ -2212,6 +2359,19 @@
    "citations": 1
   },
   {
+   "url": "https://en.wikipedia.org/wiki/Skin_in_the_Game_(book)",
+   "title": "Skin in the Game",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://en.wikipedia.org/wiki/Smart_contract",
    "title": "smart contracts",
    "domain": "en.wikipedia.org",
@@ -2246,6 +2406,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/The_Black_Swan:_The_Impact_of_the_Highly_Improbable",
+   "title": "The Black Swan",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
     }
    ],
    "citations": 1
@@ -3239,6 +3412,19 @@
    "citations": 1
   },
   {
+   "url": "https://lexfridman.com/george-hotz/",
+   "title": "Lex Fridman podcast with George Hotz",
+   "domain": "lexfridman.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://libvirt.org/",
    "title": "libvirt",
    "domain": "libvirt.org",
@@ -3416,6 +3602,19 @@
     {
      "title": "Source Code Is the New Assembly",
      "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://mpra.ub.uni-muenchen.de/67694/1/MPRA_paper_67694.pdf",
+   "title": "Festré and Nasica, MPRA paper 67694",
+   "domain": "mpra.ub.uni-muenchen.de",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
     }
    ],
    "citations": 1
@@ -3902,6 +4101,19 @@
    "citations": 1
   },
   {
+   "url": "https://tesla.com/support/insurance/real-time-insurance",
+   "title": "real-time insurance",
+   "domain": "tesla.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://the-decoder.com/openai-co-founder-says-ai-is-reaching-peak-data-as-it-hits-the-limits-of-the-internet/",
    "title": "“OpenAI co-founder says AI is reaching ‘peak data’ as it hits the limits of the internet”",
    "domain": "the-decoder.com",
@@ -4001,6 +4213,19 @@
     {
      "title": "I Stopped Writing Most of My Code",
      "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://ui.adsabs.harvard.edu/abs/1693RSPT...17..596H/abstract",
+   "title": "An Estimate of the Degrees of the Mortality of Mankind",
+   "domain": "ui.adsabs.harvard.edu",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
     }
    ],
    "citations": 1
@@ -4279,6 +4504,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy",
+   "title": "“Money creation in the modern economy”",
+   "domain": "bankofengland.co.uk",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.bnf.fr/en/gallica-bnf-digital-library",
    "title": "bnf.fr Gallica",
    "domain": "bnf.fr",
@@ -4396,19 +4634,6 @@
    "citations": 1
   },
   {
-   "url": "https://www.econlib.org/library/Knight/knRUP.html",
-   "title": "Risk, Uncertainty, and Profit",
-   "domain": "econlib.org",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "The River and the Canal",
-     "url": "https://raskell.io/articles/the-river-and-the-canal/"
-    }
-   ],
-   "citations": 1
-  },
-  {
    "url": "https://www.educatingsilicon.com/2024/05/09/how-much-llm-training-data-is-there-in-the-limit/",
    "title": "“How much LLM training data is there, in the limit?”",
    "domain": "educatingsilicon.com",
@@ -4469,6 +4694,32 @@
     {
      "title": "Edge Systems Are the New Backend",
      "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.fhnw.ch/de/personen/mathias-binswanger",
+   "title": "Mathias Binswanger",
+   "domain": "fhnw.ch",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.finma.ch/en/supervision/insurers/cross-sectoral-tools/swiss-solvency-test-sst/",
+   "title": "Swiss Solvency Test",
+   "domain": "finma.ch",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
     }
    ],
    "citations": 1
@@ -4565,6 +4816,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.insurancejournal.com/magazines/mag-features/2017/09/04/462873.htm",
+   "title": "Insurance Journal, Lessons Learned from Hurricane Andrew",
+   "domain": "insurancejournal.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.libvirt.org/manpages/virsh.html",
    "title": "virsh(1)",
    "domain": "libvirt.org",
@@ -4573,6 +4837,19 @@
     {
      "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
      "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html",
+   "title": "announcement on the cryptography mailing list",
+   "domain": "metzdowd.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Original Data Company",
+     "url": "https://raskell.io/articles/the-original-data-company/"
     }
    ],
    "citations": 1

@@ -1,8 +1,17 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-10-31T20:01:26+00:00",
+ "generated": "2026-11-01T07:15:55+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/the-original-data-company/",
+   "kind": "article",
+   "label": "The Original Data Company",
+   "url": "https://raskell.io/articles/the-original-data-company/",
+   "meta": "2026-11-01 · 26 min",
+   "description": "Insurers say they are not tech companies. Yet an insurer sells a prediction wrapped in a promise, and has since a 1693 life table: the original data company.",
+   "degree": 20
+  },
   {
    "id": "a:/articles/the-river-and-the-canal/",
    "kind": "article",
@@ -10,7 +19,7 @@
    "url": "https://raskell.io/articles/the-river-and-the-canal/",
    "meta": "2026-10-31 · 51 min",
    "description": "Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine.",
-   "degree": 31
+   "degree": 32
   },
   {
    "id": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
@@ -370,7 +379,7 @@
    "url": "https://raskell.io/notes/everything-is-a-fractal/",
    "meta": "2026-10-31",
    "description": "The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/notes/a-capability-democratised/",
@@ -611,9 +620,9 @@
    "kind": "tag",
    "label": "Cryptocurrency",
    "url": "https://raskell.io/tags/cryptocurrency/",
-   "meta": "Domain · 1 page",
+   "meta": "Domain · 2 pages",
    "description": "Bitcoin, blockchains and distributed ledgers: the attempt to formalise money and trust so completely that no institution is needed, and the institutions that grew back around it.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:data-sovereignty",
@@ -647,9 +656,9 @@
    "kind": "tag",
    "label": "Determinism",
    "url": "https://raskell.io/tags/determinism/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "Machines and institutions that do the same thing every time, what that sameness is worth, and where it breaks against an open world.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:developer-tooling",
@@ -773,9 +782,9 @@
    "kind": "tag",
    "label": "Finance",
    "url": "https://raskell.io/tags/finance/",
-   "meta": "Domain · 1 page",
+   "meta": "Domain · 2 pages",
    "description": "Banks, insurers, money and credit: abstract businesses that sell kept promises, allocate a society's resources and turn trust into procedure.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:formal-methods",
@@ -791,9 +800,9 @@
    "kind": "tag",
    "label": "Fractals",
    "url": "https://raskell.io/tags/fractals/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Self-similar patterns that repeat at every scale, from rivers and coastlines to software, organisations and ideas; the lens behind much of this site.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:future-of-work",
@@ -854,9 +863,9 @@
    "kind": "tag",
    "label": "History of technology",
    "url": "https://raskell.io/tags/history-of-technology/",
-   "meta": "Concept · 5 pages",
+   "meta": "Concept · 6 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 26
+   "degree": 27
   },
   {
    "id": "t:hypertext",
@@ -881,9 +890,9 @@
    "kind": "tag",
    "label": "Insurance",
    "url": "https://raskell.io/tags/insurance/",
-   "meta": "Domain · 1 page",
+   "meta": "Domain · 2 pages",
    "description": "Pooling risk across many so that misfortune does not ruin the few: predictions wrapped in promises, from Halley's life table to cars that price their own drivers.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:intellectual-property",
@@ -971,9 +980,9 @@
    "kind": "tag",
    "label": "Machine learning",
    "url": "https://raskell.io/tags/machine-learning/",
-   "meta": "Domain · 1 page",
+   "meta": "Domain · 2 pages",
    "description": "How models learn from data: the mathematics, the training methods, and what the results can and cannot do.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "t:meta",
@@ -991,6 +1000,24 @@
    "url": "https://raskell.io/tags/metrics/",
    "meta": "Concept · 2 pages",
    "description": "What to measure, leading versus lagging signals, and vanity numbers that look like insight.",
+   "degree": 4
+  },
+  {
+   "id": "t:money",
+   "kind": "tag",
+   "label": "Money",
+   "url": "https://raskell.io/tags/money/",
+   "meta": "Concept · 1 page",
+   "description": "What money is and who creates it: debt and credit, banks that create money by lending, central banks, and attempts to do without them.",
+   "degree": 9
+  },
+  {
+   "id": "t:mortality",
+   "kind": "tag",
+   "label": "Mortality",
+   "url": "https://raskell.io/tags/mortality/",
+   "meta": "Concept · 1 page",
+   "description": "That everyone dies: priced in life insurance, resisted by those who want to end death, and answered by keeping a person's voice and stories.",
    "degree": 4
   },
   {
@@ -1118,6 +1145,15 @@
    "meta": "Concept · 3 pages",
    "description": "What changes when making things costs next to nothing: copied software, AI labour, mission-built machines, and the economies and societies that might follow.",
    "degree": 11
+  },
+  {
+   "id": "t:probability",
+   "kind": "tag",
+   "label": "Probability",
+   "url": "https://raskell.io/tags/probability/",
+   "meta": "Concept · 1 page",
+   "description": "Chance made countable: the law of large numbers behind insurance, error margins on a measurement, and tails that are fatter than they look.",
+   "degree": 6
   },
   {
    "id": "t:programming-languages",
@@ -1259,9 +1295,9 @@
    "kind": "tag",
    "label": "Surveillance",
    "url": "https://raskell.io/tags/surveillance/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Watching people at scale, by states and by platforms: intelligence agencies, tracking for advertising, and what it costs those being watched.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:switzerland",
@@ -1295,9 +1331,9 @@
    "kind": "tag",
    "label": "Trust",
    "url": "https://raskell.io/tags/trust/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "Personal trust and system trust: why people rely on banks, procedures and software they cannot inspect, and how that reliance is earned.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:type-systems",
@@ -1534,24 +1570,6 @@
    "degree": 4
   },
   {
-   "id": "t:money",
-   "kind": "tag",
-   "label": "Money",
-   "url": "https://raskell.io/tags#money",
-   "meta": "Concept · no pages yet",
-   "description": "What money is and who creates it: debt and credit, banks that create money by lending, central banks, and attempts to do without them.",
-   "degree": 8
-  },
-  {
-   "id": "t:mortality",
-   "kind": "tag",
-   "label": "Mortality",
-   "url": "https://raskell.io/tags#mortality",
-   "meta": "Concept · no pages yet",
-   "description": "That everyone dies: priced in life insurance, resisted by those who want to end death, and answered by keeping a person's voice and stories.",
-   "degree": 3
-  },
-  {
    "id": "t:networking",
    "kind": "tag",
    "label": "Networking",
@@ -1594,15 +1612,6 @@
    "url": "https://raskell.io/tags#privacy",
    "meta": "Concept · no pages yet",
    "description": "Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place.",
-   "degree": 5
-  },
-  {
-   "id": "t:probability",
-   "kind": "tag",
-   "label": "Probability",
-   "url": "https://raskell.io/tags#probability",
-   "meta": "Concept · no pages yet",
-   "description": "Chance made countable: the law of large numbers behind insurance, error margins on a measurement, and tails that are fatter than they look.",
    "degree": 5
   },
   {
@@ -2169,7 +2178,7 @@
    "url": "https://raskell.io/reading/#antifragile",
    "meta": "Book · Nassim Nicholas Taleb · read 2015",
    "description": "Things that gain from disorder, and why systems built to avoid all stress grow fragile.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:debt",
@@ -2178,7 +2187,7 @@
    "url": "https://raskell.io/reading/#debt",
    "meta": "Book · David Graeber · read 2019",
    "description": "Credit came before coins: five thousand years of debt, and why money was a record of trust long before it was metal.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "w:the-black-swan",
@@ -2187,7 +2196,7 @@
    "url": "https://raskell.io/reading/#the-black-swan",
    "meta": "Book · Nassim Nicholas Taleb · read 2018",
    "description": "Rare, high-impact events that nobody predicted and everybody explains afterwards, and why models break exactly where it matters.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "w:skin-in-the-game",
@@ -2196,7 +2205,7 @@
    "url": "https://raskell.io/reading/#skin-in-the-game",
    "meta": "Book · Nassim Nicholas Taleb · read 2022",
    "description": "Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:geld-aus-dem-nichts",
@@ -2205,7 +2214,7 @@
    "url": "https://raskell.io/reading/#geld-aus-dem-nichts",
    "meta": "Book · Mathias Binswanger · read 2015",
    "description": "How commercial banks create money by lending, and what that means for growth and for crises.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:wer-regiert-das-geld",
@@ -2214,7 +2223,7 @@
    "url": "https://raskell.io/reading/#wer-regiert-das-geld",
    "meta": "Book · Paul Schreyer · read 2023",
    "description": "Who may create money and who decides how it is used, read as a question of power and democracy.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "w:demons",
@@ -3579,6 +3588,10 @@
    "target": "t:agents"
   },
   {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "t:cryptocurrency"
+  },
+  {
    "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
    "target": "t:cryptocurrency"
   },
@@ -3645,6 +3658,10 @@
   {
    "source": "t:democratisation",
    "target": "t:commons"
+  },
+  {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "t:determinism"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
@@ -3907,6 +3924,10 @@
    "target": "t:complex-systems"
   },
   {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "t:finance"
+  },
+  {
    "source": "a:/articles/the-river-and-the-canal/",
    "target": "t:finance"
   },
@@ -3933,6 +3954,10 @@
   {
    "source": "t:formal-methods",
    "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "t:fractals"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
@@ -4067,6 +4092,10 @@
    "target": "t:programming-languages"
   },
   {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "t:history-of-technology"
+  },
+  {
    "source": "a:/articles/win-everything-control-no-one/",
    "target": "t:history-of-technology"
   },
@@ -4137,6 +4166,10 @@
   {
    "source": "t:inference",
    "target": "t:ai-platforms"
+  },
+  {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "t:insurance"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
@@ -4275,6 +4308,10 @@
    "target": "t:distributed-systems"
   },
   {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "t:machine-learning"
+  },
+  {
    "source": "a:/articles/learning-to-play/",
    "target": "t:machine-learning"
   },
@@ -4297,6 +4334,26 @@
   {
    "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
    "target": "t:metrics"
+  },
+  {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "t:money"
+  },
+  {
+   "source": "t:money",
+   "target": "t:economics"
+  },
+  {
+   "source": "t:money",
+   "target": "t:finance"
+  },
+  {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "t:mortality"
+  },
+  {
+   "source": "t:mortality",
+   "target": "t:philosophy"
   },
   {
    "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
@@ -4457,6 +4514,14 @@
   {
    "source": "t:post-scarcity",
    "target": "t:future-of-work"
+  },
+  {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "t:probability"
+  },
+  {
+   "source": "t:probability",
+   "target": "t:mathematics"
   },
   {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
@@ -4699,6 +4764,10 @@
    "target": "t:strategy"
   },
   {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "t:surveillance"
+  },
+  {
    "source": "a:/articles/looking-back-on-2025/",
    "target": "t:surveillance"
   },
@@ -4745,6 +4814,10 @@
   {
    "source": "t:training-data",
    "target": "t:machine-learning"
+  },
+  {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "t:trust"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
@@ -4983,18 +5056,6 @@
    "target": "t:life-sciences"
   },
   {
-   "source": "t:money",
-   "target": "t:economics"
-  },
-  {
-   "source": "t:money",
-   "target": "t:finance"
-  },
-  {
-   "source": "t:mortality",
-   "target": "t:philosophy"
-  },
-  {
    "source": "t:networking",
    "target": "t:distributed-systems"
   },
@@ -5021,10 +5082,6 @@
   {
    "source": "t:privacy",
    "target": "t:sovereignty"
-  },
-  {
-   "source": "t:probability",
-   "target": "t:mathematics"
   },
   {
    "source": "t:religion",
@@ -5121,6 +5178,14 @@
   {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "c:reviews"
+  },
+  {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "a:/articles/the-river-and-the-canal/"
+  },
+  {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "a:/notes/everything-is-a-fractal/"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
@@ -7039,6 +7104,10 @@
    "target": "t:forecasting"
   },
   {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "w:antifragile"
+  },
+  {
    "source": "w:debt",
    "target": "h:shelf-read"
   },
@@ -7057,6 +7126,10 @@
   {
    "source": "w:debt",
    "target": "t:money"
+  },
+  {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "w:debt"
   },
   {
    "source": "w:the-black-swan",
@@ -7083,6 +7156,10 @@
    "target": "t:probability"
   },
   {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "w:the-black-swan"
+  },
+  {
    "source": "w:skin-in-the-game",
    "target": "h:shelf-read"
   },
@@ -7099,6 +7176,10 @@
    "target": "t:trust"
   },
   {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "w:skin-in-the-game"
+  },
+  {
    "source": "w:geld-aus-dem-nichts",
    "target": "h:shelf-read"
   },
@@ -7113,6 +7194,10 @@
   {
    "source": "w:geld-aus-dem-nichts",
    "target": "t:money"
+  },
+  {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "w:geld-aus-dem-nichts"
   },
   {
    "source": "w:wer-regiert-das-geld",
@@ -7133,6 +7218,10 @@
   {
    "source": "w:wer-regiert-das-geld",
    "target": "t:money"
+  },
+  {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "w:wer-regiert-das-geld"
   },
   {
    "source": "w:demons",

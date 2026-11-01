@@ -141,6 +141,14 @@
         <lastmod>2026-07-09</lastmod>
     </url>
     <url>
+        <loc>https://raskell.io/articles/the-original-data-company/</loc>
+        <lastmod>2026-11-01</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/the-original-data-company/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/the-original-data-company/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/the-original-data-company/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/the-original-data-company/"/>
+    </url>
+    <url>
         <loc>https://raskell.io/articles/the-proof-you-only-have-to-write-once/</loc>
         <lastmod>2026-06-19</lastmod>
     </url>
@@ -304,6 +312,14 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/the-economics-of-inference/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/the-economics-of-inference/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/the-economics-of-inference/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/ko/articles/the-original-data-company/</loc>
+        <lastmod>2026-11-01</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/the-original-data-company/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/the-original-data-company/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/the-original-data-company/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/the-original-data-company/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/articles/the-river-and-the-canal/</loc>
@@ -994,13 +1010,17 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/money/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/money/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/money/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/money/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/money/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/mortality/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/mortality/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/mortality/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/mortality/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/mortality/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/networking/</loc>
@@ -1127,8 +1147,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/probability/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/probability/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/probability/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/probability/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/probability/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/programming-languages/</loc>
@@ -1914,6 +1936,20 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/metrics/"/>
     </url>
     <url>
+        <loc>https://raskell.io/tags/money/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/money/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/money/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/money/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/money/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/tags/mortality/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/mortality/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/mortality/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/mortality/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/mortality/"/>
+    </url>
+    <url>
         <loc>https://raskell.io/tags/neuroscience/</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/neuroscience/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/neuroscience/"/>
@@ -2010,6 +2046,13 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/post-scarcity/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/post-scarcity/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/post-scarcity/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/tags/probability/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/probability/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/probability/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/probability/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/probability/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/programming-languages/</loc>
@@ -2254,6 +2297,14 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/the-economics-of-inference/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/the-economics-of-inference/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/the-economics-of-inference/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/zh/articles/the-original-data-company/</loc>
+        <lastmod>2026-11-01</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/the-original-data-company/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/the-original-data-company/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/the-original-data-company/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/the-original-data-company/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/articles/the-river-and-the-canal/</loc>
@@ -2944,13 +2995,17 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/money/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/money/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/money/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/money/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/money/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/mortality/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/mortality/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/mortality/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/mortality/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/mortality/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/networking/</loc>
@@ -3077,8 +3132,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/probability/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/probability/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/probability/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/probability/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/probability/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/programming-languages/</loc>
