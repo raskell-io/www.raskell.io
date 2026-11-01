@@ -14,7 +14,8 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 - [Reading](https://raskell.io/reading/): what Raffael is reading, what is next, and what he has read, with reviews
 - [Reviews](https://raskell.io/categories/reviews/): reviews of books, papers, and long articles from the reading log
 - [Talks](https://raskell.io/talks/): slide decks from talks
-- [Search](https://raskell.io/search/): everything on the site, including every external link the writing cites; `?q=` and `?type=link` (or article, review, note, talk, work, project, topic) work as URLs, e.g. https://raskell.io/search/?q=zentinel
+- [Data](https://raskell.io/data/): datasets Raffael compiled, each a JSON file with a page on what is in it, where it comes from, and its licence
+- [Search](https://raskell.io/search/): everything on the site, including every external link the writing cites; `?q=` and `?type=link` (or article, review, note, talk, dataset, work, project, topic) work as URLs, e.g. https://raskell.io/search/?q=zentinel
 - [RSS feed](https://raskell.io/rss.xml): full-text feed
 
 ## Series: The Agent Platform Handbook
@@ -86,10 +87,17 @@ Slide decks; each has a Markdown copy with the words of every slide.
 
 - [I Stopped Writing Most of My Code](https://raskell.io/talks/iat-13-basel.md) (2026-06-10, IT's ABOUT TECH #13): Slide deck for IT's ABOUT TECH #13 in Basel. A 15-minute story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time.
 
+## Data
+
+Datasets, listed at https://raskell.io/data/. Each is one file under https://raskell.io/data/ (the page URL with the file's extension instead of the trailing slash) and a page that describes it; the page's Markdown copy carries the file's URL, format, licence, and sources in its front matter.
+
+- [People of the AI labs, 1955 to 2026](https://raskell.io/data/ai-people.md) (2026-11-01): Who worked where in AI and when, why they left, how they were tied to each other, and the ideas and turns around them, from two books. Data: [ai-people.json](https://raskell.io/data/ai-people.json) (JSON, CC BY 4.0). Page: https://raskell.io/data/ai-people/
+
 ## Notes
 
 Short notes, a paragraph or a page each; some grow into articles.
 
+- [Who contributed to AI](https://raskell.io/notes/who-contributed-to-ai.md) (2026-11-01): A companion piece to Karen Hao's Empire of AI and Sebastian Mallaby's The Infinity Machine: the people who built AI, and where each did the work.
 - [Everything is a fractal](https://raskell.io/notes/everything-is-a-fractal.md) (2026-10-31): The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world.
 - [The move to the city](https://raskell.io/notes/the-move-to-the-city.md) (2026-10-25): Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape.
 - [Ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting.md) (2026-10-25): In 2026 the backlog of ideas I carried for years is turning into things that exist. On why this year feels like a window that will not stay open.
@@ -524,6 +532,7 @@ The site is written in English. Some articles and pages are also translated; a t
 - [智能体究竟是什么](https://raskell.io/zh/articles/what-an-agent-actually-is/): translation of [What an Agent Actually Is](https://raskell.io/articles/what-an-agent-actually-is/) ([Markdown](https://raskell.io/zh/articles/what-an-agent-actually-is.md))
 - [最后一门编程语言，也许不是给人用的](https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code/): translation of [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/) ([Markdown](https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code.md))
 - [赢下一切，不控制任何人](https://raskell.io/zh/articles/win-everything-control-no-one/): translation of [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/) ([Markdown](https://raskell.io/zh/articles/win-everything-control-no-one.md))
+- [数据](https://raskell.io/zh/data/): translation of [Data](https://raskell.io/data/)
 - [投资](https://raskell.io/zh/invest/): translation of [Invest](https://raskell.io/invest/)
 - [许可](https://raskell.io/zh/license/): translation of [Licence](https://raskell.io/license/)
 - [地图](https://raskell.io/zh/map/): translation of [Map](https://raskell.io/map/)
@@ -561,6 +570,7 @@ The site is written in English. Some articles and pages are also translated; a t
 - [에이전트란 실제로 무엇인가](https://raskell.io/ko/articles/what-an-agent-actually-is/): translation of [What an Agent Actually Is](https://raskell.io/articles/what-an-agent-actually-is/) ([Markdown](https://raskell.io/ko/articles/what-an-agent-actually-is.md))
 - [마지막 프로그래밍 언어는 인간을 위한 것이 아닐지도 모릅니다](https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code/): translation of [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/) ([Markdown](https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code.md))
 - [모든 것을 이기되, 아무도 통제하지 않기](https://raskell.io/ko/articles/win-everything-control-no-one/): translation of [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/) ([Markdown](https://raskell.io/ko/articles/win-everything-control-no-one.md))
+- [데이터](https://raskell.io/ko/data/): translation of [Data](https://raskell.io/data/)
 - [투자](https://raskell.io/ko/invest/): translation of [Invest](https://raskell.io/invest/)
 - [라이선스](https://raskell.io/ko/license/): translation of [Licence](https://raskell.io/license/)
 - [지도](https://raskell.io/ko/map/): translation of [Map](https://raskell.io/map/)
@@ -592,10 +602,11 @@ The site is written in English. Some articles and pages are also translated; a t
 - [garden.json](https://raskell.io/garden.json): the search index as data: every article, review, note, talk, work, project, topic, and cited link, with kinds, topics, and dates
 - [links.json](https://raskell.io/links.json): every external link the writing cites, with the pages that cite it and whether it is a reference
 - [reading.json](https://raskell.io/reading.json): the reading log, with status, dates, ratings, and reviews
-- Search as a URL: https://raskell.io/search/?q={query}&type={article|review|note|talk|work|project|topic|link}
+- Datasets at https://raskell.io/data/: each one a JSON file at https://raskell.io/data/<slug>.json beside its page https://raskell.io/data/<slug>/ (Markdown: https://raskell.io/data/<slug>.md); see Data above
+- Search as a URL: https://raskell.io/search/?q={query}&type={article|review|note|talk|dataset|work|project|topic|link}
 - [api-catalog](https://raskell.io/.well-known/api-catalog): RFC 9727 discovery of the machine-readable files
 - Feeds: [RSS](https://raskell.io/rss.xml), [Atom](https://raskell.io/atom.xml), [articles](https://raskell.io/articles/rss.xml), [notes](https://raskell.io/notes/rss.xml), [reviews](https://raskell.io/categories/reviews/rss.xml), [talks](https://raskell.io/talks/rss.xml)
-- In the browser: WebMCP tools (search_site, list_reading, find_links, get_current_page, get_page_markdown, get_site_index, list_topics, get_connections, cite_current_page, open_page) register when an agent exposes `document.modelContext`.
+- In the browser: WebMCP tools (search_site, list_reading, list_datasets, find_links, get_current_page, get_page_markdown, get_site_index, list_topics, get_connections, cite_current_page, open_page) register when an agent exposes `document.modelContext`.
 - No authentication, no rate limits ([auth.md](https://raskell.io/.well-known/auth.md)). Crawling for search, answers, and training is welcome (robots.txt Content-Signal).
 
 ## Optional

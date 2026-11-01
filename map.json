@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-01T11:16:23+00:00",
+ "generated": "2026-11-01T12:21:50+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -373,6 +373,15 @@
    "degree": 4
   },
   {
+   "id": "a:/notes/who-contributed-to-ai/",
+   "kind": "note",
+   "label": "Who contributed to AI",
+   "url": "https://raskell.io/notes/who-contributed-to-ai/",
+   "meta": "2026-11-01",
+   "description": "A companion piece to Karen Hao's Empire of AI and Sebastian Mallaby's The Infinity Machine: the people who built AI, and where each did the work.",
+   "degree": 7
+  },
+  {
    "id": "a:/notes/everything-is-a-fractal/",
    "kind": "note",
    "label": "Everything is a fractal",
@@ -461,6 +470,15 @@
    "meta": "2026-06-10 · IT's ABOUT TECH #13",
    "description": "Slide deck for IT's ABOUT TECH #13 in Basel. A 15-minute story about what changed for a long-time engineer after Claude Opus 4.5 and Claude Code arrived, and what happens to a backlog of years-old ideas when the bottleneck stops being time.",
    "degree": 15
+  },
+  {
+   "id": "a:/data/ai-people/",
+   "kind": "dataset",
+   "label": "People of the AI labs, 1955 to 2026",
+   "url": "https://raskell.io/data/ai-people/",
+   "meta": "2026-11-01 · CC BY 4.0",
+   "description": "Who worked where in AI and when, why they left, how they were tied to each other, and the ideas and turns around them, from two books.",
+   "degree": 7
   },
   {
    "id": "t:abstraction",
@@ -872,9 +890,9 @@
    "kind": "tag",
    "label": "History of technology",
    "url": "https://raskell.io/tags/history-of-technology/",
-   "meta": "Concept · 6 pages",
+   "meta": "Concept · 8 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 27
+   "degree": 29
   },
   {
    "id": "t:hypertext",
@@ -1007,9 +1025,9 @@
    "kind": "tag",
    "label": "Machine learning",
    "url": "https://raskell.io/tags/machine-learning/",
-   "meta": "Domain · 2 pages",
+   "meta": "Domain · 4 pages",
    "description": "How models learn from data: the mathematics, the training methods, and what the results can and cannot do.",
-   "degree": 16
+   "degree": 18
   },
   {
    "id": "t:meta",
@@ -1223,9 +1241,9 @@
    "kind": "tag",
    "label": "Research labs",
    "url": "https://raskell.io/tags/research-labs/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 4 pages",
    "description": "The institutions where discovery happens and how they are funded and run: CERN, Bell Labs, ARPA, Los Alamos, DeepMind, and the labs behind modern medicine.",
-   "degree": 15
+   "degree": 17
   },
   {
    "id": "t:risk",
@@ -1358,9 +1376,9 @@
    "kind": "tag",
    "label": "Technology races",
    "url": "https://raskell.io/tags/technology-races/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 4 pages",
    "description": "Powers racing to build a technology first, from the bomb and its deterrence to frontier AI and the data it needs.",
-   "degree": 13
+   "degree": 15
   },
   {
    "id": "t:training-data",
@@ -2196,7 +2214,7 @@
    "url": "https://raskell.io/reading/#empire-of-ai",
    "meta": "Book · Karen Hao · reading now",
    "description": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "w:the-cauldron",
@@ -2520,7 +2538,7 @@
    "url": "https://raskell.io/articles/win-everything-control-no-one/",
    "meta": "Book · Sebastian Mallaby · read October 2026",
    "description": "Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence.",
-   "degree": 13
+   "degree": 15
   },
   {
    "id": "w:the-ultimate-hidden-truth-of-the-world",
@@ -4541,6 +4559,14 @@
    "target": "t:history-of-technology"
   },
   {
+   "source": "a:/data/ai-people/",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "a:/notes/who-contributed-to-ai/",
+   "target": "t:history-of-technology"
+  },
+  {
    "source": "a:/articles/win-everything-control-no-one/",
    "target": "t:history-of-technology"
   },
@@ -4770,6 +4796,14 @@
   },
   {
    "source": "a:/articles/the-original-data-company/",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "a:/data/ai-people/",
+   "target": "t:machine-learning"
+  },
+  {
+   "source": "a:/notes/who-contributed-to-ai/",
    "target": "t:machine-learning"
   },
   {
@@ -5049,6 +5083,14 @@
    "target": "t:reliability"
   },
   {
+   "source": "a:/data/ai-people/",
+   "target": "t:research-labs"
+  },
+  {
+   "source": "a:/notes/who-contributed-to-ai/",
+   "target": "t:research-labs"
+  },
+  {
    "source": "a:/articles/win-everything-control-no-one/",
    "target": "t:research-labs"
   },
@@ -5271,6 +5313,14 @@
   {
    "source": "t:switzerland",
    "target": "t:europe"
+  },
+  {
+   "source": "a:/data/ai-people/",
+   "target": "t:technology-races"
+  },
+  {
+   "source": "a:/notes/who-contributed-to-ai/",
+   "target": "t:technology-races"
   },
   {
    "source": "a:/articles/win-everything-control-no-one/",
@@ -6115,6 +6165,10 @@
   {
    "source": "a:/articles/all-beginning-is-haskell/",
    "target": "a:/articles/mise-ate-my-makefile/"
+  },
+  {
+   "source": "a:/notes/who-contributed-to-ai/",
+   "target": "a:/data/ai-people/"
   },
   {
    "source": "a:/notes/everything-is-a-fractal/",
@@ -7353,6 +7407,14 @@
    "target": "t:hubris"
   },
   {
+   "source": "a:/notes/who-contributed-to-ai/",
+   "target": "w:empire-of-ai"
+  },
+  {
+   "source": "a:/data/ai-people/",
+   "target": "w:empire-of-ai"
+  },
+  {
    "source": "w:the-cauldron",
    "target": "h:shelf-read"
   },
@@ -8114,6 +8176,14 @@
   },
   {
    "source": "a:/articles/the-web-was-the-training-set/",
+   "target": "w:the-infinity-machine"
+  },
+  {
+   "source": "a:/notes/who-contributed-to-ai/",
+   "target": "w:the-infinity-machine"
+  },
+  {
+   "source": "a:/data/ai-people/",
    "target": "w:the-infinity-machine"
   },
   {

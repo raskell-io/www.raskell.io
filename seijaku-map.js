@@ -1,4 +1,4 @@
-// The site graph: a small force-directed graph of articles, notes, topics, series, categories, projects and reading on a
+// The site graph: a small force-directed graph of articles, notes, talks, datasets, topics, series, categories, projects and reading on a
 // canvas, no libraries. The /map/ page mounts the whole graph from its #map-data JSON; the end-of-page
 // maps (partials/local_map.html) fetch that JSON and mount one page's neighbourhood with SeijakuMap.local().
 (function () {
@@ -25,6 +25,7 @@ function mount(fig, data, opts) {
     article: { color: "#f4f0df", base: 4.2, grow: 0.9 },
     note: { color: "#f4f0df", base: 3.8, grow: 0.8 },
     talk: { color: "#efd093", base: 4.4, grow: 0.9 },
+    dataset: { color: "#efd093", base: 5, grow: 0.9 },
     tag: { color: "#72d7dc", base: 4.2, grow: 1.45 },
     series: { color: "#efd093", base: 6, grow: 1.1 },
     category: { color: "#efd093", base: 5.6, grow: 0.9 },
@@ -50,7 +51,7 @@ function mount(fig, data, opts) {
     }
     return (ICONS[k] = parts);
   }
-  var REST = { tag: 46, series: 40, category: 52, talk: 60, project: 58, work: 54, article: 64, note: 56, hub: 70, tagtag: 62 };
+  var REST = { tag: 46, series: 40, category: 52, talk: 60, dataset: 58, project: 58, work: 54, article: 64, note: 56, hub: 70, tagtag: 62 };
 
   // Nodes and links ---------------------------------------------------------
   var nodes = [], byId = {};
@@ -235,7 +236,7 @@ function mount(fig, data, opts) {
   }
 
   // Selection card -----------------------------------------------------------
-  var KIND_NAME = { article: T("Article"), note: T("Note"), talk: T("Talk"), tag: T("Topic"), series: T("Series"), project: T("Project"), hub: T("Group"), work: T("Reading"), category: T("Category") };
+  var KIND_NAME = { article: T("Article"), note: T("Note"), talk: T("Talk"), dataset: T("Dataset"), tag: T("Topic"), series: T("Series"), project: T("Project"), hub: T("Group"), work: T("Reading"), category: T("Category") };
   function select(n) {
     sel = n;
     if (!card) { draw(); return; }

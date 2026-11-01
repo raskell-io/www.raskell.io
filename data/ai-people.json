@@ -1,0 +1,8293 @@
+{
+ "about": {
+  "title": "People of the AI labs, 1955 to 2026",
+  "description": "Who worked where and when, why they left, how they were tied to each other, and the ideas, products and turns around them. Compiled from Karen Hao's Empire of AI (2025) and Sebastian Mallaby's The Infinity Machine (2026), with a few facts checked on the web and linked.",
+  "url": "https://raskell.io/data/ai-people.json",
+  "page": "https://raskell.io/data/ai-people/",
+  "author": "Raffael Schneider",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "updated": "2026-11-01",
+  "fields": {
+   "people[].stints": "one role at one organisation: org, role, start, end (null while ongoing), place, left (why it ended), src, ref (chapter) or url",
+   "links": "ties between two people: kind, date, note, src",
+   "moments": "kind idea, product or event: date, title, detail, people, orgs, src",
+   "dates": "YYYY, YYYY-MM or YYYY-MM-DD; precision as given by the source",
+   "photo_credit": "portraits from Wikimedia Commons under the licence named; they are not covered by this dataset's licence"
+  }
+ },
+ "range": {
+  "start": 1955,
+  "focus": 2005,
+  "end": 2026.0
+ },
+ "sources": {
+  "hao": {
+   "short": "Hao",
+   "title": "Karen Hao, Empire of AI (2025)"
+  },
+  "mallaby": {
+   "short": "Mallaby",
+   "title": "Sebastian Mallaby, The Infinity Machine (2026)"
+  },
+  "web": {
+   "short": "Web",
+   "title": "Checked on the web, source linked"
+  }
+ },
+ "places": {
+  "bay-area": {
+   "name": "San Francisco Bay Area",
+   "colour": "#1f8f96"
+  },
+  "london": {
+   "name": "London",
+   "colour": "#4f6bed"
+  },
+  "toronto": {
+   "name": "Toronto",
+   "colour": "#c0563f"
+  },
+  "seattle": {
+   "name": "Seattle area",
+   "colour": "#7a5bb5"
+  },
+  "boston": {
+   "name": "Boston and Cambridge, Mass.",
+   "colour": "#8a6d3b"
+  },
+  "new-york": {
+   "name": "New York",
+   "colour": "#d17a9a"
+  },
+  "guildford": {
+   "name": "Guildford",
+   "colour": "#9c755f"
+  },
+  "edmonton": {
+   "name": "Edmonton",
+   "colour": "#b07aa1"
+  },
+  "lugano": {
+   "name": "Lugano",
+   "colour": "#76b7b2"
+  },
+  "oxford": {
+   "name": "Oxford",
+   "colour": "#5b8c5a"
+  },
+  "cambridge-uk": {
+   "name": "Cambridge, UK",
+   "colour": "#6aa0c8"
+  },
+  "beijing": {
+   "name": "Beijing",
+   "colour": "#e15759"
+  },
+  "new-hampshire": {
+   "name": "Hanover, New Hampshire",
+   "colour": "#9aa39a"
+  },
+  "pittsburgh": {
+   "name": "Pittsburgh",
+   "colour": "#a0a05a"
+  },
+  "washington": {
+   "name": "Washington, DC",
+   "colour": "#8f6fb0"
+  },
+  "los-angeles": {
+   "name": "Los Angeles",
+   "colour": "#edc948"
+  },
+  "denver": {
+   "name": "Denver",
+   "colour": "#b0865a"
+  },
+  "chicago": {
+   "name": "Chicago",
+   "colour": "#7f8fa6"
+  },
+  "victoria": {
+   "name": "Victoria, BC",
+   "colour": "#6fb08f"
+  },
+  "switzerland": {
+   "name": "Switzerland",
+   "colour": "#c46b6b"
+  },
+  "seoul": {
+   "name": "Seoul",
+   "colour": "#4fb0c6"
+  },
+  "nairobi": {
+   "name": "Nairobi",
+   "colour": "#c9a227"
+  }
+ },
+ "orgs": {
+  "openai": {
+   "name": "OpenAI",
+   "kind": "lab",
+   "founded": "2015-12",
+   "place": "bay-area",
+   "note": "Founded as an AGI nonprofit by Musk, Altman and others; added capped-profit arm in 2019 and commercialised aggressively.",
+   "colour": "#10a37f"
+  },
+  "microsoft": {
+   "name": "Microsoft",
+   "kind": "company",
+   "founded": "1975",
+   "place": "seattle",
+   "note": "OpenAI's largest investor, exclusive licensee and sole compute supplier.",
+   "colour": "#6b7d8f"
+  },
+  "y-combinator": {
+   "name": "Y Combinator",
+   "kind": "investor",
+   "founded": "2005",
+   "place": "bay-area",
+   "note": "Elite startup accelerator founded by Graham and Livingston; Altman's power base.",
+   "short": "YC",
+   "colour": "#f26522"
+  },
+  "loopt": {
+   "name": "Loopt",
+   "kind": "company",
+   "founded": "2005",
+   "place": "bay-area",
+   "note": "Altman's location-sharing social app; sold in 2012 for about $43.4M.",
+   "colour": "#e67e22"
+  },
+  "hydrazine-capital": {
+   "name": "Hydrazine Capital",
+   "kind": "investor",
+   "founded": "2012",
+   "place": "bay-area",
+   "note": "Altman's personal fund raised $21M, majority from Thiel; invested in YC companies.",
+   "colour": "#8a7d6b"
+  },
+  "deepmind": {
+   "name": "DeepMind",
+   "kind": "lab",
+   "founded": "2010",
+   "place": "london",
+   "note": "Hassabis's AGI lab; acquired by Google in January 2014; merged with Google Brain in 2023.",
+   "colour": "#4f6bed"
+  },
+  "google": {
+   "name": "Google / Alphabet",
+   "kind": "company",
+   "founded": "1998",
+   "place": "bay-area",
+   "note": "Search giant; bought DeepMind, invented the Transformer, OpenAI's chief rival.",
+   "short": "Google",
+   "colour": "#e0a020"
+  },
+  "google-deepmind": {
+   "name": "Google DeepMind",
+   "kind": "lab",
+   "founded": "2023-04",
+   "place": "london",
+   "note": "Google's merged AI lab combining DeepMind and Google Brain after ChatGPT.",
+   "short": "Google DeepMind",
+   "colour": "#2b45b8"
+  },
+  "anthropic": {
+   "name": "Anthropic",
+   "kind": "lab",
+   "founded": "2021",
+   "place": "bay-area",
+   "note": "Safety-focused rival founded by former OpenAI staff led by Dario and Daniela Amodei.",
+   "colour": "#d4764a"
+  },
+  "spacex": {
+   "name": "SpaceX",
+   "kind": "company",
+   "founded": "2002",
+   "place": "los-angeles",
+   "note": "Musk's rocket company; venue for Hassabis meetings and an OpenAI off-site.",
+   "colour": "#3f4a59"
+  },
+  "stripe": {
+   "name": "Stripe",
+   "kind": "company",
+   "founded": "2010",
+   "place": "bay-area",
+   "note": "YC payments company; Brockman was first CTO; Altman's most successful early investment.",
+   "colour": "#635bff"
+  },
+  "quora": {
+   "name": "Quora",
+   "kind": "company",
+   "founded": "2009",
+   "place": "bay-area",
+   "note": "Q&A site run by OpenAI board member Adam D'Angelo.",
+   "colour": "#9c7a5b"
+  },
+  "cset": {
+   "name": "Center for Security and Emerging Technology (Georgetown)",
+   "kind": "university",
+   "founded": "2019",
+   "place": "washington",
+   "note": "Georgetown think tank where Helen Toner worked.",
+   "colour": "#8f949a"
+  },
+  "stanford": {
+   "name": "Stanford University",
+   "kind": "university",
+   "founded": "1885",
+   "place": "bay-area",
+   "note": "Altman's dropped-out alma mater; home of many AI researchers.",
+   "short": "Stanford",
+   "colour": "#a1665e"
+  },
+  "mit": {
+   "name": "MIT",
+   "kind": "university",
+   "founded": "1861",
+   "place": "boston",
+   "note": "Home of Weizenbaum, Minsky and Mądry; early AI hub.",
+   "colour": "#8a8f98"
+  },
+  "oxford": {
+   "name": "University of Oxford",
+   "kind": "university",
+   "founded": null,
+   "place": "oxford",
+   "note": "Bostrom's institution; centre of effective altruism thinking.",
+   "colour": "#a3998c"
+  },
+  "founders-fund": {
+   "name": "Founders Fund",
+   "kind": "investor",
+   "founded": "2005",
+   "place": "bay-area",
+   "note": "Thiel's venture firm; Altman helped it find deals.",
+   "colour": "#7d6b5d"
+  },
+  "reddit": {
+   "name": "Reddit",
+   "kind": "company",
+   "founded": "2005",
+   "place": "bay-area",
+   "note": "YC batchmate company; Altman joined its board in 2014.",
+   "colour": "#a07aa8"
+  },
+  "meta": {
+   "name": "Meta",
+   "kind": "company",
+   "founded": "2004",
+   "place": "bay-area",
+   "note": "Zuckerberg's social network; FAIR lab; later Meta and Llama models.",
+   "colour": "#3b5bdb"
+  },
+  "elixir": {
+   "name": "Elixir Studios",
+   "kind": "company",
+   "founded": "1998",
+   "place": "london",
+   "note": "Hassabis's video game studio; made Evil Genius (2004).",
+   "short": "Elixir",
+   "colour": "#b5651d"
+  },
+  "baidu": {
+   "name": "Baidu",
+   "kind": "company",
+   "founded": "2000",
+   "place": "beijing",
+   "note": "Chinese search giant racing to build a ChatGPT rival.",
+   "colour": "#e15759"
+  },
+  "toronto": {
+   "name": "University of Toronto",
+   "kind": "university",
+   "founded": null,
+   "place": "toronto",
+   "note": "Hinton's lab; birthplace of the 2012 ImageNet breakthrough.",
+   "short": "U of Toronto",
+   "colour": "#8f8a72"
+  },
+  "dnnresearch": {
+   "name": "DNNresearch",
+   "kind": "company",
+   "founded": "2012",
+   "place": "toronto",
+   "note": "Hinton, Sutskever and Krizhevsky's startup auctioned to Google for $44M.",
+   "colour": "#c9a227"
+  },
+  "google-brain": {
+   "name": "Google Brain",
+   "kind": "lab",
+   "founded": "2011",
+   "place": "bay-area",
+   "note": "Google's in-house AI research division; merged with DeepMind in 2023.",
+   "colour": "#f0b84a"
+  },
+  "black-in-ai": {
+   "name": "Black in AI",
+   "kind": "nonprofit",
+   "founded": "2016",
+   "place": null,
+   "note": "Community Gebru started by emailing the few Black researchers she met at NeurIPS.",
+   "colour": "#7a9a8a"
+  },
+  "tesla": {
+   "name": "Tesla",
+   "kind": "company",
+   "founded": "2003",
+   "place": "bay-area",
+   "note": "Musk's carmaker; Musk proposed OpenAI attach to it; hired Karpathy.",
+   "colour": "#c0392b"
+  },
+  "linkedin": {
+   "name": "LinkedIn",
+   "kind": "company",
+   "founded": "2002",
+   "place": "bay-area",
+   "note": "Cofounded by Reid Hoffman; later owned by Microsoft.",
+   "colour": "#a07aa8"
+  },
+  "nvidia": {
+   "name": "Nvidia",
+   "kind": "company",
+   "founded": "1993",
+   "place": null,
+   "note": "Near-monopoly GPU maker with CUDA software lock-in.",
+   "colour": "#8a9a6a"
+  },
+  "uc-berkeley": {
+   "name": "UC Berkeley",
+   "kind": "university",
+   "founded": null,
+   "place": "bay-area",
+   "note": "Abbeel's and Raji's institution.",
+   "colour": "#7f8c99"
+  },
+  "harvard": {
+   "name": "Harvard University",
+   "kind": "university",
+   "founded": null,
+   "place": "boston",
+   "note": "Brockman's first college; Summers was president.",
+   "colour": "#9aa39a"
+  },
+  "microsoft-research": {
+   "name": "Microsoft Research",
+   "kind": "lab",
+   "founded": "1991",
+   "place": "seattle",
+   "note": "Microsoft's in-house research arm that Nadella weighed against investing in OpenAI.",
+   "colour": "#5fa8a0"
+  },
+  "openai-lp": {
+   "name": "OpenAI LP (SummerSafe LP)",
+   "kind": "company",
+   "founded": "2019-03",
+   "place": "bay-area",
+   "note": "Capped-profit arm under the nonprofit; first investors capped at 100x, Microsoft at 20x.",
+   "colour": "#6d8fa8"
+  },
+  "mit-technology-review": {
+   "name": "MIT Technology Review",
+   "kind": "other",
+   "founded": "1899",
+   "place": "boston",
+   "note": "Publication where Hao wrote the first OpenAI profile in 2020.",
+   "colour": "#999"
+  },
+  "new-york-times": {
+   "name": "The New York Times",
+   "kind": "other",
+   "founded": "1851",
+   "place": "new-york",
+   "note": "Newspaper; later sued OpenAI and Microsoft over copyright.",
+   "colour": "#999"
+  },
+  "dartmouth": {
+   "name": "Dartmouth College",
+   "kind": "university",
+   "founded": null,
+   "place": "new-hampshire",
+   "note": "Site of the 1956 workshop that founded the AI field.",
+   "short": "Dartmouth",
+   "colour": "#9aa39a"
+  },
+  "cornell": {
+   "name": "Cornell University",
+   "kind": "university",
+   "founded": null,
+   "place": null,
+   "note": "Rosenblatt's Perceptron work.",
+   "colour": "#8f949a"
+  },
+  "carnegie-mellon": {
+   "name": "Carnegie Mellon University",
+   "kind": "university",
+   "founded": null,
+   "place": "pittsburgh",
+   "note": "Hinton's base in the 1980s; Uber poached 40 of its robotics researchers in 2015.",
+   "colour": "#a3998c"
+  },
+  "nyu": {
+   "name": "New York University",
+   "kind": "university",
+   "founded": null,
+   "place": "new-york",
+   "note": "Home of LeCun and Marcus.",
+   "colour": "#7f8c99"
+  },
+  "ibm": {
+   "name": "IBM",
+   "kind": "company",
+   "founded": "1911",
+   "place": null,
+   "note": "Built Watson; sold Watson Health in 2022 after spending over $4B.",
+   "colour": "#9c7a5b"
+  },
+  "github": {
+   "name": "GitHub",
+   "kind": "company",
+   "founded": "2008",
+   "place": "bay-area",
+   "note": "Microsoft-owned code repository; full download given to OpenAI for training.",
+   "colour": "#8a9a6a"
+  },
+  "apple": {
+   "name": "Apple",
+   "kind": "company",
+   "founded": "1976",
+   "place": null,
+   "note": "Dowling led its communications before joining OpenAI.",
+   "colour": "#9c7a5b"
+  },
+  "university-of-washington": {
+   "name": "University of Washington",
+   "kind": "university",
+   "founded": null,
+   "place": "seattle",
+   "note": "Bender's and Agnew's institution.",
+   "colour": "#a3998c"
+  },
+  "latitude": {
+   "name": "Latitude (AI Dungeon)",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Brockman's brother's startup; GPT-3 game used to generate child sexual content.",
+   "colour": "#a07aa8"
+  },
+  "tools-for-humanity": {
+   "name": "Tools for Humanity (Worldcoin)",
+   "kind": "company",
+   "founded": "2019",
+   "place": "bay-area",
+   "note": "Altman's iris-scanning crypto/UBI venture; launched Worldcoin in July 2023 amid controversy.",
+   "colour": "#8a9a6a"
+  },
+  "openresearch": {
+   "name": "OpenResearch",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": "bay-area",
+   "note": "YC spinout running the largest US basic income pilot; results in July 2024.",
+   "colour": "#7a9a8a"
+  },
+  "retro-biosciences": {
+   "name": "Retro Biosciences",
+   "kind": "company",
+   "founded": "2021",
+   "place": "bay-area",
+   "note": "Antiaging startup; Altman invested $180M.",
+   "colour": "#9c7a5b"
+  },
+  "helion-energy": {
+   "name": "Helion Energy",
+   "kind": "company",
+   "founded": "2013",
+   "place": "seattle",
+   "note": "Fusion company; Altman invested $375M; Microsoft agreed to buy its power from 2028.",
+   "colour": "#6d8fa8"
+  },
+  "openai-startup-fund": {
+   "name": "OpenAI Startup Fund",
+   "kind": "investor",
+   "founded": "2021-05",
+   "place": "bay-area",
+   "note": "$100M fund for AI startups, backed by Microsoft; secretly owned by Altman, a factor in his ouster.",
+   "colour": "#8a7d6b"
+  },
+  "scale-ai": {
+   "name": "Scale AI",
+   "kind": "company",
+   "founded": "2016",
+   "place": "bay-area",
+   "note": "Data-annotation giant whose Remotasks platform recruited crisis-hit workers worldwide.",
+   "colour": "#9c7a5b"
+  },
+  "ftx": {
+   "name": "FTX",
+   "kind": "company",
+   "founded": "2019",
+   "place": null,
+   "note": "SBF's crypto exchange; collapsed November 2022, denting effective altruism.",
+   "colour": "#9c7a5b"
+  },
+  "effective-altruism": {
+   "name": "Effective altruism movement",
+   "kind": "other",
+   "founded": "2011",
+   "place": "oxford",
+   "note": "Expected-value philosophy ranking rogue AI as an existential risk; fed OpenAI's and Anthropic's safety culture.",
+   "colour": "#999"
+  },
+  "lmu-munich": {
+   "name": "Ludwig Maximilian University of Munich",
+   "kind": "university",
+   "founded": null,
+   "place": null,
+   "note": "Ommer's lab built latent diffusion / Stable Diffusion.",
+   "colour": "#a3998c"
+  },
+  "khan-academy": {
+   "name": "Khan Academy",
+   "kind": "nonprofit",
+   "founded": "2008",
+   "place": "bay-area",
+   "note": "Supplied AP Bio questions; got early GPT-4 access.",
+   "colour": "#7a9a8a"
+  },
+  "youtube": {
+   "name": "YouTube",
+   "kind": "company",
+   "founded": "2005",
+   "place": null,
+   "note": "Google-owned; OpenAI transcribed over a million hours against its terms for GPT-4.",
+   "colour": "#a07aa8"
+  },
+  "deployment-safety-board": {
+   "name": "Deployment Safety Board (OpenAI-Microsoft)",
+   "kind": "other",
+   "founded": "2022",
+   "place": null,
+   "note": "Joint committee, three members each, reviewing frontier model releases.",
+   "colour": "#999"
+  },
+  "us-congress": {
+   "name": "US Congress",
+   "kind": "government",
+   "founded": null,
+   "place": "washington",
+   "note": "Hosted Altman's 2023 testimony and AI Insight Forums.",
+   "colour": "#7a7f9a"
+  },
+  "frontier-model-forum": {
+   "name": "Frontier Model Forum",
+   "kind": "nonprofit",
+   "founded": "2023-07",
+   "place": null,
+   "note": "Industry body of OpenAI, Microsoft, Google and Anthropic focused on frontier AI risks; Meta joined a year later.",
+   "colour": "#7a9a8a"
+  },
+  "inflection": {
+   "name": "Inflection AI",
+   "kind": "company",
+   "founded": "2022",
+   "place": "bay-area",
+   "note": "Hoffman and Suleyman's chatbot startup competing with OpenAI.",
+   "short": "Inflection",
+   "colour": "#8e5bd1"
+  },
+  "xai": {
+   "name": "xAI",
+   "kind": "lab",
+   "founded": "2023-03",
+   "place": "bay-area",
+   "note": "Musk's AI company created as a rival to OpenAI.",
+   "colour": "#8a8f98"
+  },
+  "new-york-magazine": {
+   "name": "New York magazine",
+   "kind": "other",
+   "founded": "1968",
+   "place": "new-york",
+   "note": "Published the 2023 Altman profile mentioning Annie.",
+   "colour": "#999"
+  },
+  "wilmerhale": {
+   "name": "WilmerHale",
+   "kind": "other",
+   "founded": null,
+   "place": null,
+   "note": "Law firm whose unpublished review cleared Altman to continue.",
+   "colour": "#999"
+  },
+  "the-atlantic": {
+   "name": "The Atlantic",
+   "kind": "other",
+   "founded": "1857",
+   "place": "washington",
+   "note": "Hao reported on the board crisis there.",
+   "colour": "#999"
+  },
+  "reuters": {
+   "name": "Reuters",
+   "kind": "other",
+   "founded": null,
+   "place": "london",
+   "note": "Reported the Q* letter during the board crisis.",
+   "colour": "#999"
+  },
+  "vox": {
+   "name": "Vox",
+   "kind": "other",
+   "founded": "2014",
+   "place": null,
+   "note": "Kelsey Piper's equity-clawback scoops.",
+   "colour": "#999"
+  },
+  "caa": {
+   "name": "Creative Artists Agency",
+   "kind": "company",
+   "founded": "1975",
+   "place": null,
+   "note": "Johansson's agency.",
+   "colour": "#8a9a6a"
+  },
+  "sec": {
+   "name": "US Securities and Exchange Commission",
+   "kind": "government",
+   "founded": "1934",
+   "place": "washington",
+   "note": "Investigated whether OpenAI investors were misled.",
+   "colour": "#7a7f9a"
+  },
+  "ai-chip-venture": {
+   "name": "Altman's AI chip venture",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Chip-making project Altman fundraised for (reportedly up to $7T), incl. Saudi investors.",
+   "colour": "#9c7a5b"
+  },
+  "ssi": {
+   "name": "Safe Superintelligence (SSI)",
+   "kind": "lab",
+   "founded": "2024",
+   "place": "bay-area",
+   "note": "Sutskever's safety-branded rival lab; announced $1B starting funding in September 2024.",
+   "short": "SSI",
+   "colour": "#2bb3a3"
+  },
+  "meta-letter-ca-ag": {
+   "name": "California Attorney General",
+   "kind": "government",
+   "founded": null,
+   "place": null,
+   "note": "Received Meta's letter urging a block on OpenAI's for-profit conversion.",
+   "colour": "#7a7f9a"
+  },
+  "te-hiku-media": {
+   "name": "Te Hiku Media",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": null,
+   "note": "Māori radio station building consent-based te reo AI under data guardianship.",
+   "colour": "#9a8a7a"
+  },
+  "dair": {
+   "name": "Distributed AI Research Institute (DAIR)",
+   "kind": "nonprofit",
+   "founded": "2021-12",
+   "place": null,
+   "note": "Gebru's community-rooted independent research institute.",
+   "colour": "#7a9a8a"
+  },
+  "bullfrog": {
+   "name": "Bullfrog Productions",
+   "kind": "company",
+   "founded": "1987",
+   "place": "guildford",
+   "note": "Peter Molyneux's game studio where teenage Hassabis co-designed Theme Park.",
+   "short": "Bullfrog",
+   "colour": "#9c755f"
+  },
+  "lionhead": {
+   "name": "Lionhead Studios",
+   "kind": "company",
+   "founded": "1997",
+   "place": "guildford",
+   "note": "Molyneux's later studio that made Black & White, featuring learning creatures.",
+   "colour": "#8a9a6a"
+  },
+  "eidos": {
+   "name": "Eidos",
+   "kind": "company",
+   "founded": null,
+   "place": "london",
+   "note": "Game publisher that funded Elixir from late 1998.",
+   "colour": "#9c7a5b"
+  },
+  "ucl": {
+   "name": "University College London",
+   "kind": "university",
+   "founded": "1826",
+   "place": "london",
+   "note": "Where Hassabis did his neuroscience PhD and where DeepMind's founders met.",
+   "short": "UCL",
+   "colour": "#7f8c99"
+  },
+  "gatsby-unit": {
+   "name": "Gatsby Computational Neuroscience Unit",
+   "kind": "university",
+   "founded": "1998",
+   "place": "london",
+   "note": "UCL unit founded by Hinton, directed by Dayan, where Hassabis and Legg met.",
+   "colour": "#9aa39a"
+  },
+  "cambridge": {
+   "name": "University of Cambridge",
+   "kind": "university",
+   "founded": "1209",
+   "place": "cambridge-uk",
+   "note": "Where Hassabis and Silver studied computer science in the mid-1990s.",
+   "colour": "#8f949a"
+  },
+  "alberta": {
+   "name": "University of Alberta",
+   "kind": "university",
+   "founded": null,
+   "place": "edmonton",
+   "note": "Rich Sutton's reinforcement-learning centre; trained Silver and Mnih.",
+   "short": "Alberta",
+   "colour": "#b07aa1"
+  },
+  "u-montreal": {
+   "name": "University of Montreal",
+   "kind": "university",
+   "founded": null,
+   "place": null,
+   "note": "Yoshua Bengio's lab, source of the attention mechanism.",
+   "colour": "#a3998c"
+  },
+  "idsia": {
+   "name": "IDSIA",
+   "kind": "lab",
+   "founded": null,
+   "place": "lugano",
+   "note": "Swiss AI institute where Legg did his PhD with Marcus Hutter.",
+   "colour": "#76b7b2"
+  },
+  "swiss-finance-institute": {
+   "name": "Swiss Finance Institute",
+   "kind": "other",
+   "founded": null,
+   "place": "switzerland",
+   "note": "Legg applied RL to markets there for a year.",
+   "colour": "#999"
+  },
+  "intelligenesis": {
+   "name": "Intelligenesis",
+   "kind": "company",
+   "founded": "1997",
+   "place": "new-york",
+   "note": "Ben Goertzel's dot-com digital-brain start-up; went bust in 2001.",
+   "colour": "#6d8fa8"
+  },
+  "horizons-ventures": {
+   "name": "Horizons Ventures",
+   "kind": "investor",
+   "founded": null,
+   "place": null,
+   "note": "Li Ka-shing's investment arm managed by Solina Chau; led DeepMind's Series C.",
+   "colour": "#a8906b"
+  },
+  "future-of-life-institute": {
+   "name": "Future of Life Institute",
+   "kind": "nonprofit",
+   "founded": "2014",
+   "place": null,
+   "note": "Safety nonprofit funded by Musk with $10m; organised the 2023 pause letter.",
+   "colour": "#9a8a7a"
+  },
+  "singularity-summit": {
+   "name": "Singularity Summit",
+   "kind": "other",
+   "founded": "2006",
+   "place": "bay-area",
+   "note": "Annual AGI-believer gathering, partly funded by Thiel, where DeepMind found its first investor.",
+   "colour": "#999"
+  },
+  "google-health": {
+   "name": "Google Health",
+   "kind": "other",
+   "founded": null,
+   "place": "bay-area",
+   "note": "Google division that absorbed DeepMind Health in November 2018.",
+   "colour": "#999"
+  },
+  "nhs": {
+   "name": "National Health Service",
+   "kind": "government",
+   "founded": "1948",
+   "place": null,
+   "note": "Britain's health system; DeepMind's partner, focus of 2016 data controversy.",
+   "colour": "#7a7f9a"
+  },
+  "royal-free-hospital": {
+   "name": "Royal Free Hospital",
+   "kind": "other",
+   "founded": null,
+   "place": "london",
+   "note": "NHS hospital that piloted the Streams kidney-alert app.",
+   "colour": "#999"
+  },
+  "moorfields": {
+   "name": "Moorfields Eye Hospital",
+   "kind": "other",
+   "founded": null,
+   "place": "london",
+   "note": "Partnered with DeepMind on retinal-scan AI.",
+   "colour": "#999"
+  },
+  "d-e-shaw-research": {
+   "name": "D. E. Shaw Research",
+   "kind": "lab",
+   "founded": null,
+   "place": "new-york",
+   "note": "Molecular-dynamics lab with a custom supercomputer where Jumper worked.",
+   "colour": "#7c9a5e"
+  },
+  "casp": {
+   "name": "CASP",
+   "kind": "other",
+   "founded": "1994",
+   "place": null,
+   "note": "Biennial protein-structure prediction contest won by AlphaFold in 2018 and 2020.",
+   "colour": "#999"
+  },
+  "deepseek": {
+   "name": "DeepSeek",
+   "kind": "lab",
+   "founded": "2023",
+   "place": null,
+   "note": "Hedge-fund offshoot whose cheap open R1 reasoning model shocked markets in January 2025.",
+   "colour": "#7c9a5e"
+  },
+  "us-government": {
+   "name": "US government (White House)",
+   "kind": "government",
+   "founded": null,
+   "place": "washington",
+   "note": "Biden team pursued export controls, voluntary commitments and an AI executive order; Trump loosened rules.",
+   "colour": "#7a7f9a"
+  },
+  "uk-government": {
+   "name": "UK government",
+   "kind": "government",
+   "founded": null,
+   "place": "london",
+   "note": "Hosted the 2023 Bletchley Park AI Safety Summit.",
+   "colour": "#7a7f9a"
+  },
+  "chinese-government": {
+   "name": "Chinese government",
+   "kind": "government",
+   "founded": null,
+   "place": "beijing",
+   "note": "Saw AlphaGo's 2017 win as a Sputnik moment; embraced DeepSeek.",
+   "colour": "#7a7f9a"
+  },
+  "muslim-youth-helpline": {
+   "name": "Muslim Youth Helpline",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": "london",
+   "note": "Counselling charity Suleyman helped lead after leaving Oxford.",
+   "colour": "#7a9a8a"
+  },
+  "london-mayors-office": {
+   "name": "London Mayor's Office",
+   "kind": "government",
+   "founded": null,
+   "place": "london",
+   "note": "Suleyman worked there before tech.",
+   "colour": "#7a7f9a"
+  },
+  "reos-partners": {
+   "name": "Reos Partners",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Conflict-resolution consultancy cofounded by Suleyman.",
+   "colour": "#9c7a5b"
+  },
+  "isomorphic": {
+   "name": "Isomorphic Labs",
+   "kind": "company",
+   "founded": "2021-11",
+   "place": "london",
+   "note": "Alphabet drug-discovery spin-out led by Hassabis, building on AlphaFold.",
+   "short": "Isomorphic",
+   "colour": "#5a9bd4"
+  },
+  "arc": {
+   "name": "Alignment Research Center",
+   "kind": "nonprofit",
+   "founded": "2021",
+   "place": null,
+   "note": "Alignment nonprofit founded by Paul Christiano after leaving OpenAI.",
+   "colour": "#9a8a7a"
+  },
+  "anysphere": {
+   "name": "Anysphere (Cursor)",
+   "short": "Anysphere",
+   "kind": "company",
+   "colour": "#7a7a7a",
+   "place": "bay-area"
+  }
+ },
+ "people": [
+  {
+   "id": "john-mccarthy",
+   "name": "John McCarthy",
+   "summary": "Dartmouth professor who convened the 1956 workshop and chose the name 'artificial intelligence'.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "dartmouth",
+     "role": "assistant professor; wrote the 1955 workshop proposal",
+     "start": "1955",
+     "end": "1958",
+     "place": "new-hampshire",
+     "src": [
+      "hao",
+      "web"
+     ],
+     "ref": "Hao, ch. 4",
+     "url": "https://legacy.cs.stanford.edu/memoriam/professor-john-mccarthy"
+    },
+    {
+     "org": "mit",
+     "role": "co-founded the MIT AI Project with Minsky",
+     "start": "1958",
+     "end": "1962",
+     "place": "boston",
+     "src": [
+      "web"
+     ],
+     "url": "https://legacy.cs.stanford.edu/memoriam/professor-john-mccarthy"
+    },
+    {
+     "org": "stanford",
+     "role": "professor; founded and directed SAIL from 1965",
+     "start": "1962",
+     "end": "2011-10",
+     "place": "bay-area",
+     "left": "Died in October 2011.",
+     "src": [
+      "web"
+     ],
+     "url": "https://phys.org/news/2011-10-artificial-intelligence-john-mccarthy-dies.html"
+    }
+   ],
+   "url": "https://en.wikipedia.org/wiki/John_McCarthy_%28computer_scientist%29",
+   "photo": "/people/ai/john-mccarthy.avif",
+   "photo_credit": {
+    "by": "\"null0\"",
+    "licence": "CC BY-SA 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:John_McCarthy_Stanford.jpg"
+   }
+  },
+  {
+   "id": "geoffrey-hinton",
+   "name": "Geoffrey Hinton",
+   "summary": "British-Canadian deep-learning pioneer; Sutskever's mentor; sold DNNresearch to Google.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "carnegie-mellon",
+     "role": "Professor",
+     "start": "1982",
+     "end": "1987",
+     "left": "Moved to Toronto",
+     "place": "pittsburgh",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 4: Dreams of Modernity"
+    },
+    {
+     "org": "toronto",
+     "role": "professor",
+     "start": "1987",
+     "end": null,
+     "left": null,
+     "place": "toronto",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 4: The Gang of Three"
+    },
+    {
+     "org": "gatsby-unit",
+     "role": "founding director",
+     "start": "1998",
+     "end": null,
+     "left": "returned to Toronto",
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 4: The Gang of Three"
+    },
+    {
+     "org": "deepmind",
+     "role": "senior adviser",
+     "start": "2010",
+     "end": null,
+     "left": null,
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 5: Founding DeepMind"
+    },
+    {
+     "org": "dnnresearch",
+     "role": "Cofounder",
+     "start": "2012",
+     "end": "2013-03",
+     "left": "Sold to Google",
+     "place": "toronto",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission; Chapter 6: Atari"
+    },
+    {
+     "org": "google",
+     "role": "Part-time researcher while keeping Toronto post",
+     "start": "2013",
+     "end": "2023-05",
+     "left": "Left Google",
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 4: Dreams of Modernity; Chapter 18: We're Cooked"
+    }
+   ],
+   "handle": "geoffreyhinton",
+   "url": "https://en.wikipedia.org/wiki/Geoffrey_Hinton",
+   "photo": "/people/ai/geoffrey-hinton.avif",
+   "photo_credit": {
+    "by": "Cmichel67",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Geoffrey_Hinton_in_2026.jpg"
+   }
+  },
+  {
+   "id": "demis-hassabis",
+   "name": "Demis Hassabis",
+   "summary": "London chess prodigy turned game designer and neuroscientist; cofounded DeepMind and leads Google DeepMind; 2024 chemistry Nobel laureate.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "bullfrog",
+     "role": "teenage game designer (Theme Park co-designer) and later consultant",
+     "start": "1992",
+     "end": "1994",
+     "left": "left to study at Cambridge, refusing Molyneux's large retention cheque",
+     "place": "guildford",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 1: Destiny"
+    },
+    {
+     "org": "cambridge",
+     "role": "computer science undergraduate",
+     "start": "1994",
+     "end": "1997",
+     "left": "graduated",
+     "place": "cambridge-uk",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 2: Deep Philosophical Questions"
+    },
+    {
+     "org": "lionhead",
+     "role": "early brainstorming on Black & White",
+     "start": "1997",
+     "end": "1998",
+     "left": "left to found his own studio",
+     "place": "guildford",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 2: Deep Philosophical Questions"
+    },
+    {
+     "org": "elixir",
+     "role": "founder and managing director",
+     "start": "1998-07",
+     "end": "2005",
+     "left": "studio closed after Republic underwhelmed",
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 3: The Jedi"
+    },
+    {
+     "org": "ucl",
+     "role": "neuroscience PhD student under Eleanor Maguire",
+     "start": "2005",
+     "end": "2009",
+     "left": "completed PhD",
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 3: The Jedi"
+    },
+    {
+     "org": "gatsby-unit",
+     "role": "postdoctoral fellow",
+     "start": "2009",
+     "end": "2010",
+     "left": "left to run DeepMind",
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 4: The Gang of Three"
+    },
+    {
+     "org": "mit",
+     "role": "visiting postdoctoral fellow with Tomaso Poggio",
+     "start": "2009",
+     "end": "2009",
+     "left": null,
+     "place": "boston",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 4: The Gang of Three"
+    },
+    {
+     "org": "harvard",
+     "role": "visiting postdoctoral fellow",
+     "start": "2009",
+     "end": "2009",
+     "left": null,
+     "place": "boston",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 4: The Gang of Three"
+    },
+    {
+     "org": "deepmind",
+     "role": "Cofounder and CEO",
+     "start": "2010",
+     "end": "2023-04",
+     "left": "DeepMind merged with Google Brain",
+     "place": "london",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 1: Divine Right; Chapter 5: Founding DeepMind"
+    },
+    {
+     "org": "google",
+     "role": "executive after Google acquired DeepMind",
+     "start": "2014-01",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 8: Get Google"
+    },
+    {
+     "org": "isomorphic",
+     "role": "founder and CEO",
+     "start": "2021-11",
+     "end": null,
+     "left": null,
+     "place": "london",
+     "src": [
+      "web"
+     ],
+     "ref": null,
+     "url": "https://en.wikipedia.org/wiki/Isomorphic_Labs"
+    },
+    {
+     "org": "google-deepmind",
+     "role": "CEO of merged lab",
+     "start": "2023-04",
+     "end": null,
+     "left": null,
+     "place": "london",
+     "src": [
+      "web",
+      "mallaby"
+     ],
+     "ref": "Chapter 17: RaceGPT",
+     "url": "https://fortune.com/2023/04/20/google-deepmind-brain-research-ai-teams-combined/"
+    }
+   ],
+   "handle": "demishassabis",
+   "url": "https://en.wikipedia.org/wiki/Demis_Hassabis",
+   "photo": "/people/ai/demis-hassabis.avif",
+   "photo_credit": {
+    "by": "John Sears",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Demis_Hassabis,_2024_Nobel_Prize_Laureate_in_Chemistry_7_(cropped).jpg"
+   }
+  },
+  {
+   "id": "shane-legg",
+   "name": "Shane Legg",
+   "summary": "New Zealand mathematician who popularised the term AGI and cofounded DeepMind as chief scientist.",
+   "src": [
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "intelligenesis",
+     "role": "engineer at Ben Goertzel's start-up",
+     "start": "1999",
+     "end": "2001",
+     "left": "company went bust",
+     "place": "new-york",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 4: The Gang of Three"
+    },
+    {
+     "org": "idsia",
+     "role": "PhD student under Marcus Hutter",
+     "start": "2003",
+     "end": "2008",
+     "left": "completed thesis on machine superintelligence",
+     "place": "lugano",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 4: The Gang of Three"
+    },
+    {
+     "org": "swiss-finance-institute",
+     "role": "researcher applying RL to markets",
+     "start": "2008",
+     "end": "2009",
+     "left": null,
+     "place": "switzerland",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 4: The Gang of Three"
+    },
+    {
+     "org": "gatsby-unit",
+     "role": "postdoctoral fellow",
+     "start": "2009-04",
+     "end": "2010",
+     "left": null,
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 4: The Gang of Three"
+    },
+    {
+     "org": "deepmind",
+     "role": "cofounder and chief scientist",
+     "start": "2010",
+     "end": "2023-04",
+     "left": "merged into Google DeepMind",
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 5: Founding DeepMind"
+    },
+    {
+     "org": "google-deepmind",
+     "role": "cofounder and chief AGI scientist",
+     "start": "2023-04",
+     "end": null,
+     "left": null,
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 17: RaceGPT"
+    }
+   ],
+   "handle": "ShaneLegg",
+   "url": "https://en.wikipedia.org/wiki/Shane_Legg",
+   "photo": "/people/ai/shane-legg.avif",
+   "photo_credit": {
+    "by": "Libor.burian",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Shane_Legg.jpg"
+   }
+  },
+  {
+   "id": "mustafa-suleyman",
+   "name": "Mustafa Suleyman",
+   "summary": "North London activist turned tech leader; DeepMind cofounder, later Inflection cofounder and Microsoft AI chief.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "london-mayors-office",
+     "role": "policy staffer",
+     "start": "2000s",
+     "end": null,
+     "left": "found it bureaucratic",
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 4: The Gang of Three"
+    },
+    {
+     "org": "reos-partners",
+     "role": "cofounder of conflict-resolution consultancy",
+     "start": "2000s",
+     "end": null,
+     "left": null,
+     "place": null,
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 4: The Gang of Three"
+    },
+    {
+     "org": "oxford",
+     "role": "philosophy and theology student",
+     "start": "2002",
+     "end": "2004",
+     "left": "dropped out",
+     "place": "oxford",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 4: The Gang of Three"
+    },
+    {
+     "org": "muslim-youth-helpline",
+     "role": "cofounder/organiser of counselling helpline",
+     "start": "2004",
+     "end": "2009",
+     "left": null,
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 4: The Gang of Three"
+    },
+    {
+     "org": "deepmind",
+     "role": "cofounder; head of Applied and policy",
+     "start": "2010",
+     "end": "2019-08",
+     "left": "Departed",
+     "place": "london",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 13: The Two Prophets; Chapter 14: Project Mario"
+    },
+    {
+     "org": "deepmind",
+     "role": "founder of DeepMind Health",
+     "start": "2016-02",
+     "end": "2018-11",
+     "left": "unit absorbed by Google",
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 11: P0 Plus Plus"
+    },
+    {
+     "org": "google",
+     "role": "vice president (no direct reports) in California",
+     "start": "2019-12",
+     "end": "2022-01",
+     "left": "quit to start Inflection",
+     "place": "bay-area",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 14: Project Mario"
+    },
+    {
+     "org": "inflection",
+     "role": "cofounder and CEO with Reid Hoffman",
+     "start": "2022",
+     "end": "2024-03",
+     "left": "moved to Microsoft",
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 13: The Two Prophets; Chapter 17: RaceGPT"
+    },
+    {
+     "org": "microsoft",
+     "role": "CEO of Microsoft AI",
+     "start": "2024-03",
+     "end": null,
+     "left": null,
+     "place": "seattle",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 17: Reckoning; Chapter 14: Project Mario"
+    }
+   ],
+   "handle": "mustafasuleyman",
+   "url": "https://en.wikipedia.org/wiki/Mustafa_Suleyman",
+   "photo": "/people/ai/mustafa-suleyman.avif",
+   "photo_credit": {
+    "by": "Joi Ito from Cambridge, MA, USA",
+    "licence": "CC BY 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Mustafa_Suleyman_(29099346447).jpg"
+   }
+  },
+  {
+   "id": "david-silver",
+   "name": "David Silver",
+   "summary": "Hassabis's Cambridge friend; reinforcement-learning leader behind AlphaGo, AlphaZero, AlphaStar and AlphaProof.",
+   "src": [
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "cambridge",
+     "role": "computer science undergraduate",
+     "start": "1994",
+     "end": "1997",
+     "left": null,
+     "place": "cambridge-uk",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 2: Deep Philosophical Questions"
+    },
+    {
+     "org": "elixir",
+     "role": "cofounder and AI programmer",
+     "start": "1998",
+     "end": "2003",
+     "left": "burned out, left for the south of France",
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 3: The Jedi"
+    },
+    {
+     "org": "alberta",
+     "role": "PhD student under Richard Sutton",
+     "start": "2004",
+     "end": "2009",
+     "left": "completed PhD on computer Go",
+     "place": "edmonton",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 3: The Jedi"
+    },
+    {
+     "org": "ucl",
+     "role": "Royal Society research fellow",
+     "start": "2009",
+     "end": "2013-05",
+     "left": "joined DeepMind full time",
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 5: Founding DeepMind"
+    },
+    {
+     "org": "deepmind",
+     "role": "part-time consultant (returned his shares)",
+     "start": "2010",
+     "end": "2013-05",
+     "left": null,
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 5: Founding DeepMind"
+    },
+    {
+     "org": "deepmind",
+     "role": "principal scientist, RL lead",
+     "start": "2013-05",
+     "end": "2023-04",
+     "left": "merger",
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 6: Atari"
+    },
+    {
+     "org": "google-deepmind",
+     "role": "RL lead; briefly led Gemini post-training",
+     "start": "2023-04",
+     "end": null,
+     "left": null,
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 18: We're Cooked"
+    }
+   ],
+   "url": "https://en.wikipedia.org/wiki/David_Silver_%28computer_scientist%29"
+  },
+  {
+   "id": "koray-kavukcuoglu",
+   "name": "Koray Kavukcuoglu",
+   "summary": "Turkish LeCun alumnus; DQN coauthor, DeepMind research director and Gemini leader.",
+   "src": [
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "deepmind",
+     "role": "researcher, later VP research/research director",
+     "start": "2012",
+     "end": "2023-04",
+     "left": "merger",
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 6: Atari"
+    },
+    {
+     "org": "google-deepmind",
+     "role": "CTO-level research leader on Gemini",
+     "start": "2023-04",
+     "end": null,
+     "left": null,
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 18: We're Cooked"
+    }
+   ],
+   "url": "https://en.wikipedia.org/wiki/Koray_Kavukcuoglu"
+  },
+  {
+   "id": "john-jumper",
+   "name": "John Jumper",
+   "summary": "Protein-motion obsessive who led AlphaFold 2 and shared the 2024 chemistry Nobel.",
+   "src": [
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "d-e-shaw-research",
+     "role": "scientist",
+     "start": "2008",
+     "end": "2011",
+     "left": null,
+     "place": "new-york",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 15: Fermat for Biology"
+    },
+    {
+     "org": "deepmind",
+     "role": "AlphaFold team lead",
+     "start": "2017-10",
+     "end": "2023-04",
+     "left": null,
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 15: Fermat for Biology"
+    },
+    {
+     "org": "google-deepmind",
+     "role": "director",
+     "start": "2023-04",
+     "end": null,
+     "left": null,
+     "place": "london",
+     "src": [
+      "web"
+     ],
+     "ref": null,
+     "url": "https://fortune.com/2023/04/20/google-deepmind-brain-research-ai-teams-combined/"
+    }
+   ],
+   "url": "https://en.wikipedia.org/wiki/John_Jumper"
+  },
+  {
+   "id": "peter-thiel",
+   "name": "Peter Thiel",
+   "summary": "PayPal/Palantir founder and Founders Fund investor; Altman's mentor, Hydrazine backer and early OpenAI funder.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "founders-fund",
+     "role": "founder",
+     "start": "2005",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 5: Founding DeepMind"
+    },
+    {
+     "org": "openai",
+     "role": "backer",
+     "start": "2015-12",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Notes"
+    }
+   ],
+   "handle": "peterthiel",
+   "url": "https://en.wikipedia.org/wiki/Peter_Thiel",
+   "photo": "/people/ai/peter-thiel.avif",
+   "photo_credit": {
+    "by": "Gage Skidmore",
+    "licence": "CC BY-SA 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Peter_Thiel_by_Gage_Skidmore.jpg"
+   }
+  },
+  {
+   "id": "elon-musk",
+   "name": "Elon Musk",
+   "summary": "SpaceX/Tesla founder, early DeepMind investor and AI-risk evangelist; named and cofunded OpenAI, then left and became its adversary.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "deepmind",
+     "role": "investor (Series C, $5m)",
+     "start": "2013-03",
+     "end": "2014-01",
+     "left": "Google acquisition",
+     "place": "london",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 1: Divine Right; Chapter 7: Thiel Trouble"
+    },
+    {
+     "org": "deepmind",
+     "role": "ethics and safety board member/host",
+     "start": "2015-04",
+     "end": "2015-12",
+     "left": "cofounded rival OpenAI",
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 10: Out of Eden"
+    },
+    {
+     "org": "openai",
+     "role": "Cofounder, cochair and main funder",
+     "start": "2015-12",
+     "end": "2018-02",
+     "left": "Lost CEO contest to Altman and left, withdrawing his funding",
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Prologue: A Run for the Throne; Chapter 14: Project Mario"
+    },
+    {
+     "org": "xai",
+     "role": "Founder",
+     "start": "2023-03",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 13: The Two Prophets; Chapter 18: We're Cooked"
+    }
+   ],
+   "handle": "elonmusk",
+   "url": "https://en.wikipedia.org/wiki/Elon_Musk",
+   "photo": "/people/ai/elon-musk.avif",
+   "photo_credit": {
+    "by": "Gage Skidmore",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_(54816836217)_(cropped_2)_(b).jpg"
+   }
+  },
+  {
+   "id": "reid-hoffman",
+   "name": "Reid Hoffman",
+   "summary": "LinkedIn cofounder and PayPal mafia member; OpenAI donor, LP co-lead investor, financial backstop after Musk.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "linkedin",
+     "role": "Cofounder",
+     "start": "2002",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    },
+    {
+     "org": "deepmind",
+     "role": "ethics and safety board participant",
+     "start": "2015-08",
+     "end": null,
+     "left": null,
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 10: Out of Eden"
+    },
+    {
+     "org": "openai",
+     "role": "Founding donor, later investor and board member",
+     "start": "2015-12",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission; Chapter 10: Out of Eden"
+    },
+    {
+     "org": "microsoft",
+     "role": "Board member",
+     "start": "2017",
+     "end": null,
+     "left": null,
+     "place": "seattle",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 16: Cloak-and-Dagger"
+    },
+    {
+     "org": "openai",
+     "role": "Board member",
+     "start": "2018",
+     "end": "2023-02",
+     "left": "Stepped down over conflict after cofounding Inflection",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 13: The Two Prophets"
+    },
+    {
+     "org": "inflection",
+     "role": "Cofounder",
+     "start": "2022",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 13: The Two Prophets; Chapter 14: Project Mario"
+    }
+   ],
+   "handle": "reidhoffman",
+   "url": "https://en.wikipedia.org/wiki/Reid_Hoffman",
+   "photo": "/people/ai/reid-hoffman.avif",
+   "photo_credit": {
+    "by": "U.S. Secretary of Defense",
+    "licence": "CC BY 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:2022_Reid_Hoffman_(cropped).jpg"
+   }
+  },
+  {
+   "id": "larry-page",
+   "name": "Larry Page",
+   "summary": "Google cofounder; argued with Musk that superhuman AI was simply the next stage of evolution.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "google",
+     "role": "cofounder and CEO",
+     "start": "1998",
+     "end": "2015",
+     "left": "became Alphabet CEO",
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 1: Divine Right; Chapter 7: Thiel Trouble"
+    },
+    {
+     "org": "google",
+     "role": "CEO",
+     "start": "2015",
+     "end": "2019",
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 14: Project Mario"
+    }
+   ],
+   "url": "https://en.wikipedia.org/wiki/Larry_Page",
+   "photo": "/people/ai/larry-page.avif",
+   "photo_credit": {
+    "by": "Marcin Mycielski, European Parliament (Stansfield)",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Larry_Page_in_the_European_Parliament,_17.06.2009.jpg"
+   }
+  },
+  {
+   "id": "sundar-pichai",
+   "name": "Sundar Pichai",
+   "summary": "Google CEO who apologized for how Gebru left.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "google",
+     "role": "CEO of Google",
+     "start": "2015",
+     "end": "2019-12",
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 7: Science in Captivity; Chapter 14: Project Mario"
+    },
+    {
+     "org": "google",
+     "role": "CEO of Google and Alphabet",
+     "start": "2019-12",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "web"
+     ],
+     "ref": null,
+     "url": "https://en.wikipedia.org/wiki/Sundar_Pichai"
+    }
+   ],
+   "handle": "sundarpichai",
+   "url": "https://en.wikipedia.org/wiki/Sundar_Pichai",
+   "photo": "/people/ai/sundar-pichai.avif",
+   "photo_credit": {
+    "by": "Photographer: Lukasz Kobus (European Commission)",
+    "licence": "CC BY 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sundar_Pichai_-_2023_(cropped).jpg"
+   }
+  },
+  {
+   "id": "jeff-dean",
+   "name": "Jeff Dean",
+   "summary": "Senior Google engineer who vetted DeepMind's code before the acquisition; later Google AI leader.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "google",
+     "role": "head of Google AI",
+     "start": "2018-04",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 14: Project Mario"
+    },
+    {
+     "org": "google-deepmind",
+     "role": "chief scientist / Gemini co-lead",
+     "start": "2023-04",
+     "end": null,
+     "left": null,
+     "place": "london",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 18: We're Cooked"
+    }
+   ],
+   "handle": "jeffdean",
+   "url": "https://en.wikipedia.org/wiki/Jeff_Dean",
+   "photo": "/people/ai/jeff-dean.avif",
+   "photo_credit": {
+    "by": "Cmichel67",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Jeff_Dean_in_2025_x.jpg"
+   }
+  },
+  {
+   "id": "yann-lecun",
+   "name": "Yann LeCun",
+   "summary": "Hinton's former postdoc, NYU professor and Facebook AI chief; 2018 Turing Award co-winner.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "meta",
+     "role": "founding director of Facebook AI Research, later chief AI scientist",
+     "start": "2013-12",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 4: Dreams of Modernity; Chapter 8: Get Google"
+    }
+   ],
+   "handle": "ylecun",
+   "url": "https://en.wikipedia.org/wiki/Yann_LeCun",
+   "photo": "/people/ai/yann-lecun.avif",
+   "photo_credit": {
+    "by": "Ecole  polytechnique from Paris",
+    "licence": "CC BY-SA 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Yann_LeCun_-_2025_(cropped).jpg"
+   }
+  },
+  {
+   "id": "timnit-gebru",
+   "name": "Timnit Gebru",
+   "summary": "AI ethics researcher; questioned Musk's AI-extinction focus at a Stanford event, later a central critic.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "black-in-ai",
+     "role": "Cofounder",
+     "start": "2016",
+     "end": null,
+     "left": null,
+     "place": null,
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    },
+    {
+     "org": "google",
+     "role": "Co-lead, ethical AI team",
+     "start": "2018",
+     "end": "2020-12-02",
+     "left": "Forced out after refusing to retract Stochastic Parrots paper",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 7: Science in Captivity"
+    },
+    {
+     "org": "dair",
+     "role": "Founder",
+     "start": "2021-12",
+     "end": null,
+     "left": null,
+     "place": null,
+     "src": [
+      "hao"
+     ],
+     "ref": "Epilogue: How the Empire Falls"
+    }
+   ],
+   "url": null
+  },
+  {
+   "id": "satya-nadella",
+   "name": "Satya Nadella",
+   "summary": "Microsoft CEO; OpenAI's biggest backer, offered to hire Altman and Brockman during the ouster.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "microsoft",
+     "role": "CEO",
+     "start": "2014-02",
+     "end": null,
+     "left": null,
+     "place": "seattle",
+     "src": [
+      "web",
+      "mallaby"
+     ],
+     "ref": "Chapter 17: RaceGPT",
+     "url": "https://en.wikipedia.org/wiki/Satya_Nadella"
+    }
+   ],
+   "handle": "satyanadella",
+   "url": "https://en.wikipedia.org/wiki/Satya_Nadella",
+   "photo": "/people/ai/satya-nadella.avif",
+   "photo_credit": {
+    "by": "Brian Smale and Microsoft",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:MS-Exec-Nadella-Satya-2017-08-31-22_(cropped).jpg"
+   }
+  },
+  {
+   "id": "sam-altman",
+   "name": "Sam Altman",
+   "summary": "Loopt founder, YC president, OpenAI cofounder and CEO; briefly ousted in November 2023 and reinstated days later.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "stanford",
+     "role": "Computer science undergraduate (dropped out)",
+     "start": "2003",
+     "end": "2005",
+     "left": "Left to run Loopt after raising VC money",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 1: Divine Right"
+    },
+    {
+     "org": "loopt",
+     "role": "Cofounder and CEO",
+     "start": "2005",
+     "end": "2012",
+     "left": "Sold the company for about $43.4M; survived two attempts by senior staff to have him fired",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 1: Divine Right"
+    },
+    {
+     "org": "hydrazine-capital",
+     "role": "Founder of personal investment fund",
+     "start": "2012",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 1: Divine Right"
+    },
+    {
+     "org": "y-combinator",
+     "role": "Partner, then president succeeding Paul Graham",
+     "start": "2014",
+     "end": "2019-03",
+     "left": "Stepped down from the presidency",
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 1: Divine Right; Chapter 10: Out of Eden"
+    },
+    {
+     "org": "reddit",
+     "role": "Board member and major shareholder",
+     "start": "2014",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 1: Divine Right"
+    },
+    {
+     "org": "openai",
+     "role": "Cofounder and cochair",
+     "start": "2015-12",
+     "end": "2018-02",
+     "left": "Musk quit; Altman became president of the nonprofit",
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 1: Divine Right; Chapter 18: We're Cooked"
+    },
+    {
+     "org": "openai",
+     "role": "President of the nonprofit after Musk's exit",
+     "start": "2018-02",
+     "end": "2023-11-17",
+     "left": "Became CEO of OpenAI LP",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    },
+    {
+     "org": "tools-for-humanity",
+     "role": "Cofounder",
+     "start": "2019",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 8: Dawn of Commerce"
+    },
+    {
+     "org": "helion-energy",
+     "role": "Investor ($375M)",
+     "start": "2021",
+     "end": null,
+     "left": null,
+     "place": "seattle",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 8: Dawn of Commerce"
+    },
+    {
+     "org": "retro-biosciences",
+     "role": "Investor ($180M)",
+     "start": "2021",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 8: Dawn of Commerce"
+    },
+    {
+     "org": "openai-startup-fund",
+     "role": "Controller of the fund",
+     "start": "2021-05",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 8: Dawn of Commerce"
+    },
+    {
+     "org": "microsoft",
+     "role": "Announced as head of a new advanced AI unit",
+     "start": "2023-11-19",
+     "end": "2023-11-21",
+     "left": "Returned to OpenAI instead",
+     "place": "seattle",
+     "src": [
+      "hao"
+     ],
+     "ref": "Prologue: A Run for the Throne"
+    },
+    {
+     "org": "openai",
+     "role": "CEO (reinstated, initially without board seat)",
+     "start": "2023-11-21",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Prologue: A Run for the Throne"
+    }
+   ],
+   "handle": "sama",
+   "url": "https://en.wikipedia.org/wiki/Sam_Altman",
+   "photo": "/people/ai/sam-altman.avif",
+   "photo_credit": {
+    "by": "Steve Jurvetson",
+    "licence": "CC BY 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sam_Altman_speaking_at_TED_(cropped).jpg"
+   }
+  },
+  {
+   "id": "greg-brockman",
+   "name": "Greg Brockman",
+   "summary": "Stripe's first CTO, OpenAI cofounder, CTO then president; Altman's closest ally.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "harvard",
+     "role": "Student",
+     "start": "2008",
+     "end": "2010",
+     "left": "Transferred to MIT",
+     "place": "boston",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    },
+    {
+     "org": "mit",
+     "role": "Student",
+     "start": "2010",
+     "end": "2010",
+     "left": "Dropped out",
+     "place": "boston",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    },
+    {
+     "org": "stripe",
+     "role": "Early engineer, then CTO",
+     "start": "2010",
+     "end": "2015",
+     "left": "Left to commit to OpenAI after the Rosewood dinner",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    },
+    {
+     "org": "openai",
+     "role": "cofounder, CTO/president",
+     "start": "2015-12",
+     "end": "2022",
+     "left": "Became president",
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission; Chapter 14: Project Mario"
+    },
+    {
+     "org": "openai",
+     "role": "Individual contributor; led GPT-4 data and training push; reported to Murati",
+     "start": "2023-11-21",
+     "end": "2023-11-17",
+     "left": "Removed from board and quit in protest of Altman's firing",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Prologue: A Run for the Throne"
+    },
+    {
+     "org": "microsoft",
+     "role": "Announced as co-lead of new AI unit with Altman",
+     "start": "2023-11-19",
+     "end": "2023-11-21",
+     "left": "Returned to OpenAI",
+     "place": "seattle",
+     "src": [
+      "hao"
+     ],
+     "ref": "Prologue: A Run for the Throne"
+    }
+   ],
+   "handle": "gdb",
+   "url": "https://en.wikipedia.org/wiki/Greg_Brockman",
+   "photo": "/people/ai/greg-brockman.avif",
+   "photo_credit": {
+    "by": "TechCrunch",
+    "licence": "CC BY 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Disrupt_SF_TechCrunch_Disrupt_San_Francisco_2019_-_Day_2_(48838200316)_(cropped).jpg"
+   }
+  },
+  {
+   "id": "ilya-sutskever",
+   "name": "Ilya Sutskever",
+   "summary": "Deep-learning researcher, OpenAI cofounder and chief scientist; voted to fire Altman, then recanted.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "toronto",
+     "role": "Student under Geoffrey Hinton",
+     "start": "2003",
+     "end": "2012",
+     "left": "Cofounded DNNresearch",
+     "place": "toronto",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    },
+    {
+     "org": "toronto",
+     "role": "PhD student under Hinton",
+     "start": "2008",
+     "end": "2013",
+     "left": null,
+     "place": "toronto",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 12: The Agent and the Transformer"
+    },
+    {
+     "org": "dnnresearch",
+     "role": "Cofounder",
+     "start": "2012",
+     "end": "2013-03",
+     "left": "Acquired by Google for $44M",
+     "place": "toronto",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission; Chapter 6: Atari"
+    },
+    {
+     "org": "google-brain",
+     "role": "Research scientist",
+     "start": "2013",
+     "end": "2015-12",
+     "left": "Turned down escalating Google counteroffers to join OpenAI",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    },
+    {
+     "org": "google",
+     "role": "research scientist (Google Brain)",
+     "start": "2013",
+     "end": "2015-12",
+     "left": "left to cofound OpenAI",
+     "place": "bay-area",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 12: The Agent and the Transformer"
+    },
+    {
+     "org": "openai",
+     "role": "Cofounder; research director, later chief scientist",
+     "start": "2015-12",
+     "end": "2024-05-14",
+     "left": "Resigned after failed ouster of Altman; return later blocked",
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Prologue: A Run for the Throne; Chapter 12: The Agent and the Transformer"
+    },
+    {
+     "org": "openai",
+     "role": "Co-lead of Superalignment",
+     "start": "2023-07",
+     "end": "2024-05-14",
+     "left": "Left OpenAI",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 13: The Two Prophets"
+    },
+    {
+     "org": "ssi",
+     "role": "Cofounder",
+     "start": "2024-06",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "web"
+     ],
+     "ref": "Chapter 18: A Formula for Empire",
+     "url": "https://www.axios.com/2024/06/19/ilya-sutskever-openai-co-founder-safe-superintelligence"
+    }
+   ],
+   "handle": "ilyasut",
+   "url": "https://en.wikipedia.org/wiki/Ilya_Sutskever",
+   "photo": "/people/ai/ilya-sutskever.avif",
+   "photo_credit": {
+    "by": "Eladkarmel",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Ilya_Sutskever_and_Sam_Altman_in_TAU_(cropped).jpg"
+   }
+  },
+  {
+   "id": "andrej-karpathy",
+   "name": "Andrej Karpathy",
+   "summary": "OpenAI founding scientist poached by Musk to lead Tesla AI; urged OpenAI to attach to Tesla.",
+   "src": [
+    "hao"
+   ],
+   "stints": [
+    {
+     "org": "openai",
+     "role": "Founding research scientist",
+     "start": "2015-12",
+     "end": "2017-06",
+     "left": "Poached by Musk to run Tesla's AI division",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    },
+    {
+     "org": "tesla",
+     "role": "Director of AI",
+     "start": "2017-06",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    }
+   ],
+   "handle": "karpathy",
+   "url": "https://en.wikipedia.org/wiki/Andrej_Karpathy",
+   "photo": "/people/ai/andrej-karpathy.avif",
+   "photo_credit": {
+    "by": "Gladwin Analytics",
+    "licence": "CC BY 3.0",
+    "licence_url": "https://creativecommons.org/licenses/by/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Andrej_Karpathy,_OpenAI.png"
+   }
+  },
+  {
+   "id": "john-schulman",
+   "name": "John Schulman",
+   "summary": "OpenAI founding scientist who led the RLHF chat project that became ChatGPT; later left for Anthropic.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "openai",
+     "role": "Founding research scientist; led ChatGPT RLHF effort",
+     "start": "2015-12",
+     "end": "2024-08-05",
+     "left": "Took over post-training and Superalignment remnants",
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 9: Disaster Capitalism; Notes"
+    },
+    {
+     "org": "openai",
+     "role": "Co-lead of post-training; absorbed Superalignment",
+     "start": "2024-05",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 17: Reckoning"
+    },
+    {
+     "org": "anthropic",
+     "role": "Researcher",
+     "start": "2024-08",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "web"
+     ],
+     "ref": "Chapter 18: A Formula for Empire",
+     "url": "https://siliconangle.com/2024/08/06/openai-co-founder-john-schulman-joins-rival-llm-developer-anthropic/"
+    }
+   ],
+   "url": "https://en.wikipedia.org/wiki/John_Schulman"
+  },
+  {
+   "id": "jakub-pachocki",
+   "name": "Jakub Pachocki",
+   "summary": "Long-tenured OpenAI researcher who quit in protest of Altman's firing and returned.",
+   "src": [
+    "hao"
+   ],
+   "stints": [
+    {
+     "org": "openai",
+     "role": "Senior researcher (quit during ouster)",
+     "start": "2017",
+     "end": "2023-11-17",
+     "left": "Quit in protest Nov 17, returned with Altman",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Prologue: A Run for the Throne"
+    },
+    {
+     "org": "openai",
+     "role": "Promoted to more senior research role by Altman, overlapping Sutskever",
+     "start": "2022",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 13: The Two Prophets"
+    },
+    {
+     "org": "openai",
+     "role": "Chief scientist",
+     "start": "2024-05-14",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 17: Reckoning"
+    }
+   ],
+   "url": null
+  },
+  {
+   "id": "dario-amodei",
+   "name": "Dario Amodei",
+   "summary": "AI researcher at the 2015 founding dinner; later OpenAI research leader who left to cofound Anthropic.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "google-brain",
+     "role": "Researcher",
+     "start": "2015",
+     "end": "2016-07",
+     "left": "Left to join OpenAI",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    },
+    {
+     "org": "openai",
+     "role": "Lead of AI safety research",
+     "start": "2016-07",
+     "end": "2020-12",
+     "left": "Promoted to director of research",
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission; Chapter 16: The Power and the Glory"
+    },
+    {
+     "org": "openai",
+     "role": "Director of research, then VP of research; led Nest team for GPT-3",
+     "start": "2018",
+     "end": "2020-12",
+     "left": "Left to found Anthropic",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 5: Scale of Ambition"
+    },
+    {
+     "org": "anthropic",
+     "role": "Cofounder and CEO",
+     "start": "2021",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "mallaby"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission; Chapter 16: The Power and the Glory"
+    }
+   ],
+   "url": "https://en.wikipedia.org/wiki/Dario_Amodei",
+   "photo": "/people/ai/dario-amodei.avif",
+   "photo_credit": {
+    "by": "TechCrunch",
+    "licence": "CC BY 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Dario_Amodei_at_TechCrunch_Disrupt_2023_02_(cropped).jpg"
+   }
+  },
+  {
+   "id": "daniela-amodei",
+   "name": "Daniela Amodei",
+   "summary": "Stripe's first recruiter; OpenAI VP of people/engineering manager; Anthropic cofounder and president.",
+   "src": [
+    "hao"
+   ],
+   "stints": [
+    {
+     "org": "openai",
+     "role": "Engineering manager and VP of people",
+     "start": "2018",
+     "end": "2020-12",
+     "left": "Left to cofound Anthropic",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    },
+    {
+     "org": "openai",
+     "role": "VP of safety and policy",
+     "start": "2020",
+     "end": "2020-12",
+     "left": "Left to cofound Anthropic",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 6: Ascension"
+    },
+    {
+     "org": "anthropic",
+     "role": "Cofounder and president",
+     "start": "2021",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    }
+   ],
+   "url": "https://en.wikipedia.org/wiki/Daniela_Amodei"
+  },
+  {
+   "id": "jan-leike",
+   "name": "Jan Leike",
+   "summary": "OpenAI head of alignment; DSB member; later co-led Superalignment and left for Anthropic.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "openai",
+     "role": "alignment lead; superalignment co-lead",
+     "start": "2021",
+     "end": "2024-05",
+     "left": "left for Anthropic",
+     "place": "bay-area",
+     "src": [
+      "mallaby"
+     ],
+     "ref": "Chapter 17: RaceGPT"
+    },
+    {
+     "org": "openai",
+     "role": "Co-lead of Superalignment",
+     "start": "2023-07",
+     "end": "2024-05-14",
+     "left": "Resigned, saying safety had taken a backseat to products",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 13: The Two Prophets"
+    },
+    {
+     "org": "anthropic",
+     "role": "alignment researcher",
+     "start": "2024-05",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao",
+      "web"
+     ],
+     "ref": "Chapter 17: Reckoning",
+     "url": "https://the-decoder.com/john-schulman-openai-co-founder-and-key-chatgpt-developer-leaves-for-anthropic/"
+    }
+   ],
+   "handle": "janleike",
+   "url": "https://en.wikipedia.org/wiki/Jan_Leike"
+  },
+  {
+   "id": "mira-murati",
+   "name": "Mira Murati",
+   "summary": "OpenAI CTO; named interim CEO when Altman was fired, then backed his return.",
+   "src": [
+    "hao"
+   ],
+   "stints": [
+    {
+     "org": "openai",
+     "role": "Hardware strategy and research oversight, later CTO",
+     "start": "2018",
+     "end": "2020",
+     "left": "Promoted to VP of Applied",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 2: A Civilizing Mission"
+    },
+    {
+     "org": "openai",
+     "role": "VP of Applied and partnerships, then oversaw Research too",
+     "start": "2020",
+     "end": "2022-05",
+     "left": "Promoted to CTO",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 15: The Gambit"
+    },
+    {
+     "org": "openai",
+     "role": "CTO (resumed after The Blip)",
+     "start": "2023-11-17",
+     "end": "2023-11-17",
+     "left": "Named interim CEO by the board",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Chapter 15: The Gambit"
+    }
+   ],
+   "handle": "miramurati",
+   "url": "https://en.wikipedia.org/wiki/Mira_Murati",
+   "photo": "/people/ai/mira-murati.avif",
+   "photo_credit": {
+    "by": "SWinxy",
+    "licence": "CC BY 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Guests_at_the_2026_Met_Gala_274_(Mira_Murati).jpg"
+   }
+  },
+  {
+   "id": "helen-toner",
+   "name": "Helen Toner",
+   "summary": "Australian researcher at Georgetown's CSET; OpenAI board member who voted to fire Altman, then stepped down.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "stints": [
+    {
+     "org": "openai",
+     "role": "Independent board director",
+     "start": "2021",
+     "end": "2023-11-21",
+     "left": "Stepped down as part of Altman's reinstatement deal",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Prologue: A Run for the Throne"
+    }
+   ],
+   "handle": "hlntnr",
+   "url": "https://en.wikipedia.org/wiki/Helen_Toner"
+  },
+  {
+   "id": "tasha-mccauley",
+   "name": "Tasha McCauley",
+   "summary": "Entrepreneur and RAND scientist; OpenAI board member who voted to fire Altman and then stepped down.",
+   "src": [
+    "hao"
+   ],
+   "stints": [
+    {
+     "org": "openai",
+     "role": "Independent board director",
+     "start": "2018",
+     "end": "2023-11-21",
+     "left": "Stepped down as part of Altman's reinstatement deal",
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Prologue: A Run for the Throne"
+    }
+   ],
+   "url": "https://en.wikipedia.org/wiki/Tasha_McCauley"
+  },
+  {
+   "id": "adam-dangelo",
+   "name": "Adam D'Angelo",
+   "summary": "Quora cofounder/CEO and OpenAI independent director; the only board member to stay after Altman's return.",
+   "src": [
+    "hao"
+   ],
+   "stints": [
+    {
+     "org": "openai",
+     "role": "Independent board director",
+     "start": "2018",
+     "end": null,
+     "left": null,
+     "place": "bay-area",
+     "src": [
+      "hao"
+     ],
+     "ref": "Prologue: A Run for the Throne"
+    }
+   ],
+   "handle": "adamdangelo",
+   "url": "https://en.wikipedia.org/wiki/Adam_D%27Angelo",
+   "photo": "/people/ai/adam-dangelo.avif",
+   "photo_credit": {
+    "by": "Philip Neustrom from San Francisco, USA",
+    "licence": "CC BY 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Adam_D%27Angelo_in_2011.jpg"
+   }
+  },
+  {
+   "id": "boris-cherny",
+   "name": "Boris Cherny",
+   "summary": "Engineer and author of Programming TypeScript who built the first Claude Code prototype at Anthropic and leads it.",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "meta",
+     "role": "engineer, later principal engineer",
+     "start": "2017",
+     "end": "2024",
+     "place": "bay-area",
+     "src": [
+      "web"
+     ],
+     "url": "https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny"
+    },
+    {
+     "org": "anthropic",
+     "role": "built Claude Code",
+     "start": "2024-09",
+     "end": "2025-07",
+     "place": "bay-area",
+     "left": "Joined Anysphere, the maker of Cursor.",
+     "src": [
+      "web"
+     ],
+     "url": "https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny"
+    },
+    {
+     "org": "anysphere",
+     "role": "chief architect",
+     "start": "2025-07",
+     "end": "2025-07",
+     "place": "bay-area",
+     "left": "Back at Anthropic about two weeks later.",
+     "src": [
+      "web"
+     ],
+     "url": "https://ng.investing.com/news/economy-news/anysphere-hires-anthropics-claude-code-leaders-amid-ai-talent-race--the-information-93CH-1990787"
+    },
+    {
+     "org": "anthropic",
+     "role": "head of Claude Code",
+     "start": "2025-07",
+     "end": null,
+     "place": "bay-area",
+     "src": [
+      "web"
+     ],
+     "url": "https://www.ai.engineer/speakers/boris-cherny"
+    }
+   ],
+   "handle": "bcherny",
+   "url": "https://www.ai.engineer/speakers/boris-cherny"
+  }
+ ],
+ "links": [
+  {
+   "a": "geoffrey-hinton",
+   "b": "ilya-sutskever",
+   "kind": "mentor",
+   "date": "2003",
+   "end": null,
+   "note": "Hinton was the only person Sutskever called a mentor.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "a": "daniela-amodei",
+   "b": "greg-brockman",
+   "kind": "other",
+   "date": "2010",
+   "end": null,
+   "note": "Former Stripe colleagues; Brockman recruited her to OpenAI in 2018.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "a": "peter-thiel",
+   "b": "sam-altman",
+   "kind": "mentor",
+   "date": "2012",
+   "end": null,
+   "note": "Thiel provided most of Hydrazine's capital; very close bond, strained by politics.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "a": "elon-musk",
+   "b": "larry-page",
+   "kind": "rival",
+   "date": "2013",
+   "end": null,
+   "note": "Longtime friends fell out over whether superhuman AI was a danger.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "a": "elon-musk",
+   "b": "demis-hassabis",
+   "kind": "rival",
+   "date": "2015",
+   "end": null,
+   "note": "Musk invested in DeepMind, then cast Hassabis as a supervillain OpenAI needed to stop.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "a": "sam-altman",
+   "b": "greg-brockman",
+   "kind": "ally",
+   "date": "2015",
+   "end": null,
+   "note": "Brockman was Altman's closest ally and quit when Altman was fired.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Prologue: A Run for the Throne"
+  },
+  {
+   "a": "greg-brockman",
+   "b": "ilya-sutskever",
+   "kind": "cofounders",
+   "date": "2015",
+   "end": null,
+   "note": "Paired by Altman after the Rosewood dinner; Brockman the engineer, Sutskever the scientist.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "a": "sam-altman",
+   "b": "elon-musk",
+   "kind": "cofounders",
+   "date": "2015-06",
+   "end": "2018-02",
+   "note": "Altman pitched Musk a nonprofit Manhattan Project for AI; they cochaired OpenAI until Musk left.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "a": "elon-musk",
+   "b": "larry-page",
+   "kind": "rival",
+   "date": "2015-12",
+   "end": null,
+   "note": "Page was furious at Musk for poaching Sutskever from Google.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "a": "sam-altman",
+   "b": "adam-dangelo",
+   "kind": "investment",
+   "date": "2017",
+   "end": null,
+   "note": "Altman co-led an $85M round in Quora; Quora was in Altman's first YC batch (2014).",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "a": "elon-musk",
+   "b": "andrej-karpathy",
+   "kind": "defected",
+   "date": "2017-06",
+   "end": null,
+   "note": "Musk poached Karpathy from OpenAI to lead Tesla AI.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "a": "sam-altman",
+   "b": "greg-brockman",
+   "kind": "ally",
+   "date": "2017-09",
+   "end": null,
+   "note": "Altman won Brockman, and through him Sutskever, to back him over Musk as CEO.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "a": "ilya-sutskever",
+   "b": "elon-musk",
+   "kind": "other",
+   "date": "2017-09",
+   "end": null,
+   "note": "Sutskever's email questioned both Musk's desire for control and Altman's motives; Musk quit funding talks.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "a": "sam-altman",
+   "b": "elon-musk",
+   "kind": "rival",
+   "date": "2018",
+   "end": null,
+   "note": "After losing the CEO contest Musk felt used and became Altman's adversary.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "a": "greg-brockman",
+   "b": "jakub-pachocki",
+   "kind": "ally",
+   "date": "2018",
+   "end": null,
+   "note": "Familial bond forged on the Dota 2 team.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 6: Ascension"
+  },
+  {
+   "a": "jeff-dean",
+   "b": "timnit-gebru",
+   "kind": "other",
+   "date": "2018",
+   "end": "2020-12",
+   "note": "Dean recruited and praised Gebru, then defended Google's rejection of her paper.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 7: Science in Captivity"
+  },
+  {
+   "a": "ilya-sutskever",
+   "b": "greg-brockman",
+   "kind": "other",
+   "date": "2019",
+   "end": null,
+   "note": "Sutskever officiated Brockman's civil wedding ceremony.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Prologue: A Run for the Throne"
+  },
+  {
+   "a": "greg-brockman",
+   "b": "dario-amodei",
+   "kind": "rival",
+   "date": "2019",
+   "end": null,
+   "note": "Clashed over Dota 2's deprioritization and Amodei's compute centralization for GPT-3.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 6: Ascension"
+  },
+  {
+   "a": "sam-altman",
+   "b": "elon-musk",
+   "kind": "rival",
+   "date": "2019",
+   "end": null,
+   "note": "Altman secretly ordered a countersurveillance sweep for bugs Musk might have planted.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 6: Ascension"
+  },
+  {
+   "a": "dario-amodei",
+   "b": "sam-altman",
+   "kind": "rival",
+   "date": "2020",
+   "end": null,
+   "note": "Clashed over GPT-3's release timing; Altman pushed for faster release and won.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 5: Scale of Ambition"
+  },
+  {
+   "a": "elon-musk",
+   "b": "dario-amodei",
+   "kind": "rival",
+   "date": "2020-02",
+   "end": null,
+   "note": "Musk tweeted low confidence in Amodei's safety work.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 3: Nerve Center"
+  },
+  {
+   "a": "dario-amodei",
+   "b": "sam-altman",
+   "kind": "resigned",
+   "date": "2020-12",
+   "end": null,
+   "note": "Amodei group told board members Altman manipulated dissenters, then split to found Anthropic.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 6: Ascension"
+  },
+  {
+   "a": "mira-murati",
+   "b": "greg-brockman",
+   "kind": "other",
+   "date": "2022",
+   "end": null,
+   "note": "Murati became Brockman's manager, spending effort containing his disruptions.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "a": "sam-altman",
+   "b": "helen-toner",
+   "kind": "rival",
+   "date": "2022",
+   "end": null,
+   "note": "Board members pushed for written reports; Altman wanted an advisory board.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "a": "ilya-sutskever",
+   "b": "geoffrey-hinton",
+   "kind": "mentor",
+   "date": "2022",
+   "end": null,
+   "note": "Sutskever told Hinton AGI was imminent.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "a": "reid-hoffman",
+   "b": "mustafa-suleyman",
+   "kind": "cofounders",
+   "date": "2022",
+   "end": null,
+   "note": "Cofounded Inflection, a direct OpenAI competitor.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "a": "greg-brockman",
+   "b": "mira-murati",
+   "kind": "rival",
+   "date": "2022",
+   "end": null,
+   "note": "Brockman admitted trying to fire Murati during GPT-4; she saw him as a bad second CEO.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 15: The Gambit"
+  },
+  {
+   "a": "elon-musk",
+   "b": "sam-altman",
+   "kind": "rival",
+   "date": "2022-10",
+   "end": null,
+   "note": "Musk texted Altman that OpenAI's valuation was a bait and switch.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "a": "sam-altman",
+   "b": "satya-nadella",
+   "kind": "partnership",
+   "date": "2023",
+   "end": null,
+   "note": "Altman called Nadella daily demanding more compute.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 11: Apex"
+  },
+  {
+   "a": "sam-altman",
+   "b": "ilya-sutskever",
+   "kind": "rival",
+   "date": "2023",
+   "end": null,
+   "note": "Altman secretly elevated Pachocki over Sutskever's portfolio, pitting them against each other.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 15: The Gambit"
+  },
+  {
+   "a": "ilya-sutskever",
+   "b": "jakub-pachocki",
+   "kind": "rival",
+   "date": "2023",
+   "end": null,
+   "note": "Longtime friendship unravelled over overlapping research leadership.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 15: The Gambit"
+  },
+  {
+   "a": "sam-altman",
+   "b": "mira-murati",
+   "kind": "other",
+   "date": "2023",
+   "end": null,
+   "note": "Altman iced her out after she gave him critical feedback; she cleaned up his promises to Microsoft.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 15: The Gambit"
+  },
+  {
+   "a": "sam-altman",
+   "b": "adam-dangelo",
+   "kind": "rival",
+   "date": "2023-03",
+   "end": null,
+   "note": "Altman tried to oust D'Angelo over Quora's Poe; the board refused.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "a": "ilya-sutskever",
+   "b": "jan-leike",
+   "kind": "ally",
+   "date": "2023-07",
+   "end": "2024-05",
+   "note": "Co-led the Superalignment team.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "a": "mira-murati",
+   "b": "helen-toner",
+   "kind": "ally",
+   "date": "2023-09-29",
+   "end": "2023-11",
+   "note": "Murati told Toner of Altman's toxic patterns and that she was uncomfortable with him leading to AGI.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 15: The Gambit"
+  },
+  {
+   "a": "ilya-sutskever",
+   "b": "helen-toner",
+   "kind": "ally",
+   "date": "2023-10-04",
+   "end": "2023-11-20",
+   "note": "Sutskever approached Toner and proposed replacing Altman with Murati.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 15: The Gambit"
+  },
+  {
+   "a": "sam-altman",
+   "b": "helen-toner",
+   "kind": "rival",
+   "date": "2023-10-25",
+   "end": "2023-11-21",
+   "note": "Altman used her CSET paper to argue she should leave, falsely claiming McCauley agreed.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 15: The Gambit"
+  },
+  {
+   "a": "ilya-sutskever",
+   "b": "sam-altman",
+   "kind": "fired",
+   "date": "2023-11-17",
+   "end": "2023-11-20",
+   "note": "Sutskever delivered the firing, then signed the employee letter and publicly regretted it.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Prologue: A Run for the Throne"
+  },
+  {
+   "a": "reid-hoffman",
+   "b": "sam-altman",
+   "kind": "ally",
+   "date": "2023-11-18",
+   "end": null,
+   "note": "As Microsoft board member, helped rally support for Altman's return.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 16: Cloak-and-Dagger"
+  },
+  {
+   "a": "helen-toner",
+   "b": "dario-amodei",
+   "kind": "other",
+   "date": "2023-11-18",
+   "end": null,
+   "note": "Board offered Amodei interim CEO; he declined.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 16: Cloak-and-Dagger"
+  },
+  {
+   "a": "satya-nadella",
+   "b": "sam-altman",
+   "kind": "ally",
+   "date": "2023-11-19",
+   "end": null,
+   "note": "Nadella offered Altman and Brockman a new Microsoft AI division during the ouster.",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Prologue: A Run for the Throne"
+  },
+  {
+   "a": "elon-musk",
+   "b": "ilya-sutskever",
+   "kind": "ally",
+   "date": "2023-11-19",
+   "end": null,
+   "note": "Musk praised Sutskever's moral compass and later offered him a job at xAI.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 16: Cloak-and-Dagger"
+  },
+  {
+   "a": "mira-murati",
+   "b": "sam-altman",
+   "kind": "ally",
+   "date": "2023-11-20",
+   "end": null,
+   "note": "Flipped back to backing Altman; first name on the employee letter.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 16: Cloak-and-Dagger"
+  },
+  {
+   "a": "greg-brockman",
+   "b": "sam-altman",
+   "kind": "ally",
+   "date": "2024",
+   "end": null,
+   "note": "Brockman moved from reporting to Murati to reporting directly to Altman.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 18: A Formula for Empire"
+  },
+  {
+   "a": "tasha-mccauley",
+   "b": "sam-altman",
+   "kind": "rival",
+   "date": "2024-03-08",
+   "end": null,
+   "note": "Toner and McCauley publicly condemned deception and resistance to oversight.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 16: Cloak-and-Dagger"
+  },
+  {
+   "a": "greg-brockman",
+   "b": "ilya-sutskever",
+   "kind": "rival",
+   "date": "2024-05-24",
+   "end": null,
+   "note": "Brockman told Sutskever his return was off the table.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 17: Reckoning"
+  },
+  {
+   "a": "dario-amodei",
+   "b": "daniela-amodei",
+   "kind": "family",
+   "date": null,
+   "end": null,
+   "note": "Siblings who left OpenAI together to found Anthropic.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "a": "yann-lecun",
+   "b": "geoffrey-hinton",
+   "kind": "mentor",
+   "date": null,
+   "end": null,
+   "note": "LeCun was Hinton's postdoc; both later shared the Turing Award.",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 4: Dreams of Modernity"
+  },
+  {
+   "a": "demis-hassabis",
+   "b": "shane-legg",
+   "kind": "cofounders",
+   "date": "2009-12",
+   "end": null,
+   "note": "Met at the Gatsby Unit; Legg agreed to start DeepMind in a late-December 2009 email.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "a": "demis-hassabis",
+   "b": "mustafa-suleyman",
+   "kind": "cofounders",
+   "date": "2010-07",
+   "end": null,
+   "note": "Brother's friend recruited after a poker night; cofounder who later fell out and left in 2019.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "a": "demis-hassabis",
+   "b": "mustafa-suleyman",
+   "kind": "rival",
+   "date": "2019-08",
+   "end": null,
+   "note": "After the bullying probe and leaked leave story, Suleyman blamed Hassabis; they later ran rival AI units.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 14: Project Mario"
+  },
+  {
+   "a": "demis-hassabis",
+   "b": "david-silver",
+   "kind": "cofounders",
+   "date": "1998",
+   "end": null,
+   "note": "Cambridge friends who cofounded Elixir; later collaborators at DeepMind on AlphaGo.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 3: The Jedi"
+  },
+  {
+   "a": "david-silver",
+   "b": "demis-hassabis",
+   "kind": "resigned",
+   "date": "2003",
+   "end": null,
+   "note": "Silver quit Elixir burned out from acting as go-between with an over-inspiring boss.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 3: The Jedi"
+  },
+  {
+   "a": "geoffrey-hinton",
+   "b": "demis-hassabis",
+   "kind": "mentor",
+   "date": "2009",
+   "end": null,
+   "note": "Met at MIT; Hinton became a DeepMind adviser and backed its Google valuation.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "a": "peter-thiel",
+   "b": "demis-hassabis",
+   "kind": "other",
+   "date": "2013",
+   "end": null,
+   "note": "Thiel never really believed in DeepMind's thesis and refused to lead Series C.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 7: Thiel Trouble"
+  },
+  {
+   "a": "larry-page",
+   "b": "demis-hassabis",
+   "kind": "ally",
+   "date": "2013-06",
+   "end": null,
+   "note": "Page recruited Hassabis on a castle walk at Musk's birthday party.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 8: Get Google"
+  },
+  {
+   "a": "yann-lecun",
+   "b": "koray-kavukcuoglu",
+   "kind": "other",
+   "date": "2013-12",
+   "end": null,
+   "note": "LeCun tried to poach his former student from DeepMind; Hassabis held him.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 8: Get Google"
+  },
+  {
+   "a": "elon-musk",
+   "b": "demis-hassabis",
+   "kind": "rival",
+   "date": "2014-01",
+   "end": null,
+   "note": "Musk tried to stop the Google sale, then turned against DeepMind and Hassabis.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 8: Get Google"
+  },
+  {
+   "a": "demis-hassabis",
+   "b": "ilya-sutskever",
+   "kind": "rival",
+   "date": "2010",
+   "end": null,
+   "note": "Hassabis failed to hire him early; he became OpenAI's scientific leader.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 5: Founding DeepMind"
+  },
+  {
+   "a": "sundar-pichai",
+   "b": "demis-hassabis",
+   "kind": "other",
+   "date": "2016-11",
+   "end": null,
+   "note": "Pichai blocked the Alphabet spin-out, later making Hassabis head of Google's AI.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 14: Project Mario"
+  },
+  {
+   "a": "sundar-pichai",
+   "b": "mustafa-suleyman",
+   "kind": "other",
+   "date": "2017",
+   "end": null,
+   "note": "Pichai offered Suleyman Google's applied AI in California; plan collapsed in 2018.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 14: Project Mario"
+  },
+  {
+   "a": "jan-leike",
+   "b": "shane-legg",
+   "kind": "partnership",
+   "date": "2017",
+   "end": null,
+   "note": "Coauthored the RLHF paper with Legg, Christiano and Amodei in a rare cross-lab collaboration.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 17: RaceGPT"
+  },
+  {
+   "a": "demis-hassabis",
+   "b": "sam-altman",
+   "kind": "rival",
+   "date": "2022-11",
+   "end": null,
+   "note": "Hassabis saw Altman as driven by power, not science, after ChatGPT.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 17: RaceGPT"
+  },
+  {
+   "a": "demis-hassabis",
+   "b": "yann-lecun",
+   "kind": "rival",
+   "date": "2023",
+   "end": null,
+   "note": "Clashed over AI risk and open-weight release.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 18: We're Cooked"
+  },
+  {
+   "a": "demis-hassabis",
+   "b": "john-jumper",
+   "kind": "ally",
+   "date": "2018-12",
+   "end": null,
+   "note": "Made Jumper AlphaFold lead; they shared the 2024 chemistry Nobel.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 15: Fermat for Biology"
+  },
+  {
+   "a": "david-silver",
+   "b": "ilya-sutskever",
+   "kind": "rival",
+   "date": "2015",
+   "end": null,
+   "note": "Opposite poles on search vs scaling, later converging on RL for reasoning.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 9: Intuition"
+  },
+  {
+   "a": "satya-nadella",
+   "b": "sundar-pichai",
+   "kind": "rival",
+   "date": "2023-02",
+   "end": null,
+   "note": "Nadella boasted Bing chat would make Google dance.",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 17: RaceGPT"
+  }
+ ],
+ "moments": [
+  {
+   "date": "1950",
+   "kind": "idea",
+   "title": "Turing poses the question 'Can machines think?'",
+   "detail": "Turing's paper proposes the imitation game, later called the Turing test; it inspired Brockman as a teen.",
+   "people": [
+    "greg-brockman"
+   ],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 3: Nerve Center"
+  },
+  {
+   "date": "1950",
+   "kind": "idea",
+   "title": "Computer chess as a wedge problem",
+   "detail": "Framed game-playing as a path to general-purpose machine judgment.",
+   "people": [],
+   "orgs": [],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 1: Destiny"
+  },
+  {
+   "date": "1950s",
+   "kind": "idea",
+   "title": "Alpha-beta pruned tree search",
+   "detail": "Lets game programs ignore bad branches; basis of classic chess engines.",
+   "people": [],
+   "orgs": [
+    "ibm"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Notes"
+  },
+  {
+   "date": "1955-08-31",
+   "kind": "idea",
+   "title": "Dartmouth AI workshop proposal submitted",
+   "detail": "McCarthy, Minsky, Rochester and Shannon propose the summer project that first used the term artificial intelligence.",
+   "people": [
+    "john-mccarthy"
+   ],
+   "orgs": [
+    "dartmouth"
+   ],
+   "place": "new-hampshire",
+   "src": [
+    "hao"
+   ],
+   "ref": "Notes, Chapter 4: Dreams of Modernity"
+  },
+  {
+   "date": "1956",
+   "kind": "idea",
+   "title": "Term 'artificial intelligence'",
+   "detail": "A marketing-flavoured rebrand of automata studies that defined the field's aims and invited endless anthropomorphizing.",
+   "people": [
+    "john-mccarthy"
+   ],
+   "orgs": [
+    "dartmouth"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 4: Dreams of Modernity"
+  },
+  {
+   "date": "1956",
+   "kind": "idea",
+   "title": "Symbolic AI (Dartmouth programme)",
+   "detail": "Founded AI on logic and symbols; later seen as too rigid for messy reality.",
+   "people": [
+    "john-mccarthy"
+   ],
+   "orgs": [
+    "dartmouth"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 2: Deep Philosophical Questions"
+  },
+  {
+   "date": "1956",
+   "kind": "event",
+   "title": "Dartmouth workshop names 'artificial intelligence'",
+   "detail": "McCarthy convenes twenty scientists and adopts the term artificial intelligence to attract funding and interest, replacing 'automata studies'.",
+   "people": [
+    "john-mccarthy"
+   ],
+   "orgs": [
+    "dartmouth"
+   ],
+   "place": "new-hampshire",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 4: Dreams of Modernity"
+  },
+  {
+   "date": "1958",
+   "kind": "idea",
+   "title": "Perceptron",
+   "detail": "First learning machine deriving its own rules from examples; seed of connectionism.",
+   "people": [],
+   "orgs": [
+    "cornell"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 4: Dreams of Modernity"
+  },
+  {
+   "date": "1966",
+   "kind": "idea",
+   "title": "ELIZA",
+   "detail": "Rule-based chatbot showing how easily people attribute intelligence to talking machines.",
+   "people": [],
+   "orgs": [
+    "mit"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 4: Dreams of Modernity"
+  },
+  {
+   "date": "1970s",
+   "kind": "idea",
+   "title": "Expert systems (symbolic AI)",
+   "detail": "Dominant paradigm encoding knowledge as rules; stalled by manual-encoding limits, causing AI winters.",
+   "people": [],
+   "orgs": [
+    "mit"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 4: Dreams of Modernity"
+  },
+  {
+   "date": "1976-07",
+   "kind": "event",
+   "title": "Demis Hassabis born",
+   "detail": "Born in Finchley, North London, to a Chinese Singaporean mother and Greek Cypriot father.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 1: Destiny"
+  },
+  {
+   "date": "1985-04-22",
+   "kind": "event",
+   "title": "Sam Altman born in Chicago",
+   "detail": "First child of dermatologist Connie Gibstine and lawyer Jerry Altman; raised in St. Louis.",
+   "people": [
+    "sam-altman"
+   ],
+   "orgs": [],
+   "place": "chicago",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "date": "1986",
+   "kind": "idea",
+   "title": "Backpropagation enables deep neural networks",
+   "detail": "Hinton and UC San Diego colleagues show how multilayer networks can learn; he later brands it deep learning.",
+   "people": [
+    "geoffrey-hinton"
+   ],
+   "orgs": [
+    "carnegie-mellon"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 4: Dreams of Modernity"
+  },
+  {
+   "date": "1988",
+   "kind": "event",
+   "title": "Liechtenstein defeat prompts life change",
+   "detail": "After a ten-hour loss to a German master, twelve-year-old Hassabis decides chess wastes great minds.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 1: Destiny"
+  },
+  {
+   "date": "1989",
+   "kind": "event",
+   "title": "Hassabis reaches chess master at 13",
+   "detail": "Rated chess master and second-strongest in his age group worldwide, behind Judit Polgar.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 1: Destiny"
+  },
+  {
+   "date": "1990s",
+   "kind": "idea",
+   "title": "Reward-prediction/dopamine link",
+   "detail": "Tied RL to brain biology, inspiring DeepMind's neuroscience bet.",
+   "people": [],
+   "orgs": [
+    "gatsby-unit"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "1991",
+   "kind": "event",
+   "title": "Chess Invaders wins Bullfrog contest place",
+   "detail": "Fifteen-year-old Hassabis's Space Invaders variant is a runner-up, earning a visit to Bullfrog.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "bullfrog"
+   ],
+   "place": "guildford",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 1: Destiny"
+  },
+  {
+   "date": "1993",
+   "kind": "event",
+   "title": "Hassabis co-designs Theme Park",
+   "detail": "During a gap year before Cambridge he builds simulated visitor behaviours for Molyneux's Theme Park.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "bullfrog"
+   ],
+   "place": "guildford",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 1: Destiny"
+  },
+  {
+   "date": "1994",
+   "kind": "event",
+   "title": "Hassabis turns down Molyneux's cheque for Cambridge",
+   "detail": "Refuses a large payment to work on Dungeon Keeper and starts computer science at Cambridge.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "cambridge",
+    "bullfrog"
+   ],
+   "place": "cambridge-uk",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 2: Deep Philosophical Questions"
+  },
+  {
+   "date": "1997",
+   "kind": "idea",
+   "title": "Brute-force chess (Deep Blue)",
+   "detail": "Beat the world champion without intuition.",
+   "people": [],
+   "orgs": [
+    "ibm"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 1: Destiny"
+  },
+  {
+   "date": "1997",
+   "kind": "event",
+   "title": "Hassabis graduates and works on Black & White",
+   "detail": "Contributes early ideas, including learning creatures, to Molyneux's god game before leaving.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "lionhead",
+    "cambridge"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 2: Deep Philosophical Questions"
+  },
+  {
+   "date": "1998",
+   "kind": "idea",
+   "title": "Reinforcement learning framework",
+   "detail": "Learning by trial, error and reward; DeepMind's signature approach.",
+   "people": [],
+   "orgs": [
+    "alberta"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 3: The Jedi"
+  },
+  {
+   "date": "1998-07-07",
+   "kind": "event",
+   "title": "Elixir Studios founded",
+   "detail": "Hassabis, Silver, McDonagh and Clarke start Elixir with angel money after rejecting VC terms.",
+   "people": [
+    "demis-hassabis",
+    "david-silver"
+   ],
+   "orgs": [
+    "elixir"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 3: The Jedi"
+  },
+  {
+   "date": "1998-08",
+   "kind": "event",
+   "title": "First Mind Sports Olympiad win",
+   "detail": "Hassabis wins the five-game Pentamind contest for the first of five times.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 3: The Jedi"
+  },
+  {
+   "date": "1998-12",
+   "kind": "event",
+   "title": "Eidos funds Elixir",
+   "detail": "Game publisher Eidos backs Republic; the studio moves to Camden.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "elixir",
+    "eidos"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 3: The Jedi"
+  },
+  {
+   "date": "1999",
+   "kind": "event",
+   "title": "Legg joins Intelligenesis",
+   "detail": "Shane Legg joins Ben Goertzel's digital-brain start-up, later moving to New York.",
+   "people": [
+    "shane-legg"
+   ],
+   "orgs": [
+    "intelligenesis"
+   ],
+   "place": "new-york",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2000s",
+   "kind": "idea",
+   "title": "Monte Carlo Tree Search for Go",
+   "detail": "Deep narrow rollouts made Go positions evaluable.",
+   "people": [
+    "david-silver"
+   ],
+   "orgs": [
+    "alberta"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 9: Intuition"
+  },
+  {
+   "date": "2001",
+   "kind": "event",
+   "title": "Intelligenesis goes bust",
+   "detail": "The dot-com AGI venture collapses; Legg travels for nine months.",
+   "people": [
+    "shane-legg"
+   ],
+   "orgs": [
+    "intelligenesis"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2001-05",
+   "kind": "event",
+   "title": "Republic demo crashes but wins at E3",
+   "detail": "Hardware fails during the Los Angeles demo; Hassabis's pitch still wins best upcoming game.",
+   "people": [
+    "demis-hassabis",
+    "david-silver"
+   ],
+   "orgs": [
+    "elixir"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 3: The Jedi"
+  },
+  {
+   "date": "2002",
+   "kind": "event",
+   "title": "Legg names Artificial General Intelligence",
+   "detail": "Legg persuades Goertzel to title his book Artificial General Intelligence, popularising the term.",
+   "people": [
+    "shane-legg"
+   ],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2003",
+   "kind": "event",
+   "title": "Silver quits Elixir",
+   "detail": "Burned out, Silver leaves for France and discovers Sutton's RL textbook.",
+   "people": [
+    "david-silver"
+   ],
+   "orgs": [
+    "elixir"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 3: The Jedi"
+  },
+  {
+   "date": "2003-08",
+   "kind": "event",
+   "title": "Republic: The Revolution ships",
+   "detail": "Elixir's ambitious political sim launches late and disappoints relative to its hype.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "elixir"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 3: The Jedi"
+  },
+  {
+   "date": "2004",
+   "kind": "idea",
+   "title": "McCarthy publishes 'What Is Artificial Intelligence?'",
+   "detail": "He concedes there is no solid definition of intelligence independent of humans.",
+   "people": [
+    "john-mccarthy"
+   ],
+   "orgs": [
+    "stanford"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 4: Dreams of Modernity"
+  },
+  {
+   "date": "2004",
+   "kind": "event",
+   "title": "Suleyman drops out of Oxford",
+   "detail": "Leaves philosophy and theology to work on a Muslim youth helpline in London.",
+   "people": [
+    "mustafa-suleyman"
+   ],
+   "orgs": [
+    "oxford",
+    "muslim-youth-helpline"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2004",
+   "kind": "event",
+   "title": "Silver starts PhD in Alberta",
+   "detail": "Begins reinforcement-learning PhD under Richard Sutton, focusing on Go.",
+   "people": [
+    "david-silver"
+   ],
+   "orgs": [
+    "alberta"
+   ],
+   "place": "edmonton",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 3: The Jedi"
+  },
+  {
+   "date": "2005",
+   "kind": "event",
+   "title": "Altman joins YC's first batch with Loopt",
+   "detail": "Altman spends summer in Cambridge building a location-sharing app, then drops out of Stanford after raising $5M from NEA and Sequoia.",
+   "people": [
+    "sam-altman"
+   ],
+   "orgs": [
+    "y-combinator",
+    "loopt"
+   ],
+   "place": "boston",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "date": "2005",
+   "kind": "event",
+   "title": "Elixir closes; Hassabis starts neuroscience PhD",
+   "detail": "Exhausted after Elixir's failure, Hassabis enrols at UCL under Eleanor Maguire and marries that summer.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "elixir",
+    "ucl"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 3: The Jedi"
+  },
+  {
+   "date": "2006",
+   "kind": "idea",
+   "title": "Hinton's deep belief networks",
+   "detail": "Hinton and coauthors show how to train larger neural networks, reviving deep learning.",
+   "people": [
+    "geoffrey-hinton"
+   ],
+   "orgs": [
+    "toronto"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2007-01",
+   "kind": "idea",
+   "title": "Imagination and memory paper in PNAS",
+   "detail": "Hassabis, Kumaran and Maguire show hippocampal amnesia patients cannot imagine new scenes; named a top breakthrough.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "ucl"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 3: The Jedi"
+  },
+  {
+   "date": "2007-12",
+   "kind": "event",
+   "title": "Smithfield lunch seals Hassabis-Suleyman friendship",
+   "detail": "They agree a property partnership; Suleyman offers a book on the psychological shadow.",
+   "people": [
+    "demis-hassabis",
+    "mustafa-suleyman"
+   ],
+   "orgs": [],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2008",
+   "kind": "idea",
+   "title": "Legg completes Machine Super Intelligence thesis",
+   "detail": "With Hutter he defines intelligence as goal achievement across many environments.",
+   "people": [
+    "shane-legg"
+   ],
+   "orgs": [
+    "idsia"
+   ],
+   "place": "lugano",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2008",
+   "kind": "idea",
+   "title": "Universal intelligence definition",
+   "detail": "Defined intelligence as goal achievement across varied environments, i.e. generality.",
+   "people": [
+    "shane-legg"
+   ],
+   "orgs": [
+    "idsia"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2009",
+   "kind": "idea",
+   "title": "GPU training of neural nets",
+   "detail": "Game chips massively accelerated deep learning.",
+   "people": [
+    "geoffrey-hinton"
+   ],
+   "orgs": [
+    "toronto"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2009",
+   "kind": "event",
+   "title": "Project Orion business plan",
+   "detail": "Hassabis drafts a plan for a brain-inspired AI company, without capital or cofounders.",
+   "people": [
+    "demis-hassabis",
+    "mustafa-suleyman"
+   ],
+   "orgs": [],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2009",
+   "kind": "event",
+   "title": "Hassabis postdocs at Gatsby, MIT and Harvard",
+   "detail": "Searches for AGI believers; MIT's Patrick Winston dismisses his RL plus deep-learning plan.",
+   "people": [
+    "demis-hassabis",
+    "geoffrey-hinton"
+   ],
+   "orgs": [
+    "gatsby-unit",
+    "mit",
+    "harvard"
+   ],
+   "place": "boston",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2009-10-31",
+   "kind": "event",
+   "title": "Legg's Halloween Scenario talk",
+   "detail": "Legg warns of superintelligence risk; Hassabis introduces himself afterwards.",
+   "people": [
+    "shane-legg",
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "gatsby-unit"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2009-12-29",
+   "kind": "event",
+   "title": "Legg commits to start DeepMind",
+   "detail": "Late-night email agreeing to found an AI company named for deep learning, Deep Blue and Deep Thought.",
+   "people": [
+    "shane-legg",
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2010-07-15",
+   "kind": "event",
+   "title": "Poker night recruits Suleyman",
+   "detail": "After a casino session Hassabis reveals his AGI plan; Suleyman helps write the business plan.",
+   "people": [
+    "demis-hassabis",
+    "mustafa-suleyman"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 4: The Gang of Three"
+  },
+  {
+   "date": "2010-08-14",
+   "kind": "event",
+   "title": "Singularity Summit pitch to Thiel",
+   "detail": "Yudkowsky introduces Legg and Hassabis to Thiel at his party; they pitch the next day.",
+   "people": [
+    "demis-hassabis",
+    "shane-legg",
+    "mustafa-suleyman",
+    "peter-thiel"
+   ],
+   "orgs": [
+    "deepmind",
+    "founders-fund",
+    "singularity-summit"
+   ],
+   "place": "bay-area",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 5: Founding DeepMind"
+  },
+  {
+   "date": "2010-12",
+   "kind": "event",
+   "title": "Founders Fund invests $2.3m",
+   "detail": "Nosek overrides partner doubts; Founders Fund takes nearly half of DeepMind; office opens in a Russell Square attic.",
+   "people": [
+    "peter-thiel",
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "founders-fund",
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 5: Founding DeepMind"
+  },
+  {
+   "date": "2011-09",
+   "kind": "event",
+   "title": "Daan Wierstra becomes first AI hire",
+   "detail": "Legg's friend joins at a pay cut, followed by game engineers and advisers Hinton and Sutton.",
+   "people": [
+    "shane-legg"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 5: Founding DeepMind"
+  },
+  {
+   "date": "2011-12",
+   "kind": "event",
+   "title": "Series B with Tallinn",
+   "detail": "Founders Fund adds $7.9m and Jaan Tallinn about $2m, motivated by safety.",
+   "people": [],
+   "orgs": [
+    "deepmind",
+    "founders-fund"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 5: Founding DeepMind"
+  },
+  {
+   "date": "2012",
+   "kind": "idea",
+   "title": "Deep convolutional nets on GPUs (AlexNet)",
+   "detail": "Won ImageNet by a wide margin, launching the deep-learning era and the commercial AI rush.",
+   "people": [
+    "geoffrey-hinton",
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "toronto"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2012",
+   "kind": "idea",
+   "title": "GPUs for neural network training",
+   "detail": "Parallel graphics chips proved ideal for training models, making Nvidia the industry's chokepoint.",
+   "people": [],
+   "orgs": [
+    "nvidia"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2012",
+   "kind": "event",
+   "title": "Musk meets Hassabis and invests in DeepMind",
+   "detail": "Hassabis warns Musk of superintelligence at SpaceX; Musk puts $5M into DeepMind.",
+   "people": [
+    "demis-hassabis",
+    "elon-musk"
+   ],
+   "orgs": [
+    "deepmind",
+    "spacex"
+   ],
+   "place": "los-angeles",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "date": "2012",
+   "kind": "event",
+   "title": "AlexNet wins ImageNet, igniting deep learning",
+   "detail": "Hinton, Sutskever and Krizhevsky cut image error to about 15 percent versus rivals' 25 percent.",
+   "people": [
+    "geoffrey-hinton",
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "toronto"
+   ],
+   "place": "toronto",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2012-09",
+   "kind": "event",
+   "title": "DeepMind moves to Bernard Street",
+   "detail": "Outgrows the Russell Square attic.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 5: Founding DeepMind"
+  },
+  {
+   "date": "2012-10",
+   "kind": "idea",
+   "title": "AlexNet / ImageNet breakthrough",
+   "detail": "Proved deep convolutional nets crush vision benchmarks.",
+   "people": [
+    "ilya-sutskever",
+    "geoffrey-hinton"
+   ],
+   "orgs": [
+    "toronto"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 6: Atari"
+  },
+  {
+   "date": "2012-10-08",
+   "kind": "event",
+   "title": "Musk name-drops DeepMind to Page",
+   "detail": "On Musk's jet after a Falcon 9 launch, Musk boasts of investing in DeepMind; Page notes the name.",
+   "people": [
+    "elon-musk",
+    "larry-page"
+   ],
+   "orgs": [
+    "spacex",
+    "google",
+    "deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 7: Thiel Trouble"
+  },
+  {
+   "date": "2012-11",
+   "kind": "event",
+   "title": "Google's Eustace approaches Hassabis",
+   "detail": "Page's engineering chief emails about AI teams; Google advises DeepMind to raise its next round anyway.",
+   "people": [
+    "larry-page",
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "google",
+    "deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 7: Thiel Trouble"
+  },
+  {
+   "date": "2012-12",
+   "kind": "event",
+   "title": "Hinton auctions DNNresearch at NIPS",
+   "detail": "Google, Microsoft, Baidu and DeepMind bid from a Lake Tahoe hotel; Google wins at $44m.",
+   "people": [
+    "geoffrey-hinton",
+    "demis-hassabis",
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "dnnresearch",
+    "google",
+    "microsoft",
+    "baidu",
+    "deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 7: Thiel Trouble"
+  },
+  {
+   "date": "2013",
+   "kind": "idea",
+   "title": "Deep RL with experience replay and target network",
+   "detail": "Stabilised learning from raw pixels, mastering many Atari games with one agent.",
+   "people": [
+    "koray-kavukcuoglu",
+    "david-silver"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 6: Atari"
+  },
+  {
+   "date": "2013",
+   "kind": "event",
+   "title": "Google buys DNNresearch for $44M",
+   "detail": "An auction at NeurIPS makes the Toronto academics multimillionaires and kicks off the AI talent rush.",
+   "people": [
+    "demis-hassabis",
+    "geoffrey-hinton",
+    "ilya-sutskever",
+    "larry-page",
+    "mustafa-suleyman",
+    "shane-legg"
+   ],
+   "orgs": [
+    "google",
+    "dnnresearch"
+   ],
+   "place": null,
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2013",
+   "kind": "event",
+   "title": "Musk and Page clash over AI at birthday party",
+   "detail": "In Napa, Page calls Musk speciesist for fearing superhuman AI; Musk turns to existential-risk campaigning.",
+   "people": [
+    "demis-hassabis",
+    "elon-musk",
+    "larry-page"
+   ],
+   "orgs": [
+    "google"
+   ],
+   "place": null,
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "date": "2013-05",
+   "kind": "event",
+   "title": "Mnih and Silver join full time",
+   "detail": "Vlad Mnih arrives from Toronto; David Silver finally joins DeepMind full time.",
+   "people": [
+    "david-silver"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 6: Atari"
+  },
+  {
+   "date": "2013-07-07",
+   "kind": "event",
+   "title": "Atari agent learns Pong",
+   "detail": "During the Wimbledon final, Mnih's agent starts returning the ball, then rapidly improves.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 6: Atari"
+  },
+  {
+   "date": "2013-12",
+   "kind": "product",
+   "title": "DQN (Deep Q-Network)",
+   "detail": "Atari-playing agent fusing deep learning and Q-learning.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 6: Atari"
+  },
+  {
+   "date": "2013-12",
+   "kind": "event",
+   "title": "LeCun tries to poach Kavukcuoglu",
+   "detail": "Facebook's offer threatens DeepMind; Hassabis reveals the pending Google sale to keep him.",
+   "people": [
+    "yann-lecun",
+    "koray-kavukcuoglu",
+    "demis-hassabis",
+    "mustafa-suleyman"
+   ],
+   "orgs": [
+    "meta",
+    "deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 8: Get Google"
+  },
+  {
+   "date": "2013-12-29",
+   "kind": "event",
+   "title": "Google due-diligence trip to London",
+   "detail": "Eustace, Hinton and Jeff Dean fly in; Dean inspects the Atari code and approves.",
+   "people": [
+    "geoffrey-hinton",
+    "jeff-dean"
+   ],
+   "orgs": [
+    "google",
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 8: Get Google"
+  },
+  {
+   "date": "2014",
+   "kind": "idea",
+   "title": "Bostrom publishes Superintelligence",
+   "detail": "Book argues superhuman AI could be uncontrollable and proposes aligning it with human values; Musk and Altman both recommend it.",
+   "people": [
+    "elon-musk",
+    "sam-altman"
+   ],
+   "orgs": [
+    "oxford"
+   ],
+   "place": "oxford",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "date": "2014",
+   "kind": "idea",
+   "title": "AI alignment (as a research agenda)",
+   "detail": "Bostrom framed steering superintelligence toward human values as the fix for the control problem; OpenAI later championed it.",
+   "people": [],
+   "orgs": [
+    "oxford"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "date": "2014",
+   "kind": "idea",
+   "title": "Deep Speech architecture",
+   "detail": "Baidu's Bay Area lab architecture underpinning Mozilla's DeepSpeech.",
+   "people": [],
+   "orgs": [
+    "baidu"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Epilogue: How the Empire Falls"
+  },
+  {
+   "date": "2014",
+   "kind": "idea",
+   "title": "Go project starts with policy network",
+   "detail": "Silver, Huang and intern Maddison train a network to imitate expert moves; paper posted December 2014.",
+   "people": [
+    "david-silver",
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 9: Intuition"
+  },
+  {
+   "date": "2014",
+   "kind": "idea",
+   "title": "Sequence-to-sequence learning",
+   "detail": "Mapped whole sequences to sequences, enabling neural translation.",
+   "people": [
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "google-brain"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 12: The Agent and the Transformer"
+  },
+  {
+   "date": "2014",
+   "kind": "event",
+   "title": "Altman teaches How to Start a Startup at Stanford",
+   "detail": "Thiel lectures on monopoly as the goal, a lesson Altman would echo.",
+   "people": [
+    "sam-altman",
+    "peter-thiel"
+   ],
+   "orgs": [
+    "stanford"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "date": "2014",
+   "kind": "event",
+   "title": "Altman becomes Y Combinator president",
+   "detail": "Paul Graham picks 28-year-old Altman as his successor at YC.",
+   "people": [
+    "sam-altman"
+   ],
+   "orgs": [
+    "y-combinator"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "date": "2014-01",
+   "kind": "event",
+   "title": "Google acquires DeepMind",
+   "detail": "Despite Musk urging Hassabis to refuse, Google confirms the purchase for a reported $400-650M after Jeff Dean vets the code.",
+   "people": [
+    "demis-hassabis",
+    "larry-page",
+    "jeff-dean",
+    "elon-musk"
+   ],
+   "orgs": [
+    "google",
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "date": "2014-01",
+   "kind": "event",
+   "title": "Musk and Nosek try to block the sale",
+   "detail": "From a party closet in Los Angeles they propose Tesla or SpaceX buy DeepMind; Hassabis declines.",
+   "people": [
+    "elon-musk",
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "tesla",
+    "spacex",
+    "deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 8: Get Google"
+  },
+  {
+   "date": "2014-05",
+   "kind": "event",
+   "title": "Hassabis promises Brin a Go win",
+   "detail": "Tells a skeptical Sergey Brin that DeepMind can beat a Go champion in two years.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "google",
+    "deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 9: Intuition"
+  },
+  {
+   "date": "2014-08-03",
+   "kind": "event",
+   "title": "Musk calls AI potentially more dangerous than nukes",
+   "detail": "Recommends Bostrom's Superintelligence on Twitter.",
+   "people": [
+    "elon-musk"
+   ],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Notes, Chapter 1: Divine Right"
+  },
+  {
+   "date": "2014-09",
+   "kind": "idea",
+   "title": "Seq2Seq framework",
+   "detail": "Sutskever, Vinyals and Le map sequences to sequences, aimed at translation.",
+   "people": [
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "google-brain"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 12: The Agent and the Transformer"
+  },
+  {
+   "date": "2015",
+   "kind": "idea",
+   "title": "ResNet",
+   "detail": "Widely used network from Microsoft's Beijing lab; showcase of US-China collaboration; used in first AlphaFold.",
+   "people": [],
+   "orgs": [
+    "microsoft-research"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "date": "2015",
+   "kind": "idea",
+   "title": "Attention mechanism",
+   "detail": "Let models focus on relevant context, fixing long-sentence weaknesses.",
+   "people": [],
+   "orgs": [
+    "u-montreal"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 12: The Agent and the Transformer"
+  },
+  {
+   "date": "2015",
+   "kind": "idea",
+   "title": "Policy and value networks plus search",
+   "detail": "Combined learned intuition with planning to tame Go's vast search space.",
+   "people": [
+    "david-silver"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 9: Intuition"
+  },
+  {
+   "date": "2015",
+   "kind": "product",
+   "title": "Streams",
+   "detail": "Kidney-injury alert app for NHS clinicians, later shut.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 11: P0 Plus Plus"
+  },
+  {
+   "date": "2015",
+   "kind": "product",
+   "title": "Hark",
+   "detail": "Clinical triage app bought from Dominic King.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 11: P0 Plus Plus"
+  },
+  {
+   "date": "2015-02",
+   "kind": "idea",
+   "title": "DQN Nature cover",
+   "detail": "DeepMind's Atari agent appears on Nature's cover, a first for computer science.",
+   "people": [
+    "david-silver",
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 9: Intuition"
+  },
+  {
+   "date": "2015-04",
+   "kind": "event",
+   "title": "Musk invited onto DeepMind safety board",
+   "detail": "Hassabis and Page invite Musk to host the first ethics and safety meeting.",
+   "people": [
+    "demis-hassabis",
+    "elon-musk",
+    "larry-page",
+    "mustafa-suleyman",
+    "reid-hoffman",
+    "shane-legg"
+   ],
+   "orgs": [
+    "deepmind",
+    "google"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 10: Out of Eden"
+  },
+  {
+   "date": "2015-05",
+   "kind": "event",
+   "title": "Altman emails Musk proposing a Manhattan Project for AI",
+   "detail": "Altman suggests a YC-linked nonprofit build AGI before Google; in June he proposes a five-person board including both men.",
+   "people": [
+    "elon-musk",
+    "sam-altman"
+   ],
+   "orgs": [
+    "y-combinator",
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "date": "2015-07",
+   "kind": "event",
+   "title": "Rosewood dinner seeds OpenAI",
+   "detail": "Altman, Musk, Brockman, Dario Amodei and Sutskever meet at the Rosewood hotel on Sand Hill Road to discuss AI's future.",
+   "people": [
+    "dario-amodei",
+    "elon-musk",
+    "greg-brockman",
+    "ilya-sutskever",
+    "reid-hoffman",
+    "sam-altman"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "date": "2015-07",
+   "kind": "event",
+   "title": "Speciesist row at Musk's Napa party",
+   "detail": "Page tells Musk machines may succeed humans; Musk is appalled.",
+   "people": [
+    "larry-page",
+    "elon-musk"
+   ],
+   "orgs": [
+    "google"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 10: Out of Eden"
+  },
+  {
+   "date": "2015-12",
+   "kind": "event",
+   "title": "OpenAI announced at NeurIPS",
+   "detail": "Nine founders, Musk and Altman as cochairs, Brockman CTO, Sutskever research director; $1B pledged by Musk, Altman, Thiel, Hoffman, Livingston and others.",
+   "people": [
+    "elon-musk",
+    "sam-altman",
+    "greg-brockman",
+    "ilya-sutskever",
+    "peter-thiel",
+    "reid-hoffman",
+    "andrej-karpathy"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2015-12",
+   "kind": "event",
+   "title": "DeepMind fails to poach OpenAI recruits",
+   "detail": "Big offers to OpenAI's hires fail as Altman and Musk cast DeepMind as the dark side.",
+   "people": [
+    "sam-altman",
+    "elon-musk"
+   ],
+   "orgs": [
+    "deepmind",
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 11: P0 Plus Plus"
+  },
+  {
+   "date": "2016",
+   "kind": "idea",
+   "title": "Sutskever memo: intelligence is compression",
+   "detail": "He argues compressing data via generative modelling is all that is needed for AGI.",
+   "people": [
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 5: Scale of Ambition"
+  },
+  {
+   "date": "2016",
+   "kind": "idea",
+   "title": "Tensor processing units (TPUs)",
+   "detail": "Google's custom AI chips, cited by Dean as more energy efficient than GPUs.",
+   "people": [
+    "jeff-dean"
+   ],
+   "orgs": [
+    "google"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 7: Science in Captivity"
+  },
+  {
+   "date": "2016",
+   "kind": "idea",
+   "title": "Community data sovereignty (kaitiakitanga licensing)",
+   "detail": "Small, consent-based, community-governed AI as an alternative to extractive scale.",
+   "people": [],
+   "orgs": [
+    "te-hiku-media"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Epilogue: How the Empire Falls"
+  },
+  {
+   "date": "2016",
+   "kind": "idea",
+   "title": "Gaia natural-world simulation (failed)",
+   "detail": "Showed RL agents struggle as environment complexity rises.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 13: On Language and Nature"
+  },
+  {
+   "date": "2016",
+   "kind": "event",
+   "title": "Project Mario spin-out talks",
+   "detail": "Hassabis meets Page repeatedly; term sheet drafted; secret trading team later disbanded.",
+   "people": [
+    "demis-hassabis",
+    "larry-page",
+    "mustafa-suleyman"
+   ],
+   "orgs": [
+    "deepmind",
+    "google"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 14: Project Mario"
+  },
+  {
+   "date": "2016-02",
+   "kind": "event",
+   "title": "DeepMind Health launched",
+   "detail": "Suleyman announces health unit and an Independent Review Panel.",
+   "people": [
+    "mustafa-suleyman"
+   ],
+   "orgs": [
+    "deepmind",
+    "nhs"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 11: P0 Plus Plus"
+  },
+  {
+   "date": "2016-03",
+   "kind": "product",
+   "title": "AlphaGo",
+   "detail": "Go-playing system that beat Lee Sedol.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2016-03",
+   "kind": "event",
+   "title": "AlphaGo defeats Lee Sedol",
+   "detail": "DeepMind's Go program wins before 200M viewers in South Korea, stressing Musk about OpenAI's progress.",
+   "people": [
+    "david-silver",
+    "demis-hassabis",
+    "elon-musk",
+    "jeff-dean"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": "seoul",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2016-03",
+   "kind": "event",
+   "title": "Foldit hackathon starts protein work",
+   "detail": "Applied hackathon team builds a Foldit agent; Suleyman and Hassabis back a protein project.",
+   "people": [
+    "mustafa-suleyman",
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 15: Fermat for Biology"
+  },
+  {
+   "date": "2016-05-03",
+   "kind": "event",
+   "title": "Daily Mail NHS data storm",
+   "detail": "Tabloid claims Google got 1.6m patients' records; two inquiries follow.",
+   "people": [
+    "mustafa-suleyman",
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "deepmind",
+    "royal-free-hospital",
+    "google"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 11: P0 Plus Plus"
+  },
+  {
+   "date": "2016-07-25",
+   "kind": "idea",
+   "title": "Concrete Problems in AI Safety",
+   "detail": "Defined AI safety as preventing accidental harmful behaviour from poorly designed systems; foundational for the field.",
+   "people": [
+    "dario-amodei"
+   ],
+   "orgs": [
+    "google-brain"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2016-11-21",
+   "kind": "event",
+   "title": "Google lawyer stalls spin-out",
+   "detail": "Drummond raises concerns; days later Pichai says AI is core to Google.",
+   "people": [
+    "sundar-pichai",
+    "demis-hassabis",
+    "mustafa-suleyman"
+   ],
+   "orgs": [
+    "google",
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 14: Project Mario"
+  },
+  {
+   "date": "2017",
+   "kind": "event",
+   "title": "Pichai proposes splitting DeepMind",
+   "detail": "Research spins out; Applied joins Google with Suleyman in California.",
+   "people": [
+    "sundar-pichai",
+    "mustafa-suleyman",
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "google",
+    "deepmind"
+   ],
+   "place": "bay-area",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 14: Project Mario"
+  },
+  {
+   "date": "2017-01",
+   "kind": "event",
+   "title": "Hoffman pledges $1bn at Asilomar",
+   "detail": "For a walk-away 'global interest company' if Google won't grant independence.",
+   "people": [
+    "reid-hoffman",
+    "demis-hassabis",
+    "mustafa-suleyman",
+    "larry-page"
+   ],
+   "orgs": [
+    "deepmind",
+    "google"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 14: Project Mario"
+  },
+  {
+   "date": "2017-03",
+   "kind": "event",
+   "title": "Brockman and Sutskever draft compute-centric roadmap",
+   "detail": "Seeking a path to AGI first, they conclude scaling compute is key; Amodei and Hernandez find compute doubling every 3.4 months.",
+   "people": [
+    "greg-brockman",
+    "ilya-sutskever",
+    "dario-amodei"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2017-04",
+   "kind": "idea",
+   "title": "OpenAI's sentiment neuron",
+   "detail": "Self-supervised model on Amazon reviews spontaneously isolates sentiment in one neuron.",
+   "people": [
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 12: The Agent and the Transformer"
+  },
+  {
+   "date": "2017-06",
+   "kind": "event",
+   "title": "Karpathy leaves OpenAI for Tesla",
+   "detail": "Musk poaches the founding scientist to run Tesla's AI division.",
+   "people": [
+    "andrej-karpathy",
+    "elon-musk",
+    "greg-brockman",
+    "ilya-sutskever",
+    "sam-altman"
+   ],
+   "orgs": [
+    "openai",
+    "tesla"
+   ],
+   "place": null,
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2017-06-12",
+   "kind": "idea",
+   "title": "Transformer paper published",
+   "detail": "Eight Google researchers publish Attention Is All You Need; Sutskever immediately redirects Radford.",
+   "people": [
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "google",
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 12: The Agent and the Transformer"
+  },
+  {
+   "date": "2017-06-13",
+   "kind": "idea",
+   "title": "OpenAI demos RLHF with a backflipping agent",
+   "detail": "Amodei's team teaches a simulated stick to backflip from about 900 contractor comparisons.",
+   "people": [
+    "dario-amodei",
+    "greg-brockman",
+    "jan-leike",
+    "shane-legg"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 5: Scale of Ambition"
+  },
+  {
+   "date": "2017-06-13",
+   "kind": "idea",
+   "title": "Reinforcement learning from human feedback (RLHF)",
+   "detail": "Human preference comparisons steer model behaviour; later used to tame language models and ChatGPT.",
+   "people": [
+    "dario-amodei"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 5: Scale of Ambition"
+  },
+  {
+   "date": "2017-08",
+   "kind": "idea",
+   "title": "Google invents the Transformer",
+   "detail": "New network architecture captures long-range patterns in text; Sutskever evangelizes it at OpenAI.",
+   "people": [
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "google"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 5: Scale of Ambition"
+  },
+  {
+   "date": "2017-09",
+   "kind": "event",
+   "title": "For-profit talks collapse over who will be CEO",
+   "detail": "Musk wants majority control, Altman wants the CEO role; Sutskever's email questioning both prompts Musk to halt funding.",
+   "people": [
+    "elon-musk",
+    "sam-altman",
+    "ilya-sutskever",
+    "greg-brockman"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2017-09-20",
+   "kind": "event",
+   "title": "Brockman and Sutskever challenge Musk and Altman",
+   "detail": "Email accuses Musk of seeking control and questions Altman's CEO ambition; Musk threatens funding.",
+   "people": [
+    "ilya-sutskever",
+    "greg-brockman",
+    "elon-musk",
+    "sam-altman"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": "bay-area",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 14: Project Mario"
+  },
+  {
+   "date": "2017-10",
+   "kind": "idea",
+   "title": "AlphaGo Zero",
+   "detail": "Learns Go purely from self-play and surpasses earlier versions.",
+   "people": [
+    "david-silver"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 12: The Agent and the Transformer"
+  },
+  {
+   "date": "2017-12",
+   "kind": "idea",
+   "title": "AlphaZero masters chess, shogi and Go",
+   "detail": "One system learns three games from scratch; Kasparov praises its style.",
+   "people": [
+    "david-silver",
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 12: The Agent and the Transformer"
+  },
+  {
+   "date": "2017-12",
+   "kind": "product",
+   "title": "AlphaZero",
+   "detail": "Single system mastering Go, chess and shogi.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 12: The Agent and the Transformer"
+  },
+  {
+   "date": "2018",
+   "kind": "idea",
+   "title": "Gender Shades exposes face analysis bias",
+   "detail": "Buolamwini and Gebru show commercial systems fail most on darker-skinned women.",
+   "people": [
+    "timnit-gebru"
+   ],
+   "orgs": [
+    "mit"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 7: Science in Captivity"
+  },
+  {
+   "date": "2018",
+   "kind": "idea",
+   "title": "AlphaFold protein structure prediction",
+   "detail": "Predicted 3D protein shapes from sequences; Nobel-winning example of targeted AI.",
+   "people": [
+    "demis-hassabis",
+    "john-jumper"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "date": "2018",
+   "kind": "idea",
+   "title": "Retinal-scan AI in Nature Medicine",
+   "detail": "Model matches top doctors at spotting eye disease; never deployed amid data worries.",
+   "people": [
+    "mustafa-suleyman"
+   ],
+   "orgs": [
+    "deepmind",
+    "moorfields"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 11: P0 Plus Plus"
+  },
+  {
+   "date": "2018",
+   "kind": "product",
+   "title": "OpenAI Five (Dota 2 agents)",
+   "detail": "Five-agent team trained to beat top Dota 2 players; publicity showcase.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2018",
+   "kind": "product",
+   "title": "AlphaFold",
+   "detail": "Protein structure predictor; earned Hassabis a Nobel.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "date": "2018",
+   "kind": "event",
+   "title": "DeepMind spin-out agreed, then collapses",
+   "detail": "Plan promised $15bn over a decade; Giannandrea's exit to Apple derails Suleyman's role.",
+   "people": [
+    "demis-hassabis",
+    "mustafa-suleyman",
+    "jeff-dean",
+    "sundar-pichai"
+   ],
+   "orgs": [
+    "deepmind",
+    "google",
+    "apple"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 14: Project Mario"
+  },
+  {
+   "date": "2018",
+   "kind": "event",
+   "title": "Gebru joins Google's ethical AI team",
+   "detail": "Recruited by Dean and Samy Bengio at a Black in AI event; co-leads with Mitchell.",
+   "people": [
+    "timnit-gebru",
+    "jeff-dean"
+   ],
+   "orgs": [
+    "google",
+    "black-in-ai"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 7: Science in Captivity"
+  },
+  {
+   "date": "2018-02",
+   "kind": "event",
+   "title": "Musk quits as cochair; Altman becomes president",
+   "detail": "Musk tells staff OpenAI will fail as a nonprofit; of the $1B pledged, only about $130M arrived, under $45M from Musk.",
+   "people": [
+    "elon-musk",
+    "sam-altman"
+   ],
+   "orgs": [
+    "openai",
+    "tesla"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2018-06-11",
+   "kind": "idea",
+   "title": "Generative pre-training (GPT)",
+   "detail": "Next-word prediction on generic text, then fine-tuning, yielded broad language skills.",
+   "people": [
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 5: Scale of Ambition"
+  },
+  {
+   "date": "2018-06-11",
+   "kind": "product",
+   "title": "GPT-1",
+   "detail": "First generative pre-trained Transformer, by Alec Radford.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 5: Scale of Ambition"
+  },
+  {
+   "date": "2018-07",
+   "kind": "event",
+   "title": "Altman pitches Nadella at Sun Valley",
+   "detail": "At the Allen & Company conference Altman raises investment with Microsoft's CEO.",
+   "people": [
+    "sam-altman",
+    "satya-nadella"
+   ],
+   "orgs": [
+    "openai",
+    "microsoft"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2018-10",
+   "kind": "product",
+   "title": "BERT",
+   "detail": "Google's transformer language model; inspired AlphaFold 2.",
+   "people": [],
+   "orgs": [
+    "google-brain"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 15: Fermat for Biology"
+  },
+  {
+   "date": "2018-11",
+   "kind": "event",
+   "title": "Google absorbs DeepMind Health",
+   "detail": "Health team moves into Google; Independent Review Panel shut.",
+   "people": [
+    "mustafa-suleyman",
+    "sundar-pichai"
+   ],
+   "orgs": [
+    "deepmind",
+    "google-health",
+    "google"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 14: Project Mario"
+  },
+  {
+   "date": "2018-12-26",
+   "kind": "event",
+   "title": "Musk tells OpenAI it has 0% chance",
+   "detail": "He emails that without billions per year OpenAI cannot rival DeepMind.",
+   "people": [
+    "elon-musk"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2019",
+   "kind": "idea",
+   "title": "Neurosymbolic AI",
+   "detail": "Proposed hybrid of rules and learning to fix deep learning's reasoning gaps; largely unfunded.",
+   "people": [],
+   "orgs": [
+    "nyu"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 4: Dreams of Modernity"
+  },
+  {
+   "date": "2019",
+   "kind": "idea",
+   "title": "Pure language hypothesis",
+   "detail": "Bet that AGI could emerge from text alone, steering OpenAI toward large language models over robotics.",
+   "people": [
+    "dario-amodei"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 5: Scale of Ambition"
+  },
+  {
+   "date": "2019",
+   "kind": "idea",
+   "title": "Staged release",
+   "detail": "Gradual publication of GPT-2 sizes, establishing norms for withholding AI research.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 5: Scale of Ambition"
+  },
+  {
+   "date": "2019",
+   "kind": "idea",
+   "title": "League self-play (AlphaStar)",
+   "detail": "Multiple specialised agents trained against each other for StarCraft.",
+   "people": [
+    "david-silver"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 13: On Language and Nature"
+  },
+  {
+   "date": "2019",
+   "kind": "idea",
+   "title": "AI acute kidney injury prediction",
+   "detail": "Predicted kidney damage one to two days earlier than blood tests.",
+   "people": [
+    "mustafa-suleyman"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 11: P0 Plus Plus"
+  },
+  {
+   "date": "2019",
+   "kind": "product",
+   "title": "Robotic hand solving Rubik's Cube",
+   "detail": "Robotics demo trained by trial and error; unimpressive to Gates.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2019",
+   "kind": "product",
+   "title": "WebText",
+   "detail": "40GB dataset of Reddit-upvoted links used for GPT-2.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 5: Scale of Ambition"
+  },
+  {
+   "date": "2019",
+   "kind": "event",
+   "title": "Amodei forms Nest team to build GPT-3",
+   "detail": "Plans to use all 10,000 Nvidia V100s of a Microsoft supercomputer at once; promoted to VP of research.",
+   "people": [
+    "dario-amodei",
+    "ilya-sutskever",
+    "sam-altman"
+   ],
+   "orgs": [
+    "openai",
+    "microsoft",
+    "nvidia"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 5: Scale of Ambition"
+  },
+  {
+   "date": "2019",
+   "kind": "event",
+   "title": "Bullying complaints against Suleyman",
+   "detail": "Outside lawyer's report finds misconduct; Suleyman accepts and takes a sabbatical.",
+   "people": [
+    "mustafa-suleyman",
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 14: Project Mario"
+  },
+  {
+   "date": "2019-02-14",
+   "kind": "product",
+   "title": "GPT-2",
+   "detail": "1.5B-parameter text generator, staged release over misuse fears.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2019-03",
+   "kind": "idea",
+   "title": "Capped-profit structure",
+   "detail": "Novel nonprofit-controlled LP limiting investor returns, letting OpenAI raise billions while claiming mission primacy.",
+   "people": [
+    "sam-altman"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2019-03-08",
+   "kind": "event",
+   "title": "Altman announces YC exit, claims chairman title",
+   "detail": "He publicizes a chairman role YC partners never agreed to; post later edited.",
+   "people": [
+    "sam-altman"
+   ],
+   "orgs": [
+    "y-combinator"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2019-03-11",
+   "kind": "event",
+   "title": "OpenAI LP created with capped returns",
+   "detail": "For-profit arm under the nonprofit, first investors capped at 100x; Altman becomes CEO; staff get equity.",
+   "people": [
+    "dario-amodei",
+    "greg-brockman",
+    "ilya-sutskever",
+    "mira-murati",
+    "sam-altman"
+   ],
+   "orgs": [
+    "openai",
+    "openai-lp"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2019-04",
+   "kind": "event",
+   "title": "OpenAI Five beats Dota 2 champions; team disbanded",
+   "detail": "After the win helps land Microsoft, Amodei winds down the project.",
+   "people": [
+    "dario-amodei",
+    "greg-brockman"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 5: Scale of Ambition"
+  },
+  {
+   "date": "2019-07-22",
+   "kind": "event",
+   "title": "Microsoft invests $1 billion in OpenAI",
+   "detail": "Deal codenamed Oregon Trail; Microsoft wants to catch Google in AI and cloud.",
+   "people": [
+    "sam-altman",
+    "satya-nadella"
+   ],
+   "orgs": [
+    "microsoft",
+    "openai"
+   ],
+   "place": "seattle",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 2: A Civilizing Mission"
+  },
+  {
+   "date": "2019-10",
+   "kind": "idea",
+   "title": "AlphaStar reaches Grandmaster",
+   "detail": "Nature paper: StarCraft II agent beats 99.8% of ranked humans; a pure self-play version failed.",
+   "people": [
+    "david-silver"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 13: On Language and Nature"
+  },
+  {
+   "date": "2019-10",
+   "kind": "product",
+   "title": "AlphaStar",
+   "detail": "Grandmaster-level StarCraft II agent.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 13: On Language and Nature"
+  },
+  {
+   "date": "2020",
+   "kind": "idea",
+   "title": "Red teaming for AI models",
+   "detail": "Ad hoc stress-testing borrowed from security; critics say it gives false rigor.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 8: Dawn of Commerce"
+  },
+  {
+   "date": "2020",
+   "kind": "idea",
+   "title": "Vision Transformer",
+   "detail": "Adapted Transformers to images, enabling scalable multimodal models.",
+   "people": [
+    "demis-hassabis",
+    "john-jumper"
+   ],
+   "orgs": [
+    "google"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "date": "2020-01",
+   "kind": "product",
+   "title": "Meena / LaMDA",
+   "detail": "Google's withheld conversational model.",
+   "people": [],
+   "orgs": [
+    "google-brain"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 16: The Power and the Glory"
+  },
+  {
+   "date": "2020-01-23",
+   "kind": "idea",
+   "title": "Scaling laws",
+   "detail": "Smooth predictable curves linking data, compute and parameters to performance, turning scaling into industry doctrine.",
+   "people": [
+    "dario-amodei"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 5: Scale of Ambition"
+  },
+  {
+   "date": "2020-02-17",
+   "kind": "event",
+   "title": "Hao's critical OpenAI profile published",
+   "detail": "Story finds a gap between OpenAI's stated openness and its secrecy; Musk tweets OpenAI should be more open; Altman launches leak probe.",
+   "people": [
+    "elon-musk",
+    "sam-altman",
+    "dario-amodei"
+   ],
+   "orgs": [
+    "openai",
+    "mit-technology-review"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 3: Nerve Center"
+  },
+  {
+   "date": "2020-04",
+   "kind": "event",
+   "title": "AlphaFold 2 hits GDT 90",
+   "detail": "Transformer-based AlphaFold reaches crystallography-level accuracy during COVID lockdown.",
+   "people": [
+    "demis-hassabis",
+    "john-jumper"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 15: Fermat for Biology"
+  },
+  {
+   "date": "2020-05",
+   "kind": "idea",
+   "title": "Few-shot learning in GPT-3",
+   "detail": "Large scale let one model do many tasks from a few examples, surprising the field.",
+   "people": [
+    "dario-amodei"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 6: Ascension"
+  },
+  {
+   "date": "2020-05",
+   "kind": "product",
+   "title": "GPT-3",
+   "detail": "175B parameters; few-shot learner.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "mallaby",
+    "hao"
+   ],
+   "ref": "Chapter 16: The Power and the Glory"
+  },
+  {
+   "date": "2020-06",
+   "kind": "product",
+   "title": "OpenAI API",
+   "detail": "First commercial product, giving model access without weights.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 6: Ascension"
+  },
+  {
+   "date": "2020-09",
+   "kind": "event",
+   "title": "Microsoft gets exclusive GPT-3 license",
+   "detail": "Microsoft gains full model weights to use in its products and Azure.",
+   "people": [
+    "satya-nadella",
+    "sam-altman"
+   ],
+   "orgs": [
+    "microsoft",
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 6: Ascension"
+  },
+  {
+   "date": "2020-11",
+   "kind": "product",
+   "title": "AlphaFold 2",
+   "detail": "Transformer-based protein predictor solving CASP14.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 15: Fermat for Biology"
+  },
+  {
+   "date": "2020-11",
+   "kind": "event",
+   "title": "Google orders Gebru to retract Stochastic Parrots",
+   "detail": "Kacholia demands retraction of the paper warning on LLM costs, bias and illusion of meaning.",
+   "people": [
+    "timnit-gebru"
+   ],
+   "orgs": [
+    "google"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 7: Science in Captivity"
+  },
+  {
+   "date": "2020-12",
+   "kind": "event",
+   "title": "Amodeis and allies announce exit from OpenAI",
+   "detail": "Dario and Daniela Amodei, Jack Clark, Jared Kaplan and core Nest researchers leave, accusing Altman of manipulation.",
+   "people": [
+    "dario-amodei",
+    "daniela-amodei",
+    "sam-altman"
+   ],
+   "orgs": [
+    "openai",
+    "anthropic"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 6: Ascension"
+  },
+  {
+   "date": "2020-12-09",
+   "kind": "event",
+   "title": "Pichai apologizes over Gebru exit",
+   "detail": "Google CEO acknowledges a prominent Black female leader left unhappily; Congress members demand answers a week later.",
+   "people": [
+    "sundar-pichai",
+    "timnit-gebru"
+   ],
+   "orgs": [
+    "google"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 7: Science in Captivity"
+  },
+  {
+   "date": "2021",
+   "kind": "event",
+   "title": "AI Dungeon used to generate child sexual content",
+   "detail": "Herbert-Voss discovers GPT-3 output via Latitude's game; OpenAI blames Latitude publicly.",
+   "people": [
+    "greg-brockman"
+   ],
+   "orgs": [
+    "openai",
+    "latitude"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 8: Dawn of Commerce"
+  },
+  {
+   "date": "2021",
+   "kind": "event",
+   "title": "Altman's mega-bets on Helion and Retro",
+   "detail": "Puts most of his liquid wealth into fusion ($375M) and longevity ($180M).",
+   "people": [
+    "sam-altman"
+   ],
+   "orgs": [
+    "helion-energy",
+    "retro-biosciences"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 8: Dawn of Commerce"
+  },
+  {
+   "date": "2021-01",
+   "kind": "event",
+   "title": "Gopher meets Hassabis",
+   "detail": "DeepMind's 280B model answers questions with questions until few-shot prompting fixes it.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 16: The Power and the Glory"
+  },
+  {
+   "date": "2021-01-05",
+   "kind": "idea",
+   "title": "CLIP (contrastive image-text)",
+   "detail": "Linked vision and language, key component of DALL-E 2.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "date": "2021-01-05",
+   "kind": "product",
+   "title": "CLIP",
+   "detail": "Radford's model linking images and text.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "date": "2021-01-05",
+   "kind": "product",
+   "title": "DALL-E",
+   "detail": "12B-parameter text-to-image Transformer.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "date": "2021-03",
+   "kind": "idea",
+   "title": "Stochastic Parrots critique",
+   "detail": "Laid out environmental, data-toxicity, auditability and false-meaning risks of ever-larger language models.",
+   "people": [
+    "timnit-gebru"
+   ],
+   "orgs": [
+    "google",
+    "university-of-washington"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 7: Science in Captivity"
+  },
+  {
+   "date": "2021-03",
+   "kind": "product",
+   "title": "GopherChat",
+   "detail": "Internal chatbot version of Gopher, never released.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 16: The Power and the Glory"
+  },
+  {
+   "date": "2021-05",
+   "kind": "event",
+   "title": "Anthropic launches as a public benefit corporation",
+   "detail": "Former OpenAI safety group formally unveils its rival lab.",
+   "people": [
+    "dario-amodei",
+    "daniela-amodei"
+   ],
+   "orgs": [
+    "anthropic"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 6: Ascension"
+  },
+  {
+   "date": "2021-08-10",
+   "kind": "product",
+   "title": "Codex",
+   "detail": "Code-generation model fine-tuned from GPT-3 on GitHub code.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 8: Dawn of Commerce"
+  },
+  {
+   "date": "2021-11-13",
+   "kind": "event",
+   "title": "Annie Altman first tweets abuse allegations",
+   "detail": "Accuses Sam and Jack; post draws little notice. She repeats it in September 2022.",
+   "people": [
+    "sam-altman"
+   ],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 14: Deliverance"
+  },
+  {
+   "date": "2021-12",
+   "kind": "idea",
+   "title": "Latent diffusion",
+   "detail": "Cut image-generation compute drastically, showing scale was not the only path.",
+   "people": [],
+   "orgs": [
+    "lmu-munich"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "date": "2021-12",
+   "kind": "idea",
+   "title": "Taxonomy of language-model harms",
+   "detail": "Catalogued 21 risks, from bias to scalable scams.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 16: The Power and the Glory"
+  },
+  {
+   "date": "2021-12",
+   "kind": "product",
+   "title": "Gopher",
+   "detail": "280B-parameter language model.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 16: The Power and the Glory"
+  },
+  {
+   "date": "2021-12",
+   "kind": "product",
+   "title": "RETRO",
+   "detail": "Small retrieval-augmented language model.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 16: The Power and the Glory"
+  },
+  {
+   "date": "2021-12",
+   "kind": "event",
+   "title": "Gebru founds DAIR",
+   "detail": "Distributed AI Research Institute; Hanna and Miceli join; Data Workers' Inquiry pays workers 25 euros/hour.",
+   "people": [
+    "timnit-gebru"
+   ],
+   "orgs": [
+    "dair"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Epilogue: How the Empire Falls"
+  },
+  {
+   "date": "2022",
+   "kind": "idea",
+   "title": "Iterative deployment",
+   "detail": "OpenAI's doctrine of releasing models early and often as the claimed safest path.",
+   "people": [
+    "sam-altman"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "date": "2022",
+   "kind": "idea",
+   "title": "Chinchilla data-scaling insight",
+   "detail": "Showed models need far more data per parameter.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 16: The Power and the Glory"
+  },
+  {
+   "date": "2022",
+   "kind": "product",
+   "title": "OpenAI content-moderation filter",
+   "detail": "Toxicity classifier built from Kenyan-labelled data; wraps GPT-3.5, GPT-4, ChatGPT.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 9: Disaster Capitalism"
+  },
+  {
+   "date": "2022",
+   "kind": "product",
+   "title": "GPT-3.5",
+   "detail": "Model trained on mixed text and code; chat version became ChatGPT.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 9: Disaster Capitalism"
+  },
+  {
+   "date": "2022",
+   "kind": "event",
+   "title": "Microsoft-OpenAI Deployment Safety Board created",
+   "detail": "Altman, Brundage and Leike join three Microsoft reps; gives GPT-4 conditional approval.",
+   "people": [
+    "adam-dangelo",
+    "greg-brockman",
+    "helen-toner",
+    "ilya-sutskever",
+    "jan-leike",
+    "mira-murati",
+    "sam-altman",
+    "satya-nadella",
+    "tasha-mccauley"
+   ],
+   "orgs": [
+    "deployment-safety-board",
+    "openai",
+    "microsoft"
+   ],
+   "place": null,
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "date": "2022",
+   "kind": "event",
+   "title": "Zoph, Metz and Fedus leave Google for OpenAI",
+   "detail": "Altman recruits their assistant idea into Schulman's chatbot team.",
+   "people": [
+    "sam-altman",
+    "john-schulman"
+   ],
+   "orgs": [
+    "google",
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "date": "2022-01",
+   "kind": "idea",
+   "title": "Chain-of-thought prompting",
+   "detail": "Asking models to reason step by step unlocked latent reasoning.",
+   "people": [],
+   "orgs": [
+    "google-brain"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 19: Step by Step"
+  },
+  {
+   "date": "2022-01-27",
+   "kind": "idea",
+   "title": "OpenAI publishes InstructGPT",
+   "detail": "RLHF via contractor-written answers and rankings makes GPT-3 follow instructions and less toxic.",
+   "people": [
+    "john-schulman"
+   ],
+   "orgs": [
+    "openai",
+    "scale-ai"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 9: Disaster Capitalism"
+  },
+  {
+   "date": "2022-01-27",
+   "kind": "idea",
+   "title": "Instruction tuning via RLHF",
+   "detail": "Human-written demonstrations plus rankings made LLMs useful products, becoming the industry standard.",
+   "people": [
+    "john-schulman"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 9: Disaster Capitalism"
+  },
+  {
+   "date": "2022-01-27",
+   "kind": "product",
+   "title": "InstructGPT",
+   "detail": "RLHF-refined GPT-3 that follows user instructions.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 9: Disaster Capitalism"
+  },
+  {
+   "date": "2022-02-15",
+   "kind": "idea",
+   "title": "Google's Patterson attacks Strubell's carbon estimates",
+   "detail": "Blog claims an 88x overestimate; OpenAI and Microsoft first disclose GPT-3 energy data (1,287 MWh).",
+   "people": [
+    "jeff-dean"
+   ],
+   "orgs": [
+    "google",
+    "openai",
+    "microsoft"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 7: Science in Captivity"
+  },
+  {
+   "date": "2022-03",
+   "kind": "idea",
+   "title": "Marcus argues deep learning is hitting a wall",
+   "detail": "Nautilus essay; OpenAI staff mock it after DALL-E 2 launches a month later.",
+   "people": [
+    "greg-brockman",
+    "sam-altman"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 4: Dreams of Modernity"
+  },
+  {
+   "date": "2022-03",
+   "kind": "product",
+   "title": "Chinchilla",
+   "detail": "Smaller model trained on far more data.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 16: The Power and the Glory"
+  },
+  {
+   "date": "2022-03",
+   "kind": "event",
+   "title": "DALL-E 2 released as research preview",
+   "detail": "Murati's compromise; faces banned at first; goes viral then loses ground to Midjourney and Stable Diffusion.",
+   "people": [
+    "greg-brockman",
+    "john-schulman",
+    "mira-murati",
+    "sam-altman"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "date": "2022-04",
+   "kind": "product",
+   "title": "Flamingo",
+   "detail": "Image-and-text multimodal model.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 16: The Power and the Glory"
+  },
+  {
+   "date": "2022-05",
+   "kind": "product",
+   "title": "Gato",
+   "detail": "Generalist model across hundreds of tasks.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 16: The Power and the Glory"
+  },
+  {
+   "date": "2022-07-06",
+   "kind": "event",
+   "title": "News breaks of Zilis's twins with Musk",
+   "detail": "OpenAI board member had not disclosed it; Altman still kept her on.",
+   "people": [
+    "elon-musk"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "date": "2022-07-22",
+   "kind": "event",
+   "title": "Toner posts about EA disillusionment",
+   "detail": "Board member's forum post criticizes effective altruism as dogmatic and insular.",
+   "people": [
+    "helen-toner",
+    "ilya-sutskever",
+    "sam-altman",
+    "tasha-mccauley"
+   ],
+   "orgs": [
+    "effective-altruism"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "date": "2022-09",
+   "kind": "idea",
+   "title": "Rule-based RLHF (Sparrow)",
+   "detail": "Added 23 explicit behaviour rules and evidence-citing to preference training.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 16: The Power and the Glory"
+  },
+  {
+   "date": "2022-09",
+   "kind": "product",
+   "title": "Sparrow",
+   "detail": "Rule-guided RLHF chatbot cancelled for Bard.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 16: The Power and the Glory"
+  },
+  {
+   "date": "2022-09",
+   "kind": "event",
+   "title": "GPT-4 aces AP Biology for Bill Gates",
+   "detail": "At Gates's home the model scores a 5; Gates calls it one of the two most stunning demos he's seen.",
+   "people": [
+    "sam-altman",
+    "greg-brockman"
+   ],
+   "orgs": [
+    "openai",
+    "microsoft",
+    "khan-academy"
+   ],
+   "place": "seattle",
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "date": "2022-09-21",
+   "kind": "product",
+   "title": "Whisper",
+   "detail": "Radford's speech recognition model used to transcribe YouTube.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "date": "2022-11",
+   "kind": "idea",
+   "title": "Chat interface for LLMs",
+   "detail": "Packaging an existing model as a free conversational app triggered mass adoption and the industry race.",
+   "people": [
+    "john-schulman"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 11: Apex"
+  },
+  {
+   "date": "2022-11-30",
+   "kind": "product",
+   "title": "ChatGPT",
+   "detail": "Chat-tuned GPT-3.5; 100M users in two months.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 11: Apex"
+  },
+  {
+   "date": "2023",
+   "kind": "idea",
+   "title": "DUST efficient-serving method",
+   "detail": "Made Transformer models cheaper to serve, yielding GPT-3.5 Turbo amid chip shortages.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 11: Apex"
+  },
+  {
+   "date": "2023",
+   "kind": "idea",
+   "title": "Test-time (inference) compute scaling",
+   "detail": "Spending more compute while answering, not training, to improve reasoning without more data.",
+   "people": [
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 16: Cloak-and-Dagger"
+  },
+  {
+   "date": "2023",
+   "kind": "idea",
+   "title": "Mechanistic interpretability at scale",
+   "detail": "Circuit-tracing tools extended from small to real-world models.",
+   "people": [],
+   "orgs": [
+    "anthropic",
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 18: We're Cooked"
+  },
+  {
+   "date": "2023",
+   "kind": "product",
+   "title": "Gobi",
+   "detail": "Optimized text-and-image model in development.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 15: The Gambit"
+  },
+  {
+   "date": "2023",
+   "kind": "product",
+   "title": "Pi",
+   "detail": "Suleyman's personal-assistant chatbot.",
+   "people": [],
+   "orgs": [
+    "inflection"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 17: RaceGPT"
+  },
+  {
+   "date": "2023",
+   "kind": "event",
+   "title": "AI Scientist project launched",
+   "detail": "Pachocki and Sidor lead an effort to build an autonomous AI researcher; staff joke of bunkers.",
+   "people": [
+    "demis-hassabis",
+    "jakub-pachocki",
+    "jan-leike",
+    "john-schulman",
+    "koray-kavukcuoglu",
+    "sam-altman",
+    "sundar-pichai"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "date": "2023",
+   "kind": "event",
+   "title": "Board discovers Altman legally owns the Startup Fund",
+   "detail": "After D'Angelo hears of odd terms, documents show the fund belongs to Altman, not OpenAI.",
+   "people": [
+    "adam-dangelo",
+    "helen-toner",
+    "ilya-sutskever",
+    "sam-altman",
+    "tasha-mccauley"
+   ],
+   "orgs": [
+    "openai-startup-fund",
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "date": "2023-01",
+   "kind": "event",
+   "title": "Google code red; Gemini begins",
+   "detail": "Pichai holds crisis meetings with Page and Brin; Brain and DeepMind start joint Gemini work; Sparrow cancelled.",
+   "people": [
+    "demis-hassabis",
+    "larry-page",
+    "sam-altman",
+    "sundar-pichai"
+   ],
+   "orgs": [
+    "google",
+    "deepmind",
+    "google-brain"
+   ],
+   "place": "bay-area",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 17: RaceGPT"
+  },
+  {
+   "date": "2023-02",
+   "kind": "product",
+   "title": "GPT-3.5 Turbo (Sahara)",
+   "detail": "Cheaper GPT-3.5 via DUST method.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 11: Apex"
+  },
+  {
+   "date": "2023-03",
+   "kind": "idea",
+   "title": "Multimodal GPT-4",
+   "detail": "Turned sketches into code and passed exams, convincing many staff AGI was near.",
+   "people": [
+    "greg-brockman",
+    "jakub-pachocki"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "date": "2023-03-14",
+   "kind": "product",
+   "title": "Claude",
+   "detail": "Anthropic opens its assistant to the public through a chat interface and an API.",
+   "people": [],
+   "orgs": [
+    "anthropic"
+   ],
+   "src": [
+    "web"
+   ],
+   "url": "https://www.anthropic.com/news/introducing-claude"
+  },
+  {
+   "date": "2023-03-14",
+   "kind": "product",
+   "title": "GPT-4",
+   "detail": "Multimodal model trained on 18k A100s; three-month pre-training.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "date": "2023-04-20",
+   "kind": "event",
+   "title": "Google DeepMind formed",
+   "detail": "Brain and DeepMind merge under Hassabis, who stays in London.",
+   "people": [
+    "demis-hassabis",
+    "sundar-pichai",
+    "jeff-dean"
+   ],
+   "orgs": [
+    "google-deepmind",
+    "deepmind",
+    "google-brain"
+   ],
+   "place": "london",
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 17: RaceGPT"
+  },
+  {
+   "date": "2023-05",
+   "kind": "idea",
+   "title": "Process supervision",
+   "detail": "Training models to judge each reasoning step improved maths.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 19: Step by Step"
+  },
+  {
+   "date": "2023-05",
+   "kind": "event",
+   "title": "Extinction-risk statement",
+   "detail": "One-sentence statement signed by Hassabis, Hinton, Bengio and lab heads.",
+   "people": [
+    "demis-hassabis",
+    "geoffrey-hinton",
+    "sam-altman",
+    "dario-amodei"
+   ],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 18: We're Cooked"
+  },
+  {
+   "date": "2023-06",
+   "kind": "product",
+   "title": "AlphaDev",
+   "detail": "Discovered faster sorting algorithms.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 15: Fermat for Biology"
+  },
+  {
+   "date": "2023-07",
+   "kind": "idea",
+   "title": "Compute-threshold regulation ('frontier models')",
+   "detail": "Equated training compute with danger; spread into US, EU and California policy despite weak science.",
+   "people": [],
+   "orgs": [
+    "openai",
+    "frontier-model-forum"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 13: The Two Prophets"
+  },
+  {
+   "date": "2023-10",
+   "kind": "product",
+   "title": "DALL-E 3",
+   "detail": "Trained with sexual images retained; powers Copilot Designer.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 10: Gods and Demons"
+  },
+  {
+   "date": "2023-10-16",
+   "kind": "event",
+   "title": "Sutskever details Altman's 'patterns of abuse'",
+   "detail": "Cites the Pachocki episode, Amodei's warnings and Annie's allegations; argues against expanding the board.",
+   "people": [
+    "ilya-sutskever",
+    "helen-toner",
+    "jakub-pachocki"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 15: The Gambit"
+  },
+  {
+   "date": "2023-10-31",
+   "kind": "event",
+   "title": "Independent directors begin daily deliberations",
+   "detail": "Toner, McCauley, D'Angelo weigh feedback from at least seven senior people; Sutskever sends dossiers via disappearing email.",
+   "people": [
+    "helen-toner",
+    "tasha-mccauley",
+    "adam-dangelo",
+    "ilya-sutskever",
+    "mira-murati"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 16: Cloak-and-Dagger"
+  },
+  {
+   "date": "2023-11",
+   "kind": "idea",
+   "title": "AI debate for scalable oversight",
+   "detail": "Pitting AIs against each other could reduce oversight to few human decisions.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 18: We're Cooked"
+  },
+  {
+   "date": "2023-11",
+   "kind": "product",
+   "title": "Q* / Strawberry",
+   "detail": "Inference-compute reasoning approach from Sutskever's research.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 16: Cloak-and-Dagger"
+  },
+  {
+   "date": "2023-11-09",
+   "kind": "event",
+   "title": "Altman again falsely invokes McCauley",
+   "detail": "He tells Sutskever McCauley wants Toner off the board; she had not spoken with him.",
+   "people": [
+    "sam-altman",
+    "tasha-mccauley",
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 16: Cloak-and-Dagger"
+  },
+  {
+   "date": "2023-11-19",
+   "kind": "event",
+   "title": "Emmett Shear named interim CEO; Microsoft offers Altman a lab",
+   "detail": "The board refuses to reinstate Altman and appoints Shear; Nadella announces Altman and Brockman will lead a new Microsoft AI division.",
+   "people": [
+    "ilya-sutskever",
+    "satya-nadella",
+    "sam-altman",
+    "greg-brockman"
+   ],
+   "orgs": [
+    "openai",
+    "microsoft"
+   ],
+   "place": "bay-area",
+   "src": [
+    "hao"
+   ],
+   "ref": "Prologue: A Run for the Throne"
+  },
+  {
+   "date": "2023-12",
+   "kind": "product",
+   "title": "Gemini 1.0 (Ultra, Pro, Nano)",
+   "detail": "Google's GPT-4 rival; Ultra released February 2024.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 19: Step by Step"
+  },
+  {
+   "date": "2024",
+   "kind": "idea",
+   "title": "RL with verifiable rewards / thinking tokens",
+   "detail": "Rewarding correct maths answers trained models to reason at length.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 20: Comeback, and Beyond"
+  },
+  {
+   "date": "2024",
+   "kind": "product",
+   "title": "Orion",
+   "detail": "Intended GPT-5, delayed.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 16: Cloak-and-Dagger"
+  },
+  {
+   "date": "2024",
+   "kind": "product",
+   "title": "Advanced Voice Mode",
+   "detail": "Native speech-to-speech in GPT-4o.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 17: Reckoning"
+  },
+  {
+   "date": "2024",
+   "kind": "product",
+   "title": "GenCast",
+   "detail": "State-of-the-art weather forecasting model.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 15: Fermat for Biology"
+  },
+  {
+   "date": "2024",
+   "kind": "event",
+   "title": "Hinton wins Nobel Prize",
+   "detail": "Hinton shares the Nobel for foundational work on neural networks.",
+   "people": [
+    "demis-hassabis",
+    "geoffrey-hinton"
+   ],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 4: Dreams of Modernity"
+  },
+  {
+   "date": "2024-01",
+   "kind": "product",
+   "title": "AlphaGeometry",
+   "detail": "Olympiad-level geometry solver.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 15: Fermat for Biology"
+  },
+  {
+   "date": "2024-02",
+   "kind": "idea",
+   "title": "Mixture of experts and long context",
+   "detail": "Cheaper routing and million-token working memory in Gemini 1.5.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 19: Step by Step"
+  },
+  {
+   "date": "2024-02",
+   "kind": "product",
+   "title": "Sora",
+   "detail": "Diffusion video generator.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 16: Cloak-and-Dagger"
+  },
+  {
+   "date": "2024-02",
+   "kind": "product",
+   "title": "Gemma",
+   "detail": "Small open-weight models to compete with Meta.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 19: Step by Step"
+  },
+  {
+   "date": "2024-02",
+   "kind": "event",
+   "title": "Gemini image-diversity fiasco",
+   "detail": "Ahistorical images draw culture-war attacks; people images paused for six months.",
+   "people": [
+    "elon-musk",
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "google",
+    "google-deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 19: Step by Step"
+  },
+  {
+   "date": "2024-03-08",
+   "kind": "event",
+   "title": "WilmerHale review clears Altman; board expanded",
+   "detail": "Report unreleased; Altman rejoins board; Desmond-Hellmann, Seligman and Simo added; Toner and McCauley object.",
+   "people": [
+    "sam-altman",
+    "helen-toner",
+    "tasha-mccauley"
+   ],
+   "orgs": [
+    "openai",
+    "wilmerhale"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 16: Cloak-and-Dagger"
+  },
+  {
+   "date": "2024-03-19",
+   "kind": "event",
+   "title": "Suleyman becomes Microsoft AI chief",
+   "detail": "Microsoft hires Suleyman and Inflection staff.",
+   "people": [
+    "mustafa-suleyman",
+    "satya-nadella"
+   ],
+   "orgs": [
+    "microsoft",
+    "inflection",
+    "microsoft"
+   ],
+   "place": "seattle",
+   "src": [
+    "web"
+   ],
+   "ref": null,
+   "url": "https://techcrunch.com/2024/03/19/microsoft-hires-inflection-founders-to-run-new-consumer-ai-division/"
+  },
+  {
+   "date": "2024-05",
+   "kind": "product",
+   "title": "AlphaFold 3",
+   "detail": "Predicts protein interactions with other molecules.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 15: Fermat for Biology"
+  },
+  {
+   "date": "2024-05-13",
+   "kind": "product",
+   "title": "GPT-4o (Scallion)",
+   "detail": "Omni model handling text, vision and native audio.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 17: Reckoning"
+  },
+  {
+   "date": "2024-05-14",
+   "kind": "event",
+   "title": "Sutskever leaves OpenAI; Pachocki chief scientist",
+   "detail": "Leike also resigns; Superalignment dissolved into Schulman's team.",
+   "people": [
+    "ilya-sutskever",
+    "jakub-pachocki",
+    "jan-leike",
+    "john-schulman"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 17: Reckoning"
+  },
+  {
+   "date": "2024-05-23",
+   "kind": "event",
+   "title": "Executives plead for Sutskever's return, then rescind",
+   "detail": "Murati, Brockman, Pachocki and Altman visit; Mądry objects; Brockman calls it off within a day.",
+   "people": [
+    "mira-murati",
+    "greg-brockman",
+    "jakub-pachocki",
+    "sam-altman",
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 17: Reckoning"
+  },
+  {
+   "date": "2024-06",
+   "kind": "event",
+   "title": "Sutskever launches Safe Superintelligence",
+   "detail": "New rival lab later announces $1B in funding.",
+   "people": [
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "ssi"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 18: A Formula for Empire"
+  },
+  {
+   "date": "2024-07",
+   "kind": "idea",
+   "title": "OpenResearch publishes basic income results",
+   "detail": "Three-year $1,000/month pilot shows cash helped recipients meet needs.",
+   "people": [
+    "sam-altman"
+   ],
+   "orgs": [
+    "openresearch"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 8: Dawn of Commerce"
+  },
+  {
+   "date": "2024-07",
+   "kind": "product",
+   "title": "AlphaProof",
+   "detail": "RL maths prover, IMO silver.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 20: Comeback, and Beyond"
+  },
+  {
+   "date": "2024-08-05",
+   "kind": "event",
+   "title": "Schulman leaves for Anthropic; Brockman takes sabbatical",
+   "detail": "Cofounder exits; Brockman's leave partly reflects staff grievances.",
+   "people": [
+    "john-schulman",
+    "greg-brockman"
+   ],
+   "orgs": [
+    "openai",
+    "anthropic"
+   ],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 18: A Formula for Empire"
+  },
+  {
+   "date": "2024-09",
+   "kind": "product",
+   "title": "o1",
+   "detail": "Reasoning model from the Strawberry project.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "hao",
+    "mallaby"
+   ],
+   "ref": "Chapter 18: A Formula for Empire"
+  },
+  {
+   "date": "2024-10",
+   "kind": "event",
+   "title": "Hassabis and Jumper win chemistry Nobel",
+   "detail": "Shared with David Baker for protein structure work; Hinton wins physics.",
+   "people": [
+    "demis-hassabis",
+    "john-jumper",
+    "geoffrey-hinton"
+   ],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Introduction: The Sweetness"
+  },
+  {
+   "date": "2024-12",
+   "kind": "idea",
+   "title": "Classical learnability conjecture",
+   "detail": "Any natural pattern can be efficiently learned by classical algorithms; rejects quantum-mind views.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Epilogue: Turing's Champion"
+  },
+  {
+   "date": "2024-12",
+   "kind": "product",
+   "title": "Veo 2",
+   "detail": "Text-to-video model ahead of Sora.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 20: Comeback, and Beyond"
+  },
+  {
+   "date": "2024-12",
+   "kind": "product",
+   "title": "Jules",
+   "detail": "Prototype coding agent.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 20: Comeback, and Beyond"
+  },
+  {
+   "date": "2024-12",
+   "kind": "product",
+   "title": "Project Mariner",
+   "detail": "Chrome-extension agent prototype.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 20: Comeback, and Beyond"
+  },
+  {
+   "date": "2024-12",
+   "kind": "product",
+   "title": "o3",
+   "detail": "Stronger, costlier reasoning successor.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 20: Comeback, and Beyond"
+  },
+  {
+   "date": "2024-12-19",
+   "kind": "product",
+   "title": "Gemini 2.0 Flash Thinking Experimental",
+   "detail": "First Google reasoning model; visible thoughts.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 20: Comeback, and Beyond"
+  },
+  {
+   "date": "2025",
+   "kind": "idea",
+   "title": "Era of Experience paper",
+   "detail": "Silver and Sutton argue RL agents learning from real-world experience will surpass LLMs.",
+   "people": [
+    "david-silver"
+   ],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 20: Comeback, and Beyond"
+  },
+  {
+   "date": "2025-01",
+   "kind": "idea",
+   "title": "Pure-RL reasoning (R1-Zero)",
+   "detail": "AlphaZero-style RL alone produced self-correcting reasoning.",
+   "people": [],
+   "orgs": [
+    "deepseek"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 20: Comeback, and Beyond"
+  },
+  {
+   "date": "2025-01-06",
+   "kind": "event",
+   "title": "Annie Altman sues Sam Altman",
+   "detail": "She files suit in Missouri alleging childhood abuse; Sam and family call the claims untrue.",
+   "people": [
+    "sam-altman"
+   ],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 1: Divine Right"
+  },
+  {
+   "date": "2025-01-07",
+   "kind": "event",
+   "title": "Altman family issues public denial",
+   "detail": "Sam, mother and brothers call Annie's allegations untrue after her lawsuit.",
+   "people": [
+    "sam-altman"
+   ],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "hao"
+   ],
+   "ref": "Chapter 14: Deliverance"
+  },
+  {
+   "date": "2025-02-24",
+   "kind": "product",
+   "title": "Claude Code",
+   "detail": "Released as a limited research preview, a coding agent that works in the terminal, alongside Claude 3.7 Sonnet.",
+   "people": [
+    "boris-cherny"
+   ],
+   "orgs": [
+    "anthropic"
+   ],
+   "src": [
+    "web"
+   ],
+   "url": "https://www.anthropic.com/news/claude-3-7-sonnet"
+  },
+  {
+   "date": "2025-03",
+   "kind": "idea",
+   "title": "o3 obfuscated reward hacking",
+   "detail": "Monitored o3 learns to hide cheating from its chain of thought.",
+   "people": [
+    "ilya-sutskever"
+   ],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 20: Comeback, and Beyond"
+  },
+  {
+   "date": "2025-07",
+   "kind": "event",
+   "title": "Gemini wins IMO gold",
+   "detail": "A Gemini model reaches gold-medal level at the maths olympiad.",
+   "people": [],
+   "orgs": [
+    "google-deepmind"
+   ],
+   "place": null,
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 20: Comeback, and Beyond"
+  },
+  {
+   "date": "2025-08",
+   "kind": "product",
+   "title": "GPT-5",
+   "detail": "New foundation model; often trailed Gemini 2.5 Pro.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "src": [
+    "mallaby"
+   ],
+   "ref": "Chapter 20: Comeback, and Beyond"
+  }
+ ]
+}

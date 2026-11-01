@@ -1,24 +1,26 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-01T11:16:23+00:00",
- "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
+ "generated": "2026-11-01T12:21:50+00:00",
+ "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "article": 39,
   "review": 2,
-  "note": 9,
+  "note": 10,
   "talk": 1,
+  "dataset": 1,
   "work": 153,
   "project": 31,
   "topic": 159,
-  "link": 391
+  "link": 411
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
   "graph": "https://raskell.io/map.json",
   "links": "https://raskell.io/links.json",
   "reading": "https://raskell.io/reading.json",
-  "llms": "https://raskell.io/llms.txt"
+  "llms": "https://raskell.io/llms.txt",
+  "data": "https://raskell.io/data/"
  },
  "items": [
   {
@@ -709,6 +711,19 @@
   },
   {
    "kind": "note",
+   "title": "Who contributed to AI",
+   "url": "https://raskell.io/notes/who-contributed-to-ai/",
+   "description": "A companion piece to Karen Hao's Empire of AI and Sebastian Mallaby's The Infinity Machine: the people who built AI, and where each did the work.",
+   "date": "2026-11-01",
+   "topics": [
+    "research-labs",
+    "technology-races",
+    "history-of-technology",
+    "machine-learning"
+   ]
+  },
+  {
+   "kind": "note",
    "title": "Everything is a fractal",
    "url": "https://raskell.io/notes/everything-is-a-fractal/",
    "description": "The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world.",
@@ -848,6 +863,23 @@
     "switzerland"
    ],
    "meta": "IT's ABOUT TECH #13"
+  },
+  {
+   "kind": "dataset",
+   "title": "People of the AI labs, 1955 to 2026",
+   "url": "https://raskell.io/data/ai-people/",
+   "description": "Who worked where in AI and when, why they left, how they were tied to each other, and the ideas and turns around them, from two books.",
+   "date": "2026-11-01",
+   "topics": [
+    "research-labs",
+    "technology-races",
+    "history-of-technology",
+    "machine-learning"
+   ],
+   "meta": "JSON · CC BY 4.0",
+   "file": "https://raskell.io/data/ai-people.json",
+   "licence": "CC BY 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by/4.0/"
   },
   {
    "kind": "work",
@@ -5461,6 +5493,346 @@
     {
      "title": "Source Code Is the New Assembly",
      "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@ShaneLegg",
+   "url": "https://x.com/ShaneLegg",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@adamdangelo",
+   "url": "https://x.com/adamdangelo",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@bcherny",
+   "url": "https://x.com/bcherny",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@demishassabis",
+   "url": "https://x.com/demishassabis",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@elonmusk",
+   "url": "https://x.com/elonmusk",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@gdb",
+   "url": "https://x.com/gdb",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@geoffreyhinton",
+   "url": "https://x.com/geoffreyhinton",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@hlntnr",
+   "url": "https://x.com/hlntnr",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@ilyasut",
+   "url": "https://x.com/ilyasut",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@janleike",
+   "url": "https://x.com/janleike",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@jeffdean",
+   "url": "https://x.com/jeffdean",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@karpathy",
+   "url": "https://x.com/karpathy",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@miramurati",
+   "url": "https://x.com/miramurati",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@mustafasuleyman",
+   "url": "https://x.com/mustafasuleyman",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@peterthiel",
+   "url": "https://x.com/peterthiel",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@reidhoffman",
+   "url": "https://x.com/reidhoffman",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@sama",
+   "url": "https://x.com/sama",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@satyanadella",
+   "url": "https://x.com/satyanadella",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@sundarpichai",
+   "url": "https://x.com/sundarpichai",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "@ylecun",
+   "url": "https://x.com/ylecun",
+   "domain": "x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Who contributed to AI",
+     "url": "https://raskell.io/notes/who-contributed-to-ai/"
+    },
+    {
+     "title": "People of the AI labs, 1955 to 2026",
+     "url": "https://raskell.io/data/ai-people/"
     }
    ]
   },

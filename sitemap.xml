@@ -235,6 +235,17 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/categories/reviews/"/>
     </url>
     <url>
+        <loc>https://raskell.io/data/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/data/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/data/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/data/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/data/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/data/ai-people/</loc>
+        <lastmod>2026-11-01</lastmod>
+    </url>
+    <url>
         <loc>https://raskell.io/invest/</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/invest/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/invest/"/>
@@ -366,6 +377,13 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/categories/reviews/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/categories/reviews/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/categories/reviews/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/ko/data/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/data/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/data/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/data/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/data/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/invest/</loc>
@@ -1571,6 +1589,10 @@
         <lastmod>2026-10-25</lastmod>
     </url>
     <url>
+        <loc>https://raskell.io/notes/who-contributed-to-ai/</loc>
+        <lastmod>2026-11-01</lastmod>
+    </url>
+    <url>
         <loc>https://raskell.io/ontology/</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/ontology/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/ontology/"/>
@@ -2511,6 +2533,13 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/categories/reviews/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/categories/reviews/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/categories/reviews/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/zh/data/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/data/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/data/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/data/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/data/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/invest/</loc>

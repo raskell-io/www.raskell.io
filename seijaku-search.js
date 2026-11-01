@@ -1,5 +1,5 @@
 // Search for seijaku: one engine behind the nav dialog (press /) and the search page. It searches the
-// garden index (partials/garden_data.html: pages, works, projects, topics, cited links), filters it by
+// garden index (partials/garden_data.html: pages, datasets, works, projects, topics, cited links), filters it by
 // kind with a chip per kind, and adds Zola's full-text index for words that only appear in page bodies.
 // Both indexes load on first use, so pages that never search pay nothing.
 (function () {
@@ -17,6 +17,7 @@
     { key: "review", label: T("Reviews"), test: function (i) { return i.c.indexOf("reviews") >= 0; } },
     { key: "note", label: T("Notes"), test: function (i) { return i.k === "note"; } },
     { key: "talk", label: T("Talks"), test: function (i) { return i.k === "talk"; } },
+    { key: "dataset", label: T("Data"), test: function (i) { return i.k === "dataset"; } },
     { key: "work", label: T("Books and papers"), test: function (i) { return i.k === "work"; } },
     { key: "project", label: T("Projects"), test: function (i) { return i.k === "project"; } },
     { key: "topic", label: T("Topics"), test: function (i) { return i.k === "topic"; } },
