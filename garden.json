@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-01T08:15:46+00:00",
+ "generated": "2026-11-01T09:11:26+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -10,7 +10,7 @@
   "talk": 1,
   "work": 153,
   "project": 31,
-  "topic": 137,
+  "topic": 159,
   "link": 391
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
@@ -64,7 +64,8 @@
     "insurance",
     "chess",
     "go-game",
-    "starcraft"
+    "starcraft",
+    "internet-culture"
    ],
    "meta": "51 min"
   },
@@ -396,7 +397,9 @@
     "haskell",
     "compilers",
     "provenance",
-    "type-systems"
+    "type-systems",
+    "linguistics",
+    "semiotics"
    ],
    "meta": "27 min"
   },
@@ -513,7 +516,9 @@
     "formal-methods",
     "haskell",
     "compilers",
-    "type-systems"
+    "type-systems",
+    "linguistics",
+    "aerospace"
    ],
    "meta": "26 min"
   },
@@ -714,7 +719,8 @@
     "emergence",
     "science-fiction",
     "chaos-theory",
-    "physics"
+    "physics",
+    "space"
    ]
   },
   {
@@ -865,7 +871,8 @@
    "date": "2026-09",
    "topics": [
     "geopolitics",
-    "history"
+    "history",
+    "middle-east"
    ],
    "meta": "Book · Simon Sebag Montefiore · Read"
   },
@@ -878,7 +885,8 @@
    "topics": [
     "world-history",
     "history-of-technology",
-    "complex-systems"
+    "complex-systems",
+    "antiquity"
    ],
    "meta": "Book · Jared Diamond · Read"
   },
@@ -892,7 +900,8 @@
     "existential-risk",
     "geopolitics",
     "technology-races",
-    "united-states"
+    "united-states",
+    "game-theory"
    ],
    "meta": "Book · Annie Jacobsen · Read"
   },
@@ -911,7 +920,9 @@
     "emergence",
     "fractals",
     "synthetic-biology",
-    "chaos-theory"
+    "chaos-theory",
+    "genetics",
+    "palaeontology"
    ],
    "meta": "Novel · Michael Crichton · Read"
   },
@@ -967,7 +978,8 @@
    "topics": [
     "philosophy-of-science",
     "physics",
-    "evolution"
+    "evolution",
+    "origins-of-life"
    ],
    "meta": "Book · David Berlinski · Read"
   },
@@ -1061,7 +1073,8 @@
    "date": "2018",
    "topics": [
     "history",
-    "united-states"
+    "united-states",
+    "democracy"
    ],
    "meta": "Book · Jill Lepore · Read"
   },
@@ -1075,7 +1088,9 @@
     "religion",
     "geopolitics",
     "world-history",
-    "cities"
+    "cities",
+    "antiquity",
+    "middle-east"
    ],
    "meta": "Book · Simon Sebag Montefiore · Read"
   },
@@ -1113,7 +1128,8 @@
    "date": "2016",
    "topics": [
     "philosophy-of-science",
-    "religion"
+    "religion",
+    "theology"
    ],
    "meta": "Book · David Berlinski · Read"
   },
@@ -1140,7 +1156,8 @@
     "finance",
     "world-history",
     "trust",
-    "money"
+    "money",
+    "antiquity"
    ],
    "meta": "Book · David Graeber · Read"
   },
@@ -1168,7 +1185,8 @@
    "topics": [
     "risk",
     "ethics",
-    "trust"
+    "trust",
+    "game-theory"
    ],
    "meta": "Book · Nassim Nicholas Taleb · Read"
   },
@@ -1221,7 +1239,8 @@
    "topics": [
     "literature",
     "ethics",
-    "religion"
+    "religion",
+    "theology"
    ],
    "meta": "Novel · Fyodor Dostoevsky · Read"
   },
@@ -1351,7 +1370,9 @@
    "topics": [
     "philosophy",
     "economics",
-    "democratisation"
+    "democratisation",
+    "anarchism",
+    "democracy"
    ],
    "meta": "Book · David Graeber · Read"
   },
@@ -1365,7 +1386,9 @@
     "history",
     "democratisation",
     "commons",
-    "utopias"
+    "utopias",
+    "anarchism",
+    "democracy"
    ],
    "meta": "Book · David Graeber · Read"
   },
@@ -1378,7 +1401,8 @@
    "topics": [
     "applied-security",
     "mathematics",
-    "history"
+    "history",
+    "cryptography"
    ],
    "meta": "Book · Elonka Dunin and Klaus Schmeh · Read"
   },
@@ -1407,7 +1431,8 @@
     "geopolitics",
     "technology-races",
     "united-states",
-    "surveillance"
+    "surveillance",
+    "cryptography"
    ],
    "meta": "Book · Shane Harris · Read"
   },
@@ -1461,7 +1486,9 @@
     "life-sciences",
     "world-history",
     "history-of-science",
-    "evolution"
+    "evolution",
+    "antiquity",
+    "genetics"
    ],
    "meta": "Book · David Reich · Read"
   },
@@ -1487,7 +1514,8 @@
    "topics": [
     "literature",
     "maximalist-novels",
-    "religion"
+    "religion",
+    "semiotics"
    ],
    "meta": "Novel · Umberto Eco · Read"
   },
@@ -1514,7 +1542,8 @@
     "religion",
     "life-sciences",
     "world-history",
-    "evolution"
+    "evolution",
+    "mythology"
    ],
    "meta": "Book · Carel van Schaik and Kai Michel · Read"
   },
@@ -1528,7 +1557,8 @@
     "philosophy",
     "geopolitics",
     "china",
-    "strategy"
+    "strategy",
+    "antiquity"
    ],
    "meta": "Book · Sun Tzu · Read"
   },
@@ -1540,7 +1570,8 @@
    "date": "2012",
    "topics": [
     "languages",
-    "intelligence"
+    "intelligence",
+    "linguistics"
    ],
    "meta": "Book · Daniel Everett · Read"
   },
@@ -1578,7 +1609,8 @@
     "world-history",
     "geopolitics",
     "cities",
-    "china"
+    "china",
+    "antiquity"
    ],
    "meta": "Book · Peter Frankopan · Read"
   },
@@ -1590,7 +1622,9 @@
    "date": "2014-01",
    "topics": [
     "history",
-    "world-history"
+    "world-history",
+    "art-history",
+    "architecture"
    ],
    "meta": "Book · E. H. Gombrich · Read"
   },
@@ -1602,7 +1636,8 @@
    "date": "2012-06",
    "topics": [
     "philosophy",
-    "psychology"
+    "psychology",
+    "personality-types"
    ],
    "meta": "Book · Jolande Jacobi · Read"
   },
@@ -1652,7 +1687,9 @@
     "literature",
     "history",
     "religion",
-    "world-history"
+    "world-history",
+    "mythology",
+    "antiquity"
    ],
    "meta": "Book · Miriam Lichtheim (ed.) · Read"
   },
@@ -1665,7 +1702,8 @@
    "topics": [
     "philosophy",
     "policy",
-    "history"
+    "history",
+    "pandemics"
    ],
    "meta": "Book · Gunnar Kaiser · Read"
   },
@@ -1679,7 +1717,9 @@
     "religion",
     "philosophy-of-science",
     "physics",
-    "life-sciences"
+    "life-sciences",
+    "theology",
+    "origins-of-life"
    ],
    "meta": "Book · Stephen C. Meyer · Read"
   },
@@ -1692,7 +1732,8 @@
    "topics": [
     "history",
     "policy",
-    "social-reform"
+    "social-reform",
+    "democracy"
    ],
    "meta": "Book · Paul Schreyer · Read"
   },
@@ -1707,7 +1748,8 @@
     "medicine",
     "geopolitics",
     "risk",
-    "forecasting"
+    "forecasting",
+    "pandemics"
    ],
    "meta": "Book · Paul Schreyer · Read"
   },
@@ -1720,7 +1762,8 @@
    "topics": [
     "physics",
     "intelligence",
-    "philosophy-of-science"
+    "philosophy-of-science",
+    "space"
    ],
    "meta": "Book · Avi Loeb · Read"
   },
@@ -1734,7 +1777,8 @@
     "social-reform",
     "switzerland",
     "future-of-work",
-    "policy"
+    "policy",
+    "democracy"
    ],
    "meta": "Book · Christian Müller and Daniel Straub · Read"
   },
@@ -1774,7 +1818,8 @@
    "date": "2019",
    "topics": [
     "philosophy",
-    "philosophy-of-science"
+    "philosophy-of-science",
+    "semiotics"
    ],
    "meta": "Book · John D. Caputo · Read"
   },
@@ -1802,7 +1847,9 @@
     "religion",
     "world-history",
     "philosophy",
-    "evolution"
+    "evolution",
+    "mythology",
+    "theology"
    ],
    "meta": "Book · Reza Aslan · Read"
   },
@@ -1827,7 +1874,8 @@
    "topics": [
     "history-of-science",
     "life-sciences",
-    "evolution"
+    "evolution",
+    "genetics"
    ],
    "meta": "Book · Hans-Jörg Rheinberger and Staffan Müller-Wille · Read"
   },
@@ -1841,7 +1889,8 @@
     "philosophy",
     "religion",
     "neuroscience",
-    "psychology"
+    "psychology",
+    "mythology"
    ],
    "meta": "Book · Jordan B. Peterson · Read"
   },
@@ -1854,7 +1903,8 @@
    "topics": [
     "philosophy",
     "ethics",
-    "religion"
+    "religion",
+    "theology"
    ],
    "meta": "Book · Rüdiger Safranski · Read"
   },
@@ -1894,7 +1944,9 @@
    "topics": [
     "philosophy",
     "religion",
-    "psychology"
+    "psychology",
+    "semiotics",
+    "mythology"
    ],
    "meta": "Book · C. G. Jung, Marie-Louise von Franz, Joseph L. Henderson, Jolande Jacobi and Aniela Jaffé · Read"
   },
@@ -1907,7 +1959,8 @@
    "topics": [
     "philosophy",
     "religion",
-    "psychology"
+    "psychology",
+    "personality-types"
    ],
    "meta": "Book · C. G. Jung · Read"
   },
@@ -1933,7 +1986,11 @@
    "topics": [
     "world-history",
     "history",
-    "religion"
+    "religion",
+    "mythology",
+    "antiquity",
+    "lost-civilisations",
+    "architecture"
    ],
    "meta": "Book · Graham Hancock · Read"
   },
@@ -1946,7 +2003,11 @@
    "topics": [
     "world-history",
     "history",
-    "geography"
+    "geography",
+    "mythology",
+    "antiquity",
+    "lost-civilisations",
+    "architecture"
    ],
    "meta": "Book · Graham Hancock · Read"
   },
@@ -2118,7 +2179,8 @@
     "high-modernism",
     "hubris",
     "commons",
-    "cities"
+    "cities",
+    "architecture"
    ],
    "meta": "Book · James C. Scott · Backlog"
   },
@@ -2129,7 +2191,8 @@
    "description": "How the Allies broke up the Ottoman Empire after the First World War and drew the borders of the modern Middle East.",
    "topics": [
     "geopolitics",
-    "history"
+    "history",
+    "middle-east"
    ],
    "meta": "Book · David Fromkin · Backlog"
   },
@@ -2155,7 +2218,8 @@
     "life-sciences",
     "research-labs",
     "history-of-science",
-    "scientific-revolutions"
+    "scientific-revolutions",
+    "genetics"
    ],
    "meta": "Book · Horace Freeland Judson · Backlog"
   },
@@ -2217,7 +2281,8 @@
    "topics": [
     "geopolitics",
     "history",
-    "strategy"
+    "strategy",
+    "game-theory"
    ],
    "meta": "Book · Lawrence Freedman · Backlog"
   },
@@ -2228,7 +2293,9 @@
    "description": "How sacred texts were once read as practice and ritual rather than as literal truth, across the world's religions.",
    "topics": [
     "religion",
-    "history"
+    "history",
+    "mythology",
+    "theology"
    ],
    "meta": "Book · Karen Armstrong · Backlog"
   },
@@ -2298,7 +2365,8 @@
     "neuroscience",
     "reinforcement-learning",
     "life-sciences",
-    "evolution"
+    "evolution",
+    "origins-of-life"
    ],
    "meta": "Book · Max Bennett · Backlog"
   },
@@ -2311,7 +2379,8 @@
     "intelligence",
     "neural-networks",
     "neuroscience",
-    "languages"
+    "languages",
+    "linguistics"
    ],
    "meta": "Book · Christopher Summerfield · Backlog"
   },
@@ -2424,7 +2493,8 @@
     "decentralisation",
     "open-web",
     "commons",
-    "cybernetics"
+    "cybernetics",
+    "internet-culture"
    ],
    "meta": "Book · Fred Turner · Backlog"
   },
@@ -2438,7 +2508,8 @@
     "high-modernism",
     "history-of-technology",
     "social-reform",
-    "cybernetics"
+    "cybernetics",
+    "democracy"
    ],
    "meta": "Book · Eden Medina · Backlog"
   },
@@ -2497,7 +2568,8 @@
     "existential-risk",
     "entrepreneurship",
     "transhumanism",
-    "physics"
+    "physics",
+    "space"
    ],
    "meta": "Book · Adam Becker · Backlog"
   },
@@ -2512,7 +2584,8 @@
     "intelligence",
     "post-scarcity",
     "utopias",
-    "strategy"
+    "strategy",
+    "game-design"
    ],
    "meta": "Novel · Iain M. Banks · Backlog"
   },
@@ -2525,7 +2598,8 @@
     "science-fiction",
     "intelligence",
     "augmentation",
-    "transhumanism"
+    "transhumanism",
+    "space"
    ],
    "meta": "Novel · Charles Stross · Backlog"
   },
@@ -2538,7 +2612,9 @@
     "science-fiction",
     "utopias",
     "abundance",
-    "physics"
+    "physics",
+    "space",
+    "anarchism"
    ],
    "meta": "Novel · Ursula K. Le Guin · Backlog"
   },
@@ -2551,7 +2627,8 @@
     "maximalist-novels",
     "geopolitics",
     "history-of-technology",
-    "hubris"
+    "hubris",
+    "aerospace"
    ],
    "meta": "Novel · Thomas Pynchon · Backlog"
   },
@@ -2564,7 +2641,8 @@
     "maximalist-novels",
     "history-of-science",
     "mathematics",
-    "utopias"
+    "utopias",
+    "anarchism"
    ],
    "meta": "Novel · Thomas Pynchon · Backlog"
   },
@@ -2577,7 +2655,8 @@
     "maximalist-novels",
     "provenance",
     "intellectual-property",
-    "money"
+    "money",
+    "art-history"
    ],
    "meta": "Novel · William Gaddis · Backlog"
   },
@@ -2601,7 +2680,8 @@
     "applied-security",
     "money",
     "history-of-technology",
-    "surveillance"
+    "surveillance",
+    "cryptography"
    ],
    "meta": "Novel · Neal Stephenson · Backlog"
   },
@@ -2613,7 +2693,8 @@
    "topics": [
     "literature",
     "external-memory",
-    "religion"
+    "religion",
+    "semiotics"
    ],
    "meta": "Novel · Umberto Eco · Backlog"
   },
@@ -2626,7 +2707,8 @@
     "literature",
     "games",
     "mathematics",
-    "philosophy"
+    "philosophy",
+    "game-design"
    ],
    "meta": "Novel · Hermann Hesse · Backlog"
   },
@@ -2637,7 +2719,8 @@
    "description": "An intelligence that resists every attempt at interpretation, and what that failure reveals about the people trying.",
    "topics": [
     "science-fiction",
-    "intelligence"
+    "intelligence",
+    "space"
    ],
    "meta": "Novel · Stanisław Lem · Backlog"
   },
@@ -2663,7 +2746,8 @@
     "science-fiction",
     "life-sciences",
     "risk",
-    "hubris"
+    "hubris",
+    "pandemics"
    ],
    "meta": "Novel · Michael Crichton · Backlog"
   },
@@ -2675,7 +2759,8 @@
    "topics": [
     "reliability",
     "observability",
-    "complex-systems"
+    "complex-systems",
+    "aerospace"
    ],
    "meta": "Novel · Michael Crichton · Backlog"
   },
@@ -2689,7 +2774,9 @@
     "synthetic-biology",
     "history-of-science",
     "ethics",
-    "medicine"
+    "medicine",
+    "genetics",
+    "pandemics"
    ],
    "meta": "Book · Walter Isaacson · Backlog"
   },
@@ -2701,7 +2788,8 @@
    "topics": [
     "evolution",
     "life-sciences",
-    "history-of-science"
+    "history-of-science",
+    "palaeontology"
    ],
    "meta": "Book · Steve Brusatte · Backlog"
   },
@@ -2712,7 +2800,8 @@
    "description": "Birds as the dinosaurs that survived, from their feathered ancestors to the species alive now.",
    "topics": [
     "evolution",
-    "life-sciences"
+    "life-sciences",
+    "palaeontology"
    ],
    "meta": "Book · Steve Brusatte · Backlog"
   },
@@ -2726,7 +2815,10 @@
     "mathematics",
     "emergence",
     "formal-methods",
-    "philosophy"
+    "philosophy",
+    "linguistics",
+    "semiotics",
+    "art-history"
    ],
    "meta": "Book · Douglas R. Hofstadter · Backlog"
   },
@@ -2789,7 +2881,8 @@
    "topics": [
     "open-web",
     "history-of-technology",
-    "hypertext"
+    "hypertext",
+    "internet-culture"
    ],
    "meta": "Book · James Gleick · Backlog"
   },
@@ -2815,7 +2908,8 @@
     "history-of-technology",
     "mathematics",
     "languages",
-    "external-memory"
+    "external-memory",
+    "linguistics"
    ],
    "meta": "Book · James Gleick · Backlog"
   },
@@ -3092,7 +3186,8 @@
     "games",
     "webassembly",
     "developer-tooling",
-    "rust"
+    "rust",
+    "game-design"
    ],
    "meta": "Labs / passion projects · Projects"
   },
@@ -3274,7 +3369,9 @@
    "description": "A turn-based strategy game in the spirit of Advance Wars, fought by woodland armies. Raccoons, badgers, lions, red pandas, and moles fight over every thicket and creek. Built in Rust with Bevy. Play it free in the browser, or as a desktop build.",
    "topics": [
     "games",
-    "rust"
+    "rust",
+    "game-design",
+    "strategy"
    ],
    "meta": "Simulations and games · Apps"
   },
@@ -3286,7 +3383,8 @@
    "topics": [
     "games",
     "webassembly",
-    "rust"
+    "rust",
+    "game-design"
    ],
    "meta": "Simulations and games · Apps"
   },
@@ -3303,6 +3401,13 @@
    "url": "https://raskell.io/tags/abundance/",
    "description": "Making what is scarce plentiful on purpose: building homes, energy, and compute until they are cheap, and the politics of supply that gets there.",
    "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Aerospace",
+   "url": "https://raskell.io/tags/aerospace/",
+   "description": "Machines that fly: aircraft and the engineering that keeps them in the air, fly-by-wire control, rockets, and the craft that leave the atmosphere.",
+   "meta": "Domain"
   },
   {
    "kind": "topic",
@@ -3348,9 +3453,37 @@
   },
   {
    "kind": "topic",
+   "title": "Anarchism",
+   "url": "https://raskell.io/tags#anarchism",
+   "description": "Societies without rulers, imagined and attempted: mutual aid, self-government, and what anthropology and fiction say about living without a state.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Antiquity",
+   "url": "https://raskell.io/tags#antiquity",
+   "description": "The ancient world and the deep past behind it: Egypt, Mesopotamia, the early empires and scriptures, and prehistory as genes and stones tell it.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
    "title": "Applied security",
    "url": "https://raskell.io/tags/applied-security/",
    "description": "Security under production pressure: adversarial input, signal versus noise, and controls that operators can live with.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Architecture",
+   "url": "https://raskell.io/tags#architecture",
+   "description": "Buildings and the cities they make: monuments of the ancient world, planned capitals, and what built form says about the people behind it.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Art history",
+   "url": "https://raskell.io/tags#art-history",
+   "description": "How people have made pictures, sculpture and buildings, from cave paintings to the modern era, and what makes a work authentic.",
    "meta": "Domain"
   },
   {
@@ -3432,6 +3565,13 @@
   },
   {
    "kind": "topic",
+   "title": "Cryptography",
+   "url": "https://raskell.io/tags#cryptography",
+   "description": "Codes and ciphers, from historical codebreaking to the mathematics that keeps secrets and money safe today.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
    "title": "Cybernetics",
    "url": "https://raskell.io/tags#cybernetics",
    "description": "The science of control and feedback in machines, organisms, and organisations, and the attempts to run economies and societies with it.",
@@ -3449,6 +3589,13 @@
    "title": "Decentralisation",
    "url": "https://raskell.io/tags/decentralisation/",
    "description": "Many small nodes and no central operator: the web's original shape, and the alternative to platforms that own the users and the data.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Democracy",
+   "url": "https://raskell.io/tags#democracy",
+   "description": "Rule by the people in theory and practice: who holds power, how representation limits it, and experiments from pirate settlements to Swiss direct democracy.",
    "meta": "Concept"
   },
   {
@@ -3628,9 +3775,30 @@
   },
   {
    "kind": "topic",
+   "title": "Game design",
+   "url": "https://raskell.io/tags#game-design",
+   "description": "Making games: rules that are fun to play, worlds that reward attention, and games that model something larger than themselves.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Game theory",
+   "url": "https://raskell.io/tags#game-theory",
+   "description": "The mathematics of decisions that depend on other people's decisions: deterrence, incentives, payoffs, and who carries the risk.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Games",
    "url": "https://raskell.io/tags/games/",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Genetics",
+   "url": "https://raskell.io/tags#genetics",
+   "description": "Heredity and the genome: how the idea of inheritance became a science, how DNA is read and edited, and what ancient DNA says about our past.",
    "meta": "Domain"
   },
   {
@@ -3740,6 +3908,13 @@
   },
   {
    "kind": "topic",
+   "title": "Internet culture",
+   "url": "https://raskell.io/tags/internet-culture/",
+   "description": "What people make of the internet among themselves: forums and imageboards, memes, anonymous storytelling, and the subcultures that grow in them.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Isolation",
    "url": "https://raskell.io/tags/isolation/",
    "description": "Sandboxes, process and failure-domain isolation, and running untrusted or fallible work safely.",
@@ -3782,6 +3957,13 @@
   },
   {
    "kind": "topic",
+   "title": "Linguistics",
+   "url": "https://raskell.io/tags/linguistics/",
+   "description": "How human language works: grammar, meaning and culture, how languages differ and change, and what the languages we write for machines borrow from them.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
    "title": "Linux",
    "url": "https://raskell.io/tags/linux/",
    "description": "Linux distributions and system administration, Void Linux in particular.",
@@ -3799,6 +3981,13 @@
    "title": "Local-first",
    "url": "https://raskell.io/tags/local-first/",
    "description": "Software that keeps data on your devices and syncs through CRDTs, with the network as an optimisation.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Lost civilisations",
+   "url": "https://raskell.io/tags#lost-civilisations",
+   "description": "The fringe of ancient history: Ice Age civilisations, cataclysms, the precession of the equinoxes read into myths and monuments, and the argument with the accepted timeline.",
    "meta": "Concept"
   },
   {
@@ -3845,6 +4034,13 @@
   },
   {
    "kind": "topic",
+   "title": "Middle East",
+   "url": "https://raskell.io/tags#middle-east",
+   "description": "The region between the Mediterranean and Iran: its cities, faiths and empires, and how its modern borders were drawn.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Money",
    "url": "https://raskell.io/tags/money/",
    "description": "What money is and who creates it: debt and credit, banks that create money by lending, central banks, and attempts to do without them.",
@@ -3855,6 +4051,13 @@
    "title": "Mortality",
    "url": "https://raskell.io/tags/mortality/",
    "description": "That everyone dies: priced in life insurance, resisted by those who want to end death, and answered by keeping a person's voice and stories.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Mythology",
+   "url": "https://raskell.io/tags#mythology",
+   "description": "Myths and sacred stories as old maps of meaning: gods and heroes, creation and flood stories, and what they encode about the people who told them.",
    "meta": "Concept"
   },
   {
@@ -3929,9 +4132,37 @@
   },
   {
    "kind": "topic",
+   "title": "Origins of life",
+   "url": "https://raskell.io/tags#origins-of-life",
+   "description": "How life began and how its first complexity arose: the chemistry, the information in the cell, and the argument over chance, selection and design.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Open source",
    "url": "https://raskell.io/tags/oss/",
    "description": "Open source as the point of the work, not just its licence.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Palaeontology",
+   "url": "https://raskell.io/tags#palaeontology",
+   "description": "Life in deep time read from fossils: the dinosaurs, their rise and extinction, and the birds that descend from them.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Pandemics",
+   "url": "https://raskell.io/tags#pandemics",
+   "description": "Diseases that spread across the world and the responses to them: preparedness exercises, outbreaks real and fictional, and the politics that follow.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Personality types",
+   "url": "https://raskell.io/tags#personality-types",
+   "description": "Typologies of character: Jung's types and cognitive functions, MBTI, the Enneagram, astrology, and what such maps capture and miss.",
    "meta": "Concept"
   },
   {
@@ -4097,6 +4328,13 @@
   },
   {
    "kind": "topic",
+   "title": "Semiotics",
+   "url": "https://raskell.io/tags/semiotics/",
+   "description": "Signs and how they carry meaning: symbols, codes and interpretation, and the gap between a sign and what it stands for, in texts, myths and machines.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Shogi",
    "url": "https://raskell.io/tags/shogi/",
    "description": "Japanese chess, where captured pieces return to the board, and where the NNUE networks now inside every strong chess engine were invented.",
@@ -4121,6 +4359,13 @@
    "title": "Sovereignty",
    "url": "https://raskell.io/tags/sovereignty/",
    "description": "Who controls compute, data, and infrastructure, and in which jurisdiction; Europe's position in particular.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Space",
+   "url": "https://raskell.io/tags/space/",
+   "description": "Astronomy, the cosmos and leaving the planet: interstellar visitors, other worlds, cosmology, and the plans to settle beyond Earth.",
    "meta": "Domain"
   },
   {
@@ -4163,6 +4408,13 @@
    "title": "Technology races",
    "url": "https://raskell.io/tags/technology-races/",
    "description": "Powers racing to build a technology first, from the bomb and its deterrence to frontier AI and the data it needs.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Theology",
+   "url": "https://raskell.io/tags#theology",
+   "description": "Arguments about God: design and chance, faith and doubt, the death of God and its return, and how scripture was read.",
    "meta": "Concept"
   },
   {

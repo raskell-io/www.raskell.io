@@ -307,7 +307,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Edge systems (`edge-systems`): Reverse proxies, policy enforcement, CDNs, and logic that runs close to the user instead of in the backend.
 - Applied security (`applied-security`): Security under production pressure: adversarial input, signal versus noise, and controls that operators can live with.
 - Distributed systems (`distributed-systems`): Replication, coordination, and consistency across machines that fail independently.
-- Programming languages (`programming-languages`): Languages, type systems, compilers, and how executable intent gets written down.
+- Programming languages (`programming-languages`) [within Linguistics]: Languages, type systems, compilers, and how executable intent gets written down.
 - Operating systems (`operating-systems`): Kernels, virtualisation, and the layer between hardware and everything else, from BSD to inference-native designs.
 - Reliability (`reliability`): Failure modes, operability, and keeping systems up when the inputs and the dependencies misbehave.
 - Sovereignty (`sovereignty`): Who controls compute, data, and infrastructure, and in which jurisdiction; Europe's position in particular.
@@ -334,6 +334,15 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Go (`go-game`) [within Games]: The board game whose positions resisted hand-written evaluation until AlphaGo, and the clearest case for learned intuition guiding search.
 - StarCraft (`starcraft`) [within Games, Strategy]: The real-time strategy game, Brood War above all: hidden information, thousands of decisions a minute, and the next benchmark after board games.
 - Psychology (`psychology`): How minds work and what people make of their lives: personality and types, the unconscious and its symbols, meaning, order and chaos.
+- Linguistics (`linguistics`): How human language works: grammar, meaning and culture, how languages differ and change, and what the languages we write for machines borrow from them.
+- Space (`space`) [within Physics]: Astronomy, the cosmos and leaving the planet: interstellar visitors, other worlds, cosmology, and the plans to settle beyond Earth.
+- Antiquity (`antiquity`) [within History]: The ancient world and the deep past behind it: Egypt, Mesopotamia, the early empires and scriptures, and prehistory as genes and stones tell it.
+- Aerospace (`aerospace`): Machines that fly: aircraft and the engineering that keeps them in the air, fly-by-wire control, rockets, and the craft that leave the atmosphere.
+- Art history (`art-history`) [within History]: How people have made pictures, sculpture and buildings, from cave paintings to the modern era, and what makes a work authentic.
+- Architecture (`architecture`) [within Art history, Cities]: Buildings and the cities they make: monuments of the ancient world, planned capitals, and what built form says about the people behind it.
+- Cryptography (`cryptography`) [within Applied security]: Codes and ciphers, from historical codebreaking to the mathematics that keeps secrets and money safe today.
+- Genetics (`genetics`) [within Life sciences]: Heredity and the genome: how the idea of inheritance became a science, how DNA is read and edited, and what ancient DNA says about our past.
+- Palaeontology (`palaeontology`) [within Life sciences, Evolution]: Life in deep time read from fossils: the dinosaurs, their rise and extinction, and the birds that descend from them.
 - Cybernetics (`cybernetics`) [within Complex systems, History of technology]: The science of control and feedback in machines, organisms, and organisations, and the attempts to run economies and societies with it.
 - Simulation (`simulation`) [within Complex systems]: Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.
 - Games (`games`): Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.
@@ -426,6 +435,19 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Strategy (`strategy`) [within Geopolitics]: Winning against an opponent who adapts: in war, in business, and in games, from Sun Tzu to real-time strategy.
 - United States (`united-states`) [within Geography, Geopolitics]: America's place in technology and power: where the frontier labs and chips are, its founding ideas, and its race with China.
 - China (`china`) [within Geography, Geopolitics]: China in history and in technology: the Silk Roads and Sun Tzu, its share of patents and research, its race with the United States, and its language.
+- Semiotics (`semiotics`) [within Linguistics, Philosophy]: Signs and how they carry meaning: symbols, codes and interpretation, and the gap between a sign and what it stands for, in texts, myths and machines.
+- Internet culture (`internet-culture`) [within The open web]: What people make of the internet among themselves: forums and imageboards, memes, anonymous storytelling, and the subcultures that grow in them.
+- Personality types (`personality-types`) [within Psychology]: Typologies of character: Jung's types and cognitive functions, MBTI, the Enneagram, astrology, and what such maps capture and miss.
+- Mythology (`mythology`) [within Religion, Literature]: Myths and sacred stories as old maps of meaning: gods and heroes, creation and flood stories, and what they encode about the people who told them.
+- Lost civilisations (`lost-civilisations`) [within Antiquity, Mythology]: The fringe of ancient history: Ice Age civilisations, cataclysms, the precession of the equinoxes read into myths and monuments, and the argument with the accepted timeline.
+- Theology (`theology`) [within Religion, Philosophy]: Arguments about God: design and chance, faith and doubt, the death of God and its return, and how scripture was read.
+- Origins of life (`origins-of-life`) [within Life sciences, Evolution]: How life began and how its first complexity arose: the chemistry, the information in the cell, and the argument over chance, selection and design.
+- Game design (`game-design`) [within Games]: Making games: rules that are fun to play, worlds that reward attention, and games that model something larger than themselves.
+- Game theory (`game-theory`) [within Mathematics, Strategy]: The mathematics of decisions that depend on other people's decisions: deterrence, incentives, payoffs, and who carries the risk.
+- Anarchism (`anarchism`) [within Social reform, Philosophy]: Societies without rulers, imagined and attempted: mutual aid, self-government, and what anthropology and fiction say about living without a state.
+- Democracy (`democracy`) [within Policy]: Rule by the people in theory and practice: who holds power, how representation limits it, and experiments from pirate settlements to Swiss direct democracy.
+- Middle East (`middle-east`) [within Geography, Geopolitics]: The region between the Mediterranean and Iran: its cities, faiths and empires, and how its modern borders were drawn.
+- Pandemics (`pandemics`) [within Medicine, Risk]: Diseases that spread across the world and the responses to them: preparedness exercises, outbreaks real and fictional, and the politics that follow.
 
 ### Technologies
 
