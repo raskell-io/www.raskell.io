@@ -4,7 +4,7 @@ status = "live"
 status_label = "Playable"
 logo = "brands/rainbow-river.png"
 links = [ { name = "Play", url = "https://rainbowriver.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/rainbow-river" } ]
-topics = ["games", "webassembly", "rust"]
+topics = ["games", "webassembly", "rust", "game-design"]
 related = ["wasm-ad"]
 
 schema_type = "VideoGame"   # schema.org type for the JSON-LD on /projects/ and /apps/ (default SoftwareApplication)

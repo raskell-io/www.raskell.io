@@ -3,7 +3,7 @@ description = "A fantasy console standard with 32-bit handheld hardware: tile la
 status = "dev"
 logo = "brands/wasm-ad.png"
 links = [ { name = "Website", url = "https://wasmad.raskell.io" }, { name = "Spec", url = "https://wasmad.raskell.io/spec.html" }, { name = "GitHub", url = "https://github.com/raskell-io/wasm-ad" } ]
-topics = ["games", "webassembly", "developer-tooling", "rust"]
+topics = ["games", "webassembly", "developer-tooling", "rust", "game-design"]
 related = ["rainbow-river"]
 
 # Translations: any field here replaces the original in that language (description, title, tagline).

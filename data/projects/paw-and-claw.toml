@@ -4,7 +4,7 @@ status = "live"
 status_label = "Playable"
 logo = "brands/paw-and-claw.png"
 links = [ { name = "Play", url = "https://pawandclaw.raskell.io" }, { name = "GitHub", url = "https://github.com/raskell-io/paw-and-claw" } ]
-topics = ["games", "rust"]
+topics = ["games", "rust", "game-design", "strategy"]
 
 schema_type = "VideoGame"   # schema.org type for the JSON-LD on /projects/ and /apps/ (default SoftwareApplication)
 app_category = "GameApplication"   # schema.org applicationCategory (default DeveloperApplication)
