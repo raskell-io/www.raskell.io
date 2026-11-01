@@ -9,6 +9,8 @@ This writes, from content/ and data/:
   static/llms-full.txt         every published article, note, and talk in full, newest first, then the reading log
   static/{articles,notes,talks}/<slug>.md  one clean Markdown copy per page, linked from its page head;
                                reviews carry the reviewed work and the rating in their front matter
+  static/data/<slug>.md        a Markdown copy of each dataset page (content/data/), with the data file's URL,
+                               format, licence, and sources in its front matter (the file itself is static/data/<slug>.json)
   static/reading.json          the reading log as data: every work, its status, dates, rating, and review
   static/<lang>/llms.txt       per translation language: a short index, in that language, of the translated
                                articles and pages
@@ -16,7 +18,9 @@ This writes, from content/ and data/:
   static/<lang>/{articles,notes,talks}/<slug>.md  a Markdown copy of each translation, with its language
                                and the original it translates in the front matter
 
-Shortcodes become plain fences, internal links become absolute URLs, drafts are skipped.
+Shortcodes become plain fences (a figure shortcode becomes a line pointing to the page and its data), internal links
+become absolute URLs, drafts are skipped. `mise run llms -- --drafts` (or LLMS_DRAFTS=1) includes drafts, to preview
+them locally; CI never passes it.
 The outputs are build artefacts (gitignored); CI runs this before `zola build`.
 Standard library only, so it runs on the CI runner and on macOS's system Python alike.
 """
@@ -26,6 +30,7 @@ import html
 import json
 import os
 import re
+import sys
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 os.chdir(ROOT)
@@ -35,6 +40,7 @@ BASE = re.search(r'^base_url\s*=\s*"([^"]+)"', config, re.M).group(1).rstrip("/"
 AUTHOR = re.search(r'^author_full\s*=\s*"([^"]+)"', config, re.M).group(1)
 JOB = re.search(r'^job_title\s*=\s*"([^"]+)"', config, re.M).group(1)
 SITE_DESC = re.search(r'^description\s*=\s*"([^"]+)"', config, re.M).group(1)
+DRAFTS = "--drafts" in sys.argv[1:] or os.environ.get("LLMS_DRAFTS") == "1"
 
 
 def split_front_matter(text):
@@ -101,6 +107,16 @@ def plain_shortcodes(body):
     return "\n".join(out)
 
 
+def figure_shortcodes(body):
+    # {{ people_timeline(data="static/data/x.json") }} on a line of its own: the figure needs the HTML page, so
+    # the copy says so and points to the data file it is drawn from.
+    def one(m):
+        data = re.search(r'data\s*=\s*"static/([^"]+)"', m.group(2))
+        return "*[An interactive figure (%s) is drawn here on the HTML page%s.]*" % (
+            m.group(1).replace("_", " "), "; its data: %s/%s" % (BASE, data.group(1)) if data else "")
+    return re.sub(r"^[ \t]*\{\{\s*([a-z_]+)\((.*?)\)\s*\}\}[ \t]*$", one, body, flags=re.M)
+
+
 def slides_to_markdown(body):
     # Talks are slide decks written as HTML sections: keep the words, one heading per slide.
     text = re.sub(r"<(script|style)\b.*?</\1>", "", body, flags=re.S)
@@ -132,11 +148,22 @@ def load(section):
         if re.search(r"\.[a-z]{2}\.md$", path):
             continue
         fm, body = split_front_matter(open(path).read())
-        if re.search(r"^draft\s*=\s*true", fm, re.M):
+        if re.search(r"^draft\s*=\s*true", fm, re.M) and not DRAFTS:
             continue
         slug = fm_str(fm, "slug") or os.path.basename(path)[:-3]
         out.append(entry(section, slug, fm, body))
     out.sort(key=lambda a: a["date"], reverse=True)
+    return out
+
+
+def sources_of(fm):
+    # sources = [{ title = "...", author = "...", publisher = "...", year = 2025, isbn = "..." }, ...] (dataset pages)
+    m = re.search(r"^sources\s*=\s*\[(.*?)^\]", fm, re.M | re.S)
+    out = []
+    for t in re.findall(r"\{([^{}]*)\}", m.group(1)) if m else []:
+        src = dict(re.findall(r'(\w+)\s*=\s*"((?:[^"\\]|\\.)*)"', t))
+        src.update({k: v for k, v in re.findall(r"(\w+)\s*=\s*(\d+)\b", t)})
+        out.append(src)
     return out
 
 
@@ -155,16 +182,24 @@ def entry(section, slug, fm, body):
         "in_short": fm_list(fm, "in_short"),
         "event": fm_str(fm, "event"),
         "venue": fm_str(fm, "venue"),
+        "file": fm_str(fm, "file"),
+        "format": fm_str(fm, "format") or (fm_str(fm, "file").rsplit(".", 1)[-1].upper() if fm_str(fm, "file") else ""),
+        "licence": fm_str(fm, "licence"),
+        "licence_url": fm_str(fm, "licence_url"),
+        "sources": sources_of(fm),
         "section": section,
         "url": "%s/%s/%s/" % (BASE, section, slug),
         "md": "%s/%s/%s.md" % (BASE, section, slug),
-        "body": slides_to_markdown(body) if section == "talks" else plain_shortcodes(absolute_links(body.strip())),
+        "body": slides_to_markdown(body) if section == "talks" else figure_shortcodes(plain_shortcodes(absolute_links(body.strip()))),
     }
 
 
 articles = load("articles")
 notes = load("notes") if os.path.isdir("content/notes") else []
 talks = load("talks") if os.path.isdir("content/talks") else []
+datasets = load("data") if os.path.isdir("content/data") else []
+for d in datasets:
+    d["file_url"] = "%s/%s" % (BASE, d["file"]) if d["file"] else ""
 
 
 def parse_works():
@@ -219,6 +254,21 @@ def article_markdown(a):
         head.append('event: "%s"' % a["event"].replace('"', '\\"'))
     if a["venue"]:
         head.append('venue: "%s"' % a["venue"].replace('"', '\\"'))
+    if a.get("file_url"):
+        head.append("data: %s" % a["file_url"])
+        head.append("format: %s" % a["format"])
+    if a.get("licence"):
+        head.append('licence: "%s"' % a["licence"])
+        if a["licence_url"]:
+            head.append("licence_url: %s" % a["licence_url"])
+    if a.get("sources"):
+        head.append("sources:")
+        for src in a["sources"]:
+            bits = ['title: "%s"' % src.get("title", "").replace('"', '\\"')]
+            bits += ['%s: "%s"' % (k, src[k].replace('"', '\\"')) for k in ("author", "publisher", "year", "isbn", "url") if src.get(k)]
+            head.append("  - {%s}" % ", ".join(bits))
+    if a.get("reads") and a["section"] == "data":
+        head.append("reads: [%s]" % ", ".join(a["reads"]))
     head += ["---", "", "# " + a["title"], ""]
     if a["in_short"]:
         head += ["## " + a.get("in_short_label", "In short"), "", " ".join(a["in_short"]), ""]
@@ -226,7 +276,7 @@ def article_markdown(a):
     return "\n".join(head)
 
 
-for section, items in (("articles", articles), ("notes", notes), ("talks", talks)):
+for section, items in (("articles", articles), ("notes", notes), ("talks", talks), ("data", datasets)):
     os.makedirs("static/%s" % section, exist_ok=True)
     for old in glob.glob("static/%s/*.md" % section):
         os.remove(old)
@@ -293,7 +343,8 @@ lines = [
     "- [Reading](%s/reading/): what %s is reading, what is next, and what he has read, with reviews" % (BASE, AUTHOR.split()[0]),
     "- [Reviews](%s/categories/reviews/): reviews of books, papers, and long articles from the reading log" % BASE,
     "- [Talks](%s/talks/): slide decks from talks" % BASE,
-    "- [Search](%s/search/): everything on the site, including every external link the writing cites; `?q=` and `?type=link` (or article, review, note, talk, work, project, topic) work as URLs, e.g. %s/search/?q=zentinel" % (BASE, BASE),
+    "- [Data](%s/data/): datasets %s compiled, each a JSON file with a page on what is in it, where it comes from, and its licence" % (BASE, AUTHOR.split()[0]),
+    "- [Search](%s/search/): everything on the site, including every external link the writing cites; `?q=` and `?type=link` (or article, review, note, talk, dataset, work, project, topic) work as URLs, e.g. %s/search/?q=zentinel" % (BASE, BASE),
     "- [RSS feed](%s/rss.xml): full-text feed" % BASE,
     "",
 ]
@@ -317,6 +368,15 @@ if reviews:
 if talks:
     lines += ["## Talks", "", "Slide decks; each has a Markdown copy with the words of every slide.", ""]
     lines += ["- [%s](%s) (%s%s): %s" % (t["title"], t["md"], t["date"], ", " + t["event"] if t["event"] else "", t["description"]) for t in talks]
+    lines.append("")
+if datasets:
+    lines += ["## Data", "", "Datasets, listed at %s/data/. Each is one file under %s/data/ (the page URL with the file's extension "
+              "instead of the trailing slash) and a page that describes it; the page's Markdown copy carries the file's URL, format, "
+              "licence, and sources in its front matter." % (BASE, BASE), ""]
+    for d in datasets:
+        lines.append("- [%s](%s) (%s): %s Data: [%s](%s) (%s%s). Page: %s" % (
+            d["title"], d["md"], d["updated"] or d["date"], d["description"], d["file"].rsplit("/", 1)[-1], d["file_url"], d["format"],
+            ", " + d["licence"] if d["licence"] else "", d["url"]))
     lines.append("")
 if notes:
     lines += ["## Notes", "", "Short notes, a paragraph or a page each; some grow into articles.", ""]
@@ -523,10 +583,11 @@ lines += ["## For agents", "",
           "- [garden.json](%s/garden.json): the search index as data: every article, review, note, talk, work, project, topic, and cited link, with kinds, topics, and dates" % BASE,
           "- [links.json](%s/links.json): every external link the writing cites, with the pages that cite it and whether it is a reference" % BASE,
           "- [reading.json](%s/reading.json): the reading log, with status, dates, ratings, and reviews" % BASE,
-          "- Search as a URL: %s/search/?q={query}&type={article|review|note|talk|work|project|topic|link}" % BASE,
+          "- Datasets at %s/data/: each one a JSON file at %s/data/<slug>.json beside its page %s/data/<slug>/ (Markdown: %s/data/<slug>.md); see Data above" % (BASE, BASE, BASE, BASE),
+          "- Search as a URL: %s/search/?q={query}&type={article|review|note|talk|dataset|work|project|topic|link}" % BASE,
           "- [api-catalog](%s/.well-known/api-catalog): RFC 9727 discovery of the machine-readable files" % BASE,
           "- Feeds: [RSS](%s/rss.xml), [Atom](%s/atom.xml), [articles](%s/articles/rss.xml), [notes](%s/notes/rss.xml), [reviews](%s/categories/reviews/rss.xml), [talks](%s/talks/rss.xml)" % (BASE, BASE, BASE, BASE, BASE, BASE),
-          "- In the browser: WebMCP tools (search_site, list_reading, find_links, get_current_page, get_page_markdown, get_site_index, list_topics, get_connections, cite_current_page, open_page) register when an agent exposes `document.modelContext`.",
+          "- In the browser: WebMCP tools (search_site, list_reading, list_datasets, find_links, get_current_page, get_page_markdown, get_site_index, list_topics, get_connections, cite_current_page, open_page) register when an agent exposes `document.modelContext`.",
           "- No authentication, no rate limits ([auth.md](%s/.well-known/auth.md)). Crawling for search, answers, and training is welcome (robots.txt Content-Signal)." % BASE,
           ""]
 lines += ["## Optional", "",
@@ -536,9 +597,9 @@ lines += ["## Optional", "",
 open("static/llms.txt", "w").write("\n".join(lines))
 
 full = ["# Raskell: all writing in full", "",
-        "> Every published article, review, note, and talk on raskell.io by %s, newest first, then the reading log. "
+        "> Every published article, review, note, talk, and dataset page on raskell.io by %s, newest first, then the reading log. "
         "Generated %s. Index: %s/llms.txt" % (AUTHOR, datetime.date.today().isoformat(), BASE), ""]
-for a in sorted(articles + notes + talks, key=lambda a: a["date"], reverse=True):
+for a in sorted(articles + notes + talks + datasets, key=lambda a: a["date"], reverse=True):
     full += ["", "=" * 80, "", article_markdown(a)]
 if works:
     full += ["", "=" * 80, "", "# Reading log", "", "From %s/reading/ (as data: %s/reading.json)." % (BASE, BASE), ""]
@@ -555,5 +616,6 @@ if works:
         full.append("")
 open("static/llms-full.txt", "w").write("\n".join(full))
 
-print("llms: %d articles (%d reviews), %d notes, %d talks, %d works, %d cited links, %d series, %d translations -> static/llms.txt, llms-full.txt, reading.json, {articles,notes,talks}/*.md, <lang>/llms.txt"
-      % (len(articles), len(reviews), len(notes), len(talks), len(works), len(cites), len(series), sum(len(v) for v in TRANSLATED.values())))
+print("llms: %d articles (%d reviews), %d notes, %d talks, %d datasets, %d works, %d cited links, %d series, %d translations%s -> static/llms.txt, llms-full.txt, reading.json, {articles,notes,talks,data}/*.md, <lang>/llms.txt"
+      % (len(articles), len(reviews), len(notes), len(talks), len(datasets), len(works), len(cites), len(series), sum(len(v) for v in TRANSLATED.values()),
+         " (drafts included)" if DRAFTS else ""))

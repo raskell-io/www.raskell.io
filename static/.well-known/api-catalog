@@ -58,6 +58,11 @@
           "title": "The reading log: books and papers, status, dates, ratings, and reviews"
         },
         {
+          "href": "https://raskell.io/data/ai-people.json",
+          "type": "application/json",
+          "title": "Dataset: people of the AI labs, 1955 to 2026 (CC BY 4.0); described at https://raskell.io/data/ai-people/"
+        },
+        {
           "href": "https://raskell.io/sitemap.xml",
           "type": "application/xml",
           "title": "Sitemap"
@@ -78,6 +83,11 @@
           "href": "https://raskell.io/reading/",
           "type": "text/html",
           "title": "The reading log"
+        },
+        {
+          "href": "https://raskell.io/data/",
+          "type": "text/html",
+          "title": "Datasets: each a JSON file with a page on what is in it, where it comes from, and its licence"
         },
         {
           "href": "https://raskell.io/tags/",

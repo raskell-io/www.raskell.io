@@ -1,7 +1,7 @@
 # AGENTS.md: curating raskell.io
 
-raskell.io is Raffael Schneider's site and digital garden: articles, reviews, notes, talks, a reading
-log, projects, and a topic vocabulary, all connected on one map and in one search index, and published
+raskell.io is Raffael Schneider's site and digital garden: articles, reviews, notes, talks, datasets, a
+reading log, projects, and a topic vocabulary, all connected on one map and in one search index, and published
 again for machines (llms.txt, Markdown copies, JSON files, JSON-LD, WebMCP). This file is the contract
 for adding content so that it reaches every one of those places. It applies to any agent (Claude Code,
 Codex, Cursor, and others) and to people.
@@ -29,6 +29,7 @@ Every kind of content has exactly one source of truth.
 | Review | an article (or note) with `extra.review = "<work-id>"` and `categories = ["reviews"]` | the work in `data/reading.toml` with `status = "read"`, `finished`, `rating` | `mise run review <work-id>` scaffolds it |
 | Note | `content/notes/<slug>.md` | title, date, description, `tags` | no image, cover, or series; a paragraph or a page |
 | Talk | `content/talks/<slug>.md` with `template = "slide-deck.html"` | title, date, description, `extra.event`, `extra.venue`, `extra.event_url` | slides are HTML sections; assets in `static/talks/<slug>/`; add a card to `content/speaking.md` |
+| Dataset | `content/data/<slug>.md` beside its file `static/data/<slug>.json` | title, date, description (under 160 chars), `tags`, `extra.file` (`"data/<slug>.json"`, a path under `static/`), `extra.licence` | `extra.licence_url`, `extra.sources = [{ title, author, publisher, year, isbn, url }]`, `extra.reads`, `extra.counts` (top-level arrays to count), `updated` when the data changes; served at `/data/<slug>/` and `/data/<slug>.json`; listed on `/data/` |
 | Work (book, novel, paper, report, article, essay, journal) | `data/reading.toml`, one `[[works]]` block | id, title, author, kind, status | dates are months, `"YYYY-MM"`; `rating` 1 to 10 (half steps allowed) when reviewed; cover via `mise run reading-covers <id>` |
 | Project or app | `data/projects/<slug>.toml` | title, description, status, links, topics | listed by adding the slug to a tier in `content/projects/_index.md` or `content/apps/_index.md`; `schema_type` (default SoftwareApplication; VideoGame, Book, ResearchProject, Project) and `app_category` (default DeveloperApplication) set its JSON-LD |
 | Topic | `data/tags.toml` | name, kind (domain, concept, technology, site), description | `broader` links it into the graph; define it before using it; translate it in `data/tags.<code>.toml` |
@@ -48,14 +49,14 @@ Once registered, content reaches all of these without further work, unless the t
 |---|---|---|
 | Pages, section lists, topic pages, category pages, series pages | Zola | content files, taxonomies |
 | `/reading/` (shelves, covers, ratings, review links) | theme `reading.html` | `data/reading.toml`, reviews |
-| The map `/map/` and `/map.json` | theme `partials/graph_data.html`; `mise run map-json` after the build | `graph_sections` (articles, notes, talks), topics and `broader`, series, categories, works, projects, every in-text link between pages |
-| Search `/search/`, the `/` dialog, `/garden.json`, `/links.json` | theme `partials/garden_data.html` and `static/seijaku-search.js`; `mise run garden-json` after the build | pages, works, projects, topics, every external link in page bodies (links under a `## References` heading are marked as references) |
-| `/llms.txt`, `/llms-full.txt`, Markdown copies (`<url>.md` for articles, notes, talks), `/reading.json` | `mise run llms` before the build | content front matter and bodies, `data/reading.toml`, `data/tags.toml`, project tiers |
+| The map `/map/` and `/map.json` | theme `partials/graph_data.html`; `mise run map-json` after the build | `graph_sections` (articles, notes, talks, data), topics and `broader`, series, categories, works, projects, every in-text link between pages |
+| Search `/search/`, the `/` dialog, `/garden.json`, `/links.json` | theme `partials/garden_data.html` and `static/seijaku-search.js`; `mise run garden-json` after the build | pages (datasets with their file and licence), works, projects, topics, every external link in page bodies (links under a `## References` heading are marked as references) |
+| `/llms.txt`, `/llms-full.txt`, Markdown copies (`<url>.md` for articles, notes, talks, dataset pages), `/reading.json` | `mise run llms` before the build | content front matter and bodies, `data/reading.toml`, `data/tags.toml`, project tiers |
 | Feeds | Zola | `/rss.xml`, `/atom.xml`, `/articles/rss.xml`, `/notes/rss.xml`, `/talks/rss.xml`, `/categories/reviews/rss.xml`, plus one per topic and series |
 | Social cards `og/<path>.png` | `mise run og` after the build, template `og/card.html` | page title, description, date, cover; reviews get the book cover and rating |
-| JSON-LD | `templates/partials/head_extra.html` (talks: `templates/slide-deck.html`) | BlogPosting and Review (itemReviewed, reviewRating), DefinedTerm topics, every project as an entity on /projects/ and /apps/ (with the author, its site and repository), the reading log as an ItemList, Datasets for the data files, a SearchAction |
+| JSON-LD | `templates/partials/head_extra.html` (talks: `templates/slide-deck.html`) | BlogPosting and Review (itemReviewed, reviewRating), DefinedTerm topics, every project as an entity on /projects/ and /apps/ (with the author, its site and repository), the reading log as an ItemList, Datasets for the data files (map, search, and one per dataset page, with `isBasedOn` its sources and a DataDownload), a DataCatalog on `/data/`, a SearchAction |
 | Discovery files | static, hand-maintained | `static/robots.txt`, `static/ai.txt`, `static/.well-known/api-catalog`, `static/.well-known/auth.md` |
-| WebMCP tools for in-browser agents | `static/js/webmcp.js` | reads llms.txt, the Markdown copies, map.json, garden.json, reading.json |
+| WebMCP tools for in-browser agents | `static/js/webmcp.js` | reads llms.txt, the Markdown copies, map.json, garden.json (`list_datasets` too), reading.json |
 | Sitemap, IndexNow ping | Zola; CI on push | every page |
 
 CI order matters: `tags-check`, `security-txt`, `llms`, `topic-pages`, `zola build`, `map-json`, `garden-json`, `og`,
@@ -111,6 +112,22 @@ links. A note may later grow into an article; link the two.
 2. Add a card for it to `content/speaking.md`.
 3. It reaches /talks/, its feed, the map, search, llms.txt, and gets a Markdown copy of its slides.
 
+### A new dataset
+1. Put the file in `static/data/<slug>.json`. Give it a top-level `about` object (title, description, url, page,
+   author, licence, licence_url, updated, and a short description of the fields), so it still makes sense when it
+   travels without its page.
+2. Write `content/data/<slug>.md` (start with `draft = true`): title, date, description, tags, and under `[extra]`
+   `file = "data/<slug>.json"`, `licence`, `licence_url`, `sources`, and `reads` when it draws on the reading log.
+   The body says what a record is, what the fields mean, where each fact comes from, how it was compiled, and
+   where it is thin. Embed a figure with a shortcode if there is one; the Markdown copy turns it into a line that
+   points to the file.
+3. Link it from the writing that uses it, and link that writing back: both are edges on the map.
+4. `mise run tags-check` checks the fields, that the file exists, the topics, and the reads. Add the file to
+   `static/.well-known/api-catalog` (one `service-desc` entry per data file).
+5. It reaches `/data/` (record counts from the file's top-level arrays), the map as a dataset node, search under
+   Data, llms.txt (page and file URL), its Markdown copy at `/data/<slug>.md`, Dataset JSON-LD, the DataCatalog,
+   and WebMCP `list_datasets`. Remove the `draft` line to publish; the file itself is served from the start.
+
 ### A new work in the reading log
 Add a `[[works]]` block to `data/reading.toml` (fields documented at the top of the file), run
 `mise run reading-covers <id>`, look at the cover, and commit the image in `static/covers/reading/`.
@@ -152,7 +169,7 @@ A new kind (say, podcasts or bookmarks) has to be taught to every sink. Touch po
 English is the source language and lives at `/`; Simplified Chinese (`zh`) and Korean (`ko`) live under
 `/zh/` and `/ko/`. Every page the navigation, footer, and indexes link to exists in all three languages, so a
 reader never drops back into English chrome: home, about, projects, apps, invest and the investor briefs,
-speaking, start here, search, map, ontology, reading, licence, privacy, and the articles, notes, and talks indexes.
+speaking, start here, search, map, ontology, reading, licence, privacy, and the articles, notes, talks, and data indexes.
 Most of the writing (articles, reviews, notes, talks) is English only; translated lists show it in English
 inside the translated page, and swap in a translation where an article has one. Topics are translated:
 names, definitions, and a page per topic in every language.
@@ -216,7 +233,7 @@ names, definitions, and a page per topic in every language.
 
 ```sh
 mise run tags-check                                   # vocabulary, reading log, categories, reviews
-mise run llms                                         # llms.txt, llms-full.txt, Markdown copies, reading.json
+mise run llms                                         # llms.txt, llms-full.txt, Markdown copies, reading.json (-- --drafts to include drafts locally)
 mise run topic-pages                                  # the topic pages of every translated language
 mise exec zola@0.22.1 -- zola build                   # add --drafts to see drafts
 mise run map-json && mise run garden-json             # the data files, from the built pages
@@ -244,6 +261,6 @@ and its social card. Screenshots with headless Chrome (playwright-core) work wel
   (`../seijaku`), then commit and push this repo (CI checks the submodule out from GitHub).
 - This repo pushes to GitHub and Codeberg (two push URLs on `origin`).
 - Never commit `linkedin-*.md` drafts in the repo root.
-- Generated files are gitignored: `static/llms*.txt`, `static/{articles,notes}/`, `static/talks/*.md`,
+- Generated files are gitignored: `static/llms*.txt`, `static/{articles,notes}/`, `static/talks/*.md`, `static/data/*.md`,
   `static/reading.json`, `public/`. Committed by hand: covers in `static/covers/`, reading covers in
   `static/covers/reading/`.

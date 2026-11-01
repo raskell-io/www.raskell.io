@@ -21,10 +21,11 @@ kinds = [
 
 [[extra.groups]]
 title = "What I made, and how it is arranged"
-deck = "The talks and projects I made, and the series and categories that give the writing its order."
+deck = "The talks, datasets, and projects I made, and the series and categories that give the writing its order."
 color = "#efd093"
 kinds = [
   { key = "talk", name = "Talk", desc = "A conference talk as slides, with its event and venue.", where = "content/talks/" },
+  { key = "dataset", name = "Dataset", desc = "A data file I compiled, with a page that says what a record is, where it comes from, and its licence.", where = "content/data/" },
   { key = "project", name = "Project", desc = "Software, a site, or a study I build, with its status and its links.", where = "data/projects/" },
   { key = "series", name = "Series", desc = "A reading order across several articles, read part by part.", where = "taxonomies.series" },
   { key = "category", name = "Category", desc = "A form of writing rather than a subject. Today there is one: Reviews.", where = "categories_descriptions" },

@@ -21,10 +21,11 @@ kinds = [
 
 [[extra.groups]]
 title = "제가 만든 것, 그리고 그 배열"
-deck = "제가 만든 발표와 프로젝트, 그리고 글에 순서를 주는 시리즈와 분류입니다."
+deck = "제가 만든 발표, 데이터셋, 프로젝트, 그리고 글에 순서를 주는 시리즈와 분류입니다."
 color = "#efd093"
 kinds = [
   { key = "talk", name = "발표", desc = "행사와 장소가 함께 적힌 콘퍼런스 발표 슬라이드입니다.", where = "content/talks/" },
+  { key = "dataset", name = "데이터셋", desc = "제가 정리한 데이터 파일과, 각 레코드가 무엇인지, 어디에서 왔는지, 어떤 라이선스인지 설명하는 페이지입니다.", where = "content/data/" },
   { key = "project", name = "프로젝트", desc = "제가 만드는 소프트웨어, 사이트, 또는 연구로, 상태와 링크가 함께 있습니다.", where = "data/projects/" },
   { key = "series", name = "시리즈", desc = "여러 글에 걸친 읽기 순서로, 한 편씩 차례로 읽습니다.", where = "taxonomies.series" },
   { key = "category", name = "분류", desc = "주제가 아니라 글의 형식입니다. 지금은 서평 하나뿐입니다.", where = "categories_descriptions" },

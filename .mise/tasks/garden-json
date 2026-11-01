@@ -2,7 +2,8 @@
 #MISE description="After `zola build`: publish the search index as public/garden.json and the cited links as public/links.json"
 """
 The search page carries the whole garden as inline JSON (the theme's partials/garden_data.html): every
-article, review, note, talk, work from the reading log, project, topic, and external link the pages cite.
+article, review, note, talk, dataset (with its data file and licence), work from the reading log, project, topic, and
+external link the pages cite.
 This publishes it for agents and answer engines that do not run the page:
 
   public/garden.json   every item, with its kind, title, URL, description, date, topics, and categories
@@ -24,7 +25,7 @@ html = open(os.path.join(PUBLIC, "search", "index.html"), encoding="utf-8").read
 rows = [r for r in json.loads(re.search(r'id="?garden-data"?[^>]*>(.*?)</script>', html, re.S).group(1))["items"] if r]
 now = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
 LICENSE = "https://creativecommons.org/licenses/by/4.0/"
-KINDS = {"article": "article", "note": "note", "talk": "talk", "work": "work", "project": "project", "topic": "topic"}
+KINDS = {"article": "article", "note": "note", "talk": "talk", "dataset": "dataset", "work": "work", "project": "project", "topic": "topic"}
 
 items, seen, links = [], set(), {}
 for r in rows:
@@ -46,6 +47,8 @@ for r in rows:
     kind = "review" if r["k"] == "article" and "reviews" in r.get("c", []) else KINDS[r["k"]]
     item = {"kind": kind, "title": r["t"], "url": r["u"], "description": r.get("d") or None, "date": r.get("y") or None,
             "topics": r.get("g") or None, "categories": r.get("c") or None, "meta": r.get("m") or None}
+    if r["k"] == "dataset":   # its data file and licence (x, l, lu in the inline index)
+        item.update(file=r.get("x") or None, licence=r.get("l") or None, licence_url=r.get("lu") or None)
     items.append({k: v for k, v in item.items() if v})
 
 link_list = sorted(links.values(), key=lambda l: (-len(l["cited_in"]), l["url"]))
@@ -61,13 +64,14 @@ counts["link"] = len(link_list)
 garden = {
     "source": "https://raskell.io/search/",
     "generated": now,
-    "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, works from the reading log, "
+    "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, "
                    "projects, topics, and every external link the writing cites. The same index the site's search uses.",
     "license": LICENSE,
     "counts": counts,
     "search_url": "https://raskell.io/search/?q={query}&type={kind}",
     "related": {"graph": "https://raskell.io/map.json", "links": "https://raskell.io/links.json",
-                "reading": "https://raskell.io/reading.json", "llms": "https://raskell.io/llms.txt"},
+                "reading": "https://raskell.io/reading.json", "llms": "https://raskell.io/llms.txt",
+                "data": "https://raskell.io/data/"},
     "items": items + [{"kind": "link", "title": l["title"], "url": l["url"], "domain": l["domain"], "reference": l["reference"],
                        "cited_in": l["cited_in"]} for l in link_list],
 }

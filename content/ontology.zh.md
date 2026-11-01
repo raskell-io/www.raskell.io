@@ -21,10 +21,11 @@ kinds = [
 
 [[extra.groups]]
 title = "我做的东西，以及它们如何编排"
-deck = "我做的演讲和项目，以及给文章排出顺序的系列和分类。"
+deck = "我做的演讲、数据集和项目，以及给文章排出顺序的系列和分类。"
 color = "#efd093"
 kinds = [
   { key = "talk", name = "演讲", desc = "一场会议演讲的幻灯片，附有活动和场地。", where = "content/talks/" },
+  { key = "dataset", name = "数据集", desc = "我整理的一份数据文件，附有一个页面，说明每条记录是什么、来自哪里以及它的许可。", where = "content/data/" },
   { key = "project", name = "项目", desc = "我构建的软件、网站或研究，附有状态和链接。", where = "data/projects/" },
   { key = "series", name = "系列", desc = "跨越几篇文章的阅读顺序，一部分接一部分地读。", where = "taxonomies.series" },
   { key = "category", name = "分类", desc = "一种写作形式，而不是一个学科。目前只有一个：书评。", where = "categories_descriptions" },

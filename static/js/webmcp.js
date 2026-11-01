@@ -2,7 +2,7 @@
 // Loaded by partials/body_end.html only when document.modelContext (or the older navigator.modelContext)
 // exists, so ordinary visitors never download it. Everything here reads the site's own public files:
 // llms.txt, the per-page Markdown copies, map.json, garden.json (the search index: articles, reviews,
-// notes, talks, works, projects, topics, cited links), reading.json, and Zola's full-text index for page
+// notes, talks, datasets, works, projects, topics, cited links), reading.json, and Zola's full-text index for page
 // bodies. Read-only except open_page.
 (function () {
   "use strict";
@@ -13,7 +13,7 @@
   function collapse(s) { return String(s || "").replace(/\s+/g, " ").trim(); }
   function meta(name) { var m = document.querySelector('meta[name="' + name + '"]'); return m ? m.getAttribute("content") : null; }
   function sameSite(u) { var url = new URL(u, ORIGIN); if (url.origin !== ORIGIN) { throw new Error("Only raskell.io URLs"); } return url; }
-  function mdUrl(u) { var url = sameSite(u); var m = url.pathname.match(/^\/((?:[a-z]{2}\/)?)(articles|notes|talks)\/([^/]+)\/?$/); return m ? ORIGIN + "/" + m[1] + m[2] + "/" + m[3] + ".md" : null; }
+  function mdUrl(u) { var url = sameSite(u); var m = url.pathname.match(/^\/((?:[a-z]{2}\/)?)(articles|notes|talks|data)\/([^/]+)\/?$/); if (m && m[2] === "data" && m[1]) { return null; } return m ? ORIGIN + "/" + m[1] + m[2] + "/" + m[3] + ".md" : null; }
   function json(path) { return fetch(ORIGIN + path).then(function (r) { if (!r.ok) { throw new Error(path + " " + r.status); } return r.json(); }); }
   // The garden index: garden.json when published, else the inline index on the search page.
   var gardenP = null;
@@ -24,7 +24,7 @@
         if (!m) { throw new Error("no search index"); }
         var rows = JSON.parse(m[1]).items.filter(Boolean), links = {}, items = [];
         rows.forEach(function (r) {
-          if (r.k !== "link") { items.push({ kind: r.k === "article" && (r.c || []).indexOf("reviews") >= 0 ? "review" : r.k, title: r.t, url: r.u, description: r.d, date: r.y, topics: r.g, meta: r.m }); return; }
+          if (r.k !== "link") { items.push({ kind: r.k === "article" && (r.c || []).indexOf("reviews") >= 0 ? "review" : r.k, title: r.t, url: r.u, description: r.d, date: r.y, topics: r.g, meta: r.m, file: r.x, licence: r.l, licence_url: r.lu }); return; }
           var key = r.u.replace(/\/+$/, ""), l = links[key] || (links[key] = { kind: "link", title: "", url: r.u, reference: false, cited_in: [] });
           var t = (r.t || "").trim().split(/\n\s*\n|\n {4,}/)[0].replace(/\s+/g, " ").trim();
           if (t && !/^https?:/.test(t) && t.length > l.title.length) { l.title = t; }
@@ -74,10 +74,10 @@
     {
       name: "search_site",
       title: "Search raskell.io",
-      description: "Search everything on raskell.io: articles, reviews, notes, talks, books and papers from the reading log, projects, topics, and every external link the writing cites. Matches titles, descriptions, topics, and authors, plus the full text of pages. Filter with kind. Read a page with get_page_markdown.",
+      description: "Search everything on raskell.io: articles, reviews, notes, talks, datasets, books and papers from the reading log, projects, topics, and every external link the writing cites. Matches titles, descriptions, topics, and authors, plus the full text of pages. Filter with kind. Read a page with get_page_markdown.",
       inputSchema: { type: "object", properties: {
         query: { type: "string", minLength: 1, description: "Search terms, e.g. 'model gateway' or 'Berners-Lee'" },
-        kind: { type: "string", enum: ["any", "article", "review", "note", "talk", "work", "project", "topic", "link"], description: "Only this kind (default any). work = a book or paper from the reading log; link = an external source the writing cites." },
+        kind: { type: "string", enum: ["any", "article", "review", "note", "talk", "dataset", "work", "project", "topic", "link"], description: "Only this kind (default any). dataset = a data file with its page (list_datasets gives the file URLs); work = a book or paper from the reading log; link = an external source the writing cites." },
         limit: { type: "integer", minimum: 1, maximum: 50, description: "Max results (default 10)" } }, required: ["query"], additionalProperties: false },
       annotations: { readOnlyHint: true },
       execute: function (input) {
@@ -87,7 +87,7 @@
           var urls = {};
           items.forEach(function (i) { urls[i.url] = 1; });
           // Pages whose body matches but whose title and description do not.
-          if (r[1] && (!kind || /^(article|review|note|talk)$/.test(kind))) {
+          if (r[1] && (!kind || /^(article|review|note|talk|dataset)$/.test(kind))) {
             r[1].search(input.query, { fields: { title: { boost: 2 }, description: { boost: 1.5 }, body: { boost: 1 } }, bool: "AND", expand: true }).forEach(function (h) {
               if (urls[h.ref]) { return; }
               var page = r[0].items.filter(function (i) { return i.url === h.ref; })[0];
@@ -99,6 +99,7 @@
             if (i.date) { out.date = i.date; }
             if (i.meta) { out.meta = i.meta; }
             if (i.kind === "link") { out.cited_in = i.cited_in; out.reference = !!i.reference; }
+            if (i.kind === "dataset" && i.file) { out.file = i.file; }
             var md = /^https?:/.test(i.url) && i.url.indexOf(ORIGIN) === 0 ? mdUrl(i.url) : null;
             if (md) { out.markdown = md; }
             return out;
@@ -116,6 +117,20 @@
         return json("/reading.json").then(function (d) {
           var st = input.status && input.status !== "any" ? input.status : null;
           return { source: d.source, works: d.works.filter(function (w) { return !st || w.status === st; }) };
+        });
+      }
+    },
+    {
+      name: "list_datasets",
+      title: "List the datasets",
+      description: "The datasets published on raskell.io (listed at /data/): each with its title, description, the page that describes it, the URL of its data file (JSON) to download, and its licence. Read a dataset's page as Markdown with get_page_markdown.",
+      inputSchema: { type: "object", properties: {}, additionalProperties: false },
+      annotations: { readOnlyHint: true },
+      execute: function () {
+        return garden().then(function (g) {
+          return { index: ORIGIN + "/data/", datasets: g.items.filter(function (i) { return i.kind === "dataset"; }).map(function (i) {
+            return { title: i.title, description: i.description || null, page: i.url, markdown: mdUrl(i.url), file: i.file || null, licence: i.licence || null, licence_url: i.licence_url || null, date: i.date || null };
+          }) };
         });
       }
     },
@@ -140,7 +155,7 @@
     {
       name: "get_current_page",
       title: "Describe the current page",
-      description: "Metadata of the page open in the browser: URL, title, description, kind (article, note, topic, project list, ...), topics, dates, the Markdown copy URL, the heading outline, its language, and its translations (other languages of the same page).",
+      description: "Metadata of the page open in the browser: URL, title, description, kind (article, note, dataset, topic, project list, ...), topics, dates, the Markdown copy URL (and for a dataset the URL of its data file), the heading outline, its language, and its translations (other languages of the same page).",
       inputSchema: { type: "object", properties: {}, additionalProperties: false },
       annotations: { readOnlyHint: true },
       execute: function () {
@@ -148,13 +163,14 @@
         // Translations live under a language prefix (/zh/about/); the kind is read from the path without it.
         var lang = document.documentElement.lang || "en";
         var path = location.pathname.replace(/^\/(zh|ko)\//, "/"), review = !!document.querySelector('a[href*="/categories/reviews/"]') && /^\/articles\//.test(path);
-        var kind = /^\/articles\/[^/]+\/$/.test(path) ? (review ? "review" : "article") : /^\/notes\/[^/]+\/$/.test(path) ? "note" : /^\/talks\/[^/]+\/$/.test(path) ? "talk"
+        var kind = /^\/articles\/[^/]+\/$/.test(path) ? (review ? "review" : "article") : /^\/notes\/[^/]+\/$/.test(path) ? "note" : /^\/talks\/[^/]+\/$/.test(path) ? "talk" : /^\/data\/[^/]+\/$/.test(path) ? "dataset" : path === "/data/" ? "data index"
           : /^\/tags\/[^/]+\/$/.test(path) ? "topic" : /^\/categories\/[^/]+\/$/.test(path) ? "category" : path === "/reading/" ? "reading log" : path === "/search/" ? "search" : path === "/map/" ? "map" : "page";
         var times = Array.prototype.map.call(document.querySelectorAll(".pagehead time, table.meta time"), function (t) { return t.getAttribute("datetime"); });
         return {
           url: location.href, title: document.title, kind: kind,
           description: meta("description"), summary: collapse((document.querySelector("[data-ai-summary]") || {}).textContent) || null,
           topics: kw ? kw.split(/,\s*/) : [], dates: times, markdown: mdUrl(location.href),
+          data: (function () { var l = document.querySelector('link[rel="alternate"][type="application/json"][title$="(the data)"]'); return l ? l.href : null; })(),
           headings: Array.prototype.map.call(document.querySelectorAll(".prose h2, .prose h3"), function (h) { return { level: h.tagName.toLowerCase(), text: collapse(h.textContent), id: h.id || null }; }),
           language: lang,
           translations: Array.prototype.filter.call(document.querySelectorAll('link[rel="alternate"][hreflang]:not([type])'), function (l) { return l.hreflang !== "x-default" && l.hreflang !== lang; }).map(function (l) { return { language: l.hreflang, url: l.href }; })
@@ -164,12 +180,12 @@
     {
       name: "get_page_markdown",
       title: "Read a page as Markdown",
-      description: "Full text of an article, review, note, or talk on raskell.io as clean Markdown with front matter (title, date, topics, URL; for reviews the reviewed work and the rating). Defaults to the current page.",
+      description: "Full text of an article, review, note, talk, or dataset page on raskell.io as clean Markdown with front matter (title, date, topics, URL; for reviews the reviewed work and the rating). Defaults to the current page.",
       inputSchema: { type: "object", properties: { url: { type: "string", description: "A raskell.io article or note URL; omit for the current page" } }, additionalProperties: false },
       annotations: { readOnlyHint: true },
       execute: function (input) {
         var u = mdUrl(input.url || location.href);
-        if (!u) { return { error: "Only articles, notes, and talks have Markdown copies. Use get_current_page, list_reading for the reading log, or llms.txt for the site index.", llms: ORIGIN + "/llms.txt" }; }
+        if (!u) { return { error: "Only articles, notes, talks, and dataset pages have Markdown copies. Use get_current_page, list_reading for the reading log, or llms.txt for the site index.", llms: ORIGIN + "/llms.txt" }; }
         return fetch(u).then(function (r) { if (!r.ok) { throw new Error(u + " " + r.status); } return r.text(); }).then(function (t) { return { url: u, markdown: t }; });
       }
     },

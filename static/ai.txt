@@ -20,9 +20,12 @@ Allow: AI training and indexing
 # Search index (everything, including every link the writing cites): https://raskell.io/garden.json
 # Every cited source, with the pages citing it: https://raskell.io/links.json
 # Reading log (books and papers, status, ratings, reviews): https://raskell.io/reading.json
-# Search as a URL: https://raskell.io/search/?q={query}&type={article|review|note|talk|work|project|topic|link}
+# Datasets: https://raskell.io/data/ lists them; each is a JSON file at https://raskell.io/data/<slug>.json
+#   beside its page https://raskell.io/data/<slug>/, under the licence named on the page (CC BY 4.0 so far).
+#   Cite a dataset as: Raffael Schneider, "Dataset title", raskell.io, URL.
+# Search as a URL: https://raskell.io/search/?q={query}&type={article|review|note|talk|dataset|work|project|topic|link}
 # Discovery for agents (RFC 9727): https://raskell.io/.well-known/api-catalog
-# Each article, note, and talk as Markdown: the page URL with .md instead of the trailing slash
+# Each article, note, talk, and dataset page as Markdown: the page URL with .md instead of the trailing slash
 # Languages: English, plus Simplified Chinese (/zh/) and Korean (/ko/) for the site's pages and a growing set of articles.
 #   Each translation links its other languages with hreflang and names its original in JSON-LD (translationOfWork).
 #   Translated articles have Markdown copies too (/zh/articles/<slug>.md). Indexes per language:

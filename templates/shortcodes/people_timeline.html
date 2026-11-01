@@ -1,0 +1,24 @@
+{#- People timeline: {{ people_timeline(data="static/data/ai-people.json") }}
+    Draws one lane per person (static/js/people-timeline.js) from a JSON file (static/data/, served at /data/); the shape is
+    documented at the top of that script. Without JavaScript the list below is the content: every
+    person with their roles, in order, and the sources. -#}
+{%- set d = load_data(path=data) -%}
+<figure class="ptl-figure">
+  <div class="ptl" data-ptl hidden></div>
+  <div class="ptl-fallback">
+    <ul>
+    {%- for p in d.people %}
+      <li><strong>{{ p.name }}</strong>{% if p.handle %} (<a href="https://x.com/{{ p.handle }}">@{{ p.handle }}</a>){% endif %}{% if p.summary %}: {{ p.summary }}{% endif %}
+        <ul>
+        {%- for s in p.stints %}
+          <li>{{ s.start }} to {% if s.end %}{{ s.end }}{% else %}now{% endif %}: {% if s.role %}{{ s.role }}, {% endif %}{% if s.org in d.orgs %}{{ d.orgs[s.org].name }}{% else %}{{ s.org }}{% endif %}{% if s.left %}. {{ s.left }}{% endif %}</li>
+        {%- endfor %}
+        </ul>
+      </li>
+    {%- endfor %}
+    </ul>
+  </div>
+  <script type="application/json" data-people-timeline>{{ d | json_encode | safe }}</script>
+  <figcaption class="ptl-caption">{% if caption %}{{ caption }} {% endif %}{% if d.about %}The data: <a href="{{ d.about.url | replace(from="https://raskell.io", to="") }}">{{ d.about.url | replace(from="https://raskell.io", to="") }}</a> ({{ d.about.licence }}).{% endif %}</figcaption>
+</figure>
+<script src="{{ get_url(path='js/people-timeline.js', cachebust=true) | safe }}" defer></script>

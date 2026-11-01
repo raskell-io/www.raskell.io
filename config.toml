@@ -98,7 +98,7 @@ languages = [
 ]
 search = "@/search.md"
 reading_data = "data/reading.toml"
-graph_sections = ["articles", "notes", "talks"]
+graph_sections = ["articles", "notes", "talks", "data"]
 tag_data = "data/tags.toml"
 nav = [
   { name = "Articles", url = "@/articles/_index.md" },
@@ -117,6 +117,7 @@ explore = [
   { name = "Reading", url = "@/reading.md" },
   { name = "Reviews", url = "/categories/reviews/" },
   { name = "Talks", url = "@/talks/_index.md" },
+  { name = "Data", url = "@/data/_index.md" },
   { name = "Series", url = "/series" },
   { name = "The Handbook", url = "/series/the-agent-platform-handbook/" },
 ]
@@ -155,6 +156,7 @@ footer_columns = [
       { name = "Topics", url = "/tags" },
       { name = "Series", url = "/series" },
       { name = "Reading", url = "@/reading.md" },
+      { name = "Data", url = "@/data/_index.md" },
       { name = "Search", url = "@/search.md" },
     ] },
   ],
@@ -287,6 +289,21 @@ Raskell 是我在网络上的一角，也是通往我所构建的一切的入口
 "Reading" = "阅读"
 "Reviews" = "书评"
 "Talks" = "演讲稿"
+"Data" = "数据"
+"Dataset" = "数据集"
+"Datasets" = "数据集"
+"1 dataset" = "1 个数据集"
+"{n} datasets" = "{n} 个数据集"
+"No datasets yet." = "还没有数据集。"
+"About the data" = "关于这份数据"
+"Format" = "格式"
+"Licence" = "许可"
+"Records" = "记录"
+"Sources" = "来源"
+"File" = "文件"
+"Download" = "下载"
+"Open the raw file" = "打开原始文件"
+"updated" = "更新于"
 "Search" = "搜索"
 "Series" = "系列"
 "The Handbook" = "手册"
@@ -580,6 +597,21 @@ Raskell은 웹 위의 제 작은 공간이자, 제가 만드는 모든 것으로
 "Reading" = "독서"
 "Reviews" = "서평"
 "Talks" = "발표 자료"
+"Data" = "데이터"
+"Dataset" = "데이터셋"
+"Datasets" = "데이터셋"
+"1 dataset" = "데이터셋 1개"
+"{n} datasets" = "데이터셋 {n}개"
+"No datasets yet." = "아직 데이터셋이 없습니다."
+"About the data" = "데이터 설명"
+"Format" = "형식"
+"Licence" = "라이선스"
+"Records" = "레코드"
+"Sources" = "출처"
+"File" = "파일"
+"Download" = "다운로드"
+"Open the raw file" = "원본 파일 열기"
+"updated" = "업데이트"
 "Search" = "검색"
 "Series" = "시리즈"
 "The Handbook" = "핸드북"

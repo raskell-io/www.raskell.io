@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-#MISE description="Check that every tag in content/, project topics, and the reading log is defined in data/tags.toml; validate the reading log"
+#MISE description="Check that every tag in content/, project topics, and the reading log is defined in data/tags.toml; validate the reading log and the datasets"
 """
 The topic vocabulary in data/tags.toml is the source of truth for tags. This reports:
   - tags used in content/ or data/projects/*.toml that the vocabulary does not define (an error),
   - broader references that point at undefined tags (an error),
   - vocabulary entries nothing uses yet (a note, not an error: the graph still shows them).
+  - dataset pages (content/data/) without title, date, description, tags, extra.file, or extra.licence, or whose
+    file is missing under static/ (an error); their reads must name works in the reading log like any page's.
 Exit status 1 when there is an error, so CI or a pre-commit hook can use it.
   - translations of the vocabulary (data/tags.<lang>.toml) with slugs it does not define (an error),
     and topics they do not translate yet (a note).
@@ -94,6 +96,27 @@ for path in glob.glob("content/**/*.md", recursive=True):
     if not translation and reviews != ("reviews" in cats) and not re.search(r"^draft\s*=\s*true", text, re.M):
         errors += 1
         print("%s: %s" % (path, "reviews a work but is not in the reviews category" if reviews else "in the reviews category without extra.review"))
+
+# Datasets (content/data/<slug>.md): title, date, description (under 160 characters), topics, the data file under
+# static/ (extra.file), and its licence (extra.licence). Topics and reads are checked with everything else above.
+for path in sorted(glob.glob("content/data/*.md")):
+    if path.endswith("_index.md") or re.search(r"\.[a-z]{2}\.md$", path):
+        continue
+    m = re.match(r"\+\+\+\n(.*?)\n\+\+\+", open(path).read(), re.S)
+    fm = m.group(1) if m else ""
+    field = lambda k: (re.search(r'^%s\s*=\s*"((?:[^"\\]|\\.)*)"' % k, fm, re.M) or [None, None])[1]
+    problems = ["missing %s" % k for k in ("title", "description", "file", "licence") if not field(k)]
+    if not re.search(r"^date\s*=\s*\d{4}-\d{2}-\d{2}", fm, re.M):
+        problems.append("missing date")
+    if not re.search(r'^tags\s*=\s*\[\s*"', fm, re.M):
+        problems.append("missing tags")
+    if field("description") and len(field("description")) >= 160:
+        problems.append("description is %d characters (keep it under 160)" % len(field("description")))
+    if field("file") and not os.path.isfile(os.path.join("static", field("file"))):
+        problems.append("file static/%s does not exist" % field("file"))
+    for p in problems:
+        errors += 1
+        print("dataset %s: %s" % (path, p))
 
 for t, where in sorted(used.items()):
     if t not in vocab:
