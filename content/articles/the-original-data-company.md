@@ -1,7 +1,6 @@
 +++
 title = "The Original Data Company"
 date = 2026-11-01
-draft = true
 description = "Insurers say they are not tech companies. Yet an insurer sells a prediction wrapped in a promise, and has since a 1693 life table: the original data company."
 
 [taxonomies]
@@ -9,6 +8,8 @@ tags = ["insurance", "finance", "cryptocurrency", "trust", "machine-learning", "
 
 [extra]
 author = "Raffael"
+image = "the-original-data-company.avif"
+cover = "covers/the-original-data-company.avif"
 reads = ["debt", "the-black-swan", "antifragile", "skin-in-the-game", "geld-aus-dem-nichts", "wer-regiert-das-geld"]
 in_short = [
   "Insurers and banks that say they are not tech companies misunderstand their own product: an insurer is a technology company that happens to hold a balance sheet, and the oldest data company there is.",

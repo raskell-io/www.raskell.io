@@ -1,11 +1,12 @@
 +++
 title = "최초의 데이터 기업"
 date = 2026-11-01
-draft = true
 description = "보험사는 자신들이 기술 기업이 아니라고 말합니다. 그러나 보험사는 약속으로 감싼 예측을 팔며, 1693년의 생명표 이래로 줄곧 그래 왔습니다. 최초의 데이터 기업입니다."
 
 [extra]
 author = "Raffael"
+image = "the-original-data-company.avif"
+cover = "covers/the-original-data-company.avif"
 reads = ["debt", "the-black-swan", "antifragile", "skin-in-the-game", "geld-aus-dem-nichts", "wer-regiert-das-geld"]
 in_short = [
   "자신들이 기술 기업이 아니라고 말하는 보험사와 은행은 자기 상품을 오해하고 있습니다. 보험사는 어쩌다 대차대조표를 가진 기술 기업이며, 현존하는 가장 오래된 데이터 기업입니다.",

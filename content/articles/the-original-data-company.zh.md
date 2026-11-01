@@ -1,11 +1,12 @@
 +++
 title = "最早的数据公司"
 date = 2026-11-01
-draft = true
 description = "保险公司说自己不是科技公司。可保险公司卖的是一份包裹在承诺里的预测，从 1693 年的一张生命表起就是如此：它是最早的数据公司。"
 
 [extra]
 author = "Raffael"
+image = "the-original-data-company.avif"
+cover = "covers/the-original-data-company.avif"
 reads = ["debt", "the-black-swan", "antifragile", "skin-in-the-game", "geld-aus-dem-nichts", "wer-regiert-das-geld"]
 in_short = [
   "说自己不是科技公司的保险公司和银行，误解了自己的产品：保险公司是一家碰巧持有资产负债表的科技公司，也是现存最古老的数据公司。",
