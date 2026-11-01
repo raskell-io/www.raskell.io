@@ -187,6 +187,11 @@ kind = "domain"
 description = "The real-time strategy game, Brood War above all: hidden information, thousands of decisions a minute, and the next benchmark after board games."
 broader = ["games", "strategy"]
 
+[psychology]
+name = "Psychology"
+kind = "domain"
+description = "How minds work and what people make of their lives: personality and types, the unconscious and its symbols, meaning, order and chaos."
+
 # Concepts -----------------------------------------------------------------
 
 [agents]
