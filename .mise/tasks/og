@@ -9,8 +9,13 @@ skipped). Nothing is committed: the cards are built in CI like llms.txt and map.
 Needs Chrome or Chromium; set CHROME to its path if it is not found.
   mise run og                 all pages
   mise run og articles/foo    one page (path below public/)
+
+With OG_CACHE set to a directory, a card is only drawn when its fingerprint is new: a hash of the card data, the
+cover image, the template, the logo and the fonts. Unchanged cards are copied from the cache, and the cache is
+pruned to the cards of this build. CI keeps the directory between runs (actions/cache).
 """
 import concurrent.futures
+import hashlib
 import html
 import json
 import os
@@ -65,20 +70,43 @@ def main():
     mark = open(os.path.join(ROOT, "static", "images", "raskell-mark.svg"), encoding="utf-8").read()
     mark = mark.replace("__id__", "og-mark")
     work = tempfile.mkdtemp(prefix="og-")
-    jobs = []
+    cache = os.environ.get("OG_CACHE")
+    if cache:
+        os.makedirs(cache, exist_ok=True)
+    # What every card depends on besides its own data: the template, the logo, and the fonts it loads.
+    base = hashlib.sha256(template.encode() + mark.encode())
+    fonts = os.path.join(PUBLIC, "fonts")
+    for f in sorted(os.listdir(fonts)) if os.path.isdir(fonts) else []:
+        base.update(f.encode() + open(os.path.join(fonts, f), "rb").read())
+    jobs, cached, keep = [], 0, set()
     for name, card in pages(only):
         if card.get("cover"):
             card["cover"] = local(card["cover"])
+        dest = os.path.join(OUT, name + ".png")
+        fp = None
+        if cache:
+            h = base.copy()
+            h.update(json.dumps(card, sort_keys=True, ensure_ascii=False).encode())
+            cover_file = card["cover"][len("file://"):] if card.get("cover") else ""
+            if cover_file and os.path.exists(cover_file):
+                h.update(open(cover_file, "rb").read())
+            fp = h.hexdigest()
+            keep.add(fp + ".png")
+            hit = os.path.join(cache, fp + ".png")
+            if os.path.exists(hit):
+                os.makedirs(os.path.dirname(dest), exist_ok=True)
+                shutil.copyfile(hit, dest)
+                cached += 1
+                continue
         page = (template.replace("__PUBLIC__", "file://" + PUBLIC).replace("__MARK__", mark)
                 .replace("__CARD__", json.dumps(card).replace("</", "<\\/")))
         src = os.path.join(work, name.replace("/", "__") + ".html")
         open(src, "w", encoding="utf-8").write(page)
-        dest = os.path.join(OUT, name + ".png")
         os.makedirs(os.path.dirname(dest), exist_ok=True)
-        jobs.append((src, dest))
+        jobs.append((src, dest, fp))
 
     def shoot(job):
-        src, dest = job
+        src, dest, fp = job
         profile = tempfile.mkdtemp(dir=work)
         # Ubuntu 24.04 runners block the user namespaces Chrome's sandbox needs; the pages are our own local files.
         sandbox = ["--no-sandbox"] if sys.platform.startswith("linux") else []
@@ -87,12 +115,19 @@ def main():
                         "--user-data-dir=" + profile, "--window-size=1200,630", "--virtual-time-budget=4000",
                         "--screenshot=" + dest, "file://" + src],
                        check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=60)
+        if cache and fp:
+            shutil.copyfile(dest, os.path.join(cache, fp + ".png"))
         return dest
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=min(8, os.cpu_count() or 2)) as pool:
         done = list(pool.map(shoot, jobs))
     shutil.rmtree(work, ignore_errors=True)
-    print("og: %d cards in public/og/" % len(done))
+    # Prune: the cache holds exactly this build's cards (only after a full run, not a single page).
+    if cache and not only:
+        for f in os.listdir(cache):
+            if f.endswith(".png") and f not in keep:
+                os.remove(os.path.join(cache, f))
+    print("og: %d cards in public/og/ (%d drawn, %d from the cache)" % (len(done) + cached, len(done), cached))
 
 
 if __name__ == "__main__":

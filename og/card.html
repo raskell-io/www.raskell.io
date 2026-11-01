@@ -34,6 +34,18 @@
   .eyebrow { font-family: "Card Mono", monospace; font-size: 22px; color: var(--muted); letter-spacing: 0.01em; }
   .eyebrow:empty { display: none; }
   h1 { font-weight: 450; letter-spacing: -0.035em; line-height: 1.04; font-size: 80px; text-wrap: balance; }
+  /* Chinese and Korean cards (card.lang): the theme fonts carry no CJK glyphs, so name CJK fonts after them, the
+     ones CI installs (fonts-noto-cjk) first, then the Mac's. Latin stays in Geist. CJK titles keep normal
+     spacing, which the Latin headline's tight tracking would crush. */
+  :lang(zh) body { font-family: "Card Sans", "Noto Sans CJK SC", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", sans-serif; }
+  :lang(ko) body { font-family: "Card Sans", "Noto Sans CJK KR", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif; }
+  :lang(zh) .eyebrow, :lang(zh) .foot { font-family: "Card Mono", "Noto Sans CJK SC", "PingFang SC", monospace; }
+  :lang(ko) .eyebrow, :lang(ko) .foot { font-family: "Card Mono", "Noto Sans CJK KR", "Apple SD Gothic Neo", monospace; }
+  :lang(zh) h1, :lang(ko) h1 { letter-spacing: 0; line-height: 1.15; font-weight: 500; }
+  /* Korean wraps between words, never inside one; Chinese avoids breaks before closing punctuation. */
+  :lang(ko) h1, :lang(ko) .desc, :lang(ko) .work { word-break: keep-all; }
+  :lang(zh) h1, :lang(zh) .desc { line-break: strict; }
+  :lang(zh) .text, :lang(ko) .text { gap: 18px; }
   .desc { font-size: 27px; line-height: 1.36; color: var(--muted); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
   .desc:empty { display: none; }
   .cover { flex: 0 0 auto; width: 430px; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--line); }
@@ -84,6 +96,7 @@
   <div class="foot"><span id="meta"></span><span>raskell.io</span></div>
 <script>
   const card = __CARD__;
+  if (card.lang) document.documentElement.lang = card.lang;
   document.body.classList.add(card.kind);
   document.getElementById("eyebrow").textContent = card.eyebrow;
   document.getElementById("title").textContent = card.title;
@@ -93,10 +106,10 @@
     if (card.work) {
       const p = document.createElement("p");
       p.className = "work";
-      p.append("On ");
+      p.append((card.on || "On") + " ");
       const c = document.createElement("cite");
       c.textContent = card.work;
-      p.append(c, card.author ? " by " + card.author : "");
+      p.append(c, card.author ? " " + (card.by || "by") + " " + card.author : "");
       document.getElementById("title").after(p);
     }
     if (card.cover) {
@@ -116,8 +129,11 @@
   document.fonts.ready.then(() => {
     const h1 = document.getElementById("title"), main = document.querySelector(".main"), text = document.querySelector(".text");
     let size = parseFloat(getComputedStyle(h1).fontSize);
-    const lines = () => Math.round(h1.getBoundingClientRect().height / (size * 1.04));
-    while (size > 44 && (lines() > 3 || text.scrollHeight > main.clientHeight)) {
+    const lh = parseFloat(getComputedStyle(h1).lineHeight) / size;
+    const lines = () => Math.round(h1.getBoundingClientRect().height / (size * lh));
+    // Fits with some air above and below, so a long title never presses the eyebrow against the logo.
+    const fits = () => text.getBoundingClientRect().height <= main.clientHeight - 36;
+    while (size > 44 && (lines() > 3 || !fits())) {
       size -= 2;
       h1.style.fontSize = size + "px";
     }

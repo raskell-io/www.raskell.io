@@ -52,8 +52,27 @@ jobs:
       - name: Publish garden.json and links.json
         run: mise run garden-json
 
+      # Social cards are drawn only when their content changed: the cache holds last run's cards by fingerprint
+      # (see .mise/tasks/og). A new key each run saves the fresh set; restore-keys picks up the latest one.
+      - name: Restore the social card cache
+        uses: actions/cache@v4
+        with:
+          path: .og-cache
+          key: og-cards-${{ github.run_id }}
+          restore-keys: og-cards-
+
+      # Chinese and Korean cards need CJK fonts, which the runner lacks. Only when they are switched on
+      # (extra.seijaku.og_cards_translated in config.toml).
+      - name: Install CJK fonts for translated social cards
+        run: |
+          if grep -qE '^og_cards_translated\s*=\s*true' config.toml; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk
+          fi
+
       - name: Draw social cards
         run: mise run og
+        env:
+          OG_CACHE: ${{ github.workspace }}/.og-cache
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4

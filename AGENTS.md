@@ -187,7 +187,8 @@ names, definitions, and a page per topic in every language.
 - **A translated article:** `<slug>.zh.md` / `<slug>.ko.md` beside the English one, with the same `[extra]`
   (author, image, cover, reads, review) and a translated title, description, `in_short`, and body, but no
   `[taxonomies]` table: the theme takes topics, series, and categories from the English page. Headings keep
-  their English anchors; links, code, and diagrams stay byte-identical. It shares the English social card,
+  their English anchors; links, code, and diagrams stay byte-identical. It shares the English social card (until
+  translated cards are switched on, below),
   gets BlogPosting JSON-LD in its language with `translationOfWork` (the original lists `workTranslation`),
   a Markdown copy at `/<code>/articles/<slug>.md`, and a place in `/<code>/llms.txt` and `/<code>/llms-full.txt`.
 - **A language:** a `[languages.<code>]` block (with `build_search_index = false` and `taxonomies = []`),
@@ -197,7 +198,15 @@ names, definitions, and a page per topic in every language.
   the same alternates (theme `sitemap.xml`), and robots.txt, ai.txt, auth.md, and the api-catalog point to the
   per-language llms files. The map knows a translation by its original's path.
 - **English only, by design:** untranslated writing, feeds, the full-text search index (translated pages
-  search the English one), map.json, the main llms-full.txt, and social cards.
+  search the English one), map.json, the main llms-full.txt, and, for now, social cards.
+- **Translated social cards** (built, switched off): with `og_cards_translated = true` under `[extra.seijaku]`
+  in config.toml, every Chinese and Korean page gets its own card, `og/<code>/<path>.png`, with its title,
+  description, labels, date, and counts in its language (`partials/og_card.html` through the i18n labels; CJK font
+  fallbacks and Korean word wrapping in `og/card.html`). CI then installs `fonts-noto-cjk` before drawing. To
+  switch on: set the flag, check a few cards locally (`mise run og zh/articles/<slug> ko`), push, and refresh
+  previews already shared (LinkedIn Post Inspector, Kakao's sharing debugger).
+- **Card cache:** `mise run og` with `OG_CACHE=<dir>` draws only cards whose fingerprint (card data, cover,
+  template, logo, fonts) is new; CI keeps the directory between runs.
 - **Check:** after a build, no link on a `/zh/` or `/ko/` page should leave its language except to
   English-only content; a broken page in the language is a 404 for that reader.
 - Translations follow the writing rules: no em or en dashes; Korean in the formal 합니다체. Chinese

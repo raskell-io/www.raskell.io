@@ -62,6 +62,8 @@ things. The name is rascal × Haskell × Raffael.
 """
 og_image = "og-default.png"
 og_cards = true                # a generated 1200x630 card per page (mise run og after zola build)
+og_cards_translated = false    # true: Chinese and Korean pages get their own card (og/zh/..., og/ko/...) in their
+                               # language; false: they share the English card. CI installs CJK fonts when true.
 og_home_title = "Notes from the machine room."
 og_home_meta = "Raffael Schneider · Basel"
 series_descriptions = { "the-agent-platform-handbook" = "Building an agent platform from first principles, one working piece of TypeScript per part.", "learning-to-play" = "How game-playing programs learn, shown on chess, shogi and Go with Kishi: three engines in Rust, trained by self-play on one laptop, measured against engines you can download." }
@@ -220,6 +222,17 @@ Raskell 是我在网络上的一角，也是通往我所构建的一切的入口
 """
 
 [extra.seijaku.i18n.zh.labels]
+"%-d %B %Y" = "%Y年%-m月%-d日"
+"Part {n}" = "第 {n} 篇"
+"Book review" = "书评"
+"1 article or note" = "1 篇文章或笔记"
+"{n} articles and notes" = "{n} 篇文章和笔记"
+"{n} parts" = "共 {n} 篇"
+"1 entry" = "1 篇"
+"{n} entries" = "{n} 篇"
+"On" = "书评对象："
+"Notes from the machine room." = "笔记，来自机房。"
+"Raffael Schneider · Basel" = "Raffael Schneider · 巴塞尔"
 # English interface text = its translation. {name} marks a placeholder; %-codes are date formats.
 "Writing" = "写作"
 "Work" = "工作"
@@ -502,6 +515,17 @@ Raskell은 웹 위의 제 작은 공간이자, 제가 만드는 모든 것으로
 """
 
 [extra.seijaku.i18n.ko.labels]
+"%-d %B %Y" = "%Y년 %-m월 %-d일"
+"Part {n}" = "{n}편"
+"Book review" = "서평"
+"1 article or note" = "글 또는 노트 1편"
+"{n} articles and notes" = "글과 노트 {n}편"
+"{n} parts" = "모두 {n}편"
+"1 entry" = "1편"
+"{n} entries" = "{n}편"
+"On" = "서평 대상:"
+"Notes from the machine room." = "노트, 기계실에서."
+"Raffael Schneider · Basel" = "Raffael Schneider · 바젤"
 # English interface text = its translation. {name} marks a placeholder; %-codes are date formats.
 "Writing" = "글쓰기"
 "Work" = "작업"

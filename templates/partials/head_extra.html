@@ -164,7 +164,7 @@
       {%- endif %}
       {%- if page.extra.og_image %},
       "image": {{ get_url(path=page.extra.og_image) | json_encode | safe }}
-      {%- elif config.extra.seijaku.og_cards %}{% set card_path = ppath | trim_start_matches(pat="/") | trim_end_matches(pat="/") %},
+      {%- elif config.extra.seijaku.og_cards %}{% if config.extra.seijaku.og_cards_translated | default(value=false) %}{% set card_path = page.path | trim_start_matches(pat="/") | trim_end_matches(pat="/") %}{% else %}{% set card_path = ppath | trim_start_matches(pat="/") | trim_end_matches(pat="/") %}{% endif %},
       "image": {{ get_url(path="og/" ~ card_path ~ ".png") | json_encode | safe }}
       {%- elif page.extra.image %},
       "image": {{ get_url(path=page.extra.image) | json_encode | safe }}
