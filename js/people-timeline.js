@@ -53,14 +53,16 @@
   // "2015", "2015-12", "2015-12-11" -> fractional year at the middle of the period named.
   function year(d, fallback) {
     if (d === null || d === undefined || d === "") return fallback;
+    if (/^\d{4}s$/.test(String(d))) return +String(d).slice(0, 4) + 5;   // "1970s": the middle of the decade
     var p = String(d).split("-").map(Number);
     if (p.length === 1) return p[0] + 0.5;
     if (p.length === 2) return p[0] + (p[1] - 0.5) / 12;
     return p[0] + (p[1] - 1) / 12 + (p[2] - 0.5) / 365;
   }
-  function startOf(d) { var p = String(d).split("-").map(Number); return p.length === 1 ? p[0] : year(d); }
+  function startOf(d) { if (/^\d{4}s$/.test(String(d))) return year(d); var p = String(d).split("-").map(Number); return p.length === 1 ? p[0] : year(d); }
   function endOf(d, fallback) {
     if (d === null || d === undefined || d === "") return fallback;
+    if (/^\d{4}s$/.test(String(d))) return year(d) + 0.5;
     var p = String(d).split("-").map(Number); return p.length === 1 ? p[0] + 1 : year(d);
   }
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
