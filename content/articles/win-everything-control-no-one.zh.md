@@ -36,7 +36,7 @@ Mallaby 把技术讲两遍，一遍用类比，一遍讲机制。例如：
 - **残差网络**（第 12 章）。深层网络会像传话游戏一样把信号传走样；跳跃连接是绕过中间层的快车道。
 - **Transformer**（第 12 章）。嵌入是一张有数百个维度的语言地图；注意力就像知道要看懂这一集犯罪剧，需要回想前面哪一集；中间还绕道 Henri Bergson，谈时间是注意力而非序列。
 
-这些解释不需要任何背景知识，也不居高临下。顺序同样重要：每一章都展示了上一次突破让什么成为可能，又做不到什么，所以从 ImageNet 到 Atari，到 AlphaGo，到 AlphaZero，到 Transformer，到 AlphaFold，再到推理模型，这条链读起来是一个完整的论证。
+这些解释不需要任何背景知识，也不居高临下。顺序同样重要：每一章都展示了上一次突破让什么成为可能，又做不到什么，所以从 ImageNet 到 Atari，到 AlphaGo，到 AlphaZero，到 Transformer，到 AlphaFold，再到推理模型，这条链读起来是一个完整的论证。我把这条链画了出来，每一环都注明出处，也画出了把它从一个实验室带到另一个实验室的那些人，做成一篇配套笔记里的两张交互图：[Who contributed to AI](@/notes/who-contributed-to-ai.md)（英文）。
 
 ## 处于中心的纷争 {#the-feud-at-the-centre}
 
