@@ -491,7 +491,7 @@
 &lt;li&gt;&lt;strong&gt;残差网络&lt;&#x2F;strong&gt;（第 12 章）。深层网络会像传话游戏一样把信号传走样；跳跃连接是绕过中间层的快车道。&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Transformer&lt;&#x2F;strong&gt;（第 12 章）。嵌入是一张有数百个维度的语言地图；注意力就像知道要看懂这一集犯罪剧，需要回想前面哪一集；中间还绕道 Henri Bergson，谈时间是注意力而非序列。&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;这些解释不需要任何背景知识，也不居高临下。顺序同样重要：每一章都展示了上一次突破让什么成为可能，又做不到什么，所以从 ImageNet 到 Atari，到 AlphaGo，到 AlphaZero，到 Transformer，到 AlphaFold，再到推理模型，这条链读起来是一个完整的论证。&lt;&#x2F;p&gt;
+&lt;p&gt;这些解释不需要任何背景知识，也不居高临下。顺序同样重要：每一章都展示了上一次突破让什么成为可能，又做不到什么，所以从 ImageNet 到 Atari，到 AlphaGo，到 AlphaZero，到 Transformer，到 AlphaFold，再到推理模型，这条链读起来是一个完整的论证。我把这条链画了出来，每一环都注明出处，也画出了把它从一个实验室带到另一个实验室的那些人，做成一篇配套笔记里的两张交互图：&lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;who-contributed-to-ai&#x2F;&quot;&gt;Who contributed to AI&lt;&#x2F;a&gt;（英文）。&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;the-feud-at-the-centre&quot;&gt;处于中心的纷争&lt;&#x2F;h2&gt;
 &lt;p&gt;把这段历史串起来的线索，是强化学习与深度学习之间的竞争。它起初是地理上的：Hinton 的深度学习派在多伦多，Richard Sutton 的强化学习派在阿尔伯塔，彼此几乎不说话。强化学习理论家 Csaba Szepesvári 承认神经网络在实践中有效，但他不愿使用，因为他无法就它们证明任何东西；Hinton 对想把两者结合起来的学生 Vlad Mnih 说：「我试过了，行不通。」Mnih 去了伦敦，还是做了，结果就是那个 Atari 智能体（第 6 章）。&lt;&#x2F;p&gt;
 &lt;p&gt;从那以后，书中展示了钟摆来回摆动，而且从不让任何一方长久获胜：&lt;&#x2F;p&gt;

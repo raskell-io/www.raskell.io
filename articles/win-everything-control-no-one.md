@@ -40,7 +40,7 @@ Mallaby explains the technology twice, once with an analogy and once with the me
 - **Residual networks** (chapter 12). Deep networks garble their signal like a game of telephone; skip connections are express lanes past the middle layers.
 - **The transformer** (chapter 12). Embeddings as a map of language with hundreds of dimensions, attention as knowing which earlier episode of a crime drama you need to understand this one, and a detour through Henri Bergson on time as attention rather than sequence.
 
-The explanations need no background and do not talk down to the reader. The order matters as much: each chapter shows what the previous breakthrough made possible and what it could not do, so the chain from ImageNet to Atari to AlphaGo to AlphaZero to the transformer to AlphaFold to reasoning models reads as one argument.
+The explanations need no background and do not talk down to the reader. The order matters as much: each chapter shows what the previous breakthrough made possible and what it could not do, so the chain from ImageNet to Atari to AlphaGo to AlphaZero to the transformer to AlphaFold to reasoning models reads as one argument. I drew that chain, with a source for every link, and the people who carried it from lab to lab, as two interactive figures in a companion note: [Who contributed to AI](https://raskell.io/notes/who-contributed-to-ai/).
 
 ## The feud at the centre
 

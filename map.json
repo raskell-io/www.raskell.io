@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-02T06:47:12+00:00",
+ "generated": "2026-11-02T11:26:29+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -37,7 +37,7 @@
    "url": "https://raskell.io/articles/win-everything-control-no-one/",
    "meta": "2026-10-29 · 17 min",
    "description": "Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it.",
-   "degree": 20
+   "degree": 21
   },
   {
    "id": "a:/articles/a-blueprint-for-the-static-web/",
@@ -397,7 +397,7 @@
    "url": "https://raskell.io/notes/who-contributed-to-ai/",
    "meta": "2026-11-01",
    "description": "A companion piece to Karen Hao's Empire of AI and Sebastian Mallaby's The Infinity Machine: who built AI, where, and which idea led to which product.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "a:/notes/everything-is-a-fractal/",
@@ -5923,6 +5923,10 @@
   {
    "source": "a:/articles/win-everything-control-no-one/",
    "target": "a:/articles/the-web-was-the-training-set/"
+  },
+  {
+   "source": "a:/articles/win-everything-control-no-one/",
+   "target": "a:/notes/who-contributed-to-ai/"
   },
   {
    "source": "a:/articles/a-blueprint-for-the-static-web/",
