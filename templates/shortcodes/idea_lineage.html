@@ -1,0 +1,17 @@
+{#- Idea lineage: {{ idea_lineage(data="static/data/ai-people.json") }}
+    Draws the paradigms, one row per field, and which idea led to which product
+    (static/js/ai-lineage.js). Reads the JSON the people_timeline shortcode already put on the page,
+    else fetches the public file. Without JavaScript the list of paradigms below is the content. -#}
+{%- set d = load_data(path=data) -%}
+<figure class="ptl-figure ail-figure">
+  <div class="ptl ail" data-ail data-src="{{ d.about.url | replace(from="https://raskell.io", to="") }}" hidden></div>
+  <div class="ail-fallback">
+    <ul>
+    {%- for p in d.paradigms %}
+      <li><strong>{{ p.name }}</strong> ({{ p.start }} to {% if p.end %}{{ p.end }}{% else %}now{% endif %}): {{ p.summary }}</li>
+    {%- endfor %}
+    </ul>
+  </div>
+  <figcaption class="ptl-caption">{% if caption %}{{ caption }} {% endif %}{{ d.lineage | length }} links between ideas and products, each with its source. The same data: <a href="{{ d.about.page | replace(from="https://raskell.io", to="") }}">{{ d.about.title }}</a>.</figcaption>
+</figure>
+<script src="{{ get_url(path='js/ai-lineage.js', cachebust=true) | safe }}" defer></script>
