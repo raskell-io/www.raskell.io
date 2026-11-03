@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-03T06:49:52+00:00",
+ "generated": "2026-11-03T18:04:12+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -373,6 +373,15 @@
    "degree": 4
   },
   {
+   "id": "a:/notes/goat-games/",
+   "kind": "note",
+   "label": "My GOAT games",
+   "url": "https://raskell.io/notes/goat-games/",
+   "meta": "2026-11-03",
+   "description": "My twenty-five greatest games of all time as one chart, from Phantasy Star Online to Anno 1602.",
+   "degree": 4
+  },
+  {
    "id": "a:/notes/a-duel-between-genres/",
    "kind": "note",
    "label": "Future Cop: L.A.P.D., a duel between genres",
@@ -388,7 +397,7 @@
    "url": "https://raskell.io/notes/orders-for-the-week/",
    "meta": "2026-11-01",
    "description": "Gangsters: Organized Crime had you plan a week of orders and then watch the city carry them out. I have not played anything like it since.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "a:/notes/who-contributed-to-ai/",
@@ -881,9 +890,9 @@
    "kind": "tag",
    "label": "Games",
    "url": "https://raskell.io/tags/games/",
-   "meta": "Domain · 2 pages",
+   "meta": "Domain · 3 pages",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
-   "degree": 17
+   "degree": 19
   },
   {
    "id": "t:go-game",
@@ -893,6 +902,15 @@
    "meta": "Domain · 3 pages",
    "description": "The board game whose positions resisted hand-written evaluation until AlphaGo, and the clearest case for learned intuition guiding search.",
    "degree": 6
+  },
+  {
+   "id": "t:goat",
+   "kind": "tag",
+   "label": "GOAT",
+   "url": "https://raskell.io/tags/goat/",
+   "meta": "Concept · 1 page",
+   "description": "The greatest of all time: my personal charts of the games and films I rate above all others.",
+   "degree": 2
   },
   {
    "id": "t:gpus",
@@ -1385,9 +1403,9 @@
    "kind": "tag",
    "label": "Strategy",
    "url": "https://raskell.io/tags/strategy/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Winning against an opponent who adapts: in war, in business, and in games, from Sun Tzu to real-time strategy.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:surveillance",
@@ -4509,6 +4527,10 @@
    "target": "t:games"
   },
   {
+   "source": "a:/notes/goat-games/",
+   "target": "t:games"
+  },
+  {
    "source": "a:/articles/win-everything-control-no-one/",
    "target": "t:games"
   },
@@ -4530,6 +4552,14 @@
   },
   {
    "source": "t:go-game",
+   "target": "t:games"
+  },
+  {
+   "source": "a:/notes/goat-games/",
+   "target": "t:goat"
+  },
+  {
+   "source": "t:goat",
    "target": "t:games"
   },
   {
@@ -5322,6 +5352,10 @@
   },
   {
    "source": "t:starcraft",
+   "target": "t:strategy"
+  },
+  {
+   "source": "a:/notes/goat-games/",
    "target": "t:strategy"
   },
   {
@@ -6207,6 +6241,10 @@
   {
    "source": "a:/articles/all-beginning-is-haskell/",
    "target": "a:/articles/mise-ate-my-makefile/"
+  },
+  {
+   "source": "a:/notes/goat-games/",
+   "target": "a:/notes/orders-for-the-week/"
   },
   {
    "source": "a:/notes/orders-for-the-week/",

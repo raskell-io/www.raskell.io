@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-03T06:49:53+00:00",
+ "generated": "2026-11-03T18:04:12+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "article": 39,
   "review": 2,
-  "note": 12,
+  "note": 13,
   "talk": 1,
   "dataset": 1,
   "work": 153,
   "project": 31,
-  "topic": 159,
-  "link": 414
+  "topic": 160,
+  "link": 438
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -708,6 +708,18 @@
     "open-web"
    ],
    "meta": "1 min"
+  },
+  {
+   "kind": "note",
+   "title": "My GOAT games",
+   "url": "https://raskell.io/notes/goat-games/",
+   "description": "My twenty-five greatest games of all time as one chart, from Phantasy Star Online to Anno 1602.",
+   "date": "2026-11-03",
+   "topics": [
+    "goat",
+    "games",
+    "strategy"
+   ]
   },
   {
    "kind": "note",
@@ -3879,6 +3891,13 @@
   },
   {
    "kind": "topic",
+   "title": "GOAT",
+   "url": "https://raskell.io/tags/goat/",
+   "description": "The greatest of all time: my personal charts of the games and films I rate above all others.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "GPUs",
    "url": "https://raskell.io/tags/gpus/",
    "description": "GPUs as the computer: memory shape, partitioning, and the hardware under inference.",
@@ -5074,6 +5093,23 @@
     {
      "title": "Everything is a fractal",
      "url": "https://raskell.io/notes/everything-is-a-fractal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Gangsters: Organized Crime",
+   "url": "https://en.wikipedia.org/wiki/Gangsters:_Organized_Crime",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    },
+    {
+     "title": "Gangsters: Organized Crime, orders for the week",
+     "url": "https://raskell.io/notes/orders-for-the-week/"
     }
    ]
   },
@@ -6641,6 +6677,19 @@
   },
   {
    "kind": "link",
+   "title": "Advance Wars",
+   "url": "https://en.wikipedia.org/wiki/Advance_Wars",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Alfred North Whitehead",
    "url": "https://en.wikipedia.org/wiki/Alfred_North_Whitehead",
    "domain": "en.wikipedia.org",
@@ -6680,6 +6729,19 @@
   },
   {
    "kind": "link",
+   "title": "Anno 1602: Creation of a New World",
+   "url": "https://en.wikipedia.org/wiki/Anno_1602",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Antifragile",
    "url": "https://en.wikipedia.org/wiki/Antifragile_(book)",
    "domain": "en.wikipedia.org",
@@ -6701,6 +6763,32 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Assassin’s Creed Origins",
+   "url": "https://en.wikipedia.org/wiki/Assassin%27s_Creed_Origins",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Black &amp; White",
+   "url": "https://en.wikipedia.org/wiki/Black_%26_White_(video_game)",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
     }
    ]
   },
@@ -6758,6 +6846,19 @@
   },
   {
    "kind": "link",
+   "title": "Command &amp; Conquer: Tiberian Sun",
+   "url": "https://en.wikipedia.org/wiki/Command_%26_Conquer:_Tiberian_Sun",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Debt: The First 5,000 Years",
    "url": "https://en.wikipedia.org/wiki/Debt:_The_First_5000_Years",
    "domain": "en.wikipedia.org",
@@ -6771,6 +6872,19 @@
   },
   {
    "kind": "link",
+   "title": "Diablo II",
+   "url": "https://en.wikipedia.org/wiki/Diablo_II",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Heighway dragon curve",
    "url": "https://en.wikipedia.org/wiki/Dragon_curve",
    "domain": "en.wikipedia.org",
@@ -6779,6 +6893,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Dwarf Fortress",
+   "url": "https://en.wikipedia.org/wiki/Dwarf_Fortress",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
     }
    ]
   },
@@ -6849,6 +6976,19 @@
   },
   {
    "kind": "link",
+   "title": "Final Fantasy VIII",
+   "url": "https://en.wikipedia.org/wiki/Final_Fantasy_VIII",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "fog of war",
    "url": "https://en.wikipedia.org/wiki/Fog_of_war",
    "domain": "en.wikipedia.org",
@@ -6888,19 +7028,6 @@
   },
   {
    "kind": "link",
-   "title": "Gangsters: Organized Crime",
-   "url": "https://en.wikipedia.org/wiki/Gangsters:_Organized_Crime",
-   "domain": "en.wikipedia.org",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "Gangsters: Organized Crime, orders for the week",
-     "url": "https://raskell.io/notes/orders-for-the-week/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
    "title": "generative, pre-trained transformer",
    "url": "https://en.wikipedia.org/wiki/Generative_pre-trained_transformer",
    "domain": "en.wikipedia.org",
@@ -6922,6 +7049,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Halo 2",
+   "url": "https://en.wikipedia.org/wiki/Halo_2",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
     }
    ]
   },
@@ -7096,6 +7236,32 @@
   },
   {
    "kind": "link",
+   "title": "Mario + Rabbids Kingdom Battle",
+   "url": "https://en.wikipedia.org/wiki/Mario_%2B_Rabbids_Kingdom_Battle",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Mass Effect",
+   "url": "https://en.wikipedia.org/wiki/Mass_Effect_(video_game)",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Max Weber",
    "url": "https://en.wikipedia.org/wiki/Max_Weber",
    "domain": "en.wikipedia.org",
@@ -7122,6 +7288,19 @@
   },
   {
    "kind": "link",
+   "title": "Mole Mania",
+   "url": "https://en.wikipedia.org/wiki/Mole_Mania",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Moravec’s paradox",
    "url": "https://en.wikipedia.org/wiki/Moravec%27s_paradox",
    "domain": "en.wikipedia.org",
@@ -7143,6 +7322,32 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Perfect Dark",
+   "url": "https://en.wikipedia.org/wiki/Perfect_Dark",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Phantasy Star Online",
+   "url": "https://en.wikipedia.org/wiki/Phantasy_Star_Online",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
     }
    ]
   },
@@ -7317,6 +7522,19 @@
   },
   {
    "kind": "link",
+   "title": "StarCraft",
+   "url": "https://en.wikipedia.org/wiki/StarCraft_(video_game)",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "strategy",
    "url": "https://en.wikipedia.org/wiki/Strategy_pattern",
    "domain": "en.wikipedia.org",
@@ -7338,6 +7556,32 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Super Smash Bros. Melee",
+   "url": "https://en.wikipedia.org/wiki/Super_Smash_Bros._Melee",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Terranigma",
+   "url": "https://en.wikipedia.org/wiki/Terranigma",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
     }
    ]
   },
@@ -7382,6 +7626,19 @@
   },
   {
    "kind": "link",
+   "title": "The Legend of Zelda: Majora’s Mask",
+   "url": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Majora%27s_Mask",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "The Pile (Wikipedia)",
    "url": "https://en.wikipedia.org/wiki/The_Pile_(dataset)",
    "domain": "en.wikipedia.org",
@@ -7421,6 +7678,32 @@
   },
   {
    "kind": "link",
+   "title": "Turok: Dinosaur Hunter",
+   "url": "https://en.wikipedia.org/wiki/Turok:_Dinosaur_Hunter",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Unreal Championship 2: The Liandri Conflict",
+   "url": "https://en.wikipedia.org/wiki/Unreal_Championship_2:_The_Liandri_Conflict",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Von Neumann universal constructor",
    "url": "https://en.wikipedia.org/wiki/Von_Neumann_universal_constructor",
    "domain": "en.wikipedia.org",
@@ -7429,6 +7712,58 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "XCOM 2",
+   "url": "https://en.wikipedia.org/wiki/XCOM_2",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Xenoblade Chronicles",
+   "url": "https://en.wikipedia.org/wiki/Xenoblade_Chronicles_(video_game)",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Xenoblade Chronicles X",
+   "url": "https://en.wikipedia.org/wiki/Xenoblade_Chronicles_X",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Xenogears",
+   "url": "https://en.wikipedia.org/wiki/Xenogears",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "My GOAT games",
+     "url": "https://raskell.io/notes/goat-games/"
     }
    ]
   },
