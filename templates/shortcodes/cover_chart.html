@@ -1,0 +1,14 @@
+{#- Cover chart in the manner of Topsters: {{ cover_chart(data="static/data/goat-games.json") }}
+    Rows of covers, plain HTML and CSS. Each cover has its title as alt text; put the list of titles in the page as a table. -#}
+{%- set d = load_data(path=data) -%}
+<figure class="cover-chart">
+  {%- for row in d.rows %}
+  <div class="cc-row">
+    <ul class="cc-covers">
+      {%- for g in row %}
+      <li><img src="{{ get_url(path=g.cover) }}" alt="{{ g.title }}" title="{{ g.title }}" width="121" height="162" loading="lazy" decoding="async"></li>
+      {%- endfor %}
+    </ul>
+  </div>
+  {%- endfor %}
+</figure>

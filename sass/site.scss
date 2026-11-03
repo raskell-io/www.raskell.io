@@ -385,3 +385,30 @@ svg.chart {
 .ail-k--down { border-color: var(--ink); border-top-style: dashed; }
 .ail-note { color: var(--muted); font-size: 0.85rem; }
 .ail-list li::before { display: none; }
+
+// Cover chart (cover_chart shortcode): black in both themes, like the Topsters charts it follows.
+.cover-chart {
+  width: fit-content;
+  max-width: 100%;
+  margin: 2.5rem 0;
+  padding: 1rem 1.5rem;
+  background: #000;
+  color: #fff;
+  border-radius: 12px;
+}
+.cc-row { padding: 0.4rem 0; }
+.cover-chart ul { list-style: none; margin: 0; padding: 0; }
+.cover-chart li, .prose .cover-chart li, .prose .cover-chart li + li { margin: 0; padding: 0; }
+.cover-chart li::before, .cover-chart li::marker { content: none; }
+.cc-covers { display: grid; grid-template-columns: repeat(5, 123px); column-gap: 2rem; }
+.cover-chart .cc-covers img { display: block; width: 100%; height: auto; aspect-ratio: 121 / 162; object-fit: contain; max-width: none; margin: 0; border-radius: 0; box-shadow: none; }
+@media (max-width: 900px) {
+  .cover-chart { width: 100%; padding: 0.75rem; }
+  .cc-row { padding: 0.2rem 0; }
+  .cc-covers { grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 0.4rem; }
+}
+@media (max-width: 600px) {
+  .prose .cover-chart + table { font-size: 0.72rem; }
+  .prose .cover-chart + table th, .prose .cover-chart + table td { padding-inline: 0 0.5rem; }
+  .prose .cover-chart + table th:last-child, .prose .cover-chart + table td:last-child { padding-inline-end: 0; }
+}

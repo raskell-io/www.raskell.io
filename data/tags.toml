@@ -824,6 +824,12 @@ kind = "concept"
 description = "Making games: rules that are fun to play, worlds that reward attention, and games that model something larger than themselves."
 broader = ["games"]
 
+[goat]
+name = "GOAT"
+kind = "concept"
+description = "The greatest of all time: my personal charts of the games and films I rate above all others."
+broader = ["games"]
+
 [game-theory]
 name = "Game theory"
 kind = "concept"
