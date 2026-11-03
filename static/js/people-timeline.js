@@ -26,11 +26,8 @@
     rival: "Rivals", fired: "Pushed out", resigned: "Resigned over", defected: "Left for a rival of",
     ally: "Allies", partnership: "Partners", board: "On the board with", family: "Family", other: "Linked"
   };
-  var LINK_TONE = {
-    cofounders: "gold", funder: "teal", investment: "teal", mentor: "teal", ally: "teal",
-    partnership: "teal", board: "grey", family: "grey", other: "grey",
-    rival: "red", fired: "red", resigned: "red", defected: "violet"
-  };
+  // one ink for every tie; a dashed line marks the ones that ended in conflict
+  var LINK_TONE = { rival: "conflict", fired: "conflict", resigned: "conflict", defected: "conflict" };
   var MOMENT_ROWS = [
     { kind: "idea", label: "Ideas" },
     { kind: "product", label: "Products" },
@@ -81,7 +78,7 @@
   function build(mount, data) {
     var R = data.range, people = data.people, orgs = data.orgs, places = data.places || {};
     var byId = {}; people.forEach(function (p, i) { p.index = i; byId[p.id] = p; });
-    var state = { colour: "org", sources: {}, focusOrg: null, selected: null };
+    var state = { colour: "org", focusPlace: null, sources: {}, focusOrg: null, selected: null };
     Object.keys(data.sources || {}).forEach(function (s) { state.sources[s] = true; });
 
     function visibleBySource(item) {
@@ -93,12 +90,12 @@
     mount.innerHTML = "";
     var controls = h("div", "ptl-controls", mount);
     var colourGroup = h("div", "ptl-group", controls);
-    h("span", "ptl-group-label", colourGroup, "Colour by");
+    h("span", "ptl-group-label", colourGroup, "Highlight");
     ["org", "place"].forEach(function (mode) {
       var b = h("button", "ptl-chip", colourGroup, mode === "org" ? "Organisation" : "Place");
       b.type = "button"; b.setAttribute("aria-pressed", String(state.colour === mode));
       b.addEventListener("click", function () {
-        state.colour = mode;
+        state.colour = mode; state.focusOrg = null; state.focusPlace = null;
         colourGroup.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
         draw();
       });
@@ -148,13 +145,18 @@
       };
     }
 
+    // Each organisation (or place) keeps its colour, softened in CSS; the one highlighted shows it at full strength.
     function colourOf(stint) {
-      if (state.colour === "place") {
-        var pl = places[stint.place] || null;
-        return pl ? pl.colour : "var(--faint)";
-      }
-      var o = orgs[stint.org];
-      return o && o.colour ? o.colour : "var(--faint)";
+      if (state.colour === "place") { var pl = places[stint.place]; return pl && pl.colour ? pl.colour : null; }
+      var o = orgs[stint.org]; return o && o.colour ? o.colour : null;
+    }
+    function tint(node, c) { if (c) node.style.setProperty("--c", c); return node; }
+    function isFocus(stint) {
+      return (state.focusOrg && stint.org === state.focusOrg) || (state.focusPlace && stint.place === state.focusPlace);
+    }
+    function hasFocus(p) {
+      if (!state.focusOrg && !state.focusPlace) return true;
+      return p.stints.some(isFocus);
     }
 
     // --- tooltip -----------------------------------------------------------------
@@ -216,7 +218,7 @@
       var list = h("ol", "ptl-stints", panel);
       p.stints.filter(visibleBySource).forEach(function (s) {
         var li = h("li", null, list);
-        var dot = h("span", "ptl-dot", li); dot.style.background = colourOf(s);
+        tint(h("span", "ptl-dot" + (isFocus(s) ? " on" : ""), li), colourOf(s));
         h("span", "ptl-when", li, human(s.start) + " to " + (s.end ? human(s.end) : "now"));
         var o = orgs[s.org];
         h("span", null, li, (s.role ? s.role + ", " : "") + (o ? o.name : s.org) + (s.place && places[s.place] ? " (" + places[s.place].name + ")" : ""));
@@ -230,7 +232,7 @@
         mine.sort(function (a, b) { return year(a.date, 0) - year(b.date, 0); }).forEach(function (l) {
           var other = byId[l.a === p.id ? l.b : l.a];
           var li = h("li", null, ul);
-          li.dataset.tone = LINK_TONE[l.kind] || "grey";
+          li.dataset.tone = LINK_TONE[l.kind] || "tie";
           h("span", "ptl-when", li, human(l.date));
           var b = h("button", "ptl-link", li, other ? other.name : (orgs[l.b] ? orgs[l.b].name : l.b));
           b.type = "button";
@@ -393,7 +395,7 @@
       var lanes = el("g", { class: "ptl-lanes" }, svg);
       shown.forEach(function (p, i) {
         var L = layout[p.id], y0 = L.y0;
-        var dim = (sel && !related[p.id]) || (state.focusOrg && !p.stints.some(function (s) { return s.org === state.focusOrg; }));
+        var dim = (sel && !related[p.id]) || !hasFocus(p);
         var row = el("g", { class: "ptl-row" + (dim ? " dim" : "") + (sel === p.id ? " on" : ""), "data-person": p.id }, lanes);
         if (i % 2 === 0) el("rect", { x: 0, y: L.top, width: W, height: L.h, class: "ptl-zebra" }, row);
         var stints = L.stints;
@@ -407,7 +409,8 @@
           var lane = L.lanes[si];
           var yy = y0 - lane * LANE - BAR / 2 + (lane ? 2 : 0);
           var bar = el("rect", { x: a, y: yy, width: b - a, height: BAR - (lane ? 4 : 0), rx: (BAR - (lane ? 4 : 0)) / 2,
-            fill: colourOf(s), class: "ptl-bar" + (s.end ? "" : " open") + (state.focusOrg === s.org ? " hl" : "") }, row);
+            class: "ptl-bar" + (s.end ? "" : " open") + (isFocus(s) ? " hl" : "") }, row);
+          tint(bar, colourOf(s));
           var o = orgs[s.org];
           bar.addEventListener("mousemove", function (e) {
             showTip(e, [(o ? o.name : s.org), (s.role ? s.role + ", " : "") + human(s.start) + " to " + (s.end ? human(s.end) : "now"),
@@ -441,8 +444,8 @@
           var y1 = layout[sel].y0, y2 = layout[other].y0;
           var bend = Math.min(90, 14 + Math.abs(y2 - y1) * 0.28);
           var path = el("path", { d: "M" + X + " " + y1 + " C" + (X + bend) + " " + y1 + " " + (X + bend) + " " + y2 + " " + X + " " + y2,
-            class: "ptl-arc", "data-tone": LINK_TONE[l.kind] || "grey" }, arcs);
-          el("circle", { cx: X, cy: y2, r: 3.5, class: "ptl-arc-end", "data-tone": LINK_TONE[l.kind] || "grey" }, arcs);
+            class: "ptl-arc", "data-tone": LINK_TONE[l.kind] || "tie" }, arcs);
+          el("circle", { cx: X, cy: y2, r: 3.5, class: "ptl-arc-end", "data-tone": LINK_TONE[l.kind] || "tie" }, arcs);
           path.addEventListener("mousemove", function (e) {
             showTip(e, [(LINK_KINDS[l.kind] || l.kind) + ": " + byId[l.a].name + " and " + byId[l.b].name, human(l.date), l.note || ""].filter(Boolean));
           });
@@ -457,7 +460,7 @@
       names.style.width = LEFT + "px"; names.style.marginInlineEnd = -LEFT + "px";
       h("div", "ptl-names-band", names).style.height = (AXIS + TOPBAND) + "px";
       shown.forEach(function (p, i) {
-        var dim = (sel && !related[p.id]) || (state.focusOrg && !p.stints.some(function (s) { return s.org === state.focusOrg; }));
+        var dim = (sel && !related[p.id]) || !hasFocus(p);
         var b = h("button", "ptl-name" + (sel === p.id ? " on" : "") + (dim ? " dim" : ""), names);
         b.type = "button"; b.style.top = layout[p.id].top + "px"; b.style.height = layout[p.id].h + "px";
         b.dataset.person = p.id;
@@ -465,7 +468,7 @@
         b.title = p.name;
         var ring = portrait(p, 32, b);
         var now = p.stints.filter(visibleBySource).slice(-1)[0];
-        if (now) ring.style.setProperty("--ptl-ring", colourOf(now));
+        if (now && colourOf(now)) ring.style.setProperty("--ptl-ring", "color-mix(in oklab, " + colourOf(now) + " 50%, var(--paper))");
         var txt = h("span", "ptl-name-text", b);
         h("span", null, txt, p.name);
         if (p.handle) h("span", "ptl-handle", txt, "@" + p.handle);
@@ -484,14 +487,16 @@
       var keys = Object.keys(table).filter(function (k) { return used[k] && table[k].legend !== false; })
         .sort(function (a, b) { return used[b] - used[a] || (table[a].name < table[b].name ? -1 : 1); });
       var cut = state.legendAll ? keys.length : Math.min(keys.length, LEGEND_TOP);
-      if (state.focusOrg && keys.indexOf(state.focusOrg) >= cut) cut = keys.indexOf(state.focusOrg) + 1;
+      var fk = state.colour === "place" ? state.focusPlace : state.focusOrg;
+      if (fk && keys.indexOf(fk) >= cut) cut = keys.indexOf(fk) + 1;
       keys.slice(0, cut).forEach(function (k) {
-        var b = h("button", "ptl-key" + (state.focusOrg === k ? " on" : ""), legend);
-        b.type = "button";
-        var sw = h("span", "ptl-dot", b); sw.style.background = table[k].colour;
+        var on = state.colour === "place" ? state.focusPlace === k : state.focusOrg === k;
+        var b = h("button", "ptl-key" + (on ? " on" : ""), legend);
+        tint(h("span", "ptl-dot", b), table[k].colour);
         b.appendChild(document.createTextNode(table[k].short || table[k].name));
+        b.type = "button"; b.setAttribute("aria-pressed", String(on));
         if (state.colour === "org") b.addEventListener("click", function () { if (state.focusOrg === k) { state.focusOrg = null; clearPanel(); draw(); } else select({ org: k }); });
-        else b.disabled = true;
+        else b.addEventListener("click", function () { state.focusPlace = state.focusPlace === k ? null : k; draw(); });
       });
       if (keys.length > LEGEND_TOP) {
         var more = h("button", "ptl-key ptl-more", legend, state.legendAll ? "Show fewer" : "Show all " + keys.length);

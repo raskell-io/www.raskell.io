@@ -215,7 +215,13 @@ svg.chart {
   --ptl-w: min(var(--shell), calc(100vw - 2 * var(--gutter)));
   width: var(--ptl-w);
   margin: 2.5rem 0;   // the text column starts at the left edge of the shell, so the figure grows to the right
-  --ptl-gold: #b8862b; --ptl-teal: #1f8f96; --ptl-red: #c0563f; --ptl-violet: #7a5bb5; --ptl-grey: var(--faint);
+  // Colours stay, but softened toward the paper so they sit back; what the reader picks shows at full strength.
+  --ptl-soft: 42%;   // how much of an organisation's colour a bar keeps
+  --ptl-accent: #b8862b;
+  --ptl-bar: color-mix(in srgb, var(--ink) 18%, var(--paper));
+  --ptl-mark: color-mix(in srgb, var(--ink) 55%, var(--paper));
+  --ptl-idea: color-mix(in oklab, #b8862b 70%, var(--paper));
+  --ptl-product: color-mix(in oklab, #1f8f96 70%, var(--paper));
 }
 .ptl-fallback ul { font-size: 0.95rem; }
 .ptl { position: relative; font-family: var(--font-prose); }
@@ -231,7 +237,8 @@ svg.chart {
 .ptl-key { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.76rem; padding: 0.15rem 0.6rem 0.15rem 0.4rem; }
 .ptl-key:disabled { cursor: default; }
 .ptl-key.on { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
-.ptl-dot { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 50%; flex: none; }
+.ptl-dot { display: inline-block; width: 0.6rem; height: 0.6rem; border-radius: 50%; flex: none; background: color-mix(in oklab, var(--c, var(--ink)) 60%, var(--paper)); }
+.ptl-dot.on { background: var(--c, var(--ptl-accent)); }
 
 .ptl-frame {
   position: relative; overflow-x: auto; overflow-y: hidden; border: 1px solid var(--line); border-radius: 14px;
@@ -269,25 +276,25 @@ svg.chart {
 .ptl-band-label { font-size: 10px; fill: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
 .ptl-band-rule { stroke: var(--line); stroke-dasharray: 2 4; }
 .ptl-moment { cursor: pointer; outline: none; }
-.ptl-moment[data-kind="idea"] path { fill: var(--ptl-gold); }
-.ptl-moment[data-kind="product"] circle { fill: var(--paper); stroke: var(--ptl-teal); stroke-width: 2; }
-.ptl-moment[data-kind="event"] rect:not(.ptl-hit) { fill: var(--ink); }
+.ptl-moment[data-kind="idea"] path { fill: var(--ptl-idea); }
+.ptl-moment[data-kind="product"] circle { fill: var(--paper); stroke: var(--ptl-product); stroke-width: 1.5; }
+.ptl-moment[data-kind="event"] rect:not(.ptl-hit) { fill: var(--ptl-mark); }
 .ptl-moment .ptl-hit { fill: transparent; }
 .ptl-moment:is(:hover, :focus-visible, .on) :is(path, circle, rect:not(.ptl-hit)) { stroke: var(--ink); stroke-width: 2; }
 .ptl-zebra { fill: var(--tint-bar); opacity: 0.5; }
 .ptl-thread { stroke: var(--line-strong); stroke-width: 1; stroke-dasharray: 1 3; }
-.ptl-bar { cursor: pointer; stroke: var(--paper); stroke-width: 1; }
+.ptl-bar { cursor: pointer; fill: color-mix(in oklab, var(--c, var(--ink)) var(--ptl-soft), var(--paper)); stroke: var(--paper); stroke-width: 1; }
+.ptl-bar:not([style]) { fill: var(--ptl-bar); }
+.ptl-bar.hl { fill: var(--c, var(--ptl-accent)); }
 .ptl-bar.open { mask: linear-gradient(90deg, #000 85%, transparent); }
-.ptl-bar.hl, .ptl-bar:hover { stroke: var(--ink); stroke-width: 1.5; }
-.ptl-bar-label { font-size: 9.5px; fill: #fff; pointer-events: none; font-weight: 500; paint-order: stroke; stroke: rgba(0, 0, 0, 0.25); stroke-width: 2px; }
+.ptl-bar:hover { stroke: var(--ink); stroke-width: 1.5; }
+.ptl-bar-label { font-size: 9.5px; fill: var(--ink); opacity: 0.75; pointer-events: none; }
+.ptl-bar.hl + .ptl-bar-label { fill: var(--paper); opacity: 1; }
 .ptl-flip circle { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; cursor: help; }
-.ptl-arc { fill: none; stroke-width: 2; opacity: 0.85; cursor: help; }
-.ptl-arc-end { stroke: var(--paper); stroke-width: 1.5; }
-.ptl-arc[data-tone="gold"] { stroke: var(--ptl-gold); } .ptl-arc-end[data-tone="gold"] { fill: var(--ptl-gold); }
-.ptl-arc[data-tone="teal"] { stroke: var(--ptl-teal); } .ptl-arc-end[data-tone="teal"] { fill: var(--ptl-teal); }
-.ptl-arc[data-tone="red"] { stroke: var(--ptl-red); stroke-dasharray: 5 3; } .ptl-arc-end[data-tone="red"] { fill: var(--ptl-red); }
-.ptl-arc[data-tone="violet"] { stroke: var(--ptl-violet); } .ptl-arc-end[data-tone="violet"] { fill: var(--ptl-violet); }
-.ptl-arc[data-tone="grey"] { stroke: var(--ptl-grey); } .ptl-arc-end[data-tone="grey"] { fill: var(--ptl-grey); }
+.ptl-arc { fill: none; stroke: var(--ink); stroke-width: 1.5; opacity: 0.7; cursor: help; }
+.ptl-arc:hover { opacity: 1; stroke-width: 2.5; }
+.ptl-arc[data-tone="conflict"] { stroke-dasharray: 5 3; }
+.ptl-arc-end { fill: var(--ink); stroke: var(--paper); stroke-width: 1.5; }
 
 .ptl-tip {
   position: absolute; z-index: 5; max-width: 270px; padding: 0.5rem 0.65rem; pointer-events: none;
@@ -306,11 +313,9 @@ svg.chart {
 .ptl-meta { font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted); }
 .ptl-stints, .ptl-ties { list-style: none; margin: 0.4rem 0 0; padding: 0; display: grid; gap: 0.35rem; }
 .ptl-stints li, .ptl-ties li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.5rem; }
-.ptl-ties li::before { content: ""; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--ptl-grey); flex: none; align-self: center; }
-.ptl-ties li[data-tone="gold"]::before { background: var(--ptl-gold); }
-.ptl-ties li[data-tone="teal"]::before { background: var(--ptl-teal); }
-.ptl-ties li[data-tone="red"]::before { background: var(--ptl-red); }
-.ptl-ties li[data-tone="violet"]::before { background: var(--ptl-violet); }
+.ptl-ties li::before { content: ""; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--ptl-bar); flex: none; align-self: center; }
+.ptl-ties li[data-tone]::before { width: 1rem; height: 0; border-radius: 0; background: none; border-top: 1.5px solid var(--ink); opacity: 0.7; }
+.ptl-ties li[data-tone="conflict"]::before { border-top-style: dashed; }
 .ptl-when { font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); min-width: 8.5rem; }
 .ptl-left { flex-basis: 100%; padding-inline-start: 9.2rem; color: var(--muted); font-size: 0.85rem; }
 .ptl-src { flex-basis: 100%; padding-inline-start: 9.2rem; font-family: var(--font-mono); font-size: 0.68rem; color: var(--faint); }
@@ -323,9 +328,11 @@ svg.chart {
   .ptl-left, .ptl-src { padding-inline-start: 0; }
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .ptl-figure { --ptl-gold: #e2b65c; --ptl-teal: #5fc8cf; --ptl-red: #e7826b; --ptl-violet: #a98fe0; }
+  :root:not([data-theme="light"]) .ptl-figure { --ptl-accent: #e2b65c; --ptl-bar: color-mix(in srgb, var(--ink) 26%, var(--paper)); --ptl-soft: 50%;
+    --ptl-idea: color-mix(in oklab, #e2b65c 70%, var(--paper)); --ptl-product: color-mix(in oklab, #5fc8cf 70%, var(--paper)); }
 }
-:root[data-theme="dark"] .ptl-figure { --ptl-gold: #e2b65c; --ptl-teal: #5fc8cf; --ptl-red: #e7826b; --ptl-violet: #a98fe0; }
+:root[data-theme="dark"] .ptl-figure { --ptl-accent: #e2b65c; --ptl-bar: color-mix(in srgb, var(--ink) 26%, var(--paper)); --ptl-soft: 50%;
+  --ptl-idea: color-mix(in oklab, #e2b65c 70%, var(--paper)); --ptl-product: color-mix(in oklab, #5fc8cf 70%, var(--paper)); }
 .ptl-src-p { font-family: var(--font-mono); font-size: 0.68rem; color: var(--faint); }
 .ptl-src-p a { color: inherit; }
 .ptl-caption { margin-block-start: 0.6rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); }
@@ -336,9 +343,9 @@ svg.chart {
 .ptl-bandkey { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 0.5rem; margin: 0 0 0.6rem; font-size: 0.78rem; color: var(--muted); }
 .ptl-k { display: inline-block; width: 0.7rem; height: 0.7rem; margin-inline-start: 0.4rem; }
 .ptl-k:first-child { margin-inline-start: 0; }
-.ptl-k--idea { background: var(--ptl-gold); transform: rotate(45deg) scale(0.8); }
-.ptl-k--product { border: 2px solid var(--ptl-teal); border-radius: 50%; }
-.ptl-k--event { width: 3px; background: var(--ink); }
+.ptl-k--idea { background: var(--ptl-idea); transform: rotate(45deg) scale(0.8); }
+.ptl-k--product { border: 1.5px solid var(--ptl-product); border-radius: 50%; }
+.ptl-k--event { width: 3px; background: var(--ptl-mark); }
 .ptl-k--flip { border: 1.5px solid var(--ink); border-radius: 50%; background: var(--paper); }
 
 // Idea lineage (static/js/ai-lineage.js): paradigms on top, one row per field, curves from idea to product.
@@ -357,22 +364,24 @@ svg.chart {
 .ail-paradigm.on .ail-pbar { fill: var(--surface); }
 .ail-paradigm.dim { opacity: 0.4; }
 .ail-plabel { font-size: 11px; fill: var(--ink); pointer-events: none; }
-.ail-era { fill: var(--ptl-teal); opacity: 0.07; }
+.ail-era { fill: var(--ink); opacity: 0.05; }
 .ail-label { font-size: 11px; fill: var(--ink); }
 .ail-item.dim { opacity: 0.16; }
-.ail-item[data-rel="up"] path, .ail-item[data-rel="up"] circle { stroke: var(--ptl-gold); stroke-width: 2; }
-.ail-item[data-rel="down"] path, .ail-item[data-rel="down"] circle { stroke: var(--ptl-teal); stroke-width: 2; }
+.ail-item.ptl-moment[data-rel="self"] path { fill: var(--ptl-accent); stroke: var(--ptl-accent); }
+.ail-item.ptl-moment[data-rel="self"] circle { stroke: var(--ptl-accent); stroke-width: 2.5; }
+.ail-item[data-rel="up"] path, .ail-item[data-rel="down"] path { fill: var(--ink); }
+.ail-item[data-rel="up"] circle, .ail-item[data-rel="down"] circle { stroke: var(--ink); stroke-width: 2; }
 .ail-item[data-rel="self"] .ail-label, .ail-item:is(:hover, :focus-visible) .ail-label { font-weight: 600; }
 .ail-edge { fill: none; stroke-width: 1.2; }
 .ail-edge--base { stroke: var(--line-strong); opacity: 0.5; }
-.ail-edge--up { stroke: var(--ptl-gold); stroke-width: 2; }
-.ail-edge--down { stroke: var(--ptl-teal); stroke-width: 2; }
+.ail-edge--up { stroke: var(--ptl-accent); stroke-width: 2; }
+.ail-edge--down { stroke: var(--ink); stroke-width: 1.6; stroke-dasharray: 5 3; }
 .ail-edge.dim { opacity: 0.15; }
 .ail-arrow--base { fill: var(--line-strong); }
-.ail-arrow--up { fill: var(--ptl-gold); }
-.ail-arrow--down { fill: var(--ptl-teal); }
+.ail-arrow--up { fill: var(--ptl-accent); }
+.ail-arrow--down { fill: var(--ink); }
 .ail-k { display: inline-block; width: 1.1rem; height: 0; border-top: 2px solid; margin-inline-start: 0.4rem; }
-.ail-k--up { border-color: var(--ptl-gold); }
-.ail-k--down { border-color: var(--ptl-teal); }
+.ail-k--up { border-color: var(--ptl-accent); }
+.ail-k--down { border-color: var(--ink); border-top-style: dashed; }
 .ail-note { color: var(--muted); font-size: 0.85rem; }
 .ail-list li::before { display: none; }
