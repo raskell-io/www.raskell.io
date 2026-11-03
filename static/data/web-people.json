@@ -1,0 +1,6886 @@
+{
+ "about": {
+  "title": "People of the World Wide Web, 1945 to 2026",
+  "description": "Who worked where and when, how they were tied to each other, and which idea led to which product. Compiled from Tim Berners-Lee's memoir This Is for Everyone (2025), written with Stephen Witt, with careers the book does not date checked on the web and linked. It is one participant's account.",
+  "url": "https://raskell.io/data/web-people.json",
+  "page": "https://raskell.io/data/web-people/",
+  "author": "Raffael Schneider",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "updated": "2026-11-03",
+  "fields": {
+   "people[].stints": "one role at one organisation: org, role, start, end (null while ongoing or not known to have ended), place, left, src, ref (chapter) or url",
+   "links": "ties between two people: kind, date, note, src, ref",
+   "moments": "kind idea, product or event: id, date, title, short, detail, people, orgs, track (ideas and products), src, ref or url",
+   "dates": "YYYY, YYYY-MM or YYYY-MM-DD; precision as given by the source",
+   "tracks": "the fields ideas and products are sorted into, in display order",
+   "paradigms": "eras of the web, which overlap",
+   "lineage": "which idea or product led to which: from, to (moment ids), note, src, ref"
+  }
+ },
+ "range": {
+  "start": 1945,
+  "focus": 1989,
+  "end": 2026.9
+ },
+ "sources": {
+  "tbl": {
+   "short": "Berners-Lee",
+   "title": "Tim Berners-Lee with Stephen Witt, This Is for Everyone (2025)"
+  },
+  "web": {
+   "short": "Web",
+   "title": "Checked on the web, source linked"
+  }
+ },
+ "places": {
+  "bay-area": {
+   "name": "San Francisco Bay Area",
+   "colour": "#1f8f96"
+  },
+  "beijing": {
+   "name": "Beijing",
+   "colour": "#b0752f"
+  },
+  "boston": {
+   "name": "Boston",
+   "colour": "#4a7fb5"
+  },
+  "champaign": {
+   "name": "Champaign, Illinois",
+   "colour": "#7a6bb0"
+  },
+  "chicago": {
+   "name": "Chicago",
+   "colour": "#5a8f4a"
+  },
+  "china": {
+   "name": "China",
+   "colour": "#a0568c"
+  },
+  "dorset": {
+   "name": "Dorset",
+   "colour": "#c0564a"
+  },
+  "east-africa": {
+   "name": "East Africa",
+   "colour": "#6d7680"
+  },
+  "flanders": {
+   "name": "Flanders",
+   "colour": "#1f8f96"
+  },
+  "france": {
+   "name": "France",
+   "colour": "#b0752f"
+  },
+  "geneva": {
+   "name": "Geneva",
+   "colour": "#4a7fb5"
+  },
+  "helsinki": {
+   "name": "Helsinki",
+   "colour": "#7a6bb0"
+  },
+  "india": {
+   "name": "India",
+   "colour": "#5a8f4a"
+  },
+  "lisbon": {
+   "name": "Lisbon",
+   "colour": "#a0568c"
+  },
+  "london": {
+   "name": "London",
+   "colour": "#c0564a"
+  },
+  "manchester": {
+   "name": "Manchester",
+   "colour": "#6d7680"
+  },
+  "minnesota": {
+   "name": "Minnesota",
+   "colour": "#1f8f96"
+  },
+  "north-carolina": {
+   "name": "North Carolina",
+   "colour": "#b0752f"
+  },
+  "norway": {
+   "name": "Norway",
+   "colour": "#4a7fb5"
+  },
+  "oxford": {
+   "name": "Oxford",
+   "colour": "#7a6bb0"
+  },
+  "paris": {
+   "name": "Paris",
+   "colour": "#5a8f4a"
+  },
+  "philippines": {
+   "name": "Philippines",
+   "colour": "#a0568c"
+  },
+  "poole": {
+   "name": "Poole",
+   "colour": "#c0564a"
+  },
+  "san-antonio": {
+   "name": "San Antonio",
+   "colour": "#6d7680"
+  },
+  "san-diego": {
+   "name": "San Diego",
+   "colour": "#1f8f96"
+  },
+  "seattle": {
+   "name": "Seattle",
+   "colour": "#b0752f"
+  },
+  "seoul": {
+   "name": "Seoul",
+   "colour": "#4a7fb5"
+  },
+  "taiwan": {
+   "name": "Taiwan",
+   "colour": "#7a6bb0"
+  },
+  "tokyo": {
+   "name": "Tokyo",
+   "colour": "#5a8f4a"
+  },
+  "tunisia": {
+   "name": "Tunisia",
+   "colour": "#a0568c"
+  },
+  "uk": {
+   "name": "United Kingdom",
+   "colour": "#c0564a"
+  },
+  "washington-dc": {
+   "name": "Washington, DC",
+   "colour": "#6d7680"
+  },
+  "west-africa": {
+   "name": "West Africa",
+   "colour": "#1f8f96"
+  },
+  "zurich": {
+   "name": "Zurich",
+   "colour": "#b0752f"
+  }
+ },
+ "orgs": {
+  "ferranti": {
+   "name": "Ferranti",
+   "kind": "company",
+   "founded": null,
+   "place": "manchester",
+   "note": "Electrical engineering firm that built the first commercial computer in the UK.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 1: Early Days"
+  },
+  "bletchley-park": {
+   "name": "Bletchley Park",
+   "kind": "other",
+   "founded": null,
+   "place": "london",
+   "note": "Wartime UK codebreaking site where Turing and his team worked.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 1: Early Days"
+  },
+  "emanuel-school": {
+   "name": "Emanuel School",
+   "kind": "other",
+   "founded": "1594",
+   "place": "london",
+   "note": "Direct grant boys school attended by Berners-Lee.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 1: Early Days"
+  },
+  "oxford": {
+   "name": "University of Oxford",
+   "kind": "university",
+   "founded": null,
+   "place": "oxford",
+   "note": "Berners-Lee read physics at Queen's College.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 1: Early Days"
+  },
+  "plessey": {
+   "name": "Plessey",
+   "kind": "company",
+   "founded": null,
+   "place": "poole",
+   "note": "Telecommunications company and first employer of Berners-Lee.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 1: Early Days"
+  },
+  "dg-nash": {
+   "name": "D.G. Nash",
+   "kind": "company",
+   "founded": null,
+   "place": "dorset",
+   "note": "Small start-up making dot-matrix printers.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 1: Early Days"
+  },
+  "cern": {
+   "name": "CERN",
+   "kind": "lab",
+   "founded": null,
+   "place": "geneva",
+   "note": "International particle physics laboratory where the web was created.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Prologue",
+   "colour": "#4a7fb5"
+  },
+  "mit": {
+   "name": "MIT",
+   "kind": "university",
+   "founded": null,
+   "place": "boston",
+   "note": "Home of the web consortium Berners-Lee led from 1994.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Prologue"
+  },
+  "microsoft": {
+   "name": "Microsoft",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Maker of MS-DOS, on its way to huge value by the mid-1980s.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 2: CERN"
+  },
+  "bell-labs": {
+   "name": "Bell Labs",
+   "kind": "lab",
+   "founded": null,
+   "place": null,
+   "note": "Where Unix was developed.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 2: CERN"
+  },
+  "us-department-of-defense": {
+   "name": "US Department of Defense",
+   "kind": "government",
+   "founded": null,
+   "place": null,
+   "note": "First major user of IP addressing.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 2: CERN"
+  },
+  "iso": {
+   "name": "International Standards Organization",
+   "kind": "other",
+   "founded": null,
+   "place": "geneva",
+   "note": "Standards body behind the OSI protocols.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 2: CERN"
+  },
+  "xanadu-operating-company": {
+   "name": "Xanadu Operating Company",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Planned operator of the centralised Xanadu system.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 2: CERN"
+  },
+  "apple": {
+   "name": "Apple",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Released HyperCard and forced out Steve Jobs in 1985.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 2: CERN",
+   "colour": "#6d7680"
+  },
+  "next": {
+   "name": "NeXT",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Company Jobs started after Apple, moved into professional workstations.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 2: CERN"
+  },
+  "slac": {
+   "name": "Stanford Linear Accelerator Center",
+   "kind": "lab",
+   "founded": null,
+   "place": "bay-area",
+   "note": "Hosted the first website outside CERN.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 4: The Rise of the Web"
+  },
+  "uc-berkeley": {
+   "name": "UC Berkeley",
+   "kind": "university",
+   "founded": null,
+   "place": "bay-area",
+   "note": "Where Pei-Yuan Wei studied computer science.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 4: The Rise of the Web"
+  },
+  "university-of-kansas": {
+   "name": "University of Kansas",
+   "kind": "university",
+   "founded": null,
+   "place": null,
+   "note": "Where Lynx was debuted.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 4: The Rise of the Web"
+  },
+  "helsinki-university-of-technology": {
+   "name": "Helsinki University of Technology",
+   "kind": "university",
+   "founded": null,
+   "place": "helsinki",
+   "note": "Graduate students there published the Erwise browser.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 4: The Rise of the Web"
+  },
+  "ietf": {
+   "name": "Internet Engineering Task Force",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": null,
+   "note": "Internet standards body, run by the US government until it became an independent non-profit in 1993.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 4: The Rise of the Web"
+  },
+  "xerox-parc": {
+   "name": "Xerox PARC",
+   "kind": "lab",
+   "founded": null,
+   "place": "bay-area",
+   "note": "Corporate research lab Berners-Lee weighed as a home for the web and turned down.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 4: The Rise of the Web"
+  },
+  "autodesk": {
+   "name": "Autodesk",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Adopted Xanadu for a time and then dropped it.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 4: The Rise of the Web"
+  },
+  "university-of-minnesota": {
+   "name": "University of Minnesota",
+   "kind": "university",
+   "founded": null,
+   "place": "minnesota",
+   "note": "Home of Gopher.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 4: The Rise of the Web"
+  },
+  "cornell": {
+   "name": "Cornell University",
+   "kind": "university",
+   "founded": null,
+   "place": null,
+   "note": "Where Tom Bruce built the Legal Information Institute.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 4: The Rise of the Web"
+  },
+  "uiuc": {
+   "name": "University of Illinois",
+   "kind": "university",
+   "founded": null,
+   "place": "champaign",
+   "note": "Andreessen was an undergraduate there.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 4: The Rise of the Web"
+  },
+  "ncsa": {
+   "name": "National Center for Supercomputing Applications",
+   "kind": "lab",
+   "founded": null,
+   "place": "champaign",
+   "note": "Where Mosaic was developed.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 4: The Rise of the Web",
+   "colour": "#7a6bb0"
+  },
+  "fermilab": {
+   "name": "Fermilab",
+   "kind": "lab",
+   "founded": null,
+   "place": "chicago",
+   "note": "Particle accelerator lab that invited Berners-Lee to speak in 1993.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 4: The Rise of the Web"
+  },
+  "oreilly": {
+   "name": "O'Reilly",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Tech publisher behind the Global News Network.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 4: The Rise of the Web"
+  },
+  "w3c": {
+   "name": "World Wide Web Consortium",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": "boston",
+   "note": "First called W3O; royalty-free web standards body hosted at MIT, INRIA, Keio and Beihang.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 5: Governing the Web",
+   "colour": "#2f8f83"
+  },
+  "inria": {
+   "name": "INRIA",
+   "kind": "lab",
+   "founded": null,
+   "place": "france",
+   "note": "French research institute and European W3C host.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 5: Governing the Web"
+  },
+  "keio": {
+   "name": "Keio University",
+   "kind": "university",
+   "founded": null,
+   "place": "tokyo",
+   "note": "Third W3C host, from 1996.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "beihang": {
+   "name": "Beihang University",
+   "kind": "university",
+   "founded": null,
+   "place": "beijing",
+   "note": "Site of the first W3C China office in 2006; fourth host in 2013.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "darpa": {
+   "name": "DARPA",
+   "kind": "government",
+   "founded": null,
+   "place": null,
+   "note": "US defence research arm; early W3C funder and semantic web backer.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "yahoo": {
+   "name": "Yahoo",
+   "kind": "company",
+   "founded": "1994-01",
+   "place": null,
+   "note": "Began as a hand-built topic directory by two Stanford students.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 5: Governing the Web"
+  },
+  "stanford": {
+   "name": "Stanford University",
+   "kind": "university",
+   "founded": null,
+   "place": null,
+   "note": "Where the Yahoo and PageRank founders were graduate students.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 5: Governing the Web",
+   "colour": "#8c4a4a"
+  },
+  "aol": {
+   "name": "America Online",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Dial-up provider; opened Usenet in 1994 and later bought Netscape.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 5: Governing the Web"
+  },
+  "hewlett-packard": {
+   "name": "Hewlett Packard",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Employer of Dave Raggett.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 5: Governing the Web"
+  },
+  "digital-equipment": {
+   "name": "Digital Equipment Corporation",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Employer of Alan Kotok.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 5: Governing the Web"
+  },
+  "infocom": {
+   "name": "Infocom",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Publisher of Zork, formerly led by Al Vezza.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 5: Governing the Web"
+  },
+  "netscape": {
+   "name": "Netscape Communications",
+   "kind": "company",
+   "founded": null,
+   "place": "bay-area",
+   "note": "Maker of Navigator; IPO in 1995, later sold to AOL.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave",
+   "colour": "#b0752f"
+  },
+  "silicon-graphics": {
+   "name": "Silicon Graphics",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Founded by Jim Clark, who backed the Netscape team.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "spyglass": {
+   "name": "Spyglass",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "NCSA spin-off bought by Microsoft in 1994.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "amazon": {
+   "name": "Amazon",
+   "kind": "company",
+   "founded": null,
+   "place": "seattle",
+   "note": "Online bookseller that later bought Alexa Internet.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "opera": {
+   "name": "Opera",
+   "kind": "company",
+   "founded": null,
+   "place": "norway",
+   "note": "Norwegian browser maker; joined the WHATWG break.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 8: Technology and Society"
+  },
+  "doubleclick": {
+   "name": "Doubleclick",
+   "kind": "company",
+   "founded": "1995",
+   "place": null,
+   "note": "Served banner ads through a third-party network.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "craigslist": {
+   "name": "Craigslist",
+   "kind": "company",
+   "founded": "1996",
+   "place": "bay-area",
+   "note": "Began as a local events mailing list on the web.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "geocities": {
+   "name": "Geocities",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Early web host; third most visited site by 1999.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "expedia": {
+   "name": "Expedia",
+   "kind": "company",
+   "founded": "1996",
+   "place": null,
+   "note": "Travel booking site that displaced travel agents.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "priceline": {
+   "name": "Priceline",
+   "kind": "company",
+   "founded": "1997",
+   "place": null,
+   "note": "Travel booking site that displaced travel agents.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "alexa-internet": {
+   "name": "Alexa Internet",
+   "kind": "company",
+   "founded": "1996",
+   "place": null,
+   "note": "For-profit web traffic analyst, sold to Amazon in 1999.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "internet-archive": {
+   "name": "Internet Archive",
+   "kind": "nonprofit",
+   "founded": "1996",
+   "place": null,
+   "note": "Non-profit library of web snapshots, founded alongside Alexa.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "altavista": {
+   "name": "AltaVista",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Search firm whose internal copy of the web inspired Kahle.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "akamai": {
+   "name": "Akamai Technologies",
+   "kind": "company",
+   "founded": "1998",
+   "place": null,
+   "note": "Content distribution network built on consistent hashing.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  "eff": {
+   "name": "Electronic Frontier Foundation",
+   "kind": "nonprofit",
+   "founded": "1990",
+   "place": null,
+   "note": "Online civil liberties group.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 8: Technology and Society"
+  },
+  "cdt": {
+   "name": "Center for Democracy and Technology",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": null,
+   "note": "Civil liberties group co-founded by Weitzner; joined W3C.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 8: Technology and Society"
+  },
+  "google": {
+   "name": "Google",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Grew from PageRank; dominant search firm by the end of 2004.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 7: Growing Pains",
+   "colour": "#c0564a"
+  },
+  "verisign": {
+   "name": "Verisign",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "For-profit operator of the dot-com registry.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 7: Growing Pains"
+  },
+  "nupedia": {
+   "name": "Nupedia",
+   "kind": "other",
+   "founded": null,
+   "place": null,
+   "note": "Expert-reviewed encyclopaedia project that Wikipedia grew out of.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 7: Growing Pains"
+  },
+  "mozilla": {
+   "name": "Mozilla",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": null,
+   "note": "Foundation formed from what remained of Netscape; launched Firefox.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 8: Technology and Society"
+  },
+  "whatwg": {
+   "name": "WHATWG",
+   "kind": "other",
+   "founded": "2004",
+   "place": null,
+   "note": "Splinter HTML group formed by Mozilla, Opera and Apple representatives.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 8: Technology and Society"
+  },
+  "alibaba": {
+   "name": "Alibaba",
+   "kind": "company",
+   "founded": null,
+   "place": "china",
+   "note": "Trade platform linking Chinese factories with customers worldwide.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 8: Technology and Society"
+  },
+  "baidu": {
+   "name": "Baidu",
+   "kind": "company",
+   "founded": null,
+   "place": "china",
+   "note": "Chinese search engine that took over after Google left in 2010.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 8: Technology and Society"
+  },
+  "royal-society": {
+   "name": "Royal Society",
+   "kind": "other",
+   "founded": null,
+   "place": "london",
+   "note": "Elected Berners-Lee a fellow in 2001.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 8: Technology and Society"
+  },
+  "web-foundation": {
+   "name": "World Wide Web Foundation",
+   "kind": "nonprofit",
+   "founded": "2009-11",
+   "place": null,
+   "note": "Set up to widen web access and treat it as a basic right.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 9: The Mobile Web",
+   "colour": "#5a8f4a"
+  },
+  "web-science-trust": {
+   "name": "Web Science Trust",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": null,
+   "note": "Charitable trust backing research on how the web affects society.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 9: The Mobile Web"
+  },
+  "flametree": {
+   "name": "Flametree",
+   "kind": "company",
+   "founded": "1998",
+   "place": null,
+   "note": "Early content company on flexible work; sold to PwC in 2001, three years after inception.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 9: The Mobile Web"
+  },
+  "pallas": {
+   "name": "Pallas",
+   "kind": "investor",
+   "founded": null,
+   "place": null,
+   "note": "Private equity firm where Leith worked after moving to the UK.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 9: The Mobile Web"
+  },
+  "knight-foundation": {
+   "name": "Knight Foundation",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": null,
+   "note": "American foundation that gave the Web Foundation its founding money.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 9: The Mobile Web"
+  },
+  "ford-foundation": {
+   "name": "Ford Foundation",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": null,
+   "note": "Large private endowment; Berners-Lee served on its board.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 10: This Is for Everyone"
+  },
+  "infosys": {
+   "name": "Infosys",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Indian tech consultancy cofounded by Nilekani.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 9: The Mobile Web"
+  },
+  "facebook": {
+   "name": "Facebook",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Social network funded by targeted advertising built on user data.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 10: This Is for Everyone"
+  },
+  "odi": {
+   "name": "Open Data Institute",
+   "kind": "nonprofit",
+   "founded": "2012",
+   "place": "london",
+   "note": "Works with governments to publish data and build tools to use it.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 11: Open Data"
+  },
+  "mastercard": {
+   "name": "MasterCard",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Gave $1 million for Solid research at MIT.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 11: Open Data"
+  },
+  "csail": {
+   "name": "MIT CSAIL",
+   "kind": "lab",
+   "founded": "2003",
+   "place": null,
+   "note": "Formed when the separate MIT computer science and AI labs reunited.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 11: Open Data"
+  },
+  "jstor": {
+   "name": "JSTOR",
+   "kind": "other",
+   "founded": null,
+   "place": null,
+   "note": "Paywalled digital library of academic papers.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 11: Open Data"
+  },
+  "deepmind": {
+   "name": "DeepMind",
+   "kind": "company",
+   "founded": "2010",
+   "place": null,
+   "note": "AI start-up aiming at general intelligence; Google bought it for $400 million.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 12: Machine Learning",
+   "colour": "#3f6fa8"
+  },
+  "last-fm": {
+   "name": "Last.fm",
+   "kind": "company",
+   "founded": "2002",
+   "place": null,
+   "note": "Music recommendation service spun off from Southampton University.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 12: Machine Learning"
+  },
+  "cambridge-analytica": {
+   "name": "Cambridge Analytica",
+   "kind": "company",
+   "founded": null,
+   "place": "london",
+   "note": "British political consulting firm using Facebook data to target voters.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 12: Machine Learning"
+  },
+  "center-for-humane-technology": {
+   "name": "Center for Humane Technology",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": null,
+   "note": "Founded by Tristan Harris after he left Google.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 13: Design Issues"
+  },
+  "project-liberty": {
+   "name": "Project Liberty",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": null,
+   "note": "NGO founded by Frank McCourt to return control of digital lives to people.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 13: Design Issues"
+  },
+  "berkman-klein": {
+   "name": "Berkman Klein Center",
+   "kind": "lab",
+   "founded": null,
+   "place": null,
+   "note": "Harvard center on internet and society; Leith is a fellow, Zittrain a cofounder.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 13: Design Issues"
+  },
+  "us-house": {
+   "name": "US House of Representatives",
+   "kind": "government",
+   "founded": null,
+   "place": "washington-dc",
+   "note": "Heard Berners-Lee testify on net neutrality.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 9: The Mobile Web"
+  },
+  "inrupt": {
+   "name": "Inrupt",
+   "kind": "company",
+   "founded": "2018",
+   "place": "boston",
+   "note": "Company formed to build enterprise servers and drive adoption of Solid.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 15: Inrupt",
+   "colour": "#a0568c"
+  },
+  "glasswing": {
+   "name": "Glasswing",
+   "kind": "investor",
+   "founded": null,
+   "place": "boston",
+   "note": "Venture firm of Rudina Seseri, focused on tech and cybersecurity; backed Inrupt as a moonshot bet.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 15: Inrupt"
+  },
+  "openai": {
+   "name": "OpenAI",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Then a nonprofit start-up when it adopted the Google transformer; builder of GPT and ChatGPT.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 16: Intelligent Machines"
+  },
+  "common-crawl": {
+   "name": "Common Crawl",
+   "kind": "nonprofit",
+   "founded": "2008",
+   "place": null,
+   "note": "Archive that copies the web monthly; its data set trained the GPT models.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 16: Intelligent Machines"
+  },
+  "applied-semantics": {
+   "name": "Applied Semantics",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Start-up of Gil Elbaz sold to Google in 2003; provided the core of AdSense.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 16: Intelligent Machines"
+  },
+  "inflection": {
+   "name": "Inflection",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "AI company cofounded by Mustafa Suleyman, maker of pi.ai; Berners-Lee saw its values as aligned with Inrupt.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 16: Intelligent Machines"
+  },
+  "wayve": {
+   "name": "Wayve",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Self-driving company founded by Alex Kendall.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 16: Intelligent Machines"
+  },
+  "athumi": {
+   "name": "Athumi",
+   "kind": "company",
+   "founded": null,
+   "place": "flanders",
+   "note": "Joint venture of the Flemish government and Inrupt that runs citizen pods.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 15: Inrupt"
+  },
+  "flanders": {
+   "name": "Government of Flanders",
+   "kind": "government",
+   "founded": null,
+   "place": "flanders",
+   "note": "Early adopter of Solid, treating data as a public utility.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 15: Inrupt"
+  },
+  "mewe": {
+   "name": "MeWe",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": "Privacy-first social network founded by Mark Weinstein, whose book imagines Solid wallets for everyone.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 18: Signs of Spring"
+  },
+  "bellingcat": {
+   "name": "Bellingcat",
+   "kind": "other",
+   "founded": null,
+   "place": null,
+   "note": "Started by Eliot Higgins; investigates controversial images.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 16: Intelligent Machines"
+  },
+  "c2pa": {
+   "name": "C2PA",
+   "kind": "other",
+   "founded": null,
+   "place": null,
+   "note": "Standards body for media metadata and provenance, with Adobe, the BBC and Sony among members.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 16: Intelligent Machines"
+  },
+  "mydata": {
+   "name": "MyData",
+   "kind": "other",
+   "founded": null,
+   "place": "seoul",
+   "note": "Global community pushing for personal control of data, with a hub in Korea.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 17: Attention vs. Intention"
+  },
+  "datasolids": {
+   "name": "Datasolids",
+   "kind": "company",
+   "founded": null,
+   "place": "north-carolina",
+   "note": "Small organization putting health data, even faxed data, into Solid wallets.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 18: Signs of Spring"
+  },
+  "ditchley-foundation": {
+   "name": "Ditchley Foundation",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": "oxford",
+   "note": "Think tank at Ditchley Park that hosted the 2022 AI summit.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 16: Intelligent Machines"
+  },
+  "web-summit": {
+   "name": "Web Summit",
+   "kind": "other",
+   "founded": null,
+   "place": "lisbon",
+   "note": "Annual conference hosted by Paddy Cosgrave since 2009, where the Contract was presented.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 14: The Contract for the Web"
+  },
+  "mci": {
+   "name": "MCI",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "cnri": {
+   "name": "Corporation for National Research Initiatives",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "vassar": {
+   "name": "Vassar College",
+   "kind": "university",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "sri": {
+   "name": "SRI International",
+   "kind": "lab",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "mcdonnell-douglas": {
+   "name": "McDonnell Douglas",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "bootstrap-institute": {
+   "name": "Bootstrap Institute",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "ucla": {
+   "name": "UCLA",
+   "kind": "university",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "usc-isi": {
+   "name": "USC Information Sciences Institute",
+   "kind": "lab",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "next-inc": {
+   "name": "NeXT",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "a16z": {
+   "name": "Andreessen Horowitz",
+   "kind": "investor",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "sgi": {
+   "name": "Silicon Graphics",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "hp-labs": {
+   "name": "Hewlett-Packard Labs",
+   "kind": "lab",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "wikimedia": {
+   "name": "Wikimedia Foundation",
+   "kind": "nonprofit",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "reddit": {
+   "name": "Reddit",
+   "kind": "company",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "harvard": {
+   "name": "Harvard University",
+   "kind": "university",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "southampton": {
+   "name": "University of Southampton",
+   "kind": "university",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  },
+  "jesus-college": {
+   "name": "Jesus College, Oxford",
+   "kind": "university",
+   "founded": null,
+   "place": null,
+   "note": null,
+   "src": [
+    "web"
+   ]
+  }
+ },
+ "people": [
+  {
+   "id": "tim-berners-lee",
+   "name": "Tim Berners-Lee",
+   "summary": "British programmer who conceived the World Wide Web at CERN, wrote its first protocols and software, then led a web consortium from MIT.",
+   "url": "https://en.wikipedia.org/wiki/Tim_Berners-Lee",
+   "src": [
+    "tbl"
+   ],
+   "stints": [
+    {
+     "org": "oxford",
+     "role": "read physics at Queen's College",
+     "start": "1973",
+     "end": "1977",
+     "place": "oxford",
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 1: Early Days"
+    },
+    {
+     "org": "plessey",
+     "role": "programmer",
+     "start": "1977",
+     "end": "1979",
+     "place": "dorset",
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 1: Early Days"
+    },
+    {
+     "org": "dg-nash",
+     "role": "programmer",
+     "start": "1979",
+     "end": "1980",
+     "place": "dorset",
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 1: Early Days"
+    },
+    {
+     "org": "cern",
+     "role": "contractor; wrote Enquire",
+     "start": "1980-07",
+     "end": "1980-12",
+     "place": "geneva",
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 2: CERN"
+    },
+    {
+     "org": "cern",
+     "role": "fellow; proposed and built the web",
+     "start": "1984",
+     "end": "1994",
+     "place": "geneva",
+     "left": "Moved to MIT to run a consortium for the web.",
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 2: CERN"
+    },
+    {
+     "org": "w3c",
+     "role": "director, hosted at MIT",
+     "start": "1994-09",
+     "end": "2023",
+     "place": "boston",
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 5: Governing the Web"
+    },
+    {
+     "org": "web-foundation",
+     "role": "cofounder",
+     "start": "2009-11",
+     "end": "2024-09",
+     "place": null,
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 18: Signs of Spring"
+    },
+    {
+     "org": "inrupt",
+     "role": "cofounder and chief technology officer",
+     "start": "2018",
+     "end": null,
+     "place": "boston",
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 15: Inrupt"
+    }
+   ]
+  },
+  {
+   "id": "robert-cailliau",
+   "name": "Robert Cailliau",
+   "summary": "Belgian CERN colleague and early convert who evangelised the web, coded MacWWW, the first Macintosh browser, and fought for its public domain release.",
+   "url": "https://en.wikipedia.org/wiki/Robert_Cailliau",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "cern",
+     "role": "fellow, then engineer; early ally on the web project",
+     "start": "1974-12",
+     "end": "2007-01",
+     "place": "geneva",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Robert_Cailliau"
+    }
+   ]
+  },
+  {
+   "id": "vint-cerf",
+   "name": "Vint Cerf",
+   "summary": "Co-developer of TCP/IP with Bob Kahn, earlier at IBM, who made the protocol free to use and argued for IP on everything.",
+   "url": "https://en.wikipedia.org/wiki/Vint_Cerf",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "stanford",
+     "role": "assistant professor; TCP/IP",
+     "start": "1972",
+     "end": "1976",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Vint_Cerf"
+    },
+    {
+     "org": "darpa",
+     "role": "funded the work on TCP/IP",
+     "start": "1973",
+     "end": "1982",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Vint_Cerf"
+    },
+    {
+     "org": "mci",
+     "role": "led MCI Mail",
+     "start": "1982",
+     "end": "1986",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Vint_Cerf"
+    },
+    {
+     "org": "google",
+     "role": "vice president and chief internet evangelist",
+     "start": "2005-10",
+     "end": "2026-07",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Vint_Cerf"
+    }
+   ]
+  },
+  {
+   "id": "bob-kahn",
+   "name": "Bob Kahn",
+   "summary": "Co-developer of TCP/IP with Vint Cerf.",
+   "url": "https://en.wikipedia.org/wiki/Robert_Kahn_(computer_scientist)",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "darpa",
+     "role": "thirteen years; TCP/IP with Cerf",
+     "start": "1973",
+     "end": "1986",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Robert_Kahn_(computer_scientist)"
+    },
+    {
+     "org": "cnri",
+     "role": "founder",
+     "start": "1986",
+     "end": null,
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Robert_Kahn_(computer_scientist)"
+    }
+   ]
+  },
+  {
+   "id": "ted-nelson",
+   "name": "Ted Nelson",
+   "summary": "Entrepreneur who coined hypertext and hypermedia, led Project Xanadu and wrote Literary Machines.",
+   "url": "https://en.wikipedia.org/wiki/Ted_Nelson",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "vassar",
+     "role": "instructor in sociology",
+     "start": "1964",
+     "end": "1966",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Ted_Nelson"
+    },
+    {
+     "org": "autodesk",
+     "role": "Distinguished Fellow, after Autodesk bought Xanadu",
+     "start": "1988",
+     "end": "1992",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Ted_Nelson"
+    }
+   ]
+  },
+  {
+   "id": "douglas-engelbart",
+   "name": "Douglas Engelbart",
+   "summary": "Computer scientist who gave the 1968 demonstration that showed the mouse and the hyperlink.",
+   "url": "https://en.wikipedia.org/wiki/Douglas_Engelbart",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "sri",
+     "role": "researcher; the 1968 demonstration; until the late 1970s",
+     "start": "1957",
+     "end": "1978",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Douglas_Engelbart"
+    },
+    {
+     "org": "mcdonnell-douglas",
+     "role": "after the acquisition of Tymshare",
+     "start": "1984",
+     "end": "1986",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Douglas_Engelbart"
+    },
+    {
+     "org": "bootstrap-institute",
+     "role": "cofounder",
+     "start": "1988",
+     "end": null,
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Douglas_Engelbart"
+    }
+   ]
+  },
+  {
+   "id": "jon-postel",
+   "name": "Jon Postel",
+   "summary": "Long-time custodian of the name registry, called the God of the Internet; died in 1998.",
+   "url": "https://en.wikipedia.org/wiki/Jon_Postel",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "ucla",
+     "role": "research engineer on the ARPANET",
+     "start": "1969-12",
+     "end": "1977-03",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Jon_Postel"
+    },
+    {
+     "org": "usc-isi",
+     "role": "research scientist; ran the name registry",
+     "start": "1977-03",
+     "end": "1998",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Jon_Postel"
+    }
+   ]
+  },
+  {
+   "id": "steve-jobs",
+   "name": "Steve Jobs",
+   "summary": "Forced out of Apple in 1985, he started NeXT, whose workstation hosted the first web software, and whom Berners-Lee narrowly failed to meet.",
+   "url": "https://en.wikipedia.org/wiki/Steve_Jobs",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "apple",
+     "role": "cofounder",
+     "start": "1976",
+     "end": "1985",
+     "place": "bay-area",
+     "left": "Forced out after a power struggle with the board.",
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Steve_Jobs"
+    },
+    {
+     "org": "next-inc",
+     "role": "founder; the NeXT machine ran the first web server",
+     "start": "1985",
+     "end": "1997",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Steve_Jobs"
+    },
+    {
+     "org": "apple",
+     "role": "returned as chief executive",
+     "start": "1997",
+     "end": "2011",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Steve_Jobs"
+    }
+   ]
+  },
+  {
+   "id": "marc-andreessen",
+   "name": "Marc Andreessen",
+   "summary": "University of Illinois undergraduate who built Mosaic at NCSA and later became a leading venture capitalist.",
+   "url": "https://en.wikipedia.org/wiki/Marc_Andreessen",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "ncsa",
+     "role": "built Mosaic as a programmer",
+     "start": "1993",
+     "end": "1994",
+     "place": "champaign",
+     "left": "Left when NCSA would not credit the Mosaic team.",
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Marc_Andreessen"
+    },
+    {
+     "org": "netscape",
+     "role": "cofounder",
+     "start": "1994",
+     "end": "1999",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Marc_Andreessen"
+    },
+    {
+     "org": "a16z",
+     "role": "cofounder",
+     "start": "2009-07",
+     "end": null,
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Marc_Andreessen"
+    }
+   ]
+  },
+  {
+   "id": "eric-bina",
+   "name": "Eric Bina",
+   "summary": "Programmer who built Mosaic with Marc Andreessen at NCSA.",
+   "url": "https://en.wikipedia.org/wiki/Eric_Bina",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "ncsa",
+     "role": "programmer; Mosaic",
+     "start": "1991",
+     "end": "1994",
+     "place": "champaign",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Eric_Bina"
+    }
+   ]
+  },
+  {
+   "id": "jim-clark",
+   "name": "Jim Clark",
+   "summary": "Silicon Graphics founder who backed the Netscape team and later sold the company to AOL with Andreessen.",
+   "url": "https://en.wikipedia.org/wiki/James_H._Clark",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "stanford",
+     "role": "associate professor",
+     "start": "1979",
+     "end": "1982",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/James_H._Clark"
+    },
+    {
+     "org": "sgi",
+     "role": "founder",
+     "start": "1982",
+     "end": "1994-01",
+     "place": "bay-area",
+     "left": "Disagreed with management on direction.",
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/James_H._Clark"
+    },
+    {
+     "org": "netscape",
+     "role": "cofounder",
+     "start": "1994-02",
+     "end": "1999",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/James_H._Clark"
+    }
+   ]
+  },
+  {
+   "id": "hakon-lie",
+   "name": "Hakon Lie",
+   "summary": "Norwegian programmer who designed CSS at CERN and W3C, left for Opera in 1998, and joined the 2004 WHATWG break.",
+   "url": "https://en.wikipedia.org/wiki/H%C3%A5kon_Wium_Lie",
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "cern",
+     "role": "proposed CSS",
+     "start": "1994",
+     "end": "1995",
+     "place": "geneva",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/H%C3%A5kon_Wium_Lie"
+    },
+    {
+     "org": "w3c",
+     "role": "worked on CSS",
+     "start": "1995",
+     "end": "1998",
+     "place": null,
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 7: Growing Pains"
+    },
+    {
+     "org": "opera",
+     "role": "chief technology officer",
+     "start": "1998",
+     "end": "2016",
+     "place": "norway",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/H%C3%A5kon_Wium_Lie"
+    }
+   ]
+  },
+  {
+   "id": "dave-raggett",
+   "name": "Dave Raggett",
+   "summary": "Hewlett Packard programmer whose Arena browser showed magazine-like pages at WWW1 and later served as the CSS testbed.",
+   "url": "https://en.wikipedia.org/wiki/Dave_Raggett",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "hp-labs",
+     "role": "researcher; the Arena browser",
+     "start": "1985",
+     "end": "2000",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Dave_Raggett"
+    },
+    {
+     "org": "w3c",
+     "role": "W3C Fellow",
+     "start": "1995",
+     "end": null,
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Dave_Raggett"
+    }
+   ]
+  },
+  {
+   "id": "larry-page",
+   "name": "Larry Page",
+   "summary": "Stanford graduate student who began PageRank work with Sergei Brin in 1997.",
+   "url": "https://en.wikipedia.org/wiki/Larry_Page",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "stanford",
+     "role": "graduate student; PageRank",
+     "start": "1995",
+     "end": "1998",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Larry_Page"
+    },
+    {
+     "org": "google",
+     "role": "cofounder",
+     "start": "1998",
+     "end": "2019-12",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Larry_Page"
+    }
+   ]
+  },
+  {
+   "id": "sergei-brin",
+   "name": "Sergei Brin",
+   "summary": "Stanford graduate student who began PageRank work with Larry Page in 1997.",
+   "url": "https://en.wikipedia.org/wiki/Sergey_Brin",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "stanford",
+     "role": "graduate student; PageRank",
+     "start": "1993",
+     "end": "1998",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Sergey_Brin"
+    },
+    {
+     "org": "google",
+     "role": "cofounder",
+     "start": "1998",
+     "end": "2019",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Sergey_Brin"
+    }
+   ]
+  },
+  {
+   "id": "jimmy-wales",
+   "name": "Jimmy Wales",
+   "summary": "Nupedia co-founder who urged a move to wiki technology, leading to Wikipedia.",
+   "url": "https://en.wikipedia.org/wiki/Jimmy_Wales",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "nupedia",
+     "role": "cofounder, funded through his company Bomis",
+     "start": "2000",
+     "end": "2003",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Jimmy_Wales"
+    },
+    {
+     "org": "wikimedia",
+     "role": "set up the foundation",
+     "start": "2003",
+     "end": null,
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Jimmy_Wales"
+    }
+   ]
+  },
+  {
+   "id": "larry-sanger",
+   "name": "Larry Sanger",
+   "summary": "Nupedia co-founder who urged a move to wiki technology, leading to Wikipedia.",
+   "url": "https://en.wikipedia.org/wiki/Larry_Sanger",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "nupedia",
+     "role": "editor in chief; proposed the wiki",
+     "start": "2000",
+     "end": "2002-03",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Larry_Sanger"
+    }
+   ]
+  },
+  {
+   "id": "brewster-kahle",
+   "name": "Brewster Kahle",
+   "summary": "Creator of WAIS, co-founder of Alexa Internet and founder of the Internet Archive; a friend of Berners-Lee.",
+   "url": "https://en.wikipedia.org/wiki/Brewster_Kahle",
+   "src": [
+    "tbl"
+   ],
+   "stints": [
+    {
+     "org": "alexa-internet",
+     "role": "founder",
+     "start": "1996",
+     "end": "1999",
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 7: Growing Pains"
+    },
+    {
+     "org": "internet-archive",
+     "role": "founder",
+     "start": "1996",
+     "end": null,
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 7: Growing Pains"
+    }
+   ]
+  },
+  {
+   "id": "mark-zuckerberg",
+   "name": "Mark Zuckerberg",
+   "summary": "Facebook head who monetized user data through advertising; Facebook donated to the Web Foundation.",
+   "url": "https://en.wikipedia.org/wiki/Mark_Zuckerberg",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "facebook",
+     "role": "cofounder",
+     "start": "2004-02",
+     "end": null,
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Mark_Zuckerberg"
+    }
+   ]
+  },
+  {
+   "id": "aaron-swartz",
+   "name": "Aaron Swartz",
+   "summary": "Activist and hacker, Reddit cofounder, open data campaigner mentored by Berners-Lee; prosecuted over JSTOR downloads.",
+   "url": "https://en.wikipedia.org/wiki/Aaron_Swartz",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "reddit",
+     "role": "co-owner after the Infogami merger",
+     "start": "2005-11",
+     "end": "2007-01",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Aaron_Swartz"
+    },
+    {
+     "org": "harvard",
+     "role": "research fellow under Lessig, from 2010 until his death",
+     "start": "2010",
+     "end": "2013-01",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Aaron_Swartz"
+    }
+   ]
+  },
+  {
+   "id": "nigel-shadbolt",
+   "name": "Nigel Shadbolt",
+   "summary": "Southampton professor who led UK open government data work and cofounded the Open Data Institute.",
+   "url": "https://en.wikipedia.org/wiki/Nigel_Shadbolt",
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "southampton",
+     "role": "professor of artificial intelligence",
+     "start": "2000",
+     "end": "2015",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Nigel_Shadbolt"
+    },
+    {
+     "org": "odi",
+     "role": "cofounder with Berners-Lee",
+     "start": "2012",
+     "end": null,
+     "place": "london",
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 11: Open Data"
+    },
+    {
+     "org": "jesus-college",
+     "role": "principal",
+     "start": "2015-08",
+     "end": "2026-07",
+     "place": "oxford",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Nigel_Shadbolt"
+    }
+   ]
+  },
+  {
+   "id": "wendy-hall",
+   "name": "Wendy Hall",
+   "summary": "Southampton professor and fellow board member of the Web Science Trust.",
+   "url": "https://en.wikipedia.org/wiki/Wendy_Hall",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "southampton",
+     "role": "computer science; hypermedia",
+     "start": "1984",
+     "end": null,
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Wendy_Hall"
+    }
+   ]
+  },
+  {
+   "id": "rosemary-leith",
+   "name": "Rosemary Leith",
+   "summary": "Investor and entrepreneur who cofounded the Web Foundation with Berners-Lee and led its strategy; later his wife.",
+   "url": "https://en.wikipedia.org/wiki/Rosemary_Leith",
+   "src": [
+    "tbl"
+   ],
+   "stints": [
+    {
+     "org": "flametree",
+     "role": "founder",
+     "start": "1998",
+     "end": "2001",
+     "place": null,
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 11: Open Data"
+    },
+    {
+     "org": "web-foundation",
+     "role": "cofounder",
+     "start": "2009-11",
+     "end": "2024-09",
+     "place": null,
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 18: Signs of Spring"
+    }
+   ]
+  },
+  {
+   "id": "gil-elbaz",
+   "name": "Gil Elbaz",
+   "summary": "Silicon Valley entrepreneur interested in semantic data. Sold Applied Semantics to Google and founded Common Crawl, whose web archive later fed GPT.",
+   "url": "https://en.wikipedia.org/wiki/Gil_Elbaz",
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "applied-semantics",
+     "role": "founder",
+     "start": "2001",
+     "end": "2003-04",
+     "place": "bay-area",
+     "left": "Sold to Google, where the technology became AdSense.",
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Gil_Elbaz"
+    },
+    {
+     "org": "common-crawl",
+     "role": "founder",
+     "start": "2008",
+     "end": null,
+     "place": "bay-area",
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 16: Intelligent Machines"
+    }
+   ]
+  },
+  {
+   "id": "demis-hassabis",
+   "name": "Demis Hassabis",
+   "summary": "DeepMind cofounder whose talk introduced Berners-Lee to modern neural networks; 2024 Nobel laureate in Chemistry.",
+   "url": "https://en.wikipedia.org/wiki/Demis_Hassabis",
+   "src": [
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "deepmind",
+     "role": "cofounder",
+     "start": "2010",
+     "end": null,
+     "place": "london",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Demis_Hassabis"
+    }
+   ]
+  },
+  {
+   "id": "mustafa-suleyman",
+   "name": "Mustafa Suleyman",
+   "summary": "DeepMind cofounder.",
+   "url": "https://en.wikipedia.org/wiki/Mustafa_Suleyman",
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "stints": [
+    {
+     "org": "deepmind",
+     "role": "cofounder, later inside Google",
+     "start": "2010",
+     "end": "2022",
+     "place": "london",
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Mustafa_Suleyman"
+    },
+    {
+     "org": "inflection",
+     "role": "cofounder",
+     "start": "2022",
+     "end": "2024",
+     "place": null,
+     "left": null,
+     "src": [
+      "web"
+     ],
+     "url": "https://en.wikipedia.org/wiki/Mustafa_Suleyman"
+    },
+    {
+     "org": "microsoft",
+     "role": "joined with most of Inflection",
+     "start": "2024",
+     "end": null,
+     "place": null,
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 16: Intelligent Machines"
+    }
+   ]
+  },
+  {
+   "id": "bruce-schneier",
+   "name": "Bruce Schneier",
+   "summary": "Famous cryptographer and critic of what he calls digital feudalism. Heads the cryptographic tools work at Inrupt.",
+   "url": "https://en.wikipedia.org/wiki/Bruce_Schneier",
+   "src": [
+    "tbl"
+   ],
+   "stints": [
+    {
+     "org": "inrupt",
+     "role": "joined the company",
+     "start": "2019",
+     "end": null,
+     "place": "boston",
+     "left": null,
+     "src": [
+      "tbl"
+     ],
+     "ref": "Chapter 15: Inrupt"
+    }
+   ]
+  }
+ ],
+ "links": [
+  {
+   "a": "robert-cailliau",
+   "b": "tim-berners-lee",
+   "kind": "ally",
+   "date": "1989",
+   "end": null,
+   "note": "Converted immediately, evangelised the web, co-ran the 1991 demo and the push for release.",
+   "ref": "Chapter 3: Ignition",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "a": "tim-berners-lee",
+   "b": "ted-nelson",
+   "kind": "other",
+   "date": "1992",
+   "end": null,
+   "note": "Met for lunch in the Bay Area, each recording the other.",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "a": "tim-berners-lee",
+   "b": "marc-andreessen",
+   "kind": "rival",
+   "date": "1993-03",
+   "end": null,
+   "note": "Berners-Lee thought the NCSA group was trying to rebrand the web as Mosaic.",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "a": "marc-andreessen",
+   "b": "eric-bina",
+   "kind": "partnership",
+   "date": "1993",
+   "end": null,
+   "note": "Built and quickly extended Mosaic together.",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "a": "tim-berners-lee",
+   "b": "marc-andreessen",
+   "kind": "other",
+   "date": "1995",
+   "end": null,
+   "note": "Berners-Lee says Andreessen had a different philosophy on web business.",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "a": "hakon-lie",
+   "b": "tim-berners-lee",
+   "kind": "defected",
+   "date": "2004",
+   "end": null,
+   "note": "Lie joined the WHATWG break from W3C.",
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "a": "tim-berners-lee",
+   "b": "rosemary-leith",
+   "kind": "cofounders",
+   "date": "2009-11",
+   "end": null,
+   "note": "Jointly conceived and founded the Web Foundation.",
+   "ref": "Chapter 9: The Mobile Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "a": "tim-berners-lee",
+   "b": "nigel-shadbolt",
+   "kind": "cofounders",
+   "date": "2012",
+   "end": null,
+   "note": "Together won funding to start the Open Data Institute.",
+   "ref": "Chapter 11: Open Data",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "a": "tim-berners-lee",
+   "b": "wendy-hall",
+   "kind": "ally",
+   "date": "2008",
+   "end": null,
+   "note": "Friends and fellow Web Science Trust board members.",
+   "ref": "Chapter 9: The Mobile Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "a": "demis-hassabis",
+   "b": "mustafa-suleyman",
+   "kind": "cofounders",
+   "date": "2010",
+   "end": null,
+   "note": "Founded DeepMind together.",
+   "ref": "Chapter 12: Machine Learning",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "a": "tim-berners-lee",
+   "b": "demis-hassabis",
+   "kind": "other",
+   "date": "2014",
+   "end": null,
+   "note": "Met at the anniversary dinner, later dined privately on AI concerns.",
+   "ref": "Chapter 12: Machine Learning",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "a": "tim-berners-lee",
+   "b": "bruce-schneier",
+   "kind": "ally",
+   "date": "2019",
+   "end": null,
+   "note": "Shared criticism of big firms as data control points; Schneier joined Inrupt.",
+   "ref": "Chapter 15: Inrupt",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "a": "tim-berners-lee",
+   "b": "larry-page",
+   "kind": "other",
+   "date": "2010",
+   "end": null,
+   "note": "Lunch conversation at Google Zeitgeist about AI and consciousness.",
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  }
+ ],
+ "paradigms": [
+  {
+   "id": "hypertext-before",
+   "name": "Hypertext before the web",
+   "start": "1945",
+   "end": "1989",
+   "summary": "Bush, Nelson and Engelbart imagined linked documents, though Berners-Lee says he had not heard of them when he first thought of the web.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 2: CERN"
+  },
+  {
+   "id": "one-web",
+   "name": "One web, given away",
+   "start": "1989",
+   "end": "1993",
+   "summary": "A proposal at CERN, a working system on a NeXT machine, and the decision to put the technology in the public domain.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 3: Ignition"
+  },
+  {
+   "id": "wave",
+   "name": "Browsers and the boom",
+   "start": "1993",
+   "end": "2001",
+   "summary": "Mosaic brought pictures, Netscape and Microsoft fought over the browser, and the money arrived and crashed.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 6: The Wave"
+  },
+  {
+   "id": "consortium",
+   "name": "Standards by consortium",
+   "start": "1994",
+   "end": null,
+   "summary": "W3C and its members agree the web's formats, with a royalty-free patent policy and a split over HTML along the way.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 5: Governing the Web"
+  },
+  {
+   "id": "platforms",
+   "name": "Platforms",
+   "start": "2004",
+   "end": null,
+   "summary": "Search and social networks gathered the web's activity, and its data, in a few places.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 10: This Is for Everyone"
+  },
+  {
+   "id": "mobile-era",
+   "name": "The mobile web",
+   "start": "2007",
+   "end": null,
+   "summary": "The phone becomes the main way to reach the web, and apps compete with it.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 9: The Mobile Web"
+  },
+  {
+   "id": "open-data",
+   "name": "Open data",
+   "start": "2009",
+   "end": null,
+   "summary": "Governments are pressed to publish raw data, from Data.gov.uk to the Open Data Institute.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 11: Open Data"
+  },
+  {
+   "id": "pods",
+   "name": "Data sovereignty",
+   "start": "2015",
+   "end": null,
+   "summary": "Solid and its pods try to give people back control of their own data.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 15: Inrupt"
+  },
+  {
+   "id": "attention",
+   "name": "The attention economy",
+   "start": "2016",
+   "end": null,
+   "summary": "Microtargeting and engagement algorithms become a public worry after Brexit and the 2016 US election.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 17: Attention vs. Intention"
+  },
+  {
+   "id": "machines",
+   "name": "Intelligent machines",
+   "start": "2022",
+   "end": null,
+   "summary": "Models trained on the web's text reach the public through ChatGPT.",
+   "src": [
+    "tbl"
+   ],
+   "ref": "Chapter 16: Intelligent Machines"
+  }
+ ],
+ "tracks": [
+  {
+   "id": "foundations",
+   "name": "Foundations",
+   "summary": "Computers, rights and ideas the web stands on."
+  },
+  {
+   "id": "hypertext",
+   "name": "Hypertext",
+   "summary": "Linking documents, from Bush's essay to the first web page."
+  },
+  {
+   "id": "protocols",
+   "name": "Protocols",
+   "summary": "How machines find each other and ask for things."
+  },
+  {
+   "id": "standards",
+   "name": "Standards",
+   "summary": "The shared formats, most of them agreed at W3C."
+  },
+  {
+   "id": "browsers",
+   "name": "Browsers and web apps",
+   "summary": "What people opened the web with and did inside it."
+  },
+  {
+   "id": "search",
+   "name": "Search",
+   "summary": "Finding things once there were too many to list."
+  },
+  {
+   "id": "social",
+   "name": "Social",
+   "summary": "Communities, from wikis and blogs to the platforms."
+  },
+  {
+   "id": "mobile",
+   "name": "Mobile",
+   "summary": "The web on the phone."
+  },
+  {
+   "id": "data",
+   "name": "Data",
+   "summary": "Advertising, archives, open data and personal pods."
+  },
+  {
+   "id": "ai",
+   "name": "Machine learning",
+   "summary": "Systems trained on what the web collected."
+  }
+ ],
+ "moments": [
+  {
+   "id": "as-we-may-think",
+   "date": "1945",
+   "kind": "idea",
+   "title": "Bush imagines link trails between documents",
+   "short": "Bush essay",
+   "detail": "An Atlantic article by Vannevar Bush described non-linear retrieval and associative trails, and called for an electromechanical Memex.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "track": "hypertext",
+   "ref": "Chapter 2: CERN",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "universal-declaration-of-human-rights",
+   "date": "1948",
+   "kind": "idea",
+   "title": "UN human rights declaration",
+   "short": "Human Rights Declaration",
+   "detail": "The stated inspiration for the Contract for the Web.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "track": "foundations",
+   "ref": "Chapter 14: The Contract for the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "ferranti-mark-1",
+   "date": "1950",
+   "kind": "product",
+   "title": "Ferranti Mark 1 computer in use",
+   "short": "Ferranti Mark 1",
+   "detail": "The parents of Berners-Lee met around 1950 working on this early commercial computer, which Turing also used.",
+   "people": [],
+   "orgs": [
+    "ferranti"
+   ],
+   "place": "manchester",
+   "track": "foundations",
+   "ref": "Chapter 1: Early Days",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "turing-test",
+   "date": "1950",
+   "kind": "idea",
+   "title": "Turing proposes the Imitation Game",
+   "short": "Turing Test",
+   "detail": "A paper imagined a machine whose conversation could not be told apart from that of a person.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "track": "ai",
+   "ref": "Chapter 1: Early Days",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "xanadu",
+   "date": "1963",
+   "kind": "idea",
+   "title": "Nelson coins hypertext for Project Xanadu",
+   "short": "Project Xanadu",
+   "detail": "Nelson envisioned a universal, centrally run information space with two-way links. It never passed the prototype stage.",
+   "people": [
+    "ted-nelson"
+   ],
+   "orgs": [
+    "xanadu-operating-company"
+   ],
+   "place": null,
+   "track": "hypertext",
+   "ref": "Chapter 2: CERN",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "mother-of-all-demos",
+   "date": "1968",
+   "kind": "idea",
+   "title": "Engelbart demonstrates the mouse and the hyperlink",
+   "short": "Mother of Demos",
+   "detail": "A ninety-minute San Francisco presentation showed collaborative editing, teleconferencing, the mouse and links on a single computer.",
+   "people": [
+    "douglas-engelbart"
+   ],
+   "orgs": [],
+   "place": "bay-area",
+   "track": "hypertext",
+   "ref": "Chapter 2: CERN",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "ftp",
+   "date": "1971-04",
+   "kind": "idea",
+   "track": "protocols",
+   "title": "File Transfer Protocol",
+   "short": "FTP",
+   "detail": "The usual way to fetch files from another computer before the web; slow, with a separate connection each time.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "ref": "Chapter 3: Ignition",
+   "url": "https://en.wikipedia.org/wiki/File_Transfer_Protocol"
+  },
+  {
+   "id": "rsa-paper",
+   "date": "1977",
+   "kind": "idea",
+   "title": "Rouse walks Berners-Lee through public-key cryptography",
+   "short": "RSA paper",
+   "detail": "On a 1977 coastal walk Paul Rouse explained the recent Rivest, Shamir and Adelman paper. The book dates the walk, not the paper.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [],
+   "place": null,
+   "track": "foundations",
+   "ref": "Chapter 1: Early Days",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "enquire",
+   "date": "1980",
+   "kind": "product",
+   "title": "Enquire note-linking program at CERN",
+   "short": "Enquire",
+   "detail": "A program for typed notes joined by links, written for a CERN Norsk Data computer. Named after a Victorian household manual, later lost on a floppy disk.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "track": "hypertext",
+   "ref": "Chapter 2: CERN",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "tcp-ip",
+   "date": "1981",
+   "kind": "idea",
+   "title": "US defence adopts IP as first major user",
+   "short": "TCP/IP",
+   "detail": "The packet-based protocol of Cerf and Kahn. The book gives 1981 only for this adoption, and it says packet switching drew on queuing theory.",
+   "people": [
+    "vint-cerf",
+    "bob-kahn"
+   ],
+   "orgs": [
+    "us-department-of-defense"
+   ],
+   "place": null,
+   "track": "protocols",
+   "ref": "Chapter 2: CERN",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "dns",
+   "date": "1985",
+   "kind": "idea",
+   "title": "First Domain Name System registration",
+   "short": "DNS",
+   "detail": "Human names for IP addresses, proposed in the early 1980s. The first registered name was symbolics.com in 1985.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "track": "protocols",
+   "ref": "Chapter 3: Ignition",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "jobs-forced-out",
+   "date": "1985",
+   "kind": "event",
+   "title": "Steve Jobs forced out of Apple",
+   "short": "Jobs leaves Apple",
+   "detail": "After a boardroom coup Jobs started NeXT, whose workstation would later be used to build the web.",
+   "people": [
+    "steve-jobs"
+   ],
+   "orgs": [
+    "apple",
+    "next"
+   ],
+   "place": null,
+   "ref": "Chapter 2: CERN",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "sgml",
+   "date": "1986",
+   "kind": "idea",
+   "track": "standards",
+   "title": "SGML markup language",
+   "short": "SGML",
+   "detail": "The document markup used at CERN, which HTML borrowed from to look familiar.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "ref": "Chapter 2: CERN",
+   "url": "https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language"
+  },
+  {
+   "id": "hypercard",
+   "date": "1987",
+   "kind": "product",
+   "title": "Apple releases HyperCard",
+   "short": "HyperCard",
+   "detail": "Linked virtual cards bundled with the Macintosh made hypertext widely popular. Berners-Lee says he had never used it.",
+   "people": [],
+   "orgs": [
+    "apple"
+   ],
+   "place": null,
+   "track": "hypertext",
+   "ref": "Chapter 2: CERN",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "protocol-war",
+   "date": "1988",
+   "kind": "event",
+   "title": "CERN settles the protocol war on TCP/IP",
+   "short": "Protocol war",
+   "detail": "Ben Segal won the long internal battle against OSI, and by 1988 all at CERN had internet email addresses.",
+   "people": [
+    "vint-cerf"
+   ],
+   "orgs": [
+    "cern",
+    "iso"
+   ],
+   "place": "geneva",
+   "ref": "Chapter 2: CERN",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "www-idea",
+   "date": "1988",
+   "kind": "idea",
+   "title": "Idea of joining hypertext and the internet",
+   "short": "Web idea",
+   "detail": "Around 1988 Berners-Lee conceived of hypertext links as a simple way to navigate the internet.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "track": "hypertext",
+   "ref": "Prologue",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "hypertext-on-hypertext",
+   "date": "1988-07",
+   "kind": "idea",
+   "title": "ACM floppy disk journal on hypertext",
+   "short": "Hypertext on Hypertext",
+   "detail": "An electronic ACM journal issue was the first hypertext Berners-Lee met, probably shared by Cailliau. Its links stayed inside one system.",
+   "people": [
+    "robert-cailliau",
+    "tim-berners-lee"
+   ],
+   "orgs": [],
+   "place": null,
+   "track": "hypertext",
+   "ref": "Chapter 2: CERN",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "www-proposal",
+   "date": "1989-03",
+   "kind": "idea",
+   "title": "Mesh memo proposes a global hypertext system",
+   "short": "WWW proposal",
+   "detail": "A memo with a concept graph titled Mesh argued CERN was a miniature of problems the wider world would face.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "track": "hypertext",
+   "ref": "Chapter 2: CERN",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "nextcube",
+   "date": "1990",
+   "kind": "product",
+   "title": "CERN buys a NeXTcube as a cover for the work",
+   "short": "NeXTcube",
+   "detail": "Sendall could not fund Mesh directly, so he proposed trying a NeXT computer. Its development tools then made the first web software practical.",
+   "people": [
+    "tim-berners-lee",
+    "steve-jobs"
+   ],
+   "orgs": [
+    "next",
+    "cern"
+   ],
+   "place": "geneva",
+   "track": "foundations",
+   "ref": "Chapter 2: CERN",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "http",
+   "date": "1990",
+   "kind": "idea",
+   "title": "Hypertext Transfer Protocol designed",
+   "short": "HTTP",
+   "detail": "A new protocol like FTP but quick and hidden from the user, written from about October 1990.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "track": "protocols",
+   "ref": "Chapter 3: Ignition",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "url",
+   "date": "1990",
+   "kind": "idea",
+   "title": "Universal identifiers for anything on the web",
+   "short": "URL",
+   "detail": "Links named as Universal Document Identifiers, borrowing the double slash from Apollo workstations. Berners-Lee thought them the most important part of the web.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "track": "protocols",
+   "ref": "Chapter 3: Ignition",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "html",
+   "date": "1990",
+   "kind": "idea",
+   "title": "Hypertext Markup Language defined",
+   "short": "HTML",
+   "detail": "A simple page format based largely on SGML, which CERN documentation systems already used. Berners-Lee did not expect people to write it by hand.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "track": "standards",
+   "ref": "Chapter 3: Ignition",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "design-issues",
+   "date": "1990",
+   "kind": "product",
+   "title": "Design Issues notes begin",
+   "short": "Design Issues",
+   "detail": "Public hypertext notes on the challenges of the web, kept up for thirty-five years. Berners-Lee considers them the first blog.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "track": "hypertext",
+   "ref": "Chapter 13: Design Issues",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "mesh-memo-resent",
+   "date": "1990-05",
+   "kind": "event",
+   "title": "Mesh memo reissued at a manager's request",
+   "short": "Memo reissued",
+   "detail": "After no action, a manager asked about the project and Berners-Lee sent the same memo again with both dates.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "ref": "Chapter 2: CERN",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "worldwideweb-app",
+   "date": "1990-12",
+   "kind": "product",
+   "title": "First web client, a read and write tool",
+   "short": "WorldWideWeb.app",
+   "detail": "A browser and editor for NeXT, finished by 13 December and versioned as Christmas Day 1990. The first web software totalled 9,555 lines of Objective-C.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern",
+    "next"
+   ],
+   "place": "geneva",
+   "track": "browsers",
+   "ref": "Chapter 3: Ignition",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "first-web-server",
+   "date": "1990-12",
+   "kind": "product",
+   "title": "First web server on the office NeXTcube",
+   "short": "First web server",
+   "detail": "The server software ran on a single machine, which carried a warning sticker against switching it off.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "track": "protocols",
+   "ref": "Chapter 3: Ignition",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "first-web-page",
+   "date": "1990-12",
+   "kind": "product",
+   "title": "First web page explaining the project",
+   "short": "First web page",
+   "detail": "A monochrome page on info.cern.ch telling people about the web and how to join it.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "track": "hypertext",
+   "ref": "Chapter 3: Ignition",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "line-mode-browser",
+   "date": "1991",
+   "kind": "product",
+   "title": "Universal command-line browser",
+   "short": "Line-mode browser",
+   "detail": "Nicola Pellow wrote a read-only client that ran on almost any computer. Links were footnoted and followed by number.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "track": "browsers",
+   "ref": "Chapter 3: Ignition",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "cern-phone-book",
+   "date": "1991",
+   "kind": "product",
+   "title": "CERN phone book served over the web",
+   "short": "CERN phone book",
+   "detail": "By mid-1991 around a thousand staff used the web, mostly for phone numbers, which gave them a reason to install a browser.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "track": "data",
+   "ref": "Chapter 3: Ignition",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "slac-website",
+   "date": "1991",
+   "kind": "product",
+   "title": "First website outside CERN at SLAC",
+   "short": "SLAC website",
+   "detail": "Kunz and Addis put scientific papers online in HTML. It proved the web useful to physicists and eased tension at CERN.",
+   "people": [],
+   "orgs": [
+    "slac"
+   ],
+   "place": "bay-area",
+   "track": "hypertext",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "gopher",
+   "date": "1991",
+   "kind": "product",
+   "title": "Gopher menu-driven internet protocol",
+   "short": "Gopher",
+   "detail": "A campus information system and chief rival of the web. More people used it than the web until 1994.",
+   "people": [],
+   "orgs": [
+    "university-of-minnesota"
+   ],
+   "place": "minnesota",
+   "track": "protocols",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "hypertext-91-demo",
+   "date": "1991",
+   "kind": "event",
+   "title": "Web demo at the Hypertext 91 conference",
+   "short": "Hypertext 91 demo",
+   "detail": "Cailliau improvised a phone line and power so they could show the web in San Antonio, with Engelbart among the attendees.",
+   "people": [
+    "tim-berners-lee",
+    "robert-cailliau",
+    "douglas-engelbart"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "san-antonio",
+   "ref": "Chapter 3: Ignition",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "information-superhighway",
+   "date": "1991",
+   "kind": "event",
+   "title": "US Congress funds the Information Superhighway",
+   "short": "Gore funding bill",
+   "detail": "A bill led by Al Gore allotted about $600 million, encouraged early browsers and paid for the Mosaic team.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "alt-hypertext-post",
+   "date": "1991-08-06",
+   "kind": "event",
+   "title": "Web announced on the alt.hypertext newsgroup",
+   "short": "Usenet post",
+   "detail": "Berners-Lee offered the prototype code by anonymous FTP. The response was lukewarm, yet the post reached Pei-Yuan Wei.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "autodesk-drops-xanadu",
+   "date": "1992",
+   "kind": "event",
+   "title": "Autodesk drops Xanadu",
+   "short": "Autodesk drops Xanadu",
+   "detail": "On the day Berners-Lee first met Nelson, Autodesk returned the project to its informal developers.",
+   "people": [
+    "ted-nelson"
+   ],
+   "orgs": [
+    "autodesk"
+   ],
+   "place": "bay-area",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "violawww",
+   "date": "1992-03",
+   "kind": "product",
+   "title": "ViolaWWW browser for X Window",
+   "short": "ViolaWWW",
+   "detail": "Pei-Yuan Wei added bookmarks, history, navigation buttons, applets and style sheets, features Berners-Lee says became standard in later browsers.",
+   "people": [],
+   "orgs": [
+    "uc-berkeley"
+   ],
+   "place": "bay-area",
+   "track": "browsers",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "uri-naming-fight",
+   "date": "1992-03",
+   "kind": "event",
+   "title": "Berners-Lee loses the Universal naming fight at IETF",
+   "short": "URL naming fight",
+   "detail": "At San Diego the working group chose Uniform over Universal. Berners-Lee thought Uniform implied conformity and still uses his term.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "ietf"
+   ],
+   "place": "san-diego",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "cello",
+   "date": "1993",
+   "kind": "product",
+   "title": "Cello, first Windows browser",
+   "short": "Cello",
+   "detail": "Tom Bruce moved his Legal Information Institute from Gopher to the web and began this browser, whose name riffed on Viola.",
+   "people": [],
+   "orgs": [
+    "cornell"
+   ],
+   "place": null,
+   "track": "browsers",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "wizards-workshop",
+   "date": "1993",
+   "kind": "event",
+   "title": "Wizard's Workshop, first web meet-up",
+   "short": "Wizards Workshop",
+   "detail": "Held in Cambridge, Massachusetts in summer 1993 by Dale Dougherty. Berners-Lee thought Andreessen kept his distance there.",
+   "people": [
+    "tim-berners-lee",
+    "marc-andreessen"
+   ],
+   "orgs": [
+    "oreilly"
+   ],
+   "place": "boston",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "global-news-network",
+   "date": "1993",
+   "kind": "product",
+   "title": "Global News Network web publication",
+   "short": "GNN",
+   "detail": "The first commercial web publication, launched through the Wizard's Workshop and remembered for the first clickable advertisement.",
+   "people": [],
+   "orgs": [
+    "oreilly"
+   ],
+   "place": null,
+   "track": "hypertext",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "mosaic-windows",
+   "date": "1993",
+   "kind": "product",
+   "title": "Mosaic ported to Windows",
+   "short": "Mosaic for Windows",
+   "detail": "Arriving shortly after summer 1993, the port set off a flood of public interest and gave Mosaic a commanding lead.",
+   "people": [
+    "marc-andreessen"
+   ],
+   "orgs": [
+    "ncsa"
+   ],
+   "place": "champaign",
+   "track": "browsers",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "hypertext-93",
+   "date": "1993",
+   "kind": "event",
+   "title": "Hypertext 93 conference is all about the web",
+   "short": "Hypertext 93",
+   "detail": "In Seattle, every project shown touched the web, a reversal from the 1991 conference.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [],
+   "place": "seattle",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "myst",
+   "date": "1993",
+   "kind": "product",
+   "title": "Myst computer game",
+   "short": "Myst",
+   "detail": "Game whose door-based 3-D navigation suggested how the web might be moved through.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "track": "hypertext",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "first-clickable-ad",
+   "date": "1993",
+   "kind": "product",
+   "title": "First clickable web advertisement",
+   "short": "First web ad",
+   "detail": "Tech publisher O'Reilly served a clickable ad that was essentially a button.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "track": "data",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "spectrum-auction-law",
+   "date": "1993",
+   "kind": "event",
+   "title": "Markey bill auctions US mobile spectrum",
+   "short": "Spectrum auction",
+   "detail": "Legislation created licences for seven new providers, opening cellular service to competition, and prices fell.",
+   "people": [],
+   "orgs": [
+    "us-house"
+   ],
+   "place": "washington-dc",
+   "ref": "Chapter 9: The Mobile Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "mosaic-browser",
+   "date": "1993-01",
+   "kind": "product",
+   "title": "Mosaic browser released for testing",
+   "short": "Mosaic",
+   "detail": "A Unix browser from NCSA with fast releases and a What's New page, whose team was funded through the Gore bill. Hardin seemed to see it as a sequel to his Collage.",
+   "people": [
+    "marc-andreessen",
+    "eric-bina"
+   ],
+   "orgs": [
+    "ncsa",
+    "uiuc"
+   ],
+   "place": "champaign",
+   "track": "browsers",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "img-tag",
+   "date": "1993-02",
+   "kind": "idea",
+   "title": "Andreessen proposes inline images in HTML",
+   "short": "IMG tag",
+   "detail": "Berners-Lee wanted a more general link for media. After a debate joined by van Rossum, Andreessen simply added the tag to Mosaic.",
+   "people": [
+    "marc-andreessen",
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "ncsa"
+   ],
+   "place": "champaign",
+   "track": "standards",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "gopher-licensing",
+   "date": "1993-02",
+   "kind": "event",
+   "title": "Minnesota reserves the right to charge for Gopher",
+   "short": "Gopher licence scare",
+   "detail": "The backlash cut Gopher use and lifted the web, and pushed Berners-Lee to seek a free release of the web.",
+   "people": [],
+   "orgs": [
+    "university-of-minnesota"
+   ],
+   "place": "minnesota",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "ncsa-meeting",
+   "date": "1993-03",
+   "kind": "event",
+   "title": "Tense meeting with the Mosaic team at NCSA",
+   "short": "NCSA meeting",
+   "detail": "Berners-Lee objected to rebranding the web as Mosaic. His suggestion of an editor was called impossible, and Andreessen and Hardin seemed at odds over credit.",
+   "people": [
+    "tim-berners-lee",
+    "marc-andreessen",
+    "eric-bina"
+   ],
+   "orgs": [
+    "ncsa",
+    "fermilab"
+   ],
+   "place": "champaign",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "web-public-domain",
+   "date": "1993-04-30",
+   "kind": "event",
+   "title": "CERN gives up all rights to the web code",
+   "short": "Web made free",
+   "detail": "After lobbying by Berners-Lee and Cailliau, Hoogland agreed, and CERN published the source code with a signed release of rights.",
+   "people": [
+    "tim-berners-lee",
+    "robert-cailliau"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "nyt-first-mention",
+   "date": "1993-12",
+   "kind": "event",
+   "title": "First New York Times mention of the web",
+   "short": "NYT article",
+   "detail": "The article focused on Mosaic and pictured Hardin and Smarr. It showed the web gaining momentum, though Andreessen and Bina went unnamed.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "ncsa"
+   ],
+   "place": null,
+   "ref": "Chapter 4: The Rise of the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "eternal-september",
+   "date": "1994",
+   "kind": "event",
+   "title": "The public arrives through AOL",
+   "short": "Eternal September",
+   "detail": "AOL opened the net to the public, ending academic netiquette and bringing a wave of amateur sites.",
+   "people": [],
+   "orgs": [
+    "aol"
+   ],
+   "place": null,
+   "ref": "Chapter 5: Governing the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "semantic-web",
+   "date": "1994",
+   "kind": "idea",
+   "title": "A web of data computers can read",
+   "short": "Semantic web",
+   "detail": "In his WWW1 closing speech Berners-Lee described moving from documents to structured data computers could reason about.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "cern"
+   ],
+   "place": "geneva",
+   "track": "data",
+   "ref": "Chapter 5: Governing the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "vrml",
+   "date": "1994",
+   "kind": "idea",
+   "title": "Virtual Reality Markup Language",
+   "short": "VRML",
+   "detail": "Standard meant to let people walk between web sites through virtual doors; it never caught on as hoped.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "track": "standards",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "amazon-founding",
+   "date": "1994",
+   "kind": "event",
+   "title": "Bezos settles on online bookselling",
+   "short": "Amazon begins",
+   "detail": "Driving from New York to Seattle about when Berners-Lee reached New England, Bezos chose to sell books on the web.",
+   "people": [],
+   "orgs": [
+    "amazon"
+   ],
+   "place": "seattle",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "netscape-navigator",
+   "date": "1994",
+   "kind": "product",
+   "title": "Netscape Navigator launches",
+   "short": "Netscape Navigator",
+   "detail": "Follow-up to Mosaic by Andreessen and his NCSA team with Jim Clark; leading browser by mid-1995.",
+   "people": [
+    "marc-andreessen",
+    "jim-clark"
+   ],
+   "orgs": [
+    "netscape",
+    "silicon-graphics"
+   ],
+   "place": "bay-area",
+   "track": "browsers",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "spyglass-acquisition",
+   "date": "1994",
+   "kind": "event",
+   "title": "Gates buys Spyglass",
+   "short": "Spyglass deal",
+   "detail": "Microsoft bought the NCSA spin-off in late 1994, intending a browser of its own to extend Windows.",
+   "people": [],
+   "orgs": [
+    "microsoft",
+    "spyglass",
+    "ncsa"
+   ],
+   "place": null,
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "yahoo-directory",
+   "date": "1994-01",
+   "kind": "product",
+   "title": "Yahoo topic directory",
+   "short": "Yahoo directory",
+   "detail": "Two Stanford students began a hand-maintained directory of web pages by topic, with no search at first.",
+   "people": [],
+   "orgs": [
+    "yahoo",
+    "stanford"
+   ],
+   "place": null,
+   "track": "search",
+   "ref": "Chapter 5: Governing the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "justins-links",
+   "date": "1994-01",
+   "kind": "product",
+   "title": "Justin Hall personal site",
+   "short": "Justin Hall blog",
+   "detail": "A Swarthmore freshman documented his life on the web, in what Berners-Lee calls perhaps the first blog with comments.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "track": "social",
+   "ref": "Chapter 5: Governing the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "zurich-meeting",
+   "date": "1994-02",
+   "kind": "event",
+   "title": "Zurich talk on a web consortium",
+   "short": "Zurich meeting",
+   "detail": "Berners-Lee and Dertouzos discussed how a web organization might work, with the MIT X Windows consortium as template.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "mit"
+   ],
+   "place": "zurich",
+   "ref": "Chapter 5: Governing the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "arena-browser",
+   "date": "1994-05",
+   "kind": "product",
+   "title": "Arena browser shown at WWW1",
+   "short": "Arena browser",
+   "detail": "Raggett showed a browser with background images, tables and text flow, many of which entered the HTML roadmap. Dated by the conference.",
+   "people": [
+    "dave-raggett"
+   ],
+   "orgs": [
+    "hewlett-packard"
+   ],
+   "place": "geneva",
+   "track": "browsers",
+   "ref": "Chapter 5: Governing the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "map-viewer",
+   "date": "1994-05",
+   "kind": "product",
+   "title": "Interactive web map viewer",
+   "short": "Map viewer",
+   "detail": "Xerox PARC tool that generated maps on demand. Dated by its prize, not its release.",
+   "people": [],
+   "orgs": [
+    "xerox-parc"
+   ],
+   "place": null,
+   "track": "data",
+   "ref": "Chapter 5: Governing the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "virtual-louvre",
+   "date": "1994-05",
+   "kind": "product",
+   "title": "Virtual copy of the Louvre",
+   "short": "Virtual Louvre",
+   "detail": "A French student digitized the museum online. Dated by its prize, not its release.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "track": "hypertext",
+   "ref": "Chapter 5: Governing the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "world-wide-web-worm",
+   "date": "1994-05",
+   "kind": "product",
+   "title": "World Wide Web Worm",
+   "short": "Web Worm",
+   "detail": "One of the first search engines, coded at the University of Colorado. Dated by its prize, not its release.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "track": "search",
+   "ref": "Chapter 5: Governing the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "www1",
+   "date": "1994-05-25",
+   "kind": "event",
+   "title": "First web conference at CERN",
+   "short": "WWW1 conference",
+   "detail": "About 350 people met at CERN, after a standoff with NCSA over who would go first; HTML and HTTP roadmaps took shape.",
+   "people": [
+    "tim-berners-lee",
+    "robert-cailliau",
+    "dave-raggett"
+   ],
+   "orgs": [
+    "cern",
+    "ncsa"
+   ],
+   "place": "geneva",
+   "ref": "Chapter 5: Governing the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "best-of-the-web-awards",
+   "date": "1994-05-26",
+   "kind": "event",
+   "title": "First Best of the Web prizes",
+   "short": "Web prizes",
+   "detail": "Prizes voted by email went to a map viewer, a virtual Louvre and a search engine at the WWW1 dinner.",
+   "people": [],
+   "orgs": [
+    "cern",
+    "xerox-parc"
+   ],
+   "place": "geneva",
+   "ref": "Chapter 5: Governing the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "w3c-founding",
+   "date": "1994-07",
+   "kind": "event",
+   "title": "MIT agrees to host W3C",
+   "short": "W3C at MIT",
+   "detail": "Vezza phoned with the go-ahead for hiring Berners-Lee and giving space and funding to the consortium, modelled on the X Consortium contract.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "mit",
+    "w3c"
+   ],
+   "place": "boston",
+   "ref": "Chapter 5: Governing the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "move-to-mit",
+   "date": "1994-09-01",
+   "kind": "event",
+   "title": "Berners-Lee starts at MIT",
+   "short": "Move to MIT",
+   "detail": "Berners-Lee left CERN and Europe for Boston, keeping a French link through INRIA.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "mit",
+    "cern",
+    "inria"
+   ],
+   "place": "boston",
+   "ref": "Chapter 5: Governing the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "gates-internet-memo",
+   "date": "1995",
+   "kind": "event",
+   "title": "Gates memo on the internet",
+   "short": "Gates memo",
+   "detail": "Gates told executives the internet was the most important development since the IBM PC; the strategy became embrace and extend.",
+   "people": [],
+   "orgs": [
+    "microsoft"
+   ],
+   "place": null,
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "internet-explorer",
+   "date": "1995",
+   "kind": "product",
+   "title": "Internet Explorer debuts",
+   "short": "Internet Explorer",
+   "detail": "A rushed first release bundled with Windows that later took about 95 per cent of the market by 2002.",
+   "people": [],
+   "orgs": [
+    "microsoft"
+   ],
+   "place": null,
+   "track": "browsers",
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "first-browser-war",
+   "date": "1995",
+   "kind": "event",
+   "title": "First browser war begins",
+   "short": "Browser war",
+   "detail": "Netscape and Microsoft fought in the market and inside W3C, adding browser-specific features. Berners-Lee counts it as the second war.",
+   "people": [],
+   "orgs": [
+    "netscape",
+    "microsoft",
+    "w3c"
+   ],
+   "place": null,
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "doubleclick-network",
+   "date": "1995",
+   "kind": "product",
+   "title": "Third-party ad network",
+   "short": "Doubleclick ads",
+   "detail": "Banner ads served across sites with tracked click-through rates and shared revenue.",
+   "people": [],
+   "orgs": [
+    "doubleclick"
+   ],
+   "place": null,
+   "track": "data",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "grail-browser",
+   "date": "1995",
+   "kind": "product",
+   "title": "Grail browser in Python",
+   "short": "Grail",
+   "detail": "A browser that ran applications inside itself using Python; Berners-Lee urged it on but would not push Python in W3C.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [],
+   "place": null,
+   "track": "browsers",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "wiki",
+   "date": "1995",
+   "kind": "idea",
+   "title": "Rapidly editable wiki pages",
+   "short": "Wiki",
+   "detail": "Cunningham invented them and did not patent the concept, thinking nobody would pay for it.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "track": "hypertext",
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "html2",
+   "date": "1995",
+   "kind": "idea",
+   "title": "HTML2 standard",
+   "short": "HTML2",
+   "detail": "Next version of HTML in the W3C sequence.",
+   "people": [],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "track": "standards",
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "netscape-ipo",
+   "date": "1995-08",
+   "kind": "event",
+   "title": "Netscape goes public",
+   "short": "Netscape IPO",
+   "detail": "Oversubscribed share sale that surprised Berners-Lee, since Netscape had no obvious way to make money.",
+   "people": [
+    "marc-andreessen"
+   ],
+   "orgs": [
+    "netscape"
+   ],
+   "place": "bay-area",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "keio-host",
+   "date": "1996",
+   "kind": "event",
+   "title": "Keio becomes third W3C host",
+   "short": "Keio host",
+   "detail": "W3C added a Tokyo host to handle growing interest from Asia.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "w3c",
+    "keio"
+   ],
+   "place": "tokyo",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "css",
+   "date": "1996",
+   "kind": "idea",
+   "title": "Cascading Style Sheets standard",
+   "short": "CSS",
+   "detail": "Lie designed a cascade of style rules, tested with Bos on the Arena browser; W3C published the first standard.",
+   "people": [
+    "hakon-lie"
+   ],
+   "orgs": [
+    "w3c",
+    "cern"
+   ],
+   "place": null,
+   "track": "standards",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "craigslist-site",
+   "date": "1996",
+   "kind": "product",
+   "title": "Craigslist local listings",
+   "short": "Craigslist",
+   "detail": "Web mailing list of San Francisco events that spread to listings and cities worldwide.",
+   "people": [],
+   "orgs": [
+    "craigslist"
+   ],
+   "place": "bay-area",
+   "track": "social",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "nyt-online",
+   "date": "1996",
+   "kind": "event",
+   "title": "New York Times goes online",
+   "short": "NYT online",
+   "detail": "The paper began posting its text on the web, a sign of the slow shift from print to digital.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "telecommunications-act",
+   "date": "1996",
+   "kind": "event",
+   "title": "US Telecommunications Act and Section 230",
+   "short": "Section 230",
+   "detail": "Its obscenity language was later struck down; its safe harbour clause later proved crucial to social media.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "declaration-of-independence-of-cyberspace",
+   "date": "1996",
+   "kind": "idea",
+   "title": "Declaration of the Independence of Cyberspace",
+   "short": "Cyberspace Declaration",
+   "detail": "Barlow manifesto against government rule online. Berners-Lee had mixed feelings and thought offline law still applied.",
+   "people": [],
+   "orgs": [
+    "eff"
+   ],
+   "place": null,
+   "track": "social",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "alexa-traffic",
+   "date": "1996",
+   "kind": "product",
+   "title": "Alexa Internet traffic rankings",
+   "short": "Alexa rankings",
+   "detail": "For-profit analysis of web traffic and page popularity, sold to Amazon in 1999.",
+   "people": [
+    "brewster-kahle"
+   ],
+   "orgs": [
+    "alexa-internet"
+   ],
+   "place": null,
+   "track": "data",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "internet-archive-founding",
+   "date": "1996",
+   "kind": "product",
+   "title": "Internet Archive begins snapshotting the web",
+   "short": "Internet Archive",
+   "detail": "Kahle saw pages were short-lived and began regular copies, first held on a tape robot.",
+   "people": [
+    "brewster-kahle"
+   ],
+   "orgs": [
+    "internet-archive"
+   ],
+   "place": null,
+   "track": "data",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "activex",
+   "date": "1996",
+   "kind": "product",
+   "title": "Microsoft ActiveX",
+   "short": "ActiveX",
+   "detail": "Browser components for video and games. Berners-Lee thought their one notable trait was being incompatible with Netscape.",
+   "people": [],
+   "orgs": [
+    "microsoft"
+   ],
+   "place": null,
+   "track": "browsers",
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "apple-buys-next",
+   "date": "1996",
+   "kind": "event",
+   "title": "Apple buys NeXT",
+   "short": "Apple buys NeXT",
+   "detail": "Apple purchased what remained of NeXT, and Jobs was soon reinstated as CEO.",
+   "people": [
+    "steve-jobs"
+   ],
+   "orgs": [
+    "apple",
+    "next"
+   ],
+   "place": null,
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "pagerank",
+   "date": "1997",
+   "kind": "idea",
+   "title": "PageRank link analysis",
+   "short": "PageRank",
+   "detail": "Stanford students ranked pages by the structure of links and lists, not word counts; soon rebranded as Google.",
+   "people": [
+    "larry-page",
+    "sergei-brin"
+   ],
+   "orgs": [
+    "stanford",
+    "google"
+   ],
+   "place": null,
+   "track": "search",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "html3",
+   "date": "1997",
+   "kind": "idea",
+   "title": "HTML3 standard",
+   "short": "HTML3",
+   "detail": "Next version of HTML in the W3C sequence.",
+   "people": [],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "track": "standards",
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "web-accessibility-initiative",
+   "date": "1997",
+   "kind": "idea",
+   "title": "W3C accessibility standards effort",
+   "short": "Web accessibility",
+   "detail": "Brewer joined to lead accessibility standards, and every W3C spec came to get an accessibility review. Dated by her joining.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "track": "standards",
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "akamai-founding",
+   "date": "1998",
+   "kind": "event",
+   "title": "Akamai incorporated",
+   "short": "Akamai founded",
+   "detail": "Lewin and Leighton turned consistent hashing, a fix for sudden traffic overload, into a content distribution business.",
+   "people": [],
+   "orgs": [
+    "akamai",
+    "mit"
+   ],
+   "place": null,
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "xml",
+   "date": "1998",
+   "kind": "idea",
+   "title": "Extensible Markup Language",
+   "short": "XML",
+   "detail": "W3C standard simpler than HTML and built to carry abstract data as well as documents; Microsoft adopted it widely.",
+   "people": [],
+   "orgs": [
+    "w3c",
+    "microsoft"
+   ],
+   "place": null,
+   "track": "data",
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "postel-death",
+   "date": "1998",
+   "kind": "event",
+   "title": "Jon Postel dies",
+   "short": "Postel dies",
+   "detail": "Death of the long-time custodian of the name registry, whose legacy Berners-Lee thought was betrayed by a for-profit registry.",
+   "people": [
+    "jon-postel"
+   ],
+   "orgs": [],
+   "place": null,
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "alexa-sold-to-amazon",
+   "date": "1999",
+   "kind": "event",
+   "title": "Kahle sells Alexa to Amazon",
+   "short": "Alexa sold",
+   "detail": "The sale let Kahle turn to running the Internet Archive full-time.",
+   "people": [
+    "brewster-kahle"
+   ],
+   "orgs": [
+    "alexa-internet",
+    "amazon",
+    "internet-archive"
+   ],
+   "place": null,
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "cluetrain-manifesto",
+   "date": "1999",
+   "kind": "idea",
+   "title": "The Cluetrain Manifesto",
+   "short": "Cluetrain Manifesto",
+   "detail": "Early document of ninety-five theses, coauthored by Searls, that predicted the impact of the web on business and marketing.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "track": "foundations",
+   "ref": "Chapter 17: Attention vs. Intention",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "livejournal",
+   "date": "1999-04",
+   "kind": "product",
+   "track": "social",
+   "title": "LiveJournal",
+   "short": "LiveJournal",
+   "detail": "An early web community.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "ref": "Chapter 10: This Is for Everyone",
+   "url": "https://en.wikipedia.org/wiki/LiveJournal"
+  },
+  {
+   "id": "https",
+   "date": "2000",
+   "kind": "idea",
+   "title": "HTTPS agreed",
+   "short": "HTTPS",
+   "detail": "Encrypted web traffic using RSA; changing the URL prefix broke existing links.",
+   "people": [],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "track": "protocols",
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "html4",
+   "date": "2000",
+   "kind": "idea",
+   "title": "HTML4 standard",
+   "short": "HTML4",
+   "detail": "Next version of HTML in the W3C sequence.",
+   "people": [],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "track": "standards",
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "petscom-bankruptcy",
+   "date": "2000",
+   "kind": "event",
+   "title": "Pets.com goes bankrupt",
+   "short": "Pets.com fails",
+   "detail": "The standard-bearer of the dot-com bubble collapsed amid hundreds of similar firms.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "wayback-machine",
+   "date": "2001",
+   "kind": "product",
+   "title": "Wayback Machine opens",
+   "short": "Wayback Machine",
+   "detail": "Kahle opened the Internet Archive database of web snapshots to the public.",
+   "people": [
+    "brewster-kahle"
+   ],
+   "orgs": [
+    "internet-archive"
+   ],
+   "place": null,
+   "track": "data",
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "mac-os-x",
+   "date": "2001",
+   "kind": "product",
+   "title": "Mac OS X, adopted at W3C",
+   "short": "Mac OS X",
+   "detail": "W3C switched to it soon after its arrival; Berners-Lee saw NeXT in its design.",
+   "people": [
+    "steve-jobs",
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "apple",
+    "w3c"
+   ],
+   "place": null,
+   "track": "foundations",
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "aol-time-warner-writedown",
+   "date": "2001",
+   "kind": "event",
+   "title": "AOL Time Warner write-down",
+   "short": "AOL write-down",
+   "detail": "A 50 billion dollar write-down after which Netscape dwindled and the web bubble burst.",
+   "people": [],
+   "orgs": [
+    "aol",
+    "netscape"
+   ],
+   "place": null,
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "wikipedia",
+   "date": "2001-01",
+   "kind": "product",
+   "title": "Wikipedia launches",
+   "short": "Wikipedia",
+   "detail": "Open encyclopaedia grown out of Nupedia; Berners-Lee calls it probably the best example of what he wanted the web to be.",
+   "people": [
+    "jimmy-wales",
+    "larry-sanger"
+   ],
+   "orgs": [
+    "nupedia"
+   ],
+   "place": null,
+   "track": "social",
+   "ref": "Chapter 7: Growing Pains",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "dertouzos-death",
+   "date": "2001-08-27",
+   "kind": "event",
+   "title": "Michael Dertouzos dies",
+   "short": "Dertouzos dies",
+   "detail": "Loss of the friend, mentor and main supporter of Berners-Lee at MIT.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "mit"
+   ],
+   "place": null,
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "lewin-death",
+   "date": "2001-09-11",
+   "kind": "event",
+   "title": "Daniel Lewin killed on Flight 11",
+   "short": "Lewin killed",
+   "detail": "The Akamai CTO died in the 9/11 attacks, probably while trying to stop the hijackers.",
+   "people": [],
+   "orgs": [
+    "akamai"
+   ],
+   "place": null,
+   "ref": "Chapter 6: The Wave",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "ie-monopoly",
+   "date": "2002",
+   "kind": "event",
+   "title": "Explorer reaches 95 per cent share",
+   "short": "IE dominance",
+   "detail": "With Netscape in shambles, the browser wars looked over to outsiders.",
+   "people": [],
+   "orgs": [
+    "microsoft",
+    "netscape"
+   ],
+   "place": null,
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "last-fm",
+   "date": "2002",
+   "kind": "product",
+   "title": "Last.fm spun off from Southampton",
+   "short": "Last.fm",
+   "detail": "Music service that matched listening habits across users. It was where Berners-Lee first met collaborative filtering.",
+   "people": [],
+   "orgs": [
+    "last-fm"
+   ],
+   "place": null,
+   "track": "ai",
+   "ref": "Chapter 12: Machine Learning",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "friendster",
+   "date": "2002-03",
+   "kind": "product",
+   "track": "social",
+   "title": "Friendster",
+   "short": "Friendster",
+   "detail": "An early social network.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "ref": "Chapter 10: This Is for Everyone",
+   "url": "https://en.wikipedia.org/wiki/Friendster"
+  },
+  {
+   "id": "w3c-patent-policy",
+   "date": "2003",
+   "kind": "idea",
+   "title": "W3C royalty-free patent policy",
+   "short": "Patent policy",
+   "detail": "A group led by Weitzner wrote it after a royalty claim scare; Berners-Lee says it saved the web.",
+   "people": [],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "track": "standards",
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "csail",
+   "date": "2003",
+   "kind": "event",
+   "title": "MIT reunites its computer science and AI labs",
+   "short": "CSAIL formed",
+   "detail": "The labs had long been separate, partly because scientists distanced themselves from AI during the funding drought.",
+   "people": [],
+   "orgs": [
+    "csail"
+   ],
+   "place": null,
+   "ref": "Chapter 11: Open Data",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "applied-semantics-sale",
+   "date": "2003",
+   "kind": "event",
+   "title": "Google buys Applied Semantics",
+   "short": "Applied Semantics sale",
+   "detail": "Gil Elbaz sold his semantic start-up to Google for more than 100 million dollars. It provided the core of AdSense.",
+   "people": [
+    "gil-elbaz"
+   ],
+   "orgs": [
+    "applied-semantics",
+    "google"
+   ],
+   "place": null,
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "myspace",
+   "date": "2003-08",
+   "kind": "product",
+   "track": "social",
+   "title": "Myspace",
+   "short": "Myspace",
+   "detail": "An early social network.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "ref": "Chapter 10: This Is for Everyone",
+   "url": "https://en.wikipedia.org/wiki/Myspace"
+  },
+  {
+   "id": "html5",
+   "date": "2004",
+   "kind": "idea",
+   "title": "HTML5, the WHATWG flavour",
+   "short": "HTML5",
+   "detail": "Tolerant of errors and powerful for applications; W3C ultimately endorsed it. Dated by the start of WHATWG work.",
+   "people": [],
+   "orgs": [
+    "whatwg",
+    "w3c"
+   ],
+   "place": null,
+   "track": "standards",
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "firefox",
+   "date": "2004",
+   "kind": "product",
+   "title": "Mozilla launches Firefox",
+   "short": "Firefox",
+   "detail": "Alternative browser that wore down the Explorer monopoly from the mid-2000s; the browser Berners-Lee used most.",
+   "people": [],
+   "orgs": [
+    "mozilla"
+   ],
+   "place": null,
+   "track": "browsers",
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "gmail",
+   "date": "2004",
+   "kind": "product",
+   "title": "Gmail built with AJAX",
+   "short": "Gmail",
+   "detail": "Web mail that felt always on through background data loading.",
+   "people": [],
+   "orgs": [
+    "google"
+   ],
+   "place": null,
+   "track": "browsers",
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "google-eclipses-yahoo",
+   "date": "2004",
+   "kind": "event",
+   "title": "Google passes Yahoo in search",
+   "short": "Google overtakes",
+   "detail": "Google became the dominant search engine, a new monopoly forming as the Explorer one faded.",
+   "people": [],
+   "orgs": [
+    "google",
+    "yahoo"
+   ],
+   "place": null,
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "facebook-site",
+   "date": "2004-02",
+   "kind": "product",
+   "track": "social",
+   "title": "Facebook",
+   "short": "Facebook",
+   "detail": "Started at Harvard and built on the communities before it.",
+   "people": [],
+   "orgs": [
+    "facebook"
+   ],
+   "place": null,
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "ref": "Chapter 10: This Is for Everyone",
+   "url": "https://en.wikipedia.org/wiki/Facebook"
+  },
+  {
+   "id": "whatwg-split",
+   "date": "2004-06",
+   "kind": "event",
+   "title": "WHATWG breaks from W3C",
+   "short": "WHATWG split",
+   "detail": "After losing a W3C vote, Mozilla, Opera and Apple representatives formed a splinter group. Berners-Lee thought it the first real blow to the integrity of the web.",
+   "people": [
+    "hakon-lie",
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "whatwg",
+    "w3c",
+    "mozilla",
+    "opera",
+    "apple"
+   ],
+   "place": null,
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "google-maps",
+   "date": "2005",
+   "kind": "product",
+   "title": "Google Maps",
+   "short": "Google Maps",
+   "detail": "AJAX map application that kept data on the device to seem always on.",
+   "people": [],
+   "orgs": [
+    "google"
+   ],
+   "place": null,
+   "track": "browsers",
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "mobile-web-initiative",
+   "date": "2005",
+   "kind": "idea",
+   "title": "W3C starts the Mobile Web Initiative",
+   "short": "Mobile Web Initiative",
+   "detail": "A W3C effort led by Hoschka to prepare websites for phones, including touch events, more than two years before the iPhone.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "w3c",
+    "apple"
+   ],
+   "place": null,
+   "track": "mobile",
+   "ref": "Chapter 9: The Mobile Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "w3c-china-office",
+   "date": "2006",
+   "kind": "event",
+   "title": "First W3C China office",
+   "short": "W3C China",
+   "detail": "Opened at Beihang University; Angel Li pushed for open standards there.",
+   "people": [],
+   "orgs": [
+    "w3c",
+    "beihang"
+   ],
+   "place": "beijing",
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "intention-economy",
+   "date": "2006",
+   "kind": "idea",
+   "title": "The intention economy",
+   "short": "Intention economy",
+   "detail": "Doc Searls coined it: buyers state what they want and vendors compete, as an alternative to the attention economy. Berners-Lee adopted the framing and discussed it with John Bruce on CNBC in 2023.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [],
+   "place": null,
+   "track": "data",
+   "ref": "Chapter 17: Attention vs. Intention",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "iphone",
+   "date": "2007",
+   "kind": "product",
+   "title": "Apple launches the iPhone",
+   "short": "iPhone",
+   "detail": "Jobs first showcased its Safari browser. Berners-Lee later came to see the app store around it as gatekeeping.",
+   "people": [
+    "steve-jobs"
+   ],
+   "orgs": [
+    "apple"
+   ],
+   "place": null,
+   "track": "mobile",
+   "ref": "Chapter 9: The Mobile Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "net-neutrality-testimony",
+   "date": "2007",
+   "kind": "event",
+   "title": "Berners-Lee testifies on net neutrality",
+   "short": "Neutrality testimony",
+   "detail": "Testified to the US House at the request of Markey, arguing for equal treatment of data packets.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "us-house"
+   ],
+   "place": "washington-dc",
+   "ref": "Chapter 9: The Mobile Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "google-chrome",
+   "date": "2008",
+   "kind": "product",
+   "title": "Google Chrome launches",
+   "short": "Chrome",
+   "detail": "Instant hit helped by close fit with HTML5. Berners-Lee thought Hickson had quietly steered HTML towards the needs of Chrome.",
+   "people": [],
+   "orgs": [
+    "google"
+   ],
+   "place": null,
+   "track": "browsers",
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "recap",
+   "date": "2008",
+   "kind": "product",
+   "title": "RECAP frees US court records",
+   "short": "RECAP",
+   "detail": "Swartz and others scraped nearly 20 million pages from the paid PACER database into a free archive. The FBI looked into it but filed no charges.",
+   "people": [
+    "aaron-swartz"
+   ],
+   "orgs": [],
+   "place": null,
+   "track": "data",
+   "ref": "Chapter 11: Open Data",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "common-crawl",
+   "date": "2008",
+   "kind": "product",
+   "title": "Common Crawl web archive",
+   "short": "Common Crawl",
+   "detail": "Nonprofit monthly copy of the web, about 50 billion pages. The data set that made GPT work, though it holds much copyrighted text.",
+   "people": [
+    "gil-elbaz"
+   ],
+   "orgs": [
+    "common-crawl"
+   ],
+   "place": null,
+   "track": "data",
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "spotify",
+   "date": "2008-10",
+   "kind": "product",
+   "track": "ai",
+   "title": "Spotify",
+   "short": "Spotify",
+   "detail": "Followed Last.fm in recommending music from what similar listeners played.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "ref": "Chapter 12: Machine Learning",
+   "url": "https://en.wikipedia.org/wiki/Spotify"
+  },
+  {
+   "id": "raw-data-now",
+   "date": "2009",
+   "kind": "event",
+   "title": "TED talk calls for Raw Data Now",
+   "short": "Raw Data Now",
+   "detail": "First of two TED talks showing the power of publishing open government data on the web.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [],
+   "place": null,
+   "ref": "Chapter 11: Open Data",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "westminster-roundtable",
+   "date": "2009",
+   "kind": "event",
+   "title": "Privacy warning at Westminster",
+   "short": "Westminster roundtable",
+   "detail": "Told UK parliamentarians that click data reveals intimate facts and should not be collected at all.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [],
+   "place": "london",
+   "ref": "Chapter 11: Open Data",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "data-gov-uk",
+   "date": "2009",
+   "kind": "product",
+   "title": "Data.gov.uk launches",
+   "short": "Data.gov.uk",
+   "detail": "UK open government data site that followed the advice of Berners-Lee to Gordon Brown, with Shadbolt suggested as lead.",
+   "people": [
+    "tim-berners-lee",
+    "nigel-shadbolt"
+   ],
+   "orgs": [],
+   "place": null,
+   "track": "data",
+   "ref": "Chapter 11: Open Data",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "web-foundation",
+   "date": "2009-11",
+   "kind": "event",
+   "title": "Web Foundation launches",
+   "short": "Web Foundation",
+   "detail": "Launched in Washington with Knight Foundation money, aiming to bring 3 billion more people online by 2019.",
+   "people": [
+    "tim-berners-lee",
+    "rosemary-leith"
+   ],
+   "orgs": [
+    "web-foundation",
+    "knight-foundation"
+   ],
+   "place": "washington-dc",
+   "ref": "Chapter 9: The Mobile Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "google-exits-china",
+   "date": "2010",
+   "kind": "event",
+   "title": "Google leaves China",
+   "short": "Google exits China",
+   "detail": "No agreement with the government on censoring results; Baidu took over.",
+   "people": [],
+   "orgs": [
+    "google",
+    "baidu"
+   ],
+   "place": "china",
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "east-africa-tour",
+   "date": "2010",
+   "kind": "event",
+   "title": "East Africa tour on affordable access",
+   "short": "East Africa tour",
+   "detail": "Meetings with officials led Berners-Lee to see avoiding broadband monopolies as the key issue.",
+   "people": [
+    "tim-berners-lee",
+    "rosemary-leith"
+   ],
+   "orgs": [
+    "web-foundation"
+   ],
+   "place": "east-africa",
+   "ref": "Chapter 9: The Mobile Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "cameron-cancels",
+   "date": "2010",
+   "kind": "event",
+   "title": "New UK government cancels the project",
+   "short": "Cameron cancels",
+   "detail": "After Labour lost the election, Cameron immediately cancelled the project, and Shadbolt and Berners-Lee had to argue their case again.",
+   "people": [
+    "nigel-shadbolt",
+    "tim-berners-lee"
+   ],
+   "orgs": [],
+   "place": null,
+   "ref": "Chapter 11: Open Data",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "deepmind",
+   "date": "2010",
+   "kind": "event",
+   "title": "DeepMind founded",
+   "short": "DeepMind founded",
+   "detail": "Hassabis, Legg and Suleyman set out to build a general artificial intelligence.",
+   "people": [
+    "demis-hassabis",
+    "mustafa-suleyman"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": null,
+   "ref": "Chapter 12: Machine Learning",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "zeitgeist-lunch",
+   "date": "2010",
+   "kind": "event",
+   "title": "Lunch with Larry Page on AI",
+   "short": "Page lunch",
+   "detail": "Berners-Lee asked about a stream of consciousness in code; Page offered to run it if someone wrote it.",
+   "people": [
+    "tim-berners-lee",
+    "larry-page"
+   ],
+   "orgs": [
+    "google"
+   ],
+   "place": null,
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "arab-spring",
+   "date": "2010-12-17",
+   "kind": "event",
+   "title": "Arab Spring begins in Tunisia",
+   "short": "Arab Spring",
+   "detail": "Protests coordinated on Twitter and Facebook spread across the region. Berners-Lee calls it the first large demonstration that social media would transform society.",
+   "people": [],
+   "orgs": [
+    "facebook"
+   ],
+   "place": "tunisia",
+   "ref": "Chapter 10: This Is for Everyone",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "nilekani-meeting",
+   "date": "2011",
+   "kind": "event",
+   "title": "Nilekani explains the paper problem",
+   "short": "Nilekani meeting",
+   "detail": "On the Hyderabad trip, Nilekani said records had to go digital first, the job of the Aadhaar ID program.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "w3c"
+   ],
+   "place": "india",
+   "ref": "Chapter 9: The Mobile Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "webrtc",
+   "date": "2011",
+   "kind": "idea",
+   "title": "WebRTC first working draft",
+   "short": "WebRTC",
+   "detail": "W3C draft for in-browser real-time communication. First cross-browser call in 2013, official standard in 2017; Zoom, Google Meet, Teams and Jitsi use it, and usage surged during Covid.",
+   "people": [],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "track": "standards",
+   "ref": "Chapter 15: Inrupt",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "this-is-for-everyone",
+   "date": "2012",
+   "kind": "event",
+   "title": "THIS IS FOR EVERYONE at the Olympics",
+   "short": "Olympics message",
+   "detail": "At the ceremony directed by Boyle, Berners-Lee typed the phrase on a NeXT machine; it ran around the stadium and went out as a tweet.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [],
+   "place": "london",
+   "ref": "Chapter 10: This Is for Everyone",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "odi",
+   "date": "2012",
+   "kind": "event",
+   "title": "Open Data Institute founded",
+   "short": "ODI founded",
+   "detail": "A UK government grant of 10 million pounds started the nonprofit, won by Berners-Lee and Shadbolt with help from Willets.",
+   "people": [
+    "tim-berners-lee",
+    "nigel-shadbolt"
+   ],
+   "orgs": [
+    "odi"
+   ],
+   "place": "london",
+   "ref": "Chapter 11: Open Data",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "beihang-host",
+   "date": "2013",
+   "kind": "event",
+   "title": "Beihang becomes fourth W3C host",
+   "short": "Beihang host",
+   "detail": "The Beijing office grew into a full host alongside Japan, France and the US.",
+   "people": [],
+   "orgs": [
+    "w3c",
+    "beihang"
+   ],
+   "place": "beijing",
+   "ref": "Chapter 8: Technology and Society",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "aaron-swartz-death",
+   "date": "2013-01-11",
+   "kind": "event",
+   "title": "Aaron Swartz dies during prosecution",
+   "short": "Swartz dies",
+   "detail": "He took his own life after plea talks collapsed on charges over bulk JSTOR downloads through MIT. Berners-Lee thought the charges disproportionate.",
+   "people": [
+    "aaron-swartz",
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "jstor"
+   ],
+   "place": null,
+   "ref": "Chapter 11: Open Data",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "web-index",
+   "date": "2014",
+   "kind": "product",
+   "title": "Web Foundation publishes the Web Index",
+   "short": "Web Index",
+   "detail": "Pilot ranking of countries by access, freedom, openness and content, used to direct the policy work of the foundation.",
+   "people": [
+    "tim-berners-lee",
+    "rosemary-leith"
+   ],
+   "orgs": [
+    "web-foundation",
+    "google"
+   ],
+   "place": "london",
+   "track": "data",
+   "ref": "Chapter 10: This Is for Everyone",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "hassabis-talk",
+   "date": "2014",
+   "kind": "event",
+   "title": "Hassabis shows neural nets at web anniversary",
+   "short": "Hassabis talk",
+   "detail": "At a Google dinner for the Web Foundation, Berners-Lee first met Hassabis and first saw how such systems learn without explicit logic layers.",
+   "people": [
+    "demis-hassabis",
+    "tim-berners-lee",
+    "rosemary-leith"
+   ],
+   "orgs": [
+    "google",
+    "deepmind",
+    "web-foundation"
+   ],
+   "place": "london",
+   "ref": "Chapter 12: Machine Learning",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "solid-mastercard-gift",
+   "date": "2015",
+   "kind": "event",
+   "title": "MasterCard funds Solid research at MIT",
+   "short": "MasterCard gift",
+   "detail": "A gift of $1 million paid for further work and a prototype of the first Solid server.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "mastercard"
+   ],
+   "place": null,
+   "ref": "Chapter 11: Open Data",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "burkina-faso-election",
+   "date": "2015",
+   "kind": "event",
+   "title": "ODI supports Burkina Faso election",
+   "short": "Burkina Faso election",
+   "detail": "A mobile web app on an open data portal delivered results from twenty-one districts within hours.",
+   "people": [],
+   "orgs": [
+    "odi"
+   ],
+   "place": "west-africa",
+   "ref": "Chapter 11: Open Data",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "polis-taiwan",
+   "date": "2015",
+   "kind": "event",
+   "title": "Polis sets Taiwan ride-sharing policy",
+   "short": "Polis in Taiwan",
+   "detail": "Citizens reached a consensus on regulating Uber through the Polis app, which Berners-Lee admires for promoting the norm over extremes.",
+   "people": [],
+   "orgs": [],
+   "place": "taiwan",
+   "ref": "Chapter 13: Design Issues",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "solid",
+   "date": "2015",
+   "kind": "idea",
+   "track": "data",
+   "title": "Solid: personal data pods",
+   "short": "Solid",
+   "detail": "Web servers that hold a person's own data, for apps to read and write with consent. The book first dates the work to the 2015 MasterCard gift.",
+   "people": [],
+   "orgs": [
+    "mit"
+   ],
+   "place": null,
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "ref": "Chapter 11: Open Data",
+   "url": "https://en.wikipedia.org/wiki/Solid_(web_decentralization_project)"
+  },
+  {
+   "id": "alphago",
+   "date": "2016",
+   "kind": "product",
+   "title": "AlphaGo beats a Go world champion",
+   "short": "AlphaGo",
+   "detail": "DeepMind neural network that became the first computer to defeat a human world champion at Go.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": null,
+   "track": "ai",
+   "ref": "Chapter 12: Machine Learning",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "turing-award",
+   "date": "2016",
+   "kind": "event",
+   "title": "Berners-Lee wins the Turing Award",
+   "short": "Turing Award",
+   "detail": "Top computing prize from the ACM, presented months later at a San Francisco banquet attended by Cerf.",
+   "people": [
+    "tim-berners-lee",
+    "vint-cerf"
+   ],
+   "orgs": [],
+   "place": null,
+   "ref": "Chapter 12: Machine Learning",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "brexit-campaign",
+   "date": "2016",
+   "kind": "event",
+   "title": "Brexit campaign narrowcasts on social media",
+   "short": "Brexit microtargeting",
+   "detail": "Berners-Lee thought targeted messaging, aided by Cambridge Analytica, was one cause of the result and the first sign of serious trouble.",
+   "people": [],
+   "orgs": [
+    "cambridge-analytica",
+    "facebook"
+   ],
+   "place": null,
+   "ref": "Chapter 12: Machine Learning",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "us-election-2016",
+   "date": "2016",
+   "kind": "event",
+   "title": "Trump elected amid targeted propaganda",
+   "short": "US election 2016",
+   "detail": "Cambridge Analytica worked to influence US voters. Berners-Lee thought its role perhaps overstated but saw the danger of secret targeting.",
+   "people": [],
+   "orgs": [
+    "cambridge-analytica"
+   ],
+   "place": null,
+   "ref": "Chapter 12: Machine Learning",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "mastodon",
+   "date": "2016-10",
+   "kind": "product",
+   "title": "Mastodon",
+   "short": "Mastodon",
+   "detail": "Protocol-based social network with many independent servers; preferred by Berners-Lee.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "track": "social",
+   "ref": "Chapter 17: Attention vs. Intention",
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "url": "https://en.wikipedia.org/wiki/Mastodon_(social_network)"
+  },
+  {
+   "id": "alphazero",
+   "date": "2017",
+   "kind": "product",
+   "title": "AlphaZero tops computer chess",
+   "short": "AlphaZero",
+   "detail": "Successor to AlphaGo, it became the strongest chess computer in existence.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": null,
+   "track": "ai",
+   "ref": "Chapter 12: Machine Learning",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "charlie",
+   "date": "2017",
+   "kind": "idea",
+   "title": "Charlie, an AI that works for you",
+   "short": "Charlie",
+   "detail": "A note imagining a personal agent with deep access to the data of its user, answering to that user and not big tech.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [],
+   "place": null,
+   "track": "ai",
+   "ref": "Chapter 12: Machine Learning",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "equifax-breach",
+   "date": "2017",
+   "kind": "event",
+   "title": "Equifax data breach",
+   "short": "Equifax breach",
+   "detail": "Hackers took personal data of over 147 million people, an example of the legal liability central data stores create.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "ref": "Chapter 15: Inrupt",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "transformer",
+   "date": "2017-06",
+   "kind": "idea",
+   "title": "Google transformer architecture",
+   "short": "Transformer",
+   "detail": "Neural net architecture from a Google research team, adopted by OpenAI.",
+   "people": [],
+   "orgs": [
+    "google"
+   ],
+   "place": null,
+   "track": "ai",
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "url": "https://en.wikipedia.org/wiki/Attention_Is_All_You_Need"
+  },
+  {
+   "id": "inrupt",
+   "date": "2018",
+   "kind": "event",
+   "title": "Berners-Lee starts Inrupt",
+   "short": "Inrupt founded",
+   "detail": "After years in nonprofits he decided a funded company was needed to build Solid at scale, then registered the corporation and recruited John Bruce as CEO.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "inrupt",
+    "glasswing"
+   ],
+   "place": "boston",
+   "ref": "Chapter 15: Inrupt",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "gdpr",
+   "date": "2018",
+   "kind": "event",
+   "title": "EU privacy law takes effect",
+   "short": "GDPR",
+   "detail": "Toughest privacy law in the world and a boost to the case for Solid. Berners-Lee thought its cookie rules were overdone and caused annoying consent pop-ups because legislators did not consult W3C.",
+   "people": [],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "ref": "Chapter 15: Inrupt",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "turing-prize-2018",
+   "date": "2018",
+   "kind": "event",
+   "title": "Turing Prize for AI research",
+   "short": "2018 Turing Prize",
+   "detail": "Awarded to LeCun, Bengio and Hinton. Only LeCun is comfortable with AI risk.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "activitypub",
+   "date": "2018-01",
+   "kind": "idea",
+   "title": "ActivityPub",
+   "short": "ActivityPub",
+   "detail": "W3C standard protocol behind Mastodon.",
+   "people": [],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "track": "social",
+   "ref": "Chapter 17: Attention vs. Intention",
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "url": "https://en.wikipedia.org/wiki/ActivityPub"
+  },
+  {
+   "id": "gpt",
+   "date": "2018-06",
+   "kind": "product",
+   "title": "GPT models",
+   "short": "GPT",
+   "detail": "OpenAI trained the transformer first on e-books (GPT-1) with poor results, then on web data; GPT-3 and later models shocked researchers.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "track": "ai",
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "url": "https://en.wikipedia.org/wiki/GPT-1"
+  },
+  {
+   "id": "alphafold",
+   "date": "2018-12",
+   "kind": "product",
+   "track": "ai",
+   "title": "AlphaFold",
+   "short": "AlphaFold",
+   "detail": "Protein structure prediction, drawing on the work on Go and chess.",
+   "people": [],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": null,
+   "src": [
+    "tbl",
+    "web"
+   ],
+   "ref": "Chapter 12: Machine Learning",
+   "url": "https://en.wikipedia.org/wiki/AlphaFold"
+  },
+  {
+   "id": "economics-of-inclusion-speech",
+   "date": "2019-03",
+   "kind": "event",
+   "title": "Rosemary Leith speech on inclusion and AI",
+   "short": "Inclusion speech",
+   "detail": "At Kirkcaldy she named AI as a major coming force and argued that the invisible hand should give way to an inclusive hand.",
+   "people": [
+    "rosemary-leith"
+   ],
+   "orgs": [
+    "web-foundation"
+   ],
+   "place": null,
+   "ref": "Chapter 14: The Contract for the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "web-at-30",
+   "date": "2019-03-12",
+   "kind": "event",
+   "title": "Thirtieth birthday tour of the web",
+   "short": "Web at 30",
+   "detail": "A day of events at CERN, Downing Street and the Science Museum, then Lagos, followed by Kirkcaldy. Berners-Lee reported on the state of the web and voiced worry about darker forces.",
+   "people": [
+    "tim-berners-lee",
+    "rosemary-leith",
+    "robert-cailliau"
+   ],
+   "orgs": [
+    "web-foundation"
+   ],
+   "place": "geneva",
+   "ref": "Chapter 14: The Contract for the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "contract-for-the-web",
+   "date": "2019-03-12",
+   "kind": "idea",
+   "title": "Contract for the Web announced",
+   "short": "Web Contract",
+   "detail": "Web Foundation text announced at CERN. A working group with Google, Microsoft, Wikimedia, Germany and France settled nine principles split among governments, companies and citizens; about eighty firms signed. Non-binding. Agreement took months after the announcement.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "web-foundation",
+    "google",
+    "microsoft"
+   ],
+   "place": "geneva",
+   "track": "standards",
+   "ref": "Chapter 14: The Contract for the Web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "social-dilemma",
+   "date": "2020",
+   "kind": "event",
+   "title": "The Social Dilemma released",
+   "short": "Social Dilemma",
+   "detail": "Film from Harris on engagement algorithms. Berners-Lee recommends it but thought it only points out the problem.",
+   "people": [],
+   "orgs": [
+    "center-for-humane-technology"
+   ],
+   "place": null,
+   "ref": "Chapter 13: Design Issues",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "flanders-pods",
+   "date": "2020",
+   "kind": "product",
+   "title": "Citizen data pods in Flanders",
+   "short": "Flanders pods",
+   "detail": "Minister-president Jan Jambon announced that citizens would deal with government through pods. The joint venture Athumi runs them for about six million people.",
+   "people": [],
+   "orgs": [
+    "flanders",
+    "athumi",
+    "inrupt"
+   ],
+   "place": "flanders",
+   "track": "data",
+   "ref": "Chapter 15: Inrupt",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "marcos-2022",
+   "date": "2022",
+   "kind": "event",
+   "title": "Marcos uses social media in Philippine election",
+   "short": "Marcos campaign",
+   "detail": "He avoided traditional journalism and used Facebook and TikTok to whitewash the record of his parents, an example of the global problem.",
+   "people": [],
+   "orgs": [
+    "facebook"
+   ],
+   "place": "philippines",
+   "ref": "Chapter 13: Design Issues",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "ditchley-summit",
+   "date": "2022",
+   "kind": "event",
+   "title": "Ditchley summit on AI",
+   "short": "Ditchley summit",
+   "detail": "Technologists, strategists and politicians met after ChatGPT appeared. Berners-Lee tried out his idea of an AI that works for the user, as a doctor or lawyer does.",
+   "people": [
+    "tim-berners-lee",
+    "rosemary-leith"
+   ],
+   "orgs": [
+    "ditchley-foundation"
+   ],
+   "place": "oxford",
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "chatgpt",
+   "date": "2022",
+   "kind": "product",
+   "title": "ChatGPT debuts",
+   "short": "ChatGPT",
+   "detail": "Public chat portal to OpenAI models. Berners-Lee calls it a step change for the web, comparable to RSA and PageRank.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "track": "ai",
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "bletchley-summit",
+   "date": "2023",
+   "kind": "event",
+   "title": "First global AI safety summit",
+   "short": "Bletchley summit",
+   "detail": "The UK convened it at Bletchley Park, with Rishi Sunak, Kamala Harris, Elon Musk and Wu Zhaohui attending.",
+   "people": [],
+   "orgs": [],
+   "place": "uk",
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "w3c-nonprofit",
+   "date": "2023",
+   "kind": "event",
+   "title": "W3C becomes a nonprofit corporation",
+   "short": "W3C reorganized",
+   "detail": "It left the hosted model for a Delaware corporation with a board of directors; technical decisions stayed with working groups.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "ref": "Chapter 18: Signs of Spring",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "berners-lee-director-emeritus",
+   "date": "2023",
+   "kind": "event",
+   "title": "Berners-Lee steps down as W3C director",
+   "short": "Director emeritus",
+   "detail": "A long phase-out ended and he became director emeritus and a non-voting board member, to focus on Solid and Inrupt.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "ref": "Chapter 18: Signs of Spring",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "why-ai-will-save-the-world",
+   "date": "2023-06",
+   "kind": "idea",
+   "title": "Andreessen essay on AI optimism",
+   "short": "AI optimism essay",
+   "detail": "His blog dismissed killer robot fears. Berners-Lee thought he could not imagine something smarter than himself.",
+   "people": [
+    "marc-andreessen"
+   ],
+   "orgs": [],
+   "place": null,
+   "track": "ai",
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "nyt-v-openai",
+   "date": "2023-12",
+   "kind": "event",
+   "title": "New York Times sues OpenAI",
+   "short": "NYT v OpenAI",
+   "detail": "Copyright suit against OpenAI and Microsoft over articles used to train GPT and reproduced by it.",
+   "people": [],
+   "orgs": [
+    "openai",
+    "microsoft"
+   ],
+   "place": null,
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "w3c-leaves-x",
+   "date": "2023-12",
+   "kind": "event",
+   "title": "W3C moves from Twitter to Mastodon",
+   "short": "W3C leaves X",
+   "detail": "The consortium left X for Mastodon, whose protocol ActivityPub is a W3C standard.",
+   "people": [],
+   "orgs": [
+    "w3c"
+   ],
+   "place": null,
+   "ref": "Chapter 17: Attention vs. Intention",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "hassabis-nobel",
+   "date": "2024",
+   "kind": "event",
+   "title": "Hassabis wins Nobel for AlphaFold",
+   "short": "Hassabis Nobel",
+   "detail": "The Nobel Prize in Chemistry recognized neural net prediction of protein shapes.",
+   "people": [
+    "demis-hassabis"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": null,
+   "ref": "Chapter 12: Machine Learning",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "third-party-cookie-phaseout",
+   "date": "2024",
+   "kind": "event",
+   "title": "Browsers drop third-party cookies",
+   "short": "Cookie phaseout",
+   "detail": "By late 2024 Firefox and Safari no longer allowed invasive tracking cookies, while Chrome had not followed.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "ref": "Chapter 15: Inrupt",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "stanford-turing-test",
+   "date": "2024",
+   "kind": "event",
+   "title": "GPT passes a Stanford Turing test",
+   "short": "GPT passes Turing",
+   "detail": "Researchers found the chatbot output statistically indistinguishable from tens of thousands of humans. Berners-Lee credits open web data.",
+   "people": [],
+   "orgs": [
+    "openai"
+   ],
+   "place": null,
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "cern-for-ai",
+   "date": "2024",
+   "kind": "idea",
+   "title": "Call for a CERN style AI institution",
+   "short": "CERN for AI",
+   "detail": "Demis Hassabis called for a shared global institution for AI researchers; Berners-Lee supports the idea.",
+   "people": [
+    "demis-hassabis",
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "deepmind"
+   ],
+   "place": null,
+   "track": "ai",
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "seoul-ai-summit",
+   "date": "2024",
+   "kind": "event",
+   "title": "AI summit in Seoul",
+   "short": "Seoul AI summit",
+   "detail": "A follow-up to Bletchley with more focus on innovation.",
+   "people": [],
+   "orgs": [],
+   "place": "seoul",
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "inflection-to-microsoft",
+   "date": "2024",
+   "kind": "event",
+   "title": "Microsoft hires the Inflection team",
+   "short": "Inflection to Microsoft",
+   "detail": "Mustafa Suleyman and most of his team left Inflection for Microsoft, after Berners-Lee had pitched pairing its AI with Solid.",
+   "people": [
+    "mustafa-suleyman"
+   ],
+   "orgs": [
+    "inflection",
+    "microsoft"
+   ],
+   "place": null,
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "us-data-access-rule",
+   "date": "2024",
+   "kind": "event",
+   "title": "US rule on reasonable data formats",
+   "short": "US data rule",
+   "detail": "A US regulation requiring data to be available in a reasonable form, which Berners-Lee sees as top-down support for Solid.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "ref": "Chapter 18: Signs of Spring",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "charlie-demo",
+   "date": "2024",
+   "kind": "event",
+   "title": "Charlie AI demonstrated at Inrupt",
+   "short": "Charlie demo",
+   "detail": "Internal demo of a personal AI using a private pod of simulated data, which gave far better advice with consent than without.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "inrupt"
+   ],
+   "place": null,
+   "ref": "Chapter 18: Signs of Spring",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "tiktok-bid",
+   "date": "2024-05",
+   "kind": "event",
+   "title": "Berners-Lee endorses McCourt bid for TikTok",
+   "short": "TikTok bid",
+   "detail": "The consortium aimed to buy the US assets of TikTok and retrain its algorithms for quality of life, not time on device.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [
+    "project-liberty"
+   ],
+   "place": null,
+   "ref": "Chapter 13: Design Issues",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "map-of-everything",
+   "date": "2024-06",
+   "kind": "idea",
+   "title": "A Map of Everything on the Internet",
+   "short": "Internet map",
+   "detail": "Design Issues diagram sorting open systems from harmful ones that flow into feed manipulation for engagement.",
+   "people": [
+    "tim-berners-lee"
+   ],
+   "orgs": [],
+   "place": null,
+   "track": "social",
+   "ref": "Chapter 13: Design Issues",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "surgeon-general-warning",
+   "date": "2024-06",
+   "kind": "event",
+   "title": "US surgeon general seeks social media warning",
+   "short": "Warning label call",
+   "detail": "Murthy asked for a warning label like those on cigarettes, citing adolescent mental health figures.",
+   "people": [],
+   "orgs": [],
+   "place": null,
+   "ref": "Chapter 13: Design Issues",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "web-foundation-wind-down",
+   "date": "2024-09",
+   "kind": "event",
+   "title": "Web Foundation wind down announced",
+   "short": "Foundation wind down",
+   "detail": "Berners-Lee and Rosemary Leith cited a mission partly met and judged that reducing social media toxicity was beyond its scope.",
+   "people": [
+    "tim-berners-lee",
+    "rosemary-leith"
+   ],
+   "orgs": [
+    "web-foundation"
+   ],
+   "place": null,
+   "ref": "Chapter 18: Signs of Spring",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "paris-ai-summit",
+   "date": "2025",
+   "kind": "event",
+   "title": "AI Action Summit in Paris",
+   "short": "Paris AI summit",
+   "detail": "Co-chaired by Emmanuel Macron and Narendra Modi. Berners-Lee thought the shift from safety to action meant less work on guardrails.",
+   "people": [],
+   "orgs": [],
+   "place": "paris",
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "id": "make-it-fair",
+   "date": "2025",
+   "kind": "event",
+   "title": "Make It Fair protest by artists",
+   "short": "Make It Fair",
+   "detail": "Artists including Kate Bush released a silent album against a UK proposal to let AI firms train on creative work unless creators opted out.",
+   "people": [],
+   "orgs": [],
+   "place": "uk",
+   "ref": "Chapter 16: Intelligent Machines",
+   "src": [
+    "tbl"
+   ]
+  }
+ ],
+ "lineage": [
+  {
+   "note": "Nelson was influenced by the work of Bush.",
+   "ref": "Chapter 2: CERN",
+   "from": "as-we-may-think",
+   "to": "xanadu",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Book says the demo built on these hypertext ideas.",
+   "ref": "Chapter 2: CERN",
+   "from": "xanadu",
+   "to": "mother-of-all-demos",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "The web generalised Enquire links by dropping its required categories.",
+   "ref": "Chapter 2: CERN",
+   "from": "enquire",
+   "to": "www-proposal",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "The memo set out the idea of the web.",
+   "ref": "Chapter 2: CERN",
+   "from": "www-idea",
+   "to": "www-proposal",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Introduced hypertext to him while he drafted the proposal.",
+   "ref": "Chapter 2: CERN",
+   "from": "hypertext-on-hypertext",
+   "to": "www-proposal",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Sendall suggested coding the proposed hypertext system on the NeXT.",
+   "ref": "Chapter 2: CERN",
+   "from": "www-proposal",
+   "to": "worldwideweb-app",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "The NeXT Interface Builder made the rapid build possible.",
+   "ref": "Chapter 3: Ignition",
+   "from": "nextcube",
+   "to": "worldwideweb-app",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "DNS gave memorable names to IP addresses.",
+   "ref": "Chapter 3: Ignition",
+   "from": "tcp-ip",
+   "to": "dns",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Web addresses reused DNS for naming servers.",
+   "ref": "Chapter 3: Ignition",
+   "from": "dns",
+   "to": "url",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "The client rendered pages written in HTML.",
+   "ref": "Chapter 3: Ignition",
+   "from": "html",
+   "to": "worldwideweb-app",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "The server software delivered pages to users over the web protocols.",
+   "ref": "Chapter 3: Ignition",
+   "from": "http",
+   "to": "first-web-server",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "The first page was hosted on that server.",
+   "ref": "Chapter 3: Ignition",
+   "from": "first-web-server",
+   "to": "first-web-page",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "The first page was displayed through this client.",
+   "ref": "Chapter 3: Ignition",
+   "from": "worldwideweb-app",
+   "to": "first-web-page",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Written because the first client ran only on NeXT machines.",
+   "ref": "Chapter 3: Ignition",
+   "from": "worldwideweb-app",
+   "to": "line-mode-browser",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Staff reached the phone book through the line-mode browser.",
+   "ref": "Chapter 3: Ignition",
+   "from": "line-mode-browser",
+   "to": "cern-phone-book",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Kunz downloaded the web app before building the SLAC site.",
+   "ref": "Chapter 4: The Rise of the Web",
+   "from": "worldwideweb-app",
+   "to": "slac-website",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Viola was a HyperCard-like system, later made a web browser.",
+   "ref": "Chapter 4: The Rise of the Web",
+   "from": "hypercard",
+   "to": "violawww",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Wei built his browser after grasping the web hyperlink.",
+   "ref": "Chapter 4: The Rise of the Web",
+   "from": "url",
+   "to": "violawww",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Proposed as an extension for inline HTML images.",
+   "ref": "Chapter 4: The Rise of the Web",
+   "from": "html",
+   "to": "img-tag",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Andreessen added the tag to Mosaic on his own.",
+   "ref": "Chapter 4: The Rise of the Web",
+   "from": "img-tag",
+   "to": "mosaic-browser",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "The Unix browser was ported to Windows.",
+   "ref": "Chapter 4: The Rise of the Web",
+   "from": "mosaic-browser",
+   "to": "mosaic-windows",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Secure web links were made possible by the RSA paper.",
+   "ref": "Chapter 1: Early Days",
+   "from": "rsa-paper",
+   "to": "https",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Andreessen and his NCSA team built Navigator as a Mosaic follow-up.",
+   "ref": "Chapter 6: The Wave",
+   "from": "mosaic-browser",
+   "to": "netscape-navigator",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Arena served as the testbed for developing CSS.",
+   "ref": "Chapter 6: The Wave",
+   "from": "arena-browser",
+   "to": "css",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Door navigation in Myst suggested the web version VRML aimed at.",
+   "ref": "Chapter 6: The Wave",
+   "from": "myst",
+   "to": "vrml",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Successor version in the W3C sequence.",
+   "ref": "Chapter 7: Growing Pains",
+   "from": "html",
+   "to": "html2",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Successor version in the W3C sequence.",
+   "ref": "Chapter 7: Growing Pains",
+   "from": "html2",
+   "to": "html3",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Successor version in the W3C sequence.",
+   "ref": "Chapter 7: Growing Pains",
+   "from": "html3",
+   "to": "html4",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "HTML5 was the fifth version of the standard, disputed in 2004.",
+   "ref": "Chapter 8: Technology and Society",
+   "from": "html4",
+   "to": "html5",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Chrome success owed partly to close integration with HTML5.",
+   "ref": "Chapter 8: Technology and Society",
+   "from": "html5",
+   "to": "google-chrome",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "HTML tags inspired similar tags; XML generalized the approach to data.",
+   "ref": "Chapter 7: Growing Pains",
+   "from": "html",
+   "to": "xml",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "HTTPS encrypts the same hypertext traffic; W3C urged upgrading from HTTP.",
+   "ref": "Chapter 8: Technology and Society",
+   "from": "http",
+   "to": "https",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Traffic analysis showed Kahle pages were short-lived, prompting the archive.",
+   "ref": "Chapter 6: The Wave",
+   "from": "alexa-traffic",
+   "to": "internet-archive-founding",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "The public Wayback Machine opened the archive of snapshots.",
+   "ref": "Chapter 6: The Wave",
+   "from": "internet-archive-founding",
+   "to": "wayback-machine",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Wikipedia used wiki technology for open editing.",
+   "ref": "Chapter 7: Growing Pains",
+   "from": "wiki",
+   "to": "wikipedia",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Berners-Lee saw NeXT platform heritage in the new Macintosh system.",
+   "ref": "Chapter 7: Growing Pains",
+   "from": "nextcube",
+   "to": "mac-os-x",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Mozilla came out of the remains of Netscape and launched Firefox.",
+   "ref": "Chapter 8: Technology and Society",
+   "from": "netscape-navigator",
+   "to": "firefox",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Style sheets let the same content render on small screens.",
+   "ref": "Chapter 9: The Mobile Web",
+   "from": "css",
+   "to": "mobile-web-initiative",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Earlier web community named as a conceptual root.",
+   "ref": "Chapter 10: This Is for Everyone",
+   "from": "livejournal",
+   "to": "facebook-site",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Earlier web community named as a conceptual root.",
+   "ref": "Chapter 10: This Is for Everyone",
+   "from": "myspace",
+   "to": "facebook-site",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Earlier web community named as a conceptual root.",
+   "ref": "Chapter 10: This Is for Everyone",
+   "from": "friendster",
+   "to": "facebook-site",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Pods grew from the semantic web community idea of owned data.",
+   "ref": "Chapter 11: Open Data",
+   "from": "semantic-web",
+   "to": "solid",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Charlie imagined a personal AI on data the user controls.",
+   "ref": "Chapter 12: Machine Learning",
+   "from": "solid",
+   "to": "charlie",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "AlphaZero was the direct successor.",
+   "ref": "Chapter 12: Machine Learning",
+   "from": "alphago",
+   "to": "alphazero",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "AlphaFold drew on insights from the Go work.",
+   "ref": "Chapter 12: Machine Learning",
+   "from": "alphago",
+   "to": "alphafold",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "AlphaFold drew on insights from the chess work.",
+   "ref": "Chapter 12: Machine Learning",
+   "from": "alphazero",
+   "to": "alphafold",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Spotify followed Last.fm in using collaborative filtering.",
+   "ref": "Chapter 12: Machine Learning",
+   "from": "last-fm",
+   "to": "spotify",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Inspired the Contract as a declaration of shared principles.",
+   "ref": "Chapter 14: The Contract for the Web",
+   "from": "universal-declaration-of-human-rights",
+   "to": "contract-for-the-web",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Common Crawl archives a monthly copy of the web.",
+   "ref": "Chapter 16: Intelligent Machines",
+   "from": "first-web-page",
+   "to": "common-crawl",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Flemish citizen pods run on the Solid protocol.",
+   "ref": "Chapter 15: Inrupt",
+   "from": "solid",
+   "to": "flanders-pods",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "HTTP worked like an FTP request, made fast and hidden behind a click.",
+   "ref": "Chapter 3: Ignition",
+   "from": "ftp",
+   "to": "http",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "HTML borrowed its look from the SGML already used at CERN.",
+   "ref": "Chapter 3: Ignition",
+   "from": "sgml",
+   "to": "html",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "OpenAI adopted the Google transformer to generate text.",
+   "ref": "Chapter 16: Intelligent Machines",
+   "from": "transformer",
+   "to": "gpt",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Web scale data from Common Crawl made GPT work.",
+   "ref": "Chapter 16: Intelligent Machines",
+   "from": "common-crawl",
+   "to": "gpt",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "ChatGPT is a portal to the latest GPT models.",
+   "ref": "Chapter 16: Intelligent Machines",
+   "from": "gpt",
+   "to": "chatgpt",
+   "src": [
+    "tbl"
+   ]
+  },
+  {
+   "note": "Mastodon runs on the ActivityPub protocol.",
+   "ref": "Chapter 17: Attention vs. Intention",
+   "from": "activitypub",
+   "to": "mastodon",
+   "src": [
+    "tbl"
+   ]
+  }
+ ]
+}
