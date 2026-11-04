@@ -1,16 +1,25 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-03T19:33:36+00:00",
+ "generated": "2026-11-04T07:42:28+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/it-intelligence/",
+   "kind": "article",
+   "label": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+   "url": "https://raskell.io/articles/it-intelligence/",
+   "meta": "2026-11-04 · 50 min",
+   "description": "Business intelligence tells a company how it sells. Nothing tells it how its IT fits together. Why I started building an Enterprise Context Platform.",
+   "degree": 22
+  },
   {
    "id": "a:/articles/the-original-data-company/",
    "kind": "article",
    "label": "The Original Data Company",
    "url": "https://raskell.io/articles/the-original-data-company/",
-   "meta": "2026-11-01 · 26 min",
+   "meta": "2026-11-01 · 27 min",
    "description": "Insurers say they are not tech companies. Yet an insurer sells a prediction wrapped in a promise, and has since a 1693 life table: the original data company.",
-   "degree": 20
+   "degree": 21
   },
   {
    "id": "a:/articles/the-river-and-the-canal/",
@@ -19,7 +28,7 @@
    "url": "https://raskell.io/articles/the-river-and-the-canal/",
    "meta": "2026-10-31 · 51 min",
    "description": "Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine.",
-   "degree": 33
+   "degree": 34
   },
   {
    "id": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
@@ -82,7 +91,7 @@
    "url": "https://raskell.io/articles/this-site-is-becoming-a-map/",
    "meta": "2026-10-15 · 9 min",
    "description": "A blog shows what I wrote last. The new map on raskell.io shows what I keep coming back to, and it is the start of a public second brain.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "a:/articles/the-bill-is-part-of-the-loop/",
@@ -127,7 +136,7 @@
    "url": "https://raskell.io/articles/memory-is-a-write-path/",
    "meta": "2026-06-23 · 19 min",
    "description": "Retrieval reads context the project authored. Memory is the agent writing context for its own future sessions, and the write is the part that is dangerous. Why session memory comes free from the transcript, why cross-session memory needs a separate write surface, and how to let an agent remember without letting it corrupt its own ground truth. Part six of The Agent Platform Handbook.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/the-proof-you-only-have-to-write-once/",
@@ -145,7 +154,7 @@
    "url": "https://raskell.io/articles/retrieval-is-a-tool-not-a-layer/",
    "meta": "2026-06-17 · 16 min",
    "description": "Loading the whole .AGENTS/ directory on every turn does not scale. The fix is not a retrieval layer bolted to the side of the agent. It is a search tool in the registry the agent already has. BM25 over project docs, no vector store, and an honest account of when embeddings start to earn their keep. Part five of The Agent Platform Handbook.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/articles/context-is-the-product/",
@@ -154,7 +163,7 @@
    "url": "https://raskell.io/articles/context-is-the-product/",
    "meta": "2026-06-13 · 26 min",
    "description": "Models are commodities. Context is not. The sources of context an agent draws on, why retrieval alone is not enough, and a minimal .AGENTS/ convention that loads context from disk into the same harness we have been building. Part four of The Agent Platform Handbook.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "a:/articles/tools-how-agents-actually-do-things/",
@@ -181,7 +190,7 @@
    "url": "https://raskell.io/articles/what-an-agent-actually-is/",
    "meta": "2026-06-02 · 19 min",
    "description": "AI agent is the most overloaded word in the industry. This is the anatomy, the lineage, and a working implementation in roughly two hundred lines of TypeScript on Bun. Part one of The Agent Platform Handbook.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/the-field-exists-now/",
@@ -199,7 +208,7 @@
    "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/",
    "meta": "2026-05-07 · 27 min",
    "description": "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "a:/articles/patents-per-capita-is-a-vanity-metric/",
@@ -226,7 +235,7 @@
    "url": "https://raskell.io/articles/the-economics-of-inference/",
    "meta": "2026-04-22 · 12 min",
    "description": "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas.",
-   "degree": 17
+   "degree": 18
   },
   {
    "id": "a:/articles/what-comes-after-the-last-programming-language/",
@@ -271,7 +280,7 @@
    "url": "https://raskell.io/articles/notes-from-rsac-2026/",
    "meta": "2026-04-09 · 23 min",
    "description": "Third time at RSA Conference, first time as a speaker. What I saw, what I heard, and what I am still processing.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "a:/articles/what-zentinel-is-really-optimizing-for/",
@@ -289,7 +298,7 @@
    "url": "https://raskell.io/articles/how-i-work-these-days/",
    "meta": "2026-03-15 · 10 min",
    "description": "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right.",
-   "degree": 19
+   "degree": 20
   },
   {
    "id": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
@@ -415,7 +424,7 @@
    "url": "https://raskell.io/notes/everything-is-a-fractal/",
    "meta": "2026-10-31",
    "description": "The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "a:/notes/a-capability-democratised/",
@@ -665,9 +674,9 @@
    "kind": "tag",
    "label": "Context engineering",
    "url": "https://raskell.io/tags/context-engineering/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "Deciding what a model sees: pinned context, retrieval, memory, and the conventions that keep them honest.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:cryptocurrency",
@@ -701,9 +710,9 @@
    "kind": "tag",
    "label": "Democratisation",
    "url": "https://raskell.io/tags/democratisation/",
-   "meta": "Concept · 5 pages",
+   "meta": "Concept · 6 pages",
    "description": "A capability that needed money, a team, or years of training becoming available to anyone: printing, the web, and now building software by describing it.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:determinism",
@@ -787,6 +796,15 @@
    "degree": 5
   },
   {
+   "id": "t:enterprise-architecture",
+   "kind": "tag",
+   "label": "Enterprise architecture",
+   "url": "https://raskell.io/tags/enterprise-architecture/",
+   "meta": "Domain · 1 page",
+   "description": "How a company's capabilities, applications, data and infrastructure fit together, who owns what, and how the landscape is changed on purpose.",
+   "degree": 2
+  },
+  {
    "id": "t:entrepreneurship",
    "kind": "tag",
    "label": "Entrepreneurship",
@@ -863,9 +881,9 @@
    "kind": "tag",
    "label": "Future of work",
    "url": "https://raskell.io/tags/future-of-work/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "What AI does to jobs and livelihoods: the interval before any post-scarcity economy, basic income against basic access, and who gets through the middle.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:game-ai",
@@ -1007,9 +1025,9 @@
    "kind": "tag",
    "label": "Knowledge management",
    "url": "https://raskell.io/tags/knowledge-management/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:kubernetes",
@@ -1034,9 +1052,9 @@
    "kind": "tag",
    "label": "Legibility",
    "url": "https://raskell.io/tags/legibility/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Making a complex system readable from above: what the measure captures, what it erases, and what breaks when the map replaces the territory.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:linguistics",
@@ -1187,9 +1205,9 @@
    "kind": "tag",
    "label": "Open source",
    "url": "https://raskell.io/tags/oss/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "Open source as the point of the work, not just its licence.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:physics",
@@ -1259,9 +1277,9 @@
    "kind": "tag",
    "label": "Provenance",
    "url": "https://raskell.io/tags/provenance/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Where something came from and who vouches for it: signed media, rights-clear training data, and artifacts that carry their own history.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:reinforcement-learning",
@@ -1595,15 +1613,6 @@
    "meta": "Concept · no pages yet",
    "description": "Rule by the people in theory and practice: who holds power, how representation limits it, and experiments from pirate settlements to Swiss direct democracy.",
    "degree": 7
-  },
-  {
-   "id": "t:enterprise-architecture",
-   "kind": "tag",
-   "label": "Enterprise architecture",
-   "url": "https://raskell.io/tags#enterprise-architecture",
-   "meta": "Domain · no pages yet",
-   "description": "How a company's capabilities, applications, data and infrastructure fit together, who owns what, and how the landscape is changed on purpose.",
-   "degree": 1
   },
   {
    "id": "t:evaluation",
@@ -2988,7 +2997,7 @@
    "url": "https://raskell.io/reading/#enterprise-architecture-as-strategy",
    "meta": "Book · Jeanne W. Ross, Peter Weill, and David C. Robertson · in the backlog",
    "description": "Enterprise architecture as the foundation for execution: an operating model first, then the systems that serve it.",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "w:the-art-of-doing-science-and-engineering",
@@ -3105,7 +3114,7 @@
    "url": "https://raskell.io/reading/#seeing-like-a-state",
    "meta": "Book · James C. Scott · in the backlog",
    "description": "Why grand state plans fail when they make the world legible and simple, and ignore local, practical knowledge.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "w:a-peace-to-end-all-peace",
@@ -4067,6 +4076,10 @@
    "target": "t:programming-languages"
   },
   {
+   "source": "a:/articles/it-intelligence/",
+   "target": "t:context-engineering"
+  },
+  {
    "source": "a:/articles/a-blueprint-for-the-static-web/",
    "target": "t:context-engineering"
   },
@@ -4129,6 +4142,10 @@
   {
    "source": "t:decentralisation",
    "target": "t:distributed-systems"
+  },
+  {
+   "source": "a:/articles/it-intelligence/",
+   "target": "t:democratisation"
   },
   {
    "source": "a:/notes/a-capability-democratised/",
@@ -4355,6 +4372,10 @@
    "target": "t:economics"
   },
   {
+   "source": "a:/articles/it-intelligence/",
+   "target": "t:enterprise-architecture"
+  },
+  {
    "source": "a:/notes/citizen-entrepreneurs/",
    "target": "t:entrepreneurship"
   },
@@ -4477,6 +4498,10 @@
   {
    "source": "t:fractals",
    "target": "t:chaos-theory"
+  },
+  {
+   "source": "a:/articles/it-intelligence/",
+   "target": "t:future-of-work"
   },
   {
    "source": "a:/notes/citizen-entrepreneurs/",
@@ -4783,6 +4808,10 @@
    "target": "t:reliability"
   },
   {
+   "source": "a:/articles/it-intelligence/",
+   "target": "t:knowledge-management"
+  },
+  {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "t:knowledge-management"
   },
@@ -4805,6 +4834,10 @@
   {
    "source": "t:languages",
    "target": "t:literature"
+  },
+  {
+   "source": "a:/articles/it-intelligence/",
+   "target": "t:legibility"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
@@ -4995,6 +5028,10 @@
    "target": "t:operating-systems"
   },
   {
+   "source": "a:/articles/it-intelligence/",
+   "target": "t:oss"
+  },
+  {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
    "target": "t:oss"
   },
@@ -5105,6 +5142,10 @@
   {
    "source": "t:programming-languages",
    "target": "t:linguistics"
+  },
+  {
+   "source": "a:/articles/it-intelligence/",
+   "target": "t:provenance"
   },
   {
    "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
@@ -5895,12 +5936,56 @@
    "target": "c:reviews"
   },
   {
+   "source": "a:/articles/it-intelligence/",
+   "target": "a:/articles/this-site-is-becoming-a-map/"
+  },
+  {
+   "source": "a:/articles/it-intelligence/",
+   "target": "a:/articles/memory-is-a-write-path/"
+  },
+  {
+   "source": "a:/articles/it-intelligence/",
+   "target": "a:/articles/retrieval-is-a-tool-not-a-layer/"
+  },
+  {
+   "source": "a:/articles/it-intelligence/",
+   "target": "a:/articles/context-is-the-product/"
+  },
+  {
+   "source": "a:/articles/it-intelligence/",
+   "target": "a:/articles/what-an-agent-actually-is/"
+  },
+  {
+   "source": "a:/articles/it-intelligence/",
+   "target": "a:/articles/semantic-artifacts-and-meaning-engines/"
+  },
+  {
+   "source": "a:/articles/it-intelligence/",
+   "target": "a:/articles/the-economics-of-inference/"
+  },
+  {
+   "source": "a:/articles/it-intelligence/",
+   "target": "a:/articles/notes-from-rsac-2026/"
+  },
+  {
+   "source": "a:/articles/it-intelligence/",
+   "target": "a:/articles/how-i-work-these-days/"
+  },
+  {
+   "source": "a:/articles/the-original-data-company/",
+   "target": "a:/articles/it-intelligence/"
+  },
+  {
    "source": "a:/articles/the-original-data-company/",
    "target": "a:/articles/the-river-and-the-canal/"
   },
   {
    "source": "a:/articles/the-original-data-company/",
    "target": "a:/notes/everything-is-a-fractal/"
+  },
+  {
+   "source": "a:/articles/the-river-and-the-canal/",
+   "target": "a:/articles/it-intelligence/"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
@@ -6253,6 +6338,10 @@
   {
    "source": "a:/notes/who-contributed-to-ai/",
    "target": "a:/data/ai-people/"
+  },
+  {
+   "source": "a:/notes/everything-is-a-fractal/",
+   "target": "a:/articles/it-intelligence/"
   },
   {
    "source": "a:/notes/everything-is-a-fractal/",
@@ -9271,6 +9360,10 @@
    "target": "t:platform-automation"
   },
   {
+   "source": "a:/articles/it-intelligence/",
+   "target": "w:enterprise-architecture-as-strategy"
+  },
+  {
    "source": "w:the-art-of-doing-science-and-engineering",
    "target": "h:shelf-backlog"
   },
@@ -9505,6 +9598,10 @@
   {
    "source": "w:seeing-like-a-state",
    "target": "t:architecture"
+  },
+  {
+   "source": "a:/articles/it-intelligence/",
+   "target": "w:seeing-like-a-state"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",

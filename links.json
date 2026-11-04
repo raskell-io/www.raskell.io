@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-03T19:33:36+00:00",
+ "generated": "2026-11-04T07:42:28+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 438,
+ "count": 460,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -543,6 +543,23 @@
    "citations": 2
   },
   {
+   "url": "https://en.wikipedia.org/wiki/SECI_model_of_knowledge_dimensions",
+   "title": "SECI model",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    },
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 2
+  },
+  {
    "url": "https://fly.io",
    "title": "fly.io",
    "domain": "fly.io",
@@ -895,6 +912,23 @@
     {
      "title": "Edge Systems Are the New Backend",
      "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ],
+   "citations": 2
+  },
+  {
+   "url": "https://www.anthropic.com/news/claude-opus-4-5",
+   "title": "Introducing Claude Opus 4.5",
+   "domain": "anthropic.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    },
+    {
+     "title": "Opus 5.5 is the best Opus since 4.5",
+     "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/"
     }
    ],
    "citations": 2
@@ -1338,6 +1372,19 @@
    "citations": 1
   },
   {
+   "url": "http://www.melconway.com/Home/Committees_Paper.html",
+   "title": "How Do Committees Invent?",
+   "domain": "melconway.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "http://www.softwareishard.com/blog/har-12-spec/",
    "title": "HAR 1.2 specification",
    "domain": "softwareishard.com",
@@ -1455,6 +1502,19 @@
    "citations": 1
   },
   {
+   "url": "https://arxiv.org/abs/1604.06766",
+   "title": "A Novel Approach for Estimating Truck Factors",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://arxiv.org/abs/1706.03762",
    "title": "“Attention Is All You Need”",
    "domain": "arxiv.org",
@@ -1476,6 +1536,19 @@
     {
      "title": "The Web Was the Training Set",
      "url": "https://raskell.io/articles/the-web-was-the-training-set/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/2501.03566",
+   "title": "Applying Large Language Models in Knowledge Graph-based Enterprise Modeling: Challenges and Opportunities",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
     }
    ],
    "citations": 1
@@ -1559,6 +1632,19 @@
    "citations": 1
   },
   {
+   "url": "https://atlan.com/know/ai-agent/context-layer/gartner-impact-radar-ai-context-platform/",
+   "title": "Atlan’s",
+   "domain": "atlan.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://authorsguild.org/advocacy/artificial-intelligence/what-authors-need-to-know-about-the-anthropic-settlement/",
    "title": "“What authors need to know about the Anthropic settlement”",
    "domain": "authorsguild.org",
@@ -1580,6 +1666,19 @@
     {
      "title": "Edge Systems Are the New Backend",
      "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://backstage.io/docs/features/software-catalog",
+   "title": "Backstage software catalog",
+   "domain": "backstage.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
     }
    ],
    "citations": 1
@@ -1715,6 +1814,19 @@
    "citations": 1
   },
   {
+   "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+   "title": "Documenting Architecture Decisions",
+   "domain": "cognitect.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://comma.ai/",
    "title": "comma.ai",
    "domain": "comma.ai",
@@ -1840,6 +1952,19 @@
     {
      "title": "Patents Per Capita Is a Vanity Metric",
      "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://datahub.com/?p=14496",
+   "title": "Announcing the DataHub Context Platform",
+   "domain": "datahub.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
     }
    ],
    "citations": 1
@@ -2066,6 +2191,45 @@
    "citations": 1
   },
   {
+   "url": "https://doi.org/10.1002/job.737",
+   "title": "Knowledge hiding in organizations",
+   "domain": "doi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://doi.org/10.1007/978-3-030-49640-1_13",
+   "title": "Automated Enterprise Architecture Model Maintenance via Runtime IT Discovery",
+   "domain": "doi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://doi.org/10.1108/13673279910259385",
+   "title": "“If only HP knew what HP knows”: the roots of knowledge management at Hewlett-Packard",
+   "domain": "doi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://doi.org/10.1287/orsc.2.1.71",
    "title": "“Exploration and Exploitation in Organizational Learning”",
    "domain": "doi.org",
@@ -2074,6 +2238,32 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://doi.org/10.2307/2667032",
+   "title": "The Search-Transfer Problem: The Role of Weak Ties in Sharing Knowledge across Organization Subunits",
+   "domain": "doi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://dtg.sites.fas.harvard.edu/DANWEGNER/wjh/tm.htm",
+   "title": "summary of transactive memory",
+   "domain": "dtg.sites.fas.harvard.edu",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
     }
    ],
    "citations": 1
@@ -2846,19 +3036,6 @@
    "citations": 1
   },
   {
-   "url": "https://en.wikipedia.org/wiki/SECI_model_of_knowledge_dimensions",
-   "title": "SECI model",
-   "domain": "en.wikipedia.org",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "The River and the Canal",
-     "url": "https://raskell.io/articles/the-river-and-the-canal/"
-    }
-   ],
-   "citations": 1
-  },
-  {
    "url": "https://en.wikipedia.org/wiki/SHA-2",
    "title": "SHA-2 family designed by the NSA",
    "domain": "en.wikipedia.org",
@@ -3101,6 +3278,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Tribal_knowledge",
+   "title": "Tribal knowledge",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
     }
    ],
    "citations": 1
@@ -4302,6 +4492,19 @@
    "citations": 1
   },
   {
+   "url": "https://modelcontextprotocol.io/",
+   "title": "Model Context Protocol",
+   "domain": "modelcontextprotocol.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://mpra.ub.uni-muenchen.de/67694/1/MPRA_paper_67694.pdf",
    "title": "Festré and Nasica, MPRA paper 67694",
    "domain": "mpra.ub.uni-muenchen.de",
@@ -4323,6 +4526,19 @@
     {
      "title": "How AI Makes Bare Metal Viable Again",
      "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://neo4j.com/?p=433599",
+   "title": "Neo4j Context Engine",
+   "domain": "neo4j.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
     }
    ],
    "citations": 1
@@ -4523,6 +4739,19 @@
    "citations": 1
   },
   {
+   "url": "https://path.rsaconference.com/flow/rsac/us26/FullAgenda/page/catalog/session/1753946922633001YdMq",
+   "title": "Self-Learning WAF: Using Generative AI to Tame ModSecurity False Positives",
+   "domain": "path.rsaconference.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://pawandclaw.raskell.io",
    "title": "Paw &amp; Claw",
    "domain": "pawandclaw.raskell.io",
@@ -4648,6 +4877,19 @@
     {
      "title": "What Comes After the Last Programming Language",
      "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://smith.queensu.ca/insight/content/research-brief-knowledge-hiding-in-organizations.php",
+   "title": "research brief",
+   "domain": "smith.queensu.ca",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
     }
    ],
    "citations": 1
@@ -5147,19 +5389,6 @@
    "citations": 1
   },
   {
-   "url": "https://www.anthropic.com/news/claude-opus-4-5",
-   "title": "Introducing Claude Opus 4.5",
-   "domain": "anthropic.com",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Opus 5.5 is the best Opus since 4.5",
-     "url": "https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5/"
-    }
-   ],
-   "citations": 1
-  },
-  {
    "url": "https://www.apple.com/mac-studio/specs/",
    "title": "Mac Studio tech specs",
    "domain": "apple.com",
@@ -5181,6 +5410,19 @@
     {
      "title": "Learning to Play",
      "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.ardoq.com/news/ardoq-graphlake-context-graph-enterprise-ai",
+   "title": "Ardoq Acquires GraphLake to Establish the EA-Grade Context Graph for Enterprise AI",
+   "domain": "ardoq.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
     }
    ],
    "citations": 1
@@ -5342,6 +5584,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.einpresswire.com/article/893232971/topquadrant-launches-enterprise-context-platform-to-build-trusted-ai",
+   "title": "TopQuadrant Launches Enterprise Context Platform to Build Trusted AI",
+   "domain": "einpresswire.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.envoyproxy.io/",
    "title": "Envoy",
    "domain": "envoyproxy.io",
@@ -5415,6 +5670,19 @@
     {
      "title": "The Original Data Company",
      "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.gartner.com/en/documents/8486545",
+   "title": "abstracts",
+   "domain": "gartner.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
     }
    ],
    "citations": 1
@@ -5862,6 +6130,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.rsaconference.com/About/FAQ",
+   "title": "RSAC Conference",
+   "domain": "rsaconference.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.rust-lang.org/",
    "title": "Rust",
    "domain": "rust-lang.org",
@@ -5922,6 +6203,19 @@
     {
      "title": "This Site Is Becoming a Map",
      "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.thoughtworks.com/insights/books/data-mesh",
+   "title": "Data Mesh",
+   "domain": "thoughtworks.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
     }
    ],
    "citations": 1

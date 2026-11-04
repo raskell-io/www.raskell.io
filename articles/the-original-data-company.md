@@ -164,7 +164,7 @@ I think it makes them financial companies too, which is not the same thing. Capi
 If an insurer is a technology company, a few things follow, and none of them requires hoodies.
 
 - **Own the models.** Pricing, underwriting, claims triage and capital models are the product. Outsourcing them is outsourcing the business.
-- **Own the data, and the context around it.** Including the data about your own systems, which is the argument of IT Intelligence: a company that cannot answer questions about itself cannot build reliable technology on top of itself.
+- **Own the data, and the context around it.** Including the data about your own systems, which is the argument of [IT Intelligence](https://raskell.io/articles/it-intelligence/): a company that cannot answer questions about itself cannot build reliable technology on top of itself.
 - **Treat engineers, actuaries and data scientists as one craft.** They are doing the same thing with different tools: turning uncertainty into procedure.
 - **Make procedures first-class.** Claims and underwriting procedures are code, whether they are written down in a manual or in a workflow engine. Treat them like code: versioned, tested against past cases, replayable.
 - **Go where the sensors are.** Partner with the companies that see the road, the home and the body, or become one.
