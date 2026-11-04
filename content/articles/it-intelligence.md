@@ -1,7 +1,6 @@
 +++
 title = "IT Intelligence: The Missing Data Layer of Enterprise IT"
-date = 2026-11-02
-draft = true
+date = 2026-11-04
 description = "Business intelligence tells a company how it sells. Nothing tells it how its IT fits together. Why I started building an Enterprise Context Platform."
 
 [taxonomies]
@@ -67,17 +66,17 @@ I formalised every data structure in the squad's domain as a **manifest**: a dec
 
 {% diagram(title="The web delivery self-service, one squad's scope") %}
    ┌──────────────────────────┐
-   │ Next.js frontend         │  self-service portal: see what is
+   │ Web frontend             │  self-service portal: see what is
    │                          │  exposed and how, order changes
    └─────────────┬────────────┘
                  ▼
    ┌──────────────────────────┐
-   │ Go API backend           │  control plane: validates requests,
+   │ API backend              │  control plane: validates requests,
    │                          │  starts workflows
    └─────────────┬────────────┘
                  ▼
    ┌──────────────────────────┐
-   │ Temporal workflows       │  create, adjust and remove resources,
+   │ Durable workflows        │  create, adjust and remove resources,
    │                          │  do the operator work
    └──────┬────────────┬──────┘
           ▼            ▼
@@ -85,7 +84,7 @@ I formalised every data structure in the squad's domain as a **manifest**: a dec
     (source of truth)
 {% end %}
 
-The portal was a facade over the manifests. A team could look up its service and see, in one place, through which perimeter it was reachable, which WAF rules applied, how the CDN cached and forwarded, and which DNS records pointed where, without ever needing an account with the CDN vendor. When they wanted a change, they ordered it in the portal. The Go backend acted as the control plane, validated the request and started a Temporal workflow, and the workflow did what a human operator used to do: update the manifest in Git, apply the change to the WAF, the CDN, the proxies and the DNS, check the result and roll back if needed. Over time, the workflows took over practically all of the operational work that had needed dedicated operators.
+The portal was a facade over the manifests. A team could look up its service and see, in one place, through which perimeter it was reachable, which WAF rules applied, how the CDN cached and forwarded, and which DNS records pointed where, without ever needing an account with the CDN vendor. When they wanted a change, they ordered it in the portal. The backend acted as the control plane, validated the request and started a durable workflow, and the workflow did what a human operator used to do: update the manifest in Git, apply the change to the WAF, the CDN, the proxies and the DNS, check the result and roll back if needed. Over time, the workflows took over practically all of the operational work that had needed dedicated operators.
 
 Milan and I have submitted that system as a talk to the RSAC 2027 Call for Speakers. 
 
@@ -182,13 +181,13 @@ Looking back, I have been working on the same problem for years, at a growing sc
 
 | Role | Scope | The question nobody could answer cheaply | What I built or did |
 |---|---|---|---|
-| Platform engineer and solution architect, web service delivery | one squad's mandate: WAF, CDN, ingress proxies, DNS | how is my web service exposed and protected? | manifests in Git, a self-service portal, Temporal workflows doing the operator work |
+| Platform engineer and solution architect, web service delivery | one squad's mandate: WAF, CDN, ingress proxies, DNS | how is my web service exposed and protected? | manifests in Git, a self-service portal, durable workflows doing the operator work |
 | Enterprise Solution Architect, agentic AI and AI platforms | solution architecture across 10+ market units | does what we build match what enterprise architecture and strategy intend? | reviews, directives and reference designs, starting every time from archaeology |
 | Group AI Architect, AI and Data | the IT landscape of the whole group | what exists, how does it fit together, and what should we change? | the Enterprise Context Platform |
 
 The pattern repeats at each step. First the data has to be formalised, then it has to be readable by everyone, and only then can work be automated on top of it, whether by workflows or by agents. In the web delivery squad that pattern worked. In the enterprise solution architect role, its absence was the main cost of the job. The Enterprise Context Platform is the attempt to apply it to the whole company.
 
-It also connects to what I have been writing here. [Context Is the Product](/articles/context-is-the-product/) and the rest of [The Agent Platform Handbook](/articles/what-an-agent-actually-is/) argue that the context an agent reads matters more than the model it runs on, at the scale of one repository. [Memory Is a Write Path](/articles/memory-is-a-write-path/) is about how context gets written back safely, which is the same question as how a data set becomes a primary source. The notes on the [enterprise context warehouse](/notes/the-enterprise-context-warehouse/) sketched the idea at company scale before I had built any of it. And this site is a toy version of the same thing: every page is published again for machines, as described in [This Site Is Becoming a Map](/articles/this-site-is-becoming-a-map/). The Enterprise Context Platform is where those threads meet in production.
+It also connects to what I have been writing here. [Context Is the Product](/articles/context-is-the-product/) and the rest of [The Agent Platform Handbook](/articles/what-an-agent-actually-is/) argue that the context an agent reads matters more than the model it runs on, at the scale of one repository. [Memory Is a Write Path](/articles/memory-is-a-write-path/) is about how context gets written back safely, which is the same question as how a data set becomes a primary source. The notes on the enterprise context warehouse sketched the idea at company scale before I had built any of it. And this site is a toy version of the same thing: every page is published again for machines, as described in [This Site Is Becoming a Map](/articles/this-site-is-becoming-a-map/). The Enterprise Context Platform is where those threads meet in production.
 
 ## What I mean by an Enterprise Context Platform
 
@@ -275,9 +274,9 @@ Three things turned out to matter more than I expected.
 
 **Identity resolution is most of the work.** The same application has a different name in every system, and sometimes no name at all. Deciding when two records are the same entity is the core problem. Deterministic keys solve part of it (a deployment label that carries the application ID from the EA repository is a gift). The rest is inference, and inference needs to be visible.
 
-**Every edge carries provenance and confidence.** An edge that came from a foreign key in an API is a different kind of fact than an edge a model proposed from a README. Both are useful. Treating them as equal is how you build a beautiful graph that nobody trusts. Each relationship records where it came from, when it was last seen, and whether it was asserted, derived or inferred. I made the same argument for the [context warehouse](/notes/the-enterprise-context-warehouse/), and it holds even more strongly once the graph starts producing artifacts people act on.
+**Every edge carries provenance and confidence.** An edge that came from a foreign key in an API is a different kind of fact than an edge a model proposed from a README. Both are useful. Treating them as equal is how you build a beautiful graph that nobody trusts. Each relationship records where it came from, when it was last seen, and whether it was asserted, derived or inferred. I made the same argument for the context warehouse, and it holds even more strongly once the graph starts producing artifacts people act on.
 
-**The model has to be opinionated, and the opinions have to be the enterprise architecture's.** The entity types, the relationship types and the capability map are not neutral. They are where corporate strategy and EA's capabilities enter the platform. If the Context Model uses the same capability taxonomy that EA uses, then "which systems support capability X across all market units" is a query, not a project. That is the harmony problem from my previous role, turned into a data problem. More on that in [A taxonomy agents can read](/notes/a-taxonomy-agents-can-read/).
+**The model has to be opinionated, and the opinions have to be the enterprise architecture's.** The entity types, the relationship types and the capability map are not neutral. They are where corporate strategy and EA's capabilities enter the platform. If the Context Model uses the same capability taxonomy that EA uses, then "which systems support capability X across all market units" is a query, not a project. That is the harmony problem from my previous role, turned into a data problem. More on that in A taxonomy agents can read.
 
 ## Primary and secondary sources
 
@@ -340,7 +339,7 @@ The difference shows up in the questions that become cheap.
 | What would consolidating these three integration platforms touch? | a workshop | the dependency subgraph, as a diagram and a draft business case |
 | Is this ADR still true? | nobody knows | the ADR's assumptions checked against the current model |
 
-None of these answers is perfect. All of them are a better starting point than a blank page and a meeting invite. The architect's job moves from gathering the current state to judging it, which is the shift I described in [What the architect does now](/notes/what-the-architect-does-now/).
+None of these answers is perfect. All of them are a better starting point than a blank page and a meeting invite. The architect's job moves from gathering the current state to judging it, which is the shift I described in What the architect does now.
 
 ## From context to work
 
@@ -357,9 +356,9 @@ Most work in an IT department is routine: looking things up, translating between
 | Engineers and coding agents | finding the right service, API, platform and convention before building | everything above, through MCP, in the editor |
 | Portfolio and IT management | inventories, cost allocation, rationalisation candidates | applications, owners, usage, overlaps across market units |
 
-I have seen this happen at small scale. In the web delivery squad, once the manifests existed and the Temporal workflows could read them, the workflows took over practically all of the operational work that had needed dedicated operators. The automation had been possible for years; what it had lacked was context good enough to act on safely.
+I have seen this happen at small scale. In the web delivery squad, once the manifests existed and the durable workflows could read them, the workflows took over practically all of the operational work that had needed dedicated operators. The automation had been possible for years; what it had lacked was context good enough to act on safely.
 
-Done right, at the scale of a whole IT department, this substantially reduces the number of people an IT organisation needs. Not by replacing judgement, which becomes more valuable, as I argued in [What the architect does now](/notes/what-the-architect-does-now/), but by removing the large share of work that only existed because context was expensive to get. That is the business case, and it is a much larger one than better architecture reviews. How a company handles the people side of that shift is a leadership question this platform does not answer, and it deserves more care than a blog post can give it.
+Done right, at the scale of a whole IT department, this substantially reduces the number of people an IT organisation needs. Not by replacing judgement, which becomes more valuable, as I argued in What the architect does now, but by removing the large share of work that only existed because context was expensive to get. That is the business case, and it is a much larger one than better architecture reviews. How a company handles the people side of that shift is a leadership question this platform does not answer, and it deserves more care than a blog post can give it.
 
 ## Context is cheaper than exploration
 
@@ -421,7 +420,7 @@ I do not know yet what the right organisational shape is. I am fairly sure about
 - **Smaller teams with broader mandates**, each owning a problem from understanding to operation, with agents doing most of the implementation.
 - **Decision rights closer to the business**, because the person who understands the need and the person who can now build the solution are increasingly the same person or sit at the same table.
 - **Funding by product and outcome rather than by project**, because projects are a unit of scarce implementation capacity, and that capacity is no longer the scarce thing.
-- **Governance as an automated gate rather than a review queue**, scoring designs against the Context Model at design time and escalating only what genuinely needs a human, as in [Design-time risk with a threshold](/notes/design-time-risk-with-a-threshold/) and [Architecture becomes a loop](/notes/architecture-becomes-a-loop/).
+- **Governance as an automated gate rather than a review queue**, scoring designs against the Context Model at design time and escalating only what genuinely needs a human, as in Design-time risk with a threshold and Architecture becomes a loop.
 - **A shared picture of the company as infrastructure**, which is what the Context Model is for.
 
 This is a shift in kind, not in degree. It changes how technology is built, and it changes how an organisation has to be built to absorb technology at the pace it can now be produced. Companies that introduce coding agents without IT intelligence will get faster at building the wrong things. Companies that introduce both without changing their organisation will build the right things and then wait for the organisation to catch up. The ones that do all three will look very different in five years from the ones that do not.
@@ -460,7 +459,7 @@ The closest neighbour is the developer portal, such as Backstage, whose software
 
 **"An open map of the IT landscape helps attackers."** It is the objection I hear most. An attacker who is already inside the network can map most of the landscape with enough time; the defenders and builders, today, often cannot. Keeping the map closed mostly protects the attacker's advantage in patience. Real protection belongs on the systems themselves, in identity, network controls and secrets management, not in making it hard for colleagues to know what exists. Where a single detail is genuinely dangerous, a specific vulnerability or a credential, it is not IT context and it does not go into the model.
 
-What it costs: connectors break when sources change their APIs, identity resolution needs ongoing care, and access is the real constraint. A platform that sees the whole IT landscape needs read access to the whole IT landscape, and in a regulated financial group that is a conversation, not a config change. I wrote about that in [The bottleneck is read access](/notes/the-bottleneck-is-read-access/).
+What it costs: connectors break when sources change their APIs, identity resolution needs ongoing care, and access is the real constraint. A platform that sees the whole IT landscape needs read access to the whole IT landscape, and in a regulated financial group that is a conversation, not a config change. I wrote about that in The bottleneck is read access.
 
 ## Failure modes I am watching for
 
@@ -474,7 +473,7 @@ What it costs: connectors break when sources change their APIs, identity resolut
 
 ## Closing
 
-Business intelligence made a company legible to its executives. IT intelligence makes it legible to everyone who builds it, people and agents alike, and as the level at which software gets built moves up, that shared picture of the company becomes the thing everything else is built on. The [loop I sketched for architecture](/notes/architecture-becomes-a-loop/) needs a place to start from and a place to land back in, and the Context Model is meant to be both.
+Business intelligence made a company legible to its executives. IT intelligence makes it legible to everyone who builds it, people and agents alike, and as the level at which software gets built moves up, that shared picture of the company becomes the thing everything else is built on. The loop I sketched for architecture needs a place to start from and a place to land back in, and the Context Model is meant to be both.
 
 ## References
 
@@ -531,4 +530,3 @@ Technology:
 
 - Anthropic, [Introducing Claude Opus 4.5](https://www.anthropic.com/news/claude-opus-4-5), November 2025.
 - [Model Context Protocol](https://modelcontextprotocol.io/), the protocol behind the agent endpoints.
-- [Temporal](https://temporal.io/), the durable workflow engine behind the web delivery self-service.
