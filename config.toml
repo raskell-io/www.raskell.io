@@ -132,6 +132,7 @@ footer_groups = [
   ] },
   { title = "For machines", items = [
     { name = "RSS feed", url = "/rss.xml" },
+    { name = "Atom feed", url = "/atom.xml" },
     { name = "llms.txt", url = "/llms.txt" },
     { name = "llms-full.txt", url = "/llms-full.txt" },
     { name = "map.json", url = "/map.json" },
@@ -179,6 +180,7 @@ footer_columns = [
   [
     { title = "For machines", items = [
       { name = "RSS feed", url = "/rss.xml" },
+      { name = "Atom feed", url = "/atom.xml" },
       { name = "llms.txt", url = "/llms.txt" },
       { name = "llms-full.txt", url = "/llms-full.txt" },
       { name = "map.json", url = "/map.json" },
@@ -310,6 +312,7 @@ Raskell 是我在网络上的一角，也是通往我所构建的一切的入口
 "Building" = "正在构建"
 "For machines" = "给机器读的"
 "RSS feed" = "RSS 订阅"
+"Atom feed" = "Atom 订阅"
 "Sitemap" = "站点地图"
 "Explore" = "浏览"
 "Index" = "索引"
@@ -618,6 +621,7 @@ Raskell은 웹 위의 제 작은 공간이자, 제가 만드는 모든 것으로
 "Building" = "만들고 있는 것"
 "For machines" = "기계를 위한 자료"
 "RSS feed" = "RSS 피드"
+"Atom feed" = "Atom 피드"
 "Sitemap" = "사이트맵"
 "Explore" = "둘러보기"
 "Index" = "색인"
