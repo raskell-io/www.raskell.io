@@ -1,7 +1,6 @@
 +++
 title = "The Behavioural Turn in Software Engineering"
-date = 2026-11-04
-draft = true
+date = 2026-11-05
 description = "Moving from assembly to C changed what we read. Coding agents change whether we read. What psychology learned about black boxes, and what it got wrong."
 
 [taxonomies]
@@ -23,27 +22,9 @@ in_short = [
 ]
 +++
 
-<!--
-DRAFT NOTES (remove before publish)
-1. PERSONAL STORY: the TODO below the opening needs a real case of yours: a green agent PR that was broken
-   when you ran it. The prompt rules forbid inventing one, and the essay is stronger with it.
-2. EXAMPLE: the checkout behaviour diff is invented and says so. Swap in real Ushio output if you have it.
-3. CHECK AGAINST THE LIVE PAGE: the OpenAI quotes (harness engineering, sycophancy, GPT-4o) were matched
-   against Wayback copies because openai.com blocked fetching. Marr and Naur were matched against scans.
-   Skinner is one step from the book, through the Skinner Foundation's quotation page.
-4. DISCLOSURE: the paragraph on Claude helping with this essay is my suggestion. Keep it, as Anthropic
-   material is cited throughout, or reword it. Your call.
-5. NOT LINKED: "Evaluation Closes the Loop" is still a draft. Link it from "The second subject" once it is out.
-6. HERO IMAGE: none yet. Then `mise run covers the-behavioural-turn`.
-7. "PARADIGM" is on the banned list in PROMPT_NEW_ARTICLE.md, so the essay says "turn" throughout.
-8. Full evidence: raskell-io/reports/Behavioral turn in software engineering.md, notes in research_notes/.
--->
-
 You have seen this pull request. Four thousand lines from an agent, every check green. The tests are new, and the agent wrote those too. You could read all of it, which takes the afternoon, and by then the agent has opened two more. You could merge it, which feels like signing a contract in a language you do not speak. Or you could start the thing, click around, and watch what it does.
 
 More and more of us take the third option, and so do the agents. Over the past two years they grew hands: [Playwright MCP](https://github.com/microsoft/playwright-mcp), [Chrome DevTools MCP](https://developer.chrome.com/blog/chrome-devtools-mcp), [Claude in Chrome](https://code.claude.com/docs/en/chrome), [Cursor's computer use](https://cursor.com/blog/agent-computer-use). The motive is written down. Anthropic's Justin Young [describes agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) that ran unit tests or curl and still did not notice that a feature failed end to end, so the harness now tells them to "do all testing as a human user would". A [freeCodeCamp write-up](https://www.freecodecamp.org/news/how-to-make-your-coding-agent-check-its-work-in-the-browser/), by an author with a tool to promote, has the neatest specimen I have found: "The PR's new unit tests passed against the old code too, so they didn't prove the fix did anything."
-
-<!-- TODO Raffael: two or three sentences from your own work. The green PR you opened in a browser, what the agent had missed, what you did next. -->
 
 Simon Willison [put the question](https://simonwillison.net/2026/Feb/7/software-factory/) in one sentence: "how can you prove that software you are producing works if both the implementation and the tests are being written for you by coding agents?" I think answering it takes a different discipline from the one most of us trained in, and I think we can borrow a good part of that discipline from people who studied rats.
 
