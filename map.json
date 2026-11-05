@@ -1,8 +1,17 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-04T08:13:35+00:00",
+ "generated": "2026-11-05T12:29:35+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/the-behavioural-turn/",
+   "kind": "article",
+   "label": "The Behavioural Turn in Software Engineering",
+   "url": "https://raskell.io/articles/the-behavioural-turn/",
+   "meta": "2026-11-05 · 32 min",
+   "description": "Moving from assembly to C changed what we read. Coding agents change whether we read. What psychology learned about black boxes, and what it got wrong.",
+   "degree": 13
+  },
   {
    "id": "a:/articles/it-intelligence/",
    "kind": "article",
@@ -109,7 +118,7 @@
    "url": "https://raskell.io/articles/the-model-is-a-dependency/",
    "meta": "2026-07-09 · 14 min",
    "description": "Every layer of the harness has existed to put the right tokens in front of one hardcoded model string. This post pulls that string out and makes the model a dependency: why you route a cheap model for easy turns and a strong one for hard turns, what a fallback looks like when a provider is down, and why 'models are commodities' is a claim about your architecture before it is a claim about the market. Part seven of The Agent Platform Handbook.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
@@ -145,7 +154,7 @@
    "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/",
    "meta": "2026-06-19 · 13 min",
    "description": "Generation is cheap, so verification is the bottleneck — and we throw the verification away every time. What if a proof, once written, could be named, shared, and vouched for? A content-addressed commons for verified Haskell, and the move I left for after the semantic-artifact trilogy.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/retrieval-is-a-tool-not-a-layer/",
@@ -208,7 +217,7 @@
    "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/",
    "meta": "2026-05-07 · 27 min",
    "description": "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target.",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "a:/articles/patents-per-capita-is-a-vanity-metric/",
@@ -226,7 +235,7 @@
    "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/",
    "meta": "2026-04-27 · 12 min",
    "description": "WAF tuning is a guessing game because you cannot reproduce the traffic that triggered the rule. Deterministic replay changes that.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "a:/articles/the-economics-of-inference/",
@@ -271,7 +280,7 @@
    "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/",
    "meta": "2026-04-11 · 26 min",
    "description": "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell.",
-   "degree": 19
+   "degree": 20
   },
   {
    "id": "a:/articles/notes-from-rsac-2026/",
@@ -521,9 +530,9 @@
    "kind": "tag",
    "label": "Abstraction",
    "url": "https://raskell.io/tags/abstraction/",
-   "meta": "Concept · 5 pages",
+   "meta": "Concept · 6 pages",
    "description": "Layers that let people stop thinking about the layer below, from assembly and programming languages to orchestrators and agents, and how each new layer becomes the ground for the next.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:abundance",
@@ -566,9 +575,9 @@
    "kind": "tag",
    "label": "AI-assisted engineering",
    "url": "https://raskell.io/tags/ai-engineering/",
-   "meta": "Domain · 14 pages",
+   "meta": "Domain · 15 pages",
    "description": "AI as an engineering tool: coding agents, AI-authored code, and what programming becomes when models write most of it.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "t:ai-for-ops",
@@ -830,6 +839,15 @@
    "meta": "Concept · 2 pages",
    "description": "Europe's place in technology and history: where the web was invented, what it builds and gives away, and the data and capabilities it still holds.",
    "degree": 9
+  },
+  {
+   "id": "t:evaluation",
+   "kind": "tag",
+   "label": "Evaluation",
+   "url": "https://raskell.io/tags/evaluation/",
+   "meta": "Concept · 1 page",
+   "description": "Measuring whether an AI system does the right thing: golden sets, structural checks, LLM-as-judge, and regression suites.",
+   "degree": 6
   },
   {
    "id": "t:external-memory",
@@ -1133,18 +1151,18 @@
    "kind": "tag",
    "label": "Neuroscience",
    "url": "https://raskell.io/tags/neuroscience/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "t:observability",
    "kind": "tag",
    "label": "Observability",
    "url": "https://raskell.io/tags/observability/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "Seeing what a running system does: traces, metering, glass-box infrastructure, and what not to log.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:open-data",
@@ -1279,6 +1297,15 @@
    "url": "https://raskell.io/tags/provenance/",
    "meta": "Concept · 3 pages",
    "description": "Where something came from and who vouches for it: signed media, rights-clear training data, and artifacts that carry their own history.",
+   "degree": 9
+  },
+  {
+   "id": "t:psychology",
+   "kind": "tag",
+   "label": "Psychology",
+   "url": "https://raskell.io/tags/psychology/",
+   "meta": "Domain · 1 page",
+   "description": "How minds work and what people make of their lives: personality and types, the unconscious and its symbols, meaning, order and chaos.",
    "degree": 9
   },
   {
@@ -1466,9 +1493,9 @@
    "kind": "tag",
    "label": "Trust",
    "url": "https://raskell.io/tags/trust/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "Personal trust and system trust: why people rely on banks, procedures and software they cannot inspect, and how that reliance is earned.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:type-systems",
@@ -1613,15 +1640,6 @@
    "meta": "Concept · no pages yet",
    "description": "Rule by the people in theory and practice: who holds power, how representation limits it, and experiments from pirate settlements to Swiss direct democracy.",
    "degree": 7
-  },
-  {
-   "id": "t:evaluation",
-   "kind": "tag",
-   "label": "Evaluation",
-   "url": "https://raskell.io/tags#evaluation",
-   "meta": "Concept · no pages yet",
-   "description": "Measuring whether an AI system does the right thing: golden sets, structural checks, LLM-as-judge, and regression suites.",
-   "degree": 5
   },
   {
    "id": "t:evolution",
@@ -1874,15 +1892,6 @@
    "meta": "Concept · no pages yet",
    "description": "Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place.",
    "degree": 5
-  },
-  {
-   "id": "t:psychology",
-   "kind": "tag",
-   "label": "Psychology",
-   "url": "https://raskell.io/tags#psychology",
-   "meta": "Domain · no pages yet",
-   "description": "How minds work and what people make of their lives: personality and types, the unconscious and its symbols, meaning, order and chaos.",
-   "degree": 8
   },
   {
    "id": "t:religion",
@@ -2178,7 +2187,7 @@
    "url": "https://github.com/raskell-io/ushio",
    "meta": "Project",
    "description": "Deterministic edge traffic replay for understanding WAF and proxy behavior. Capture traffic as HAR files, rewrite URLs for staging/production comparison, mutate headers, strip cook…",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "p:driftscape",
@@ -3712,6 +3721,10 @@
  ],
  "links": [
   {
+   "source": "a:/articles/the-behavioural-turn/",
+   "target": "t:abstraction"
+  },
+  {
    "source": "a:/articles/the-river-and-the-canal/",
    "target": "t:abstraction"
   },
@@ -3830,6 +3843,10 @@
   {
    "source": "t:ai-alignment",
    "target": "t:existential-risk"
+  },
+  {
+   "source": "a:/articles/the-behavioural-turn/",
+   "target": "t:ai-engineering"
   },
   {
    "source": "a:/notes/a-capability-democratised/",
@@ -4408,6 +4425,18 @@
    "target": "t:geography"
   },
   {
+   "source": "a:/articles/the-behavioural-turn/",
+   "target": "t:evaluation"
+  },
+  {
+   "source": "t:evaluation",
+   "target": "t:agents"
+  },
+  {
+   "source": "t:evaluation",
+   "target": "t:metrics"
+  },
+  {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "t:external-memory"
   },
@@ -4944,12 +4973,20 @@
    "target": "t:philosophy"
   },
   {
+   "source": "a:/articles/the-behavioural-turn/",
+   "target": "t:neuroscience"
+  },
+  {
    "source": "a:/articles/brain-emulation-as-an-infrastructure-problem/",
    "target": "t:neuroscience"
   },
   {
    "source": "t:neuroscience",
    "target": "t:life-sciences"
+  },
+  {
+   "source": "a:/articles/the-behavioural-turn/",
+   "target": "t:observability"
   },
   {
    "source": "a:/articles/observability-is-not-logging/",
@@ -5162,6 +5199,10 @@
   {
    "source": "t:provenance",
    "target": "t:applied-security"
+  },
+  {
+   "source": "a:/articles/the-behavioural-turn/",
+   "target": "t:psychology"
   },
   {
    "source": "a:/articles/win-everything-control-no-one/",
@@ -5472,6 +5513,10 @@
    "target": "t:machine-learning"
   },
   {
+   "source": "a:/articles/the-behavioural-turn/",
+   "target": "t:trust"
+  },
+  {
    "source": "a:/articles/the-original-data-company/",
    "target": "t:trust"
   },
@@ -5682,14 +5727,6 @@
   {
    "source": "t:democracy",
    "target": "t:policy"
-  },
-  {
-   "source": "t:evaluation",
-   "target": "t:agents"
-  },
-  {
-   "source": "t:evaluation",
-   "target": "t:metrics"
   },
   {
    "source": "t:evolution",
@@ -5934,6 +5971,26 @@
   {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "c:reviews"
+  },
+  {
+   "source": "a:/articles/the-behavioural-turn/",
+   "target": "a:/articles/the-model-is-a-dependency/"
+  },
+  {
+   "source": "a:/articles/the-behavioural-turn/",
+   "target": "a:/articles/the-proof-you-only-have-to-write-once/"
+  },
+  {
+   "source": "a:/articles/the-behavioural-turn/",
+   "target": "a:/articles/semantic-artifacts-and-meaning-engines/"
+  },
+  {
+   "source": "a:/articles/the-behavioural-turn/",
+   "target": "a:/articles/traffic-replay-as-a-security-primitive/"
+  },
+  {
+   "source": "a:/articles/the-behavioural-turn/",
+   "target": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/"
   },
   {
    "source": "a:/articles/it-intelligence/",
@@ -6770,6 +6827,10 @@
   {
    "source": "a:/talks/iat-13-basel/",
    "target": "p:conflux"
+  },
+  {
+   "source": "a:/articles/the-behavioural-turn/",
+   "target": "p:ushio"
   },
   {
    "source": "a:/articles/traffic-replay-as-a-security-primitive/",

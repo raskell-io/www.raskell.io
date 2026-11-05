@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-04T08:13:35+00:00",
+ "generated": "2026-11-05T12:29:35+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 460,
+ "count": 528,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -1398,6 +1398,19 @@
    "citations": 1
   },
   {
+   "url": "https://6826.csail.mit.edu/2020/papers/noproof.pdf",
+   "title": "How Did Software Get So Reliable Without Proof?",
+   "domain": "6826.csail.mit.edu",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://accordproject.org/",
    "title": "Accord Project",
    "domain": "accordproject.org",
@@ -1424,6 +1437,19 @@
    "citations": 1
   },
   {
+   "url": "https://addyo.substack.com/p/the-code-nobody-reads",
+   "title": "states the remedy",
+   "domain": "addyo.substack.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://aiweekly.co/alerts/nvidia-launches-64gb-dgx-spark-at-4999-as-128gb-hits-6950",
    "title": "Nvidia launches 64GB DGX Spark at $4,999 as 128GB hits $6,950",
    "domain": "aiweekly.co",
@@ -1445,6 +1471,32 @@
     {
      "title": "Brain Emulation, Read as an Infrastructure Problem",
      "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://anthropic.com/claude-opus-4-6-system-card",
+   "title": "“a notable overeagerness to complete tasks that can override appropriate caution”",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://anthropic.com/claude-opus-5-system-card",
+   "title": "“frequently suffered from scope creep, especially on coding tasks”",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -1541,6 +1593,32 @@
    "citations": 1
   },
   {
+   "url": "https://arxiv.org/abs/2303.13988",
+   "title": "the line",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/2410.21136",
+   "title": "Konstantinou and colleagues",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://arxiv.org/abs/2501.03566",
    "title": "Applying Large Language Models in Knowledge Graph-based Enterprise Modeling: Challenges and Opportunities",
    "domain": "arxiv.org",
@@ -1567,6 +1645,19 @@
    "citations": 1
   },
   {
+   "url": "https://arxiv.org/abs/2503.18597v3",
+   "title": "Testora",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://arxiv.org/abs/2506.01732",
    "title": "arXiv 2506.01732",
    "domain": "arxiv.org",
@@ -1580,6 +1671,19 @@
    "citations": 1
   },
   {
+   "url": "https://arxiv.org/abs/2509.15541",
+   "title": "Schoen and colleagues",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://arxiv.org/abs/2510.15745",
    "title": "State of Brain Emulation Report 2025",
    "domain": "arxiv.org",
@@ -1588,6 +1692,97 @@
     {
      "title": "Brain Emulation, Read as an Infrastructure Problem",
      "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/2510.20270",
+   "title": "ImpossibleBench",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/2511.04427",
+   "title": "Carnegie Mellon study",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/2601.20245",
+   "title": "Shen and Tamkin",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/2603.24755",
+   "title": "SlopCodeBench",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/2605.20049",
+   "title": "SonarSource found",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/2606.20205",
+   "title": "Meyer and colleagues",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/html/2503.15223v2",
+   "title": "Wang, Pradel and Liu",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -1627,6 +1822,19 @@
     {
      "title": "Mise ate my Makefile",
      "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://ashby.info/Ashby-Introduction-to-Cybernetics.pdf",
+   "title": "An Introduction to Cybernetics",
+   "domain": "ashby.info",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -1749,6 +1957,19 @@
    "citations": 1
   },
   {
+   "url": "https://blog.x.com/engineering/en_us/a/2015/diffy-testing-services-without-writing-tests",
+   "title": "Diffy",
+   "domain": "blog.x.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://book.realworldhaskell.org/",
    "title": "Real World Haskell",
    "domain": "book.realworldhaskell.org",
@@ -1814,6 +2035,45 @@
    "citations": 1
   },
   {
+   "url": "https://chomsky.info/1967____/",
+   "title": "Review of Verbal Behavior",
+   "domain": "chomsky.info",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://ckrybus.com/static/papers/Bainbridge_1983_Automatica.pdf",
+   "title": "predicted the rest in 1983",
+   "domain": "ckrybus.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://code.claude.com/docs/en/chrome",
+   "title": "Claude in Chrome",
+   "domain": "code.claude.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
    "title": "Documenting Architecture Decisions",
    "domain": "cognitect.com",
@@ -1822,6 +2082,19 @@
     {
      "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
      "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://cognition.ai/blog/swe-grep",
+   "title": "reports",
+   "domain": "cognition.ai",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -1918,6 +2191,19 @@
    "citations": 1
   },
   {
+   "url": "https://cursor.com/blog/agent-computer-use",
+   "title": "Cursor’s computer use",
+   "domain": "cursor.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://dafny.org/",
    "title": "Dafny",
    "domain": "dafny.org",
@@ -1978,6 +2264,32 @@
     {
      "title": "Edge Systems Are the New Backend",
      "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf",
+   "title": "GPT-6 Astra card",
+   "domain": "deploymentsafety.openai.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://developer.chrome.com/blog/chrome-devtools-mcp",
+   "title": "Chrome DevTools MCP",
+   "domain": "developer.chrome.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -2217,6 +2529,45 @@
    "citations": 1
   },
   {
+   "url": "https://doi.org/10.1016/j.neuron.2016.12.041",
+   "title": "Neuroscience Needs Behavior: Correcting a Reductionist Bias",
+   "domain": "doi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://doi.org/10.1037/apl0000994",
+   "title": "offer one hint",
+   "domain": "doi.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://doi.org/10.1037/h0043424",
+   "title": "described in human subjects",
+   "domain": "doi.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://doi.org/10.1108/13673279910259385",
    "title": "“If only HP knew what HP knows”: the roots of knowledge management at Hewlett-Packard",
    "domain": "doi.org",
@@ -2238,6 +2589,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://doi.org/10.1371/journal.pcbi.1005268",
+   "title": "“Could a Neuroscientist Understand a Microprocessor?”",
+   "domain": "doi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -3400,6 +3764,19 @@
    "citations": 1
   },
   {
+   "url": "https://engineering.fb.com/2026/10/29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/",
+   "title": "Meta’s JiTTests",
+   "domain": "engineering.fb.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://epoch.ai/publications/will-we-run-out-of-data-limits-of-llm-scaling-based-on-human-generated-data",
    "title": "“Will we run out of data? Limits of LLM scaling based on human-generated data”",
    "domain": "epoch.ai",
@@ -3504,6 +3881,19 @@
    "citations": 1
   },
   {
+   "url": "https://factory.strongdm.ai/",
+   "title": "goes all the way",
+   "domain": "factory.strongdm.ai",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://gatling.io/",
    "title": "Gatling",
    "domain": "gatling.io",
@@ -3512,6 +3902,19 @@
     {
      "title": "Traffic Replay as a Security Primitive",
      "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://github.blog/developer-skills/application-development/scientist/",
+   "title": "Scientist",
+   "domain": "github.blog",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -3707,6 +4110,19 @@
     {
      "title": "What Comes After the Last Programming Language",
      "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://github.com/microsoft/playwright-mcp",
+   "title": "Playwright MCP",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -4193,6 +4609,19 @@
    "citations": 1
   },
   {
+   "url": "https://isaacvando.pages.dev/nondeterminisms-not-the-problem",
+   "title": "has the sharpest version",
+   "domain": "isaacvando.pages.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://joint-research-centre.ec.europa.eu/language-technology-resources/jrc-acquis_en",
    "title": "JRC-Acquis",
    "domain": "joint-research-centre.ec.europa.eu",
@@ -4453,6 +4882,71 @@
    "citations": 1
   },
   {
+   "url": "https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html",
+   "title": "would rather",
+   "domain": "martin.kleppmann.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+   "title": "METR’s 2025 trial",
+   "domain": "metr.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+   "title": "later data",
+   "domain": "metr.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main/",
+   "title": "maintainers review",
+   "domain": "metr.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://michaelfeathers.silvrback.com/characterization-testing",
+   "title": "Characterisation tests",
+   "domain": "michaelfeathers.silvrback.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://mirror.ungleich.ch/pub/OpenBSD/7.2/",
    "title": "mirror.ungleich.ch/pub/OpenBSD",
    "domain": "mirror.ungleich.ch",
@@ -4552,6 +5046,19 @@
     {
      "title": "Edge Systems Are the New Backend",
      "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://netflixtechblog.com/automated-canary-analysis-at-netflix-with-kayenta-3260bc7acc69",
+   "title": "Canary analysis",
+   "domain": "netflixtechblog.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -4700,6 +5207,32 @@
    "citations": 1
   },
   {
+   "url": "https://openai.com/index/expanding-on-sycophancy/",
+   "title": "shipped a sycophantic GPT-4o",
+   "domain": "openai.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://openai.com/index/harness-engineering/",
+   "title": "the report",
+   "domain": "openai.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://opentofu.org/",
    "title": "OpenTofu",
    "domain": "opentofu.org",
@@ -4734,6 +5267,19 @@
     {
      "title": "The move to the city",
      "url": "https://raskell.io/notes/the-move-to-the-city/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://pages.cs.wisc.edu/~remzi/Naur.pdf",
+   "title": "Programming as Theory Building",
+   "domain": "pages.cs.wisc.edu",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -4817,6 +5363,19 @@
    "citations": 1
   },
   {
+   "url": "https://plato.stanford.edu/entries/behaviorism/",
+   "title": "Inner states",
+   "domain": "plato.stanford.edu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://portswigger.net/burp",
    "title": "Burp Suite",
    "domain": "portswigger.net",
@@ -4825,6 +5384,45 @@
     {
      "title": "Traffic Replay as a Security Primitive",
      "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://principlesofchaos.org/",
+   "title": "Chaos experiments",
+   "domain": "principlesofchaos.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://psychclassics.yorku.ca/Cronbach/construct.htm",
+   "title": "Construct Validity in Psychological Tests",
+   "domain": "psychclassics.yorku.ca",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://psychclassics.yorku.ca/Watson/views.htm",
+   "title": "Psychology as the Behaviorist Views It",
+   "domain": "psychclassics.yorku.ca",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -4877,6 +5475,19 @@
     {
      "title": "What Comes After the Last Programming Language",
      "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://simonwillison.net/2026/Feb/7/software-factory/",
+   "title": "put the question",
+   "domain": "simonwillison.net",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -5168,6 +5779,19 @@
    "citations": 1
   },
   {
+   "url": "https://users.cs.utah.edu/~regehr/papers/pldi11-preprint.pdf",
+   "title": "Differential testing",
+   "domain": "users.cs.utah.edu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://varnish-cache.org/",
    "title": "Varnish",
    "domain": "varnish-cache.org",
@@ -5241,6 +5865,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://web.stanford.edu/class/psych209a/ReadingsByDate/01_07/Marr82Philosophy.pdf",
+   "title": "Vision",
+   "domain": "web.stanford.edu",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -5337,6 +5974,32 @@
    "citations": 1
   },
   {
+   "url": "https://www-cdn.anthropic.com/963373e433e489a87a10c823c52a0a013e9172dd.pdf",
+   "title": "Sonnet 4.5 card",
+   "domain": "www-cdn.anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.alignmentforum.org/posts/PwnadG4BFjaER3MGf/interpretability-will-not-reliably-find-deceptive-ai",
+   "title": "counters",
+   "domain": "alignmentforum.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.anthropic.com/claude-code",
    "title": "Claude Code",
    "domain": "anthropic.com",
@@ -5345,6 +6008,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.anthropic.com/claude-mythos-preview-system-card",
+   "title": "Mythos Preview",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -5363,6 +6039,45 @@
    "citations": 1
   },
   {
+   "url": "https://www.anthropic.com/claude-opus-5-5-system-card",
+   "title": "Opus 5.5 card",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+   "title": "Anthropic’s April 2026 postmortem",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.anthropic.com/engineering/building-c-compiler",
+   "title": "built a C compiler",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.anthropic.com/engineering/building-effective-agents",
    "title": "“Building effective agents”",
    "domain": "anthropic.com",
@@ -5371,6 +6086,32 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+   "title": "describes agents",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.anthropic.com/engineering/harness-design-long-running-apps",
+   "title": "harness write-up",
+   "domain": "anthropic.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -5545,6 +6286,32 @@
    "citations": 1
   },
   {
+   "url": "https://www.cs.princeton.edu/~rit/geo/Miller.pdf",
+   "title": "The cognitive revolution: a historical perspective",
+   "domain": "cs.princeton.edu",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html",
+   "title": "Dijkstra’s remedy",
+   "domain": "cs.utexas.edu",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.cyberciti.biz/faq/kvmvirtualization-virt-install-openbsd-unix-guest/",
    "title": "KVM virt-install: Install OpenBSD as Guest Operating System",
    "domain": "cyberciti.biz",
@@ -5553,6 +6320,19 @@
     {
      "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
      "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.darioamodei.com/post/the-urgency-of-interpretability",
+   "title": "argues",
+   "domain": "darioamodei.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -5649,6 +6429,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.fda.gov/media/73141/download",
+   "title": "The FDA’s guidance",
+   "domain": "fda.gov",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.fhnw.ch/de/personen/mathias-binswanger",
    "title": "Mathias Binswanger",
    "domain": "fhnw.ch",
@@ -5675,6 +6468,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.freecodecamp.org/news/how-to-make-your-coding-agent-check-its-work-in-the-browser/",
+   "title": "freeCodeCamp write-up",
+   "domain": "freecodecamp.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.gartner.com/en/documents/8486545",
    "title": "abstracts",
    "domain": "gartner.com",
@@ -5696,6 +6502,19 @@
     {
      "title": "Mise ate my Makefile",
      "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.gutenberg.org/ebooks/33936",
+   "title": "Clever Hans (The Horse of Mr. von Osten)",
+   "domain": "gutenberg.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -5753,6 +6572,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.hyrumslaw.com/",
+   "title": "Hyrum’s Law",
+   "domain": "hyrumslaw.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.iais.fraunhofer.de/en/industries_and_cross-sector_solutions/cross-sector_solutions/generative-ai/opengpt-x.html",
    "title": "Fraunhofer IAIS",
    "domain": "iais.fraunhofer.de",
@@ -5792,6 +6624,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.kth.se/social/files/564df871f2765419e306178d/KnightLeveson.pdf",
+   "title": "1986 result",
+   "domain": "kth.se",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.libvirt.org/manpages/virsh.html",
    "title": "virsh(1)",
    "domain": "libvirt.org",
@@ -5818,6 +6663,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2015/05/PID3556473.pdf",
+   "title": "Code Reviews Do Not Find Bugs",
+   "domain": "microsoft.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.minix3.org/",
    "title": "Minix",
    "domain": "minix3.org",
@@ -5839,6 +6697,19 @@
     {
      "title": "Learning to Play",
      "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.nature.com/articles/s41586-019-1138-y",
+   "title": "proposed in Nature",
+   "domain": "nature.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1
@@ -5956,6 +6827,19 @@
     {
      "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
      "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.openwall.com/lists/oss-security/2024/03/29/4",
+   "title": "The xz backdoor",
+   "domain": "openwall.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Behavioural Turn in Software Engineering",
+     "url": "https://raskell.io/articles/the-behavioural-turn/"
     }
    ],
    "citations": 1

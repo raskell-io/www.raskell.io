@@ -125,6 +125,10 @@
         <lastmod>2026-10-30</lastmod>
     </url>
     <url>
+        <loc>https://raskell.io/articles/the-behavioural-turn/</loc>
+        <lastmod>2026-11-05</lastmod>
+    </url>
+    <url>
         <loc>https://raskell.io/articles/the-bill-is-part-of-the-loop/</loc>
         <lastmod>2026-07-18</lastmod>
     </url>
@@ -819,8 +823,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/evaluation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/evaluation/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/evaluation/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/evaluation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/evaluation/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/evolution/</loc>
@@ -1314,8 +1320,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/psychology/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/psychology/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/psychology/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/psychology/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/psychology/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/reinforcement-learning/</loc>
@@ -1949,6 +1957,13 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/europe/"/>
     </url>
     <url>
+        <loc>https://raskell.io/tags/evaluation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/evaluation/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/evaluation/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/evaluation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/evaluation/"/>
+    </url>
+    <url>
         <loc>https://raskell.io/tags/external-memory/</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/external-memory/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/external-memory/"/>
@@ -2297,6 +2312,13 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/provenance/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/provenance/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/provenance/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/tags/psychology/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/psychology/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/psychology/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/psychology/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/psychology/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/reinforcement-learning/</loc>
@@ -3036,8 +3058,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/evaluation/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/evaluation/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/evaluation/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/evaluation/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/evaluation/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/evolution/</loc>
@@ -3531,8 +3555,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/psychology/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/psychology/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/psychology/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/psychology/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/psychology/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/reinforcement-learning/</loc>
