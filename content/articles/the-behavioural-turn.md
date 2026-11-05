@@ -8,6 +8,8 @@ tags = ["ai-engineering", "abstraction", "evaluation", "psychology", "neuroscien
 
 [extra]
 author = "Raffael"
+image = "the-behavioural-turn.avif"
+cover = "covers/the-behavioural-turn.avif"
 related = [
     "semantic-artifacts-and-meaning-engines",
     "traffic-replay-as-a-security-primitive",
