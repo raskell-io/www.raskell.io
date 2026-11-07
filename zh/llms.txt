@@ -4,6 +4,7 @@
 
 ## 已翻译的文章
 
+- [三个部分，没有大脑](https://raskell.io/zh/articles/three-parts-and-no-brain/) (2026-11-05): 一个国际象棋程序由什么构成，以及在任何学习开始之前，一个手写的程序能在 lichess 的电脑对手面前走多远。 Markdown: https://raskell.io/zh/articles/three-parts-and-no-brain.md · 英文原文: https://raskell.io/articles/three-parts-and-no-brain/
 - [IT 智能：企业 IT 缺失的数据层](https://raskell.io/zh/articles/it-intelligence/) (2026-11-04): 商业智能告诉一家公司它是怎么做生意的，却没有什么告诉它，它的 IT 是怎么拼在一起的。我为什么开始构建一个 Enterprise Context Platform。 Markdown: https://raskell.io/zh/articles/it-intelligence.md · 英文原文: https://raskell.io/articles/it-intelligence/
 - [最早的数据公司](https://raskell.io/zh/articles/the-original-data-company/) (2026-11-01): 保险公司说自己不是科技公司。可保险公司卖的是一份包裹在承诺里的预测，从 1693 年的一张生命表起就是如此：它是最早的数据公司。 Markdown: https://raskell.io/zh/articles/the-original-data-company.md · 英文原文: https://raskell.io/articles/the-original-data-company/
 - [河流与运河](https://raskell.io/zh/articles/the-river-and-the-canal/) (2026-10-31): 智能体在崎岖的世界里探索；工作流是探索留下的东西。国际象棋、星际争霸、海底的工厂，以及我为什么要造一台引擎。 Markdown: https://raskell.io/zh/articles/the-river-and-the-canal.md · 英文原文: https://raskell.io/articles/the-river-and-the-canal/
@@ -39,6 +40,7 @@
 - [演讲稿](https://raskell.io/zh/talks/): 我做过的演讲的幻灯片。每套幻灯片都在浏览器中运行；演讲页面列出了全部演讲、圆桌和播客。 英文原文: https://raskell.io/talks/
 - [书评](https://raskell.io/zh/categories/reviews/): 阅读记录中书籍、论文和长文的书评。 英文原文: https://raskell.io/categories/reviews/
 - [类别](https://raskell.io/zh/categories/): 按写作形式归档的文章。 英文原文: https://raskell.io/categories/
+- [Learning to Play](https://raskell.io/zh/series/learning-to-play/): 游戏程序如何学习：以国际象棋、将棋和围棋上的 Kishi 为例，三台用 Rust 写的引擎，在一台笔记本电脑上通过自我对弈训练，并与可下载的引擎对比测量。 英文原文: https://raskell.io/series/learning-to-play/
 - [The Agent Platform Handbook](https://raskell.io/zh/series/the-agent-platform-handbook/): 从第一性原理出发构建智能体平台的系列，每一篇都附带一段可运行的 TypeScript。 英文原文: https://raskell.io/series/the-agent-platform-handbook/
 - [系列](https://raskell.io/zh/series/): 按顺序阅读的多篇系列文章。 英文原文: https://raskell.io/series/
 - [主题](https://raskell.io/zh/tags/): 站点上的一切，按主题归档。 英文原文: https://raskell.io/tags/

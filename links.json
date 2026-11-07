@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-07T09:29:38+00:00",
+ "generated": "2026-11-07T09:41:39+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 530,
+ "count": 533,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -173,6 +173,35 @@
    "citations": 6
   },
   {
+   "url": "https://kishi.raskell.io",
+   "title": "kishi.raskell.io",
+   "domain": "kishi.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Three Parts and No Brain",
+     "url": "https://raskell.io/articles/three-parts-and-no-brain/"
+    },
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    },
+    {
+     "title": "Win Everything, Control No One",
+     "url": "https://raskell.io/articles/win-everything-control-no-one/"
+    },
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    },
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ],
+   "citations": 5
+  },
+  {
    "url": "https://die-zukunft.ch/",
    "title": "Die Zukunft",
    "domain": "die-zukunft.ch",
@@ -243,31 +272,6 @@
     {
      "title": "What an Agent Actually Is",
      "url": "https://raskell.io/articles/what-an-agent-actually-is/"
-    }
-   ],
-   "citations": 4
-  },
-  {
-   "url": "https://kishi.raskell.io",
-   "title": "kishi.raskell.io",
-   "domain": "kishi.raskell.io",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
-     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
-    },
-    {
-     "title": "Win Everything, Control No One",
-     "url": "https://raskell.io/articles/win-everything-control-no-one/"
-    },
-    {
-     "title": "After PHP Gate: A Blueprint for the Static Web",
-     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
-    },
-    {
-     "title": "Learning to Play",
-     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ],
    "citations": 4
@@ -606,6 +610,23 @@
     {
      "title": "What Sixteen AI Agents Taught Me About Management",
      "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
+    }
+   ],
+   "citations": 2
+  },
+  {
+   "url": "https://github.com/raskell-io/kishi",
+   "title": "on GitHub",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Three Parts and No Brain",
+     "url": "https://raskell.io/articles/three-parts-and-no-brain/"
+    },
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ],
    "citations": 2
@@ -4141,6 +4162,19 @@
    "citations": 1
   },
   {
+   "url": "https://github.com/lichess-org/fishnet",
+   "title": "fishnet",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Three Parts and No Brain",
+     "url": "https://raskell.io/articles/three-parts-and-no-brain/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://github.com/microsoft/playwright-mcp",
    "title": "Playwright MCP",
    "domain": "github.com",
@@ -4253,19 +4287,6 @@
     {
      "title": "After PHP Gate: A Blueprint for the Static Web",
      "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
-    }
-   ],
-   "citations": 1
-  },
-  {
-   "url": "https://github.com/raskell-io/kishi",
-   "title": "on GitHub",
-   "domain": "github.com",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "Learning to Play",
-     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ],
    "citations": 1
@@ -6268,6 +6289,32 @@
     {
      "title": "Traffic Replay as a Security Primitive",
      "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.chessprogramming.org/PeSTO%27s_Evaluation_Function",
+   "title": "PeSTO’s evaluation function",
+   "domain": "chessprogramming.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Three Parts and No Brain",
+     "url": "https://raskell.io/articles/three-parts-and-no-brain/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.chessprogramming.org/Perft_Results",
+   "title": "Perft results",
+   "domain": "chessprogramming.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Three Parts and No Brain",
+     "url": "https://raskell.io/articles/three-parts-and-no-brain/"
     }
    ],
    "citations": 1

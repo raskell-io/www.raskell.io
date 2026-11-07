@@ -30,8 +30,14 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 8. [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop.md): Every model response already carries its own bill in the usage field, and the loop throws it away. This post reads that field, prices it against a table, and turns cost into a value the loop can see per turn and act on: a metering decorator that needs no loop change, a running ledger, prompt-cache accounting that moves the number the most, and a budget that degrades before it stops. Part eight of The Agent Platform Handbook.
 9. [Observability Is Not Logging](https://raskell.io/articles/observability-is-not-logging.md): A cost total says nothing about how a run went. This part turns each agent run into a trace: which turn escalated, which tool failed, where the money went.
 
+## Series: Learning To Play
+
+1. [Learning to Play](https://raskell.io/articles/learning-to-play.md): A chess prodigy's handbook, three old games and one laptop: rebuilding the ideas behind game-playing AI in Rust for a browser on my phone, and measuring them.
+2. [Three Parts and No Brain](https://raskell.io/articles/three-parts-and-no-brain.md): What a chess program is made of, and how far a hand-written one gets against the computer opponent on lichess, before any learning starts.
+
 ## Articles
 
+- [Three Parts and No Brain](https://raskell.io/articles/three-parts-and-no-brain.md) (2026-11-05): What a chess program is made of, and how far a hand-written one gets against the computer opponent on lichess, before any learning starts.
 - [The Behavioural Turn in Software Engineering](https://raskell.io/articles/the-behavioural-turn.md) (2026-11-05): Moving from assembly to C changed what we read. Coding agents change whether we read. What psychology learned about black boxes, and what it got wrong.
 - [IT Intelligence: The Missing Data Layer of Enterprise IT](https://raskell.io/articles/it-intelligence.md) (2026-11-04): Business intelligence tells a company how it sells. Nothing tells it how its IT fits together. Why I started building an Enterprise Context Platform.
 - [The Original Data Company](https://raskell.io/articles/the-original-data-company.md) (2026-11-01): Insurers say they are not tech companies. Yet an insurer sells a prediction wrapped in a promise, and has since a 1693 life table: the original data company.
@@ -287,16 +293,16 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ## Sources cited most
 
-External links cited on more than one page (all 509 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
+External links cited on more than one page (all 512 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
 
 - [Zentinel](https://zentinelproxy.io): cited on 12 pages
 - [Archipelag.io](https://archipelag.io): cited on 9 pages
 - [Arcanist](https://arcanist.sh/): cited on 6 pages
 - [Cyanea](https://cyanea.bio): cited on 6 pages
+- [kishi.raskell.io](https://kishi.raskell.io): cited on 5 pages
 - [Die Zukunft](https://die-zukunft.ch/): cited on 4 pages
 - [Shiioo](https://github.com/raskell-io/shiioo): cited on 4 pages
 - [companion repository](https://github.com/raskell-io/the-agent-platform-handbook): cited on 4 pages
-- [Kishi](https://kishi.raskell.io): cited on 4 pages
 - [AI 2027](https://ai-2027.com/): cited on 3 pages
 - [Basel Haskell Compiler](https://arcanist.sh/bhc/): cited on 3 pages
 - [Pingora](https://github.com/cloudflare/pingora): cited on 3 pages
@@ -541,6 +547,7 @@ The site is written in English. Some articles and pages are also translated; a t
 - [推理的经济学](https://raskell.io/zh/articles/the-economics-of-inference/): translation of [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/) ([Markdown](https://raskell.io/zh/articles/the-economics-of-inference.md))
 - [最早的数据公司](https://raskell.io/zh/articles/the-original-data-company/): translation of [The Original Data Company](https://raskell.io/articles/the-original-data-company/) ([Markdown](https://raskell.io/zh/articles/the-original-data-company.md))
 - [河流与运河](https://raskell.io/zh/articles/the-river-and-the-canal/): translation of [The River and the Canal](https://raskell.io/articles/the-river-and-the-canal/) ([Markdown](https://raskell.io/zh/articles/the-river-and-the-canal.md))
+- [三个部分，没有大脑](https://raskell.io/zh/articles/three-parts-and-no-brain/): translation of [Three Parts and No Brain](https://raskell.io/articles/three-parts-and-no-brain/) ([Markdown](https://raskell.io/zh/articles/three-parts-and-no-brain.md))
 - [智能体究竟是什么](https://raskell.io/zh/articles/what-an-agent-actually-is/): translation of [What an Agent Actually Is](https://raskell.io/articles/what-an-agent-actually-is/) ([Markdown](https://raskell.io/zh/articles/what-an-agent-actually-is.md))
 - [最后一门编程语言，也许不是给人用的](https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code/): translation of [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/) ([Markdown](https://raskell.io/zh/articles/what-programming-languages-become-when-ai-writes-the-code.md))
 - [赢下一切，不控制任何人](https://raskell.io/zh/articles/win-everything-control-no-one/): translation of [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/) ([Markdown](https://raskell.io/zh/articles/win-everything-control-no-one.md))
@@ -563,6 +570,7 @@ The site is written in English. Some articles and pages are also translated; a t
 - [演讲稿](https://raskell.io/zh/talks/): translation of [Talks](https://raskell.io/talks/)
 - [书评](https://raskell.io/zh/categories/reviews/): translation of [书评](https://raskell.io/categories/reviews/)
 - [类别](https://raskell.io/zh/categories/): translation of [类别](https://raskell.io/categories/)
+- [Learning to Play](https://raskell.io/zh/series/learning-to-play/): translation of [Learning to Play](https://raskell.io/series/learning-to-play/)
 - [The Agent Platform Handbook](https://raskell.io/zh/series/the-agent-platform-handbook/): translation of [The Agent Platform Handbook](https://raskell.io/series/the-agent-platform-handbook/)
 - [系列](https://raskell.io/zh/series/): translation of [系列](https://raskell.io/series/)
 - [主题](https://raskell.io/zh/tags/): translation of [主题](https://raskell.io/tags/)
@@ -580,6 +588,7 @@ The site is written in English. Some articles and pages are also translated; a t
 - [추론의 경제학](https://raskell.io/ko/articles/the-economics-of-inference/): translation of [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/) ([Markdown](https://raskell.io/ko/articles/the-economics-of-inference.md))
 - [최초의 데이터 기업](https://raskell.io/ko/articles/the-original-data-company/): translation of [The Original Data Company](https://raskell.io/articles/the-original-data-company/) ([Markdown](https://raskell.io/ko/articles/the-original-data-company.md))
 - [강과 운하](https://raskell.io/ko/articles/the-river-and-the-canal/): translation of [The River and the Canal](https://raskell.io/articles/the-river-and-the-canal/) ([Markdown](https://raskell.io/ko/articles/the-river-and-the-canal.md))
+- [두뇌 없는 세 부분](https://raskell.io/ko/articles/three-parts-and-no-brain/): translation of [Three Parts and No Brain](https://raskell.io/articles/three-parts-and-no-brain/) ([Markdown](https://raskell.io/ko/articles/three-parts-and-no-brain.md))
 - [에이전트란 실제로 무엇인가](https://raskell.io/ko/articles/what-an-agent-actually-is/): translation of [What an Agent Actually Is](https://raskell.io/articles/what-an-agent-actually-is/) ([Markdown](https://raskell.io/ko/articles/what-an-agent-actually-is.md))
 - [마지막 프로그래밍 언어는 인간을 위한 것이 아닐지도 모릅니다](https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code/): translation of [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/) ([Markdown](https://raskell.io/ko/articles/what-programming-languages-become-when-ai-writes-the-code.md))
 - [모든 것을 이기되, 아무도 통제하지 않기](https://raskell.io/ko/articles/win-everything-control-no-one/): translation of [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/) ([Markdown](https://raskell.io/ko/articles/win-everything-control-no-one.md))
@@ -602,6 +611,7 @@ The site is written in English. Some articles and pages are also translated; a t
 - [발표 자료](https://raskell.io/ko/talks/): translation of [Talks](https://raskell.io/talks/)
 - [서평](https://raskell.io/ko/categories/reviews/): translation of [서평](https://raskell.io/categories/reviews/)
 - [분류](https://raskell.io/ko/categories/): translation of [분류](https://raskell.io/categories/)
+- [Learning to Play](https://raskell.io/ko/series/learning-to-play/): translation of [Learning to Play](https://raskell.io/series/learning-to-play/)
 - [The Agent Platform Handbook](https://raskell.io/ko/series/the-agent-platform-handbook/): translation of [The Agent Platform Handbook](https://raskell.io/series/the-agent-platform-handbook/)
 - [시리즈](https://raskell.io/ko/series/): translation of [시리즈](https://raskell.io/series/)
 - [주제](https://raskell.io/ko/tags/): translation of [주제](https://raskell.io/tags/)

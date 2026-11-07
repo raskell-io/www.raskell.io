@@ -1,10 +1,10 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-07T09:29:38+00:00",
+ "generated": "2026-11-07T09:41:39+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
-  "article": 41,
+  "article": 42,
   "review": 2,
   "note": 16,
   "talk": 1,
@@ -12,7 +12,7 @@
   "work": 153,
   "project": 31,
   "topic": 162,
-  "link": 530
+  "link": 533
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -39,6 +39,25 @@
     "observability"
    ],
    "meta": "32 min"
+  },
+  {
+   "kind": "article",
+   "title": "Three Parts and No Brain",
+   "url": "https://raskell.io/articles/three-parts-and-no-brain/",
+   "description": "What a chess program is made of, and how far a hand-written one gets against the computer opponent on lichess, before any learning starts.",
+   "date": "2026-11-05",
+   "topics": [
+    "game-ai",
+    "tree-search",
+    "games",
+    "rust",
+    "metrics",
+    "probability",
+    "chess",
+    "shogi",
+    "go-game"
+   ],
+   "meta": "16 min"
   },
   {
    "kind": "article",
@@ -4605,7 +4624,7 @@
   {
    "kind": "topic",
    "title": "Tree search",
-   "url": "https://raskell.io/tags#tree-search",
+   "url": "https://raskell.io/tags/tree-search/",
    "description": "Looking ahead by expanding a tree of moves: minimax and alpha-beta, Monte Carlo tree search, and the pruning and ordering that make them tractable.",
    "meta": "Concept"
   },
@@ -4842,6 +4861,35 @@
   },
   {
    "kind": "link",
+   "title": "kishi.raskell.io",
+   "url": "https://kishi.raskell.io",
+   "domain": "kishi.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Three Parts and No Brain",
+     "url": "https://raskell.io/articles/three-parts-and-no-brain/"
+    },
+    {
+     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
+     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    },
+    {
+     "title": "Win Everything, Control No One",
+     "url": "https://raskell.io/articles/win-everything-control-no-one/"
+    },
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    },
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Die Zukunft",
    "url": "https://die-zukunft.ch/",
    "domain": "die-zukunft.ch",
@@ -4912,31 +4960,6 @@
     {
      "title": "What an Agent Actually Is",
      "url": "https://raskell.io/articles/what-an-agent-actually-is/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "kishi.raskell.io",
-   "url": "https://kishi.raskell.io",
-   "domain": "kishi.raskell.io",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
-     "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
-    },
-    {
-     "title": "Win Everything, Control No One",
-     "url": "https://raskell.io/articles/win-everything-control-no-one/"
-    },
-    {
-     "title": "After PHP Gate: A Blueprint for the Static Web",
-     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
-    },
-    {
-     "title": "Learning to Play",
-     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ]
   },
@@ -5275,6 +5298,23 @@
     {
      "title": "What Sixteen AI Agents Taught Me About Management",
      "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "on GitHub",
+   "url": "https://github.com/raskell-io/kishi",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Three Parts and No Brain",
+     "url": "https://raskell.io/articles/three-parts-and-no-brain/"
+    },
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ]
   },
@@ -8810,6 +8850,19 @@
   },
   {
    "kind": "link",
+   "title": "fishnet",
+   "url": "https://github.com/lichess-org/fishnet",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Three Parts and No Brain",
+     "url": "https://raskell.io/articles/three-parts-and-no-brain/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Playwright MCP",
    "url": "https://github.com/microsoft/playwright-mcp",
    "domain": "github.com",
@@ -8922,19 +8975,6 @@
     {
      "title": "After PHP Gate: A Blueprint for the Static Web",
      "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "on GitHub",
-   "url": "https://github.com/raskell-io/kishi",
-   "domain": "github.com",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "Learning to Play",
-     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ]
   },
@@ -10937,6 +10977,32 @@
     {
      "title": "Traffic Replay as a Security Primitive",
      "url": "https://raskell.io/articles/traffic-replay-as-a-security-primitive/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "PeSTO’s evaluation function",
+   "url": "https://www.chessprogramming.org/PeSTO%27s_Evaluation_Function",
+   "domain": "chessprogramming.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Three Parts and No Brain",
+     "url": "https://raskell.io/articles/three-parts-and-no-brain/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Perft results",
+   "url": "https://www.chessprogramming.org/Perft_Results",
+   "domain": "chessprogramming.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Three Parts and No Brain",
+     "url": "https://raskell.io/articles/three-parts-and-no-brain/"
     }
    ]
   },

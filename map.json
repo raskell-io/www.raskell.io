@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-07T09:29:38+00:00",
+ "generated": "2026-11-07T09:41:39+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -11,6 +11,15 @@
    "meta": "2026-11-05 · 32 min",
    "description": "Moving from assembly to C changed what we read. Coding agents change whether we read. What psychology learned about black boxes, and what it got wrong.",
    "degree": 13
+  },
+  {
+   "id": "a:/articles/three-parts-and-no-brain/",
+   "kind": "article",
+   "label": "Three Parts and No Brain",
+   "url": "https://raskell.io/articles/three-parts-and-no-brain/",
+   "meta": "2026-11-05 · 16 min",
+   "description": "What a chess program is made of, and how far a hand-written one gets against the computer opponent on lichess, before any learning starts.",
+   "degree": 12
   },
   {
    "id": "a:/articles/it-intelligence/",
@@ -73,7 +82,7 @@
    "url": "https://raskell.io/articles/learning-to-play/",
    "meta": "2026-10-25 · 22 min",
    "description": "A chess prodigy's handbook, three old games and one laptop: rebuilding the ideas behind game-playing AI in Rust for a browser on my phone, and measuring them.",
-   "degree": 19
+   "degree": 21
   },
   {
    "id": "a:/articles/the-web-was-the-training-set/",
@@ -674,9 +683,9 @@
    "kind": "tag",
    "label": "Chess",
    "url": "https://raskell.io/tags/chess/",
-   "meta": "Domain · 3 pages",
+   "meta": "Domain · 4 pages",
    "description": "The game that served as the benchmark of machine intelligence for seventy years, from Shannon's paper to Deep Blue and engines that learn.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:china",
@@ -944,9 +953,9 @@
    "kind": "tag",
    "label": "Game AI",
    "url": "https://raskell.io/tags/game-ai/",
-   "meta": "Domain · 2 pages",
+   "meta": "Domain · 3 pages",
    "description": "Programs that play games: search, evaluation, learned networks, and how their strength is measured, from chess engines to Go and real-time strategy.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:game-design",
@@ -962,18 +971,18 @@
    "kind": "tag",
    "label": "Games",
    "url": "https://raskell.io/tags/games/",
-   "meta": "Domain · 3 pages",
+   "meta": "Domain · 4 pages",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
-   "degree": 19
+   "degree": 20
   },
   {
    "id": "t:go-game",
    "kind": "tag",
    "label": "Go",
    "url": "https://raskell.io/tags/go-game/",
-   "meta": "Domain · 3 pages",
+   "meta": "Domain · 4 pages",
    "description": "The board game whose positions resisted hand-written evaluation until AlphaGo, and the clearest case for learned intuition guiding search.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:goat",
@@ -1169,9 +1178,9 @@
    "kind": "tag",
    "label": "Metrics",
    "url": "https://raskell.io/tags/metrics/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "What to measure, leading versus lagging signals, and vanity numbers that look like insight.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:money",
@@ -1322,9 +1331,9 @@
    "kind": "tag",
    "label": "Probability",
    "url": "https://raskell.io/tags/probability/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Chance made countable: the law of large numbers behind insurance, error margins on a measurement, and tails that are fatter than they look.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:programming-languages",
@@ -1394,9 +1403,9 @@
    "kind": "tag",
    "label": "Rust",
    "url": "https://raskell.io/tags/rust/",
-   "meta": "Technology · 10 pages",
+   "meta": "Technology · 11 pages",
    "description": "The systems language most of the projects here are written in.",
-   "degree": 36
+   "degree": 37
   },
   {
    "id": "t:science-fiction",
@@ -1439,9 +1448,9 @@
    "kind": "tag",
    "label": "Shogi",
    "url": "https://raskell.io/tags/shogi/",
-   "meta": "Domain · 2 pages",
+   "meta": "Domain · 3 pages",
    "description": "Japanese chess, where captured pieces return to the board, and where the NNUE networks now inside every strong chess engine were invented.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:simulation",
@@ -1532,6 +1541,15 @@
    "meta": "Concept · 2 pages",
    "description": "What models learn from: web crawls, books, and licensed or unlicensed corpora; who holds what has not been scraped yet, and on what terms.",
    "degree": 7
+  },
+  {
+   "id": "t:tree-search",
+   "kind": "tag",
+   "label": "Tree search",
+   "url": "https://raskell.io/tags/tree-search/",
+   "meta": "Concept · 1 page",
+   "description": "Looking ahead by expanding a tree of moves: minimax and alpha-beta, Monte Carlo tree search, and the pruning and ordering that make them tractable.",
+   "degree": 2
   },
   {
    "id": "t:trust",
@@ -1993,15 +2011,6 @@
    "degree": 7
   },
   {
-   "id": "t:tree-search",
-   "kind": "tag",
-   "label": "Tree search",
-   "url": "https://raskell.io/tags#tree-search",
-   "meta": "Concept · no pages yet",
-   "description": "Looking ahead by expanding a tree of moves: minimax and alpha-beta, Monte Carlo tree search, and the pruning and ordering that make them tractable.",
-   "degree": 1
-  },
-  {
    "id": "t:utopias",
    "kind": "tag",
    "label": "Utopias",
@@ -2009,6 +2018,14 @@
    "meta": "Concept · no pages yet",
    "description": "Designs for a better society, imagined or attempted: colonies, planned economies, post-scarcity civilisations, and what became of them.",
    "degree": 12
+  },
+  {
+   "id": "s:learning-to-play",
+   "kind": "series",
+   "label": "Learning To Play",
+   "url": "https://raskell.io/series/learning-to-play/",
+   "meta": "2 parts",
+   "degree": 2
   },
   {
    "id": "s:the-agent-platform-handbook",
@@ -2205,7 +2222,7 @@
    "url": "https://kishi.raskell.io",
    "meta": "Project",
    "description": "Chess, shogi and Go against engines written in Rust and compiled to WebAssembly. They play in the browser on your own device, offline, from novice to full strength, on a quiet boar…",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "p:sango",
@@ -4078,6 +4095,10 @@
    "target": "t:mathematics"
   },
   {
+   "source": "a:/articles/three-parts-and-no-brain/",
+   "target": "t:chess"
+  },
+  {
    "source": "a:/articles/the-river-and-the-canal/",
    "target": "t:chess"
   },
@@ -4638,6 +4659,10 @@
    "target": "t:social-reform"
   },
   {
+   "source": "a:/articles/three-parts-and-no-brain/",
+   "target": "t:game-ai"
+  },
+  {
    "source": "a:/articles/the-river-and-the-canal/",
    "target": "t:game-ai"
   },
@@ -4666,6 +4691,10 @@
    "target": "t:games"
   },
   {
+   "source": "a:/articles/three-parts-and-no-brain/",
+   "target": "t:games"
+  },
+  {
    "source": "a:/notes/goat-games/",
    "target": "t:games"
   },
@@ -4676,6 +4705,10 @@
   {
    "source": "a:/articles/learning-to-play/",
    "target": "t:games"
+  },
+  {
+   "source": "a:/articles/three-parts-and-no-brain/",
+   "target": "t:go-game"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
@@ -5058,6 +5091,10 @@
    "target": "t:meta"
   },
   {
+   "source": "a:/articles/three-parts-and-no-brain/",
+   "target": "t:metrics"
+  },
+  {
    "source": "a:/articles/the-bill-is-part-of-the-loop/",
    "target": "t:metrics"
   },
@@ -5262,6 +5299,10 @@
    "target": "t:future-of-work"
   },
   {
+   "source": "a:/articles/three-parts-and-no-brain/",
+   "target": "t:probability"
+  },
+  {
    "source": "a:/articles/the-original-data-company/",
    "target": "t:probability"
   },
@@ -5382,6 +5423,10 @@
    "target": "t:economics"
   },
   {
+   "source": "a:/articles/three-parts-and-no-brain/",
+   "target": "t:rust"
+  },
+  {
    "source": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
    "target": "t:rust"
   },
@@ -5480,6 +5525,10 @@
   {
    "source": "t:semiotics",
    "target": "t:philosophy"
+  },
+  {
+   "source": "a:/articles/three-parts-and-no-brain/",
+   "target": "t:shogi"
   },
   {
    "source": "a:/articles/win-everything-control-no-one/",
@@ -5640,6 +5689,14 @@
   {
    "source": "t:training-data",
    "target": "t:machine-learning"
+  },
+  {
+   "source": "a:/articles/three-parts-and-no-brain/",
+   "target": "t:tree-search"
+  },
+  {
+   "source": "t:tree-search",
+   "target": "t:game-ai"
   },
   {
    "source": "a:/articles/the-behavioural-turn/",
@@ -6050,16 +6107,20 @@
    "target": "t:philosophy"
   },
   {
-   "source": "t:tree-search",
-   "target": "t:game-ai"
-  },
-  {
    "source": "t:utopias",
    "target": "t:social-reform"
   },
   {
    "source": "t:utopias",
    "target": "t:philosophy"
+  },
+  {
+   "source": "a:/articles/three-parts-and-no-brain/",
+   "target": "s:learning-to-play"
+  },
+  {
+   "source": "a:/articles/learning-to-play/",
+   "target": "s:learning-to-play"
   },
   {
    "source": "a:/articles/observability-is-not-logging/",
@@ -6124,6 +6185,10 @@
   {
    "source": "a:/articles/the-behavioural-turn/",
    "target": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/"
+  },
+  {
+   "source": "a:/articles/three-parts-and-no-brain/",
+   "target": "a:/articles/learning-to-play/"
   },
   {
    "source": "a:/articles/it-intelligence/",
@@ -6924,6 +6989,10 @@
   {
    "source": "a:/articles/learning-to-play/",
    "target": "p:hotaru"
+  },
+  {
+   "source": "a:/articles/three-parts-and-no-brain/",
+   "target": "p:kishi"
   },
   {
    "source": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
