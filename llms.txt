@@ -100,6 +100,8 @@ Datasets, listed at https://raskell.io/data/. Each is one file under https://ras
 Short notes, a paragraph or a page each; some grow into articles.
 
 - [In vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro.md) (2026-11-07): An open question: can intelligence be measured anywhere but in performance? My hunch is that it shows only when an agent acts.
+- [Who carries progress](https://raskell.io/notes/who-carries-progress.md) (2026-11-07): A colleague says the breakthroughs come from academia and the state. I think they come from people who have to make things work, and that what they learn spreads.
+- [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan.md) (2026-11-07): Large language models were funded before anyone could say what they were for. That took a dense pool of capital and a few people deciding where it went.
 - [My GOAT games](https://raskell.io/notes/goat-games.md) (2026-11-03): My twenty-five greatest games of all time as one chart, from Phantasy Star Online to Anno 1602.
 - [Who contributed to AI](https://raskell.io/notes/who-contributed-to-ai.md) (2026-11-01): A companion piece to Karen Hao's Empire of AI and Sebastian Mallaby's The Infinity Machine: who built AI, where, and which idea led to which product.
 - [Gangsters: Organized Crime, orders for the week](https://raskell.io/notes/orders-for-the-week.md) (2026-11-01): Gangsters: Organized Crime had you plan a week of orders and then watch the city carry them out. I have not played anything like it since.
@@ -363,6 +365,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 
 ### Concepts
 
+- Capital allocation (`capital-allocation`) [within Finance, Entrepreneurship]: Who decides where a society's money, time and talent go, how concentrated that decision is, and what gets built because of it.
 - Language (`language`) [within Linguistics, Intelligence]: Language as a faculty and a medium: how it carries thought and knowledge, and whether a machine that learns only text learns the world.
 - Agents (`agents`) [within AI platforms]: LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.
 - Context engineering (`context-engineering`) [within Agents]: Deciding what a model sees: pinned context, retrieval, memory, and the conventions that keep them honest.

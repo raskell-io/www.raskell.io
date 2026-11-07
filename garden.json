@@ -1,17 +1,17 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-07T09:00:16+00:00",
+ "generated": "2026-11-07T09:29:38+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "article": 41,
   "review": 2,
-  "note": 14,
+  "note": 16,
   "talk": 1,
   "dataset": 1,
   "work": 153,
   "project": 31,
-  "topic": 161,
+  "topic": 162,
   "link": 530
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
@@ -746,6 +746,21 @@
   },
   {
    "kind": "note",
+   "title": "A billion without a plan",
+   "url": "https://raskell.io/notes/a-billion-without-a-plan/",
+   "description": "Large language models were funded before anyone could say what they were for. That took a dense pool of capital and a few people deciding where it went.",
+   "date": "2026-11-07",
+   "topics": [
+    "capital-allocation",
+    "research-labs",
+    "technology-races",
+    "entrepreneurship",
+    "china",
+    "united-states"
+   ]
+  },
+  {
+   "kind": "note",
    "title": "In vivo, not in vitro",
    "url": "https://raskell.io/notes/in-vivo-not-in-vitro/",
    "description": "An open question: can intelligence be measured anywhere but in performance? My hunch is that it shows only when an agent acts.",
@@ -758,6 +773,20 @@
     "evaluation",
     "agents",
     "legibility"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Who carries progress",
+   "url": "https://raskell.io/notes/who-carries-progress/",
+   "description": "A colleague says the breakthroughs come from academia and the state. I think they come from people who have to make things work, and that what they learn spreads.",
+   "date": "2026-11-07",
+   "topics": [
+    "capital-allocation",
+    "entrepreneurship",
+    "democratisation",
+    "history-of-technology",
+    "post-scarcity"
    ]
   },
   {
@@ -3619,6 +3648,13 @@
    "title": "Augmentation",
    "url": "https://raskell.io/tags/augmentation/",
    "description": "Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Capital allocation",
+   "url": "https://raskell.io/tags/capital-allocation/",
+   "description": "Who decides where a society's money, time and talent go, how concentrated that decision is, and what gets built because of it.",
    "meta": "Concept"
   },
   {

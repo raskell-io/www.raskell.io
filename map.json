@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-07T09:00:16+00:00",
+ "generated": "2026-11-07T09:29:38+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -391,13 +391,31 @@
    "degree": 4
   },
   {
+   "id": "a:/notes/a-billion-without-a-plan/",
+   "kind": "note",
+   "label": "A billion without a plan",
+   "url": "https://raskell.io/notes/a-billion-without-a-plan/",
+   "meta": "2026-11-07",
+   "description": "Large language models were funded before anyone could say what they were for. That took a dense pool of capital and a few people deciding where it went.",
+   "degree": 8
+  },
+  {
    "id": "a:/notes/in-vivo-not-in-vitro/",
    "kind": "note",
    "label": "In vivo, not in vitro",
    "url": "https://raskell.io/notes/in-vivo-not-in-vitro/",
    "meta": "2026-11-07",
    "description": "An open question: can intelligence be measured anywhere but in performance? My hunch is that it shows only when an agent acts.",
-   "degree": 8
+   "degree": 9
+  },
+  {
+   "id": "a:/notes/who-carries-progress/",
+   "kind": "note",
+   "label": "Who carries progress",
+   "url": "https://raskell.io/notes/who-carries-progress/",
+   "meta": "2026-11-07",
+   "description": "A colleague says the breakthroughs come from academia and the state. I think they come from people who have to make things work, and that what they learn spreads.",
+   "degree": 10
   },
   {
    "id": "a:/notes/goat-games/",
@@ -634,6 +652,15 @@
    "degree": 16
   },
   {
+   "id": "t:capital-allocation",
+   "kind": "tag",
+   "label": "Capital allocation",
+   "url": "https://raskell.io/tags/capital-allocation/",
+   "meta": "Concept · 2 pages",
+   "description": "Who decides where a society's money, time and talent go, how concentrated that decision is, and what gets built because of it.",
+   "degree": 4
+  },
+  {
    "id": "t:chaos-theory",
    "kind": "tag",
    "label": "Chaos theory",
@@ -656,9 +683,9 @@
    "kind": "tag",
    "label": "China",
    "url": "https://raskell.io/tags/china/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "China in history and in technology: the Silk Roads and Sun Tzu, its share of patents and research, its race with the United States, and its language.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:cities",
@@ -728,9 +755,9 @@
    "kind": "tag",
    "label": "Democratisation",
    "url": "https://raskell.io/tags/democratisation/",
-   "meta": "Concept · 6 pages",
+   "meta": "Concept · 7 pages",
    "description": "A capability that needed money, a team, or years of training becoming available to anyone: printing, the web, and now building software by describing it.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:determinism",
@@ -827,9 +854,9 @@
    "kind": "tag",
    "label": "Entrepreneurship",
    "url": "https://raskell.io/tags/entrepreneurship/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 3 pages",
    "description": "Finding something worth building and building it: ventures, side projects, and what changes when anyone can spot an opportunity and operate a business with AI.",
-   "degree": 4
+   "degree": 7
   },
   {
    "id": "t:ethics",
@@ -883,7 +910,7 @@
    "url": "https://raskell.io/tags/finance/",
    "meta": "Domain · 2 pages",
    "description": "Banks, insurers, money and credit: abstract businesses that sell kept promises, allocate a society's resources and turn trust into procedure.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:formal-methods",
@@ -980,9 +1007,9 @@
    "kind": "tag",
    "label": "History of technology",
    "url": "https://raskell.io/tags/history-of-technology/",
-   "meta": "Concept · 8 pages",
+   "meta": "Concept · 9 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 29
+   "degree": 30
   },
   {
    "id": "t:hypertext",
@@ -1286,9 +1313,9 @@
    "kind": "tag",
    "label": "Post-scarcity",
    "url": "https://raskell.io/tags/post-scarcity/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "What changes when making things costs next to nothing: copied software, AI labour, mission-built machines, and the economies and societies that might follow.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:probability",
@@ -1349,9 +1376,9 @@
    "kind": "tag",
    "label": "Research labs",
    "url": "https://raskell.io/tags/research-labs/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "The institutions where discovery happens and how they are funded and run: CERN, Bell Labs, ARPA, Los Alamos, DeepMind, and the labs behind modern medicine.",
-   "degree": 17
+   "degree": 18
   },
   {
    "id": "t:risk",
@@ -1493,9 +1520,9 @@
    "kind": "tag",
    "label": "Technology races",
    "url": "https://raskell.io/tags/technology-races/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "Powers racing to build a technology first, from the bomb and its deterrence to frontier AI and the data it needs.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "t:training-data",
@@ -1538,9 +1565,9 @@
    "kind": "tag",
    "label": "United States",
    "url": "https://raskell.io/tags/united-states/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "America's place in technology and power: where the frontier labs and chips are, its founding ideas, and its race with China.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "t:waf",
@@ -2286,7 +2313,7 @@
    "url": "https://raskell.io/reading/#empire-of-ai",
    "meta": "Book · Karen Hao · reading now",
    "description": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "w:the-cauldron",
@@ -2583,7 +2610,7 @@
    "url": "https://raskell.io/articles/the-web-was-the-training-set/",
    "meta": "Book · Tim Berners-Lee · read October 2025",
    "description": "Read on the shores of Okinawa: the web as a commons, how far what we built drifted from it, and why the models exist at all.",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "w:the-invention-of-science",
@@ -2871,7 +2898,7 @@
    "url": "https://raskell.io/reading/#die-befreiung-der-schweiz",
    "meta": "Book · Christian Müller and Daniel Straub · read 2012",
    "description": "The case for an unconditional basic income in Switzerland, from the people who put it to a vote.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "w:beyond-order",
@@ -4023,6 +4050,22 @@
    "target": "t:intelligence"
   },
   {
+   "source": "a:/notes/a-billion-without-a-plan/",
+   "target": "t:capital-allocation"
+  },
+  {
+   "source": "a:/notes/who-carries-progress/",
+   "target": "t:capital-allocation"
+  },
+  {
+   "source": "t:capital-allocation",
+   "target": "t:finance"
+  },
+  {
+   "source": "t:capital-allocation",
+   "target": "t:entrepreneurship"
+  },
+  {
    "source": "a:/notes/everything-is-a-fractal/",
    "target": "t:chaos-theory"
   },
@@ -4049,6 +4092,10 @@
   {
    "source": "t:chess",
    "target": "t:games"
+  },
+  {
+   "source": "a:/notes/a-billion-without-a-plan/",
+   "target": "t:china"
   },
   {
    "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
@@ -4181,6 +4228,10 @@
   {
    "source": "t:decentralisation",
    "target": "t:distributed-systems"
+  },
+  {
+   "source": "a:/notes/who-carries-progress/",
+   "target": "t:democratisation"
   },
   {
    "source": "a:/articles/it-intelligence/",
@@ -4413,6 +4464,14 @@
   {
    "source": "a:/articles/it-intelligence/",
    "target": "t:enterprise-architecture"
+  },
+  {
+   "source": "a:/notes/a-billion-without-a-plan/",
+   "target": "t:entrepreneurship"
+  },
+  {
+   "source": "a:/notes/who-carries-progress/",
+   "target": "t:entrepreneurship"
   },
   {
    "source": "a:/notes/citizen-entrepreneurs/",
@@ -4693,6 +4752,10 @@
   {
    "source": "t:haskell",
    "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/notes/who-carries-progress/",
+   "target": "t:history-of-technology"
   },
   {
    "source": "a:/articles/the-original-data-company/",
@@ -5175,6 +5238,10 @@
    "target": "t:policy"
   },
   {
+   "source": "a:/notes/who-carries-progress/",
+   "target": "t:post-scarcity"
+  },
+  {
    "source": "a:/articles/the-river-and-the-canal/",
    "target": "t:post-scarcity"
   },
@@ -5273,6 +5340,10 @@
   {
    "source": "a:/articles/traffic-replay-as-a-security-primitive/",
    "target": "t:reliability"
+  },
+  {
+   "source": "a:/notes/a-billion-without-a-plan/",
+   "target": "t:research-labs"
   },
   {
    "source": "a:/data/ai-people/",
@@ -5531,6 +5602,10 @@
    "target": "t:europe"
   },
   {
+   "source": "a:/notes/a-billion-without-a-plan/",
+   "target": "t:technology-races"
+  },
+  {
    "source": "a:/data/ai-people/",
    "target": "t:technology-races"
   },
@@ -5661,6 +5736,10 @@
   {
    "source": "t:typescript",
    "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/notes/a-billion-without-a-plan/",
+   "target": "t:united-states"
   },
   {
    "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
@@ -6437,6 +6516,14 @@
   {
    "source": "a:/articles/all-beginning-is-haskell/",
    "target": "a:/articles/mise-ate-my-makefile/"
+  },
+  {
+   "source": "a:/notes/a-billion-without-a-plan/",
+   "target": "a:/notes/who-carries-progress/"
+  },
+  {
+   "source": "a:/notes/who-carries-progress/",
+   "target": "a:/notes/in-vivo-not-in-vitro/"
   },
   {
    "source": "a:/notes/goat-games/",
@@ -7699,7 +7786,15 @@
    "target": "t:language"
   },
   {
+   "source": "a:/notes/a-billion-without-a-plan/",
+   "target": "w:empire-of-ai"
+  },
+  {
    "source": "a:/notes/in-vivo-not-in-vitro/",
+   "target": "w:empire-of-ai"
+  },
+  {
+   "source": "a:/notes/who-carries-progress/",
    "target": "w:empire-of-ai"
   },
   {
@@ -8388,6 +8483,10 @@
   },
   {
    "source": "a:/articles/looking-back-on-2025/",
+   "target": "w:this-is-for-everyone"
+  },
+  {
+   "source": "a:/notes/who-carries-progress/",
    "target": "w:this-is-for-everyone"
   },
   {
@@ -9137,6 +9236,10 @@
   {
    "source": "w:die-befreiung-der-schweiz",
    "target": "t:democracy"
+  },
+  {
+   "source": "a:/notes/who-carries-progress/",
+   "target": "w:die-befreiung-der-schweiz"
   },
   {
    "source": "w:beyond-order",
