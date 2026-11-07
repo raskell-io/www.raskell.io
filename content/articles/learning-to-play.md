@@ -5,6 +5,7 @@ description = "A chess prodigy's handbook, three old games and one laptop: rebui
 
 [taxonomies]
 tags = ["game-ai", "machine-learning", "reinforcement-learning", "games", "rust", "webassembly", "history-of-technology", "chess", "shogi", "go-game"]
+series = ["learning-to-play"]
 
 [extra]
 author = "Raffael"

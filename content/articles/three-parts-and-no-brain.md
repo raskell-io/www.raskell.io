@@ -1,7 +1,6 @@
 +++
 title = "Three Parts and No Brain"
 date = 2026-11-05
-draft = true
 description = "What a chess program is made of, and how far a hand-written one gets against the computer opponent on lichess, before any learning starts."
 
 [taxonomies]
@@ -10,6 +9,8 @@ series = ["learning-to-play"]
 
 [extra]
 author = "Raffael"
+image = "three-parts-and-no-brain.avif"
+cover = "covers/three-parts-and-no-brain.avif"
 in_short = [
   "Before any learning starts, I built Kishi's chess engine from the three parts Levy described: the board as numbers, an evaluation that says who is better, and a search that looks ahead.",
   "The bitboard representation is checked by perft on every change, and the hand-written PeSTO evaluation holds almost none of the chess; the strength lives in the search and its pile of tuned statistical bets.",
@@ -18,20 +19,6 @@ in_short = [
   "The same construction gives a fair club opponent in shogi, while Go needs random playouts instead, and this baseline is the opponent every trained neural network in the project will have to beat.",
 ]
 +++
-
-<!--
-DRAFT NOTES (remove before publish)
-1. This is the second piece, so the series becomes real with it: `series = ["learning-to-play"]` is set
-   here; add the same line under [taxonomies] in learning-to-play.md and commit the series description
-   that is already in config.toml. Both pages then get a "Series" row and the /series/learning-to-play/
-   page exists.
-2. One timing was never recorded and would round the cost table off: how long a 600-game match at
-   10,000 nodes takes on ten cores. The depth and speed figures were measured on 2026-10-25 (notebook).
-3. Hero image in the usual style. One idea: the lichess level picker (the eight-step slider) with the
-   pixel creature stuck between 6 and 7.
-4. Facts to check against your own memory: the opening paragraph says you play the lichess computer on
-   trains and have a level you cannot beat; adjust the level if you want to name it.
--->
 
 The chess computer on lichess has eight levels. I play it on trains, on my phone, and like everyone who plays it I have a level I can beat and a level that beats me. When I built my own engine last month, the first question from anyone I showed it to was the same question I had been asking myself: what level is it? It sounds like the easiest thing in the world to answer. It turned out to be the hardest part of the whole project, harder than getting the program to play at all, and the answer is the point of this piece.
 
@@ -158,7 +145,7 @@ Go did not get the three parts, because they do not work. There is no table of 3
 |---|---|
 | The engine | a few days of Rust, written with a coding agent, me steering |
 | The rules test | seconds, on every change |
-| Positions searched per second, one core | about 3.5 million |
+| Positions searched per second, one core | 3 to 3.7 million |
 | A 600-game match at 10,000 positions a move | an evening on ten cores |
 | Twenty games against a lichess level | minutes |
 
