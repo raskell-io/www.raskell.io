@@ -136,6 +136,12 @@ kind = "domain"
 description = "Banks, insurers, money and credit: abstract businesses that sell kept promises, allocate a society's resources and turn trust into procedure."
 broader = ["economics"]
 
+[capital-allocation]
+name = "Capital allocation"
+kind = "concept"
+description = "Who decides where a society's money, time and talent go, how concentrated that decision is, and what gets built because of it."
+broader = ["finance", "entrepreneurship"]
+
 [cryptocurrency]
 name = "Cryptocurrency"
 kind = "domain"

@@ -5,7 +5,7 @@ draft = true
 description = "A person spending their time, a family choosing a school, a bank choosing a borrower: the same act of betting on the future with limited resources."
 
 [taxonomies]
-tags = ["fractals", "finance", "risk"]
+tags = ["fractals", "finance", "risk", "capital-allocation"]
 
 [extra]
 reads = ["skin-in-the-game"]
