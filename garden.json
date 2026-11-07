@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-05T13:14:56+00:00",
+ "generated": "2026-11-07T09:00:16+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "article": 41,
   "review": 2,
-  "note": 13,
+  "note": 14,
   "talk": 1,
   "dataset": 1,
   "work": 153,
   "project": 31,
-  "topic": 160,
-  "link": 528
+  "topic": 161,
+  "link": 530
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -746,6 +746,22 @@
   },
   {
    "kind": "note",
+   "title": "In vivo, not in vitro",
+   "url": "https://raskell.io/notes/in-vivo-not-in-vitro/",
+   "description": "An open question: can intelligence be measured anywhere but in performance? My hunch is that it shows only when an agent acts.",
+   "date": "2026-11-07",
+   "topics": [
+    "intelligence",
+    "language",
+    "linguistics",
+    "semiotics",
+    "evaluation",
+    "agents",
+    "legibility"
+   ]
+  },
+  {
+   "kind": "note",
    "title": "My GOAT games",
    "url": "https://raskell.io/notes/goat-games/",
    "description": "My twenty-five greatest games of all time as one chart, from Phantasy Star Online to Anno 1602.",
@@ -961,7 +977,8 @@
     "research-labs",
     "training-data",
     "technology-races",
-    "hubris"
+    "hubris",
+    "language"
    ],
    "meta": "Book · Karen Hao · Reading now"
   },
@@ -1673,7 +1690,8 @@
    "topics": [
     "languages",
     "intelligence",
-    "linguistics"
+    "linguistics",
+    "language"
    ],
    "meta": "Book · Daniel Everett · Read"
   },
@@ -2482,7 +2500,8 @@
     "neural-networks",
     "neuroscience",
     "languages",
-    "linguistics"
+    "linguistics",
+    "language"
    ],
    "meta": "Book · Christopher Summerfield · Backlog"
   },
@@ -4042,6 +4061,13 @@
    "url": "https://raskell.io/tags/kubernetes/",
    "description": "Container orchestration, and the question of when you actually need it.",
    "meta": "Technology"
+  },
+  {
+   "kind": "topic",
+   "title": "Language",
+   "url": "https://raskell.io/tags/language/",
+   "description": "Language as a faculty and a medium: how it carries thought and knowledge, and whether a machine that learns only text learns the world.",
+   "meta": "Concept"
   },
   {
    "kind": "topic",
@@ -6161,6 +6187,19 @@
   },
   {
    "kind": "link",
+   "title": "Universal Intelligence: A Definition of Machine Intelligence",
+   "url": "https://arxiv.org/abs/0712.3329",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "In vivo, not in vitro",
+     "url": "https://raskell.io/notes/in-vivo-not-in-vitro/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "A Novel Approach for Estimating Truck Factors",
    "url": "https://arxiv.org/abs/1604.06766",
    "domain": "arxiv.org",
@@ -6377,6 +6416,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The Symbol Grounding Problem",
+   "url": "https://arxiv.org/abs/cs/9906002",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "In vivo, not in vitro",
+     "url": "https://raskell.io/notes/in-vivo-not-in-vitro/"
     }
    ]
   },

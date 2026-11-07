@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-05T13:14:56+00:00",
+ "generated": "2026-11-07T09:00:16+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 528,
+ "count": 530,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -1554,6 +1554,19 @@
    "citations": 1
   },
   {
+   "url": "https://arxiv.org/abs/0712.3329",
+   "title": "Universal Intelligence: A Definition of Machine Intelligence",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "In vivo, not in vitro",
+     "url": "https://raskell.io/notes/in-vivo-not-in-vitro/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://arxiv.org/abs/1604.06766",
    "title": "A Novel Approach for Estimating Truck Factors",
    "domain": "arxiv.org",
@@ -1770,6 +1783,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/cs/9906002",
+   "title": "The Symbol Grounding Problem",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "In vivo, not in vitro",
+     "url": "https://raskell.io/notes/in-vivo-not-in-vitro/"
     }
    ],
    "citations": 1

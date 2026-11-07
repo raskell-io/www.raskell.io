@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-05T13:14:56+00:00",
+ "generated": "2026-11-07T09:00:16+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -391,6 +391,15 @@
    "degree": 4
   },
   {
+   "id": "a:/notes/in-vivo-not-in-vitro/",
+   "kind": "note",
+   "label": "In vivo, not in vitro",
+   "url": "https://raskell.io/notes/in-vivo-not-in-vitro/",
+   "meta": "2026-11-07",
+   "description": "An open question: can intelligence be measured anywhere but in performance? My hunch is that it shows only when an agent acts.",
+   "degree": 8
+  },
+  {
    "id": "a:/notes/goat-games/",
    "kind": "note",
    "label": "My GOAT games",
@@ -557,9 +566,9 @@
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 15 pages",
+   "meta": "Concept · 16 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 24
+   "degree": 25
   },
   {
    "id": "t:ai-alignment",
@@ -845,9 +854,9 @@
    "kind": "tag",
    "label": "Evaluation",
    "url": "https://raskell.io/tags/evaluation/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Measuring whether an AI system does the right thing: golden sets, structural checks, LLM-as-judge, and regression suites.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:external-memory",
@@ -1016,9 +1025,9 @@
    "kind": "tag",
    "label": "Intelligence",
    "url": "https://raskell.io/tags/intelligence/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.",
-   "degree": 21
+   "degree": 23
   },
   {
    "id": "t:internet-culture",
@@ -1057,6 +1066,15 @@
    "degree": 2
   },
   {
+   "id": "t:language",
+   "kind": "tag",
+   "label": "Language",
+   "url": "https://raskell.io/tags/language/",
+   "meta": "Concept · 1 page",
+   "description": "Language as a faculty and a medium: how it carries thought and knowledge, and whether a machine that learns only text learns the world.",
+   "degree": 6
+  },
+  {
    "id": "t:languages",
    "kind": "tag",
    "label": "Languages and translation",
@@ -1070,18 +1088,18 @@
    "kind": "tag",
    "label": "Legibility",
    "url": "https://raskell.io/tags/legibility/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Making a complex system readable from above: what the measure captures, what it erases, and what breaks when the map replaces the territory.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:linguistics",
    "kind": "tag",
    "label": "Linguistics",
    "url": "https://raskell.io/tags/linguistics/",
-   "meta": "Domain · 2 pages",
+   "meta": "Domain · 3 pages",
    "description": "How human language works: grammar, meaning and culture, how languages differ and change, and what the languages we write for machines borrow from them.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "t:linux",
@@ -1385,9 +1403,9 @@
    "kind": "tag",
    "label": "Semiotics",
    "url": "https://raskell.io/tags/semiotics/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Signs and how they carry meaning: symbols, codes and interpretation, and the gap between a sign and what it stands for, in texts, myths and machines.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:shogi",
@@ -2268,7 +2286,7 @@
    "url": "https://raskell.io/reading/#empire-of-ai",
    "meta": "Book · Karen Hao · reading now",
    "description": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
-   "degree": 7
+   "degree": 9
   },
   {
    "id": "w:the-cauldron",
@@ -2727,7 +2745,7 @@
    "url": "https://raskell.io/reading/#language-the-cultural-tool",
    "meta": "Book · Daniel Everett · read 2012",
    "description": "Language as a cultural invention rather than an innate grammar, argued from the Pirahã of the Amazon.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:erkenne-die-welt",
@@ -3258,7 +3276,7 @@
    "url": "https://raskell.io/reading/#these-strange-new-minds",
    "meta": "Book · Christopher Summerfield · in the backlog",
    "description": "How large language models learned to talk, and what they are and are not, by a neuroscientist who has worked at DeepMind.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "w:ai-snake-oil",
@@ -3767,6 +3785,10 @@
   {
    "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
    "target": "t:aerospace"
+  },
+  {
+   "source": "a:/notes/in-vivo-not-in-vitro/",
+   "target": "t:agents"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
@@ -4425,6 +4447,10 @@
    "target": "t:geography"
   },
   {
+   "source": "a:/notes/in-vivo-not-in-vitro/",
+   "target": "t:evaluation"
+  },
+  {
    "source": "a:/articles/the-behavioural-turn/",
    "target": "t:evaluation"
   },
@@ -4789,6 +4815,10 @@
    "target": "t:economics"
   },
   {
+   "source": "a:/notes/in-vivo-not-in-vitro/",
+   "target": "t:intelligence"
+  },
+  {
    "source": "a:/articles/win-everything-control-no-one/",
    "target": "t:intelligence"
   },
@@ -4857,12 +4887,28 @@
    "target": "t:platform-automation"
   },
   {
+   "source": "a:/notes/in-vivo-not-in-vitro/",
+   "target": "t:language"
+  },
+  {
+   "source": "t:language",
+   "target": "t:linguistics"
+  },
+  {
+   "source": "t:language",
+   "target": "t:intelligence"
+  },
+  {
    "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
    "target": "t:languages"
   },
   {
    "source": "t:languages",
    "target": "t:literature"
+  },
+  {
+   "source": "a:/notes/in-vivo-not-in-vitro/",
+   "target": "t:legibility"
   },
   {
    "source": "a:/articles/it-intelligence/",
@@ -4883,6 +4929,10 @@
   {
    "source": "t:legibility",
    "target": "t:observability"
+  },
+  {
+   "source": "a:/notes/in-vivo-not-in-vitro/",
+   "target": "t:linguistics"
   },
   {
    "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
@@ -5343,6 +5393,10 @@
   {
    "source": "a:/articles/notes-from-rsac-2026/",
    "target": "t:semiconductors"
+  },
+  {
+   "source": "a:/notes/in-vivo-not-in-vitro/",
+   "target": "t:semiotics"
   },
   {
    "source": "a:/articles/semantic-artifacts-and-meaning-engines/",
@@ -7641,6 +7695,14 @@
    "target": "t:hubris"
   },
   {
+   "source": "w:empire-of-ai",
+   "target": "t:language"
+  },
+  {
+   "source": "a:/notes/in-vivo-not-in-vitro/",
+   "target": "w:empire-of-ai"
+  },
+  {
    "source": "a:/notes/who-contributed-to-ai/",
    "target": "w:empire-of-ai"
   },
@@ -8735,6 +8797,10 @@
   {
    "source": "w:language-the-cultural-tool",
    "target": "t:linguistics"
+  },
+  {
+   "source": "w:language-the-cultural-tool",
+   "target": "t:language"
   },
   {
    "source": "w:erkenne-die-welt",
@@ -9987,6 +10053,10 @@
   {
    "source": "w:these-strange-new-minds",
    "target": "t:linguistics"
+  },
+  {
+   "source": "w:these-strange-new-minds",
+   "target": "t:language"
   },
   {
    "source": "w:ai-snake-oil",
