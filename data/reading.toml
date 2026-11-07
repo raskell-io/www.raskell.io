@@ -40,7 +40,7 @@ cover = "covers/reading/empire-of-ai.avif"
 year = 2025
 status = "reading"
 started = "2026-10"
-topics = ["research-labs", "training-data", "technology-races", "hubris"]
+topics = ["research-labs", "training-data", "technology-races", "hubris", "language"]
 about = "A work of investigative journalism tracing OpenAI from its founding as a non-profit research lab to a commercial giant, including the 2023 boardroom crisis around Sam Altman. Hao argues that the AI industry behaves like a new empire, drawing on data, labour, water and land, and she reports from Kenya, Chile, Colombia and elsewhere to show who bears those costs."
 take = "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them."
 
@@ -771,7 +771,7 @@ cover_id = "7498236"
 year = 2012
 status = "read"
 finished = "2012"
-topics = ["languages", "intelligence", "linguistics"]
+topics = ["languages", "intelligence", "linguistics", "language"]
 about = "Drawing on decades of fieldwork among the Pirahã of the Amazon, Everett argues against the Chomskyan claim of an innate universal grammar. He presents language as a tool shaped by human cognition, culture and communicative need, and he discusses recursion, the links between culture and grammar, and what this view implies for linguistics and the study of the mind."
 take = "Language as a cultural invention rather than an innate grammar, argued from the Pirahã of the Amazon."
 
@@ -1632,7 +1632,7 @@ cover = "covers/reading/these-strange-new-minds.avif"
 isbn = "9780593831717"
 year = 2025
 status = "backlog"
-topics = ["intelligence", "neural-networks", "neuroscience", "languages", "linguistics"]
+topics = ["intelligence", "neural-networks", "neuroscience", "languages", "linguistics", "language"]
 about = "An account for general readers of how large language models came about, tracing ideas about machine intelligence from the seventeenth century to modern neural networks. Summerfield, an Oxford cognitive neuroscientist, examines whether these systems can be said to think or understand, compares them with human cognition, and considers their risks and their likely effects on society."
 take = "How large language models learned to talk, and what they are and are not, by a neuroscientist who has worked at DeepMind."
 

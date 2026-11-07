@@ -198,6 +198,12 @@ name = "Linguistics"
 kind = "domain"
 description = "How human language works: grammar, meaning and culture, how languages differ and change, and what the languages we write for machines borrow from them."
 
+[language]
+name = "Language"
+kind = "concept"
+description = "Language as a faculty and a medium: how it carries thought and knowledge, and whether a machine that learns only text learns the world."
+broader = ["linguistics", "intelligence"]
+
 [space]
 name = "Space"
 kind = "domain"
