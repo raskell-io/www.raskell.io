@@ -1151,7 +1151,8 @@
    "topics": [
     "philosophy",
     "psychology",
-    "personality-types"
+    "personality-types",
+    "basel"
    ],
    "about": "First published in 1940, this book sets out Jung's analytical psychology in a systematic form. Jacobi explains the structure of the psyche, the attitude and function types, the personal and collective unconscious, archetypes, symbols and complexes, and then the practical side of the theory, centred on the process of individuation. Later editions include diagrams and an account of Jung's method.",
    "take": "An introduction to Jung's analytical psychology by one of his closest collaborators, with a foreword by Jung.",
@@ -1541,7 +1542,8 @@
     "philosophy",
     "ethics",
     "religion",
-    "theology"
+    "theology",
+    "basel"
    ],
    "about": "Safranski follows the development of Nietzsche's thought through the course of his life, from his early devotion to Schopenhauer and Wagner and The Birth of Tragedy to the free spirit, Zarathustra, the will to power and the eternal recurrence, up to his collapse in 1889. As its German subtitle, Biographie seines Denkens, says, it is a biography of the thinking more than of the life.",
    "take": "A biography of Nietzsche told through his ideas rather than his days.",
@@ -1602,7 +1604,8 @@
     "religion",
     "psychology",
     "semiotics",
-    "mythology"
+    "mythology",
+    "basel"
    ],
    "about": "An illustrated introduction to Jung's psychology written for general readers, planned by Jung shortly before his death in 1961 and completed under the editorship of Marie-Louise von Franz. Jung's opening essay, Approaching the Unconscious, is followed by chapters from his collaborators on ancient myths and modern man, the process of individuation, symbolism in the visual arts and symbols in an individual analysis, with dreams as the common thread.",
    "take": "Jung's own introduction to the unconscious, dreams and symbols, written with his closest collaborators for readers without training.",
@@ -1622,7 +1625,8 @@
     "philosophy",
     "religion",
     "psychology",
-    "personality-types"
+    "personality-types",
+    "basel"
    ],
    "about": "First published in German in 1921 as Psychologische Typen, the book introduces the attitudes of introversion and extraversion and the four functions of thinking, feeling, sensation and intuition. Much of it traces the problem of types through the history of thought, from early Christian theology and medieval disputes to Schiller, Nietzsche and poetry, before a general description of the types and a long chapter of definitions.",
    "take": "Jung's theory of introversion, extraversion and the four functions, the basis of later typologies such as the Myers-Briggs Type Indicator.",
@@ -2739,7 +2743,8 @@
     "games",
     "mathematics",
     "philosophy",
-    "game-design"
+    "game-design",
+    "basel"
    ],
    "about": "In a future province called Castalia, an order of scholars plays a game that relates mathematics, music, and every other discipline to one another. The novel follows Josef Knecht, who rises to become master of the game and then questions whether such a life can stay apart from the world outside.",
    "take": "A game that connects every field of knowledge, and the man who masters it and then leaves.",
@@ -3164,7 +3169,8 @@
     "philosophy",
     "literature",
     "religion",
-    "ethics"
+    "ethics",
+    "basel"
    ],
    "about": "A philosophical narrative in four parts, written in the style of scripture, in which the prophet Zarathustra comes down from the mountains to teach. Through his speeches Nietzsche introduces the Übermensch, the will to power and the eternal recurrence, in a world where God is dead.",
    "take": "Nietzsche's philosophy as a prophet's book: God is dead, and what humans become next.",
@@ -3183,7 +3189,8 @@
    "topics": [
     "philosophy",
     "ethics",
-    "religion"
+    "religion",
+    "basel"
    ],
    "about": "Nietzsche's attack on the philosophers before him and on the moral prejudices hidden in their systems. In nine parts of short sections and aphorisms, he questions the will to truth, contrasts master morality with slave morality, and calls for free spirits who would create new values.",
    "take": "A suspicion of every morality that presents itself as truth.",
@@ -3287,6 +3294,84 @@
    "take": "The case for a society without a state, argued from property rights.",
    "cover": "https://raskell.io/covers/reading/for-a-new-liberty.avif",
    "page": "https://raskell.io/reading/#for-a-new-liberty"
+  },
+  {
+   "id": "siddhartha",
+   "title": "Siddhartha",
+   "subtitle": "Eine indische Dichtung",
+   "author": "Hermann Hesse",
+   "kind": "novel",
+   "year": 1922,
+   "status": "read",
+   "finished": "2009",
+   "topics": [
+    "literature",
+    "religion",
+    "philosophy",
+    "basel"
+   ],
+   "about": "In the India of the Buddha's time, Siddhartha, the son of a Brahmin, leaves home to find enlightenment. He lives as an ascetic, meets the Buddha and declines to follow him, spends years in wealth and love with the courtesan Kamala, and finally learns from a river and the ferryman Vasudeva what no teacher could give him.",
+   "take": "Wisdom that cannot be taught, only lived, found at last by a river.",
+   "cover": "https://raskell.io/covers/reading/siddhartha.avif",
+   "page": "https://raskell.io/reading/#siddhartha"
+  },
+  {
+   "id": "der-steppenwolf",
+   "title": "Der Steppenwolf",
+   "author": "Hermann Hesse",
+   "kind": "novel",
+   "year": 1927,
+   "status": "read",
+   "finished": "2010",
+   "topics": [
+    "literature",
+    "psychology",
+    "basel"
+   ],
+   "about": "The notes of Harry Haller, a middle-aged intellectual who feels split between a cultured, bourgeois self and a lonely wolf of the steppes. A treatise on his condition, the young woman Hermine and the musician Pablo lead him out of his isolation and into the Magic Theatre, where his self breaks into many.",
+   "take": "A man who thinks he is two selves learns that he is many.",
+   "cover": "https://raskell.io/covers/reading/der-steppenwolf.avif",
+   "page": "https://raskell.io/reading/#der-steppenwolf"
+  },
+  {
+   "id": "demian",
+   "title": "Demian",
+   "subtitle": "Die Geschichte von Emil Sinclairs Jugend",
+   "author": "Hermann Hesse",
+   "kind": "novel",
+   "year": 1919,
+   "status": "read",
+   "finished": "2011",
+   "topics": [
+    "literature",
+    "psychology",
+    "religion",
+    "basel"
+   ],
+   "about": "Emil Sinclair, raised in a sheltered, respectable home, discovers a second, darker world and is guided out of his childhood by the older boy Max Demian. Through dreams, symbols and the god Abraxas, who unites good and evil, he learns to follow his own path, until the First World War. Hesse first published it under Sinclair's name.",
+   "take": "Growing up as leaving the bright world of the parents and finding your own.",
+   "cover": "https://raskell.io/covers/reading/demian.avif",
+   "page": "https://raskell.io/reading/#demian"
+  },
+  {
+   "id": "narziss-und-goldmund",
+   "title": "Narziß und Goldmund",
+   "author": "Hermann Hesse",
+   "kind": "novel",
+   "year": 1930,
+   "status": "read",
+   "finished": "2012",
+   "topics": [
+    "literature",
+    "religion",
+    "philosophy",
+    "mortality",
+    "basel"
+   ],
+   "about": "In a medieval monastery, the young teacher Narziss, a man of thought and discipline, recognises that his pupil Goldmund belongs to the world. Goldmund leaves to wander through love affairs, the Black Death and violence, becomes a sculptor, and returns at the end to his friend, the two lives set against each other as spirit and senses.",
+   "take": "The thinker and the artist, two ways of living, and the friendship between them.",
+   "cover": "https://raskell.io/covers/reading/narziss-und-goldmund.avif",
+   "page": "https://raskell.io/reading/#narziss-und-goldmund"
   }
  ]
 }

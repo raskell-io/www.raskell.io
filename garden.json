@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-08T09:14:07+00:00",
+ "generated": "2026-11-08T09:49:46+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -9,9 +9,9 @@
   "note": 16,
   "talk": 1,
   "dataset": 1,
-  "work": 162,
+  "work": 166,
   "project": 31,
-  "topic": 162,
+  "topic": 163,
   "link": 533
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
@@ -471,6 +471,7 @@
     "sovereignty",
     "economics",
     "switzerland",
+    "basel",
     "intellectual-property",
     "united-states",
     "china",
@@ -994,7 +995,7 @@
    "topics": [
     "ai-engineering",
     "augmentation",
-    "switzerland"
+    "basel"
    ],
    "meta": "IT's ABOUT TECH #13"
   },
@@ -1805,7 +1806,8 @@
    "topics": [
     "philosophy",
     "psychology",
-    "personality-types"
+    "personality-types",
+    "basel"
    ],
    "meta": "Book · Jolande Jacobi · Read"
   },
@@ -2072,7 +2074,8 @@
     "philosophy",
     "ethics",
     "religion",
-    "theology"
+    "theology",
+    "basel"
    ],
    "meta": "Book · Rüdiger Safranski · Read"
   },
@@ -2114,7 +2117,8 @@
     "religion",
     "psychology",
     "semiotics",
-    "mythology"
+    "mythology",
+    "basel"
    ],
    "meta": "Book · C. G. Jung, Marie-Louise von Franz, Joseph L. Henderson, Jolande Jacobi and Aniela Jaffé · Read"
   },
@@ -2128,7 +2132,8 @@
     "philosophy",
     "religion",
     "psychology",
-    "personality-types"
+    "personality-types",
+    "basel"
    ],
    "meta": "Book · C. G. Jung · Read"
   },
@@ -2877,7 +2882,8 @@
     "games",
     "mathematics",
     "philosophy",
-    "game-design"
+    "game-design",
+    "basel"
    ],
    "meta": "Novel · Hermann Hesse · Backlog"
   },
@@ -3167,7 +3173,8 @@
     "philosophy",
     "literature",
     "religion",
-    "ethics"
+    "ethics",
+    "basel"
    ],
    "meta": "Book · Friedrich Nietzsche · Read"
   },
@@ -3180,7 +3187,8 @@
    "topics": [
     "philosophy",
     "ethics",
-    "religion"
+    "religion",
+    "basel"
    ],
    "meta": "Book · Friedrich Nietzsche · Read"
   },
@@ -3253,6 +3261,62 @@
     "policy"
    ],
    "meta": "Book · Murray N. Rothbard · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Siddhartha",
+   "url": "https://raskell.io/reading/#siddhartha",
+   "description": "Wisdom that cannot be taught, only lived, found at last by a river.",
+   "date": "2009",
+   "topics": [
+    "literature",
+    "religion",
+    "philosophy",
+    "basel"
+   ],
+   "meta": "Novel · Hermann Hesse · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Der Steppenwolf",
+   "url": "https://raskell.io/reading/#der-steppenwolf",
+   "description": "A man who thinks he is two selves learns that he is many.",
+   "date": "2010",
+   "topics": [
+    "literature",
+    "psychology",
+    "basel"
+   ],
+   "meta": "Novel · Hermann Hesse · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Demian",
+   "url": "https://raskell.io/reading/#demian",
+   "description": "Growing up as leaving the bright world of the parents and finding your own.",
+   "date": "2011",
+   "topics": [
+    "literature",
+    "psychology",
+    "religion",
+    "basel"
+   ],
+   "meta": "Novel · Hermann Hesse · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Narziß und Goldmund",
+   "url": "https://raskell.io/reading/#narziss-und-goldmund",
+   "description": "The thinker and the artist, two ways of living, and the friendship between them.",
+   "date": "2012",
+   "topics": [
+    "literature",
+    "religion",
+    "philosophy",
+    "mortality",
+    "basel"
+   ],
+   "meta": "Novel · Hermann Hesse · Read"
   },
   {
    "kind": "project",
@@ -3350,7 +3414,8 @@
    "topics": [
     "haskell",
     "programming-languages",
-    "formal-methods"
+    "formal-methods",
+    "basel"
    ],
    "meta": "Flagship and serious builds · Projects"
   },
@@ -3434,7 +3499,8 @@
     "policy",
     "oss",
     "social-reform",
-    "switzerland"
+    "switzerland",
+    "basel"
    ],
    "meta": "Civic and research · Projects"
   },
@@ -3791,6 +3857,13 @@
    "title": "Augmentation",
    "url": "https://raskell.io/tags/augmentation/",
    "description": "Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Basel",
+   "url": "https://raskell.io/tags/basel/",
+   "description": "The city this site is written from, on the Rhine where Switzerland meets France and Germany: its pharmaceutical cluster, and the thinkers who lived there, Nietzsche as a professor, Hesse as a child and a bookseller, Jung as a medical student.",
    "meta": "Concept"
   },
   {
@@ -4707,7 +4780,7 @@
    "kind": "topic",
    "title": "Switzerland",
    "url": "https://raskell.io/tags/switzerland/",
-   "description": "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Swiss civic projects.",
+   "description": "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Die Zukunft, the Swiss political party I founded.",
    "meta": "Concept"
   },
   {

@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-08T09:14:07+00:00",
+ "generated": "2026-11-08T09:49:46+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -235,7 +235,7 @@
    "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/",
    "meta": "2026-05-01 · 23 min",
    "description": "Switzerland tops the Global Innovation Index for the fifteenth year running. As an engineer, that should make you suspicious of the metric, not proud of the country.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "a:/articles/traffic-replay-as-a-security-primitive/",
@@ -658,6 +658,15 @@
    "url": "https://raskell.io/tags/augmentation/",
    "meta": "Concept · 8 pages",
    "description": "Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents.",
+   "degree": 16
+  },
+  {
+   "id": "t:basel",
+   "kind": "tag",
+   "label": "Basel",
+   "url": "https://raskell.io/tags/basel/",
+   "meta": "Concept · 2 pages",
+   "description": "The city this site is written from, on the Rhine where Switzerland meets France and Germany: its pharmaceutical cluster, and the thinkers who lived there, Nietzsche as a professor, Hesse as a child and a bookseller, Jung as a medical student.",
    "degree": 16
   },
   {
@@ -1198,7 +1207,7 @@
    "url": "https://raskell.io/tags/mortality/",
    "meta": "Concept · 1 page",
    "description": "That everyone dies: priced in life insurance, resisted by those who want to end death, and answered by keeping a person's voice and stories.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:neuroscience",
@@ -1360,7 +1369,7 @@
    "url": "https://raskell.io/tags/psychology/",
    "meta": "Domain · 1 page",
    "description": "How minds work and what people make of their lives: personality and types, the unconscious and its symbols, meaning, order and chaos.",
-   "degree": 12
+   "degree": 14
   },
   {
    "id": "t:reinforcement-learning",
@@ -1520,8 +1529,8 @@
    "kind": "tag",
    "label": "Switzerland",
    "url": "https://raskell.io/tags/switzerland/",
-   "meta": "Concept · 2 pages",
-   "description": "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Swiss civic projects.",
+   "meta": "Concept · 1 page",
+   "description": "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Die Zukunft, the Swiss political party I founded.",
    "degree": 7
   },
   {
@@ -1819,7 +1828,7 @@
    "url": "https://raskell.io/tags#literature",
    "meta": "Domain · no pages yet",
    "description": "Fiction and writing about fiction: novels read for their own sake, and the forms they take.",
-   "degree": 21
+   "degree": 25
   },
   {
    "id": "t:lost-civilisations",
@@ -1936,7 +1945,7 @@
    "url": "https://raskell.io/tags#philosophy",
    "meta": "Domain · no pages yet",
    "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
-   "degree": 35
+   "degree": 37
   },
   {
    "id": "t:philosophy-of-science",
@@ -1963,7 +1972,7 @@
    "url": "https://raskell.io/tags#religion",
    "meta": "Concept · no pages yet",
    "description": "Faith, doubt, and the institutions and cities built around belief, as history and as argument.",
-   "degree": 27
+   "degree": 30
   },
   {
    "id": "t:scientific-revolutions",
@@ -2105,7 +2114,7 @@
    "url": "https://arcanist.sh/bhc/",
    "meta": "Project",
    "description": "The Basel Haskell Compiler, a clean-slate compiler for the Haskell you already write. Written in Rust, it compiles to native code through LLVM and to WebAssembly, with a runtime pr…",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "p:shiioo",
@@ -2159,7 +2168,7 @@
    "url": "https://die-zukunft.ch",
    "meta": "Project",
    "description": "A new Swiss party for the age of AI and robotics: its own compute and open Swiss models, top talent, production at home, and a dividend for everyone.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "p:human-macroscope",
@@ -2834,7 +2843,7 @@
    "url": "https://raskell.io/reading/#die-psychologie-von-c-g-jung",
    "meta": "Book · Jolande Jacobi · read June 2012",
    "description": "An introduction to Jung's analytical psychology by one of his closest collaborators, with a foreword by Jung.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:ai-2027",
@@ -2996,7 +3005,7 @@
    "url": "https://raskell.io/reading/#nietzsche-safranski",
    "meta": "Book · Rüdiger Safranski · read 2013",
    "description": "A biography of Nietzsche told through his ideas rather than his days.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "w:philosophy-and-social-hope",
@@ -3023,7 +3032,7 @@
    "url": "https://raskell.io/reading/#man-and-his-symbols",
    "meta": "Book · C. G. Jung, Marie-Louise von Franz, Joseph L. Henderson, Jolande Jacobi and Aniela Jaffé · read 2010",
    "description": "Jung's own introduction to the unconscious, dreams and symbols, written with his closest collaborators for readers without training.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "w:psychological-types",
@@ -3032,7 +3041,7 @@
    "url": "https://raskell.io/reading/#psychological-types",
    "meta": "Book · C. G. Jung · read 2010",
    "description": "Jung's theory of introversion, extraversion and the four functions, the basis of later typologies such as the Myers-Briggs Type Indicator.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "w:the-library-a-fragile-history",
@@ -3527,7 +3536,7 @@
    "url": "https://raskell.io/reading/#das-glasperlenspiel",
    "meta": "Novel · Hermann Hesse · in the backlog",
    "description": "A game that connects every field of knowledge, and the man who masters it and then leaves.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "w:solaris",
@@ -3725,7 +3734,7 @@
    "url": "https://raskell.io/reading/#also-sprach-zarathustra",
    "meta": "Book · Friedrich Nietzsche · read 2009",
    "description": "Nietzsche's philosophy as a prophet's book: God is dead, and what humans become next.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "w:jenseits-von-gut-und-bose",
@@ -3734,7 +3743,7 @@
    "url": "https://raskell.io/reading/#jenseits-von-gut-und-bose",
    "meta": "Book · Friedrich Nietzsche · read 2010",
    "description": "A suspicion of every morality that presents itself as truth.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "w:der-zauberberg",
@@ -3782,6 +3791,42 @@
    "degree": 5
   },
   {
+   "id": "w:siddhartha",
+   "kind": "work",
+   "label": "Siddhartha",
+   "url": "https://raskell.io/reading/#siddhartha",
+   "meta": "Novel · Hermann Hesse · read 2009",
+   "description": "Wisdom that cannot be taught, only lived, found at last by a river.",
+   "degree": 5
+  },
+  {
+   "id": "w:der-steppenwolf",
+   "kind": "work",
+   "label": "Der Steppenwolf",
+   "url": "https://raskell.io/reading/#der-steppenwolf",
+   "meta": "Novel · Hermann Hesse · read 2010",
+   "description": "A man who thinks he is two selves learns that he is many.",
+   "degree": 4
+  },
+  {
+   "id": "w:demian",
+   "kind": "work",
+   "label": "Demian",
+   "url": "https://raskell.io/reading/#demian",
+   "meta": "Novel · Hermann Hesse · read 2011",
+   "description": "Growing up as leaving the bright world of the parents and finding your own.",
+   "degree": 5
+  },
+  {
+   "id": "w:narziss-und-goldmund",
+   "kind": "work",
+   "label": "Narziß und Goldmund",
+   "url": "https://raskell.io/reading/#narziss-und-goldmund",
+   "meta": "Novel · Hermann Hesse · read 2012",
+   "description": "The thinker and the artist, two ways of living, and the friendship between them.",
+   "degree": 6
+  },
+  {
    "id": "h:shelf-reading",
    "kind": "hub",
    "label": "Reading now",
@@ -3803,7 +3848,7 @@
    "label": "Read",
    "url": "https://raskell.io/reading/#shelf-read",
    "meta": "Shelf",
-   "degree": 90
+   "degree": 94
   },
   {
    "id": "h:shelf-set-aside",
@@ -4146,6 +4191,18 @@
   {
    "source": "t:augmentation",
    "target": "t:intelligence"
+  },
+  {
+   "source": "a:/talks/iat-13-basel/",
+   "target": "t:basel"
+  },
+  {
+   "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
+   "target": "t:basel"
+  },
+  {
+   "source": "t:basel",
+   "target": "t:switzerland"
   },
   {
    "source": "a:/notes/a-billion-without-a-plan/",
@@ -5718,10 +5775,6 @@
   {
    "source": "t:surveillance",
    "target": "t:privacy"
-  },
-  {
-   "source": "a:/talks/iat-13-basel/",
-   "target": "t:switzerland"
   },
   {
    "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
@@ -7345,6 +7398,10 @@
   },
   {
    "source": "p:bhc",
+   "target": "t:basel"
+  },
+  {
+   "source": "p:bhc",
    "target": "p:arcanist"
   },
   {
@@ -7494,6 +7551,10 @@
   {
    "source": "p:die-zukunft",
    "target": "t:switzerland"
+  },
+  {
+   "source": "p:die-zukunft",
+   "target": "t:basel"
   },
   {
    "source": "p:human-macroscope",
@@ -9140,6 +9201,10 @@
    "target": "t:personality-types"
   },
   {
+   "source": "w:die-psychologie-von-c-g-jung",
+   "target": "t:basel"
+  },
+  {
    "source": "w:ai-2027",
    "target": "h:shelf-read"
   },
@@ -9576,6 +9641,10 @@
    "target": "t:theology"
   },
   {
+   "source": "w:nietzsche-safranski",
+   "target": "t:basel"
+  },
+  {
    "source": "w:philosophy-and-social-hope",
    "target": "h:shelf-read"
   },
@@ -9636,6 +9705,10 @@
    "target": "t:mythology"
   },
   {
+   "source": "w:man-and-his-symbols",
+   "target": "t:basel"
+  },
+  {
    "source": "w:psychological-types",
    "target": "h:shelf-read"
   },
@@ -9654,6 +9727,10 @@
   {
    "source": "w:psychological-types",
    "target": "t:personality-types"
+  },
+  {
+   "source": "w:psychological-types",
+   "target": "t:basel"
   },
   {
    "source": "w:the-library-a-fragile-history",
@@ -10892,6 +10969,10 @@
    "target": "t:game-design"
   },
   {
+   "source": "w:das-glasperlenspiel",
+   "target": "t:basel"
+  },
+  {
    "source": "w:solaris",
    "target": "h:shelf-backlog"
   },
@@ -11332,6 +11413,10 @@
    "target": "t:ethics"
   },
   {
+   "source": "w:also-sprach-zarathustra",
+   "target": "t:basel"
+  },
+  {
    "source": "w:jenseits-von-gut-und-bose",
    "target": "h:shelf-read"
   },
@@ -11346,6 +11431,10 @@
   {
    "source": "w:jenseits-von-gut-und-bose",
    "target": "t:religion"
+  },
+  {
+   "source": "w:jenseits-von-gut-und-bose",
+   "target": "t:basel"
   },
   {
    "source": "w:der-zauberberg",
@@ -11446,6 +11535,86 @@
   {
    "source": "w:for-a-new-liberty",
    "target": "t:policy"
+  },
+  {
+   "source": "w:siddhartha",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:siddhartha",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:siddhartha",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:siddhartha",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:siddhartha",
+   "target": "t:basel"
+  },
+  {
+   "source": "w:der-steppenwolf",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:der-steppenwolf",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:der-steppenwolf",
+   "target": "t:psychology"
+  },
+  {
+   "source": "w:der-steppenwolf",
+   "target": "t:basel"
+  },
+  {
+   "source": "w:demian",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:demian",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:demian",
+   "target": "t:psychology"
+  },
+  {
+   "source": "w:demian",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:demian",
+   "target": "t:basel"
+  },
+  {
+   "source": "w:narziss-und-goldmund",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:narziss-und-goldmund",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:narziss-und-goldmund",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:narziss-und-goldmund",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:narziss-und-goldmund",
+   "target": "t:mortality"
+  },
+  {
+   "source": "w:narziss-und-goldmund",
+   "target": "t:basel"
   }
  ]
 }
