@@ -1,17 +1,17 @@
 title = "Die Zukunft"
-description = "A Swiss movement that applies engineering principles to public life: not left, not right. Digital sovereignty through open standards, auditable and portable public infrastructure, and policy grounded in evidence, with its own research pipeline for Swiss federal data."
+description = "A new Swiss party for the age of AI and robotics: its own compute and open Swiss models, top talent, production at home, and a dividend for everyone."
 status = "live"
 logo = "brands/die-zukunft.png"
 wordmark = "brands/die-zukunft-wordmark.svg"   # the brandtype, shown beside the logo as the card title
 links = [ { name = "Website", url = "https://die-zukunft.ch" }, { name = "GitHub", url = "https://github.com/zukunft-ch" } ]
-topics = ["sovereignty", "policy", "oss", "social-reform", "switzerland"]
-accents = ["#a855f7", "#06b6d4"]   # brand colours, used for the card glow
+topics = ["sovereignty", "abundance", "policy", "oss", "social-reform", "switzerland"]
+accents = ["#c026d3", "#4338ca"]   # brand colours (Alpenglühen: magenta, indigo), used for the card glow
 
 schema_type = "Project"   # schema.org type for the JSON-LD on /projects/ and /apps/ (default SoftwareApplication)
 
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]
-description = "一个把工程原则应用于公共生活的瑞士运动：不左也不右。通过开放标准实现数字主权，可审计、可迁移的公共基础设施，以证据为依据的政策，并拥有自己的瑞士联邦数据研究流程。"
+description = "一个面向人工智能与机器人时代的瑞士新政党：自己的算力和开放的瑞士模型、顶尖人才、本土制造，以及人人有份的红利。"
 
 [i18n.ko]
-description = "공공의 삶에 공학 원칙을 적용하는 스위스의 운동으로, 좌도 우도 아닙니다. 개방형 표준을 통한 디지털 주권, 감사할 수 있고 이전할 수 있는 공공 인프라, 근거에 기반한 정책을 추구하며, 스위스 연방 데이터를 위한 자체 연구 파이프라인을 갖추고 있습니다."
+description = "인공지능과 로봇의 시대를 위한 스위스의 새 정당입니다. 자체 컴퓨팅과 개방형 스위스 모델, 최고의 인재, 국내 생산, 그리고 모두를 위한 배당을 추구합니다."
