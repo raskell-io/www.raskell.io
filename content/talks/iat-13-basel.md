@@ -11,7 +11,7 @@ venue = "FHNW Aula, Basel"
 event_date_human = "10 June 2026"
 
 [taxonomies]
-tags = ["ai-engineering", "augmentation", "switzerland"]
+tags = ["ai-engineering", "augmentation", "basel"]
 +++
 
 <section class="slide slide--title">

@@ -4,7 +4,7 @@ status = "live"
 logo = "brands/die-zukunft.png"
 wordmark = "brands/die-zukunft-wordmark.svg"   # the brandtype, shown beside the logo as the card title
 links = [ { name = "Website", url = "https://die-zukunft.ch" }, { name = "GitHub", url = "https://github.com/zukunft-ch" } ]
-topics = ["sovereignty", "abundance", "policy", "oss", "social-reform", "switzerland"]
+topics = ["sovereignty", "abundance", "policy", "oss", "social-reform", "switzerland", "basel"]
 accents = ["#c026d3", "#4338ca"]   # brand colours (Alpenglühen: magenta, indigo), used for the card glow
 
 schema_type = "Project"   # schema.org type for the JSON-LD on /projects/ and /apps/ (default SoftwareApplication)

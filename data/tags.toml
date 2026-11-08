@@ -641,8 +641,14 @@ broader = ["sovereignty", "geography"]
 [switzerland]
 name = "Switzerland"
 kind = "concept"
-description = "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Swiss civic projects."
+description = "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Die Zukunft, the Swiss political party I founded."
 broader = ["europe"]
+
+[basel]
+name = "Basel"
+kind = "concept"
+description = "The city this site is written from, on the Rhine where Switzerland meets France and Germany: its pharmaceutical cluster, and the thinkers who lived there, Nietzsche as a professor, Hesse as a child and a bookseller, Jung as a medical student."
+broader = ["switzerland"]
 
 [democratisation]
 name = "Democratisation"
