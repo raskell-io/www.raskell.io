@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-08T08:11:40+00:00",
+ "generated": "2026-11-08T09:14:07+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -9,7 +9,7 @@
   "note": 16,
   "talk": 1,
   "dataset": 1,
-  "work": 153,
+  "work": 162,
   "project": 31,
   "topic": 162,
   "link": 533
@@ -3130,6 +3130,129 @@
     "compilers"
    ],
    "meta": "Book · Harold Abelson, Gerald Jay Sussman, and Julie Sussman · Set aside"
+  },
+  {
+   "kind": "work",
+   "title": "Über das Mitleid",
+   "url": "https://raskell.io/reading/#uber-das-mitleid",
+   "description": "Morality as compassion: the moral act begins where another's suffering becomes your own.",
+   "date": "2007",
+   "topics": [
+    "philosophy",
+    "ethics",
+    "psychology"
+   ],
+   "meta": "Essay · Arthur Schopenhauer · Read"
+  },
+  {
+   "kind": "work",
+   "title": "The Way of Zen",
+   "url": "https://raskell.io/reading/#the-way-of-zen",
+   "description": "Zen explained from its Indian and Chinese roots for readers raised in the West.",
+   "date": "2007",
+   "topics": [
+    "philosophy",
+    "religion",
+    "psychology"
+   ],
+   "meta": "Book · Alan Watts · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Also sprach Zarathustra",
+   "url": "https://raskell.io/reading/#also-sprach-zarathustra",
+   "description": "Nietzsche's philosophy as a prophet's book: God is dead, and what humans become next.",
+   "date": "2009",
+   "topics": [
+    "philosophy",
+    "literature",
+    "religion",
+    "ethics"
+   ],
+   "meta": "Book · Friedrich Nietzsche · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Jenseits von Gut und Böse",
+   "url": "https://raskell.io/reading/#jenseits-von-gut-und-bose",
+   "description": "A suspicion of every morality that presents itself as truth.",
+   "date": "2010",
+   "topics": [
+    "philosophy",
+    "ethics",
+    "religion"
+   ],
+   "meta": "Book · Friedrich Nietzsche · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Der Zauberberg",
+   "url": "https://raskell.io/reading/#der-zauberberg",
+   "description": "Seven years on a mountain in Davos, where time, illness and Europe's arguments stand still.",
+   "date": "2011",
+   "topics": [
+    "literature",
+    "mortality",
+    "philosophy",
+    "switzerland"
+   ],
+   "meta": "Novel · Thomas Mann · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Faust I",
+   "url": "https://raskell.io/reading/#faust-i",
+   "description": "A wager with the devil over whether any moment can satisfy a restless mind.",
+   "date": "2009",
+   "topics": [
+    "literature",
+    "hubris",
+    "religion",
+    "ethics"
+   ],
+   "meta": "Book · Johann Wolfgang von Goethe · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Faust II",
+   "url": "https://raskell.io/reading/#faust-ii",
+   "description": "Ambition grown to the scale of money, empire and land, building a world it does not live to see.",
+   "date": "2009",
+   "topics": [
+    "literature",
+    "hubris",
+    "money",
+    "mythology",
+    "high-modernism"
+   ],
+   "meta": "Book · Johann Wolfgang von Goethe · Read"
+  },
+  {
+   "kind": "work",
+   "title": "Die Leiden des jungen Werther",
+   "url": "https://raskell.io/reading/#die-leiden-des-jungen-werther",
+   "description": "A young man undone by a love he cannot have, and the book that made feeling a literary event.",
+   "date": "2010",
+   "topics": [
+    "literature",
+    "psychology",
+    "mortality"
+   ],
+   "meta": "Novel · Johann Wolfgang von Goethe · Read"
+  },
+  {
+   "kind": "work",
+   "title": "For a New Liberty",
+   "url": "https://raskell.io/reading/#for-a-new-liberty",
+   "description": "The case for a society without a state, argued from property rights.",
+   "date": "2011",
+   "topics": [
+    "economics",
+    "anarchism",
+    "money",
+    "policy"
+   ],
+   "meta": "Book · Murray N. Rothbard · Read"
   },
   {
    "kind": "project",

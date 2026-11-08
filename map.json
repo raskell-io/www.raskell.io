@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-08T08:11:40+00:00",
+ "generated": "2026-11-08T09:14:07+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -811,7 +811,7 @@
    "url": "https://raskell.io/tags/economics/",
    "meta": "Concept · 11 pages",
    "description": "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.",
-   "degree": 29
+   "degree": 30
   },
   {
    "id": "t:edge-systems",
@@ -874,7 +874,7 @@
    "url": "https://raskell.io/tags/ethics/",
    "meta": "Concept · 1 page",
    "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
-   "degree": 17
+   "degree": 21
   },
   {
    "id": "t:europe",
@@ -1189,7 +1189,7 @@
    "url": "https://raskell.io/tags/money/",
    "meta": "Concept · 1 page",
    "description": "What money is and who creates it: debt and credit, banks that create money by lending, central banks, and attempts to do without them.",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "t:mortality",
@@ -1198,7 +1198,7 @@
    "url": "https://raskell.io/tags/mortality/",
    "meta": "Concept · 1 page",
    "description": "That everyone dies: priced in life insurance, resisted by those who want to end death, and answered by keeping a person's voice and stories.",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "t:neuroscience",
@@ -1315,7 +1315,7 @@
    "url": "https://raskell.io/tags/policy/",
    "meta": "Domain · 3 pages",
    "description": "Where engineering meets regulation, public institutions, procurement, and national strategy.",
-   "degree": 19
+   "degree": 20
   },
   {
    "id": "t:post-scarcity",
@@ -1360,7 +1360,7 @@
    "url": "https://raskell.io/tags/psychology/",
    "meta": "Domain · 1 page",
    "description": "How minds work and what people make of their lives: personality and types, the unconscious and its symbols, meaning, order and chaos.",
-   "degree": 9
+   "degree": 12
   },
   {
    "id": "t:reinforcement-learning",
@@ -1522,7 +1522,7 @@
    "url": "https://raskell.io/tags/switzerland/",
    "meta": "Concept · 2 pages",
    "description": "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Swiss civic projects.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:technology-races",
@@ -1639,7 +1639,7 @@
    "url": "https://raskell.io/tags#anarchism",
    "meta": "Concept · no pages yet",
    "description": "Societies without rulers, imagined and attempted: mutual aid, self-government, and what anthropology and fiction say about living without a state.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:antiquity",
@@ -1774,7 +1774,7 @@
    "url": "https://raskell.io/tags#high-modernism",
    "meta": "Concept · no pages yet",
    "description": "The confidence that society can be planned from above by experts: Le Corbusier's rational city, scientific forestry, and the schemes that failed when they met real life.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:history",
@@ -1801,7 +1801,7 @@
    "url": "https://raskell.io/tags#hubris",
    "meta": "Concept · no pages yet",
    "description": "When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand.",
-   "degree": 12
+   "degree": 14
   },
   {
    "id": "t:life-sciences",
@@ -1819,7 +1819,7 @@
    "url": "https://raskell.io/tags#literature",
    "meta": "Domain · no pages yet",
    "description": "Fiction and writing about fiction: novels read for their own sake, and the forms they take.",
-   "degree": 16
+   "degree": 21
   },
   {
    "id": "t:lost-civilisations",
@@ -1873,7 +1873,7 @@
    "url": "https://raskell.io/tags#mythology",
    "meta": "Concept · no pages yet",
    "description": "Myths and sacred stories as old maps of meaning: gods and heroes, creation and flood stories, and what they encode about the people who told them.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:networking",
@@ -1936,7 +1936,7 @@
    "url": "https://raskell.io/tags#philosophy",
    "meta": "Domain · no pages yet",
    "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
-   "degree": 30
+   "degree": 35
   },
   {
    "id": "t:philosophy-of-science",
@@ -1963,7 +1963,7 @@
    "url": "https://raskell.io/tags#religion",
    "meta": "Concept · no pages yet",
    "description": "Faith, doubt, and the institutions and cities built around belief, as history and as argument.",
-   "degree": 23
+   "degree": 27
   },
   {
    "id": "t:scientific-revolutions",
@@ -3701,6 +3701,87 @@
    "degree": 2
   },
   {
+   "id": "w:uber-das-mitleid",
+   "kind": "work",
+   "label": "Über das Mitleid",
+   "url": "https://raskell.io/reading/#uber-das-mitleid",
+   "meta": "Essay · Arthur Schopenhauer · read 2007",
+   "description": "Morality as compassion: the moral act begins where another's suffering becomes your own.",
+   "degree": 4
+  },
+  {
+   "id": "w:the-way-of-zen",
+   "kind": "work",
+   "label": "The Way of Zen",
+   "url": "https://raskell.io/reading/#the-way-of-zen",
+   "meta": "Book · Alan Watts · read 2007",
+   "description": "Zen explained from its Indian and Chinese roots for readers raised in the West.",
+   "degree": 4
+  },
+  {
+   "id": "w:also-sprach-zarathustra",
+   "kind": "work",
+   "label": "Also sprach Zarathustra",
+   "url": "https://raskell.io/reading/#also-sprach-zarathustra",
+   "meta": "Book · Friedrich Nietzsche · read 2009",
+   "description": "Nietzsche's philosophy as a prophet's book: God is dead, and what humans become next.",
+   "degree": 5
+  },
+  {
+   "id": "w:jenseits-von-gut-und-bose",
+   "kind": "work",
+   "label": "Jenseits von Gut und Böse",
+   "url": "https://raskell.io/reading/#jenseits-von-gut-und-bose",
+   "meta": "Book · Friedrich Nietzsche · read 2010",
+   "description": "A suspicion of every morality that presents itself as truth.",
+   "degree": 4
+  },
+  {
+   "id": "w:der-zauberberg",
+   "kind": "work",
+   "label": "Der Zauberberg",
+   "url": "https://raskell.io/reading/#der-zauberberg",
+   "meta": "Novel · Thomas Mann · read 2011",
+   "description": "Seven years on a mountain in Davos, where time, illness and Europe's arguments stand still.",
+   "degree": 5
+  },
+  {
+   "id": "w:faust-i",
+   "kind": "work",
+   "label": "Faust I",
+   "url": "https://raskell.io/reading/#faust-i",
+   "meta": "Book · Johann Wolfgang von Goethe · read 2009",
+   "description": "A wager with the devil over whether any moment can satisfy a restless mind.",
+   "degree": 5
+  },
+  {
+   "id": "w:faust-ii",
+   "kind": "work",
+   "label": "Faust II",
+   "url": "https://raskell.io/reading/#faust-ii",
+   "meta": "Book · Johann Wolfgang von Goethe · read 2009",
+   "description": "Ambition grown to the scale of money, empire and land, building a world it does not live to see.",
+   "degree": 6
+  },
+  {
+   "id": "w:die-leiden-des-jungen-werther",
+   "kind": "work",
+   "label": "Die Leiden des jungen Werther",
+   "url": "https://raskell.io/reading/#die-leiden-des-jungen-werther",
+   "meta": "Novel · Johann Wolfgang von Goethe · read 2010",
+   "description": "A young man undone by a love he cannot have, and the book that made feeling a literary event.",
+   "degree": 4
+  },
+  {
+   "id": "w:for-a-new-liberty",
+   "kind": "work",
+   "label": "For a New Liberty",
+   "url": "https://raskell.io/reading/#for-a-new-liberty",
+   "meta": "Book · Murray N. Rothbard · read 2011",
+   "description": "The case for a society without a state, argued from property rights.",
+   "degree": 5
+  },
+  {
    "id": "h:shelf-reading",
    "kind": "hub",
    "label": "Reading now",
@@ -3722,7 +3803,7 @@
    "label": "Read",
    "url": "https://raskell.io/reading/#shelf-read",
    "meta": "Shelf",
-   "degree": 81
+   "degree": 90
   },
   {
    "id": "h:shelf-set-aside",
@@ -11197,6 +11278,174 @@
   {
    "source": "w:sicp",
    "target": "t:compilers"
+  },
+  {
+   "source": "w:uber-das-mitleid",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:uber-das-mitleid",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:uber-das-mitleid",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:uber-das-mitleid",
+   "target": "t:psychology"
+  },
+  {
+   "source": "w:the-way-of-zen",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:the-way-of-zen",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:the-way-of-zen",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:the-way-of-zen",
+   "target": "t:psychology"
+  },
+  {
+   "source": "w:also-sprach-zarathustra",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:also-sprach-zarathustra",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:also-sprach-zarathustra",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:also-sprach-zarathustra",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:also-sprach-zarathustra",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:jenseits-von-gut-und-bose",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:jenseits-von-gut-und-bose",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:jenseits-von-gut-und-bose",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:jenseits-von-gut-und-bose",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:der-zauberberg",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:der-zauberberg",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:der-zauberberg",
+   "target": "t:mortality"
+  },
+  {
+   "source": "w:der-zauberberg",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "w:der-zauberberg",
+   "target": "t:switzerland"
+  },
+  {
+   "source": "w:faust-i",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:faust-i",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:faust-i",
+   "target": "t:hubris"
+  },
+  {
+   "source": "w:faust-i",
+   "target": "t:religion"
+  },
+  {
+   "source": "w:faust-i",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:faust-ii",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:faust-ii",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:faust-ii",
+   "target": "t:hubris"
+  },
+  {
+   "source": "w:faust-ii",
+   "target": "t:money"
+  },
+  {
+   "source": "w:faust-ii",
+   "target": "t:mythology"
+  },
+  {
+   "source": "w:faust-ii",
+   "target": "t:high-modernism"
+  },
+  {
+   "source": "w:die-leiden-des-jungen-werther",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:die-leiden-des-jungen-werther",
+   "target": "t:literature"
+  },
+  {
+   "source": "w:die-leiden-des-jungen-werther",
+   "target": "t:psychology"
+  },
+  {
+   "source": "w:die-leiden-des-jungen-werther",
+   "target": "t:mortality"
+  },
+  {
+   "source": "w:for-a-new-liberty",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:for-a-new-liberty",
+   "target": "t:economics"
+  },
+  {
+   "source": "w:for-a-new-liberty",
+   "target": "t:anarchism"
+  },
+  {
+   "source": "w:for-a-new-liberty",
+   "target": "t:money"
+  },
+  {
+   "source": "w:for-a-new-liberty",
+   "target": "t:policy"
   }
  ]
 }
