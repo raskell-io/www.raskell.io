@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-08T09:49:46+00:00",
+ "generated": "2026-11-08T10:26:57+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 533,
+ "count": 535,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -2051,6 +2051,19 @@
     {
      "title": "Win Everything, Control No One",
      "url": "https://raskell.io/articles/win-everything-control-no-one/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://calmtech.com/papers/computer-for-the-21st-century",
+   "title": "The Computer for the 21st Century",
+   "domain": "calmtech.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The interface that disappears",
+     "url": "https://raskell.io/notes/the-interface-that-disappears/"
     }
    ],
    "citations": 1
@@ -5470,6 +5483,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://quotepark.com/quotes/1900877-hyman-george-rickover-i-believe-it-is-the-duty-of-each-of-us-to-act-as-i/",
+   "title": "Quotepark",
+   "domain": "quotepark.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "One person can make a difference",
+     "url": "https://raskell.io/notes/one-person-can-make-a-difference/"
     }
    ],
    "citations": 1

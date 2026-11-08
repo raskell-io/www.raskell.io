@@ -105,6 +105,8 @@ Datasets, listed at https://raskell.io/data/. Each is one file under https://ras
 
 Short notes, a paragraph or a page each; some grow into articles.
 
+- [One person can make a difference](https://raskell.io/notes/one-person-can-make-a-difference.md) (2026-11-08): Sam Altman had a line from Admiral Rickover painted on OpenAI's walls. It says one person can make a difference, and it was used to ask for unity.
+- [The interface that disappears](https://raskell.io/notes/the-interface-that-disappears.md) (2026-11-08): OpenAI's founders kept pointing to the film Her as a picture of AGI. What they described is the north star for every interface: natural enough to vanish.
 - [In vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro.md) (2026-11-07): An open question: can intelligence be measured anywhere but in performance? My hunch is that it shows only when an agent acts.
 - [Who carries progress](https://raskell.io/notes/who-carries-progress.md) (2026-11-07): A colleague says the breakthroughs come from academia and the state. I think they come from people who have to make things work, and that what they learn spreads.
 - [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan.md) (2026-11-07): Large language models were funded before anyone could say what they were for. That took a dense pool of capital and a few people deciding where it went.
@@ -306,7 +308,7 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ## Sources cited most
 
-External links cited on more than one page (all 512 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
+External links cited on more than one page (all 514 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
 
 - [Zentinel](https://zentinelproxy.io): cited on 12 pages
 - [Archipelag.io](https://archipelag.io): cited on 9 pages
@@ -442,6 +444,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Provenance (`provenance`) [within Training data, Applied security]: Where something came from and who vouches for it: signed media, rights-clear training data, and artifacts that carry their own history.
 - External memory (`external-memory`) [within Knowledge management, Context engineering]: Notes, links, and stores that remember for us: second brains, the web as a shared memory, and what agents write down for their next session.
 - Augmentation (`augmentation`) [within AI-assisted engineering, Intelligence]: Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents.
+- Interfaces (`interfaces`) [within Augmentation, Language]: Where people meet machines, from command lines to chat and voice, and the goal of an interface so natural that it disappears.
 - Technology races (`technology-races`) [within Geopolitics, Existential risk]: Powers racing to build a technology first, from the bomb and its deterrence to frontier AI and the data it needs.
 - Scientific revolutions (`scientific-revolutions`) [within Philosophy of science, History of science]: Moments when a field's picture of the world changes: the invention of modern science, molecular biology, antisepsis, and the first antibiotics.
 - Cities (`cities`) [within Geography]: How cities are planned and how they actually grow: Jerusalem over three thousand years, Brasilia drawn on paper, and the rational city the web was designed against.

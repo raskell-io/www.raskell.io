@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-08T09:49:46+00:00",
+ "generated": "2026-11-08T10:26:57+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -289,7 +289,7 @@
    "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/",
    "meta": "2026-04-11 · 26 min",
    "description": "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell.",
-   "degree": 20
+   "degree": 21
   },
   {
    "id": "a:/articles/notes-from-rsac-2026/",
@@ -400,6 +400,24 @@
    "degree": 4
   },
   {
+   "id": "a:/notes/one-person-can-make-a-difference/",
+   "kind": "note",
+   "label": "One person can make a difference",
+   "url": "https://raskell.io/notes/one-person-can-make-a-difference/",
+   "meta": "2026-11-08",
+   "description": "Sam Altman had a line from Admiral Rickover painted on OpenAI's walls. It says one person can make a difference, and it was used to ask for unity.",
+   "degree": 6
+  },
+  {
+   "id": "a:/notes/the-interface-that-disappears/",
+   "kind": "note",
+   "label": "The interface that disappears",
+   "url": "https://raskell.io/notes/the-interface-that-disappears/",
+   "meta": "2026-11-08",
+   "description": "OpenAI's founders kept pointing to the film Her as a picture of AGI. What they described is the north star for every interface: natural enough to vanish.",
+   "degree": 6
+  },
+  {
    "id": "a:/notes/a-billion-without-a-plan/",
    "kind": "note",
    "label": "A billion without a plan",
@@ -424,7 +442,7 @@
    "url": "https://raskell.io/notes/who-carries-progress/",
    "meta": "2026-11-07",
    "description": "A colleague says the breakthroughs come from academia and the state. I think they come from people who have to make things work, and that what they learn spreads.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "a:/notes/goat-games/",
@@ -593,9 +611,9 @@
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 16 pages",
+   "meta": "Concept · 17 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 25
+   "degree": 26
   },
   {
    "id": "t:ai-alignment",
@@ -656,9 +674,9 @@
    "kind": "tag",
    "label": "Augmentation",
    "url": "https://raskell.io/tags/augmentation/",
-   "meta": "Concept · 8 pages",
+   "meta": "Concept · 9 pages",
    "description": "Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents.",
-   "degree": 16
+   "degree": 18
   },
   {
    "id": "t:basel",
@@ -872,18 +890,18 @@
    "kind": "tag",
    "label": "Entrepreneurship",
    "url": "https://raskell.io/tags/entrepreneurship/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "Finding something worth building and building it: ventures, side projects, and what changes when anyone can spot an opportunity and operate a business with AI.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:ethics",
    "kind": "tag",
    "label": "Ethics",
    "url": "https://raskell.io/tags/ethics/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
-   "degree": 21
+   "degree": 22
   },
   {
    "id": "t:europe",
@@ -1030,6 +1048,15 @@
    "degree": 30
   },
   {
+   "id": "t:hubris",
+   "kind": "tag",
+   "label": "Hubris",
+   "url": "https://raskell.io/tags/hubris/",
+   "meta": "Concept · 1 page",
+   "description": "When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand.",
+   "degree": 15
+  },
+  {
    "id": "t:hypertext",
    "kind": "tag",
    "label": "Hypertext",
@@ -1075,6 +1102,15 @@
    "degree": 23
   },
   {
+   "id": "t:interfaces",
+   "kind": "tag",
+   "label": "Interfaces",
+   "url": "https://raskell.io/tags/interfaces/",
+   "meta": "Concept · 1 page",
+   "description": "Where people meet machines, from command lines to chat and voice, and the goal of an interface so natural that it disappears.",
+   "degree": 3
+  },
+  {
    "id": "t:internet-culture",
    "kind": "tag",
    "label": "Internet culture",
@@ -1115,9 +1151,9 @@
    "kind": "tag",
    "label": "Language",
    "url": "https://raskell.io/tags/language/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Language as a faculty and a medium: how it carries thought and knowledge, and whether a machine that learns only text learns the world.",
-   "degree": 6
+   "degree": 8
   },
   {
    "id": "t:languages",
@@ -1394,9 +1430,9 @@
    "kind": "tag",
    "label": "Research labs",
    "url": "https://raskell.io/tags/research-labs/",
-   "meta": "Concept · 5 pages",
+   "meta": "Concept · 6 pages",
    "description": "The institutions where discovery happens and how they are funded and run: CERN, Bell Labs, ARPA, Los Alamos, DeepMind, and the labs behind modern medicine.",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "t:risk",
@@ -1802,15 +1838,6 @@
    "meta": "Concept · no pages yet",
    "description": "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.",
    "degree": 18
-  },
-  {
-   "id": "t:hubris",
-   "kind": "tag",
-   "label": "Hubris",
-   "url": "https://raskell.io/tags#hubris",
-   "meta": "Concept · no pages yet",
-   "description": "When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand.",
-   "degree": 14
   },
   {
    "id": "t:life-sciences",
@@ -2339,7 +2366,7 @@
    "url": "https://raskell.io/reading/#empire-of-ai",
    "meta": "Book · Karen Hao · reading now",
    "description": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
-   "degree": 11
+   "degree": 13
   },
   {
    "id": "w:the-cauldron",
@@ -3957,6 +3984,10 @@
    "target": "t:aerospace"
   },
   {
+   "source": "a:/notes/the-interface-that-disappears/",
+   "target": "t:agents"
+  },
+  {
    "source": "a:/notes/in-vivo-not-in-vitro/",
    "target": "t:agents"
   },
@@ -4151,6 +4182,10 @@
   {
    "source": "t:attention-economy",
    "target": "t:open-web"
+  },
+  {
+   "source": "a:/notes/the-interface-that-disappears/",
+   "target": "t:augmentation"
   },
   {
    "source": "a:/notes/citizen-entrepreneurs/",
@@ -4625,6 +4660,10 @@
    "target": "t:enterprise-architecture"
   },
   {
+   "source": "a:/notes/one-person-can-make-a-difference/",
+   "target": "t:entrepreneurship"
+  },
+  {
    "source": "a:/notes/a-billion-without-a-plan/",
    "target": "t:entrepreneurship"
   },
@@ -4639,6 +4678,10 @@
   {
    "source": "t:entrepreneurship",
    "target": "t:economics"
+  },
+  {
+   "source": "a:/notes/one-person-can-make-a-difference/",
+   "target": "t:ethics"
   },
   {
    "source": "a:/notes/power-in-the-good-sense/",
@@ -4965,6 +5008,18 @@
    "target": "t:history"
   },
   {
+   "source": "a:/notes/one-person-can-make-a-difference/",
+   "target": "t:hubris"
+  },
+  {
+   "source": "t:hubris",
+   "target": "t:risk"
+  },
+  {
+   "source": "t:hubris",
+   "target": "t:ethics"
+  },
+  {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "t:hypertext"
   },
@@ -5069,6 +5124,18 @@
    "target": "t:neuroscience"
   },
   {
+   "source": "a:/notes/the-interface-that-disappears/",
+   "target": "t:interfaces"
+  },
+  {
+   "source": "t:interfaces",
+   "target": "t:augmentation"
+  },
+  {
+   "source": "t:interfaces",
+   "target": "t:language"
+  },
+  {
    "source": "a:/articles/the-river-and-the-canal/",
    "target": "t:internet-culture"
   },
@@ -5119,6 +5186,10 @@
   {
    "source": "t:kubernetes",
    "target": "t:platform-automation"
+  },
+  {
+   "source": "a:/notes/the-interface-that-disappears/",
+   "target": "t:language"
   },
   {
    "source": "a:/notes/in-vivo-not-in-vitro/",
@@ -5519,6 +5590,10 @@
   {
    "source": "a:/articles/traffic-replay-as-a-security-primitive/",
    "target": "t:reliability"
+  },
+  {
+   "source": "a:/notes/one-person-can-make-a-difference/",
+   "target": "t:research-labs"
   },
   {
    "source": "a:/notes/a-billion-without-a-plan/",
@@ -6099,14 +6174,6 @@
   {
    "source": "t:history-of-science",
    "target": "t:history"
-  },
-  {
-   "source": "t:hubris",
-   "target": "t:risk"
-  },
-  {
-   "source": "t:hubris",
-   "target": "t:ethics"
   },
   {
    "source": "t:lost-civilisations",
@@ -6715,6 +6782,14 @@
   {
    "source": "a:/articles/all-beginning-is-haskell/",
    "target": "a:/articles/mise-ate-my-makefile/"
+  },
+  {
+   "source": "a:/notes/one-person-can-make-a-difference/",
+   "target": "a:/notes/who-carries-progress/"
+  },
+  {
+   "source": "a:/notes/the-interface-that-disappears/",
+   "target": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/"
   },
   {
    "source": "a:/notes/a-billion-without-a-plan/",
@@ -7999,6 +8074,14 @@
   {
    "source": "w:empire-of-ai",
    "target": "t:language"
+  },
+  {
+   "source": "a:/notes/one-person-can-make-a-difference/",
+   "target": "w:empire-of-ai"
+  },
+  {
+   "source": "a:/notes/the-interface-that-disappears/",
+   "target": "w:empire-of-ai"
   },
   {
    "source": "a:/notes/a-billion-without-a-plan/",

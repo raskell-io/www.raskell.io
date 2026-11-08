@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-08T09:49:46+00:00",
+ "generated": "2026-11-08T10:26:57+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "article": 42,
   "review": 2,
-  "note": 16,
+  "note": 18,
   "talk": 1,
   "dataset": 1,
   "work": 166,
   "project": 31,
-  "topic": 163,
-  "link": 533
+  "topic": 164,
+  "link": 535
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -763,6 +763,32 @@
     "open-web"
    ],
    "meta": "1 min"
+  },
+  {
+   "kind": "note",
+   "title": "One person can make a difference",
+   "url": "https://raskell.io/notes/one-person-can-make-a-difference/",
+   "description": "Sam Altman had a line from Admiral Rickover painted on OpenAI's walls. It says one person can make a difference, and it was used to ask for unity.",
+   "date": "2026-11-08",
+   "topics": [
+    "research-labs",
+    "hubris",
+    "ethics",
+    "entrepreneurship"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "The interface that disappears",
+   "url": "https://raskell.io/notes/the-interface-that-disappears/",
+   "description": "OpenAI's founders kept pointing to the film Her as a picture of AGI. What they described is the north star for every interface: natural enough to vanish.",
+   "date": "2026-11-08",
+   "topics": [
+    "interfaces",
+    "augmentation",
+    "language",
+    "agents"
+   ]
   },
   {
    "kind": "note",
@@ -4247,7 +4273,7 @@
   {
    "kind": "topic",
    "title": "Hubris",
-   "url": "https://raskell.io/tags#hubris",
+   "url": "https://raskell.io/tags/hubris/",
    "description": "When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand.",
    "meta": "Concept"
   },
@@ -4284,6 +4310,13 @@
    "title": "Intelligence",
    "url": "https://raskell.io/tags/intelligence/",
    "description": "What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Interfaces",
+   "url": "https://raskell.io/tags/interfaces/",
+   "description": "Where people meet machines, from command lines to chat and voice, and the goal of an interface so natural that it disappears.",
    "meta": "Concept"
   },
   {
@@ -6936,6 +6969,19 @@
     {
      "title": "Win Everything, Control No One",
      "url": "https://raskell.io/articles/win-everything-control-no-one/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The Computer for the 21st Century",
+   "url": "https://calmtech.com/papers/computer-for-the-21st-century",
+   "domain": "calmtech.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The interface that disappears",
+     "url": "https://raskell.io/notes/the-interface-that-disappears/"
     }
    ]
   },
@@ -10355,6 +10401,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Quotepark",
+   "url": "https://quotepark.com/quotes/1900877-hyman-george-rickover-i-believe-it-is-the-duty-of-each-of-us-to-act-as-i/",
+   "domain": "quotepark.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "One person can make a difference",
+     "url": "https://raskell.io/notes/one-person-can-make-a-difference/"
     }
    ]
   },

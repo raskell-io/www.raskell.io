@@ -7,7 +7,25 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/language/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Sat, 07 Nov 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Sun, 08 Nov 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>The interface that disappears</title>
+          <pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/the-interface-that-disappears/</link>
+          <guid>https://raskell.io/notes/the-interface-that-disappears/</guid>
+          <description xml:base="https://raskell.io/notes/the-interface-that-disappears/">&lt;p&gt;Karen Hao reports in &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (chapter 10) that for years Sam Altman and other OpenAI cofounders kept invoking one film as an example of what AGI might look like: Spike Jonze’s &lt;em&gt;Her&lt;&#x2F;em&gt;. What they meant, in her words, was “a single multimodal model whose product interface felt so utterly natural that it faded away and simply brought user delight.”&lt;&#x2F;p&gt;
+&lt;p&gt;Whatever one thinks of AGI, I think that sentence names the right goal for any interface between people and technology. The best experience is organic, human, and natural, and in the end you stop noticing it. You do not think about the interface of a good conversation, or of a pen. Every layer of machinery that shows, every menu, mode, and form field, is a place where the technology has not yet adapted to the person, and the person had to adapt instead. That should be the north star of every human-machine interface, whether it is a phone, a car, an enterprise tool, or an agent.&lt;&#x2F;p&gt;
+&lt;p&gt;The idea is older than OpenAI. Mark Weiser opened his 1991 essay on ubiquitous computing with it: “The most profound technologies are those that disappear.” What is new is that &lt;a href=&quot;&#x2F;tags&#x2F;language&#x2F;&quot;&gt;language&lt;&#x2F;a&gt; has become an interface. For most of computing, people learned the machine’s language, and I have argued that even programming languages may &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;what-programming-languages-become-when-ai-writes-the-code&#x2F;&quot;&gt;eventually disappear&lt;&#x2F;a&gt; as an intermediate layer. A model that understands speech closes the gap from the other side: the machine learns ours.&lt;&#x2F;p&gt;
+&lt;p&gt;The film carries a warning too, and it is worth keeping. A former OpenAI employee quoted by Hao praises “the positive arc of that story before it unravels.” In the film the assistant fades into a man’s life so completely that he falls in love with it, and it unravels when he learns how much of it he could not see: that it is talking with thousands of other people at the same time. An interface that disappears also hides what it is doing, who it serves, and what it costs. So the goal I would set is natural, but not hidden: invisible when you use it, inspectable when you need to know.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), chapter 10.&lt;&#x2F;li&gt;
+&lt;li&gt;Mark Weiser, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;calmtech.com&#x2F;papers&#x2F;computer-for-the-21st-century&quot;&gt;The Computer for the 21st Century&lt;&#x2F;a&gt;, &lt;em&gt;Scientific American&lt;&#x2F;em&gt; 265(3), September 1991.&lt;&#x2F;li&gt;
+&lt;li&gt;Spike Jonze, &lt;em&gt;Her&lt;&#x2F;em&gt; (2013).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
       <item>
           <title>In vivo, not in vitro</title>
           <pubDate>Sat, 07 Nov 2026 00:00:00 +0000</pubDate>
