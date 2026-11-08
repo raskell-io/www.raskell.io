@@ -608,6 +608,12 @@ kind = "concept"
 description = "Computers that extend what people can do instead of replacing them: Licklider's symbiosis, Kasparov's centaur chess, and working alongside coding agents."
 broader = ["ai-engineering", "intelligence"]
 
+[interfaces]
+name = "Interfaces"
+kind = "concept"
+description = "Where people meet machines, from command lines to chat and voice, and the goal of an interface so natural that it disappears."
+broader = ["augmentation", "language"]
+
 [technology-races]
 name = "Technology races"
 kind = "concept"
