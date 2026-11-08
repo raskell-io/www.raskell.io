@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-07T09:41:39+00:00",
+ "generated": "2026-11-08T08:11:40+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -577,7 +577,7 @@
    "url": "https://raskell.io/tags/abundance/",
    "meta": "Concept · 1 page",
    "description": "Making what is scarce plentiful on purpose: building homes, energy, and compute until they are cheap, and the politics of supply that gets there.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:aerospace",
@@ -2158,8 +2158,8 @@
    "label": "Die Zukunft",
    "url": "https://die-zukunft.ch",
    "meta": "Project",
-   "description": "A Swiss movement that applies engineering principles to public life: not left, not right. Digital sovereignty through open standards, auditable and portable public infrastructure, …",
-   "degree": 10
+   "description": "A new Swiss party for the age of AI and robotics: its own compute and open Swiss models, top talent, production at home, and a dividend for everyone.",
+   "degree": 11
   },
   {
    "id": "p:human-macroscope",
@@ -7393,6 +7393,10 @@
   {
    "source": "p:die-zukunft",
    "target": "t:sovereignty"
+  },
+  {
+   "source": "p:die-zukunft",
+   "target": "t:abundance"
   },
   {
    "source": "p:die-zukunft",
