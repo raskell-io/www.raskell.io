@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-08T10:26:57+00:00",
+ "generated": "2026-11-12T10:07:07+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 535,
+ "count": 540,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -173,6 +173,35 @@
    "citations": 6
   },
   {
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook",
+   "title": "the-agent-platform-handbook",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Evaluation Closes the Loop",
+     "url": "https://raskell.io/articles/evaluation-closes-the-loop/"
+    },
+    {
+     "title": "Observability Is Not Logging",
+     "url": "https://raskell.io/articles/observability-is-not-logging/"
+    },
+    {
+     "title": "Tools: How Agents Actually Do Things",
+     "url": "https://raskell.io/articles/tools-how-agents-actually-do-things/"
+    },
+    {
+     "title": "Your Agent Wants Root",
+     "url": "https://raskell.io/articles/your-agent-wants-root/"
+    },
+    {
+     "title": "What an Agent Actually Is",
+     "url": "https://raskell.io/articles/what-an-agent-actually-is/"
+    }
+   ],
+   "citations": 5
+  },
+  {
    "url": "https://kishi.raskell.io",
    "title": "kishi.raskell.io",
    "domain": "kishi.raskell.io",
@@ -247,31 +276,6 @@
     {
      "title": "All beginning is Haskell",
      "url": "https://raskell.io/articles/all-beginning-is-haskell/"
-    }
-   ],
-   "citations": 4
-  },
-  {
-   "url": "https://github.com/raskell-io/the-agent-platform-handbook",
-   "title": "the-agent-platform-handbook",
-   "domain": "github.com",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Observability Is Not Logging",
-     "url": "https://raskell.io/articles/observability-is-not-logging/"
-    },
-    {
-     "title": "Tools: How Agents Actually Do Things",
-     "url": "https://raskell.io/articles/tools-how-agents-actually-do-things/"
-    },
-    {
-     "title": "Your Agent Wants Root",
-     "url": "https://raskell.io/articles/your-agent-wants-root/"
-    },
-    {
-     "title": "What an Agent Actually Is",
-     "url": "https://raskell.io/articles/what-an-agent-actually-is/"
     }
    ],
    "citations": 4
@@ -1635,6 +1639,45 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/2305.17926",
+   "title": "Wang et al., 2023",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Evaluation Closes the Loop",
+     "url": "https://raskell.io/articles/evaluation-closes-the-loop/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/2306.05685",
+   "title": "Zheng et al.",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Evaluation Closes the Loop",
+     "url": "https://raskell.io/articles/evaluation-closes-the-loop/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/2404.13076",
+   "title": "Panickssery et al.",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Evaluation Closes the Loop",
+     "url": "https://raskell.io/articles/evaluation-closes-the-loop/"
     }
    ],
    "citations": 1
@@ -4435,6 +4478,19 @@
    "citations": 1
   },
   {
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook/tree/post-10",
+   "title": "post-10",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Evaluation Closes the Loop",
+     "url": "https://raskell.io/articles/evaluation-closes-the-loop/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://github.com/raskell-io/www.raskell.io",
    "title": "raskell.io source",
    "domain": "github.com",
@@ -4508,6 +4564,19 @@
     {
      "title": "Edge Systems Are the New Backend",
      "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://hamel.dev/blog/posts/evals/",
+   "title": "Your AI Product Needs Evals",
+   "domain": "hamel.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Evaluation Closes the Loop",
+     "url": "https://raskell.io/articles/evaluation-closes-the-loop/"
     }
    ],
    "citations": 1

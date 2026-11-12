@@ -29,6 +29,7 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 7. [The Model Is a Dependency](https://raskell.io/articles/the-model-is-a-dependency.md): Every layer of the harness has existed to put the right tokens in front of one hardcoded model string. This post pulls that string out and makes the model a dependency: why you route a cheap model for easy turns and a strong one for hard turns, what a fallback looks like when a provider is down, and why 'models are commodities' is a claim about your architecture before it is a claim about the market. Part seven of The Agent Platform Handbook.
 8. [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop.md): Every model response already carries its own bill in the usage field, and the loop throws it away. This post reads that field, prices it against a table, and turns cost into a value the loop can see per turn and act on: a metering decorator that needs no loop change, a running ledger, prompt-cache accounting that moves the number the most, and a budget that degrades before it stops. Part eight of The Agent Platform Handbook.
 9. [Observability Is Not Logging](https://raskell.io/articles/observability-is-not-logging.md): A cost total says nothing about how a run went. This part turns each agent run into a trace: which turn escalated, which tool failed, where the money went.
+10. [Evaluation Closes the Loop](https://raskell.io/articles/evaluation-closes-the-loop.md): A trace shows what an agent did, not whether it was right. This part scores the agent against known cases and fails the build when a passing case breaks.
 
 ## Series: Learning To Play
 
@@ -37,6 +38,7 @@ raskell.io is the personal site of Raffael Schneider, an AI Architect in Basel, 
 
 ## Articles
 
+- [Evaluation Closes the Loop](https://raskell.io/articles/evaluation-closes-the-loop.md) (2026-11-12): A trace shows what an agent did, not whether it was right. This part scores the agent against known cases and fails the build when a passing case breaks.
 - [Three Parts and No Brain](https://raskell.io/articles/three-parts-and-no-brain.md) (2026-11-05): What a chess program is made of, and how far a hand-written one gets against the computer opponent on lichess, before any learning starts.
 - [The Behavioural Turn in Software Engineering](https://raskell.io/articles/the-behavioural-turn.md) (2026-11-05): Moving from assembly to C changed what we read. Coding agents change whether we read. What psychology learned about black boxes, and what it got wrong.
 - [IT Intelligence: The Missing Data Layer of Enterprise IT](https://raskell.io/articles/it-intelligence.md) (2026-11-04): Business intelligence tells a company how it sells. Nothing tells it how its IT fits together. Why I started building an Enterprise Context Platform.
@@ -308,16 +310,16 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ## Sources cited most
 
-External links cited on more than one page (all 514 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
+External links cited on more than one page (all 519 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
 
 - [Zentinel](https://zentinelproxy.io): cited on 12 pages
 - [Archipelag.io](https://archipelag.io): cited on 9 pages
 - [Arcanist](https://arcanist.sh/): cited on 6 pages
 - [Cyanea](https://cyanea.bio): cited on 6 pages
+- [companion repository](https://github.com/raskell-io/the-agent-platform-handbook): cited on 5 pages
 - [kishi.raskell.io](https://kishi.raskell.io): cited on 5 pages
 - [Die Zukunft](https://die-zukunft.ch/): cited on 4 pages
 - [Shiioo](https://github.com/raskell-io/shiioo): cited on 4 pages
-- [companion repository](https://github.com/raskell-io/the-agent-platform-handbook): cited on 4 pages
 - [AI 2027](https://ai-2027.com/): cited on 3 pages
 - [Basel Haskell Compiler](https://arcanist.sh/bhc/): cited on 3 pages
 - [Pingora](https://github.com/cloudflare/pingora): cited on 3 pages

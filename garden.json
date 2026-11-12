@@ -1,10 +1,10 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-08T10:26:57+00:00",
+ "generated": "2026-11-12T10:07:07+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
-  "article": 42,
+  "article": 43,
   "review": 2,
   "note": 18,
   "talk": 1,
@@ -12,7 +12,7 @@
   "work": 166,
   "project": 31,
   "topic": 164,
-  "link": 535
+  "link": 540
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -23,6 +23,20 @@
   "data": "https://raskell.io/data/"
  },
  "items": [
+  {
+   "kind": "article",
+   "title": "Evaluation Closes the Loop",
+   "url": "https://raskell.io/articles/evaluation-closes-the-loop/",
+   "description": "A trace shows what an agent did, not whether it was right. This part scores the agent against known cases and fails the build when a passing case breaks.",
+   "date": "2026-11-12",
+   "topics": [
+    "agents",
+    "evaluation",
+    "ai-platforms",
+    "typescript"
+   ],
+   "meta": "14 min"
+  },
   {
    "kind": "article",
    "title": "The Behavioural Turn in Software Engineering",
@@ -5091,6 +5105,35 @@
   },
   {
    "kind": "link",
+   "title": "the-agent-platform-handbook",
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Evaluation Closes the Loop",
+     "url": "https://raskell.io/articles/evaluation-closes-the-loop/"
+    },
+    {
+     "title": "Observability Is Not Logging",
+     "url": "https://raskell.io/articles/observability-is-not-logging/"
+    },
+    {
+     "title": "Tools: How Agents Actually Do Things",
+     "url": "https://raskell.io/articles/tools-how-agents-actually-do-things/"
+    },
+    {
+     "title": "Your Agent Wants Root",
+     "url": "https://raskell.io/articles/your-agent-wants-root/"
+    },
+    {
+     "title": "What an Agent Actually Is",
+     "url": "https://raskell.io/articles/what-an-agent-actually-is/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "kishi.raskell.io",
    "url": "https://kishi.raskell.io",
    "domain": "kishi.raskell.io",
@@ -5165,31 +5208,6 @@
     {
      "title": "All beginning is Haskell",
      "url": "https://raskell.io/articles/all-beginning-is-haskell/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "the-agent-platform-handbook",
-   "url": "https://github.com/raskell-io/the-agent-platform-handbook",
-   "domain": "github.com",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Observability Is Not Logging",
-     "url": "https://raskell.io/articles/observability-is-not-logging/"
-    },
-    {
-     "title": "Tools: How Agents Actually Do Things",
-     "url": "https://raskell.io/articles/tools-how-agents-actually-do-things/"
-    },
-    {
-     "title": "Your Agent Wants Root",
-     "url": "https://raskell.io/articles/your-agent-wants-root/"
-    },
-    {
-     "title": "What an Agent Actually Is",
-     "url": "https://raskell.io/articles/what-an-agent-actually-is/"
     }
    ]
   },
@@ -6553,6 +6571,45 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Wang et al., 2023",
+   "url": "https://arxiv.org/abs/2305.17926",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Evaluation Closes the Loop",
+     "url": "https://raskell.io/articles/evaluation-closes-the-loop/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Zheng et al.",
+   "url": "https://arxiv.org/abs/2306.05685",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Evaluation Closes the Loop",
+     "url": "https://raskell.io/articles/evaluation-closes-the-loop/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Panickssery et al.",
+   "url": "https://arxiv.org/abs/2404.13076",
+   "domain": "arxiv.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Evaluation Closes the Loop",
+     "url": "https://raskell.io/articles/evaluation-closes-the-loop/"
     }
    ]
   },
@@ -9353,6 +9410,19 @@
   },
   {
    "kind": "link",
+   "title": "post-10",
+   "url": "https://github.com/raskell-io/the-agent-platform-handbook/tree/post-10",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Evaluation Closes the Loop",
+     "url": "https://raskell.io/articles/evaluation-closes-the-loop/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "raskell.io source",
    "url": "https://github.com/raskell-io/www.raskell.io",
    "domain": "github.com",
@@ -9426,6 +9496,19 @@
     {
      "title": "Edge Systems Are the New Backend",
      "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Your AI Product Needs Evals",
+   "url": "https://hamel.dev/blog/posts/evals/",
+   "domain": "hamel.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Evaluation Closes the Loop",
+     "url": "https://raskell.io/articles/evaluation-closes-the-loop/"
     }
    ]
   },

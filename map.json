@@ -1,8 +1,17 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-08T10:26:57+00:00",
+ "generated": "2026-11-12T10:07:07+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/evaluation-closes-the-loop/",
+   "kind": "article",
+   "label": "Evaluation Closes the Loop",
+   "url": "https://raskell.io/articles/evaluation-closes-the-loop/",
+   "meta": "2026-11-12 · 14 min",
+   "description": "A trace shows what an agent did, not whether it was right. This part scores the agent against known cases and fails the build when a passing case breaks.",
+   "degree": 7
+  },
   {
    "id": "a:/articles/the-behavioural-turn/",
    "kind": "article",
@@ -100,7 +109,7 @@
    "url": "https://raskell.io/articles/observability-is-not-logging/",
    "meta": "2026-10-20 · 15 min",
    "description": "A cost total says nothing about how a run went. This part turns each agent run into a trace: which turn escalated, which tool failed, where the money went.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "a:/articles/this-site-is-becoming-a-map/",
@@ -127,7 +136,7 @@
    "url": "https://raskell.io/articles/the-model-is-a-dependency/",
    "meta": "2026-07-09 · 14 min",
    "description": "Every layer of the harness has existed to put the right tokens in front of one hardcoded model string. This post pulls that string out and makes the model a dependency: why you route a cheap model for easy turns and a strong one for hard turns, what a fallback looks like when a provider is down, and why 'models are commodities' is a claim about your architecture before it is a claim about the market. Part seven of The Agent Platform Handbook.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
@@ -611,9 +620,9 @@
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 17 pages",
+   "meta": "Concept · 18 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 26
+   "degree": 27
   },
   {
    "id": "t:ai-alignment",
@@ -647,9 +656,9 @@
    "kind": "tag",
    "label": "AI platforms",
    "url": "https://raskell.io/tags/ai-platforms/",
-   "meta": "Domain · 4 pages",
+   "meta": "Domain · 5 pages",
    "description": "The shared foundation an organisation builds AI on: model gateways, agent runtimes, governance, observability, and the operating model around them.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:applied-security",
@@ -917,9 +926,9 @@
    "kind": "tag",
    "label": "Evaluation",
    "url": "https://raskell.io/tags/evaluation/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Measuring whether an AI system does the right thing: golden sets, structural checks, LLM-as-judge, and regression suites.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:external-memory",
@@ -1619,9 +1628,9 @@
    "kind": "tag",
    "label": "TypeScript",
    "url": "https://raskell.io/tags/typescript/",
-   "meta": "Technology · 8 pages",
+   "meta": "Technology · 9 pages",
    "description": "TypeScript on Bun, the language of the Agent Platform Handbook code.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "t:united-states",
@@ -2068,8 +2077,8 @@
    "kind": "series",
    "label": "The Agent Platform Handbook",
    "url": "https://raskell.io/series/the-agent-platform-handbook/",
-   "meta": "9 parts",
-   "degree": 9
+   "meta": "10 parts",
+   "degree": 10
   },
   {
    "id": "c:reviews",
@@ -3984,6 +3993,10 @@
    "target": "t:aerospace"
   },
   {
+   "source": "a:/articles/evaluation-closes-the-loop/",
+   "target": "t:agents"
+  },
+  {
    "source": "a:/notes/the-interface-that-disappears/",
    "target": "t:agents"
   },
@@ -4130,6 +4143,10 @@
   {
    "source": "a:/articles/notes-from-rsac-2026/",
    "target": "t:ai-for-ops"
+  },
+  {
+   "source": "a:/articles/evaluation-closes-the-loop/",
+   "target": "t:ai-platforms"
   },
   {
    "source": "a:/articles/observability-is-not-logging/",
@@ -4706,6 +4723,10 @@
   {
    "source": "t:europe",
    "target": "t:geography"
+  },
+  {
+   "source": "a:/articles/evaluation-closes-the-loop/",
+   "target": "t:evaluation"
   },
   {
    "source": "a:/notes/in-vivo-not-in-vitro/",
@@ -5968,6 +5989,10 @@
    "target": "t:formal-methods"
   },
   {
+   "source": "a:/articles/evaluation-closes-the-loop/",
+   "target": "t:typescript"
+  },
+  {
    "source": "a:/articles/observability-is-not-logging/",
    "target": "t:typescript"
   },
@@ -6324,6 +6349,10 @@
    "target": "s:learning-to-play"
   },
   {
+   "source": "a:/articles/evaluation-closes-the-loop/",
+   "target": "s:the-agent-platform-handbook"
+  },
+  {
    "source": "a:/articles/observability-is-not-logging/",
    "target": "s:the-agent-platform-handbook"
   },
@@ -6366,6 +6395,14 @@
   {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "c:reviews"
+  },
+  {
+   "source": "a:/articles/evaluation-closes-the-loop/",
+   "target": "a:/articles/observability-is-not-logging/"
+  },
+  {
+   "source": "a:/articles/evaluation-closes-the-loop/",
+   "target": "a:/articles/the-model-is-a-dependency/"
   },
   {
    "source": "a:/articles/the-behavioural-turn/",
