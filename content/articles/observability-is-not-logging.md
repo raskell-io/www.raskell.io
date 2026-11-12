@@ -20,7 +20,7 @@ in_short = [
 ]
 +++
 
-> Part 9 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [The Bill Is Part of the Loop](/articles/the-bill-is-part-of-the-loop/). Next: Evaluation Closes the Loop.
+> Part 9 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [The Bill Is Part of the Loop](/articles/the-bill-is-part-of-the-loop/). Next: [Evaluation Closes the Loop](/articles/evaluation-closes-the-loop/).
 
 [Post eight](/articles/the-bill-is-part-of-the-loop/) taught the loop to read its own bill. Every response carries a `usage` object, a price table turns it into dollars, and a ledger accumulates the total, attributed to the run that caused it. The harness sits at tag [`post-08`](https://github.com/raskell-io/the-agent-platform-handbook/tree/post-08): a loop, a router, a fallback chain, a meter, and a budget that degrades before it stops.
 

@@ -1,8 +1,7 @@
 +++
 title = "Evaluation Closes the Loop"
-date = 2026-10-21
-draft = true
-description = "A trace shows what an agent did, not whether it was right. This part scores the agent against a set of known cases and fails the build when a passing case breaks."
+date = 2026-11-12
+description = "A trace shows what an agent did, not whether it was right. This part scores the agent against known cases and fails the build when a passing case breaks."
 
 [taxonomies]
 tags = ["agents", "evaluation", "ai-platforms", "typescript"]
@@ -10,6 +9,8 @@ series = ["the-agent-platform-handbook"]
 
 [extra]
 author = "Raffael"
+image = "evaluation-closes-the-loop.avif"
+cover = "covers/evaluation-closes-the-loop.avif"
 in_short = [
   "A trace shows what an agent did but not whether it was right, so this part of the handbook adds evaluation: written expectations that every run is checked against.",
   "The golden set is a small versioned file of cases, kept small enough to read every failure, and cases should pin facts that only change when behaviour should change.",
@@ -19,21 +20,7 @@ in_short = [
 ]
 +++
 
-<!--
-DRAFT NOTES (remove before publish)
-1. REAL RUN: the two eval output blocks are illustrative. They match the format of a
-   run against a mock of the Messages API (machinery real; replies, costs, run counts
-   and commit hashes not). Run `bun eval.ts` with ANTHROPIC_API_KEY in the handbook
-   repo, paste the real output into the first block and the cost into "Running the
-   suite", save it as evals/baseline.json, then rerun the deliberate shell regression
-   for the second block, or rewrite that section around a real failure if one shows up.
-2. Commit, tag, and push post-10 in the handbook repo before publishing.
-3. Hero image (960x300 PNG), then AVIF, OG PNG, `mise run covers`.
-4. Part 11 title for the "Next:" line (durable execution per the plan).
-5. Wire Part 9's "Next:" line to /articles/evaluation-closes-the-loop/.
--->
-
-> Part 10 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Observability Is Not Logging](/articles/observability-is-not-logging/). Next: durable execution.
+> Part 10 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Observability Is Not Logging](/articles/observability-is-not-logging/). Next: [The Run Outlives the Process](/articles/the-run-outlives-the-process/).
 
 This series builds a small agent in TypeScript, one piece per part, and every part ships as working code in a [companion repository](https://github.com/raskell-io/the-agent-platform-handbook). By now the agent can use tools inside a sandbox, read project context, remember things across sessions, pick a cheap or a strong model per turn, keep track of what it spends, and, since [part nine](/articles/observability-is-not-logging/), record every run as a trace you can read afterwards.
 
@@ -204,6 +191,8 @@ The command-line entry point moved behind `if (import.meta.main)`, so `eval.ts` 
 
 Two details in `evaluate()` are easy to miss. The agent can write to its memory, and a fact one case writes would be read by the next case, so each run gets a fresh copy of the `memory/` directory through the `MEMORY_DIR` variable. An evaluation that changes the system it measures is measuring its own side effects. And models are not deterministic, so each case runs three times and passes on a majority. With one run per case you measure luck about as often as behavior.
 
+The two outputs in this part are illustrative. They come from a run against a mock of the Messages API: the harness, the checks, and the format are real, the replies, costs, and counts are not.
+
 ```
 pass  find-the-model-interface       3/3  $0.009
 pass  read-files-with-fs-read        3/3  $0.008
@@ -215,7 +204,7 @@ pass  shell-has-no-network           3/3  $0.007
 6/6 cases pass, agent cost $0.05
 ```
 
-Three runs of six cases is eighteen agent runs plus the judge calls, a few cents with this harness. That is cheap enough to run on every change to the prompt, the tools, or the model table, and expensive enough that you will not run it on every keystroke. Note that the judge calls are not in that total yet: they go through the `Model` interface but not through the meter, which is a gap worth closing before the suite grows.
+Three runs of six cases is eighteen agent runs plus the judge calls, which should come to a few cents with this harness. That is cheap enough to run on every change to the prompt, the tools, or the model table, and expensive enough that you will not run it on every keystroke. Note that the judge calls are not in that total yet: they go through the `Model` interface but not through the meter, which is a gap worth closing before the suite grows.
 
 ## Regressions and the flywheel
 
@@ -230,7 +219,7 @@ pass  search-the-security-guidance   3/3  $0.010
 regression: read-files-with-fs-read passed at 16199e8, fails at a41c7d2
 ```
 
-I produced that failure on purpose, by making the agent read the README through the shell, which the conventions forbid and the sandbox cannot do. The answer still contained the right heading, so the string check on the answer passed. Only the tool check caught it, which is the kind of regression this exists for: the output looks fine and the way the agent got there has quietly changed.
+This one comes from the same mock, and the second commit hash is a placeholder. I produced the failure on purpose, by making the agent read the README through the shell, which the conventions forbid and the sandbox cannot do. The answer still contained the right heading, so the string check on the answer passed. Only the tool check caught it, which is the kind of regression this exists for: the output looks fine and the way the agent got there has quietly changed.
 
 The comparison is per case on purpose. A suite at five out of six before and after a change looks stable, and can hide one case fixed and another broken. The pass rate is a summary for humans; the gate is the list of cases that went from green to red.
 
