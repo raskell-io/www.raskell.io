@@ -30,8 +30,8 @@ text = "Everything else I read, have read, and plan to read is in the reading lo
 
 # Notes from the <span class="hero-term" data-flap="data plane.|agent loop.|rabbit hole.|latent space.|night shift.|training run.|field research.|frontier.|control plane.|simulation.|test kitchen.|event horizon.|packet capture.|singularity.|cold storage.|future.">machine room.</span>
 
-<a class="hero-who" href="/about/"><img class="hero-who__face" src="/images/raffael-face.webp" alt="" width="64" height="64"><strong>Raffael</strong></a> builds automation-first platforms and edge systems by day,
-and tries out ideas in language tooling, local-first apps, simulations, and games on the side.
-Writing about platform automation, edge infrastructure, applied security, and
-AI-assisted engineering. Languages and models are tools.
+<a class="hero-who" href="/about/"><img class="hero-who__face" src="/images/raffael-face.webp" alt="" width="64" height="64"><strong>Raffael</strong></a> architects AI and agent platforms by day,
+and builds decentralised compute, language tooling, local-first apps, simulations, and games by night.
+Writing about agents and the platforms they run on, trust and determinism in software,
+and the history and economics of technology. Languages and models are tools.
 They serve humans, not the other way around.

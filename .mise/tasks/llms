@@ -326,12 +326,12 @@ lines = [
     "",
     "> %s" % SITE_DESC,
     "",
-    "raskell.io is the personal site of %s, an %s in Basel, Switzerland. He works on enterprise AI and agent "
+    "raskell.io is the personal site of %s, %s %s in Basel, Switzerland. He works on enterprise AI and agent "
     "platforms, edge infrastructure, applied security, and developer tooling, and writes long-form articles about them. "
     "The site is a digital garden: articles, book reviews, notes, talks, a reading log, projects, a topic vocabulary, and "
     "every source the writing cites, all connected in one graph (map.json) and one search index (garden.json). "
     "Every article below links to a clean Markdown copy; the HTML page is the same URL without `.md`. "
-    "Writing is licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) and code samples MIT: reuse, quote, and train on it with attribution, e.g. %s, \"Article title\", raskell.io, date, URL. Images, logos, and quoted third-party material are excluded (%s/license/)." % (AUTHOR, JOB, AUTHOR, BASE),
+    "Writing is licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/) and code samples MIT: reuse, quote, and train on it with attribution, e.g. %s, \"Article title\", raskell.io, date, URL. Images, logos, and quoted third-party material are excluded (%s/license/)." % (AUTHOR, "an" if JOB[:1] in "AEIOU" else "a", JOB, AUTHOR, BASE),
     "",
     "## Key pages",
     "",

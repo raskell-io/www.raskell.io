@@ -24,7 +24,7 @@ text = "읽고 있는 책, 읽은 책, 읽을 책은 모두 독서 기록에 있
 
 # 노트, <span class="hero-term" data-flap="데이터 플레인에서.|에이전트 루프에서.|토끼굴에서.|잠재 공간에서.|야간 근무에서.|트레이닝 런에서.|현장 연구에서.|프런티어에서.|컨트롤 플레인에서.|시뮬레이션에서.|시험 주방에서.|사건의 지평선에서.|패킷 캡처에서.|특이점에서.|콜드 스토리지에서.|미래에서.">기계실에서.</span>
 
-<a class="hero-who" href="/ko/about/"><img class="hero-who__face" src="/images/raffael-face.webp" alt="" width="64" height="64"><strong>Raffael</strong></a>은 낮에는 자동화 우선 플랫폼과 엣지 시스템을 만들고,
-틈틈이 언어 도구, 로컬 우선 앱, 시뮬레이션, 게임으로 아이디어를 시험합니다.
-이곳에서는 플랫폼 자동화, 엣지 인프라, 응용 보안, 그리고 AI와 함께하는 엔지니어링에 대해 씁니다.
+<a class="hero-who" href="/ko/about/"><img class="hero-who__face" src="/images/raffael-face.webp" alt="" width="64" height="64"><strong>Raffael</strong></a>은 낮에는 AI와 에이전트 플랫폼의 아키텍처를 설계하고,
+밤에는 탈중앙화 컴퓨팅, 언어 도구, 로컬 우선 앱, 시뮬레이션, 게임을 만듭니다.
+이곳에서는 에이전트와 그 기반이 되는 플랫폼, 소프트웨어의 신뢰와 결정론, 그리고 기술의 역사와 경제학에 대해 씁니다.
 언어와 모델은 도구일 뿐입니다. 사람이 도구를 섬기는 것이 아니라, 도구가 사람을 섬깁니다.

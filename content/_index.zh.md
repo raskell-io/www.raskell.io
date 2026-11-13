@@ -24,4 +24,4 @@ text = "我读过的、正在读的和打算读的，都在阅读记录里。"
 
 # 笔记，来自<span class="hero-term" data-flap="数据平面。|智能体循环。|兔子洞。|潜在空间。|夜班。|训练现场。|实地研究。|前沿。|控制平面。|模拟世界。|试验厨房。|事件视界。|抓包现场。|奇点。|冷存储。|未来。">机房。</span>
 
-<a class="hero-who" href="/zh/about/"><img class="hero-who__face" src="/images/raffael-face.webp" alt="" width="64" height="64"><strong>Raffael</strong></a> 白天构建自动化优先的平台和边缘系统，业余时间则在语言工具、本地优先应用、模拟和游戏上尝试各种想法。这里写的是平台自动化、边缘基础设施、应用安全，以及 AI 辅助的工程实践。编程语言和模型都只是工具。它们为人服务，而不是反过来。
+<a class="hero-who" href="/zh/about/"><img class="hero-who__face" src="/images/raffael-face.webp" alt="" width="64" height="64"><strong>Raffael</strong></a> 白天做 AI 与智能体平台的架构，夜里构建去中心化算力、语言工具、本地优先应用、模拟和游戏。这里写的是智能体和承载它们的平台、软件中的信任与确定性，以及技术的历史与经济学。编程语言和模型都只是工具。它们为人服务，而不是反过来。
