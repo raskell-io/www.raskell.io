@@ -358,7 +358,7 @@
     }
     {%- elif section is defined and section.extra.tiers is defined %},
     {#- The projects and apps pages: every project as an entity (data/projects/<slug>.toml) with a stable id on
-        raskell.io, its own site and repository as sameAs, and the author. `schema_type` and `app_category` in
+        raskell.io, its own site and repository (and `entity_id`, its id on its own site) as sameAs, and the author. `schema_type` and `app_category` in
         the data file pick the schema.org type (default SoftwareApplication, DeveloperApplication). -#}
     {%- set_global ld_items = [] %}
     {%- for tier in section.extra.tiers %}{% for slug in tier.projects %}{% set_global ld_items = ld_items | concat(with=slug) %}{% endfor %}{% endfor %}
@@ -382,6 +382,8 @@
           {%- set_global purl = "" %}{% set_global psame = [] %}
           {%- for l in p.links | default(value=[]) %}{% set_global psame = psame | concat(with=l.url) %}{% if not purl and l.name | lower != "github" %}{% set_global purl = l.url %}{% endif %}{% endfor %}
           {%- if not purl and psame | length > 0 %}{% set_global purl = psame | first %}{% endif %}
+          {#- `entity_id`: the id the project's own site gives itself in its JSON-LD, so both descriptions join. -#}
+          {%- if p.entity_id %}{% set_global psame = psame | concat(with=p.entity_id) %}{% endif %}
           {%- set st = p.schema_type | default(value="SoftwareApplication") %}
           {%- set is_app = st == "SoftwareApplication" or st == "VideoGame" %}
           { "@type": "ListItem", "position": {{ loop.index }}, "item": {

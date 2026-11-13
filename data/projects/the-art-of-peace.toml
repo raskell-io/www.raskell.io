@@ -7,6 +7,7 @@ links = [ { name = "Read online", url = "https://artofpeace.raskell.io" }, { nam
 topics = ["philosophy", "ethics", "trust", "commons"]
 
 schema_type = "Book"   # schema.org type for the JSON-LD on /projects/ and /apps/ (default SoftwareApplication)
+entity_id = "https://artofpeace.raskell.io/#book"   # the id the book's own JSON-LD uses; added to sameAs so both join
 
 # Translations: any field here replaces the original in that language (description, title, tagline).
 [i18n.zh]

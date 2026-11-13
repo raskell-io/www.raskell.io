@@ -31,7 +31,7 @@ Every kind of content has exactly one source of truth.
 | Talk | `content/talks/<slug>.md` with `template = "slide-deck.html"` | title, date, description, `extra.event`, `extra.venue`, `extra.event_url` | slides are HTML sections; assets in `static/talks/<slug>/`; add a card to `content/speaking.md` |
 | Dataset | `content/data/<slug>.md` beside its file `static/data/<slug>.json` | title, date, description (under 160 chars), `tags`, `extra.file` (`"data/<slug>.json"`, a path under `static/`), `extra.licence` | `extra.licence_url`, `extra.sources = [{ title, author, publisher, year, isbn, url }]`, `extra.reads`, `extra.counts` (top-level arrays to count), `updated` when the data changes; served at `/data/<slug>/` and `/data/<slug>.json`; listed on `/data/` |
 | Work (book, novel, paper, report, article, essay, journal) | `data/reading.toml`, one `[[works]]` block | id, title, author, kind, status | dates are months, `"YYYY-MM"`; `rating` 1 to 10 (half steps allowed) when reviewed; cover via `mise run reading-covers <id>` |
-| Project or app | `data/projects/<slug>.toml` | title, description, status, links, topics | listed by adding the slug to a tier in `content/projects/_index.md` or `content/apps/_index.md`; `schema_type` (default SoftwareApplication; VideoGame, Book, ResearchProject, Project) and `app_category` (default DeveloperApplication) set its JSON-LD |
+| Project or app | `data/projects/<slug>.toml` | title, description, status, links, topics | listed by adding the slug to a tier in `content/projects/_index.md` or `content/apps/_index.md`; `schema_type` (default SoftwareApplication; VideoGame, Book, ResearchProject, Project) and `app_category` (default DeveloperApplication) set its JSON-LD; `entity_id` is the `@id` the project's own site uses for itself in its JSON-LD, added to `sameAs` |
 | Topic | `data/tags.toml` | name, kind (domain, concept, technology, site), description | `broader` links it into the graph; define it before using it; translate it in `data/tags.<code>.toml` |
 | Category | `config.toml`, `extra.seijaku.categories_descriptions` | a one-line description | a form of writing, not a subject; today only `reviews` |
 | Series | `taxonomies.series` on each part, `extra.seijaku.series_descriptions` in config | | only for real multi-part reading orders |
@@ -138,7 +138,7 @@ Add `data/projects/<slug>.toml`, then add the slug to a tier in `content/project
 `content/apps/_index.md`. Topics come from the same vocabulary. `related` links projects on the map.
 If the project has its own site under *.raskell.io, give it the discovery kit: real `robots.txt`,
 `sitemap.xml` and `llms.txt` files (not the app's HTML fallback), a description and social card, JSON-LD
-naming the author as `https://raskell.io/#person`, a few sentences of text readable without JavaScript, and a
+naming the author as `https://raskell.io/#person` (put that JSON-LD's own `@id` in the project file as `entity_id`), a few sentences of text readable without JavaScript, and a
 quiet `rel="author"` link back to https://raskell.io/.
 
 ### A new category
