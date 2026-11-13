@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-13T06:56:20+00:00",
+ "generated": "2026-11-13T13:19:05+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -748,7 +748,7 @@
    "url": "https://raskell.io/tags/commons/",
    "meta": "Concept · 2 pages",
    "description": "Resources held in common and the rules that keep them so: common land, open protocols, open data, and the web before the platforms.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:compilers",
@@ -910,7 +910,7 @@
    "url": "https://raskell.io/tags/ethics/",
    "meta": "Concept · 2 pages",
    "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
-   "degree": 22
+   "degree": 23
   },
   {
    "id": "t:europe",
@@ -1612,7 +1612,7 @@
    "url": "https://raskell.io/tags/trust/",
    "meta": "Concept · 5 pages",
    "description": "Personal trust and system trust: why people rely on banks, procedures and software they cannot inspect, and how that reliance is earned.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:type-systems",
@@ -1981,7 +1981,7 @@
    "url": "https://raskell.io/tags#philosophy",
    "meta": "Domain · no pages yet",
    "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
-   "degree": 37
+   "degree": 38
   },
   {
    "id": "t:philosophy-of-science",
@@ -2223,6 +2223,15 @@
    "meta": "Project",
    "description": "An evidence-linked historical atlas, starting with 1900–2026: choose a place and a date, see what changed, and inspect the evidence behind every assertion. Control, territorial cla…",
    "degree": 9
+  },
+  {
+   "id": "p:the-art-of-peace",
+   "kind": "project",
+   "label": "The Art of Peace",
+   "url": "https://artofpeace.raskell.io",
+   "meta": "Project",
+   "description": "A short book on living together without thinking alike. An opening, thirteen chapters, and a closing on independent thought, voluntary cooperation, and the boundaries that let peop…",
+   "degree": 5
   },
   {
    "id": "p:wasm-ad",
@@ -3916,7 +3925,7 @@
    "label": "Civic and research",
    "url": "https://raskell.io/projects/#tier-civic",
    "meta": "Group",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "h:projects-lab",
@@ -7735,6 +7744,26 @@
   {
    "source": "p:chronicle-of-earth",
    "target": "t:typescript"
+  },
+  {
+   "source": "p:the-art-of-peace",
+   "target": "h:projects-civic"
+  },
+  {
+   "source": "p:the-art-of-peace",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "p:the-art-of-peace",
+   "target": "t:ethics"
+  },
+  {
+   "source": "p:the-art-of-peace",
+   "target": "t:trust"
+  },
+  {
+   "source": "p:the-art-of-peace",
+   "target": "t:commons"
   },
   {
    "source": "p:wasm-ad",
