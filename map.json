@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-13T13:19:05+00:00",
+ "generated": "2026-11-13T13:36:37+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -409,6 +409,15 @@
    "degree": 4
   },
   {
+   "id": "a:/notes/the-art-of-peace/",
+   "kind": "note",
+   "label": "I wrote a short book about peace",
+   "url": "https://raskell.io/notes/the-art-of-peace/",
+   "meta": "2026-11-13",
+   "description": "The Art of Peace is a short web book on living together without thinking alike: thirteen chapters, 104 passages, free to read.",
+   "degree": 7
+  },
+  {
    "id": "a:/notes/one-person-can-make-a-difference/",
    "kind": "note",
    "label": "One person can make a difference",
@@ -746,9 +755,9 @@
    "kind": "tag",
    "label": "The commons",
    "url": "https://raskell.io/tags/commons/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Resources held in common and the rules that keep them so: common land, open protocols, open data, and the web before the platforms.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "t:compilers",
@@ -908,9 +917,9 @@
    "kind": "tag",
    "label": "Ethics",
    "url": "https://raskell.io/tags/ethics/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
-   "degree": 23
+   "degree": 24
   },
   {
    "id": "t:europe",
@@ -1336,6 +1345,15 @@
    "degree": 9
   },
   {
+   "id": "t:philosophy",
+   "kind": "tag",
+   "label": "Philosophy",
+   "url": "https://raskell.io/tags/philosophy/",
+   "meta": "Domain · 1 page",
+   "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
+   "degree": 39
+  },
+  {
    "id": "t:physics",
    "kind": "tag",
    "label": "Physics",
@@ -1556,9 +1574,9 @@
    "kind": "tag",
    "label": "Strategy",
    "url": "https://raskell.io/tags/strategy/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "Winning against an opponent who adapts: in war, in business, and in games, from Sun Tzu to real-time strategy.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:surveillance",
@@ -1610,9 +1628,9 @@
    "kind": "tag",
    "label": "Trust",
    "url": "https://raskell.io/tags/trust/",
-   "meta": "Concept · 5 pages",
+   "meta": "Concept · 6 pages",
    "description": "Personal trust and system trust: why people rely on banks, procedures and software they cannot inspect, and how that reliance is earned.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:type-systems",
@@ -1975,15 +1993,6 @@
    "degree": 3
   },
   {
-   "id": "t:philosophy",
-   "kind": "tag",
-   "label": "Philosophy",
-   "url": "https://raskell.io/tags#philosophy",
-   "meta": "Domain · no pages yet",
-   "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
-   "degree": 38
-  },
-  {
    "id": "t:philosophy-of-science",
    "kind": "tag",
    "label": "Philosophy of science",
@@ -2231,7 +2240,7 @@
    "url": "https://artofpeace.raskell.io",
    "meta": "Project",
    "description": "A short book on living together without thinking alike. An opening, thirteen chapters, and a closing on independent thought, voluntary cooperation, and the boundaries that let peop…",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "p:wasm-ad",
@@ -2834,7 +2843,7 @@
    "url": "https://raskell.io/reading/#the-art-of-war",
    "meta": "Book · Sun Tzu · read June 2018",
    "description": "An ancient Chinese treatise on strategy: deception, terrain, knowing yourself and the enemy, and winning without fighting.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "w:language-the-cultural-tool",
@@ -4342,6 +4351,10 @@
    "target": "t:geography"
   },
   {
+   "source": "a:/notes/the-art-of-peace/",
+   "target": "t:commons"
+  },
+  {
    "source": "a:/notes/a-capability-democratised/",
    "target": "t:commons"
   },
@@ -4704,6 +4717,10 @@
   {
    "source": "t:entrepreneurship",
    "target": "t:economics"
+  },
+  {
+   "source": "a:/notes/the-art-of-peace/",
+   "target": "t:ethics"
   },
   {
    "source": "a:/notes/one-person-can-make-a-difference/",
@@ -5474,6 +5491,10 @@
    "target": "t:open-web"
   },
   {
+   "source": "a:/notes/the-art-of-peace/",
+   "target": "t:philosophy"
+  },
+  {
    "source": "a:/notes/everything-is-a-fractal/",
    "target": "t:physics"
   },
@@ -5854,6 +5875,10 @@
    "target": "t:strategy"
   },
   {
+   "source": "a:/notes/the-art-of-peace/",
+   "target": "t:strategy"
+  },
+  {
    "source": "a:/notes/goat-games/",
    "target": "t:strategy"
   },
@@ -5936,6 +5961,10 @@
   {
    "source": "t:tree-search",
    "target": "t:game-ai"
+  },
+  {
+   "source": "a:/notes/the-art-of-peace/",
+   "target": "t:trust"
   },
   {
    "source": "a:/articles/the-behavioural-turn/",
@@ -7208,6 +7237,10 @@
   {
    "source": "a:/talks/iat-13-basel/",
    "target": "p:die-zukunft"
+  },
+  {
+   "source": "a:/notes/the-art-of-peace/",
+   "target": "p:the-art-of-peace"
   },
   {
    "source": "a:/articles/learning-to-play/",
@@ -9244,6 +9277,10 @@
   {
    "source": "w:the-art-of-war",
    "target": "t:antiquity"
+  },
+  {
+   "source": "a:/notes/the-art-of-peace/",
+   "target": "w:the-art-of-war"
   },
   {
    "source": "w:language-the-cultural-tool",

@@ -1311,8 +1311,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/philosophy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/philosophy/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/philosophy/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/philosophy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/philosophy/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/physics/</loc>
@@ -1695,6 +1697,10 @@
     <url>
         <loc>https://raskell.io/notes/power-in-the-good-sense/</loc>
         <lastmod>2026-10-25</lastmod>
+    </url>
+    <url>
+        <loc>https://raskell.io/notes/the-art-of-peace/</loc>
+        <lastmod>2026-11-13</lastmod>
     </url>
     <url>
         <loc>https://raskell.io/notes/the-interface-that-disappears/</loc>
@@ -2377,6 +2383,13 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/oss/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/oss/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/oss/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/tags/philosophy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/philosophy/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/philosophy/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/philosophy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/philosophy/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/physics/</loc>
@@ -3662,8 +3675,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/philosophy/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/philosophy/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/philosophy/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/philosophy/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/philosophy/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/physics/</loc>

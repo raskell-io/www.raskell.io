@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-13T13:19:05+00:00",
+ "generated": "2026-11-13T13:36:37+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "article": 43,
   "review": 2,
-  "note": 18,
+  "note": 19,
   "talk": 1,
   "dataset": 1,
   "work": 166,
   "project": 32,
   "topic": 164,
-  "link": 540
+  "link": 543
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -777,6 +777,20 @@
     "open-web"
    ],
    "meta": "1 min"
+  },
+  {
+   "kind": "note",
+   "title": "I wrote a short book about peace",
+   "url": "https://raskell.io/notes/the-art-of-peace/",
+   "description": "The Art of Peace is a short web book on living together without thinking alike: thirteen chapters, 104 passages, free to read.",
+   "date": "2026-11-13",
+   "topics": [
+    "philosophy",
+    "ethics",
+    "trust",
+    "commons",
+    "strategy"
+   ]
   },
   {
    "kind": "note",
@@ -4615,7 +4629,7 @@
   {
    "kind": "topic",
    "title": "Philosophy",
-   "url": "https://raskell.io/tags#philosophy",
+   "url": "https://raskell.io/tags/philosophy/",
    "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
    "meta": "Domain"
   },
@@ -6519,6 +6533,45 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The Art of Peace",
+   "url": "https://artofpeace.raskell.io/",
+   "domain": "artofpeace.raskell.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "I wrote a short book about peace",
+     "url": "https://raskell.io/notes/the-art-of-peace/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Markdown copy",
+   "url": "https://artofpeace.raskell.io/book.md",
+   "domain": "artofpeace.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "I wrote a short book about peace",
+     "url": "https://raskell.io/notes/the-art-of-peace/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "read it in one piece",
+   "url": "https://artofpeace.raskell.io/read/",
+   "domain": "artofpeace.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "I wrote a short book about peace",
+     "url": "https://raskell.io/notes/the-art-of-peace/"
     }
    ]
   },

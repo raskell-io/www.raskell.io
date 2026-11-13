@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-13T13:19:05+00:00",
+ "generated": "2026-11-13T13:36:37+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 540,
+ "count": 543,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -1574,6 +1574,45 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://artofpeace.raskell.io/",
+   "title": "The Art of Peace",
+   "domain": "artofpeace.raskell.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "I wrote a short book about peace",
+     "url": "https://raskell.io/notes/the-art-of-peace/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://artofpeace.raskell.io/book.md",
+   "title": "Markdown copy",
+   "domain": "artofpeace.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "I wrote a short book about peace",
+     "url": "https://raskell.io/notes/the-art-of-peace/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://artofpeace.raskell.io/read/",
+   "title": "read it in one piece",
+   "domain": "artofpeace.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "I wrote a short book about peace",
+     "url": "https://raskell.io/notes/the-art-of-peace/"
     }
    ],
    "citations": 1
