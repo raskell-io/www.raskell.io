@@ -1,0 +1,16 @@
+title = "The Art of Peace"
+description = "A short book on living together without thinking alike. An opening, thirteen chapters, and a closing on independent thought, voluntary cooperation, and the boundaries that let people share a world. Conceived during a morning swim in Nago Bay, Okinawa, and free to read on the web."
+status = "live"
+status_label = "First manuscript"
+logo = "brands/the-art-of-peace.png"
+links = [ { name = "Read online", url = "https://artofpeace.raskell.io" }, { name = "Markdown", url = "https://artofpeace.raskell.io/book.md" }, { name = "GitHub", url = "https://github.com/raskell-io/artofpeace.raskell.io" } ]
+topics = ["philosophy", "ethics", "trust", "commons"]
+
+schema_type = "Book"   # schema.org type for the JSON-LD on /projects/ and /apps/ (default SoftwareApplication)
+
+# Translations: any field here replaces the original in that language (description, title, tagline).
+[i18n.zh]
+description = "一本关于如何在想法不同的情况下共同生活的小书。一篇开场、十三章和一篇结语，谈独立思考、自愿合作，以及让人们得以共享一个世界的边界。构思于冲绳名护湾的一次晨泳，可在网上免费阅读。"
+
+[i18n.ko]
+description = "생각이 같지 않아도 함께 살아가는 법에 관한 짧은 책입니다. 여는 글과 열세 개의 장, 맺는 글에서 독립적인 사고, 자발적인 협력, 그리고 사람들이 한 세계를 함께 쓸 수 있게 하는 경계를 다룹니다. 오키나와 나고만에서 아침 수영을 하다가 구상했으며, 웹에서 무료로 읽을 수 있습니다."
