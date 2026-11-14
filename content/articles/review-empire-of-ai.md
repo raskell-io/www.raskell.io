@@ -10,6 +10,7 @@ categories = ["reviews"]
 [extra]
 author = "Raffael"
 review = "empire-of-ai"
+og_image = "review-empire-of-ai.png"   # hand-made social card, 1200x630
 in_short = [
   "Karen Hao's *Empire of AI* is an inside account of OpenAI, Sam Altman, and the people around them, built on some 300 interviews; I give it 7.5 out of 10.",
   "Read right after Sebastian Mallaby's *The Infinity Machine*, it is almost a companion volume: the same cast and the same years, seen from OpenAI instead of DeepMind, with more politics and less technology.",
