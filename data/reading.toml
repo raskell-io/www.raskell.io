@@ -620,6 +620,21 @@ about = "Written by two well-known cryptography researchers, the book teaches ho
 take = "A hands-on guide to breaking classical ciphers and codes, with real cases solved and unsolved."
 
 [[works]]
+id = "how-life-works"
+title = "How Life Works"
+subtitle = "A User's Guide to the New Biology"
+author = "Philip Ball"
+kind = "book"
+cover = "covers/reading/how-life-works.avif"
+isbn = "9780226826684"   # the University of Chicago Press hardcover, 2023
+year = 2023
+status = "read"
+finished = "2025-04"
+topics = ["life-sciences", "genetics", "emergence", "complex-systems", "philosophy-of-science"]
+about = "A science writer's survey of how biology has changed since the Human Genome Project. Ball argues that the picture of the genome as a blueprint and of genes as instructions for building an organism is incomplete or misleading, and describes life as a system of many levels, from genes and proteins to cells, tissues, and the immune and nervous systems, each with its own rules."
+take = "Why the genome is not a blueprint, and how life works across many levels at once."
+
+[[works]]
 id = "the-island-at-the-center-of-the-world"
 title = "The Island at the Center of the World"
 subtitle = "The Epic Story of Dutch Manhattan and the Forgotten Colony That Shaped America"
