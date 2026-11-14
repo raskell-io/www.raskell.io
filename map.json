@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-14T20:18:19+00:00",
+ "generated": "2026-11-14T21:06:29+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -2468,11 +2468,20 @@
    "degree": 6
   },
   {
+   "id": "w:a-brief-history-of-intelligence",
+   "kind": "work",
+   "label": "A Brief History of Intelligence",
+   "url": "https://raskell.io/reading/#a-brief-history-of-intelligence",
+   "meta": "Book · Max Bennett · reading now",
+   "description": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it.",
+   "degree": 7
+  },
+  {
    "id": "w:the-code-breaker",
    "kind": "work",
    "label": "The Code Breaker",
    "url": "https://raskell.io/reading/#the-code-breaker",
-   "meta": "Book · Walter Isaacson · reading now",
+   "meta": "Book · Walter Isaacson · set aside",
    "description": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
    "degree": 8
   },
@@ -3467,15 +3476,6 @@
    "degree": 6
   },
   {
-   "id": "w:a-brief-history-of-intelligence",
-   "kind": "work",
-   "label": "A Brief History of Intelligence",
-   "url": "https://raskell.io/reading/#a-brief-history-of-intelligence",
-   "meta": "Book · Max Bennett · in the backlog",
-   "description": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it.",
-   "degree": 7
-  },
-  {
    "id": "w:these-strange-new-minds",
    "kind": "work",
    "label": "These Strange New Minds",
@@ -3979,12 +3979,20 @@
    "degree": 1
   },
   {
+   "id": "h:shelf-on-hold",
+   "kind": "hub",
+   "label": "On hold",
+   "url": "https://raskell.io/reading/#shelf-on-hold",
+   "meta": "Shelf",
+   "degree": 1
+  },
+  {
    "id": "h:shelf-backlog",
    "kind": "hub",
    "label": "Backlog",
    "url": "https://raskell.io/reading/#shelf-backlog",
    "meta": "Shelf",
-   "degree": 69
+   "degree": 68
   },
   {
    "id": "h:shelf-read",
@@ -8525,8 +8533,36 @@
    "target": "h:apps-play"
   },
   {
-   "source": "w:the-code-breaker",
+   "source": "w:a-brief-history-of-intelligence",
    "target": "h:shelf-reading"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:reinforcement-learning"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:evolution"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:origins-of-life"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "h:shelf-on-hold"
   },
   {
    "source": "w:the-code-breaker",
@@ -10983,34 +11019,6 @@
   {
    "source": "w:the-thinking-machine",
    "target": "t:semiconductors"
-  },
-  {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "h:shelf-backlog"
-  },
-  {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "t:intelligence"
-  },
-  {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "t:neuroscience"
-  },
-  {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "t:reinforcement-learning"
-  },
-  {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "t:life-sciences"
-  },
-  {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "t:evolution"
-  },
-  {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "t:origins-of-life"
   },
   {
    "source": "w:these-strange-new-minds",

@@ -25,7 +25,7 @@
   ];
   // The resource-type icons from the sprite base.html puts on every page (partials/kind_icons.html).
   function icon(k) { return k && document.getElementById("kicon-" + k) ? '<svg class="kicon" aria-hidden="true" focusable="false"><use href="#kicon-' + k + '"/></svg>' : ""; }
-  var WORK_ORDER = { "Reading now": 0, "Up next": 1, "Read": 2, "Backlog": 3, "Set aside": 4 };
+  var WORK_ORDER = { "Reading now": 0, "On hold": 0.5, "Up next": 1, "Read": 2, "Backlog": 3, "Set aside": 4 };
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function load(src) {

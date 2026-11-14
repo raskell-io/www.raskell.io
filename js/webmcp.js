@@ -111,7 +111,7 @@
       name: "list_reading",
       title: "List the reading log",
       description: "Books, papers, and reports from the reading log on raskell.io: what is being read now, what is next, the backlog, and what has been read, with the month finished, ratings out of 10, one-line takes, and links to reviews.",
-      inputSchema: { type: "object", properties: { status: { type: "string", enum: ["any", "reading", "next", "backlog", "read", "set-aside"], description: "Only works with this status (default any)" } }, additionalProperties: false },
+      inputSchema: { type: "object", properties: { status: { type: "string", enum: ["any", "reading", "on-hold", "next", "backlog", "read", "set-aside"], description: "Only works with this status (default any)" } }, additionalProperties: false },
       annotations: { readOnlyHint: true },
       execute: function (input) {
         return json("/reading.json").then(function (d) {

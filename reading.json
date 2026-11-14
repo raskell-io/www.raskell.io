@@ -5,6 +5,29 @@
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "works": [
   {
+   "id": "a-brief-history-of-intelligence",
+   "title": "A Brief History of Intelligence",
+   "subtitle": "Evolution, AI, and the Five Breakthroughs That Made Our Brains",
+   "author": "Max Bennett",
+   "kind": "book",
+   "year": 2023,
+   "isbn": "9780063286344",
+   "status": "reading",
+   "started": "2026-11",
+   "topics": [
+    "intelligence",
+    "neuroscience",
+    "reinforcement-learning",
+    "life-sciences",
+    "evolution",
+    "origins-of-life"
+   ],
+   "about": "An account of how brains evolved, organised around five breakthroughs: steering, reinforcing, simulating, mentalising and speaking. Bennett, an entrepreneur rather than a career neuroscientist, follows these from early bilaterian animals to humans, and uses each step to compare natural intelligence with current AI and to ask what machines still lack.",
+   "take": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it.",
+   "cover": "https://raskell.io/covers/reading/a-brief-history-of-intelligence.avif",
+   "page": "https://raskell.io/reading/#a-brief-history-of-intelligence"
+  },
+  {
    "id": "the-code-breaker",
    "title": "The Code Breaker",
    "subtitle": "Jennifer Doudna, Gene Editing, and the Future of the Human Race",
@@ -12,7 +35,7 @@
    "kind": "book",
    "year": 2021,
    "isbn": "9781398502314",
-   "status": "reading",
+   "status": "on-hold",
    "started": "2026-11",
    "topics": [
     "life-sciences",
@@ -2297,28 +2320,6 @@
    "take": "Jensen Huang and how Nvidia bet the company on the chips that made modern AI possible.",
    "cover": "https://raskell.io/covers/reading/the-thinking-machine.avif",
    "page": "https://raskell.io/reading/#the-thinking-machine"
-  },
-  {
-   "id": "a-brief-history-of-intelligence",
-   "title": "A Brief History of Intelligence",
-   "subtitle": "Evolution, AI, and the Five Breakthroughs That Made Our Brains",
-   "author": "Max Bennett",
-   "kind": "book",
-   "year": 2023,
-   "isbn": "9780063286344",
-   "status": "backlog",
-   "topics": [
-    "intelligence",
-    "neuroscience",
-    "reinforcement-learning",
-    "life-sciences",
-    "evolution",
-    "origins-of-life"
-   ],
-   "about": "An account of how brains evolved, organised around five breakthroughs: steering, reinforcing, simulating, mentalising and speaking. Bennett, an entrepreneur rather than a career neuroscientist, follows these from early bilaterian animals to humans, and uses each step to compare natural intelligence with current AI and to ask what machines still lack.",
-   "take": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it.",
-   "cover": "https://raskell.io/covers/reading/a-brief-history-of-intelligence.avif",
-   "page": "https://raskell.io/reading/#a-brief-history-of-intelligence"
   },
   {
    "id": "these-strange-new-minds",

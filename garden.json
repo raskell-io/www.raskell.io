@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-14T20:18:20+00:00",
+ "generated": "2026-11-14T21:06:29+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -1190,6 +1190,22 @@
   },
   {
    "kind": "work",
+   "title": "A Brief History of Intelligence",
+   "url": "https://raskell.io/reading/#a-brief-history-of-intelligence",
+   "description": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it.",
+   "date": "2026-11",
+   "topics": [
+    "intelligence",
+    "neuroscience",
+    "reinforcement-learning",
+    "life-sciences",
+    "evolution",
+    "origins-of-life"
+   ],
+   "meta": "Book · Max Bennett · Reading now"
+  },
+  {
+   "kind": "work",
    "title": "The Code Breaker",
    "url": "https://raskell.io/reading/#the-code-breaker",
    "description": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
@@ -1203,7 +1219,7 @@
     "genetics",
     "pandemics"
    ],
-   "meta": "Book · Walter Isaacson · Reading now"
+   "meta": "Book · Walter Isaacson · On hold"
   },
   {
    "kind": "work",
@@ -2731,21 +2747,6 @@
     "semiconductors"
    ],
    "meta": "Book · Stephen Witt · Backlog"
-  },
-  {
-   "kind": "work",
-   "title": "A Brief History of Intelligence",
-   "url": "https://raskell.io/reading/#a-brief-history-of-intelligence",
-   "description": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it.",
-   "topics": [
-    "intelligence",
-    "neuroscience",
-    "reinforcement-learning",
-    "life-sciences",
-    "evolution",
-    "origins-of-life"
-   ],
-   "meta": "Book · Max Bennett · Backlog"
   },
   {
    "kind": "work",
