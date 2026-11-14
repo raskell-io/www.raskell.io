@@ -38,6 +38,7 @@ raskell.io is the personal site of Raffael Schneider, a Group AI Solutions Archi
 
 ## Articles
 
+- [Its Own Metaphor](https://raskell.io/articles/review-how-life-works.md) (2026-11-14): Philip Ball's How Life Works is the popular science book I wish every other one were: deep, clear, and honest about how we came to know what we know.
 - [An Empire of People](https://raskell.io/articles/review-empire-of-ai.md) (2026-11-14): Karen Hao's Empire of AI tells the story of OpenAI through its people. Gripping as reporting, and uneven where it argues.
 - [Evaluation Closes the Loop](https://raskell.io/articles/evaluation-closes-the-loop.md) (2026-11-12): A trace shows what an agent did, not whether it was right. This part scores the agent against known cases and fails the build when a passing case breaks.
 - [Three Parts and No Brain](https://raskell.io/articles/three-parts-and-no-brain.md) (2026-11-05): What a chess program is made of, and how far a hand-written one gets against the computer opponent on lichess, before any learning starts.
@@ -89,6 +90,7 @@ raskell.io is the personal site of Raffael Schneider, a Group AI Solutions Archi
 
 Reviews of works from the reading log (category: reviews, feed https://raskell.io/categories/reviews/rss.xml). Each Markdown copy names the reviewed work and the rating in its front matter.
 
+- [Its Own Metaphor](https://raskell.io/articles/review-how-life-works.md) (2026-11-14): review of *How Life Works* by Philip Ball (book, 2023), rated 9/10. Philip Ball's How Life Works is the popular science book I wish every other one were: deep, clear, and honest about how we came to know what we know.
 - [An Empire of People](https://raskell.io/articles/review-empire-of-ai.md) (2026-11-14): review of *Empire of AI* by Karen Hao (book, 2025), rated 7.5/10. Karen Hao's Empire of AI tells the story of OpenAI through its people. Gripping as reporting, and uneven where it argues.
 - [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one.md) (2026-10-29): review of *The Infinity Machine* by Sebastian Mallaby (book, 2026), rated 8.5/10. Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it.
 - [The Web Was the Training Set](https://raskell.io/articles/the-web-was-the-training-set.md) (2026-10-24): review of *This Is for Everyone* by Tim Berners-Lee (book, 2025), rated 8/10. Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply.
@@ -233,7 +235,7 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 - Pirate Enlightenment, or the Real Libertalia, David Graeber (book, finished October 2025): Pirate settlements on Madagascar and the Malagasy experiments in self-government that may have fed the European Enlightenment.
 - Jurassic Park, Michael Crichton (novel, finished July 2025): A park of cloned dinosaurs, and a mathematician who uses chaos theory to explain why it cannot stay under control.
 - Codebreaking, Elonka Dunin and Klaus Schmeh (book, finished April 2025): A hands-on guide to breaking classical ciphers and codes, with real cases solved and unsolved.
-- How Life Works, Philip Ball (book, finished April 2025): Why the genome is not a blueprint, and how life works across many levels at once.
+- How Life Works, Philip Ball (book, finished April 2025, rated 9/10): Why the genome is not a blueprint, and how life works across many levels at once. Review: [Its Own Metaphor](https://raskell.io/articles/review-how-life-works.md)
 - [AI 2027](https://ai-2027.com/), Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, and Romeo Dean (report, finished April 2025): A month-by-month scenario of AI progress to superintelligence by 2027, with two endings: a race and a slowdown.
 - The Library, Andrew Pettegree and Arthur der Weduwen (book, finished February 2025): Two thousand years of libraries, and how often their collections were lost, dispersed or rebuilt.
 - The Island at the Center of the World, Russell Shorto (book, finished January 2025): Dutch New Amsterdam, rebuilt from its own archives, and the tolerance and trade it left to Manhattan and America.

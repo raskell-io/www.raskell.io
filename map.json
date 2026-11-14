@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-14T09:22:02+00:00",
+ "generated": "2026-11-14T09:36:55+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -11,6 +11,15 @@
    "meta": "2026-11-14 · 17 min",
    "description": "Karen Hao's Empire of AI tells the story of OpenAI through its people. Gripping as reporting, and uneven where it argues.",
    "degree": 22
+  },
+  {
+   "id": "a:/articles/review-how-life-works/",
+   "kind": "article",
+   "label": "Its Own Metaphor",
+   "url": "https://raskell.io/articles/review-how-life-works/",
+   "meta": "2026-11-14 · 10 min",
+   "description": "Philip Ball's How Life Works is the popular science book I wish every other one were: deep, clear, and honest about how we came to know what we know.",
+   "degree": 10
   },
   {
    "id": "a:/articles/evaluation-closes-the-loop/",
@@ -82,7 +91,7 @@
    "url": "https://raskell.io/articles/win-everything-control-no-one/",
    "meta": "2026-10-29 · 17 min",
    "description": "Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it.",
-   "degree": 23
+   "degree": 24
   },
   {
    "id": "a:/articles/a-blueprint-for-the-static-web/",
@@ -442,7 +451,7 @@
    "url": "https://raskell.io/notes/intelligence-is-compression/",
    "meta": "2026-11-14",
    "description": "Ilya Sutskever's internal slogan at OpenAI: a model that must predict the world has to compress it. I think it is the most useful definition we have.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/notes/its-magic-crumbles-away/",
@@ -841,6 +850,15 @@
    "degree": 10
   },
   {
+   "id": "t:complex-systems",
+   "kind": "tag",
+   "label": "Complex systems",
+   "url": "https://raskell.io/tags/complex-systems/",
+   "meta": "Concept · 1 page",
+   "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
+   "degree": 22
+  },
+  {
    "id": "t:context-engineering",
    "kind": "tag",
    "label": "Context engineering",
@@ -953,9 +971,9 @@
    "kind": "tag",
    "label": "Emergence",
    "url": "https://raskell.io/tags/emergence/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "Order nobody designed: reefs, the early web, neuron cultures, and simulated worlds where simple rules add up to behaviour no single part has.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "t:energy",
@@ -1100,6 +1118,15 @@
    "meta": "Domain · 4 pages",
    "description": "Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.",
    "degree": 20
+  },
+  {
+   "id": "t:genetics",
+   "kind": "tag",
+   "label": "Genetics",
+   "url": "https://raskell.io/tags/genetics/",
+   "meta": "Domain · 1 page",
+   "description": "Heredity and the genome: how the idea of inheritance became a science, how DNA is read and edited, and what ancient DNA says about our past.",
+   "degree": 8
   },
   {
    "id": "t:go-game",
@@ -1271,6 +1298,15 @@
    "meta": "Concept · 3 pages",
    "description": "Making a complex system readable from above: what the measure captures, what it erases, and what breaks when the map replaces the territory.",
    "degree": 9
+  },
+  {
+   "id": "t:life-sciences",
+   "kind": "tag",
+   "label": "Life sciences",
+   "url": "https://raskell.io/tags/life-sciences/",
+   "meta": "Domain · 1 page",
+   "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
+   "degree": 23
   },
   {
    "id": "t:linguistics",
@@ -1451,6 +1487,15 @@
    "meta": "Domain · 2 pages",
    "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
    "degree": 40
+  },
+  {
+   "id": "t:philosophy-of-science",
+   "kind": "tag",
+   "label": "Philosophy of science",
+   "url": "https://raskell.io/tags/philosophy-of-science/",
+   "meta": "Concept · 1 page",
+   "description": "How science produces knowledge, what counts as evidence, and where its methods and claims reach their limits.",
+   "degree": 17
   },
   {
    "id": "t:physics",
@@ -1705,6 +1750,15 @@
    "degree": 7
   },
   {
+   "id": "t:synthetic-biology",
+   "kind": "tag",
+   "label": "Synthetic biology",
+   "url": "https://raskell.io/tags/synthetic-biology/",
+   "meta": "Domain · 1 page",
+   "description": "Engineering living systems: designing molecules and organisms, growing neurons on chips, and the software that reads and writes biology.",
+   "degree": 7
+  },
+  {
    "id": "t:technology-races",
    "kind": "tag",
    "label": "Technology races",
@@ -1849,15 +1903,6 @@
    "degree": 5
   },
   {
-   "id": "t:complex-systems",
-   "kind": "tag",
-   "label": "Complex systems",
-   "url": "https://raskell.io/tags#complex-systems",
-   "meta": "Concept · no pages yet",
-   "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
-   "degree": 21
-  },
-  {
    "id": "t:cryptography",
    "kind": "tag",
    "label": "Cryptography",
@@ -1912,15 +1957,6 @@
    "degree": 5
   },
   {
-   "id": "t:genetics",
-   "kind": "tag",
-   "label": "Genetics",
-   "url": "https://raskell.io/tags#genetics",
-   "meta": "Domain · no pages yet",
-   "description": "Heredity and the genome: how the idea of inheritance became a science, how DNA is read and edited, and what ancient DNA says about our past.",
-   "degree": 7
-  },
-  {
    "id": "t:geography",
    "kind": "tag",
    "label": "Geography",
@@ -1964,15 +2000,6 @@
    "meta": "Concept · no pages yet",
    "description": "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.",
    "degree": 18
-  },
-  {
-   "id": "t:life-sciences",
-   "kind": "tag",
-   "label": "Life sciences",
-   "url": "https://raskell.io/tags#life-sciences",
-   "meta": "Domain · no pages yet",
-   "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
-   "degree": 22
   },
   {
    "id": "t:literature",
@@ -2074,15 +2101,6 @@
    "degree": 3
   },
   {
-   "id": "t:philosophy-of-science",
-   "kind": "tag",
-   "label": "Philosophy of science",
-   "url": "https://raskell.io/tags#philosophy-of-science",
-   "meta": "Concept · no pages yet",
-   "description": "How science produces knowledge, what counts as evidence, and where its methods and claims reach their limits.",
-   "degree": 16
-  },
-  {
    "id": "t:privacy",
    "kind": "tag",
    "label": "Privacy",
@@ -2108,15 +2126,6 @@
    "meta": "Concept · no pages yet",
    "description": "A program improving by playing itself: generating its own training data, learning from the outcomes, and testing each generation against the last.",
    "degree": 2
-  },
-  {
-   "id": "t:synthetic-biology",
-   "kind": "tag",
-   "label": "Synthetic biology",
-   "url": "https://raskell.io/tags#synthetic-biology",
-   "meta": "Domain · no pages yet",
-   "description": "Engineering living systems: designing molecules and organisms, growing neurons on chips, and the software that reads and writes biology.",
-   "degree": 6
   },
   {
    "id": "t:theology",
@@ -2166,9 +2175,9 @@
    "kind": "category",
    "label": "Reviews",
    "url": "https://raskell.io/categories/reviews/",
-   "meta": "3 entries",
+   "meta": "4 entries",
    "description": "Reviews of books, papers, and long articles from the reading log: what the work argues, where I was persuaded, and what I made of it.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "p:archipelag-io",
@@ -2831,10 +2840,10 @@
    "id": "w:how-life-works",
    "kind": "work",
    "label": "How Life Works",
-   "url": "https://raskell.io/reading/#how-life-works",
+   "url": "https://raskell.io/articles/review-how-life-works/",
    "meta": "Book · Philip Ball · read April 2025",
    "description": "Why the genome is not a blueprint, and how life works across many levels at once.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "w:the-island-at-the-center-of-the-world",
@@ -4496,6 +4505,10 @@
    "target": "t:programming-languages"
   },
   {
+   "source": "a:/articles/review-how-life-works/",
+   "target": "t:complex-systems"
+  },
+  {
    "source": "a:/articles/it-intelligence/",
    "target": "t:context-engineering"
   },
@@ -4762,6 +4775,10 @@
   {
    "source": "t:elixir",
    "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/articles/review-how-life-works/",
+   "target": "t:emergence"
   },
   {
    "source": "a:/notes/an-emergent-property-of-matter/",
@@ -5062,6 +5079,14 @@
   {
    "source": "a:/articles/learning-to-play/",
    "target": "t:games"
+  },
+  {
+   "source": "a:/articles/review-how-life-works/",
+   "target": "t:genetics"
+  },
+  {
+   "source": "t:genetics",
+   "target": "t:life-sciences"
   },
   {
    "source": "a:/articles/three-parts-and-no-brain/",
@@ -5444,6 +5469,10 @@
    "target": "t:observability"
   },
   {
+   "source": "a:/articles/review-how-life-works/",
+   "target": "t:life-sciences"
+  },
+  {
    "source": "a:/notes/in-vivo-not-in-vitro/",
    "target": "t:linguistics"
   },
@@ -5674,6 +5703,18 @@
   {
    "source": "a:/notes/the-art-of-peace/",
    "target": "t:philosophy"
+  },
+  {
+   "source": "a:/articles/review-how-life-works/",
+   "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "t:philosophy-of-science",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "t:philosophy-of-science",
+   "target": "t:history-of-science"
   },
   {
    "source": "a:/notes/an-emergent-property-of-matter/",
@@ -6136,6 +6177,14 @@
    "target": "t:europe"
   },
   {
+   "source": "a:/articles/review-how-life-works/",
+   "target": "t:synthetic-biology"
+  },
+  {
+   "source": "t:synthetic-biology",
+   "target": "t:life-sciences"
+  },
+  {
    "source": "a:/articles/review-empire-of-ai/",
    "target": "t:technology-races"
   },
@@ -6444,10 +6493,6 @@
    "target": "t:strategy"
   },
   {
-   "source": "t:genetics",
-   "target": "t:life-sciences"
-  },
-  {
    "source": "t:geopolitics",
    "target": "t:history"
   },
@@ -6536,14 +6581,6 @@
    "target": "t:psychology"
   },
   {
-   "source": "t:philosophy-of-science",
-   "target": "t:philosophy"
-  },
-  {
-   "source": "t:philosophy-of-science",
-   "target": "t:history-of-science"
-  },
-  {
    "source": "t:privacy",
    "target": "t:applied-security"
   },
@@ -6566,10 +6603,6 @@
   {
    "source": "t:self-play",
    "target": "t:game-ai"
-  },
-  {
-   "source": "t:synthetic-biology",
-   "target": "t:life-sciences"
   },
   {
    "source": "t:theology",
@@ -6648,6 +6681,10 @@
    "target": "c:reviews"
   },
   {
+   "source": "a:/articles/review-how-life-works/",
+   "target": "c:reviews"
+  },
+  {
    "source": "a:/articles/win-everything-control-no-one/",
    "target": "c:reviews"
   },
@@ -6706,6 +6743,14 @@
   {
    "source": "a:/articles/review-empire-of-ai/",
    "target": "a:/notes/who-contributed-to-ai/"
+  },
+  {
+   "source": "a:/articles/review-how-life-works/",
+   "target": "a:/articles/win-everything-control-no-one/"
+  },
+  {
+   "source": "a:/articles/review-how-life-works/",
+   "target": "a:/notes/intelligence-is-compression/"
   },
   {
    "source": "a:/articles/evaluation-closes-the-loop/",
@@ -9462,6 +9507,10 @@
   {
    "source": "w:how-life-works",
    "target": "t:philosophy-of-science"
+  },
+  {
+   "source": "a:/articles/review-how-life-works/",
+   "target": "w:how-life-works"
   },
   {
    "source": "w:the-island-at-the-center-of-the-world",

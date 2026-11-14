@@ -862,6 +862,7 @@
    "isbn": "9780226826684",
    "status": "read",
    "finished": "2025-04",
+   "rating": 9,
    "topics": [
     "life-sciences",
     "genetics",
@@ -872,7 +873,12 @@
    "about": "A science writer's survey of how biology has changed since the Human Genome Project. Ball argues that the picture of the genome as a blueprint and of genes as instructions for building an organism is incomplete or misleading, and describes life as a system of many levels, from genes and proteins to cells, tissues, and the immune and nervous systems, each with its own rules.",
    "take": "Why the genome is not a blueprint, and how life works across many levels at once.",
    "cover": "https://raskell.io/covers/reading/how-life-works.avif",
-   "page": "https://raskell.io/reading/#how-life-works"
+   "page": "https://raskell.io/reading/#how-life-works",
+   "review": {
+    "title": "Its Own Metaphor",
+    "url": "https://raskell.io/articles/review-how-life-works/",
+    "markdown": "https://raskell.io/articles/review-how-life-works.md"
+   }
   },
   {
    "id": "the-island-at-the-center-of-the-world",

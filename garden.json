@@ -1,10 +1,10 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-14T09:22:03+00:00",
+ "generated": "2026-11-14T09:36:55+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
-  "review": 3,
+  "review": 4,
   "article": 43,
   "note": 25,
   "talk": 1,
@@ -41,6 +41,25 @@
     "reviews"
    ],
    "meta": "17 min"
+  },
+  {
+   "kind": "review",
+   "title": "Its Own Metaphor",
+   "url": "https://raskell.io/articles/review-how-life-works/",
+   "description": "Philip Ball's How Life Works is the popular science book I wish every other one were: deep, clear, and honest about how we came to know what we know.",
+   "date": "2026-11-14",
+   "topics": [
+    "life-sciences",
+    "genetics",
+    "emergence",
+    "complex-systems",
+    "philosophy-of-science",
+    "synthetic-biology"
+   ],
+   "categories": [
+    "reviews"
+   ],
+   "meta": "10 min"
   },
   {
    "kind": "article",
@@ -1747,7 +1766,7 @@
   {
    "kind": "work",
    "title": "How Life Works",
-   "url": "https://raskell.io/reading/#how-life-works",
+   "url": "https://raskell.io/articles/review-how-life-works/",
    "description": "Why the genome is not a blueprint, and how life works across many levels at once.",
    "date": "2025-04",
    "topics": [
@@ -4107,7 +4126,7 @@
   {
    "kind": "topic",
    "title": "Complex systems",
-   "url": "https://raskell.io/tags#complex-systems",
+   "url": "https://raskell.io/tags/complex-systems/",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
    "meta": "Concept"
   },
@@ -4359,7 +4378,7 @@
   {
    "kind": "topic",
    "title": "Genetics",
-   "url": "https://raskell.io/tags#genetics",
+   "url": "https://raskell.io/tags/genetics/",
    "description": "Heredity and the genome: how the idea of inheritance became a science, how DNA is read and edited, and what ancient DNA says about our past.",
    "meta": "Domain"
   },
@@ -4534,7 +4553,7 @@
   {
    "kind": "topic",
    "title": "Life sciences",
-   "url": "https://raskell.io/tags#life-sciences",
+   "url": "https://raskell.io/tags/life-sciences/",
    "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
    "meta": "Domain"
   },
@@ -4758,7 +4777,7 @@
   {
    "kind": "topic",
    "title": "Philosophy of science",
-   "url": "https://raskell.io/tags#philosophy-of-science",
+   "url": "https://raskell.io/tags/philosophy-of-science/",
    "description": "How science produces knowledge, what counts as evidence, and where its methods and claims reach their limits.",
    "meta": "Concept"
   },
@@ -4982,7 +5001,7 @@
   {
    "kind": "topic",
    "title": "Synthetic biology",
-   "url": "https://raskell.io/tags#synthetic-biology",
+   "url": "https://raskell.io/tags/synthetic-biology/",
    "description": "Engineering living systems: designing molecules and organisms, growing neurons on chips, and the software that reads and writes biology.",
    "meta": "Domain"
   },

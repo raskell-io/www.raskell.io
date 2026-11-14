@@ -129,6 +129,10 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/review-empire-of-ai/"/>
     </url>
     <url>
+        <loc>https://raskell.io/articles/review-how-life-works/</loc>
+        <lastmod>2026-11-14</lastmod>
+    </url>
+    <url>
         <loc>https://raskell.io/articles/semantic-artifacts-and-meaning-engines/</loc>
         <lastmod>2026-05-07</lastmod>
     </url>
@@ -741,8 +745,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/complex-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/complex-systems/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/complex-systems/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/complex-systems/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/complex-systems/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/context-engineering/</loc>
@@ -979,8 +985,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/genetics/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/genetics/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/genetics/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/genetics/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/genetics/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/geography/</loc>
@@ -1142,8 +1150,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/life-sciences/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/life-sciences/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/life-sciences/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/life-sciences/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/life-sciences/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/linguistics/</loc>
@@ -1335,8 +1345,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/philosophy-of-science/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/philosophy-of-science/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/philosophy-of-science/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/philosophy-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/philosophy-of-science/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/philosophy/</loc>
@@ -1558,8 +1570,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/synthetic-biology/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/synthetic-biology/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/synthetic-biology/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/synthetic-biology/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/synthetic-biology/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/technology-races/</loc>
@@ -1999,6 +2013,13 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/compilers/"/>
     </url>
     <url>
+        <loc>https://raskell.io/tags/complex-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/complex-systems/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/complex-systems/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/complex-systems/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/complex-systems/"/>
+    </url>
+    <url>
         <loc>https://raskell.io/tags/context-engineering/</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/context-engineering/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/context-engineering/"/>
@@ -2202,6 +2223,13 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/games/"/>
     </url>
     <url>
+        <loc>https://raskell.io/tags/genetics/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/genetics/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/genetics/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/genetics/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/genetics/"/>
+    </url>
+    <url>
         <loc>https://raskell.io/tags/go-game/</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/go-game/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/go-game/"/>
@@ -2335,6 +2363,13 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/legibility/"/>
     </url>
     <url>
+        <loc>https://raskell.io/tags/life-sciences/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/life-sciences/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/life-sciences/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/life-sciences/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/life-sciences/"/>
+    </url>
+    <url>
         <loc>https://raskell.io/tags/linguistics/</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/linguistics/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/linguistics/"/>
@@ -2466,6 +2501,13 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/oss/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/oss/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/oss/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/tags/philosophy-of-science/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/philosophy-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/philosophy-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/philosophy-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/philosophy-of-science/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/philosophy/</loc>
@@ -2669,6 +2711,13 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/switzerland/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/switzerland/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/switzerland/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/tags/synthetic-biology/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/synthetic-biology/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/synthetic-biology/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/synthetic-biology/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/synthetic-biology/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/technology-races/</loc>
@@ -3187,8 +3236,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/complex-systems/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/complex-systems/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/complex-systems/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/complex-systems/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/complex-systems/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/context-engineering/</loc>
@@ -3425,8 +3476,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/genetics/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/genetics/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/genetics/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/genetics/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/genetics/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/geography/</loc>
@@ -3588,8 +3641,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/life-sciences/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/life-sciences/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/life-sciences/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/life-sciences/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/life-sciences/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/linguistics/</loc>
@@ -3781,8 +3836,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/philosophy-of-science/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/philosophy-of-science/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/philosophy-of-science/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/philosophy-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/philosophy-of-science/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/philosophy/</loc>
@@ -4004,8 +4061,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/synthetic-biology/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/synthetic-biology/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/synthetic-biology/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/synthetic-biology/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/synthetic-biology/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/technology-races/</loc>
