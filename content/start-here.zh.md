@@ -17,6 +17,7 @@ title = "书评"
 deck = "我从中学到最多的几本书的长篇书评：书中论证了什么，哪里说得对，以及我在哪里不同意。"
 items = [
   { path = "articles/review-empire-of-ai.md", note = "Karen Hao 对 OpenAI 和 Sam Altman 的内部叙述：报道引人入胜，而她关于帝国的论点我只接受一半。" },
+  { path = "articles/review-how-life-works.md", note = "Philip Ball 对新生物学的导览：为什么基因组不是蓝图。这是我所知道的最好的科普书。" },
   { path = "articles/win-everything-control-no-one.md", note = "Sebastian Mallaby 为 Demis Hassabis 写的传记，是我所知道的最好的现代 AI 史。" },
   { path = "articles/the-web-was-the-training-set.md", note = "Tim Berners-Lee 的回忆录，以及他无偿交出的开放网络为何成了 AI 的训练集。" },
 ]

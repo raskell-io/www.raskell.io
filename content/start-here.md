@@ -17,6 +17,7 @@ title = "Book reviews"
 deck = "Long reviews of the books I learn most from, each with what the book argues, what it gets right, and where I disagree."
 items = [
   { path = "articles/review-empire-of-ai.md", note = "Karen Hao's inside account of OpenAI and Sam Altman: gripping reporting, an argument about empire I only half accept." },
+  { path = "articles/review-how-life-works.md", note = "Philip Ball's tour of the new biology: why the genome is not a blueprint, and the best popular science book I know." },
   { path = "articles/win-everything-control-no-one.md", note = "Sebastian Mallaby's biography of Demis Hassabis, the best history of modern AI I know." },
   { path = "articles/the-web-was-the-training-set.md", note = "Tim Berners-Lee's memoir, and why the open web he gave away became the training set for AI." },
 ]

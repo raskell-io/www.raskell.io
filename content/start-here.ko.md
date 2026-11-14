@@ -17,6 +17,7 @@ title = "서평"
 deck = "제가 가장 많이 배운 책들에 대한 긴 서평입니다. 책이 무엇을 주장하는지, 무엇이 옳은지, 그리고 제가 어디에서 생각이 다른지를 다룹니다."
 items = [
   { path = "articles/review-empire-of-ai.md", note = "Karen Hao(캐런 하오)가 OpenAI와 Sam Altman(샘 올트먼)을 안에서 들여다본 기록입니다. 취재는 흡인력이 있지만, 제국에 관한 논지는 절반만 받아들입니다." },
+  { path = "articles/review-how-life-works.md", note = "Philip Ball(필립 볼)의 새로운 생물학 안내서입니다. 유전체가 왜 설계도가 아닌지를 다루며, 제가 아는 가장 좋은 대중 과학책입니다." },
   { path = "articles/win-everything-control-no-one.md", note = "Sebastian Mallaby(세바스천 맬러비)가 쓴 Demis Hassabis(데미스 허사비스) 전기로, 제가 아는 가장 좋은 현대 AI의 역사입니다." },
   { path = "articles/the-web-was-the-training-set.md", note = "Tim Berners-Lee(팀 버너스리)의 회고록, 그리고 그가 대가 없이 내놓은 열린 웹이 어떻게 AI의 학습 데이터가 되었는지에 관한 이야기입니다." },
 ]
