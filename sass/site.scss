@@ -412,3 +412,41 @@ svg.chart {
   .prose .cover-chart + table th, .prose .cover-chart + table td { padding-inline: 0 0.5rem; }
   .prose .cover-chart + table th:last-child, .prose .cover-chart + table td:last-child { padding-inline-end: 0; }
 }
+
+// CRISPR in 3D (templates/shortcodes/crispr_3d.html, static/js/crispr-3d.js): a WebGL stage with a step panel.
+// Without JavaScript only the numbered list of steps shows; the script adds .is-live.
+.c3d { margin-block: 2rem; }
+.c3d__stage, .c3d__panel { display: none; }
+.c3d.is-live .c3d__stage, .c3d.is-live .c3d__panel { display: block; }
+.c3d.is-live .c3d__fallback { display: none; }
+.c3d__stage {
+  position: relative; height: clamp(320px, 52vw, 520px); overflow: hidden; border-radius: 1rem;
+  // A deep stage in both colour schemes, so the bright cel-shaded model reads the same way everywhere.
+  background: radial-gradient(circle at 50% 35%, #24406b, transparent 70%), radial-gradient(circle at 85% 90%, #3b1f5c, transparent 55%), #0d1626;
+  box-shadow: 0 0 0 1px var(--line); cursor: grab; touch-action: pan-y;
+}
+.c3d__stage:active { cursor: grabbing; }
+.c3d__stage canvas { display: block; width: 100%; height: 100%; }
+.c3d-labels { position: absolute; inset: 0; pointer-events: none; }
+.c3d-label {
+  position: absolute; left: 0; top: 0; padding: 0.15rem 0.45rem; border-radius: 0.4rem; white-space: nowrap;
+  font-family: var(--font-mono); font-size: 0.72rem; color: #f4f7ff;
+  background: rgba(11, 16, 32, 0.78); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
+  transition: opacity 300ms ease;
+}
+.c3d__panel { margin-block-start: 0.9rem; }
+.c3d__dots { display: flex; gap: 0.4rem; list-style: none; margin: 0; padding: 0; }
+.c3d__dots button {
+  width: 2rem; height: 2rem; border-radius: 50%; border: 0; cursor: pointer;
+  font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink); background: var(--tint-2); box-shadow: 0 0 0 1px var(--line);
+}
+.c3d__dots button[aria-current="step"] { background: var(--ink); color: var(--tint-1); }
+.c3d__title { margin: 0.8rem 0 0.2rem; font-weight: 500; font-size: 1.1rem; }
+.c3d__text { margin: 0; color: var(--muted); line-height: 1.5; min-height: 4.5em; }
+.c3d__controls { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-block-start: 0.8rem; }
+.c3d__controls button {
+  padding: 0.4rem 0.8rem; border-radius: 999px; border: 0; cursor: pointer; font: inherit; font-size: 0.9rem;
+  color: var(--ink); background: var(--tint-2); box-shadow: 0 0 0 1px var(--line);
+}
+.c3d__controls button[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--ink); }
+.c3d__caption { margin-block-start: 0.8rem; color: var(--muted); font-size: 0.85rem; }

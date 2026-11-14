@@ -1,0 +1,32 @@
+{#- CRISPR in 3D: {{ crispr_3d() }}
+    A stepped, animated 3D figure (static/js/crispr-3d.js, three.js vendored in static/js/vendor/three) that explains
+    how bacteria remember viruses with CRISPR and how Cas9 became a gene-editing tool. The steps below are the
+    figure's text (data/crispr-3d.toml); without JavaScript or WebGL they show as a plain numbered list. -#}
+{%- set crispr = load_data(path="data/crispr-3d.toml") -%}{%- set steps = crispr.steps -%}
+<figure class="c3d" data-crispr3d>
+  <div class="c3d__stage" data-stage role="img" aria-label="Animated 3D model of the CRISPR system; the current step is described below."></div>
+  <div class="c3d__panel">
+    <ol class="c3d__dots" aria-label="Steps">
+      {%- for s in steps %}
+      <li><button type="button" data-step aria-current="{% if loop.first %}step{% else %}false{% endif %}" title="{{ s.title }}">{{ loop.index }}</button></li>
+      {%- endfor %}
+    </ol>
+    <p class="c3d__title" data-step-title aria-live="polite"></p>
+    <p class="c3d__text" data-step-text></p>
+    <div class="c3d__controls">
+      <button type="button" data-prev>← Previous</button>
+      <button type="button" data-replay>Replay</button>
+      <button type="button" data-play aria-pressed="false" data-play-label="Play all" data-pause="Pause">Play all</button>
+      <button type="button" data-next>Next →</button>
+    </div>
+  </div>
+  <ol class="c3d__fallback">
+    {%- for s in steps %}
+    <li><strong>{{ s.title }}.</strong> {{ s.text }}</li>
+    {%- endfor %}
+  </ol>
+  <figcaption class="c3d__caption">Drag to turn the model. Not to scale: real repeats and spacers are a few dozen letters long, and here one repeat and one spacer make one turn of the helix. Drawn with <a href="https://threejs.org">three.js</a>.</figcaption>
+  <script type="application/json" data-crispr-steps>{{ steps | json_encode | safe }}</script>
+</figure>
+<script type="importmap">{"imports": {"three": "{{ get_url(path='js/vendor/three/three.module.min.js') | safe }}"}}</script>
+<script type="module" src="{{ get_url(path='js/crispr-3d.js', cachebust=true) | safe }}"></script>

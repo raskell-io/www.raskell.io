@@ -1,0 +1,26 @@
+# The steps of the CRISPR 3D figure (templates/shortcodes/crispr_3d.html, static/js/crispr-3d.js).
+# One [[steps]] per stage of the animation, in order; the script draws stage n for step n.
+
+[[steps]]
+title = "A strange pattern"
+text = "In 1987 Yoshizumi Ishino found short, identical stretches of DNA repeated at regular intervals in E. coli, with ordinary-looking stretches, the spacers, in between. Francisco Mojica found the same pattern in salt-loving archaea, and in 2001 he and Ruud Jansen named it CRISPR: clustered regularly interspaced short palindromic repeats. Beside the array sit genes for CRISPR-associated (Cas) enzymes. The repeats are drawn in amber, the spacers each in their own colour."
+
+[[steps]]
+title = "A virus attacks"
+text = "A bacteriophage, a virus that preys on bacteria, lands on the cell and injects its DNA to take the cell over. In 2003 Mojica found that the spacers in the array match the DNA of viruses that attack that bacterium: the array is a record of past infections."
+
+[[steps]]
+title = "Keeping a mug shot"
+text = "A bacterium that survives keeps a copy. The enzymes Cas1 and Cas2 cut a short piece out of the virus's DNA and insert it at the front of the array as a new spacer, together with a fresh repeat. The newest spacer always sits first, and the record is passed on to every descendant."
+
+[[steps]]
+title = "Reading the archive"
+text = "The cell copies the whole array into one long RNA and cuts it at the repeats into short CRISPR RNAs, or crRNAs. Each carries one spacer: one guide for each virus the bacterium remembers. In the Cas9 system a second RNA, the tracrRNA, helps to make the guides and to hold them in place."
+
+[[steps]]
+title = "Search and cut"
+text = "Cas9 holds a guide and scans DNA. It first looks for a short tag called the PAM, then checks whether the stretch beside it matches its guide. On a match it opens the double helix, the guide pairs with the DNA, and Cas9 cuts both strands. The virus's DNA is destroyed. The spacers in the bacterium's own array have no PAM beside them, so Cas9 does not cut its own record."
+
+[[steps]]
+title = "A tool for any DNA"
+text = "In 2012 Jennifer Doudna and Emmanuelle Charpentier showed that Cas9 can be programmed: fuse the two RNAs into a single guide, write the sequence you want into it, and Cas9 cuts DNA wherever that sequence occurs. The cell then repairs the break, and the repair is where editing happens: the gene can be switched off, or, given a template, rewritten."
