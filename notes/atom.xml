@@ -5,8 +5,206 @@
     <link rel="self" type="application/atom+xml" href="https://raskell.io/notes/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://raskell.io/notes/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-11-13T00:00:00+00:00</updated>
+    <updated>2026-11-14T00:00:00+00:00</updated>
     <id>https://raskell.io/notes/atom.xml</id>
+    <entry xml:lang="en">
+        <title>A self-fulfilling prophecy</title>
+        <published>2026-11-14T00:00:00+00:00</published>
+        <updated>2026-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/a-self-fulfilling-prophecy/"/>
+        <id>https://raskell.io/notes/a-self-fulfilling-prophecy/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/a-self-fulfilling-prophecy/">&lt;p&gt;At the end of chapter 4 of &lt;em&gt;Empire of AI&lt;&#x2F;em&gt;, Karen Hao compares OpenAI’s scaling laws to Moore’s Law. Moore’s Law, she writes, was never a principle of physics. It was an observation Gordon Moore made about the pace he could drive his own company to, and a choice to keep that pace, which the rest of the industry then copied because it was the most competitive strategy. OpenAI’s internal “law” of compute doubling, and the scaling laws that replaced it, are the same: “It is not a natural phenomenon. It’s a self-fulfilling prophecy.”&lt;&#x2F;p&gt;
+&lt;p&gt;She is right about Moore’s Law, and it is worth remembering how much of technological progress works this way. A forecast that everyone believes becomes a schedule. Chip makers planned their factories around it, suppliers planned around the chip makers, and software assumed the chips would arrive. The prediction coordinated an industry, and the coordination made the prediction come true.&lt;&#x2F;p&gt;
+&lt;p&gt;The same thing happened with scaling. Once the labs believed that a bigger model trained on more data with more compute would reliably get better, money, chips, power plants, and careers lined up behind that belief, and the belief kept paying out. Hao is right that this was a choice, and that the choice crowded out other paths: better architectures, better data, approaches other than deep learning.&lt;&#x2F;p&gt;
+&lt;p&gt;But a prophecy can only fulfil itself where the world allows it. Moore’s Law ran for decades because transistors could in fact be made smaller; it slowed when physics said no. Scaling laws are measurements, loss curves that fall along a straight line on a log scale across many orders of magnitude, first published by OpenAI researchers in 2020 and corrected by DeepMind in 2022. Investment decided how far along the line the industry would go. It did not draw the line. Hao’s own reporting shows the other side: by late 2024 OpenAI was struggling to make its next model good enough, and scaling alone “no longer seemed to be enough” (chapter 18). A pure prophecy would not have stalled.&lt;&#x2F;p&gt;
+&lt;p&gt;So the useful version of her point is narrower and, I think, more interesting. The regularity is real; the decision to follow it at any cost is social. That is how every large bet on technology works, from chips to railways, and it is the subject of &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;a-billion-without-a-plan&#x2F;&quot;&gt;A billion without a plan&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), chapter 4, “Dreams of Modernity”, and chapter 18, “A Formula for Empire”.&lt;&#x2F;li&gt;
+&lt;li&gt;Gordon E. Moore, “Cramming more components onto integrated circuits”, &lt;em&gt;Electronics&lt;&#x2F;em&gt; 38(8), 1965.&lt;&#x2F;li&gt;
+&lt;li&gt;Jared Kaplan et al., &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2001.08361&quot;&gt;Scaling Laws for Neural Language Models&lt;&#x2F;a&gt;, 2020.&lt;&#x2F;li&gt;
+&lt;li&gt;Jordan Hoffmann et al., &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2203.15556&quot;&gt;Training Compute-Optimal Large Language Models&lt;&#x2F;a&gt;, 2022.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>An emergent property of matter</title>
+        <published>2026-11-14T00:00:00+00:00</published>
+        <updated>2026-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/an-emergent-property-of-matter/"/>
+        <id>https://raskell.io/notes/an-emergent-property-of-matter/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/an-emergent-property-of-matter/">&lt;p&gt;In May 2024, on the All-In podcast, Sam Altman said something that Karen Hao quotes in &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (chapter 17) as an example of his “unusual degree of hype”. It feels to him, he said, “like we just stumbled on a new fact of nature or science or whatever you want to call it”. He hedged, “I don’t believe this literally but it’s like a spiritual point”, and then said it anyway:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;intelligence is just this emergent property of matter and that’s like a rule of physics or something.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Hao places it in a run of unusually boastful interviews that spring, which she reads as a sign that Altman was anxious: GPT-4o launched that month, lawsuits were piling up, and in the middle of May Sutskever and Jan Leike left the company. I do not read the sentence as hype. It is the most important thing anyone at OpenAI has said, and I share the conviction, including the part he hedged.&lt;&#x2F;p&gt;
+&lt;p&gt;The claim, stated plainly: intelligence is not a gift that only brains received. Arrange matter so that it predicts its surroundings, put it under pressure to predict better, give it enough scale, and intelligence appears, the way temperature appears from moving molecules and a glider appears in Conway’s Game of Life. The evidence is now on several substrates at once. Neurons evolved it. Neurons in a dish learned to play Pong in a few minutes, the experiment behind my small simulation &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;hotaru.raskell.io&quot;&gt;Hotaru&lt;&#x2F;a&gt;. Transformers trained to predict the next word learned to reason. None of these were told what intelligence is; it came out of the arrangement.&lt;&#x2F;p&gt;
+&lt;p&gt;“A rule of physics” overstates it, and Altman says so himself. There is no equation, and I do not know the conditions under which it holds. The counter-arguments are serious: that a model trained on text only rearranges what people wrote (Bender and Gebru’s stochastic parrots, which Hao also covers), or that intelligence needs a body and a world to act in, which I lean towards in &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;in-vivo-not-in-vitro&#x2F;&quot;&gt;in vivo, not in vitro&lt;&#x2F;a&gt;. But both arguments are about which arrangements are enough, not about whether matter can do it.&lt;&#x2F;p&gt;
+&lt;p&gt;The spiritual point is the part I care about most. If intelligence is something the universe does whenever matter is arranged in the right way, then minds are not an accident on one planet but a regularity, and building them is less like inventing a machine and more like discovering a law. That is a quasi-religious conviction, and I hold it as one. It is also, I think, why the people who build these systems talk about them with a seriousness that sounds like faith to everyone else. They are not wrong to feel it.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;, and on emergence in Hassabis’s simulated worlds in &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;win-everything-control-no-one&#x2F;&quot;&gt;Win Everything, Control No One&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), chapter 17, “Reckoning”. Hao gives the All-In podcast, May 2024, as the source.&lt;&#x2F;li&gt;
+&lt;li&gt;Brett J. Kagan et al., “In vitro neurons learn and exhibit sentience when embodied in a simulated game-world”, &lt;em&gt;Neuron&lt;&#x2F;em&gt; 110(23), 2022.&lt;&#x2F;li&gt;
+&lt;li&gt;Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Margaret Mitchell, “On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?”, FAccT 2021.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Intelligence is compression</title>
+        <published>2026-11-14T00:00:00+00:00</published>
+        <updated>2026-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/intelligence-is-compression/"/>
+        <id>https://raskell.io/notes/intelligence-is-compression/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/intelligence-is-compression/">&lt;p&gt;Karen Hao reports in &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (chapter 5) that while Alec Radford was teaching a transformer to predict the next word, the work that became GPT, Ilya Sutskever had a short way of explaining why it mattered: “Intelligence is compression.” A model trained to generate convincing text is forced to squeeze what it sees about the world into its essence. In a 2016 memo, Hao writes, Sutskever went further and argued that compression was the only thing needed for general intelligence. OpenAI’s public version borrowed Richard Feynman’s line, “What I cannot create, I do not understand”, which Hao calls “heavily anthropomorphized”.&lt;&#x2F;p&gt;
+&lt;p&gt;I think the slogan is right, and older than OpenAI. The argument goes like this:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;To compress data well, you have to predict it. A compressor that knows what comes next only has to store the surprises.&lt;&#x2F;li&gt;
+&lt;li&gt;To predict text well, you have to model whatever produced the text: grammar first, then facts, then the reasoning and intentions of the people who wrote it.&lt;&#x2F;li&gt;
+&lt;li&gt;So the better the compression, the more of the world the model has had to capture. A model that compresses everything people have written down cannot help learning a great deal about people.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This is not a metaphor. Prediction and compression are the same problem in information theory, which is why Marcus Hutter has offered a prize since 2006 for compressing a fixed slice of Wikipedia, as a benchmark for intelligence. Next-word prediction is exactly that contest, run at the scale of the internet.&lt;&#x2F;p&gt;
+&lt;p&gt;It is also half of a wager. The other half, in the same chapter, is Dario Amodei’s bet on the “pure language” hypothesis: that text alone is enough to learn from. Put together, they say that compressing everything humans have written is a path to general intelligence. That is my reading, not Hao’s, and it is the bet the rest of the book is about. Whether it is enough is still open; I lean towards thinking a model also has to act, as I argued in &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;in-vivo-not-in-vitro&#x2F;&quot;&gt;in vivo, not in vitro&lt;&#x2F;a&gt;. But compression explains why the bet got as far as it did, and it fits the larger conviction I share with Altman, that intelligence is &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;an-emergent-property-of-matter&#x2F;&quot;&gt;an emergent property of matter&lt;&#x2F;a&gt; arranged to predict.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), chapter 5, “Scale of Ambition”.&lt;&#x2F;li&gt;
+&lt;li&gt;The Hutter Prize for lossless compression of human knowledge, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;prize.hutter1.net&#x2F;&quot;&gt;prize.hutter1.net&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Its magic crumbles away</title>
+        <published>2026-11-14T00:00:00+00:00</published>
+        <updated>2026-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/its-magic-crumbles-away/"/>
+        <id>https://raskell.io/notes/its-magic-crumbles-away/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/its-magic-crumbles-away/">&lt;p&gt;Karen Hao opens and closes &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; with the same sentence, from Joseph Weizenbaum’s 1966 paper on ELIZA: once a program’s inner workings are explained in language plain enough to induce understanding, “its magic crumbles away.” The observer, Weizenbaum went on, says to himself that he could have written it.&lt;&#x2F;p&gt;
+&lt;p&gt;ELIZA was a simple procedural program that matched keywords and turned the user’s sentences back into questions, and Weizenbaum built it partly to show how easily people fall for an illusion of intelligence. They fell for it anyway. Psychiatrists talked about automated therapy, and Weizenbaum spent much of the rest of his career trying to deflate what he had started (chapter 4). For ELIZA the sentence is exactly true: explain the trick and nothing is left.&lt;&#x2F;p&gt;
+&lt;p&gt;Hao uses it as her remedy against the influence of the AI companies: teach people how the technology works, and the hype loses its hold. I agree with the remedy. Explaining how these systems work is the most useful thing anyone writing about them can do, and it is most of what this site tries to do.&lt;&#x2F;p&gt;
+&lt;p&gt;But with large language models the magic does not crumble when you explain it, and that is the interesting part. The procedure is simple enough to write down: predict the next word, adjust the weights, repeat over most of what people have written. Knowing that does not let you say you could have written the result, because the program you could write is not the one that runs. What the model learned lives in billions of weights that nobody wrote and nobody can yet read in full. The explanation of the method is plain; the explanation of the behaviour is still a research field.&lt;&#x2F;p&gt;
+&lt;p&gt;So I would put Weizenbaum’s sentence to a test rather than use it as a remedy. If explaining a system makes its abilities disappear, it was a trick. If the explanation leaves the abilities standing, something real is there, and the honest response is to keep explaining, including where we cannot yet. That is the line between hype and capability, and it is why I take seriously the idea that &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;intelligence-is-compression&#x2F;&quot;&gt;intelligence is compression&lt;&#x2F;a&gt;, and that it may be &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;an-emergent-property-of-matter&#x2F;&quot;&gt;an emergent property of matter&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), epigraph, chapter 4, “Dreams of Modernity”, and the epilogue.&lt;&#x2F;li&gt;
+&lt;li&gt;Joseph Weizenbaum, “ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine”, &lt;em&gt;Communications of the ACM&lt;&#x2F;em&gt; 9(1), January 1966, pp. 36 to 45, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;doi.org&#x2F;10.1145&#x2F;365153.365168&quot;&gt;doi:10.1145&#x2F;365153.365168&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Small, focused, high-trust</title>
+        <published>2026-11-14T00:00:00+00:00</published>
+        <updated>2026-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/small-focused-high-trust/"/>
+        <id>https://raskell.io/notes/small-focused-high-trust/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/small-focused-high-trust/">&lt;p&gt;In a 2020 vision memo, written after Microsoft’s investment, Sam Altman warned his own company against growing too large. Karen Hao quotes it in &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (chapter 11): “what has worked for us so far is being small, focused, high-trust, low-bullshit, and intense.” Too many people and too much bureaucracy, he wrote, “can easily kill great ideas or result in sclerosis”, and OpenAI could fulfil its mission “with a surprisingly small number of great people.”&lt;&#x2F;p&gt;
+&lt;p&gt;He meant it. Hao reports that in late 2022, after ChatGPT, when every team was stretched thin and managers begged for head count, Altman kept repeating the line and wanted to add no more than about a hundred people. Other executives wanted closer to five hundred. OpenAI had about 300 people in October 2022, close to 600 by the middle of 2023, and nearly 800 when the board fired Altman that November.&lt;&#x2F;p&gt;
+&lt;p&gt;I have made the same observation in every large organisation I have worked in or with, public or private. A group of people has to spend work on holding itself together, and that share grows faster than the group. Fred Brooks put the arithmetic in &lt;em&gt;The Mythical Man-Month&lt;&#x2F;em&gt;: every pair of people is a possible line of communication, and the number of pairs grows with the square of the headcount.&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th style=&quot;text-align: right&quot;&gt;People&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: right&quot;&gt;Pairs who may need to talk&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: right&quot;&gt;5&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;10&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: right&quot;&gt;10&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;45&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: right&quot;&gt;50&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;1,225&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: right&quot;&gt;500&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;124,750&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td style=&quot;text-align: right&quot;&gt;5,000&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: right&quot;&gt;12,497,500&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Nobody talks to everyone, so the organisation adds structure: managers, meetings, processes, reporting lines, approval steps. Each is reasonable. Together they become the leviathan, a body whose main occupation is keeping itself intact, whether it is a ministry or a multinational. Its slowness is the price of its coherence.&lt;&#x2F;p&gt;
+&lt;p&gt;What interests me is that the arithmetic may be changing. If a small team with agents can do what used to take a department, the number of people a mission needs drops, and with it the overhead. I wrote about that from the side of the individual in &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;power-in-the-good-sense&#x2F;&quot;&gt;power in the good sense&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;citizen-entrepreneurs&#x2F;&quot;&gt;citizen entrepreneurs&lt;&#x2F;a&gt;. Altman’s “surprisingly small number of great people” reads differently in 2026 than it did in 2020.&lt;&#x2F;p&gt;
+&lt;p&gt;Small has its own failure mode, and Hao’s account shows it too: teams stretched so thin that the people in them burn out. Small, focused, and high-trust is a discipline, and OpenAI could not keep it. Neither, as far as I know, has anyone else at that scale.&lt;&#x2F;p&gt;
+&lt;p&gt;Related: &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;a-billion-without-a-plan&#x2F;&quot;&gt;A billion without a plan&lt;&#x2F;a&gt;, and my review of the book, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), chapter 11, “Apex”.&lt;&#x2F;li&gt;
+&lt;li&gt;Frederick P. Brooks Jr., &lt;em&gt;The Mythical Man-Month&lt;&#x2F;em&gt; (1975), chapter 2.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Something closer to a religion</title>
+        <published>2026-11-14T00:00:00+00:00</published>
+        <updated>2026-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/something-closer-to-a-religion/"/>
+        <id>https://raskell.io/notes/something-closer-to-a-religion/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/something-closer-to-a-religion/">&lt;p&gt;Karen Hao opens &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; with two epigraphs. One is a passage from Sam Altman’s blog in 2013. He had heard a saying from Qi Lu: successful people create companies, more successful people create countries, and the most successful people create religions. Altman drew his own conclusion: the most successful founders “are on a mission to create something closer to a religion”, and at some point a company turns out to be the easiest way to do it.&lt;&#x2F;p&gt;
+&lt;p&gt;Hao comes back to it in chapter 18, where she argues that OpenAI’s mission works as a formula for empire: it gathers talent, it gathers capital, and it is vague enough to be reinterpreted at will. In chapter 10 she writes that the people who fear AGI and the people who long for it preach from the same bible. For her, the religious quality of the AI labs is the warning sign.&lt;&#x2F;p&gt;
+&lt;p&gt;I read the same sentence as a forecast, and an accurate one. A company has always held people together with two things: what it pays them for and what it lets them believe. For most of industrial history the first carried the weight. The work was the reason to show up, the wage was the reason to stay, and the mission statement was decoration. If AI makes a great deal of human work cheaper, the first bond weakens. What is left to hold a group of people together is the second: a shared idea of what they are building and why it matters.&lt;&#x2F;p&gt;
+&lt;p&gt;That is not new. Monasteries, guilds, universities, and the early labs of the nuclear age were held together this way, and they built things no wage alone would have bought. The OpenAI that Hao describes runs on the same fuel: people who took less money than Google offered because they believed in the mission, and who threatened to leave together when they thought it was in danger. Altman put a line from Admiral Rickover on the office walls for the same reason (&lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;one-person-can-make-a-difference&#x2F;&quot;&gt;One person can make a difference&lt;&#x2F;a&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;Hao is right that a belief can be bent to serve power, and that a vague mission can be reinterpreted to justify almost anything. That is the risk of every religion. But the answer is to look at what the faith builds and whom it serves, not to wish companies were held together by wages alone. I expect more of them to look like this, not fewer, and I share some of the faith myself: &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;an-emergent-property-of-matter&#x2F;&quot;&gt;An emergent property of matter&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), epigraph, chapter 10, “Gods and Demons”, and chapter 18, “A Formula for Empire”.&lt;&#x2F;li&gt;
+&lt;li&gt;Sam Altman, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;blog.samaltman.com&#x2F;successful-people&quot;&gt;Successful People&lt;&#x2F;a&gt;, blog post, March 7, 2013.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>I wrote a short book about peace</title>
         <published>2026-11-13T00:00:00+00:00</published>

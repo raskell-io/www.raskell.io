@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Raskell - neural-networks</title>
+    <subtitle>Notes on agent platforms, platform automation, edge infrastructure, and applied security. Building automation-first platforms that survive production reality.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/neural-networks/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://raskell.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-11-14T00:00:00+00:00</updated>
+    <id>https://raskell.io/tags/neural-networks/atom.xml</id>
+    <entry xml:lang="en">
+        <title>A self-fulfilling prophecy</title>
+        <published>2026-11-14T00:00:00+00:00</published>
+        <updated>2026-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/a-self-fulfilling-prophecy/"/>
+        <id>https://raskell.io/notes/a-self-fulfilling-prophecy/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/a-self-fulfilling-prophecy/">&lt;p&gt;At the end of chapter 4 of &lt;em&gt;Empire of AI&lt;&#x2F;em&gt;, Karen Hao compares OpenAI’s scaling laws to Moore’s Law. Moore’s Law, she writes, was never a principle of physics. It was an observation Gordon Moore made about the pace he could drive his own company to, and a choice to keep that pace, which the rest of the industry then copied because it was the most competitive strategy. OpenAI’s internal “law” of compute doubling, and the scaling laws that replaced it, are the same: “It is not a natural phenomenon. It’s a self-fulfilling prophecy.”&lt;&#x2F;p&gt;
+&lt;p&gt;She is right about Moore’s Law, and it is worth remembering how much of technological progress works this way. A forecast that everyone believes becomes a schedule. Chip makers planned their factories around it, suppliers planned around the chip makers, and software assumed the chips would arrive. The prediction coordinated an industry, and the coordination made the prediction come true.&lt;&#x2F;p&gt;
+&lt;p&gt;The same thing happened with scaling. Once the labs believed that a bigger model trained on more data with more compute would reliably get better, money, chips, power plants, and careers lined up behind that belief, and the belief kept paying out. Hao is right that this was a choice, and that the choice crowded out other paths: better architectures, better data, approaches other than deep learning.&lt;&#x2F;p&gt;
+&lt;p&gt;But a prophecy can only fulfil itself where the world allows it. Moore’s Law ran for decades because transistors could in fact be made smaller; it slowed when physics said no. Scaling laws are measurements, loss curves that fall along a straight line on a log scale across many orders of magnitude, first published by OpenAI researchers in 2020 and corrected by DeepMind in 2022. Investment decided how far along the line the industry would go. It did not draw the line. Hao’s own reporting shows the other side: by late 2024 OpenAI was struggling to make its next model good enough, and scaling alone “no longer seemed to be enough” (chapter 18). A pure prophecy would not have stalled.&lt;&#x2F;p&gt;
+&lt;p&gt;So the useful version of her point is narrower and, I think, more interesting. The regularity is real; the decision to follow it at any cost is social. That is how every large bet on technology works, from chips to railways, and it is the subject of &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;a-billion-without-a-plan&#x2F;&quot;&gt;A billion without a plan&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), chapter 4, “Dreams of Modernity”, and chapter 18, “A Formula for Empire”.&lt;&#x2F;li&gt;
+&lt;li&gt;Gordon E. Moore, “Cramming more components onto integrated circuits”, &lt;em&gt;Electronics&lt;&#x2F;em&gt; 38(8), 1965.&lt;&#x2F;li&gt;
+&lt;li&gt;Jared Kaplan et al., &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2001.08361&quot;&gt;Scaling Laws for Neural Language Models&lt;&#x2F;a&gt;, 2020.&lt;&#x2F;li&gt;
+&lt;li&gt;Jordan Hoffmann et al., &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2203.15556&quot;&gt;Training Compute-Optimal Large Language Models&lt;&#x2F;a&gt;, 2022.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Intelligence is compression</title>
+        <published>2026-11-14T00:00:00+00:00</published>
+        <updated>2026-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/intelligence-is-compression/"/>
+        <id>https://raskell.io/notes/intelligence-is-compression/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/intelligence-is-compression/">&lt;p&gt;Karen Hao reports in &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (chapter 5) that while Alec Radford was teaching a transformer to predict the next word, the work that became GPT, Ilya Sutskever had a short way of explaining why it mattered: “Intelligence is compression.” A model trained to generate convincing text is forced to squeeze what it sees about the world into its essence. In a 2016 memo, Hao writes, Sutskever went further and argued that compression was the only thing needed for general intelligence. OpenAI’s public version borrowed Richard Feynman’s line, “What I cannot create, I do not understand”, which Hao calls “heavily anthropomorphized”.&lt;&#x2F;p&gt;
+&lt;p&gt;I think the slogan is right, and older than OpenAI. The argument goes like this:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;To compress data well, you have to predict it. A compressor that knows what comes next only has to store the surprises.&lt;&#x2F;li&gt;
+&lt;li&gt;To predict text well, you have to model whatever produced the text: grammar first, then facts, then the reasoning and intentions of the people who wrote it.&lt;&#x2F;li&gt;
+&lt;li&gt;So the better the compression, the more of the world the model has had to capture. A model that compresses everything people have written down cannot help learning a great deal about people.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This is not a metaphor. Prediction and compression are the same problem in information theory, which is why Marcus Hutter has offered a prize since 2006 for compressing a fixed slice of Wikipedia, as a benchmark for intelligence. Next-word prediction is exactly that contest, run at the scale of the internet.&lt;&#x2F;p&gt;
+&lt;p&gt;It is also half of a wager. The other half, in the same chapter, is Dario Amodei’s bet on the “pure language” hypothesis: that text alone is enough to learn from. Put together, they say that compressing everything humans have written is a path to general intelligence. That is my reading, not Hao’s, and it is the bet the rest of the book is about. Whether it is enough is still open; I lean towards thinking a model also has to act, as I argued in &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;in-vivo-not-in-vitro&#x2F;&quot;&gt;in vivo, not in vitro&lt;&#x2F;a&gt;. But compression explains why the bet got as far as it did, and it fits the larger conviction I share with Altman, that intelligence is &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;an-emergent-property-of-matter&#x2F;&quot;&gt;an emergent property of matter&lt;&#x2F;a&gt; arranged to predict.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), chapter 5, “Scale of Ambition”.&lt;&#x2F;li&gt;
+&lt;li&gt;The Hutter Prize for lossless compression of human knowledge, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;prize.hutter1.net&#x2F;&quot;&gt;prize.hutter1.net&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Raskell - mathematics</title>
+    <subtitle>Notes on agent platforms, platform automation, edge infrastructure, and applied security. Building automation-first platforms that survive production reality.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/mathematics/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://raskell.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-11-14T00:00:00+00:00</updated>
+    <id>https://raskell.io/tags/mathematics/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Intelligence is compression</title>
+        <published>2026-11-14T00:00:00+00:00</published>
+        <updated>2026-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/intelligence-is-compression/"/>
+        <id>https://raskell.io/notes/intelligence-is-compression/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/intelligence-is-compression/">&lt;p&gt;Karen Hao reports in &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (chapter 5) that while Alec Radford was teaching a transformer to predict the next word, the work that became GPT, Ilya Sutskever had a short way of explaining why it mattered: “Intelligence is compression.” A model trained to generate convincing text is forced to squeeze what it sees about the world into its essence. In a 2016 memo, Hao writes, Sutskever went further and argued that compression was the only thing needed for general intelligence. OpenAI’s public version borrowed Richard Feynman’s line, “What I cannot create, I do not understand”, which Hao calls “heavily anthropomorphized”.&lt;&#x2F;p&gt;
+&lt;p&gt;I think the slogan is right, and older than OpenAI. The argument goes like this:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;To compress data well, you have to predict it. A compressor that knows what comes next only has to store the surprises.&lt;&#x2F;li&gt;
+&lt;li&gt;To predict text well, you have to model whatever produced the text: grammar first, then facts, then the reasoning and intentions of the people who wrote it.&lt;&#x2F;li&gt;
+&lt;li&gt;So the better the compression, the more of the world the model has had to capture. A model that compresses everything people have written down cannot help learning a great deal about people.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This is not a metaphor. Prediction and compression are the same problem in information theory, which is why Marcus Hutter has offered a prize since 2006 for compressing a fixed slice of Wikipedia, as a benchmark for intelligence. Next-word prediction is exactly that contest, run at the scale of the internet.&lt;&#x2F;p&gt;
+&lt;p&gt;It is also half of a wager. The other half, in the same chapter, is Dario Amodei’s bet on the “pure language” hypothesis: that text alone is enough to learn from. Put together, they say that compressing everything humans have written is a path to general intelligence. That is my reading, not Hao’s, and it is the bet the rest of the book is about. Whether it is enough is still open; I lean towards thinking a model also has to act, as I argued in &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;in-vivo-not-in-vitro&#x2F;&quot;&gt;in vivo, not in vitro&lt;&#x2F;a&gt;. But compression explains why the bet got as far as it did, and it fits the larger conviction I share with Altman, that intelligence is &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;an-emergent-property-of-matter&#x2F;&quot;&gt;an emergent property of matter&lt;&#x2F;a&gt; arranged to predict.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), chapter 5, “Scale of Ambition”.&lt;&#x2F;li&gt;
+&lt;li&gt;The Hutter Prize for lossless compression of human knowledge, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;prize.hutter1.net&#x2F;&quot;&gt;prize.hutter1.net&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

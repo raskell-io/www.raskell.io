@@ -1,8 +1,17 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-13T13:36:37+00:00",
+ "generated": "2026-11-14T08:12:18+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/review-empire-of-ai/",
+   "kind": "article",
+   "label": "An Empire of People",
+   "url": "https://raskell.io/articles/review-empire-of-ai/",
+   "meta": "2026-11-14 · 17 min",
+   "description": "Karen Hao's Empire of AI tells the story of OpenAI through its people. Gripping as reporting, and uneven where it argues.",
+   "degree": 22
+  },
   {
    "id": "a:/articles/evaluation-closes-the-loop/",
    "kind": "article",
@@ -73,7 +82,7 @@
    "url": "https://raskell.io/articles/win-everything-control-no-one/",
    "meta": "2026-10-29 · 17 min",
    "description": "Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it.",
-   "degree": 21
+   "degree": 23
   },
   {
    "id": "a:/articles/a-blueprint-for-the-static-web/",
@@ -100,7 +109,7 @@
    "url": "https://raskell.io/articles/the-web-was-the-training-set/",
    "meta": "2026-10-24 · 16 min",
    "description": "Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply.",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "a:/articles/observability-is-not-logging/",
@@ -334,7 +343,7 @@
    "url": "https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
    "meta": "2026-03-13 · 23 min",
    "description": "From watching Ethereum miners in 2016 to building a decentralized compute network in open beta. Architecture, conviction, and the long road.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "a:/articles/how-ai-makes-bare-metal-viable-again/",
@@ -409,6 +418,60 @@
    "degree": 4
   },
   {
+   "id": "a:/notes/a-self-fulfilling-prophecy/",
+   "kind": "note",
+   "label": "A self-fulfilling prophecy",
+   "url": "https://raskell.io/notes/a-self-fulfilling-prophecy/",
+   "meta": "2026-11-14",
+   "description": "Karen Hao says scaling laws are like Moore's Law: not a law of nature but a self-fulfilling prophecy. She is half right, and the half matters.",
+   "degree": 8
+  },
+  {
+   "id": "a:/notes/an-emergent-property-of-matter/",
+   "kind": "note",
+   "label": "An emergent property of matter",
+   "url": "https://raskell.io/notes/an-emergent-property-of-matter/",
+   "meta": "2026-11-14",
+   "description": "Sam Altman said intelligence may be an emergent property of matter, like a rule of physics. Karen Hao calls it hype. I share the conviction.",
+   "degree": 13
+  },
+  {
+   "id": "a:/notes/intelligence-is-compression/",
+   "kind": "note",
+   "label": "Intelligence is compression",
+   "url": "https://raskell.io/notes/intelligence-is-compression/",
+   "meta": "2026-11-14",
+   "description": "Ilya Sutskever's internal slogan at OpenAI: a model that must predict the world has to compress it. I think it is the most useful definition we have.",
+   "degree": 9
+  },
+  {
+   "id": "a:/notes/its-magic-crumbles-away/",
+   "kind": "note",
+   "label": "Its magic crumbles away",
+   "url": "https://raskell.io/notes/its-magic-crumbles-away/",
+   "meta": "2026-11-14",
+   "description": "Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models.",
+   "degree": 8
+  },
+  {
+   "id": "a:/notes/small-focused-high-trust/",
+   "kind": "note",
+   "label": "Small, focused, high-trust",
+   "url": "https://raskell.io/notes/small-focused-high-trust/",
+   "meta": "2026-11-14",
+   "description": "Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic.",
+   "degree": 9
+  },
+  {
+   "id": "a:/notes/something-closer-to-a-religion/",
+   "kind": "note",
+   "label": "Something closer to a religion",
+   "url": "https://raskell.io/notes/something-closer-to-a-religion/",
+   "meta": "2026-11-14",
+   "description": "In 2013 Sam Altman wrote that great founders create something closer to a religion. Karen Hao reads it as a warning; I read it as a forecast.",
+   "degree": 8
+  },
+  {
    "id": "a:/notes/the-art-of-peace/",
    "kind": "note",
    "label": "I wrote a short book about peace",
@@ -424,7 +487,7 @@
    "url": "https://raskell.io/notes/one-person-can-make-a-difference/",
    "meta": "2026-11-08",
    "description": "Sam Altman had a line from Admiral Rickover painted on OpenAI's walls. It says one person can make a difference, and it was used to ask for unity.",
-   "degree": 6
+   "degree": 8
   },
   {
    "id": "a:/notes/the-interface-that-disappears/",
@@ -433,7 +496,7 @@
    "url": "https://raskell.io/notes/the-interface-that-disappears/",
    "meta": "2026-11-08",
    "description": "OpenAI's founders kept pointing to the film Her as a picture of AGI. What they described is the north star for every interface: natural enough to vanish.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "a:/notes/a-billion-without-a-plan/",
@@ -442,7 +505,7 @@
    "url": "https://raskell.io/notes/a-billion-without-a-plan/",
    "meta": "2026-11-07",
    "description": "Large language models were funded before anyone could say what they were for. That took a dense pool of capital and a few people deciding where it went.",
-   "degree": 8
+   "degree": 11
   },
   {
    "id": "a:/notes/in-vivo-not-in-vitro/",
@@ -451,7 +514,7 @@
    "url": "https://raskell.io/notes/in-vivo-not-in-vitro/",
    "meta": "2026-11-07",
    "description": "An open question: can intelligence be measured anywhere but in performance? My hunch is that it shows only when an agent acts.",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "a:/notes/who-carries-progress/",
@@ -496,7 +559,7 @@
    "url": "https://raskell.io/notes/who-contributed-to-ai/",
    "meta": "2026-11-01",
    "description": "A companion piece to Karen Hao's Empire of AI and Sebastian Mallaby's The Infinity Machine: who built AI, where, and which idea led to which product.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "a:/notes/everything-is-a-fractal/",
@@ -523,7 +586,7 @@
    "url": "https://raskell.io/notes/citizen-entrepreneurs/",
    "meta": "2026-10-25",
    "description": "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "a:/notes/ideas-stop-waiting/",
@@ -541,7 +604,7 @@
    "url": "https://raskell.io/notes/power-in-the-good-sense/",
    "meta": "2026-10-25",
    "description": "The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "a:/notes/the-move-to-the-city/",
@@ -706,13 +769,22 @@
    "degree": 16
   },
   {
+   "id": "t:bureaucracy",
+   "kind": "tag",
+   "label": "Bureaucracy",
+   "url": "https://raskell.io/tags/bureaucracy/",
+   "meta": "Concept · 2 pages",
+   "description": "The work a group spends on holding itself together, which grows faster than the group: in public administration, corporations, and labs.",
+   "degree": 4
+  },
+  {
    "id": "t:capital-allocation",
    "kind": "tag",
    "label": "Capital allocation",
    "url": "https://raskell.io/tags/capital-allocation/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Who decides where a society's money, time and talent go, how concentrated that decision is, and what gets built because of it.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:chaos-theory",
@@ -856,7 +928,7 @@
    "url": "https://raskell.io/tags/economics/",
    "meta": "Concept · 11 pages",
    "description": "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.",
-   "degree": 30
+   "degree": 31
   },
   {
    "id": "t:edge-systems",
@@ -881,9 +953,9 @@
    "kind": "tag",
    "label": "Emergence",
    "url": "https://raskell.io/tags/emergence/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "Order nobody designed: reefs, the early web, neuron cultures, and simulated worlds where simple rules add up to behaviour no single part has.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:energy",
@@ -908,9 +980,9 @@
    "kind": "tag",
    "label": "Entrepreneurship",
    "url": "https://raskell.io/tags/entrepreneurship/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 6 pages",
    "description": "Finding something worth building and building it: ventures, side projects, and what changes when anyone can spot an opportunity and operate a business with AI.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "t:ethics",
@@ -967,6 +1039,15 @@
    "degree": 10
   },
   {
+   "id": "t:forecasting",
+   "kind": "tag",
+   "label": "Forecasting",
+   "url": "https://raskell.io/tags/forecasting/",
+   "meta": "Concept · 1 page",
+   "description": "Saying what will happen and how sure you are: scenarios, predictions that fail, and the events nobody priced in.",
+   "degree": 13
+  },
+  {
    "id": "t:formal-methods",
    "kind": "tag",
    "label": "Formal methods",
@@ -989,9 +1070,9 @@
    "kind": "tag",
    "label": "Future of work",
    "url": "https://raskell.io/tags/future-of-work/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 6 pages",
    "description": "What AI does to jobs and livelihoods: the interval before any post-scarcity economy, basic income against basic access, and who gets through the middle.",
-   "degree": 12
+   "degree": 14
   },
   {
    "id": "t:game-ai",
@@ -1061,18 +1142,18 @@
    "kind": "tag",
    "label": "History of technology",
    "url": "https://raskell.io/tags/history-of-technology/",
-   "meta": "Concept · 9 pages",
+   "meta": "Concept · 11 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 30
+   "degree": 32
   },
   {
    "id": "t:hubris",
    "kind": "tag",
    "label": "Hubris",
    "url": "https://raskell.io/tags/hubris/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "t:hypertext",
@@ -1115,9 +1196,9 @@
    "kind": "tag",
    "label": "Intelligence",
    "url": "https://raskell.io/tags/intelligence/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 6 pages",
    "description": "What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.",
-   "degree": 23
+   "degree": 26
   },
   {
    "id": "t:interfaces",
@@ -1169,9 +1250,9 @@
    "kind": "tag",
    "label": "Language",
    "url": "https://raskell.io/tags/language/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 4 pages",
    "description": "Language as a faculty and a medium: how it carries thought and knowledge, and whether a machine that learns only text learns the world.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "t:languages",
@@ -1228,6 +1309,15 @@
    "degree": 18
   },
   {
+   "id": "t:mathematics",
+   "kind": "tag",
+   "label": "Mathematics",
+   "url": "https://raskell.io/tags/mathematics/",
+   "meta": "Domain · 1 page",
+   "description": "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.",
+   "degree": 18
+  },
+  {
    "id": "t:meta",
    "kind": "tag",
    "label": "This site",
@@ -1262,6 +1352,15 @@
    "meta": "Concept · 1 page",
    "description": "That everyone dies: priced in life insurance, resisted by those who want to end death, and answered by keeping a person's voice and stories.",
    "degree": 7
+  },
+  {
+   "id": "t:neural-networks",
+   "kind": "tag",
+   "label": "Neural networks",
+   "url": "https://raskell.io/tags/neural-networks/",
+   "meta": "Concept · 2 pages",
+   "description": "Layers of weights that learn a function from examples: architectures, activations, quantisation, and running them where the data is.",
+   "degree": 5
   },
   {
    "id": "t:neuroscience",
@@ -1349,18 +1448,18 @@
    "kind": "tag",
    "label": "Philosophy",
    "url": "https://raskell.io/tags/philosophy/",
-   "meta": "Domain · 1 page",
+   "meta": "Domain · 2 pages",
    "description": "Questions about knowledge, mind, morality, and belief, from how science knows things to the novels that argue with God.",
-   "degree": 39
+   "degree": 40
   },
   {
    "id": "t:physics",
    "kind": "tag",
    "label": "Physics",
    "url": "https://raskell.io/tags/physics/",
-   "meta": "Domain · 1 page",
+   "meta": "Domain · 2 pages",
    "description": "The laws of matter, energy, space and time, and the people who found them, from Newton to the bomb to cosmology.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:pingora",
@@ -1430,9 +1529,9 @@
    "kind": "tag",
    "label": "Psychology",
    "url": "https://raskell.io/tags/psychology/",
-   "meta": "Domain · 1 page",
+   "meta": "Domain · 2 pages",
    "description": "How minds work and what people make of their lives: personality and types, the unconscious and its symbols, meaning, order and chaos.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "t:reinforcement-learning",
@@ -1453,13 +1552,22 @@
    "degree": 12
   },
   {
+   "id": "t:religion",
+   "kind": "tag",
+   "label": "Religion",
+   "url": "https://raskell.io/tags/religion/",
+   "meta": "Concept · 2 pages",
+   "description": "Faith, doubt, and the institutions and cities built around belief, as history and as argument.",
+   "degree": 32
+  },
+  {
    "id": "t:research-labs",
    "kind": "tag",
    "label": "Research labs",
    "url": "https://raskell.io/tags/research-labs/",
-   "meta": "Concept · 6 pages",
+   "meta": "Concept · 9 pages",
    "description": "The institutions where discovery happens and how they are funded and run: CERN, Bell Labs, ARPA, Los Alamos, DeepMind, and the labs behind modern medicine.",
-   "degree": 19
+   "degree": 22
   },
   {
    "id": "t:risk",
@@ -1502,9 +1610,9 @@
    "kind": "tag",
    "label": "Semiconductors",
    "url": "https://raskell.io/tags/semiconductors/",
-   "meta": "Domain · 3 pages",
+   "meta": "Domain · 4 pages",
    "description": "Chips and the factories that make them: fabrication, the few companies and places that can do it, and why nations compete for them.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:semiotics",
@@ -1601,18 +1709,18 @@
    "kind": "tag",
    "label": "Technology races",
    "url": "https://raskell.io/tags/technology-races/",
-   "meta": "Concept · 5 pages",
+   "meta": "Concept · 7 pages",
    "description": "Powers racing to build a technology first, from the bomb and its deterrence to frontier AI and the data it needs.",
-   "degree": 16
+   "degree": 18
   },
   {
    "id": "t:training-data",
    "kind": "tag",
    "label": "Training data",
    "url": "https://raskell.io/tags/training-data/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "What models learn from: web crawls, books, and licensed or unlicensed corpora; who holds what has not been scraped yet, and on what terms.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:tree-search",
@@ -1747,7 +1855,7 @@
    "url": "https://raskell.io/tags#complex-systems",
    "meta": "Concept · no pages yet",
    "description": "Emergence and collective dynamics: how simple agents, roles, and rules add up to markets, institutions, and societies.",
-   "degree": 19
+   "degree": 20
   },
   {
    "id": "t:cryptography",
@@ -1793,15 +1901,6 @@
    "meta": "Concept · no pages yet",
    "description": "Technologies that could end or permanently cripple civilisation, from nuclear weapons to misaligned AI, and how people have tried to contain them.",
    "degree": 11
-  },
-  {
-   "id": "t:forecasting",
-   "kind": "tag",
-   "label": "Forecasting",
-   "url": "https://raskell.io/tags#forecasting",
-   "meta": "Concept · no pages yet",
-   "description": "Saying what will happen and how sure you are: scenarios, predictions that fail, and the events nobody priced in.",
-   "degree": 12
   },
   {
    "id": "t:game-theory",
@@ -1894,15 +1993,6 @@
    "degree": 4
   },
   {
-   "id": "t:mathematics",
-   "kind": "tag",
-   "label": "Mathematics",
-   "url": "https://raskell.io/tags#mathematics",
-   "meta": "Domain · no pages yet",
-   "description": "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.",
-   "degree": 17
-  },
-  {
    "id": "t:maximalist-novels",
    "kind": "tag",
    "label": "Maximalist novels",
@@ -1946,15 +2036,6 @@
    "meta": "Concept · no pages yet",
    "description": "How machines talk: packets, protocols, sockets, and the networks from ARPANET to the web that carry them.",
    "degree": 8
-  },
-  {
-   "id": "t:neural-networks",
-   "kind": "tag",
-   "label": "Neural networks",
-   "url": "https://raskell.io/tags#neural-networks",
-   "meta": "Concept · no pages yet",
-   "description": "Layers of weights that learn a function from examples: architectures, activations, quantisation, and running them where the data is.",
-   "degree": 3
   },
   {
    "id": "t:origins-of-life",
@@ -2009,15 +2090,6 @@
    "meta": "Concept · no pages yet",
    "description": "Tracking, profiling, and consent on the web, and designs that avoid collecting the data in the first place.",
    "degree": 5
-  },
-  {
-   "id": "t:religion",
-   "kind": "tag",
-   "label": "Religion",
-   "url": "https://raskell.io/tags#religion",
-   "meta": "Concept · no pages yet",
-   "description": "Faith, doubt, and the institutions and cities built around belief, as history and as argument.",
-   "degree": 30
   },
   {
    "id": "t:scientific-revolutions",
@@ -2094,9 +2166,9 @@
    "kind": "category",
    "label": "Reviews",
    "url": "https://raskell.io/categories/reviews/",
-   "meta": "2 entries",
+   "meta": "3 entries",
    "description": "Reviews of books, papers, and long articles from the reading log: what the work argues, where I was persuaded, and what I made of it.",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "p:archipelag-io",
@@ -2105,7 +2177,7 @@
    "url": "https://archipelag.io",
    "meta": "Project",
    "description": "Decentralized AI compute: AI jobs run on a network of community-operated GPU hosts. Jobs prefer nearby hosts and a preferred region, and every job records where it ran; strict regi…",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "p:cyanea",
@@ -2276,7 +2348,7 @@
    "url": "https://hotaru.raskell.io",
    "meta": "Project",
    "description": "Simulated neuron cultures on a 60-electrode array play Pong in your browser, as in the DishBrain experiment. Feedback for hits and misses alone did not make them better. Input that…",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "p:kishi",
@@ -2387,13 +2459,22 @@
    "degree": 6
   },
   {
+   "id": "w:the-code-breaker",
+   "kind": "work",
+   "label": "The Code Breaker",
+   "url": "https://raskell.io/reading/#the-code-breaker",
+   "meta": "Book · Walter Isaacson · reading now",
+   "description": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
+   "degree": 8
+  },
+  {
    "id": "w:empire-of-ai",
    "kind": "work",
    "label": "Empire of AI",
-   "url": "https://raskell.io/reading/#empire-of-ai",
-   "meta": "Book · Karen Hao · reading now",
+   "url": "https://raskell.io/articles/review-empire-of-ai/",
+   "meta": "Book · Karen Hao · read November 2026",
    "description": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
-   "degree": 13
+   "degree": 20
   },
   {
    "id": "w:the-cauldron",
@@ -3629,15 +3710,6 @@
    "degree": 5
   },
   {
-   "id": "w:the-code-breaker",
-   "kind": "work",
-   "label": "The Code Breaker",
-   "url": "https://raskell.io/reading/#the-code-breaker",
-   "meta": "Book · Walter Isaacson · in the backlog",
-   "description": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
-   "degree": 8
-  },
-  {
    "id": "w:the-rise-and-fall-of-the-dinosaurs",
    "kind": "work",
    "label": "The Rise and Fall of the Dinosaurs",
@@ -3894,7 +3966,7 @@
    "label": "Backlog",
    "url": "https://raskell.io/reading/#shelf-backlog",
    "meta": "Shelf",
-   "degree": 70
+   "degree": 69
   },
   {
    "id": "h:shelf-read",
@@ -3902,7 +3974,7 @@
    "label": "Read",
    "url": "https://raskell.io/reading/#shelf-read",
    "meta": "Shelf",
-   "degree": 94
+   "degree": 95
   },
   {
    "id": "h:shelf-set-aside",
@@ -4273,6 +4345,26 @@
   {
    "source": "t:basel",
    "target": "t:switzerland"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "t:bureaucracy"
+  },
+  {
+   "source": "a:/notes/small-focused-high-trust/",
+   "target": "t:bureaucracy"
+  },
+  {
+   "source": "t:bureaucracy",
+   "target": "t:complex-systems"
+  },
+  {
+   "source": "t:bureaucracy",
+   "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "t:capital-allocation"
   },
   {
    "source": "a:/notes/a-billion-without-a-plan/",
@@ -4663,6 +4755,10 @@
    "target": "t:programming-languages"
   },
   {
+   "source": "a:/notes/an-emergent-property-of-matter/",
+   "target": "t:emergence"
+  },
+  {
    "source": "a:/notes/everything-is-a-fractal/",
    "target": "t:emergence"
   },
@@ -4697,6 +4793,14 @@
   {
    "source": "a:/articles/it-intelligence/",
    "target": "t:enterprise-architecture"
+  },
+  {
+   "source": "a:/notes/small-focused-high-trust/",
+   "target": "t:entrepreneurship"
+  },
+  {
+   "source": "a:/notes/something-closer-to-a-religion/",
+   "target": "t:entrepreneurship"
   },
   {
    "source": "a:/notes/one-person-can-make-a-difference/",
@@ -4819,6 +4923,14 @@
    "target": "t:economics"
   },
   {
+   "source": "a:/notes/a-self-fulfilling-prophecy/",
+   "target": "t:forecasting"
+  },
+  {
+   "source": "t:forecasting",
+   "target": "t:risk"
+  },
+  {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
    "target": "t:formal-methods"
   },
@@ -4861,6 +4973,14 @@
   {
    "source": "t:fractals",
    "target": "t:chaos-theory"
+  },
+  {
+   "source": "a:/notes/small-focused-high-trust/",
+   "target": "t:future-of-work"
+  },
+  {
+   "source": "a:/notes/something-closer-to-a-religion/",
+   "target": "t:future-of-work"
   },
   {
    "source": "a:/articles/it-intelligence/",
@@ -5015,6 +5135,14 @@
    "target": "t:programming-languages"
   },
   {
+   "source": "a:/notes/a-self-fulfilling-prophecy/",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "a:/notes/its-magic-crumbles-away/",
+   "target": "t:history-of-technology"
+  },
+  {
    "source": "a:/notes/who-carries-progress/",
    "target": "t:history-of-technology"
   },
@@ -5053,6 +5181,10 @@
   {
    "source": "t:history-of-technology",
    "target": "t:history"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "t:hubris"
   },
   {
    "source": "a:/notes/one-person-can-make-a-difference/",
@@ -5151,6 +5283,18 @@
    "target": "t:economics"
   },
   {
+   "source": "a:/notes/an-emergent-property-of-matter/",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "a:/notes/intelligence-is-compression/",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "a:/notes/its-magic-crumbles-away/",
+   "target": "t:intelligence"
+  },
+  {
    "source": "a:/notes/in-vivo-not-in-vitro/",
    "target": "t:intelligence"
   },
@@ -5233,6 +5377,14 @@
   {
    "source": "t:kubernetes",
    "target": "t:platform-automation"
+  },
+  {
+   "source": "a:/notes/intelligence-is-compression/",
+   "target": "t:language"
+  },
+  {
+   "source": "a:/notes/its-magic-crumbles-away/",
+   "target": "t:language"
   },
   {
    "source": "a:/notes/the-interface-that-disappears/",
@@ -5335,6 +5487,10 @@
    "target": "t:machine-learning"
   },
   {
+   "source": "a:/notes/intelligence-is-compression/",
+   "target": "t:mathematics"
+  },
+  {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "t:meta"
   },
@@ -5377,6 +5533,18 @@
   {
    "source": "t:mortality",
    "target": "t:philosophy"
+  },
+  {
+   "source": "a:/notes/a-self-fulfilling-prophecy/",
+   "target": "t:neural-networks"
+  },
+  {
+   "source": "a:/notes/intelligence-is-compression/",
+   "target": "t:neural-networks"
+  },
+  {
+   "source": "t:neural-networks",
+   "target": "t:machine-learning"
   },
   {
    "source": "a:/articles/the-behavioural-turn/",
@@ -5491,8 +5659,16 @@
    "target": "t:open-web"
   },
   {
+   "source": "a:/notes/an-emergent-property-of-matter/",
+   "target": "t:philosophy"
+  },
+  {
    "source": "a:/notes/the-art-of-peace/",
    "target": "t:philosophy"
+  },
+  {
+   "source": "a:/notes/an-emergent-property-of-matter/",
+   "target": "t:physics"
   },
   {
    "source": "a:/notes/everything-is-a-fractal/",
@@ -5619,6 +5795,10 @@
    "target": "t:applied-security"
   },
   {
+   "source": "a:/notes/its-magic-crumbles-away/",
+   "target": "t:psychology"
+  },
+  {
    "source": "a:/articles/the-behavioural-turn/",
    "target": "t:psychology"
   },
@@ -5641,6 +5821,34 @@
   {
    "source": "a:/articles/traffic-replay-as-a-security-primitive/",
    "target": "t:reliability"
+  },
+  {
+   "source": "a:/notes/an-emergent-property-of-matter/",
+   "target": "t:religion"
+  },
+  {
+   "source": "a:/notes/something-closer-to-a-religion/",
+   "target": "t:religion"
+  },
+  {
+   "source": "t:religion",
+   "target": "t:philosophy"
+  },
+  {
+   "source": "t:religion",
+   "target": "t:history"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "t:research-labs"
+  },
+  {
+   "source": "a:/notes/small-focused-high-trust/",
+   "target": "t:research-labs"
+  },
+  {
+   "source": "a:/notes/something-closer-to-a-religion/",
+   "target": "t:research-labs"
   },
   {
    "source": "a:/notes/one-person-can-make-a-difference/",
@@ -5761,6 +5969,10 @@
   {
    "source": "t:self-hosting",
    "target": "t:sovereignty"
+  },
+  {
+   "source": "a:/notes/a-self-fulfilling-prophecy/",
+   "target": "t:semiconductors"
   },
   {
    "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
@@ -5915,6 +6127,14 @@
    "target": "t:europe"
   },
   {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "t:technology-races"
+  },
+  {
+   "source": "a:/notes/a-self-fulfilling-prophecy/",
+   "target": "t:technology-races"
+  },
+  {
    "source": "a:/notes/a-billion-without-a-plan/",
    "target": "t:technology-races"
   },
@@ -5941,6 +6161,10 @@
   {
    "source": "t:technology-races",
    "target": "t:existential-risk"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "t:training-data"
   },
   {
    "source": "a:/articles/the-web-was-the-training-set/",
@@ -6203,10 +6427,6 @@
    "target": "t:policy"
   },
   {
-   "source": "t:forecasting",
-   "target": "t:risk"
-  },
-  {
    "source": "t:game-theory",
    "target": "t:mathematics"
   },
@@ -6279,10 +6499,6 @@
    "target": "t:open-web"
   },
   {
-   "source": "t:neural-networks",
-   "target": "t:machine-learning"
-  },
-  {
    "source": "t:origins-of-life",
    "target": "t:life-sciences"
   },
@@ -6325,14 +6541,6 @@
   {
    "source": "t:privacy",
    "target": "t:sovereignty"
-  },
-  {
-   "source": "t:religion",
-   "target": "t:philosophy"
-  },
-  {
-   "source": "t:religion",
-   "target": "t:history"
   },
   {
    "source": "t:scientific-revolutions",
@@ -6427,12 +6635,68 @@
    "target": "s:the-agent-platform-handbook"
   },
   {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "c:reviews"
+  },
+  {
    "source": "a:/articles/win-everything-control-no-one/",
    "target": "c:reviews"
   },
   {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "c:reviews"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "a:/articles/win-everything-control-no-one/"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "a:/articles/the-web-was-the-training-set/"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "a:/notes/a-self-fulfilling-prophecy/"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "a:/notes/an-emergent-property-of-matter/"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "a:/notes/intelligence-is-compression/"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "a:/notes/its-magic-crumbles-away/"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "a:/notes/small-focused-high-trust/"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "a:/notes/something-closer-to-a-religion/"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "a:/notes/one-person-can-make-a-difference/"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "a:/notes/the-interface-that-disappears/"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "a:/notes/a-billion-without-a-plan/"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "a:/notes/who-contributed-to-ai/"
   },
   {
    "source": "a:/articles/evaluation-closes-the-loop/",
@@ -6859,6 +7123,54 @@
    "target": "a:/articles/mise-ate-my-makefile/"
   },
   {
+   "source": "a:/notes/a-self-fulfilling-prophecy/",
+   "target": "a:/notes/a-billion-without-a-plan/"
+  },
+  {
+   "source": "a:/notes/an-emergent-property-of-matter/",
+   "target": "a:/articles/win-everything-control-no-one/"
+  },
+  {
+   "source": "a:/notes/an-emergent-property-of-matter/",
+   "target": "a:/notes/in-vivo-not-in-vitro/"
+  },
+  {
+   "source": "a:/notes/intelligence-is-compression/",
+   "target": "a:/notes/an-emergent-property-of-matter/"
+  },
+  {
+   "source": "a:/notes/intelligence-is-compression/",
+   "target": "a:/notes/in-vivo-not-in-vitro/"
+  },
+  {
+   "source": "a:/notes/its-magic-crumbles-away/",
+   "target": "a:/notes/an-emergent-property-of-matter/"
+  },
+  {
+   "source": "a:/notes/its-magic-crumbles-away/",
+   "target": "a:/notes/intelligence-is-compression/"
+  },
+  {
+   "source": "a:/notes/small-focused-high-trust/",
+   "target": "a:/notes/a-billion-without-a-plan/"
+  },
+  {
+   "source": "a:/notes/small-focused-high-trust/",
+   "target": "a:/notes/citizen-entrepreneurs/"
+  },
+  {
+   "source": "a:/notes/small-focused-high-trust/",
+   "target": "a:/notes/power-in-the-good-sense/"
+  },
+  {
+   "source": "a:/notes/something-closer-to-a-religion/",
+   "target": "a:/notes/an-emergent-property-of-matter/"
+  },
+  {
+   "source": "a:/notes/something-closer-to-a-religion/",
+   "target": "a:/notes/one-person-can-make-a-difference/"
+  },
+  {
    "source": "a:/notes/one-person-can-make-a-difference/",
    "target": "a:/notes/who-carries-progress/"
   },
@@ -6977,6 +7289,10 @@
   {
    "source": "a:/notes/opus-5-5-is-the-best-opus-since-4-5/",
    "target": "a:/talks/iat-13-basel/"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "p:archipelag-io"
   },
   {
    "source": "a:/articles/a-blueprint-for-the-static-web/",
@@ -7276,6 +7592,10 @@
   },
   {
    "source": "a:/articles/learning-to-play/",
+   "target": "p:hotaru"
+  },
+  {
+   "source": "a:/notes/an-emergent-property-of-matter/",
    "target": "p:hotaru"
   },
   {
@@ -8151,8 +8471,40 @@
    "target": "h:apps-play"
   },
   {
-   "source": "w:empire-of-ai",
+   "source": "w:the-code-breaker",
    "target": "h:shelf-reading"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "t:synthetic-biology"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "t:ethics"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "t:medicine"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "t:genetics"
+  },
+  {
+   "source": "w:the-code-breaker",
+   "target": "t:pandemics"
+  },
+  {
+   "source": "w:empire-of-ai",
+   "target": "h:shelf-read"
   },
   {
    "source": "w:empire-of-ai",
@@ -8173,6 +8525,34 @@
   {
    "source": "w:empire-of-ai",
    "target": "t:language"
+  },
+  {
+   "source": "a:/articles/review-empire-of-ai/",
+   "target": "w:empire-of-ai"
+  },
+  {
+   "source": "a:/notes/a-self-fulfilling-prophecy/",
+   "target": "w:empire-of-ai"
+  },
+  {
+   "source": "a:/notes/an-emergent-property-of-matter/",
+   "target": "w:empire-of-ai"
+  },
+  {
+   "source": "a:/notes/intelligence-is-compression/",
+   "target": "w:empire-of-ai"
+  },
+  {
+   "source": "a:/notes/its-magic-crumbles-away/",
+   "target": "w:empire-of-ai"
+  },
+  {
+   "source": "a:/notes/small-focused-high-trust/",
+   "target": "w:empire-of-ai"
+  },
+  {
+   "source": "a:/notes/something-closer-to-a-religion/",
+   "target": "w:empire-of-ai"
   },
   {
    "source": "a:/notes/one-person-can-make-a-difference/",
@@ -11237,38 +11617,6 @@
   {
    "source": "w:airframe",
    "target": "t:aerospace"
-  },
-  {
-   "source": "w:the-code-breaker",
-   "target": "h:shelf-backlog"
-  },
-  {
-   "source": "w:the-code-breaker",
-   "target": "t:life-sciences"
-  },
-  {
-   "source": "w:the-code-breaker",
-   "target": "t:synthetic-biology"
-  },
-  {
-   "source": "w:the-code-breaker",
-   "target": "t:history-of-science"
-  },
-  {
-   "source": "w:the-code-breaker",
-   "target": "t:ethics"
-  },
-  {
-   "source": "w:the-code-breaker",
-   "target": "t:medicine"
-  },
-  {
-   "source": "w:the-code-breaker",
-   "target": "t:genetics"
-  },
-  {
-   "source": "w:the-code-breaker",
-   "target": "t:pandemics"
   },
   {
    "source": "w:the-rise-and-fall-of-the-dinosaurs",

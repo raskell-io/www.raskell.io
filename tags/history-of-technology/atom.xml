@@ -5,8 +5,70 @@
     <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/history-of-technology/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://raskell.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-11-07T00:00:00+00:00</updated>
+    <updated>2026-11-14T00:00:00+00:00</updated>
     <id>https://raskell.io/tags/history-of-technology/atom.xml</id>
+    <entry xml:lang="en">
+        <title>A self-fulfilling prophecy</title>
+        <published>2026-11-14T00:00:00+00:00</published>
+        <updated>2026-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/a-self-fulfilling-prophecy/"/>
+        <id>https://raskell.io/notes/a-self-fulfilling-prophecy/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/a-self-fulfilling-prophecy/">&lt;p&gt;At the end of chapter 4 of &lt;em&gt;Empire of AI&lt;&#x2F;em&gt;, Karen Hao compares OpenAI’s scaling laws to Moore’s Law. Moore’s Law, she writes, was never a principle of physics. It was an observation Gordon Moore made about the pace he could drive his own company to, and a choice to keep that pace, which the rest of the industry then copied because it was the most competitive strategy. OpenAI’s internal “law” of compute doubling, and the scaling laws that replaced it, are the same: “It is not a natural phenomenon. It’s a self-fulfilling prophecy.”&lt;&#x2F;p&gt;
+&lt;p&gt;She is right about Moore’s Law, and it is worth remembering how much of technological progress works this way. A forecast that everyone believes becomes a schedule. Chip makers planned their factories around it, suppliers planned around the chip makers, and software assumed the chips would arrive. The prediction coordinated an industry, and the coordination made the prediction come true.&lt;&#x2F;p&gt;
+&lt;p&gt;The same thing happened with scaling. Once the labs believed that a bigger model trained on more data with more compute would reliably get better, money, chips, power plants, and careers lined up behind that belief, and the belief kept paying out. Hao is right that this was a choice, and that the choice crowded out other paths: better architectures, better data, approaches other than deep learning.&lt;&#x2F;p&gt;
+&lt;p&gt;But a prophecy can only fulfil itself where the world allows it. Moore’s Law ran for decades because transistors could in fact be made smaller; it slowed when physics said no. Scaling laws are measurements, loss curves that fall along a straight line on a log scale across many orders of magnitude, first published by OpenAI researchers in 2020 and corrected by DeepMind in 2022. Investment decided how far along the line the industry would go. It did not draw the line. Hao’s own reporting shows the other side: by late 2024 OpenAI was struggling to make its next model good enough, and scaling alone “no longer seemed to be enough” (chapter 18). A pure prophecy would not have stalled.&lt;&#x2F;p&gt;
+&lt;p&gt;So the useful version of her point is narrower and, I think, more interesting. The regularity is real; the decision to follow it at any cost is social. That is how every large bet on technology works, from chips to railways, and it is the subject of &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;a-billion-without-a-plan&#x2F;&quot;&gt;A billion without a plan&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), chapter 4, “Dreams of Modernity”, and chapter 18, “A Formula for Empire”.&lt;&#x2F;li&gt;
+&lt;li&gt;Gordon E. Moore, “Cramming more components onto integrated circuits”, &lt;em&gt;Electronics&lt;&#x2F;em&gt; 38(8), 1965.&lt;&#x2F;li&gt;
+&lt;li&gt;Jared Kaplan et al., &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2001.08361&quot;&gt;Scaling Laws for Neural Language Models&lt;&#x2F;a&gt;, 2020.&lt;&#x2F;li&gt;
+&lt;li&gt;Jordan Hoffmann et al., &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2203.15556&quot;&gt;Training Compute-Optimal Large Language Models&lt;&#x2F;a&gt;, 2022.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Its magic crumbles away</title>
+        <published>2026-11-14T00:00:00+00:00</published>
+        <updated>2026-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/its-magic-crumbles-away/"/>
+        <id>https://raskell.io/notes/its-magic-crumbles-away/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/its-magic-crumbles-away/">&lt;p&gt;Karen Hao opens and closes &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; with the same sentence, from Joseph Weizenbaum’s 1966 paper on ELIZA: once a program’s inner workings are explained in language plain enough to induce understanding, “its magic crumbles away.” The observer, Weizenbaum went on, says to himself that he could have written it.&lt;&#x2F;p&gt;
+&lt;p&gt;ELIZA was a simple procedural program that matched keywords and turned the user’s sentences back into questions, and Weizenbaum built it partly to show how easily people fall for an illusion of intelligence. They fell for it anyway. Psychiatrists talked about automated therapy, and Weizenbaum spent much of the rest of his career trying to deflate what he had started (chapter 4). For ELIZA the sentence is exactly true: explain the trick and nothing is left.&lt;&#x2F;p&gt;
+&lt;p&gt;Hao uses it as her remedy against the influence of the AI companies: teach people how the technology works, and the hype loses its hold. I agree with the remedy. Explaining how these systems work is the most useful thing anyone writing about them can do, and it is most of what this site tries to do.&lt;&#x2F;p&gt;
+&lt;p&gt;But with large language models the magic does not crumble when you explain it, and that is the interesting part. The procedure is simple enough to write down: predict the next word, adjust the weights, repeat over most of what people have written. Knowing that does not let you say you could have written the result, because the program you could write is not the one that runs. What the model learned lives in billions of weights that nobody wrote and nobody can yet read in full. The explanation of the method is plain; the explanation of the behaviour is still a research field.&lt;&#x2F;p&gt;
+&lt;p&gt;So I would put Weizenbaum’s sentence to a test rather than use it as a remedy. If explaining a system makes its abilities disappear, it was a trick. If the explanation leaves the abilities standing, something real is there, and the honest response is to keep explaining, including where we cannot yet. That is the line between hype and capability, and it is why I take seriously the idea that &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;intelligence-is-compression&#x2F;&quot;&gt;intelligence is compression&lt;&#x2F;a&gt;, and that it may be &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;an-emergent-property-of-matter&#x2F;&quot;&gt;an emergent property of matter&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), epigraph, chapter 4, “Dreams of Modernity”, and the epilogue.&lt;&#x2F;li&gt;
+&lt;li&gt;Joseph Weizenbaum, “ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine”, &lt;em&gt;Communications of the ACM&lt;&#x2F;em&gt; 9(1), January 1966, pp. 36 to 45, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;doi.org&#x2F;10.1145&#x2F;365153.365168&quot;&gt;doi:10.1145&#x2F;365153.365168&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Who carries progress</title>
         <published>2026-11-07T00:00:00+00:00</published>

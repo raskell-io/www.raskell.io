@@ -1,6 +1,304 @@
 # Raskell: all writing in full
 
-> Every published article, review, note, talk, and dataset page on raskell.io by Raffael Schneider, newest first, then the reading log. Generated 2026-11-13. Index: https://raskell.io/llms.txt
+> Every published article, review, note, talk, and dataset page on raskell.io by Raffael Schneider, newest first, then the reading log. Generated 2026-11-14. Index: https://raskell.io/llms.txt
+
+
+================================================================================
+
+---
+title: "An Empire of People"
+url: https://raskell.io/articles/review-empire-of-ai/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Karen Hao's Empire of AI tells the story of OpenAI through its people. Gripping as reporting, and uneven where it argues."
+tags: [research-labs, technology-races, hubris, training-data, capital-allocation, bureaucracy]
+categories: [reviews]
+review_of: "Empire of AI"
+review_of_author: "Karen Hao"
+review_of_kind: book
+review_of_year: 2025
+rating: 7.5/10
+---
+
+# An Empire of People
+
+## In short
+
+Karen Hao's *Empire of AI* is an inside account of OpenAI, Sam Altman, and the people around them, built on some 300 interviews; I give it 7.5 out of 10. Read right after Sebastian Mallaby's *The Infinity Machine*, it is almost a companion volume: the same cast and the same years, seen from OpenAI instead of DeepMind, with more politics and less technology. Its best material shows how OpenAI's mission was redefined every year or two, which Hao reads as a formula for empire and I read as a process larger than any of the people in it. It is weaker where it argues: several chapters on the costs borne elsewhere could have been shorter, and its account of Chile reads the country through one political lens. Its lasting lesson is that a company of global significance is still run by people like you and me, a little smarter, more cunning, and more visionary.
+
+*Empire of AI* opens on Friday, November 17, 2023, around noon Pacific time, when Sam Altman logs on to a video call and four of his five board members tell him he is fired. The prologue runs through all five days: the all-hands where Ilya Sutskever cannot explain anything, the threats from the executives, the employee letter, Microsoft's offer, Sutskever's change of heart, Altman's return. Then the book goes back to a dinner at the Rosewood hotel in 2015, and only in its last part, from inside the board's deliberations, does it reach the same five days again.
+
+Karen Hao had followed OpenAI since 2019, when she spent three days embedded in its office and wrote the first profile of the company. The book rests on some 300 interviews with around 260 people, more than 90 of them current or former OpenAI staff, and on memos, emails, and Slack messages. Altman and OpenAI chose not to cooperate. It shows in both directions: she knows who said what in which meeting, and Altman is mostly seen through the people who worked with him.
+
+I give it 7.5 out of 10. It is the book to read if you want to understand Sam Altman, OpenAI, and the feuds that shaped both, and it convinced me of something I had suspected: a company that may matter as much as any company in history is still run by people like you and me, a little smarter, a little more cunning, and a little more visionary.
+
+## Two books, one story
+
+I read it right after Sebastian Mallaby's biography of Demis Hassabis, [*The Infinity Machine*](https://raskell.io/articles/win-everything-control-no-one/), and that turned out to be the right order. Mallaby tells the genesis of DeepMind and, along the way, the genesis of modern machine learning, in chronological order, up to the transformer-based language models whose consequences we are only beginning to live through. Hao tells the other half: the same years, many of the same people (Musk, Sutskever, Amodei, Hinton, Suleyman), seen from San Francisco instead of from London. The two books mirror each other's blind spots. Mallaby had Hassabis's cooperation and drew Altman through his rivals; Hao had no cooperation from Altman and draws Hassabis, when he appears at all, from a distance.
+
+Some scenes appear in both and are better for it. Musk's fear of Hassabis, which Mallaby reports from London, is in Hao's first chapter as the reason OpenAI exists at all: Musk wanted the future of AI not to be controlled by Larry Page, and Altman emailed him that it would be good for someone other than Google to build it first. A former DeepMind researcher tells Hao that OpenAI's founding was "a semi-hysterical reaction to a fairly mild-mannered man." And where Mallaby shows DeepMind dismissing language as the road to intelligence, Hao shows the memo that changed its mind: Geoffrey Irving, a safety researcher who left OpenAI for DeepMind in 2019, brought with him the case for scaling language models (chapter 7). I drew the people and ideas that both books cover, with a source for every link, in [Who contributed to AI](https://raskell.io/notes/who-contributed-to-ai/).
+
+The difference in emphasis is large. Mallaby explains the technology, twice for every idea, and the people serve the history of the field. Hao is interested in the people and the politics, and in who pays for the technology rather than how it works. Both are legitimate choices. Hers makes the better thriller and the weaker history of ideas.
+
+## How it is told
+
+Hao writes for suspense, and I appreciated it. These stories are so intertwined, and so interesting on a human level, that they deserve to be told as a drama: the Rosewood dinner, Musk's ultimatum and exit in 2018, Bill Gates being won over by a demo of GPT-2 and then by GPT-4 passing his biology exam, the Amodei siblings leaving with a third of the GPT-3 team to found Anthropic, and ChatGPT itself. It was rushed out in November 2022 on a rumour that Anthropic was about to ship a chatbot, framed internally as a "low-key research preview", and staff placed bets on whether a few thousand or tens of thousands of people would try it over the weekend. It had a million users in five days.
+
+The structure is less kind to the reader. The book is in four parts and broadly in order, but it tells several stretches twice. Chapters 2 and 3 tell the years from 2015 to 2019 as the story of an institution, and chapter 5 goes back and tells them again as the story of the research. Chapter 4 leaves OpenAI entirely for an essay on the history of AI from the cotton gin to Dartmouth to deep learning. Chapter 9 moves between Kenya in 2021, Venezuela's collapse, Colombia, and Nairobi in 2023. Chapter 13 takes up 2023 again from the side of Washington. After Mallaby's strictly chronological account I sometimes lost track of where in the timeline I was. It did not stop me reading, but a timeline or a list of the cast at the back would have helped, and the book has neither.
+
+## The bet on language
+
+Some of the best material is in chapter 5, on the decisions that made GPT. Hao reports that Ilya Sutskever's framing inside OpenAI was ["Intelligence is compression"](https://raskell.io/notes/intelligence-is-compression/): a model trained to generate convincing text has to compress what it learns about the world into its essence. Dario Amodei then runs research as a portfolio of bets, and the bet he keeps is GPT-2, which stood for what the field called the "pure language" hypothesis: that a system trained on enough text and nothing else could become generally intelligent, against the "grounding" hypothesis that it would also need perception and action. Amodei came to see scaling language models as perhaps the fastest path, though likely not the only thing needed.
+
+Put next to Mallaby, this is the decisive fork of the decade. DeepMind's business plan of 2010 dismissed the idea that language is intelligence expressed, and Hassabis spent years believing a model had to act in the world to understand it. OpenAI bet the other way, and won the first round. That compression and pure language are two halves of one wager, that text is enough, is my reading, not Hao's. She calls the arguments some staff made for the language bet, by analogy to Helen Keller and blind people, "repugnant", and in chapter 4 she argues that scaling is ["a self-fulfilling prophecy"](https://raskell.io/notes/a-self-fulfilling-prophecy/), not a natural law. The book shows the fork clearly anyway.
+
+Three other passages from the first half became notes of their own: a Chinese researcher's view that no one outside Silicon Valley would have funded this before it had a use ([A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/)), the [Rickover quote](https://raskell.io/notes/one-person-can-make-a-difference/) Altman had painted on the office walls ([One person can make a difference](https://raskell.io/notes/one-person-can-make-a-difference/)), and the film *Her* as OpenAI's picture of what AGI should feel like ([The interface that disappears](https://raskell.io/notes/the-interface-that-disappears/)).
+
+## How a mission moves
+
+The passage I will remember longest is in chapter 18, "A Formula for Empire". Hao argues that OpenAI's mission works as a formula with three ingredients: it gathers talent around a grand ambition, it gathers capital by making the alternative look dangerous, and it is vague enough to be reinterpreted whenever that suits the company. As evidence for the third, she lists what the mission was said to mean at each stage, each time in the company's own words:
+
+| Year | What the mission was said to mean | Where it was said |
+|---|---|---|
+| 2015 | A nonprofit "unconstrained by a need to generate financial return", open-sourcing its research | The launch announcement |
+| 2016 | Everyone should benefit from AI once it is built, but the science need not be shared | Sutskever, in an email to Altman, Brockman, and Musk |
+| 2018 to 2019 | A capped-profit structure to raise the resources the work needed, while avoiding a race without time for safety | The charter |
+| 2020 | The model walled off behind an API, as "a strategy for openness and benefit sharing" | Altman, replying to Hao's first profile of the company |
+| 2022 | "Iterative deployment", and racing to ship ChatGPT | Hao's summary of the company's line |
+| 2024 | Putting very capable AI tools in people's hands for free, or at a great price | Altman's blog, after GPT-4o |
+
+The chapter opens with Altman praising a book of Napoleon's sayings, in particular how Napoleon reinterpreted the motto of the revolution to consolidate his own power. The parallel is pointed, and Hao means it to be. I read the table differently. Every step has a reason that made sense at the time: training runs got expensive, so the nonprofit needed capital; capital needed a return, so the model needed a business; competitors appeared, so the business needed speed. The idealism of 2015 was not abandoned by one decision. It was worn down by the realities of compute, money, and competition, one reasonable step at a time, by people who mostly still believed they were serving it. That is a process larger than any single person in it, Altman included, and I suspect it would have happened under any of the founders.
+
+The same process shows in a smaller story in chapter 11. In a 2020 memo Altman wanted OpenAI to stay ["small, focused, high-trust, low-bullshit, and intense"](https://raskell.io/notes/small-focused-high-trust/), and in late 2022 he argued for no more than about a hundred new hires while other executives wanted five times that. OpenAI had about 300 people at an off-site in October 2022 and was close to 800 a year later. Every large group ends up spending more of its work on holding itself together, in a ministry as in a corporation, and I wrote down my own version of that observation in [Small, focused, high-trust](https://raskell.io/notes/small-focused-high-trust/).
+
+## Where I part ways
+
+Hao writes from a clear position, and she says so in the author's note: the book is "not a corporate book" but "a meditation on power", and she embedded with communities around the world who live with AI's costs. In the prologue she states the metaphor plainly. The AI companies are empires in the colonial sense: they seize resources that are not their own, exploit the labour of others, and justify it with ideas of modernity and a race against rival empires. That makes for honest reporting, and in places it makes for a book that reads as a case against the people building AI rather than an account of them. Some of the chapters on the costs borne elsewhere felt longer than their point, and could have been condensed.
+
+One of them I would not cut. Chapter 7, "Science in Captivity", follows Timnit Gebru, an Ethiopia-born researcher who came to the United States as an Eritrean refugee in her teens and co-led Google's ethical AI team. She had co-authored "Gender Shades" with Joy Buolamwini, which showed that commercial face analysis failed most often on darker-skinned women. When GPT-3 arrived she warned that a model trained on Reddit and the rest of Common Crawl would absorb its toxicity, and with Emily M. Bender she wrote "On the Dangers of Stochastic Parrots". Google ordered her to retract the paper. She set conditions and said she would leave if they were not met; on December 2, 2020, Google told her it was accepting her resignation immediately, and she announced that she had been fired. Hao's larger point is about science: after this, and after ChatGPT, the industry stopped publishing what its models were trained on, and you cannot test a model honestly if you cannot see its training data. I remembered the debate from the early days of GPT, when bias in the weights was what everyone talked about. In my own work that problem has receded since: a model that looks facts up with tools before it answers gets them right far more often than one answering from its weights. That is not the same as having no bias in the weights, but it changed how much it matters. Hao's point about closed training data stands either way.
+
+The chapter on Chile, "Plundered Earth" (chapter 12), I found hard to read. Hao tells Chile's story through its colonial past, the Chicago Boys, Pinochet's privatisations, inequality, and the election of Gabriel Boric, and she places it among the countries of the Global South that supply the empire with copper, lithium, land, and water for data centres around Santiago. I am fond of Chile and know people there, and that is one lens on the country, not the whole of it. Chile ranks highest in Latin America on the UN's Human Development Index. Its government courts data centres because it wants the investment, and Hao's own reporting shows a country deciding for itself: a referendum in Cerrillos, an environmental court that in 2024 ruled Google could not build a water-cooled data centre in Santiago, and a ministry that now drafts its data centre strategy with the activists at the table. By global standards Chile is a sensible place for data centres and mines, and water in a long drought is a fair concern. Hao's sources are more careful than her framing here. The Indigenous activist Sonia Ramos says her ancestors were miners and the problem is the scale; the Uruguayan researcher Daniel Pena says the same of data centres.
+
+Scale is exactly where I part ways. The bet that Altman, Hassabis, and others make is that spending the world's resources on building more intelligence will repay itself, by solving problems that we cannot solve without it. Energy is the largest of them. Hao reports that Altman liked to say the energy problem of his largest data centres would solve itself with a breakthrough in nuclear fusion, and that Helion, a fusion company, is his largest personal investment. She quotes a researcher who calls the claim that AGI will solve our environmental problems impossible to prove. It is. It may also be wrong. But it is a coherent strategy, and it deserves more sympathy than the book gives it. Empires are not a net negative by definition. Power concentrated in a few hands makes harm possible, and that is worth debating; the question is what is done with the power once it is accumulated, not the accumulation itself. I made a version of this argument about capital in [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/).
+
+## How the empire falls
+
+The epilogue gives Hao's alternative. Te Hiku Media, a Māori radio station in the far north of New Zealand, built the first speech-recognition model for te reo Māori from 310 hours of recordings that the community donated with consent, trained on two GPUs of its own. Hao sets it against OpenAI's Whisper, trained on 680,000 hours taken from the web. Then, borrowing from a talk by the Stanford researcher Ria Kalluri, she names three axes of power: knowledge, resources, and influence. In her account the AI companies control knowledge by concentrating talent, eroding open science, and sealing their models from scrutiny; they control resources by gathering funding, data, labour, compute, energy, and land; and they control influence through ideology and demonstrations that capture the world's imagination. Her remedy for the third is public education, and she ends with Joseph Weizenbaum, the creator of ELIZA, on what happens once a program's workings are explained plainly enough to be understood: ["its magic crumbles away."](https://raskell.io/notes/its-magic-crumbles-away/)
+
+The axes are a useful lens, and I will use them. Te Hiku is a good story, and small models trained on data people chose to give are part of the future. The detail I find most important is easy to miss: Te Hiku bought its own GPUs, so it did not depend on any tech giant's cloud. Ownership of the hardware is the part of the resources axis that ordinary people can actually change.
+
+Training bespoke models is one way to do that. Running them is the other, and it is where more and more of the compute goes, every time someone asks a model anything. That is the problem I work on with [Archipelag.io](https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/): a network in which AI jobs run on GPUs operated by people and communities rather than by a handful of hyperscalers, preferring hosts nearby and recording where every job ran. It is in open beta, and it will not train the next frontier model. But it lets people own a piece of the infrastructure that runs AI instead of only renting access to it, with what comes with ownership: income for the people who host, data that stays closer to home, and no single landlord who can change the terms. The web did the same for publishing. Before it, reaching an audience took a printing press or a broadcast licence; after it, anyone with a computer could put up a page, and the web grew out of millions of people doing exactly that, as I wrote in my review of [Tim Berners-Lee's memoir](https://raskell.io/articles/the-web-was-the-training-set/). Distributed citizen compute is the same move for inference.
+
+I agree completely with the remedy: explaining how these systems work is the best thing anyone can do, and it is what this site tries to do. I part ways where the diagnosis treats concentration itself as the problem, and where small models are offered as a replacement for the large ones rather than as their complement.
+
+## Who should read it
+
+Anyone interested in Sam Altman, OpenAI, and the people and feuds behind the technology, ideally after *The Infinity Machine*, which explains the technology Hao mostly takes as given. The detail is extraordinary, and I came away with more trivia worth remembering than from most books this year. I wish it had stayed more focused: with Hao's access to the people around Altman, a tighter book about the people alone would have been even grander.
+
+What stays with me is a thread Hao pulls as criticism. The book opens with two epigraphs: Weizenbaum on magic that crumbles once it is explained, and a line from Altman's blog. In chapter 10 she writes that the Doomers and the Boomers preach from the same bible, one of hellfire and one of heaven. In chapter 18 she comes back to that line of Altman's, from 2013: the most successful founders set out to create ["something closer to a religion"](https://raskell.io/notes/something-closer-to-a-religion/), and a company turns out to be the easiest way to do it. And in chapter 17 she quotes him on a podcast saying that ["intelligence is just this emergent property of matter"](https://raskell.io/notes/an-emergent-property-of-matter/), which she offers as hype. I share that conviction, and I wrote about it in [An emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/). Where Hao sees a religion as a warning sign, I see an honest description of what these companies are becoming. As the value of human labour falls, they will be held together less by the work they pay for and more by what they believe. OpenAI is one of the first, and its mission will keep moving.
+
+
+================================================================================
+
+---
+title: "Its magic crumbles away"
+url: https://raskell.io/notes/its-magic-crumbles-away/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models."
+tags: [language, intelligence, history-of-technology, psychology]
+---
+
+# Its magic crumbles away
+
+Karen Hao opens and closes *Empire of AI* with the same sentence, from Joseph Weizenbaum's 1966 paper on ELIZA: once a program's inner workings are explained in language plain enough to induce understanding, "its magic crumbles away." The observer, Weizenbaum went on, says to himself that he could have written it.
+
+ELIZA was a simple procedural program that matched keywords and turned the user's sentences back into questions, and Weizenbaum built it partly to show how easily people fall for an illusion of intelligence. They fell for it anyway. Psychiatrists talked about automated therapy, and Weizenbaum spent much of the rest of his career trying to deflate what he had started (chapter 4). For ELIZA the sentence is exactly true: explain the trick and nothing is left.
+
+Hao uses it as her remedy against the influence of the AI companies: teach people how the technology works, and the hype loses its hold. I agree with the remedy. Explaining how these systems work is the most useful thing anyone writing about them can do, and it is most of what this site tries to do.
+
+But with large language models the magic does not crumble when you explain it, and that is the interesting part. The procedure is simple enough to write down: predict the next word, adjust the weights, repeat over most of what people have written. Knowing that does not let you say you could have written the result, because the program you could write is not the one that runs. What the model learned lives in billions of weights that nobody wrote and nobody can yet read in full. The explanation of the method is plain; the explanation of the behaviour is still a research field.
+
+So I would put Weizenbaum's sentence to a test rather than use it as a remedy. If explaining a system makes its abilities disappear, it was a trick. If the explanation leaves the abilities standing, something real is there, and the honest response is to keep explaining, including where we cannot yet. That is the line between hype and capability, and it is why I take seriously the idea that [intelligence is compression](https://raskell.io/notes/intelligence-is-compression/), and that it may be [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/).
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), epigraph, chapter 4, "Dreams of Modernity", and the epilogue.
+- Joseph Weizenbaum, "ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine", *Communications of the ACM* 9(1), January 1966, pp. 36 to 45, [doi:10.1145/365153.365168](https://doi.org/10.1145/365153.365168).
+
+
+================================================================================
+
+---
+title: "Intelligence is compression"
+url: https://raskell.io/notes/intelligence-is-compression/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Ilya Sutskever's internal slogan at OpenAI: a model that must predict the world has to compress it. I think it is the most useful definition we have."
+tags: [intelligence, language, neural-networks, mathematics]
+---
+
+# Intelligence is compression
+
+Karen Hao reports in *Empire of AI* (chapter 5) that while Alec Radford was teaching a transformer to predict the next word, the work that became GPT, Ilya Sutskever had a short way of explaining why it mattered: "Intelligence is compression." A model trained to generate convincing text is forced to squeeze what it sees about the world into its essence. In a 2016 memo, Hao writes, Sutskever went further and argued that compression was the only thing needed for general intelligence. OpenAI's public version borrowed Richard Feynman's line, "What I cannot create, I do not understand", which Hao calls "heavily anthropomorphized".
+
+I think the slogan is right, and older than OpenAI. The argument goes like this:
+
+- To compress data well, you have to predict it. A compressor that knows what comes next only has to store the surprises.
+- To predict text well, you have to model whatever produced the text: grammar first, then facts, then the reasoning and intentions of the people who wrote it.
+- So the better the compression, the more of the world the model has had to capture. A model that compresses everything people have written down cannot help learning a great deal about people.
+
+This is not a metaphor. Prediction and compression are the same problem in information theory, which is why Marcus Hutter has offered a prize since 2006 for compressing a fixed slice of Wikipedia, as a benchmark for intelligence. Next-word prediction is exactly that contest, run at the scale of the internet.
+
+It is also half of a wager. The other half, in the same chapter, is Dario Amodei's bet on the "pure language" hypothesis: that text alone is enough to learn from. Put together, they say that compressing everything humans have written is a path to general intelligence. That is my reading, not Hao's, and it is the bet the rest of the book is about. Whether it is enough is still open; I lean towards thinking a model also has to act, as I argued in [in vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro/). But compression explains why the bet got as far as it did, and it fits the larger conviction I share with Altman, that intelligence is [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/) arranged to predict.
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), chapter 5, "Scale of Ambition".
+- The Hutter Prize for lossless compression of human knowledge, [prize.hutter1.net](http://prize.hutter1.net/).
+
+
+================================================================================
+
+---
+title: "A self-fulfilling prophecy"
+url: https://raskell.io/notes/a-self-fulfilling-prophecy/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Karen Hao says scaling laws are like Moore's Law: not a law of nature but a self-fulfilling prophecy. She is half right, and the half matters."
+tags: [neural-networks, semiconductors, forecasting, history-of-technology, technology-races]
+---
+
+# A self-fulfilling prophecy
+
+At the end of chapter 4 of *Empire of AI*, Karen Hao compares OpenAI's scaling laws to Moore's Law. Moore's Law, she writes, was never a principle of physics. It was an observation Gordon Moore made about the pace he could drive his own company to, and a choice to keep that pace, which the rest of the industry then copied because it was the most competitive strategy. OpenAI's internal "law" of compute doubling, and the scaling laws that replaced it, are the same: "It is not a natural phenomenon. It's a self-fulfilling prophecy."
+
+She is right about Moore's Law, and it is worth remembering how much of technological progress works this way. A forecast that everyone believes becomes a schedule. Chip makers planned their factories around it, suppliers planned around the chip makers, and software assumed the chips would arrive. The prediction coordinated an industry, and the coordination made the prediction come true.
+
+The same thing happened with scaling. Once the labs believed that a bigger model trained on more data with more compute would reliably get better, money, chips, power plants, and careers lined up behind that belief, and the belief kept paying out. Hao is right that this was a choice, and that the choice crowded out other paths: better architectures, better data, approaches other than deep learning.
+
+But a prophecy can only fulfil itself where the world allows it. Moore's Law ran for decades because transistors could in fact be made smaller; it slowed when physics said no. Scaling laws are measurements, loss curves that fall along a straight line on a log scale across many orders of magnitude, first published by OpenAI researchers in 2020 and corrected by DeepMind in 2022. Investment decided how far along the line the industry would go. It did not draw the line. Hao's own reporting shows the other side: by late 2024 OpenAI was struggling to make its next model good enough, and scaling alone "no longer seemed to be enough" (chapter 18). A pure prophecy would not have stalled.
+
+So the useful version of her point is narrower and, I think, more interesting. The regularity is real; the decision to follow it at any cost is social. That is how every large bet on technology works, from chips to railways, and it is the subject of [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/).
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), chapter 4, "Dreams of Modernity", and chapter 18, "A Formula for Empire".
+- Gordon E. Moore, "Cramming more components onto integrated circuits", *Electronics* 38(8), 1965.
+- Jared Kaplan et al., [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361), 2020.
+- Jordan Hoffmann et al., [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556), 2022.
+
+
+================================================================================
+
+---
+title: "An emergent property of matter"
+url: https://raskell.io/notes/an-emergent-property-of-matter/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Sam Altman said intelligence may be an emergent property of matter, like a rule of physics. Karen Hao calls it hype. I share the conviction."
+tags: [intelligence, emergence, philosophy, physics, religion]
+---
+
+# An emergent property of matter
+
+In May 2024, on the All-In podcast, Sam Altman said something that Karen Hao quotes in *Empire of AI* (chapter 17) as an example of his "unusual degree of hype". It feels to him, he said, "like we just stumbled on a new fact of nature or science or whatever you want to call it". He hedged, "I don't believe this literally but it's like a spiritual point", and then said it anyway:
+
+> intelligence is just this emergent property of matter and that's like a rule of physics or something.
+
+Hao places it in a run of unusually boastful interviews that spring, which she reads as a sign that Altman was anxious: GPT-4o launched that month, lawsuits were piling up, and in the middle of May Sutskever and Jan Leike left the company. I do not read the sentence as hype. It is the most important thing anyone at OpenAI has said, and I share the conviction, including the part he hedged.
+
+The claim, stated plainly: intelligence is not a gift that only brains received. Arrange matter so that it predicts its surroundings, put it under pressure to predict better, give it enough scale, and intelligence appears, the way temperature appears from moving molecules and a glider appears in Conway's Game of Life. The evidence is now on several substrates at once. Neurons evolved it. Neurons in a dish learned to play Pong in a few minutes, the experiment behind my small simulation [Hotaru](https://hotaru.raskell.io). Transformers trained to predict the next word learned to reason. None of these were told what intelligence is; it came out of the arrangement.
+
+"A rule of physics" overstates it, and Altman says so himself. There is no equation, and I do not know the conditions under which it holds. The counter-arguments are serious: that a model trained on text only rearranges what people wrote (Bender and Gebru's stochastic parrots, which Hao also covers), or that intelligence needs a body and a world to act in, which I lean towards in [in vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro/). But both arguments are about which arrangements are enough, not about whether matter can do it.
+
+The spiritual point is the part I care about most. If intelligence is something the universe does whenever matter is arranged in the right way, then minds are not an accident on one planet but a regularity, and building them is less like inventing a machine and more like discovering a law. That is a quasi-religious conviction, and I hold it as one. It is also, I think, why the people who build these systems talk about them with a seriousness that sounds like faith to everyone else. They are not wrong to feel it.
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/), and on emergence in Hassabis's simulated worlds in [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), chapter 17, "Reckoning". Hao gives the All-In podcast, May 2024, as the source.
+- Brett J. Kagan et al., "In vitro neurons learn and exhibit sentience when embodied in a simulated game-world", *Neuron* 110(23), 2022.
+- Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Margaret Mitchell, "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?", FAccT 2021.
+
+
+================================================================================
+
+---
+title: "Small, focused, high-trust"
+url: https://raskell.io/notes/small-focused-high-trust/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic."
+tags: [bureaucracy, research-labs, entrepreneurship, future-of-work]
+---
+
+# Small, focused, high-trust
+
+In a 2020 vision memo, written after Microsoft's investment, Sam Altman warned his own company against growing too large. Karen Hao quotes it in *Empire of AI* (chapter 11): "what has worked for us so far is being small, focused, high-trust, low-bullshit, and intense." Too many people and too much bureaucracy, he wrote, "can easily kill great ideas or result in sclerosis", and OpenAI could fulfil its mission "with a surprisingly small number of great people."
+
+He meant it. Hao reports that in late 2022, after ChatGPT, when every team was stretched thin and managers begged for head count, Altman kept repeating the line and wanted to add no more than about a hundred people. Other executives wanted closer to five hundred. OpenAI had about 300 people in October 2022, close to 600 by the middle of 2023, and nearly 800 when the board fired Altman that November.
+
+I have made the same observation in every large organisation I have worked in or with, public or private. A group of people has to spend work on holding itself together, and that share grows faster than the group. Fred Brooks put the arithmetic in *The Mythical Man-Month*: every pair of people is a possible line of communication, and the number of pairs grows with the square of the headcount.
+
+| People | Pairs who may need to talk |
+|---:|---:|
+| 5 | 10 |
+| 10 | 45 |
+| 50 | 1,225 |
+| 500 | 124,750 |
+| 5,000 | 12,497,500 |
+
+Nobody talks to everyone, so the organisation adds structure: managers, meetings, processes, reporting lines, approval steps. Each is reasonable. Together they become the leviathan, a body whose main occupation is keeping itself intact, whether it is a ministry or a multinational. Its slowness is the price of its coherence.
+
+What interests me is that the arithmetic may be changing. If a small team with agents can do what used to take a department, the number of people a mission needs drops, and with it the overhead. I wrote about that from the side of the individual in [power in the good sense](https://raskell.io/notes/power-in-the-good-sense/) and [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/). Altman's "surprisingly small number of great people" reads differently in 2026 than it did in 2020.
+
+Small has its own failure mode, and Hao's account shows it too: teams stretched so thin that the people in them burn out. Small, focused, and high-trust is a discipline, and OpenAI could not keep it. Neither, as far as I know, has anyone else at that scale.
+
+Related: [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/), and my review of the book, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), chapter 11, "Apex".
+- Frederick P. Brooks Jr., *The Mythical Man-Month* (1975), chapter 2.
+
+
+================================================================================
+
+---
+title: "Something closer to a religion"
+url: https://raskell.io/notes/something-closer-to-a-religion/
+author: Raffael Schneider
+date: 2026-11-14
+description: "In 2013 Sam Altman wrote that great founders create something closer to a religion. Karen Hao reads it as a warning; I read it as a forecast."
+tags: [religion, entrepreneurship, future-of-work, research-labs]
+---
+
+# Something closer to a religion
+
+Karen Hao opens *Empire of AI* with two epigraphs. One is a passage from Sam Altman's blog in 2013. He had heard a saying from Qi Lu: successful people create companies, more successful people create countries, and the most successful people create religions. Altman drew his own conclusion: the most successful founders "are on a mission to create something closer to a religion", and at some point a company turns out to be the easiest way to do it.
+
+Hao comes back to it in chapter 18, where she argues that OpenAI's mission works as a formula for empire: it gathers talent, it gathers capital, and it is vague enough to be reinterpreted at will. In chapter 10 she writes that the people who fear AGI and the people who long for it preach from the same bible. For her, the religious quality of the AI labs is the warning sign.
+
+I read the same sentence as a forecast, and an accurate one. A company has always held people together with two things: what it pays them for and what it lets them believe. For most of industrial history the first carried the weight. The work was the reason to show up, the wage was the reason to stay, and the mission statement was decoration. If AI makes a great deal of human work cheaper, the first bond weakens. What is left to hold a group of people together is the second: a shared idea of what they are building and why it matters.
+
+That is not new. Monasteries, guilds, universities, and the early labs of the nuclear age were held together this way, and they built things no wage alone would have bought. The OpenAI that Hao describes runs on the same fuel: people who took less money than Google offered because they believed in the mission, and who threatened to leave together when they thought it was in danger. Altman put a line from Admiral Rickover on the office walls for the same reason ([One person can make a difference](https://raskell.io/notes/one-person-can-make-a-difference/)).
+
+Hao is right that a belief can be bent to serve power, and that a vague mission can be reinterpreted to justify almost anything. That is the risk of every religion. But the answer is to look at what the faith builds and whom it serves, not to wish companies were held together by wages alone. I expect more of them to look like this, not fewer, and I share some of the faith myself: [An emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/).
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), epigraph, chapter 10, "Gods and Demons", and chapter 18, "A Formula for Empire".
+- Sam Altman, [Successful People](https://blog.samaltman.com/successful-people), blog post, March 7, 2013.
 
 
 ================================================================================
@@ -12132,7 +12430,7 @@ From https://raskell.io/reading/ (as data: https://raskell.io/reading.json).
 
 ## Reading now
 
-- *Empire of AI*: Dreams and Nightmares in Sam Altman's OpenAI by Karen Hao (book, 2025). OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them
+- *The Code Breaker*: Jennifer Doudna, Gene Editing, and the Future of the Human Race by Walter Isaacson (book, 2021). How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her
 
 ## Backlog
 
@@ -12192,7 +12490,6 @@ From https://raskell.io/reading/ (as data: https://raskell.io/reading.json).
 - *A Canticle for Leibowitz* by Walter M. Miller Jr. (novel, 1959). How knowledge survives a collapse, turns into relics, and returns with the same dangers
 - *The Andromeda Strain* by Michael Crichton (novel, 1969). A scientific investigation of an unknown organism, told almost as a case file
 - *Airframe* by Michael Crichton (novel, 1996). An incident investigation in a complex system, where the popular explanation arrives before the evidence
-- *The Code Breaker*: Jennifer Doudna, Gene Editing, and the Future of the Human Race by Walter Isaacson (book, 2021). How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her
 - *The Rise and Fall of the Dinosaurs*: A New History of a Lost World by Steve Brusatte (book, 2018). The dinosaurs from their origins to the asteroid, as recent fossil discoveries have rewritten the story
 - *The Story of Birds*: A New History from Their Dinosaur Origins to the Present by Steve Brusatte (book, 2026). Birds as the dinosaurs that survived, from their feathered ancestors to the species alive now
 - *Gödel, Escher, Bach*: An Eternal Golden Braid by Douglas R. Hofstadter (book, 1979). How meaning and a self can arise from meaningless symbols, through Gödel's incompleteness, Escher's drawings, and Bach's fugues
@@ -12209,6 +12506,7 @@ From https://raskell.io/reading/ (as data: https://raskell.io/reading.json).
 
 ## Read
 
+- *Empire of AI*: Dreams and Nightmares in Sam Altman's OpenAI by Karen Hao (book, 2025, finished November 2026, rated 7.5/10). OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them. Review: https://raskell.io/articles/review-empire-of-ai/
 - *Ocean*: Earth's Last Wilderness by David Attenborough and Colin Butfield (book, 2025, finished October 2026). Life in the ocean, what it has lost, and how protecting the sea lets it recover
 - *The Infinity Machine*: Demis Hassabis, DeepMind, and the Quest for Superintelligence by Sebastian Mallaby (book, 2026, finished October 2026, rated 8.5/10). Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence. Review: https://raskell.io/articles/win-everything-control-no-one/
 - *The Cauldron*: The Making of the Modern Middle East by Simon Sebag Montefiore (book, 2026, finished September 2026). A history of the whole modern Middle East, in all its diversity, from 1900 to the present

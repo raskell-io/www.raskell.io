@@ -5,8 +5,72 @@
     <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/language/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://raskell.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-11-08T00:00:00+00:00</updated>
+    <updated>2026-11-14T00:00:00+00:00</updated>
     <id>https://raskell.io/tags/language/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Intelligence is compression</title>
+        <published>2026-11-14T00:00:00+00:00</published>
+        <updated>2026-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/intelligence-is-compression/"/>
+        <id>https://raskell.io/notes/intelligence-is-compression/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/intelligence-is-compression/">&lt;p&gt;Karen Hao reports in &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (chapter 5) that while Alec Radford was teaching a transformer to predict the next word, the work that became GPT, Ilya Sutskever had a short way of explaining why it mattered: “Intelligence is compression.” A model trained to generate convincing text is forced to squeeze what it sees about the world into its essence. In a 2016 memo, Hao writes, Sutskever went further and argued that compression was the only thing needed for general intelligence. OpenAI’s public version borrowed Richard Feynman’s line, “What I cannot create, I do not understand”, which Hao calls “heavily anthropomorphized”.&lt;&#x2F;p&gt;
+&lt;p&gt;I think the slogan is right, and older than OpenAI. The argument goes like this:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;To compress data well, you have to predict it. A compressor that knows what comes next only has to store the surprises.&lt;&#x2F;li&gt;
+&lt;li&gt;To predict text well, you have to model whatever produced the text: grammar first, then facts, then the reasoning and intentions of the people who wrote it.&lt;&#x2F;li&gt;
+&lt;li&gt;So the better the compression, the more of the world the model has had to capture. A model that compresses everything people have written down cannot help learning a great deal about people.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This is not a metaphor. Prediction and compression are the same problem in information theory, which is why Marcus Hutter has offered a prize since 2006 for compressing a fixed slice of Wikipedia, as a benchmark for intelligence. Next-word prediction is exactly that contest, run at the scale of the internet.&lt;&#x2F;p&gt;
+&lt;p&gt;It is also half of a wager. The other half, in the same chapter, is Dario Amodei’s bet on the “pure language” hypothesis: that text alone is enough to learn from. Put together, they say that compressing everything humans have written is a path to general intelligence. That is my reading, not Hao’s, and it is the bet the rest of the book is about. Whether it is enough is still open; I lean towards thinking a model also has to act, as I argued in &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;in-vivo-not-in-vitro&#x2F;&quot;&gt;in vivo, not in vitro&lt;&#x2F;a&gt;. But compression explains why the bet got as far as it did, and it fits the larger conviction I share with Altman, that intelligence is &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;an-emergent-property-of-matter&#x2F;&quot;&gt;an emergent property of matter&lt;&#x2F;a&gt; arranged to predict.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), chapter 5, “Scale of Ambition”.&lt;&#x2F;li&gt;
+&lt;li&gt;The Hutter Prize for lossless compression of human knowledge, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;http:&#x2F;&#x2F;prize.hutter1.net&#x2F;&quot;&gt;prize.hutter1.net&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Its magic crumbles away</title>
+        <published>2026-11-14T00:00:00+00:00</published>
+        <updated>2026-11-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/its-magic-crumbles-away/"/>
+        <id>https://raskell.io/notes/its-magic-crumbles-away/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/its-magic-crumbles-away/">&lt;p&gt;Karen Hao opens and closes &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; with the same sentence, from Joseph Weizenbaum’s 1966 paper on ELIZA: once a program’s inner workings are explained in language plain enough to induce understanding, “its magic crumbles away.” The observer, Weizenbaum went on, says to himself that he could have written it.&lt;&#x2F;p&gt;
+&lt;p&gt;ELIZA was a simple procedural program that matched keywords and turned the user’s sentences back into questions, and Weizenbaum built it partly to show how easily people fall for an illusion of intelligence. They fell for it anyway. Psychiatrists talked about automated therapy, and Weizenbaum spent much of the rest of his career trying to deflate what he had started (chapter 4). For ELIZA the sentence is exactly true: explain the trick and nothing is left.&lt;&#x2F;p&gt;
+&lt;p&gt;Hao uses it as her remedy against the influence of the AI companies: teach people how the technology works, and the hype loses its hold. I agree with the remedy. Explaining how these systems work is the most useful thing anyone writing about them can do, and it is most of what this site tries to do.&lt;&#x2F;p&gt;
+&lt;p&gt;But with large language models the magic does not crumble when you explain it, and that is the interesting part. The procedure is simple enough to write down: predict the next word, adjust the weights, repeat over most of what people have written. Knowing that does not let you say you could have written the result, because the program you could write is not the one that runs. What the model learned lives in billions of weights that nobody wrote and nobody can yet read in full. The explanation of the method is plain; the explanation of the behaviour is still a research field.&lt;&#x2F;p&gt;
+&lt;p&gt;So I would put Weizenbaum’s sentence to a test rather than use it as a remedy. If explaining a system makes its abilities disappear, it was a trick. If the explanation leaves the abilities standing, something real is there, and the honest response is to keep explaining, including where we cannot yet. That is the line between hype and capability, and it is why I take seriously the idea that &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;intelligence-is-compression&#x2F;&quot;&gt;intelligence is compression&lt;&#x2F;a&gt;, and that it may be &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;an-emergent-property-of-matter&#x2F;&quot;&gt;an emergent property of matter&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), epigraph, chapter 4, “Dreams of Modernity”, and the epilogue.&lt;&#x2F;li&gt;
+&lt;li&gt;Joseph Weizenbaum, “ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine”, &lt;em&gt;Communications of the ACM&lt;&#x2F;em&gt; 9(1), January 1966, pp. 36 to 45, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;doi.org&#x2F;10.1145&#x2F;365153.365168&quot;&gt;doi:10.1145&#x2F;365153.365168&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>The interface that disappears</title>
         <published>2026-11-08T00:00:00+00:00</published>

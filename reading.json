@@ -1,9 +1,33 @@
 {
  "source": "https://raskell.io/reading/",
- "generated": "2026-11-13",
+ "generated": "2026-11-14",
  "description": "The reading log of raskell.io by Raffael Schneider: what is being read, what is next, and what has been read.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "works": [
+  {
+   "id": "the-code-breaker",
+   "title": "The Code Breaker",
+   "subtitle": "Jennifer Doudna, Gene Editing, and the Future of the Human Race",
+   "author": "Walter Isaacson",
+   "kind": "book",
+   "year": 2021,
+   "isbn": "9781398502314",
+   "status": "reading",
+   "started": "2026-11",
+   "topics": [
+    "life-sciences",
+    "synthetic-biology",
+    "history-of-science",
+    "ethics",
+    "medicine",
+    "genetics",
+    "pandemics"
+   ],
+   "about": "A biography of biochemist Jennifer Doudna and an account of how CRISPR, a bacterial defence against viruses, was turned into a tool for editing genes. Isaacson follows the research race and the patent dispute between laboratories, the use of the technique against disease and during the COVID-19 pandemic, and the ethical questions raised by editing human embryos.",
+   "take": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
+   "cover": "https://raskell.io/covers/reading/the-code-breaker.avif",
+   "page": "https://raskell.io/reading/#the-code-breaker"
+  },
   {
    "id": "empire-of-ai",
    "title": "Empire of AI",
@@ -11,9 +35,11 @@
    "author": "Karen Hao",
    "kind": "book",
    "year": 2025,
-   "isbn": "9780593657508",
-   "status": "reading",
+   "isbn": "9780241678923",
+   "status": "read",
    "started": "2026-10",
+   "finished": "2026-11",
+   "rating": 7.5,
    "topics": [
     "research-labs",
     "training-data",
@@ -24,7 +50,12 @@
    "about": "A work of investigative journalism tracing OpenAI from its founding as a non-profit research lab to a commercial giant, including the 2023 boardroom crisis around Sam Altman. Hao argues that the AI industry behaves like a new empire, drawing on data, labour, water and land, and she reports from Kenya, Chile, Colombia and elsewhere to show who bears those costs.",
    "take": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
    "cover": "https://raskell.io/covers/reading/empire-of-ai.avif",
-   "page": "https://raskell.io/reading/#empire-of-ai"
+   "page": "https://raskell.io/reading/#empire-of-ai",
+   "review": {
+    "title": "An Empire of People",
+    "url": "https://raskell.io/articles/review-empire-of-ai/",
+    "markdown": "https://raskell.io/articles/review-empire-of-ai.md"
+   }
   },
   {
    "id": "the-cauldron",
@@ -2827,29 +2858,6 @@
    "take": "An incident investigation in a complex system, where the popular explanation arrives before the evidence.",
    "cover": "https://raskell.io/covers/reading/airframe.avif",
    "page": "https://raskell.io/reading/#airframe"
-  },
-  {
-   "id": "the-code-breaker",
-   "title": "The Code Breaker",
-   "subtitle": "Jennifer Doudna, Gene Editing, and the Future of the Human Race",
-   "author": "Walter Isaacson",
-   "kind": "book",
-   "year": 2021,
-   "isbn": "9781982115852",
-   "status": "backlog",
-   "topics": [
-    "life-sciences",
-    "synthetic-biology",
-    "history-of-science",
-    "ethics",
-    "medicine",
-    "genetics",
-    "pandemics"
-   ],
-   "about": "A biography of biochemist Jennifer Doudna and an account of how CRISPR, a bacterial defence against viruses, was turned into a tool for editing genes. Isaacson follows the research race and the patent dispute between laboratories, the use of the technique against disease and during the COVID-19 pandemic, and the ethical questions raised by editing human embryos.",
-   "take": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
-   "cover": "https://raskell.io/covers/reading/the-code-breaker.avif",
-   "page": "https://raskell.io/reading/#the-code-breaker"
   },
   {
    "id": "the-rise-and-fall-of-the-dinosaurs",

@@ -38,6 +38,7 @@ raskell.io is the personal site of Raffael Schneider, a Group AI Solutions Archi
 
 ## Articles
 
+- [An Empire of People](https://raskell.io/articles/review-empire-of-ai.md) (2026-11-14): Karen Hao's Empire of AI tells the story of OpenAI through its people. Gripping as reporting, and uneven where it argues.
 - [Evaluation Closes the Loop](https://raskell.io/articles/evaluation-closes-the-loop.md) (2026-11-12): A trace shows what an agent did, not whether it was right. This part scores the agent against known cases and fails the build when a passing case breaks.
 - [Three Parts and No Brain](https://raskell.io/articles/three-parts-and-no-brain.md) (2026-11-05): What a chess program is made of, and how far a hand-written one gets against the computer opponent on lichess, before any learning starts.
 - [The Behavioural Turn in Software Engineering](https://raskell.io/articles/the-behavioural-turn.md) (2026-11-05): Moving from assembly to C changed what we read. Coding agents change whether we read. What psychology learned about black boxes, and what it got wrong.
@@ -88,6 +89,7 @@ raskell.io is the personal site of Raffael Schneider, a Group AI Solutions Archi
 
 Reviews of works from the reading log (category: reviews, feed https://raskell.io/categories/reviews/rss.xml). Each Markdown copy names the reviewed work and the rating in its front matter.
 
+- [An Empire of People](https://raskell.io/articles/review-empire-of-ai.md) (2026-11-14): review of *Empire of AI* by Karen Hao (book, 2025), rated 7.5/10. Karen Hao's Empire of AI tells the story of OpenAI through its people. Gripping as reporting, and uneven where it argues.
 - [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one.md) (2026-10-29): review of *The Infinity Machine* by Sebastian Mallaby (book, 2026), rated 8.5/10. Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it.
 - [The Web Was the Training Set](https://raskell.io/articles/the-web-was-the-training-set.md) (2026-10-24): review of *This Is for Everyone* by Tim Berners-Lee (book, 2025), rated 8/10. Tim Berners-Lee's memoir is the story of a British engineer at a Franco-Swiss lab giving a protocol away. Read in 2026, it is also the origin story of AI's data supply.
 
@@ -107,6 +109,12 @@ Datasets, listed at https://raskell.io/data/. Each is one file under https://ras
 
 Short notes, a paragraph or a page each; some grow into articles.
 
+- [Its magic crumbles away](https://raskell.io/notes/its-magic-crumbles-away.md) (2026-11-14): Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models.
+- [Intelligence is compression](https://raskell.io/notes/intelligence-is-compression.md) (2026-11-14): Ilya Sutskever's internal slogan at OpenAI: a model that must predict the world has to compress it. I think it is the most useful definition we have.
+- [A self-fulfilling prophecy](https://raskell.io/notes/a-self-fulfilling-prophecy.md) (2026-11-14): Karen Hao says scaling laws are like Moore's Law: not a law of nature but a self-fulfilling prophecy. She is half right, and the half matters.
+- [An emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter.md) (2026-11-14): Sam Altman said intelligence may be an emergent property of matter, like a rule of physics. Karen Hao calls it hype. I share the conviction.
+- [Small, focused, high-trust](https://raskell.io/notes/small-focused-high-trust.md) (2026-11-14): Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic.
+- [Something closer to a religion](https://raskell.io/notes/something-closer-to-a-religion.md) (2026-11-14): In 2013 Sam Altman wrote that great founders create something closer to a religion. Karen Hao reads it as a warning; I read it as a forecast.
 - [I wrote a short book about peace](https://raskell.io/notes/the-art-of-peace.md) (2026-11-13): The Art of Peace is a short web book on living together without thinking alike: thirteen chapters, 104 passages, free to read.
 - [One person can make a difference](https://raskell.io/notes/one-person-can-make-a-difference.md) (2026-11-08): Sam Altman had a line from Admiral Rickover painted on OpenAI's walls. It says one person can make a difference, and it was used to ask for unity.
 - [The interface that disappears](https://raskell.io/notes/the-interface-that-disappears.md) (2026-11-08): OpenAI's founders kept pointing to the film Her as a picture of AGI. What they described is the north star for every interface: natural enough to vanish.
@@ -133,7 +141,7 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ### Reading now
 
-- Empire of AI, Karen Hao (book): OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.
+- The Code Breaker, Walter Isaacson (book): How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.
 
 ### Backlog
 
@@ -193,7 +201,6 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 - [A Canticle for Leibowitz](https://www.penguinrandomhouse.com/books/114888/a-canticle-for-leibowitz-by-walter-m-miller-jr/), Walter M. Miller Jr. (novel): How knowledge survives a collapse, turns into relics, and returns with the same dangers.
 - [The Andromeda Strain](https://michaelcrichton.com/works/the-andromeda-strain/), Michael Crichton (novel): A scientific investigation of an unknown organism, told almost as a case file.
 - [Airframe](https://michaelcrichton.com/works/airframe/), Michael Crichton (novel): An incident investigation in a complex system, where the popular explanation arrives before the evidence.
-- The Code Breaker, Walter Isaacson (book): How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.
 - The Rise and Fall of the Dinosaurs, Steve Brusatte (book): The dinosaurs from their origins to the asteroid, as recent fossil discoveries have rewritten the story.
 - The Story of Birds, Steve Brusatte (book): Birds as the dinosaurs that survived, from their feathered ancestors to the species alive now.
 - Gödel, Escher, Bach, Douglas R. Hofstadter (book): How meaning and a self can arise from meaningless symbols, through Gödel's incompleteness, Escher's drawings, and Bach's fugues.
@@ -210,6 +217,7 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ### Read
 
+- Empire of AI, Karen Hao (book, finished November 2026, rated 7.5/10): OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them. Review: [An Empire of People](https://raskell.io/articles/review-empire-of-ai.md)
 - Ocean, David Attenborough and Colin Butfield (book, finished October 2026): Life in the ocean, what it has lost, and how protecting the sea lets it recover.
 - [The Infinity Machine](https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9781802066296), Sebastian Mallaby (book, finished October 2026, rated 8.5/10): Demis Hassabis and DeepMind, from game-playing programs and AlphaGo to AlphaFold and the race toward general intelligence. Review: [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one.md)
 - [The Cauldron](https://www.hachette.co.uk/titles/simon-sebag-montefiore/the-cauldron/9781399634939/), Simon Sebag Montefiore (book, finished September 2026): A history of the whole modern Middle East, in all its diversity, from 1900 to the present.
@@ -311,7 +319,7 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ## Sources cited most
 
-External links cited on more than one page (all 522 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
+External links cited on more than one page (all 527 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
 
 - [Zentinel](https://zentinelproxy.io): cited on 12 pages
 - [Archipelag.io](https://archipelag.io): cited on 9 pages
@@ -321,12 +329,12 @@ External links cited on more than one page (all 522 are searchable at https://ra
 - [kishi.raskell.io](https://kishi.raskell.io): cited on 5 pages
 - [Die Zukunft](https://die-zukunft.ch/): cited on 4 pages
 - [Shiioo](https://github.com/raskell-io/shiioo): cited on 4 pages
+- [Hotaru](https://hotaru.raskell.io): cited on 4 pages
 - [AI 2027](https://ai-2027.com/): cited on 3 pages
 - [Basel Haskell Compiler](https://arcanist.sh/bhc/): cited on 3 pages
 - [Pingora](https://github.com/cloudflare/pingora): cited on 3 pages
 - [Conflux](https://github.com/raskell-io/conflux): cited on 3 pages
 - [Kage](https://github.com/raskell-io/kage): cited on 3 pages
-- [Hotaru](https://hotaru.raskell.io): cited on 3 pages
 - [Vera](https://veralang.dev/): cited on 3 pages
 - [Void Linux](https://voidlinux.org/): cited on 3 pages
 - [catalogue of languages built for agents to write](https://agentlanguages.dev): cited on 2 pages
@@ -440,6 +448,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Social reform (`social-reform`) [within Economics, Policy]: Plans to redesign society or the economy, from nineteenth-century utopias to high-modernist states and basic income, and what happened when they met people.
 - World history (`world-history`) [within History, Geography]: History told at the scale of continents and millennia: why societies diverged, and how the world came to look the way it does.
 - Emergence (`emergence`) [within Complex systems]: Order nobody designed: reefs, the early web, neuron cultures, and simulated worlds where simple rules add up to behaviour no single part has.
+- Bureaucracy (`bureaucracy`) [within Complex systems, Economics]: The work a group spends on holding itself together, which grows faster than the group: in public administration, corporations, and labs.
 - High modernism (`high-modernism`) [within Legibility, Social reform]: The confidence that society can be planned from above by experts: Le Corbusier's rational city, scientific forestry, and the schemes that failed when they met real life.
 - Hubris (`hubris`) [within Risk, Ethics]: When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand.
 - The commons (`commons`) [within The open web, Economics]: Resources held in common and the rules that keep them so: common land, open protocols, open data, and the web before the platforms.

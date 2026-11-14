@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-13T13:36:37+00:00",
+ "generated": "2026-11-14T08:12:18+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 543,
+ "count": 548,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -281,6 +281,31 @@
    "citations": 4
   },
   {
+   "url": "https://hotaru.raskell.io",
+   "title": "neuron culture",
+   "domain": "hotaru.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Win Everything, Control No One",
+     "url": "https://raskell.io/articles/win-everything-control-no-one/"
+    },
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    },
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    },
+    {
+     "title": "An emergent property of matter",
+     "url": "https://raskell.io/notes/an-emergent-property-of-matter/"
+    }
+   ],
+   "citations": 4
+  },
+  {
    "url": "https://ai-2027.com/",
    "title": "AI 2027",
    "domain": "ai-2027.com",
@@ -381,27 +406,6 @@
     {
      "title": "What Sixteen AI Agents Taught Me About Management",
      "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
-    }
-   ],
-   "citations": 3
-  },
-  {
-   "url": "https://hotaru.raskell.io",
-   "title": "neuron culture",
-   "domain": "hotaru.raskell.io",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Win Everything, Control No One",
-     "url": "https://raskell.io/articles/win-everything-control-no-one/"
-    },
-    {
-     "title": "After PHP Gate: A Blueprint for the Static Web",
-     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
-    },
-    {
-     "title": "Learning to Play",
-     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ],
    "citations": 3
@@ -1384,6 +1388,19 @@
    "citations": 2
   },
   {
+   "url": "http://prize.hutter1.net/",
+   "title": "prize.hutter1.net",
+   "domain": "prize.hutter1.net",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Intelligence is compression",
+     "url": "https://raskell.io/notes/intelligence-is-compression/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "http://www.haproxy.org/",
    "title": "HAProxy",
    "domain": "haproxy.org",
@@ -1657,6 +1674,19 @@
    "citations": 1
   },
   {
+   "url": "https://arxiv.org/abs/2001.08361",
+   "title": "Scaling Laws for Neural Language Models",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "A self-fulfilling prophecy",
+     "url": "https://raskell.io/notes/a-self-fulfilling-prophecy/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://arxiv.org/abs/2005.14165",
    "title": "Language Models are Few-Shot Learners",
    "domain": "arxiv.org",
@@ -1665,6 +1695,19 @@
     {
      "title": "The Web Was the Training Set",
      "url": "https://raskell.io/articles/the-web-was-the-training-set/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/2203.15556",
+   "title": "Training Compute-Optimal Large Language Models",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "A self-fulfilling prophecy",
+     "url": "https://raskell.io/notes/a-self-fulfilling-prophecy/"
     }
    ],
    "citations": 1
@@ -2081,6 +2124,19 @@
     {
      "title": "The Original Data Company",
      "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://blog.samaltman.com/successful-people",
+   "title": "Successful People",
+   "domain": "blog.samaltman.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Something closer to a religion",
+     "url": "https://raskell.io/notes/something-closer-to-a-religion/"
     }
    ],
    "citations": 1
@@ -2718,6 +2774,19 @@
     {
      "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
      "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://doi.org/10.1145/365153.365168",
+   "title": "doi:10.1145/365153.365168",
+   "domain": "doi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Its magic crumbles away",
+     "url": "https://raskell.io/notes/its-magic-crumbles-away/"
     }
    ],
    "citations": 1

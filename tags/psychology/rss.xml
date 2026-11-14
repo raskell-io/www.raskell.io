@@ -7,7 +7,26 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/psychology/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Thu, 05 Nov 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Sat, 14 Nov 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Its magic crumbles away</title>
+          <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/its-magic-crumbles-away/</link>
+          <guid>https://raskell.io/notes/its-magic-crumbles-away/</guid>
+          <description xml:base="https://raskell.io/notes/its-magic-crumbles-away/">&lt;p&gt;Karen Hao opens and closes &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; with the same sentence, from Joseph Weizenbaum’s 1966 paper on ELIZA: once a program’s inner workings are explained in language plain enough to induce understanding, “its magic crumbles away.” The observer, Weizenbaum went on, says to himself that he could have written it.&lt;&#x2F;p&gt;
+&lt;p&gt;ELIZA was a simple procedural program that matched keywords and turned the user’s sentences back into questions, and Weizenbaum built it partly to show how easily people fall for an illusion of intelligence. They fell for it anyway. Psychiatrists talked about automated therapy, and Weizenbaum spent much of the rest of his career trying to deflate what he had started (chapter 4). For ELIZA the sentence is exactly true: explain the trick and nothing is left.&lt;&#x2F;p&gt;
+&lt;p&gt;Hao uses it as her remedy against the influence of the AI companies: teach people how the technology works, and the hype loses its hold. I agree with the remedy. Explaining how these systems work is the most useful thing anyone writing about them can do, and it is most of what this site tries to do.&lt;&#x2F;p&gt;
+&lt;p&gt;But with large language models the magic does not crumble when you explain it, and that is the interesting part. The procedure is simple enough to write down: predict the next word, adjust the weights, repeat over most of what people have written. Knowing that does not let you say you could have written the result, because the program you could write is not the one that runs. What the model learned lives in billions of weights that nobody wrote and nobody can yet read in full. The explanation of the method is plain; the explanation of the behaviour is still a research field.&lt;&#x2F;p&gt;
+&lt;p&gt;So I would put Weizenbaum’s sentence to a test rather than use it as a remedy. If explaining a system makes its abilities disappear, it was a trick. If the explanation leaves the abilities standing, something real is there, and the honest response is to keep explaining, including where we cannot yet. That is the line between hype and capability, and it is why I take seriously the idea that &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;intelligence-is-compression&#x2F;&quot;&gt;intelligence is compression&lt;&#x2F;a&gt;, and that it may be &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;an-emergent-property-of-matter&#x2F;&quot;&gt;an emergent property of matter&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-empire-of-ai&#x2F;&quot;&gt;An Empire of People&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Karen Hao, &lt;em&gt;Empire of AI&lt;&#x2F;em&gt; (2025), epigraph, chapter 4, “Dreams of Modernity”, and the epilogue.&lt;&#x2F;li&gt;
+&lt;li&gt;Joseph Weizenbaum, “ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine”, &lt;em&gt;Communications of the ACM&lt;&#x2F;em&gt; 9(1), January 1966, pp. 36 to 45, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;doi.org&#x2F;10.1145&#x2F;365153.365168&quot;&gt;doi:10.1145&#x2F;365153.365168&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
       <item>
           <title>The Behavioural Turn in Software Engineering</title>
           <pubDate>Thu, 05 Nov 2026 00:00:00 +0000</pubDate>

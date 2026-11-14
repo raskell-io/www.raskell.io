@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-13T13:36:37+00:00",
+ "generated": "2026-11-14T08:12:18+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
+  "review": 3,
   "article": 43,
-  "review": 2,
-  "note": 19,
+  "note": 25,
   "talk": 1,
   "dataset": 1,
   "work": 166,
   "project": 32,
-  "topic": 164,
-  "link": 543
+  "topic": 165,
+  "link": 548
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -23,6 +23,25 @@
   "data": "https://raskell.io/data/"
  },
  "items": [
+  {
+   "kind": "review",
+   "title": "An Empire of People",
+   "url": "https://raskell.io/articles/review-empire-of-ai/",
+   "description": "Karen Hao's Empire of AI tells the story of OpenAI through its people. Gripping as reporting, and uneven where it argues.",
+   "date": "2026-11-14",
+   "topics": [
+    "research-labs",
+    "technology-races",
+    "hubris",
+    "training-data",
+    "capital-allocation",
+    "bureaucracy"
+   ],
+   "categories": [
+    "reviews"
+   ],
+   "meta": "17 min"
+  },
   {
    "kind": "article",
    "title": "Evaluation Closes the Loop",
@@ -780,6 +799,86 @@
   },
   {
    "kind": "note",
+   "title": "A self-fulfilling prophecy",
+   "url": "https://raskell.io/notes/a-self-fulfilling-prophecy/",
+   "description": "Karen Hao says scaling laws are like Moore's Law: not a law of nature but a self-fulfilling prophecy. She is half right, and the half matters.",
+   "date": "2026-11-14",
+   "topics": [
+    "neural-networks",
+    "semiconductors",
+    "forecasting",
+    "history-of-technology",
+    "technology-races"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "An emergent property of matter",
+   "url": "https://raskell.io/notes/an-emergent-property-of-matter/",
+   "description": "Sam Altman said intelligence may be an emergent property of matter, like a rule of physics. Karen Hao calls it hype. I share the conviction.",
+   "date": "2026-11-14",
+   "topics": [
+    "intelligence",
+    "emergence",
+    "philosophy",
+    "physics",
+    "religion"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Intelligence is compression",
+   "url": "https://raskell.io/notes/intelligence-is-compression/",
+   "description": "Ilya Sutskever's internal slogan at OpenAI: a model that must predict the world has to compress it. I think it is the most useful definition we have.",
+   "date": "2026-11-14",
+   "topics": [
+    "intelligence",
+    "language",
+    "neural-networks",
+    "mathematics"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Its magic crumbles away",
+   "url": "https://raskell.io/notes/its-magic-crumbles-away/",
+   "description": "Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models.",
+   "date": "2026-11-14",
+   "topics": [
+    "language",
+    "intelligence",
+    "history-of-technology",
+    "psychology"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Small, focused, high-trust",
+   "url": "https://raskell.io/notes/small-focused-high-trust/",
+   "description": "Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic.",
+   "date": "2026-11-14",
+   "topics": [
+    "bureaucracy",
+    "research-labs",
+    "entrepreneurship",
+    "future-of-work"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Something closer to a religion",
+   "url": "https://raskell.io/notes/something-closer-to-a-religion/",
+   "description": "In 2013 Sam Altman wrote that great founders create something closer to a religion. Karen Hao reads it as a warning; I read it as a forecast.",
+   "date": "2026-11-14",
+   "topics": [
+    "religion",
+    "entrepreneurship",
+    "future-of-work",
+    "research-labs"
+   ]
+  },
+  {
+   "kind": "note",
    "title": "I wrote a short book about peace",
    "url": "https://raskell.io/notes/the-art-of-peace/",
    "description": "The Art of Peace is a short web book on living together without thinking alike: thirteen chapters, 104 passages, free to read.",
@@ -1072,10 +1171,27 @@
   },
   {
    "kind": "work",
+   "title": "The Code Breaker",
+   "url": "https://raskell.io/reading/#the-code-breaker",
+   "description": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
+   "date": "2026-11",
+   "topics": [
+    "life-sciences",
+    "synthetic-biology",
+    "history-of-science",
+    "ethics",
+    "medicine",
+    "genetics",
+    "pandemics"
+   ],
+   "meta": "Book · Walter Isaacson · Reading now"
+  },
+  {
+   "kind": "work",
    "title": "Empire of AI",
-   "url": "https://raskell.io/reading/#empire-of-ai",
+   "url": "https://raskell.io/articles/review-empire-of-ai/",
    "description": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
-   "date": "2026-10",
+   "date": "2026-11",
    "topics": [
     "research-labs",
     "training-data",
@@ -1083,7 +1199,7 @@
     "hubris",
     "language"
    ],
-   "meta": "Book · Karen Hao · Reading now"
+   "meta": "Book · Karen Hao · Read"
   },
   {
    "kind": "work",
@@ -2995,22 +3111,6 @@
   },
   {
    "kind": "work",
-   "title": "The Code Breaker",
-   "url": "https://raskell.io/reading/#the-code-breaker",
-   "description": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
-   "topics": [
-    "life-sciences",
-    "synthetic-biology",
-    "history-of-science",
-    "ethics",
-    "medicine",
-    "genetics",
-    "pandemics"
-   ],
-   "meta": "Book · Walter Isaacson · Backlog"
-  },
-  {
-   "kind": "work",
    "title": "The Rise and Fall of the Dinosaurs",
    "url": "https://raskell.io/reading/#the-rise-and-fall-of-the-dinosaurs",
    "description": "The dinosaurs from their origins to the asteroid, as recent fossil discoveries have rewritten the story.",
@@ -3935,6 +4035,13 @@
   },
   {
    "kind": "topic",
+   "title": "Bureaucracy",
+   "url": "https://raskell.io/tags/bureaucracy/",
+   "description": "The work a group spends on holding itself together, which grows faster than the group: in public administration, corporations, and labs.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Capital allocation",
    "url": "https://raskell.io/tags/capital-allocation/",
    "description": "Who decides where a society's money, time and talent go, how concentrated that decision is, and what gets built because of it.",
@@ -4181,7 +4288,7 @@
   {
    "kind": "topic",
    "title": "Forecasting",
-   "url": "https://raskell.io/tags#forecasting",
+   "url": "https://raskell.io/tags/forecasting/",
    "description": "Saying what will happen and how sure you are: scenarios, predictions that fail, and the events nobody priced in.",
    "meta": "Concept"
   },
@@ -4461,7 +4568,7 @@
   {
    "kind": "topic",
    "title": "Mathematics",
-   "url": "https://raskell.io/tags#mathematics",
+   "url": "https://raskell.io/tags/mathematics/",
    "description": "The mathematics underneath the systems on this site: probability, linear algebra, optimisation, and proof.",
    "meta": "Domain"
   },
@@ -4531,7 +4638,7 @@
   {
    "kind": "topic",
    "title": "Neural networks",
-   "url": "https://raskell.io/tags#neural-networks",
+   "url": "https://raskell.io/tags/neural-networks/",
    "description": "Layers of weights that learn a function from examples: architectures, activations, quantisation, and running them where the data is.",
    "meta": "Concept"
   },
@@ -4727,7 +4834,7 @@
   {
    "kind": "topic",
    "title": "Religion",
-   "url": "https://raskell.io/tags#religion",
+   "url": "https://raskell.io/tags/religion/",
    "description": "Faith, doubt, and the institutions and cities built around belief, as history and as argument.",
    "meta": "Concept"
   },
@@ -5240,6 +5347,31 @@
   },
   {
    "kind": "link",
+   "title": "neuron culture",
+   "url": "https://hotaru.raskell.io",
+   "domain": "hotaru.raskell.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Win Everything, Control No One",
+     "url": "https://raskell.io/articles/win-everything-control-no-one/"
+    },
+    {
+     "title": "After PHP Gate: A Blueprint for the Static Web",
+     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    },
+    {
+     "title": "Learning to Play",
+     "url": "https://raskell.io/articles/learning-to-play/"
+    },
+    {
+     "title": "An emergent property of matter",
+     "url": "https://raskell.io/notes/an-emergent-property-of-matter/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "AI 2027",
    "url": "https://ai-2027.com/",
    "domain": "ai-2027.com",
@@ -5340,27 +5472,6 @@
     {
      "title": "What Sixteen AI Agents Taught Me About Management",
      "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "neuron culture",
-   "url": "https://hotaru.raskell.io",
-   "domain": "hotaru.raskell.io",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Win Everything, Control No One",
-     "url": "https://raskell.io/articles/win-everything-control-no-one/"
-    },
-    {
-     "title": "After PHP Gate: A Blueprint for the Static Web",
-     "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
-    },
-    {
-     "title": "Learning to Play",
-     "url": "https://raskell.io/articles/learning-to-play/"
     }
    ]
   },
@@ -6343,6 +6454,19 @@
   },
   {
    "kind": "link",
+   "title": "prize.hutter1.net",
+   "url": "http://prize.hutter1.net/",
+   "domain": "prize.hutter1.net",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Intelligence is compression",
+     "url": "https://raskell.io/notes/intelligence-is-compression/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "HAProxy",
    "url": "http://www.haproxy.org/",
    "domain": "haproxy.org",
@@ -6616,6 +6740,19 @@
   },
   {
    "kind": "link",
+   "title": "Scaling Laws for Neural Language Models",
+   "url": "https://arxiv.org/abs/2001.08361",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "A self-fulfilling prophecy",
+     "url": "https://raskell.io/notes/a-self-fulfilling-prophecy/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Language Models are Few-Shot Learners",
    "url": "https://arxiv.org/abs/2005.14165",
    "domain": "arxiv.org",
@@ -6624,6 +6761,19 @@
     {
      "title": "The Web Was the Training Set",
      "url": "https://raskell.io/articles/the-web-was-the-training-set/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Training Compute-Optimal Large Language Models",
+   "url": "https://arxiv.org/abs/2203.15556",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "A self-fulfilling prophecy",
+     "url": "https://raskell.io/notes/a-self-fulfilling-prophecy/"
     }
    ]
   },
@@ -7040,6 +7190,19 @@
     {
      "title": "The Original Data Company",
      "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Successful People",
+   "url": "https://blog.samaltman.com/successful-people",
+   "domain": "blog.samaltman.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Something closer to a religion",
+     "url": "https://raskell.io/notes/something-closer-to-a-religion/"
     }
    ]
   },
@@ -7677,6 +7840,19 @@
     {
      "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
      "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "doi:10.1145/365153.365168",
+   "url": "https://doi.org/10.1145/365153.365168",
+   "domain": "doi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Its magic crumbles away",
+     "url": "https://raskell.io/notes/its-magic-crumbles-away/"
     }
    ]
   },
