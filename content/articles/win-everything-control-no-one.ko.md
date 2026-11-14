@@ -6,6 +6,7 @@ description = "Sebastian Mallaby가 쓴 Demis Hassabis 전기는 제가 아는 �
 [extra]
 author = "Raffael"
 review = "the-infinity-machine"
+og_image = "review-win-everything-control-no-one.png"   # hand-made social card, 1200x630
 in_short = [
   "Sebastian Mallaby의 *The Infinity Machine*은 Demis Hassabis의 전기이자 제가 아는 가장 좋은 현대 AI의 역사입니다. 저는 10점 만점에 8.5점을 줍니다.",
   "이 책은 모든 아이디어를 두 번, 먼저 비유로, 그다음 메커니즘으로 설명합니다. 그리고 이 분야를 강화학습과 딥러닝 사이의 긴 반목으로 들려주는데, 진짜 돌파구는 모두 둘을 결합한 것이었습니다.",

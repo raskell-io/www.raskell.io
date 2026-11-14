@@ -6,6 +6,7 @@ description = "Sebastian Mallaby 为 Demis Hassabis 写的传记，是我所知�
 [extra]
 author = "Raffael"
 review = "the-infinity-machine"
+og_image = "review-win-everything-control-no-one.png"   # hand-made social card, 1200x630
 in_short = [
   "Sebastian Mallaby 的 *The Infinity Machine* 是 Demis Hassabis 的传记，也是我所知最好的现代 AI 史；我给它打 8.5 分（满分 10 分）。",
   "它把每个概念讲两遍，先用类比，再讲机制；它把这个领域讲成强化学习与深度学习之间的一场长期纷争，而每一次真正的突破都结合了两者。",

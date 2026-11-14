@@ -10,6 +10,7 @@ categories = ["reviews"]
 [extra]
 author = "Raffael"
 review = "this-is-for-everyone"
+og_image = "review-the-web-was-the-training-set.png"   # hand-made social card, 1200x630
 reads = ["the-infinity-machine"]
 in_short = [
   "Tim Berners-Lee's *This Is for Everyone* is a memoir, a history of the web and a manifesto for data sovereignty, and its last line, that the web provided the data for AI, is its real thesis.",

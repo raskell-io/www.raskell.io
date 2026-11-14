@@ -12,6 +12,15 @@ items = [
   { url = "https://arcanist.sh/hx/benchmarks/", title = "hx 벤치마크", note = "직접 실행해 볼 수 있는 것으로 엔지니어링을 판단하고 싶다면. hx는 Rust로 만든 Haskell 툴체인이며, 이 페이지에는 테스트 머신, 방법, 한계가 적혀 있습니다." },
 ]
 
+[extra.gallery]
+title = "서평"
+deck = "제가 가장 많이 배운 책들에 대한 긴 서평입니다. 책이 무엇을 주장하는지, 무엇이 옳은지, 그리고 제가 어디에서 생각이 다른지를 다룹니다."
+items = [
+  { path = "articles/review-empire-of-ai.md", note = "Karen Hao(캐런 하오)가 OpenAI와 Sam Altman(샘 올트먼)을 안에서 들여다본 기록입니다. 취재는 흡인력이 있지만, 제국에 관한 논지는 절반만 받아들입니다." },
+  { path = "articles/win-everything-control-no-one.md", note = "Sebastian Mallaby(세바스천 맬러비)가 쓴 Demis Hassabis(데미스 허사비스) 전기로, 제가 아는 가장 좋은 현대 AI의 역사입니다." },
+  { path = "articles/the-web-was-the-training-set.md", note = "Tim Berners-Lee(팀 버너스리)의 회고록, 그리고 그가 대가 없이 내놓은 열린 웹이 어떻게 AI의 학습 데이터가 되었는지에 관한 이야기입니다." },
+]
+
 [[extra.tracks]]
 title = "엣지 시스템과 응용 보안"
 deck = "정책, 인증, WAF, 관측 가능성이 어떻게 엣지로 옮겨 가고 있는지, 그리고 그것이 백엔드를 만드는 방식에 어떤 의미인지 다룹니다."
@@ -54,7 +63,7 @@ items = [
 title = "열린 웹과 그 데이터"
 deck = "선물로서의 웹, 학습 데이터로서의 웹, 그리고 열린 채로 지킬 가치가 있는 공유지로서의 웹입니다."
 items = [
-  { path = "articles/the-web-was-the-training-set.md", note = "Tim Berners-Lee의 회고록은 프랑스와 스위스에 걸친 연구소에서 한 영국 엔지니어가 프로토콜을 내어 준 이야기입니다. 2026년에 읽으면, AI 데이터 공급의 기원 이야기이기도 합니다." },
+  { path = "articles/the-web-was-the-training-set.md", image = "review-the-web-was-the-training-set.png", note = "Tim Berners-Lee의 회고록은 프랑스와 스위스에 걸친 연구소에서 한 영국 엔지니어가 프로토콜을 내어 준 이야기입니다. 2026년에 읽으면, AI 데이터 공급의 기원 이야기이기도 합니다." },
   { path = "articles/the-bottleneck-is-data-and-europe-is-sitting-on-it.md", note = "프런티어 AI에 부족한 것은 컴퓨팅이 아니라 공개된 텍스트입니다. 유럽의 강점은 온라인에 올린 적 없는 고품질 데이터이며, 이를 활용하려면 조율이 필요합니다." },
   { path = "articles/this-site-is-becoming-a-map.md", note = "블로그는 제가 마지막으로 쓴 것을 보여 줍니다. raskell.io의 새 지도는 제가 계속 되돌아오는 것을 보여 주며, 공개된 두 번째 뇌의 시작입니다." },
   { path = "articles/looking-back-on-2025.md", note = "오키나와에서 Tim Berners-Lee를 읽은 일, 그리고 AI가 어쩌다 웹을 웹 자신으로부터 구해 낼지도 모르는 이유." },

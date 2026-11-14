@@ -12,6 +12,15 @@ items = [
   { url = "https://arcanist.sh/hx/benchmarks/", title = "hx 基准测试", note = "让你用可以亲自运行的东西来评判工程质量。hx 是一个用 Rust 写的 Haskell 工具链，这一页写明了测试机器、方法和局限。" },
 ]
 
+[extra.gallery]
+title = "书评"
+deck = "我从中学到最多的几本书的长篇书评：书中论证了什么，哪里说得对，以及我在哪里不同意。"
+items = [
+  { path = "articles/review-empire-of-ai.md", note = "Karen Hao 对 OpenAI 和 Sam Altman 的内部叙述：报道引人入胜，而她关于帝国的论点我只接受一半。" },
+  { path = "articles/win-everything-control-no-one.md", note = "Sebastian Mallaby 为 Demis Hassabis 写的传记，是我所知道的最好的现代 AI 史。" },
+  { path = "articles/the-web-was-the-training-set.md", note = "Tim Berners-Lee 的回忆录，以及他无偿交出的开放网络为何成了 AI 的训练集。" },
+]
+
 [[extra.tracks]]
 title = "边缘系统与应用安全"
 deck = "策略、认证、WAF 和可观测性如何移向边缘，以及这对我们构建后端的方式意味着什么。"
@@ -54,7 +63,7 @@ items = [
 title = "开放的 Web 与它的数据"
 deck = "Web 作为一份礼物、一个训练集，以及一片值得保持开放的公地。"
 items = [
-  { path = "articles/the-web-was-the-training-set.md", note = "Tim Berners-Lee 的回忆录，讲的是一位英国工程师在一个法瑞边境的实验室里把一个协议送了出去。在 2026 年读，它也是 AI 数据来源的起源故事。" },
+  { path = "articles/the-web-was-the-training-set.md", image = "review-the-web-was-the-training-set.png", note = "Tim Berners-Lee 的回忆录，讲的是一位英国工程师在一个法瑞边境的实验室里把一个协议送了出去。在 2026 年读，它也是 AI 数据来源的起源故事。" },
   { path = "articles/the-bottleneck-is-data-and-europe-is-sitting-on-it.md", note = "前沿 AI 缺的是公开文本，而不是算力。欧洲的优势在于它从未放到网上的高质量数据。要把它利用起来，需要协调。" },
   { path = "articles/this-site-is-becoming-a-map.md", note = "博客展示的是我最近写了什么。raskell.io 上的新地图展示的是我一再回到的东西，它也是一个公开的第二大脑的开端。" },
   { path = "articles/looking-back-on-2025.md", note = "关于在冲绳读 Tim Berners-Lee，以及为什么 AI 也许会意外地把 Web 从它自己手中拯救出来。" },

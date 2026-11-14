@@ -10,6 +10,7 @@ categories = ["reviews"]
 [extra]
 author = "Raffael"
 review = "the-infinity-machine"
+og_image = "review-win-everything-control-no-one.png"   # hand-made social card, 1200x630
 in_short = [
   "Sebastian Mallaby's *The Infinity Machine* is a biography of Demis Hassabis and the best history of modern AI I know; I give it 8.5 out of 10.",
   "It explains each idea twice, with an analogy and then the mechanism, and tells the field as a long feud between reinforcement learning and deep learning in which every real breakthrough combines both.",

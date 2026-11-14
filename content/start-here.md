@@ -12,6 +12,15 @@ items = [
   { url = "https://arcanist.sh/hx/benchmarks/", title = "The hx benchmarks", note = "For judging the engineering by something you can run. hx is a Haskell toolchain written in Rust, and the page writes down the test machine, the method, and the limits." },
 ]
 
+[extra.gallery]
+title = "Book reviews"
+deck = "Long reviews of the books I learn most from, each with what the book argues, what it gets right, and where I disagree."
+items = [
+  { path = "articles/review-empire-of-ai.md", note = "Karen Hao's inside account of OpenAI and Sam Altman: gripping reporting, an argument about empire I only half accept." },
+  { path = "articles/win-everything-control-no-one.md", note = "Sebastian Mallaby's biography of Demis Hassabis, the best history of modern AI I know." },
+  { path = "articles/the-web-was-the-training-set.md", note = "Tim Berners-Lee's memoir, and why the open web he gave away became the training set for AI." },
+]
+
 [[extra.tracks]]
 title = "Edge systems and applied security"
 deck = "How policy, auth, WAF, and observability are moving to the edge, and what that means for how we build backends."
@@ -54,7 +63,7 @@ items = [
 title = "The open web and its data"
 deck = "The web as a gift, as a training set, and as a commons worth keeping open."
 items = [
-  { path = "articles/the-web-was-the-training-set.md" },
+  { path = "articles/the-web-was-the-training-set.md", image = "review-the-web-was-the-training-set.png" },
   { path = "articles/the-bottleneck-is-data-and-europe-is-sitting-on-it.md" },
   { path = "articles/this-site-is-becoming-a-map.md" },
   { path = "articles/looking-back-on-2025.md", note = "On reading Tim Berners-Lee in Okinawa, and why AI might accidentally save the web from itself." },
