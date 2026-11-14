@@ -1035,8 +1035,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/history-of-science/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/history-of-science/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/history-of-science/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/history-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/history-of-science/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/history-of-technology/</loc>
@@ -1728,6 +1730,10 @@
         <lastmod>2026-11-03</lastmod>
     </url>
     <url>
+        <loc>https://raskell.io/notes/how-crispr-works/</loc>
+        <lastmod>2026-11-14</lastmod>
+    </url>
+    <url>
         <loc>https://raskell.io/notes/ideas-stop-waiting/</loc>
         <lastmod>2026-10-25</lastmod>
     </url>
@@ -2256,6 +2262,13 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/haskell/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/haskell/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/haskell/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/tags/history-of-science/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/history-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/history-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/history-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/history-of-science/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/history-of-technology/</loc>
@@ -3526,8 +3539,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/history-of-science/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/history-of-science/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/history-of-science/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/history-of-science/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/history-of-science/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/history-of-technology/</loc>

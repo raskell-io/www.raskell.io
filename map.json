@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-14T21:06:29+00:00",
+ "generated": "2026-11-14T21:09:53+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -443,6 +443,15 @@
    "meta": "2026-11-14",
    "description": "Sam Altman said intelligence may be an emergent property of matter, like a rule of physics. Karen Hao calls it hype. I share the conviction.",
    "degree": 13
+  },
+  {
+   "id": "a:/notes/how-crispr-works/",
+   "kind": "note",
+   "label": "How CRISPR works",
+   "url": "https://raskell.io/notes/how-crispr-works/",
+   "meta": "2026-11-14",
+   "description": "Bacteria keep mug shots of the viruses that attacked them, and Cas9 uses them to cut. A 3D model to step through, from the discovery to the tool.",
+   "degree": 5
   },
   {
    "id": "a:/notes/intelligence-is-compression/",
@@ -1124,9 +1133,9 @@
    "kind": "tag",
    "label": "Genetics",
    "url": "https://raskell.io/tags/genetics/",
-   "meta": "Domain · 1 page",
+   "meta": "Domain · 2 pages",
    "description": "Heredity and the genome: how the idea of inheritance became a science, how DNA is read and edited, and what ancient DNA says about our past.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:go-game",
@@ -1163,6 +1172,15 @@
    "meta": "Technology · 6 pages",
    "description": "The language that shaped how I think about types, effects, and correctness.",
    "degree": 10
+  },
+  {
+   "id": "t:history-of-science",
+   "kind": "tag",
+   "label": "History of science",
+   "url": "https://raskell.io/tags/history-of-science/",
+   "meta": "Concept · 1 page",
+   "description": "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.",
+   "degree": 19
   },
   {
    "id": "t:history-of-technology",
@@ -1304,9 +1322,9 @@
    "kind": "tag",
    "label": "Life sciences",
    "url": "https://raskell.io/tags/life-sciences/",
-   "meta": "Domain · 1 page",
+   "meta": "Domain · 2 pages",
    "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
-   "degree": 23
+   "degree": 24
   },
   {
    "id": "t:linguistics",
@@ -1754,9 +1772,9 @@
    "kind": "tag",
    "label": "Synthetic biology",
    "url": "https://raskell.io/tags/synthetic-biology/",
-   "meta": "Domain · 1 page",
+   "meta": "Domain · 2 pages",
    "description": "Engineering living systems: designing molecules and organisms, growing neurons on chips, and the software that reads and writes biology.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:technology-races",
@@ -1991,15 +2009,6 @@
    "meta": "Domain · no pages yet",
    "description": "Events, institutions, and societies through time, with attention to sources, competing accounts, and uncertainty.",
    "degree": 27
-  },
-  {
-   "id": "t:history-of-science",
-   "kind": "tag",
-   "label": "History of science",
-   "url": "https://raskell.io/tags#history-of-science",
-   "meta": "Concept · no pages yet",
-   "description": "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.",
-   "degree": 18
   },
   {
    "id": "t:literature",
@@ -2483,7 +2492,7 @@
    "url": "https://raskell.io/reading/#the-code-breaker",
    "meta": "Book · Walter Isaacson · set aside",
    "description": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "w:empire-of-ai",
@@ -5093,6 +5102,10 @@
    "target": "t:genetics"
   },
   {
+   "source": "a:/notes/how-crispr-works/",
+   "target": "t:genetics"
+  },
+  {
    "source": "t:genetics",
    "target": "t:life-sciences"
   },
@@ -5175,6 +5188,14 @@
   {
    "source": "t:haskell",
    "target": "t:programming-languages"
+  },
+  {
+   "source": "a:/notes/how-crispr-works/",
+   "target": "t:history-of-science"
+  },
+  {
+   "source": "t:history-of-science",
+   "target": "t:history"
   },
   {
    "source": "a:/notes/a-self-fulfilling-prophecy/",
@@ -5478,6 +5499,10 @@
   },
   {
    "source": "a:/articles/review-how-life-works/",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "a:/notes/how-crispr-works/",
    "target": "t:life-sciences"
   },
   {
@@ -6189,6 +6214,10 @@
    "target": "t:synthetic-biology"
   },
   {
+   "source": "a:/notes/how-crispr-works/",
+   "target": "t:synthetic-biology"
+  },
+  {
    "source": "t:synthetic-biology",
    "target": "t:life-sciences"
   },
@@ -6515,10 +6544,6 @@
   {
    "source": "t:high-modernism",
    "target": "t:social-reform"
-  },
-  {
-   "source": "t:history-of-science",
-   "target": "t:history"
   },
   {
    "source": "t:lost-civilisations",
@@ -8591,6 +8616,10 @@
   {
    "source": "w:the-code-breaker",
    "target": "t:pandemics"
+  },
+  {
+   "source": "a:/notes/how-crispr-works/",
+   "target": "w:the-code-breaker"
   },
   {
    "source": "w:empire-of-ai",

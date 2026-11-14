@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-14T21:06:29+00:00",
+ "generated": "2026-11-14T21:09:53+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "review": 4,
   "article": 43,
-  "note": 25,
+  "note": 26,
   "talk": 1,
   "dataset": 1,
   "work": 167,
   "project": 32,
   "topic": 165,
-  "link": 548
+  "link": 550
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -842,6 +842,19 @@
     "philosophy",
     "physics",
     "religion"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "How CRISPR works",
+   "url": "https://raskell.io/notes/how-crispr-works/",
+   "description": "Bacteria keep mug shots of the viruses that attacked them, and Cas9 uses them to cut. A 3D model to step through, from the discovery to the tool.",
+   "date": "2026-11-14",
+   "topics": [
+    "genetics",
+    "synthetic-biology",
+    "life-sciences",
+    "history-of-science"
    ]
   },
   {
@@ -4442,7 +4455,7 @@
   {
    "kind": "topic",
    "title": "History of science",
-   "url": "https://raskell.io/tags#history-of-science",
+   "url": "https://raskell.io/tags/history-of-science/",
    "description": "How discoveries were actually made: the people, instruments, dead ends, and institutions behind them.",
    "meta": "Concept"
   },
@@ -10766,6 +10779,19 @@
   },
   {
    "kind": "link",
+   "title": "A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/22745249/",
+   "domain": "pubmed.ncbi.nlm.nih.gov",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "How CRISPR works",
+     "url": "https://raskell.io/notes/how-crispr-works/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Quotepark",
    "url": "https://quotepark.com/quotes/1900877-hyman-george-rickover-i-believe-it-is-the-duty-of-each-of-us-to-act-as-i/",
    "domain": "quotepark.com",
@@ -11047,6 +11073,19 @@
     {
      "title": "After PHP Gate: A Blueprint for the Static Web",
      "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "three.js",
+   "url": "https://threejs.org",
+   "domain": "threejs.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "How CRISPR works",
+     "url": "https://raskell.io/notes/how-crispr-works/"
     }
    ]
   },
