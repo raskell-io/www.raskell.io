@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-14T08:41:45+00:00",
+ "generated": "2026-11-14T09:22:03+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -9,7 +9,7 @@
   "note": 25,
   "talk": 1,
   "dataset": 1,
-  "work": 166,
+  "work": 167,
   "project": 32,
   "topic": 165,
   "link": 548
@@ -1743,6 +1743,21 @@
     "cryptography"
    ],
    "meta": "Book · Elonka Dunin and Klaus Schmeh · Read"
+  },
+  {
+   "kind": "work",
+   "title": "How Life Works",
+   "url": "https://raskell.io/reading/#how-life-works",
+   "description": "Why the genome is not a blueprint, and how life works across many levels at once.",
+   "date": "2025-04",
+   "topics": [
+    "life-sciences",
+    "genetics",
+    "emergence",
+    "complex-systems",
+    "philosophy-of-science"
+   ],
+   "meta": "Book · Philip Ball · Read"
   },
   {
    "kind": "work",
