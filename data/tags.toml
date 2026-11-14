@@ -566,6 +566,12 @@ kind = "concept"
 description = "Order nobody designed: reefs, the early web, neuron cultures, and simulated worlds where simple rules add up to behaviour no single part has."
 broader = ["complex-systems"]
 
+[bureaucracy]
+name = "Bureaucracy"
+kind = "concept"
+description = "The work a group spends on holding itself together, which grows faster than the group: in public administration, corporations, and labs."
+broader = ["complex-systems", "economics"]
+
 [high-modernism]
 name = "High modernism"
 kind = "concept"
