@@ -130,6 +130,11 @@ name = "지금 읽는 중"
 desc = "지금 읽고 있는 것입니다."
 
 [[extra.statuses]]
+key = "on-hold"
+name = "잠시 멈춘 책"
+desc = "시작했지만 다른 책을 읽는 동안 잠시 멈춘 것으로, 다시 이어 읽을 것입니다."
+
+[[extra.statuses]]
 key = "next"
 name = "다음 차례"
 desc = "바로 다음에 읽을 것으로, 순서대로입니다."

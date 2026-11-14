@@ -386,7 +386,7 @@ if notes:
 
 
 
-SHELVES = (("reading", "Reading now"), ("next", "Up next"), ("backlog", "Backlog"), ("read", "Read"), ("set-aside", "Set aside"))
+SHELVES = (("reading", "Reading now"), ("on-hold", "On hold"), ("next", "Up next"), ("backlog", "Backlog"), ("read", "Read"), ("set-aside", "Set aside"))
 works = list(WORKS.values())
 if works:
     lines += ["## Reading", "", "The reading log at %s/reading/ (as data: [reading.json](%s/reading.json)): books, papers, and long articles, "

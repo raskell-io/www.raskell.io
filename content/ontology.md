@@ -130,6 +130,11 @@ name = "Reading now"
 desc = "What I am reading at the moment."
 
 [[extra.statuses]]
+key = "on-hold"
+name = "On hold"
+desc = "Started and paused while I read something else; I will pick it up again."
+
+[[extra.statuses]]
 key = "next"
 name = "Up next"
 desc = "What I will read right after, in order."
