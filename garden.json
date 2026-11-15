@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-15T12:31:27+00:00",
+ "generated": "2026-11-15T12:39:07+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -11,7 +11,7 @@
   "dataset": 1,
   "work": 167,
   "project": 32,
-  "topic": 165,
+  "topic": 167,
   "link": 553
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
@@ -3999,6 +3999,13 @@
   },
   {
    "kind": "topic",
+   "title": "Agent experience",
+   "url": "https://raskell.io/tags#agent-experience",
+   "description": "How much an agent has to guess to do the right thing in a system: its tools, errors, docs and sources of context.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Agent identity",
    "url": "https://raskell.io/tags#agent-identity",
    "description": "Agents as principals of their own: identities, entitlements, credentials, budgets and audit trails provisioned like an employee's, with a human sponsor, instead of borrowed rights.",
@@ -4437,6 +4444,13 @@
    "url": "https://raskell.io/tags/goat/",
    "description": "The greatest of all time: my personal charts of the games and films I rate above all others.",
    "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Go",
+   "url": "https://raskell.io/tags#golang",
+   "description": "Go, the plain and readable language for services that many teams share.",
+   "meta": "Technology"
   },
   {
    "kind": "topic",

@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-15T12:31:27+00:00",
+ "generated": "2026-11-15T12:39:07+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -721,7 +721,7 @@
    "url": "https://raskell.io/tags/agents/",
    "meta": "Concept · 19 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 28
+   "degree": 29
   },
   {
    "id": "t:ai-alignment",
@@ -937,7 +937,7 @@
    "url": "https://raskell.io/tags/developer-tooling/",
    "meta": "Concept · 5 pages",
    "description": "Package managers, build tools, CLIs, and the daily toolchain an engineer actually touches.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "t:distributed-systems",
@@ -1261,7 +1261,7 @@
    "url": "https://raskell.io/tags/interfaces/",
    "meta": "Concept · 1 page",
    "description": "Where people meet machines, from command lines to chat and voice, and the goal of an interface so natural that it disappears.",
-   "degree": 3
+   "degree": 4
   },
   {
    "id": "t:internet-culture",
@@ -1585,7 +1585,7 @@
    "url": "https://raskell.io/tags/programming-languages/",
    "meta": "Domain · 6 pages",
    "description": "Languages, type systems, compilers, and how executable intent gets written down.",
-   "degree": 21
+   "degree": 22
   },
   {
    "id": "t:provenance",
@@ -1885,6 +1885,15 @@
    "degree": 5
   },
   {
+   "id": "t:agent-experience",
+   "kind": "tag",
+   "label": "Agent experience",
+   "url": "https://raskell.io/tags#agent-experience",
+   "meta": "Concept · no pages yet",
+   "description": "How much an agent has to guess to do the right thing in a system: its tools, errors, docs and sources of context.",
+   "degree": 3
+  },
+  {
    "id": "t:agent-identity",
    "kind": "tag",
    "label": "Agent identity",
@@ -2000,6 +2009,15 @@
    "meta": "Concept · no pages yet",
    "description": "How geography, empires, and arms shape the balance of power between states and regions, as history.",
    "degree": 24
+  },
+  {
+   "id": "t:golang",
+   "kind": "tag",
+   "label": "Go",
+   "url": "https://raskell.io/tags#golang",
+   "meta": "Technology · no pages yet",
+   "description": "Go, the plain and readable language for services that many teams share.",
+   "degree": 1
   },
   {
    "id": "t:high-modernism",
@@ -6491,6 +6509,18 @@
    "target": "t:open-web"
   },
   {
+   "source": "t:agent-experience",
+   "target": "t:agents"
+  },
+  {
+   "source": "t:agent-experience",
+   "target": "t:developer-tooling"
+  },
+  {
+   "source": "t:agent-experience",
+   "target": "t:interfaces"
+  },
+  {
    "source": "t:agent-identity",
    "target": "t:agents"
   },
@@ -6565,6 +6595,10 @@
   {
    "source": "t:geopolitics",
    "target": "t:geography"
+  },
+  {
+   "source": "t:golang",
+   "target": "t:programming-languages"
   },
   {
    "source": "t:high-modernism",

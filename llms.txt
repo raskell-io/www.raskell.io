@@ -408,6 +408,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Capital allocation (`capital-allocation`) [within Finance, Entrepreneurship]: Who decides where a society's money, time and talent go, how concentrated that decision is, and what gets built because of it.
 - Language (`language`) [within Linguistics, Intelligence]: Language as a faculty and a medium: how it carries thought and knowledge, and whether a machine that learns only text learns the world.
 - Agents (`agents`) [within AI platforms]: LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.
+- Agent experience (`agent-experience`) [within Agents, Developer tooling, Interfaces]: How much an agent has to guess to do the right thing in a system: its tools, errors, docs and sources of context.
 - Context engineering (`context-engineering`) [within Agents]: Deciding what a model sees: pinned context, retrieval, memory, and the conventions that keep them honest.
 - Inference (`inference`) [within AI platforms]: Running models in production: routing, cost, hardware, and inference as a metered utility.
 - Isolation (`isolation`) [within Applied security, Reliability]: Sandboxes, process and failure-domain isolation, and running untrusted or fallible work safely.
@@ -516,6 +517,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - WebAssembly (`webassembly`) [within The open web]: Portable, sandboxed bytecode for running native-speed code in the browser and beyond.
 - Rust (`rust`) [within Programming languages]: The systems language most of the projects here are written in.
 - Haskell (`haskell`) [within Programming languages]: The language that shaped how I think about types, effects, and correctness.
+- Go (`golang`) [within Programming languages]: Go, the plain and readable language for services that many teams share.
 - OpenTelemetry (`opentelemetry`) [within Observability]: The vendor-neutral standard for traces, metrics, and logs, including the GenAI semantic conventions for model calls.
 - TypeScript (`typescript`) [within Programming languages]: TypeScript on Bun, the language of the Agent Platform Handbook code.
 - Elixir (`elixir`) [within Programming languages]: Elixir, Phoenix, and the BEAM for the long-running, fault-tolerant parts.
