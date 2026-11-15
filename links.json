@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-14T21:09:53+00:00",
+ "generated": "2026-11-15T12:31:27+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 550,
+ "count": 553,
  "links": [
   {
    "url": "https://zentinelproxy.io",
@@ -6406,6 +6406,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.anthropic.com/research/components-of-agent-memory",
+   "title": "The components of agent memory",
+   "domain": "anthropic.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Memory that dreams",
+     "url": "https://raskell.io/notes/memory-that-dreams/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.apple.com/mac-studio/specs/",
    "title": "Mac Studio tech specs",
    "domain": "apple.com",
@@ -6939,6 +6952,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.letta.com/blog/sleep-time-compute",
+   "title": "Sleep-time Compute",
+   "domain": "letta.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Memory that dreams",
+     "url": "https://raskell.io/notes/memory-that-dreams/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.libvirt.org/manpages/virsh.html",
    "title": "virsh(1)",
    "domain": "libvirt.org",
@@ -6947,6 +6973,19 @@
     {
      "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
      "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.linkedin.com/in/joachimprinzbach/",
+   "title": "Joachim Prinzbach",
+   "domain": "linkedin.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Memory that dreams",
+     "url": "https://raskell.io/notes/memory-that-dreams/"
     }
    ],
    "citations": 1

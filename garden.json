@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-14T21:09:53+00:00",
+ "generated": "2026-11-15T12:31:27+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "review": 4,
   "article": 43,
-  "note": 26,
+  "note": 27,
   "talk": 1,
   "dataset": 1,
   "work": 167,
   "project": 32,
   "topic": 165,
-  "link": 550
+  "link": 553
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -815,6 +815,20 @@
     "open-web"
    ],
    "meta": "1 min"
+  },
+  {
+   "kind": "note",
+   "title": "Memory that dreams",
+   "url": "https://raskell.io/notes/memory-that-dreams/",
+   "description": "A colleague showed me that agent memory should dream before Anthropic published on it. Replay the day, and check the notes against what happened.",
+   "date": "2026-11-15",
+   "topics": [
+    "external-memory",
+    "context-engineering",
+    "agents",
+    "neuroscience",
+    "knowledge-management"
+   ]
   },
   {
    "kind": "note",
@@ -11520,6 +11534,19 @@
   },
   {
    "kind": "link",
+   "title": "The components of agent memory",
+   "url": "https://www.anthropic.com/research/components-of-agent-memory",
+   "domain": "anthropic.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Memory that dreams",
+     "url": "https://raskell.io/notes/memory-that-dreams/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Mac Studio tech specs",
    "url": "https://www.apple.com/mac-studio/specs/",
    "domain": "apple.com",
@@ -12053,6 +12080,19 @@
   },
   {
    "kind": "link",
+   "title": "Sleep-time Compute",
+   "url": "https://www.letta.com/blog/sleep-time-compute",
+   "domain": "letta.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Memory that dreams",
+     "url": "https://raskell.io/notes/memory-that-dreams/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "virsh(1)",
    "url": "https://www.libvirt.org/manpages/virsh.html",
    "domain": "libvirt.org",
@@ -12061,6 +12101,19 @@
     {
      "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
      "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Joachim Prinzbach",
+   "url": "https://www.linkedin.com/in/joachimprinzbach/",
+   "domain": "linkedin.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Memory that dreams",
+     "url": "https://raskell.io/notes/memory-that-dreams/"
     }
    ]
   },

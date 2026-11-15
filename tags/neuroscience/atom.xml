@@ -5,8 +5,36 @@
     <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/neuroscience/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://raskell.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-11-05T00:00:00+00:00</updated>
+    <updated>2026-11-15T00:00:00+00:00</updated>
     <id>https://raskell.io/tags/neuroscience/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Memory that dreams</title>
+        <published>2026-11-15T00:00:00+00:00</published>
+        <updated>2026-11-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/memory-that-dreams/"/>
+        <id>https://raskell.io/notes/memory-that-dreams/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/memory-that-dreams/">&lt;p&gt;The best idea in the context layer my agents start from was not mine. &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;joachimprinzbach&#x2F;&quot;&gt;Joachim Prinzbach&lt;&#x2F;a&gt;, a colleague at Helvetia, showed me the idea that it should dream: run while nobody is working, read back the day’s sessions, and tidy up what the agents learned, the way sleep is thought to tidy up what people learned. He did so before Anthropic published its post on the subject, which I only read afterwards.&lt;&#x2F;p&gt;
+&lt;p&gt;That post, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.anthropic.com&#x2F;research&#x2F;components-of-agent-memory&quot;&gt;The components of agent memory&lt;&#x2F;a&gt; by Lance Martin, explains why the idea works. During sleep and quiet rest, “the hippocampus replays our recent experiences”, and some of them are distilled into lasting knowledge. Agents already keep the raw material for the same division of labour: their transcripts. The post’s best example comes from a long run of a game, where a memory note held the wrong location for a place Claude needed. Dreaming “checked the note against the session transcript, caught its error, and rewrote it”, and Claude went straight on; in the run with the uncorrected note it went back to the wrong route three times. The post also measures the effect of a wiki that grows by dreaming: with both the wiki and a search tool, Claude’s score rose “from 54% to 61% as that wiki grew, compared with 53% when it had access to the search tool alone”. And it explains why the layer injected into every session has to stay small; Claude Code loads “only the first 200 lines or 25 KB” of its memory index.&lt;&#x2F;p&gt;
+&lt;p&gt;So I taught my notes to dream, one context at a time. A model reads the day’s transcripts and the notes, tests the notes against what actually happened, corrects, merges and prunes, and raises conflicts it finds as open questions. Nobody reviews the result, so the gates are mechanical: the transcripts are never edited, a few paths can never be touched, a linter and a commit hook check every run, and each night is one commit that can be reverted. The first run, started by hand while the nightly schedule waits for its first night, took about three minutes, corrected a stale note I had written by hand, and raised an open question about two positions of mine that pull against each other, which I would never have written down myself.&lt;&#x2F;p&gt;
+&lt;p&gt;What I take from both is that a memory nobody checks against what happened does not stay neutral. It drifts, and the agent follows it. Replaying the day is the check.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Lance Martin, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.anthropic.com&#x2F;research&#x2F;components-of-agent-memory&quot;&gt;The components of agent memory&lt;&#x2F;a&gt;, Anthropic, 6 November 2026.&lt;&#x2F;li&gt;
+&lt;li&gt;Letta, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.letta.com&#x2F;blog&#x2F;sleep-time-compute&quot;&gt;Sleep-time Compute&lt;&#x2F;a&gt;, 21 April 2025, where the idea of agents using idle time to reorganise their memory was proposed.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>The Behavioural Turn in Software Engineering</title>
         <published>2026-11-05T00:00:00+00:00</published>

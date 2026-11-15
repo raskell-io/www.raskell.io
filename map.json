@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-14T21:09:53+00:00",
+ "generated": "2026-11-15T12:31:27+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -427,6 +427,15 @@
    "degree": 4
   },
   {
+   "id": "a:/notes/memory-that-dreams/",
+   "kind": "note",
+   "label": "Memory that dreams",
+   "url": "https://raskell.io/notes/memory-that-dreams/",
+   "meta": "2026-11-15",
+   "description": "A colleague showed me that agent memory should dream before Anthropic published on it. Replay the day, and check the notes against what happened.",
+   "degree": 5
+  },
+  {
    "id": "a:/notes/a-self-fulfilling-prophecy/",
    "kind": "note",
    "label": "A self-fulfilling prophecy",
@@ -710,9 +719,9 @@
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 18 pages",
+   "meta": "Concept · 19 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 27
+   "degree": 28
   },
   {
    "id": "t:ai-alignment",
@@ -872,9 +881,9 @@
    "kind": "tag",
    "label": "Context engineering",
    "url": "https://raskell.io/tags/context-engineering/",
-   "meta": "Concept · 5 pages",
+   "meta": "Concept · 6 pages",
    "description": "Deciding what a model sees: pinned context, retrieval, memory, and the conventions that keep them honest.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:cryptocurrency",
@@ -1043,9 +1052,9 @@
    "kind": "tag",
    "label": "External memory",
    "url": "https://raskell.io/tags/external-memory/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "Notes, links, and stores that remember for us: second brains, the web as a shared memory, and what agents write down for their next session.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "t:factories",
@@ -1277,9 +1286,9 @@
    "kind": "tag",
    "label": "Knowledge management",
    "url": "https://raskell.io/tags/knowledge-management/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:kubernetes",
@@ -1421,9 +1430,9 @@
    "kind": "tag",
    "label": "Neuroscience",
    "url": "https://raskell.io/tags/neuroscience/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "t:observability",
@@ -4118,6 +4127,10 @@
    "target": "t:aerospace"
   },
   {
+   "source": "a:/notes/memory-that-dreams/",
+   "target": "t:agents"
+  },
+  {
    "source": "a:/articles/evaluation-closes-the-loop/",
    "target": "t:agents"
   },
@@ -4526,6 +4539,10 @@
    "target": "t:complex-systems"
   },
   {
+   "source": "a:/notes/memory-that-dreams/",
+   "target": "t:context-engineering"
+  },
+  {
    "source": "a:/articles/it-intelligence/",
    "target": "t:context-engineering"
   },
@@ -4916,6 +4933,10 @@
   {
    "source": "t:evaluation",
    "target": "t:metrics"
+  },
+  {
+   "source": "a:/notes/memory-that-dreams/",
+   "target": "t:external-memory"
   },
   {
    "source": "a:/articles/this-site-is-becoming-a-map/",
@@ -5422,6 +5443,10 @@
    "target": "t:reliability"
   },
   {
+   "source": "a:/notes/memory-that-dreams/",
+   "target": "t:knowledge-management"
+  },
+  {
    "source": "a:/articles/it-intelligence/",
    "target": "t:knowledge-management"
   },
@@ -5616,6 +5641,10 @@
   {
    "source": "t:neural-networks",
    "target": "t:machine-learning"
+  },
+  {
+   "source": "a:/notes/memory-that-dreams/",
+   "target": "t:neuroscience"
   },
   {
    "source": "a:/articles/the-behavioural-turn/",
