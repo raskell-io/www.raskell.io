@@ -265,6 +265,12 @@ kind = "concept"
 description = "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them."
 broader = ["ai-platforms"]
 
+[agent-experience]
+name = "Agent experience"
+kind = "concept"
+description = "How much an agent has to guess to do the right thing in a system: its tools, errors, docs and sources of context."
+broader = ["agents", "developer-tooling", "interfaces"]
+
 [context-engineering]
 name = "Context engineering"
 kind = "concept"
@@ -908,6 +914,12 @@ broader = ["programming-languages"]
 name = "Haskell"
 kind = "technology"
 description = "The language that shaped how I think about types, effects, and correctness."
+broader = ["programming-languages"]
+
+[golang]
+name = "Go"
+kind = "technology"
+description = "Go, the plain and readable language for services that many teams share."
 broader = ["programming-languages"]
 
 [opentelemetry]

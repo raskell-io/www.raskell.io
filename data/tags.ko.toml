@@ -114,6 +114,10 @@ description = "불운이 소수를 무너뜨리지 않도록 위험을 다수에
 name = "에이전트"
 description = "소프트웨어로서의 LLM 에이전트: 루프, 도구, 컨텍스트, 메모리, 샌드박스, 그리고 그 아래의 플랫폼."
 
+[agent-experience]
+name = "에이전트 경험"
+description = "에이전트가 한 시스템에서 올바른 일을 하기 위해 추측해야 하는 정도. 도구, 오류 메시지, 문서, 맥락의 출처."
+
 [context-engineering]
 name = "컨텍스트 엔지니어링"
 description = "모델이 무엇을 보게 할지 정하는 일: 고정 컨텍스트, 검색, 메모리, 그리고 이들을 정직하게 유지하는 규약."
@@ -427,6 +431,10 @@ description = "브라우저와 그 너머에서 네이티브에 가까운 속도
 [rust]
 name = "Rust"
 description = "이곳 프로젝트 대부분이 작성된 시스템 언어."
+
+[golang]
+name = "Go"
+description = "여러 팀이 함께 쓰는 서비스를 위한 단순하고 읽기 쉬운 언어 Go."
 
 [haskell]
 name = "Haskell"

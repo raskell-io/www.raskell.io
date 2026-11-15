@@ -114,6 +114,10 @@ description = "把风险分摊给许多人，使不幸不至于压垮少数人�
 name = "智能体"
 description = "作为软件的 LLM 智能体：循环、工具、上下文、记忆、沙箱，以及它们底下的平台。"
 
+[agent-experience]
+name = "智能体体验"
+description = "智能体在一个系统中为做对事情而必须猜测的程度：它的工具、错误信息、文档与上下文来源。"
+
 [context-engineering]
 name = "上下文工程"
 description = "决定模型看到什么：固定上下文、检索、记忆，以及让它们保持可信的约定。"
@@ -427,6 +431,10 @@ description = "可移植、沙箱化的字节码，用于在浏览器内外以�
 [rust]
 name = "Rust"
 description = "这里大多数项目所使用的系统编程语言。"
+
+[golang]
+name = "Go"
+description = "Go：一门朴素易读的语言，适合许多团队共同维护的服务。"
 
 [haskell]
 name = "Haskell"
