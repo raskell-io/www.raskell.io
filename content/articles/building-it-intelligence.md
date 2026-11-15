@@ -20,15 +20,15 @@ in_short = [
 
 In [IT Intelligence](/articles/it-intelligence/) I argued that large companies never built for their own IT what they built for their sales figures: one model that knows what exists, who owns it, how it connects and whether it matches the strategy, readable by every person and every agent who works on it. The obvious next question is a fair one: what does that look like when you build it?
 
-This post is the answer, as concretely as I can make it without showing anyone's real landscape. It walks through a reference implementation in a single open source repository, [raskell-io/it-intelligence](https://github.com/raskell-io/it-intelligence), with a fictional company inside it. You can clone it, run it on a laptop, point a coding agent at it, and see every layer the first post described: connectors, workflow orchestration, a persistence store, the Context Model itself, an API backend with an MCP server, a frontend, and the analytics that turn the model into artifacts.
+This post answers it as concretely as I can without showing anyone's real landscape, by walking through a reference implementation in a single open source repository, [raskell-io/it-intelligence](https://github.com/raskell-io/it-intelligence), with a fictional company inside it. You can clone it, run it on a laptop, point a coding agent at it, and see every layer the first post described: connectors, workflow orchestration, a persistence store, the Context Model itself, an API backend with an MCP server, a frontend, and the analytics that turn the model into artifacts.
 
-The reference is not the platform I run at work. It is smaller, simpler and deliberately boring. The shape is the same, and the shape is what I want to show.
+The reference is smaller, simpler and more boring than the platform I run at work, but it has the same shape, and the shape is what I want to show.
 
 ## The fictional company
 
 Every example below uses the **Kestrel Group**, a made-up financial group with three market units, about forty applications, a dozen teams, two container clusters, a WAF, an API gateway and the usual collection of systems of record. The repository ships Kestrel as seed files that imitate the exports you would get from real tools: an application list from an EA repository, configuration items and incidents from an IT service management tool, repositories and teams from a git host, namespaces and workloads from a cluster, policies from a WAF, routes from a gateway.
 
-The seed data is deliberately messy. Names differ between systems, two applications claim the same repository, one namespace has no owner label, a market unit runs its own integration platform that nobody in group IT knows about, and the EA repository lists an application that was switched off a year ago. A clean demo would prove nothing. The interesting part of IT intelligence is what happens when the sources disagree.
+The seed data is deliberately messy. Names differ between systems, two applications claim the same repository, one namespace has no owner label, a market unit runs its own integration platform that nobody in group IT knows about, and the EA repository lists an application that was switched off a year ago. A clean demo would prove nothing, because IT intelligence earns its keep where the sources disagree.
 
 ## The shape of the system
 
@@ -70,7 +70,7 @@ Six moving parts, and one file that sits above all of them. I will go through th
 it-intelligence/
   ontology/       context_model.yaml, entities.yaml, relations.yaml: the Context Model in LinkML
     generated/    JSON Schema, OWL, SHACL, the store vocabulary (do not edit)
-  cmd/itx/        the one binary: serve, ingest, verify, runs, snapshot
+  cmd/itx/        the one binary: serve, worker, ingest, verify, runs, snapshot
   connectors/     one package per source kind: earepo/ itsm/ githost/ cluster/ waf/ gateway/
   mapping/        observations to candidate entities and edges, one mapper per connector
   resolver/       identity resolution: keys, rules, inference, pluggable model providers
@@ -101,7 +101,7 @@ The stack is open source throughout and chosen for being unsurprising:
 | Frontend | Next.js | fast to build entity pages, graph views and review queues | any web framework |
 | Diagrams | [Mermaid](https://mermaid.js.org/) as text | diffable, renders in Git hosts, wikis and chat | Structurizr DSL, PlantUML |
 
-None of these choices is the point. Swap any of them and the design holds. What does not swap well is the order of the layers and the rules each one follows.
+Any of these can be swapped without changing the design. What cannot be swapped is the order of the layers and the rules each one follows.
 
 ### Why Go
 
@@ -314,7 +314,7 @@ func (clusterMapper) Map(ctx Context, o connectors.Observation) (Assertions, err
 
 The split keeps connectors reusable, because the same git host connector works for any company, and keeps the company-specific knowledge in the mappers, where it can be reviewed. It also means a connector can be written by the team that owns the source, which is how contribution starts. In the reference, adding a source is three files: a connector, a mapper and a seed export to test against.
 
-The label check in the snippet is the cheapest win in the whole system. A deployment label that carries the application ID from the EA repository turns an inference into an assertion. Every team that adds one makes the model more certain, and the scorecard shows it.
+The label check matters beyond this one mapper: every team that adds the EA application ID to its deployments turns one of the model's inferences into an assertion, and the scorecard shows the improvement the next morning.
 
 ## Layer four: identity resolution
 
@@ -347,7 +347,11 @@ The thresholds are explicit and live in configuration. Above 0.9 the link is sto
 
 Ingestion talks to flaky sources and calls models that time out, so it needs retries per step, resumption after a crash, schedules, and a place to see what happened. And not everything here is quick: a link waits for a team to confirm it, a primary declaration waits for a second person to approve it, and either can sit for days while someone is on holiday and a reminder goes out by email. That work does not belong in the API. So workflow orchestration is a component of its own: the API is the control plane, which starts runs and reports on them but never runs them, and an orchestrator does the running.
 
-In production that orchestrator is a durable workflow engine, Temporal, Restate or something similar; the design does not depend on which. One candidate is my own: [Aqueduct](https://github.com/raskell-io/aqueduct), a durable execution engine in Rust built for procedures that agents write and people approve. It journals every step before it counts, waits for a person with a timeout (a signal or an id anyone can complete, raised to someone else if nobody answers), and runs steps on workers in any language over gRPC or HTTP, so the steps here could stay in Go. It is young, and its own README asks you not to depend on it yet, so I name it as an option rather than the default. The reference ships a minimal orchestrator over PostgreSQL behind the same contract, as a separate process, `itx worker`, so it runs on a laptop with nothing else to install. A workflow is a fixed list of idempotent steps:
+In production that orchestrator is a durable workflow engine, Temporal, Restate or something similar; the design does not depend on which.
+
+One candidate is my own: [Aqueduct](https://github.com/raskell-io/aqueduct), a durable execution engine in Rust built for procedures that agents write and people approve. It journals every step before it counts, waits for a person with a timeout (a signal or an id anyone can complete, raised to someone else if nobody answers), and runs steps on workers in any language over gRPC or HTTP, so the steps here could stay in Go. It is young, and its own README asks you not to depend on it yet, so I name it as an option rather than the default.
+
+The reference ships a minimal orchestrator over PostgreSQL behind the same contract, as a separate process, `itx worker`, so it runs on a laptop with nothing else to install. A workflow is a fixed list of idempotent steps:
 
 ```go
 // workflows/workflows.go (trimmed)
@@ -392,7 +396,7 @@ The overall score is a weighted mean, the weights are configuration, and every n
 
 ## Layer seven: the API and the MCP server
 
-One Go binary serves three surfaces from the same queries: a REST API for systems and the frontend, an MCP server for agents, and a static endpoint for generated artifacts. Keeping them in one process is deliberate. An agent and a person looking at the same entity must see the same facts, and the easiest way to guarantee that is to not have two implementations.
+The API process, `itx serve`, serves three surfaces from the same queries: a REST API for systems and the frontend, an MCP server for agents, and a static endpoint for generated artifacts. Keeping them in one process is deliberate. An agent and a person looking at the same entity must see the same facts, and the easiest way to guarantee that is to not have two implementations.
 
 The MCP server is where most of the design effort went, because tools for agents are an interface with different rules than an API for programs. The Kestrel server exposes a handful:
 
@@ -418,7 +422,7 @@ find_owner {"id": "claims-prod"}
          ctx:Application/claims-settlement - owned_by -> ctx:Team/claims-platform (asserted, itsm)
 ```
 
-The namespace carries no owner label, so the ownership is derived, and the answer says so. Three claims applications run in `claims-prod` and all point to the same team; the strongest chain wins, and the agent can cite every fact it rests on. A follow-up for the team writes itself: put an owner label on the namespace, and the derivation becomes an assertion.
+The namespace carries no owner label, so the ownership is derived, and the answer says so. Three claims applications run in `claims-prod` and all point to the same team; the strongest chain wins, and the agent can cite every fact it rests on. The team's next step is plain from the answer: an owner label on the namespace turns the derivation into an assertion.
 
 To let a coding agent use it, the repository carries a project-scoped MCP configuration. In Claude Code that is a `.mcp.json` at the repository root:
 
@@ -445,7 +449,7 @@ The Next.js frontend is the least interesting layer technically and the one that
 - **Source scorecards**, the league table from layer six.
 - **Artifacts**, everything `BuildArtifacts` produced, each stamped with the snapshot it was built from.
 
-The TypeScript types come from the ontology, so when the model changes the frontend fails to compile until it catches up. That is the right kind of friction.
+The TypeScript types come from the ontology, so when the model changes the frontend fails to compile until it catches up, which is the right kind of friction.
 
 ## Layer nine: artifacts
 
@@ -512,7 +516,7 @@ The part I am proudest of is `make verify`. The seed ships with an answer key: w
 
 ## What the reference leaves out
 
-A reference implementation earns trust by being honest about its gaps. These are the big ones.
+A reference implementation earns trust by being honest about its gaps, and these are the big ones.
 
 - **Identity and access.** The reference has no authentication. Writes carry a name from an "act as" picker, sent as an `X-Actor` header, because confirmations and primary declarations need one. A real deployment needs real identity for writes, even if reads stay open to everyone, as I argued they should.
 - **Real connectors at scale.** The connectors read the seed files; only the git host has a small live mode, for one GitHub organisation. Production connectors deal with pagination, rate limits, partial failures, credentials and sources that change their schema without warning. That work is unglamorous and endless.
@@ -525,7 +529,7 @@ None of these changes the shape. They are the difference between a reference you
 
 ## What to take from it
 
-If you build one of these, the order matters more than the tools. Write the ontology first and generate from it. Keep observations and entities apart. Make every relationship a row with a basis, a confidence and a source. Score your sources in public. Put the MCP server in the same process as the API, and keep orchestration out of it. Generate artifacts as text, with sources, from snapshots. Everything else, the database, the workflow engine, the frontend framework, the model provider, is a choice you can revisit later.
+If you build one of these, the order matters more than the tools: an ontology first, with everything generated from it; observations kept apart from entities; every relationship a row with a basis, a confidence and a source; sources scored in public; the MCP server in the same process as the API, and orchestration outside it; artifacts as text, from snapshots, with their sources. The database, the workflow engine, the frontend framework and the model provider are choices you can revisit later.
 
 The repository is there to be taken apart. If you run it against your own exports and the model gets something wrong, that is the most useful thing that can happen, and I would like to hear about it: [CONTRIBUTING.md](https://github.com/raskell-io/it-intelligence/blob/main/CONTRIBUTING.md) explains how to add a source, and issues are open.
 
