@@ -988,3 +988,9 @@ broader = ["distributed-systems", "platform-automation"]
 name = "This site"
 kind = "site"
 description = "Posts about raskell.io itself: why it exists, how it is built, and where it is going."
+
+[olfaction]
+name = "Olfaction"
+kind = "concept"
+description = "Smell and taste as senses: how noses and brains recognise mixtures of molecules, and how far machines are from reading and writing them."
+broader = ["neuroscience", "life-sciences"]
