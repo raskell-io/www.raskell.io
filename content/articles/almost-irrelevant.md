@@ -48,7 +48,7 @@ To keep the examples comparable, every snippet below handles a piece of the same
 
 Rust holds the ground C and C++ used to hold: proxies, operating systems, runtimes, compilers, engines, anything that runs for months, sits on a hot path or handles input from people who mean harm. The borrow checker gives memory safety and freedom from data races at compile time, without a garbage collector, and the type system makes it natural to put invariants where the compiler can see them.
 
-The famous cost of Rust was the fight with the borrow checker, and that fight is exactly the kind of cost an agent absorbs. Rust even turns it into an advantage, because its compiler errors are precise, local and actionable, which makes them close to ideal feedback for a model working in a loop. The agent proposes, the compiler objects with a line number and a suggestion, the agent fixes it. By the time a person reads the code, a whole class of mistakes is already gone.
+The famous cost of Rust was the fight with the borrow checker, and that fight is the kind of cost an agent absorbs. Rust even turns it into an advantage, because its compiler errors are precise, local and actionable, which makes them close to ideal feedback for a model working in a loop. The agent proposes, the compiler objects with a line number and a suggestion, the agent fixes it. By the time a person reads the code, a whole class of mistakes is already gone.
 
 This is what that feedback looks like when two threads append to the same ledger, which in many languages compiles and then fails only now and then, under load, in production:
 
@@ -76,11 +76,11 @@ help: consider cloning the value before moving it into the closure
 
 The program never runs, and the error says exactly where and why. It also shows the limit of the compiler, and the point where a person or a requirement still matters: the suggested fix, cloning the vector, compiles, but it gives each thread its own ledger, which is not what a bank wants. The right fix is one shared ledger behind a lock, `Arc<Mutex<Vec<_>>>`, and choosing it takes knowing what the code is for. The compiler narrows the agent's options to the safe ones; the requirement picks among them.
 
-The evidence that this matters at scale is not mine. Google reported in 2024 that the share of memory safety vulnerabilities in Android fell "from 76% to 24% over 6 years as development shifted to memory safe languages", and that the problem is "overwhelmingly with new code" ([Google Security Blog](https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html)). The lesson for the agent era is direct: if agents are about to write a great deal of new code, the safest place for that new code to land is a language where those mistakes do not compile.
+The evidence that this matters at scale is not mine. Google reported in 2024 that the share of memory safety vulnerabilities in Android fell "from 76% to 24% over 6 years as development shifted to memory safe languages", and that the problem is "overwhelmingly with new code" ([Google Security Blog](https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html)). A year later the same team reported a memory safety vulnerability density in Rust "more than 1000x" lower than in Android's C and C++, and Rust changes with a roughly four times lower rollback rate ([Google Security Blog](https://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html)). If agents are about to write a great deal of new code, the safest place for that new code to land is a language where those mistakes do not compile.
 
-Most of what I build is in Rust for that reason. [Zentinel](https://zentinelproxy.io/), a reverse proxy, sits in front of other people's traffic. Aqueduct, a durable execution engine, has to replay a run to the same result after a crash ([The River and the Canal](/articles/the-river-and-the-canal/) explains why). hx and bhc are toolchains other people's builds depend on. Shiioo runs agents on my own machine and keeps the record of what they did. Each of these fails expensively, and each ships as one static binary.
+Most of what I build is in Rust for that reason. [Zentinel](https://zentinelproxy.io/), a reverse proxy, sits in front of other people's traffic. Aqueduct, a durable execution engine, has to replay a run to the same result after a crash ([The River and the Canal](/articles/the-river-and-the-canal/) explains why). hx and bhc are toolchains other people's builds depend on ([Why We Built a Haskell Package Manager in Rust](/articles/why-we-built-a-haskell-package-manager-in-rust/) tells that story). Shiioo runs agents on my own machine and keeps the record of what they did ([Shiioo, Re-imagined](/articles/shiioo-reimagined-and-a-home-ai-lab/)). Each of these fails expensively, and each ships as one static binary.
 
-The same reasoning makes Rust my first choice for the biggest job of this kind: replacing the core systems that banks, insurers and public administrations still run on mainframes, most of them written in COBOL decades ago. Those systems work. They are reliable, they do decimal arithmetic correctly, and they have survived every attempt to replace them, mostly because nobody can say with confidence what all of their code does. Agents change half of that problem. They read COBOL patiently, explain what a program does, and write the new version without tiring. What they do not change is the need for the new system to be at least as dependable as the old one, and that is where the language matters. Rust gives you the mainframe's virtues without the mainframe: no undefined behaviour, no garbage collector pausing in the middle of a posting run, exact decimal types such as [rust_decimal](https://docs.rs/rust_decimal/) for money, and a compiler that rejects the program before a customer's balance is wrong.
+The same reasoning makes Rust my first choice for the biggest job of this kind: replacing the core systems that banks, insurers and public administrations still run on mainframes, most of them written in COBOL decades ago. Those systems work. They are reliable, they do decimal arithmetic correctly, and they have survived every attempt to replace them, mostly because nobody can say with confidence what all of their code does. Agents change half of that problem. They read COBOL patiently, explain what a program does, and write the new version without tiring. What they do not change is the need for the new system to be at least as dependable as the old one, and that is where the language matters. Rust gives you the mainframe's virtues without the mainframe: no undefined behaviour, no garbage collector pausing in the middle of a posting run (Discord moved a service from Go to Rust in 2020 for this reason, after Go's collector, which runs at least every two minutes, caused [regular latency spikes](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)), exact decimal types such as [rust_decimal](https://docs.rs/rust_decimal/) for money, and a compiler that rejects the program before a customer's balance is wrong.
 
 The money part is short. COBOL programs keep amounts as fixed-point decimals, and the replacement has to do the same, never binary floating point, where `0.1 + 0.2` is `0.30000000000000004`:
 
@@ -103,10 +103,12 @@ What the mainframe did with batch windows and transaction monitors, Rust does wi
 
 ```rust
 /// Parallel run: the mainframe stays the system of record, the new core shadows it.
-async fn post_interest(legacy: &Legacy, core: &Core, balance: Decimal) -> Outcome {
+async fn post_interest(
+    legacy: &Legacy, core: &Core, divergences: &Divergences, balance: Decimal,
+) -> Outcome {
     let (old, new) = tokio::join!(legacy.post(balance), core.post(balance));
     if old != new {
-        divergences.record(balance, &old, &new);
+        divergences.record(balance, &old, &new).await;
     }
     old
 }
@@ -114,7 +116,7 @@ async fn post_interest(legacy: &Legacy, core: &Core, balance: Decimal) -> Outcom
 
 Both systems get the same input at the same time, the old answer is the one that counts, and every disagreement is written down for someone to explain. That comparison is the real work, and it is work agents are good at. The language is what makes it safe to trust what they produce afterwards.
 
-Rust has its costs, and agents do not remove all of them. Builds are slower than Go's. Async Rust is still harder than it should be. And Rust is not quick to review for someone who does not read lifetimes fluently, which matters when the reviewer is a person from another team. I would not write a company's internal services in it by default, only the parts those services cannot afford to have fail.
+Rust has its costs, and agents do not remove all of them. Builds are slower than Go's. Async Rust is still harder than it should be. And Rust is not quick to review for someone who does not read lifetimes fluently, which matters when the reviewer is a person from another team. (Google's Android engineers report the opposite, that Rust changes spend about a quarter less time in review, but they compare it with C++, not with Go, and they review Rust every day.) I would not write a company's internal services in it by default, only the parts those services cannot afford to have fail.
 
 ## Go: for code a whole company shares
 
@@ -143,7 +145,7 @@ func MonthlyInterest(ctx context.Context, accounts Accounts, iban string, bps in
 }
 ```
 
-The dependency is an interface passed in, every failure is a value with context added on the way up, and a caller can ask `errors.Is(err, ErrClosed)` instead of parsing a message. Nobody has to be told how it works.
+The dependency is an interface passed in, every failure is a value with context added on the way up, and a caller can ask `errors.Is(err, ErrClosed)` instead of parsing a message, and none of it needs explaining to someone from another team.
 
 The cost is that Go checks less than Rust or Haskell. It has no sum types, `nil` is still a value, and a good share of correctness lives in tests rather than in types. For a company that is usually the right trade: the system that has to be correct gets Rust, and the hundred services around it get Go.
 
@@ -151,7 +153,7 @@ The cost is that Go checks less than Rust or Haskell. It has no sum types, `nil`
 
 Elixir runs on the BEAM, the Erlang virtual machine, and the BEAM was built for telephone switches: millions of small isolated processes, supervisors that restart what crashes, messages between nodes as a first-class thing, and a culture of designing for failure instead of pretending it will not happen. Most languages add distribution with libraries and infrastructure. On the BEAM it is the default way of thinking.
 
-A process on the BEAM is not an operating system thread. A new one takes 327 words of memory, about 2.6 KB, according to the [Erlang efficiency guide](https://www.erlang.org/doc/system/eff_guide_processes.html), with its own heap, so one machine runs hundreds of thousands of them and one process's garbage collection never stops the others. Processes share nothing and talk by messages, and supervisors watch them. An application is a tree of supervisors, and a cluster is several of those trees on machines that can message each other. This is broodwar.live's tree, trimmed:
+A process on the BEAM is not an operating system thread. A new one takes 327 words of memory, about 2.6 KB, according to the [Erlang efficiency guide](https://www.erlang.org/doc/system/eff_guide_processes.html), with its own heap, so one machine runs hundreds of thousands of them and one process's garbage collection never stops the others. (WhatsApp, built on Erlang, reported holding [over two million TCP connections](https://blog.whatsapp.com/1-million-is-so-2011) on a single server in January 2012.) Processes share nothing and talk by messages, and supervisors watch them. An application is a tree of supervisors, and a cluster is several of those trees on machines that can message each other. This is broodwar.live's tree, trimmed:
 
 ```elixir
 children = [
@@ -189,7 +191,7 @@ And this is what it looks like running on two machines:
 
 When the throttle process crashes, its supervisor starts a fresh one, and the open connections, the job queues and the other node never notice. A message published on one node reaches subscribers on the other. That is the whole distributed system, and none of it needed a separate piece of infrastructure.
 
-That makes Elixir my choice for platforms that are distributed by nature: anything omnichannel, where the same conversation arrives by web, chat, email and phone; anything with live presence and many open connections; anything with a lot of background work that has to survive restarts. The background work is where [Oban](https://oban.hexdocs.pm/Oban.html) comes in, "a robust background job framework which uses PostgreSQL, MySQL, or SQLite3 for persistence". Jobs live in the database you already have, with retries, uniqueness and queues, and no separate broker to run. In [broodwar.live](https://broodwar.live), a job that ingests tournament pages from Liquipedia looks like this:
+That makes Elixir my choice for platforms that are distributed by nature: anything omnichannel, where the same conversation arrives by web, chat, email and phone; anything with live presence and many open connections; anything with a lot of background work that has to survive restarts. The background work is where [Oban](https://oban.hexdocs.pm/Oban.html) comes in, a job framework that "uses PostgreSQL, MySQL, or SQLite3 for persistence". Jobs live in the database you already have, with retries, uniqueness and queues, and no separate broker to run. In [broodwar.live](https://broodwar.live), a job that ingests tournament pages from Liquipedia looks like this:
 
 ```elixir
 # api.broodwar.live, lib/broodwar/ingestion/match_sync.ex (trimmed)
@@ -208,19 +210,19 @@ def perform(%Oban.Job{args: %{"pages" => pages}}) when is_list(pages) do
 end
 ```
 
-Retries, deduplication within an hour, and the decision to stop rather than retry when the source rate-limits us: eight lines, all of them readable by someone who has never seen Elixir. Humankind, an archive of people's voices and stories, runs eight queues the same way (transcription, embeddings, voice synthesis, story generation, among others) next to Phoenix's real-time updates, in one runtime.
+Retries, deduplication within an hour, and the decision to stop rather than retry when the source rate-limits us: eight lines, all of them readable by someone who has never seen Elixir. [Humankind](https://humankind.plus), an archive of people's voices and stories, runs eight queues the same way (transcription, embeddings, voice synthesis, story generation, among others) next to Phoenix's real-time updates, in one runtime.
 
 This is also why Elixir is my favourite language for ambitious projects that one person runs. What a company would split into a web tier, a queue, a broker, a cache and a cluster manager, the BEAM gives you in one system you can still hold in your head. It does not have the hiring pool or the cross-team conventions of Go, so I would not make it the default for a large organisation, but a small team gets a long way on it.
 
 The weakness has been typing, and with agents it weighs more, because a dynamic language checks less of what the agent wrote before it runs. That is changing. [Elixir 1.20](https://elixir-lang.org/blog/2026/06/03/elixir-v1-20-0-released), released in June 2026, can "perform type inference and gradually type check every Elixir program, without introducing type annotations". Typed structs and type signatures are still to come, without a fixed date ([the roadmap](https://elixir-lang.org/blog/2026/01/09/type-inference-of-all-and-next-15/)). Until then I lean on pattern matching, typespecs and tests, and I review agent-written Elixir more carefully than agent-written Rust.
 
-If you want the BEAM with static types today, there is [Gleam](https://gleam.run/), "a friendly language for building type-safe systems that scale". It compiles to the same virtual machine, so it gets the processes, supervisors and distribution, it can use packages written in Erlang and Elixir, and it has been stable since [version 1.0 in March 2024](https://gleam.run/news/gleam-version-1/). Everything is typed and checked by the compiler, which is exactly the property that gains weight when an agent writes the code. Its ecosystem is younger than Elixir's, and there is no Phoenix or Oban written in it, though Elixir libraries can be called through its foreign function interface, with the types written by hand, and for a new service on the BEAM where correctness matters more than the framework, it is the choice I would look at first.
+If you want the BEAM with static types today, there is [Gleam](https://gleam.run/), "a friendly language for building type-safe systems that scale". It compiles to the same virtual machine, so it gets the processes, supervisors and distribution, it can use packages written in Erlang and Elixir, and it has been stable since [version 1.0 in March 2024](https://gleam.run/news/gleam-version-1/). Everything is typed and checked by the compiler, the property that gains weight when an agent writes the code. Its ecosystem is younger than Elixir's, and there is no Phoenix or Oban written in it, though Elixir libraries can be called through its foreign function interface, with the types written by hand. For a new service on the BEAM where correctness matters more than the framework, it is the choice I would look at first.
 
 ## Haskell and bhc: a different kind of bet
 
 Rust, Go and Elixir are better answers to questions we already had. Haskell, in the form I am building it, answers one that appears only once agents write the code: what happens when generation is cheap?
 
-A model produces plausible code in seconds, and plausible code is often wrong, so the scarce work moves from writing code to knowing it is correct. Haskell is the production language that makes the most of that checkable. A well-typed function is a small proof that a transformation is valid, effects are visible in the signature, and illegal states can be made unrepresentable. The model does not have to be right; it has to be checkable, and the compiler is the checker.
+A model produces plausible code in seconds, and plausible code is often wrong, so the scarce work moves from writing code to knowing it is correct (and, as I argued in [The Behavioural Turn](/articles/the-behavioural-turn/), to deciding how much of it anyone reads at all). Haskell is the production language that makes the most of that checkable. A well-typed function is a small proof that a transformation is valid, effects are visible in the signature, and illegal states can be made unrepresentable. The model does not have to be right; it has to be checkable, and the compiler is the checker. The checker can even sit inside generation: a team at ETH Zurich and UC Berkeley let a type checker constrain a model's output token by token and cut compilation errors in generated TypeScript by more than half ([Mündler et al., 2025](https://arxiv.org/abs/2504.09246)).
 
 The interest requirement says interest is never posted to a closed account. In most languages that rule is an `if` that somebody has to remember. In Haskell it can be the shape of the data:
 
@@ -257,17 +259,19 @@ Nobody has to remember the rule, because the program cannot express breaking it.
 
 The first is that a runtime is a contract you choose. The same source compiles under a profile: `default` for lazy evaluation as usual, `server` for structured concurrency with deadlines, `numeric` for fused, strict numeric code and tensor kernels, `edge` for a minimal WebAssembly runtime. The performance envelope stops being folklore and becomes part of what a function is: not only "this is correct", but "this is correct under this contract".
 
-The second is [the commons](https://arcanist.sh/commons/). Today every agent, in every session, writes and checks the same date parser again and throws the verification away. bhc elaborates every definition into its explicit meaning, with type class instances spelled out, and that meaning can be addressed by its content. A definition then carries an identity, a precise record of what has been checked about it and what has not, and signatures from whoever compiled, tested, reviewed or vouched for it. Two people who write the same function in different styles have written the same function, and their evidence pools on one object. The agent's job changes from "write this code" to "assemble this from meaning that is already checked, and where nothing exists, write it, prove it and leave it for the next one".
+The second is [the commons](https://arcanist.sh/commons/). Today every agent, in every session, writes and checks the same date parser again and throws the verification away. bhc elaborates every definition into its explicit meaning, with type class instances spelled out, and that meaning can be addressed by its content. A definition then carries an identity, a precise record of what has been checked about it and what has not, and signatures from whoever compiled, tested, reviewed or vouched for it. Two people who write the same function in different styles have written the same function, and their evidence pools on one object. The agent's job changes from "write this code" to "assemble this from meaning that is already checked, and where nothing exists, write it, prove it and leave it for the next one". [The Proof You Only Have to Write Once](/articles/the-proof-you-only-have-to-write-once/) has the long version.
 
 That is what I mean by a different way of building software: the unit of software stops being a file of instructions and becomes a piece of verified meaning under a stated contract, shared across everyone who needs it.
 
-It is also the part furthest from done. bhc is in beta. It type-checks and compiles all 221 modules of Pandoc, and Pandoc's Markdown reader and HTML writer run end to end, but the garbage collector is not yet wired into compiled code, so long-running servers are not a fit yet ([status](https://arcanist.sh/bhc/status/)). The commons is a direction with its first steps on the roadmap, not a service you can use today. I am building toward it because I think it is where verification has to go once most code is generated, and Haskell is the language where that is closest to reachable.
+It is also the part furthest from done. bhc is at version 0.2. It type-checks and compiles all 221 modules of Pandoc, and Pandoc's Markdown reader and HTML writer run end to end, but the garbage collector is not yet wired into compiled code, so long-running servers are not a fit yet ([status](https://arcanist.sh/bhc/status/)). The commons is a direction with its first steps on the roadmap, not a service you can use today. I am building toward it because I think it is where verification has to go once most code is generated, and Haskell is the language where that is closest to reachable.
 
 ## The obvious objection
 
 The strongest argument against all of this is that agents are best at the languages with the most training data, so you should write everything in Python and TypeScript and stop worrying.
 
-There is something to it, and both languages have earned their places. Python owns data science, machine learning and the notebook, where its libraries have no equal and much of the code runs once and is thrown away. JavaScript is the language of the browser, and TypeScript is how to write it without regret; a front end in anything else is usually a self-inflicted wound. But I rarely go back to either for anything that has to last. The reasons I used to reach for them were speed of writing and familiarity, and those are exactly the costs an agent now absorbs. What is left is a runtime that finds type errors in production. How fluently a model writes a language and what the result guarantees are different questions. Python written fluently still fails at runtime with a type error a compiler would have caught, and fluency in generating code is precisely the cheap part now. Whatever gap remains between how well models write Rust and how well they write Python, it is a gap in the cheap part; the gap between what the two compilers check is in the expensive one.
+There is something to it, and both languages have earned their places. Python owns data science, machine learning and the notebook, where its libraries have no equal and much of the code runs once and is thrown away. JavaScript is the language of the browser, and TypeScript is how to write it without regret; a front end in anything else is usually a self-inflicted wound. But I rarely go back to either for anything that has to last. I used to reach for them for speed of writing and familiarity, and those are the costs an agent now absorbs; what remains is a runtime that finds type errors in production.
+
+How fluently a model writes a language and what the result guarantees are different questions. The fluency gap is smaller than the objection assumes: MultiPL-E, which translated the standard code-generation benchmarks into 18 languages, found a model matching or beating its Python score in several of them ([Cassano et al., 2022](https://arxiv.org/abs/2208.08227)). The guarantee gap is measurable too: when researchers added type annotations to JavaScript bugs that had survived testing and review, TypeScript flagged 15% of them ([Gao, Bird and Barr, 2017](https://earlbarr.com/publications/typestudy.pdf)). Whatever gap remains between how well models write Rust and how well they write Python, it is a gap in the cheap part; the gap between what the two compilers check is in the expensive one.
 
 The other fair objection is that four languages are three too many for one organisation. That is true for most companies, and it is why I would not hand this list to a company as a policy. A company should pick very few languages and give each one a job. Mine looks like this:
 
@@ -309,9 +313,9 @@ and the cases that pin it down, in JSON:
 
 Everything in the four languages above is downstream of those two files.
 
-Its formats are Markdown, for intent, decisions and the instructions agents read (a brief, a design record, an `AGENTS.md`), and JSON, with YAML and TOML as its friendlier relatives, for anything with structure: a schema, a configuration, a contract between two systems, the cases a test runs against. Neither is a programming language, and those are the two formats I now edit most by hand. This site is an example: the writing is Markdown, the data is TOML and JSON, and most of the code that turns them into pages was written by agents.
+The formats for that writing are Markdown, for intent, decisions and the instructions agents read (a brief, a design record, an `AGENTS.md`), and JSON, with YAML and TOML as its friendlier relatives, for anything with structure: a schema, a configuration, a contract between two systems, the cases a test runs against (the same known cases that [Evaluation Closes the Loop](/articles/evaluation-closes-the-loop/) scores an agent on). Neither is a programming language, and those are the two formats I now edit most by hand. This site is an example: the writing is Markdown, the data is TOML and JSON, and most of the code that turns them into pages was written by agents.
 
-Even that may be a passing stage. Markdown and JSON matter to people because people still read them, and as more of what they describe is checked by machines, the human part shrinks to stating intent and approving the result. A requirement precise enough for a machine to check is not far from a type, which is one more reason I think the Haskell bet is a bet on where requirements are heading, and not only on where code is.
+Even that may be a passing stage. Markdown and JSON matter to people because people still read them, and as more of what they describe is checked by machines, the human part shrinks to stating intent and approving the result. A requirement precise enough for a machine to check is not far from a type (the argument of [Source Code Is the New Assembly](/articles/semantic-artifacts-and-meaning-engines/)), which is one more reason I think the Haskell bet is a bet on where requirements are heading, and not only on where code is.
 
 ## What is left of the choice
 
@@ -320,13 +324,19 @@ When the cost of writing code goes to zero, a language stops being a tool for wr
 ## References
 
 - Jeff Vander Stoep and Alex Rebert, [Eliminating Memory Safety Vulnerabilities at the Source](https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html), Google Security Blog, 25 September 2024.
+- Jeff Vander Stoep, [Rust in Android: move fast and fix things](https://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html), Google Security Blog, 13 November 2025.
+- Jesse Howarth, [Why Discord is switching from Go to Rust](https://discord.com/blog/why-discord-is-switching-from-go-to-rust), 4 February 2020.
 - [Go 1 and the Future of Go Programs](https://go.dev/doc/go1compat), the Go 1 compatibility promise.
+- WhatsApp, [1 million is so 2011](https://blog.whatsapp.com/1-million-is-so-2011), 6 January 2012.
 - José Valim, [Elixir v1.20 released: now a gradually typed language](https://elixir-lang.org/blog/2026/06/03/elixir-v1-20-0-released), 3 June 2026, and [Type inference of all constructs and the next 15 months](https://elixir-lang.org/blog/2026/01/09/type-inference-of-all-and-next-15/), 9 January 2026.
 - [Gleam](https://gleam.run/), a statically typed language for the BEAM, and [Gleam version 1](https://gleam.run/news/gleam-version-1/), 4 March 2024.
 - [Tokio](https://tokio.rs/), the asynchronous runtime for Rust, and [rust_decimal](https://docs.rs/rust_decimal/), decimal numbers for financial calculations.
 - [Oban](https://oban.hexdocs.pm/Oban.html), background jobs for Elixir backed by the database.
 - arcanist.sh, [Manifesto](https://arcanist.sh/manifesto/), [The Commons](https://arcanist.sh/commons/), and [The Scorecard Is Right. The Weights Are Wrong.](https://arcanist.sh/blog/the-scorecard-is-right-the-weights-are-wrong/)
-- [bhc](https://arcanist.sh/bhc/) and [where bhc stands](https://arcanist.sh/bhc/status/).
+- [bhc](https://arcanist.sh/bhc/) and [where bhc stands](https://arcanist.sh/bhc/status/), last updated 20 October 2026.
+- Federico Cassano et al., [MultiPL-E: A Scalable and Extensible Approach to Benchmarking Neural Code Generation](https://arxiv.org/abs/2208.08227), 2022.
+- Zheng Gao, Christian Bird and Earl T. Barr, [To Type or Not to Type: Quantifying Detectable Bugs in JavaScript](https://earlbarr.com/publications/typestudy.pdf), ICSE 2017.
+- Niels Mündler, Jingxuan He, Hao Wang, Koushik Sen, Dawn Song and Martin Vechev, [Type-Constrained Code Generation with Language Models](https://arxiv.org/abs/2504.09246), 2025.
 
 ### Further reading
 
@@ -337,6 +347,7 @@ On this site, the longer arguments behind this post:
 - [Why We Built a Haskell Package Manager in Rust](/articles/why-we-built-a-haskell-package-manager-in-rust/), Rust and Haskell in one project, each for its job.
 - [The River and the Canal](/articles/the-river-and-the-canal/), the essay behind Aqueduct and durable execution.
 - [How I Work These Days](/articles/how-i-work-these-days/), what working with coding agents looks like day to day.
+- [The Proof You Only Have to Write Once](/articles/the-proof-you-only-have-to-write-once/), the commons for verified Haskell in full.
 
 Rust and memory safety:
 
