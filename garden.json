@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-15T13:25:21+00:00",
+ "generated": "2026-11-16T06:56:45+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
+  "article": 44,
   "review": 4,
-  "article": 43,
   "note": 27,
   "talk": 1,
   "dataset": 1,
   "work": 167,
   "project": 32,
   "topic": 167,
-  "link": 553
+  "link": 569
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -23,6 +23,23 @@
   "data": "https://raskell.io/data/"
  },
  "items": [
+  {
+   "kind": "article",
+   "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+   "url": "https://raskell.io/articles/building-it-intelligence/",
+   "description": "How to build an Enterprise Context Platform from open source parts: ontology, connectors, workflows, store, API, MCP and UI, in one repository you can run.",
+   "date": "2026-11-16",
+   "topics": [
+    "enterprise-architecture",
+    "context-engineering",
+    "agents",
+    "provenance",
+    "oss",
+    "durable-execution",
+    "knowledge-management"
+   ],
+   "meta": "27 min"
+  },
   {
    "kind": "review",
    "title": "An Empire of People",
@@ -5646,6 +5663,40 @@
   },
   {
    "kind": "link",
+   "title": "Backstage software catalog",
+   "url": "https://backstage.io/docs/features/software-catalog",
+   "domain": "backstage.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    },
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Documenting Architecture Decisions",
+   "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+   "domain": "cognitect.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    },
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Void Linux Handbook: XBPS",
    "url": "https://docs.voidlinux.org/xbps/index.html",
    "domain": "docs.voidlinux.org",
@@ -6054,6 +6105,57 @@
   },
   {
    "kind": "link",
+   "title": "Model Context Protocol",
+   "url": "https://modelcontextprotocol.io/",
+   "domain": "modelcontextprotocol.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    },
+    {
+     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
+     "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Restate",
+   "url": "https://restate.dev/",
+   "domain": "restate.dev",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    },
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Temporal",
+   "url": "https://temporal.io/",
+   "domain": "temporal.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    },
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "WASI",
    "url": "https://wasi.dev/",
    "domain": "wasi.dev",
@@ -6181,6 +6283,23 @@
     {
      "title": "The Proof You Only Have to Write Once",
      "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/"
+    },
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "PROV-O: The PROV Ontology",
+   "url": "https://www.w3.org/TR/prov-o/",
+   "domain": "w3.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
     },
     {
      "title": "Source Code Is the New Assembly",
@@ -6629,6 +6748,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Apache AGE",
+   "url": "https://age.apache.org/",
+   "domain": "age.apache.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
     }
    ]
   },
@@ -7193,19 +7325,6 @@
   },
   {
    "kind": "link",
-   "title": "Backstage software catalog",
-   "url": "https://backstage.io/docs/features/software-catalog",
-   "domain": "backstage.io",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
-     "url": "https://raskell.io/articles/it-intelligence/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
    "title": "About basic income",
    "url": "https://basicincome.org/about-basic-income/",
    "domain": "basicincome.org",
@@ -7336,6 +7455,19 @@
   },
   {
    "kind": "link",
+   "title": "The C4 model",
+   "url": "https://c4model.com/",
+   "domain": "c4model.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "The Computer for the 21st Century",
    "url": "https://calmtech.com/papers/computer-for-the-21st-century",
    "domain": "calmtech.com",
@@ -7409,19 +7541,6 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "Documenting Architecture Decisions",
-   "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
-   "domain": "cognitect.com",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
-     "url": "https://raskell.io/articles/it-intelligence/"
     }
    ]
   },
@@ -7903,6 +8022,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "doi:10.1080/01621459.1969.10501049",
+   "url": "https://doi.org/10.1080/01621459.1969.10501049",
+   "domain": "doi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
     }
    ]
   },
@@ -9507,6 +9639,19 @@
   },
   {
    "kind": "link",
+   "title": "official Go SDK",
+   "url": "https://github.com/modelcontextprotocol/go-sdk",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "github.com/ogulcancelik/herdr",
    "url": "https://github.com/ogulcancelik/herdr",
    "domain": "github.com",
@@ -9572,6 +9717,19 @@
   },
   {
    "kind": "link",
+   "title": "Aqueduct",
+   "url": "https://github.com/raskell-io/aqueduct",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "blueprint-app",
    "url": "https://github.com/raskell-io/blueprint-app",
    "domain": "github.com",
@@ -9593,6 +9751,32 @@
     {
      "title": "After PHP Gate: A Blueprint for the Static Web",
      "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "raskell-io/it-intelligence",
+   "url": "https://github.com/raskell-io/it-intelligence",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "CONTRIBUTING.md",
+   "url": "https://github.com/raskell-io/it-intelligence/blob/main/CONTRIBUTING.md",
+   "domain": "github.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
     }
    ]
   },
@@ -9788,6 +9972,19 @@
     {
      "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
      "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The Go 1 compatibility promise",
+   "url": "https://go.dev/doc/go1compat",
+   "domain": "go.dev",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
     }
    ]
   },
@@ -10014,6 +10211,19 @@
   },
   {
    "kind": "link",
+   "title": "JSON Schema",
+   "url": "https://json-schema.org/",
+   "domain": "json-schema.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "k6",
    "url": "https://k6.io/",
    "domain": "k6.io",
@@ -10126,6 +10336,32 @@
     {
      "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
      "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "LinkML",
+   "url": "https://linkml.io/",
+   "domain": "linkml.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "generators",
+   "url": "https://linkml.io/linkml/generators/",
+   "domain": "linkml.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
     }
    ]
   },
@@ -10274,6 +10510,19 @@
   },
   {
    "kind": "link",
+   "title": "Mermaid",
+   "url": "https://mermaid.js.org/",
+   "domain": "mermaid.js.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "METR’s 2025 trial",
    "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
    "domain": "metr.org",
@@ -10365,14 +10614,14 @@
   },
   {
    "kind": "link",
-   "title": "Model Context Protocol",
-   "url": "https://modelcontextprotocol.io/",
-   "domain": "modelcontextprotocol.io",
+   "title": "Splink",
+   "url": "https://moj-analytical-services.github.io/splink/",
+   "domain": "moj-analytical-services.github.io",
    "reference": true,
    "cited_in": [
     {
-     "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
-     "url": "https://raskell.io/articles/it-intelligence/"
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
     }
    ]
   },
@@ -10859,19 +11108,6 @@
   },
   {
    "kind": "link",
-   "title": "Restate",
-   "url": "https://restate.dev/",
-   "domain": "restate.dev",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "The River and the Canal",
-     "url": "https://raskell.io/articles/the-river-and-the-canal/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
    "title": "seL4",
    "url": "https://sel4.systems/",
    "domain": "sel4.systems",
@@ -11018,19 +11254,6 @@
    "title": "TechCrunch, Who’s behind AMI Labs",
    "url": "https://techcrunch.com/2026/01/23/whos-behind-ami-labs-yann-lecuns-world-model-startup/",
    "domain": "techcrunch.com",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "The River and the Canal",
-     "url": "https://raskell.io/articles/the-river-and-the-canal/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "Temporal",
-   "url": "https://temporal.io/",
-   "domain": "temporal.io",
    "reference": true,
    "cited_in": [
     {
@@ -12393,6 +12616,19 @@
   },
   {
    "kind": "link",
+   "title": "PostgreSQL documentation on recursive queries",
+   "url": "https://www.postgresql.org/docs/current/queries-with.html",
+   "domain": "postgresql.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Publishers Weekly",
    "url": "https://www.publishersweekly.com/9780374612467",
    "domain": "publishersweekly.com",
@@ -12601,14 +12837,27 @@
   },
   {
    "kind": "link",
-   "title": "PROV-O",
-   "url": "https://www.w3.org/TR/prov-o/",
+   "title": "OWL 2 Web Ontology Language",
+   "url": "https://www.w3.org/TR/owl2-overview/",
    "domain": "w3.org",
-   "reference": false,
+   "reference": true,
    "cited_in": [
     {
-     "title": "Source Code Is the New Assembly",
-     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "SHACL",
+   "url": "https://www.w3.org/TR/shacl/",
+   "domain": "w3.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
     }
    ]
   },

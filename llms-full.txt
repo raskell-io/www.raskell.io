@@ -1,6 +1,565 @@
 # Raskell: all writing in full
 
-> Every published article, review, note, talk, and dataset page on raskell.io by Raffael Schneider, newest first, then the reading log. Generated 2026-11-15. Index: https://raskell.io/llms.txt
+> Every published article, review, note, talk, and dataset page on raskell.io by Raffael Schneider, newest first, then the reading log. Generated 2026-11-16. Index: https://raskell.io/llms.txt
+
+
+================================================================================
+
+---
+title: "Building IT Intelligence: A Reference Implementation in One Repository"
+url: https://raskell.io/articles/building-it-intelligence/
+author: Raffael Schneider
+date: 2026-11-16
+description: "How to build an Enterprise Context Platform from open source parts: ontology, connectors, workflows, store, API, MCP and UI, in one repository you can run."
+tags: [enterprise-architecture, context-engineering, agents, provenance, oss, durable-execution, knowledge-management]
+---
+
+# Building IT Intelligence: A Reference Implementation in One Repository
+
+## In short
+
+This is a reference implementation of the IT intelligence platform from my earlier post, in one open source repository with a deliberately messy fictional company, the Kestrel Group, inside it. The ontology comes first and everything is generated from or validated against it, and observations from sources are kept separate from the entities the model concludes from them. Every relationship is a row with a basis, a confidence and a source, and identity resolution runs from shared keys to rules to model inference, with uncertain links queued for the owning team to confirm. A workflow orchestrator, separate from the API, ingests with retries and resume, sources are scored in public, and the API serves REST and an MCP server whose small, entity-centric answers always carry their provenance. The order of the layers matters more than the tools; the database, workflow engine, frontend and model provider are choices you can revisit, and a test suite checks this post's claims against the running system.
+
+In [IT Intelligence](https://raskell.io/articles/it-intelligence/) I argued that large companies never built for their own IT what they built for their sales figures: one model that knows what exists, who owns it, how it connects and whether it matches the strategy, readable by every person and every agent who works on it. The obvious next question is a fair one: what does that look like when you build it?
+
+This post answers it as concretely as I can without showing anyone's real landscape, by walking through a reference implementation in a single open source repository, [raskell-io/it-intelligence](https://github.com/raskell-io/it-intelligence), with a fictional company inside it. You can clone it, run it on a laptop, point a coding agent at it, and see every layer the first post described: connectors, workflow orchestration, a persistence store, the Context Model itself, an API backend with an MCP server, a frontend, and the analytics that turn the model into artifacts.
+
+The reference is smaller, simpler and more boring than the platform I run at work, but it has the same shape, and the shape is what I want to show.
+
+## The fictional company
+
+Every example below uses the **Kestrel Group**, a made-up financial group with three market units, about forty applications, a dozen teams, two container clusters, a WAF, an API gateway and the usual collection of systems of record. The repository ships Kestrel as seed files that imitate the exports you would get from real tools: an application list from an EA repository, configuration items and incidents from an IT service management tool, repositories and teams from a git host, namespaces and workloads from a cluster, policies from a WAF, routes from a gateway.
+
+The seed data is deliberately messy. Names differ between systems, two applications claim the same repository, one namespace has no owner label, a market unit runs its own integration platform that nobody in group IT knows about, and the EA repository lists an application that was switched off a year ago. A clean demo would prove nothing, because IT intelligence earns its keep where the sources disagree.
+
+## The shape of the system
+
+*it-intelligence, the reference implementation*
+
+```text
+   ┌────────────────────────┐
+   │ seed/ or real sources  │
+   └────────────┬───────────┘
+                ▼
+   ┌────────────────────────┐
+   │ connectors (Go)        │
+   └────────────┬───────────┘
+                ▼
+   ┌────────────────────────┐     ┌──────────────────────┐
+   │ workflow orchestrator: │ ──▶ │ PostgreSQL:          │
+   │ extract, judge,        │     │ observations,        │
+   │ build, score           │     │ entities, edges,     │
+   └────────────┬───────────┘     │ scorecards,          │
+                │ LLM calls       │ artifacts            │
+                ▼                 └──────────┬───────────┘
+   ┌────────────────────────┐                │
+   │ resolver (pluggable    │                │
+   │ model provider)        │                │
+   └────────────────────────┘                ▼
+   ┌──────────────────┐      ┌──────────────────────────┐
+   │ web (Next.js)    │ ◀──▶ │ API (Go): REST, MCP,     │
+   └──────────────────┘      │ artifacts; starts runs   │
+                             └─────┬──────────────┬─────┘
+                                   ▲              ▲
+                     coding agents (MCP)   other systems (REST)
+
+   ontology/ (LinkML) ──▶ generated types, store vocabulary, JSON Schema, OWL
+```
+
+Six moving parts, and one file that sits above all of them. I will go through them in the order you would build them, which is not the order data flows through them. The ontology comes first, because everything else is generated from it or validated against it.
+
+## The repository
+
+```text
+it-intelligence/
+  ontology/       context_model.yaml, entities.yaml, relations.yaml: the Context Model in LinkML
+    generated/    JSON Schema, OWL, SHACL, the store vocabulary (do not edit)
+  cmd/itx/        the one binary: serve, worker, ingest, verify, runs, snapshot
+  connectors/     one package per source kind: earepo/ itsm/ githost/ cluster/ waf/ gateway/
+  mapping/        observations to candidate entities and edges, one mapper per connector
+  resolver/       identity resolution: keys, rules, inference, pluggable model providers
+  workflows/      the workflows, and runner/, the minimal orchestrator that runs them
+  store/          PostgreSQL migrations and the generated vocabulary
+  api/            REST, MCP and the queries both share
+  artifacts/      Mermaid diagrams and insights
+  web/            Next.js frontend
+  config/         sources, resolver thresholds and rules, people, the verify baseline
+  seed/           the Kestrel Group as source-shaped exports, plus an answer key
+  deploy/         docker compose for a laptop, a Helm chart for a cluster
+  docs/           architecture, decision records, adding a source
+  .mcp.json       lets a coding agent in this repo use the MCP server
+  Makefile
+```
+
+A monorepo is the right call here for a boring reason: the ontology changes, and when it does, the store, the mappers, the API, the MCP tools and the frontend types all have to change with it. In one repository that is one pull request, one review and one CI run. Spread over five repositories it is a coordination problem, which is exactly the kind of problem the platform is meant to remove.
+
+The stack is open source throughout and chosen for being unsurprising:
+
+| Concern | Choice in the reference | Why | Reasonable alternatives |
+|---|---|---|---|
+| Ontology | [LinkML](https://linkml.io/) | one YAML schema, many generated artifacts, a bridge to RDF and OWL | OWL with SHACL directly, JSON Schema alone |
+| Persistence | PostgreSQL | everyone can run it, recursive queries cover most graph needs | Apache AGE on PostgreSQL, a dedicated graph database |
+| Orchestration | a durable workflow orchestrator, its own component apart from the API; the reference ships a minimal one over PostgreSQL | retries, resume, schedules and long waits for people belong to the platform, not to each request | [Temporal](https://temporal.io/), [Restate](https://restate.dev/), [Aqueduct](https://github.com/raskell-io/aqueduct), or a similar engine |
+| Backend | Go | one static binary, `itx`, run as the API (`itx serve`) and as the workflow worker (`itx worker`) | any language with an MCP SDK |
+| Agent interface | [Model Context Protocol](https://modelcontextprotocol.io/) | what coding agents already speak | REST with an OpenAPI description |
+| Frontend | Next.js | fast to build entity pages, graph views and review queues | any web framework |
+| Diagrams | [Mermaid](https://mermaid.js.org/) as text | diffable, renders in Git hosts, wikis and chat | Structurizr DSL, PlantUML |
+
+Any of these can be swapped without changing the design. What cannot be swapped is the order of the layers and the rules each one follows.
+
+### Why Go
+
+One choice deserves more than a table row, because I would make it again for almost any platform a large company has to run for ten years: the backend is written in Go.
+
+Corporate code is read far more often than it is written, by people who did not write it, often years later and under some pressure. Go is built for exactly that reader. There is usually one idiomatic way to do a thing, and `gofmt` settles the layout, so code from one team and code from a contractor on another continent look the same. Everything is explicit and typed: errors are values you handle where they happen, dependencies are passed in rather than injected by a framework, and there is no inheritance hierarchy to climb before you find the line that does the work. The language simply does not offer most of the machinery that enterprise Java made famous, so the factories of factories never get written. A new colleague, or a coding agent, can open `resolver/` and follow it without a guide.
+
+Dependencies are named by where they live. An import path is a module path, and for most modules that is the address of a Git repository; the module file pins versions and a checksum file guards them:
+
+```go
+// go.mod (trimmed)
+module github.com/raskell-io/it-intelligence
+
+require (
+	github.com/jackc/pgx/v5 v5.12.0
+	github.com/modelcontextprotocol/go-sdk v1.8.0
+)
+```
+
+Inside the module, packages import each other by path and compile from source. That is what makes the monorepo cheap: the mappers, the resolver, the REST API and the MCP server share the generated `vocab` package without anyone publishing an internal library, versioning it and waiting for it to reach an artifact repository. Change the ontology, regenerate, and `go build ./...` tells you within seconds everything that broke.
+
+It is fast twice. A clean build of the whole repository, dependencies included, takes about twenty seconds on my laptop and a rebuild after a change under two, so the feedback loop stays short, and the result is one static binary that starts instantly and serves requests with little memory, which is what you want from both the API and the worker. The tooling comes in the box: `go test`, `go vet`, the race detector, `pprof` for profiling and `gopls` for every editor, with nothing to choose or configure. And the [Go 1 compatibility promise](https://go.dev/doc/go1compat) means code written today still builds in a decade, which is the timescale corporate software actually lives on.
+
+Go has its costs. `if err != nil` gets repetitive, the type system has no sum types, so some of the ontology's precision ends up in validation rather than in types, and generics arrived late and are deliberately modest. For the frontend I use TypeScript, where the ecosystem is. But for the part of a platform that has to be correct, boring and readable by the next person, I do not know a better fit.
+
+## Layer one: the ontology
+
+The Context Model is the ontology, and it lives in `ontology/`: `context_model.yaml` and the two files it imports, `entities.yaml` and `relations.yaml`. I use LinkML because it lets the model be written once, in readable YAML, and generated into the forms each part of the system needs: [JSON Schema](https://json-schema.org/) for validation, the store's vocabulary (tables of entity and relation kinds, and a trigger that rejects any edge outside its domain and range), [OWL](https://www.w3.org/TR/owl2-overview/) and [SHACL](https://www.w3.org/TR/shacl/) for anyone who wants to reason over it with semantic web tooling, Python and TypeScript models, and human-readable documentation. The Go types are generated from the JSON Schema.
+
+A trimmed version of the Kestrel model:
+
+```yaml
+# ontology/entities.yaml (trimmed)
+classes:
+  Entity:
+    abstract: true
+    slots: [id, name, standing, last_seen]
+  Application:
+    is_a: Entity
+    description: A thing the business recognises as one system, however many parts it has.
+  Repository:
+    is_a: Entity
+  Workload:
+    is_a: Entity
+  Namespace:
+    is_a: Entity
+  Team:
+    is_a: Entity
+  Capability:
+    is_a: Entity
+    description: A business capability from the enterprise architecture capability map.
+  Endpoint:
+    is_a: Entity
+  Decision:
+    is_a: Entity
+    description: An architecture decision record, with the entities it constrains.
+  MarketUnit:
+    is_a: Entity
+
+enums:
+  Standing:
+    permissible_values:
+      secondary: {description: mirrored from an authoritative system}
+      primary: {description: the Context Model is authoritative}
+```
+
+Relationships are a closed vocabulary of slots. LinkML allows one domain per slot, so where a relationship may start from several kinds of entity, annotations carry the full domain and range for the generator that writes the store's vocabulary:
+
+```yaml
+# ontology/relations.yaml (trimmed)
+slots:
+  deployed_as:
+    description: The application runs as this workload.
+    domain: Application
+    range: Workload
+    multivalued: true
+    annotations: {ctx_domain: Application, ctx_range: Workload, ctx_cardinality: many}
+  runs_in:
+    description: The workload runs in this namespace.
+    domain: Workload
+    range: Namespace
+    annotations: {ctx_domain: Workload, ctx_range: Namespace, ctx_cardinality: one}
+  owned_by:
+    description: The accountable team.
+    range: Team
+    annotations: {ctx_domain: "Application Repository Workload Namespace Endpoint", ctx_range: Team, ctx_cardinality: one}
+```
+
+Four modelling rules came out of building this, and they matter more than the syntax.
+
+**Keep the core small.** Kestrel has nine entity kinds and exactly fifteen relationship kinds. Every new kind has to justify itself by a question it lets someone answer. The failure mode, as I wrote in the first post, is ontology sprawl, and the defence is a schema one person can explain on a whiteboard.
+
+**Separate entities from observations.** An observation is what a source said at a point in time: a row in an export, a JSON object from an API. An entity is what the Context Model concluded from all observations together. Mixing the two is how a catalogue becomes a copy of its sources, with all their contradictions.
+
+**Make relationships first-class.** In the ontology a relationship is a slot. In the store every relationship becomes a row of its own, with a basis, a confidence, a source and a "last seen". That is the only way to answer "why does the model think this?", which is the question that decides whether anyone trusts it.
+
+**Take the capability map from enterprise architecture, not from the platform team.** `Capability` is populated from the group's own capability model. That single decision is what lets a question like "which systems support claims handling in every market unit" be a query, and it is how strategy enters the model.
+
+`make ontology` regenerates everything in `ontology/generated/`, and CI fails if the generated files are out of date. The ontology is code, reviewed like code.
+
+## Layer two: the store
+
+PostgreSQL holds five things: observations, entities, edges, scorecards and artifacts. Around them sit a few supporting tables: aliases (the names each source uses for an entity), a registry of data sets, an append-only log of every confirmation and declaration, the recorded model judgements, snapshots, and the state of workflow runs. The core is short enough to show:
+
+```sql
+-- store/schema.sql (trimmed)
+create table observation (
+  id           bigserial primary key,
+  source       text not null,          -- 'earepo', 'cluster', ...
+  dataset      text not null,          -- 'applications', 'workloads', ...
+  external_id  text not null,          -- the id inside the source
+  payload      jsonb not null,
+  observed_at  timestamptz not null
+);
+
+create table entity (
+  id          text primary key,        -- 'ctx:Application/policy-admin'
+  kind        text not null,
+  name        text not null,
+  standing    text not null default 'secondary',
+  attributes  jsonb not null default '{}',
+  last_seen   timestamptz not null
+);
+
+create table edge (
+  id            text primary key,       -- a stable hash of kind, endpoints and source
+  kind          text not null references relation_kind(kind),
+  from_id       text not null references entity(id),
+  to_id         text not null references entity(id),
+  basis         text not null,          -- 'asserted' | 'derived' | 'inferred'
+  confidence    double precision not null,
+  status        text not null,          -- 'active' | 'pending' | 'rejected'
+  source        text not null,
+  evidence      jsonb not null default '{}',
+  confirmed_by  text,
+  confirmed_at  timestamptz,
+  last_seen     timestamptz,
+  unique (kind, from_id, to_id, source)
+);
+```
+
+Observations are append-only. Nothing is ever overwritten, so the model can always be rebuilt from what the sources said, and every edge can point back to the observations that produced it through its `evidence`.
+
+The `basis` column carries the distinction from the first post. An **asserted** edge came straight from a source's own key: the cluster says this workload runs in that namespace. A **derived** edge follows from other edges by a rule: the workload runs in a namespace owned by a team, so the team owns the workload unless something says otherwise. An **inferred** edge was proposed by the resolver, usually with a model's help, and carries a confidence and the reasoning behind it. When a team confirms an inferred edge, `confirmed_by` and `confirmed_at` are set and the edge becomes asserted, with a person's name on it. A trigger on the table checks every edge against the vocabulary generated from the ontology, so the store cannot hold a relationship the model does not allow.
+
+None of this needs a provenance standard to work, but it lines up with one. In the terms of the W3C's [PROV-O](https://www.w3.org/TR/prov-o/), an edge is an entity that was derived from the observations in its `evidence` and attributed to its `source` or, once confirmed, to a person. The reference does not export PROV, and it does not yet record which ingest run produced an edge, the activity in PROV's terms; if another tool needs the lineage, those are the two places to start.
+
+Why PostgreSQL and not a graph database? Because most of what architects and agents ask is one or two hops from an entity, and the rest is a bounded traversal that a recursive query handles well. The classic "what breaks if I change this" question:
+
+```sql
+-- everything that depends on payment-gateway, up to four hops away
+with recursive impact(id, depth) as (
+  select 'ctx:Application/payment-gateway'::text, 0
+  union
+  select e.from_id, i.depth + 1
+  from edge e
+  join impact i on e.to_id = i.id
+  where e.kind = 'depends_on' and i.depth < 4
+)
+select id, min(depth) as distance
+from impact
+where depth > 0
+group by id
+order by distance, id;
+```
+
+If the graph grows past what this handles comfortably, [Apache AGE](https://age.apache.org/) adds openCypher queries to the same PostgreSQL instance, and a dedicated graph database is a later, separate decision. Starting with the database every team already knows how to operate is worth more than the elegance of a graph query language on day one.
+
+## Layer three: connectors and mapping
+
+A connector does one thing: it reads a source and emits observations. It knows nothing about the ontology.
+
+```go
+// connectors/connector.go
+type Observation struct {
+	Source     string
+	Dataset    string
+	ExternalID string
+	Payload    json.RawMessage
+	ObservedAt time.Time
+}
+
+type Connector interface {
+	Name() string
+	Datasets() []string
+	Extract(ctx context.Context, dataset string, since time.Time) iter.Seq2[Observation, error]
+}
+```
+
+Mapping is a separate step, one mapper per connector, and it turns observations into **assertions**: candidate entities and candidate edges, each tagged with the observation it came from. The kind and relation constants come from a `vocab` package generated from the ontology, so a mapper cannot invent a relationship.
+
+```go
+// mapping/mappers.go, the cluster mapper (trimmed)
+func (clusterMapper) Map(ctx Context, o connectors.Observation) (Assertions, error) {
+	a := start(o)
+	var k k8sObject
+	if err := decode(o, &k); err != nil {
+		return a, err
+	}
+	if o.Dataset == "workloads" {
+		wl := a.Entity(vocab.Workload, k.Metadata.Namespace+"/"+k.Metadata.Name, k.Metadata.Name, nil)
+		a.Edge(vocab.RunsIn, wl, Key(vocab.Namespace, k.Metadata.Namespace), Asserted)
+		// The cheapest win in the whole system: a label carrying the EA application id
+		// turns an inference into an assertion.
+		if app := k.Metadata.Labels[ctx.Config.ApplicationLabel]; app != "" {
+			a.Edge(vocab.DeployedAs, Alias(vocab.Application, "earepo:applications", app), wl, Asserted)
+		}
+	}
+	return a, nil
+}
+```
+
+The split keeps connectors reusable, because the same git host connector works for any company, and keeps the company-specific knowledge in the mappers, where it can be reviewed. It also means a connector can be written by the team that owns the source, which is how contribution starts. In the reference, adding a source is three files: a connector, a mapper and a seed export to test against.
+
+The label check matters beyond this one mapper: every team that adds the EA application ID to its deployments turns one of the model's inferences into an assertion, and the scorecard shows the improvement the next morning.
+
+## Layer four: identity resolution
+
+Mapping produces many candidates for the same thing. The EA repository says "Policy Administration", the git host has `pol-adm-svc` and `pol-adm-ui`, the cluster runs `policy-admin` in namespace `claims-prod`, and the IT service management tool has a business service called "PAS". Resolution decides which of these are one entity.
+
+It runs in three passes, from cheap and certain to expensive and uncertain:
+
+1. **Keys.** Shared identifiers across sources, such as the application ID in a deployment label or a CMDB reference in a repository's metadata file, produce asserted links.
+2. **Rules.** Deterministic heuristics with known precision: identical normalised names, a repository whose owning team owns exactly one application, a namespace naming convention. These produce derived links.
+3. **Inference.** Whatever is left goes to a model. Each candidate gets a shortlist of at most five applications, those of its owning team first and then the most similar names, and the model sees the candidate's name, README excerpt or description, owner and namespace, and returns a structured judgement.
+
+```json
+{
+  "candidate": "githost:repo/kestrel/pol-adm-ui",
+  "match": "ctx:Application/policy-admin",
+  "confidence": 0.82,
+  "reasons": [
+    "README describes the policy administration frontend",
+    "same owning team as pol-adm-svc, already linked by key",
+    "deploys to claims-prod next to policy-admin"
+  ]
+}
+```
+
+"PAS", the business service in the IT service management tool, resolves the same way: the model links it to Policy Administration at 0.93, because PAS is the usual abbreviation, the support group owns the application, and its incident texts mention `pol-adm-svc`.
+
+The thresholds are explicit and live in configuration. Above 0.9 the link is stored as inferred and shown normally. Between 0.6 and 0.9 it is stored as inferred and queued for the owning team to confirm. Below 0.6 it is dropped and logged. No inferred link is ever silently promoted to asserted; that takes a person. The model provider is pluggable. By default the reference replays recorded judgements, so it runs offline, without an API key, and gives the same answers every time; one line in `config/resolver.yaml` switches it to a local model or a hosted one, which works well because the inputs are metadata and the prompts are small.
+
+The problem is an old one. Statisticians call it record linkage, and Ivan Fellegi and Alan Sunter gave it a formal theory in 1969: two thresholds split candidate pairs into links, non-links and possible links that go to a person for review. The three bands above are the same idea, with a model's judgement where their theory has match weights. If your sources hold millions of records rather than a few hundred applications, look at [Splink](https://moj-analytical-services.github.io/splink/), an open source implementation of that probabilistic approach from the UK Ministry of Justice.
+
+## Layer five: workflows
+
+Ingestion talks to flaky sources and calls models that time out, so it needs retries per step, resumption after a crash, schedules, and a place to see what happened. And not everything here is quick: a link waits for a team to confirm it, a primary declaration waits for a second person to approve it, and either can sit for days while someone is on holiday and a reminder goes out by email. That work does not belong in the API. So workflow orchestration is a component of its own: the API is the control plane, which starts runs and reports on them but never runs them, and an orchestrator does the running.
+
+In production that orchestrator is a durable workflow engine, Temporal, Restate or something similar; the design does not depend on which.
+
+One candidate is my own: [Aqueduct](https://github.com/raskell-io/aqueduct), a durable execution engine in Rust built for procedures that agents write and people approve. It journals every step before it counts, waits for a person with a timeout (a signal or an id anyone can complete, raised to someone else if nobody answers), and runs steps on workers in any language over gRPC or HTTP, so the steps here could stay in Go. It is young, and its own README asks you not to depend on it yet, so I name it as an option rather than the default.
+
+The reference ships a minimal orchestrator over PostgreSQL behind the same contract, as a separate process, `itx worker`, so it runs on a laptop with nothing else to install. A workflow is a fixed list of idempotent steps:
+
+```go
+// workflows/workflows.go (trimmed)
+modelSteps := []runner.Step{
+	{Name: "Judge", Run: d.judge, Timeout: 30 * time.Minute},
+	{Name: "Build", Run: d.build, Timeout: 10 * time.Minute},
+	{Name: "Score", Run: d.score, Timeout: 10 * time.Minute},
+}
+return []runner.Workflow{
+	{Name: "IngestSource", Steps: append([]runner.Step{extract}, modelSteps...)},
+	{Name: "IngestAll", Steps: all},
+	{Name: "ConfirmLink", Steps: []runner.Step{applyLink, build, score}},
+	{Name: "DeclarePrimary", Steps: []runner.Step{applyPrimary, build}},
+	{Name: "BuildArtifacts", Steps: artifactSteps},
+}
+```
+
+Runs and step attempts live in two tables. A worker claims a run with `select ... for update skip locked` and keeps a heartbeat, so several workers can run side by side and a run abandoned by a crashed process is picked up by another. A run resumes at the first step that did not succeed, retries back off with jitter, and steps pass nothing but the run id: whatever a step produces goes to PostgreSQL. Because the API and the worker are separate processes, they scale separately, and a slow ingest never holds up a query from an agent.
+
+| Workflow | Trigger | Steps |
+|---|---|---|
+| `IngestSource` | a source's interval, or on demand | Extract, Judge, Build, Score |
+| `IngestAll` | `make ingest` | Extract for every source, then Judge, Build, Score and the artifact steps |
+| `ConfirmLink` | a team confirms or rejects in the UI | Apply, Build, Score |
+| `DeclarePrimary` | a data set owner's request, approved by a second person | Apply, Build |
+| `BuildArtifacts` | nightly, and at the end of `IngestAll` | Snapshot, Diagrams, Insights |
+
+Every run shows up on `/runs` with its steps, attempts, errors and durations, which matters more than it sounds: when a source's scorecard drops, the first question is what happened during the last ingest, and the answer is one click away. What the minimal orchestrator cannot do is wait days for a person inside a workflow, send the reminders, or fan out to thousands of parallel tasks. In the reference, `ConfirmLink` and `DeclarePrimary` therefore start only after the person has answered. A durable engine moves that wait into the workflow itself, which is the first thing it adds, and swapping it in is mechanical: the steps already have the shape of activities, and the API only ever starts runs and reads their state.
+
+## Layer six: scoring
+
+The `Score` activity computes a scorecard per source and data set on every ingest:
+
+| Signal | Computed as |
+|---|---|
+| freshness | share of records changed or confirmed within the source's expected cycle |
+| completeness | share of records with every field the mapper needs |
+| agreement | share of facts that at least one other source confirms, so facts only one source holds pull it down |
+| resolvability | share of records whose identity and references all resolve to Context Model entities |
+
+The overall score is a weighted mean, the weights are configuration, and every number links to the records behind it. On the seed after one ingest, the EA repository's applications score 0.58 and its capabilities 0.45, the cluster's namespaces 0.75, and the IT service management tool's business services 0.99. Two things follow from the scores. Every asserted fact starts at a confidence of 0.7 plus 0.3 times its source's last overall score, so a fact from a well-kept source outranks the same claim from a neglected one, and derived facts inherit the weakest confidence in their chain. And the scorecards are public, on a page every team can see, which turns data quality from an audit finding into something closer to a league table.
+
+## Layer seven: the API and the MCP server
+
+The API process, `itx serve`, serves three surfaces from the same queries: a REST API for systems and the frontend, an MCP server for agents, and a static endpoint for generated artifacts. Keeping them in one process is deliberate. An agent and a person looking at the same entity must see the same facts, and the easiest way to guarantee that is to not have two implementations.
+
+The MCP server is where most of the design effort went, because tools for agents are an interface with different rules than an API for programs. The Kestrel server exposes a handful:
+
+| Tool | Input | Returns |
+|---|---|---|
+| `search_entities` | text, optional kind | matching entities with ids, kinds and one-line summaries |
+| `get_entity` | id | the entity, its attributes, its standing and its direct edges |
+| `find_owner` | id or free-text name | the owning team, how the ownership was established, and confidence |
+| `impact_of_change` | id, depth | dependants up to the given depth, grouped by distance |
+| `explain_fact` | edge id | the evidence behind one edge: sources, observations, basis, who confirmed it |
+| `list_decisions` | id | architecture decisions that constrain the entity |
+| `render_diagram` | id, view | a Mermaid diagram of the entity's neighbourhood |
+
+Three rules shaped them. **Tools are entity-centric**, because agents reason better from "give me this thing and its neighbourhood" than from generic query languages. **Every answer carries its provenance**, so an agent can cite where a fact came from and a human can check it. **Answers are small**, with ids the agent can follow up on, rather than whole subgraphs, because the point of the platform is to save the agent tokens, not to flood its context window. I made the economic case in [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/) and the design case for tools in [Tools: How Agents Actually Do Things](https://raskell.io/articles/tools-how-agents-actually-do-things/).
+
+Asked *"who owns claims-prod and what depends on it?"*, an agent in the repository calls `find_owner` and gets this after the first ingest:
+
+```text
+find_owner {"id": "claims-prod"}
+  owner: ctx:Team/claims-platform, derived, 0.92
+  path:  ctx:Namespace/claims-prod <- runs_in - ctx:Workload/claims-prod/claims-settlement (asserted, cluster)
+         ctx:Workload/claims-prod/claims-settlement <- deployed_as - ctx:Application/claims-settlement (asserted, cluster)
+         ctx:Application/claims-settlement - owned_by -> ctx:Team/claims-platform (asserted, itsm)
+```
+
+The namespace carries no owner label, so the ownership is derived, and the answer says so. Three claims applications run in `claims-prod` and all point to the same team; the strongest chain wins, and the agent can cite every fact it rests on. The team's next step is plain from the answer: an owner label on the namespace turns the derivation into an assertion.
+
+To let a coding agent use it, the repository carries a project-scoped MCP configuration. In Claude Code that is a `.mcp.json` at the repository root:
+
+```json
+{
+  "mcpServers": {
+    "it-intelligence": {
+      "type": "http",
+      "url": "http://localhost:8080/mcp"
+    }
+  }
+}
+```
+
+In a company, the same entry points at the shared instance and goes into the template every new repository starts from. From then on, every coding agent on every notebook can ask who owns a service before it writes code against it.
+
+## Layer eight: the frontend
+
+The Next.js frontend is the least interesting layer technically and the one that decides whether people come back. It has five views:
+
+- **Entity pages**, one per entity, with attributes, edges grouped by kind, provenance on hover, and a "last seen" that turns amber when a fact goes stale.
+- **A graph view** of any entity's neighbourhood, filtered by relationship kind and depth.
+- **A review queue** per team, with the inferred links waiting for confirmation and the model's reasons next to each.
+- **Source scorecards**, the league table from layer six.
+- **Artifacts**, everything `BuildArtifacts` produced, each stamped with the snapshot it was built from.
+
+The TypeScript types come from the ontology, so when the model changes the frontend fails to compile until it catches up, which is the right kind of friction.
+
+## Layer nine: artifacts
+
+Artifacts are where a context model starts earning its keep beyond lookups. The `BuildArtifacts` workflow takes a snapshot of the model and runs generators over it. Each artifact records the snapshot it came from, so it can be reproduced and so a reader knows how current it is.
+
+**Diagrams as text.** A generator walks an entity's neighbourhood and writes Mermaid. For Kestrel's policy administration application, the output is:
+
+```text
+flowchart LR
+  app_policy_admin["Policy Administration<br/>owner: claims-platform"]
+  repo_svc["repo: pol-adm-svc"]
+  repo_ui["repo: pol-adm-ui"]
+  wl["workload: policy-admin<br/>ns: claims-prod"]
+  ep["endpoint: api.kestrel.example/policies<br/>WAF: enforced"]
+  cap["capability: Policy Management"]
+  pay["Payment Gateway"]
+
+  app_policy_admin -->|realised_by| repo_svc
+  app_policy_admin -.->|realised_by, inferred 0.82| repo_ui
+  app_policy_admin -->|deployed_as| wl
+  app_policy_admin -->|exposed_via| ep
+  app_policy_admin -->|supports| cap
+  app_policy_admin -->|depends_on| pay
+```
+
+Inferred edges are dashed and labelled with their confidence, so the diagram is honest about what it knows. Because it is text, it renders in the Git host, the wiki and the chat tool, and it can be diffed between snapshots to show what changed in a landscape over a quarter.
+
+**Insights.** Each insight is a query with a name, a description and a threshold, run on every snapshot. Kestrel ships with a few that tend to find something in any real company:
+
+```sql
+-- applications in production with no accountable owner
+select a.id, a.name
+from entity a
+where a.kind = 'Application'
+  and a.attributes->>'lifecycle' = 'production'
+  and not exists (
+    select 1 from edge e
+    where e.from_id = a.id and e.kind = 'owned_by'
+      and e.confidence >= 0.8
+  );
+```
+
+Others find capabilities supported by more than one platform per market unit (consolidation candidates), endpoints exposed to the internet without a WAF policy, applications whose EA lifecycle says "retired" while workloads still run, and repositories with a truck factor of one, computed from commit history. Each finding links to the entities involved, so it is a starting point for a conversation rather than a report that gets filed.
+
+**Drafts** are the next step and not built yet: generators for a solution design's current-state section, a pre-filled architecture decision record or a short business case, each required to cite an entity or an edge for every claim. That citation rule is the defence against what I called artifact over-trust in the first post.
+
+## Running it
+
+You need Docker, and no API key.
+
+```sh
+git clone https://github.com/raskell-io/it-intelligence
+cd it-intelligence
+make up       # PostgreSQL, the API, the workflow worker and the web UI
+make seed     # register the Kestrel Group sources
+make ingest   # extract, judge, build, score, and build the artifacts
+make verify   # check the resolver against the answer key, and this post against the system
+open http://localhost:3000
+```
+
+After the first ingest, three places are worth a look. The scorecards page shows the EA repository export scoring worst on freshness: most of its records were last touched more than half a year ago, among them the application that was switched off a year ago. The review queue for the claims platform team holds the inferred link from `pol-adm-ui` to Policy Administration, at 0.82, with the model's three reasons. And asking a coding agent in the repository "who owns claims-prod and what depends on it?" produces an answer that cites its path through the graph, in two tool calls instead of twenty.
+
+The part I am proudest of is `make verify`. The seed ships with an answer key: what the Kestrel Group really looks like, written down by hand. The verify step compares the resolved model with it and checks every concrete claim in this post against the running system, and CI runs it on every change. On the seed, edges come out with a precision of 0.996 and a recall of 0.994, and identities at 1.0. Every rule's precision is measured too, and one of them, `team_owns_single_app`, gets 0 of its 1 case right: it links an experiments repository to an application it has nothing to do with. That is exactly the kind of thing a reference should show rather than hide.
+
+## What the reference leaves out
+
+A reference implementation earns trust by being honest about its gaps, and these are the big ones.
+
+- **Identity and access.** The reference has no authentication. Writes carry a name from an "act as" picker, sent as an `X-Actor` header, because confirmations and primary declarations need one. A real deployment needs real identity for writes, even if reads stay open to everyone, as I argued they should.
+- **Real connectors at scale.** The connectors read the seed files; only the git host has a small live mode, for one GitHub organisation. Production connectors deal with pagination, rate limits, partial failures, credentials and sources that change their schema without warning. That work is unglamorous and endless.
+- **History.** The reference keeps observation history but rebuilds entities and edges in place. Point-in-time questions ("what did the landscape look like before the migration?") need edge history with validity intervals, which is a straightforward extension and a real cost in storage and query complexity. Snapshots, and `itx snapshot diff` between them, are the cheap substitute in the meantime.
+- **Scale.** Kestrel has forty applications, and the reference rebuilds the whole model on every ingest. That is fine for thousands of entities, not for millions. PostgreSQL copes with a large group's landscape, but the build has to become incremental and the recursive queries need indexes, limits and some care.
+- **Drafts.** The generators for decision records and business cases, with their citation check, are not built yet.
+- **Governance of the ontology itself.** Who may add an entity kind, and how the change is reviewed, is an organisational question the repository can support with code review but not answer.
+
+None of these changes the shape. They are the difference between a reference you can understand in an afternoon and a platform you can run for a group.
+
+## What to take from it
+
+If you build one of these, the order matters more than the tools: an ontology first, with everything generated from it; observations kept apart from entities; every relationship a row with a basis, a confidence and a source; sources scored in public; the MCP server in the same process as the API, and orchestration outside it; artifacts as text, from snapshots, with their sources. The database, the workflow engine, the frontend framework and the model provider are choices you can revisit later.
+
+The repository is there to be taken apart. If you run it against your own exports and the model gets something wrong, that is the most useful thing that can happen, and I would like to hear about it: [CONTRIBUTING.md](https://github.com/raskell-io/it-intelligence/blob/main/CONTRIBUTING.md) explains how to add a source, and issues are open.
+
+
+## References
+
+- Raffael Schneider, [IT Intelligence: The Missing Data Layer of Enterprise IT](https://raskell.io/articles/it-intelligence/), the companion post with the argument for the platform.
+- [raskell-io/it-intelligence](https://github.com/raskell-io/it-intelligence), the reference implementation, with its decision records in `docs/adr/`.
+- [LinkML](https://linkml.io/), the Linked Data Modeling Language, and its [generators](https://linkml.io/linkml/generators/).
+- [Temporal](https://temporal.io/), [Restate](https://restate.dev/) and [Aqueduct](https://github.com/raskell-io/aqueduct), durable execution engines, any of which can take the orchestrator's place.
+- [PostgreSQL documentation on recursive queries](https://www.postgresql.org/docs/current/queries-with.html) (`WITH RECURSIVE`).
+- [Apache AGE](https://age.apache.org/), graph queries with openCypher on PostgreSQL.
+- [Model Context Protocol](https://modelcontextprotocol.io/), and the [official Go SDK](https://github.com/modelcontextprotocol/go-sdk).
+- [Mermaid](https://mermaid.js.org/), diagrams as text.
+- [Backstage software catalog](https://backstage.io/docs/features/software-catalog), the developer-portal ancestor of the entity model.
+- Simon Brown, [The C4 model](https://c4model.com/), for architecture views that a generator can target.
+- [The Go 1 compatibility promise](https://go.dev/doc/go1compat), the reason Go code written years ago still builds.
+- Ivan P. Fellegi and Alan B. Sunter, "A Theory for Record Linkage", *Journal of the American Statistical Association* 64, no. 328 (1969): 1183 to 1210, [doi:10.1080/01621459.1969.10501049](https://doi.org/10.1080/01621459.1969.10501049), the foundation of identity resolution with thresholds and clerical review.
+- [Splink](https://moj-analytical-services.github.io/splink/), open source probabilistic record linkage from the UK Ministry of Justice.
+- W3C, [PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/), the standard vocabulary for where a fact came from.
+- W3C, [OWL 2 Web Ontology Language](https://www.w3.org/TR/owl2-overview/) and [SHACL](https://www.w3.org/TR/shacl/), the semantic web forms the ontology is generated into, and [JSON Schema](https://json-schema.org/), the form used for validation.
+- Michael Nygard, [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions).
 
 
 ================================================================================
@@ -28,94 +587,6 @@ What I take from both is that a memory nobody checks against what happened does 
 
 - Lance Martin, [The components of agent memory](https://www.anthropic.com/research/components-of-agent-memory), Anthropic, 6 November 2026.
 - Letta, [Sleep-time Compute](https://www.letta.com/blog/sleep-time-compute), 21 April 2025, where the idea of agents using idle time to reorganise their memory was proposed.
-
-
-================================================================================
-
----
-title: "Its Own Metaphor"
-url: https://raskell.io/articles/review-how-life-works/
-author: Raffael Schneider
-date: 2026-11-14
-description: "Philip Ball's How Life Works is the popular science book I wish every other one were: deep, clear, and honest about how we came to know what we know."
-tags: [life-sciences, genetics, emergence, complex-systems, philosophy-of-science, synthetic-biology]
-categories: [reviews]
-review_of: "How Life Works"
-review_of_author: "Philip Ball"
-review_of_kind: book
-review_of_year: 2023
-rating: 9/10
----
-
-# Its Own Metaphor
-
-## In short
-
-Philip Ball's *How Life Works* is a tour of the new biology, from genes to bodies to medicine, and the best popular science book I have read; I give it 9 out of 10. Its argument is that the genome is not a blueprint and life is not a machine or a computer: genes are resources the cell draws on, and every level of life has its own rules. It explains the science deeply enough to get a real grip on it, and it tells how each piece of knowledge was won, by whom, and with which technique. Ball keeps describing life as if it were engineered, then attributes everything to evolution; I read the same evidence the other way. Some of its arguments against the computer metaphor aim at an old picture of computing, and its take on AlphaFold has aged, but none of that changes the recommendation.
-
-On June 26, 2000, Bill Clinton announced the first draft of the human genome and said that we were learning "the language in which God created life." Philip Ball opens *How Life Works* with that sentence and answers it in the next line: Clinton was wrong, but not (just) in the way you might think. The problem, Ball says, was never the reference to God. It was the idea that the genome is an instruction book at all.
-
-I read the book in April 2025 and only now realised it was missing from [my reading log](https://raskell.io/reading/). It belongs near the top. It is the best popular science book I have read, and the one I would hold up as the model for all the others. I give it 9 out of 10.
-
-## What the book argues
-
-The book is a user's guide in the literal sense: it walks through life one level at a time, from genes and RNA to proteins, networks, cells, tissues, and bodies, then to agency, medicine, and the engineering of new living things. At each level Ball shows a picture most of us learned at school, explains why the research of the last few decades has broken it, and describes what is taking its place.
-
-The thread that ties the levels together is a single claim. The genome is not a blueprint, a program, or a code that an organism executes. Genes, in his phrase, are "not instructions, but resources": a toolkit the cell draws on, switched on and off by committees of molecules, read differently in every context. The decisions that make a body are taken higher up, by cells and tissues that sense, signal, and settle into a small number of stable states. No level is in charge, and each has rules that do not depend on the details of the level below.
-
-| Level | The picture we learned | Ball's picture |
-|---|---|---|
-| Genes | A blueprint; a gene for each trait | Resources the cell draws on; most variants matter only in combination |
-| RNA | A messenger carrying the gene's instructions | Where much of the regulation happens; a large part of the genome is read for control, not for proteins |
-| Proteins | Machines with a fixed shape: lock and key | Many are partly disordered and take their role from context and partners |
-| Networks | Circuits of switches | Regulation "by committee": loose, combinatorial, noisy, and robust because of it |
-| Cells | Factories following orders | Agents that decide their fate together, settling into stable states |
-| Tissues and bodies | Built to a plan | Generated by rules: chemical gradients, Turing patterns, mechanical forces |
-
-Ball's conclusion is that living things "have to be their own metaphor." No technology we have built works the way a cell does. The closest analogy he finds, in the epilogue, is language: something that works on many levels at once and loses its meaning when you reduce it to its words.
-
-## How it is told
-
-What makes the book great is the writing. Ball is curious, generous, and a little flashy, in the best sense: he enjoys his material and wants you to enjoy it too. He explains how microbiology works in plain language without flattening it, so that you come away with a real grip on what is happening inside a cell rather than a pleasant feeling of having been told. When the science gets complicated he does not hide it; he shows you why it is complicated and what the complication is for.
-
-He also tells how we came to know what we think we know. Each chapter is a history of a technique and the people who used it: Conrad Waddington drawing cell fates as balls rolling down a landscape of valleys, Alan Turing working out how spots and stripes can arise from two chemicals, Shinya Yamanaka turning adult cells back into stem cells with four factors, single-cell sequencing that finally let researchers watch the valleys Waddington imagined. He includes the false starts, the reversals, and the researchers who took months to believe their own data. It is science shown as an iterative, human process, which is how it actually works, and it is far more convincing than a list of results.
-
-Some of the episodes stay with you. Cut a flatworm into a hundred pieces and each grows into a whole worm. Five fingers is not written anywhere in the genome; it is what a Turing-type pattern happens to fit into a limb bud, and the same mechanism, tuned differently, makes fins. The side of the body your heart ends up on is decided, early in the embryo, by tiny hairs stirring fluid in one direction.
-
-## Designed, and then not
-
-There is one thread through the book that Ball never resolves, and I think it is the most interesting thing in it.
-
-Ball describes life, again and again, in the language of design. Its mechanisms are "ingenious." Combinatorial signalling and causal emergence are "design principles." Bodies form through rules that are designed to produce something generative rather than a fixed product. In chapter 9 he says it outright: all these processes behave as if serving some overall plan, and "Biology looks uncannily teleological," that is, as if directed toward a goal. He then takes on William Paley's argument from 1802 that contrivances like the eye point to a designer.
-
-And every time, he steps back. The appearance of a plan is real, he argues, but it comes from evolution working with self-organisation, physics that gives structure "for free," and the agency of organisms themselves. In the epilogue he even asks whether that agency might give evolution something like a direction, and hurries to add that this is "not a backdoor for intelligent design." In the prologue he offers readers who believe in God the consolation that God comes out of the new biology looking smarter than the Human Genome Project implied, and invites everyone else simply to be enchanted by the genius of life.
-
-I read the same evidence the other way. I believe life was engineered, though not necessarily in a theistic sense: I do not need the designer to be a god for the design to be real. What struck me is how much of Ball's own material fits that reading better than the one he chooses. A small, shared toolkit that produces coherent bodies from loose rules. Generative systems that correct their own errors. A cell computing close to the physical limit of efficiency. Layers of control that delegate decisions upward, the way a good engineer builds a system to adapt rather than to follow a script. Ball spends four hundred pages explaining that life is not a machine because it is far cleverer than any machine we have made. That is a strange argument against design.
-
-To be fair to him: he is a science writer explaining the consensus of his field, and he says plainly which questions remain open. The book is honest about the limits of what is known, and it does not pretend the design question is settled by the data. It simply declines to ask it. I would have liked one chapter that did.
-
-## What a builder takes from it
-
-For someone who builds systems, the book is full of ideas worth stealing:
-
-- **Noise as a resource.** Cells do not fight molecular randomness so much as use it to make decisions, explore options, and keep populations diverse.
-- **Structure for free.** Cells let physics do work they never specify: phase separation, surface tension, buckling. The equivalent in software is using what the platform already provides.
-- **Generative, not prescriptive.** A body is not assembled from a plan but grown toward a target shape by rules that correct themselves. A cut zebrafish tail regrows, stripes included.
-- **Prediction on a budget.** Ball reports an estimate that a cell computes within about ten times the theoretical minimum energy, while our computers use around a million times more. Life, as he puts it, takes care not to overthink the problem of survival. It fits my conviction that [intelligence is compression](https://raskell.io/notes/intelligence-is-compression/): an organism stores only what helps it predict.
-
-Two places where I would push back. First, the computer Ball argues against is an old one: the tape reader, the fixed circuit, the program as a list of steps. Modern distributed systems are noisy, fault-tolerant, and full of emergent behaviour, and a program never builds anything without the runtime it runs on. "Source plus runtime" survives his argument; only "source alone" fails. Second, his verdict on AlphaFold, that it "does not so much solve" the protein-folding problem "as sidestep it", undersells what it does. Predicting the result without simulating the path is exactly what makes it useful. The book was finished before the Nobel Prize for that work, which I wrote about in my review of [*The Infinity Machine*](https://raskell.io/articles/win-everything-control-no-one/).
-
-## Medicine and making
-
-The last chapters turn the argument into practice, and they are where the book is most hopeful. If disease is a state of the whole body rather than a broken part, medicine should work at the level where the cause sits, and aim, as Ball says, less at curing disease than at curating health. He is sceptical that genetic screening or gene therapy will help much with common diseases, which involve hundreds of variants each, and hopeful about immunotherapy, about nudging cancer cells back to a benign state, and about the body's own small number of ways of failing and recovering.
-
-Then come the things that sound like science fiction and are not: organoids, synthetic embryo models with beating hearts, and xenobots, tiny living machines made from frog cells, designed by an evolutionary algorithm in a computer, and then assembled by hand. Ball's view is that we will engineer life not by writing genes but by steering how cells organise themselves. Whichever way that turns out, it confirms what I believe about the atom, the bit, and the gene: the life sciences are at the very beginning of their revolution.
-
-## Who should read it
-
-Anyone who wants to understand how living things work as we know them now, not as the textbooks of thirty years ago taught it. You need no background in biology, but you will need attention: it is a long book, and dense in places, and it rewards being read slowly.
-
-A note on how this review came about: I am writing it a year and a half after I finished the book, so the details are not as fresh as they would be for something I read last week. I went back to the text to check every quotation and example above, but the judgement is the one I carried away in 2025, and it has not faded. What prompted me to write it now is the book I am reading at the moment, Walter Isaacson's *The Code Breaker*, and the contrast is instructive. Isaacson tells the story of gene editing through the people who invented it; Ball explains why the gene was never the whole story. A few chapters in, Isaacson feels slow and a little patronising next to Ball, who trusts his reader with the real complexity and makes it a pleasure. That trust is what I would wish for every popular science book.
 
 
 ================================================================================
@@ -216,6 +687,94 @@ What stays with me is a thread Hao pulls as criticism. The book opens with two e
 ================================================================================
 
 ---
+title: "Its Own Metaphor"
+url: https://raskell.io/articles/review-how-life-works/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Philip Ball's How Life Works is the popular science book I wish every other one were: deep, clear, and honest about how we came to know what we know."
+tags: [life-sciences, genetics, emergence, complex-systems, philosophy-of-science, synthetic-biology]
+categories: [reviews]
+review_of: "How Life Works"
+review_of_author: "Philip Ball"
+review_of_kind: book
+review_of_year: 2023
+rating: 9/10
+---
+
+# Its Own Metaphor
+
+## In short
+
+Philip Ball's *How Life Works* is a tour of the new biology, from genes to bodies to medicine, and the best popular science book I have read; I give it 9 out of 10. Its argument is that the genome is not a blueprint and life is not a machine or a computer: genes are resources the cell draws on, and every level of life has its own rules. It explains the science deeply enough to get a real grip on it, and it tells how each piece of knowledge was won, by whom, and with which technique. Ball keeps describing life as if it were engineered, then attributes everything to evolution; I read the same evidence the other way. Some of its arguments against the computer metaphor aim at an old picture of computing, and its take on AlphaFold has aged, but none of that changes the recommendation.
+
+On June 26, 2000, Bill Clinton announced the first draft of the human genome and said that we were learning "the language in which God created life." Philip Ball opens *How Life Works* with that sentence and answers it in the next line: Clinton was wrong, but not (just) in the way you might think. The problem, Ball says, was never the reference to God. It was the idea that the genome is an instruction book at all.
+
+I read the book in April 2025 and only now realised it was missing from [my reading log](https://raskell.io/reading/). It belongs near the top. It is the best popular science book I have read, and the one I would hold up as the model for all the others. I give it 9 out of 10.
+
+## What the book argues
+
+The book is a user's guide in the literal sense: it walks through life one level at a time, from genes and RNA to proteins, networks, cells, tissues, and bodies, then to agency, medicine, and the engineering of new living things. At each level Ball shows a picture most of us learned at school, explains why the research of the last few decades has broken it, and describes what is taking its place.
+
+The thread that ties the levels together is a single claim. The genome is not a blueprint, a program, or a code that an organism executes. Genes, in his phrase, are "not instructions, but resources": a toolkit the cell draws on, switched on and off by committees of molecules, read differently in every context. The decisions that make a body are taken higher up, by cells and tissues that sense, signal, and settle into a small number of stable states. No level is in charge, and each has rules that do not depend on the details of the level below.
+
+| Level | The picture we learned | Ball's picture |
+|---|---|---|
+| Genes | A blueprint; a gene for each trait | Resources the cell draws on; most variants matter only in combination |
+| RNA | A messenger carrying the gene's instructions | Where much of the regulation happens; a large part of the genome is read for control, not for proteins |
+| Proteins | Machines with a fixed shape: lock and key | Many are partly disordered and take their role from context and partners |
+| Networks | Circuits of switches | Regulation "by committee": loose, combinatorial, noisy, and robust because of it |
+| Cells | Factories following orders | Agents that decide their fate together, settling into stable states |
+| Tissues and bodies | Built to a plan | Generated by rules: chemical gradients, Turing patterns, mechanical forces |
+
+Ball's conclusion is that living things "have to be their own metaphor." No technology we have built works the way a cell does. The closest analogy he finds, in the epilogue, is language: something that works on many levels at once and loses its meaning when you reduce it to its words.
+
+## How it is told
+
+What makes the book great is the writing. Ball is curious, generous, and a little flashy, in the best sense: he enjoys his material and wants you to enjoy it too. He explains how microbiology works in plain language without flattening it, so that you come away with a real grip on what is happening inside a cell rather than a pleasant feeling of having been told. When the science gets complicated he does not hide it; he shows you why it is complicated and what the complication is for.
+
+He also tells how we came to know what we think we know. Each chapter is a history of a technique and the people who used it: Conrad Waddington drawing cell fates as balls rolling down a landscape of valleys, Alan Turing working out how spots and stripes can arise from two chemicals, Shinya Yamanaka turning adult cells back into stem cells with four factors, single-cell sequencing that finally let researchers watch the valleys Waddington imagined. He includes the false starts, the reversals, and the researchers who took months to believe their own data. It is science shown as an iterative, human process, which is how it actually works, and it is far more convincing than a list of results.
+
+Some of the episodes stay with you. Cut a flatworm into a hundred pieces and each grows into a whole worm. Five fingers is not written anywhere in the genome; it is what a Turing-type pattern happens to fit into a limb bud, and the same mechanism, tuned differently, makes fins. The side of the body your heart ends up on is decided, early in the embryo, by tiny hairs stirring fluid in one direction.
+
+## Designed, and then not
+
+There is one thread through the book that Ball never resolves, and I think it is the most interesting thing in it.
+
+Ball describes life, again and again, in the language of design. Its mechanisms are "ingenious." Combinatorial signalling and causal emergence are "design principles." Bodies form through rules that are designed to produce something generative rather than a fixed product. In chapter 9 he says it outright: all these processes behave as if serving some overall plan, and "Biology looks uncannily teleological," that is, as if directed toward a goal. He then takes on William Paley's argument from 1802 that contrivances like the eye point to a designer.
+
+And every time, he steps back. The appearance of a plan is real, he argues, but it comes from evolution working with self-organisation, physics that gives structure "for free," and the agency of organisms themselves. In the epilogue he even asks whether that agency might give evolution something like a direction, and hurries to add that this is "not a backdoor for intelligent design." In the prologue he offers readers who believe in God the consolation that God comes out of the new biology looking smarter than the Human Genome Project implied, and invites everyone else simply to be enchanted by the genius of life.
+
+I read the same evidence the other way. I believe life was engineered, though not necessarily in a theistic sense: I do not need the designer to be a god for the design to be real. What struck me is how much of Ball's own material fits that reading better than the one he chooses. A small, shared toolkit that produces coherent bodies from loose rules. Generative systems that correct their own errors. A cell computing close to the physical limit of efficiency. Layers of control that delegate decisions upward, the way a good engineer builds a system to adapt rather than to follow a script. Ball spends four hundred pages explaining that life is not a machine because it is far cleverer than any machine we have made. That is a strange argument against design.
+
+To be fair to him: he is a science writer explaining the consensus of his field, and he says plainly which questions remain open. The book is honest about the limits of what is known, and it does not pretend the design question is settled by the data. It simply declines to ask it. I would have liked one chapter that did.
+
+## What a builder takes from it
+
+For someone who builds systems, the book is full of ideas worth stealing:
+
+- **Noise as a resource.** Cells do not fight molecular randomness so much as use it to make decisions, explore options, and keep populations diverse.
+- **Structure for free.** Cells let physics do work they never specify: phase separation, surface tension, buckling. The equivalent in software is using what the platform already provides.
+- **Generative, not prescriptive.** A body is not assembled from a plan but grown toward a target shape by rules that correct themselves. A cut zebrafish tail regrows, stripes included.
+- **Prediction on a budget.** Ball reports an estimate that a cell computes within about ten times the theoretical minimum energy, while our computers use around a million times more. Life, as he puts it, takes care not to overthink the problem of survival. It fits my conviction that [intelligence is compression](https://raskell.io/notes/intelligence-is-compression/): an organism stores only what helps it predict.
+
+Two places where I would push back. First, the computer Ball argues against is an old one: the tape reader, the fixed circuit, the program as a list of steps. Modern distributed systems are noisy, fault-tolerant, and full of emergent behaviour, and a program never builds anything without the runtime it runs on. "Source plus runtime" survives his argument; only "source alone" fails. Second, his verdict on AlphaFold, that it "does not so much solve" the protein-folding problem "as sidestep it", undersells what it does. Predicting the result without simulating the path is exactly what makes it useful. The book was finished before the Nobel Prize for that work, which I wrote about in my review of [*The Infinity Machine*](https://raskell.io/articles/win-everything-control-no-one/).
+
+## Medicine and making
+
+The last chapters turn the argument into practice, and they are where the book is most hopeful. If disease is a state of the whole body rather than a broken part, medicine should work at the level where the cause sits, and aim, as Ball says, less at curing disease than at curating health. He is sceptical that genetic screening or gene therapy will help much with common diseases, which involve hundreds of variants each, and hopeful about immunotherapy, about nudging cancer cells back to a benign state, and about the body's own small number of ways of failing and recovering.
+
+Then come the things that sound like science fiction and are not: organoids, synthetic embryo models with beating hearts, and xenobots, tiny living machines made from frog cells, designed by an evolutionary algorithm in a computer, and then assembled by hand. Ball's view is that we will engineer life not by writing genes but by steering how cells organise themselves. Whichever way that turns out, it confirms what I believe about the atom, the bit, and the gene: the life sciences are at the very beginning of their revolution.
+
+## Who should read it
+
+Anyone who wants to understand how living things work as we know them now, not as the textbooks of thirty years ago taught it. You need no background in biology, but you will need attention: it is a long book, and dense in places, and it rewards being read slowly.
+
+A note on how this review came about: I am writing it a year and a half after I finished the book, so the details are not as fresh as they would be for something I read last week. I went back to the text to check every quotation and example above, but the judgement is the one I carried away in 2025, and it has not faded. What prompted me to write it now is the book I am reading at the moment, Walter Isaacson's *The Code Breaker*, and the contrast is instructive. Isaacson tells the story of gene editing through the people who invented it; Ball explains why the gene was never the whole story. A few chapters in, Isaacson feels slow and a little patronising next to Ball, who trusts his reader with the real complexity and makes it a pleasure. That trust is what I would wish for every popular science book.
+
+
+================================================================================
+
+---
 title: "Its magic crumbles away"
 url: https://raskell.io/notes/its-magic-crumbles-away/
 author: Raffael Schneider
@@ -242,72 +801,6 @@ More on the book in my review, [An Empire of People](https://raskell.io/articles
 
 - Karen Hao, *Empire of AI* (2025), epigraph, chapter 4, "Dreams of Modernity", and the epilogue.
 - Joseph Weizenbaum, "ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine", *Communications of the ACM* 9(1), January 1966, pp. 36 to 45, [doi:10.1145/365153.365168](https://doi.org/10.1145/365153.365168).
-
-
-================================================================================
-
----
-title: "Intelligence is compression"
-url: https://raskell.io/notes/intelligence-is-compression/
-author: Raffael Schneider
-date: 2026-11-14
-description: "Ilya Sutskever's internal slogan at OpenAI: a model that must predict the world has to compress it. I think it is the most useful definition we have."
-tags: [intelligence, language, neural-networks, mathematics]
----
-
-# Intelligence is compression
-
-Karen Hao reports in *Empire of AI* (chapter 5) that while Alec Radford was teaching a transformer to predict the next word, the work that became GPT, Ilya Sutskever had a short way of explaining why it mattered: "Intelligence is compression." A model trained to generate convincing text is forced to squeeze what it sees about the world into its essence. In a 2016 memo, Hao writes, Sutskever went further and argued that compression was the only thing needed for general intelligence. OpenAI's public version borrowed Richard Feynman's line, "What I cannot create, I do not understand", which Hao calls "heavily anthropomorphized".
-
-I think the slogan is right, and older than OpenAI. The argument goes like this:
-
-- To compress data well, you have to predict it. A compressor that knows what comes next only has to store the surprises.
-- To predict text well, you have to model whatever produced the text: grammar first, then facts, then the reasoning and intentions of the people who wrote it.
-- So the better the compression, the more of the world the model has had to capture. A model that compresses everything people have written down cannot help learning a great deal about people.
-
-This is not a metaphor. Prediction and compression are the same problem in information theory, which is why Marcus Hutter has offered a prize since 2006 for compressing a fixed slice of Wikipedia, as a benchmark for intelligence. Next-word prediction is exactly that contest, run at the scale of the internet.
-
-It is also half of a wager. The other half, in the same chapter, is Dario Amodei's bet on the "pure language" hypothesis: that text alone is enough to learn from. Put together, they say that compressing everything humans have written is a path to general intelligence. That is my reading, not Hao's, and it is the bet the rest of the book is about. Whether it is enough is still open; I lean towards thinking a model also has to act, as I argued in [in vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro/). But compression explains why the bet got as far as it did, and it fits the larger conviction I share with Altman, that intelligence is [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/) arranged to predict.
-
-More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
-
-## References
-
-- Karen Hao, *Empire of AI* (2025), chapter 5, "Scale of Ambition".
-- The Hutter Prize for lossless compression of human knowledge, [prize.hutter1.net](http://prize.hutter1.net/).
-
-
-================================================================================
-
----
-title: "A self-fulfilling prophecy"
-url: https://raskell.io/notes/a-self-fulfilling-prophecy/
-author: Raffael Schneider
-date: 2026-11-14
-description: "Karen Hao says scaling laws are like Moore's Law: not a law of nature but a self-fulfilling prophecy. She is half right, and the half matters."
-tags: [neural-networks, semiconductors, forecasting, history-of-technology, technology-races]
----
-
-# A self-fulfilling prophecy
-
-At the end of chapter 4 of *Empire of AI*, Karen Hao compares OpenAI's scaling laws to Moore's Law. Moore's Law, she writes, was never a principle of physics. It was an observation Gordon Moore made about the pace he could drive his own company to, and a choice to keep that pace, which the rest of the industry then copied because it was the most competitive strategy. OpenAI's internal "law" of compute doubling, and the scaling laws that replaced it, are the same: "It is not a natural phenomenon. It's a self-fulfilling prophecy."
-
-She is right about Moore's Law, and it is worth remembering how much of technological progress works this way. A forecast that everyone believes becomes a schedule. Chip makers planned their factories around it, suppliers planned around the chip makers, and software assumed the chips would arrive. The prediction coordinated an industry, and the coordination made the prediction come true.
-
-The same thing happened with scaling. Once the labs believed that a bigger model trained on more data with more compute would reliably get better, money, chips, power plants, and careers lined up behind that belief, and the belief kept paying out. Hao is right that this was a choice, and that the choice crowded out other paths: better architectures, better data, approaches other than deep learning.
-
-But a prophecy can only fulfil itself where the world allows it. Moore's Law ran for decades because transistors could in fact be made smaller; it slowed when physics said no. Scaling laws are measurements, loss curves that fall along a straight line on a log scale across many orders of magnitude, first published by OpenAI researchers in 2020 and corrected by DeepMind in 2022. Investment decided how far along the line the industry would go. It did not draw the line. Hao's own reporting shows the other side: by late 2024 OpenAI was struggling to make its next model good enough, and scaling alone "no longer seemed to be enough" (chapter 18). A pure prophecy would not have stalled.
-
-So the useful version of her point is narrower and, I think, more interesting. The regularity is real; the decision to follow it at any cost is social. That is how every large bet on technology works, from chips to railways, and it is the subject of [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/).
-
-More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
-
-## References
-
-- Karen Hao, *Empire of AI* (2025), chapter 4, "Dreams of Modernity", and chapter 18, "A Formula for Empire".
-- Gordon E. Moore, "Cramming more components onto integrated circuits", *Electronics* 38(8), 1965.
-- Jared Kaplan et al., [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361), 2020.
-- Jordan Hoffmann et al., [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556), 2022.
 
 
 ================================================================================
@@ -347,42 +840,34 @@ More on the book in my review, [An Empire of People](https://raskell.io/articles
 ================================================================================
 
 ---
-title: "Small, focused, high-trust"
-url: https://raskell.io/notes/small-focused-high-trust/
+title: "Intelligence is compression"
+url: https://raskell.io/notes/intelligence-is-compression/
 author: Raffael Schneider
 date: 2026-11-14
-description: "Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic."
-tags: [bureaucracy, research-labs, entrepreneurship, future-of-work]
+description: "Ilya Sutskever's internal slogan at OpenAI: a model that must predict the world has to compress it. I think it is the most useful definition we have."
+tags: [intelligence, language, neural-networks, mathematics]
 ---
 
-# Small, focused, high-trust
+# Intelligence is compression
 
-In a 2020 vision memo, written after Microsoft's investment, Sam Altman warned his own company against growing too large. Karen Hao quotes it in *Empire of AI* (chapter 11): "what has worked for us so far is being small, focused, high-trust, low-bullshit, and intense." Too many people and too much bureaucracy, he wrote, "can easily kill great ideas or result in sclerosis", and OpenAI could fulfil its mission "with a surprisingly small number of great people."
+Karen Hao reports in *Empire of AI* (chapter 5) that while Alec Radford was teaching a transformer to predict the next word, the work that became GPT, Ilya Sutskever had a short way of explaining why it mattered: "Intelligence is compression." A model trained to generate convincing text is forced to squeeze what it sees about the world into its essence. In a 2016 memo, Hao writes, Sutskever went further and argued that compression was the only thing needed for general intelligence. OpenAI's public version borrowed Richard Feynman's line, "What I cannot create, I do not understand", which Hao calls "heavily anthropomorphized".
 
-He meant it. Hao reports that in late 2022, after ChatGPT, when every team was stretched thin and managers begged for head count, Altman kept repeating the line and wanted to add no more than about a hundred people. Other executives wanted closer to five hundred. OpenAI had about 300 people in October 2022, close to 600 by the middle of 2023, and nearly 800 when the board fired Altman that November.
+I think the slogan is right, and older than OpenAI. The argument goes like this:
 
-I have made the same observation in every large organisation I have worked in or with, public or private. A group of people has to spend work on holding itself together, and that share grows faster than the group. Fred Brooks put the arithmetic in *The Mythical Man-Month*: every pair of people is a possible line of communication, and the number of pairs grows with the square of the headcount.
+- To compress data well, you have to predict it. A compressor that knows what comes next only has to store the surprises.
+- To predict text well, you have to model whatever produced the text: grammar first, then facts, then the reasoning and intentions of the people who wrote it.
+- So the better the compression, the more of the world the model has had to capture. A model that compresses everything people have written down cannot help learning a great deal about people.
 
-| People | Pairs who may need to talk |
-|---:|---:|
-| 5 | 10 |
-| 10 | 45 |
-| 50 | 1,225 |
-| 500 | 124,750 |
-| 5,000 | 12,497,500 |
+This is not a metaphor. Prediction and compression are the same problem in information theory, which is why Marcus Hutter has offered a prize since 2006 for compressing a fixed slice of Wikipedia, as a benchmark for intelligence. Next-word prediction is exactly that contest, run at the scale of the internet.
 
-Nobody talks to everyone, so the organisation adds structure: managers, meetings, processes, reporting lines, approval steps. Each is reasonable. Together they become the leviathan, a body whose main occupation is keeping itself intact, whether it is a ministry or a multinational. Its slowness is the price of its coherence.
+It is also half of a wager. The other half, in the same chapter, is Dario Amodei's bet on the "pure language" hypothesis: that text alone is enough to learn from. Put together, they say that compressing everything humans have written is a path to general intelligence. That is my reading, not Hao's, and it is the bet the rest of the book is about. Whether it is enough is still open; I lean towards thinking a model also has to act, as I argued in [in vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro/). But compression explains why the bet got as far as it did, and it fits the larger conviction I share with Altman, that intelligence is [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/) arranged to predict.
 
-What interests me is that the arithmetic may be changing. If a small team with agents can do what used to take a department, the number of people a mission needs drops, and with it the overhead. I wrote about that from the side of the individual in [power in the good sense](https://raskell.io/notes/power-in-the-good-sense/) and [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/). Altman's "surprisingly small number of great people" reads differently in 2026 than it did in 2020.
-
-Small has its own failure mode, and Hao's account shows it too: teams stretched so thin that the people in them burn out. Small, focused, and high-trust is a discipline, and OpenAI could not keep it. Neither, as far as I know, has anyone else at that scale.
-
-Related: [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/), and my review of the book, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
 
 ## References
 
-- Karen Hao, *Empire of AI* (2025), chapter 11, "Apex".
-- Frederick P. Brooks Jr., *The Mythical Man-Month* (1975), chapter 2.
+- Karen Hao, *Empire of AI* (2025), chapter 5, "Scale of Ambition".
+- The Hutter Prize for lossless compression of human knowledge, [prize.hutter1.net](http://prize.hutter1.net/).
 
 
 ================================================================================
@@ -444,6 +929,80 @@ More on the book in my review, [An Empire of People](https://raskell.io/articles
 
 - Karen Hao, *Empire of AI* (2025), epigraph, chapter 10, "Gods and Demons", and chapter 18, "A Formula for Empire".
 - Sam Altman, [Successful People](https://blog.samaltman.com/successful-people), blog post, March 7, 2013.
+
+
+================================================================================
+
+---
+title: "Small, focused, high-trust"
+url: https://raskell.io/notes/small-focused-high-trust/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic."
+tags: [bureaucracy, research-labs, entrepreneurship, future-of-work]
+---
+
+# Small, focused, high-trust
+
+In a 2020 vision memo, written after Microsoft's investment, Sam Altman warned his own company against growing too large. Karen Hao quotes it in *Empire of AI* (chapter 11): "what has worked for us so far is being small, focused, high-trust, low-bullshit, and intense." Too many people and too much bureaucracy, he wrote, "can easily kill great ideas or result in sclerosis", and OpenAI could fulfil its mission "with a surprisingly small number of great people."
+
+He meant it. Hao reports that in late 2022, after ChatGPT, when every team was stretched thin and managers begged for head count, Altman kept repeating the line and wanted to add no more than about a hundred people. Other executives wanted closer to five hundred. OpenAI had about 300 people in October 2022, close to 600 by the middle of 2023, and nearly 800 when the board fired Altman that November.
+
+I have made the same observation in every large organisation I have worked in or with, public or private. A group of people has to spend work on holding itself together, and that share grows faster than the group. Fred Brooks put the arithmetic in *The Mythical Man-Month*: every pair of people is a possible line of communication, and the number of pairs grows with the square of the headcount.
+
+| People | Pairs who may need to talk |
+|---:|---:|
+| 5 | 10 |
+| 10 | 45 |
+| 50 | 1,225 |
+| 500 | 124,750 |
+| 5,000 | 12,497,500 |
+
+Nobody talks to everyone, so the organisation adds structure: managers, meetings, processes, reporting lines, approval steps. Each is reasonable. Together they become the leviathan, a body whose main occupation is keeping itself intact, whether it is a ministry or a multinational. Its slowness is the price of its coherence.
+
+What interests me is that the arithmetic may be changing. If a small team with agents can do what used to take a department, the number of people a mission needs drops, and with it the overhead. I wrote about that from the side of the individual in [power in the good sense](https://raskell.io/notes/power-in-the-good-sense/) and [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/). Altman's "surprisingly small number of great people" reads differently in 2026 than it did in 2020.
+
+Small has its own failure mode, and Hao's account shows it too: teams stretched so thin that the people in them burn out. Small, focused, and high-trust is a discipline, and OpenAI could not keep it. Neither, as far as I know, has anyone else at that scale.
+
+Related: [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/), and my review of the book, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), chapter 11, "Apex".
+- Frederick P. Brooks Jr., *The Mythical Man-Month* (1975), chapter 2.
+
+
+================================================================================
+
+---
+title: "A self-fulfilling prophecy"
+url: https://raskell.io/notes/a-self-fulfilling-prophecy/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Karen Hao says scaling laws are like Moore's Law: not a law of nature but a self-fulfilling prophecy. She is half right, and the half matters."
+tags: [neural-networks, semiconductors, forecasting, history-of-technology, technology-races]
+---
+
+# A self-fulfilling prophecy
+
+At the end of chapter 4 of *Empire of AI*, Karen Hao compares OpenAI's scaling laws to Moore's Law. Moore's Law, she writes, was never a principle of physics. It was an observation Gordon Moore made about the pace he could drive his own company to, and a choice to keep that pace, which the rest of the industry then copied because it was the most competitive strategy. OpenAI's internal "law" of compute doubling, and the scaling laws that replaced it, are the same: "It is not a natural phenomenon. It's a self-fulfilling prophecy."
+
+She is right about Moore's Law, and it is worth remembering how much of technological progress works this way. A forecast that everyone believes becomes a schedule. Chip makers planned their factories around it, suppliers planned around the chip makers, and software assumed the chips would arrive. The prediction coordinated an industry, and the coordination made the prediction come true.
+
+The same thing happened with scaling. Once the labs believed that a bigger model trained on more data with more compute would reliably get better, money, chips, power plants, and careers lined up behind that belief, and the belief kept paying out. Hao is right that this was a choice, and that the choice crowded out other paths: better architectures, better data, approaches other than deep learning.
+
+But a prophecy can only fulfil itself where the world allows it. Moore's Law ran for decades because transistors could in fact be made smaller; it slowed when physics said no. Scaling laws are measurements, loss curves that fall along a straight line on a log scale across many orders of magnitude, first published by OpenAI researchers in 2020 and corrected by DeepMind in 2022. Investment decided how far along the line the industry would go. It did not draw the line. Hao's own reporting shows the other side: by late 2024 OpenAI was struggling to make its next model good enough, and scaling alone "no longer seemed to be enough" (chapter 18). A pure prophecy would not have stalled.
+
+So the useful version of her point is narrower and, I think, more interesting. The regularity is real; the decision to follow it at any cost is social. That is how every large bet on technology works, from chips to railways, and it is the subject of [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/).
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), chapter 4, "Dreams of Modernity", and chapter 18, "A Formula for Empire".
+- Gordon E. Moore, "Cramming more components onto integrated circuits", *Electronics* 38(8), 1965.
+- Jared Kaplan et al., [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361), 2020.
+- Jordan Hoffmann et al., [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556), 2022.
 
 
 ================================================================================
@@ -789,6 +1348,36 @@ The film carries a warning too, and it is worth keeping. A former OpenAI employe
 ================================================================================
 
 ---
+title: "Who carries progress"
+url: https://raskell.io/notes/who-carries-progress/
+author: Raffael Schneider
+date: 2026-11-07
+description: "A colleague says the breakthroughs come from academia and the state. I think they come from people who have to make things work, and that what they learn spreads."
+tags: [capital-allocation, entrepreneurship, democratisation, history-of-technology, post-scarcity]
+---
+
+# Who carries progress
+
+A colleague with a philosophical bent and I had the same argument from opposite ends recently. He distrusts the founders and investors of Silicon Valley, and he holds that the real breakthroughs in science and technology come from academia, and so in the end from the state that funds it. I argued the opposite: progress is carried by people who have to make things work. Entrepreneurs, investors, and companies.
+
+My reasoning goes like this. Someone who has to make a venture survive is selected for the qualities progress needs: being effective, being efficient, daring to try what nobody has asked for. A market does not only reward those qualities once. It trains them, in the people and in the organisations they build, because the ones without them run out of money. An academic can be right for decades without anyone depending on the result. An entrepreneur finds out within a year or two. That feedback loop is the same one I trust when I [measure intelligence by what it does](https://raskell.io/notes/in-vivo-not-in-vitro/) rather than by what it knows.
+
+The second half of the argument is the one I care about more. Over the long run, what these people build does not stay with them. Know-how leaks: employees leave and start their own companies, techniques get published or reverse engineered, tools get cheaper until anyone can use them. The sum of many self-interested builders ends up [democratising](https://raskell.io/tags/democratisation/) what each of them tried to keep. Large language models are the latest case. [A billion dollars bet without a plan](https://raskell.io/notes/a-billion-without-a-plan/) became, within a few years, something a single person can run on a laptop.
+
+My colleague has real evidence on his side, and I should say so. The deep learning that OpenAI scaled came out of university labs, Geoffrey Hinton's in Toronto among them. The web was invented at CERN, a publicly funded laboratory, and [Tim Berners-Lee](https://raskell.io/reading/) chose to give it away. Where I still disagree is on what counts as the breakthrough. Academia often finds the idea. It usually takes someone with money at risk to turn it into something that reaches everyone, and the Transformer, invented at Google, shows that the line between the two is not as clean as either of us made it sound.
+
+None of this makes me a capitalist in the sense my colleague meant. I am closer to the geolibertarian, or left-libertarian, tradition: Henry George and Silvio Gesell, and in our time Hillel Steiner, Peter Vallentyne, and Philippe Van Parijs. In that tradition you own yourself and what you make, but land and natural resources belong to everyone, and their value should be shared, through a land value tax or a basic income. It fits the argument above. Know-how disperses on its own; land and resources do not, and that is where the sharing has to be designed. And if AI takes us anywhere near [post-scarcity](https://raskell.io/tags/post-scarcity/), we will have to revisit those designs soon, because the question will no longer be who produces the most, but who owns what is still scarce.
+
+Open threads:
+
+- Is there a fair test of who carries progress, or does each side count the breakthroughs that suit it?
+- How fast does know-how actually diffuse, and what slows it down: patents, secrecy, scale, compute?
+- What remains scarce when production is cheap, and who should own it?
+
+
+================================================================================
+
+---
 title: "In vivo, not in vitro"
 url: https://raskell.io/notes/in-vivo-not-in-vitro/
 author: Raffael Schneider
@@ -827,36 +1416,6 @@ Open threads:
 ================================================================================
 
 ---
-title: "Who carries progress"
-url: https://raskell.io/notes/who-carries-progress/
-author: Raffael Schneider
-date: 2026-11-07
-description: "A colleague says the breakthroughs come from academia and the state. I think they come from people who have to make things work, and that what they learn spreads."
-tags: [capital-allocation, entrepreneurship, democratisation, history-of-technology, post-scarcity]
----
-
-# Who carries progress
-
-A colleague with a philosophical bent and I had the same argument from opposite ends recently. He distrusts the founders and investors of Silicon Valley, and he holds that the real breakthroughs in science and technology come from academia, and so in the end from the state that funds it. I argued the opposite: progress is carried by people who have to make things work. Entrepreneurs, investors, and companies.
-
-My reasoning goes like this. Someone who has to make a venture survive is selected for the qualities progress needs: being effective, being efficient, daring to try what nobody has asked for. A market does not only reward those qualities once. It trains them, in the people and in the organisations they build, because the ones without them run out of money. An academic can be right for decades without anyone depending on the result. An entrepreneur finds out within a year or two. That feedback loop is the same one I trust when I [measure intelligence by what it does](https://raskell.io/notes/in-vivo-not-in-vitro/) rather than by what it knows.
-
-The second half of the argument is the one I care about more. Over the long run, what these people build does not stay with them. Know-how leaks: employees leave and start their own companies, techniques get published or reverse engineered, tools get cheaper until anyone can use them. The sum of many self-interested builders ends up [democratising](https://raskell.io/tags/democratisation/) what each of them tried to keep. Large language models are the latest case. [A billion dollars bet without a plan](https://raskell.io/notes/a-billion-without-a-plan/) became, within a few years, something a single person can run on a laptop.
-
-My colleague has real evidence on his side, and I should say so. The deep learning that OpenAI scaled came out of university labs, Geoffrey Hinton's in Toronto among them. The web was invented at CERN, a publicly funded laboratory, and [Tim Berners-Lee](https://raskell.io/reading/) chose to give it away. Where I still disagree is on what counts as the breakthrough. Academia often finds the idea. It usually takes someone with money at risk to turn it into something that reaches everyone, and the Transformer, invented at Google, shows that the line between the two is not as clean as either of us made it sound.
-
-None of this makes me a capitalist in the sense my colleague meant. I am closer to the geolibertarian, or left-libertarian, tradition: Henry George and Silvio Gesell, and in our time Hillel Steiner, Peter Vallentyne, and Philippe Van Parijs. In that tradition you own yourself and what you make, but land and natural resources belong to everyone, and their value should be shared, through a land value tax or a basic income. It fits the argument above. Know-how disperses on its own; land and resources do not, and that is where the sharing has to be designed. And if AI takes us anywhere near [post-scarcity](https://raskell.io/tags/post-scarcity/), we will have to revisit those designs soon, because the question will no longer be who produces the most, but who owns what is still scarce.
-
-Open threads:
-
-- Is there a fair test of who carries progress, or does each side count the breakthroughs that suit it?
-- How fast does know-how actually diffuse, and what slows it down: patents, secrecy, scale, compute?
-- What remains scarce when production is cheap, and who should own it?
-
-
-================================================================================
-
----
 title: "A billion without a plan"
 url: https://raskell.io/notes/a-billion-without-a-plan/
 author: Raffael Schneider
@@ -881,164 +1440,6 @@ Two things keep me honest about this:
 The broader argument, about who carries progress and why what they build spreads, is in [who carries progress](https://raskell.io/notes/who-carries-progress/).
 
 Related: allocation is the same act at every scale, a person, a family, and a bank all betting on the future with limited means.
-
-
-================================================================================
-
----
-title: "Three Parts and No Brain"
-url: https://raskell.io/articles/three-parts-and-no-brain/
-author: Raffael Schneider
-date: 2026-11-05
-description: "What a chess program is made of, and how far a hand-written one gets against the computer opponent on lichess, before any learning starts."
-tags: [game-ai, tree-search, games, rust, metrics, probability, chess, shogi, go-game]
-series: learning-to-play
----
-
-# Three Parts and No Brain
-
-## In short
-
-Before any learning starts, I built Kishi's chess engine from the three parts Levy described: the board as numbers, an evaluation that says who is better, and a search that looks ahead. The bitboard representation is checked by perft on every change, and the hand-written PeSTO evaluation holds almost none of the chess; the strength lives in the search and its pile of tuned statistical bets. Measuring strength honestly is the hardest part: matches need paired openings, equal search budgets and stated margins of error, and a small positive result without proof means keep it and do not claim it. Against a rebuilt version of the lichess computer, Kishi with its hand-written evaluation on one core sits between level 6 and level 7, with wide margins that I report rather than leave off. The same construction gives a fair club opponent in shogi, while Go needs random playouts instead, and this baseline is the opponent every trained neural network in the project will have to beat.
-
-The chess computer on lichess has eight levels. I play it on trains, on my phone, and like everyone who plays it I have a level I can beat and a level that beats me. When I built my own engine last month, the first question from anyone I showed it to was the same question I had been asking myself: what level is it? It sounds like the easiest thing in the world to answer. It turned out to be the hardest part of the whole project, harder than getting the program to play at all, and the answer is the point of this piece.
-
-In [the first piece](https://raskell.io/articles/learning-to-play/) I told the story of Demis Hassabis at twelve, reading David Levy's handbook on chess computers and learning that a chess program is three parts: the board turned into numbers, a function that says who is better, and a search that looks ahead. I built the three parts in Rust, and I want to show what each one turns out to be once you build it, because the surprise is which of them holds the chess. Then I want to put a number on the result, and show why the number comes with a margin of error that most people quietly leave off.
-
-Nothing in this piece learns. That is deliberate. A neural network that learns to evaluate chess positions needs something to play the games it learns from, and something to beat afterwards, or there is no way to tell whether it learned anything. This is that something.
-
-## The board, as numbers
-
-Levy's first part is the one that sounds trivial and is not. A chessboard has 64 squares and a modern processor works with 64-bit numbers, so the natural representation is one number per kind of piece, with a bit set for every square that kind of piece stands on. Twelve numbers, one for each of white's and black's six piece types, and you have the position. A move is sixteen bits: where from, where to, and a few bits for what kind of move it is. The whole state of a game fits in less memory than this paragraph.
-
-The reason to care is speed. Asking "where can this knight go" becomes a lookup in a table; asking "is the king attacked" becomes a handful of ANDs and ORs on those numbers. An engine asks those questions tens of millions of times a second, and every one of them has to be exactly right, because the rules of chess have corners. Castling through check. The pawn that captures en passant and, in doing so, uncovers a check on its own king along the rank. A program with one rare bug in its move generation plays a thousand games without incident and then loses one by making an illegal move, and nobody notices which rule it was.
-
-The test for this has a name, perft, and it is the first thing any engine author runs. You count every legal sequence of moves to a fixed depth from a known position and compare with the published numbers, which have been agreed on for decades.
-
-| Moves ahead | Positions reachable from the start |
-|---|---|
-| 1 | 20 |
-| 2 | 400 |
-| 3 | 8,902 |
-| 4 | 197,281 |
-| 5 | 4,865,609 |
-
-If your program says 4,865,609 at depth five, your rules are right, at least for the starting position. There is a second position everyone uses, nicknamed Kiwipete, with castling rights and en passant and promotions all live at once, and a handful of nastier endgames. Kishi runs the whole suite on every change. Every match tool in the project also checks the opponent's moves against Kishi's own generator, so if the two programs ever disagree about the rules, the game fails loudly instead of being quietly scored.
-
-One decision follows the engine everywhere afterwards. A position in Kishi is a small value that is copied, not modified. Making a move hands you a new position and leaves the old one untouched, so there is no "unmake" and no way for the two to drift apart. It costs a copy of a couple of hundred bytes per move and buys code that cannot get out of sync with itself. For a program that would later be compiled to WebAssembly and run on several threads at once, that was the right trade, and I would make it again.
-
-## The evaluation
-
-Levy's second part is the one I expected to hold the chess, and it holds almost none. The evaluation looks at a single position, without looking ahead, and returns a number: who is better and by how much, in hundredths of a pawn. Plus 100 means the side to move is a pawn up, or has the equivalent in position. Levy's example, in the book Hassabis read, was material against mobility: if the pieces you have left matter twice as much as the squares they can reach, double the material score before adding the mobility score. The idea is still exactly that, weights on things you can count.
-
-Kishi's hand-written evaluation is a well-known set of tables called PeSTO. For each of the twelve kinds of piece there is a table of 64 numbers, one per square: a knight in the centre is worth more than a knight on the rim, a king belongs in the corner in the middlegame and in the centre in the endgame, a pawn far up the board is worth more than one at home. There are two tables per piece, one for the middlegame and one for the endgame, and the evaluation blends them by how much material is left. Add up the entries for the pieces on the board, and that is the number.
-
-It knows nothing else. Nothing about pawn structure beyond where each pawn stands, nothing about king safety beyond where the king stands, nothing about whether a rook is on an open file, nothing about how any two pieces relate to each other. It is 768 numbers twice, and an interpolation, and it plays chess well enough to beat most people who play chess, which tells you something about where the strength of these programs lives. It is not in the knowledge.
-
-I will come back to the number 768 in the next piece, because the neural network that is supposed to replace this table has exactly 768 inputs, and the coincidence is not one.
-
-There is one small piece of learning in the engine already, and it is worth a sentence as the smallest possible example of the idea this whole project is about. The search keeps a table of how wrong the evaluation has recently been for each pawn structure it has seen, and corrects the evaluation by that running average before using it. The correction is learned during the game, from the search's own deeper results, and thrown away afterwards.
-
-## The search
-
-Levy's third part is where the engineering is, and where the strength comes from. The search tries every move, and every reply, and every reply to those, building a tree of positions that might be reached, and asks the evaluation about the positions at the tips. The textbook version is minimax: assume your opponent always picks the reply that is worst for you, and choose the move whose worst case is best. Alpha-beta is minimax with a proof that most of the tree does not matter. Once a reply has shown that a move is bad enough, you stop reading the rest of that move's continuations, the way you stop reading a contract clause once you have found the sentence that kills the deal. With the best move examined first at every step, alpha-beta sees as far as minimax while visiting roughly the square root of the positions.
-
-Everything a modern engine does on top of that is a bet about chess, and every bet is sometimes wrong. The engine is tuned so that the extra depth the bets buy is worth more than the mistakes they cost.
-
-| The technique | The bet | In Kishi |
-|---|---|---|
-| Transposition table | the same position is reached by different move orders, so remember what you found | 16-byte entries in a table all threads share without locks |
-| Move ordering | look at the likely best move first, so the cut-offs come early | the move the table remembers, then captures by value, then moves that cut off recently |
-| Null-move pruning | if doing nothing is already good enough, moving is too; skip the rest | a shallower search after a pass, shallower still the further ahead you are |
-| Reverse futility | far above the target at shallow depth, stop looking | the margin is 75 hundredths of a pawn per move of depth, up to eight |
-| Late move reductions | moves that order late are rarely best, so search them shallower | a formula in the logarithm of depth and move number |
-| Singular extensions | one move much better than every alternative deserves a deeper look | from eight moves of depth |
-| Quiescence | never evaluate in the middle of an exchange | keep capturing until the position is quiet, then ask |
-
-None of these are mine. They are the shared inheritance of open-source engines, worked out over thirty years by people who tested each one with tens of thousands of games, and they are why Kishi's search is a few thousand lines rather than a research project. What I want you to take from the table is its shape. A chess search is a pile of statistical bets, each with a margin written in hundredths of a pawn, each tuned against the particular evaluation it runs with. The bets do not know what the evaluation is. In the next piece the evaluation changes, and that sentence becomes expensive.
-
-With all of it in place, on one core of the laptop, the engine examines about three million positions a second and looks seventeen to twenty half-moves ahead in half a second, the time it takes to tap the board. Deep Blue, in 1997, looked twelve to sixteen half-moves ahead by examining two hundred million positions a second on hardware built for nothing else. Sixty times fewer positions, and a little further: the difference is the bets.
-
-## How you know anything
-
-Now the hard part. Two chess programs can play each other, and one wins more often, and you would like to turn that into a number. Chess has had such a number since the 1960s: the Elo rating, the number every club player knows, and the one I first met at regional tournaments as a teenager, which is why the arithmetic has never felt abstract to me. A difference of 400 points means ten-to-one odds. A difference of 100 points means the stronger side scores about 64 percent. The rating difference between two programs is computed from the score of a match between them, and the catch is that the score of a short match is mostly noise.
-
-Chess engine developers have one honest instrument for this, and it is worth describing because the design is where the honesty lives. The two programs play a few hundred games from the same random openings, each opening played twice with the colours swapped, so that a lucky opening cannot favour one side. Both sides get the same number of positions to search per move, so that a faster program cannot pass for a stronger one. And the result comes with a margin of error, at 95 percent confidence, that depends on how many games were played.
-
-| Games | Margin of error |
-|---|---|
-| 20 | about 200 rating points either way |
-| 400 | about 32 |
-| 600 | about 23 |
-
-Before I trusted the instrument I pointed it at itself. The same program on both sides, ten thousand positions a move, six hundred games:
-
-```text
-Kishi vs Kishi, 10,000 nodes a move, 600 games: +211 =181 -208   elo +1.7 ± 23.3
-```
-
-Plus 1.7 with a margin of 23 is the instrument reading zero, which is what it should read when nothing has changed. Then the real test, the pawn-structure correction described above against the engine without it:
-
-```text
-Kishi vs Kishi without correction, 600 games: +219 =180 -201   elo +10.4 ± 23.3
-```
-
-That is probably positive and not proven. The big engine projects run this test with tens of thousands of games per change and a statistical rule that stops the match as soon as the answer is clear either way. On a laptop, six hundred games is an evening, and the honest reading of plus ten with a margin of twenty-three is "keep it, and do not claim it". I have found that sentence useful well outside chess.
-
-## The lichess ladder
-
-A match between two versions of Kishi says which is better. It says nothing about how good either of them is. For that, the program has to play something whose strength people already know, and the most useful yardstick I know is the one in your pocket: lichess's computer opponent, because everyone has played it and everyone has a level that beats them.
-
-The eight levels are not eight different programs. They are Stockfish, the strongest open-source engine in the world, deliberately weakened in three ways at once: a skill setting that makes it pick worse moves on purpose, a cap on how many moves ahead it may look, and a time limit per move. The settings are public, in the client lichess runs, so the opponent can be rebuilt exactly on a laptop.
-
-| Level | Skill | Depth | Time per move |
-|---|---|---|---|
-| 1 | −9 | 5 | 50 ms |
-| 2 | −5 | 5 | 100 ms |
-| 3 | −1 | 5 | 150 ms |
-| 4 | 3 | 5 | 200 ms |
-| 5 | 7 | 5 | 300 ms |
-| 6 | 11 | 8 | 400 ms |
-| 7 | 16 | 13 | 500 ms |
-| 8 | 20 | 22 | 1,000 ms |
-
-Stockfish's own skill setting stops at zero, so levels 1 to 3 as I rebuild them are a little stronger than the real ones. Levels 4 to 8 are exact. Kishi played Stockfish 19 on one core, twenty games a level, with the time its own app gives the matching level:
-
-| Opponent | Kishi's time per move | Score | Rating difference |
-|---|---|---|---|
-| lichess level 4 | 200 ms | 19 of 20 | +511, give or take 646 |
-| lichess level 6 | 500 ms | 13 of 20 | +108, give or take 165 |
-| lichess level 7 | 500 ms | ½ of 20 | −636, give or take 579 |
-
-Twenty games a level gives margins you could drive a bus through, which is why they are in the table rather than left off. What the numbers do allow you to say is this: with the hand-written evaluation, on one core, at half a second a move, Kishi sits between lichess's level 6 and level 7. If level 6 is the one that beats you, Kishi beats it two games in three. Level 7 is Stockfish thinking thirteen moves deep with most of its strength intact, and one draw in twenty games is an honest description of the distance. Level 8 is Stockfish at depth 22, which is to say Stockfish, and no evaluation function written by hand on a laptop is going to get there.
-
-The app plays on four cores on a phone, and these numbers come from one, so the opponent you meet at [kishi.raskell.io](https://kishi.raskell.io) is a little stronger than the table. I will measure it again with the phone's budget as the trained neural networks arrive, because that is the measurement that will decide whether they ship.
-
-## The same three parts, twice more
-
-Shogi got the same construction: the board as numbers, with the extra wrinkle that captured pieces sit in a hand and can come back; a hand-written evaluation that counts material, with pieces in hand worth a little more than pieces on the board, and rewards golds and silvers near your own king; and the same search with the same bets. Against Fairy-Stockfish, the variant engine that plays shogi, at half a second a move, it wins twenty games out of twenty at the weakest skill setting and two out of twenty at a middling one. A fair club opponent, nowhere near strong play, and the hand-written evaluation is already where the design strains: with pieces returning to the board, there is no endgame to simplify into, and a table of squares says less and less.
-
-Go did not get the three parts, because they do not work. There is no table of 361 squares that tells you who is winning a Go position, and a search that looks four moves ahead on a nineteen-by-nineteen board sees almost nothing. The Go engine in Kishi plays the way the programs of 2008 played, by playing thousands of fast random games to the end and counting, and against GNU Go at its lowest level it wins three games in ten. That method, and why it was the dead end AlphaGo had to get out of, is a piece of its own.
-
-## What it cost
-
-| | |
-|---|---|
-| The engine | a few days of Rust, written with a coding agent, me steering |
-| The rules test | seconds, on every change |
-| Positions searched per second, one core | 3 to 3.7 million |
-| A 600-game match at 10,000 positions a move | an evening on ten cores |
-| Twenty games against a lichess level | minutes |
-
-The baseline is the most important number in this whole project, and the least glamorous. It is the opponent every trained neural network has to beat, the player that will generate the first games they learn from, and the thing the rest of the work is trying to make unnecessary. Levy's three parts, built, hold a hand-written table of 768 numbers and a great deal of search, and they land between level 6 and 7 of the computer on your phone. The next piece gives the table a hidden layer and finds out what that costs.
-
-## References
-
-- Ronald Friederich, [PeSTO's evaluation function](https://www.chessprogramming.org/PeSTO%27s_Evaluation_Function), Chess Programming Wiki.
-- [Perft results](https://www.chessprogramming.org/Perft_Results), Chess Programming Wiki.
-- lichess, [fishnet](https://github.com/lichess-org/fishnet), the client that plays the computer levels, with the level table.
-- Arpad Elo, *The Rating of Chessplayers, Past and Present* (Arco, 1978).
-- [Kishi](https://github.com/raskell-io/kishi): `engine/` for the search and evaluation, `tools/` for the match runners, `docs/study/notebook.md` for every match quoted here.
 
 
 ================================================================================
@@ -1262,6 +1663,164 @@ Pfungst's verdict on von Osten, the man who owned Clever Hans, is the part of th
 - Rahwan, I. et al. (2019). [Machine behaviour](https://www.nature.com/articles/s41586-019-1138-y). *Nature* 568.
 - Watson, J. B. (1913). [Psychology as the Behaviorist Views It](https://psychclassics.yorku.ca/Watson/views.htm). *Psychological Review* 20(2).
 - Zhong, Z., Raghunathan, A. and Carlini, N. (2025). [ImpossibleBench](https://arxiv.org/abs/2510.20270). arXiv:2510.20270.
+
+
+================================================================================
+
+---
+title: "Three Parts and No Brain"
+url: https://raskell.io/articles/three-parts-and-no-brain/
+author: Raffael Schneider
+date: 2026-11-05
+description: "What a chess program is made of, and how far a hand-written one gets against the computer opponent on lichess, before any learning starts."
+tags: [game-ai, tree-search, games, rust, metrics, probability, chess, shogi, go-game]
+series: learning-to-play
+---
+
+# Three Parts and No Brain
+
+## In short
+
+Before any learning starts, I built Kishi's chess engine from the three parts Levy described: the board as numbers, an evaluation that says who is better, and a search that looks ahead. The bitboard representation is checked by perft on every change, and the hand-written PeSTO evaluation holds almost none of the chess; the strength lives in the search and its pile of tuned statistical bets. Measuring strength honestly is the hardest part: matches need paired openings, equal search budgets and stated margins of error, and a small positive result without proof means keep it and do not claim it. Against a rebuilt version of the lichess computer, Kishi with its hand-written evaluation on one core sits between level 6 and level 7, with wide margins that I report rather than leave off. The same construction gives a fair club opponent in shogi, while Go needs random playouts instead, and this baseline is the opponent every trained neural network in the project will have to beat.
+
+The chess computer on lichess has eight levels. I play it on trains, on my phone, and like everyone who plays it I have a level I can beat and a level that beats me. When I built my own engine last month, the first question from anyone I showed it to was the same question I had been asking myself: what level is it? It sounds like the easiest thing in the world to answer. It turned out to be the hardest part of the whole project, harder than getting the program to play at all, and the answer is the point of this piece.
+
+In [the first piece](https://raskell.io/articles/learning-to-play/) I told the story of Demis Hassabis at twelve, reading David Levy's handbook on chess computers and learning that a chess program is three parts: the board turned into numbers, a function that says who is better, and a search that looks ahead. I built the three parts in Rust, and I want to show what each one turns out to be once you build it, because the surprise is which of them holds the chess. Then I want to put a number on the result, and show why the number comes with a margin of error that most people quietly leave off.
+
+Nothing in this piece learns. That is deliberate. A neural network that learns to evaluate chess positions needs something to play the games it learns from, and something to beat afterwards, or there is no way to tell whether it learned anything. This is that something.
+
+## The board, as numbers
+
+Levy's first part is the one that sounds trivial and is not. A chessboard has 64 squares and a modern processor works with 64-bit numbers, so the natural representation is one number per kind of piece, with a bit set for every square that kind of piece stands on. Twelve numbers, one for each of white's and black's six piece types, and you have the position. A move is sixteen bits: where from, where to, and a few bits for what kind of move it is. The whole state of a game fits in less memory than this paragraph.
+
+The reason to care is speed. Asking "where can this knight go" becomes a lookup in a table; asking "is the king attacked" becomes a handful of ANDs and ORs on those numbers. An engine asks those questions tens of millions of times a second, and every one of them has to be exactly right, because the rules of chess have corners. Castling through check. The pawn that captures en passant and, in doing so, uncovers a check on its own king along the rank. A program with one rare bug in its move generation plays a thousand games without incident and then loses one by making an illegal move, and nobody notices which rule it was.
+
+The test for this has a name, perft, and it is the first thing any engine author runs. You count every legal sequence of moves to a fixed depth from a known position and compare with the published numbers, which have been agreed on for decades.
+
+| Moves ahead | Positions reachable from the start |
+|---|---|
+| 1 | 20 |
+| 2 | 400 |
+| 3 | 8,902 |
+| 4 | 197,281 |
+| 5 | 4,865,609 |
+
+If your program says 4,865,609 at depth five, your rules are right, at least for the starting position. There is a second position everyone uses, nicknamed Kiwipete, with castling rights and en passant and promotions all live at once, and a handful of nastier endgames. Kishi runs the whole suite on every change. Every match tool in the project also checks the opponent's moves against Kishi's own generator, so if the two programs ever disagree about the rules, the game fails loudly instead of being quietly scored.
+
+One decision follows the engine everywhere afterwards. A position in Kishi is a small value that is copied, not modified. Making a move hands you a new position and leaves the old one untouched, so there is no "unmake" and no way for the two to drift apart. It costs a copy of a couple of hundred bytes per move and buys code that cannot get out of sync with itself. For a program that would later be compiled to WebAssembly and run on several threads at once, that was the right trade, and I would make it again.
+
+## The evaluation
+
+Levy's second part is the one I expected to hold the chess, and it holds almost none. The evaluation looks at a single position, without looking ahead, and returns a number: who is better and by how much, in hundredths of a pawn. Plus 100 means the side to move is a pawn up, or has the equivalent in position. Levy's example, in the book Hassabis read, was material against mobility: if the pieces you have left matter twice as much as the squares they can reach, double the material score before adding the mobility score. The idea is still exactly that, weights on things you can count.
+
+Kishi's hand-written evaluation is a well-known set of tables called PeSTO. For each of the twelve kinds of piece there is a table of 64 numbers, one per square: a knight in the centre is worth more than a knight on the rim, a king belongs in the corner in the middlegame and in the centre in the endgame, a pawn far up the board is worth more than one at home. There are two tables per piece, one for the middlegame and one for the endgame, and the evaluation blends them by how much material is left. Add up the entries for the pieces on the board, and that is the number.
+
+It knows nothing else. Nothing about pawn structure beyond where each pawn stands, nothing about king safety beyond where the king stands, nothing about whether a rook is on an open file, nothing about how any two pieces relate to each other. It is 768 numbers twice, and an interpolation, and it plays chess well enough to beat most people who play chess, which tells you something about where the strength of these programs lives. It is not in the knowledge.
+
+I will come back to the number 768 in the next piece, because the neural network that is supposed to replace this table has exactly 768 inputs, and the coincidence is not one.
+
+There is one small piece of learning in the engine already, and it is worth a sentence as the smallest possible example of the idea this whole project is about. The search keeps a table of how wrong the evaluation has recently been for each pawn structure it has seen, and corrects the evaluation by that running average before using it. The correction is learned during the game, from the search's own deeper results, and thrown away afterwards.
+
+## The search
+
+Levy's third part is where the engineering is, and where the strength comes from. The search tries every move, and every reply, and every reply to those, building a tree of positions that might be reached, and asks the evaluation about the positions at the tips. The textbook version is minimax: assume your opponent always picks the reply that is worst for you, and choose the move whose worst case is best. Alpha-beta is minimax with a proof that most of the tree does not matter. Once a reply has shown that a move is bad enough, you stop reading the rest of that move's continuations, the way you stop reading a contract clause once you have found the sentence that kills the deal. With the best move examined first at every step, alpha-beta sees as far as minimax while visiting roughly the square root of the positions.
+
+Everything a modern engine does on top of that is a bet about chess, and every bet is sometimes wrong. The engine is tuned so that the extra depth the bets buy is worth more than the mistakes they cost.
+
+| The technique | The bet | In Kishi |
+|---|---|---|
+| Transposition table | the same position is reached by different move orders, so remember what you found | 16-byte entries in a table all threads share without locks |
+| Move ordering | look at the likely best move first, so the cut-offs come early | the move the table remembers, then captures by value, then moves that cut off recently |
+| Null-move pruning | if doing nothing is already good enough, moving is too; skip the rest | a shallower search after a pass, shallower still the further ahead you are |
+| Reverse futility | far above the target at shallow depth, stop looking | the margin is 75 hundredths of a pawn per move of depth, up to eight |
+| Late move reductions | moves that order late are rarely best, so search them shallower | a formula in the logarithm of depth and move number |
+| Singular extensions | one move much better than every alternative deserves a deeper look | from eight moves of depth |
+| Quiescence | never evaluate in the middle of an exchange | keep capturing until the position is quiet, then ask |
+
+None of these are mine. They are the shared inheritance of open-source engines, worked out over thirty years by people who tested each one with tens of thousands of games, and they are why Kishi's search is a few thousand lines rather than a research project. What I want you to take from the table is its shape. A chess search is a pile of statistical bets, each with a margin written in hundredths of a pawn, each tuned against the particular evaluation it runs with. The bets do not know what the evaluation is. In the next piece the evaluation changes, and that sentence becomes expensive.
+
+With all of it in place, on one core of the laptop, the engine examines about three million positions a second and looks seventeen to twenty half-moves ahead in half a second, the time it takes to tap the board. Deep Blue, in 1997, looked twelve to sixteen half-moves ahead by examining two hundred million positions a second on hardware built for nothing else. Sixty times fewer positions, and a little further: the difference is the bets.
+
+## How you know anything
+
+Now the hard part. Two chess programs can play each other, and one wins more often, and you would like to turn that into a number. Chess has had such a number since the 1960s: the Elo rating, the number every club player knows, and the one I first met at regional tournaments as a teenager, which is why the arithmetic has never felt abstract to me. A difference of 400 points means ten-to-one odds. A difference of 100 points means the stronger side scores about 64 percent. The rating difference between two programs is computed from the score of a match between them, and the catch is that the score of a short match is mostly noise.
+
+Chess engine developers have one honest instrument for this, and it is worth describing because the design is where the honesty lives. The two programs play a few hundred games from the same random openings, each opening played twice with the colours swapped, so that a lucky opening cannot favour one side. Both sides get the same number of positions to search per move, so that a faster program cannot pass for a stronger one. And the result comes with a margin of error, at 95 percent confidence, that depends on how many games were played.
+
+| Games | Margin of error |
+|---|---|
+| 20 | about 200 rating points either way |
+| 400 | about 32 |
+| 600 | about 23 |
+
+Before I trusted the instrument I pointed it at itself. The same program on both sides, ten thousand positions a move, six hundred games:
+
+```text
+Kishi vs Kishi, 10,000 nodes a move, 600 games: +211 =181 -208   elo +1.7 ± 23.3
+```
+
+Plus 1.7 with a margin of 23 is the instrument reading zero, which is what it should read when nothing has changed. Then the real test, the pawn-structure correction described above against the engine without it:
+
+```text
+Kishi vs Kishi without correction, 600 games: +219 =180 -201   elo +10.4 ± 23.3
+```
+
+That is probably positive and not proven. The big engine projects run this test with tens of thousands of games per change and a statistical rule that stops the match as soon as the answer is clear either way. On a laptop, six hundred games is an evening, and the honest reading of plus ten with a margin of twenty-three is "keep it, and do not claim it". I have found that sentence useful well outside chess.
+
+## The lichess ladder
+
+A match between two versions of Kishi says which is better. It says nothing about how good either of them is. For that, the program has to play something whose strength people already know, and the most useful yardstick I know is the one in your pocket: lichess's computer opponent, because everyone has played it and everyone has a level that beats them.
+
+The eight levels are not eight different programs. They are Stockfish, the strongest open-source engine in the world, deliberately weakened in three ways at once: a skill setting that makes it pick worse moves on purpose, a cap on how many moves ahead it may look, and a time limit per move. The settings are public, in the client lichess runs, so the opponent can be rebuilt exactly on a laptop.
+
+| Level | Skill | Depth | Time per move |
+|---|---|---|---|
+| 1 | −9 | 5 | 50 ms |
+| 2 | −5 | 5 | 100 ms |
+| 3 | −1 | 5 | 150 ms |
+| 4 | 3 | 5 | 200 ms |
+| 5 | 7 | 5 | 300 ms |
+| 6 | 11 | 8 | 400 ms |
+| 7 | 16 | 13 | 500 ms |
+| 8 | 20 | 22 | 1,000 ms |
+
+Stockfish's own skill setting stops at zero, so levels 1 to 3 as I rebuild them are a little stronger than the real ones. Levels 4 to 8 are exact. Kishi played Stockfish 19 on one core, twenty games a level, with the time its own app gives the matching level:
+
+| Opponent | Kishi's time per move | Score | Rating difference |
+|---|---|---|---|
+| lichess level 4 | 200 ms | 19 of 20 | +511, give or take 646 |
+| lichess level 6 | 500 ms | 13 of 20 | +108, give or take 165 |
+| lichess level 7 | 500 ms | ½ of 20 | −636, give or take 579 |
+
+Twenty games a level gives margins you could drive a bus through, which is why they are in the table rather than left off. What the numbers do allow you to say is this: with the hand-written evaluation, on one core, at half a second a move, Kishi sits between lichess's level 6 and level 7. If level 6 is the one that beats you, Kishi beats it two games in three. Level 7 is Stockfish thinking thirteen moves deep with most of its strength intact, and one draw in twenty games is an honest description of the distance. Level 8 is Stockfish at depth 22, which is to say Stockfish, and no evaluation function written by hand on a laptop is going to get there.
+
+The app plays on four cores on a phone, and these numbers come from one, so the opponent you meet at [kishi.raskell.io](https://kishi.raskell.io) is a little stronger than the table. I will measure it again with the phone's budget as the trained neural networks arrive, because that is the measurement that will decide whether they ship.
+
+## The same three parts, twice more
+
+Shogi got the same construction: the board as numbers, with the extra wrinkle that captured pieces sit in a hand and can come back; a hand-written evaluation that counts material, with pieces in hand worth a little more than pieces on the board, and rewards golds and silvers near your own king; and the same search with the same bets. Against Fairy-Stockfish, the variant engine that plays shogi, at half a second a move, it wins twenty games out of twenty at the weakest skill setting and two out of twenty at a middling one. A fair club opponent, nowhere near strong play, and the hand-written evaluation is already where the design strains: with pieces returning to the board, there is no endgame to simplify into, and a table of squares says less and less.
+
+Go did not get the three parts, because they do not work. There is no table of 361 squares that tells you who is winning a Go position, and a search that looks four moves ahead on a nineteen-by-nineteen board sees almost nothing. The Go engine in Kishi plays the way the programs of 2008 played, by playing thousands of fast random games to the end and counting, and against GNU Go at its lowest level it wins three games in ten. That method, and why it was the dead end AlphaGo had to get out of, is a piece of its own.
+
+## What it cost
+
+| | |
+|---|---|
+| The engine | a few days of Rust, written with a coding agent, me steering |
+| The rules test | seconds, on every change |
+| Positions searched per second, one core | 3 to 3.7 million |
+| A 600-game match at 10,000 positions a move | an evening on ten cores |
+| Twenty games against a lichess level | minutes |
+
+The baseline is the most important number in this whole project, and the least glamorous. It is the opponent every trained neural network has to beat, the player that will generate the first games they learn from, and the thing the rest of the work is trying to make unnecessary. Levy's three parts, built, hold a hand-written table of 768 numbers and a great deal of search, and they land between level 6 and 7 of the computer on your phone. The next piece gives the table a hidden layer and finds out what that costs.
+
+## References
+
+- Ronald Friederich, [PeSTO's evaluation function](https://www.chessprogramming.org/PeSTO%27s_Evaluation_Function), Chess Programming Wiki.
+- [Perft results](https://www.chessprogramming.org/Perft_Results), Chess Programming Wiki.
+- lichess, [fishnet](https://github.com/lichess-org/fishnet), the client that plays the computer levels, with the level table.
+- Arpad Elo, *The Rating of Chessplayers, Past and Present* (Arco, 1978).
+- [Kishi](https://github.com/raskell-io/kishi): `engine/` for the search and evaluation, `tools/` for the match runners, `docs/study/notebook.md` for every match quoted here.
 
 
 ================================================================================
@@ -2096,6 +2655,33 @@ The data behind both figures is a dataset of its own, with a page on what each r
 ================================================================================
 
 ---
+title: "Future Cop: L.A.P.D., a duel between genres"
+url: https://raskell.io/notes/a-duel-between-genres/
+author: Raffael Schneider
+date: 2026-11-01
+description: "Future Cop: L.A.P.D. had a one-against-one mode where you were the soldier and the general at once. I have not found a game since that does it."
+tags: [game-design, strategy]
+---
+
+# Future Cop: L.A.P.D., a duel between genres
+
+One of the most fun things I played on the PlayStation was a side mode in a game about police robots. [Future Cop: L.A.P.D.](https://en.wikipedia.org/wiki/Future_Cop:_LAPD) came out in 1998, set in a Los Angeles of 2098, and next to its campaign it had a mode called Precinct Assault. Two players, one arena, one base each. You pilot the X1-Alpha, a machine that switches between a fast hover car and a slow, heavily armed walking mech. You drive out to capture turrets and outposts, you spend what they earn on hovertanks that roll toward the other base on their own, and you buy helicopters to shoot down the tanks coming at yours. The first tank to break into a base ends the match.
+
+What made it work was that you were two things at once. You were the soldier, in the middle of the fighting, escorting your tanks through the turrets and hunting the other player. And you were the general, deciding whether the next credits went into attack or defence. Every minute you spent driving back to defend was a minute your own push went without you.
+
+It was not the first game to try this. [Herzog Zwei](https://en.wikipedia.org/wiki/Herzog_Zwei) did something close on the Mega Drive in 1989, with a transforming mech of its own, and the Wikipedia article on Future Cop notes that the difference is that you can help your army reach the other base yourself. Precinct Assault is sometimes counted as an early form of the MOBA, and the genre that followed kept the lanes and the units that walk them. But it dropped the economy and the general, and it went from one against one to five against five. I have not found a game since that does exactly what Precinct Assault did.
+
+The version I would like to build is a one-against-one DotA in a setting closer to Terminator: a ruined city, machines on both sides, one transforming unit per player that is both your hero and your commander. Capture a factory and it produces infantry. Capture a ridge and it holds a turret. Everything you own is something the other player can take, and the only way to protect it is to be somewhere, which means not being somewhere else.
+
+## References
+
+- [Future Cop: L.A.P.D.](https://en.wikipedia.org/wiki/Future_Cop:_LAPD), Wikipedia.
+- [Herzog Zwei](https://en.wikipedia.org/wiki/Herzog_Zwei), Wikipedia.
+
+
+================================================================================
+
+---
 title: "Gangsters: Organized Crime, orders for the week"
 url: https://raskell.io/notes/orders-for-the-week/
 author: Raffael Schneider
@@ -2119,33 +2705,6 @@ I have not played anything like it since, and like [Precinct Assault](https://ra
 ## References
 
 - [Gangsters: Organized Crime](https://en.wikipedia.org/wiki/Gangsters:_Organized_Crime), Wikipedia.
-
-
-================================================================================
-
----
-title: "Future Cop: L.A.P.D., a duel between genres"
-url: https://raskell.io/notes/a-duel-between-genres/
-author: Raffael Schneider
-date: 2026-11-01
-description: "Future Cop: L.A.P.D. had a one-against-one mode where you were the soldier and the general at once. I have not found a game since that does it."
-tags: [game-design, strategy]
----
-
-# Future Cop: L.A.P.D., a duel between genres
-
-One of the most fun things I played on the PlayStation was a side mode in a game about police robots. [Future Cop: L.A.P.D.](https://en.wikipedia.org/wiki/Future_Cop:_LAPD) came out in 1998, set in a Los Angeles of 2098, and next to its campaign it had a mode called Precinct Assault. Two players, one arena, one base each. You pilot the X1-Alpha, a machine that switches between a fast hover car and a slow, heavily armed walking mech. You drive out to capture turrets and outposts, you spend what they earn on hovertanks that roll toward the other base on their own, and you buy helicopters to shoot down the tanks coming at yours. The first tank to break into a base ends the match.
-
-What made it work was that you were two things at once. You were the soldier, in the middle of the fighting, escorting your tanks through the turrets and hunting the other player. And you were the general, deciding whether the next credits went into attack or defence. Every minute you spent driving back to defend was a minute your own push went without you.
-
-It was not the first game to try this. [Herzog Zwei](https://en.wikipedia.org/wiki/Herzog_Zwei) did something close on the Mega Drive in 1989, with a transforming mech of its own, and the Wikipedia article on Future Cop notes that the difference is that you can help your army reach the other base yourself. Precinct Assault is sometimes counted as an early form of the MOBA, and the genre that followed kept the lanes and the units that walk them. But it dropped the economy and the general, and it went from one against one to five against five. I have not found a game since that does exactly what Precinct Assault did.
-
-The version I would like to build is a one-against-one DotA in a setting closer to Terminator: a ruined city, machines on both sides, one transforming unit per player that is both your hero and your commander. Capture a factory and it produces infantry. Capture a ridge and it holds a turret. Everything you own is something the other player can take, and the only way to protect it is to be somewhere, which means not being somewhere else.
-
-## References
-
-- [Future Cop: L.A.P.D.](https://en.wikipedia.org/wiki/Future_Cop:_LAPD), Wikipedia.
-- [Herzog Zwei](https://en.wikipedia.org/wiki/Herzog_Zwei), Wikipedia.
 
 
 ================================================================================
@@ -3719,6 +4278,24 @@ Each of those is a few days of work and a few numbers, and I have started keepin
 ================================================================================
 
 ---
+title: "The window before the utility"
+url: https://raskell.io/notes/the-window-before-the-utility/
+author: Raffael Schneider
+date: 2026-10-25
+description: "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again."
+tags: [inference, economics, augmentation, democratisation, ai-engineering, energy]
+---
+
+# The window before the utility
+
+I argued in [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/) that tokens are a metered utility, priced per unit like water or electricity, and that pricing and provision will converge on the utility model. The consequence follows: AI capability will be commoditised. It will become normal, boring, and available to everyone on the same terms, and once it is, having it is no advantage at all, any more than having electricity is. The model behind it becomes a dependency like any other, the argument of [The Model Is a Dependency](https://raskell.io/articles/the-model-is-a-dependency/), and its bill gets metered into the loop, as in [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop/).
+
+That is the end state. We are not there. The models, the tools and the prices are still moving every quarter, and in a moving market the advantage goes to the people who adopt early and learn to use the thing well, which is work. This is why the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is a window and not a new normal: nobody in 2036 will write a note about feeling empowered by their electricity supply. The window is open now, it is once in a lifetime in the literal sense, and what one does with it is the question. One answer is in [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/).
+
+
+================================================================================
+
+---
 title: "Ideas stop waiting"
 url: https://raskell.io/notes/ideas-stop-waiting/
 author: Raffael Schneider
@@ -3737,46 +4314,6 @@ I am not faster at the things I already did. A whole category of things has move
 ================================================================================
 
 ---
-title: "A capability, democratised"
-url: https://raskell.io/notes/a-capability-democratised/
-author: Raffael Schneider
-date: 2026-10-25
-description: "Building software took money, a team, or years of training. Now anyone with an idea and a subscription can do it, and nobody predicted what would follow."
-tags: [democratisation, emergence, ai-engineering, history-of-technology, commons]
----
-
-# A capability, democratised
-
-Making software used to be reserved for people with a particular privilege: the money to pay a team, or the team itself, or the years it takes to learn to program well enough to build something real. [The power](https://raskell.io/notes/power-in-the-good-sense/) I wrote about is that privilege, democratised. Anyone with an idea, a subscription, and the patience to describe what they want can now have it built, and the ones who learn to describe well get a great deal.
-
-Democratised capabilities have a history, and the history has a shape. Nobody who built the printing press or the web could say what people would do with them, and what people did was not on anyone's plan. The web's version of that story is in [The Web Was the Training Set](https://raskell.io/articles/the-web-was-the-training-set/): a protocol given away, and thirty years of uses nobody at CERN drew. It emerged, from millions of small decisions, and it was better for almost everyone, collectively and in the end, even where it was hard for the people in the middle of it. I expect the same of this, with the same caveat; [the move to the city](https://raskell.io/notes/the-move-to-the-city/) is the comparison I keep returning to. And I expect the window in which it is an advantage rather than a baseline to be short, for the reason in [the window before the utility](https://raskell.io/notes/the-window-before-the-utility/).
-
-
-================================================================================
-
----
-title: "The move to the city"
-url: https://raskell.io/notes/the-move-to-the-city/
-author: Raffael Schneider
-date: 2026-10-25
-description: "Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape."
-tags: [history-of-technology, cities, future-of-work, social-reform, world-history]
----
-
-# The move to the city
-
-The comparison I keep coming back to is the move from the land to the city. The industrial cities of the nineteenth century were dense, dirty and short of everything, sanitation first of all; people got sick in them and died in them. The people still on the land did not want to go, and thought life was better where they were, and for them, in their own lifetimes, it often was. Over generations the move made almost everyone better off, and nobody now argues for going back; the long series is on Our World in Data's page on urbanisation, below.
-
-The thinking today has the same shape. The fear of what AI does to work is legitimate on the timescale of a life, and the long-run reading, that a [democratised capability](https://raskell.io/notes/a-capability-democratised/) ends up better for everyone collectively, is probably also right. Both can be true, and the part that history does not make comfortable is the middle: [the tumult in between](https://raskell.io/notes/the-tumult-in-between/).
-
-## References
-
-- Our World in Data, [Urbanization](https://ourworldindata.org/urbanization): the share of people living in cities over two centuries, by country.
-
-
-================================================================================
-
----
 title: "Power, in the good sense"
 url: https://raskell.io/notes/power-in-the-good-sense/
 author: Raffael Schneider
@@ -3790,24 +4327,6 @@ tags: [augmentation, democratisation, ai-engineering, ethics]
 The word I have settled on for the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is power. Not in the sense the word usually carries, power over someone, but in the plain sense: being capable of doing something, having possibilities, having a moat of your own. Through the AI services anyone can subscribe to, we became powerful.
 
 It is an uncomfortable choice of word at first, and the longer I sit with it the more I like it. We have trained ourselves to hear power only as hierarchy, and to look for a victim in every arrangement that has some. This is a kind of power nobody took from anyone. It was not redistributed; it was created, and handed out to whoever cared to learn it. Capability is power, and it is a relief to say so without apology. It is the capability of one person directing many hands, which is what [sixteen agents under one manager](https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/) turned out to be about. What makes it more than a personal feeling is that the capability is [democratised](https://raskell.io/notes/a-capability-democratised/), which is where the interesting consequences start.
-
-
-================================================================================
-
----
-title: "Citizen entrepreneurs"
-url: https://raskell.io/notes/citizen-entrepreneurs/
-author: Raffael Schneider
-date: 2026-10-25
-description: "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory."
-tags: [entrepreneurship, democratisation, future-of-work, agents, augmentation, factories]
----
-
-# Citizen entrepreneurs
-
-A friend of mine, an enterprise architect at a large Swiss energy group, answers [the tumult in between](https://raskell.io/notes/the-tumult-in-between/) with the observation that the same tools that threaten jobs make citizen entrepreneurs possible. An ordinary person can use AI to identify a business opportunity, use AI to build the business, and use AI to operate it. The barrier was never only money; it was the ten different competences a business needs on day one, and those are now available by the hour. The operating half is already true for infrastructure, where one person can now run what used to take a team, as I argued in [How AI Makes Bare Metal Viable Again](https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/). He took his own idea seriously enough to build a business idea factory, a system that generates and evaluates opportunities. About a week before we talked, someone else announced a project with the same shape on Hacker News, which he took as confirmation rather than competition.
-
-I find it the most hopeful reading of [the window](https://raskell.io/notes/the-window-before-the-utility/), and the one with the most work in it. It assumes the capability really is [democratised](https://raskell.io/notes/a-capability-democratised/), which I believe, and it assumes people will take it up, which is the part the window is for.
 
 
 ================================================================================
@@ -3835,19 +4354,59 @@ The interval is the part I cannot see through. If AI really does lead to somethi
 ================================================================================
 
 ---
-title: "The window before the utility"
-url: https://raskell.io/notes/the-window-before-the-utility/
+title: "The move to the city"
+url: https://raskell.io/notes/the-move-to-the-city/
 author: Raffael Schneider
 date: 2026-10-25
-description: "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again."
-tags: [inference, economics, augmentation, democratisation, ai-engineering, energy]
+description: "Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape."
+tags: [history-of-technology, cities, future-of-work, social-reform, world-history]
 ---
 
-# The window before the utility
+# The move to the city
 
-I argued in [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/) that tokens are a metered utility, priced per unit like water or electricity, and that pricing and provision will converge on the utility model. The consequence follows: AI capability will be commoditised. It will become normal, boring, and available to everyone on the same terms, and once it is, having it is no advantage at all, any more than having electricity is. The model behind it becomes a dependency like any other, the argument of [The Model Is a Dependency](https://raskell.io/articles/the-model-is-a-dependency/), and its bill gets metered into the loop, as in [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop/).
+The comparison I keep coming back to is the move from the land to the city. The industrial cities of the nineteenth century were dense, dirty and short of everything, sanitation first of all; people got sick in them and died in them. The people still on the land did not want to go, and thought life was better where they were, and for them, in their own lifetimes, it often was. Over generations the move made almost everyone better off, and nobody now argues for going back; the long series is on Our World in Data's page on urbanisation, below.
 
-That is the end state. We are not there. The models, the tools and the prices are still moving every quarter, and in a moving market the advantage goes to the people who adopt early and learn to use the thing well, which is work. This is why the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is a window and not a new normal: nobody in 2036 will write a note about feeling empowered by their electricity supply. The window is open now, it is once in a lifetime in the literal sense, and what one does with it is the question. One answer is in [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/).
+The thinking today has the same shape. The fear of what AI does to work is legitimate on the timescale of a life, and the long-run reading, that a [democratised capability](https://raskell.io/notes/a-capability-democratised/) ends up better for everyone collectively, is probably also right. Both can be true, and the part that history does not make comfortable is the middle: [the tumult in between](https://raskell.io/notes/the-tumult-in-between/).
+
+## References
+
+- Our World in Data, [Urbanization](https://ourworldindata.org/urbanization): the share of people living in cities over two centuries, by country.
+
+
+================================================================================
+
+---
+title: "A capability, democratised"
+url: https://raskell.io/notes/a-capability-democratised/
+author: Raffael Schneider
+date: 2026-10-25
+description: "Building software took money, a team, or years of training. Now anyone with an idea and a subscription can do it, and nobody predicted what would follow."
+tags: [democratisation, emergence, ai-engineering, history-of-technology, commons]
+---
+
+# A capability, democratised
+
+Making software used to be reserved for people with a particular privilege: the money to pay a team, or the team itself, or the years it takes to learn to program well enough to build something real. [The power](https://raskell.io/notes/power-in-the-good-sense/) I wrote about is that privilege, democratised. Anyone with an idea, a subscription, and the patience to describe what they want can now have it built, and the ones who learn to describe well get a great deal.
+
+Democratised capabilities have a history, and the history has a shape. Nobody who built the printing press or the web could say what people would do with them, and what people did was not on anyone's plan. The web's version of that story is in [The Web Was the Training Set](https://raskell.io/articles/the-web-was-the-training-set/): a protocol given away, and thirty years of uses nobody at CERN drew. It emerged, from millions of small decisions, and it was better for almost everyone, collectively and in the end, even where it was hard for the people in the middle of it. I expect the same of this, with the same caveat; [the move to the city](https://raskell.io/notes/the-move-to-the-city/) is the comparison I keep returning to. And I expect the window in which it is an advantage rather than a baseline to be short, for the reason in [the window before the utility](https://raskell.io/notes/the-window-before-the-utility/).
+
+
+================================================================================
+
+---
+title: "Citizen entrepreneurs"
+url: https://raskell.io/notes/citizen-entrepreneurs/
+author: Raffael Schneider
+date: 2026-10-25
+description: "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory."
+tags: [entrepreneurship, democratisation, future-of-work, agents, augmentation, factories]
+---
+
+# Citizen entrepreneurs
+
+A friend of mine, an enterprise architect at a large Swiss energy group, answers [the tumult in between](https://raskell.io/notes/the-tumult-in-between/) with the observation that the same tools that threaten jobs make citizen entrepreneurs possible. An ordinary person can use AI to identify a business opportunity, use AI to build the business, and use AI to operate it. The barrier was never only money; it was the ten different competences a business needs on day one, and those are now available by the hour. The operating half is already true for infrastructure, where one person can now run what used to take a team, as I argued in [How AI Makes Bare Metal Viable Again](https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/). He took his own idea seriously enough to build a business idea factory, a system that generates and evaluates opportunities. About a week before we talked, someone else announced a project with the same shape on Hacker News, which he took as confirmation rather than competition.
+
+I find it the most hopeful reading of [the window](https://raskell.io/notes/the-window-before-the-utility/), and the one with the most work in it. It assumes the capability really is [democratised](https://raskell.io/notes/a-capability-democratised/), which I believe, and it assumes people will take it up, which is the part the window is for.
 
 
 ================================================================================

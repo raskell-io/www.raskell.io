@@ -1,8 +1,17 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-15T13:25:21+00:00",
+ "generated": "2026-11-16T06:56:45+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/building-it-intelligence/",
+   "kind": "article",
+   "label": "Building IT Intelligence: A Reference Implementation in One Repository",
+   "url": "https://raskell.io/articles/building-it-intelligence/",
+   "meta": "2026-11-16 · 27 min",
+   "description": "How to build an Enterprise Context Platform from open source parts: ontology, connectors, workflows, store, API, MCP and UI, in one repository you can run.",
+   "degree": 11
+  },
   {
    "id": "a:/articles/review-empire-of-ai/",
    "kind": "article",
@@ -55,7 +64,7 @@
    "url": "https://raskell.io/articles/it-intelligence/",
    "meta": "2026-11-04 · 50 min",
    "description": "Business intelligence tells a company how it sells. Nothing tells it how its IT fits together. Why I started building an Enterprise Context Platform.",
-   "degree": 22
+   "degree": 23
   },
   {
    "id": "a:/articles/the-original-data-company/",
@@ -217,7 +226,7 @@
    "url": "https://raskell.io/articles/tools-how-agents-actually-do-things/",
    "meta": "2026-06-09 · 13 min",
    "description": "Function calling is the API between language and action, but the engineering is in the registry. A working four-tool registry in TypeScript on Bun, schema design that survives model drift, parallel tool calls, and the failure modes nobody mentions in the demo. Part three of The Agent Platform Handbook.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "a:/articles/your-agent-wants-root/",
@@ -280,7 +289,7 @@
    "url": "https://raskell.io/articles/the-economics-of-inference/",
    "meta": "2026-04-22 · 12 min",
    "description": "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas.",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "a:/articles/what-comes-after-the-last-programming-language/",
@@ -719,9 +728,9 @@
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 19 pages",
+   "meta": "Concept · 20 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 29
+   "degree": 30
   },
   {
    "id": "t:ai-alignment",
@@ -881,9 +890,9 @@
    "kind": "tag",
    "label": "Context engineering",
    "url": "https://raskell.io/tags/context-engineering/",
-   "meta": "Concept · 6 pages",
+   "meta": "Concept · 7 pages",
    "description": "Deciding what a model sees: pinned context, retrieval, memory, and the conventions that keep them honest.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:cryptocurrency",
@@ -953,9 +962,9 @@
    "kind": "tag",
    "label": "Durable execution",
    "url": "https://raskell.io/tags/durable-execution/",
-   "meta": "Technology · 2 pages",
+   "meta": "Technology · 3 pages",
    "description": "Workflow engines that keep long-running processes alive through crashes and deployments, with a journal of every step: Temporal, Restate and their kin.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:economics",
@@ -1007,9 +1016,9 @@
    "kind": "tag",
    "label": "Enterprise architecture",
    "url": "https://raskell.io/tags/enterprise-architecture/",
-   "meta": "Domain · 1 page",
+   "meta": "Domain · 2 pages",
    "description": "How a company's capabilities, applications, data and infrastructure fit together, who owns what, and how the landscape is changed on purpose.",
-   "degree": 2
+   "degree": 3
   },
   {
    "id": "t:entrepreneurship",
@@ -1286,9 +1295,9 @@
    "kind": "tag",
    "label": "Knowledge management",
    "url": "https://raskell.io/tags/knowledge-management/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:kubernetes",
@@ -1502,9 +1511,9 @@
    "kind": "tag",
    "label": "Open source",
    "url": "https://raskell.io/tags/oss/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "Open source as the point of the work, not just its licence.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:philosophy",
@@ -1592,9 +1601,9 @@
    "kind": "tag",
    "label": "Provenance",
    "url": "https://raskell.io/tags/provenance/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "Where something came from and who vouches for it: signed media, rights-clear training data, and artifacts that carry their own history.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:psychology",
@@ -2294,7 +2303,7 @@
    "url": "https://github.com/raskell-io/aqueduct",
    "meta": "Project",
    "description": "A durable execution engine in Rust, built for the procedures agents write and people approve. Every step is journaled before it counts, so a run survives crashes, restarts and week…",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "p:refrakt",
@@ -4145,6 +4154,10 @@
    "target": "t:aerospace"
   },
   {
+   "source": "a:/articles/building-it-intelligence/",
+   "target": "t:agents"
+  },
+  {
    "source": "a:/notes/memory-that-dreams/",
    "target": "t:agents"
   },
@@ -4557,6 +4570,10 @@
    "target": "t:complex-systems"
   },
   {
+   "source": "a:/articles/building-it-intelligence/",
+   "target": "t:context-engineering"
+  },
+  {
    "source": "a:/notes/memory-that-dreams/",
    "target": "t:context-engineering"
   },
@@ -4729,6 +4746,10 @@
    "target": "t:distributed-systems"
   },
   {
+   "source": "a:/articles/building-it-intelligence/",
+   "target": "t:durable-execution"
+  },
+  {
    "source": "a:/articles/the-river-and-the-canal/",
    "target": "t:durable-execution"
   },
@@ -4867,6 +4888,10 @@
   {
    "source": "t:energy",
    "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/building-it-intelligence/",
+   "target": "t:enterprise-architecture"
   },
   {
    "source": "a:/articles/it-intelligence/",
@@ -5461,6 +5486,10 @@
    "target": "t:reliability"
   },
   {
+   "source": "a:/articles/building-it-intelligence/",
+   "target": "t:knowledge-management"
+  },
+  {
    "source": "a:/notes/memory-that-dreams/",
    "target": "t:knowledge-management"
   },
@@ -5757,6 +5786,10 @@
    "target": "t:operating-systems"
   },
   {
+   "source": "a:/articles/building-it-intelligence/",
+   "target": "t:oss"
+  },
+  {
    "source": "a:/articles/it-intelligence/",
    "target": "t:oss"
   },
@@ -5903,6 +5936,10 @@
   {
    "source": "t:programming-languages",
    "target": "t:linguistics"
+  },
+  {
+   "source": "a:/articles/building-it-intelligence/",
+   "target": "t:provenance"
   },
   {
    "source": "a:/articles/it-intelligence/",
@@ -6789,6 +6826,18 @@
    "target": "c:reviews"
   },
   {
+   "source": "a:/articles/building-it-intelligence/",
+   "target": "a:/articles/it-intelligence/"
+  },
+  {
+   "source": "a:/articles/building-it-intelligence/",
+   "target": "a:/articles/tools-how-agents-actually-do-things/"
+  },
+  {
+   "source": "a:/articles/building-it-intelligence/",
+   "target": "a:/articles/the-economics-of-inference/"
+  },
+  {
    "source": "a:/articles/review-empire-of-ai/",
    "target": "a:/articles/win-everything-control-no-one/"
   },
@@ -7659,6 +7708,10 @@
   {
    "source": "a:/talks/iat-13-basel/",
    "target": "p:shiioo"
+  },
+  {
+   "source": "a:/articles/building-it-intelligence/",
+   "target": "p:aqueduct"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
