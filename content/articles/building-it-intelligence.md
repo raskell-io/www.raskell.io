@@ -1,7 +1,6 @@
 +++
 title = "Building IT Intelligence: A Reference Implementation in One Repository"
 date = 2026-11-16
-draft = true
 description = "How to build an Enterprise Context Platform from open source parts: ontology, connectors, workflows, store, API, MCP and UI, in one repository you can run."
 
 [taxonomies]
@@ -9,6 +8,8 @@ tags = ["enterprise-architecture", "context-engineering", "agents", "provenance"
 
 [extra]
 author = "Raffael"
+image = "building-it-intelligence.avif"
+cover = "covers/building-it-intelligence.avif"
 in_short = [
   "This is a reference implementation of the IT intelligence platform from my earlier post, in one open source repository with a deliberately messy fictional company, the Kestrel Group, inside it.",
   "The ontology comes first and everything is generated from or validated against it, and observations from sources are kept separate from the entities the model concludes from them.",
@@ -129,7 +130,7 @@ Go has its costs. `if err != nil` gets repetitive, the type system has no sum ty
 
 ## Layer one: the ontology
 
-The Context Model is the ontology, and it lives in `ontology/`: `context_model.yaml` and the two files it imports, `entities.yaml` and `relations.yaml`. I use LinkML because it lets the model be written once, in readable YAML, and generated into the forms each part of the system needs: JSON Schema for validation, the store's vocabulary (tables of entity and relation kinds, and a trigger that rejects any edge outside its domain and range), OWL and SHACL for anyone who wants to reason over it with semantic web tooling, Python and TypeScript models, and human-readable documentation. The Go types are generated from the JSON Schema.
+The Context Model is the ontology, and it lives in `ontology/`: `context_model.yaml` and the two files it imports, `entities.yaml` and `relations.yaml`. I use LinkML because it lets the model be written once, in readable YAML, and generated into the forms each part of the system needs: [JSON Schema](https://json-schema.org/) for validation, the store's vocabulary (tables of entity and relation kinds, and a trigger that rejects any edge outside its domain and range), [OWL](https://www.w3.org/TR/owl2-overview/) and [SHACL](https://www.w3.org/TR/shacl/) for anyone who wants to reason over it with semantic web tooling, Python and TypeScript models, and human-readable documentation. The Go types are generated from the JSON Schema.
 
 A trimmed version of the Kestrel model:
 
@@ -247,6 +248,8 @@ Observations are append-only. Nothing is ever overwritten, so the model can alwa
 
 The `basis` column carries the distinction from the first post. An **asserted** edge came straight from a source's own key: the cluster says this workload runs in that namespace. A **derived** edge follows from other edges by a rule: the workload runs in a namespace owned by a team, so the team owns the workload unless something says otherwise. An **inferred** edge was proposed by the resolver, usually with a model's help, and carries a confidence and the reasoning behind it. When a team confirms an inferred edge, `confirmed_by` and `confirmed_at` are set and the edge becomes asserted, with a person's name on it. A trigger on the table checks every edge against the vocabulary generated from the ontology, so the store cannot hold a relationship the model does not allow.
 
+None of this needs a provenance standard to work, but it lines up with one. In the terms of the W3C's [PROV-O](https://www.w3.org/TR/prov-o/), an edge is an entity that was derived from the observations in its `evidence` and attributed to its `source` or, once confirmed, to a person. The reference does not export PROV, and it does not yet record which ingest run produced an edge, the activity in PROV's terms; if another tool needs the lineage, those are the two places to start.
+
 Why PostgreSQL and not a graph database? Because most of what architects and agents ask is one or two hops from an entity, and the rest is a bounded traversal that a recursive query handles well. The classic "what breaks if I change this" question:
 
 ```sql
@@ -342,6 +345,8 @@ It runs in three passes, from cheap and certain to expensive and uncertain:
 "PAS", the business service in the IT service management tool, resolves the same way: the model links it to Policy Administration at 0.93, because PAS is the usual abbreviation, the support group owns the application, and its incident texts mention `pol-adm-svc`.
 
 The thresholds are explicit and live in configuration. Above 0.9 the link is stored as inferred and shown normally. Between 0.6 and 0.9 it is stored as inferred and queued for the owning team to confirm. Below 0.6 it is dropped and logged. No inferred link is ever silently promoted to asserted; that takes a person. The model provider is pluggable. By default the reference replays recorded judgements, so it runs offline, without an API key, and gives the same answers every time; one line in `config/resolver.yaml` switches it to a local model or a hosted one, which works well because the inputs are metadata and the prompts are small.
+
+The problem is an old one. Statisticians call it record linkage, and Ivan Fellegi and Alan Sunter gave it a formal theory in 1969: two thresholds split candidate pairs into links, non-links and possible links that go to a person for review. The three bands above are the same idea, with a model's judgement where their theory has match weights. If your sources hold millions of records rather than a few hundred applications, look at [Splink](https://moj-analytical-services.github.io/splink/), an open source implementation of that probabilistic approach from the UK Ministry of Justice.
 
 ## Layer five: workflows
 
@@ -546,4 +551,9 @@ The repository is there to be taken apart. If you run it against your own export
 - [Mermaid](https://mermaid.js.org/), diagrams as text.
 - [Backstage software catalog](https://backstage.io/docs/features/software-catalog), the developer-portal ancestor of the entity model.
 - Simon Brown, [The C4 model](https://c4model.com/), for architecture views that a generator can target.
+- [The Go 1 compatibility promise](https://go.dev/doc/go1compat), the reason Go code written years ago still builds.
+- Ivan P. Fellegi and Alan B. Sunter, "A Theory for Record Linkage", *Journal of the American Statistical Association* 64, no. 328 (1969): 1183 to 1210, [doi:10.1080/01621459.1969.10501049](https://doi.org/10.1080/01621459.1969.10501049), the foundation of identity resolution with thresholds and clerical review.
+- [Splink](https://moj-analytical-services.github.io/splink/), open source probabilistic record linkage from the UK Ministry of Justice.
+- W3C, [PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/), the standard vocabulary for where a fact came from.
+- W3C, [OWL 2 Web Ontology Language](https://www.w3.org/TR/owl2-overview/) and [SHACL](https://www.w3.org/TR/shacl/), the semantic web forms the ontology is generated into, and [JSON Schema](https://json-schema.org/), the form used for validation.
 - Michael Nygard, [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions).
