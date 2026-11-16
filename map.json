@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-16T08:10:38+00:00",
+ "generated": "2026-11-16T16:52:31+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -1342,7 +1342,7 @@
    "url": "https://raskell.io/tags/life-sciences/",
    "meta": "Domain · 2 pages",
    "description": "Biology and medicine: how living systems work, and how we learn to measure, model, and treat them.",
-   "degree": 24
+   "degree": 25
   },
   {
    "id": "t:linguistics",
@@ -1441,7 +1441,7 @@
    "url": "https://raskell.io/tags/neuroscience/",
    "meta": "Concept · 3 pages",
    "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "t:observability",
@@ -2108,6 +2108,15 @@
    "meta": "Concept · no pages yet",
    "description": "How machines talk: packets, protocols, sockets, and the networks from ARPANET to the web that carry them.",
    "degree": 8
+  },
+  {
+   "id": "t:olfaction",
+   "kind": "tag",
+   "label": "Olfaction",
+   "url": "https://raskell.io/tags#olfaction",
+   "meta": "Concept · no pages yet",
+   "description": "Smell and taste as senses: how noses and brains recognise mixtures of molecules, and how far machines are from reading and writing them.",
+   "degree": 2
   },
   {
    "id": "t:origins-of-life",
@@ -6684,6 +6693,14 @@
   {
    "source": "t:networking",
    "target": "t:open-web"
+  },
+  {
+   "source": "t:olfaction",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "t:olfaction",
+   "target": "t:life-sciences"
   },
   {
    "source": "t:origins-of-life",

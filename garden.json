@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-16T08:10:38+00:00",
+ "generated": "2026-11-16T16:52:31+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -11,7 +11,7 @@
   "dataset": 1,
   "work": 167,
   "project": 32,
-  "topic": 167,
+  "topic": 168,
   "link": 569
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
@@ -4747,6 +4747,13 @@
    "title": "Observability",
    "url": "https://raskell.io/tags/observability/",
    "description": "Seeing what a running system does: traces, metering, glass-box infrastructure, and what not to log.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Olfaction",
+   "url": "https://raskell.io/tags#olfaction",
+   "description": "Smell and taste as senses: how noses and brains recognise mixtures of molecules, and how far machines are from reading and writing them.",
    "meta": "Concept"
   },
   {
