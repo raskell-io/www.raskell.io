@@ -23,6 +23,7 @@ import sys
 # Per-image exceptions, keyed by hero image filename.
 #   paint: the meme background behind the badge is white, so blank the badge instead of cutting
 #   keep:  text runs under the badge, so keep the badge rather than truncate it
+#   ("paint", h): paint, but only the top h of the height (default 0.21), when the meme starts just below the badge
 OVERRIDES = {
     "mise-ate-make.avif": "paint",
     "it-intelligence.avif": "keep",
@@ -34,6 +35,7 @@ OVERRIDES = {
     "the-bill-is-part-of-the-loop.avif": "keep",
     "your-agent-wants-root.avif": "keep",
     "evaluation-closes-the-loop.avif": "keep",
+    "building-it-intelligence.avif": ("paint", 0.17),
 }
 OUT = "static/covers"
 
@@ -100,10 +102,13 @@ def main(slugs):
             print(f"skip  {slug}: {src} not found")
             continue
         mode = OVERRIDES.get(name, "auto")
+        paint_h = 0.21
+        if isinstance(mode, tuple):
+            mode, paint_h = mode
         pre = ()
         if mode == "paint":
             W, H = map(int, run("magick", "identify", "-format", "%w %h", src + "[0]").split())
-            pre = ("-fill", "white", "-draw", f"rectangle {int(W * 0.80)},0 {W},{int(H * 0.21)}")
+            pre = ("-fill", "white", "-draw", f"rectangle {int(W * 0.80)},0 {W},{int(H * paint_h)}")
         W, H, L, R, T, B, note = crop_box(src, mode, pre)
         if mode != "auto":
             note = mode
