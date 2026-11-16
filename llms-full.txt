@@ -2303,6 +2303,8 @@ What it costs: connectors break when sources change their APIs, identity resolut
 
 Business intelligence made a company legible to its executives. IT intelligence makes it legible to everyone who builds it, people and agents alike, and as the level at which software gets built moves up, that shared picture of the company becomes the thing everything else is built on. The loop I sketched for architecture needs a place to start from and a place to land back in, and the Context Model is meant to be both.
 
+If you want to see what this looks like as running code, [Building IT Intelligence](https://raskell.io/articles/building-it-intelligence/) walks through a reference implementation in one open source repository, with a fictional company inside it that you can run on a laptop.
+
 ## References
 
 Knowledge, tacit and explicit:
