@@ -1,7 +1,6 @@
 +++
 title = "Almost Irrelevant: Choosing a Language When Agents Write the Code"
 date = 2026-11-19
-draft = true
 description = "When agents write most of the code, the language matters less than it did, but not nothing. What Rust, Go, Elixir and Haskell still buy you."
 
 [taxonomies]
@@ -9,6 +8,8 @@ tags = ["programming-languages", "ai-engineering", "rust", "golang", "elixir", "
 
 [extra]
 author = "Raffael"
+image = "almost-irrelevant.avif"
+cover = "covers/almost-irrelevant.avif"
 in_short = [
   "Coding agents absorb the costs that used to decide a language choice, the learning curve, the boilerplate and the hiring pool, so the choice matters much less than it did.",
   "What is left is what a language promises after the agent has gone: what the compiler checks, what the runtime does under failure, how the code reads in review, and how it composes across a company.",

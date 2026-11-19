@@ -1,11 +1,12 @@
 +++
 title = "几乎无关紧要：当智能体写代码时，如何选择编程语言"
 date = 2026-11-19
-draft = true
 description = "当智能体写下大部分代码，语言没有以前那么重要了，但也并非毫不重要。Rust、Go、Elixir 和 Haskell 仍然能给你带来什么。"
 
 [extra]
 author = "Raffael"
+image = "almost-irrelevant.avif"
+cover = "covers/almost-irrelevant.avif"
 in_short = [
   "编程智能体吸收了过去决定语言选择的那些成本，也就是学习曲线、样板代码和招聘人才池，所以这个选择远没有以前那么重要了。",
   "剩下的是智能体离开之后一门语言还能做出的承诺：编译器检查什么，运行时在故障下如何表现，代码在评审时读起来如何，以及它在整个公司范围内如何组合。",
