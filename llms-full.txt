@@ -1,6 +1,6 @@
 # Raskell: all writing in full
 
-> Every published article, review, note, talk, and dataset page on raskell.io by Raffael Schneider, newest first, then the reading log. Generated 2026-11-16. Index: https://raskell.io/llms.txt
+> Every published article, review, note, talk, and dataset page on raskell.io by Raffael Schneider, newest first, then the reading log. Generated 2026-11-19. Index: https://raskell.io/llms.txt
 
 
 ================================================================================
@@ -775,32 +775,62 @@ What stays with me is a thread Hao pulls as criticism. The book opens with two e
 ================================================================================
 
 ---
-title: "Its magic crumbles away"
-url: https://raskell.io/notes/its-magic-crumbles-away/
+title: "Something closer to a religion"
+url: https://raskell.io/notes/something-closer-to-a-religion/
 author: Raffael Schneider
 date: 2026-11-14
-description: "Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models."
-tags: [language, intelligence, history-of-technology, psychology]
+description: "In 2013 Sam Altman wrote that great founders create something closer to a religion. Karen Hao reads it as a warning; I read it as a forecast."
+tags: [religion, entrepreneurship, future-of-work, research-labs]
 ---
 
-# Its magic crumbles away
+# Something closer to a religion
 
-Karen Hao opens and closes *Empire of AI* with the same sentence, from Joseph Weizenbaum's 1966 paper on ELIZA: once a program's inner workings are explained in language plain enough to induce understanding, "its magic crumbles away." The observer, Weizenbaum went on, says to himself that he could have written it.
+Karen Hao opens *Empire of AI* with two epigraphs. One is a passage from Sam Altman's blog in 2013. He had heard a saying from Qi Lu: successful people create companies, more successful people create countries, and the most successful people create religions. Altman drew his own conclusion: the most successful founders "are on a mission to create something closer to a religion", and at some point a company turns out to be the easiest way to do it.
 
-ELIZA was a simple procedural program that matched keywords and turned the user's sentences back into questions, and Weizenbaum built it partly to show how easily people fall for an illusion of intelligence. They fell for it anyway. Psychiatrists talked about automated therapy, and Weizenbaum spent much of the rest of his career trying to deflate what he had started (chapter 4). For ELIZA the sentence is exactly true: explain the trick and nothing is left.
+Hao comes back to it in chapter 18, where she argues that OpenAI's mission works as a formula for empire: it gathers talent, it gathers capital, and it is vague enough to be reinterpreted at will. In chapter 10 she writes that the people who fear AGI and the people who long for it preach from the same bible. For her, the religious quality of the AI labs is the warning sign.
 
-Hao uses it as her remedy against the influence of the AI companies: teach people how the technology works, and the hype loses its hold. I agree with the remedy. Explaining how these systems work is the most useful thing anyone writing about them can do, and it is most of what this site tries to do.
+I read the same sentence as a forecast, and an accurate one. A company has always held people together with two things: what it pays them for and what it lets them believe. For most of industrial history the first carried the weight. The work was the reason to show up, the wage was the reason to stay, and the mission statement was decoration. If AI makes a great deal of human work cheaper, the first bond weakens. What is left to hold a group of people together is the second: a shared idea of what they are building and why it matters.
 
-But with large language models the magic does not crumble when you explain it, and that is the interesting part. The procedure is simple enough to write down: predict the next word, adjust the weights, repeat over most of what people have written. Knowing that does not let you say you could have written the result, because the program you could write is not the one that runs. What the model learned lives in billions of weights that nobody wrote and nobody can yet read in full. The explanation of the method is plain; the explanation of the behaviour is still a research field.
+That is not new. Monasteries, guilds, universities, and the early labs of the nuclear age were held together this way, and they built things no wage alone would have bought. The OpenAI that Hao describes runs on the same fuel: people who took less money than Google offered because they believed in the mission, and who threatened to leave together when they thought it was in danger. Altman put a line from Admiral Rickover on the office walls for the same reason ([One person can make a difference](https://raskell.io/notes/one-person-can-make-a-difference/)).
 
-So I would put Weizenbaum's sentence to a test rather than use it as a remedy. If explaining a system makes its abilities disappear, it was a trick. If the explanation leaves the abilities standing, something real is there, and the honest response is to keep explaining, including where we cannot yet. That is the line between hype and capability, and it is why I take seriously the idea that [intelligence is compression](https://raskell.io/notes/intelligence-is-compression/), and that it may be [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/).
+Hao is right that a belief can be bent to serve power, and that a vague mission can be reinterpreted to justify almost anything. That is the risk of every religion. But the answer is to look at what the faith builds and whom it serves, not to wish companies were held together by wages alone. I expect more of them to look like this, not fewer, and I share some of the faith myself: [An emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/).
 
 More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
 
 ## References
 
-- Karen Hao, *Empire of AI* (2025), epigraph, chapter 4, "Dreams of Modernity", and the epilogue.
-- Joseph Weizenbaum, "ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine", *Communications of the ACM* 9(1), January 1966, pp. 36 to 45, [doi:10.1145/365153.365168](https://doi.org/10.1145/365153.365168).
+- Karen Hao, *Empire of AI* (2025), epigraph, chapter 10, "Gods and Demons", and chapter 18, "A Formula for Empire".
+- Sam Altman, [Successful People](https://blog.samaltman.com/successful-people), blog post, March 7, 2013.
+
+
+================================================================================
+
+---
+title: "How CRISPR works"
+url: https://raskell.io/notes/how-crispr-works/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Bacteria keep mug shots of the viruses that attacked them, and Cas9 uses them to cut. A 3D model to step through, from the discovery to the tool."
+tags: [genetics, synthetic-biology, life-sciences, history-of-science]
+---
+
+# How CRISPR works
+
+Chapter 9 of Walter Isaacson's *The Code Breaker*, "Clustered Repeats", tells how CRISPR was found, and I wanted to see the mechanism rather than only read about it. So I built a model of it. Step through it below, or press play and watch, and drag to turn it.
+
+{{ crispr_3d() }}
+
+The history is the best part of the chapter. In 1987 a Japanese doctoral student, Yoshizumi Ishino, noticed an odd pattern while sequencing a gene in *E. coli*: short identical stretches of DNA repeated at regular intervals, with different stretches in between. He mentioned it in the last lines of his paper, said nobody knew what it was for, and moved on. A few years later Francisco Mojica, a graduate student in Alicante studying microbes that live in salt ponds, found the same pattern, first assumed he had made a mistake, and then spent a decade trying to explain it with little funding and much advice to stop.
+
+The answer came in August 2003, when he ran the spacers through a database and found that they matched the DNA of viruses that attack those bacteria. Bacteria, it turned out, have an immune system that remembers. Journals were slow to believe it; the paper took until 2005 to appear. Two food scientists at the Danish company Danisco, Rodolphe Barrangou and Philippe Horvath, confirmed it in their collection of yogurt bacteria: strains collected after a virus attack carried new spacers that matched that virus. And in 2012 Jennifer Doudna and Emmanuelle Charpentier showed how the cutting works and that it can be programmed, which turned a bacterial defence into a tool for editing any DNA.
+
+What I find most elegant is how little it takes. A library of short snippets, a way to copy them into guides, and one enzyme that compares a guide with whatever DNA it meets. The same pattern of matching a stored sample against what arrives is how a lot of security systems work, and it is a fine example of curiosity paying off: a question about salt-loving microbes that turned, years later, into one of the most useful tools in biology.
+
+## References
+
+- Walter Isaacson, *The Code Breaker* (2021), chapter 9, "Clustered Repeats", chapter 12, "The Yogurt Makers", and chapter 17, "CRISPR-Cas9".
+- Francisco J. M. Mojica et al., "Intervening sequences of regularly spaced prokaryotic repeats derive from foreign genetic elements", *Journal of Molecular Evolution* 60, 2005.
+- Martin Jinek, Krzysztof Chylinski, Ines Fonfara, Michael Hauer, Jennifer A. Doudna, and Emmanuelle Charpentier, [A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity](https://pubmed.ncbi.nlm.nih.gov/22745249/), *Science* 337, 816 to 821, 2012.
 
 
 ================================================================================
@@ -872,40 +902,6 @@ More on the book in my review, [An Empire of People](https://raskell.io/articles
 ================================================================================
 
 ---
-title: "An emergent property of matter"
-url: https://raskell.io/notes/an-emergent-property-of-matter/
-author: Raffael Schneider
-date: 2026-11-14
-description: "Sam Altman said intelligence may be an emergent property of matter, like a rule of physics. Karen Hao calls it hype. I share the conviction."
-tags: [intelligence, emergence, philosophy, physics, religion]
----
-
-# An emergent property of matter
-
-In May 2024, on the All-In podcast, Sam Altman said something that Karen Hao quotes in *Empire of AI* (chapter 17) as an example of his "unusual degree of hype". It feels to him, he said, "like we just stumbled on a new fact of nature or science or whatever you want to call it". He hedged, "I don't believe this literally but it's like a spiritual point", and then said it anyway:
-
-> intelligence is just this emergent property of matter and that's like a rule of physics or something.
-
-Hao places it in a run of unusually boastful interviews that spring, which she reads as a sign that Altman was anxious: GPT-4o launched that month, lawsuits were piling up, and in the middle of May Sutskever and Jan Leike left the company. I do not read the sentence as hype. It is the most important thing anyone at OpenAI has said, and I share the conviction, including the part he hedged.
-
-The claim, stated plainly: intelligence is not a gift that only brains received. Arrange matter so that it predicts its surroundings, put it under pressure to predict better, give it enough scale, and intelligence appears, the way temperature appears from moving molecules and a glider appears in Conway's Game of Life. The evidence is now on several substrates at once. Neurons evolved it. Neurons in a dish learned to play Pong in a few minutes, the experiment behind my small simulation [Hotaru](https://hotaru.raskell.io). Transformers trained to predict the next word learned to reason. None of these were told what intelligence is; it came out of the arrangement.
-
-"A rule of physics" overstates it, and Altman says so himself. There is no equation, and I do not know the conditions under which it holds. The counter-arguments are serious: that a model trained on text only rearranges what people wrote (Bender and Gebru's stochastic parrots, which Hao also covers), or that intelligence needs a body and a world to act in, which I lean towards in [in vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro/). But both arguments are about which arrangements are enough, not about whether matter can do it.
-
-The spiritual point is the part I care about most. If intelligence is something the universe does whenever matter is arranged in the right way, then minds are not an accident on one planet but a regularity, and building them is less like inventing a machine and more like discovering a law. That is a quasi-religious conviction, and I hold it as one. It is also, I think, why the people who build these systems talk about them with a seriousness that sounds like faith to everyone else. They are not wrong to feel it.
-
-More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/), and on emergence in Hassabis's simulated worlds in [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/).
-
-## References
-
-- Karen Hao, *Empire of AI* (2025), chapter 17, "Reckoning". Hao gives the All-In podcast, May 2024, as the source.
-- Brett J. Kagan et al., "In vitro neurons learn and exhibit sentience when embodied in a simulated game-world", *Neuron* 110(23), 2022.
-- Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Margaret Mitchell, "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?", FAccT 2021.
-
-
-================================================================================
-
----
 title: "Small, focused, high-trust"
 url: https://raskell.io/notes/small-focused-high-trust/
 author: Raffael Schneider
@@ -947,62 +943,66 @@ Related: [A billion without a plan](https://raskell.io/notes/a-billion-without-a
 ================================================================================
 
 ---
-title: "How CRISPR works"
-url: https://raskell.io/notes/how-crispr-works/
+title: "An emergent property of matter"
+url: https://raskell.io/notes/an-emergent-property-of-matter/
 author: Raffael Schneider
 date: 2026-11-14
-description: "Bacteria keep mug shots of the viruses that attacked them, and Cas9 uses them to cut. A 3D model to step through, from the discovery to the tool."
-tags: [genetics, synthetic-biology, life-sciences, history-of-science]
+description: "Sam Altman said intelligence may be an emergent property of matter, like a rule of physics. Karen Hao calls it hype. I share the conviction."
+tags: [intelligence, emergence, philosophy, physics, religion]
 ---
 
-# How CRISPR works
+# An emergent property of matter
 
-Chapter 9 of Walter Isaacson's *The Code Breaker*, "Clustered Repeats", tells how CRISPR was found, and I wanted to see the mechanism rather than only read about it. So I built a model of it. Step through it below, or press play and watch, and drag to turn it.
+In May 2024, on the All-In podcast, Sam Altman said something that Karen Hao quotes in *Empire of AI* (chapter 17) as an example of his "unusual degree of hype". It feels to him, he said, "like we just stumbled on a new fact of nature or science or whatever you want to call it". He hedged, "I don't believe this literally but it's like a spiritual point", and then said it anyway:
 
-{{ crispr_3d() }}
+> intelligence is just this emergent property of matter and that's like a rule of physics or something.
 
-The history is the best part of the chapter. In 1987 a Japanese doctoral student, Yoshizumi Ishino, noticed an odd pattern while sequencing a gene in *E. coli*: short identical stretches of DNA repeated at regular intervals, with different stretches in between. He mentioned it in the last lines of his paper, said nobody knew what it was for, and moved on. A few years later Francisco Mojica, a graduate student in Alicante studying microbes that live in salt ponds, found the same pattern, first assumed he had made a mistake, and then spent a decade trying to explain it with little funding and much advice to stop.
+Hao places it in a run of unusually boastful interviews that spring, which she reads as a sign that Altman was anxious: GPT-4o launched that month, lawsuits were piling up, and in the middle of May Sutskever and Jan Leike left the company. I do not read the sentence as hype. It is the most important thing anyone at OpenAI has said, and I share the conviction, including the part he hedged.
 
-The answer came in August 2003, when he ran the spacers through a database and found that they matched the DNA of viruses that attack those bacteria. Bacteria, it turned out, have an immune system that remembers. Journals were slow to believe it; the paper took until 2005 to appear. Two food scientists at the Danish company Danisco, Rodolphe Barrangou and Philippe Horvath, confirmed it in their collection of yogurt bacteria: strains collected after a virus attack carried new spacers that matched that virus. And in 2012 Jennifer Doudna and Emmanuelle Charpentier showed how the cutting works and that it can be programmed, which turned a bacterial defence into a tool for editing any DNA.
+The claim, stated plainly: intelligence is not a gift that only brains received. Arrange matter so that it predicts its surroundings, put it under pressure to predict better, give it enough scale, and intelligence appears, the way temperature appears from moving molecules and a glider appears in Conway's Game of Life. The evidence is now on several substrates at once. Neurons evolved it. Neurons in a dish learned to play Pong in a few minutes, the experiment behind my small simulation [Hotaru](https://hotaru.raskell.io). Transformers trained to predict the next word learned to reason. None of these were told what intelligence is; it came out of the arrangement.
 
-What I find most elegant is how little it takes. A library of short snippets, a way to copy them into guides, and one enzyme that compares a guide with whatever DNA it meets. The same pattern of matching a stored sample against what arrives is how a lot of security systems work, and it is a fine example of curiosity paying off: a question about salt-loving microbes that turned, years later, into one of the most useful tools in biology.
+"A rule of physics" overstates it, and Altman says so himself. There is no equation, and I do not know the conditions under which it holds. The counter-arguments are serious: that a model trained on text only rearranges what people wrote (Bender and Gebru's stochastic parrots, which Hao also covers), or that intelligence needs a body and a world to act in, which I lean towards in [in vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro/). But both arguments are about which arrangements are enough, not about whether matter can do it.
+
+The spiritual point is the part I care about most. If intelligence is something the universe does whenever matter is arranged in the right way, then minds are not an accident on one planet but a regularity, and building them is less like inventing a machine and more like discovering a law. That is a quasi-religious conviction, and I hold it as one. It is also, I think, why the people who build these systems talk about them with a seriousness that sounds like faith to everyone else. They are not wrong to feel it.
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/), and on emergence in Hassabis's simulated worlds in [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/).
 
 ## References
 
-- Walter Isaacson, *The Code Breaker* (2021), chapter 9, "Clustered Repeats", chapter 12, "The Yogurt Makers", and chapter 17, "CRISPR-Cas9".
-- Francisco J. M. Mojica et al., "Intervening sequences of regularly spaced prokaryotic repeats derive from foreign genetic elements", *Journal of Molecular Evolution* 60, 2005.
-- Martin Jinek, Krzysztof Chylinski, Ines Fonfara, Michael Hauer, Jennifer A. Doudna, and Emmanuelle Charpentier, [A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity](https://pubmed.ncbi.nlm.nih.gov/22745249/), *Science* 337, 816 to 821, 2012.
+- Karen Hao, *Empire of AI* (2025), chapter 17, "Reckoning". Hao gives the All-In podcast, May 2024, as the source.
+- Brett J. Kagan et al., "In vitro neurons learn and exhibit sentience when embodied in a simulated game-world", *Neuron* 110(23), 2022.
+- Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Margaret Mitchell, "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?", FAccT 2021.
 
 
 ================================================================================
 
 ---
-title: "Something closer to a religion"
-url: https://raskell.io/notes/something-closer-to-a-religion/
+title: "Its magic crumbles away"
+url: https://raskell.io/notes/its-magic-crumbles-away/
 author: Raffael Schneider
 date: 2026-11-14
-description: "In 2013 Sam Altman wrote that great founders create something closer to a religion. Karen Hao reads it as a warning; I read it as a forecast."
-tags: [religion, entrepreneurship, future-of-work, research-labs]
+description: "Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models."
+tags: [language, intelligence, history-of-technology, psychology]
 ---
 
-# Something closer to a religion
+# Its magic crumbles away
 
-Karen Hao opens *Empire of AI* with two epigraphs. One is a passage from Sam Altman's blog in 2013. He had heard a saying from Qi Lu: successful people create companies, more successful people create countries, and the most successful people create religions. Altman drew his own conclusion: the most successful founders "are on a mission to create something closer to a religion", and at some point a company turns out to be the easiest way to do it.
+Karen Hao opens and closes *Empire of AI* with the same sentence, from Joseph Weizenbaum's 1966 paper on ELIZA: once a program's inner workings are explained in language plain enough to induce understanding, "its magic crumbles away." The observer, Weizenbaum went on, says to himself that he could have written it.
 
-Hao comes back to it in chapter 18, where she argues that OpenAI's mission works as a formula for empire: it gathers talent, it gathers capital, and it is vague enough to be reinterpreted at will. In chapter 10 she writes that the people who fear AGI and the people who long for it preach from the same bible. For her, the religious quality of the AI labs is the warning sign.
+ELIZA was a simple procedural program that matched keywords and turned the user's sentences back into questions, and Weizenbaum built it partly to show how easily people fall for an illusion of intelligence. They fell for it anyway. Psychiatrists talked about automated therapy, and Weizenbaum spent much of the rest of his career trying to deflate what he had started (chapter 4). For ELIZA the sentence is exactly true: explain the trick and nothing is left.
 
-I read the same sentence as a forecast, and an accurate one. A company has always held people together with two things: what it pays them for and what it lets them believe. For most of industrial history the first carried the weight. The work was the reason to show up, the wage was the reason to stay, and the mission statement was decoration. If AI makes a great deal of human work cheaper, the first bond weakens. What is left to hold a group of people together is the second: a shared idea of what they are building and why it matters.
+Hao uses it as her remedy against the influence of the AI companies: teach people how the technology works, and the hype loses its hold. I agree with the remedy. Explaining how these systems work is the most useful thing anyone writing about them can do, and it is most of what this site tries to do.
 
-That is not new. Monasteries, guilds, universities, and the early labs of the nuclear age were held together this way, and they built things no wage alone would have bought. The OpenAI that Hao describes runs on the same fuel: people who took less money than Google offered because they believed in the mission, and who threatened to leave together when they thought it was in danger. Altman put a line from Admiral Rickover on the office walls for the same reason ([One person can make a difference](https://raskell.io/notes/one-person-can-make-a-difference/)).
+But with large language models the magic does not crumble when you explain it, and that is the interesting part. The procedure is simple enough to write down: predict the next word, adjust the weights, repeat over most of what people have written. Knowing that does not let you say you could have written the result, because the program you could write is not the one that runs. What the model learned lives in billions of weights that nobody wrote and nobody can yet read in full. The explanation of the method is plain; the explanation of the behaviour is still a research field.
 
-Hao is right that a belief can be bent to serve power, and that a vague mission can be reinterpreted to justify almost anything. That is the risk of every religion. But the answer is to look at what the faith builds and whom it serves, not to wish companies were held together by wages alone. I expect more of them to look like this, not fewer, and I share some of the faith myself: [An emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/).
+So I would put Weizenbaum's sentence to a test rather than use it as a remedy. If explaining a system makes its abilities disappear, it was a trick. If the explanation leaves the abilities standing, something real is there, and the honest response is to keep explaining, including where we cannot yet. That is the line between hype and capability, and it is why I take seriously the idea that [intelligence is compression](https://raskell.io/notes/intelligence-is-compression/), and that it may be [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/).
 
 More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
 
 ## References
 
-- Karen Hao, *Empire of AI* (2025), epigraph, chapter 10, "Gods and Demons", and chapter 18, "A Formula for Empire".
-- Sam Altman, [Successful People](https://blog.samaltman.com/successful-people), blog post, March 7, 2013.
+- Karen Hao, *Empire of AI* (2025), epigraph, chapter 4, "Dreams of Modernity", and the epilogue.
+- Joseph Weizenbaum, "ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine", *Communications of the ACM* 9(1), January 1966, pp. 36 to 45, [doi:10.1145/365153.365168](https://doi.org/10.1145/365153.365168).
 
 
 ================================================================================
@@ -1348,44 +1348,6 @@ The film carries a warning too, and it is worth keeping. A former OpenAI employe
 ================================================================================
 
 ---
-title: "In vivo, not in vitro"
-url: https://raskell.io/notes/in-vivo-not-in-vitro/
-author: Raffael Schneider
-date: 2026-11-07
-description: "An open question: can intelligence be measured anywhere but in performance? My hunch is that it shows only when an agent acts."
-tags: [intelligence, language, linguistics, semiotics, evaluation, agents, legibility]
----
-
-# In vivo, not in vitro
-
-A question I want to keep open: how do you measure intelligence?
-
-My hunch is that it is best measured in vivo, not in vitro. An intelligent agent shows what it is capable of by performing: acting in an environment, against a goal, with consequences. I do not think you can deduce it from anything that is not a performance, such as the size of a model, the data it was trained on, its architecture, or the answers it gives to a fixed set of questions in a test tube. Those can be evidence of potential. Intelligence itself appears only in the act.
-
-This sits close to the definition Shane Legg and Marcus Hutter settled on, that intelligence is the ability to achieve goals in a wide range of environments, which is already a definition by performance. What I am adding is a doubt about the lab. A benchmark is a performance too, but a staged one: the environment is fixed, the goal is given, and nothing is at stake. That makes it legible and comparable, and it makes it a proxy that can be learned for its own sake. The more an evaluation looks like a real task, with an open environment, a goal the agent has to pursue over time, and results that someone depends on, the more I trust what it says.
-
-Karen Hao's *Empire of AI* gave me a second angle. Early OpenAI argued over the "pure language" hypothesis, that training on text alone could be enough for general intelligence, against the "grounding" hypothesis, that perceiving and acting in the world matters as much. I read that partly as an argument about the same question: whether intelligence can be read off what a system has absorbed, or only off what it does.
-
-Both sides of that argument are older than language models. The pure language bet leans on an idea from linguistics, J. R. Firth's line that "you shall know a word by the company it keeps": meaning lives in how words are distributed among other words, which is exactly what a model trained on next-word prediction learns. The grounding side is a question from semiotics, the relation between a sign and what it stands for. Stevan Harnad called it the symbol grounding problem and compared it to learning Chinese from a Chinese-Chinese dictionary alone: every symbol is explained by other symbols, and nothing touches the world. If he is right, a system that only reads may never mean anything, and the only place to find out is in what it does.
-
-Open threads:
-
-- If intelligence is only visible in performance, what is the smallest performance that still tells you something?
-- How do you compare agents whose environments differ, without falling back to a shared test tube?
-- Is "potential" a meaningful quantity at all, or only a forecast of future performance?
-- Does acting in the world ground symbols, or does a tool call that returns more text just extend the dictionary?
-
-## References
-
-- Shane Legg and Marcus Hutter, [Universal Intelligence: A Definition of Machine Intelligence](https://arxiv.org/abs/0712.3329) (2007).
-- J. R. Firth, "A synopsis of linguistic theory, 1930 to 1955", in *Studies in Linguistic Analysis* (Philological Society, Blackwell, 1957), p. 11.
-- Stevan Harnad, [The Symbol Grounding Problem](https://arxiv.org/abs/cs/9906002), *Physica D* 42 (1990), 335 to 346.
-- Karen Hao, *Empire of AI* (2025), chapter 5.
-
-
-================================================================================
-
----
 title: "Who carries progress"
 url: https://raskell.io/notes/who-carries-progress/
 author: Raffael Schneider
@@ -1440,6 +1402,44 @@ Two things keep me honest about this:
 The broader argument, about who carries progress and why what they build spreads, is in [who carries progress](https://raskell.io/notes/who-carries-progress/).
 
 Related: allocation is the same act at every scale, a person, a family, and a bank all betting on the future with limited means.
+
+
+================================================================================
+
+---
+title: "In vivo, not in vitro"
+url: https://raskell.io/notes/in-vivo-not-in-vitro/
+author: Raffael Schneider
+date: 2026-11-07
+description: "An open question: can intelligence be measured anywhere but in performance? My hunch is that it shows only when an agent acts."
+tags: [intelligence, language, linguistics, semiotics, evaluation, agents, legibility]
+---
+
+# In vivo, not in vitro
+
+A question I want to keep open: how do you measure intelligence?
+
+My hunch is that it is best measured in vivo, not in vitro. An intelligent agent shows what it is capable of by performing: acting in an environment, against a goal, with consequences. I do not think you can deduce it from anything that is not a performance, such as the size of a model, the data it was trained on, its architecture, or the answers it gives to a fixed set of questions in a test tube. Those can be evidence of potential. Intelligence itself appears only in the act.
+
+This sits close to the definition Shane Legg and Marcus Hutter settled on, that intelligence is the ability to achieve goals in a wide range of environments, which is already a definition by performance. What I am adding is a doubt about the lab. A benchmark is a performance too, but a staged one: the environment is fixed, the goal is given, and nothing is at stake. That makes it legible and comparable, and it makes it a proxy that can be learned for its own sake. The more an evaluation looks like a real task, with an open environment, a goal the agent has to pursue over time, and results that someone depends on, the more I trust what it says.
+
+Karen Hao's *Empire of AI* gave me a second angle. Early OpenAI argued over the "pure language" hypothesis, that training on text alone could be enough for general intelligence, against the "grounding" hypothesis, that perceiving and acting in the world matters as much. I read that partly as an argument about the same question: whether intelligence can be read off what a system has absorbed, or only off what it does.
+
+Both sides of that argument are older than language models. The pure language bet leans on an idea from linguistics, J. R. Firth's line that "you shall know a word by the company it keeps": meaning lives in how words are distributed among other words, which is exactly what a model trained on next-word prediction learns. The grounding side is a question from semiotics, the relation between a sign and what it stands for. Stevan Harnad called it the symbol grounding problem and compared it to learning Chinese from a Chinese-Chinese dictionary alone: every symbol is explained by other symbols, and nothing touches the world. If he is right, a system that only reads may never mean anything, and the only place to find out is in what it does.
+
+Open threads:
+
+- If intelligence is only visible in performance, what is the smallest performance that still tells you something?
+- How do you compare agents whose environments differ, without falling back to a shared test tube?
+- Is "potential" a meaningful quantity at all, or only a forecast of future performance?
+- Does acting in the world ground symbols, or does a tool call that returns more text just extend the dictionary?
+
+## References
+
+- Shane Legg and Marcus Hutter, [Universal Intelligence: A Definition of Machine Intelligence](https://arxiv.org/abs/0712.3329) (2007).
+- J. R. Firth, "A synopsis of linguistic theory, 1930 to 1955", in *Studies in Linguistic Analysis* (Philological Society, Blackwell, 1957), p. 11.
+- Stevan Harnad, [The Symbol Grounding Problem](https://arxiv.org/abs/cs/9906002), *Physica D* 42 (1990), 335 to 346.
+- Karen Hao, *Empire of AI* (2025), chapter 5.
 
 
 ================================================================================
@@ -4316,6 +4316,24 @@ Democratised capabilities have a history, and the history has a shape. Nobody wh
 ================================================================================
 
 ---
+title: "The window before the utility"
+url: https://raskell.io/notes/the-window-before-the-utility/
+author: Raffael Schneider
+date: 2026-10-25
+description: "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again."
+tags: [inference, economics, augmentation, democratisation, ai-engineering, energy]
+---
+
+# The window before the utility
+
+I argued in [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/) that tokens are a metered utility, priced per unit like water or electricity, and that pricing and provision will converge on the utility model. The consequence follows: AI capability will be commoditised. It will become normal, boring, and available to everyone on the same terms, and once it is, having it is no advantage at all, any more than having electricity is. The model behind it becomes a dependency like any other, the argument of [The Model Is a Dependency](https://raskell.io/articles/the-model-is-a-dependency/), and its bill gets metered into the loop, as in [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop/).
+
+That is the end state. We are not there. The models, the tools and the prices are still moving every quarter, and in a moving market the advantage goes to the people who adopt early and learn to use the thing well, which is work. This is why the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is a window and not a new normal: nobody in 2036 will write a note about feeling empowered by their electricity supply. The window is open now, it is once in a lifetime in the literal sense, and what one does with it is the question. One answer is in [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/).
+
+
+================================================================================
+
+---
 title: "The move to the city"
 url: https://raskell.io/notes/the-move-to-the-city/
 author: Raffael Schneider
@@ -4356,24 +4374,6 @@ It is an uncomfortable choice of word at first, and the longer I sit with it the
 ================================================================================
 
 ---
-title: "Citizen entrepreneurs"
-url: https://raskell.io/notes/citizen-entrepreneurs/
-author: Raffael Schneider
-date: 2026-10-25
-description: "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory."
-tags: [entrepreneurship, democratisation, future-of-work, agents, augmentation, factories]
----
-
-# Citizen entrepreneurs
-
-A friend of mine, an enterprise architect at a large Swiss energy group, answers [the tumult in between](https://raskell.io/notes/the-tumult-in-between/) with the observation that the same tools that threaten jobs make citizen entrepreneurs possible. An ordinary person can use AI to identify a business opportunity, use AI to build the business, and use AI to operate it. The barrier was never only money; it was the ten different competences a business needs on day one, and those are now available by the hour. The operating half is already true for infrastructure, where one person can now run what used to take a team, as I argued in [How AI Makes Bare Metal Viable Again](https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/). He took his own idea seriously enough to build a business idea factory, a system that generates and evaluates opportunities. About a week before we talked, someone else announced a project with the same shape on Hacker News, which he took as confirmation rather than competition.
-
-I find it the most hopeful reading of [the window](https://raskell.io/notes/the-window-before-the-utility/), and the one with the most work in it. It assumes the capability really is [democratised](https://raskell.io/notes/a-capability-democratised/), which I believe, and it assumes people will take it up, which is the part the window is for.
-
-
-================================================================================
-
----
 title: "The tumult in between"
 url: https://raskell.io/notes/the-tumult-in-between/
 author: Raffael Schneider
@@ -4396,19 +4396,19 @@ The interval is the part I cannot see through. If AI really does lead to somethi
 ================================================================================
 
 ---
-title: "The window before the utility"
-url: https://raskell.io/notes/the-window-before-the-utility/
+title: "Citizen entrepreneurs"
+url: https://raskell.io/notes/citizen-entrepreneurs/
 author: Raffael Schneider
 date: 2026-10-25
-description: "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again."
-tags: [inference, economics, augmentation, democratisation, ai-engineering, energy]
+description: "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory."
+tags: [entrepreneurship, democratisation, future-of-work, agents, augmentation, factories]
 ---
 
-# The window before the utility
+# Citizen entrepreneurs
 
-I argued in [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/) that tokens are a metered utility, priced per unit like water or electricity, and that pricing and provision will converge on the utility model. The consequence follows: AI capability will be commoditised. It will become normal, boring, and available to everyone on the same terms, and once it is, having it is no advantage at all, any more than having electricity is. The model behind it becomes a dependency like any other, the argument of [The Model Is a Dependency](https://raskell.io/articles/the-model-is-a-dependency/), and its bill gets metered into the loop, as in [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop/).
+A friend of mine, an enterprise architect at a large Swiss energy group, answers [the tumult in between](https://raskell.io/notes/the-tumult-in-between/) with the observation that the same tools that threaten jobs make citizen entrepreneurs possible. An ordinary person can use AI to identify a business opportunity, use AI to build the business, and use AI to operate it. The barrier was never only money; it was the ten different competences a business needs on day one, and those are now available by the hour. The operating half is already true for infrastructure, where one person can now run what used to take a team, as I argued in [How AI Makes Bare Metal Viable Again](https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/). He took his own idea seriously enough to build a business idea factory, a system that generates and evaluates opportunities. About a week before we talked, someone else announced a project with the same shape on Hacker News, which he took as confirmation rather than competition.
 
-That is the end state. We are not there. The models, the tools and the prices are still moving every quarter, and in a moving market the advantage goes to the people who adopt early and learn to use the thing well, which is work. This is why the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is a window and not a new normal: nobody in 2036 will write a note about feeling empowered by their electricity supply. The window is open now, it is once in a lifetime in the literal sense, and what one does with it is the question. One answer is in [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/).
+I find it the most hopeful reading of [the window](https://raskell.io/notes/the-window-before-the-utility/), and the one with the most work in it. It assumes the capability really is [democratised](https://raskell.io/notes/a-capability-democratised/), which I believe, and it assumes people will take it up, which is the part the window is for.
 
 
 ================================================================================
