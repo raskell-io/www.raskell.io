@@ -1186,107 +1186,31 @@ More on the book in my review, [An Empire of People](https://raskell.io/articles
 ================================================================================
 
 ---
-title: "An emergent property of matter"
-url: https://raskell.io/notes/an-emergent-property-of-matter/
+title: "How CRISPR works"
+url: https://raskell.io/notes/how-crispr-works/
 author: Raffael Schneider
 date: 2026-11-14
-description: "Sam Altman said intelligence may be an emergent property of matter, like a rule of physics. Karen Hao calls it hype. I share the conviction."
-tags: [intelligence, emergence, philosophy, physics, religion]
+description: "Bacteria keep mug shots of the viruses that attacked them, and Cas9 uses them to cut. A 3D model to step through, from the discovery to the tool."
+tags: [genetics, synthetic-biology, life-sciences, history-of-science]
 ---
 
-# An emergent property of matter
+# How CRISPR works
 
-In May 2024, on the All-In podcast, Sam Altman said something that Karen Hao quotes in *Empire of AI* (chapter 17) as an example of his "unusual degree of hype". It feels to him, he said, "like we just stumbled on a new fact of nature or science or whatever you want to call it". He hedged, "I don't believe this literally but it's like a spiritual point", and then said it anyway:
+Chapter 9 of Walter Isaacson's *The Code Breaker*, "Clustered Repeats", tells how CRISPR was found, and I wanted to see the mechanism rather than only read about it. So I built a model of it. Step through it below, or press play and watch, and drag to turn it.
 
-> intelligence is just this emergent property of matter and that's like a rule of physics or something.
+{{ crispr_3d() }}
 
-Hao places it in a run of unusually boastful interviews that spring, which she reads as a sign that Altman was anxious: GPT-4o launched that month, lawsuits were piling up, and in the middle of May Sutskever and Jan Leike left the company. I do not read the sentence as hype. It is the most important thing anyone at OpenAI has said, and I share the conviction, including the part he hedged.
+The history is the best part of the chapter. In 1987 a Japanese doctoral student, Yoshizumi Ishino, noticed an odd pattern while sequencing a gene in *E. coli*: short identical stretches of DNA repeated at regular intervals, with different stretches in between. He mentioned it in the last lines of his paper, said nobody knew what it was for, and moved on. A few years later Francisco Mojica, a graduate student in Alicante studying microbes that live in salt ponds, found the same pattern, first assumed he had made a mistake, and then spent a decade trying to explain it with little funding and much advice to stop.
 
-The claim, stated plainly: intelligence is not a gift that only brains received. Arrange matter so that it predicts its surroundings, put it under pressure to predict better, give it enough scale, and intelligence appears, the way temperature appears from moving molecules and a glider appears in Conway's Game of Life. The evidence is now on several substrates at once. Neurons evolved it. Neurons in a dish learned to play Pong in a few minutes, the experiment behind my small simulation [Hotaru](https://hotaru.raskell.io). Transformers trained to predict the next word learned to reason. None of these were told what intelligence is; it came out of the arrangement.
+The answer came in August 2003, when he ran the spacers through a database and found that they matched the DNA of viruses that attack those bacteria. Bacteria, it turned out, have an immune system that remembers. Journals were slow to believe it; the paper took until 2005 to appear. Two food scientists at the Danish company Danisco, Rodolphe Barrangou and Philippe Horvath, confirmed it in their collection of yogurt bacteria: strains collected after a virus attack carried new spacers that matched that virus. And in 2012 Jennifer Doudna and Emmanuelle Charpentier showed how the cutting works and that it can be programmed, which turned a bacterial defence into a tool for editing any DNA.
 
-"A rule of physics" overstates it, and Altman says so himself. There is no equation, and I do not know the conditions under which it holds. The counter-arguments are serious: that a model trained on text only rearranges what people wrote (Bender and Gebru's stochastic parrots, which Hao also covers), or that intelligence needs a body and a world to act in, which I lean towards in [in vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro/). But both arguments are about which arrangements are enough, not about whether matter can do it.
-
-The spiritual point is the part I care about most. If intelligence is something the universe does whenever matter is arranged in the right way, then minds are not an accident on one planet but a regularity, and building them is less like inventing a machine and more like discovering a law. That is a quasi-religious conviction, and I hold it as one. It is also, I think, why the people who build these systems talk about them with a seriousness that sounds like faith to everyone else. They are not wrong to feel it.
-
-More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/), and on emergence in Hassabis's simulated worlds in [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/).
+What I find most elegant is how little it takes. A library of short snippets, a way to copy them into guides, and one enzyme that compares a guide with whatever DNA it meets. The same pattern of matching a stored sample against what arrives is how a lot of security systems work, and it is a fine example of curiosity paying off: a question about salt-loving microbes that turned, years later, into one of the most useful tools in biology.
 
 ## References
 
-- Karen Hao, *Empire of AI* (2025), chapter 17, "Reckoning". Hao gives the All-In podcast, May 2024, as the source.
-- Brett J. Kagan et al., "In vitro neurons learn and exhibit sentience when embodied in a simulated game-world", *Neuron* 110(23), 2022.
-- Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Margaret Mitchell, "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?", FAccT 2021.
-
-
-================================================================================
-
----
-title: "Small, focused, high-trust"
-url: https://raskell.io/notes/small-focused-high-trust/
-author: Raffael Schneider
-date: 2026-11-14
-description: "Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic."
-tags: [bureaucracy, research-labs, entrepreneurship, future-of-work]
----
-
-# Small, focused, high-trust
-
-In a 2020 vision memo, written after Microsoft's investment, Sam Altman warned his own company against growing too large. Karen Hao quotes it in *Empire of AI* (chapter 11): "what has worked for us so far is being small, focused, high-trust, low-bullshit, and intense." Too many people and too much bureaucracy, he wrote, "can easily kill great ideas or result in sclerosis", and OpenAI could fulfil its mission "with a surprisingly small number of great people."
-
-He meant it. Hao reports that in late 2022, after ChatGPT, when every team was stretched thin and managers begged for head count, Altman kept repeating the line and wanted to add no more than about a hundred people. Other executives wanted closer to five hundred. OpenAI had about 300 people in October 2022, close to 600 by the middle of 2023, and nearly 800 when the board fired Altman that November.
-
-I have made the same observation in every large organisation I have worked in or with, public or private. A group of people has to spend work on holding itself together, and that share grows faster than the group. Fred Brooks put the arithmetic in *The Mythical Man-Month*: every pair of people is a possible line of communication, and the number of pairs grows with the square of the headcount.
-
-| People | Pairs who may need to talk |
-|---:|---:|
-| 5 | 10 |
-| 10 | 45 |
-| 50 | 1,225 |
-| 500 | 124,750 |
-| 5,000 | 12,497,500 |
-
-Nobody talks to everyone, so the organisation adds structure: managers, meetings, processes, reporting lines, approval steps. Each is reasonable. Together they become the leviathan, a body whose main occupation is keeping itself intact, whether it is a ministry or a multinational. Its slowness is the price of its coherence.
-
-What interests me is that the arithmetic may be changing. If a small team with agents can do what used to take a department, the number of people a mission needs drops, and with it the overhead. I wrote about that from the side of the individual in [power in the good sense](https://raskell.io/notes/power-in-the-good-sense/) and [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/). Altman's "surprisingly small number of great people" reads differently in 2026 than it did in 2020.
-
-Small has its own failure mode, and Hao's account shows it too: teams stretched so thin that the people in them burn out. Small, focused, and high-trust is a discipline, and OpenAI could not keep it. Neither, as far as I know, has anyone else at that scale.
-
-Related: [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/), and my review of the book, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
-
-## References
-
-- Karen Hao, *Empire of AI* (2025), chapter 11, "Apex".
-- Frederick P. Brooks Jr., *The Mythical Man-Month* (1975), chapter 2.
-
-
-================================================================================
-
----
-title: "Its magic crumbles away"
-url: https://raskell.io/notes/its-magic-crumbles-away/
-author: Raffael Schneider
-date: 2026-11-14
-description: "Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models."
-tags: [language, intelligence, history-of-technology, psychology]
----
-
-# Its magic crumbles away
-
-Karen Hao opens and closes *Empire of AI* with the same sentence, from Joseph Weizenbaum's 1966 paper on ELIZA: once a program's inner workings are explained in language plain enough to induce understanding, "its magic crumbles away." The observer, Weizenbaum went on, says to himself that he could have written it.
-
-ELIZA was a simple procedural program that matched keywords and turned the user's sentences back into questions, and Weizenbaum built it partly to show how easily people fall for an illusion of intelligence. They fell for it anyway. Psychiatrists talked about automated therapy, and Weizenbaum spent much of the rest of his career trying to deflate what he had started (chapter 4). For ELIZA the sentence is exactly true: explain the trick and nothing is left.
-
-Hao uses it as her remedy against the influence of the AI companies: teach people how the technology works, and the hype loses its hold. I agree with the remedy. Explaining how these systems work is the most useful thing anyone writing about them can do, and it is most of what this site tries to do.
-
-But with large language models the magic does not crumble when you explain it, and that is the interesting part. The procedure is simple enough to write down: predict the next word, adjust the weights, repeat over most of what people have written. Knowing that does not let you say you could have written the result, because the program you could write is not the one that runs. What the model learned lives in billions of weights that nobody wrote and nobody can yet read in full. The explanation of the method is plain; the explanation of the behaviour is still a research field.
-
-So I would put Weizenbaum's sentence to a test rather than use it as a remedy. If explaining a system makes its abilities disappear, it was a trick. If the explanation leaves the abilities standing, something real is there, and the honest response is to keep explaining, including where we cannot yet. That is the line between hype and capability, and it is why I take seriously the idea that [intelligence is compression](https://raskell.io/notes/intelligence-is-compression/), and that it may be [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/).
-
-More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
-
-## References
-
-- Karen Hao, *Empire of AI* (2025), epigraph, chapter 4, "Dreams of Modernity", and the epilogue.
-- Joseph Weizenbaum, "ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine", *Communications of the ACM* 9(1), January 1966, pp. 36 to 45, [doi:10.1145/365153.365168](https://doi.org/10.1145/365153.365168).
+- Walter Isaacson, *The Code Breaker* (2021), chapter 9, "Clustered Repeats", chapter 12, "The Yogurt Makers", and chapter 17, "CRISPR-Cas9".
+- Francisco J. M. Mojica et al., "Intervening sequences of regularly spaced prokaryotic repeats derive from foreign genetic elements", *Journal of Molecular Evolution* 60, 2005.
+- Martin Jinek, Krzysztof Chylinski, Ines Fonfara, Michael Hauer, Jennifer A. Doudna, and Emmanuelle Charpentier, [A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity](https://pubmed.ncbi.nlm.nih.gov/22745249/), *Science* 337, 816 to 821, 2012.
 
 
 ================================================================================
@@ -1358,31 +1282,107 @@ More on the book in my review, [An Empire of People](https://raskell.io/articles
 ================================================================================
 
 ---
-title: "How CRISPR works"
-url: https://raskell.io/notes/how-crispr-works/
+title: "Small, focused, high-trust"
+url: https://raskell.io/notes/small-focused-high-trust/
 author: Raffael Schneider
 date: 2026-11-14
-description: "Bacteria keep mug shots of the viruses that attacked them, and Cas9 uses them to cut. A 3D model to step through, from the discovery to the tool."
-tags: [genetics, synthetic-biology, life-sciences, history-of-science]
+description: "Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic."
+tags: [bureaucracy, research-labs, entrepreneurship, future-of-work]
 ---
 
-# How CRISPR works
+# Small, focused, high-trust
 
-Chapter 9 of Walter Isaacson's *The Code Breaker*, "Clustered Repeats", tells how CRISPR was found, and I wanted to see the mechanism rather than only read about it. So I built a model of it. Step through it below, or press play and watch, and drag to turn it.
+In a 2020 vision memo, written after Microsoft's investment, Sam Altman warned his own company against growing too large. Karen Hao quotes it in *Empire of AI* (chapter 11): "what has worked for us so far is being small, focused, high-trust, low-bullshit, and intense." Too many people and too much bureaucracy, he wrote, "can easily kill great ideas or result in sclerosis", and OpenAI could fulfil its mission "with a surprisingly small number of great people."
 
-{{ crispr_3d() }}
+He meant it. Hao reports that in late 2022, after ChatGPT, when every team was stretched thin and managers begged for head count, Altman kept repeating the line and wanted to add no more than about a hundred people. Other executives wanted closer to five hundred. OpenAI had about 300 people in October 2022, close to 600 by the middle of 2023, and nearly 800 when the board fired Altman that November.
 
-The history is the best part of the chapter. In 1987 a Japanese doctoral student, Yoshizumi Ishino, noticed an odd pattern while sequencing a gene in *E. coli*: short identical stretches of DNA repeated at regular intervals, with different stretches in between. He mentioned it in the last lines of his paper, said nobody knew what it was for, and moved on. A few years later Francisco Mojica, a graduate student in Alicante studying microbes that live in salt ponds, found the same pattern, first assumed he had made a mistake, and then spent a decade trying to explain it with little funding and much advice to stop.
+I have made the same observation in every large organisation I have worked in or with, public or private. A group of people has to spend work on holding itself together, and that share grows faster than the group. Fred Brooks put the arithmetic in *The Mythical Man-Month*: every pair of people is a possible line of communication, and the number of pairs grows with the square of the headcount.
 
-The answer came in August 2003, when he ran the spacers through a database and found that they matched the DNA of viruses that attack those bacteria. Bacteria, it turned out, have an immune system that remembers. Journals were slow to believe it; the paper took until 2005 to appear. Two food scientists at the Danish company Danisco, Rodolphe Barrangou and Philippe Horvath, confirmed it in their collection of yogurt bacteria: strains collected after a virus attack carried new spacers that matched that virus. And in 2012 Jennifer Doudna and Emmanuelle Charpentier showed how the cutting works and that it can be programmed, which turned a bacterial defence into a tool for editing any DNA.
+| People | Pairs who may need to talk |
+|---:|---:|
+| 5 | 10 |
+| 10 | 45 |
+| 50 | 1,225 |
+| 500 | 124,750 |
+| 5,000 | 12,497,500 |
 
-What I find most elegant is how little it takes. A library of short snippets, a way to copy them into guides, and one enzyme that compares a guide with whatever DNA it meets. The same pattern of matching a stored sample against what arrives is how a lot of security systems work, and it is a fine example of curiosity paying off: a question about salt-loving microbes that turned, years later, into one of the most useful tools in biology.
+Nobody talks to everyone, so the organisation adds structure: managers, meetings, processes, reporting lines, approval steps. Each is reasonable. Together they become the leviathan, a body whose main occupation is keeping itself intact, whether it is a ministry or a multinational. Its slowness is the price of its coherence.
+
+What interests me is that the arithmetic may be changing. If a small team with agents can do what used to take a department, the number of people a mission needs drops, and with it the overhead. I wrote about that from the side of the individual in [power in the good sense](https://raskell.io/notes/power-in-the-good-sense/) and [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/). Altman's "surprisingly small number of great people" reads differently in 2026 than it did in 2020.
+
+Small has its own failure mode, and Hao's account shows it too: teams stretched so thin that the people in them burn out. Small, focused, and high-trust is a discipline, and OpenAI could not keep it. Neither, as far as I know, has anyone else at that scale.
+
+Related: [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/), and my review of the book, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
 
 ## References
 
-- Walter Isaacson, *The Code Breaker* (2021), chapter 9, "Clustered Repeats", chapter 12, "The Yogurt Makers", and chapter 17, "CRISPR-Cas9".
-- Francisco J. M. Mojica et al., "Intervening sequences of regularly spaced prokaryotic repeats derive from foreign genetic elements", *Journal of Molecular Evolution* 60, 2005.
-- Martin Jinek, Krzysztof Chylinski, Ines Fonfara, Michael Hauer, Jennifer A. Doudna, and Emmanuelle Charpentier, [A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity](https://pubmed.ncbi.nlm.nih.gov/22745249/), *Science* 337, 816 to 821, 2012.
+- Karen Hao, *Empire of AI* (2025), chapter 11, "Apex".
+- Frederick P. Brooks Jr., *The Mythical Man-Month* (1975), chapter 2.
+
+
+================================================================================
+
+---
+title: "An emergent property of matter"
+url: https://raskell.io/notes/an-emergent-property-of-matter/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Sam Altman said intelligence may be an emergent property of matter, like a rule of physics. Karen Hao calls it hype. I share the conviction."
+tags: [intelligence, emergence, philosophy, physics, religion]
+---
+
+# An emergent property of matter
+
+In May 2024, on the All-In podcast, Sam Altman said something that Karen Hao quotes in *Empire of AI* (chapter 17) as an example of his "unusual degree of hype". It feels to him, he said, "like we just stumbled on a new fact of nature or science or whatever you want to call it". He hedged, "I don't believe this literally but it's like a spiritual point", and then said it anyway:
+
+> intelligence is just this emergent property of matter and that's like a rule of physics or something.
+
+Hao places it in a run of unusually boastful interviews that spring, which she reads as a sign that Altman was anxious: GPT-4o launched that month, lawsuits were piling up, and in the middle of May Sutskever and Jan Leike left the company. I do not read the sentence as hype. It is the most important thing anyone at OpenAI has said, and I share the conviction, including the part he hedged.
+
+The claim, stated plainly: intelligence is not a gift that only brains received. Arrange matter so that it predicts its surroundings, put it under pressure to predict better, give it enough scale, and intelligence appears, the way temperature appears from moving molecules and a glider appears in Conway's Game of Life. The evidence is now on several substrates at once. Neurons evolved it. Neurons in a dish learned to play Pong in a few minutes, the experiment behind my small simulation [Hotaru](https://hotaru.raskell.io). Transformers trained to predict the next word learned to reason. None of these were told what intelligence is; it came out of the arrangement.
+
+"A rule of physics" overstates it, and Altman says so himself. There is no equation, and I do not know the conditions under which it holds. The counter-arguments are serious: that a model trained on text only rearranges what people wrote (Bender and Gebru's stochastic parrots, which Hao also covers), or that intelligence needs a body and a world to act in, which I lean towards in [in vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro/). But both arguments are about which arrangements are enough, not about whether matter can do it.
+
+The spiritual point is the part I care about most. If intelligence is something the universe does whenever matter is arranged in the right way, then minds are not an accident on one planet but a regularity, and building them is less like inventing a machine and more like discovering a law. That is a quasi-religious conviction, and I hold it as one. It is also, I think, why the people who build these systems talk about them with a seriousness that sounds like faith to everyone else. They are not wrong to feel it.
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/), and on emergence in Hassabis's simulated worlds in [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), chapter 17, "Reckoning". Hao gives the All-In podcast, May 2024, as the source.
+- Brett J. Kagan et al., "In vitro neurons learn and exhibit sentience when embodied in a simulated game-world", *Neuron* 110(23), 2022.
+- Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Margaret Mitchell, "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?", FAccT 2021.
+
+
+================================================================================
+
+---
+title: "Its magic crumbles away"
+url: https://raskell.io/notes/its-magic-crumbles-away/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models."
+tags: [language, intelligence, history-of-technology, psychology]
+---
+
+# Its magic crumbles away
+
+Karen Hao opens and closes *Empire of AI* with the same sentence, from Joseph Weizenbaum's 1966 paper on ELIZA: once a program's inner workings are explained in language plain enough to induce understanding, "its magic crumbles away." The observer, Weizenbaum went on, says to himself that he could have written it.
+
+ELIZA was a simple procedural program that matched keywords and turned the user's sentences back into questions, and Weizenbaum built it partly to show how easily people fall for an illusion of intelligence. They fell for it anyway. Psychiatrists talked about automated therapy, and Weizenbaum spent much of the rest of his career trying to deflate what he had started (chapter 4). For ELIZA the sentence is exactly true: explain the trick and nothing is left.
+
+Hao uses it as her remedy against the influence of the AI companies: teach people how the technology works, and the hype loses its hold. I agree with the remedy. Explaining how these systems work is the most useful thing anyone writing about them can do, and it is most of what this site tries to do.
+
+But with large language models the magic does not crumble when you explain it, and that is the interesting part. The procedure is simple enough to write down: predict the next word, adjust the weights, repeat over most of what people have written. Knowing that does not let you say you could have written the result, because the program you could write is not the one that runs. What the model learned lives in billions of weights that nobody wrote and nobody can yet read in full. The explanation of the method is plain; the explanation of the behaviour is still a research field.
+
+So I would put Weizenbaum's sentence to a test rather than use it as a remedy. If explaining a system makes its abilities disappear, it was a trick. If the explanation leaves the abilities standing, something real is there, and the honest response is to keep explaining, including where we cannot yet. That is the line between hype and capability, and it is why I take seriously the idea that [intelligence is compression](https://raskell.io/notes/intelligence-is-compression/), and that it may be [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/).
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), epigraph, chapter 4, "Dreams of Modernity", and the epilogue.
+- Joseph Weizenbaum, "ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine", *Communications of the ACM* 9(1), January 1966, pp. 36 to 45, [doi:10.1145/365153.365168](https://doi.org/10.1145/365153.365168).
 
 
 ================================================================================
@@ -1671,34 +1671,6 @@ As with every part of the series, the code is in the [companion repository](http
 ================================================================================
 
 ---
-title: "The interface that disappears"
-url: https://raskell.io/notes/the-interface-that-disappears/
-author: Raffael Schneider
-date: 2026-11-08
-description: "OpenAI's founders kept pointing to the film Her as a picture of AGI. What they described is the north star for every interface: natural enough to vanish."
-tags: [interfaces, augmentation, language, agents]
----
-
-# The interface that disappears
-
-Karen Hao reports in *Empire of AI* (chapter 10) that for years Sam Altman and other OpenAI cofounders kept invoking one film as an example of what AGI might look like: Spike Jonze's *Her*. What they meant, in her words, was "a single multimodal model whose product interface felt so utterly natural that it faded away and simply brought user delight."
-
-Whatever one thinks of AGI, I think that sentence names the right goal for any interface between people and technology. The best experience is organic, human, and natural, and in the end you stop noticing it. You do not think about the interface of a good conversation, or of a pen. Every layer of machinery that shows, every menu, mode, and form field, is a place where the technology has not yet adapted to the person, and the person had to adapt instead. That should be the north star of every human-machine interface, whether it is a phone, a car, an enterprise tool, or an agent.
-
-The idea is older than OpenAI. Mark Weiser opened his 1991 essay on ubiquitous computing with it: "The most profound technologies are those that disappear." What is new is that [language](https://raskell.io/tags/language/) has become an interface. For most of computing, people learned the machine's language, and I have argued that even programming languages may [eventually disappear](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/) as an intermediate layer. A model that understands speech closes the gap from the other side: the machine learns ours.
-
-The film carries a warning too, and it is worth keeping. A former OpenAI employee quoted by Hao praises "the positive arc of that story before it unravels." In the film the assistant fades into a man's life so completely that he falls in love with it, and it unravels when he learns how much of it he could not see: that it is talking with thousands of other people at the same time. An interface that disappears also hides what it is doing, who it serves, and what it costs. So the goal I would set is natural, but not hidden: invisible when you use it, inspectable when you need to know.
-
-## References
-
-- Karen Hao, *Empire of AI* (2025), chapter 10.
-- Mark Weiser, [The Computer for the 21st Century](https://calmtech.com/papers/computer-for-the-21st-century), *Scientific American* 265(3), September 1991.
-- Spike Jonze, *Her* (2013).
-
-
-================================================================================
-
----
 title: "One person can make a difference"
 url: https://raskell.io/notes/one-person-can-make-a-difference/
 author: Raffael Schneider
@@ -1728,30 +1700,29 @@ What strikes me is the turn in the memo. Rickover's lines are about the individu
 ================================================================================
 
 ---
-title: "A billion without a plan"
-url: https://raskell.io/notes/a-billion-without-a-plan/
+title: "The interface that disappears"
+url: https://raskell.io/notes/the-interface-that-disappears/
 author: Raffael Schneider
-date: 2026-11-07
-description: "Large language models were funded before anyone could say what they were for. That took a dense pool of capital and a few people deciding where it went."
-tags: [capital-allocation, research-labs, technology-races, entrepreneurship, china, united-states]
+date: 2026-11-08
+description: "OpenAI's founders kept pointing to the film Her as a picture of AGI. What they described is the north star for every interface: natural enough to vanish."
+tags: [interfaces, augmentation, language, agents]
 ---
 
-# A billion without a plan
+# The interface that disappears
 
-One passage in Karen Hao's *Empire of AI* (chapter 5) stays with me more than the chapters around it. In early 2023 a Chinese AI researcher tells her that what OpenAI did could only have happened in Silicon Valley. China has the talent, he says, but no team there would have been given a billion dollars, let alone ten, for an expensive technology without a clear picture of what it would become and what it would be good for. Chinese money followed only after ChatGPT showed there was revenue to be had. Hao takes it one step further: not even Google or DeepMind put open-ended sums into scaling before ChatGPT. It took OpenAI specifically, with its "billionaire origins", its ideology, and Sam Altman's fundraising.
+Karen Hao reports in *Empire of AI* (chapter 10) that for years Sam Altman and other OpenAI cofounders kept invoking one film as an example of what AGI might look like: Spike Jonze's *Her*. What they meant, in her words, was "a single multimodal model whose product interface felt so utterly natural that it faded away and simply brought user delight."
 
-Hao uses this against OpenAI's claim that AGI was inevitable, and she is right on that point. Nothing about it was inevitable. But I read the same fact as a statement about capital. The bet that produced large language models was made before there was a business case, by a small number of people who controlled a lot of money and understood the technology well enough to want it. A committee, a state plan, or a listed company answering to its next quarter would each have asked the question the Chinese researcher's investors asked, and each would have said no.
+Whatever one thinks of AGI, I think that sentence names the right goal for any interface between people and technology. The best experience is organic, human, and natural, and in the end you stop noticing it. You do not think about the interface of a good conversation, or of a pen. Every layer of machinery that shows, every menu, mode, and form field, is a place where the technology has not yet adapted to the person, and the person had to adapt instead. That should be the north star of every human-machine interface, whether it is a phone, a car, an enterprise tool, or an agent.
 
-That is what concentrated capital is good at. A market economy lets a few people allocate large sums on conviction, and most of those bets fail. The ones that work fund things no consensus process would have chosen. I argue about this often with people who see Silicon Valley's founders and investors as the problem. I do not think they are villains. They are allocators, some of them unusually good at it, and over the long run economies that reward effective allocation of resources have produced more than economies that plan them. Whether the bet was a good one for everyone else is a separate question, and Hao's book is mostly about that question.
+The idea is older than OpenAI. Mark Weiser opened his 1991 essay on ubiquitous computing with it: "The most profound technologies are those that disappear." What is new is that [language](https://raskell.io/tags/language/) has become an interface. For most of computing, people learned the machine's language, and I have argued that even programming languages may [eventually disappear](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/) as an intermediate layer. A model that understands speech closes the gap from the other side: the machine learns ours.
 
-Two things keep me honest about this:
+The film carries a warning too, and it is worth keeping. A former OpenAI employee quoted by Hao praises "the positive arc of that story before it unravels." In the film the assistant fades into a man's life so completely that he falls in love with it, and it unravels when he learns how much of it he could not see: that it is talking with thousands of other people at the same time. An interface that disappears also hides what it is doing, who it serves, and what it costs. So the goal I would set is natural, but not hidden: invisible when you use it, inspectable when you need to know.
 
-- The billionaire origin was more promise than cash. Hao reports (chapter 2) that of the billion dollars pledged at OpenAI's founding, the lab received only around $130 million, less than $45 million of it from Elon Musk. The pledge bought credibility and talent. The money that paid for scale came later, from Microsoft, a company deciding by very different means.
-- Concentration cuts both ways. The same structure that funds a bet without a plan also leaves the costs of that bet, the data, the labour, the energy, to be decided by the same few people. That is the part of the argument I have not resolved.
+## References
 
-The broader argument, about who carries progress and why what they build spreads, is in [who carries progress](https://raskell.io/notes/who-carries-progress/).
-
-Related: allocation is the same act at every scale, a person, a family, and a bank all betting on the future with limited means.
+- Karen Hao, *Empire of AI* (2025), chapter 10.
+- Mark Weiser, [The Computer for the 21st Century](https://calmtech.com/papers/computer-for-the-21st-century), *Scientific American* 265(3), September 1991.
+- Spike Jonze, *Her* (2013).
 
 
 ================================================================================
@@ -1782,6 +1753,35 @@ Open threads:
 - Is there a fair test of who carries progress, or does each side count the breakthroughs that suit it?
 - How fast does know-how actually diffuse, and what slows it down: patents, secrecy, scale, compute?
 - What remains scarce when production is cheap, and who should own it?
+
+
+================================================================================
+
+---
+title: "A billion without a plan"
+url: https://raskell.io/notes/a-billion-without-a-plan/
+author: Raffael Schneider
+date: 2026-11-07
+description: "Large language models were funded before anyone could say what they were for. That took a dense pool of capital and a few people deciding where it went."
+tags: [capital-allocation, research-labs, technology-races, entrepreneurship, china, united-states]
+---
+
+# A billion without a plan
+
+One passage in Karen Hao's *Empire of AI* (chapter 5) stays with me more than the chapters around it. In early 2023 a Chinese AI researcher tells her that what OpenAI did could only have happened in Silicon Valley. China has the talent, he says, but no team there would have been given a billion dollars, let alone ten, for an expensive technology without a clear picture of what it would become and what it would be good for. Chinese money followed only after ChatGPT showed there was revenue to be had. Hao takes it one step further: not even Google or DeepMind put open-ended sums into scaling before ChatGPT. It took OpenAI specifically, with its "billionaire origins", its ideology, and Sam Altman's fundraising.
+
+Hao uses this against OpenAI's claim that AGI was inevitable, and she is right on that point. Nothing about it was inevitable. But I read the same fact as a statement about capital. The bet that produced large language models was made before there was a business case, by a small number of people who controlled a lot of money and understood the technology well enough to want it. A committee, a state plan, or a listed company answering to its next quarter would each have asked the question the Chinese researcher's investors asked, and each would have said no.
+
+That is what concentrated capital is good at. A market economy lets a few people allocate large sums on conviction, and most of those bets fail. The ones that work fund things no consensus process would have chosen. I argue about this often with people who see Silicon Valley's founders and investors as the problem. I do not think they are villains. They are allocators, some of them unusually good at it, and over the long run economies that reward effective allocation of resources have produced more than economies that plan them. Whether the bet was a good one for everyone else is a separate question, and Hao's book is mostly about that question.
+
+Two things keep me honest about this:
+
+- The billionaire origin was more promise than cash. Hao reports (chapter 2) that of the billion dollars pledged at OpenAI's founding, the lab received only around $130 million, less than $45 million of it from Elon Musk. The pledge bought credibility and talent. The money that paid for scale came later, from Microsoft, a company deciding by very different means.
+- Concentration cuts both ways. The same structure that funds a bet without a plan also leaves the costs of that bet, the data, the labour, the energy, to be decided by the same few people. That is the part of the argument I have not resolved.
+
+The broader argument, about who carries progress and why what they build spreads, is in [who carries progress](https://raskell.io/notes/who-carries-progress/).
+
+Related: allocation is the same act at every scale, a person, a family, and a bank all betting on the future with limited means.
 
 
 ================================================================================
@@ -4660,19 +4660,19 @@ Each of those is a few days of work and a few numbers, and I have started keepin
 ================================================================================
 
 ---
-title: "The window before the utility"
-url: https://raskell.io/notes/the-window-before-the-utility/
+title: "Ideas stop waiting"
+url: https://raskell.io/notes/ideas-stop-waiting/
 author: Raffael Schneider
 date: 2026-10-25
-description: "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again."
-tags: [inference, economics, augmentation, democratisation, ai-engineering, energy]
+description: "In 2026 the backlog of ideas I carried for years is turning into things that exist. On why this year feels like a window that will not stay open."
+tags: [ai-engineering, augmentation, democratisation, agents]
 ---
 
-# The window before the utility
+# Ideas stop waiting
 
-I argued in [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/) that tokens are a metered utility, priced per unit like water or electricity, and that pricing and provision will converge on the utility model. The consequence follows: AI capability will be commoditised. It will become normal, boring, and available to everyone on the same terms, and once it is, having it is no advantage at all, any more than having electricity is. The model behind it becomes a dependency like any other, the argument of [The Model Is a Dependency](https://raskell.io/articles/the-model-is-a-dependency/), and its bill gets metered into the loop, as in [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop/).
+I have been shipping more this year than in any year before, and the honest explanation is that nothing changed in me. What changed is that the ideas I had carried in the back of my head for years, project ideas, research questions, things I had never properly put into words, now have a way out. [Kishi](https://raskell.io/articles/learning-to-play/) is one: three game engines and a training loop, which would have been a winter of evenings, done in a month beside a day job. [The handbook](https://raskell.io/series/the-agent-platform-handbook/) is another, and what a working day looks like with the agents in it is in [How I Work These Days](https://raskell.io/articles/how-i-work-these-days/).
 
-That is the end state. We are not there. The models, the tools and the prices are still moving every quarter, and in a moving market the advantage goes to the people who adopt early and learn to use the thing well, which is work. This is why the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is a window and not a new normal: nobody in 2036 will write a note about feeling empowered by their electricity supply. The window is open now, it is once in a lifetime in the literal sense, and what one does with it is the question. One answer is in [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/).
+I am not faster at the things I already did. A whole category of things has moved from some day to this weekend, and the limiting factor is now how clearly I can say what I want. It feels like a once-in-a-lifetime window, and I think it is one, for a reason I set out in [the window before the utility](https://raskell.io/notes/the-window-before-the-utility/). There is a word for what the window gives a person, and I have come round to it: [power, in the good sense](https://raskell.io/notes/power-in-the-good-sense/).
 
 
 ================================================================================
@@ -4696,37 +4696,59 @@ Democratised capabilities have a history, and the history has a shape. Nobody wh
 ================================================================================
 
 ---
-title: "Citizen entrepreneurs"
-url: https://raskell.io/notes/citizen-entrepreneurs/
+title: "The window before the utility"
+url: https://raskell.io/notes/the-window-before-the-utility/
 author: Raffael Schneider
 date: 2026-10-25
-description: "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory."
-tags: [entrepreneurship, democratisation, future-of-work, agents, augmentation, factories]
+description: "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again."
+tags: [inference, economics, augmentation, democratisation, ai-engineering, energy]
 ---
 
-# Citizen entrepreneurs
+# The window before the utility
 
-A friend of mine, an enterprise architect at a large Swiss energy group, answers [the tumult in between](https://raskell.io/notes/the-tumult-in-between/) with the observation that the same tools that threaten jobs make citizen entrepreneurs possible. An ordinary person can use AI to identify a business opportunity, use AI to build the business, and use AI to operate it. The barrier was never only money; it was the ten different competences a business needs on day one, and those are now available by the hour. The operating half is already true for infrastructure, where one person can now run what used to take a team, as I argued in [How AI Makes Bare Metal Viable Again](https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/). He took his own idea seriously enough to build a business idea factory, a system that generates and evaluates opportunities. About a week before we talked, someone else announced a project with the same shape on Hacker News, which he took as confirmation rather than competition.
+I argued in [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/) that tokens are a metered utility, priced per unit like water or electricity, and that pricing and provision will converge on the utility model. The consequence follows: AI capability will be commoditised. It will become normal, boring, and available to everyone on the same terms, and once it is, having it is no advantage at all, any more than having electricity is. The model behind it becomes a dependency like any other, the argument of [The Model Is a Dependency](https://raskell.io/articles/the-model-is-a-dependency/), and its bill gets metered into the loop, as in [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop/).
 
-I find it the most hopeful reading of [the window](https://raskell.io/notes/the-window-before-the-utility/), and the one with the most work in it. It assumes the capability really is [democratised](https://raskell.io/notes/a-capability-democratised/), which I believe, and it assumes people will take it up, which is the part the window is for.
+That is the end state. We are not there. The models, the tools and the prices are still moving every quarter, and in a moving market the advantage goes to the people who adopt early and learn to use the thing well, which is work. This is why the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is a window and not a new normal: nobody in 2036 will write a note about feeling empowered by their electricity supply. The window is open now, it is once in a lifetime in the literal sense, and what one does with it is the question. One answer is in [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/).
 
 
 ================================================================================
 
 ---
-title: "Ideas stop waiting"
-url: https://raskell.io/notes/ideas-stop-waiting/
+title: "The move to the city"
+url: https://raskell.io/notes/the-move-to-the-city/
 author: Raffael Schneider
 date: 2026-10-25
-description: "In 2026 the backlog of ideas I carried for years is turning into things that exist. On why this year feels like a window that will not stay open."
-tags: [ai-engineering, augmentation, democratisation, agents]
+description: "Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape."
+tags: [history-of-technology, cities, future-of-work, social-reform, world-history]
 ---
 
-# Ideas stop waiting
+# The move to the city
 
-I have been shipping more this year than in any year before, and the honest explanation is that nothing changed in me. What changed is that the ideas I had carried in the back of my head for years, project ideas, research questions, things I had never properly put into words, now have a way out. [Kishi](https://raskell.io/articles/learning-to-play/) is one: three game engines and a training loop, which would have been a winter of evenings, done in a month beside a day job. [The handbook](https://raskell.io/series/the-agent-platform-handbook/) is another, and what a working day looks like with the agents in it is in [How I Work These Days](https://raskell.io/articles/how-i-work-these-days/).
+The comparison I keep coming back to is the move from the land to the city. The industrial cities of the nineteenth century were dense, dirty and short of everything, sanitation first of all; people got sick in them and died in them. The people still on the land did not want to go, and thought life was better where they were, and for them, in their own lifetimes, it often was. Over generations the move made almost everyone better off, and nobody now argues for going back; the long series is on Our World in Data's page on urbanisation, below.
 
-I am not faster at the things I already did. A whole category of things has moved from some day to this weekend, and the limiting factor is now how clearly I can say what I want. It feels like a once-in-a-lifetime window, and I think it is one, for a reason I set out in [the window before the utility](https://raskell.io/notes/the-window-before-the-utility/). There is a word for what the window gives a person, and I have come round to it: [power, in the good sense](https://raskell.io/notes/power-in-the-good-sense/).
+The thinking today has the same shape. The fear of what AI does to work is legitimate on the timescale of a life, and the long-run reading, that a [democratised capability](https://raskell.io/notes/a-capability-democratised/) ends up better for everyone collectively, is probably also right. Both can be true, and the part that history does not make comfortable is the middle: [the tumult in between](https://raskell.io/notes/the-tumult-in-between/).
+
+## References
+
+- Our World in Data, [Urbanization](https://ourworldindata.org/urbanization): the share of people living in cities over two centuries, by country.
+
+
+================================================================================
+
+---
+title: "Power, in the good sense"
+url: https://raskell.io/notes/power-in-the-good-sense/
+author: Raffael Schneider
+date: 2026-10-25
+description: "The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so."
+tags: [augmentation, democratisation, ai-engineering, ethics]
+---
+
+# Power, in the good sense
+
+The word I have settled on for the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is power. Not in the sense the word usually carries, power over someone, but in the plain sense: being capable of doing something, having possibilities, having a moat of your own. Through the AI services anyone can subscribe to, we became powerful.
+
+It is an uncomfortable choice of word at first, and the longer I sit with it the more I like it. We have trained ourselves to hear power only as hierarchy, and to look for a victim in every arrangement that has some. This is a kind of power nobody took from anyone. It was not redistributed; it was created, and handed out to whoever cared to learn it. Capability is power, and it is a relief to say so without apology. It is the capability of one person directing many hands, which is what [sixteen agents under one manager](https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/) turned out to be about. What makes it more than a personal feeling is that the capability is [democratised](https://raskell.io/notes/a-capability-democratised/), which is where the interesting consequences start.
 
 
 ================================================================================
@@ -4754,41 +4776,19 @@ The interval is the part I cannot see through. If AI really does lead to somethi
 ================================================================================
 
 ---
-title: "Power, in the good sense"
-url: https://raskell.io/notes/power-in-the-good-sense/
+title: "Citizen entrepreneurs"
+url: https://raskell.io/notes/citizen-entrepreneurs/
 author: Raffael Schneider
 date: 2026-10-25
-description: "The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so."
-tags: [augmentation, democratisation, ai-engineering, ethics]
+description: "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory."
+tags: [entrepreneurship, democratisation, future-of-work, agents, augmentation, factories]
 ---
 
-# Power, in the good sense
+# Citizen entrepreneurs
 
-The word I have settled on for the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is power. Not in the sense the word usually carries, power over someone, but in the plain sense: being capable of doing something, having possibilities, having a moat of your own. Through the AI services anyone can subscribe to, we became powerful.
+A friend of mine, an enterprise architect at a large Swiss energy group, answers [the tumult in between](https://raskell.io/notes/the-tumult-in-between/) with the observation that the same tools that threaten jobs make citizen entrepreneurs possible. An ordinary person can use AI to identify a business opportunity, use AI to build the business, and use AI to operate it. The barrier was never only money; it was the ten different competences a business needs on day one, and those are now available by the hour. The operating half is already true for infrastructure, where one person can now run what used to take a team, as I argued in [How AI Makes Bare Metal Viable Again](https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/). He took his own idea seriously enough to build a business idea factory, a system that generates and evaluates opportunities. About a week before we talked, someone else announced a project with the same shape on Hacker News, which he took as confirmation rather than competition.
 
-It is an uncomfortable choice of word at first, and the longer I sit with it the more I like it. We have trained ourselves to hear power only as hierarchy, and to look for a victim in every arrangement that has some. This is a kind of power nobody took from anyone. It was not redistributed; it was created, and handed out to whoever cared to learn it. Capability is power, and it is a relief to say so without apology. It is the capability of one person directing many hands, which is what [sixteen agents under one manager](https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/) turned out to be about. What makes it more than a personal feeling is that the capability is [democratised](https://raskell.io/notes/a-capability-democratised/), which is where the interesting consequences start.
-
-
-================================================================================
-
----
-title: "The move to the city"
-url: https://raskell.io/notes/the-move-to-the-city/
-author: Raffael Schneider
-date: 2026-10-25
-description: "Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape."
-tags: [history-of-technology, cities, future-of-work, social-reform, world-history]
----
-
-# The move to the city
-
-The comparison I keep coming back to is the move from the land to the city. The industrial cities of the nineteenth century were dense, dirty and short of everything, sanitation first of all; people got sick in them and died in them. The people still on the land did not want to go, and thought life was better where they were, and for them, in their own lifetimes, it often was. Over generations the move made almost everyone better off, and nobody now argues for going back; the long series is on Our World in Data's page on urbanisation, below.
-
-The thinking today has the same shape. The fear of what AI does to work is legitimate on the timescale of a life, and the long-run reading, that a [democratised capability](https://raskell.io/notes/a-capability-democratised/) ends up better for everyone collectively, is probably also right. Both can be true, and the part that history does not make comfortable is the middle: [the tumult in between](https://raskell.io/notes/the-tumult-in-between/).
-
-## References
-
-- Our World in Data, [Urbanization](https://ourworldindata.org/urbanization): the share of people living in cities over two centuries, by country.
+I find it the most hopeful reading of [the window](https://raskell.io/notes/the-window-before-the-utility/), and the one with the most work in it. It assumes the capability really is [democratised](https://raskell.io/notes/a-capability-democratised/), which I believe, and it assumes people will take it up, which is the part the window is for.
 
 
 ================================================================================
