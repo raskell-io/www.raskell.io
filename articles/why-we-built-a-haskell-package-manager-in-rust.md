@@ -63,7 +63,7 @@ Think about what this means in practice. You are a new developer. You want to tr
 
 GHC's runtime system adds initialization overhead to every invocation. When you type `cabal build`, the first 45 milliseconds are spent starting the GHC runtime before Cabal even begins to think about your project. Stack is worse at 89 milliseconds. These numbers sound small until you are running commands in a tight development loop, hitting save and expecting the build to start instantly. Or in CI, where the build tool is invoked hundreds of times across a pipeline and those milliseconds compound into minutes.
 
-hx starts in 12 milliseconds. A native binary without a garbage-collected runtime does not need to initialize one. The tool should not have the same dependencies as the thing it manages.
+hx starts in 12 milliseconds. A native binary without a garbage-collected runtime does not need to initialize one. The tool should not have the same dependencies as the thing it manages. Rust is my default for this kind of thing, tools that have to work no matter what; I wrote down why, language by language, in [Almost Irrelevant](https://raskell.io/articles/almost-irrelevant/).
 
 ```bash
 hx build    # 12ms startup + build time

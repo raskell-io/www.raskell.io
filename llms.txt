@@ -38,6 +38,7 @@ raskell.io is the personal site of Raffael Schneider, a Group AI Solutions Archi
 
 ## Articles
 
+- [Almost Irrelevant: Choosing a Language When Agents Write the Code](https://raskell.io/articles/almost-irrelevant.md) (2026-11-19): When agents write most of the code, the language matters less than it did, but not nothing. What Rust, Go, Elixir and Haskell still buy you.
 - [Building IT Intelligence: A Reference Implementation in One Repository](https://raskell.io/articles/building-it-intelligence.md) (2026-11-16): How to build an Enterprise Context Platform from open source parts: ontology, connectors, workflows, store, API, MCP and UI, in one repository you can run.
 - [Its Own Metaphor](https://raskell.io/articles/review-how-life-works.md) (2026-11-14): Philip Ball's How Life Works is the popular science book I wish every other one were: deep, clear, and honest about how we came to know what we know.
 - [An Empire of People](https://raskell.io/articles/review-empire-of-ai.md) (2026-11-14): Karen Hao's Empire of AI tells the story of OpenAI through its people. Gripping as reporting, and uneven where it argues.
@@ -114,30 +115,30 @@ Short notes, a paragraph or a page each; some grow into articles.
 
 - [Memory that dreams](https://raskell.io/notes/memory-that-dreams.md) (2026-11-15): A colleague showed me that agent memory should dream before Anthropic published on it. Replay the day, and check the notes against what happened.
 - [Something closer to a religion](https://raskell.io/notes/something-closer-to-a-religion.md) (2026-11-14): In 2013 Sam Altman wrote that great founders create something closer to a religion. Karen Hao reads it as a warning; I read it as a forecast.
-- [How CRISPR works](https://raskell.io/notes/how-crispr-works.md) (2026-11-14): Bacteria keep mug shots of the viruses that attacked them, and Cas9 uses them to cut. A 3D model to step through, from the discovery to the tool.
+- [An emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter.md) (2026-11-14): Sam Altman said intelligence may be an emergent property of matter, like a rule of physics. Karen Hao calls it hype. I share the conviction.
+- [Small, focused, high-trust](https://raskell.io/notes/small-focused-high-trust.md) (2026-11-14): Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic.
+- [Its magic crumbles away](https://raskell.io/notes/its-magic-crumbles-away.md) (2026-11-14): Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models.
 - [Intelligence is compression](https://raskell.io/notes/intelligence-is-compression.md) (2026-11-14): Ilya Sutskever's internal slogan at OpenAI: a model that must predict the world has to compress it. I think it is the most useful definition we have.
 - [A self-fulfilling prophecy](https://raskell.io/notes/a-self-fulfilling-prophecy.md) (2026-11-14): Karen Hao says scaling laws are like Moore's Law: not a law of nature but a self-fulfilling prophecy. She is half right, and the half matters.
-- [Small, focused, high-trust](https://raskell.io/notes/small-focused-high-trust.md) (2026-11-14): Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic.
-- [An emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter.md) (2026-11-14): Sam Altman said intelligence may be an emergent property of matter, like a rule of physics. Karen Hao calls it hype. I share the conviction.
-- [Its magic crumbles away](https://raskell.io/notes/its-magic-crumbles-away.md) (2026-11-14): Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models.
+- [How CRISPR works](https://raskell.io/notes/how-crispr-works.md) (2026-11-14): Bacteria keep mug shots of the viruses that attacked them, and Cas9 uses them to cut. A 3D model to step through, from the discovery to the tool.
 - [I wrote a short book about peace](https://raskell.io/notes/the-art-of-peace.md) (2026-11-13): The Art of Peace is a short web book on living together without thinking alike: thirteen chapters, 104 passages, free to read.
-- [One person can make a difference](https://raskell.io/notes/one-person-can-make-a-difference.md) (2026-11-08): Sam Altman had a line from Admiral Rickover painted on OpenAI's walls. It says one person can make a difference, and it was used to ask for unity.
 - [The interface that disappears](https://raskell.io/notes/the-interface-that-disappears.md) (2026-11-08): OpenAI's founders kept pointing to the film Her as a picture of AGI. What they described is the north star for every interface: natural enough to vanish.
-- [Who carries progress](https://raskell.io/notes/who-carries-progress.md) (2026-11-07): A colleague says the breakthroughs come from academia and the state. I think they come from people who have to make things work, and that what they learn spreads.
+- [One person can make a difference](https://raskell.io/notes/one-person-can-make-a-difference.md) (2026-11-08): Sam Altman had a line from Admiral Rickover painted on OpenAI's walls. It says one person can make a difference, and it was used to ask for unity.
 - [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan.md) (2026-11-07): Large language models were funded before anyone could say what they were for. That took a dense pool of capital and a few people deciding where it went.
+- [Who carries progress](https://raskell.io/notes/who-carries-progress.md) (2026-11-07): A colleague says the breakthroughs come from academia and the state. I think they come from people who have to make things work, and that what they learn spreads.
 - [In vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro.md) (2026-11-07): An open question: can intelligence be measured anywhere but in performance? My hunch is that it shows only when an agent acts.
 - [My GOAT games](https://raskell.io/notes/goat-games.md) (2026-11-03): My twenty-five greatest games of all time as one chart, from Phantasy Star Online to Anno 1602.
 - [Who contributed to AI](https://raskell.io/notes/who-contributed-to-ai.md) (2026-11-01): A companion piece to Karen Hao's Empire of AI and Sebastian Mallaby's The Infinity Machine: who built AI, where, and which idea led to which product.
 - [Gangsters: Organized Crime, orders for the week](https://raskell.io/notes/orders-for-the-week.md) (2026-11-01): Gangsters: Organized Crime had you plan a week of orders and then watch the city carry them out. I have not played anything like it since.
 - [Future Cop: L.A.P.D., a duel between genres](https://raskell.io/notes/a-duel-between-genres.md) (2026-11-01): Future Cop: L.A.P.D. had a one-against-one mode where you were the soldier and the general at once. I have not found a game since that does it.
 - [Everything is a fractal](https://raskell.io/notes/everything-is-a-fractal.md) (2026-10-31): The idea I have carried longest: the same patterns recur at every scale. When something holds at three scales, it is usually something real about the world.
-- [Ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting.md) (2026-10-25): In 2026 the backlog of ideas I carried for years is turning into things that exist. On why this year feels like a window that will not stay open.
-- [A capability, democratised](https://raskell.io/notes/a-capability-democratised.md) (2026-10-25): Building software took money, a team, or years of training. Now anyone with an idea and a subscription can do it, and nobody predicted what would follow.
 - [The window before the utility](https://raskell.io/notes/the-window-before-the-utility.md) (2026-10-25): Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again.
-- [The move to the city](https://raskell.io/notes/the-move-to-the-city.md) (2026-10-25): Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape.
-- [Power, in the good sense](https://raskell.io/notes/power-in-the-good-sense.md) (2026-10-25): The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so.
-- [The tumult in between](https://raskell.io/notes/the-tumult-in-between.md) (2026-10-25): If AI ends in post-scarcity, the dangerous part is the interval: jobs going before goods become nearly free, with no agreed idea of where the ship steers.
+- [A capability, democratised](https://raskell.io/notes/a-capability-democratised.md) (2026-10-25): Building software took money, a team, or years of training. Now anyone with an idea and a subscription can do it, and nobody predicted what would follow.
 - [Citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs.md) (2026-10-25): My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory.
+- [Ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting.md) (2026-10-25): In 2026 the backlog of ideas I carried for years is turning into things that exist. On why this year feels like a window that will not stay open.
+- [The tumult in between](https://raskell.io/notes/the-tumult-in-between.md) (2026-10-25): If AI ends in post-scarcity, the dangerous part is the interval: jobs going before goods become nearly free, with no agreed idea of where the ship steers.
+- [Power, in the good sense](https://raskell.io/notes/power-in-the-good-sense.md) (2026-10-25): The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so.
+- [The move to the city](https://raskell.io/notes/the-move-to-the-city.md) (2026-10-25): Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape.
 - [Opus 5.5 is the best Opus since 4.5](https://raskell.io/notes/opus-5-5-is-the-best-opus-since-4-5.md) (2026-10-24): A month in, Claude Opus 5.5 feels like the next milestone after Opus 4.5: the same jump in what Claude Code can carry, now faster and cheaper per task.
 
 ## Reading
@@ -328,28 +329,28 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ## Sources cited most
 
-External links cited on more than one page (all 547 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
+External links cited on more than one page (all 583 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
 
-- [Zentinel](https://zentinelproxy.io): cited on 12 pages
+- [Zentinel](https://zentinelproxy.io/): cited on 13 pages
 - [Archipelag.io](https://archipelag.io): cited on 9 pages
 - [Arcanist](https://arcanist.sh/): cited on 6 pages
 - [Cyanea](https://cyanea.bio): cited on 6 pages
 - [companion repository](https://github.com/raskell-io/the-agent-platform-handbook): cited on 5 pages
 - [kishi.raskell.io](https://kishi.raskell.io): cited on 5 pages
+- [bhc](https://arcanist.sh/bhc/): cited on 4 pages
 - [Die Zukunft](https://die-zukunft.ch/): cited on 4 pages
 - [Shiioo](https://github.com/raskell-io/shiioo): cited on 4 pages
 - [Hotaru](https://hotaru.raskell.io): cited on 4 pages
 - [AI 2027](https://ai-2027.com/): cited on 3 pages
-- [Basel Haskell Compiler](https://arcanist.sh/bhc/): cited on 3 pages
 - [Pingora](https://github.com/cloudflare/pingora): cited on 3 pages
 - [Conflux](https://github.com/raskell-io/conflux): cited on 3 pages
 - [Kage](https://github.com/raskell-io/kage): cited on 3 pages
 - [Vera](https://veralang.dev/): cited on 3 pages
 - [Void Linux](https://voidlinux.org/): cited on 3 pages
+- [Unison](https://www.unison-lang.org/): cited on 3 pages
 - [catalogue of languages built for agents to write](https://agentlanguages.dev): cited on 2 pages
 - [hx](https://arcanist.sh/hx/): cited on 2 pages
-- [astral.sh](https://astral.sh): cited on 2 pages
-- [Backstage software catalog](https://backstage.io/docs/features/software-catalog): cited on 2 pages
+- [arcanist.sh](https://arcanist.sh/manifesto/): cited on 2 pages
 
 ## Topics
 
@@ -584,6 +585,7 @@ The site is written in English. Some articles and pages are also translated; a t
 - [关于](https://raskell.io/zh/about/): translation of [About](https://raskell.io/about/)
 - [应用](https://raskell.io/zh/apps/): translation of [Apps](https://raskell.io/apps/)
 - [文章](https://raskell.io/zh/articles/): translation of [Articles](https://raskell.io/articles/)
+- [几乎无关紧要：当智能体写代码时，如何选择编程语言](https://raskell.io/zh/articles/almost-irrelevant/): translation of [Almost Irrelevant: Choosing a Language When Agents Write the Code](https://raskell.io/articles/almost-irrelevant/) ([Markdown](https://raskell.io/zh/articles/almost-irrelevant.md))
 - [构建 IT Intelligence：一个仓库里的参考实现](https://raskell.io/zh/articles/building-it-intelligence/): translation of [Building IT Intelligence: A Reference Implementation in One Repository](https://raskell.io/articles/building-it-intelligence/) ([Markdown](https://raskell.io/zh/articles/building-it-intelligence.md))
 - [IT 智能：企业 IT 缺失的数据层](https://raskell.io/zh/articles/it-intelligence/): translation of [IT Intelligence: The Missing Data Layer of Enterprise IT](https://raskell.io/articles/it-intelligence/) ([Markdown](https://raskell.io/zh/articles/it-intelligence.md))
 - [学会下棋](https://raskell.io/zh/articles/learning-to-play/): translation of [Learning to Play](https://raskell.io/articles/learning-to-play/) ([Markdown](https://raskell.io/zh/articles/learning-to-play.md))
@@ -627,6 +629,7 @@ The site is written in English. Some articles and pages are also translated; a t
 - [소개](https://raskell.io/ko/about/): translation of [About](https://raskell.io/about/)
 - [앱](https://raskell.io/ko/apps/): translation of [Apps](https://raskell.io/apps/)
 - [글](https://raskell.io/ko/articles/): translation of [Articles](https://raskell.io/articles/)
+- [거의 무관해진 선택: 에이전트가 코드를 쓸 때 언어를 고르는 법](https://raskell.io/ko/articles/almost-irrelevant/): translation of [Almost Irrelevant: Choosing a Language When Agents Write the Code](https://raskell.io/articles/almost-irrelevant/) ([Markdown](https://raskell.io/ko/articles/almost-irrelevant.md))
 - [IT Intelligence 만들기: 리포지토리 하나에 담은 참조 구현](https://raskell.io/ko/articles/building-it-intelligence/): translation of [Building IT Intelligence: A Reference Implementation in One Repository](https://raskell.io/articles/building-it-intelligence/) ([Markdown](https://raskell.io/ko/articles/building-it-intelligence.md))
 - [IT 인텔리전스(IT Intelligence): 엔터프라이즈 IT에 빠진 데이터 계층](https://raskell.io/ko/articles/it-intelligence/): translation of [IT Intelligence: The Missing Data Layer of Enterprise IT](https://raskell.io/articles/it-intelligence/) ([Markdown](https://raskell.io/ko/articles/it-intelligence.md))
 - [두는 법을 배우기](https://raskell.io/ko/articles/learning-to-play/): translation of [Learning to Play](https://raskell.io/articles/learning-to-play/) ([Markdown](https://raskell.io/ko/articles/learning-to-play.md))

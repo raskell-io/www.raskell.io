@@ -1,10 +1,10 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-19T06:04:16+00:00",
+ "generated": "2026-11-19T07:58:16+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
-  "article": 44,
+  "article": 45,
   "review": 4,
   "note": 27,
   "talk": 1,
@@ -12,7 +12,7 @@
   "work": 167,
   "project": 32,
   "topic": 168,
-  "link": 569
+  "link": 605
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -23,6 +23,23 @@
   "data": "https://raskell.io/data/"
  },
  "items": [
+  {
+   "kind": "article",
+   "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+   "url": "https://raskell.io/articles/almost-irrelevant/",
+   "description": "When agents write most of the code, the language matters less than it did, but not nothing. What Rust, Go, Elixir and Haskell still buy you.",
+   "date": "2026-11-19",
+   "topics": [
+    "programming-languages",
+    "ai-engineering",
+    "rust",
+    "golang",
+    "elixir",
+    "haskell",
+    "type-systems"
+   ],
+   "meta": "27 min"
+  },
   {
    "kind": "article",
    "title": "Building IT Intelligence: A Reference Implementation in One Repository",
@@ -4465,7 +4482,7 @@
   {
    "kind": "topic",
    "title": "Go",
-   "url": "https://raskell.io/tags#golang",
+   "url": "https://raskell.io/tags/golang/",
    "description": "Go, the plain and readable language for services that many teams share.",
    "meta": "Technology"
   },
@@ -5172,10 +5189,14 @@
   {
    "kind": "link",
    "title": "Zentinel",
-   "url": "https://zentinelproxy.io",
+   "url": "https://zentinelproxy.io/",
    "domain": "zentinelproxy.io",
    "reference": false,
    "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    },
     {
      "title": "After PHP Gate: A Blueprint for the Static Web",
      "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/"
@@ -5397,6 +5418,31 @@
   },
   {
    "kind": "link",
+   "title": "Basel Haskell Compiler",
+   "url": "https://arcanist.sh/bhc/",
+   "domain": "arcanist.sh",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    },
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    },
+    {
+     "title": "Why We Built a Haskell Package Manager in Rust",
+     "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/"
+    },
+    {
+     "title": "The Last Programming Language Might Not Be for Humans",
+     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Die Zukunft",
    "url": "https://die-zukunft.ch/",
    "domain": "die-zukunft.ch",
@@ -5488,27 +5534,6 @@
     {
      "title": "How I Work These Days",
      "url": "https://raskell.io/articles/how-i-work-these-days/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "Basel Haskell Compiler",
-   "url": "https://arcanist.sh/bhc/",
-   "domain": "arcanist.sh",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "The River and the Canal",
-     "url": "https://raskell.io/articles/the-river-and-the-canal/"
-    },
-    {
-     "title": "Why We Built a Haskell Package Manager in Rust",
-     "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/"
-    },
-    {
-     "title": "The Last Programming Language Might Not Be for Humans",
-     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
     }
    ]
   },
@@ -5619,6 +5644,27 @@
   },
   {
    "kind": "link",
+   "title": "Unison",
+   "url": "https://www.unison-lang.org/",
+   "domain": "unison-lang.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    },
+    {
+     "title": "The Proof You Only Have to Write Once",
+     "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/"
+    },
+    {
+     "title": "Source Code Is the New Assembly",
+     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "catalogue of languages built for agents to write",
    "url": "https://agentlanguages.dev",
    "domain": "agentlanguages.dev",
@@ -5653,6 +5699,23 @@
   },
   {
    "kind": "link",
+   "title": "arcanist.sh",
+   "url": "https://arcanist.sh/manifesto/",
+   "domain": "arcanist.sh",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    },
+    {
+     "title": "The Proof You Only Have to Write Once",
+     "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "astral.sh",
    "url": "https://astral.sh",
    "domain": "astral.sh",
@@ -5682,6 +5745,40 @@
     {
      "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
      "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Making illegal states unrepresentable",
+   "url": "https://blog.janestreet.com/effective-ml-revisited/",
+   "domain": "blog.janestreet.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    },
+    {
+     "title": "All beginning is Haskell",
+     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "a site about it",
+   "url": "https://broodwar.live",
+   "domain": "broodwar.live",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    },
+    {
+     "title": "Win Everything, Control No One",
+     "url": "https://raskell.io/articles/win-everything-control-no-one/"
     }
    ]
   },
@@ -6061,6 +6158,40 @@
   },
   {
    "kind": "link",
+   "title": "Go 1 and the Future of Go Programs",
+   "url": "https://go.dev/doc/go1compat",
+   "domain": "go.dev",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    },
+    {
+     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
+     "url": "https://raskell.io/articles/building-it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Humankind",
+   "url": "https://humankind.plus",
+   "domain": "humankind.plus",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    },
+    {
+     "title": "I Stopped Writing Most of My Code",
+     "url": "https://raskell.io/talks/iat-13-basel/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Kurumi",
    "url": "https://kurumi.raskell.io",
    "domain": "kurumi.raskell.io",
@@ -6277,23 +6408,6 @@
     {
      "title": "Hello and outlook",
      "url": "https://raskell.io/articles/hello-and-outlook/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "Unison",
-   "url": "https://www.unison-lang.org/",
-   "domain": "unison-lang.org",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "The Proof You Only Have to Write Once",
-     "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/"
-    },
-    {
-     "title": "Source Code Is the New Assembly",
-     "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
     }
    ]
   },
@@ -6838,6 +6952,45 @@
   },
   {
    "kind": "link",
+   "title": "where bhc stands",
+   "url": "https://arcanist.sh/bhc/status/",
+   "domain": "arcanist.sh",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Building the Commons",
+   "url": "https://arcanist.sh/blog/building-the-commons/",
+   "domain": "arcanist.sh",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The Scorecard Is Right. The Weights Are Wrong.",
+   "url": "https://arcanist.sh/blog/the-scorecard-is-right-the-weights-are-wrong/",
+   "domain": "arcanist.sh",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "arcanist.sh",
    "url": "https://arcanist.sh/building-the-commons/",
    "domain": "arcanist.sh",
@@ -6851,14 +7004,14 @@
   },
   {
    "kind": "link",
-   "title": "manifesto",
-   "url": "https://arcanist.sh/manifesto/",
+   "title": "the commons",
+   "url": "https://arcanist.sh/commons/",
    "domain": "arcanist.sh",
-   "reference": false,
+   "reference": true,
    "cited_in": [
     {
-     "title": "The Proof You Only Have to Write Once",
-     "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/"
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
     }
    ]
   },
@@ -6994,6 +7147,19 @@
   },
   {
    "kind": "link",
+   "title": "MultiPL-E: A Scalable and Extensible Approach to Benchmarking Neural Code Generation",
+   "url": "https://arxiv.org/abs/2208.08227",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "the line",
    "url": "https://arxiv.org/abs/2303.13988",
    "domain": "arxiv.org",
@@ -7028,6 +7194,19 @@
     {
      "title": "Evaluation Closes the Loop",
      "url": "https://raskell.io/articles/evaluation-closes-the-loop/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The Design Principles of the Elixir Type System",
+   "url": "https://arxiv.org/abs/2306.06391",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
     }
    ]
   },
@@ -7093,6 +7272,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Type-Constrained Code Generation with Language Models",
+   "url": "https://arxiv.org/abs/2504.09246",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
     }
    ]
   },
@@ -7371,19 +7563,6 @@
   },
   {
    "kind": "link",
-   "title": "Making illegal states unrepresentable",
-   "url": "https://blog.janestreet.com/effective-ml-revisited/",
-   "domain": "blog.janestreet.com",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "All beginning is Haskell",
-     "url": "https://raskell.io/articles/all-beginning-is-haskell/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
    "title": "The History of the FICO Score",
    "url": "https://blog.myfico.com/history-of-the-fico-score/",
    "domain": "blog.myfico.com",
@@ -7405,6 +7584,19 @@
     {
      "title": "Something closer to a religion",
      "url": "https://raskell.io/notes/something-closer-to-a-religion/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "over two million TCP connections",
+   "url": "https://blog.whatsapp.com/1-million-is-so-2011",
+   "domain": "blog.whatsapp.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
     }
    ]
   },
@@ -7444,19 +7636,6 @@
     {
      "title": "Brain Emulation, Read as an Infrastructure Problem",
      "url": "https://raskell.io/articles/brain-emulation-as-an-infrastructure-problem/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "a site about it",
-   "url": "https://broodwar.live",
-   "domain": "broodwar.live",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "Win Everything, Control No One",
-     "url": "https://raskell.io/articles/win-everything-control-no-one/"
     }
    ]
   },
@@ -7865,6 +8044,32 @@
   },
   {
    "kind": "link",
+   "title": "Why Discord is switching from Go to Rust",
+   "url": "https://discord.com/blog/why-discord-is-switching-from-go-to-rust",
+   "domain": "discord.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Fearless Concurrency",
+   "url": "https://doc.rust-lang.org/book/ch16-00-concurrency.html",
+   "domain": "doc.rust-lang.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Rust and WebAssembly",
    "url": "https://doc.rust-lang.org/rustc/platform-support/wasm32-unknown-unknown.html",
    "domain": "doc.rust-lang.org",
@@ -7904,6 +8109,19 @@
   },
   {
    "kind": "link",
+   "title": "Rust in the Linux kernel",
+   "url": "https://docs.kernel.org/rust/index.html",
+   "domain": "docs.kernel.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "DGX Spark hardware overview",
    "url": "https://docs.nvidia.com/dgx/dgx-spark/hardware.html",
    "domain": "docs.nvidia.com",
@@ -7912,6 +8130,19 @@
     {
      "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
      "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "rust_decimal",
+   "url": "https://docs.rs/rust_decimal/",
+   "domain": "docs.rs",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
     }
    ]
   },
@@ -8125,6 +8356,19 @@
   },
   {
    "kind": "link",
+   "title": "To Type or Not to Type: Quantifying Detectable Bugs in JavaScript",
+   "url": "https://earlbarr.com/publications/typestudy.pdf",
+   "domain": "earlbarr.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Regional Innovation Scoreboard 2025 — Switzerland profile",
    "url": "https://ec.europa.eu/assets/rtd/ris/2025/ec_rtd_ris-regional-profile-ch.pdf",
    "domain": "ec.europa.eu",
@@ -8133,6 +8377,32 @@
     {
      "title": "Patents Per Capita Is a Vanity Metric",
      "url": "https://raskell.io/articles/patents-per-capita-is-a-vanity-metric/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Type inference of all constructs and the next 15 months",
+   "url": "https://elixir-lang.org/blog/2026/01/09/type-inference-of-all-and-next-15/",
+   "domain": "elixir-lang.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Elixir v1.20 released: now a gradually typed language",
+   "url": "https://elixir-lang.org/blog/2026/06/03/elixir-v1-20-0-released",
+   "domain": "elixir-lang.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
     }
    ]
   },
@@ -9282,6 +9552,19 @@
   },
   {
    "kind": "link",
+   "title": "Making reliable distributed systems in the presence of software errors",
+   "url": "https://erlang.org/download/armstrong_thesis_2003.pdf",
+   "domain": "erlang.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "EUR-Lex 2019/1024",
    "url": "https://eur-lex.europa.eu/eli/dir/2019/1024/oj",
    "domain": "eur-lex.europa.eu",
@@ -9984,14 +10267,79 @@
   },
   {
    "kind": "link",
-   "title": "The Go 1 compatibility promise",
-   "url": "https://go.dev/doc/go1compat",
+   "title": "Gleam",
+   "url": "https://gleam.run/",
+   "domain": "gleam.run",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "version 1.0 in March 2024",
+   "url": "https://gleam.run/news/gleam-version-1/",
+   "domain": "gleam.run",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Go Proverbs",
+   "url": "https://go-proverbs.github.io/",
+   "domain": "go-proverbs.github.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Effective Go",
+   "url": "https://go.dev/doc/effective_go",
    "domain": "go.dev",
    "reference": true,
    "cited_in": [
     {
-     "title": "Building IT Intelligence: A Reference Implementation in One Repository",
-     "url": "https://raskell.io/articles/building-it-intelligence/"
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Go Modules Reference",
+   "url": "https://go.dev/ref/mod",
+   "domain": "go.dev",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Go at Google: Language Design in the Service of Software Engineering",
+   "url": "https://go.dev/talks/2012/splash.article",
+   "domain": "go.dev",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
     }
    ]
   },
@@ -10036,6 +10384,19 @@
   },
   {
    "kind": "link",
+   "title": "gradual set-theoretic types",
+   "url": "https://hexdocs.pm/elixir/gradual-set-theoretic-types.html",
+   "domain": "hexdocs.pm",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Twenty years of a free, open web",
    "url": "https://home.cern/twenty-years-free-and-open-www/",
    "domain": "home.cern",
@@ -10057,6 +10418,19 @@
     {
      "title": "All beginning is Haskell",
      "url": "https://raskell.io/articles/all-beginning-is-haskell/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Propositions as Types",
+   "url": "https://homepages.inf.ed.ac.uk/wadler/papers/propositions-as-types/propositions-as-types.pdf",
+   "domain": "homepages.inf.ed.ac.uk",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
     }
    ]
   },
@@ -10122,19 +10496,6 @@
     {
      "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
      "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "Humankind",
-   "url": "https://humankind.plus",
-   "domain": "humankind.plus",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "I Stopped Writing Most of My Code",
-     "url": "https://raskell.io/talks/iat-13-basel/"
     }
    ]
   },
@@ -10335,6 +10696,19 @@
   },
   {
    "kind": "link",
+   "title": "Parse, don’t validate",
+   "url": "https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/",
+   "domain": "lexi-lambda.github.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "libvirt",
    "url": "https://libvirt.org/",
    "domain": "libvirt.org",
@@ -10512,6 +10886,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Strangler Fig Application",
+   "url": "https://martinfowler.com/bliki/StranglerFigApplication.html",
+   "domain": "martinfowler.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
     }
    ]
   },
@@ -10829,6 +11216,19 @@
   },
   {
    "kind": "link",
+   "title": "Oban",
+   "url": "https://oban.hexdocs.pm/Oban.html",
+   "domain": "oban.hexdocs.pm",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Ollama",
    "url": "https://ollama.com",
    "domain": "ollama.com",
@@ -11115,6 +11515,32 @@
   },
   {
    "kind": "link",
+   "title": "Eliminating Memory Safety Vulnerabilities at the Source",
+   "url": "https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html",
+   "domain": "security.googleblog.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Rust in Android: move fast and fix things",
+   "url": "https://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html",
+   "domain": "security.googleblog.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "seL4",
    "url": "https://sel4.systems/",
    "domain": "sel4.systems",
@@ -11375,6 +11801,19 @@
   },
   {
    "kind": "link",
+   "title": "Tokio",
+   "url": "https://tokio.rs/",
+   "domain": "tokio.rs",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "TOML specification",
    "url": "https://toml.io/",
    "domain": "toml.io",
@@ -11383,6 +11822,19 @@
     {
      "title": "Mise ate my Makefile",
      "url": "https://raskell.io/articles/mise-ate-my-makefile/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The Gleam language tour",
+   "url": "https://tour.gleam.run/",
+   "domain": "tour.gleam.run",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
     }
    ]
   },
@@ -11934,6 +12386,19 @@
   },
   {
    "kind": "link",
+   "title": "The Case for Memory Safe Roadmaps",
+   "url": "https://www.cisa.gov/resources-tools/resources/case-memory-safe-roadmaps",
+   "domain": "cisa.gov",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "CockroachDB",
    "url": "https://www.cockroachlabs.com/",
    "domain": "cockroachlabs.com",
@@ -12085,6 +12550,32 @@
     {
      "title": "How AI Makes Bare Metal Viable Again",
      "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "OTP Design Principles",
+   "url": "https://www.erlang.org/doc/system/design_principles.html",
+   "domain": "erlang.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Erlang efficiency guide",
+   "url": "https://www.erlang.org/doc/system/eff_guide_processes.html",
+   "domain": "erlang.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
     }
    ]
   },
@@ -12363,6 +12854,19 @@
   },
   {
    "kind": "link",
+   "title": "What is memory safety and why does it matter?",
+   "url": "https://www.memorysafety.org/docs/memory-safety/",
+   "domain": "memorysafety.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "announcement on the cryptography mailing list",
    "url": "https://www.metzdowd.com/pipermail/cryptography/2008-October/014810.html",
    "domain": "metzdowd.com",
@@ -12592,6 +13096,19 @@
     {
      "title": "How AI Makes Bare Metal Viable Again",
      "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The Road to 2 Million Websocket Connections in Phoenix",
+   "url": "https://www.phoenixframework.org/blog/the-road-to-2-million-websocket-connections",
+   "domain": "phoenixframework.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
     }
    ]
   },

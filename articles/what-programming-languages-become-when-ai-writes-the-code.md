@@ -325,3 +325,5 @@ I still write code every day. I still think in types. I am still building hx and
 The person who built Vera saw the same thing I saw, probably around the same time. They chose the first approach. I chose the second. Somebody, eventually, will build the third. And then we will all need to figure out what we mean by "programming" when nobody writes programs anymore.
 
 I am already curious about the answer.
+
+*Later:* for the practical side of the same question, which languages I reach for today now that agents write most of the code, and what each one still buys you, see [Almost Irrelevant](https://raskell.io/articles/almost-irrelevant/).

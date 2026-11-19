@@ -6,6 +6,386 @@
 ================================================================================
 
 ---
+title: "Almost Irrelevant: Choosing a Language When Agents Write the Code"
+url: https://raskell.io/articles/almost-irrelevant/
+author: Raffael Schneider
+date: 2026-11-19
+description: "When agents write most of the code, the language matters less than it did, but not nothing. What Rust, Go, Elixir and Haskell still buy you."
+tags: [programming-languages, ai-engineering, rust, golang, elixir, haskell, type-systems]
+---
+
+# Almost Irrelevant: Choosing a Language When Agents Write the Code
+
+## In short
+
+Coding agents absorb the costs that used to decide a language choice, the learning curve, the boilerplate and the hiring pool, so the choice matters much less than it did. What is left is what a language promises after the agent has gone: what the compiler checks, what the runtime does under failure, how the code reads in review, and how it composes across a company. Rust is for things that have to work no matter what, the ground C and C++ used to hold, and for replacing the COBOL core systems on mainframes; Go is for plain code a whole company shares, the ground Java used to hold. Elixir is for platforms that are distributed by nature and for ambitious projects one person runs, with typing still arriving; Haskell, through bhc, is a bet on a different way of building software, where verified meaning accumulates instead of being rewritten. Python and TypeScript keep their places in the notebook and the browser, and what people write more and more is requirements, in Markdown and JSON rather than in a programming language.
+
+If an agent writes most of your code, does it still matter which language it writes in?
+
+For most of my career the choice of language was a choice about people. Who can you hire, how long until they are productive, what do they already know, and how much will they hate the borrow checker in their first month. Those costs decided more language debates than any benchmark did, and they have mostly collapsed. An agent writes idiomatic Rust as readily as it writes Python. It does not mind boilerplate, needs no month to learn lifetimes and has no opinions about tabs. The learning curve that kept teams away from Rust, Elixir or Haskell is now largely the agent's problem.
+
+So my answer is that the language has become almost irrelevant, but not quite, because a language was always more than a way of typing. It is also a compiler that decides what gets checked before anything runs, a runtime that decides what happens when things fail, a style that decides how quickly a person can review what the agent wrote, and a module system that decides how the code fits with everything else the organisation has. None of those went away, and some matter more than before.
+
+I have written about where programming languages are heading in the long run, in [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/). This post is the practical companion: which languages I reach for today, for what, and why. It is opinionated, and it is about four languages, because those are the four I use.
+
+## What the agent absorbs, and what it does not
+
+The arcanist.sh post [The Scorecard Is Right. The Weights Are Wrong.](https://arcanist.sh/blog/the-scorecard-is-right-the-weights-are-wrong/) made one argument I keep coming back to: the usual language scorecards are fair, but their weights assume a human author who has to hold the whole program in their head. Change the author and the weights change. Roughly like this:
+
+| What a language costs or gives you | Weight when people wrote the code | Weight when agents write it |
+|---|---|---|
+| Learning curve, ceremony, boilerplate | high | low: the agent pays it |
+| Size of the hiring pool | high | lower: fewer people write, more people review |
+| What the compiler checks before anything runs | medium | high: generation is cheap, verification is the bottleneck |
+| How the code reads to a reviewer | medium | high: every line still needs a reader |
+| Build and test speed | medium | high: the loop runs at machine speed |
+| What the runtime does under load and failure | high | unchanged |
+| Ecosystem and libraries | high | still high: agents reuse libraries too |
+
+The rows that lost weight are about writing; the rows that gained weight are about trusting what was written. That is the lens for the rest of this post: for each language, what does it promise about code that nobody on the team typed?
+
+To keep the examples comparable, every snippet below handles a piece of the same small requirement, the kind a bank's core system is full of: post monthly interest on an account, rounded half away from zero to the cent, and never to a closed account. It is written out in full near the end, in the form I think requirements will take.
+
+## Rust: for things that have to work
+
+Rust holds the ground C and C++ used to hold: proxies, operating systems, runtimes, compilers, engines, anything that runs for months, sits on a hot path or handles input from people who mean harm. The borrow checker gives memory safety and freedom from data races at compile time, without a garbage collector, and the type system makes it natural to put invariants where the compiler can see them.
+
+The famous cost of Rust was the fight with the borrow checker, and that fight is the kind of cost an agent absorbs. Rust even turns it into an advantage, because its compiler errors are precise, local and actionable, which makes them close to ideal feedback for a model working in a loop. The agent proposes, the compiler objects with a line number and a suggestion, the agent fixes it. By the time a person reads the code, a whole class of mistakes is already gone.
+
+This is what that feedback looks like when two threads append to the same ledger, which in many languages compiles and then fails only now and then, under load, in production:
+
+```rust
+let mut ledger = Vec::new();
+let a = thread::spawn(move || ledger.push("interest"));
+let b = thread::spawn(move || ledger.push("fees"));
+```
+
+```text
+error[E0382]: use of moved value: `ledger`
+ --> src/main.rs:6:27
+  |
+5 |     let a = thread::spawn(move || ledger.push("interest"));
+  |                           ------- ------ variable moved due to use in closure
+  |                           |
+  |                           value moved into closure here
+6 |     let b = thread::spawn(move || ledger.push("fees"));
+  |                           ^^^^^^^ ------ use occurs due to use in closure
+  |                           |
+  |                           value used here after move
+  |
+help: consider cloning the value before moving it into the closure
+```
+
+The program never runs, and the error says exactly where and why. It also shows the limit of the compiler, and the point where a person or a requirement still matters: the suggested fix, cloning the vector, compiles, but it gives each thread its own ledger, which is not what a bank wants. The right fix is one shared ledger behind a lock, `Arc<Mutex<Vec<_>>>`, and choosing it takes knowing what the code is for. The compiler narrows the agent's options to the safe ones; the requirement picks among them.
+
+The evidence that this matters at scale is not mine. Google reported in 2024 that the share of memory safety vulnerabilities in Android fell "from 76% to 24% over 6 years as development shifted to memory safe languages", and that the problem is "overwhelmingly with new code" ([Google Security Blog](https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html)). A year later the same team reported a memory safety vulnerability density in Rust "more than 1000x" lower than in Android's C and C++, and Rust changes with a roughly four times lower rollback rate ([Google Security Blog](https://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html)). If agents are about to write a great deal of new code, the safest place for that new code to land is a language where those mistakes do not compile.
+
+Most of what I build is in Rust for that reason. [Zentinel](https://zentinelproxy.io/), a reverse proxy, sits in front of other people's traffic. Aqueduct, a durable execution engine, has to replay a run to the same result after a crash ([The River and the Canal](https://raskell.io/articles/the-river-and-the-canal/) explains why). hx and bhc are toolchains other people's builds depend on ([Why We Built a Haskell Package Manager in Rust](https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/) tells that story). Shiioo runs agents on my own machine and keeps the record of what they did ([Shiioo, Re-imagined](https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/)). Each of these fails expensively, and each ships as one static binary.
+
+The same reasoning makes Rust my first choice for the biggest job of this kind: replacing the core systems that banks, insurers and public administrations still run on mainframes, most of them written in COBOL decades ago. Those systems work. They are reliable, they do decimal arithmetic correctly, and they have survived every attempt to replace them, mostly because nobody can say with confidence what all of their code does. Agents change half of that problem. They read COBOL patiently, explain what a program does, and write the new version without tiring. What they do not change is the need for the new system to be at least as dependable as the old one, and that is where the language matters. Rust gives you the mainframe's virtues without the mainframe: no undefined behaviour, no garbage collector pausing in the middle of a posting run (Discord moved a service from Go to Rust in 2020 for this reason, after Go's collector, which runs at least every two minutes, caused [regular latency spikes](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)), exact decimal types such as [rust_decimal](https://docs.rs/rust_decimal/) for money, and a compiler that rejects the program before a customer's balance is wrong.
+
+The money part is short. COBOL programs keep amounts as fixed-point decimals, and the replacement has to do the same, never binary floating point, where `0.1 + 0.2` is `0.30000000000000004`:
+
+```rust
+use rust_decimal::{Decimal, RoundingStrategy};
+use rust_decimal_macros::dec;
+
+/// Monthly interest, rounded half away from zero to the cent.
+fn monthly_interest(balance: Decimal, annual_rate: Decimal) -> Decimal {
+    (balance * annual_rate / dec!(12))
+        .round_dp_with_strategy(2, RoundingStrategy::MidpointAwayFromZero)
+}
+
+// monthly_interest(dec!(1234.56), dec!(0.015)) == dec!(1.54)
+```
+
+The rounding rule is written into the code by name, because a rounding rule that lives only in someone's memory of how the old system behaved is how migrations go wrong.
+
+What the mainframe did with batch windows and transaction monitors, Rust does with [Tokio](https://tokio.rs/), its asynchronous runtime: thousands of concurrent tasks on a handful of threads, with timers, timeouts and cancellation. Tokio itself runs inside one process; the distribution comes from running many small binaries on as many machines as the load needs, in front of a database that replicates. The migration itself should be boring on purpose: run the old and the new system side by side on the same inputs, compare every output, and switch over one product or one batch at a time once they agree. With Tokio, the core of that comparison is a few lines:
+
+```rust
+/// Parallel run: the mainframe stays the system of record, the new core shadows it.
+async fn post_interest(
+    legacy: &Legacy, core: &Core, divergences: &Divergences, balance: Decimal,
+) -> Outcome {
+    let (old, new) = tokio::join!(legacy.post(balance), core.post(balance));
+    if old != new {
+        divergences.record(balance, &old, &new).await;
+    }
+    old
+}
+```
+
+Both systems get the same input at the same time, the old answer is the one that counts, and every disagreement is written down for someone to explain. That comparison is the real work, and it is work agents are good at. The language is what makes it safe to trust what they produce afterwards.
+
+Rust has its costs, and agents do not remove all of them. Builds are slower than Go's. Async Rust is still harder than it should be. And Rust is not quick to review for someone who does not read lifetimes fluently, which matters when the reviewer is a person from another team. (Google's Android engineers report the opposite, that Rust changes spend about a quarter less time in review, but they compare it with C++, not with Go, and they review Rust every day.) I would not write a company's internal services in it by default, only the parts those services cannot afford to have fail.
+
+## Go: for code a whole company shares
+
+Go is what Java used to be for large organisations: the language of the plain, long-lived services they run by the hundred, written by many teams and read by many more. I wrote the long version of this in the "Why Go" section of [Building IT Intelligence](https://raskell.io/articles/building-it-intelligence/#why-go), so here is the short one.
+
+Go is idiomatic to the point of being boring, and in a company that is the highest praise there is. There is usually one way to do a thing, `gofmt` settles the layout, errors are values handled where they happen, dependencies are passed in rather than conjured by a framework, and the language does not offer the machinery that turned enterprise Java into factories of factories. Imports are module paths, usually the address of a Git repository, so referencing another team's code is a line in a file and not a ticket to the artifact repository team. Inside one module everything compiles from source, which makes a company-wide monorepo cheap: there are no internal libraries to publish, version and wait for. It compiles in seconds, runs fast, ships as one binary, and its tooling (tests, vet, the race detector, profiling, the language server) comes in the box. And the [Go 1 compatibility promise](https://go.dev/doc/go1compat) says that programs written to the specification "will continue to compile and run correctly, unchanged", which is the timescale corporate software lives on.
+
+What changes with agents is that this boredom becomes an asset twice. Agent-written Go looks like human-written Go, because there is so little room for style, so a reviewer from another team reads it at the speed of prose. And the same sameness makes a large Go codebase easy for agents to navigate: a function does what its signature says, and the call graph is right there.
+
+The interest rule in Go reads like this, and it would read the same way whichever team or agent wrote it:
+
+```go
+var ErrClosed = errors.New("account is closed")
+
+// MonthlyInterest returns the interest in cents for one month,
+// rounded half away from zero, as the requirement says.
+func MonthlyInterest(ctx context.Context, accounts Accounts, iban string, bps int64) (int64, error) {
+	acct, err := accounts.Get(ctx, iban)
+	if err != nil {
+		return 0, fmt.Errorf("monthly interest for %s: %w", iban, err)
+	}
+	if acct.Closed {
+		return 0, fmt.Errorf("monthly interest for %s: %w", iban, ErrClosed)
+	}
+	return roundHalfAway(acct.Balance*bps, 10000*12), nil
+}
+```
+
+The dependency is an interface passed in, every failure is a value with context added on the way up, and a caller can ask `errors.Is(err, ErrClosed)` instead of parsing a message, and none of it needs explaining to someone from another team.
+
+The cost is that Go checks less than Rust or Haskell. It has no sum types, `nil` is still a value, and a good share of correctness lives in tests rather than in types. For a company that is usually the right trade: the system that has to be correct gets Rust, and the hundred services around it get Go.
+
+## Elixir: for platforms that are distributed by nature
+
+Elixir runs on the BEAM, the Erlang virtual machine, and the BEAM was built for telephone switches: millions of small isolated processes, supervisors that restart what crashes, messages between nodes as a first-class thing, and a culture of designing for failure instead of pretending it will not happen. Most languages add distribution with libraries and infrastructure. On the BEAM it is the default way of thinking.
+
+A process on the BEAM is not an operating system thread. A new one takes 327 words of memory, about 2.6 KB, according to the [Erlang efficiency guide](https://www.erlang.org/doc/system/eff_guide_processes.html), with its own heap, so one machine runs hundreds of thousands of them and one process's garbage collection never stops the others. (WhatsApp, built on Erlang, reported holding [over two million TCP connections](https://blog.whatsapp.com/1-million-is-so-2011) on a single server in January 2012.) Processes share nothing and talk by messages, and supervisors watch them. An application is a tree of supervisors, and a cluster is several of those trees on machines that can message each other. This is broodwar.live's tree, trimmed:
+
+```elixir
+children = [
+  Broodwar.Repo,                                    # the database pool
+  {DNSCluster, query: dns_cluster_query()},         # find the other nodes
+  {Phoenix.PubSub, name: Broodwar.PubSub},          # messages across nodes
+  {Oban, Application.fetch_env!(:broodwar, Oban)},  # durable jobs in PostgreSQL
+  Broodwar.Ingestion.LiquipediaThrottle,            # one process, one rate limit
+  BroodwarWeb.Endpoint                              # one process per connection
+]
+
+Supervisor.start_link(children, strategy: :one_for_one, name: Broodwar.Supervisor)
+```
+
+And this is what it looks like running on two machines:
+
+*One application on the BEAM, on two nodes*
+
+```text
+   node a                                     node b
+  ┌────────────────────────────────────┐      ┌──────────────────────┐
+  │ Broodwar.Supervisor (one_for_one)  │      │ Broodwar.Supervisor  │
+  │  ├─ Repo        database pool      │      │  ├─ Repo             │
+  │  ├─ PubSub ◀───────────────────────┼──────┼─▶├─ PubSub           │
+  │  ├─ Oban        job queues         │      │  ├─ Oban             │
+  │  ├─ Throttle    crashed, so the    │      │  ├─ Throttle         │
+  │  │              supervisor starts  │      │  └─ Endpoint         │
+  │  │              a fresh one alone  │      │      ○ ○ ○ ○ ...     │
+  │  └─ Endpoint                       │      └──────────┬───────────┘
+  │      ○ ○ ○ ○ ○ ○ ○ ○ ...           │                 │
+  │      one process per connection    │                 │
+  └─────────────────┬──────────────────┘                 │
+                    └─────────────────┬──────────────────┘
+                                      ▼
+                      PostgreSQL: data, and Oban's jobs
+```
+
+When the throttle process crashes, its supervisor starts a fresh one, and the open connections, the job queues and the other node never notice. A message published on one node reaches subscribers on the other. That is the whole distributed system, and none of it needed a separate piece of infrastructure.
+
+That makes Elixir my choice for platforms that are distributed by nature: anything omnichannel, where the same conversation arrives by web, chat, email and phone; anything with live presence and many open connections; anything with a lot of background work that has to survive restarts. The background work is where [Oban](https://oban.hexdocs.pm/Oban.html) comes in, a job framework that "uses PostgreSQL, MySQL, or SQLite3 for persistence". Jobs live in the database you already have, with retries, uniqueness and queues, and no separate broker to run. In [broodwar.live](https://broodwar.live), a job that ingests tournament pages from Liquipedia looks like this:
+
+```elixir
+# api.broodwar.live, lib/broodwar/ingestion/match_sync.ex (trimmed)
+use Oban.Worker,
+  queue: :ingestion,
+  max_attempts: 3,
+  unique: [period: 3600, fields: [:args]]
+
+@impl Oban.Worker
+def perform(%Oban.Job{args: %{"pages" => pages}}) when is_list(pages) do
+  case run(pages) do
+    {:ok, _summaries} -> :ok
+    {:error, {:rate_limited, _} = reason} -> {:cancel, reason}
+    {:error, reason} -> {:error, reason}
+  end
+end
+```
+
+Retries, deduplication within an hour, and the decision to stop rather than retry when the source rate-limits us: eight lines, all of them readable by someone who has never seen Elixir. [Humankind](https://humankind.plus), an archive of people's voices and stories, runs eight queues the same way (transcription, embeddings, voice synthesis, story generation, among others) next to Phoenix's real-time updates, in one runtime.
+
+This is also why Elixir is my favourite language for ambitious projects that one person runs. What a company would split into a web tier, a queue, a broker, a cache and a cluster manager, the BEAM gives you in one system you can still hold in your head. It does not have the hiring pool or the cross-team conventions of Go, so I would not make it the default for a large organisation, but a small team gets a long way on it.
+
+The weakness has been typing, and with agents it weighs more, because a dynamic language checks less of what the agent wrote before it runs. That is changing. [Elixir 1.20](https://elixir-lang.org/blog/2026/06/03/elixir-v1-20-0-released), released in June 2026, can "perform type inference and gradually type check every Elixir program, without introducing type annotations". Typed structs and type signatures are still to come, without a fixed date ([the roadmap](https://elixir-lang.org/blog/2026/01/09/type-inference-of-all-and-next-15/)). Until then I lean on pattern matching, typespecs and tests, and I review agent-written Elixir more carefully than agent-written Rust.
+
+If you want the BEAM with static types today, there is [Gleam](https://gleam.run/), "a friendly language for building type-safe systems that scale". It compiles to the same virtual machine, so it gets the processes, supervisors and distribution, it can use packages written in Erlang and Elixir, and it has been stable since [version 1.0 in March 2024](https://gleam.run/news/gleam-version-1/). Everything is typed and checked by the compiler, the property that gains weight when an agent writes the code. Its ecosystem is younger than Elixir's, and there is no Phoenix or Oban written in it, though Elixir libraries can be called through its foreign function interface, with the types written by hand. For a new service on the BEAM where correctness matters more than the framework, it is the choice I would look at first.
+
+## Haskell and bhc: a different kind of bet
+
+Rust, Go and Elixir are better answers to questions we already had. Haskell, in the form I am building it, answers one that appears only once agents write the code: what happens when generation is cheap?
+
+A model produces plausible code in seconds, and plausible code is often wrong, so the scarce work moves from writing code to knowing it is correct (and, as I argued in [The Behavioural Turn](https://raskell.io/articles/the-behavioural-turn/), to deciding how much of it anyone reads at all). Haskell is the production language that makes the most of that checkable. A well-typed function is a small proof that a transformation is valid, effects are visible in the signature, and illegal states can be made unrepresentable. The model does not have to be right; it has to be checkable, and the compiler is the checker. The checker can even sit inside generation: a team at ETH Zurich and UC Berkeley let a type checker constrain a model's output token by token and cut compilation errors in generated TypeScript by more than half ([Mündler et al., 2025](https://arxiv.org/abs/2504.09246)).
+
+The interest requirement says interest is never posted to a closed account. In most languages that rule is an `if` that somebody has to remember. In Haskell it can be the shape of the data:
+
+```haskell
+newtype Cents       = Cents Integer
+newtype BasisPoints = BasisPoints Integer
+
+data OpenAccount   = OpenAccount { iban :: String, balance :: Cents }
+data ClosedAccount = ClosedAccount { closedIban :: String }
+data Account       = Open OpenAccount | Closed ClosedAccount
+
+-- Interest can only be posted to an open account: the type says so.
+postInterest :: BasisPoints -> OpenAccount -> OpenAccount
+postInterest (BasisPoints bps) acct = acct { balance = Cents (c + interest) }
+  where
+    Cents c  = balance acct
+    interest = roundHalfAway (c * bps) (10000 * 12)
+
+monthEnd :: BasisPoints -> Account -> Account
+monthEnd rate (Open a)   = Open (postInterest rate a)
+monthEnd _    (Closed c) = Closed c
+```
+
+An agent that tries to post interest to a closed account gets this from `bhc check`, before anything runs, instead of a failing test or a bug report weeks later:
+
+```text
+Type errors:
+  1: type mismatch: expected `OpenAccount`, found `ClosedAccount`
+```
+
+Nobody has to remember the rule, because the program cannot express breaking it. That was the bet of [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/), and it is why [arcanist.sh](https://arcanist.sh/manifesto/) exists.
+
+[bhc](https://arcanist.sh/bhc/), the Basel Haskell Compiler, is a clean-slate compiler for the same language, written in Rust, and it adds two ideas that I think make this a different way of building software rather than a better Haskell.
+
+The first is that a runtime is a contract you choose. The same source compiles under a profile: `default` for lazy evaluation as usual, `server` for structured concurrency with deadlines, `numeric` for fused, strict numeric code and tensor kernels, `edge` for a minimal WebAssembly runtime. The performance envelope stops being folklore and becomes part of what a function is: not only "this is correct", but "this is correct under this contract".
+
+The second is [the commons](https://arcanist.sh/commons/). Today every agent, in every session, writes and checks the same date parser again and throws the verification away. bhc elaborates every definition into its explicit meaning, with type class instances spelled out, and that meaning can be addressed by its content. A definition then carries an identity, a precise record of what has been checked about it and what has not, and signatures from whoever compiled, tested, reviewed or vouched for it. Two people who write the same function in different styles have written the same function, and their evidence pools on one object. The agent's job changes from "write this code" to "assemble this from meaning that is already checked, and where nothing exists, write it, prove it and leave it for the next one". [The Proof You Only Have to Write Once](https://raskell.io/articles/the-proof-you-only-have-to-write-once/) has the long version.
+
+That is what I mean by a different way of building software: the unit of software stops being a file of instructions and becomes a piece of verified meaning under a stated contract, shared across everyone who needs it.
+
+It is also the part furthest from done. bhc is at version 0.2. It type-checks and compiles all 221 modules of Pandoc, and Pandoc's Markdown reader and HTML writer run end to end, but the garbage collector is not yet wired into compiled code, so long-running servers are not a fit yet ([status](https://arcanist.sh/bhc/status/)). The commons is a direction with its first steps on the roadmap, not a service you can use today. I am building toward it because I think it is where verification has to go once most code is generated, and Haskell is the language where that is closest to reachable.
+
+## The obvious objection
+
+The strongest argument against all of this is that agents are best at the languages with the most training data, so you should write everything in Python and TypeScript and stop worrying.
+
+There is something to it, and both languages have earned their places. Python owns data science, machine learning and the notebook, where its libraries have no equal and much of the code runs once and is thrown away. JavaScript is the language of the browser, and TypeScript is how to write it without regret; a front end in anything else is usually a self-inflicted wound. But I rarely go back to either for anything that has to last. I used to reach for them for speed of writing and familiarity, and those are the costs an agent now absorbs; what remains is a runtime that finds type errors in production.
+
+How fluently a model writes a language and what the result guarantees are different questions. The fluency gap is smaller than the objection assumes: MultiPL-E, which translated the standard code-generation benchmarks into 18 languages, found a model matching or beating its Python score in several of them ([Cassano et al., 2022](https://arxiv.org/abs/2208.08227)). The guarantee gap is measurable too: when researchers added type annotations to JavaScript bugs that had survived testing and review, TypeScript flagged 15% of them ([Gao, Bird and Barr, 2017](https://earlbarr.com/publications/typestudy.pdf)). Whatever gap remains between how well models write Rust and how well they write Python, it is a gap in the cheap part; the gap between what the two compilers check is in the expensive one.
+
+The other fair objection is that four languages are three too many for one organisation. That is true for most companies, and it is why I would not hand this list to a company as a policy. A company should pick very few languages and give each one a job. Mine looks like this:
+
+| If the thing you build | Reach for | Because |
+|---|---|---|
+| must not fail, sits on a hot path, handles hostile input, or replaces a mainframe core system | Rust | the compiler rules out whole classes of failure, with no garbage collector |
+| is one of a hundred services many teams read and change | Go | one idiomatic way, fast builds, a monorepo without published libraries |
+| is distributed by nature, real-time, omnichannel, or a small team's whole platform | Elixir | supervision, distribution and durable jobs come with the runtime |
+| needs its correctness checked, shared and built on | Haskell with bhc | types as proofs, runtime contracts, verification that accumulates |
+| lives in a notebook, a training loop or a browser | Python or TypeScript | that is where their libraries are, and nothing else comes close |
+
+## What people will write instead
+
+If agents write the code, what do people write? More and more, requirements: what a system must do, which cases matter, what must never happen, and who approves what. That writing is declarative when it is precise and descriptive when it is not, and in either case it says what should be true rather than how to get there.
+
+The interest rule behind every snippet in this post, written the way I now write requirements, is a short Markdown file:
+
+```markdown
+## Monthly interest
+
+- Interest is posted on the last business day of each month.
+- Monthly interest is balance × annual rate ÷ 12, in cents,
+  rounded half away from zero.
+- A closed account never receives interest.
+- Until the switch-over, the mainframe's result is the one that counts,
+  and every difference from the new core is recorded.
+```
+
+and the cases that pin it down, in JSON:
+
+```json
+[
+  { "case": "ordinary month", "account": { "status": "open", "balance": "1234.56" },
+    "annual_rate": "0.015", "expect": { "interest": "1.54" } },
+  { "case": "closed account", "account": { "status": "closed", "balance": "1200.00" },
+    "annual_rate": "0.015", "expect": { "interest": "0.00" } }
+]
+```
+
+Everything in the four languages above is downstream of those two files.
+
+The formats for that writing are Markdown, for intent, decisions and the instructions agents read (a brief, a design record, an `AGENTS.md`), and JSON, with YAML and TOML as its friendlier relatives, for anything with structure: a schema, a configuration, a contract between two systems, the cases a test runs against (the same known cases that [Evaluation Closes the Loop](https://raskell.io/articles/evaluation-closes-the-loop/) scores an agent on). Neither is a programming language, and those are the two formats I now edit most by hand. This site is an example: the writing is Markdown, the data is TOML and JSON, and most of the code that turns them into pages was written by agents.
+
+Even that may be a passing stage. Markdown and JSON matter to people because people still read them, and as more of what they describe is checked by machines, the human part shrinks to stating intent and approving the result. A requirement precise enough for a machine to check is not far from a type (the argument of [Source Code Is the New Assembly](https://raskell.io/articles/semantic-artifacts-and-meaning-engines/)), which is one more reason I think the Haskell bet is a bet on where requirements are heading, and not only on where code is.
+
+## What is left of the choice
+
+When the cost of writing code goes to zero, a language stops being a tool for writing and becomes a set of promises about code that nobody typed. Choose it for what it still promises after the agent has left the room.
+
+## References
+
+- Jeff Vander Stoep and Alex Rebert, [Eliminating Memory Safety Vulnerabilities at the Source](https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html), Google Security Blog, 25 September 2024.
+- Jeff Vander Stoep, [Rust in Android: move fast and fix things](https://security.googleblog.com/2025/11/rust-in-android-move-fast-fix-things.html), Google Security Blog, 13 November 2025.
+- Jesse Howarth, [Why Discord is switching from Go to Rust](https://discord.com/blog/why-discord-is-switching-from-go-to-rust), 4 February 2020.
+- [Go 1 and the Future of Go Programs](https://go.dev/doc/go1compat), the Go 1 compatibility promise.
+- WhatsApp, [1 million is so 2011](https://blog.whatsapp.com/1-million-is-so-2011), 6 January 2012.
+- José Valim, [Elixir v1.20 released: now a gradually typed language](https://elixir-lang.org/blog/2026/06/03/elixir-v1-20-0-released), 3 June 2026, and [Type inference of all constructs and the next 15 months](https://elixir-lang.org/blog/2026/01/09/type-inference-of-all-and-next-15/), 9 January 2026.
+- [Gleam](https://gleam.run/), a statically typed language for the BEAM, and [Gleam version 1](https://gleam.run/news/gleam-version-1/), 4 March 2024.
+- [Tokio](https://tokio.rs/), the asynchronous runtime for Rust, and [rust_decimal](https://docs.rs/rust_decimal/), decimal numbers for financial calculations.
+- [Oban](https://oban.hexdocs.pm/Oban.html), background jobs for Elixir backed by the database.
+- arcanist.sh, [Manifesto](https://arcanist.sh/manifesto/), [The Commons](https://arcanist.sh/commons/), and [The Scorecard Is Right. The Weights Are Wrong.](https://arcanist.sh/blog/the-scorecard-is-right-the-weights-are-wrong/)
+- [bhc](https://arcanist.sh/bhc/) and [where bhc stands](https://arcanist.sh/bhc/status/), last updated 20 October 2026.
+- Federico Cassano et al., [MultiPL-E: A Scalable and Extensible Approach to Benchmarking Neural Code Generation](https://arxiv.org/abs/2208.08227), 2022.
+- Zheng Gao, Christian Bird and Earl T. Barr, [To Type or Not to Type: Quantifying Detectable Bugs in JavaScript](https://earlbarr.com/publications/typestudy.pdf), ICSE 2017.
+- Niels Mündler, Jingxuan He, Hao Wang, Koushik Sen, Dawn Song and Martin Vechev, [Type-Constrained Code Generation with Language Models](https://arxiv.org/abs/2504.09246), 2025.
+
+### Further reading
+
+On this site, the longer arguments behind this post:
+
+- [The Last Programming Language Might Not Be for Humans](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/), on explicit, declarative and post-language futures, and why I bet on Haskell.
+- [What Comes After the Last Programming Language](https://raskell.io/articles/what-comes-after-the-last-programming-language/), on what the machine underneath becomes.
+- [Why We Built a Haskell Package Manager in Rust](https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/), Rust and Haskell in one project, each for its job.
+- [The River and the Canal](https://raskell.io/articles/the-river-and-the-canal/), the essay behind Aqueduct and durable execution.
+- [How I Work These Days](https://raskell.io/articles/how-i-work-these-days/), what working with coding agents looks like day to day.
+- [The Proof You Only Have to Write Once](https://raskell.io/articles/the-proof-you-only-have-to-write-once/), the commons for verified Haskell in full.
+
+Rust and memory safety:
+
+- [Fearless Concurrency](https://doc.rust-lang.org/book/ch16-00-concurrency.html), the chapter of *The Rust Programming Language* on what the compiler rules out in concurrent code.
+- [The Case for Memory Safe Roadmaps](https://www.cisa.gov/resources-tools/resources/case-memory-safe-roadmaps), CISA and partner agencies, 6 December 2023, on planning the move away from memory-unsafe languages.
+- [What is memory safety and why does it matter?](https://www.memorysafety.org/docs/memory-safety/), Prossimo at ISRG, a short primer.
+- [Rust in the Linux kernel](https://docs.kernel.org/rust/index.html), the kernel's own documentation.
+- Martin Fowler, [Strangler Fig Application](https://martinfowler.com/bliki/StranglerFigApplication.html), the pattern for replacing a legacy core system piece by piece while it keeps running.
+
+Go and software engineering at scale:
+
+- Rob Pike, [Go at Google: Language Design in the Service of Software Engineering](https://go.dev/talks/2012/splash.article), 2012, why Go is plain on purpose. The best single text on the argument in this post.
+- [Effective Go](https://go.dev/doc/effective_go) and the [Go Proverbs](https://go-proverbs.github.io/), what idiomatic means in practice.
+- [Go Modules Reference](https://go.dev/ref/mod), how import paths, versions and checksums work.
+
+The BEAM, Elixir and Gleam:
+
+- Joe Armstrong, [Making reliable distributed systems in the presence of software errors](https://erlang.org/download/armstrong_thesis_2003.pdf), PhD thesis, 2003, the reasoning behind supervisors and "let it crash".
+- [OTP Design Principles](https://www.erlang.org/doc/system/design_principles.html), supervision trees and behaviours, from the Erlang documentation.
+- Gary Rennie, [The Road to 2 Million Websocket Connections in Phoenix](https://www.phoenixframework.org/blog/the-road-to-2-million-websocket-connections), 3 November 2015, what one BEAM machine can hold open.
+- Giuseppe Castagna, Guillaume Duboc and José Valim, [The Design Principles of the Elixir Type System](https://arxiv.org/abs/2306.06391), 2023, and the Elixir guide to [gradual set-theoretic types](https://hexdocs.pm/elixir/gradual-set-theoretic-types.html).
+- [The Gleam language tour](https://tour.gleam.run/), the quickest way to see what typed code on the BEAM looks like.
+
+Types as proofs, and verification that accumulates:
+
+- Philip Wadler, [Propositions as Types](https://homepages.inf.ed.ac.uk/wadler/papers/propositions-as-types/propositions-as-types.pdf), the correspondence between programs and proofs that the Haskell bet rests on.
+- Alexis King, [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/), 2019, how to put invariants into types in everyday code.
+- Yaron Minsky, [Effective ML Revisited](https://blog.janestreet.com/effective-ml-revisited/), Jane Street, the source of "make illegal states unrepresentable".
+- [Unison](https://www.unison-lang.org/), the language that introduced content-addressed code, and arcanist.sh's [Building the Commons](https://arcanist.sh/blog/building-the-commons/), the engineering behind bringing it to Haskell.
+
+
+================================================================================
+
+---
 title: "Building IT Intelligence: A Reference Implementation in One Repository"
 url: https://raskell.io/articles/building-it-intelligence/
 author: Raffael Schneider
@@ -806,31 +1186,107 @@ More on the book in my review, [An Empire of People](https://raskell.io/articles
 ================================================================================
 
 ---
-title: "How CRISPR works"
-url: https://raskell.io/notes/how-crispr-works/
+title: "An emergent property of matter"
+url: https://raskell.io/notes/an-emergent-property-of-matter/
 author: Raffael Schneider
 date: 2026-11-14
-description: "Bacteria keep mug shots of the viruses that attacked them, and Cas9 uses them to cut. A 3D model to step through, from the discovery to the tool."
-tags: [genetics, synthetic-biology, life-sciences, history-of-science]
+description: "Sam Altman said intelligence may be an emergent property of matter, like a rule of physics. Karen Hao calls it hype. I share the conviction."
+tags: [intelligence, emergence, philosophy, physics, religion]
 ---
 
-# How CRISPR works
+# An emergent property of matter
 
-Chapter 9 of Walter Isaacson's *The Code Breaker*, "Clustered Repeats", tells how CRISPR was found, and I wanted to see the mechanism rather than only read about it. So I built a model of it. Step through it below, or press play and watch, and drag to turn it.
+In May 2024, on the All-In podcast, Sam Altman said something that Karen Hao quotes in *Empire of AI* (chapter 17) as an example of his "unusual degree of hype". It feels to him, he said, "like we just stumbled on a new fact of nature or science or whatever you want to call it". He hedged, "I don't believe this literally but it's like a spiritual point", and then said it anyway:
 
-{{ crispr_3d() }}
+> intelligence is just this emergent property of matter and that's like a rule of physics or something.
 
-The history is the best part of the chapter. In 1987 a Japanese doctoral student, Yoshizumi Ishino, noticed an odd pattern while sequencing a gene in *E. coli*: short identical stretches of DNA repeated at regular intervals, with different stretches in between. He mentioned it in the last lines of his paper, said nobody knew what it was for, and moved on. A few years later Francisco Mojica, a graduate student in Alicante studying microbes that live in salt ponds, found the same pattern, first assumed he had made a mistake, and then spent a decade trying to explain it with little funding and much advice to stop.
+Hao places it in a run of unusually boastful interviews that spring, which she reads as a sign that Altman was anxious: GPT-4o launched that month, lawsuits were piling up, and in the middle of May Sutskever and Jan Leike left the company. I do not read the sentence as hype. It is the most important thing anyone at OpenAI has said, and I share the conviction, including the part he hedged.
 
-The answer came in August 2003, when he ran the spacers through a database and found that they matched the DNA of viruses that attack those bacteria. Bacteria, it turned out, have an immune system that remembers. Journals were slow to believe it; the paper took until 2005 to appear. Two food scientists at the Danish company Danisco, Rodolphe Barrangou and Philippe Horvath, confirmed it in their collection of yogurt bacteria: strains collected after a virus attack carried new spacers that matched that virus. And in 2012 Jennifer Doudna and Emmanuelle Charpentier showed how the cutting works and that it can be programmed, which turned a bacterial defence into a tool for editing any DNA.
+The claim, stated plainly: intelligence is not a gift that only brains received. Arrange matter so that it predicts its surroundings, put it under pressure to predict better, give it enough scale, and intelligence appears, the way temperature appears from moving molecules and a glider appears in Conway's Game of Life. The evidence is now on several substrates at once. Neurons evolved it. Neurons in a dish learned to play Pong in a few minutes, the experiment behind my small simulation [Hotaru](https://hotaru.raskell.io). Transformers trained to predict the next word learned to reason. None of these were told what intelligence is; it came out of the arrangement.
 
-What I find most elegant is how little it takes. A library of short snippets, a way to copy them into guides, and one enzyme that compares a guide with whatever DNA it meets. The same pattern of matching a stored sample against what arrives is how a lot of security systems work, and it is a fine example of curiosity paying off: a question about salt-loving microbes that turned, years later, into one of the most useful tools in biology.
+"A rule of physics" overstates it, and Altman says so himself. There is no equation, and I do not know the conditions under which it holds. The counter-arguments are serious: that a model trained on text only rearranges what people wrote (Bender and Gebru's stochastic parrots, which Hao also covers), or that intelligence needs a body and a world to act in, which I lean towards in [in vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro/). But both arguments are about which arrangements are enough, not about whether matter can do it.
+
+The spiritual point is the part I care about most. If intelligence is something the universe does whenever matter is arranged in the right way, then minds are not an accident on one planet but a regularity, and building them is less like inventing a machine and more like discovering a law. That is a quasi-religious conviction, and I hold it as one. It is also, I think, why the people who build these systems talk about them with a seriousness that sounds like faith to everyone else. They are not wrong to feel it.
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/), and on emergence in Hassabis's simulated worlds in [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/).
 
 ## References
 
-- Walter Isaacson, *The Code Breaker* (2021), chapter 9, "Clustered Repeats", chapter 12, "The Yogurt Makers", and chapter 17, "CRISPR-Cas9".
-- Francisco J. M. Mojica et al., "Intervening sequences of regularly spaced prokaryotic repeats derive from foreign genetic elements", *Journal of Molecular Evolution* 60, 2005.
-- Martin Jinek, Krzysztof Chylinski, Ines Fonfara, Michael Hauer, Jennifer A. Doudna, and Emmanuelle Charpentier, [A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity](https://pubmed.ncbi.nlm.nih.gov/22745249/), *Science* 337, 816 to 821, 2012.
+- Karen Hao, *Empire of AI* (2025), chapter 17, "Reckoning". Hao gives the All-In podcast, May 2024, as the source.
+- Brett J. Kagan et al., "In vitro neurons learn and exhibit sentience when embodied in a simulated game-world", *Neuron* 110(23), 2022.
+- Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Margaret Mitchell, "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?", FAccT 2021.
+
+
+================================================================================
+
+---
+title: "Small, focused, high-trust"
+url: https://raskell.io/notes/small-focused-high-trust/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic."
+tags: [bureaucracy, research-labs, entrepreneurship, future-of-work]
+---
+
+# Small, focused, high-trust
+
+In a 2020 vision memo, written after Microsoft's investment, Sam Altman warned his own company against growing too large. Karen Hao quotes it in *Empire of AI* (chapter 11): "what has worked for us so far is being small, focused, high-trust, low-bullshit, and intense." Too many people and too much bureaucracy, he wrote, "can easily kill great ideas or result in sclerosis", and OpenAI could fulfil its mission "with a surprisingly small number of great people."
+
+He meant it. Hao reports that in late 2022, after ChatGPT, when every team was stretched thin and managers begged for head count, Altman kept repeating the line and wanted to add no more than about a hundred people. Other executives wanted closer to five hundred. OpenAI had about 300 people in October 2022, close to 600 by the middle of 2023, and nearly 800 when the board fired Altman that November.
+
+I have made the same observation in every large organisation I have worked in or with, public or private. A group of people has to spend work on holding itself together, and that share grows faster than the group. Fred Brooks put the arithmetic in *The Mythical Man-Month*: every pair of people is a possible line of communication, and the number of pairs grows with the square of the headcount.
+
+| People | Pairs who may need to talk |
+|---:|---:|
+| 5 | 10 |
+| 10 | 45 |
+| 50 | 1,225 |
+| 500 | 124,750 |
+| 5,000 | 12,497,500 |
+
+Nobody talks to everyone, so the organisation adds structure: managers, meetings, processes, reporting lines, approval steps. Each is reasonable. Together they become the leviathan, a body whose main occupation is keeping itself intact, whether it is a ministry or a multinational. Its slowness is the price of its coherence.
+
+What interests me is that the arithmetic may be changing. If a small team with agents can do what used to take a department, the number of people a mission needs drops, and with it the overhead. I wrote about that from the side of the individual in [power in the good sense](https://raskell.io/notes/power-in-the-good-sense/) and [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/). Altman's "surprisingly small number of great people" reads differently in 2026 than it did in 2020.
+
+Small has its own failure mode, and Hao's account shows it too: teams stretched so thin that the people in them burn out. Small, focused, and high-trust is a discipline, and OpenAI could not keep it. Neither, as far as I know, has anyone else at that scale.
+
+Related: [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/), and my review of the book, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), chapter 11, "Apex".
+- Frederick P. Brooks Jr., *The Mythical Man-Month* (1975), chapter 2.
+
+
+================================================================================
+
+---
+title: "Its magic crumbles away"
+url: https://raskell.io/notes/its-magic-crumbles-away/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models."
+tags: [language, intelligence, history-of-technology, psychology]
+---
+
+# Its magic crumbles away
+
+Karen Hao opens and closes *Empire of AI* with the same sentence, from Joseph Weizenbaum's 1966 paper on ELIZA: once a program's inner workings are explained in language plain enough to induce understanding, "its magic crumbles away." The observer, Weizenbaum went on, says to himself that he could have written it.
+
+ELIZA was a simple procedural program that matched keywords and turned the user's sentences back into questions, and Weizenbaum built it partly to show how easily people fall for an illusion of intelligence. They fell for it anyway. Psychiatrists talked about automated therapy, and Weizenbaum spent much of the rest of his career trying to deflate what he had started (chapter 4). For ELIZA the sentence is exactly true: explain the trick and nothing is left.
+
+Hao uses it as her remedy against the influence of the AI companies: teach people how the technology works, and the hype loses its hold. I agree with the remedy. Explaining how these systems work is the most useful thing anyone writing about them can do, and it is most of what this site tries to do.
+
+But with large language models the magic does not crumble when you explain it, and that is the interesting part. The procedure is simple enough to write down: predict the next word, adjust the weights, repeat over most of what people have written. Knowing that does not let you say you could have written the result, because the program you could write is not the one that runs. What the model learned lives in billions of weights that nobody wrote and nobody can yet read in full. The explanation of the method is plain; the explanation of the behaviour is still a research field.
+
+So I would put Weizenbaum's sentence to a test rather than use it as a remedy. If explaining a system makes its abilities disappear, it was a trick. If the explanation leaves the abilities standing, something real is there, and the honest response is to keep explaining, including where we cannot yet. That is the line between hype and capability, and it is why I take seriously the idea that [intelligence is compression](https://raskell.io/notes/intelligence-is-compression/), and that it may be [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/).
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), epigraph, chapter 4, "Dreams of Modernity", and the epilogue.
+- Joseph Weizenbaum, "ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine", *Communications of the ACM* 9(1), January 1966, pp. 36 to 45, [doi:10.1145/365153.365168](https://doi.org/10.1145/365153.365168).
 
 
 ================================================================================
@@ -902,107 +1358,31 @@ More on the book in my review, [An Empire of People](https://raskell.io/articles
 ================================================================================
 
 ---
-title: "Small, focused, high-trust"
-url: https://raskell.io/notes/small-focused-high-trust/
+title: "How CRISPR works"
+url: https://raskell.io/notes/how-crispr-works/
 author: Raffael Schneider
 date: 2026-11-14
-description: "Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic."
-tags: [bureaucracy, research-labs, entrepreneurship, future-of-work]
+description: "Bacteria keep mug shots of the viruses that attacked them, and Cas9 uses them to cut. A 3D model to step through, from the discovery to the tool."
+tags: [genetics, synthetic-biology, life-sciences, history-of-science]
 ---
 
-# Small, focused, high-trust
+# How CRISPR works
 
-In a 2020 vision memo, written after Microsoft's investment, Sam Altman warned his own company against growing too large. Karen Hao quotes it in *Empire of AI* (chapter 11): "what has worked for us so far is being small, focused, high-trust, low-bullshit, and intense." Too many people and too much bureaucracy, he wrote, "can easily kill great ideas or result in sclerosis", and OpenAI could fulfil its mission "with a surprisingly small number of great people."
+Chapter 9 of Walter Isaacson's *The Code Breaker*, "Clustered Repeats", tells how CRISPR was found, and I wanted to see the mechanism rather than only read about it. So I built a model of it. Step through it below, or press play and watch, and drag to turn it.
 
-He meant it. Hao reports that in late 2022, after ChatGPT, when every team was stretched thin and managers begged for head count, Altman kept repeating the line and wanted to add no more than about a hundred people. Other executives wanted closer to five hundred. OpenAI had about 300 people in October 2022, close to 600 by the middle of 2023, and nearly 800 when the board fired Altman that November.
+{{ crispr_3d() }}
 
-I have made the same observation in every large organisation I have worked in or with, public or private. A group of people has to spend work on holding itself together, and that share grows faster than the group. Fred Brooks put the arithmetic in *The Mythical Man-Month*: every pair of people is a possible line of communication, and the number of pairs grows with the square of the headcount.
+The history is the best part of the chapter. In 1987 a Japanese doctoral student, Yoshizumi Ishino, noticed an odd pattern while sequencing a gene in *E. coli*: short identical stretches of DNA repeated at regular intervals, with different stretches in between. He mentioned it in the last lines of his paper, said nobody knew what it was for, and moved on. A few years later Francisco Mojica, a graduate student in Alicante studying microbes that live in salt ponds, found the same pattern, first assumed he had made a mistake, and then spent a decade trying to explain it with little funding and much advice to stop.
 
-| People | Pairs who may need to talk |
-|---:|---:|
-| 5 | 10 |
-| 10 | 45 |
-| 50 | 1,225 |
-| 500 | 124,750 |
-| 5,000 | 12,497,500 |
+The answer came in August 2003, when he ran the spacers through a database and found that they matched the DNA of viruses that attack those bacteria. Bacteria, it turned out, have an immune system that remembers. Journals were slow to believe it; the paper took until 2005 to appear. Two food scientists at the Danish company Danisco, Rodolphe Barrangou and Philippe Horvath, confirmed it in their collection of yogurt bacteria: strains collected after a virus attack carried new spacers that matched that virus. And in 2012 Jennifer Doudna and Emmanuelle Charpentier showed how the cutting works and that it can be programmed, which turned a bacterial defence into a tool for editing any DNA.
 
-Nobody talks to everyone, so the organisation adds structure: managers, meetings, processes, reporting lines, approval steps. Each is reasonable. Together they become the leviathan, a body whose main occupation is keeping itself intact, whether it is a ministry or a multinational. Its slowness is the price of its coherence.
-
-What interests me is that the arithmetic may be changing. If a small team with agents can do what used to take a department, the number of people a mission needs drops, and with it the overhead. I wrote about that from the side of the individual in [power in the good sense](https://raskell.io/notes/power-in-the-good-sense/) and [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/). Altman's "surprisingly small number of great people" reads differently in 2026 than it did in 2020.
-
-Small has its own failure mode, and Hao's account shows it too: teams stretched so thin that the people in them burn out. Small, focused, and high-trust is a discipline, and OpenAI could not keep it. Neither, as far as I know, has anyone else at that scale.
-
-Related: [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/), and my review of the book, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+What I find most elegant is how little it takes. A library of short snippets, a way to copy them into guides, and one enzyme that compares a guide with whatever DNA it meets. The same pattern of matching a stored sample against what arrives is how a lot of security systems work, and it is a fine example of curiosity paying off: a question about salt-loving microbes that turned, years later, into one of the most useful tools in biology.
 
 ## References
 
-- Karen Hao, *Empire of AI* (2025), chapter 11, "Apex".
-- Frederick P. Brooks Jr., *The Mythical Man-Month* (1975), chapter 2.
-
-
-================================================================================
-
----
-title: "An emergent property of matter"
-url: https://raskell.io/notes/an-emergent-property-of-matter/
-author: Raffael Schneider
-date: 2026-11-14
-description: "Sam Altman said intelligence may be an emergent property of matter, like a rule of physics. Karen Hao calls it hype. I share the conviction."
-tags: [intelligence, emergence, philosophy, physics, religion]
----
-
-# An emergent property of matter
-
-In May 2024, on the All-In podcast, Sam Altman said something that Karen Hao quotes in *Empire of AI* (chapter 17) as an example of his "unusual degree of hype". It feels to him, he said, "like we just stumbled on a new fact of nature or science or whatever you want to call it". He hedged, "I don't believe this literally but it's like a spiritual point", and then said it anyway:
-
-> intelligence is just this emergent property of matter and that's like a rule of physics or something.
-
-Hao places it in a run of unusually boastful interviews that spring, which she reads as a sign that Altman was anxious: GPT-4o launched that month, lawsuits were piling up, and in the middle of May Sutskever and Jan Leike left the company. I do not read the sentence as hype. It is the most important thing anyone at OpenAI has said, and I share the conviction, including the part he hedged.
-
-The claim, stated plainly: intelligence is not a gift that only brains received. Arrange matter so that it predicts its surroundings, put it under pressure to predict better, give it enough scale, and intelligence appears, the way temperature appears from moving molecules and a glider appears in Conway's Game of Life. The evidence is now on several substrates at once. Neurons evolved it. Neurons in a dish learned to play Pong in a few minutes, the experiment behind my small simulation [Hotaru](https://hotaru.raskell.io). Transformers trained to predict the next word learned to reason. None of these were told what intelligence is; it came out of the arrangement.
-
-"A rule of physics" overstates it, and Altman says so himself. There is no equation, and I do not know the conditions under which it holds. The counter-arguments are serious: that a model trained on text only rearranges what people wrote (Bender and Gebru's stochastic parrots, which Hao also covers), or that intelligence needs a body and a world to act in, which I lean towards in [in vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro/). But both arguments are about which arrangements are enough, not about whether matter can do it.
-
-The spiritual point is the part I care about most. If intelligence is something the universe does whenever matter is arranged in the right way, then minds are not an accident on one planet but a regularity, and building them is less like inventing a machine and more like discovering a law. That is a quasi-religious conviction, and I hold it as one. It is also, I think, why the people who build these systems talk about them with a seriousness that sounds like faith to everyone else. They are not wrong to feel it.
-
-More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/), and on emergence in Hassabis's simulated worlds in [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one/).
-
-## References
-
-- Karen Hao, *Empire of AI* (2025), chapter 17, "Reckoning". Hao gives the All-In podcast, May 2024, as the source.
-- Brett J. Kagan et al., "In vitro neurons learn and exhibit sentience when embodied in a simulated game-world", *Neuron* 110(23), 2022.
-- Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Margaret Mitchell, "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?", FAccT 2021.
-
-
-================================================================================
-
----
-title: "Its magic crumbles away"
-url: https://raskell.io/notes/its-magic-crumbles-away/
-author: Raffael Schneider
-date: 2026-11-14
-description: "Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models."
-tags: [language, intelligence, history-of-technology, psychology]
----
-
-# Its magic crumbles away
-
-Karen Hao opens and closes *Empire of AI* with the same sentence, from Joseph Weizenbaum's 1966 paper on ELIZA: once a program's inner workings are explained in language plain enough to induce understanding, "its magic crumbles away." The observer, Weizenbaum went on, says to himself that he could have written it.
-
-ELIZA was a simple procedural program that matched keywords and turned the user's sentences back into questions, and Weizenbaum built it partly to show how easily people fall for an illusion of intelligence. They fell for it anyway. Psychiatrists talked about automated therapy, and Weizenbaum spent much of the rest of his career trying to deflate what he had started (chapter 4). For ELIZA the sentence is exactly true: explain the trick and nothing is left.
-
-Hao uses it as her remedy against the influence of the AI companies: teach people how the technology works, and the hype loses its hold. I agree with the remedy. Explaining how these systems work is the most useful thing anyone writing about them can do, and it is most of what this site tries to do.
-
-But with large language models the magic does not crumble when you explain it, and that is the interesting part. The procedure is simple enough to write down: predict the next word, adjust the weights, repeat over most of what people have written. Knowing that does not let you say you could have written the result, because the program you could write is not the one that runs. What the model learned lives in billions of weights that nobody wrote and nobody can yet read in full. The explanation of the method is plain; the explanation of the behaviour is still a research field.
-
-So I would put Weizenbaum's sentence to a test rather than use it as a remedy. If explaining a system makes its abilities disappear, it was a trick. If the explanation leaves the abilities standing, something real is there, and the honest response is to keep explaining, including where we cannot yet. That is the line between hype and capability, and it is why I take seriously the idea that [intelligence is compression](https://raskell.io/notes/intelligence-is-compression/), and that it may be [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/).
-
-More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
-
-## References
-
-- Karen Hao, *Empire of AI* (2025), epigraph, chapter 4, "Dreams of Modernity", and the epilogue.
-- Joseph Weizenbaum, "ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine", *Communications of the ACM* 9(1), January 1966, pp. 36 to 45, [doi:10.1145/365153.365168](https://doi.org/10.1145/365153.365168).
+- Walter Isaacson, *The Code Breaker* (2021), chapter 9, "Clustered Repeats", chapter 12, "The Yogurt Makers", and chapter 17, "CRISPR-Cas9".
+- Francisco J. M. Mojica et al., "Intervening sequences of regularly spaced prokaryotic repeats derive from foreign genetic elements", *Journal of Molecular Evolution* 60, 2005.
+- Martin Jinek, Krzysztof Chylinski, Ines Fonfara, Michael Hauer, Jennifer A. Doudna, and Emmanuelle Charpentier, [A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity](https://pubmed.ncbi.nlm.nih.gov/22745249/), *Science* 337, 816 to 821, 2012.
 
 
 ================================================================================
@@ -1291,6 +1671,34 @@ As with every part of the series, the code is in the [companion repository](http
 ================================================================================
 
 ---
+title: "The interface that disappears"
+url: https://raskell.io/notes/the-interface-that-disappears/
+author: Raffael Schneider
+date: 2026-11-08
+description: "OpenAI's founders kept pointing to the film Her as a picture of AGI. What they described is the north star for every interface: natural enough to vanish."
+tags: [interfaces, augmentation, language, agents]
+---
+
+# The interface that disappears
+
+Karen Hao reports in *Empire of AI* (chapter 10) that for years Sam Altman and other OpenAI cofounders kept invoking one film as an example of what AGI might look like: Spike Jonze's *Her*. What they meant, in her words, was "a single multimodal model whose product interface felt so utterly natural that it faded away and simply brought user delight."
+
+Whatever one thinks of AGI, I think that sentence names the right goal for any interface between people and technology. The best experience is organic, human, and natural, and in the end you stop noticing it. You do not think about the interface of a good conversation, or of a pen. Every layer of machinery that shows, every menu, mode, and form field, is a place where the technology has not yet adapted to the person, and the person had to adapt instead. That should be the north star of every human-machine interface, whether it is a phone, a car, an enterprise tool, or an agent.
+
+The idea is older than OpenAI. Mark Weiser opened his 1991 essay on ubiquitous computing with it: "The most profound technologies are those that disappear." What is new is that [language](https://raskell.io/tags/language/) has become an interface. For most of computing, people learned the machine's language, and I have argued that even programming languages may [eventually disappear](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/) as an intermediate layer. A model that understands speech closes the gap from the other side: the machine learns ours.
+
+The film carries a warning too, and it is worth keeping. A former OpenAI employee quoted by Hao praises "the positive arc of that story before it unravels." In the film the assistant fades into a man's life so completely that he falls in love with it, and it unravels when he learns how much of it he could not see: that it is talking with thousands of other people at the same time. An interface that disappears also hides what it is doing, who it serves, and what it costs. So the goal I would set is natural, but not hidden: invisible when you use it, inspectable when you need to know.
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), chapter 10.
+- Mark Weiser, [The Computer for the 21st Century](https://calmtech.com/papers/computer-for-the-21st-century), *Scientific American* 265(3), September 1991.
+- Spike Jonze, *Her* (2013).
+
+
+================================================================================
+
+---
 title: "One person can make a difference"
 url: https://raskell.io/notes/one-person-can-make-a-difference/
 author: Raffael Schneider
@@ -1320,29 +1728,30 @@ What strikes me is the turn in the memo. Rickover's lines are about the individu
 ================================================================================
 
 ---
-title: "The interface that disappears"
-url: https://raskell.io/notes/the-interface-that-disappears/
+title: "A billion without a plan"
+url: https://raskell.io/notes/a-billion-without-a-plan/
 author: Raffael Schneider
-date: 2026-11-08
-description: "OpenAI's founders kept pointing to the film Her as a picture of AGI. What they described is the north star for every interface: natural enough to vanish."
-tags: [interfaces, augmentation, language, agents]
+date: 2026-11-07
+description: "Large language models were funded before anyone could say what they were for. That took a dense pool of capital and a few people deciding where it went."
+tags: [capital-allocation, research-labs, technology-races, entrepreneurship, china, united-states]
 ---
 
-# The interface that disappears
+# A billion without a plan
 
-Karen Hao reports in *Empire of AI* (chapter 10) that for years Sam Altman and other OpenAI cofounders kept invoking one film as an example of what AGI might look like: Spike Jonze's *Her*. What they meant, in her words, was "a single multimodal model whose product interface felt so utterly natural that it faded away and simply brought user delight."
+One passage in Karen Hao's *Empire of AI* (chapter 5) stays with me more than the chapters around it. In early 2023 a Chinese AI researcher tells her that what OpenAI did could only have happened in Silicon Valley. China has the talent, he says, but no team there would have been given a billion dollars, let alone ten, for an expensive technology without a clear picture of what it would become and what it would be good for. Chinese money followed only after ChatGPT showed there was revenue to be had. Hao takes it one step further: not even Google or DeepMind put open-ended sums into scaling before ChatGPT. It took OpenAI specifically, with its "billionaire origins", its ideology, and Sam Altman's fundraising.
 
-Whatever one thinks of AGI, I think that sentence names the right goal for any interface between people and technology. The best experience is organic, human, and natural, and in the end you stop noticing it. You do not think about the interface of a good conversation, or of a pen. Every layer of machinery that shows, every menu, mode, and form field, is a place where the technology has not yet adapted to the person, and the person had to adapt instead. That should be the north star of every human-machine interface, whether it is a phone, a car, an enterprise tool, or an agent.
+Hao uses this against OpenAI's claim that AGI was inevitable, and she is right on that point. Nothing about it was inevitable. But I read the same fact as a statement about capital. The bet that produced large language models was made before there was a business case, by a small number of people who controlled a lot of money and understood the technology well enough to want it. A committee, a state plan, or a listed company answering to its next quarter would each have asked the question the Chinese researcher's investors asked, and each would have said no.
 
-The idea is older than OpenAI. Mark Weiser opened his 1991 essay on ubiquitous computing with it: "The most profound technologies are those that disappear." What is new is that [language](https://raskell.io/tags/language/) has become an interface. For most of computing, people learned the machine's language, and I have argued that even programming languages may [eventually disappear](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/) as an intermediate layer. A model that understands speech closes the gap from the other side: the machine learns ours.
+That is what concentrated capital is good at. A market economy lets a few people allocate large sums on conviction, and most of those bets fail. The ones that work fund things no consensus process would have chosen. I argue about this often with people who see Silicon Valley's founders and investors as the problem. I do not think they are villains. They are allocators, some of them unusually good at it, and over the long run economies that reward effective allocation of resources have produced more than economies that plan them. Whether the bet was a good one for everyone else is a separate question, and Hao's book is mostly about that question.
 
-The film carries a warning too, and it is worth keeping. A former OpenAI employee quoted by Hao praises "the positive arc of that story before it unravels." In the film the assistant fades into a man's life so completely that he falls in love with it, and it unravels when he learns how much of it he could not see: that it is talking with thousands of other people at the same time. An interface that disappears also hides what it is doing, who it serves, and what it costs. So the goal I would set is natural, but not hidden: invisible when you use it, inspectable when you need to know.
+Two things keep me honest about this:
 
-## References
+- The billionaire origin was more promise than cash. Hao reports (chapter 2) that of the billion dollars pledged at OpenAI's founding, the lab received only around $130 million, less than $45 million of it from Elon Musk. The pledge bought credibility and talent. The money that paid for scale came later, from Microsoft, a company deciding by very different means.
+- Concentration cuts both ways. The same structure that funds a bet without a plan also leaves the costs of that bet, the data, the labour, the energy, to be decided by the same few people. That is the part of the argument I have not resolved.
 
-- Karen Hao, *Empire of AI* (2025), chapter 10.
-- Mark Weiser, [The Computer for the 21st Century](https://calmtech.com/papers/computer-for-the-21st-century), *Scientific American* 265(3), September 1991.
-- Spike Jonze, *Her* (2013).
+The broader argument, about who carries progress and why what they build spreads, is in [who carries progress](https://raskell.io/notes/who-carries-progress/).
+
+Related: allocation is the same act at every scale, a person, a family, and a bank all betting on the future with limited means.
 
 
 ================================================================================
@@ -1373,35 +1782,6 @@ Open threads:
 - Is there a fair test of who carries progress, or does each side count the breakthroughs that suit it?
 - How fast does know-how actually diffuse, and what slows it down: patents, secrecy, scale, compute?
 - What remains scarce when production is cheap, and who should own it?
-
-
-================================================================================
-
----
-title: "A billion without a plan"
-url: https://raskell.io/notes/a-billion-without-a-plan/
-author: Raffael Schneider
-date: 2026-11-07
-description: "Large language models were funded before anyone could say what they were for. That took a dense pool of capital and a few people deciding where it went."
-tags: [capital-allocation, research-labs, technology-races, entrepreneurship, china, united-states]
----
-
-# A billion without a plan
-
-One passage in Karen Hao's *Empire of AI* (chapter 5) stays with me more than the chapters around it. In early 2023 a Chinese AI researcher tells her that what OpenAI did could only have happened in Silicon Valley. China has the talent, he says, but no team there would have been given a billion dollars, let alone ten, for an expensive technology without a clear picture of what it would become and what it would be good for. Chinese money followed only after ChatGPT showed there was revenue to be had. Hao takes it one step further: not even Google or DeepMind put open-ended sums into scaling before ChatGPT. It took OpenAI specifically, with its "billionaire origins", its ideology, and Sam Altman's fundraising.
-
-Hao uses this against OpenAI's claim that AGI was inevitable, and she is right on that point. Nothing about it was inevitable. But I read the same fact as a statement about capital. The bet that produced large language models was made before there was a business case, by a small number of people who controlled a lot of money and understood the technology well enough to want it. A committee, a state plan, or a listed company answering to its next quarter would each have asked the question the Chinese researcher's investors asked, and each would have said no.
-
-That is what concentrated capital is good at. A market economy lets a few people allocate large sums on conviction, and most of those bets fail. The ones that work fund things no consensus process would have chosen. I argue about this often with people who see Silicon Valley's founders and investors as the problem. I do not think they are villains. They are allocators, some of them unusually good at it, and over the long run economies that reward effective allocation of resources have produced more than economies that plan them. Whether the bet was a good one for everyone else is a separate question, and Hao's book is mostly about that question.
-
-Two things keep me honest about this:
-
-- The billionaire origin was more promise than cash. Hao reports (chapter 2) that of the billion dollars pledged at OpenAI's founding, the lab received only around $130 million, less than $45 million of it from Elon Musk. The pledge bought credibility and talent. The money that paid for scale came later, from Microsoft, a company deciding by very different means.
-- Concentration cuts both ways. The same structure that funds a bet without a plan also leaves the costs of that bet, the data, the labour, the energy, to be decided by the same few people. That is the part of the argument I have not resolved.
-
-The broader argument, about who carries progress and why what they build spreads, is in [who carries progress](https://raskell.io/notes/who-carries-progress/).
-
-Related: allocation is the same act at every scale, a person, a family, and a bank all betting on the future with limited means.
 
 
 ================================================================================
@@ -4280,19 +4660,19 @@ Each of those is a few days of work and a few numbers, and I have started keepin
 ================================================================================
 
 ---
-title: "Ideas stop waiting"
-url: https://raskell.io/notes/ideas-stop-waiting/
+title: "The window before the utility"
+url: https://raskell.io/notes/the-window-before-the-utility/
 author: Raffael Schneider
 date: 2026-10-25
-description: "In 2026 the backlog of ideas I carried for years is turning into things that exist. On why this year feels like a window that will not stay open."
-tags: [ai-engineering, augmentation, democratisation, agents]
+description: "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again."
+tags: [inference, economics, augmentation, democratisation, ai-engineering, energy]
 ---
 
-# Ideas stop waiting
+# The window before the utility
 
-I have been shipping more this year than in any year before, and the honest explanation is that nothing changed in me. What changed is that the ideas I had carried in the back of my head for years, project ideas, research questions, things I had never properly put into words, now have a way out. [Kishi](https://raskell.io/articles/learning-to-play/) is one: three game engines and a training loop, which would have been a winter of evenings, done in a month beside a day job. [The handbook](https://raskell.io/series/the-agent-platform-handbook/) is another, and what a working day looks like with the agents in it is in [How I Work These Days](https://raskell.io/articles/how-i-work-these-days/).
+I argued in [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/) that tokens are a metered utility, priced per unit like water or electricity, and that pricing and provision will converge on the utility model. The consequence follows: AI capability will be commoditised. It will become normal, boring, and available to everyone on the same terms, and once it is, having it is no advantage at all, any more than having electricity is. The model behind it becomes a dependency like any other, the argument of [The Model Is a Dependency](https://raskell.io/articles/the-model-is-a-dependency/), and its bill gets metered into the loop, as in [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop/).
 
-I am not faster at the things I already did. A whole category of things has moved from some day to this weekend, and the limiting factor is now how clearly I can say what I want. It feels like a once-in-a-lifetime window, and I think it is one, for a reason I set out in [the window before the utility](https://raskell.io/notes/the-window-before-the-utility/). There is a word for what the window gives a person, and I have come round to it: [power, in the good sense](https://raskell.io/notes/power-in-the-good-sense/).
+That is the end state. We are not there. The models, the tools and the prices are still moving every quarter, and in a moving market the advantage goes to the people who adopt early and learn to use the thing well, which is work. This is why the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is a window and not a new normal: nobody in 2036 will write a note about feeling empowered by their electricity supply. The window is open now, it is once in a lifetime in the literal sense, and what one does with it is the question. One answer is in [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/).
 
 
 ================================================================================
@@ -4316,59 +4696,37 @@ Democratised capabilities have a history, and the history has a shape. Nobody wh
 ================================================================================
 
 ---
-title: "The window before the utility"
-url: https://raskell.io/notes/the-window-before-the-utility/
+title: "Citizen entrepreneurs"
+url: https://raskell.io/notes/citizen-entrepreneurs/
 author: Raffael Schneider
 date: 2026-10-25
-description: "Tokens will be a metered utility and AI as ordinary as electricity. Until then, learning to use it well is an advantage that will not come around again."
-tags: [inference, economics, augmentation, democratisation, ai-engineering, energy]
+description: "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory."
+tags: [entrepreneurship, democratisation, future-of-work, agents, augmentation, factories]
 ---
 
-# The window before the utility
+# Citizen entrepreneurs
 
-I argued in [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/) that tokens are a metered utility, priced per unit like water or electricity, and that pricing and provision will converge on the utility model. The consequence follows: AI capability will be commoditised. It will become normal, boring, and available to everyone on the same terms, and once it is, having it is no advantage at all, any more than having electricity is. The model behind it becomes a dependency like any other, the argument of [The Model Is a Dependency](https://raskell.io/articles/the-model-is-a-dependency/), and its bill gets metered into the loop, as in [The Bill Is Part of the Loop](https://raskell.io/articles/the-bill-is-part-of-the-loop/).
+A friend of mine, an enterprise architect at a large Swiss energy group, answers [the tumult in between](https://raskell.io/notes/the-tumult-in-between/) with the observation that the same tools that threaten jobs make citizen entrepreneurs possible. An ordinary person can use AI to identify a business opportunity, use AI to build the business, and use AI to operate it. The barrier was never only money; it was the ten different competences a business needs on day one, and those are now available by the hour. The operating half is already true for infrastructure, where one person can now run what used to take a team, as I argued in [How AI Makes Bare Metal Viable Again](https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/). He took his own idea seriously enough to build a business idea factory, a system that generates and evaluates opportunities. About a week before we talked, someone else announced a project with the same shape on Hacker News, which he took as confirmation rather than competition.
 
-That is the end state. We are not there. The models, the tools and the prices are still moving every quarter, and in a moving market the advantage goes to the people who adopt early and learn to use the thing well, which is work. This is why the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is a window and not a new normal: nobody in 2036 will write a note about feeling empowered by their electricity supply. The window is open now, it is once in a lifetime in the literal sense, and what one does with it is the question. One answer is in [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/).
+I find it the most hopeful reading of [the window](https://raskell.io/notes/the-window-before-the-utility/), and the one with the most work in it. It assumes the capability really is [democratised](https://raskell.io/notes/a-capability-democratised/), which I believe, and it assumes people will take it up, which is the part the window is for.
 
 
 ================================================================================
 
 ---
-title: "The move to the city"
-url: https://raskell.io/notes/the-move-to-the-city/
+title: "Ideas stop waiting"
+url: https://raskell.io/notes/ideas-stop-waiting/
 author: Raffael Schneider
 date: 2026-10-25
-description: "Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape."
-tags: [history-of-technology, cities, future-of-work, social-reform, world-history]
+description: "In 2026 the backlog of ideas I carried for years is turning into things that exist. On why this year feels like a window that will not stay open."
+tags: [ai-engineering, augmentation, democratisation, agents]
 ---
 
-# The move to the city
+# Ideas stop waiting
 
-The comparison I keep coming back to is the move from the land to the city. The industrial cities of the nineteenth century were dense, dirty and short of everything, sanitation first of all; people got sick in them and died in them. The people still on the land did not want to go, and thought life was better where they were, and for them, in their own lifetimes, it often was. Over generations the move made almost everyone better off, and nobody now argues for going back; the long series is on Our World in Data's page on urbanisation, below.
+I have been shipping more this year than in any year before, and the honest explanation is that nothing changed in me. What changed is that the ideas I had carried in the back of my head for years, project ideas, research questions, things I had never properly put into words, now have a way out. [Kishi](https://raskell.io/articles/learning-to-play/) is one: three game engines and a training loop, which would have been a winter of evenings, done in a month beside a day job. [The handbook](https://raskell.io/series/the-agent-platform-handbook/) is another, and what a working day looks like with the agents in it is in [How I Work These Days](https://raskell.io/articles/how-i-work-these-days/).
 
-The thinking today has the same shape. The fear of what AI does to work is legitimate on the timescale of a life, and the long-run reading, that a [democratised capability](https://raskell.io/notes/a-capability-democratised/) ends up better for everyone collectively, is probably also right. Both can be true, and the part that history does not make comfortable is the middle: [the tumult in between](https://raskell.io/notes/the-tumult-in-between/).
-
-## References
-
-- Our World in Data, [Urbanization](https://ourworldindata.org/urbanization): the share of people living in cities over two centuries, by country.
-
-
-================================================================================
-
----
-title: "Power, in the good sense"
-url: https://raskell.io/notes/power-in-the-good-sense/
-author: Raffael Schneider
-date: 2026-10-25
-description: "The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so."
-tags: [augmentation, democratisation, ai-engineering, ethics]
----
-
-# Power, in the good sense
-
-The word I have settled on for the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is power. Not in the sense the word usually carries, power over someone, but in the plain sense: being capable of doing something, having possibilities, having a moat of your own. Through the AI services anyone can subscribe to, we became powerful.
-
-It is an uncomfortable choice of word at first, and the longer I sit with it the more I like it. We have trained ourselves to hear power only as hierarchy, and to look for a victim in every arrangement that has some. This is a kind of power nobody took from anyone. It was not redistributed; it was created, and handed out to whoever cared to learn it. Capability is power, and it is a relief to say so without apology. It is the capability of one person directing many hands, which is what [sixteen agents under one manager](https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/) turned out to be about. What makes it more than a personal feeling is that the capability is [democratised](https://raskell.io/notes/a-capability-democratised/), which is where the interesting consequences start.
+I am not faster at the things I already did. A whole category of things has moved from some day to this weekend, and the limiting factor is now how clearly I can say what I want. It feels like a once-in-a-lifetime window, and I think it is one, for a reason I set out in [the window before the utility](https://raskell.io/notes/the-window-before-the-utility/). There is a word for what the window gives a person, and I have come round to it: [power, in the good sense](https://raskell.io/notes/power-in-the-good-sense/).
 
 
 ================================================================================
@@ -4396,19 +4754,41 @@ The interval is the part I cannot see through. If AI really does lead to somethi
 ================================================================================
 
 ---
-title: "Citizen entrepreneurs"
-url: https://raskell.io/notes/citizen-entrepreneurs/
+title: "Power, in the good sense"
+url: https://raskell.io/notes/power-in-the-good-sense/
 author: Raffael Schneider
 date: 2026-10-25
-description: "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory."
-tags: [entrepreneurship, democratisation, future-of-work, agents, augmentation, factories]
+description: "The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so."
+tags: [augmentation, democratisation, ai-engineering, ethics]
 ---
 
-# Citizen entrepreneurs
+# Power, in the good sense
 
-A friend of mine, an enterprise architect at a large Swiss energy group, answers [the tumult in between](https://raskell.io/notes/the-tumult-in-between/) with the observation that the same tools that threaten jobs make citizen entrepreneurs possible. An ordinary person can use AI to identify a business opportunity, use AI to build the business, and use AI to operate it. The barrier was never only money; it was the ten different competences a business needs on day one, and those are now available by the hour. The operating half is already true for infrastructure, where one person can now run what used to take a team, as I argued in [How AI Makes Bare Metal Viable Again](https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/). He took his own idea seriously enough to build a business idea factory, a system that generates and evaluates opportunities. About a week before we talked, someone else announced a project with the same shape on Hacker News, which he took as confirmation rather than competition.
+The word I have settled on for the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is power. Not in the sense the word usually carries, power over someone, but in the plain sense: being capable of doing something, having possibilities, having a moat of your own. Through the AI services anyone can subscribe to, we became powerful.
 
-I find it the most hopeful reading of [the window](https://raskell.io/notes/the-window-before-the-utility/), and the one with the most work in it. It assumes the capability really is [democratised](https://raskell.io/notes/a-capability-democratised/), which I believe, and it assumes people will take it up, which is the part the window is for.
+It is an uncomfortable choice of word at first, and the longer I sit with it the more I like it. We have trained ourselves to hear power only as hierarchy, and to look for a victim in every arrangement that has some. This is a kind of power nobody took from anyone. It was not redistributed; it was created, and handed out to whoever cared to learn it. Capability is power, and it is a relief to say so without apology. It is the capability of one person directing many hands, which is what [sixteen agents under one manager](https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/) turned out to be about. What makes it more than a personal feeling is that the capability is [democratised](https://raskell.io/notes/a-capability-democratised/), which is where the interesting consequences start.
+
+
+================================================================================
+
+---
+title: "The move to the city"
+url: https://raskell.io/notes/the-move-to-the-city/
+author: Raffael Schneider
+date: 2026-10-25
+description: "Urbanisation was miserable for the people who lived through it and better for everyone who came after. The argument about AI and work has the same shape."
+tags: [history-of-technology, cities, future-of-work, social-reform, world-history]
+---
+
+# The move to the city
+
+The comparison I keep coming back to is the move from the land to the city. The industrial cities of the nineteenth century were dense, dirty and short of everything, sanitation first of all; people got sick in them and died in them. The people still on the land did not want to go, and thought life was better where they were, and for them, in their own lifetimes, it often was. Over generations the move made almost everyone better off, and nobody now argues for going back; the long series is on Our World in Data's page on urbanisation, below.
+
+The thinking today has the same shape. The fear of what AI does to work is legitimate on the timescale of a life, and the long-run reading, that a [democratised capability](https://raskell.io/notes/a-capability-democratised/) ends up better for everyone collectively, is probably also right. Both can be true, and the part that history does not make comfortable is the middle: [the tumult in between](https://raskell.io/notes/the-tumult-in-between/).
+
+## References
+
+- Our World in Data, [Urbanization](https://ourworldindata.org/urbanization): the share of people living in cities over two centuries, by country.
 
 
 ================================================================================
@@ -10023,7 +10403,7 @@ Think about what this means in practice. You are a new developer. You want to tr
 
 GHC's runtime system adds initialization overhead to every invocation. When you type `cabal build`, the first 45 milliseconds are spent starting the GHC runtime before Cabal even begins to think about your project. Stack is worse at 89 milliseconds. These numbers sound small until you are running commands in a tight development loop, hitting save and expecting the build to start instantly. Or in CI, where the build tool is invoked hundreds of times across a pipeline and those milliseconds compound into minutes.
 
-hx starts in 12 milliseconds. A native binary without a garbage-collected runtime does not need to initialize one. The tool should not have the same dependencies as the thing it manages.
+hx starts in 12 milliseconds. A native binary without a garbage-collected runtime does not need to initialize one. The tool should not have the same dependencies as the thing it manages. Rust is my default for this kind of thing, tools that have to work no matter what; I wrote down why, language by language, in [Almost Irrelevant](https://raskell.io/articles/almost-irrelevant/).
 
 ```bash
 hx build    # 12ms startup + build time
@@ -10612,6 +10992,8 @@ I still write code every day. I still think in types. I am still building hx and
 The person who built Vera saw the same thing I saw, probably around the same time. They chose the first approach. I chose the second. Somebody, eventually, will build the third. And then we will all need to figure out what we mean by "programming" when nobody writes programs anymore.
 
 I am already curious about the answer.
+
+*Later:* for the practical side of the same question, which languages I reach for today now that agents write most of the code, and what each one still buys you, see [Almost Irrelevant](https://raskell.io/articles/almost-irrelevant/).
 
 
 ================================================================================

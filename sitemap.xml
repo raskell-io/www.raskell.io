@@ -37,6 +37,14 @@
         <lastmod>2026-03-09</lastmod>
     </url>
     <url>
+        <loc>https://raskell.io/articles/almost-irrelevant/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/almost-irrelevant/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/almost-irrelevant/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/almost-irrelevant/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/almost-irrelevant/"/>
+    </url>
+    <url>
         <loc>https://raskell.io/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/</loc>
         <lastmod>2026-03-13</lastmod>
     </url>
@@ -351,6 +359,14 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/ko/articles/almost-irrelevant/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/almost-irrelevant/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/almost-irrelevant/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/almost-irrelevant/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/almost-irrelevant/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/articles/building-it-intelligence/</loc>
@@ -1037,8 +1053,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/golang/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/golang/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/golang/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/golang/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/golang/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/gpus/</loc>
@@ -2285,6 +2303,13 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/goat/"/>
     </url>
     <url>
+        <loc>https://raskell.io/tags/golang/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/golang/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/golang/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/golang/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/golang/"/>
+    </url>
+    <url>
         <loc>https://raskell.io/tags/gpus/</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/gpus/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/gpus/"/>
@@ -2882,6 +2907,14 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/zh/articles/almost-irrelevant/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/almost-irrelevant/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/articles/almost-irrelevant/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/articles/almost-irrelevant/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/articles/almost-irrelevant/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/articles/building-it-intelligence/</loc>
@@ -3568,8 +3601,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/golang/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/golang/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/golang/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/golang/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/golang/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/gpus/</loc>

@@ -1,8 +1,17 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-19T06:04:15+00:00",
+ "generated": "2026-11-19T07:58:16+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/almost-irrelevant/",
+   "kind": "article",
+   "label": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+   "url": "https://raskell.io/articles/almost-irrelevant/",
+   "meta": "2026-11-19 · 27 min",
+   "description": "When agents write most of the code, the language matters less than it did, but not nothing. What Rust, Go, Elixir and Haskell still buy you.",
+   "degree": 25
+  },
   {
    "id": "a:/articles/building-it-intelligence/",
    "kind": "article",
@@ -10,7 +19,7 @@
    "url": "https://raskell.io/articles/building-it-intelligence/",
    "meta": "2026-11-16 · 27 min",
    "description": "How to build an Enterprise Context Platform from open source parts: ontology, connectors, workflows, store, API, MCP and UI, in one repository you can run.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "a:/articles/review-empire-of-ai/",
@@ -37,7 +46,7 @@
    "url": "https://raskell.io/articles/evaluation-closes-the-loop/",
    "meta": "2026-11-12 · 14 min",
    "description": "A trace shows what an agent did, not whether it was right. This part scores the agent against known cases and fails the build when a passing case breaks.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "a:/articles/the-behavioural-turn/",
@@ -46,7 +55,7 @@
    "url": "https://raskell.io/articles/the-behavioural-turn/",
    "meta": "2026-11-05 · 32 min",
    "description": "Moving from assembly to C changed what we read. Coding agents change whether we read. What psychology learned about black boxes, and what it got wrong.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/three-parts-and-no-brain/",
@@ -82,7 +91,7 @@
    "url": "https://raskell.io/articles/the-river-and-the-canal/",
    "meta": "2026-10-31 · 51 min",
    "description": "Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine.",
-   "degree": 34
+   "degree": 35
   },
   {
    "id": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
@@ -91,7 +100,7 @@
    "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/",
    "meta": "2026-10-30 · 25 min",
    "description": "How I re-imagined Shiioo with what 2026 taught me about agent systems, and why my local setup moves to a Mac Studio and DGX Sparks.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "a:/articles/win-everything-control-no-one/",
@@ -199,7 +208,7 @@
    "url": "https://raskell.io/articles/the-proof-you-only-have-to-write-once/",
    "meta": "2026-06-19 · 13 min",
    "description": "Generation is cheap, so verification is the bottleneck — and we throw the verification away every time. What if a proof, once written, could be named, shared, and vouched for? A content-addressed commons for verified Haskell, and the move I left for after the semantic-artifact trilogy.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "a:/articles/retrieval-is-a-tool-not-a-layer/",
@@ -262,7 +271,7 @@
    "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/",
    "meta": "2026-05-07 · 27 min",
    "description": "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target.",
-   "degree": 17
+   "degree": 18
   },
   {
    "id": "a:/articles/patents-per-capita-is-a-vanity-metric/",
@@ -298,7 +307,7 @@
    "url": "https://raskell.io/articles/what-comes-after-the-last-programming-language/",
    "meta": "2026-04-19 · 23 min",
    "description": "If AI generates machine code directly, why are we still running operating systems designed for humans? The answer might be an inference-native OS.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/",
@@ -316,7 +325,7 @@
    "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/",
    "meta": "2026-04-13 · 19 min",
    "description": "hx is a fast, opinionated Haskell toolchain built in Rust, following the playbook astral.sh used to modernize Python.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
@@ -325,7 +334,7 @@
    "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/",
    "meta": "2026-04-11 · 26 min",
    "description": "Three futures for programming languages as AI becomes the primary author of code, and why I bet on Haskell.",
-   "degree": 21
+   "degree": 22
   },
   {
    "id": "a:/articles/notes-from-rsac-2026/",
@@ -352,7 +361,7 @@
    "url": "https://raskell.io/articles/how-i-work-these-days/",
    "meta": "2026-03-15 · 10 min",
    "description": "From Kaggle in 2020 to coding agents in late 2025. The shift that changed how I build and why my routine finally feels right.",
-   "degree": 20
+   "degree": 21
   },
   {
    "id": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
@@ -746,9 +755,9 @@
    "kind": "tag",
    "label": "AI-assisted engineering",
    "url": "https://raskell.io/tags/ai-engineering/",
-   "meta": "Domain · 15 pages",
+   "meta": "Domain · 16 pages",
    "description": "AI as an engineering tool: coding agents, AI-authored code, and what programming becomes when models write most of it.",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "t:ai-for-ops",
@@ -989,9 +998,9 @@
    "kind": "tag",
    "label": "Elixir",
    "url": "https://raskell.io/tags/elixir/",
-   "meta": "Technology · 2 pages",
+   "meta": "Technology · 3 pages",
    "description": "Elixir, Phoenix, and the BEAM for the long-running, fault-tolerant parts.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:emergence",
@@ -1174,6 +1183,15 @@
    "degree": 2
   },
   {
+   "id": "t:golang",
+   "kind": "tag",
+   "label": "Go",
+   "url": "https://raskell.io/tags/golang/",
+   "meta": "Technology · 1 page",
+   "description": "Go, the plain and readable language for services that many teams share.",
+   "degree": 2
+  },
+  {
    "id": "t:gpus",
    "kind": "tag",
    "label": "GPUs",
@@ -1187,9 +1205,9 @@
    "kind": "tag",
    "label": "Haskell",
    "url": "https://raskell.io/tags/haskell/",
-   "meta": "Technology · 6 pages",
+   "meta": "Technology · 7 pages",
    "description": "The language that shaped how I think about types, effects, and correctness.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:history-of-science",
@@ -1592,9 +1610,9 @@
    "kind": "tag",
    "label": "Programming languages",
    "url": "https://raskell.io/tags/programming-languages/",
-   "meta": "Domain · 6 pages",
+   "meta": "Domain · 7 pages",
    "description": "Languages, type systems, compilers, and how executable intent gets written down.",
-   "degree": 22
+   "degree": 23
   },
   {
    "id": "t:provenance",
@@ -1664,9 +1682,9 @@
    "kind": "tag",
    "label": "Rust",
    "url": "https://raskell.io/tags/rust/",
-   "meta": "Technology · 11 pages",
+   "meta": "Technology · 12 pages",
    "description": "The systems language most of the projects here are written in.",
-   "degree": 37
+   "degree": 38
   },
   {
    "id": "t:science-fiction",
@@ -1835,9 +1853,9 @@
    "kind": "tag",
    "label": "Type systems",
    "url": "https://raskell.io/tags/type-systems/",
-   "meta": "Concept · 6 pages",
+   "meta": "Concept · 7 pages",
    "description": "Types as a cheap, mechanical proof that code does what it says, and why they matter more once machines write the code.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:typescript",
@@ -2018,15 +2036,6 @@
    "meta": "Concept · no pages yet",
    "description": "How geography, empires, and arms shape the balance of power between states and regions, as history.",
    "degree": 24
-  },
-  {
-   "id": "t:golang",
-   "kind": "tag",
-   "label": "Go",
-   "url": "https://raskell.io/tags#golang",
-   "meta": "Technology · no pages yet",
-   "description": "Go, the plain and readable language for services that many teams share.",
-   "degree": 1
   },
   {
    "id": "t:high-modernism",
@@ -2258,7 +2267,7 @@
    "url": "https://humankind.plus",
    "meta": "Project",
    "description": "Human continuity platform for preserving presence across generations. Humankind helps people build a living archive of voice, stories, memories, values, and relational warmth so th…",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "p:arcanist",
@@ -2267,7 +2276,7 @@
    "url": "https://arcanist.sh",
    "meta": "Project",
    "description": "Haskell tooling for the age of AI-authored code. hx is a fast package and project manager written in Rust, and bhc is a compiler built to check everything it can. With a registry t…",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "p:zentinel",
@@ -2276,7 +2285,7 @@
    "url": "https://zentinelproxy.io",
    "meta": "Project",
    "description": "Security-first reverse proxy built to guard the free web. Rust on Cloudflare's Pingora, explicit configuration over hidden defaults, and WAF, auth and other policy in isolated agen…",
-   "degree": 24
+   "degree": 25
   },
   {
    "id": "p:hx",
@@ -2294,7 +2303,7 @@
    "url": "https://arcanist.sh/bhc/",
    "meta": "Project",
    "description": "The Basel Haskell Compiler, a clean-slate compiler for the Haskell you already write. Written in Rust, it compiles to native code through LLVM and to WebAssembly, with a runtime pr…",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "p:shiioo",
@@ -2303,7 +2312,7 @@
    "url": "https://shiioo.raskell.io",
    "meta": "Project",
    "description": "A virtual company of AI agents on your Mac, run from your phone. Claude Code, Codex and local models work in their own branches; a rules file decides what they may do alone, the re…",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "p:aqueduct",
@@ -2312,7 +2321,7 @@
    "url": "https://github.com/raskell-io/aqueduct",
    "meta": "Project",
    "description": "A durable execution engine in Rust, built for the procedures agents write and people approve. Every step is journaled before it counts, so a run survives crashes, restarts and week…",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "p:refrakt",
@@ -2339,7 +2348,7 @@
    "url": "https://broodwar.live",
    "meta": "Project",
    "description": "The community platform for StarCraft: Brood War competitive play, a basketball-reference.com for Brood War. Profiles for 150 pro players in English and Korean, build orders for eve…",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "p:die-zukunft",
@@ -4259,6 +4268,10 @@
    "target": "t:existential-risk"
   },
   {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "t:ai-engineering"
+  },
+  {
    "source": "a:/articles/the-behavioural-turn/",
    "target": "t:ai-engineering"
   },
@@ -4847,6 +4860,10 @@
    "target": "t:edge-systems"
   },
   {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "t:elixir"
+  },
+  {
    "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
    "target": "t:elixir"
   },
@@ -5211,6 +5228,14 @@
    "target": "t:games"
   },
   {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "t:golang"
+  },
+  {
+   "source": "t:golang",
+   "target": "t:programming-languages"
+  },
+  {
    "source": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
    "target": "t:gpus"
   },
@@ -5233,6 +5258,10 @@
   {
    "source": "t:gpus",
    "target": "t:semiconductors"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "t:haskell"
   },
   {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
@@ -5919,6 +5948,10 @@
    "target": "t:mathematics"
   },
   {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "t:programming-languages"
+  },
+  {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
    "target": "t:programming-languages"
   },
@@ -6069,6 +6102,10 @@
   {
    "source": "t:risk",
    "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "t:rust"
   },
   {
    "source": "a:/articles/three-parts-and-no-brain/",
@@ -6407,6 +6444,10 @@
    "target": "t:economics"
   },
   {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "t:type-systems"
+  },
+  {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
    "target": "t:type-systems"
   },
@@ -6643,10 +6684,6 @@
    "target": "t:geography"
   },
   {
-   "source": "t:golang",
-   "target": "t:programming-languages"
-  },
-  {
    "source": "t:high-modernism",
    "target": "t:legibility"
   },
@@ -6841,6 +6878,50 @@
   {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "c:reviews"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "a:/articles/building-it-intelligence/"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "a:/articles/evaluation-closes-the-loop/"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "a:/articles/the-behavioural-turn/"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "a:/articles/the-river-and-the-canal/"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "a:/articles/the-proof-you-only-have-to-write-once/"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "a:/articles/semantic-artifacts-and-meaning-engines/"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "a:/articles/what-comes-after-the-last-programming-language/"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "a:/articles/how-i-work-these-days/"
   },
   {
    "source": "a:/articles/building-it-intelligence/",
@@ -7579,12 +7660,20 @@
    "target": "p:cyanea"
   },
   {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "p:humankind"
+  },
+  {
    "source": "a:/articles/how-i-work-these-days/",
    "target": "p:humankind"
   },
   {
    "source": "a:/talks/iat-13-basel/",
    "target": "p:humankind"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "p:arcanist"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
@@ -7617,6 +7706,10 @@
   {
    "source": "a:/talks/iat-13-basel/",
    "target": "p:arcanist"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "p:zentinel"
   },
   {
    "source": "a:/articles/a-blueprint-for-the-static-web/",
@@ -7691,6 +7784,10 @@
    "target": "p:hx"
   },
   {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "p:bhc"
+  },
+  {
    "source": "a:/articles/the-river-and-the-canal/",
    "target": "p:bhc"
   },
@@ -7701,6 +7798,10 @@
   {
    "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
    "target": "p:bhc"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "p:shiioo"
   },
   {
    "source": "a:/articles/the-river-and-the-canal/",
@@ -7725,6 +7826,10 @@
   {
    "source": "a:/talks/iat-13-basel/",
    "target": "p:shiioo"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "p:aqueduct"
   },
   {
    "source": "a:/articles/building-it-intelligence/",
@@ -7753,6 +7858,10 @@
   {
    "source": "a:/articles/mise-ate-my-makefile/",
    "target": "p:vela"
+  },
+  {
+   "source": "a:/articles/almost-irrelevant/",
+   "target": "p:broodwar-live"
   },
   {
    "source": "a:/articles/win-everything-control-no-one/",
