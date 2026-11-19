@@ -10,10 +10,10 @@ tags = ["agent-experience", "agents", "ai-engineering", "developer-tooling", "co
 [extra]
 author = "Raffael"
 in_short = [
-  "When agents write the code, developers spend less time on syntax and patterns and more on architecture, integration and requirements, and the tools the agents drive matter more than ever.",
+  "When agents write the code, developers spend less time on syntax and patterns and more on architecture, integration and requirements, and the tools the agents drive matter more than they did.",
   "Agent experience, a term Mathias Biilmann introduced in 2025, is best measured by one thing: how much an agent has to guess to do the right thing in your system.",
   "Interfaces sit on a legibility ladder, from compilers and schemas that leave nothing to guess down to HTML and screenshots that leave everything; errors and feedback are the most important interface of all.",
-  "Tooling has become cheap to rewrite, as Bun's port from Zig to Rust and Anthropic's move off git show, so what a choice of ecosystem commits you to is its premises, not its implementation.",
+  "Tooling has become cheap to rewrite, as Bun's port from Zig to Rust and Anthropic's move off git show, so choosing an ecosystem now commits you to its premises more than to its code.",
   "An agent's context arrives through a supply chain of repositories, protocols, graphs and indexes, and it deserves the same care as any other supply chain: provenance, freshness, stable contracts and cost.",
   "The standards are arriving fast (AGENTS.md, MCP, Agent Skills, llms.txt), but the gaps are larger: a contract for command-line tools, guaranteed effects, provenance on context, a way to measure systems, and a boundary between instructions and data.",
 ]
@@ -25,7 +25,7 @@ Hardly any of those guesses say something about the model. They come from the sy
 
 ## The developer moved up a level
 
-In [Almost Irrelevant](/articles/almost-irrelevant/) I argued that once agents write most of the code, the choice of programming language matters much less than it did, because the agent absorbs the learning curve, the ceremony and the boilerplate. The same shift changes what the developer thinks about all day. Less of it goes to syntax, design patterns and how to express a loop, and more to the shape of the whole: which system owns which data, how a change ripples into the three systems next to it, what the requirement actually is, and what has to be true when the work is done.
+In [Almost Irrelevant](/articles/almost-irrelevant/) I argued that once agents write most of the code, the choice of programming language matters much less than it did, because the agent absorbs the learning curve, the ceremony and the boilerplate. The same shift changes what the developer thinks about all day. Less of it goes to syntax, design patterns and how to express a loop, and more to the shape of the whole: which system owns which data, how a change ripples into the three systems next to it, what the requirement is, and what has to be true when the work is done.
 
 What did not move is tooling. It matters more than before, for a reason Jarred Sumner put well when [Bun joined Anthropic](https://bun.com/blog/bun-joins-anthropic): "If most new code is going to be written, tested, and deployed by AI agents: The runtime and tooling around that code become way more important." Humans, he wrote, "are more detached from every individual line, so the environment it runs in has to be fast and predictable". An agent runs the same command a thousand times a day and takes every output literally, so the quirks a developer learned to ignore now cost something on every run.
 
@@ -59,7 +59,7 @@ The first serious evidence that interfaces, not just models, decide what an agen
 
 Showing the agent more of the file made it worse, and letting it browse search results made it worse than giving it no search at all, which scored 15.7%. What helped was less information, in a predictable shape. Anthropic drew the same lesson for its own agents: in [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) the team wrote that for their coding agent they "spent more time optimizing our tools than the overall prompt", and gave the advice "Carefully craft your agent-computer interface (ACI) through thorough tool documentation and testing." Their advice has a name borrowed from manufacturing: "Poka-yoke your tools", change them so that the mistake is hard to make in the first place.
 
-In my own work the guesses come from a short list of places, and almost all of them were always there; humans simply absorbed them by asking a colleague.
+In my own work the guesses come from a short list of places, and almost all of them were always there; people absorbed them by asking a colleague.
 
 - **Output that changes shape.** A tool that prints a table for people, with colours and a progress bar, and no stable machine form.
 - **Errors in prose.** A message written for a person in a hurry, which an agent has to interpret, and which changes wording between versions.
@@ -141,7 +141,7 @@ The second is that agent experience becomes a reason to rewrite. A tool with pro
 
 ## The context supply chain
 
-The other half of agent experience is where an agent gets what it knows. I wrote about the kinds of context an agent draws on in [Context Is the Product](/articles/context-is-the-product/), and about why retrieval belongs in a tool in [Retrieval Is a Tool, Not a Layer](/articles/retrieval-is-a-tool-not-a-layer/). Here I want to look at the same thing as a supply chain, because that is how it behaves:
+The other half of agent experience is where an agent gets what it knows. I wrote about the kinds of context an agent draws on in [Context Is the Product](/articles/context-is-the-product/), and about why retrieval belongs in a tool in [Retrieval Is a Tool, Not a Layer](/articles/retrieval-is-a-tool-not-a-layer/). Seen from the agent's side, it behaves like a supply chain:
 
 {% diagram(title="The context supply chain") %}
   sources                  channels                     the agent
@@ -159,11 +159,11 @@ Every link in that chain has the four properties any supply chain has. **Provena
 
 The channels are standardising, which is good news for anyone building on them. In December 2025 the Linux Foundation formed the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) around three contributed projects: the Model Context Protocol from Anthropic, goose from Block and AGENTS.md from OpenAI. A convention for the repository, a protocol for systems and a reference agent, under neutral governance, is the start of a shared infrastructure for this supply chain.
 
-What no standard supplies is the content, and that is where most companies have the worst agent experience of all. The question an agent asks most often inside a company is about ownership rather than code, "who owns this, what depends on it, and is it still used?", and in most organisations the answer is scattered across six tools that disagree. That is the problem [IT Intelligence](/articles/it-intelligence/) is about, and the reason the [reference implementation](/articles/building-it-intelligence/) answers through an MCP server with small, entity-centric answers that always carry their provenance. A knowledge layer an agent can query, with the source of every fact attached, is agent experience for the organisation itself.
+What no standard supplies is the content, and that is where most companies have the worst agent experience of all. Inside a company, the question an agent asks most often is "who owns this, what depends on it, and is it still used?", and in most organisations the answer is scattered across six tools that disagree. That is the problem [IT Intelligence](/articles/it-intelligence/) is about, and the reason the [reference implementation](/articles/building-it-intelligence/) answers through an MCP server with small, entity-centric answers that always carry their provenance. A knowledge layer an agent can query, with the source of every fact attached, is agent experience for the organisation itself.
 
 ## The standards so far
 
-For a field that did not have a name two years ago, agent experience already has a fair amount of shared ground. This is the map as I see it in November 2026:
+For a field that did not have a name two years ago, agent experience already has a fair amount of shared ground. As of November 2026 it looks like this:
 
 | Concern | What exists | Since | Who stands behind it |
 |---|---|---|---|
@@ -177,7 +177,7 @@ For a field that did not have a name two years ago, agent experience already has
 | A catalogue of services and owners | Backstage's [catalog-info.yaml](https://backstage.io/docs/features/software-catalog/descriptor-format) | 2020 | a de facto convention |
 | Where a fact came from | [PROV-O](https://www.w3.org/TR/prov-o/) | 2013 | W3C |
 
-Two things stand out. The newest entries are the ones agents actually use, and they came from model vendors and moved quickly to neutral governance; by Anthropic's count, more than 70 agent platforms have integrated Agent Skills alone since the standard was published in December 2025. The older entries, from standards bodies, solve parts of the problem well, but were written for other readers: SARIF for code scanners, PROV-O for the semantic web, Backstage for a developer portal. Nobody has yet joined them up for agents.
+Two things stand out. The newest entries are the ones agents use every day, and they came from model vendors and moved quickly to neutral governance; by Anthropic's count, more than 70 agent platforms have integrated Agent Skills alone since the standard was published in December 2025. The older entries, from standards bodies, solve parts of the problem well, but were written for other readers: SARIF for code scanners, PROV-O for the semantic web, Backstage for a developer portal. Nobody has yet joined them up for agents.
 
 ## What is still missing
 
@@ -187,9 +187,9 @@ The gaps are where I expect most of the work, and most of the interesting ideas,
 |---|---|---|
 | A contract for command-line tools | RFC 9457 for HTTP, SARIF for analysers | anything common to the thousands of CLIs agents run every day |
 | Effects you can rely on | MCP tool annotations | guarantees: they are hints |
-| Provenance and freshness on context | PROV-O, a few product conventions | a field in the channels agents actually read |
-| A measure of agent experience | model benchmarks such as SWE-bench | a benchmark of systems, not of models |
-| Organisational context | Backstage catalogues | what is true, rather than what was declared |
+| Provenance and freshness on context | PROV-O, a few product conventions | a field in the channels agents read |
+| A measure of agent experience | model benchmarks such as SWE-bench | a benchmark that varies the system and keeps the agent fixed |
+| Organisational context | Backstage catalogues | what is true today, beyond what teams declared |
 | Change management for agent-facing text | API versioning | versions and changelogs for tool descriptions, instructions and error meanings |
 | A boundary between instructions and data | none in common use | a way to mark what in the context may be obeyed |
 | Durable hand-offs to people | MCP elicitation | approvals that wait for days, with a name and a record |
@@ -200,15 +200,15 @@ The gaps are where I expect most of the work, and most of the interesting ideas,
 
 **Provenance and freshness on context.** An `AGENTS.md` has no owner and no date. An `llms.txt` does not say when it was last true. A tool result has no common field for where its facts came from. The semantic web solved provenance long ago in PROV-O, but none of the channels agents read carry it. Until they do, an agent cannot tell a fact checked this morning from one written three reorganisations ago, and neither can the person reviewing its work. I would like every fact an agent receives to carry three things: a source, an as-of date and an owner. It is what I built into the [reference implementation](/articles/building-it-intelligence/), and it should not need a custom platform.
 
-**A measure of agent experience.** Every benchmark we have holds the environment fixed and varies the model. Agent experience needs the opposite: hold the agent fixed and vary the system. There is no shared way to say that one repository, API or internal platform is easier for agents than another, so improvements cannot be compared or even claimed. The cold-start test below is my stopgap. A real one would be a public suite of tasks, run against a system by a fixed agent, with the guesses counted the same way everywhere.
+**A measure of agent experience.** Every benchmark we have holds the environment fixed and varies the model. Agent experience needs the opposite: hold the agent fixed and vary the system. Nobody can say, in terms others would accept, that one repository, API or internal platform is easier for agents than another, so improvements cannot be compared or even claimed. The cold-start test below is my stopgap. A real one would be a public suite of tasks, run against a system by a fixed agent, with the guesses counted the same way everywhere.
 
-**Organisational context.** Backstage made it normal to describe a service in a file next to its code, and that is a real step. But a catalogue records what teams declared, and agents need what is true: who actually owns the namespace, which application still calls the old API, which record is stale. There is no standard for an ownership and dependency graph that carries confidence and evidence, and every company that wants one builds it alone. That is the gap [IT Intelligence](/articles/it-intelligence/) is about.
+**Organisational context.** Backstage made it normal to describe a service in a file next to its code, and that is a real step. But a catalogue records what teams declared, and agents need what is true: who owns the namespace in practice, which application still calls the old API, which record is stale. There is no standard for an ownership and dependency graph that carries confidence and evidence, and every company that wants one builds it alone. That is the gap [IT Intelligence](/articles/it-intelligence/) is about.
 
 **Change management for agent-facing text.** We version APIs because clients break when they change. Agents are clients too, but the text they depend on changes silently: a tool description is reworded, an instruction file is reorganised, an error message gains a sentence. Each of those changes what agents do, and nobody sees the breakage because no test failed. Worse, a tool description is an instruction to the model, so changing it changes behaviour in ways a reviewer of code would never look for. Agent-facing text needs what API surfaces have: versions, changelogs, and a diff that someone reviews.
 
-**A boundary between instructions and data.** Everything in an agent's context looks alike: the user's request, the repository's conventions, a web page it fetched, an issue comment written by a stranger. There is no common way to mark which of those may be obeyed and which may only be read, and that is the root of prompt injection. Better models reduce the risk, and sandboxes contain the damage, as I wrote in [Your Agent Wants Root](/articles/your-agent-wants-root/), but the missing piece is a convention, carried through every channel, for where authority comes from.
+**A boundary between instructions and data.** Everything in an agent's context looks alike: the user's request, the repository's conventions, a web page it fetched, an issue comment written by a stranger. Nothing marks which of those may be obeyed and which may only be read, and that is the root of prompt injection. Better models reduce the risk, and sandboxes contain the damage, as I wrote in [Your Agent Wants Root](/articles/your-agent-wants-root/), but the missing piece is a convention, carried through every channel, for where authority comes from.
 
-**Durable hand-offs to people.** MCP's elicitation lets a server ask the user for information in the middle of a session, which covers the quick question. The harder case is the approval that has to wait: a change that needs a second person, who is on holiday until Thursday, and a record afterwards of who said yes. There is no standard for that hand-off, so every platform builds its own. It is the reason durable execution engines with waits for people, such as [Aqueduct](https://github.com/raskell-io/aqueduct), exist, and I expect the hand-off to become a protocol of its own.
+**Durable hand-offs to people.** MCP's elicitation lets a server ask the user for information in the middle of a session, which covers the quick question. The harder case is the approval that has to wait: a change that needs a second person, who is on holiday until Thursday, and a record afterwards of who said yes. That hand-off has no standard yet. It is the reason durable execution engines with waits for people, such as [Aqueduct](https://github.com/raskell-io/aqueduct), exist, and I expect the hand-off to become a protocol of its own.
 
 None of these gaps needs a breakthrough, only a few people agreeing on something boring, which is how the web got HTTP status codes and how the command line got `--help`. The difference this time is the speed: whoever writes the convention down first, and makes it easy to adopt, will define how agents work for a long time.
 
@@ -242,7 +242,7 @@ For people who build software and people who run it, the list is short, and none
 - **Choose ecosystems by their premises.** Compatibility promises, determinism and a compiler that explains itself are worth more now than the size of the library catalogue, because the catalogue can be regenerated and the premises cannot.
 - **Run the cold-start test.** Not once, but every quarter, the way you would run a load test.
 
-The objection I hear most is that all of this is simply good developer experience. Much of it is, and I take that as encouraging: a system with good agent experience is almost always better for people too. The difference is forgiveness. A person asks a colleague when the docs are wrong and learns the team's habits once, while an agent guesses, and starts from nothing in every session unless the habits are written down. A person who misreads an error loses an afternoon; an agent misreads it on every run, in parallel, faster than any review can follow.
+The objection I hear most is that all of this is good developer experience under a new name. Much of it is, and I take that as encouraging: a system with good agent experience is almost always better for people too. The difference is forgiveness. A person asks a colleague when the docs are wrong and learns the team's habits once, while an agent guesses, and starts from nothing in every session unless the habits are written down. A person who misreads an error loses an afternoon; an agent misreads it on every run, in parallel, faster than any review can follow.
 
 ## The third reader
 
