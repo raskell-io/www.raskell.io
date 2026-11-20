@@ -548,7 +548,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Zola (`zola`) [within The open web]: The static site generator this site and several project sites are built with.
 - Durable execution (`durable-execution`) [within Distributed systems, Platform automation]: Workflow engines that keep long-running processes alive through crashes and deployments, with a journal of every step: Temporal, Restate and their kin.
 - Arcanist (`arcanist`) [within Haskell, Developer tooling]: Haskell tooling for code that agents write: the hx package manager, the bhc compiler, and a registry that records what has been verified, at arcanist.sh.
-- bhc (`bhc`) [within Arcanist, Compilers]: The Basel Haskell Compiler, a clean-slate Haskell compiler written in Rust that checks everything it can, part of Arcanist.
+- bhc (`bhc`) [within Arcanist, Compilers, Basel]: The Basel Haskell Compiler, a clean-slate Haskell compiler written in Rust that checks everything it can, part of Arcanist.
 
 ### This site
 

@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-20T18:49:59+00:00",
+ "generated": "2026-11-20T18:51:46+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -946,7 +946,7 @@
    "url": "https://raskell.io/tags/basel/",
    "meta": "Concept · 2 pages",
    "description": "The city this site is written from, on the Rhine where Switzerland meets France and Germany: its pharmaceutical cluster, and the thinkers who lived there, Nietzsche as a professor, Hesse as a child and a bookseller, Jung as a medical student.",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "t:bhc",
@@ -955,7 +955,7 @@
    "url": "https://raskell.io/tags/bhc/",
    "meta": "Technology · 1 page",
    "description": "The Basel Haskell Compiler, a clean-slate Haskell compiler written in Rust that checks everything it can, part of Arcanist.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:bureaucracy",
@@ -4720,6 +4720,10 @@
   {
    "source": "t:bhc",
    "target": "t:compilers"
+  },
+  {
+   "source": "t:bhc",
+   "target": "t:basel"
   },
   {
    "source": "a:/articles/review-empire-of-ai/",
