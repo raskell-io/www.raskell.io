@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-20T17:42:43+00:00",
+ "generated": "2026-11-20T17:44:06+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -454,15 +454,6 @@
    "degree": 4
   },
   {
-   "id": "a:/notes/testing-deltadb/",
-   "kind": "note",
-   "label": "Testing DeltaDB",
-   "url": "https://raskell.io/notes/testing-deltadb/",
-   "meta": "2026-11-21",
-   "description": "Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?",
-   "degree": 5
-  },
-  {
    "id": "a:/notes/data-fusion-belongs-in-the-store/",
    "kind": "note",
    "label": "Data fusion belongs in the store",
@@ -479,6 +470,15 @@
    "meta": "2026-11-20",
    "description": "NVIDIA's NOOA makes an agent a Python object with typed contracts. A language that enforces types could make the harness a compiler primitive. An open question.",
    "degree": 11
+  },
+  {
+   "id": "a:/notes/testing-deltadb/",
+   "kind": "note",
+   "label": "Testing DeltaDB",
+   "url": "https://raskell.io/notes/testing-deltadb/",
+   "meta": "2026-11-20",
+   "description": "Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?",
+   "degree": 5
   },
   {
    "id": "a:/notes/the-conversation-is-the-workspace/",
@@ -4373,11 +4373,11 @@
    "target": "t:open-standards"
   },
   {
-   "source": "a:/notes/testing-deltadb/",
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
    "target": "t:agents"
   },
   {
-   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "source": "a:/notes/testing-deltadb/",
    "target": "t:agents"
   },
   {
@@ -6081,11 +6081,11 @@
    "target": "t:philosophy"
   },
   {
-   "source": "a:/notes/testing-deltadb/",
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
    "target": "t:multiplayer-work"
   },
   {
-   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "source": "a:/notes/testing-deltadb/",
    "target": "t:multiplayer-work"
   },
   {
@@ -7869,10 +7869,6 @@
    "target": "a:/articles/mise-ate-my-makefile/"
   },
   {
-   "source": "a:/notes/testing-deltadb/",
-   "target": "a:/notes/the-conversation-is-the-workspace/"
-  },
-  {
    "source": "a:/notes/data-fusion-belongs-in-the-store/",
    "target": "a:/articles/building-it-intelligence/"
   },
@@ -7887,6 +7883,10 @@
   {
    "source": "a:/notes/harness-types-in-the-compiler/",
    "target": "a:/notes/determinism-is-what-intelligence-leaves-behind/"
+  },
+  {
+   "source": "a:/notes/testing-deltadb/",
+   "target": "a:/notes/the-conversation-is-the-workspace/"
   },
   {
    "source": "a:/notes/the-conversation-is-the-workspace/",

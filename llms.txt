@@ -114,8 +114,8 @@ Datasets, listed at https://raskell.io/data/. Each is one file under https://ras
 
 Short notes, a paragraph or a page each; some grow into articles.
 
-- [Testing DeltaDB](https://raskell.io/notes/testing-deltadb.md) (2026-11-21): Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?
 - [The simplest protocol that reduces the most uncertainty wins](https://raskell.io/notes/the-simplest-protocol-wins.md) (2026-11-20): A lens from a talk on agent protocols: judge a standard by how many decisions it removes from your application, and ask what it makes replaceable.
+- [Testing DeltaDB](https://raskell.io/notes/testing-deltadb.md) (2026-11-20): Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?
 - [Harness types in the compiler](https://raskell.io/notes/harness-types-in-the-compiler.md) (2026-11-20): NVIDIA's NOOA makes an agent a Python object with typed contracts. A language that enforces types could make the harness a compiler primitive. An open question.
 - [The conversation is the workspace](https://raskell.io/notes/the-conversation-is-the-workspace.md) (2026-11-20): Work is moving into shared conversations between several people and several agents, with the decisions and artifacts living inside the conversation.
 - [Data fusion belongs in the store](https://raskell.io/notes/data-fusion-belongs-in-the-store.md) (2026-11-20): An agent that joins five MCP servers by itself carries the integration burden on every call. The store could do that work once, for every agent.

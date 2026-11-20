@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-20T17:42:43+00:00",
+ "generated": "2026-11-20T17:44:06+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -868,19 +868,6 @@
   },
   {
    "kind": "note",
-   "title": "Testing DeltaDB",
-   "url": "https://raskell.io/notes/testing-deltadb/",
-   "description": "Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?",
-   "date": "2026-11-21",
-   "topics": [
-    "multiplayer-work",
-    "provenance",
-    "developer-tooling",
-    "agents"
-   ]
-  },
-  {
-   "kind": "note",
    "title": "Data fusion belongs in the store",
    "url": "https://raskell.io/notes/data-fusion-belongs-in-the-store/",
    "description": "An agent that joins five MCP servers by itself carries the integration burden on every call. The store could do that work once, for every agent.",
@@ -905,6 +892,19 @@
     "compilers",
     "arcanist",
     "bhc"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Testing DeltaDB",
+   "url": "https://raskell.io/notes/testing-deltadb/",
+   "description": "Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?",
+   "date": "2026-11-20",
+   "topics": [
+    "multiplayer-work",
+    "provenance",
+    "developer-tooling",
+    "agents"
    ]
   },
   {

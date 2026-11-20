@@ -7,24 +7,7 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Sat, 21 Nov 2026 00:00:00 +0000</lastBuildDate>
-      <item>
-          <title>Testing DeltaDB</title>
-          <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
-          <link>https://raskell.io/notes/testing-deltadb/</link>
-          <guid>https://raskell.io/notes/testing-deltadb/</guid>
-          <description xml:base="https://raskell.io/notes/testing-deltadb/">&lt;p&gt;&lt;a href=&quot;&#x2F;notes&#x2F;the-conversation-is-the-workspace&#x2F;&quot;&gt;The conversation is the workspace&lt;&#x2F;a&gt; ended on Zed’s &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zed.dev&#x2F;blog&#x2F;introducing-deltadb&quot;&gt;DeltaDB&lt;&#x2F;a&gt;, version control that “captures every operation in between and gives each one a stable identity” and ties each edit to the agent conversation that produced it. The obvious next step is to try it, so here is where that is possible today.&lt;&#x2F;p&gt;
-&lt;p&gt;DeltaDB is not something you install or host on its own. It is the storage under &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;delta.dev&quot;&gt;Delta&lt;&#x2F;a&gt;, Zed’s “multiplayer environment for coding with agents and reviewing what they build”, which has been in public beta since Zed’s post &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zed.dev&#x2F;blog&#x2F;delta-public-beta&quot;&gt;Replace PRs with Delta&lt;&#x2F;a&gt;. There are three ways in:&lt;&#x2F;p&gt;
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Way in&lt;&#x2F;th&gt;&lt;th&gt;What it does&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;delta.dev&#x2F;download&quot;&gt;Delta app&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;macOS, Linux and Windows, or in the browser without installing anything&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;delta.dev&#x2F;cli&quot;&gt;Delta CLI&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;syncs the sessions of an agent you already use, such as Claude Code, to DeltaDB, so a teammate can join the same session&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;delta.dev&#x2F;blog&#x2F;claude-agent-in-delta&quot;&gt;Claude Agent in Delta&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;runs Claude inside Delta on an existing Claude subscription&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
-&lt;p&gt;The CLI asks which sessions to sync: private sync, organisation sharing, or manual, where only sessions you share explicitly leave the machine. Delta “stores the conversation and a copy of this checkout, including uncommitted changes, in DeltaDB”, which is Zed’s cloud, so I keep it to my own open source repositories and start with manual sharing.&lt;&#x2F;p&gt;
-&lt;p&gt;The test I want to run is small. Share one Claude Code session on a public repository, then open the thread as a reviewer would, from another machine, and compare it with reviewing the same change as a pull request. The question is the one the conference left me with: is review faster and better when the conversation is attached to the code, or does it only move the reading from the diff to the thread? I will add the answer here.&lt;&#x2F;p&gt;
-</description>
-      </item>
+      <lastBuildDate>Fri, 20 Nov 2026 00:00:00 +0000</lastBuildDate>
       <item>
           <title>The Constraint Moves: A Day at Agentic Engineering Days Zurich</title>
           <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
@@ -167,6 +150,23 @@
 &lt;p&gt;The results he showed were about memory, and they are the strongest argument for treating the harness as software. On ARC-AGI-3 games with the same model, an agent keeping its own notes in Markdown reached 38.4%; NOOA’s memory API reached 50.2%, and matched the Markdown score for about $290 in estimated API cost against about $1,040. The slide was titled “Software is cheaper than thinking.” Structure the harness manages beats structure the model has to reread.&lt;&#x2F;p&gt;
 &lt;p&gt;It is the right direction, and Python is the weak point of it. A signature in Python is checked when the call happens, and NOOA retries until the output fits. In a language whose compiler enforces the contract, the program would not build until the application and the agent agree on types, and the line in &lt;a href=&quot;&#x2F;notes&#x2F;determinism-is-what-intelligence-leaves-behind&#x2F;&quot;&gt;Determinism is what intelligence leaves behind&lt;&#x2F;a&gt; between what is decided and what is delegated would be part of the program’s type, not a convention.&lt;&#x2F;p&gt;
 &lt;p&gt;So the thought I left with: could &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;bhc&#x2F;&quot;&gt;bhc&lt;&#x2F;a&gt; carry inference and harness bindings as a native primitive, with an agent call typed like any other effect, and its retries, budget and memory visible in the type? I do not know yet whether that is a library, a language feature or a bad idea. &lt;a href=&quot;&#x2F;articles&#x2F;almost-irrelevant&#x2F;&quot;&gt;Almost Irrelevant&lt;&#x2F;a&gt; argued that what a compiler checks is what stays valuable when agents write the code; this would be the same argument applied to the agent itself.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Testing DeltaDB</title>
+          <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/testing-deltadb/</link>
+          <guid>https://raskell.io/notes/testing-deltadb/</guid>
+          <description xml:base="https://raskell.io/notes/testing-deltadb/">&lt;p&gt;&lt;a href=&quot;&#x2F;notes&#x2F;the-conversation-is-the-workspace&#x2F;&quot;&gt;The conversation is the workspace&lt;&#x2F;a&gt; ended on Zed’s &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zed.dev&#x2F;blog&#x2F;introducing-deltadb&quot;&gt;DeltaDB&lt;&#x2F;a&gt;, version control that “captures every operation in between and gives each one a stable identity” and ties each edit to the agent conversation that produced it. The obvious next step is to try it, so here is where that is possible today.&lt;&#x2F;p&gt;
+&lt;p&gt;DeltaDB is not something you install or host on its own. It is the storage under &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;delta.dev&quot;&gt;Delta&lt;&#x2F;a&gt;, Zed’s “multiplayer environment for coding with agents and reviewing what they build”, which has been in public beta since Zed’s post &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zed.dev&#x2F;blog&#x2F;delta-public-beta&quot;&gt;Replace PRs with Delta&lt;&#x2F;a&gt;. There are three ways in:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Way in&lt;&#x2F;th&gt;&lt;th&gt;What it does&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;delta.dev&#x2F;download&quot;&gt;Delta app&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;macOS, Linux and Windows, or in the browser without installing anything&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;delta.dev&#x2F;cli&quot;&gt;Delta CLI&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;syncs the sessions of an agent you already use, such as Claude Code, to DeltaDB, so a teammate can join the same session&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;delta.dev&#x2F;blog&#x2F;claude-agent-in-delta&quot;&gt;Claude Agent in Delta&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;runs Claude inside Delta on an existing Claude subscription&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;The CLI asks which sessions to sync: private sync, organisation sharing, or manual, where only sessions you share explicitly leave the machine. Delta “stores the conversation and a copy of this checkout, including uncommitted changes, in DeltaDB”, which is Zed’s cloud, so I keep it to my own open source repositories and start with manual sharing.&lt;&#x2F;p&gt;
+&lt;p&gt;The test I want to run is small. Share one Claude Code session on a public repository, then open the thread as a reviewer would, from another machine, and compare it with reviewing the same change as a pull request. The question is the one the conference left me with: is review faster and better when the conversation is attached to the code, or does it only move the reading from the diff to the thread? I will add the answer here.&lt;&#x2F;p&gt;
 </description>
       </item>
       <item>

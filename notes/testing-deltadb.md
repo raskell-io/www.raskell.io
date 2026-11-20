@@ -2,7 +2,7 @@
 title: "Testing DeltaDB"
 url: https://raskell.io/notes/testing-deltadb/
 author: Raffael Schneider
-date: 2026-11-21
+date: 2026-11-20
 description: "Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?"
 tags: [multiplayer-work, provenance, developer-tooling, agents]
 ---
