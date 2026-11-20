@@ -1,7 +1,6 @@
 +++
 title = "Testing DeltaDB"
 date = 2026-11-21
-draft = true
 description = "Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?"
 
 [taxonomies]
