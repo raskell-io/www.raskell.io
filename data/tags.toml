@@ -1029,4 +1029,4 @@ broader = ["haskell", "developer-tooling"]
 name = "bhc"
 kind = "technology"
 description = "The Basel Haskell Compiler, a clean-slate Haskell compiler written in Rust that checks everything it can, part of Arcanist."
-broader = ["arcanist", "compilers"]
+broader = ["arcanist", "compilers", "basel"]
