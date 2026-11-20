@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-20T17:44:06+00:00",
+ "generated": "2026-11-20T18:49:59+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 643,
+ "count": 649,
  "links": [
   {
    "url": "https://zentinelproxy.io/",
@@ -2159,6 +2159,19 @@
    "citations": 1
   },
   {
+   "url": "https://arxiv.org/abs/2210.03629",
+   "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://arxiv.org/abs/2303.13988",
    "title": "the line",
    "domain": "arxiv.org",
@@ -2315,6 +2328,19 @@
    "citations": 1
   },
   {
+   "url": "https://arxiv.org/abs/2506.08837",
+   "title": "Design Patterns for Securing LLM Agents against Prompt Injections",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://arxiv.org/abs/2509.15541",
    "title": "Schoen and colleagues",
    "domain": "arxiv.org",
@@ -2388,6 +2414,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://arxiv.org/abs/2605.14290",
+   "title": "Web Agents Should Adopt the Plan-Then-Execute Paradigm",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
     }
    ],
    "citations": 1
@@ -3693,6 +3732,19 @@
    "citations": 1
   },
   {
+   "url": "https://en.wikipedia.org/wiki/Combat_Mission",
+   "title": "Combat Mission",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://en.wikipedia.org/wiki/Command_%26_Conquer:_Tiberian_Sun",
    "title": "Command &amp; Conquer: Tiberian Sun",
    "domain": "en.wikipedia.org",
@@ -3727,6 +3779,19 @@
     {
      "title": "My GOAT games",
      "url": "https://raskell.io/notes/goat-games/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Diplomacy_(game)",
+   "title": "Diplomacy",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
     }
    ],
    "citations": 1
@@ -3857,6 +3922,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Frozen_Synapse",
+   "title": "Frozen Synapse",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
     }
    ],
    "citations": 1

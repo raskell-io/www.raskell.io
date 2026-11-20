@@ -7,7 +7,33 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/game-design/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Sun, 01 Nov 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Fri, 20 Nov 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Plan, then let go</title>
+          <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/plan-then-execute/</link>
+          <guid>https://raskell.io/notes/plan-then-execute/</guid>
+          <description xml:base="https://raskell.io/notes/plan-then-execute/">&lt;p&gt;While working on the design of Waterfront, the game I am sketching as a successor to &lt;a href=&quot;&#x2F;notes&#x2F;orders-for-the-week&#x2F;&quot;&gt;Gangsters: Organized Crime&lt;&#x2F;a&gt;, I went looking for the name of the rhythm I loved in it: give your orders with the clock stopped, then watch the week play out and do not touch it. Wargamers call it WEGO, “we go”, as opposed to the alternating “I go, you go” of classic turns. Everyone plans in secret, everything resolves at once. &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Diplomacy_(game)&quot;&gt;Diplomacy&lt;&#x2F;a&gt; works this way on paper, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Combat_Mission&quot;&gt;Combat Mission&lt;&#x2F;a&gt; and &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Frozen_Synapse&quot;&gt;Frozen Synapse&lt;&#x2F;a&gt; on screen.&lt;&#x2F;p&gt;
+&lt;p&gt;The same shape turned up, under a different name, in the work I do during the day. In agent architectures it is called plan-then-execute, and it is the counterpart to the &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2210.03629&quot;&gt;ReAct&lt;&#x2F;a&gt; loop, where the model reasons, calls a tool, reads the result, and decides the next step, over and over. A plan-then-execute agent drafts the whole sequence of tool calls first, and then ordinary code or smaller models run it without asking the planner again.&lt;&#x2F;p&gt;
+&lt;p&gt;The three phases are the same in both worlds:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Phase&lt;&#x2F;th&gt;&lt;th&gt;In the game&lt;&#x2F;th&gt;&lt;th&gt;In the agent&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Plan&lt;&#x2F;td&gt;&lt;td&gt;the weekly order sheet: who goes where, with whom, and what to do if it goes wrong&lt;&#x2F;td&gt;&lt;td&gt;the planner writes the full graph of tool calls, with branches&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Lock in&lt;&#x2F;td&gt;&lt;td&gt;the week starts; no orders change until it ends&lt;&#x2F;td&gt;&lt;td&gt;control passes to the executor; the plan is fixed&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Execute&lt;&#x2F;td&gt;&lt;td&gt;the city runs, schedules cross, you watch&lt;&#x2F;td&gt;&lt;td&gt;the steps run; the planner sees the outcome at the end&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;The reason for the lock is different in each. In the game, the lock is where the fun comes from: you cannot rescue a bad plan mid-week, so planning carries the weight, and the week becomes a story you did not write. In the agent, the lock is a security property. &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2506.08837&quot;&gt;Design Patterns for Securing LLM Agents against Prompt Injections&lt;&#x2F;a&gt; (Beurer-Kellner and others, 2025) puts it plainly: “A prompt injection cannot force the LLM into executing a tool that is not part of the defined plan.” Untrusted text read during execution can still bend the arguments of a planned call, the paper notes, but it cannot add a new one. This year a Berkeley group went further and argued in &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2605.14290&quot;&gt;Web Agents Should Adopt the Plan-Then-Execute Paradigm&lt;&#x2F;a&gt; (Piet and others, 2026) that web agents should fix their program before reading any live page, since pages mix in text from sellers, reviewers and advertisers.&lt;&#x2F;p&gt;
+&lt;p&gt;The trade-off is also the same. Plan-then-execute suits work where the big picture matters more than the next step and where reacting to what you see is risky or expensive. It suits poorly work where you cannot know the next step until you see the result of this one. A player in Waterfront who wants to react to every event would be playing the wrong game, and an agent exploring an unknown codebase is better off in a loop.&lt;&#x2F;p&gt;
+&lt;p&gt;What I like is that the friction is the point in both. The player and the planner give up control at the moment it would be most tempting to keep it, and in exchange they get something that cannot happen while they hold on: a week that surprises you, an agent whose control flow nobody else can rewrite. I spend my days on the second and my evenings on the first, and it is a small pleasure to find they are one idea.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Luca Beurer-Kellner and others, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2506.08837&quot;&gt;Design Patterns for Securing LLM Agents against Prompt Injections&lt;&#x2F;a&gt;, arXiv:2506.08837, 2025.&lt;&#x2F;li&gt;
+&lt;li&gt;Julien Piet and others, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2605.14290&quot;&gt;Web Agents Should Adopt the Plan-Then-Execute Paradigm&lt;&#x2F;a&gt;, arXiv:2605.14290, 2026.&lt;&#x2F;li&gt;
+&lt;li&gt;Shunyu Yao and others, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2210.03629&quot;&gt;ReAct: Synergizing Reasoning and Acting in Language Models&lt;&#x2F;a&gt;, arXiv:2210.03629, 2022.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Combat_Mission&quot;&gt;Combat Mission&lt;&#x2F;a&gt;, Wikipedia.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
       <item>
           <title>Future Cop: L.A.P.D., a duel between genres</title>
           <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>

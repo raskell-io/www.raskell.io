@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-20T17:44:06+00:00",
+ "generated": "2026-11-20T18:49:59+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "article": 46,
   "review": 4,
-  "note": 37,
+  "note": 38,
   "talk": 1,
   "dataset": 1,
   "work": 167,
   "project": 32,
   "topic": 174,
-  "link": 643
+  "link": 649
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -892,6 +892,20 @@
     "compilers",
     "arcanist",
     "bhc"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Plan, then let go",
+   "url": "https://raskell.io/notes/plan-then-execute/",
+   "description": "Wargames call it WEGO, agent builders call it plan-then-execute: commit to the whole plan, lock it in, then watch it run without touching it.",
+   "date": "2026-11-20",
+   "topics": [
+    "agents",
+    "agent-harness",
+    "game-design",
+    "simulation",
+    "emergence"
    ]
   },
   {
@@ -7538,6 +7552,19 @@
   },
   {
    "kind": "link",
+   "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+   "url": "https://arxiv.org/abs/2210.03629",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "the line",
    "url": "https://arxiv.org/abs/2303.13988",
    "domain": "arxiv.org",
@@ -7694,6 +7721,19 @@
   },
   {
    "kind": "link",
+   "title": "Design Patterns for Securing LLM Agents against Prompt Injections",
+   "url": "https://arxiv.org/abs/2506.08837",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Schoen and colleagues",
    "url": "https://arxiv.org/abs/2509.15541",
    "domain": "arxiv.org",
@@ -7767,6 +7807,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Web Agents Should Adopt the Plan-Then-Execute Paradigm",
+   "url": "https://arxiv.org/abs/2605.14290",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
     }
    ]
   },
@@ -9072,6 +9125,19 @@
   },
   {
    "kind": "link",
+   "title": "Combat Mission",
+   "url": "https://en.wikipedia.org/wiki/Combat_Mission",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Command &amp; Conquer: Tiberian Sun",
    "url": "https://en.wikipedia.org/wiki/Command_%26_Conquer:_Tiberian_Sun",
    "domain": "en.wikipedia.org",
@@ -9106,6 +9172,19 @@
     {
      "title": "My GOAT games",
      "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Diplomacy",
+   "url": "https://en.wikipedia.org/wiki/Diplomacy_(game)",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
     }
    ]
   },
@@ -9236,6 +9315,19 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Frozen Synapse",
+   "url": "https://en.wikipedia.org/wiki/Frozen_Synapse",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
     }
    ]
   },
