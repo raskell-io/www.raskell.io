@@ -4,7 +4,7 @@ url: https://raskell.io/notes/harness-types-in-the-compiler/
 author: Raffael Schneider
 date: 2026-11-20
 description: "NVIDIA's NOOA makes an agent a Python object with typed contracts. A language that enforces types could make the harness a compiler primitive. An open question."
-tags: [agent-harness, type-systems, haskell, compilers]
+tags: [agent-harness, type-systems, haskell, compilers, arcanist, bhc]
 ---
 
 # Harness types in the compiler

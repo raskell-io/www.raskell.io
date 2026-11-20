@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-20T16:50:10+00:00",
+ "generated": "2026-11-20T16:58:13+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -469,7 +469,7 @@
    "url": "https://raskell.io/notes/harness-types-in-the-compiler/",
    "meta": "2026-11-20",
    "description": "NVIDIA's NOOA makes an agent a Python object with typed contracts. A language that enforces types could make the harness a compiler primitive. An open question.",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "a:/notes/the-conversation-is-the-workspace/",
@@ -895,6 +895,15 @@
    "degree": 18
   },
   {
+   "id": "t:arcanist",
+   "kind": "tag",
+   "label": "Arcanist",
+   "url": "https://raskell.io/tags/arcanist/",
+   "meta": "Technology · 1 page",
+   "description": "Haskell tooling for code that agents write: the hx package manager, the bhc compiler, and a registry that records what has been verified, at arcanist.sh.",
+   "degree": 5
+  },
+  {
    "id": "t:attention-economy",
    "kind": "tag",
    "label": "Attention economy",
@@ -920,6 +929,15 @@
    "meta": "Concept · 2 pages",
    "description": "The city this site is written from, on the Rhine where Switzerland meets France and Germany: its pharmaceutical cluster, and the thinkers who lived there, Nietzsche as a professor, Hesse as a child and a bookseller, Jung as a medical student.",
    "degree": 16
+  },
+  {
+   "id": "t:bhc",
+   "kind": "tag",
+   "label": "bhc",
+   "url": "https://raskell.io/tags/bhc/",
+   "meta": "Technology · 1 page",
+   "description": "The Basel Haskell Compiler, a clean-slate Haskell compiler written in Rust that checks everything it can, part of Arcanist.",
+   "degree": 4
   },
   {
    "id": "t:bureaucracy",
@@ -991,7 +1009,7 @@
    "url": "https://raskell.io/tags/compilers/",
    "meta": "Concept · 6 pages",
    "description": "Turning programs into other programs: parsers, interpreters, type checkers, and code generation.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:complex-systems",
@@ -1072,7 +1090,7 @@
    "url": "https://raskell.io/tags/developer-tooling/",
    "meta": "Concept · 5 pages",
    "description": "Package managers, build tools, CLIs, and the daily toolchain an engineer actually touches.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "t:distributed-systems",
@@ -1324,7 +1342,7 @@
    "url": "https://raskell.io/tags/haskell/",
    "meta": "Technology · 8 pages",
    "description": "The language that shaped how I think about types, effects, and correctness.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "t:history-of-science",
@@ -2402,7 +2420,7 @@
    "url": "https://arcanist.sh",
    "meta": "Project",
    "description": "Haskell tooling for the age of AI-authored code. hx is a fast package and project manager written in Rust, and bhc is a compiler built to check everything it can. With a registry t…",
-   "degree": 19
+   "degree": 20
   },
   {
    "id": "p:zentinel",
@@ -2429,7 +2447,7 @@
    "url": "https://arcanist.sh/bhc/",
    "meta": "Project",
    "description": "The Basel Haskell Compiler, a clean-slate compiler for the Haskell you already write. Written in Rust, it compiles to native code through LLVM and to WebAssembly, with a runtime pr…",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "p:shiioo",
@@ -4582,6 +4600,18 @@
    "target": "t:applied-security"
   },
   {
+   "source": "a:/notes/harness-types-in-the-compiler/",
+   "target": "t:arcanist"
+  },
+  {
+   "source": "t:arcanist",
+   "target": "t:haskell"
+  },
+  {
+   "source": "t:arcanist",
+   "target": "t:developer-tooling"
+  },
+  {
    "source": "a:/articles/looking-back-on-2025/",
    "target": "t:attention-economy"
   },
@@ -4648,6 +4678,18 @@
   {
    "source": "t:basel",
    "target": "t:switzerland"
+  },
+  {
+   "source": "a:/notes/harness-types-in-the-compiler/",
+   "target": "t:bhc"
+  },
+  {
+   "source": "t:bhc",
+   "target": "t:arcanist"
+  },
+  {
+   "source": "t:bhc",
+   "target": "t:compilers"
   },
   {
    "source": "a:/articles/review-empire-of-ai/",
@@ -8567,6 +8609,10 @@
   },
   {
    "source": "p:arcanist",
+   "target": "t:arcanist"
+  },
+  {
+   "source": "p:arcanist",
    "target": "t:rust"
   },
   {
@@ -8648,6 +8694,10 @@
   {
    "source": "p:bhc",
    "target": "t:haskell"
+  },
+  {
+   "source": "p:bhc",
+   "target": "t:bhc"
   },
   {
    "source": "p:bhc",

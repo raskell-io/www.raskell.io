@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Raskell - bhc</title>
+      <link>https://raskell.io</link>
+      <description>Notes on agent platforms, platform automation, edge infrastructure, and applied security. Building automation-first platforms that survive production reality.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://raskell.io/tags/bhc/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Fri, 20 Nov 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Harness types in the compiler</title>
+          <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/harness-types-in-the-compiler/</link>
+          <guid>https://raskell.io/notes/harness-types-in-the-compiler/</guid>
+          <description xml:base="https://raskell.io/notes/harness-types-in-the-compiler/">&lt;p&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;NVIDIA-NeMo&#x2F;labs-OO-Agents&quot;&gt;NOOA&lt;&#x2F;a&gt;, NVIDIA’s object-oriented agent harness, models an agent as a Python class: methods are capabilities, fields are state, docstrings are prompts and type annotations are contracts. Matt Staats walked through it at &lt;a href=&quot;&#x2F;articles&#x2F;agentic-engineering-days-zurich-2026&#x2F;&quot;&gt;Agentic Engineering Days Zurich&lt;&#x2F;a&gt;, ending on a slide that said “Zoom out: now everything is software”, the agent loop as an object with internal state, called from a deterministic application with typed tasks and typed values going in and out.&lt;&#x2F;p&gt;
+&lt;p&gt;It is the right direction, and Python is the weak point of it. A type annotation in Python is a promise the runtime checks when the call happens, if anyone checks it at all. In a language where the compiler enforces types, the contract between the application and the agent would be checked before anything runs, and the boundary in &lt;a href=&quot;&#x2F;notes&#x2F;determinism-is-what-intelligence-leaves-behind&#x2F;&quot;&gt;Determinism is what intelligence leaves behind&lt;&#x2F;a&gt; would be part of the program’s type, not a convention.&lt;&#x2F;p&gt;
+&lt;p&gt;So the thought I left with: could &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;bhc&#x2F;&quot;&gt;bhc&lt;&#x2F;a&gt; carry inference and harness bindings as a native primitive, with an agent call typed like any other effect? I do not know yet whether that is a library, a language feature or a bad idea. &lt;a href=&quot;&#x2F;articles&#x2F;almost-irrelevant&#x2F;&quot;&gt;Almost Irrelevant&lt;&#x2F;a&gt; argued that what a compiler checks is what stays valuable when agents write the code; this would be the same argument applied to the agent itself.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
