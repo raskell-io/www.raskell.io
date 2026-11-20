@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-20T16:58:13+00:00",
+ "generated": "2026-11-20T17:09:51+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
  "count": 638,
  "links": [
@@ -626,6 +626,23 @@
    "citations": 2
   },
   {
+   "url": "https://docs.exasol.com/db/latest/ai/ai_build_agents/mcp-server-as-agent-tool.htm",
+   "title": "MCP Server as an agent tool",
+   "domain": "docs.exasol.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    },
+    {
+     "title": "Data fusion belongs in the store",
+     "url": "https://raskell.io/notes/data-fusion-belongs-in-the-store/"
+    }
+   ],
+   "citations": 2
+  },
+  {
    "url": "https://docs.voidlinux.org/xbps/index.html",
    "title": "Void Linux Handbook: XBPS",
    "domain": "docs.voidlinux.org",
@@ -1085,6 +1102,23 @@
    "citations": 2
   },
   {
+   "url": "https://maggieappleton.com/zero-alignment",
+   "title": "One Developer, Two Dozen Agents, Zero Alignment",
+   "domain": "maggieappleton.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    },
+    {
+     "title": "The conversation is the workspace",
+     "url": "https://raskell.io/notes/the-conversation-is-the-workspace/"
+    }
+   ],
+   "citations": 2
+  },
+  {
    "url": "https://manabi.raskell.io",
    "title": "Manabi",
    "domain": "manabi.raskell.io",
@@ -1204,6 +1238,23 @@
    "citations": 2
   },
   {
+   "url": "https://www.agenticdays.com/session/1368894-beyond-mcp-supercharging-your-agents-with-a-single-unified",
+   "title": "Beyond MCP: Supercharging your agents with a single unified data plane",
+   "domain": "agenticdays.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    },
+    {
+     "title": "Data fusion belongs in the store",
+     "url": "https://raskell.io/notes/data-fusion-belongs-in-the-store/"
+    }
+   ],
+   "citations": 2
+  },
+  {
    "url": "https://www.anthropic.com/news/claude-opus-4-5",
    "title": "Introducing Claude Opus 4.5",
    "domain": "anthropic.com",
@@ -1233,6 +1284,23 @@
     {
      "title": "The River and the Canal",
      "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    }
+   ],
+   "citations": 2
+  },
+  {
+   "url": "https://www.exasol.com/",
+   "title": "Exasol",
+   "domain": "exasol.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    },
+    {
+     "title": "Data fusion belongs in the store",
+     "url": "https://raskell.io/notes/data-fusion-belongs-in-the-store/"
     }
    ],
    "citations": 2
@@ -1658,6 +1726,23 @@
     {
      "title": "How I Work These Days",
      "url": "https://raskell.io/articles/how-i-work-these-days/"
+    }
+   ],
+   "citations": 2
+  },
+  {
+   "url": "https://zed.dev/blog/introducing-delta",
+   "title": "Introducing Delta",
+   "domain": "zed.dev",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    },
+    {
+     "title": "The conversation is the workspace",
+     "url": "https://raskell.io/notes/the-conversation-is-the-workspace/"
     }
    ],
    "citations": 2
@@ -3053,19 +3138,6 @@
     {
      "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
      "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
-    }
-   ],
-   "citations": 1
-  },
-  {
-   "url": "https://docs.exasol.com/db/latest/ai/ai_build_agents/mcp-server-as-agent-tool.htm",
-   "title": "MCP Server as an agent tool",
-   "domain": "docs.exasol.com",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
-     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
     }
    ],
    "citations": 1
@@ -5827,19 +5899,6 @@
    "citations": 1
   },
   {
-   "url": "https://maggieappleton.com/zero-alignment",
-   "title": "One Developer, Two Dozen Agents, Zero Alignment",
-   "domain": "maggieappleton.com",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
-     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
-    }
-   ],
-   "citations": 1
-  },
-  {
    "url": "https://man.openbsd.org/pledge.2",
    "title": "pledge(2)",
    "domain": "man.openbsd.org",
@@ -7257,19 +7316,6 @@
    "citations": 1
   },
   {
-   "url": "https://www.agenticdays.com/session/1368894-beyond-mcp-supercharging-your-agents-with-a-single-unified",
-   "title": "Beyond MCP: Supercharging your agents with a single unified data plane",
-   "domain": "agenticdays.com",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
-     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
-    }
-   ],
-   "citations": 1
-  },
-  {
    "url": "https://www.agenticdays.com/sessions",
    "title": "Agentic Engineering Days Zurich 2026, programme",
    "domain": "agenticdays.com",
@@ -7811,19 +7857,6 @@
     {
      "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
      "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
-    }
-   ],
-   "citations": 1
-  },
-  {
-   "url": "https://www.exasol.com/",
-   "title": "Exasol",
-   "domain": "exasol.com",
-   "reference": false,
-   "cited_in": [
-    {
-     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
-     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
     }
    ],
    "citations": 1
@@ -8760,19 +8793,6 @@
     {
      "title": "Edge Systems Are the New Backend",
      "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
-    }
-   ],
-   "citations": 1
-  },
-  {
-   "url": "https://zed.dev/blog/introducing-delta",
-   "title": "Introducing Delta",
-   "domain": "zed.dev",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
-     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
     }
    ],
    "citations": 1
