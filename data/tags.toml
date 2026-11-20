@@ -994,3 +994,27 @@ name = "Olfaction"
 kind = "concept"
 description = "Smell and taste as senses: how noses and brains recognise mixtures of molecules, and how far machines are from reading and writing them."
 broader = ["neuroscience", "life-sciences"]
+
+[agent-harness]
+name = "Agent harness"
+kind = "concept"
+description = "The software around a model that turns it into an agent: the loop, the action surface, typed contracts, state, and how much of it is ordinary code."
+broader = ["agents", "type-systems"]
+
+[agent-protocols]
+name = "Agent protocols"
+kind = "concept"
+description = "The agreements at each boundary of an agent, MCP for tools, A2A for other agents, and the smaller ones for users, editors and traces, and what each makes replaceable."
+broader = ["agents", "open-standards"]
+
+[data-fusion]
+name = "Data fusion"
+kind = "concept"
+description = "Giving data from many sources one shared meaning, one customer, one revenue figure, and the question of which layer should do that work."
+broader = ["context-engineering", "enterprise-architecture"]
+
+[multiplayer-work]
+name = "Multiplayer work"
+kind = "concept"
+description = "People and agents working in one shared, live space, where the conversation and the decisions and artifacts it produces live together."
+broader = ["future-of-work", "interfaces"]

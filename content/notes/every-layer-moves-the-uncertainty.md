@@ -1,7 +1,6 @@
 +++
 title = "Every layer moves the uncertainty"
 date = 2026-11-11
-draft = true
 description = "Each new layer in computing makes one thing predictable and pushes the uncertainty somewhere else. The useful question about a new layer is where it went."
 
 [taxonomies]

@@ -681,3 +681,19 @@ description = "关于 raskell.io 本身的文章：它为何存在、如何构�
 [olfaction]
 name = "嗅觉"
 description = "作为感官的嗅觉与味觉：鼻子和大脑如何识别分子的混合物，以及机器离读取和写出它们还有多远。"
+
+[agent-harness]
+name = "智能体框架"
+description = "把模型变成智能体的那层软件：循环、行动界面、类型化契约、状态，以及其中有多少只是普通代码。"
+
+[agent-protocols]
+name = "智能体协议"
+description = "智能体每条边界上的约定：工具用 MCP，其他智能体用 A2A，还有面向用户、编辑器和追踪的较小协议，以及每一种让什么变得可替换。"
+
+[data-fusion]
+name = "数据融合"
+description = "让来自多个来源的数据拥有同一个含义，同一个客户，同一个收入数字，以及应该由哪一层来完成这项工作。"
+
+[multiplayer-work]
+name = "多人协作"
+description = "人和智能体在同一个共享的实时空间里工作，对话与它产生的决定和成果放在一起。"

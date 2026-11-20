@@ -1,7 +1,6 @@
 +++
 title = "Context is cheaper than exploration"
 date = 2026-11-03
-draft = true
 description = "An agent without context explores, and every agent pays for the same exploration again. Computing a fact once for every agent is a cache for a company."
 
 [taxonomies]
