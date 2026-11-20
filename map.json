@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-20T17:40:31+00:00",
+ "generated": "2026-11-20T17:42:43+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -454,6 +454,15 @@
    "degree": 4
   },
   {
+   "id": "a:/notes/testing-deltadb/",
+   "kind": "note",
+   "label": "Testing DeltaDB",
+   "url": "https://raskell.io/notes/testing-deltadb/",
+   "meta": "2026-11-21",
+   "description": "Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?",
+   "degree": 5
+  },
+  {
    "id": "a:/notes/data-fusion-belongs-in-the-store/",
    "kind": "note",
    "label": "Data fusion belongs in the store",
@@ -478,7 +487,7 @@
    "url": "https://raskell.io/notes/the-conversation-is-the-workspace/",
    "meta": "2026-11-20",
    "description": "Work is moving into shared conversations between several people and several agents, with the decisions and artifacts living inside the conversation.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "a:/notes/the-simplest-protocol-wins/",
@@ -845,9 +854,9 @@
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 26 pages",
+   "meta": "Concept · 27 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 38
+   "degree": 39
   },
   {
    "id": "t:ai-alignment",
@@ -1088,9 +1097,9 @@
    "kind": "tag",
    "label": "Developer tooling",
    "url": "https://raskell.io/tags/developer-tooling/",
-   "meta": "Concept · 5 pages",
+   "meta": "Concept · 6 pages",
    "description": "Package managers, build tools, CLIs, and the daily toolchain an engineer actually touches.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "t:distributed-systems",
@@ -1583,9 +1592,9 @@
    "kind": "tag",
    "label": "Multiplayer work",
    "url": "https://raskell.io/tags/multiplayer-work/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "People and agents working in one shared, live space, where the conversation and the decisions and artifacts it produces live together.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:neural-networks",
@@ -1763,9 +1772,9 @@
    "kind": "tag",
    "label": "Provenance",
    "url": "https://raskell.io/tags/provenance/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "Where something came from and who vouches for it: signed media, rights-clear training data, and artifacts that carry their own history.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:psychology",
@@ -4364,6 +4373,10 @@
    "target": "t:open-standards"
   },
   {
+   "source": "a:/notes/testing-deltadb/",
+   "target": "t:agents"
+  },
+  {
    "source": "a:/articles/agentic-engineering-days-zurich-2026/",
    "target": "t:agents"
   },
@@ -5014,6 +5027,10 @@
   {
    "source": "t:determinism",
    "target": "t:philosophy"
+  },
+  {
+   "source": "a:/notes/testing-deltadb/",
+   "target": "t:developer-tooling"
   },
   {
    "source": "a:/articles/traffic-replay-as-a-security-primitive/",
@@ -6064,6 +6081,10 @@
    "target": "t:philosophy"
   },
   {
+   "source": "a:/notes/testing-deltadb/",
+   "target": "t:multiplayer-work"
+  },
+  {
    "source": "a:/articles/agentic-engineering-days-zurich-2026/",
    "target": "t:multiplayer-work"
   },
@@ -6350,6 +6371,10 @@
   {
    "source": "t:programming-languages",
    "target": "t:linguistics"
+  },
+  {
+   "source": "a:/notes/testing-deltadb/",
+   "target": "t:provenance"
   },
   {
    "source": "a:/articles/building-it-intelligence/",
@@ -7842,6 +7867,10 @@
   {
    "source": "a:/articles/all-beginning-is-haskell/",
    "target": "a:/articles/mise-ate-my-makefile/"
+  },
+  {
+   "source": "a:/notes/testing-deltadb/",
+   "target": "a:/notes/the-conversation-is-the-workspace/"
   },
   {
    "source": "a:/notes/data-fusion-belongs-in-the-store/",

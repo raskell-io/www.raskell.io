@@ -114,6 +114,7 @@ Datasets, listed at https://raskell.io/data/. Each is one file under https://ras
 
 Short notes, a paragraph or a page each; some grow into articles.
 
+- [Testing DeltaDB](https://raskell.io/notes/testing-deltadb.md) (2026-11-21): Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?
 - [The simplest protocol that reduces the most uncertainty wins](https://raskell.io/notes/the-simplest-protocol-wins.md) (2026-11-20): A lens from a talk on agent protocols: judge a standard by how many decisions it removes from your application, and ask what it makes replaceable.
 - [Harness types in the compiler](https://raskell.io/notes/harness-types-in-the-compiler.md) (2026-11-20): NVIDIA's NOOA makes an agent a Python object with typed contracts. A language that enforces types could make the harness a compiler primitive. An open question.
 - [The conversation is the workspace](https://raskell.io/notes/the-conversation-is-the-workspace.md) (2026-11-20): Work is moving into shared conversations between several people and several agents, with the decisions and artifacts living inside the conversation.
@@ -339,7 +340,7 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ## Sources cited most
 
-External links cited on more than one page (all 616 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
+External links cited on more than one page (all 621 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
 
 - [Zentinel](https://zentinelproxy.io/): cited on 13 pages
 - [Archipelag.io](https://archipelag.io): cited on 9 pages
@@ -358,9 +359,9 @@ External links cited on more than one page (all 616 are searchable at https://ra
 - [Vera](https://veralang.dev/): cited on 3 pages
 - [Void Linux](https://voidlinux.org/): cited on 3 pages
 - [Unison](https://www.unison-lang.org/): cited on 3 pages
+- [DeltaDB](https://zed.dev/blog/introducing-deltadb): cited on 3 pages
 - [catalogue of languages built for agents to write](https://agentlanguages.dev): cited on 2 pages
 - [hx](https://arcanist.sh/hx/): cited on 2 pages
-- [arcanist.sh](https://arcanist.sh/manifesto/): cited on 2 pages
 
 ## Topics
 

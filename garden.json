@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-20T17:40:31+00:00",
+ "generated": "2026-11-20T17:42:43+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "article": 46,
   "review": 4,
-  "note": 36,
+  "note": 37,
   "talk": 1,
   "dataset": 1,
   "work": 167,
   "project": 32,
   "topic": 174,
-  "link": 638
+  "link": 643
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -865,6 +865,19 @@
     "open-web"
    ],
    "meta": "1 min"
+  },
+  {
+   "kind": "note",
+   "title": "Testing DeltaDB",
+   "url": "https://raskell.io/notes/testing-deltadb/",
+   "description": "Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?",
+   "date": "2026-11-21",
+   "topics": [
+    "multiplayer-work",
+    "provenance",
+    "developer-tooling",
+    "agents"
+   ]
   },
   {
    "kind": "note",
@@ -5856,6 +5869,27 @@
   },
   {
    "kind": "link",
+   "title": "Software Is Made Between Commits",
+   "url": "https://zed.dev/blog/introducing-deltadb",
+   "domain": "zed.dev",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    },
+    {
+     "title": "Testing DeltaDB",
+     "url": "https://raskell.io/notes/testing-deltadb/"
+    },
+    {
+     "title": "The conversation is the workspace",
+     "url": "https://raskell.io/notes/the-conversation-is-the-workspace/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "catalogue of languages built for agents to write",
    "url": "https://agentlanguages.dev",
    "domain": "agentlanguages.dev",
@@ -7114,23 +7148,6 @@
   },
   {
    "kind": "link",
-   "title": "Software Is Made Between Commits",
-   "url": "https://zed.dev/blog/introducing-deltadb",
-   "domain": "zed.dev",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
-     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
-    },
-    {
-     "title": "The conversation is the workspace",
-     "url": "https://raskell.io/notes/the-conversation-is-the-workspace/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
    "title": "prize.hutter1.net",
    "url": "http://prize.hutter1.net/",
    "domain": "prize.hutter1.net",
@@ -8296,6 +8313,58 @@
     {
      "title": "IT Intelligence: The Missing Data Layer of Enterprise IT",
      "url": "https://raskell.io/articles/it-intelligence/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Delta",
+   "url": "https://delta.dev",
+   "domain": "delta.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Testing DeltaDB",
+     "url": "https://raskell.io/notes/testing-deltadb/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Claude Agent in Delta",
+   "url": "https://delta.dev/blog/claude-agent-in-delta",
+   "domain": "delta.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Testing DeltaDB",
+     "url": "https://raskell.io/notes/testing-deltadb/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Delta CLI",
+   "url": "https://delta.dev/cli",
+   "domain": "delta.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Testing DeltaDB",
+     "url": "https://raskell.io/notes/testing-deltadb/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Delta app",
+   "url": "https://delta.dev/download",
+   "domain": "delta.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Testing DeltaDB",
+     "url": "https://raskell.io/notes/testing-deltadb/"
     }
    ]
   },
@@ -14159,6 +14228,19 @@
     {
      "title": "Edge Systems Are the New Backend",
      "url": "https://raskell.io/articles/edge-systems-are-the-new-backend/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Replace PRs with Delta",
+   "url": "https://zed.dev/blog/delta-public-beta",
+   "domain": "zed.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Testing DeltaDB",
+     "url": "https://raskell.io/notes/testing-deltadb/"
     }
    ]
   },
