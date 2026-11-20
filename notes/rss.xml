@@ -7,7 +7,50 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/notes/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Sun, 15 Nov 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Fri, 20 Nov 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Data fusion belongs in the store</title>
+          <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/data-fusion-belongs-in-the-store/</link>
+          <guid>https://raskell.io/notes/data-fusion-belongs-in-the-store/</guid>
+          <description xml:base="https://raskell.io/notes/data-fusion-belongs-in-the-store/">&lt;p&gt;One slide at &lt;a href=&quot;&#x2F;articles&#x2F;agentic-engineering-days-zurich-2026&#x2F;&quot;&gt;Agentic Engineering Days Zurich&lt;&#x2F;a&gt; listed “Seven costs of separate data MCP servers”: context overhead, multiple roundtrips, high token cost, cross-source joins, separate compute, fragmented caching and inconsistent semantics. Under the list, in green: “The agent carries the integration burden.” The talk was Alexander Stigsen’s for Exasol, a sponsored slot, and the answer it sold was one MCP interface over a federated database, with a semantic layer that maps &lt;code&gt;account_id&lt;&#x2F;code&gt; in the CRM and &lt;code&gt;customer_ref&lt;&#x2F;code&gt; in billing to one customer.&lt;&#x2F;p&gt;
+&lt;p&gt;I knew data fusion as an idea. What I had not considered is putting it inside the persistence layer, so that the store does the joining and the reconciling, and the agent asks for a customer instead of for three rows it then has to agree on. It is the same argument as &lt;a href=&quot;&#x2F;notes&#x2F;context-is-cheaper-than-exploration&#x2F;&quot;&gt;Context is cheaper than exploration&lt;&#x2F;a&gt;, one layer lower: a meaning computed once in the store is a meaning no agent has to work out again.&lt;&#x2F;p&gt;
+&lt;p&gt;The pattern in &lt;a href=&quot;&#x2F;articles&#x2F;building-it-intelligence&#x2F;&quot;&gt;Building IT Intelligence&lt;&#x2F;a&gt; does that fusion today in its own pipeline, on PostgreSQL, with identity resolution as a workflow step. The open question for me is whether a database that fuses at query time can replace part of that pipeline, or only moves the same work into a product I do not control. I will test it against the reference implementation before I believe either answer.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Harness types in the compiler</title>
+          <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/harness-types-in-the-compiler/</link>
+          <guid>https://raskell.io/notes/harness-types-in-the-compiler/</guid>
+          <description xml:base="https://raskell.io/notes/harness-types-in-the-compiler/">&lt;p&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;NVIDIA-NeMo&#x2F;labs-OO-Agents&quot;&gt;NOOA&lt;&#x2F;a&gt;, NVIDIA’s object-oriented agent harness, models an agent as a Python class: methods are capabilities, fields are state, docstrings are prompts and type annotations are contracts. Matt Staats walked through it at &lt;a href=&quot;&#x2F;articles&#x2F;agentic-engineering-days-zurich-2026&#x2F;&quot;&gt;Agentic Engineering Days Zurich&lt;&#x2F;a&gt;, ending on a slide that said “Zoom out: now everything is software”, the agent loop as an object with internal state, called from a deterministic application with typed tasks and typed values going in and out.&lt;&#x2F;p&gt;
+&lt;p&gt;It is the right direction, and Python is the weak point of it. A type annotation in Python is a promise the runtime checks when the call happens, if anyone checks it at all. In a language where the compiler enforces types, the contract between the application and the agent would be checked before anything runs, and the boundary in &lt;a href=&quot;&#x2F;notes&#x2F;determinism-is-what-intelligence-leaves-behind&#x2F;&quot;&gt;Determinism is what intelligence leaves behind&lt;&#x2F;a&gt; would be part of the program’s type, not a convention.&lt;&#x2F;p&gt;
+&lt;p&gt;So the thought I left with: could &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arcanist.sh&#x2F;bhc&#x2F;&quot;&gt;bhc&lt;&#x2F;a&gt; carry inference and harness bindings as a native primitive, with an agent call typed like any other effect? I do not know yet whether that is a library, a language feature or a bad idea. &lt;a href=&quot;&#x2F;articles&#x2F;almost-irrelevant&#x2F;&quot;&gt;Almost Irrelevant&lt;&#x2F;a&gt; argued that what a compiler checks is what stays valuable when agents write the code; this would be the same argument applied to the agent itself.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>The conversation is the workspace</title>
+          <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/the-conversation-is-the-workspace/</link>
+          <guid>https://raskell.io/notes/the-conversation-is-the-workspace/</guid>
+          <description xml:base="https://raskell.io/notes/the-conversation-is-the-workspace/">&lt;p&gt;Agentic engineering has been one person and their agents. Krzysztof Cieślak of GitHub Next showed the other version at &lt;a href=&quot;&#x2F;articles&#x2F;agentic-engineering-days-zurich-2026&#x2F;&quot;&gt;Agentic Engineering Days Zurich&lt;&#x2F;a&gt;: Ace, a multiplayer workspace where a team shares a chat, its agents and their microVMs, and &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;githubnext.com&#x2F;projects&#x2F;chopin&#x2F;&quot;&gt;Chopin&lt;&#x2F;a&gt;, its successor, where coworkers and agents write a plan together around a repository.&lt;&#x2F;p&gt;
+&lt;p&gt;I think this is where work goes. Not one person prompting one agent and pasting the result into a document, but a conversation with several people and several agents in it, where the decisions, the designs and the code are produced inside the conversation and stay attached to it. The artifact keeps the argument that made it.&lt;&#x2F;p&gt;
+&lt;p&gt;Zed got there early from the editor side. &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;zed.dev&#x2F;blog&#x2F;introducing-deltadb&quot;&gt;DeltaDB&lt;&#x2F;a&gt; records every edit between commits and ties each change to the agent conversation that produced it, on top of an editor that was multiplayer before agents were a topic. They came ahead of their time and lost some momentum; I am still rooting for them. &lt;a href=&quot;&#x2F;notes&#x2F;the-agent-factory&#x2F;&quot;&gt;The agent factory&lt;&#x2F;a&gt; is the execution side of the same picture; this is the deciding side.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>The simplest protocol that reduces the most uncertainty wins</title>
+          <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/the-simplest-protocol-wins/</link>
+          <guid>https://raskell.io/notes/the-simplest-protocol-wins/</guid>
+          <description xml:base="https://raskell.io/notes/the-simplest-protocol-wins/">&lt;p&gt;Stefano Maestri and Alessio Soldano, who work on the protocols themselves (Maestri sits on the A2A Technical Steering Committee), gave their talk at &lt;a href=&quot;&#x2F;articles&#x2F;agentic-engineering-days-zurich-2026&#x2F;&quot;&gt;Agentic Engineering Days Zurich&lt;&#x2F;a&gt; one lens: “The simplest protocol that reduces the most uncertainty wins.” Their map put an agreement at each boundary of an agent: Open Responses for models, MCP for capabilities, A2A for other agents, AG-UI and A2UI for users, AGENTS.md, Skills and Plugins for knowledge, OpenTelemetry GenAI for operations, ACP for the editor, x402 for payments. The question under the map was “What do you want to make replaceable?”&lt;&#x2F;p&gt;
+&lt;p&gt;The lens fits &lt;a href=&quot;&#x2F;notes&#x2F;every-layer-moves-the-uncertainty&#x2F;&quot;&gt;Every layer moves the uncertainty&lt;&#x2F;a&gt; closely. A protocol is a layer whose whole job is to make one boundary predictable, so the useful question is the same: which decisions disappear from my application, and where does the uncertainty go instead. The &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;maeste.it&#x2F;agents-speak-protocol-aed&#x2F;&quot;&gt;deck&lt;&#x2F;a&gt; answers with history, CORBA against REST and SOAP against JSON, and its smallest line was the one I kept: “Opening a channel is not the agreement.”&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>Memory that dreams</title>
           <pubDate>Sun, 15 Nov 2026 00:00:00 +0000</pubDate>
@@ -228,6 +271,26 @@
 </description>
       </item>
       <item>
+          <title>Every layer moves the uncertainty</title>
+          <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/every-layer-moves-the-uncertainty/</link>
+          <guid>https://raskell.io/notes/every-layer-moves-the-uncertainty/</guid>
+          <description xml:base="https://raskell.io/notes/every-layer-moves-the-uncertainty/">&lt;p&gt;Every layer I have worked with in computing made one thing predictable so that the people above it could stop thinking about it. The function call made control flow predictable, microservices made ownership predictable, Kubernetes made placement predictable, workflow engines made the order and history of a process predictable. None of them removed uncertainty. Each one moved it: into interfaces, into the network, into reconciliation loops, into step bodies that may run twice. The table in &lt;a href=&quot;&#x2F;articles&#x2F;the-river-and-the-canal&#x2F;&quot;&gt;The River and the Canal&lt;&#x2F;a&gt; follows the move layer by layer, and &lt;a href=&quot;&#x2F;articles&#x2F;semantic-artifacts-and-meaning-engines&#x2F;&quot;&gt;Source Code Is the New Assembly&lt;&#x2F;a&gt; follows it down through programming languages.&lt;&#x2F;p&gt;
+&lt;p&gt;So the first question I ask about any new layer is where the uncertainty went. For most layers the answer is somewhere you can see and engineer: a network you can trace, a journal you can replay. For agent runtimes the answer is into the model, which is the one place nobody can inspect. That does not make agents a bad layer. It makes them the first layer where the uncertainty went somewhere invisible, and it is why I want something deterministic and readable on either side of them.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>Determinism is what intelligence leaves behind</title>
+          <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/determinism-is-what-intelligence-leaves-behind/</link>
+          <guid>https://raskell.io/notes/determinism-is-what-intelligence-leaves-behind/</guid>
+          <description xml:base="https://raskell.io/notes/determinism-is-what-intelligence-leaves-behind/">&lt;p&gt;The longer I think about agents and workflows, the less they look like rivals. An agent is how you find a path through terrain nobody has mapped. A deterministic procedure is how you keep that path once you know it will be walked again. Intelligence explores; determinism is the residue it leaves behind, the part worth not thinking about any more. Organisations have always worked this way with people, turning what capable employees improvised into routines wherever the work repeated, and &lt;a href=&quot;&#x2F;articles&#x2F;the-river-and-the-canal&#x2F;&quot;&gt;The River and the Canal&lt;&#x2F;a&gt; argues that agents simply make the exploring half cheap.&lt;&#x2F;p&gt;
+&lt;p&gt;That moves the interesting decision. It is not whether to use an agent or a workflow for a process, but when a path has been found often enough, with stakes high enough, that it should stop being rediscovered every time. It is the same question as the one in The job is choosing when to be deterministic, asked one level up: there it was which part of a context should move from model calls into code; here it is which part of a company’s work should move from agents into procedures. I expect to keep asking it at every scale I work on.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
           <title>One person can make a difference</title>
           <pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
           <author>Unknown</author>
@@ -327,6 +390,16 @@
 &lt;li&gt;How fast does know-how actually diffuse, and what slows it down: patents, secrecy, scale, compute?&lt;&#x2F;li&gt;
 &lt;li&gt;What remains scarce when production is cheap, and who should own it?&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
+</description>
+      </item>
+      <item>
+          <title>Context is cheaper than exploration</title>
+          <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/context-is-cheaper-than-exploration/</link>
+          <guid>https://raskell.io/notes/context-is-cheaper-than-exploration/</guid>
+          <description xml:base="https://raskell.io/notes/context-is-cheaper-than-exploration/">&lt;p&gt;An agent that does not know something does not stop. It explores: searches, reads, greps, queries, and reasons over whatever it found, paying for every token of it, and paying again on every turn after. Then the next agent asks the same question and pays for the same exploration from scratch. In &lt;a href=&quot;&#x2F;articles&#x2F;it-intelligence&#x2F;&quot;&gt;IT Intelligence&lt;&#x2F;a&gt; I estimated that a thousand engineers asking twenty such questions a day spend billions of tokens rediscovering the same facts. The numbers were illustrative; the shape is not.&lt;&#x2F;p&gt;
+&lt;p&gt;The fix is the oldest trick in computing applied to what a company knows about itself: compute once, read many. A context platform, a well-kept repository of decisions, a typed catalogue of services, anything that lets an agent look up instead of search, is a cache for the organisation. It makes agents cheaper, as I argued for inference generally in &lt;a href=&quot;&#x2F;articles&#x2F;the-economics-of-inference&#x2F;&quot;&gt;The Economics of Inference&lt;&#x2F;a&gt;, and it makes them better, because the window they do not spend on searching is spent on the task. I expect this to matter more every year, because the number of agents asking grows much faster than the number of facts worth knowing.&lt;&#x2F;p&gt;
 </description>
       </item>
       <item>
@@ -759,6 +832,22 @@
 </description>
       </item>
       <item>
+          <title>Strategic forgetting</title>
+          <pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/strategic-forgetting/</link>
+          <guid>https://raskell.io/notes/strategic-forgetting/</guid>
+          <description xml:base="https://raskell.io/notes/strategic-forgetting/">&lt;p&gt;Breunig’s prediction for next year’s problem comes from running a personal agent for six months and watching its memory. The skills it writes for itself accumulate odd fixes; it solves one task one way and later rediscovers a different way for a similar task; the instructions and memories build up and begin to conflict. Very few people have run one of these harnesses long enough to see it, and he thinks it is the context problem of tomorrow: as the field leans on memory, it has to learn strategic forgetting, and nobody has.&lt;&#x2F;p&gt;
+&lt;p&gt;The Hacker News thread had the sharpest line on the mechanism: old facts in a memory do not get deleted, they get contradicted, and the model picks whichever version is nearer in the prompt. One commenter answered with the Zettelkasten, append-only notes with periodic gardening to consolidate them, and said agents have a lot still to borrow from it; another runs a small ticket system where every finished task writes back what the next one should know. A third pointed to the view that imperfect human memory is adaptive rather than a defect, and that a machine with perfect recall of its own history may be worse at thinking for it.&lt;&#x2F;p&gt;
+&lt;p&gt;This is the problem the enterprise context warehouse is designed around without saying so: read-mostly, provenance on every record, and the agent’s own learnings kept apart from the company’s record, in a pod of their own, where forgetting can be a policy rather than an accident. For my own notes the lesson is older. This site’s notes are my gardening; the private notes app is where the contradictions accumulate.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Drew Breunig, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.dbreunig.com&#x2F;2026&#x2F;10&#x2F;24&#x2F;the-state-of-context-engineering.html&quot;&gt;The State of Context Engineering&lt;&#x2F;a&gt; (24 October 2026).&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=50235780&quot;&gt;Hacker News discussion&lt;&#x2F;a&gt; of the talk.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
+      <item>
           <title>A capability, democratised</title>
           <pubDate>Sun, 25 Oct 2026 00:00:00 +0000</pubDate>
           <author>Unknown</author>
@@ -796,6 +885,22 @@
           <guid>https://raskell.io/notes/power-in-the-good-sense/</guid>
           <description xml:base="https://raskell.io/notes/power-in-the-good-sense/">&lt;p&gt;The word I have settled on for the feeling in &lt;a href=&quot;&#x2F;notes&#x2F;ideas-stop-waiting&#x2F;&quot;&gt;ideas stop waiting&lt;&#x2F;a&gt; is power. Not in the sense the word usually carries, power over someone, but in the plain sense: being capable of doing something, having possibilities, having a moat of your own. Through the AI services anyone can subscribe to, we became powerful.&lt;&#x2F;p&gt;
 &lt;p&gt;It is an uncomfortable choice of word at first, and the longer I sit with it the more I like it. We have trained ourselves to hear power only as hierarchy, and to look for a victim in every arrangement that has some. This is a kind of power nobody took from anyone. It was not redistributed; it was created, and handed out to whoever cared to learn it. Capability is power, and it is a relief to say so without apology. It is the capability of one person directing many hands, which is what &lt;a href=&quot;&#x2F;articles&#x2F;what-sixteen-ai-agents-taught-me-about-management&#x2F;&quot;&gt;sixteen agents under one manager&lt;&#x2F;a&gt; turned out to be about. What makes it more than a personal feeling is that the capability is &lt;a href=&quot;&#x2F;notes&#x2F;a-capability-democratised&#x2F;&quot;&gt;democratised&lt;&#x2F;a&gt;, which is where the interesting consequences start.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>The agent factory</title>
+          <pubDate>Sun, 25 Oct 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/the-agent-factory/</link>
+          <guid>https://raskell.io/notes/the-agent-factory/</guid>
+          <description xml:base="https://raskell.io/notes/the-agent-factory/">&lt;p&gt;The execution half of the loop is a factory: a fleet of coding agents, Claude Code instances in the version we discussed, each on a secure runtime, a microVM that lives for one task and keeps no state except what the repositories and the warehouse hold, orchestrated the way a remote team is orchestrated, through tickets, branches and reviews, and working in the same tickets and pull requests as the employees. Not a tool employees call; colleagues employees work with. That is the new work style, and it changes management more than it changes tooling. &lt;a href=&quot;&#x2F;articles&#x2F;what-sixteen-ai-agents-taught-me-about-management&#x2F;&quot;&gt;What Sixteen AI Agents Taught Me About Management&lt;&#x2F;a&gt; is the small-scale version of the same lesson.&lt;&#x2F;p&gt;
+&lt;p&gt;Three things the factory cannot do without. The warehouse is its library; a factory without context produces plausible changes nobody can accept, and the tools it calls are the ones from &lt;a href=&quot;&#x2F;articles&#x2F;tools-how-agents-actually-do-things&#x2F;&quot;&gt;Tools: How Agents Actually Do Things&lt;&#x2F;a&gt;, run inside the sandbox rather than on someone’s laptop. The runtime can be the company’s own metal, which is cheaper than it was, as in &lt;a href=&quot;&#x2F;articles&#x2F;how-ai-makes-bare-metal-viable-again&#x2F;&quot;&gt;How AI Makes Bare Metal Viable Again&lt;&#x2F;a&gt;. The risk gate is its exit; the factory must not be able to deploy what nobody scored. And a budget, because a factory paid per token has a bill, and as I argued in &lt;a href=&quot;&#x2F;articles&#x2F;the-bill-is-part-of-the-loop&#x2F;&quot;&gt;The Bill Is Part of the Loop&lt;&#x2F;a&gt;, the bill belongs inside the control loop rather than in next month’s invoice.&lt;&#x2F;p&gt;
+&lt;p&gt;The agents in it also need to be someone. That is the last note: agents are their own principals.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;firecracker-microvm.github.io&#x2F;&quot;&gt;Firecracker&lt;&#x2F;a&gt;: the microVM runtime the secure runtime is modelled on.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;code.claude.com&#x2F;docs&#x2F;en&#x2F;overview&quot;&gt;Claude Code&lt;&#x2F;a&gt;: the coding agent in question.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </description>
       </item>
       <item>

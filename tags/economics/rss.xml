@@ -7,7 +7,17 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/economics/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Fri, 30 Oct 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Tue, 03 Nov 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Context is cheaper than exploration</title>
+          <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/context-is-cheaper-than-exploration/</link>
+          <guid>https://raskell.io/notes/context-is-cheaper-than-exploration/</guid>
+          <description xml:base="https://raskell.io/notes/context-is-cheaper-than-exploration/">&lt;p&gt;An agent that does not know something does not stop. It explores: searches, reads, greps, queries, and reasons over whatever it found, paying for every token of it, and paying again on every turn after. Then the next agent asks the same question and pays for the same exploration from scratch. In &lt;a href=&quot;&#x2F;articles&#x2F;it-intelligence&#x2F;&quot;&gt;IT Intelligence&lt;&#x2F;a&gt; I estimated that a thousand engineers asking twenty such questions a day spend billions of tokens rediscovering the same facts. The numbers were illustrative; the shape is not.&lt;&#x2F;p&gt;
+&lt;p&gt;The fix is the oldest trick in computing applied to what a company knows about itself: compute once, read many. A context platform, a well-kept repository of decisions, a typed catalogue of services, anything that lets an agent look up instead of search, is a cache for the organisation. It makes agents cheaper, as I argued for inference generally in &lt;a href=&quot;&#x2F;articles&#x2F;the-economics-of-inference&#x2F;&quot;&gt;The Economics of Inference&lt;&#x2F;a&gt;, and it makes them better, because the window they do not spend on searching is spent on the task. I expect this to matter more every year, because the number of agents asking grows much faster than the number of facts worth knowing.&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>Shiioo, Re-imagined, and the Home AI Lab It Runs On</title>
           <pubDate>Fri, 30 Oct 2026 00:00:00 +0000</pubDate>
@@ -157,6 +167,22 @@
 &lt;li&gt;NVIDIA, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;docs.nvidia.com&#x2F;dgx&#x2F;dgx-spark&#x2F;hardware.html&quot;&gt;DGX Spark hardware overview&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;StorageReview, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.storagereview.com&#x2F;news&#x2F;nvidia-dgx-spark-64gb-october-23-4999-two-units-cluster-to-128gb&quot;&gt;NVIDIA DGX Spark 64GB, October 23, $4,999&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;AI Weekly, relaying Tom’s Hardware, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;aiweekly.co&#x2F;alerts&#x2F;nvidia-launches-64gb-dgx-spark-at-4999-as-128gb-hits-6950&quot;&gt;Nvidia launches 64GB DGX Spark at $4,999 as 128GB hits $6,950&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+      </item>
+      <item>
+          <title>The agent factory</title>
+          <pubDate>Sun, 25 Oct 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/the-agent-factory/</link>
+          <guid>https://raskell.io/notes/the-agent-factory/</guid>
+          <description xml:base="https://raskell.io/notes/the-agent-factory/">&lt;p&gt;The execution half of the loop is a factory: a fleet of coding agents, Claude Code instances in the version we discussed, each on a secure runtime, a microVM that lives for one task and keeps no state except what the repositories and the warehouse hold, orchestrated the way a remote team is orchestrated, through tickets, branches and reviews, and working in the same tickets and pull requests as the employees. Not a tool employees call; colleagues employees work with. That is the new work style, and it changes management more than it changes tooling. &lt;a href=&quot;&#x2F;articles&#x2F;what-sixteen-ai-agents-taught-me-about-management&#x2F;&quot;&gt;What Sixteen AI Agents Taught Me About Management&lt;&#x2F;a&gt; is the small-scale version of the same lesson.&lt;&#x2F;p&gt;
+&lt;p&gt;Three things the factory cannot do without. The warehouse is its library; a factory without context produces plausible changes nobody can accept, and the tools it calls are the ones from &lt;a href=&quot;&#x2F;articles&#x2F;tools-how-agents-actually-do-things&#x2F;&quot;&gt;Tools: How Agents Actually Do Things&lt;&#x2F;a&gt;, run inside the sandbox rather than on someone’s laptop. The runtime can be the company’s own metal, which is cheaper than it was, as in &lt;a href=&quot;&#x2F;articles&#x2F;how-ai-makes-bare-metal-viable-again&#x2F;&quot;&gt;How AI Makes Bare Metal Viable Again&lt;&#x2F;a&gt;. The risk gate is its exit; the factory must not be able to deploy what nobody scored. And a budget, because a factory paid per token has a bill, and as I argued in &lt;a href=&quot;&#x2F;articles&#x2F;the-bill-is-part-of-the-loop&#x2F;&quot;&gt;The Bill Is Part of the Loop&lt;&#x2F;a&gt;, the bill belongs inside the control loop rather than in next month’s invoice.&lt;&#x2F;p&gt;
+&lt;p&gt;The agents in it also need to be someone. That is the last note: agents are their own principals.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;firecracker-microvm.github.io&#x2F;&quot;&gt;Firecracker&lt;&#x2F;a&gt;: the microVM runtime the secure runtime is modelled on.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;code.claude.com&#x2F;docs&#x2F;en&#x2F;overview&quot;&gt;Claude Code&lt;&#x2F;a&gt;: the coding agent in question.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </description>
       </item>

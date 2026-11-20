@@ -5,8 +5,29 @@
     <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/inference/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://raskell.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-10-30T00:00:00+00:00</updated>
+    <updated>2026-11-03T00:00:00+00:00</updated>
     <id>https://raskell.io/tags/inference/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Context is cheaper than exploration</title>
+        <published>2026-11-03T00:00:00+00:00</published>
+        <updated>2026-11-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/context-is-cheaper-than-exploration/"/>
+        <id>https://raskell.io/notes/context-is-cheaper-than-exploration/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/context-is-cheaper-than-exploration/">&lt;p&gt;An agent that does not know something does not stop. It explores: searches, reads, greps, queries, and reasons over whatever it found, paying for every token of it, and paying again on every turn after. Then the next agent asks the same question and pays for the same exploration from scratch. In &lt;a href=&quot;&#x2F;articles&#x2F;it-intelligence&#x2F;&quot;&gt;IT Intelligence&lt;&#x2F;a&gt; I estimated that a thousand engineers asking twenty such questions a day spend billions of tokens rediscovering the same facts. The numbers were illustrative; the shape is not.&lt;&#x2F;p&gt;
+&lt;p&gt;The fix is the oldest trick in computing applied to what a company knows about itself: compute once, read many. A context platform, a well-kept repository of decisions, a typed catalogue of services, anything that lets an agent look up instead of search, is a cache for the organisation. It makes agents cheaper, as I argued for inference generally in &lt;a href=&quot;&#x2F;articles&#x2F;the-economics-of-inference&#x2F;&quot;&gt;The Economics of Inference&lt;&#x2F;a&gt;, and it makes them better, because the window they do not spend on searching is spent on the task. I expect this to matter more every year, because the number of agents asking grows much faster than the number of facts worth knowing.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Shiioo, Re-imagined, and the Home AI Lab It Runs On</title>
         <published>2026-10-30T00:00:00+00:00</published>

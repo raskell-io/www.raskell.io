@@ -39,4 +39,25 @@
 </content>
         
     </entry>
+    <entry xml:lang="en">
+        <title>Every layer moves the uncertainty</title>
+        <published>2026-11-11T00:00:00+00:00</published>
+        <updated>2026-11-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/every-layer-moves-the-uncertainty/"/>
+        <id>https://raskell.io/notes/every-layer-moves-the-uncertainty/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/every-layer-moves-the-uncertainty/">&lt;p&gt;Every layer I have worked with in computing made one thing predictable so that the people above it could stop thinking about it. The function call made control flow predictable, microservices made ownership predictable, Kubernetes made placement predictable, workflow engines made the order and history of a process predictable. None of them removed uncertainty. Each one moved it: into interfaces, into the network, into reconciliation loops, into step bodies that may run twice. The table in &lt;a href=&quot;&#x2F;articles&#x2F;the-river-and-the-canal&#x2F;&quot;&gt;The River and the Canal&lt;&#x2F;a&gt; follows the move layer by layer, and &lt;a href=&quot;&#x2F;articles&#x2F;semantic-artifacts-and-meaning-engines&#x2F;&quot;&gt;Source Code Is the New Assembly&lt;&#x2F;a&gt; follows it down through programming languages.&lt;&#x2F;p&gt;
+&lt;p&gt;So the first question I ask about any new layer is where the uncertainty went. For most layers the answer is somewhere you can see and engineer: a network you can trace, a journal you can replay. For agent runtimes the answer is into the model, which is the one place nobody can inspect. That does not make agents a bad layer. It makes them the first layer where the uncertainty went somewhere invisible, and it is why I want something deterministic and readable on either side of them.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
 </feed>

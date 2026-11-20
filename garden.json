@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-19T11:52:00+00:00",
+ "generated": "2026-11-20T15:46:39+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
-  "article": 45,
+  "article": 46,
   "review": 4,
-  "note": 27,
+  "note": 36,
   "talk": 1,
   "dataset": 1,
   "work": 167,
   "project": 32,
-  "topic": 168,
-  "link": 605
+  "topic": 172,
+  "link": 638
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -23,6 +23,22 @@
   "data": "https://raskell.io/data/"
  },
  "items": [
+  {
+   "kind": "article",
+   "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+   "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/",
+   "description": "Seven talks at Agentic Engineering Days Zurich 2026, and the thread through them: agents do not remove a constraint, they move it somewhere else.",
+   "date": "2026-11-20",
+   "topics": [
+    "agents",
+    "agent-harness",
+    "agent-protocols",
+    "data-fusion",
+    "multiplayer-work",
+    "switzerland"
+   ],
+   "meta": "19 min"
+  },
   {
    "kind": "article",
    "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
@@ -852,6 +868,58 @@
   },
   {
    "kind": "note",
+   "title": "Data fusion belongs in the store",
+   "url": "https://raskell.io/notes/data-fusion-belongs-in-the-store/",
+   "description": "An agent that joins five MCP servers by itself carries the integration burden on every call. The store could do that work once, for every agent.",
+   "date": "2026-11-20",
+   "topics": [
+    "data-fusion",
+    "context-engineering",
+    "enterprise-architecture",
+    "agent-protocols"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Harness types in the compiler",
+   "url": "https://raskell.io/notes/harness-types-in-the-compiler/",
+   "description": "NVIDIA's NOOA makes an agent a Python object with typed contracts. A language that enforces types could make the harness a compiler primitive. An open question.",
+   "date": "2026-11-20",
+   "topics": [
+    "agent-harness",
+    "type-systems",
+    "haskell",
+    "compilers"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "The conversation is the workspace",
+   "url": "https://raskell.io/notes/the-conversation-is-the-workspace/",
+   "description": "Work is moving into shared conversations between several people and several agents, with the decisions and artifacts living inside the conversation.",
+   "date": "2026-11-20",
+   "topics": [
+    "multiplayer-work",
+    "future-of-work",
+    "interfaces",
+    "agents"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "The simplest protocol that reduces the most uncertainty wins",
+   "url": "https://raskell.io/notes/the-simplest-protocol-wins/",
+   "description": "A lens from a talk on agent protocols: judge a standard by how many decisions it removes from your application, and ask what it makes replaceable.",
+   "date": "2026-11-20",
+   "topics": [
+    "agent-protocols",
+    "open-standards",
+    "abstraction",
+    "history-of-technology"
+   ]
+  },
+  {
+   "kind": "note",
    "title": "Memory that dreams",
    "url": "https://raskell.io/notes/memory-that-dreams/",
    "description": "A colleague showed me that agent memory should dream before Anthropic published on it. Replay the day, and check the notes against what happened.",
@@ -973,6 +1041,33 @@
   },
   {
    "kind": "note",
+   "title": "Every layer moves the uncertainty",
+   "url": "https://raskell.io/notes/every-layer-moves-the-uncertainty/",
+   "description": "Each new layer in computing makes one thing predictable and pushes the uncertainty somewhere else. The useful question about a new layer is where it went.",
+   "date": "2026-11-11",
+   "topics": [
+    "abstraction",
+    "determinism",
+    "platform-automation",
+    "history-of-technology",
+    "forecasting"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Determinism is what intelligence leaves behind",
+   "url": "https://raskell.io/notes/determinism-is-what-intelligence-leaves-behind/",
+   "description": "Agents explore; procedures keep what the exploring found. The useful question is never agent or workflow, but when a path has been found often enough to keep.",
+   "date": "2026-11-10",
+   "topics": [
+    "determinism",
+    "agents",
+    "durable-execution",
+    "abstraction"
+   ]
+  },
+  {
+   "kind": "note",
    "title": "One person can make a difference",
    "url": "https://raskell.io/notes/one-person-can-make-a-difference/",
    "description": "Sam Altman had a line from Admiral Rickover painted on OpenAI's walls. It says one person can make a difference, and it was used to ask for unity.",
@@ -1044,6 +1139,19 @@
   },
   {
    "kind": "note",
+   "title": "Context is cheaper than exploration",
+   "url": "https://raskell.io/notes/context-is-cheaper-than-exploration/",
+   "description": "An agent without context explores, and every agent pays for the same exploration again. Computing a fact once for every agent is a cache for a company.",
+   "date": "2026-11-03",
+   "topics": [
+    "context-engineering",
+    "economics",
+    "agents",
+    "inference"
+   ]
+  },
+  {
+   "kind": "note",
    "title": "My GOAT games",
    "url": "https://raskell.io/notes/goat-games/",
    "description": "My twenty-five greatest games of all time as one chart, from Phantasy Star Online to Anno 1602.",
@@ -1108,6 +1216,19 @@
   },
   {
    "kind": "note",
+   "title": "Strategic forgetting",
+   "url": "https://raskell.io/notes/strategic-forgetting/",
+   "description": "Breunig's prediction for the context problem of 2027: memories that accumulate for months stop helping. Old facts are not deleted, they are contradicted.",
+   "date": "2026-10-26",
+   "topics": [
+    "external-memory",
+    "knowledge-management",
+    "context-engineering",
+    "agents"
+   ]
+  },
+  {
+   "kind": "note",
    "title": "A capability, democratised",
    "url": "https://raskell.io/notes/a-capability-democratised/",
    "description": "Building software took money, a team, or years of training. Now anyone with an idea and a subscription can do it, and nobody predicted what would follow.",
@@ -1159,6 +1280,22 @@
     "democratisation",
     "ai-engineering",
     "ethics"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "The agent factory",
+   "url": "https://raskell.io/notes/the-agent-factory/",
+   "description": "Coding agents on short-lived microVMs, orchestrated like a remote team and working in the same tickets and pull requests as employees. The new work style.",
+   "date": "2026-10-25",
+   "topics": [
+    "agents",
+    "isolation",
+    "future-of-work",
+    "ai-platforms",
+    "economics",
+    "factories",
+    "self-hosting"
    ]
   },
   {
@@ -4040,9 +4177,23 @@
   },
   {
    "kind": "topic",
+   "title": "Agent harness",
+   "url": "https://raskell.io/tags/agent-harness/",
+   "description": "The software around a model that turns it into an agent: the loop, the action surface, typed contracts, state, and how much of it is ordinary code.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
    "title": "Agent identity",
    "url": "https://raskell.io/tags#agent-identity",
    "description": "Agents as principals of their own: identities, entitlements, credentials, budgets and audit trails provisioned like an employee's, with a human sponsor, instead of borrowed rights.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Agent protocols",
+   "url": "https://raskell.io/tags/agent-protocols/",
+   "description": "The agreements at each boundary of an agent, MCP for tools, A2A for other agents, and the smaller ones for users, editors and traces, and what each makes replaceable.",
    "meta": "Concept"
   },
   {
@@ -4226,6 +4377,13 @@
    "url": "https://raskell.io/tags#cybernetics",
    "description": "The science of control and feedback in machines, organisms, and organisations, and the attempts to run economies and societies with it.",
    "meta": "Domain"
+  },
+  {
+   "kind": "topic",
+   "title": "Data fusion",
+   "url": "https://raskell.io/tags/data-fusion/",
+   "description": "Giving data from many sources one shared meaning, one customer, one revenue figure, and the question of which layer should do that work.",
+   "meta": "Concept"
   },
   {
    "kind": "topic",
@@ -4729,6 +4887,13 @@
    "title": "Mortality",
    "url": "https://raskell.io/tags/mortality/",
    "description": "That everyone dies: priced in life insurance, resisted by those who want to end death, and answered by keeping a person's voice and stories.",
+   "meta": "Concept"
+  },
+  {
+   "kind": "topic",
+   "title": "Multiplayer work",
+   "url": "https://raskell.io/tags/multiplayer-work/",
+   "description": "People and agents working in one shared, live space, where the conversation and the decisions and artifacts it produces live together.",
    "meta": "Concept"
   },
   {
@@ -5327,6 +5492,39 @@
   },
   {
    "kind": "link",
+   "title": "Basel Haskell Compiler",
+   "url": "https://arcanist.sh/bhc/",
+   "domain": "arcanist.sh",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    },
+    {
+     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
+     "url": "https://raskell.io/articles/almost-irrelevant/"
+    },
+    {
+     "title": "The River and the Canal",
+     "url": "https://raskell.io/articles/the-river-and-the-canal/"
+    },
+    {
+     "title": "Why We Built a Haskell Package Manager in Rust",
+     "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/"
+    },
+    {
+     "title": "The Last Programming Language Might Not Be for Humans",
+     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    },
+    {
+     "title": "Harness types in the compiler",
+     "url": "https://raskell.io/notes/harness-types-in-the-compiler/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "cyanea.bio",
    "url": "https://cyanea.bio",
    "domain": "cyanea.bio",
@@ -5413,31 +5611,6 @@
     {
      "title": "Learning to Play",
      "url": "https://raskell.io/articles/learning-to-play/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "Basel Haskell Compiler",
-   "url": "https://arcanist.sh/bhc/",
-   "domain": "arcanist.sh",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
-     "url": "https://raskell.io/articles/almost-irrelevant/"
-    },
-    {
-     "title": "The River and the Canal",
-     "url": "https://raskell.io/articles/the-river-and-the-canal/"
-    },
-    {
-     "title": "Why We Built a Haskell Package Manager in Rust",
-     "url": "https://raskell.io/articles/why-we-built-a-haskell-package-manager-in-rust/"
-    },
-    {
-     "title": "The Last Programming Language Might Not Be for Humans",
-     "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
     }
    ]
   },
@@ -5903,6 +6076,23 @@
   },
   {
    "kind": "link",
+   "title": "NVIDIA-NeMo/labs-OO-Agents",
+   "url": "https://github.com/NVIDIA-NeMo/labs-OO-Agents",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    },
+    {
+     "title": "Harness types in the compiler",
+     "url": "https://raskell.io/notes/harness-types-in-the-compiler/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "OpenClaw: Personal AI agent framework",
    "url": "https://github.com/openclaw/openclaw",
    "domain": "github.com",
@@ -6158,6 +6348,23 @@
   },
   {
    "kind": "link",
+   "title": "Chopin",
+   "url": "https://githubnext.com/projects/chopin/",
+   "domain": "githubnext.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    },
+    {
+     "title": "The conversation is the workspace",
+     "url": "https://raskell.io/notes/the-conversation-is-the-workspace/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Go 1 and the Future of Go Programs",
    "url": "https://go.dev/doc/go1compat",
    "domain": "go.dev",
@@ -6204,6 +6411,23 @@
     {
      "title": "This Site Is Becoming a Map",
      "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Agents Speak Protocol",
+   "url": "https://maeste.it/agents-speak-protocol-aed/",
+   "domain": "maeste.it",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    },
+    {
+     "title": "The simplest protocol that reduces the most uncertainty wins",
+     "url": "https://raskell.io/notes/the-simplest-protocol-wins/"
     }
    ]
   },
@@ -6770,6 +6994,40 @@
   },
   {
    "kind": "link",
+   "title": "Zed",
+   "url": "https://zed.dev/",
+   "domain": "zed.dev",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    },
+    {
+     "title": "How I Work These Days",
+     "url": "https://raskell.io/articles/how-i-work-these-days/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Software Is Made Between Commits",
+   "url": "https://zed.dev/blog/introducing-deltadb",
+   "domain": "zed.dev",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    },
+    {
+     "title": "The conversation is the workspace",
+     "url": "https://raskell.io/notes/the-conversation-is-the-workspace/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "prize.hutter1.net",
    "url": "http://prize.hutter1.net/",
    "domain": "prize.hutter1.net",
@@ -7212,6 +7470,19 @@
   },
   {
    "kind": "link",
+   "title": "Executable Code Actions Elicit Better LLM Agents",
+   "url": "https://arxiv.org/abs/2402.01030",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Panickssery et al.",
    "url": "https://arxiv.org/abs/2404.13076",
    "domain": "arxiv.org",
@@ -7537,6 +7808,19 @@
   },
   {
    "kind": "link",
+   "title": "Programs, Tests, and Oracles: The Foundations of Testing Revisited",
+   "url": "https://bibtex.github.io/ICSE-2011-StaatsWH11a.html",
+   "domain": "bibtex.github.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "“Bitcoin: A Peer-to-Peer Electronic Cash System”",
    "url": "https://bitcoin.org/bitcoin.pdf",
    "domain": "bitcoin.org",
@@ -7727,6 +8011,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Claude Code",
+   "url": "https://code.claude.com/docs/en/overview",
+   "domain": "code.claude.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The agent factory",
+     "url": "https://raskell.io/notes/the-agent-factory/"
     }
    ]
   },
@@ -7979,6 +8276,19 @@
   },
   {
    "kind": "link",
+   "title": "Six Agent Harness Capabilities for Higher Model Performance",
+   "url": "https://developer.nvidia.com/blog/six-agent-harness-capabilities-for-higher-model-performance/",
+   "domain": "developer.nvidia.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Pages limits",
    "url": "https://developers.cloudflare.com/pages/platform/limits/",
    "domain": "developers.cloudflare.com",
@@ -8091,6 +8401,19 @@
     {
      "title": "Shiioo, Re-imagined, and the Home AI Lab It Runs On",
      "url": "https://raskell.io/articles/shiioo-reimagined-and-a-home-ai-lab/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "MCP Server as an agent tool",
+   "url": "https://docs.exasol.com/db/latest/ai/ai_build_agents/mcp-server-as-agent-tool.htm",
+   "domain": "docs.exasol.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
     }
    ]
   },
@@ -9136,6 +9459,19 @@
   },
   {
    "kind": "link",
+   "title": "Realm",
+   "url": "https://en.wikipedia.org/wiki/Realm_(database)",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "reinforcement learning",
    "url": "https://en.wikipedia.org/wiki/Reinforcement_learning",
    "domain": "en.wikipedia.org",
@@ -9669,6 +10005,19 @@
   },
   {
    "kind": "link",
+   "title": "Firecracker",
+   "url": "https://firecracker-microvm.github.io/",
+   "domain": "firecracker-microvm.github.io",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The agent factory",
+     "url": "https://raskell.io/notes/the-agent-factory/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Gatling",
    "url": "https://gatling.io/",
    "domain": "gatling.io",
@@ -9703,6 +10052,19 @@
     {
      "title": "Source Code Is the New Assembly",
      "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "A2A Technical Steering Committee",
+   "url": "https://github.com/a2aproject/A2A/blob/main/GOVERNANCE.md",
+   "domain": "github.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
     }
    ]
   },
@@ -10787,6 +11149,19 @@
   },
   {
    "kind": "link",
+   "title": "sources",
+   "url": "https://maeste.it/agents-speak-protocol-aed/sources.html",
+   "domain": "maeste.it",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "history of digital gardens",
    "url": "https://maggieappleton.com/garden-history",
    "domain": "maggieappleton.com",
@@ -10795,6 +11170,19 @@
     {
      "title": "This Site Is Becoming a Map",
      "url": "https://raskell.io/articles/this-site-is-becoming-a-map/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "One Developer, Two Dozen Agents, Zero Alignment",
+   "url": "https://maggieappleton.com/zero-alignment",
+   "domain": "maggieappleton.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
     }
    ]
   },
@@ -11094,6 +11482,19 @@
     {
      "title": "The Last Programming Language Might Not Be for Humans",
      "url": "https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Hacker News discussion",
+   "url": "https://news.ycombinator.com/item?id=50235780",
+   "domain": "news.ycombinator.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Strategic forgetting",
+     "url": "https://raskell.io/notes/strategic-forgetting/"
     }
    ]
   },
@@ -11476,6 +11877,19 @@
   },
   {
    "kind": "link",
+   "title": "A2A Java SDK",
+   "url": "https://quarkus.io/blog/a2a-project-launches-java-sdk",
+   "domain": "quarkus.io",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Quotepark",
    "url": "https://quotepark.com/quotes/1900877-hyman-george-rickover-i-believe-it-is-the-duty-of-each-of-us-to-act-as-i/",
    "domain": "quotepark.com",
@@ -11484,6 +11898,19 @@
     {
      "title": "One person can make a difference",
      "url": "https://raskell.io/notes/one-person-can-make-a-difference/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "From Cloud Native to AI Native",
+   "url": "https://re-cinq.com/whitepapers",
+   "domain": "re-cinq.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
     }
    ]
   },
@@ -11562,6 +11989,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The five levels",
+   "url": "https://simonwillison.net/2026/Jan/28/the-five-levels/",
+   "domain": "simonwillison.net",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
     }
    ]
   },
@@ -12087,6 +12527,110 @@
   },
   {
    "kind": "link",
+   "title": "Agentic Engineering Days Zurich",
+   "url": "https://www.agenticdays.com/",
+   "domain": "agenticdays.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "“YOU MUST NOT ssh!” and Other Stories from Building Our SRE Agent",
+   "url": "https://www.agenticdays.com/session/1250380-you-must-not-ssh-and-other-stories-from-building-our-sre",
+   "domain": "agenticdays.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The next frontier: agentic collaborative environments",
+   "url": "https://www.agenticdays.com/session/1283743-the-next-frontier-agentic-collaborative-environments",
+   "domain": "agenticdays.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "When Software Stops Being Deterministic",
+   "url": "https://www.agenticdays.com/session/1287383-when-software-stops-being-deterministic-rethinking",
+   "domain": "agenticdays.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "From Copilot to the Dark Factory",
+   "url": "https://www.agenticdays.com/session/1301641-from-copilot-to-the-dark-factory",
+   "domain": "agenticdays.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "NOOA: Inside NVIDIA’s Object-Oriented Agent Harness",
+   "url": "https://www.agenticdays.com/session/1305345-nooa-inside-nvidia-s-object-oriented-agent-harness",
+   "domain": "agenticdays.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Beyond MCP: Supercharging your agents with a single unified data plane",
+   "url": "https://www.agenticdays.com/session/1368894-beyond-mcp-supercharging-your-agents-with-a-single-unified",
+   "domain": "agenticdays.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Agentic Engineering Days Zurich 2026, programme",
+   "url": "https://www.agenticdays.com/sessions",
+   "domain": "agenticdays.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "counters",
    "url": "https://www.alignmentforum.org/posts/PwnadG4BFjaER3MGf/interpretability-will-not-reliably-find-deceptive-ai",
    "domain": "alignmentforum.org",
@@ -12477,6 +13021,19 @@
   },
   {
    "kind": "link",
+   "title": "The Five Levels: from Spicy Autocomplete to the Dark Factory",
+   "url": "https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/",
+   "domain": "danshapiro.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "argues",
    "url": "https://www.darioamodei.com/post/the-urgency-of-interpretability",
    "domain": "darioamodei.com",
@@ -12485,6 +13042,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "The State of Context Engineering",
+   "url": "https://www.dbreunig.com/2026/10/24/the-state-of-context-engineering.html",
+   "domain": "dbreunig.com",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Strategic forgetting",
+     "url": "https://raskell.io/notes/strategic-forgetting/"
     }
    ]
   },
@@ -12589,6 +13159,19 @@
     {
      "title": "The Bottleneck Is Data, and Europe Is Sitting on It",
      "url": "https://raskell.io/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Exasol",
+   "url": "https://www.exasol.com/",
+   "domain": "exasol.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
     }
    ]
   },
@@ -12810,6 +13393,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "letsboot.ch",
+   "url": "https://www.letsboot.ch/",
+   "domain": "letsboot.ch",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
     }
    ]
   },
@@ -13057,6 +13653,19 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Cloud Native Transformation",
+   "url": "https://www.oreilly.com/pub/au/7845",
+   "domain": "oreilly.com",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
     }
    ]
   },
@@ -13504,14 +14113,27 @@
   },
   {
    "kind": "link",
-   "title": "Zed",
-   "url": "https://zed.dev/",
+   "title": "Introducing Delta",
+   "url": "https://zed.dev/blog/introducing-delta",
    "domain": "zed.dev",
-   "reference": false,
+   "reference": true,
    "cited_in": [
     {
-     "title": "How I Work These Days",
-     "url": "https://raskell.io/articles/how-i-work-these-days/"
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Leveraging Rust and the GPU to render user interfaces at 120 FPS",
+   "url": "https://zed.dev/blog/videogame",
+   "domain": "zed.dev",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+     "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
     }
    ]
   },

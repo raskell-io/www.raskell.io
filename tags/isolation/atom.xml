@@ -5,8 +5,35 @@
     <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/isolation/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://raskell.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-06-05T00:00:00+00:00</updated>
+    <updated>2026-10-25T00:00:00+00:00</updated>
     <id>https://raskell.io/tags/isolation/atom.xml</id>
+    <entry xml:lang="en">
+        <title>The agent factory</title>
+        <published>2026-10-25T00:00:00+00:00</published>
+        <updated>2026-10-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/the-agent-factory/"/>
+        <id>https://raskell.io/notes/the-agent-factory/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/the-agent-factory/">&lt;p&gt;The execution half of the loop is a factory: a fleet of coding agents, Claude Code instances in the version we discussed, each on a secure runtime, a microVM that lives for one task and keeps no state except what the repositories and the warehouse hold, orchestrated the way a remote team is orchestrated, through tickets, branches and reviews, and working in the same tickets and pull requests as the employees. Not a tool employees call; colleagues employees work with. That is the new work style, and it changes management more than it changes tooling. &lt;a href=&quot;&#x2F;articles&#x2F;what-sixteen-ai-agents-taught-me-about-management&#x2F;&quot;&gt;What Sixteen AI Agents Taught Me About Management&lt;&#x2F;a&gt; is the small-scale version of the same lesson.&lt;&#x2F;p&gt;
+&lt;p&gt;Three things the factory cannot do without. The warehouse is its library; a factory without context produces plausible changes nobody can accept, and the tools it calls are the ones from &lt;a href=&quot;&#x2F;articles&#x2F;tools-how-agents-actually-do-things&#x2F;&quot;&gt;Tools: How Agents Actually Do Things&lt;&#x2F;a&gt;, run inside the sandbox rather than on someone’s laptop. The runtime can be the company’s own metal, which is cheaper than it was, as in &lt;a href=&quot;&#x2F;articles&#x2F;how-ai-makes-bare-metal-viable-again&#x2F;&quot;&gt;How AI Makes Bare Metal Viable Again&lt;&#x2F;a&gt;. The risk gate is its exit; the factory must not be able to deploy what nobody scored. And a budget, because a factory paid per token has a bill, and as I argued in &lt;a href=&quot;&#x2F;articles&#x2F;the-bill-is-part-of-the-loop&#x2F;&quot;&gt;The Bill Is Part of the Loop&lt;&#x2F;a&gt;, the bill belongs inside the control loop rather than in next month’s invoice.&lt;&#x2F;p&gt;
+&lt;p&gt;The agents in it also need to be someone. That is the last note: agents are their own principals.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;firecracker-microvm.github.io&#x2F;&quot;&gt;Firecracker&lt;&#x2F;a&gt;: the microVM runtime the secure runtime is modelled on.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;code.claude.com&#x2F;docs&#x2F;en&#x2F;overview&quot;&gt;Claude Code&lt;&#x2F;a&gt;: the coding agent in question.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Your Agent Wants Root</title>
         <published>2026-06-05T00:00:00+00:00</published>

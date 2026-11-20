@@ -2,6 +2,25 @@
 // in a native <dialog>, with a zoom toggle, drag to pan when zoomed, and Escape, the close button or a click on
 // the backdrop to close. data-lightbox-alt carries the description. Labels come from window.SEIJAKU_I18N.
 (function () {
+  // Captioned photos in prose (<figure><img><figcaption>) get an expand button in their top right corner;
+  // the button and the photo itself both open the overlay.
+  var expandIcon = '<svg viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.5h4v4M13.5 2.5L9 7M6.5 13.5h-4v-4M2.5 13.5L7 9"/></svg>';
+  document.querySelectorAll(".prose figure > img:first-child").forEach(function (im) {
+    if (im.hasAttribute("data-lightbox")) return;
+    var fig = im.parentNode, src = im.currentSrc || im.getAttribute("src"), alt = im.getAttribute("alt") || "";
+    fig.classList.add("figure--lightbox");
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "figure__expand";
+    btn.setAttribute("data-lightbox", src);
+    btn.setAttribute("data-lightbox-alt", alt);
+    btn.innerHTML = expandIcon;
+    fig.insertBefore(btn, im);
+    im.setAttribute("data-lightbox", src);
+    im.setAttribute("data-lightbox-alt", alt);
+    im.setAttribute("tabindex", "-1");
+  });
+
   var triggers = document.querySelectorAll("[data-lightbox]");
   if (!triggers.length || typeof HTMLDialogElement !== "function") return;
   var L = window.SEIJAKU_I18N || {};

@@ -1,8 +1,17 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-19T11:52:00+00:00",
+ "generated": "2026-11-20T15:46:39+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "kind": "article",
+   "label": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
+   "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/",
+   "meta": "2026-11-20 · 19 min",
+   "description": "Seven talks at Agentic Engineering Days Zurich 2026, and the thread through them: agents do not remove a constraint, they move it somewhere else.",
+   "degree": 18
+  },
   {
    "id": "a:/articles/almost-irrelevant/",
    "kind": "article",
@@ -10,7 +19,7 @@
    "url": "https://raskell.io/articles/almost-irrelevant/",
    "meta": "2026-11-19 · 27 min",
    "description": "When agents write most of the code, the language matters less than it did, but not nothing. What Rust, Go, Elixir and Haskell still buy you.",
-   "degree": 25
+   "degree": 26
   },
   {
    "id": "a:/articles/building-it-intelligence/",
@@ -19,7 +28,7 @@
    "url": "https://raskell.io/articles/building-it-intelligence/",
    "meta": "2026-11-16 · 27 min",
    "description": "How to build an Enterprise Context Platform from open source parts: ontology, connectors, workflows, store, API, MCP and UI, in one repository you can run.",
-   "degree": 12
+   "degree": 14
   },
   {
    "id": "a:/articles/review-empire-of-ai/",
@@ -46,7 +55,7 @@
    "url": "https://raskell.io/articles/evaluation-closes-the-loop/",
    "meta": "2026-11-12 · 14 min",
    "description": "A trace shows what an agent did, not whether it was right. This part scores the agent against known cases and fails the build when a passing case breaks.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "a:/articles/the-behavioural-turn/",
@@ -73,7 +82,7 @@
    "url": "https://raskell.io/articles/it-intelligence/",
    "meta": "2026-11-04 · 50 min",
    "description": "Business intelligence tells a company how it sells. Nothing tells it how its IT fits together. Why I started building an Enterprise Context Platform.",
-   "degree": 23
+   "degree": 24
   },
   {
    "id": "a:/articles/the-original-data-company/",
@@ -91,7 +100,7 @@
    "url": "https://raskell.io/articles/the-river-and-the-canal/",
    "meta": "2026-10-31 · 51 min",
    "description": "Agents explore the rugged world; workflows are what exploration leaves behind. Chess, StarCraft, a factory under the sea, and why I build an engine.",
-   "degree": 35
+   "degree": 37
   },
   {
    "id": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
@@ -163,7 +172,7 @@
    "url": "https://raskell.io/articles/the-bill-is-part-of-the-loop/",
    "meta": "2026-07-18 · 10 min",
    "description": "Every model response already carries its own bill in the usage field, and the loop throws it away. This post reads that field, prices it against a table, and turns cost into a value the loop can see per turn and act on: a metering decorator that needs no loop change, a running ledger, prompt-cache accounting that moves the number the most, and a budget that degrades before it stops. Part eight of The Agent Platform Handbook.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "a:/articles/the-model-is-a-dependency/",
@@ -235,7 +244,7 @@
    "url": "https://raskell.io/articles/tools-how-agents-actually-do-things/",
    "meta": "2026-06-09 · 13 min",
    "description": "Function calling is the API between language and action, but the engineering is in the registry. A working four-tool registry in TypeScript on Bun, schema design that survives model drift, parallel tool calls, and the failure modes nobody mentions in the demo. Part three of The Agent Platform Handbook.",
-   "degree": 9
+   "degree": 11
   },
   {
    "id": "a:/articles/your-agent-wants-root/",
@@ -271,7 +280,7 @@
    "url": "https://raskell.io/articles/semantic-artifacts-and-meaning-engines/",
    "meta": "2026-05-07 · 27 min",
    "description": "Closing the trilogy. The artifact you author is no longer source code. It is a typed, verifiable object that carries meaning. Code becomes a lowering target.",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "a:/articles/patents-per-capita-is-a-vanity-metric/",
@@ -298,7 +307,7 @@
    "url": "https://raskell.io/articles/the-economics-of-inference/",
    "meta": "2026-04-22 · 12 min",
    "description": "Inference tokens are not API calls. They are a metered resource that is consumed, generates value, and correlates with power draw. The economics of the post-AI world look less like software and more like water, electricity, and gas.",
-   "degree": 19
+   "degree": 20
   },
   {
    "id": "a:/articles/what-comes-after-the-last-programming-language/",
@@ -316,7 +325,7 @@
    "url": "https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/",
    "meta": "2026-04-16 · 19 min",
    "description": "What happens when you give sixteen AI agents an org chart, a reporting structure, and a token budget. A story about orchestration, management, and running out of runway.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/articles/why-we-built-a-haskell-package-manager-in-rust/",
@@ -379,7 +388,7 @@
    "url": "https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/",
    "meta": "2026-03-08 · 29 min",
    "description": "I migrated two production apps from Kubernetes to a single Hetzner box. The missing piece was not the hardware.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "a:/articles/edge-systems-are-the-new-backend/",
@@ -443,6 +452,42 @@
    "meta": "2022-09-20 · 1 min",
    "description": "The first post on raskell.io. What this site is for and what I planned to write about.",
    "degree": 4
+  },
+  {
+   "id": "a:/notes/data-fusion-belongs-in-the-store/",
+   "kind": "note",
+   "label": "Data fusion belongs in the store",
+   "url": "https://raskell.io/notes/data-fusion-belongs-in-the-store/",
+   "meta": "2026-11-20",
+   "description": "An agent that joins five MCP servers by itself carries the integration burden on every call. The store could do that work once, for every agent.",
+   "degree": 7
+  },
+  {
+   "id": "a:/notes/harness-types-in-the-compiler/",
+   "kind": "note",
+   "label": "Harness types in the compiler",
+   "url": "https://raskell.io/notes/harness-types-in-the-compiler/",
+   "meta": "2026-11-20",
+   "description": "NVIDIA's NOOA makes an agent a Python object with typed contracts. A language that enforces types could make the harness a compiler primitive. An open question.",
+   "degree": 9
+  },
+  {
+   "id": "a:/notes/the-conversation-is-the-workspace/",
+   "kind": "note",
+   "label": "The conversation is the workspace",
+   "url": "https://raskell.io/notes/the-conversation-is-the-workspace/",
+   "meta": "2026-11-20",
+   "description": "Work is moving into shared conversations between several people and several agents, with the decisions and artifacts living inside the conversation.",
+   "degree": 6
+  },
+  {
+   "id": "a:/notes/the-simplest-protocol-wins/",
+   "kind": "note",
+   "label": "The simplest protocol that reduces the most uncertainty wins",
+   "url": "https://raskell.io/notes/the-simplest-protocol-wins/",
+   "meta": "2026-11-20",
+   "description": "A lens from a talk on agent protocols: judge a standard by how many decisions it removes from your application, and ask what it makes replaceable.",
+   "degree": 6
   },
   {
    "id": "a:/notes/memory-that-dreams/",
@@ -526,6 +571,24 @@
    "degree": 7
   },
   {
+   "id": "a:/notes/every-layer-moves-the-uncertainty/",
+   "kind": "note",
+   "label": "Every layer moves the uncertainty",
+   "url": "https://raskell.io/notes/every-layer-moves-the-uncertainty/",
+   "meta": "2026-11-11",
+   "description": "Each new layer in computing makes one thing predictable and pushes the uncertainty somewhere else. The useful question about a new layer is where it went.",
+   "degree": 9
+  },
+  {
+   "id": "a:/notes/determinism-is-what-intelligence-leaves-behind/",
+   "kind": "note",
+   "label": "Determinism is what intelligence leaves behind",
+   "url": "https://raskell.io/notes/determinism-is-what-intelligence-leaves-behind/",
+   "meta": "2026-11-10",
+   "description": "Agents explore; procedures keep what the exploring found. The useful question is never agent or workflow, but when a path has been found often enough to keep.",
+   "degree": 6
+  },
+  {
    "id": "a:/notes/one-person-can-make-a-difference/",
    "kind": "note",
    "label": "One person can make a difference",
@@ -569,6 +632,15 @@
    "meta": "2026-11-07",
    "description": "A colleague says the breakthroughs come from academia and the state. I think they come from people who have to make things work, and that what they learn spreads.",
    "degree": 11
+  },
+  {
+   "id": "a:/notes/context-is-cheaper-than-exploration/",
+   "kind": "note",
+   "label": "Context is cheaper than exploration",
+   "url": "https://raskell.io/notes/context-is-cheaper-than-exploration/",
+   "meta": "2026-11-03",
+   "description": "An agent without context explores, and every agent pays for the same exploration again. Computing a fact once for every agent is a cache for a company.",
+   "degree": 8
   },
   {
    "id": "a:/notes/goat-games/",
@@ -616,6 +688,15 @@
    "degree": 12
   },
   {
+   "id": "a:/notes/strategic-forgetting/",
+   "kind": "note",
+   "label": "Strategic forgetting",
+   "url": "https://raskell.io/notes/strategic-forgetting/",
+   "meta": "2026-10-26",
+   "description": "Breunig's prediction for the context problem of 2027: memories that accumulate for months stop helping. Old facts are not deleted, they are contradicted.",
+   "degree": 5
+  },
+  {
    "id": "a:/notes/a-capability-democratised/",
    "kind": "note",
    "label": "A capability, democratised",
@@ -650,6 +731,15 @@
    "meta": "2026-10-25",
    "description": "The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so.",
    "degree": 8
+  },
+  {
+   "id": "a:/notes/the-agent-factory/",
+   "kind": "note",
+   "label": "The agent factory",
+   "url": "https://raskell.io/notes/the-agent-factory/",
+   "meta": "2026-10-25",
+   "description": "Coding agents on short-lived microVMs, orchestrated like a remote team and working in the same tickets and pull requests as employees. The new work style.",
+   "degree": 12
   },
   {
    "id": "a:/notes/the-move-to-the-city/",
@@ -710,9 +800,9 @@
    "kind": "tag",
    "label": "Abstraction",
    "url": "https://raskell.io/tags/abstraction/",
-   "meta": "Concept · 6 pages",
+   "meta": "Concept · 9 pages",
    "description": "Layers that let people stop thinking about the layer below, from assembly and programming languages to orchestrators and agents, and how each new layer becomes the ground for the next.",
-   "degree": 8
+   "degree": 11
   },
   {
    "id": "t:abundance",
@@ -733,13 +823,31 @@
    "degree": 3
   },
   {
+   "id": "t:agent-harness",
+   "kind": "tag",
+   "label": "Agent harness",
+   "url": "https://raskell.io/tags/agent-harness/",
+   "meta": "Concept · 2 pages",
+   "description": "The software around a model that turns it into an agent: the loop, the action surface, typed contracts, state, and how much of it is ordinary code.",
+   "degree": 4
+  },
+  {
+   "id": "t:agent-protocols",
+   "kind": "tag",
+   "label": "Agent protocols",
+   "url": "https://raskell.io/tags/agent-protocols/",
+   "meta": "Concept · 3 pages",
+   "description": "The agreements at each boundary of an agent, MCP for tools, A2A for other agents, and the smaller ones for users, editors and traces, and what each makes replaceable.",
+   "degree": 5
+  },
+  {
    "id": "t:agents",
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 20 pages",
+   "meta": "Concept · 26 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 30
+   "degree": 38
   },
   {
    "id": "t:ai-alignment",
@@ -773,9 +881,9 @@
    "kind": "tag",
    "label": "AI platforms",
    "url": "https://raskell.io/tags/ai-platforms/",
-   "meta": "Domain · 5 pages",
+   "meta": "Domain · 6 pages",
    "description": "The shared foundation an organisation builds AI on: model gateways, agent runtimes, governance, observability, and the operating model around them.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:applied-security",
@@ -881,9 +989,9 @@
    "kind": "tag",
    "label": "Compilers",
    "url": "https://raskell.io/tags/compilers/",
-   "meta": "Concept · 5 pages",
+   "meta": "Concept · 6 pages",
    "description": "Turning programs into other programs: parsers, interpreters, type checkers, and code generation.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:complex-systems",
@@ -899,9 +1007,9 @@
    "kind": "tag",
    "label": "Context engineering",
    "url": "https://raskell.io/tags/context-engineering/",
-   "meta": "Concept · 7 pages",
+   "meta": "Concept · 10 pages",
    "description": "Deciding what a model sees: pinned context, retrieval, memory, and the conventions that keep them honest.",
-   "degree": 9
+   "degree": 13
   },
   {
    "id": "t:cryptocurrency",
@@ -911,6 +1019,15 @@
    "meta": "Domain · 2 pages",
    "description": "Bitcoin, blockchains and distributed ledgers: the attempt to formalise money and trust so completely that no institution is needed, and the institutions that grew back around it.",
    "degree": 5
+  },
+  {
+   "id": "t:data-fusion",
+   "kind": "tag",
+   "label": "Data fusion",
+   "url": "https://raskell.io/tags/data-fusion/",
+   "meta": "Concept · 2 pages",
+   "description": "Giving data from many sources one shared meaning, one customer, one revenue figure, and the question of which layer should do that work.",
+   "degree": 4
   },
   {
    "id": "t:data-sovereignty",
@@ -944,9 +1061,9 @@
    "kind": "tag",
    "label": "Determinism",
    "url": "https://raskell.io/tags/determinism/",
-   "meta": "Concept · 5 pages",
+   "meta": "Concept · 7 pages",
    "description": "Machines and institutions that do the same thing every time, what that sameness is worth, and where it breaks against an open world.",
-   "degree": 8
+   "degree": 10
   },
   {
    "id": "t:developer-tooling",
@@ -971,18 +1088,18 @@
    "kind": "tag",
    "label": "Durable execution",
    "url": "https://raskell.io/tags/durable-execution/",
-   "meta": "Technology · 3 pages",
+   "meta": "Technology · 4 pages",
    "description": "Workflow engines that keep long-running processes alive through crashes and deployments, with a journal of every step: Temporal, Restate and their kin.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:economics",
    "kind": "tag",
    "label": "Economics",
    "url": "https://raskell.io/tags/economics/",
-   "meta": "Concept · 11 pages",
+   "meta": "Concept · 13 pages",
    "description": "Cost, pricing, budgets, and the money side of infrastructure, inference, and innovation.",
-   "degree": 31
+   "degree": 33
   },
   {
    "id": "t:edge-systems",
@@ -1025,9 +1142,9 @@
    "kind": "tag",
    "label": "Enterprise architecture",
    "url": "https://raskell.io/tags/enterprise-architecture/",
-   "meta": "Domain · 2 pages",
+   "meta": "Domain · 3 pages",
    "description": "How a company's capabilities, applications, data and infrastructure fit together, who owns what, and how the landscape is changed on purpose.",
-   "degree": 3
+   "degree": 5
   },
   {
    "id": "t:entrepreneurship",
@@ -1070,18 +1187,18 @@
    "kind": "tag",
    "label": "External memory",
    "url": "https://raskell.io/tags/external-memory/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "Notes, links, and stores that remember for us: second brains, the web as a shared memory, and what agents write down for their next session.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "t:factories",
    "kind": "tag",
    "label": "Factories",
    "url": "https://raskell.io/tags/factories/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Machines that make machines: the factory pattern in code, real plants, universal constructors, and purpose-built things made on demand.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:finance",
@@ -1097,9 +1214,9 @@
    "kind": "tag",
    "label": "Forecasting",
    "url": "https://raskell.io/tags/forecasting/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Saying what will happen and how sure you are: scenarios, predictions that fail, and the events nobody priced in.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "t:formal-methods",
@@ -1124,9 +1241,9 @@
    "kind": "tag",
    "label": "Future of work",
    "url": "https://raskell.io/tags/future-of-work/",
-   "meta": "Concept · 6 pages",
+   "meta": "Concept · 8 pages",
    "description": "What AI does to jobs and livelihoods: the interval before any post-scarcity economy, basic income against basic access, and who gets through the middle.",
-   "degree": 14
+   "degree": 17
   },
   {
    "id": "t:game-ai",
@@ -1205,9 +1322,9 @@
    "kind": "tag",
    "label": "Haskell",
    "url": "https://raskell.io/tags/haskell/",
-   "meta": "Technology · 7 pages",
+   "meta": "Technology · 8 pages",
    "description": "The language that shaped how I think about types, effects, and correctness.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:history-of-science",
@@ -1223,9 +1340,9 @@
    "kind": "tag",
    "label": "History of technology",
    "url": "https://raskell.io/tags/history-of-technology/",
-   "meta": "Concept · 11 pages",
+   "meta": "Concept · 13 pages",
    "description": "How tools, machines, and networks came to be built, and the choices that shaped them.",
-   "degree": 32
+   "degree": 34
   },
   {
    "id": "t:hubris",
@@ -1250,9 +1367,9 @@
    "kind": "tag",
    "label": "Inference",
    "url": "https://raskell.io/tags/inference/",
-   "meta": "Concept · 8 pages",
+   "meta": "Concept · 9 pages",
    "description": "Running models in production: routing, cost, hardware, and inference as a metered utility.",
-   "degree": 13
+   "degree": 14
   },
   {
    "id": "t:insurance",
@@ -1286,9 +1403,9 @@
    "kind": "tag",
    "label": "Interfaces",
    "url": "https://raskell.io/tags/interfaces/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Where people meet machines, from command lines to chat and voice, and the goal of an interface so natural that it disappears.",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "t:internet-culture",
@@ -1304,18 +1421,18 @@
    "kind": "tag",
    "label": "Isolation",
    "url": "https://raskell.io/tags/isolation/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "Sandboxes, process and failure-domain isolation, and running untrusted or fallible work safely.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "t:knowledge-management",
    "kind": "tag",
    "label": "Knowledge management",
    "url": "https://raskell.io/tags/knowledge-management/",
-   "meta": "Concept · 5 pages",
+   "meta": "Concept · 6 pages",
    "description": "Second brains, knowledge graphs, and how notes, links, and memory turn into understanding.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:kubernetes",
@@ -1444,6 +1561,15 @@
    "degree": 7
   },
   {
+   "id": "t:multiplayer-work",
+   "kind": "tag",
+   "label": "Multiplayer work",
+   "url": "https://raskell.io/tags/multiplayer-work/",
+   "meta": "Concept · 2 pages",
+   "description": "People and agents working in one shared, live space, where the conversation and the decisions and artifacts it produces live together.",
+   "degree": 4
+  },
+  {
    "id": "t:neural-networks",
    "kind": "tag",
    "label": "Neural networks",
@@ -1484,9 +1610,9 @@
    "kind": "tag",
    "label": "Open standards",
    "url": "https://raskell.io/tags/open-standards/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Protocols and formats agreed in the open and free to implement: HTTP, HTML, TCP/IP, RSS, and the consortia and working groups that keep them so.",
-   "degree": 2
+   "degree": 4
   },
   {
    "id": "t:open-web",
@@ -1574,9 +1700,9 @@
    "kind": "tag",
    "label": "Platform automation",
    "url": "https://raskell.io/tags/platform-automation/",
-   "meta": "Domain · 2 pages",
+   "meta": "Domain · 3 pages",
    "description": "Self-service, guardrails, deployment, and the tooling that keeps operating software sustainable.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:policy",
@@ -1700,9 +1826,9 @@
    "kind": "tag",
    "label": "Self-hosting",
    "url": "https://raskell.io/tags/self-hosting/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "Running your own infrastructure, from a single bare-metal box to community-operated compute.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:semiconductors",
@@ -1799,9 +1925,9 @@
    "kind": "tag",
    "label": "Switzerland",
    "url": "https://raskell.io/tags/switzerland/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "The country this site is written from: CERN in Geneva, Basel, Swiss innovation as measured and as lived, and Die Zukunft, the Swiss political party I founded.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:synthetic-biology",
@@ -1853,9 +1979,9 @@
    "kind": "tag",
    "label": "Type systems",
    "url": "https://raskell.io/tags/type-systems/",
-   "meta": "Concept · 7 pages",
+   "meta": "Concept · 8 pages",
    "description": "Types as a cheap, mechanical proof that code does what it says, and why they matter more once machines write the code.",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "t:typescript",
@@ -2276,7 +2402,7 @@
    "url": "https://arcanist.sh",
    "meta": "Project",
    "description": "Haskell tooling for the age of AI-authored code. hx is a fast package and project manager written in Rust, and bhc is a compiler built to check everything it can. With a registry t…",
-   "degree": 17
+   "degree": 19
   },
   {
    "id": "p:zentinel",
@@ -2303,7 +2429,7 @@
    "url": "https://arcanist.sh/bhc/",
    "meta": "Project",
    "description": "The Basel Haskell Compiler, a clean-slate compiler for the Haskell you already write. Written in Rust, it compiles to native code through LLVM and to WebAssembly, with a runtime pr…",
-   "degree": 10
+   "degree": 12
   },
   {
    "id": "p:shiioo",
@@ -4124,6 +4250,18 @@
  ],
  "links": [
   {
+   "source": "a:/notes/the-simplest-protocol-wins/",
+   "target": "t:abstraction"
+  },
+  {
+   "source": "a:/notes/every-layer-moves-the-uncertainty/",
+   "target": "t:abstraction"
+  },
+  {
+   "source": "a:/notes/determinism-is-what-intelligence-leaves-behind/",
+   "target": "t:abstraction"
+  },
+  {
    "source": "a:/articles/the-behavioural-turn/",
    "target": "t:abstraction"
   },
@@ -4172,6 +4310,50 @@
    "target": "t:aerospace"
   },
   {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "t:agent-harness"
+  },
+  {
+   "source": "a:/notes/harness-types-in-the-compiler/",
+   "target": "t:agent-harness"
+  },
+  {
+   "source": "t:agent-harness",
+   "target": "t:agents"
+  },
+  {
+   "source": "t:agent-harness",
+   "target": "t:type-systems"
+  },
+  {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "t:agent-protocols"
+  },
+  {
+   "source": "a:/notes/data-fusion-belongs-in-the-store/",
+   "target": "t:agent-protocols"
+  },
+  {
+   "source": "a:/notes/the-simplest-protocol-wins/",
+   "target": "t:agent-protocols"
+  },
+  {
+   "source": "t:agent-protocols",
+   "target": "t:agents"
+  },
+  {
+   "source": "t:agent-protocols",
+   "target": "t:open-standards"
+  },
+  {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/notes/the-conversation-is-the-workspace/",
+   "target": "t:agents"
+  },
+  {
    "source": "a:/articles/building-it-intelligence/",
    "target": "t:agents"
   },
@@ -4184,11 +4366,19 @@
    "target": "t:agents"
   },
   {
+   "source": "a:/notes/determinism-is-what-intelligence-leaves-behind/",
+   "target": "t:agents"
+  },
+  {
    "source": "a:/notes/the-interface-that-disappears/",
    "target": "t:agents"
   },
   {
    "source": "a:/notes/in-vivo-not-in-vitro/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/notes/context-is-cheaper-than-exploration/",
    "target": "t:agents"
   },
   {
@@ -4200,11 +4390,19 @@
    "target": "t:agents"
   },
   {
+   "source": "a:/notes/strategic-forgetting/",
+   "target": "t:agents"
+  },
+  {
    "source": "a:/notes/citizen-entrepreneurs/",
    "target": "t:agents"
   },
   {
    "source": "a:/notes/ideas-stop-waiting/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/notes/the-agent-factory/",
    "target": "t:agents"
   },
   {
@@ -4337,6 +4535,10 @@
   },
   {
    "source": "a:/articles/evaluation-closes-the-loop/",
+   "target": "t:ai-platforms"
+  },
+  {
+   "source": "a:/notes/the-agent-factory/",
    "target": "t:ai-platforms"
   },
   {
@@ -4564,6 +4766,10 @@
    "target": "t:economics"
   },
   {
+   "source": "a:/notes/harness-types-in-the-compiler/",
+   "target": "t:compilers"
+  },
+  {
    "source": "a:/articles/the-proof-you-only-have-to-write-once/",
    "target": "t:compilers"
   },
@@ -4592,6 +4798,10 @@
    "target": "t:complex-systems"
   },
   {
+   "source": "a:/notes/data-fusion-belongs-in-the-store/",
+   "target": "t:context-engineering"
+  },
+  {
    "source": "a:/articles/building-it-intelligence/",
    "target": "t:context-engineering"
   },
@@ -4604,7 +4814,15 @@
    "target": "t:context-engineering"
   },
   {
+   "source": "a:/notes/context-is-cheaper-than-exploration/",
+   "target": "t:context-engineering"
+  },
+  {
    "source": "a:/articles/a-blueprint-for-the-static-web/",
+   "target": "t:context-engineering"
+  },
+  {
+   "source": "a:/notes/strategic-forgetting/",
    "target": "t:context-engineering"
   },
   {
@@ -4642,6 +4860,22 @@
   {
    "source": "t:cryptocurrency",
    "target": "t:money"
+  },
+  {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "t:data-fusion"
+  },
+  {
+   "source": "a:/notes/data-fusion-belongs-in-the-store/",
+   "target": "t:data-fusion"
+  },
+  {
+   "source": "t:data-fusion",
+   "target": "t:context-engineering"
+  },
+  {
+   "source": "t:data-fusion",
+   "target": "t:enterprise-architecture"
   },
   {
    "source": "a:/articles/the-web-was-the-training-set/",
@@ -4702,6 +4936,14 @@
   {
    "source": "t:democratisation",
    "target": "t:commons"
+  },
+  {
+   "source": "a:/notes/every-layer-moves-the-uncertainty/",
+   "target": "t:determinism"
+  },
+  {
+   "source": "a:/notes/determinism-is-what-intelligence-leaves-behind/",
+   "target": "t:determinism"
   },
   {
    "source": "a:/articles/the-original-data-company/",
@@ -4772,6 +5014,10 @@
    "target": "t:durable-execution"
   },
   {
+   "source": "a:/notes/determinism-is-what-intelligence-leaves-behind/",
+   "target": "t:durable-execution"
+  },
+  {
    "source": "a:/articles/the-river-and-the-canal/",
    "target": "t:durable-execution"
   },
@@ -4788,7 +5034,15 @@
    "target": "t:platform-automation"
   },
   {
+   "source": "a:/notes/context-is-cheaper-than-exploration/",
+   "target": "t:economics"
+  },
+  {
    "source": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
+   "target": "t:economics"
+  },
+  {
+   "source": "a:/notes/the-agent-factory/",
    "target": "t:economics"
   },
   {
@@ -4916,6 +5170,10 @@
    "target": "t:economics"
   },
   {
+   "source": "a:/notes/data-fusion-belongs-in-the-store/",
+   "target": "t:enterprise-architecture"
+  },
+  {
    "source": "a:/articles/building-it-intelligence/",
    "target": "t:enterprise-architecture"
   },
@@ -5008,6 +5266,10 @@
    "target": "t:external-memory"
   },
   {
+   "source": "a:/notes/strategic-forgetting/",
+   "target": "t:external-memory"
+  },
+  {
    "source": "a:/articles/this-site-is-becoming-a-map/",
    "target": "t:external-memory"
   },
@@ -5036,6 +5298,10 @@
    "target": "t:factories"
   },
   {
+   "source": "a:/notes/the-agent-factory/",
+   "target": "t:factories"
+  },
+  {
    "source": "t:factories",
    "target": "t:platform-automation"
   },
@@ -5057,6 +5323,10 @@
   },
   {
    "source": "a:/notes/a-self-fulfilling-prophecy/",
+   "target": "t:forecasting"
+  },
+  {
+   "source": "a:/notes/every-layer-moves-the-uncertainty/",
    "target": "t:forecasting"
   },
   {
@@ -5108,6 +5378,10 @@
    "target": "t:chaos-theory"
   },
   {
+   "source": "a:/notes/the-conversation-is-the-workspace/",
+   "target": "t:future-of-work"
+  },
+  {
    "source": "a:/notes/small-focused-high-trust/",
    "target": "t:future-of-work"
   },
@@ -5121,6 +5395,10 @@
   },
   {
    "source": "a:/notes/citizen-entrepreneurs/",
+   "target": "t:future-of-work"
+  },
+  {
+   "source": "a:/notes/the-agent-factory/",
    "target": "t:future-of-work"
   },
   {
@@ -5260,6 +5538,10 @@
    "target": "t:semiconductors"
   },
   {
+   "source": "a:/notes/harness-types-in-the-compiler/",
+   "target": "t:haskell"
+  },
+  {
    "source": "a:/articles/almost-irrelevant/",
    "target": "t:haskell"
   },
@@ -5300,11 +5582,19 @@
    "target": "t:history"
   },
   {
+   "source": "a:/notes/the-simplest-protocol-wins/",
+   "target": "t:history-of-technology"
+  },
+  {
    "source": "a:/notes/a-self-fulfilling-prophecy/",
    "target": "t:history-of-technology"
   },
   {
    "source": "a:/notes/its-magic-crumbles-away/",
+   "target": "t:history-of-technology"
+  },
+  {
+   "source": "a:/notes/every-layer-moves-the-uncertainty/",
    "target": "t:history-of-technology"
   },
   {
@@ -5374,6 +5664,10 @@
   {
    "source": "t:hypertext",
    "target": "t:open-web"
+  },
+  {
+   "source": "a:/notes/context-is-cheaper-than-exploration/",
+   "target": "t:inference"
   },
   {
    "source": "a:/articles/shiioo-reimagined-and-a-home-ai-lab/",
@@ -5480,6 +5774,10 @@
    "target": "t:neuroscience"
   },
   {
+   "source": "a:/notes/the-conversation-is-the-workspace/",
+   "target": "t:interfaces"
+  },
+  {
    "source": "a:/notes/the-interface-that-disappears/",
    "target": "t:interfaces"
   },
@@ -5498,6 +5796,10 @@
   {
    "source": "t:internet-culture",
    "target": "t:open-web"
+  },
+  {
+   "source": "a:/notes/the-agent-factory/",
+   "target": "t:isolation"
   },
   {
    "source": "a:/articles/your-agent-wants-root/",
@@ -5533,6 +5835,10 @@
   },
   {
    "source": "a:/articles/it-intelligence/",
+   "target": "t:knowledge-management"
+  },
+  {
+   "source": "a:/notes/strategic-forgetting/",
    "target": "t:knowledge-management"
   },
   {
@@ -5716,6 +6022,22 @@
    "target": "t:philosophy"
   },
   {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "t:multiplayer-work"
+  },
+  {
+   "source": "a:/notes/the-conversation-is-the-workspace/",
+   "target": "t:multiplayer-work"
+  },
+  {
+   "source": "t:multiplayer-work",
+   "target": "t:future-of-work"
+  },
+  {
+   "source": "t:multiplayer-work",
+   "target": "t:interfaces"
+  },
+  {
    "source": "a:/notes/a-self-fulfilling-prophecy/",
    "target": "t:neural-networks"
   },
@@ -5774,6 +6096,10 @@
   {
    "source": "t:open-data",
    "target": "t:policy"
+  },
+  {
+   "source": "a:/notes/the-simplest-protocol-wins/",
+   "target": "t:open-standards"
   },
   {
    "source": "a:/articles/looking-back-on-2025/",
@@ -5890,6 +6216,10 @@
   {
    "source": "t:pingora",
    "target": "t:rust"
+  },
+  {
+   "source": "a:/notes/every-layer-moves-the-uncertainty/",
+   "target": "t:platform-automation"
   },
   {
    "source": "a:/articles/how-ai-makes-bare-metal-viable-again/",
@@ -6168,6 +6498,10 @@
    "target": "t:self-hosting"
   },
   {
+   "source": "a:/notes/the-agent-factory/",
+   "target": "t:self-hosting"
+  },
+  {
    "source": "a:/articles/archipelag-io-distributed-compute-from-mining-rigs-to-open-beta/",
    "target": "t:self-hosting"
   },
@@ -6332,6 +6666,10 @@
    "target": "t:privacy"
   },
   {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "t:switzerland"
+  },
+  {
    "source": "a:/articles/patents-per-capita-is-a-vanity-metric/",
    "target": "t:switzerland"
   },
@@ -6442,6 +6780,10 @@
   {
    "source": "t:trust",
    "target": "t:economics"
+  },
+  {
+   "source": "a:/notes/harness-types-in-the-compiler/",
+   "target": "t:type-systems"
   },
   {
    "source": "a:/articles/almost-irrelevant/",
@@ -6878,6 +7220,46 @@
   {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "c:reviews"
+  },
+  {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "a:/articles/building-it-intelligence/"
+  },
+  {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "a:/articles/evaluation-closes-the-loop/"
+  },
+  {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "a:/articles/tools-how-agents-actually-do-things/"
+  },
+  {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "a:/notes/data-fusion-belongs-in-the-store/"
+  },
+  {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "a:/notes/harness-types-in-the-compiler/"
+  },
+  {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "a:/notes/the-conversation-is-the-workspace/"
+  },
+  {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "a:/notes/the-simplest-protocol-wins/"
+  },
+  {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "a:/notes/every-layer-moves-the-uncertainty/"
+  },
+  {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "a:/notes/context-is-cheaper-than-exploration/"
+  },
+  {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "a:/notes/strategic-forgetting/"
   },
   {
    "source": "a:/articles/almost-irrelevant/",
@@ -7420,6 +7802,30 @@
    "target": "a:/articles/mise-ate-my-makefile/"
   },
   {
+   "source": "a:/notes/data-fusion-belongs-in-the-store/",
+   "target": "a:/articles/building-it-intelligence/"
+  },
+  {
+   "source": "a:/notes/data-fusion-belongs-in-the-store/",
+   "target": "a:/notes/context-is-cheaper-than-exploration/"
+  },
+  {
+   "source": "a:/notes/harness-types-in-the-compiler/",
+   "target": "a:/articles/almost-irrelevant/"
+  },
+  {
+   "source": "a:/notes/harness-types-in-the-compiler/",
+   "target": "a:/notes/determinism-is-what-intelligence-leaves-behind/"
+  },
+  {
+   "source": "a:/notes/the-conversation-is-the-workspace/",
+   "target": "a:/notes/the-agent-factory/"
+  },
+  {
+   "source": "a:/notes/the-simplest-protocol-wins/",
+   "target": "a:/notes/every-layer-moves-the-uncertainty/"
+  },
+  {
    "source": "a:/notes/a-self-fulfilling-prophecy/",
    "target": "a:/notes/a-billion-without-a-plan/"
   },
@@ -7468,6 +7874,18 @@
    "target": "a:/notes/one-person-can-make-a-difference/"
   },
   {
+   "source": "a:/notes/every-layer-moves-the-uncertainty/",
+   "target": "a:/articles/the-river-and-the-canal/"
+  },
+  {
+   "source": "a:/notes/every-layer-moves-the-uncertainty/",
+   "target": "a:/articles/semantic-artifacts-and-meaning-engines/"
+  },
+  {
+   "source": "a:/notes/determinism-is-what-intelligence-leaves-behind/",
+   "target": "a:/articles/the-river-and-the-canal/"
+  },
+  {
    "source": "a:/notes/one-person-can-make-a-difference/",
    "target": "a:/notes/who-carries-progress/"
   },
@@ -7482,6 +7900,14 @@
   {
    "source": "a:/notes/who-carries-progress/",
    "target": "a:/notes/in-vivo-not-in-vitro/"
+  },
+  {
+   "source": "a:/notes/context-is-cheaper-than-exploration/",
+   "target": "a:/articles/it-intelligence/"
+  },
+  {
+   "source": "a:/notes/context-is-cheaper-than-exploration/",
+   "target": "a:/articles/the-economics-of-inference/"
   },
   {
    "source": "a:/notes/goat-games/",
@@ -7554,6 +7980,22 @@
   {
    "source": "a:/notes/power-in-the-good-sense/",
    "target": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/"
+  },
+  {
+   "source": "a:/notes/the-agent-factory/",
+   "target": "a:/articles/the-bill-is-part-of-the-loop/"
+  },
+  {
+   "source": "a:/notes/the-agent-factory/",
+   "target": "a:/articles/tools-how-agents-actually-do-things/"
+  },
+  {
+   "source": "a:/notes/the-agent-factory/",
+   "target": "a:/articles/what-sixteen-ai-agents-taught-me-about-management/"
+  },
+  {
+   "source": "a:/notes/the-agent-factory/",
+   "target": "a:/articles/how-ai-makes-bare-metal-viable-again/"
   },
   {
    "source": "a:/notes/the-move-to-the-city/",
@@ -7672,6 +8114,10 @@
    "target": "p:humankind"
   },
   {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "p:arcanist"
+  },
+  {
    "source": "a:/articles/almost-irrelevant/",
    "target": "p:arcanist"
   },
@@ -7701,6 +8147,10 @@
   },
   {
    "source": "a:/articles/how-i-work-these-days/",
+   "target": "p:arcanist"
+  },
+  {
+   "source": "a:/notes/harness-types-in-the-compiler/",
    "target": "p:arcanist"
   },
   {
@@ -7784,6 +8234,10 @@
    "target": "p:hx"
   },
   {
+   "source": "a:/articles/agentic-engineering-days-zurich-2026/",
+   "target": "p:bhc"
+  },
+  {
    "source": "a:/articles/almost-irrelevant/",
    "target": "p:bhc"
   },
@@ -7797,6 +8251,10 @@
   },
   {
    "source": "a:/articles/what-programming-languages-become-when-ai-writes-the-code/",
+   "target": "p:bhc"
+  },
+  {
+   "source": "a:/notes/harness-types-in-the-compiler/",
    "target": "p:bhc"
   },
   {
