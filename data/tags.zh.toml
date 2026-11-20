@@ -697,3 +697,11 @@ description = "让来自多个来源的数据拥有同一个含义，同一个�
 [multiplayer-work]
 name = "多人协作"
 description = "人和智能体在同一个共享的实时空间里工作，对话与它产生的决定和成果放在一起。"
+
+[arcanist]
+name = "Arcanist"
+description = "为智能体编写的代码打造的 Haskell 工具：hx 包管理器、bhc 编译器，以及记录哪些内容已被验证的注册中心，位于 arcanist.sh。"
+
+[bhc]
+name = "bhc"
+description = "Basel Haskell Compiler，一个用 Rust 从零编写、尽可能检查一切的 Haskell 编译器，是 Arcanist 的一部分。"

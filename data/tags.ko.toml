@@ -697,3 +697,11 @@ description = "여러 출처의 데이터에 하나의 공통된 의미, 하나�
 [multiplayer-work]
 name = "멀티플레이어 작업"
 description = "사람과 에이전트가 하나의 공유된 실시간 공간에서 일하며, 대화와 그 대화가 만든 결정과 산출물이 함께 있는 방식."
+
+[arcanist]
+name = "Arcanist"
+description = "에이전트가 작성하는 코드를 위한 Haskell 도구: hx 패키지 관리자, bhc 컴파일러, 그리고 무엇이 검증되었는지 기록하는 레지스트리이며, arcanist.sh에 있습니다."
+
+[bhc]
+name = "bhc"
+description = "Basel Haskell Compiler는 Rust로 처음부터 새로 작성되어 가능한 모든 것을 검사하는 Haskell 컴파일러이며, Arcanist의 일부입니다."

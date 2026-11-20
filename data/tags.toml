@@ -1018,3 +1018,15 @@ name = "Multiplayer work"
 kind = "concept"
 description = "People and agents working in one shared, live space, where the conversation and the decisions and artifacts it produces live together."
 broader = ["future-of-work", "interfaces"]
+
+[arcanist]
+name = "Arcanist"
+kind = "technology"
+description = "Haskell tooling for code that agents write: the hx package manager, the bhc compiler, and a registry that records what has been verified, at arcanist.sh."
+broader = ["haskell", "developer-tooling"]
+
+[bhc]
+name = "bhc"
+kind = "technology"
+description = "The Basel Haskell Compiler, a clean-slate Haskell compiler written in Rust that checks everything it can, part of Arcanist."
+broader = ["arcanist", "compilers"]
