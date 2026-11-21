@@ -29,21 +29,6 @@
 # queue, top first; read: newest finished first, whatever the order here).
 
 # Reading now --------------------------------------------------------------
-[[works]]
-id = "a-brief-history-of-intelligence"
-title = "A Brief History of Intelligence"
-subtitle = "Evolution, AI, and the Five Breakthroughs That Made Our Brains"
-author = "Max Bennett"
-kind = "book"
-cover = "covers/reading/a-brief-history-of-intelligence.avif"
-isbn = "9780063286344"
-year = 2023
-status = "reading"
-started = "2026-11"
-topics = ["intelligence", "neuroscience", "reinforcement-learning", "life-sciences", "evolution", "origins-of-life"]
-about = "An account of how brains evolved, organised around five breakthroughs: steering, reinforcing, simulating, mentalising and speaking. Bennett, an entrepreneur rather than a career neuroscientist, follows these from early bilaterian animals to humans, and uses each step to compare natural intelligence with current AI and to ask what machines still lack."
-take = "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it."
-
 
 [[works]]
 id = "the-code-breaker"
@@ -54,7 +39,7 @@ kind = "book"
 cover = "covers/reading/the-code-breaker.avif"
 isbn = "9781398502314"   # the UK hardcover, Simon & Schuster UK, March 2021
 year = 2021
-status = "on-hold"
+status = "reading"
 started = "2026-11"
 topics = ["life-sciences", "synthetic-biology", "history-of-science", "ethics", "medicine", "genetics", "pandemics"]
 about = "A biography of biochemist Jennifer Doudna and an account of how CRISPR, a bacterial defence against viruses, was turned into a tool for editing genes. Isaacson follows the research race and the patent dispute between laboratories, the use of the technique against disease and during the COVID-19 pandemic, and the ethical questions raised by editing human embryos."
@@ -79,6 +64,24 @@ rating = 7.5
 topics = ["research-labs", "training-data", "technology-races", "hubris", "language"]
 about = "A work of investigative journalism tracing OpenAI from its founding as a non-profit research lab to a commercial giant, including the 2023 boardroom crisis around Sam Altman. Hao argues that the AI industry behaves like a new empire, drawing on data, labour, water and land, and she reports from Kenya, Chile, Colombia and elsewhere to show who bears those costs."
 take = "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them."
+
+
+[[works]]
+id = "a-brief-history-of-intelligence"
+title = "A Brief History of Intelligence"
+subtitle = "Evolution, AI, and the Five Breakthroughs That Made Our Brains"
+author = "Max Bennett"
+kind = "book"
+cover = "covers/reading/a-brief-history-of-intelligence.avif"
+isbn = "9780063286344"
+year = 2023
+status = "read"
+started = "2026-11"
+finished = "2026-11"
+rating = 7.5
+topics = ["intelligence", "neuroscience", "reinforcement-learning", "life-sciences", "evolution", "origins-of-life"]
+about = "An account of how brains evolved, organised around five breakthroughs: steering, reinforcing, simulating, mentalising and speaking. Bennett, an entrepreneur rather than a career neuroscientist, follows these from early bilaterian animals to humans, and uses each step to compare natural intelligence with current AI and to ask what machines still lack."
+take = "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it: a strong premise and real depth, slow going on a first read."
 
 [[works]]
 id = "the-cauldron"

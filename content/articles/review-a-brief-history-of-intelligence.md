@@ -1,8 +1,7 @@
 +++
-title = ""
-date = 2026-11-16
-draft = true
-description = ""
+title = "Five Breakthroughs and a Dishwasher"
+date = 2026-11-21
+description = "Max Bennett's A Brief History of Intelligence maps five steps in how brains work onto five ideas in AI. A deep book, and slow going on a first read."
 
 [taxonomies]
 tags = ["intelligence", "neuroscience", "reinforcement-learning", "neural-networks", "olfaction", "evolution"]
@@ -11,34 +10,109 @@ categories = ["reviews"]
 [extra]
 author = "Raffael"
 review = "a-brief-history-of-intelligence"
+og_image = "review-a-brief-history-of-intelligence.png"   # hand-made social card, 1200x630
+in_short = [
+  "Max Bennett's *A Brief History of Intelligence* breaks intelligence into five breakthroughs (steering, reinforcing, simulating, mentalizing, speaking) and pairs each with the AI technique that echoes it; I give it 7.5 out of 10.",
+  "The premise is excellent and the book has real depth: it gave me more to think about than most books on AI I have read.",
+  "It is slow going. Much of it is evolutionary biology, whose framing I do not share, and long accounts of behavioural studies that move the argument forward but did not pull me in.",
+  "The best chapters are the ones where an old experiment meets a modern algorithm: smell and pattern recognition, Tolman's rats and planning, the motor cortex and the robot that cannot load a dishwasher.",
+  "I learned a lot, and I suspect a second reading would earn it a higher score.",
+]
 +++
 
-<!-- A review of A Brief History of Intelligence by Max Bennett (book). Questions worth answering, in any order and not as headings:
-  - Why did I pick it up, and what question was I bringing to it?
-  - What is its central argument? A fair, short account the author would recognise.
-  - Which ideas, experiments, episodes, or passages deserve attention? Be specific: chapter or page.
-  - Where was I persuaded, unconvinced, or surprised? What changed in my understanding, or did not, and why?
-  - Who should read it, with what expectations: prerequisites, depth, limits?
-  Keep apart what the author argues, what evidence the work offers, and what I infer beyond it.
-  When this goes out, set the work's status in data/reading.toml to "read" with a finished date. -->
+*The Jetsons* went on air in September 1962 and, as Max Bennett points out at the start of *A Brief History of Intelligence*, got a surprising amount of the future right: video calls, flat screens, cell phones, 3D printing, smartwatches. What it did not get right was the one thing it took for granted, Rosey, the robot who kept the house, helped with homework, and noticed when the family was about to quarrel. Sixty years later we still have nothing like her. *"It is no secret that the first company to build a robot that can simply load a dishwasher will immediately have a bestselling product,"* Bennett writes. *"All attempts to do this have failed. It isn't fundamentally a mechanical problem; it's an intellectual one."*
 
-<!-- Draft notes while reading. Not yet prose for the review; the structure comes later.
+That is the question the book sets out to answer: why can a machine beat anyone alive at chess, yet not load a dishwasher as well as a six-year-old? It is also the question I brought to it. I spend my working days building systems around language models, and I wanted a better account of what those models do not have. Bennett is not a neuroscientist, which I count in his favour. *"I wrote this book because I wanted to read this book,"* he says in the introduction; it grew out of reading, long email exchanges with researchers, and a few papers of his own.
 
-Opening idea: Bennett starts the introduction with The Jetsons (September 1962). The show predicted video calls,
-flat screens, cell phones, 3D printing and smartwatches, but not the one thing it took for granted: Rosey, the
-robot who keeps the house, helps with homework, and reads the family's moods. As of print, Bennett notes, no robot
-can load a dishwasher, and "it isn't fundamentally a mechanical problem; it's an intellectual one". A good frame
-for the review and for the hero image (an original retro-futurist housekeeping robot, not Rosey herself).
+I give it 7.5 out of 10. The premise is one of the best I have met in a book about AI, and the book has more depth than I was ready for. It was also slow to read, and I will come back to why.
 
-Hinton: the introduction's epigraph is his ("the only way to get artificial intelligence to work is to do the
-computation in a way similar to the human brain"); he returns in chapter 7 (backpropagation) and chapter 11 (the
-Helmholtz machine, with Peter Dayan). Link the Empire of AI review, where he is a central figure.
--->
+<figure>
+<img src="/review-a-brief-history-of-intelligence-copy.avif" alt="My copy of A Brief History of Intelligence, held up in a café" width="1600" height="800" loading="lazy">
+<figcaption>My copy of <cite>A Brief History of Intelligence</cite>, the morning after I finished it.</figcaption>
+</figure>
 
-## Smell, the first pattern
+## Five breakthroughs {#five-breakthroughs}
 
-Chapter 7, "The Problems of Pattern Recognition", is where the book clicked for me, because Bennett explains neural networks with the nose. A smell is not one molecule but a mixture that lights up a pattern across many kinds of olfactory neurons, and the first vertebrates were the first animals that could read such patterns. From there he walks through the two problems any pattern recogniser has to solve, discrimination and generalisation, shows how the early cortex may solve them with expansion, sparsity, and auto-association, and then shows how an artificial network solves them with backpropagation, the method Geoffrey Hinton, David Rumelhart and Ronald Williams popularised in the 1980s. His running example for the machine is a network that learns to tell egg smells from flower smells.
+Bennett's argument is that intelligence was not built in one piece. It came in five steps, each one resting on the steps before it, and each step solved a problem that the older machinery could not. He tells it as an evolutionary story, from worm-like animals to fish to the first mammals, primates, and humans. For each step he finds the idea in AI that does the same job, and that pairing is what makes the book worth reading for anyone who builds software.
+
+| Breakthrough | What it adds | Its counterpart in AI |
+|---|---|---|
+| Steering | Sorting the world into good and bad, and turning toward the one and away from the other | The first Roomba, with a handful of sensors and two choices: go forward or turn |
+| Reinforcing | Repeating what led to good outcomes; dopamine as a signal of a prediction that was wrong | Temporal difference learning, actor and critic, TD-Gammon |
+| Simulating | An inner model of the world, so an animal can try things in imagination before it tries them in the world | Model-based reinforcement learning, AlphaZero searching future moves |
+| Mentalizing | A model of one's own mind, and through it the minds of others: intent, imitation, planning for needs one does not have yet | Imitation and inverse reinforcement learning, a helicopter that learns to fly from a pilot's demonstrations |
+| Speaking | Names and grammar that tie inner simulations together, so ideas outlive the person who had them | Large language models |
+
+Each part of the book ends with a summary of its breakthrough, and reading the five summaries in a row is the fastest way to see the whole argument. The thread that runs through them is learning: first by reflex, then by trial and error, then by imagination, then by watching others, then by being told.
+
+## Steering: good and bad {#steering}
+
+The first part starts with the nematode *Caenorhabditis elegans*, a worm with 302 neurons, which Bennett uses as a stand-in for the first animals with a brain. A worm cannot see where food is. It can only tell whether the smell is getting stronger or weaker, and turn. Its sensory neurons report straight away whether a thing is good or bad, which psychologists call valence. *"Valence isn't about a moral judgment,"* Bennett writes; *"it's something far more primitive: whether an animal will respond to a stimulus by approaching it or avoiding it."*
+
+The AI parallel is the first Roomba, which Rodney Brooks's company iRobot sold in 2002. It had a handful of sensors and could only go forward or turn, and it cleaned a whole flat without a map. The detail I liked best is Dirt Detect: when a Roomba finds a patch of dirt, it starts turning in circles, and keeps doing so for a while after the dirt is gone, because dirt in one spot predicts dirt nearby. That, Bennett argues, is what an affective state is for. A worm that smells food stays in a state of searching after the smell has faded; a worm that has eaten settles into a state of rest. In the nematode, dopamine marks *"the something-good-is-nearby chemical"* and serotonin *"the something-good-is-actually-happening chemical."*
+
+Chapter 3 carries this into humans with one of the more unsettling experiments in the book. In the 1960s the psychiatrist Robert Heath gave patients a button that stimulated their own dopamine neurons, and they pressed it, sometimes hundreds of times an hour, not because it felt good but because it never quite did. *"Dopamine is not a signal for pleasure itself,"* Bennett concludes; *"it is a signal for the anticipation of future pleasure."* It is hard to read that today without thinking of the feeds on our phones.
+
+Chapter 4 closes the part with learning, and with a problem every machine learning engineer knows: credit assignment. If you tap a slug and shock it, how does it know to link the shock to the tap, and not to the temperature of the water or the texture of the ground? Bennett lists four tricks the earliest brains use, which Pavlov had already found in his dogs: eligibility traces, overshadowing, latent inhibition, and blocking. Blocking is the one that stayed with me. *"Once an animal has established an association between a predictive cue and a response, all further cues that overlap with the predictive cue are blocked from association with that response."* It is a crude rule and a sensible one, and it is also the kind of inertia I see in agents whose memory has settled on an early explanation and no longer lets a better one in.
+
+## Reinforcing: learning from what was not expected {#reinforcing}
+
+In the second part, the biology and the computer science meet in one story. In 1984 Richard Sutton finished a dissertation that proposed temporal difference learning: instead of waiting for the end of a game to learn whether a move was good, a system learns from the change in its own prediction from one moment to the next. Sutton had studied psychology, not computer science, and Bennett makes a point of it: *"He didn't want to understand the best way to tackle the temporal credit assignment problem; he wanted to understand the actual way that animals solved it."* In 1994 Gerald Tesauro's TD-Gammon, which learned backgammon purely by playing itself, reached what Tesauro called a *"truly staggering level of performance."*
+
+Then the neuroscientist Wolfram Schultz recorded dopamine neurons in monkeys that had learned to expect sugar water after a picture. When the reward came unexpectedly, dopamine went up. When the picture appeared and the sugar did not, dopamine dropped, even though the surprise was the same. Once the researchers working on temporal difference learning saw his data, *"they immediately knew what they were seeing. The dopamine responses that Schultz found in monkeys aligned exactly with Sutton's temporal difference learning signal."* Bennett's one-line summary corrects the popular picture of dopamine twice over: *"Dopamine is not a signal for reward but for reinforcement."*
+
+Chapter 8, "Why Life Got Curious", adds the missing ingredient. Reinforcement learning systems that had mastered Atari games could not get through the first level of *Montezuma's Revenge*, a game where the reward comes only after a long walk through rooms full of traps. *"It wasn't until 2018 when an algorithm was developed that finally completed level one,"* and what it added was curiosity, a reward for seeing something new. Bennett finds the same thing in fish, mice, monkeys, and infants (*"surprise itself triggers the release of dopamine, even if there is no 'real' reward"*) and uses it to explain gambling, which violates every simple theory of learning from reward. I had read about *Montezuma's Revenge* before; I had not seen it set beside a slot machine.
+
+## Smell, the first pattern {#smell-the-first-pattern}
+
+Chapter 7, "The Problems of Pattern Recognition", is where the book clicked for me, because Bennett explains neural networks with the nose. A smell is not one molecule but a mixture that lights up a pattern across many kinds of olfactory neurons, and the first vertebrates were the first animals that could read such patterns. From there he walks through the two problems any pattern recogniser has to solve, discrimination and generalisation, shows how the early cortex may solve them with expansion, sparsity, and auto-association, and then shows how an artificial network solves them with backpropagation, the method Geoffrey Hinton, David Rumelhart and Ronald Williams popularised in the 1980s. His running example for the machine is a network that learns to tell egg smells from flower smells. Hinton, who returns in chapter 11 with the Helmholtz machine, is also one of the central figures of [Empire of AI](@/articles/review-empire-of-ai.md).
 
 The chapter then moves on to catastrophic forgetting (a network taught to add twos forgets how to add ones, in McCloskey and Cohen's 1989 experiment) and to the invariance problem in vision, where Hubel and Wiesel's cats lead to Fukushima's convolutional networks. Smell is the quiet hinge here: an egg smells the same from any angle, so smell has no invariance problem, and it is the one sense that bypasses the thalamus.
 
 I wrote more about this, and about why I think smell will be the last sense we learn to read and write with machines, in a note: [Smell is pattern recognition](@/notes/smell-is-pattern-recognition.md).
+
+## Simulating: imagining before doing {#imagining-before-doing}
+
+The third part is the one I keep thinking about at work. Its subject is the neocortex, which Bennett treats as a single repeated circuit. Vernon Mountcastle found in the mid-twentieth century that neurons in one vertical column of the cortex respond alike, and the idea that every column runs the same algorithm leads Bennett to Hermann von Helmholtz, who suggested in the nineteenth century that we do not perceive the world directly but perceive *"what the brain thinks is there,"* a process he called inference. Geoffrey Hinton and Peter Dayan built a proof of concept in 1995 and called it the Helmholtz machine. If perception is the cortex generating a world and checking it against the senses, then some neuroscientists are right to call it, as Bennett quotes, a *"constrained hallucination."* Cut off the senses and the hallucination runs free.
+
+I find that a useful way to think about language models. A model answering from its weights alone is a generative model without senses, and what we call hallucination is the free-running case. Tools and retrieval are the constraint: they play the part the eyes play for the cortex. That is my reading, not Bennett's, but it fits what I see in practice. Bennett also suggests that dreaming may keep the generative model stable, *"a process of forced generation"* to balance a day of recognition, which is close to an idea I wrote down about [agent memory that dreams](@/notes/memory-that-dreams.md).
+
+In the 1930s Edward Tolman, at Berkeley, noticed that rats at a hard fork in a maze would stop and look left and right for a few seconds before choosing. Tolman guessed the rat was *"playing out"* each option first, and called it *"vicarious trial and error."* The idea fell out of favour for lack of evidence, until recordings in the 2000s let researchers watch a rat's neurons while it paused and see it sweep through the paths ahead. *"Tolman was right,"* Bennett writes: the rats were planning. Other experiments in chapter 12 show rats that pass up a mediocre treat for a better one, find that the better one comes with a long wait, and look back at the door they gave up, which is what regret looks like from the outside. Even memory turns out to be simulation: *"we don't truly remember episodic events. The process of episodic remembering is one of simulating an approximate re-creation of the past."*
+
+Chapter 13 gives the machine version. Temporal difference learning was enough for backgammon, but not for Go, and what AlphaZero added in 2017 was the rat's pause: it simulated future moves before it made one. That is the same split I wrote about in [Plan, then let go](@/notes/plan-then-execute.md): an agent that drafts the whole plan before it acts behaves very differently from one that reacts step by step, and the draft is the agent's version of the rat's pause at the fork. Bennett also shows the other side. In the 1980s Tony Dickinson trained rats to press a lever for food, then made the food make them ill. Rats that had pressed the lever a few times stopped; rats that had pressed it five hundred times kept going. *"Dickinson had discovered habits."* Planning and habit are the same duality Kahneman calls slow and fast thinking, and Bennett is careful to say that *"Neither is better; each has its benefits and costs."* That is the argument I made about agents and workflows in [Determinism is what intelligence leaves behind](@/notes/determinism-is-what-intelligence-leaves-behind.md): a path explored often enough becomes a habit worth keeping, and the skill is in knowing when to plan and when to repeat.
+
+The hard part of planning is choosing what to simulate, since no brain can play out every future. Bennett's proposal is that the oldest part of the frontal cortex builds a model of the animal itself and constructs *"intent"* to explain its own behaviour, and that intent is what narrows the search. He is open that this is a hypothesis. Chapter 14 then answers the question from the introduction, as far as anyone can: *"The secret to dishwashing robots lives somewhere in the motor cortex and the broader motor system of mammals."* We do not yet understand how the motor cortex plans fine movements so flexibly, or how it keeps learning as it goes. I liked that the part ends on an open problem rather than a solution.
+
+## Mentalizing: a model of one's own mind {#mentalizing}
+
+The fourth breakthrough is the one Bennett calls, in some ways, the hardest to reverse engineer in AI. It starts with politics among monkeys. In the 1980s and 1990s Nicholas Humphrey, Frans de Waal, and Robin Dunbar argued that primate brains grew to handle society rather than the jungle, and Dunbar found that across primates, *"the bigger the neocortex of a primate, the bigger its social group."* Monkeys form alliances through grooming, rescue the friends they groom, and climb or fall in rank through those friendships. To play that game, you have to model what others know and want.
+
+The classic test of that is the Sally-Ann test, where a child watches Ann move a marble while Sally is out of the room and has to say where Sally will look for it. Bennett's claim is that theory of mind, learning by imitation, and planning for future needs are three uses of one new ability: a model of one's own mind, which can then be pointed at others. Jane Goodall's chimpanzees stripping twigs to fish for termites in Gombe, and the different techniques used by chimpanzees elsewhere, show skills that pass between individuals by watching. The AI parallels are some of the best in the book: ALVINN, the car Dean Pomerleau built at Carnegie Mellon in 1990, which learned to stay in its lane on a real highway by imitating human drivers, and the 2010 work by Pieter Abbeel, Adam Coates, and Andrew Ng, who used inverse reinforcement learning to teach a system to fly a remote-controlled helicopter by working out what the human pilot was trying to do.
+
+The chapter title I will remember is "Why Rats Can't Go Grocery Shopping". In 2006 Miriam Naqshbandi and William Roberts offered squirrel monkeys dates and rats raisins, both treats that make them very thirsty, and a choice: a large helping with water only hours later, or a small one with water within half an hour. *"Squirrel monkeys learn to select the low treat option, while rats continue to select the high treat option."* The rats, in Bennett's words, *"stuck with the flawed logic of 'why give up extra raisins for water, I'm not even thirsty!'"* Planning for a need you do not have yet is, for me, the clearest line between the assistants we build today and the ones we want. An agent that infers what you are trying to do, and what you will need next week, is doing what Bennett calls mentalizing. Most of ours still behave like the rats.
+
+## Speaking: tethering simulations together {#speaking}
+
+The last part asks what makes humans different, and Bennett's answer is careful. Chapter 19 walks through the attempts to teach apes language: Washoe, who saw a swan and signed *"Water bird"*, and Kanzi, who in Sue Savage-Rumbaugh's test was given over six hundred commands in sentences he had never seen, such as *"Go put some soap on Liz"*, and carried them out more than 70 percent of the time, outperforming a two-year-old child. Bennett gives the critics their due (most of the apes were rewarded with treats, and rarely combined words into new phrases) and concludes that *"The debate is not yet settled."* His position is that apes can learn a rudimentary language with great effort, but never pass a young child.
+
+What humans have, he argues, is not a new language organ but a curriculum. Chapter 20 begins with Louis Victor Leborgne, who lost the ability to speak in 1830 and whose brain led Paul Broca to the language area that bears his name, and then turns to infants: proto-conversations, and joint attention, where a nine-month-old follows a mother's gaze and checks that they both see the same thing. Chimpanzees do not do this. The AI parallel is Jeffrey Elman's work in the 1990s on networks that predict the next word, which only learned complex sentences when he first showed them simple ones. *"In other words, he designed a curriculum."*
+
+Chapter 21 explains why language spread, and its answer is gossip. Dunbar eavesdropped on conversations and found that *"as much as 70 percent of human conversation is gossip,"* and Bennett argues that gossip plus the punishment of cheaters is what makes cooperation between strangers stable. With language, *"the human hive mind emerged, creating an ephemeral medium for ideas to propagate and accumulate across generations."* The book's definition of language is the one I took away from it: a way of tethering one person's inner simulation to another's. It also explains Bennett's view of language models, which have the words without, as far as anyone can show, the simulation behind them.
+
+## The sixth breakthrough {#the-sixth-breakthrough}
+
+Chapter 22, "ChatGPT and the Window into the Mind", is the most honest chapter in the book. Bennett had written a set of questions to show that GPT-3 lacked common sense, because it predicts words without an inner simulation of the world: it did not know, for example, that looking up in a basement shows you a ceiling and not the sky. Then GPT-4 came out while the book was being finished, and *"each question that I designed in this chapter to demonstrate a lack of common sense and physical intuition in GPT-3 was answered flawlessly by GPT-4."* He kept both in the book, and his conclusion holds up better for it. Without simulating and mentalizing, he argues, language models will miss something essential, and the humanlike AI we build one day will not be a language model: *"language models will be merely a window to something richer that lies beneath."* I am less sure than he is that the window and the room stay separate, but it is the right question to ask of the systems I work with.
+
+The conclusion is called "The Sixth Breakthrough", and Bennett thinks it will be artificial superintelligence: intelligence moving from biology to silicon, no longer limited by the speed of neurons or the size of a skull. He ends on a question, *"What should be humanity's goals?"*, which he says is a matter of values rather than truth. I agree, and few books on AI stop in a better place.
+
+## Where it dragged {#where-it-dragged}
+
+The book is long, and it does not hurry. A great deal of it is behavioural studies: Thorndike's cats, Pavlov's dogs, rats in mazes, animals in front of mirrors, Jane Goodall's chimpanzees and their tools. Each one is there for a reason and each one moves the argument forward; I would not cut any of them. But they are told at a steady, even pace, one experiment after the other, and few of them pulled me in the way the chapter on smell did. I found myself reading for the AI paragraph at the end of each chapter, and that is not the right way to read this book.
+
+The other half is evolutionary biology, and here I part ways with the framing. Bennett tells every breakthrough as a story of deep time, pressure, and survival, and closes his chapter on simulation by saying that thinking was born *"not within the clay creatures of Prometheus's divine workshop"* but in the tunnels and trees of a Jurassic Earth, which he calls *"the real story."* I do not share that view, and I read the material the other way round, as I did with [How Life Works](@/articles/review-how-life-works.md): a layered design in which each layer builds on the one below is easier for me to see as engineered than as an accident that kept succeeding. That disagreement did not spoil the book, though, because its argument does not depend on it. The five breakthroughs work as a decomposition of intelligence whatever one believes about how they came to be, and that decomposition is the part I will keep.
+
+## Who should read it {#who-should-read-it}
+
+Anyone who builds with AI and wants to know where the ideas came from and what is still missing. You do not need a background in neuroscience; Bennett explains everything from the ground up, which is part of why the book is long. Set aside time for it, read the five summaries first if you want the map before the territory, and expect to read it slowly, a part at a time.
+
+I learned a lot from it. I was not prepared for its depth, and I think that showed in how slowly I read. I expect to come back to it, and I suspect a second reading, knowing where it is going, would earn it a higher score.

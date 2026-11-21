@@ -1,7 +1,6 @@
 +++
 title = "Smell is pattern recognition"
-date = 2026-11-16
-draft = true
+date = 2026-11-21
 description = "Max Bennett explains neural networks with the nose. For the brain, smell is the easiest pattern to recognise; for machines, the hardest sense to build."
 
 [taxonomies]
