@@ -18,9 +18,24 @@ in_short = [
 ]
 +++
 
+<!--
+DRAFT NOTES (remove before publish)
+1. Sources checked 2026-11-21: every quote from Anthropic's memory post, the Managed Agents post, Letta, MemGPT,
+   Generative Agents, Simon Willison and Andy Matuschak is verbatim from that day's fetch. Dreaming in Managed Agents
+   is a research preview, and Letta's post names no university, so neither is claimed. The arXiv sleep paper
+   (2605.26099) was dropped: it is about model architecture, not agent memory. Bush's "As We May Think" and Wilson and
+   McNaughton (1994) could not be fetched, so they are not cited.
+2. "What is not proven yet" was updated from the brain's own history: scheduled dreams on 16, 17, 18 and 21
+   November, per context; the second agent tool starts from the same command. The Kurumi mirror has been tried in
+   the running app (confirmed by Raffael, 2026-11-21).
+3. The brain is private: the text speaks of "contexts" in general terms and never names one, and it describes the
+   design, not the brain's contents. Keep it that way in edits and translations.
+4. Hero: hero-prompt-context-is-king.md is written; no image yet. Translations: context-is-king.zh.md and .ko.md.
+-->
+
 The large language models of the last few years made capability general. A generative pre-trained transformer has read a large part of what humanity has written, and it can draft, reason, translate and write code in almost any domain. That was the revolution. What it did not do is make the model know anything about you: your projects, your rules, the decisions you already made and why, the people you work with, the mistakes you do not want repeated. The model is the same for everyone. Whatever makes it yours has to come from somewhere else.
 
-That somewhere else is context, and I think it is where the next large step in what these systems can do will come from: the same model, given the right two kilobytes about the person it works for. This post is about that layer: why it matters more than most people assume, why every person who works with agents will end up with one, and what I learned building mine.
+That somewhere else is context, and I think it is where the next large step in what these systems can do will come from: the same model, given the right two kilobytes about the person it works for. Most people underrate that layer. I think every person who works with agents will end up with one, and building mine taught me more about it than any paper did.
 
 ## The general model and the missing context
 
@@ -28,7 +43,9 @@ Generality is the gift of these models and it is also their gap. A model that ca
 
 Context closes both gaps. In [Context Is the Product](/articles/context-is-the-product/) I argued that models are becoming commodities and context is not. In [Agent Experience](/articles/agent-experience/) I described how much an agent has to guess as the measure of how well a system serves it. A personal context layer is agent experience for a person: the same model, given a short page about who you are, what you are building and which mistakes not to repeat, asks fewer questions, guesses less, spends fewer tokens getting oriented, and makes the kind of change you would have made. It becomes bespoke without being retrained.
 
-There is measured evidence that a curated layer adds something that search alone does not. In [The components of agent memory](https://www.anthropic.com/research/components-of-agent-memory), Anthropic reports that when Claude had both a search tool and a wiki it had built up over time, its score rose "from 54% to 61% as that wiki grew, compared with 53% when it had access to the search tool alone". Search finds what exists. A curated layer says what matters.
+The craft already has a name. Andrej Karpathy, as [quoted by Simon Willison](https://simonwillison.net/2025/Jun/27/context-engineering/) in June 2025, called context engineering *"the delicate art and science of filling the context window with just the right information"*. Most of that information is about the task. A personal context layer is the part that is about you, and it is the part that does not change from one task to the next.
+
+There is measured evidence that a curated layer adds something that search alone does not. In [The components of agent memory](https://www.anthropic.com/research/components-of-agent-memory), Anthropic reports that when Claude had both a search tool and a wiki it had built up over time, its score rose *"from 54% to 61% as that wiki grew, compared with 53% when it had access to the search tool alone"*. Search finds what exists. A curated layer says what matters.
 
 ## Every person, a context layer
 
@@ -56,7 +73,7 @@ The agent and I disagreed about almost every one of these before anything was bu
 
 The first draft wanted the brain to know everything. That conflicts with being cheap to load, and it duplicates information that already has a home. The version that held up is a router: the notes hold distilled facts and pointers, and each project's own files, its README, its decision records, its status file, stay the source of truth. A session loads a small entry page, about 2,600 bytes in practice, and follows links from there when it needs more.
 
-Every note is one Markdown file about one thing: a project, a rule, a lesson, a machine, an open question. The front matter says what it is and how far to trust it:
+Every note is one Markdown file about one thing: a project, a rule, a lesson, a machine, an open question. That is close to what Andy Matuschak calls [evergreen notes](https://notes.andymatuschak.org/Evergreen_notes), which *"are written and organized to evolve, contribute, and accumulate over time, across projects."* The difference is the reader: these notes are written first for agents, and a person reads them second. The front matter says what it is and how far to trust it:
 
 ```markdown
 ---
@@ -90,7 +107,7 @@ Notes link to each other with `[[id]]`. A small compiler turns the folder into t
 }
 ```
 
-A linter rejects broken links, unknown types, an entry page that has grown too large, and any note that refers to another context. The structure is deliberately close to what Anthropic describes for Claude's own memory: transcripts as ground truth, one page per entity, linked pages, and a small injected layer on top. Claude Code keeps that top layer small in the same spirit; according to the same post, it loads "only the first 200 lines or 25 KB" of its memory index into each session.
+A linter rejects broken links, unknown types, an entry page that has grown too large, and any note that refers to another context. The structure is deliberately close to what Anthropic describes for Claude's own memory: transcripts as ground truth, a wiki of linked pages, each about one subject, and a small injected layer on top, because *"the top layer of the memory hierarchy has to stay relatively small."* Claude Code keeps it small in the same spirit; according to the same post, *"It loads only the first 200 lines or 25 KB"* of its memory index into each session. The hierarchy itself is older than any of these products. [MemGPT](https://arxiv.org/abs/2310.08560), by Charles Packer and colleagues in 2023, proposed *"virtual context management, a technique drawing inspiration from hierarchical memory systems"* in operating systems: a small fast layer in the context window, and a large slow one the agent pages in on demand.
 
 ## Separate repositories, and a wall
 
@@ -110,7 +127,7 @@ This is the least exciting part of the design and the one I would copy first. In
 
 ## Dreaming
 
-The part that makes the brain grow is a nightly consolidation, which I call dreaming because Anthropic and others do. The idea of letting my notes dream came from [Joachim Prinzbach](https://www.linkedin.com/in/joachimprinzbach/), a colleague at Helvetia, who showed it to me before Anthropic published its post on agent memory; the short version of that story is in [Memory that dreams](/notes/memory-that-dreams/). The idea comes from how memory is thought to work in people: during sleep and quiet rest, "the hippocampus replays our recent experiences", and some of them are distilled into lasting knowledge (Anthropic). Letta and UC Berkeley proposed [sleep-time compute](https://www.letta.com/blog/sleep-time-compute) in 2025 as a way for agents to use idle time to reorganise what they know, and Anthropic shipped [dreaming in Claude Managed Agents](https://claude.com/blog/new-in-claude-managed-agents) in May 2026.
+The part that makes the brain grow is a nightly consolidation, which I call dreaming because Anthropic and others do. The idea of letting my notes dream came from [Joachim Prinzbach](https://www.linkedin.com/in/joachimprinzbach/), a colleague at Helvetia, who showed it to me before Anthropic published its post on agent memory; the short version of that story is in [Memory that dreams](/notes/memory-that-dreams/). The idea comes from how memory is thought to work in people: during sleep and quiet rest, *"the hippocampus replays our recent experiences"*, and some of them are distilled into lasting knowledge (Anthropic). The agent version has a short history. [Generative Agents](https://arxiv.org/abs/2304.03442), by Joon Sung Park and colleagues in 2023, kept a full record of each simulated character's experiences and let it *"synthesize those memories over time into higher-level reflections"*. Letta proposed [sleep-time compute](https://www.letta.com/blog/sleep-time-compute) in April 2025, in a paper by Kevin Lin, Charlie Snell and colleagues, for agents *"using their downtime to reorganize information"*. And Anthropic launched [dreaming in Claude Managed Agents](https://claude.com/blog/new-in-claude-managed-agents) as a research preview in May 2026.
 
 Each night, for each context separately:
 
@@ -140,7 +157,7 @@ The gates are what make this defensible without a person reviewing it. The trans
 
 The first real run took about three minutes. It read three sessions and the tools' own memory files and committed thirteen files. It corrected a stale claim in the notes I had written by hand to seed the brain. It took rules one agent tool had written into its private memory and turned them into notes the other tool could see. And it raised one open question, about two positions of mine that pull against each other, which is exactly what I want a second brain to do and what I would never have written down myself.
 
-Anthropic's post has a good example of why the transcript matters as ground truth. In a long run of a game, a memory note held the wrong location for a place Claude needed, and dreaming "checked the note against the session transcript, caught its error, and rewrote it". With the corrected note Claude went straight on; with the uncorrected one it went back to the wrong route three times. A memory that is never checked against what happened does not stay neutral. It drifts, and the agent follows it.
+Anthropic's post has a good example of why the transcript matters as ground truth. In a long run of a game, a memory note held the wrong location for a place Claude needed, and dreaming *"checked the note against the session transcript, caught its error, and rewrote it"*. With the corrected note Claude went straight on; with the uncorrected one it *"dropped back onto that earlier route three times"*. A memory that is never checked against what happened does not stay neutral. It drifts, and the agent follows it.
 
 ## Kurumi: the assistant on top of the layer
 
@@ -148,13 +165,13 @@ A context layer that only agents can read drifts away from the person it describ
 
 Kurumi keeps its data in its own database, but it can sync a local folder of Markdown and read changes back. The brain does not point Kurumi at its notes directly. A command, `ctx mirror`, writes a one-way copy in Kurumi's own format, one vault per context. Links are rewritten from ids to titles, because Kurumi resolves links by title. The dream's open questions become Kurumi's own question records and the project notes its project records, so they show up where I already track questions and projects. Each night's journal becomes a note, so "what changed last night" is something I read with my coffee. A note that leaves the brain is marked as deleted rather than removed, because Kurumi restores files that simply disappear. And anything I write in Kurumi is picked up by the next dream as my own words, with `source: person`.
 
-Kurumi was already working on the same idea from the person's side. Its built-in agent keeps a note called "Kurumi memory" that it reads at the start of every conversation, and anyone can open and edit it, which is a small injected layer in exactly the sense above. When you ask it about a person or a project, it walks your notes along the links, in both directions, to the to-dos, decisions and open questions attached, and shows the path it took as a small graph. And a "living note" rewrites itself from the notes on its topic every few hours, with links back to every source, which is dreaming at the scale of a single page.
+Kurumi was already working on the same idea from the person's side. Its built-in agent keeps a note called "Kurumi memory" that it reads at the start of every conversation, and anyone can open and edit it, which is a small injected layer in exactly the sense above. When you ask it about a person or a project, it walks your notes along the links, in both directions, to the to-dos, decisions and open questions attached, and shows the path it took as a small graph. And a "living note" rewrites itself from the notes on its topic, at most every six hours, with links back to every source, which is dreaming at the scale of a single page.
 
 The mirror is a workaround. The proper version is a Kurumi feature I have started: a linked folder vault that opens the brain's files directly, keeps their foreign front matter byte for byte, resolves links by a configurable key and guards every write with a content hash. The first part, read-only linked vaults behind Kurumi's store, is on a branch; the rest is in progress.
 
 ## The same layer, for a whole company
 
-If this sounds familiar, it should. In [IT Intelligence](/articles/it-intelligence/) and the [reference implementation](/articles/building-it-intelligence/) I described a knowledge layer for a whole organisation's IT landscape. A personal context layer is the same pattern at the scale of one person:
+In [IT Intelligence](/articles/it-intelligence/) and the [reference implementation](/articles/building-it-intelligence/) I described a knowledge layer for a whole organisation's IT landscape. A personal context layer is the same pattern at the scale of one person:
 
 | | IT Intelligence, for an organisation | A context layer, for a person |
 |---|---|---|
@@ -184,7 +201,7 @@ If you want to build your own, these are the decisions I would keep, in order of
 
 ## What is not proven yet
 
-This is a working system, but a young one, and some parts have only been shown once. At the time of writing, the scheduled nightly job had not run on its own yet; one dream was run by hand, for one context. The second agent tool's wiring had not been exercised in a live session. The mirror into Kurumi was checked against Kurumi's code, its parser, link resolver and record reader, but not yet in the running app, and the linked folder vault has unit tests and nothing more. I will write about how it holds up after a few months of nights.
+This is a working system, but a young one. The first dream was run by hand, for one context. Since then the scheduled job has dreamed on its own, at half past three in the morning, for each context, on four nights of its first week, and both agent tools start their sessions from the same command. A week is not a track record. The mirror into Kurumi was first checked against Kurumi's code, its parser, link resolver and record reader, and has since been tried in the running app. The linked folder vault, which would replace it, has unit tests on a branch and nothing more. I will write about how it holds up after a few months of nights.
 
 ## The model is rented
 
@@ -195,6 +212,10 @@ The models will keep getting better, and everyone will have the same ones. What 
 - Lance Martin, [The components of agent memory](https://www.anthropic.com/research/components-of-agent-memory), Anthropic, 6 November 2026.
 - Anthropic, [New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration](https://claude.com/blog/new-in-claude-managed-agents), 19 May 2026.
 - Letta, [Sleep-time Compute](https://www.letta.com/blog/sleep-time-compute), 21 April 2025.
-- [Do Language Models Need Sleep? Offline Recurrence for Improved Online Inference](https://arxiv.org/abs/2605.26099), arXiv, May 2026.
+- Kevin Lin, Charlie Snell, Yu Wang, Charles Packer, Sarah Wooders, Ion Stoica, and Joseph E. Gonzalez, *Sleep-time compute: Beyond inference scaling at test-time*, arXiv:2504.13171, 2025, as cited in the Letta post.
+- Charles Packer, Sarah Wooders, Kevin Lin, Vivian Fang, Shishir G. Patil, Ion Stoica, and Joseph E. Gonzalez, [MemGPT: Towards LLMs as Operating Systems](https://arxiv.org/abs/2310.08560), arXiv:2310.08560, 2023.
+- Joon Sung Park, Joseph C. O'Brien, Carrie J. Cai, Meredith Ringel Morris, Percy Liang, and Michael S. Bernstein, [Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/abs/2304.03442), arXiv:2304.03442, 2023.
+- Simon Willison, [Context engineering](https://simonwillison.net/2025/Jun/27/context-engineering/), simonwillison.net, 27 June 2025, quoting Andrej Karpathy.
+- Andy Matuschak, [Evergreen notes](https://notes.andymatuschak.org/Evergreen_notes), Andy's working notes.
 - [Kurumi](https://kurumi.raskell.io), a local-first second brain, and its [documentation on AI and the agent](https://github.com/raskell-io/kurumi/blob/main/docs/ai.md).
-- Raffael Schneider, [Context Is the Product](/articles/context-is-the-product/), [Agent Experience](/articles/agent-experience/), [IT Intelligence](/articles/it-intelligence/) and [Building IT Intelligence](/articles/building-it-intelligence/).
+- Raffael Schneider, [Memory that dreams](/notes/memory-that-dreams/), [Context Is the Product](/articles/context-is-the-product/), [Agent Experience](/articles/agent-experience/), [IT Intelligence](/articles/it-intelligence/) and [Building IT Intelligence](/articles/building-it-intelligence/).

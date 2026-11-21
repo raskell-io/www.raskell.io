@@ -1,6 +1,6 @@
 +++
 title = "The Run Outlives the Process"
-date = 2026-11-20
+date = 2026-11-26
 draft = true
 description = "Processes die mid-run. This part journals every model response and tool result, so a run resumes after a crash, and waits a week for an approval, without repeating anything."
 
@@ -34,9 +34,16 @@ DRAFT NOTES (remove before publish)
 2. The code is on branch post-11-wip (commit dd327d0) in the handbook repo, on top of post-10.
    After post-10 is tagged with its real baseline: rebase post-11-wip onto main, fast-forward
    main, tag post-11, push.
-3. Hero image (960x300 PNG), then AVIF, OG PNG, `mise run covers`.
-4. Part 12 title for the "Next:" line (identity per the plan in part one).
-5. Wire Part 10's "Next:" line to /articles/the-run-outlives-the-process/, and set the date.
+3. Hero: hero-prompt-the-run-outlives-the-process.md is written; image (960x300 PNG), then AVIF, `mise run covers`.
+4. Part 12 has no title yet; the "Next:" line says "identity", per the plan in part one. Link it when Part 12 exists.
+5. Done: Part 10's "Next:" line links here; date set to Thursday 2026-11-26.
+6. Sources checked 2026-11-21. Temporal's about page gives no years for Cadence's open-sourcing or Temporal's founding,
+   so none are claimed; the sagas link points to the Princeton report (the Cornell scan could not be read).
+7. Code excerpts checked against the handbook repo at main (dd327d0): journal.ts, registry.ts, agent.ts, eval.ts,
+   tools/memory_write.ts. The repo asks for claude-haiku-4-5; the run blocks show the dated id the API returns,
+   which the real run will confirm.
+8. Release: the post-11 tag does not exist yet (main already holds dd327d0, post-10 is tagged). Tag and push
+   before the article goes live, since it links to tree/post-11. Handbook parts are not translated.
 -->
 
 > Part 11 of *The Agent Platform Handbook. From Loop to Platform.* Previous: [Evaluation Closes the Loop](/articles/evaluation-closes-the-loop/). Next: identity.
@@ -53,15 +60,15 @@ This part makes a run outlive the process running it. Every model response and e
 
 The idea is older than agents by decades. Databases solved it first: a write-ahead log records each change before it is applied, so after a crash the database replays the log and arrives where it was. Journaling file systems did the same for disks. The pattern is always the same: write down what you are about to rely on, make the write survive, then rely on it.
 
-Long-running business processes needed it next, because they span many systems and much more time than one transaction. Hector Garcia-Molina and Kenneth Salem described [sagas](https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf) in 1987: a long transaction split into steps, each with a compensating step that undoes it, so a process that cannot finish can still leave the world consistent. Workflow engines spent the next thirty years putting that idea into products.
+Long-running business processes needed it next, because they span many systems and much more time than one transaction. Hector Garcia-Molina and Kenneth Salem described [sagas](https://www.cs.princeton.edu/research/techreps/598) in 1987: a long transaction split into steps, each with a compensating step that undoes it, so a process that cannot finish can still leave the world consistent. Workflow engines spent the next thirty years putting that idea into products.
 
-The version this part borrows from is younger. Microsoft's [Durable Functions](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-orchestrations) keep an orchestration's history as a sequence of events, and after a restart they re-run the orchestrator code from the start; whenever the code asks for an activity that already ran, the framework hands back the recorded result instead of running it again. Cadence, built at Uber and open-sourced in 2017, and [Temporal](https://temporal.io/about), founded by Cadence's creators in 2019, made the same model general: a workflow's [event history](https://docs.temporal.io/workflow-execution) is the source of truth, and a worker that picks it up replays it to the point of failure and carries on. [Restate](https://restate.dev/blog/why-we-built-restate/), from the people who built Apache Flink, records an execution journal for each invocation and replays it on re-invocation in the same way.
+The version this part borrows from is younger. Microsoft's [Durable Functions](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-orchestrations) keep an orchestration's history as a sequence of events, and each time the orchestration wakes up, for new work or after a machine restarts, they re-run the orchestrator code from the start; whenever the code asks for an activity that already ran, the framework *"replays that function's result"* instead of running it again. Cadence, which Maxim Fateev and Samar Abbas co-created at Uber and which was open-sourced there, and [Temporal](https://temporal.io/about), the company they founded to carry it on, made the same model general: a workflow's [event history](https://docs.temporal.io/workflow-execution) records every step, and after a failure the execution *"picks up where the last recorded event occurred in the Event History."* [Restate](https://restate.dev/blog/why-we-built-restate/), from the people who built Apache Flink, records an execution journal for each invocation and replays it on re-invocation in the same way.
 
-Agent frameworks arrived at the same need from the other side. LangGraph's [checkpointers](https://docs.langchain.com/oss/python/langgraph/persistence) persist a thread's state after every step, for, in their words, "human-in-the-loop workflows, time travel, and fault tolerance". The workflow engines now market themselves for agents, and the agent frameworks now ship persistence. They are converging because an agent run is a long-running process with an unusually expensive and unusually unpredictable step in the middle of it: the model call.
+Agent frameworks arrived at the same need from the other side. LangGraph's [checkpointers](https://docs.langchain.com/oss/python/langgraph/persistence) persist a thread's graph state as checkpoints, for, in their words, *"human-in-the-loop workflows, time travel, and fault tolerance"*. The workflow engines now market themselves for agents, and the agent frameworks now ship persistence. They are converging because an agent run is a long-running process with an unusually expensive and unusually unpredictable step in the middle of it: the model call.
 
 ## What a crash costs
 
-It is worth being precise about what goes wrong, because each loss needs a different fix.
+A crash loses four different things, and each needs a different fix.
 
 The work is lost. Turns one to five happened, and their results lived in memory. Starting over means paying for them again, in money and in time.
 
@@ -159,7 +166,7 @@ So does every tool call, keyed by the `tool_use` id the model gave it. The keys 
 
 That is also the answer to the question every durable execution system has to answer, which is what to do about nondeterminism. Temporal asks you to write workflow code that is deterministic and to push everything that is not, network calls, clocks, random numbers, into activities whose results get recorded. An agent loop has one big source of nondeterminism, the model, and it already sits behind a single call. Record that call, and the loop around it becomes deterministic: given the same recorded responses, it builds the same messages, asks for the same tools, with the same ids, in the same order. The replay does not have to hope the model repeats itself, because the model is not asked.
 
-Two consequences follow, and both are worth stating plainly. A replay costs nothing: the recorded responses come from a file, with no tokens and no latency. The budget from part eight still counts them, because the ledger adds each replayed turn's recorded cost back in; a run that was interrupted at forty cents of a fifty-cent ceiling does not get a fresh fifty cents by crashing. And a replay reproduces decisions, not the world. If a file changed on disk between the crash and the resume, the replayed turns still see the old content they read the first time, and the first live turn after them sees the new one. That is the right behavior, because the replayed turns already acted on what they saw, but it is worth knowing when a resumed run surprises you.
+Two consequences follow. A replay costs nothing: the recorded responses come from a file, with no tokens and no latency. The budget from part eight still counts them, because the ledger adds each replayed turn's recorded cost back in; a run that was interrupted at forty cents of a fifty-cent ceiling does not get a fresh fifty cents by crashing. And a replay reproduces decisions, not the world. If a file changed on disk between the crash and the resume, the replayed turns still see the old content they read the first time, and the first live turn after them sees the new one. That is the right behavior, because the replayed turns already acted on what they saw, but it is worth knowing when a resumed run surprises you.
 
 ## The gap that remains
 
@@ -302,9 +309,9 @@ As with every part of the series, the code is in the [companion repository](http
 
 ## References
 
-- Hector Garcia-Molina and Kenneth Salem, [Sagas](https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf), SIGMOD 1987
+- Hector Garcia-Molina and Kenneth Salem, [SAGAS](https://www.cs.princeton.edu/research/techreps/598), Princeton University technical report TR-070-87, 1987; SIGMOD 1987
 - Microsoft, [Durable orchestrations](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-orchestrations): event sourcing and replay in Durable Functions
-- Temporal, [Workflow Execution](https://docs.temporal.io/workflow-execution): event history, replay, and deterministic constraints; [Who we are](https://temporal.io/about)
-- Stephan Ewen, [Why we built Restate](https://restate.dev/blog/why-we-built-restate/)
+- Temporal, [Workflow Execution](https://docs.temporal.io/workflow-execution) and [Workflow Definition](https://docs.temporal.io/workflow-definition): event history, replay, and why workflow code *"must be deterministic to support replay"*; [About Temporal](https://temporal.io/about)
+- Stephan Ewen, [Why we built Restate](https://restate.dev/blog/why-we-built-restate/), Restate, 24 August 2023
 - LangChain, [LangGraph persistence](https://docs.langchain.com/oss/python/langgraph/persistence)
 - Stripe, [Idempotent requests](https://docs.stripe.com/api/idempotent_requests)
