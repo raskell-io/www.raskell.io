@@ -1,8 +1,8 @@
 +++
-title = "CRDTs in Practice: What the Papers Don't Tell You"
+title = "CRDTs in Practice: What the Papers Do Not Tell You"
 date = 2026-04-16
 draft = true
-description = "CRDTs promise conflict-free merges with mathematical guarantees. The papers are correct. They are also incomplete. Here is what building a real CRDT engine taught me about clocks, garbage, and the distance between theory and production."
+description = "The guarantees of CRDTs hold. What building Conflux taught me about the rest: clock drift, semantic conflicts, garbage, and schema change."
 
 [taxonomies]
 tags = ["distributed-systems", "local-first", "determinism", "reliability", "rust"]
@@ -10,209 +10,217 @@ tags = ["distributed-systems", "local-first", "determinism", "reliability", "rus
 [extra]
 author = "Raffael"
 in_short = [
-  "Managing infrastructure config with one Git branch per environment caused drift, false conflicts and load-bearing merge order, so I built *Conflux*, a CRDT engine in Rust, to let many writers merge without conflicts.",
-  "The mathematical guarantees hold, but clocks drift, so a last writer wins field can pick the wrong write, and a merge can be conflict-free and still semantically wrong.",
-  "Choosing the right CRDT type for each field and logging every merge decision makes semantic conflicts less likely and visible when they happen.",
-  "State grows forever without compaction, which needs every replica's watermark, so a replica offline past an expiry window must rejoin from scratch, a tradeoff of correctness for practicality.",
-  "Schema changes are the problem nobody warns you about; I would start with fewer types and build compaction and schema evolution in from day one, because conflict-free does not mean problem-free.",
+  "Managing infrastructure config with one Git branch per environment caused drift, false conflicts and load-bearing merge order, so I built *Conflux*, a schema-aware CRDT engine in Rust, to let many writers merge without conflicts.",
+  "The mathematical guarantees hold, but they rest on clocks, and a hybrid logical clock that refuses a timestamp too far in the future quietly gives up part of its causality guarantee.",
+  "A merge can be conflict-free and still wrong. Choosing a merge strategy per field, flagging concurrent writes for review, and recording who wrote what with which intent make those cases rarer and visible.",
+  "Conflux keeps its whole operation log on purpose, as the audit trail, but CRDT metadata such as tombstones grows too, and collecting it needs causal stability, which needs every replica to be known and alive.",
+  "Changing a field's merge strategy is the problem I have not solved; I would build garbage collection and schema migration in from day one, because conflict-free does not mean problem-free.",
+  "Zed's editor, its DeltaDB, and GitHub Next's Chopin show where this goes now that agents edit alongside people: CRDT text underneath, every operation kept with its provenance, and decisions recorded apart from the merged prose.",
 ]
 +++
 
-If you have managed infrastructure config across multiple environments, you know the pattern. You have a Git repository. It holds runtime configuration for your services. There is a `dev` branch, a `staging` branch, and a `production` branch. Each branch represents the state of a different environment. When you want to promote a config change from dev to production, you merge the branch.
+<!--
+DRAFT NOTES (remove before publish)
+1. Checked 2026-11-21 against conflux at 83b92a8 (v1.0.0, February 2026): six strategies, uhlc 0.9 with its
+   default 500 ms max delta, gRPC replication with anti-entropy every 30 s and a 5 s leader heartbeat, append-only
+   operation log with snapshots, no garbage collection, no merge-strategy migration.
+2. The April draft described a skew threshold of five seconds, a compaction protocol with watermarks and a 30-day
+   replica expiry, storage figures (2.4 MB to 180 KB), schema versions with conversion functions, and WebSocket and
+   HTTP long-polling transports. None of that is in the code, so the text now describes what is there and calls the
+   rest unsolved. If any of it lives in an unpushed branch, restore the passage with the real numbers.
+3. The opening describes the branch-per-environment setup at a former workplace in general terms only; keep it that way.
+4. Every reference was fetched and checked on 2026-11-21 (papers via HAL, arXiv, Crossref and OpenAlex; Zed and
+   GitHub Next pages and the githubnext/chopin README and docs/architecture.md). Quotes are verbatim from those fetches.
+5. Not claimed on purpose: post-merge validation and the strategy-change error. Both are fixed in the conflux
+   working tree (2026-11-21, uncommitted): FieldState::merge returns MergeError::StrategyMismatch instead of
+   panicking, and the HTTP and gRPC write paths run validate_document and report violations in the response
+   (reported, not rejected, so replicas still converge). Once that is released, the text may say so; until then
+   it describes v1.0.0.
+6. Publish date: suggested 2026-12-22 (the next free Tuesday after the drafts on 11-24, 12-01, 12-08, 12-15).
+-->
 
-This is how we did it at work. We had dozens of infrastructure components, each with its own IaC-inspired runtime config repository. The repositories were not Terraform or Pulumi. They were closer to declarative state files that described what a running system should look like: feature flags, routing rules, rate limits, WAF policies, certificate configurations. The actual infrastructure read these files at runtime and reconciled.
+If you have managed infrastructure config across several environments, you know the pattern. A Git repository holds the runtime configuration for your services, with a `dev` branch, a `staging` branch, and a `production` branch, each one the state of a different environment. To promote a change from dev to production, you merge the branch.
 
-The branching model was simple and intuitive. It was also, over time, a source of constant pain.
+This is how we did it at work. Dozens of infrastructure components each had their own runtime config repository. These were declarative state files rather than Terraform or Pulumi projects, and they described what a running system should look like: feature flags, routing rules, rate limits, WAF policies, certificate settings. The running systems read these files and reconciled. The branching model was simple and intuitive, and over time it became a source of constant pain.
 
 ## The stage branch problem
 
-The first problem is drift. When `dev` and `production` diverge, which they always do, merging becomes a negotiation. A config value that makes sense in dev might be dangerous in production. A rate limit tuned for staging traffic is meaningless under production load. The branches are not really "versions" of the same configuration. They are different configurations that happen to share a history.
+The first problem is drift. When `dev` and `production` diverge, which they always do, every merge becomes a negotiation. A value that makes sense in dev can be dangerous in production, and a rate limit tuned for staging traffic means nothing under production load. The branches are not versions of one configuration so much as different configurations that happen to share a history.
 
-The second problem is merge conflicts. When two engineers change the same config file on different branches, Git treats this as a conflict even when the changes are to different fields. You are now resolving a merge conflict in a YAML file that controls production routing. The cognitive load is high and the stakes are real.
+The second problem is merge conflicts. When two engineers change the same file on different branches, Git reports a conflict even when they touched different fields, and you end up resolving a conflict in a YAML file that controls production routing.
 
-The third problem is ordering. Git branches encode a linear history, but config changes are not linear. Engineer A changes a rate limit on dev. Engineer B changes a feature flag on staging. These changes are independent. They do not conflict semantically. But the branching model forces you to sequence them. A merges first, then B merges on top of A, or vice versa. The merge order becomes load-bearing, and it should not be.
+The third problem is ordering. Git records a linear history, but config changes are not linear. Engineer A changes a rate limit on dev, engineer B changes a feature flag on staging, and the two changes have nothing to do with each other. The branching model still forces you to sequence them, and the merge order becomes load-bearing when it should not matter at all.
 
-The fourth problem is visibility. Which branch represents "truth" for a given environment? Production, presumably. But what about the changes sitting on staging that have not been promoted yet? Are they pending, or abandoned? The branch model does not distinguish between "waiting for review" and "forgotten." Three months later, you discover a staging branch with fifteen commits that nobody remembers the purpose of.
+The fourth problem is visibility. Production is the truth for production, presumably, but what about the changes sitting on staging that were never promoted? The branch model cannot tell "waiting for review" from "forgotten", and three months later you find a staging branch with fifteen commits whose purpose nobody remembers.
 
-I lived with this for long enough to recognize a pattern. The problems were not bugs in our workflow. They were consequences of using a tool designed for source code versioning to manage distributed mutable state. Git is excellent at what it does. What it does is track the history of a single lineage of changes. What we needed was a way for multiple writers to modify shared state concurrently, independently, and merge without conflicts.
-
-That is, by definition, a CRDT.
+After living with this long enough I stopped seeing bugs in our workflow and started seeing the consequences of using a tool built for versioning source code to manage shared, mutable state. Git is excellent at tracking one lineage of changes. We needed many writers changing shared state at the same time, independently, with merges that cannot conflict, and that is the definition of a CRDT.
 
 ## What a CRDT actually is
 
-If you have read the Wikipedia article, you know the acronym: Conflict-free Replicated Data Type. If you have read the Shapiro et al. paper, you know the formal definition: a data type equipped with a merge function that is associative, commutative, and idempotent. If you have read neither, the intuition is simple.
+CRDT stands for conflict-free replicated data type. Marc Shapiro, Nuno Preguiça, Carlos Baquero and Marek Zawirski gave the formal treatment in [2011](https://inria.hal.science/hal-00932836). In the state-based form, the states of a replica form a join semilattice, and merging two states means taking their least upper bound. That makes the merge function:
 
-Imagine two people editing a shared document on two different laptops with no internet connection. They each make changes. When they reconnect, their changes need to combine into a single document without either person's work being lost, and without a central server deciding who "wins."
-
-A CRDT is a data structure where this combination is automatic and deterministic. No matter what order the changes arrive in, no matter how many times the same change is applied, every replica converges to the same state. The merge function guarantees it.
-
-The three properties of the merge function are what make this work:
-
-- **Associative**: `merge(merge(A, B), C) = merge(A, merge(B, C))`. Grouping does not matter.
 - **Commutative**: `merge(A, B) = merge(B, A)`. Order does not matter.
-- **Idempotent**: `merge(A, A) = A`. Applying the same change twice has no additional effect.
+- **Associative**: `merge(merge(A, B), C) = merge(A, merge(B, C))`. Grouping does not matter.
+- **Idempotent**: `merge(A, A) = A`. Receiving the same state twice changes nothing.
 
-These properties mean you can relay operations through any number of intermediate nodes, in any order, with any amount of duplication, and every replica will converge. No coordination protocol. No consensus algorithm. No leader election. The math handles it.
+The operation-based form gets to the same place differently: operations that may run concurrently must commute, and the network has to deliver each one exactly once and in causal order.
 
-The catch is in the details.
+The intuition is simpler than the lattice. Two people edit the same document on two laptops without a connection. When they reconnect, their changes have to combine into one document without losing either person's work and without a server deciding who wins. With a CRDT, that combination is automatic and deterministic: whatever order the changes arrive in, and however often the same change arrives, every replica ends up in the same state. You can relay updates through any number of nodes, in any order, with any amount of duplication, and they still converge, with no consensus protocol and no leader. The rest of this article is about the details that the convergence proof does not cover.
 
 ## Conflux
 
-Conflux is the CRDT engine I built to solve the config management problem. It is written in Rust, with pluggable storage backends for SQLite, PostgreSQL, and DynamoDB. The core data model is a document: a flat `HashMap<EntityId, Entity>` where each entity holds a set of CRDT-typed fields.
+[Conflux](https://github.com/raskell-io/conflux) is the engine I built for the config problem. It is a daemon and a command-line tool in Rust that replaces Git as the write path for configuration. Humans, CI pipelines, operators and autoscalers submit typed operations, such as setting the `weight` field of the route `api` to 80 with a stated intent, instead of text diffs. The engine merges them deterministically and projects the resolved state to a Git repository from time to time as a milestone, so the history people like to read in Git is still there. Storage is pluggable: SQLite, PostgreSQL, DynamoDB, and an in-memory store for tests.
 
-The field types determine how concurrent edits merge:
+The core data model is a document: a `HashMap<EntityId, Entity>` in which each entity has a type, an optional parent, and a set of fields. The schema, written in TOML, gives every field a merge strategy, and each strategy is backed by a CRDT:
 
-| CRDT type | Merge behavior | Use case |
-|-----------|---------------|----------|
-| `LwwRegister<T>` | Last writer wins (by timestamp) | Simple values: name, status, URL |
-| `GrowOnlySet<T>` | Union of both sides | Tags, labels, immutable references |
-| `ObservedRemoveSet<T>` | Add wins over concurrent remove | Collaborator lists, mutable collections |
-| `MaxRegister` | Higher value wins | Version counters, progress indicators |
-| `MinRegister` | Lower value wins | Earliest timestamps, priority values |
+| Strategy | CRDT | Merge behaviour | Typical use |
+|---|---|---|---|
+| `lww` | `LwwRegister` | highest timestamp wins, ties broken by actor | names, images, URLs |
+| `max` | `MaxRegister` | higher value wins | replica counts, version counters |
+| `min` | `MinRegister` | lower value wins | timeouts, limits that may only tighten |
+| `grow` | `GrowOnlySet` | union, nothing is ever removed | tags, immutable references |
+| `set` | `ObservedRemoveSet` | add and remove, a concurrent add wins | ports, member lists |
+| `review` | `ReviewRegister` | last writer wins, concurrent writes flagged for a human | anything where a silent winner is unacceptable |
 
-Each field carries a hybrid logical clock (HLC) timestamp. When two replicas sync, the merge function walks the entity map, compares timestamps and CRDT types, and produces a deterministic result. The output is the same regardless of which replica syncs first or how many times they sync.
-
-This is the clean version. The version that fits on a slide. What actually happens when you build this is less tidy.
+Every write carries a hybrid logical clock timestamp. Environments live in the data as overlays: staging and development inherit from production, and promoting a change is one more operation.
 
 ## Clock drift is not a theoretical concern
 
-Every timestamp-based CRDT depends on clocks. The HLC (Hybrid Logical Clock) is the standard answer. It combines physical wall-clock time with a logical counter. When a node generates an event, it takes the maximum of its local wall time and its last known HLC time, increments the counter if the wall time has not advanced, and attaches the result to the event. This preserves causality: if event A caused event B, then `hlc(A) < hlc(B)`. Always.
+Every timestamp-based CRDT depends on clocks, and the usual answer is the hybrid logical clock that Sandeep Kulkarni, Murat Demirbas and colleagues [published in 2014](https://cse.buffalo.edu/tech-reports/2014-04.pdf). It combines wall-clock time with a logical counter. When a node creates an event, it takes the larger of its wall time and the highest timestamp it has seen, and bumps the counter if the wall time has not moved. When it receives a message, it does the same with the incoming timestamp. The result keeps the property that matters: if event *e* happened before event *f*, then *e*'s timestamp is smaller than *f*'s, and the timestamps stay close to physical time.
 
-The HLC algorithm is elegant and well-studied. Kulkarni et al. published it in 2014, and the proof is solid. What the proof does not cover is what happens when your nodes disagree about wall time by thirty seconds.
-
-```
-Node A clock:  14:00:00.000
-Node B clock:  14:00:30.000  (30s ahead)
-
-Node B writes field X = "foo" at HLC(14:00:30.000, 0)
-Node A writes field X = "bar" at HLC(14:00:01.000, 0)
-
-Merge result: X = "foo" (Node B's timestamp wins)
-```
-
-Node A's write happened after Node B's in real time, but the HLC says otherwise because Node B's clock is ahead. For an `LwwRegister`, this means Node B "wins" even though Node A wrote last.
-
-In a controlled environment, say, a set of servers in the same data center running NTP with a tight sync, the drift is usually under a millisecond. The HLC handles that gracefully. But Conflux was designed for a world where the writers are not always in the same data center. Laptops. CI runners. Edge nodes. Devices that wake from sleep with a stale clock and take a few seconds to sync.
-
-The practical mitigation is unglamorous. Conflux tracks the maximum observed clock skew across all replicas in a sync session. If the skew exceeds a configurable threshold (default: five seconds), the sync completes but emits a warning. The merge is still deterministic. The HLC guarantees are still intact. But the user needs to know that their "last writer wins" field might not reflect the write they think was last.
-
-I considered alternatives. Vector clocks give you true causality without depending on wall time, but they grow linearly with the number of replicas. For a system with three writers, that is fine. For a system where any number of CI runners, developer laptops, and edge nodes can write, the vector becomes unbounded. Lamport timestamps are compact but give you a total order, not a causal one. You cannot distinguish "A happened before B" from "A and B are concurrent." The HLC is the right tradeoff for Conflux. It is just not a tradeoff you can ignore.
-
-## LWW considered harmful (sometimes)
-
-The `LwwRegister` is the most intuitive CRDT and the most dangerous. Last writer wins. Simple. Except "last" is determined by the timestamp, and as we just discussed, timestamps are only as good as your clock sync.
-
-But even with perfect clocks, LWW has a semantic problem. Two engineers independently change the same config value. Engineer A sets the rate limit to 1000 because she ran a load test and determined that 1000 is the safe threshold. Engineer B sets the rate limit to 500 because he is responding to an incident and needs to throttle traffic immediately. Engineer B's write has a later timestamp. LWW picks 500. In this case, that is the right answer. But it is the right answer by accident, not by design.
-
-Now reverse the scenario. Engineer A is responding to the incident. She sets the rate limit to 500 at 14:00:01. Engineer B, unaware of the incident, sets it to 1000 at 14:00:02 because his load test just finished. LWW picks 1000. The incident response is silently overwritten.
-
-The CRDT did exactly what it promised. It merged without conflict. It converged deterministically. And the result is wrong.
-
-This is the gap between "conflict-free" and "correct." CRDTs eliminate technical conflicts. They do not eliminate semantic conflicts. The papers are precise about this, but the marketing around CRDTs often is not. "No more merge conflicts" is true at the data structure level. It is misleading at the application level.
-
-Conflux addresses this in two ways. First, the schema definition encourages you to choose the right CRDT type for each field. A rate limit that should only decrease during an incident is better modeled as a `MinRegister` than an `LwwRegister`. The merge function for `MinRegister` always picks the lower value, regardless of timestamp. No clock dependency. No ordering ambiguity. The tradeoff is that you cannot raise the rate limit by writing a higher value. You need to reset the field, which is a different operation with different semantics.
-
-Second, Conflux logs every merge decision with the full context: which replicas contributed, what the pre-merge values were, what the HLC timestamps were, and which CRDT rule applied. This audit trail does not prevent semantic conflicts. But it makes them visible. When the rate limit unexpectedly changes, you can trace exactly why.
-
-## Storage grows forever (and you have to deal with it)
-
-CRDTs are monotonic by design. State only grows. A `GrowOnlySet` never shrinks. An `ObservedRemoveSet` tracks removals as tombstones, which are themselves additions to an internal set. Even an `LwwRegister` retains the history of all writes until you explicitly compact it.
-
-In the academic literature, this is a known property, usually handled with a single sentence: "garbage collection is left as an implementation concern." That sentence hides a significant engineering problem.
-
-In Conflux, every entity field stores its full operation history for the current sync epoch. A sync epoch is the interval between two successful full syncs across all replicas. Within an epoch, you need the history to correctly merge concurrent operations from replicas that have not yet synced. After a full sync, you know every replica has seen every operation, and you can safely discard the history and keep only the current value.
-
-The problem is that "after a full sync" is not always well-defined. If you have three replicas and one goes offline for a week, the other two cannot compact. The offline replica might come back with operations that reference history you have already discarded. If you compacted too early, those operations cannot merge correctly.
+Conflux uses the Rust crate [uhlc](https://github.com/atolab/uhlc-rs) for its clocks. What the paper does not cover is what happens when two nodes disagree about wall time by thirty seconds:
 
 ```
-Replica A: [op1, op2, op3, op4, op5]  -- wants to compact
-Replica B: [op1, op2, op3, op4, op5]  -- wants to compact
-Replica C: [op1, op2] ................ -- offline since op2
+Node A wall clock:  14:00:00.000
+Node B wall clock:  14:00:30.000   (30 s ahead)
 
-Can A and B compact ops 1-5?
+Node B writes route.api.weight = 50  at HLC 14:00:30.000
+Node A writes route.api.weight = 80  at HLC 14:00:01.000   (one second later, in real time)
 
-No. C will come back with ops that depend
-on the state after op2. If A and B have
-discarded ops 1-4, they cannot verify that
-C's new operations merge correctly with the
-intermediate states.
+Merge result for an lww field: 50
 ```
 
-Conflux uses a two-phase compaction protocol. First, every active replica reports its sync watermark: the latest operation it has seen and acknowledged from every other replica. Second, the compaction threshold is set to the minimum watermark across all known replicas. Operations below the threshold are safe to compact because every replica has seen them.
+Node A wrote last in real time, but node B's clock is ahead, so node B wins. That is the correct outcome by the rules of a last-writer-wins register, because the two writes were concurrent: neither node had seen the other's write. It is still not what the operator at node A expected.
 
-This works when all replicas are reachable. When a replica goes permanently offline, the minimum watermark never advances, and storage grows indefinitely. The practical solution is a replica expiry timeout. If a replica has not synced within a configurable window (default: 30 days), it is assumed dead and excluded from the watermark calculation. If it comes back after that window, it must perform a full state transfer rather than an incremental sync.
+The more interesting case is the one where A *has* seen B's write. A hybrid logical clock should then advance A's clock past B's timestamp, so A's next write wins. uhlc refuses to do that when the incoming timestamp is more than its maximum delta ahead of local time, 500 milliseconds by default, because a timestamp that far in the future may come from a broken clock, and accepting it would drag every clock in the cluster forward. Conflux logs a warning, applies the operation anyway, and leaves its clock where it was. The write is safe and the state still converges, but A's next write can carry a smaller timestamp than a write it has already seen. The causality guarantee holds only within the delta.
 
-A policy decision that trades correctness for practicality. The pure CRDT model says "all replicas eventually converge, no matter how long they are offline." The production system says "if you disappear for 30 days, you rejoin from scratch." I have not found a way to avoid this tradeoff.
+I think that is the right default. A clock that any peer can push thirty seconds into the future is a worse failure than a register that occasionally prefers the write with the earlier wall time. But the guarantee comes with a footnote, and the footnote is about NTP, not about the algorithm. Inside one data centre with tight clock synchronisation, the skew is far below the delta and the footnote never matters. Across laptops running the CLI against a local store, CI runners and nodes in other regions, it does.
 
-The storage numbers, for context: a Conflux document with 500 entities, each with 10 fields, averaging 4 operations per field per sync epoch, consumes about 2.4 MB of operation history. After compaction, it drops to about 180 KB (just the current values plus metadata). The 13x reduction is why compaction matters. Without it, a busy document would consume hundreds of megabytes within a few months.
+The alternatives have their own costs. Vector clocks track causality exactly, without wall time, but grow with the number of participants. Lamport timestamps are compact and consistent with causality, but they cannot tell you whether two events were concurrent, and they have nothing to do with the time an operator sees on a dashboard. Conflux uses both ideas where they fit: hybrid logical clocks on every operation, and version vectors between replication nodes, of which there are few, so the vectors stay small. The many actors that write are not replicas and never appear in a vector.
+
+## Last writer wins, considered harmful (sometimes)
+
+The last-writer-wins register is the most intuitive CRDT and the most dangerous, because "last" means the highest timestamp, and timestamps are only as good as the clocks behind them. But even with perfect clocks, it has a semantic problem.
+
+Two engineers change the same rate limit. One sets it to 1000 because a load test showed that 1000 is safe. The other sets it to 500 because an incident is in progress and traffic needs throttling now. If the incident response has the later timestamp, the register picks 500, which is right, but right by accident. Reverse the timing, so the load-test result lands one second after the incident response, and the register picks 1000. The incident response is silently overwritten. The CRDT did exactly what it promised: it merged without conflict and converged deterministically, and the result is wrong.
+
+That is the gap between conflict-free and correct. CRDTs remove technical conflicts; they do not remove semantic ones. The papers are precise about this, and the way CRDTs are often sold is not: "no more merge conflicts" is true for the data structure and misleading for the application. Conflux narrows the gap in three ways.
+
+**Choose the strategy per field.** A limit that should only tighten during an incident fits a `min` field better than an `lww` field: the lower value always wins, regardless of timestamps, so there is no clock dependency at all. The price is that the field can only go down. Raising it again takes a deliberate change outside the merge rule, which is the point, but it is a different operation with different semantics, and the schema has to say so.
+
+**Flag concurrent writes for review.** A `review` field picks a winner by timestamp, like `lww`, but when two different actors wrote two different values it marks the field as needing review. `conflux conflicts` lists those fields, and `conflux resolve` records a person's choice as an operation of its own. The detection is deliberately coarse: it flags any two writes from different actors with different values, including some that were not truly concurrent, because for these fields a needless question costs less than a silent winner.
+
+**Keep the evidence.** Every operation is appended to a log with its actor, its timestamp, and the intent the writer gave, and `conflux blame` shows who last changed each field. That does not prevent a semantic conflict, but when the rate limit changes unexpectedly, you can see exactly which write won and why.
+
+## Storage grows, and that is half on purpose
+
+CRDTs are monotonic by design: state only grows. A `GrowOnlySet` never shrinks. An `ObservedRemoveSet` does not delete an element; it records the tags of the element's additions as removed, in a set of tombstones that is itself only ever added to. Conflux removes entities the same way, with a tombstone flag that is merged as a last-writer-wins register, because a replica that has not yet heard of the removal could otherwise bring the entity back.
+
+Conflux also keeps every operation it has ever accepted, and that part is on purpose. The operation log is the audit trail: who changed what, when, and with which intent, signed where the actor has a key. Snapshots make it fast to rebuild the current state without replaying the whole log, and milestones mark the points that were projected to Git. I do not want to throw that history away, and for config, which changes slowly, the log stays small enough that I have not needed to.
+
+The tombstones are a different matter. They are not history anyone reads; they are metadata the merge needs, and only for as long as an operation concurrent with the removal might still arrive. Shapiro and his colleagues give this problem its own section in their [comprehensive study](https://inria.hal.science/inria-00555588), observing that CRDTs *"tend to become inefficient over time, as tombstones accumulate"*. Their condition for discarding such metadata is stability: an update is stable at a replica once every update concurrent with it has been delivered there. And they name the catch: *"Liveness of Φ requires that the set of replicas be known and that they not crash permanently (undetectably)."* Carlos Baquero, Paulo Sérgio Almeida and Ali Shoker build on the same idea with [causal stability](https://repositorio.inesctec.pt/server/api/core/bitstreams/b3895e16-abb3-4e21-b7e7-265d405660cf/content) in their 2014 pure operation-based framework, where operations live in a log only until they are causally stable and can be folded into the state.
+
+In practice that means one question: do you know every replica, and will each of them come back? Conflux's replication nodes are configured, so the set is known, and the version vectors they already exchange are the information a stability check needs. What is missing is a policy for the node that never comes back. Wait forever, and the tombstones are never collected. Give up on it after some time, and a node that returns after that time has to be rebuilt from a snapshot rather than synced incrementally. Every system I have read about makes that trade somewhere, and Conflux has not made it yet.
 
 ## Schema evolution is the problem nobody warns you about
 
-The papers assume a fixed schema. Entity has fields. Fields have CRDT types. The merge function knows the types at compile time. Everything is clean.
+The papers assume a fixed schema: entities have fields, fields have types, and the merge function knows the types. In production, schemas change, and every kind of change meets the merge rules differently.
 
-In production, schemas change. You add a field. You remove a field. You change a field from an `LwwRegister` to an `ObservedRemoveSet` because the original type was wrong. Each of these changes interacts with the CRDT merge semantics in ways that are not covered by the standard theory.
+Adding a field is the easy case. Entities that have never seen it simply do not have it, and the first write creates it. The catch is the transition: a node still running the old schema rejects an operation for a field it does not know, so the schema has to reach every node before anyone writes to the new field.
 
-Adding a field is the easy case. Replicas that do not know about the new field simply do not have it. When they sync with a replica that does, the new field appears. The merge function treats a missing field as "empty," which is the identity element for the CRDT type. No conflict.
+Removing a field from the schema is quieter than it sounds. New writes to it are rejected, but the values already stored stay where they are, and nothing in the merge removes them.
 
-Removing a field is harder. If Replica A removes field X and Replica B writes to field X concurrently, what happens? In Conflux, a field removal is modeled as a tombstone with an HLC timestamp. If B's write has a later timestamp than A's removal, the field reappears. This is the "add wins over concurrent remove" semantic, consistent with the `ObservedRemoveSet` logic. It is also surprising if you are the person who removed the field and expected it to stay removed.
+Changing a field's merge strategy is the hard case, and the one I have not solved. An `lww` register and a grow-only set have different merge functions, and there is no merge of one with the other. Today Conflux treats the strategy of a field with existing state as a commitment: changing it on a live document is not supported, and the safe path is a new field and a migration by hand. Geoffrey Litt, Peter van Hardenberg and Orion Henry's [Project Cambria](https://www.inkandswitch.com/cambria/) at Ink & Switch is the most promising approach I know: bidirectional lenses that translate data between schema versions on demand, so old and new writers can keep working on the same document. Translating values is the easier half. Translating the merge metadata, so that a register's history becomes a sensible set, is the part I have not seen solved in general.
 
-Changing a field's CRDT type is the hardest case. An `LwwRegister<String>` and a `GrowOnlySet<String>` have incompatible merge functions. If Replica A upgrades the schema and Replica B has not yet, their operations for that field are type-incompatible. Conflux handles this by versioning the schema itself. Each field carries a schema version, and the merge function first checks version compatibility. If the versions differ, the higher version wins, and the lower-version value is migrated using a type-specific conversion function. `LwwRegister` to `GrowOnlySet`: the current register value becomes the initial element of the set. `GrowOnlySet` to `LwwRegister`: the set is serialized as the register value. These conversions are lossy. There is no general-purpose lossless migration between arbitrary CRDT types.
+The practical lesson is to choose merge strategies with care from the start. When I design a Conflux schema now, I spend more time on the strategy of each field than on the shape of the entities. The entities can evolve; the strategies are commitments.
 
-The practical lesson: choose your CRDT types carefully at the start. Migrations work, but they are a source of subtle behavior that is hard to reason about during an incident. When I design a new Conflux schema, I spend more time on the type assignments than on the entity structure. The entity structure can evolve freely. The types are commitments.
+## How nodes stay in sync
 
-## The sync protocol
-
-Syncing two Conflux replicas works in three phases:
+The merge needs no coordination, but a cluster still needs a protocol to move operations around. Conflux nodes replicate over gRPC in three ways:
 
 ```
-Phase 1: Exchange       Phase 2: Merge         Phase 3: Acknowledge
- 
-Replica A ──ops──▶     A merges B's ops        A ──ack──▶ B
-Replica B ──ops──▶     B merges A's ops        B ──ack──▶ A
-                       (deterministic,
-                        same result)
+            broadcast: every accepted operation goes to every peer
+  Node A  ─────────────────────────────────────────────▶  Node B
+          ◀─────────────────────────────────────────────
+            anti-entropy, every 30 s: compare version vectors,
+            send the operations the other side is missing
+
+  Leader election (heartbeat every 5 s): one node projects milestones to Git
 ```
 
-Phase 1: each replica sends the operations the other has not seen. This is determined by comparing sync vectors, which track the latest operation each replica has received from every other replica. The delta is usually small. A full sync only happens on first contact or after a replica exceeds the expiry window.
+Broadcast is the fast path: an operation one node accepts goes straight to the others. Anti-entropy is the safety net: every thirty seconds by default, each node compares version vectors with its peers and fills any gap, so a node that missed a broadcast during a network partition catches up without anyone noticing. Because the merge is commutative, associative and idempotent, it does not matter that broadcast and anti-entropy sometimes deliver the same operation twice, or in a different order.
 
-Phase 2: each replica independently applies the received operations using the CRDT merge function. Because the merge is associative, commutative, and idempotent, both replicas arrive at the same state regardless of the order operations are processed. This phase requires no coordination. Each replica can merge at its own pace.
+Leader election is the part that surprised me. Merging state needs no leader, but writing milestones to a Git repository does, because two nodes committing the same milestone would produce exactly the kind of history Conflux was built to avoid. So the cluster elects one node, by heartbeat, to do the one job that cannot be done concurrently. The CRDT removes coordination from the write path, not from the system.
 
-Phase 3: each replica acknowledges the sync by updating its sync vector and reporting its new watermark. This is what enables compaction. The acknowledge phase is also where clock skew is detected and reported.
-
-The transport layer is pluggable. Conflux ships with WebSocket and HTTP long-polling transports. The WebSocket transport maintains a persistent connection and pushes operations in real time. The HTTP transport polls at a configurable interval for environments where WebSocket is not available or not desired. The protocol is the same either way. Only the delivery mechanism changes.
-
-For the config management use case that started all of this, the HTTP transport with a 30-second poll interval is sufficient. Config changes are not real-time collaborative edits. A 30-second propagation delay is fine. The important property is that the propagation is automatic, deterministic, and does not require anyone to run `git merge`.
+Clients reach a node over a REST API, gRPC streams for watchers, or webhooks. For the config use case that started all of this, a propagation delay of seconds is fine; config is not a real-time collaborative text. What matters is that propagation is automatic and deterministic, and that nobody has to run `git merge`.
 
 ## What about Automerge and Yjs?
 
-A reasonable question: why build a custom CRDT engine when Automerge and Yjs exist?
+A fair question is why I built a CRDT engine at all when [Automerge](https://automerge.org/docs/hello/) and [Yjs](https://docs.yjs.dev/) exist. I use Automerge myself, in [Kurumi](https://kurumi.raskell.io), where the data really is a set of documents.
 
-Automerge is excellent for document-shaped data. It models a document as a JSON-like tree with fine-grained character-level editing, which makes it ideal for collaborative text editing and rich document applications. Yjs is similarly focused on real-time collaboration with a sophisticated encoding format that makes sync payloads tiny.
+Automerge descends from the JSON CRDT that Martin Kleppmann and Alastair Beresford [described in 2017](https://arxiv.org/abs/1608.03960): a document is a JSON-like tree of maps, lists, counters and text, and concurrent edits anywhere in it merge automatically. Yjs, which Petru Nicolaescu, Kevin Jahns and colleagues [presented in 2016](https://doi.org/10.1145/2957276.2957310), exposes its CRDT as shared types, maps, arrays and text, built for real-time collaborative editors. Both are local-first in the sense of the [Ink & Switch essay](https://www.inkandswitch.com/essay/local-first/) by Kleppmann, Adam Wiggins, Peter van Hardenberg and Mark McGranaghan: the data lives on your device first, and the server is optional.
 
-Conflux solves a different problem. The data model is not a document tree. It is a flat map of entities with typed fields. There is no text editing. There is no rich document structure. There are config values, feature flags, routing rules, and policy definitions. The operations are "set this field to this value," not "insert character at position 47."
+Conflux solves a narrower problem. Its data is a set of entities with typed fields, with no document tree and no text in it, and its operations are "set this field to this value", not "insert a character at position 47". That makes several things simpler. The merge strategy is declared per field, so the schema says how each value behaves under concurrency instead of every field inheriting the same rule. Validation is straightforward because every field has an explicit type. And the storage backends can keep operations, snapshots and milestones as ordinary rows. Automerge's repository stores documents as binary changes and [compacted snapshots](https://automerge.org/docs/reference/under-the-hood/storage/) under keys of a key-value store, which is efficient and needs Automerge to read. Conflux's state can be queried with SQL and backed up with the database's own tools.
 
-The flat entity model makes several things simpler. Merge is O(fields changed), not O(document depth). Schema validation is straightforward because every field has an explicit type. Compaction is per-entity, so you can compact aggressively for stable entities while retaining history for active ones. And the storage backends can use a simple key-value layout rather than a tree-aware structure.
+Automerge and Yjs are better tools for collaborative documents, and I would not use Conflux for one. "CRDT" names a family of data structures with different strengths, and the target use case decides which one you want.
 
-I also needed pluggable storage. Automerge stores its data in a custom binary format that is optimized for document sync but requires Automerge-aware tooling to inspect. Conflux stores operations and state in whatever backend you choose: SQLite for single-node development, PostgreSQL for shared infrastructure, DynamoDB for serverless deployments. You can query the current state with standard SQL. You can back it up with standard database tools. You can inspect it without importing a library.
+## Agents in the document
 
-This is not a criticism of Automerge or Yjs. They are better tools for their target use case. But the target use case matters, and "CRDT" is not a single category of tool. It is a family of data structures with different strengths.
+Since the first version of this article, the question has changed. CRDTs used to be the machinery behind people editing together. Now some of the other writers are agents, and they write faster than any of us. Three projects show where that leads, and each of them meets the problems above in its own way.
+
+[Zed](https://zed.dev/) is the evidence that a CRDT holds up inside a production editor. In [How CRDTs make multiplayer text editing part of Zed's DNA](https://zed.dev/blog/crdts) (2022), Nathan Sobo explains why Zed chose CRDTs over operational transformation: instead of transforming concurrent operations, *"we structure our data so that concurrent operations are inherently commutative"*. Every insertion gets an identifier made of a replica id and a sequence number, deletions hide text behind tombstones instead of removing it, and concurrent insertions at the same place are ordered by Lamport timestamps. Two details stood out to me after building Conflux. Zed's ordering needs no wall clock at all, so the drift problem from earlier does not arise for its text. And replica ids are assigned centrally, so the set of replicas is known, which is exactly the precondition that stability, and with it garbage collection, depends on.
+
+DeltaDB carries the idea up into version control. Sobo's [post introducing it](https://zed.dev/blog/introducing-deltadb) in June 2026 says: *"Where Git captures a snapshot at each commit, DeltaDB captures every operation in between and gives each one a stable identity."* It also says that *"DeltaDB embeds conflict-free replicated worktrees"*, so that *"many people and agents can edit the same files at once across different machines"*, and that *"A message and the edit it produced are recorded side by side, so neither drifts away from the other."* The [public beta announcement](https://zed.dev/blog/delta-public-beta) adds that *"A commit remains the checkpoint you push, pull, and build from. DeltaDB retains the work between those checkpoints."* I wrote about that premise in [The conversation is the workspace](/notes/the-conversation-is-the-workspace/) and planned a small trial in [Testing DeltaDB](/notes/testing-deltadb/). I have not run it yet, so what follows is a reading of the design, not a result.
+
+Read next to Conflux, DeltaDB makes the opposite trade to compaction. A CRDT system usually wants to fold old operations into state and forget them. DeltaDB's premise is that the operations are the product: every edit addressable, and tied to the conversation that produced it. Conflux keeps its operation log for a smaller version of the same reason, as evidence of who changed what and with which intent; DeltaDB keeps the whole conversation as the intent. That is also the best answer I know to the semantic conflict. When a merge is conflict-free and wrong, the first question is who wrote the value that won, and why, and provenance answers it. The posts I read do not say what DeltaDB does over years with the metadata a replicated text accumulates, the tombstones of every deleted line, and that is what I would ask first.
+
+[Chopin](https://githubnext.com/projects/chopin/), the GitHub Next prototype Krzysztof Cieślak showed at [Agentic Engineering Days Zurich](/articles/agentic-engineering-days-zurich-2026/), is the planning side. Its project page describes *"a real-time, multiplayer planning environment"* in which *"agents editing the plan should behave like other users editing the plan."* Its [open source repository](https://github.com/githubnext/chopin) shows the machinery. A document is *"represented as restricted MDX, Lexical, and Yjs"*, and the server keeps *"complete Yjs checkpoints and the accepted update journal after each checkpoint"*: checkpoint plus journal, the same compromise between keeping history and keeping it small. Two of its design choices read like answers to the lessons in this article. A Yjs epoch *"Identifies one collaborative history. Rebuild or replacement creates a new epoch so clients discard incompatible updates."* That is a blunt and honest way to handle a change the merge cannot express: start a new history instead of pretending to merge across it. And decisions are kept out of the merged text: *"Question answers and accepted comments live in attributed records separate from the prose they produced. Later edits cannot silently overwrite what the team decided."* That is my rate-limit problem, solved at the right level. The prose may converge however the CRDT likes, but a decision is not a value that a later write can win against.
+
+My view is that agents make the semantic conflict worse in a specific way. A person who overwrites a colleague's change usually notices; an agent making a hundred edits a minute does not, and the CRDT merges every one of them without complaint. Convergence becomes cheap, and correctness becomes the thing to protect. I expect the systems that last to look like these three put together: a CRDT underneath for the text, operations kept with their identity and provenance above it, and a separate, attributed record of decisions that no merge rule may override. Conflux's review fields and operation log are a small version of the last two, and I would make them more central if I started again.
 
 ## What I would do differently
 
-Three things.
+I would build garbage collection in from the first day, together with the replica policy it depends on. Deciding late what happens to a node that disappears means deciding it under pressure, and the decision touches the replication protocol, the store, and the way a node rejoins.
 
-First, I would have started with fewer CRDT types. Conflux launched with five field types. In practice, 90% of fields use `LwwRegister` or `GrowOnlySet`. The `MinRegister` and `MaxRegister` types have clear use cases, but they are rare enough that I could have added them later. The `ObservedRemoveSet` is the most complex type to implement correctly, and I have fixed more bugs in its tombstone management than in the rest of the engine combined. Fewer types at the start would have meant fewer edge cases, faster development, and a smaller surface area for bugs.
+Schema migration belongs in the engine, not in its users' runbooks. The day you need to change a field's merge strategy is the day you discover there is no merge between strategies, and a lens layer in the spirit of Cambria is far easier to design before the first production document exists.
 
-Second, I would have built the compaction protocol earlier. The first version of Conflux stored full history forever, with compaction planned as a "later" optimization. It was not later. Storage growth became a problem within weeks of real use. The compaction protocol was retrofitted, and the retrofit required changes to the sync vector format, the storage schema, and the replica registration model. Building it in from the start would have been significantly less work.
+The clock policy should be explicit in configuration. A 500 millisecond delta is a reasonable default for a data centre and a tight one for a fleet of laptops, and an operator should choose it knowingly, with a metric for how often it is exceeded.
 
-Third, I would have made schema evolution a first-class concept from day one rather than adding it after the first schema migration broke a production sync. The current versioned-schema approach works, but it was designed under pressure. I suspect there are cleaner models, possibly borrowing from database schema migration tools or protocol buffer evolution rules. This is an area I am still iterating on.
+Last, the review register's concurrency detection should rest on real causal information. The version vectors are already there; using them would flag exactly the writes that were concurrent, rather than every pair from different actors.
 
 ## The distance between theory and production
 
-CRDTs work. The mathematical guarantees are real. If your merge function satisfies the three properties, your replicas will converge. This is provably true and practically useful. I am building production systems on these guarantees and I trust them.
+CRDTs work. If your merge function is the least upper bound of a semilattice, your replicas converge; that is provably true and practically useful, and I trust it. But the theory gives you the foundation, not the building. Clocks drift and the clock protects itself by giving up a little causality. Users make concurrent writes that are conflict-free and contradictory. Metadata accumulates, and collecting it needs a decision about replicas that will never return. Schemas change, and merge strategies do not convert into each other. The merge handles all of it at the level of the data structure. At the level of the application you still need policies, visibility, and the humility to accept that conflict-free does not mean problem-free. As with [every layer](/notes/every-layer-moves-the-uncertainty/), the uncertainty does not disappear; it moves to where you can see it.
 
-But the theory gives you the foundation, not the building. Clocks drift. Storage grows. Schemas change. Replicas go offline and come back with stale state. Users make concurrent writes that are technically conflict-free and semantically contradictory. The merge function handles all of these at the data structure level. At the application level, you still need policies, visibility, and the humility to admit that "conflict-free" does not mean "problem-free."
+In Conflux there are no stage branches and no merge conflicts in YAML files, and nobody has to wonder which branch is the truth. Each environment is an overlay on one document, changes propagate on their own, and every write is in the log with the name of whoever made it. The papers got me started; the problems they leave out taught me the rest.
 
-The config management problem I started with is solved. No more stage branches. No more merge conflicts in YAML files. No more wondering which branch represents truth. Each environment is a Conflux replica. Config changes propagate automatically. The merge is deterministic. The audit trail is complete. Engineers make changes without coordinating, and the system converges.
+## References
 
-It took building a CRDT engine from scratch to get there. The papers got me started. The production problems taught me the rest.
+- Marc Shapiro, Nuno Preguiça, Carlos Baquero, and Marek Zawirski, [Conflict-free Replicated Data Types](https://inria.hal.science/hal-00932836), SSS 2011 (Stabilization, Safety, and Security of Distributed Systems), LNCS 6976, 2011.
+- Marc Shapiro, Nuno Preguiça, Carlos Baquero, and Marek Zawirski, [A comprehensive study of Convergent and Commutative Replicated Data Types](https://inria.hal.science/inria-00555588), Inria Research Report RR-7506, 2011.
+- Sandeep Kulkarni, Murat Demirbas, Deepak Madappa, Bharadwaj Avva, and Marcelo Leone, [Logical Physical Clocks and Consistent Snapshots in Globally Distributed Databases](https://cse.buffalo.edu/tech-reports/2014-04.pdf), University at Buffalo technical report 2014-04; published as Logical Physical Clocks, OPODIS 2014, LNCS 8878.
+- Leslie Lamport, [Time, Clocks, and the Ordering of Events in a Distributed System](https://lamport.azurewebsites.net/pubs/time-clocks.pdf), Communications of the ACM 21(7), 1978.
+- Carlos Baquero, Paulo Sérgio Almeida, and Ali Shoker, [Making Operation-based CRDTs Operation-based](https://repositorio.inesctec.pt/server/api/core/bitstreams/b3895e16-abb3-4e21-b7e7-265d405660cf/content), DAIS 2014 (Distributed Applications and Interoperable Systems), LNCS 8460, 2014.
+- Martin Kleppmann and Alastair R. Beresford, [A Conflict-Free Replicated JSON Datatype](https://arxiv.org/abs/1608.03960), IEEE Transactions on Parallel and Distributed Systems, 2017; arXiv:1608.03960.
+- Petru Nicolaescu, Kevin Jahns, Michael Derntl, and Ralf Klamma, [Near Real-Time Peer-to-Peer Shared Editing on Extensible Data Types](https://doi.org/10.1145/2957276.2957310), GROUP 2016.
+- Martin Kleppmann, Adam Wiggins, Peter van Hardenberg, and Mark McGranaghan, [Local-first software: You own your data, in spite of the cloud](https://www.inkandswitch.com/essay/local-first/), Ink & Switch, 2019.
+- Geoffrey Litt, Peter van Hardenberg, and Orion Henry, [Project Cambria: Translate your data with lenses](https://www.inkandswitch.com/cambria/), Ink & Switch, 2020.
+- [Automerge documentation](https://automerge.org/docs/hello/), including [Storage](https://automerge.org/docs/reference/under-the-hood/storage/).
+- [Yjs documentation](https://docs.yjs.dev/).
+- [uhlc](https://github.com/atolab/uhlc-rs), a hybrid logical clock for Rust, with a default maximum delta of 500 ms.
+- Nathan Sobo, [How CRDTs make multiplayer text editing part of Zed's DNA](https://zed.dev/blog/crdts), Zed blog, December 1, 2022.
+- Nathan Sobo, [Software Is Made Between Commits](https://zed.dev/blog/introducing-deltadb), Zed blog, June 11, 2026, introducing DeltaDB.
+- Nathan Sobo, [Introducing Delta](https://zed.dev/blog/introducing-delta), Zed blog, August 12, 2026.
+- Nathan Sobo, [Replace PRs with Delta: Now in Public Beta](https://zed.dev/blog/delta-public-beta), Zed blog, September 16, 2026.
+- Krzysztof Cieślak and Maggie Appleton, [Chopin: A real-time multiplayer, agentic planning environment](https://githubnext.com/projects/chopin/), GitHub Next, September 2026; source and [architecture notes](https://github.com/githubnext/chopin/blob/main/docs/architecture.md) at [githubnext/chopin](https://github.com/githubnext/chopin).
+- [Conflux](https://github.com/raskell-io/conflux), the engine described here.
