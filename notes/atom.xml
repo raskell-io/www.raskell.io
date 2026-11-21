@@ -61,6 +61,43 @@
         
     </entry>
     <entry xml:lang="en">
+        <title>Smell is pattern recognition</title>
+        <published>2026-11-21T00:00:00+00:00</published>
+        <updated>2026-11-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/smell-is-pattern-recognition/"/>
+        <id>https://raskell.io/notes/smell-is-pattern-recognition/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/smell-is-pattern-recognition/">&lt;p&gt;Chapter 7 of Max Bennett’s &lt;em&gt;A Brief History of Intelligence&lt;&#x2F;em&gt;, “The Problems of Pattern Recognition”, explains neural networks with the nose, and that is why I am writing this down. I love everything that goes through the nose: I keep a fragrance collection, I cook mostly for taste, I like wine and spirit tastings, cocktails, and the craft of essential oils and aromas. It is a pleasure to find smell at the centre of a book about intelligence.&lt;&#x2F;p&gt;
+&lt;p&gt;Bennett’s point is simple. There is no molecule for pulled pork. A smell is a mixture of many molecules that activates a pattern across many kinds of olfactory neurons; the lamprey, his model for the first vertebrates, has about fifty. So, in his words, “smell recognition is nothing more than pattern recognition.” Earlier animals recognised the world one neuron at a time: one cell for light, one for touch. The first vertebrates, some five hundred million years ago, learned to read the pattern instead, and fifty cells can make more patterns than any animal will ever meet.&lt;&#x2F;p&gt;
+&lt;p&gt;Reading a pattern raises two problems, and Bennett draws both as smells:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Problem&lt;&#x2F;th&gt;&lt;th&gt;The smell version&lt;&#x2F;th&gt;&lt;th&gt;How the cortex may solve it&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Discrimination&lt;&#x2F;td&gt;&lt;td&gt;A predator and a meal activate overlapping neurons, but one means flee and the other means approach.&lt;&#x2F;td&gt;&lt;td&gt;Expansion and sparsity: a few olfactory neurons feed many cortical neurons, each wired to only some of them, so overlapping inputs become separate patterns.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Generalisation&lt;&#x2F;td&gt;&lt;td&gt;The same predator never smells exactly the same twice: another age, another diet, another background.&lt;&#x2F;td&gt;&lt;td&gt;Auto-association: cortical neurons wire to each other, so a partial pattern brings back the whole memory.&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Then he builds the machine version, still with smells. To train a network to tell eggs from flowers, you show it labelled examples, measure the error at the output, and nudge every weight a little in the right direction, millions of times. That is backpropagation, popularised in the 1980s by Geoffrey Hinton, David Rumelhart and Ronald Williams. Hinton keeps turning up in what I read; he is all over &lt;em&gt;Empire of AI&lt;&#x2F;em&gt;, and by now he feels like the grandfather of the field. Bennett opens his introduction with a Hinton quotation and comes back to him in chapter 11 with the Helmholtz machine. He also reports that Hinton himself saw backpropagation as a poor model of the brain: a child tells an egg from a strawberry before knowing either word, and no brain can adjust millions of synapses at once by exactly the right amount.&lt;&#x2F;p&gt;
+&lt;p&gt;The detail I liked most is in an endnote. Smell has no invariance problem. A face looks different from every angle and distance, but an egg releases the same molecules wherever it sits, so it activates the same olfactory neurons. And smell is the one sense that skips the thalamus and goes straight to the cortex. Bennett suggests the two facts may be connected: the thalamus might be what the other senses need to recognise things that are rotated, moved, or scaled.&lt;&#x2F;p&gt;
+&lt;p&gt;That gives me a way to put my own belief more precisely. I believe smell will be the last sense we learn to read and write with machines. Not the last we understand, but the last for which we build input and output devices as ordinary as a camera and a screen, a microphone and a speaker. For the brain, smell is the easiest pattern problem. For engineers, it is the hardest, and the difficulty is in the instruments, not in the recognition. Sight compresses well: three kinds of cones, so three channels in, three primaries out. Smell has no such shortcut. Bennett notes that rats carry more than a thousand olfactory receptor types, and an output device cannot mix every scent from three cartridges. It has to put the actual molecules into the air.&lt;&#x2F;p&gt;
+&lt;p&gt;There is progress, and the recognition side is moving first, as the chapter would predict. In 2023, a team from Osmo and the Monell Chemical Senses Center published a principal odor map in &lt;em&gt;Science&lt;&#x2F;em&gt;: a graph neural network that predicts from a molecule’s structure how it will smell, and matched human panelists at describing odors in words. In 2024 Osmo reported a “scent teleportation”: a plum measured by gas chromatography and mass spectrometry, turned into a formula, and reprinted by a machine. That is the company’s own account, and it is a laboratory, not a device in a pocket. Recognising a smell from data is starting to work. Writing one back into a room is still chemistry. I would bet that a phone that can play a perfume as easily as a song will come after everything else on the list.&lt;&#x2F;p&gt;
+&lt;p&gt;More on the book in my review, &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-a-brief-history-of-intelligence&#x2F;&quot;&gt;A Brief History of Intelligence&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Max Bennett, &lt;em&gt;A Brief History of Intelligence&lt;&#x2F;em&gt; (2023), chapter 7, “The Problems of Pattern Recognition”, and its endnotes; chapter 11 for the Helmholtz machine.&lt;&#x2F;li&gt;
+&lt;li&gt;Brian K. Lee, Emily J. Mayhew, et al., “A principal odor map unifies diverse tasks in olfactory perception”, &lt;em&gt;Science&lt;&#x2F;em&gt; 381 (2023), &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;doi.org&#x2F;10.1126&#x2F;science.ade4401&quot;&gt;doi:10.1126&#x2F;science.ade4401&lt;&#x2F;a&gt;; press release by the Monell Chemical Senses Center on &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.eurekalert.org&#x2F;news-releases&#x2F;999716&quot;&gt;EurekAlert&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;Osmo, “&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.osmo.ai&#x2F;blog&#x2F;teleporting-scent&quot;&gt;Teleporting scent&lt;&#x2F;a&gt;”, the company’s account of the plum reprint.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>Data fusion belongs in the store</title>
         <published>2026-11-20T00:00:00+00:00</published>
         <updated>2026-11-20T00:00:00+00:00</updated>

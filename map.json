@@ -1,8 +1,17 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-21T07:58:11+00:00",
+ "generated": "2026-11-21T10:05:09+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
+  {
+   "id": "a:/articles/review-a-brief-history-of-intelligence/",
+   "kind": "article",
+   "label": "Five Breakthroughs and a Dishwasher",
+   "url": "https://raskell.io/articles/review-a-brief-history-of-intelligence/",
+   "meta": "2026-11-21 · 20 min",
+   "description": "Max Bennett's A Brief History of Intelligence maps five steps in how brains work onto five ideas in AI. A deep book, and slow going on a first read.",
+   "degree": 14
+  },
   {
    "id": "a:/articles/agentic-engineering-days-zurich-2026/",
    "kind": "article",
@@ -37,7 +46,7 @@
    "url": "https://raskell.io/articles/review-empire-of-ai/",
    "meta": "2026-11-14 · 17 min",
    "description": "Karen Hao's Empire of AI tells the story of OpenAI through its people. Gripping as reporting, and uneven where it argues.",
-   "degree": 22
+   "degree": 23
   },
   {
    "id": "a:/articles/review-how-life-works/",
@@ -46,7 +55,7 @@
    "url": "https://raskell.io/articles/review-how-life-works/",
    "meta": "2026-11-14 · 10 min",
    "description": "Philip Ball's How Life Works is the popular science book I wish every other one were: deep, clear, and honest about how we came to know what we know.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "a:/articles/evaluation-closes-the-loop/",
@@ -463,6 +472,15 @@
    "degree": 7
   },
   {
+   "id": "a:/notes/smell-is-pattern-recognition/",
+   "kind": "note",
+   "label": "Smell is pattern recognition",
+   "url": "https://raskell.io/notes/smell-is-pattern-recognition/",
+   "meta": "2026-11-21",
+   "description": "Max Bennett explains neural networks with the nose. For the brain, smell is the easiest pattern to recognise; for machines, the hardest sense to build.",
+   "degree": 7
+  },
+  {
    "id": "a:/notes/data-fusion-belongs-in-the-store/",
    "kind": "note",
    "label": "Data fusion belongs in the store",
@@ -487,7 +505,7 @@
    "url": "https://raskell.io/notes/plan-then-execute/",
    "meta": "2026-11-20",
    "description": "Wargames call it WEGO, agent builders call it plan-then-execute: commit to the whole plan, lock it in, then watch it run without touching it.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "a:/notes/testing-deltadb/",
@@ -523,7 +541,7 @@
    "url": "https://raskell.io/notes/memory-that-dreams/",
    "meta": "2026-11-15",
    "description": "A colleague showed me that agent memory should dream before Anthropic published on it. Replay the day, and check the notes against what happened.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "a:/notes/a-self-fulfilling-prophecy/",
@@ -613,7 +631,7 @@
    "url": "https://raskell.io/notes/determinism-is-what-intelligence-leaves-behind/",
    "meta": "2026-11-10",
    "description": "Agents explore; procedures keep what the exploring found. The useful question is never agent or workflow, but when a path has been found often enough to keep.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "a:/notes/one-person-can-make-a-difference/",
@@ -1237,6 +1255,15 @@
    "degree": 8
   },
   {
+   "id": "t:evolution",
+   "kind": "tag",
+   "label": "Evolution",
+   "url": "https://raskell.io/tags/evolution/",
+   "meta": "Concept · 2 pages",
+   "description": "Change by variation and selection, in genes, brains, and populations, and the arguments over how much it explains.",
+   "degree": 15
+  },
+  {
    "id": "t:external-memory",
    "kind": "tag",
    "label": "External memory",
@@ -1457,9 +1484,9 @@
    "kind": "tag",
    "label": "Intelligence",
    "url": "https://raskell.io/tags/intelligence/",
-   "meta": "Concept · 6 pages",
+   "meta": "Concept · 8 pages",
    "description": "What intelligence is and how it arises, in brains, in neuron cultures, and in machines that learn.",
-   "degree": 26
+   "degree": 28
   },
   {
    "id": "t:interfaces",
@@ -1637,18 +1664,18 @@
    "kind": "tag",
    "label": "Neural networks",
    "url": "https://raskell.io/tags/neural-networks/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 4 pages",
    "description": "Layers of weights that learn a function from examples: architectures, activations, quantisation, and running them where the data is.",
-   "degree": 5
+   "degree": 7
   },
   {
    "id": "t:neuroscience",
    "kind": "tag",
    "label": "Neuroscience",
    "url": "https://raskell.io/tags/neuroscience/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 5 pages",
    "description": "Brains and nervous systems: connectomes, neural recording, and the attempt to model what neurons compute.",
-   "degree": 16
+   "degree": 18
   },
   {
    "id": "t:observability",
@@ -1658,6 +1685,15 @@
    "meta": "Concept · 4 pages",
    "description": "Seeing what a running system does: traces, metering, glass-box infrastructure, and what not to log.",
    "degree": 11
+  },
+  {
+   "id": "t:olfaction",
+   "kind": "tag",
+   "label": "Olfaction",
+   "url": "https://raskell.io/tags/olfaction/",
+   "meta": "Concept · 2 pages",
+   "description": "Smell and taste as senses: how noses and brains recognise mixtures of molecules, and how far machines are from reading and writing them.",
+   "degree": 4
   },
   {
    "id": "t:open-data",
@@ -1826,9 +1862,9 @@
    "kind": "tag",
    "label": "Reinforcement learning",
    "url": "https://raskell.io/tags/reinforcement-learning/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Learning from the outcomes of one's own actions: self-play, rewards, and feedback loops that turn experience into skill.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:reliability",
@@ -2182,15 +2218,6 @@
    "degree": 7
   },
   {
-   "id": "t:evolution",
-   "kind": "tag",
-   "label": "Evolution",
-   "url": "https://raskell.io/tags#evolution",
-   "meta": "Concept · no pages yet",
-   "description": "Change by variation and selection, in genes, brains, and populations, and the arguments over how much it explains.",
-   "degree": 13
-  },
-  {
    "id": "t:existential-risk",
    "kind": "tag",
    "label": "Existential risk",
@@ -2297,15 +2324,6 @@
    "meta": "Concept · no pages yet",
    "description": "How machines talk: packets, protocols, sockets, and the networks from ARPANET to the web that carry them.",
    "degree": 8
-  },
-  {
-   "id": "t:olfaction",
-   "kind": "tag",
-   "label": "Olfaction",
-   "url": "https://raskell.io/tags#olfaction",
-   "meta": "Concept · no pages yet",
-   "description": "Smell and taste as senses: how noses and brains recognise mixtures of molecules, and how far machines are from reading and writing them.",
-   "degree": 2
   },
   {
    "id": "t:origins-of-life",
@@ -2418,9 +2436,9 @@
    "kind": "category",
    "label": "Reviews",
    "url": "https://raskell.io/categories/reviews/",
-   "meta": "4 entries",
+   "meta": "5 entries",
    "description": "Reviews of books, papers, and long articles from the reading log: what the work argues, where I was persuaded, and what I made of it.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "p:archipelag-io",
@@ -2711,20 +2729,11 @@
    "degree": 6
   },
   {
-   "id": "w:a-brief-history-of-intelligence",
-   "kind": "work",
-   "label": "A Brief History of Intelligence",
-   "url": "https://raskell.io/reading/#a-brief-history-of-intelligence",
-   "meta": "Book · Max Bennett · reading now",
-   "description": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it.",
-   "degree": 7
-  },
-  {
    "id": "w:the-code-breaker",
    "kind": "work",
    "label": "The Code Breaker",
    "url": "https://raskell.io/reading/#the-code-breaker",
-   "meta": "Book · Walter Isaacson · set aside",
+   "meta": "Book · Walter Isaacson · reading now",
    "description": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
    "degree": 9
   },
@@ -2736,6 +2745,15 @@
    "meta": "Book · Karen Hao · read November 2026",
    "description": "OpenAI from the inside: its founding ideals, Sam Altman, the costs of scale, and the people and places that pay them.",
    "degree": 20
+  },
+  {
+   "id": "w:a-brief-history-of-intelligence",
+   "kind": "work",
+   "label": "A Brief History of Intelligence",
+   "url": "https://raskell.io/articles/review-a-brief-history-of-intelligence/",
+   "meta": "Book · Max Bennett · read November 2026",
+   "description": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it: a strong premise and real depth, slow going on a first read.",
+   "degree": 9
   },
   {
    "id": "w:the-cauldron",
@@ -4222,14 +4240,6 @@
    "degree": 1
   },
   {
-   "id": "h:shelf-on-hold",
-   "kind": "hub",
-   "label": "On hold",
-   "url": "https://raskell.io/reading/#shelf-on-hold",
-   "meta": "Shelf",
-   "degree": 1
-  },
-  {
    "id": "h:shelf-backlog",
    "kind": "hub",
    "label": "Backlog",
@@ -4243,7 +4253,7 @@
    "label": "Read",
    "url": "https://raskell.io/reading/#shelf-read",
    "meta": "Shelf",
-   "degree": 96
+   "degree": 97
   },
   {
    "id": "h:shelf-set-aside",
@@ -5380,6 +5390,18 @@
    "target": "t:metrics"
   },
   {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "t:evolution"
+  },
+  {
+   "source": "a:/notes/smell-is-pattern-recognition/",
+   "target": "t:evolution"
+  },
+  {
+   "source": "t:evolution",
+   "target": "t:life-sciences"
+  },
+  {
    "source": "a:/notes/memory-that-dreams/",
    "target": "t:external-memory"
   },
@@ -5880,6 +5902,14 @@
    "target": "t:economics"
   },
   {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "a:/notes/smell-is-pattern-recognition/",
+   "target": "t:intelligence"
+  },
+  {
    "source": "a:/notes/an-emergent-property-of-matter/",
    "target": "t:intelligence"
   },
@@ -6180,6 +6210,14 @@
    "target": "t:interfaces"
   },
   {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "t:neural-networks"
+  },
+  {
+   "source": "a:/notes/smell-is-pattern-recognition/",
+   "target": "t:neural-networks"
+  },
+  {
    "source": "a:/notes/a-self-fulfilling-prophecy/",
    "target": "t:neural-networks"
   },
@@ -6190,6 +6228,14 @@
   {
    "source": "t:neural-networks",
    "target": "t:machine-learning"
+  },
+  {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "a:/notes/smell-is-pattern-recognition/",
+   "target": "t:neuroscience"
   },
   {
    "source": "a:/notes/memory-that-dreams/",
@@ -6226,6 +6272,22 @@
   {
    "source": "t:observability",
    "target": "t:reliability"
+  },
+  {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "t:olfaction"
+  },
+  {
+   "source": "a:/notes/smell-is-pattern-recognition/",
+   "target": "t:olfaction"
+  },
+  {
+   "source": "t:olfaction",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "t:olfaction",
+   "target": "t:life-sciences"
   },
   {
    "source": "a:/articles/the-bottleneck-is-data-and-europe-is-sitting-on-it/",
@@ -6486,6 +6548,10 @@
   {
    "source": "a:/articles/the-behavioural-turn/",
    "target": "t:psychology"
+  },
+  {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "t:reinforcement-learning"
   },
   {
    "source": "a:/articles/win-everything-control-no-one/",
@@ -7148,10 +7214,6 @@
    "target": "t:policy"
   },
   {
-   "source": "t:evolution",
-   "target": "t:life-sciences"
-  },
-  {
    "source": "t:existential-risk",
    "target": "t:risk"
   },
@@ -7214,14 +7276,6 @@
   {
    "source": "t:networking",
    "target": "t:open-web"
-  },
-  {
-   "source": "t:olfaction",
-   "target": "t:neuroscience"
-  },
-  {
-   "source": "t:olfaction",
-   "target": "t:life-sciences"
   },
   {
    "source": "t:origins-of-life",
@@ -7348,6 +7402,10 @@
    "target": "s:the-agent-platform-handbook"
   },
   {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "c:reviews"
+  },
+  {
    "source": "a:/articles/review-empire-of-ai/",
    "target": "c:reviews"
   },
@@ -7362,6 +7420,30 @@
   {
    "source": "a:/articles/the-web-was-the-training-set/",
    "target": "c:reviews"
+  },
+  {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "a:/articles/review-empire-of-ai/"
+  },
+  {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "a:/articles/review-how-life-works/"
+  },
+  {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "a:/notes/smell-is-pattern-recognition/"
+  },
+  {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "a:/notes/plan-then-execute/"
+  },
+  {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "a:/notes/memory-that-dreams/"
+  },
+  {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "a:/notes/determinism-is-what-intelligence-leaves-behind/"
   },
   {
    "source": "a:/articles/agentic-engineering-days-zurich-2026/",
@@ -9424,36 +9506,8 @@
    "target": "h:apps-play"
   },
   {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "h:shelf-reading"
-  },
-  {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "t:intelligence"
-  },
-  {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "t:neuroscience"
-  },
-  {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "t:reinforcement-learning"
-  },
-  {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "t:life-sciences"
-  },
-  {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "t:evolution"
-  },
-  {
-   "source": "w:a-brief-history-of-intelligence",
-   "target": "t:origins-of-life"
-  },
-  {
    "source": "w:the-code-breaker",
-   "target": "h:shelf-on-hold"
+   "target": "h:shelf-reading"
   },
   {
    "source": "w:the-code-breaker",
@@ -9566,6 +9620,42 @@
   {
    "source": "a:/data/ai-people/",
    "target": "w:empire-of-ai"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "h:shelf-read"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:intelligence"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:neuroscience"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:reinforcement-learning"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:life-sciences"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:evolution"
+  },
+  {
+   "source": "w:a-brief-history-of-intelligence",
+   "target": "t:origins-of-life"
+  },
+  {
+   "source": "a:/articles/review-a-brief-history-of-intelligence/",
+   "target": "w:a-brief-history-of-intelligence"
+  },
+  {
+   "source": "a:/notes/smell-is-pattern-recognition/",
+   "target": "w:a-brief-history-of-intelligence"
   },
   {
    "source": "w:the-cauldron",

@@ -145,6 +145,10 @@
         <lastmod>2026-06-17</lastmod>
     </url>
     <url>
+        <loc>https://raskell.io/articles/review-a-brief-history-of-intelligence/</loc>
+        <lastmod>2026-11-21</lastmod>
+    </url>
+    <url>
         <loc>https://raskell.io/articles/review-empire-of-ai/</loc>
         <lastmod>2026-11-14</lastmod>
         <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/articles/review-empire-of-ai/"/>
@@ -995,8 +999,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/evolution/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/evolution/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/evolution/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/evolution/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/evolution/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/existential-risk/</loc>
@@ -1389,8 +1395,10 @@
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/olfaction/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/olfaction/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/olfaction/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/olfaction/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/olfaction/"/>
     </url>
     <url>
         <loc>https://raskell.io/ko/tags/open-data/</loc>
@@ -1918,6 +1926,10 @@
         <lastmod>2026-11-14</lastmod>
     </url>
     <url>
+        <loc>https://raskell.io/notes/smell-is-pattern-recognition/</loc>
+        <lastmod>2026-11-21</lastmod>
+    </url>
+    <url>
         <loc>https://raskell.io/notes/something-closer-to-a-religion/</loc>
         <lastmod>2026-11-14</lastmod>
     </url>
@@ -2369,6 +2381,13 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/evaluation/"/>
     </url>
     <url>
+        <loc>https://raskell.io/tags/evolution/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/evolution/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/evolution/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/evolution/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/evolution/"/>
+    </url>
+    <url>
         <loc>https://raskell.io/tags/external-memory/</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/external-memory/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/external-memory/"/>
@@ -2696,6 +2715,13 @@
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/observability/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/observability/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/observability/"/>
+    </url>
+    <url>
+        <loc>https://raskell.io/tags/olfaction/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/olfaction/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/olfaction/"/>
+        <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/olfaction/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/olfaction/"/>
     </url>
     <url>
         <loc>https://raskell.io/tags/open-data/</loc>
@@ -3706,8 +3732,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/evolution/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/evolution/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/evolution/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/evolution/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/evolution/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/existential-risk/</loc>
@@ -4100,8 +4128,10 @@
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/olfaction/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://raskell.io/tags/olfaction/"/>
         <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://raskell.io/zh/tags/olfaction/"/>
         <xhtml:link rel="alternate" hreflang="ko" href="https://raskell.io/ko/tags/olfaction/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://raskell.io/tags/olfaction/"/>
     </url>
     <url>
         <loc>https://raskell.io/zh/tags/open-data/</loc>

@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-21T07:58:11+00:00",
+ "generated": "2026-11-21T10:05:10+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
+  "review": 5,
   "article": 46,
-  "review": 4,
-  "note": 39,
+  "note": 40,
   "talk": 1,
   "dataset": 1,
   "work": 167,
   "project": 32,
   "topic": 175,
-  "link": 660
+  "link": 663
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -23,6 +23,25 @@
   "data": "https://raskell.io/data/"
  },
  "items": [
+  {
+   "kind": "review",
+   "title": "Five Breakthroughs and a Dishwasher",
+   "url": "https://raskell.io/articles/review-a-brief-history-of-intelligence/",
+   "description": "Max Bennett's A Brief History of Intelligence maps five steps in how brains work onto five ideas in AI. A deep book, and slow going on a first read.",
+   "date": "2026-11-21",
+   "topics": [
+    "intelligence",
+    "neuroscience",
+    "reinforcement-learning",
+    "neural-networks",
+    "olfaction",
+    "evolution"
+   ],
+   "categories": [
+    "reviews"
+   ],
+   "meta": "20 min"
+  },
   {
    "kind": "article",
    "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
@@ -882,6 +901,20 @@
   },
   {
    "kind": "note",
+   "title": "Smell is pattern recognition",
+   "url": "https://raskell.io/notes/smell-is-pattern-recognition/",
+   "description": "Max Bennett explains neural networks with the nose. For the brain, smell is the easiest pattern to recognise; for machines, the hardest sense to build.",
+   "date": "2026-11-21",
+   "topics": [
+    "olfaction",
+    "neural-networks",
+    "neuroscience",
+    "evolution",
+    "intelligence"
+   ]
+  },
+  {
+   "kind": "note",
    "title": "Data fusion belongs in the store",
    "url": "https://raskell.io/notes/data-fusion-belongs-in-the-store/",
    "description": "An agent that joins five MCP servers by itself carries the integration burden on every call. The store could do that work once, for every agent.",
@@ -1431,22 +1464,6 @@
   },
   {
    "kind": "work",
-   "title": "A Brief History of Intelligence",
-   "url": "https://raskell.io/reading/#a-brief-history-of-intelligence",
-   "description": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it.",
-   "date": "2026-11",
-   "topics": [
-    "intelligence",
-    "neuroscience",
-    "reinforcement-learning",
-    "life-sciences",
-    "evolution",
-    "origins-of-life"
-   ],
-   "meta": "Book · Max Bennett · Reading now"
-  },
-  {
-   "kind": "work",
    "title": "The Code Breaker",
    "url": "https://raskell.io/reading/#the-code-breaker",
    "description": "How CRISPR became a gene editing tool, told through Jennifer Doudna and the scientists racing alongside her.",
@@ -1460,7 +1477,7 @@
     "genetics",
     "pandemics"
    ],
-   "meta": "Book · Walter Isaacson · On hold"
+   "meta": "Book · Walter Isaacson · Reading now"
   },
   {
    "kind": "work",
@@ -1476,6 +1493,22 @@
     "language"
    ],
    "meta": "Book · Karen Hao · Read"
+  },
+  {
+   "kind": "work",
+   "title": "A Brief History of Intelligence",
+   "url": "https://raskell.io/articles/review-a-brief-history-of-intelligence/",
+   "description": "Five breakthroughs in the evolution of the brain, each paired with the AI technique that echoes it: a strong premise and real depth, slow going on a first read.",
+   "date": "2026-11",
+   "topics": [
+    "intelligence",
+    "neuroscience",
+    "reinforcement-learning",
+    "life-sciences",
+    "evolution",
+    "origins-of-life"
+   ],
+   "meta": "Book · Max Bennett · Read"
   },
   {
    "kind": "work",
@@ -4580,7 +4613,7 @@
   {
    "kind": "topic",
    "title": "Evolution",
-   "url": "https://raskell.io/tags#evolution",
+   "url": "https://raskell.io/tags/evolution/",
    "description": "Change by variation and selection, in genes, brains, and populations, and the arguments over how much it explains.",
    "meta": "Concept"
   },
@@ -5000,7 +5033,7 @@
   {
    "kind": "topic",
    "title": "Olfaction",
-   "url": "https://raskell.io/tags#olfaction",
+   "url": "https://raskell.io/tags/olfaction/",
    "description": "Smell and taste as senses: how noses and brains recognise mixtures of molecules, and how far machines are from reading and writing them.",
    "meta": "Concept"
   },
@@ -8893,6 +8926,19 @@
     {
      "title": "Board games already solved agent coordination",
      "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "doi:10.1126/science.ade4401",
+   "url": "https://doi.org/10.1126/science.ade4401",
+   "domain": "doi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Smell is pattern recognition",
+     "url": "https://raskell.io/notes/smell-is-pattern-recognition/"
     }
    ]
   },
@@ -13539,6 +13585,19 @@
   },
   {
    "kind": "link",
+   "title": "EurekAlert",
+   "url": "https://www.eurekalert.org/news-releases/999716",
+   "domain": "eurekalert.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Smell is pattern recognition",
+     "url": "https://raskell.io/notes/smell-is-pattern-recognition/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "europeana.eu/en/about-us",
    "url": "https://www.europeana.eu/en/about-us",
    "domain": "europeana.eu",
@@ -14041,6 +14100,19 @@
     {
      "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
      "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Teleporting scent",
+   "url": "https://www.osmo.ai/blog/teleporting-scent",
+   "domain": "osmo.ai",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Smell is pattern recognition",
+     "url": "https://raskell.io/notes/smell-is-pattern-recognition/"
     }
    ]
   },

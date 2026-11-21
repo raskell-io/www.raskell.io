@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-21T07:58:11+00:00",
+ "generated": "2026-11-21T10:05:10+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 660,
+ "count": 663,
  "links": [
   {
    "url": "https://zentinelproxy.io/",
@@ -3479,6 +3479,19 @@
     {
      "title": "Board games already solved agent coordination",
      "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://doi.org/10.1126/science.ade4401",
+   "title": "doi:10.1126/science.ade4401",
+   "domain": "doi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Smell is pattern recognition",
+     "url": "https://raskell.io/notes/smell-is-pattern-recognition/"
     }
    ],
    "citations": 1
@@ -8125,6 +8138,19 @@
    "citations": 1
   },
   {
+   "url": "https://www.eurekalert.org/news-releases/999716",
+   "title": "EurekAlert",
+   "domain": "eurekalert.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Smell is pattern recognition",
+     "url": "https://raskell.io/notes/smell-is-pattern-recognition/"
+    }
+   ],
+   "citations": 1
+  },
+  {
    "url": "https://www.europeana.eu/en/about-us",
    "title": "europeana.eu/en/about-us",
    "domain": "europeana.eu",
@@ -8627,6 +8653,19 @@
     {
      "title": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
      "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://www.osmo.ai/blog/teleporting-scent",
+   "title": "Teleporting scent",
+   "domain": "osmo.ai",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Smell is pattern recognition",
+     "url": "https://raskell.io/notes/smell-is-pattern-recognition/"
     }
    ],
    "citations": 1
