@@ -155,7 +155,7 @@ children = [
   Broodwar.Repo,                                    # the database pool
   {DNSCluster, query: dns_cluster_query()},         # find the other nodes
   {Phoenix.PubSub, name: Broodwar.PubSub},          # messages across nodes
-  {Oban, Application.fetch_env!(:broodwar, Oban)},  # durable jobs in PostgreSQL
+  {Oban, Application.fetch_env!(:broodwar, Oban)},  # durable jobs in SQLite
   Broodwar.Ingestion.LiquipediaThrottle,            # one process, one rate limit
   BroodwarWeb.Endpoint                              # one process per connection
 ]
@@ -163,7 +163,7 @@ children = [
 Supervisor.start_link(children, strategy: :one_for_one, name: Broodwar.Supervisor)
 ```
 
-And this is what it looks like running on two machines:
+broodwar.live runs on one node, with SQLite. On two machines, with the database moved to PostgreSQL so both can reach it, the same tree looks like this:
 
 *One application on the BEAM, on two nodes*
 
