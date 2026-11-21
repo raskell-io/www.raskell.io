@@ -253,6 +253,8 @@ and its social card. Screenshots with headless Chrome (playwright-core) work wel
 - No politics, except load-bearing civic-engineering references.
 - "Archipelag.io" in full.
 - Quote sources exactly; say what is sourced and what is opinion.
+- Italics are set in Computer Modern (`sass/site.scss`): use them for foreign words (`*Autorenspiele*`), titles of
+  works, and in-text quotes from a source, written `*"..."*`. Not for scare quotes or words mentioned as words.
 
 ## Committing
 

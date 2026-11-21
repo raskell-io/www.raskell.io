@@ -21,7 +21,7 @@ in_short = [
 
 On Friday I spent a day at [Agentic Engineering Days Zurich](https://www.agenticdays.com/) with a few colleagues. It ran for one day in the Marriott next to Zurich main station, organised by [letsboot.ch](https://www.letsboot.ch/), with 40 sessions picked from 344 submissions across five rooms, and it was sold out. Next year it moves to a bigger venue and two days, which tells you something about how the year went.
 
-Jonas and Barbara Felix and their team organised all of it, and for a first edition it was close to flawless: rooms on time, talks on time, good food, and an apéro long enough for the conversations the talks started. Thank you both.
+Jonas and Barbara Felix and their team organised all of it, and for a first edition it was close to flawless: rooms on time, talks on time, good food, and an *apéro* long enough for the conversations the talks started. Thank you both.
 
 <figure>
 <img src="/agentic-days-2026-foyer.avif" alt="The foyer of the Marriott before the first talk" width="1600" height="667" loading="lazy">
@@ -150,7 +150,7 @@ Her talk is also where Reznik's dark factory leads. The term comes from lights-o
 <figcaption>With my colleagues at the apéro, the part of a conference no talk replaces.</figcaption>
 </figure>
 
-The talks were good, and the day was better, mostly for the conversations between them and at the apéro with my colleagues. But if I keep one thing, it is the habit Reznik's sentence gave me. Every talk I saw moved a constraint: into the database, into a protocol, into a type, into a shared conversation, into evaluation. None of them made one disappear. The useful question about any new agent tool is not what it removes but where it puts the work, and whether that place is one I can see, test and own.
+The talks were good, and the day was better, mostly for the conversations between them and at the *apéro* with my colleagues. But if I keep one thing, it is the habit Reznik's sentence gave me. Every talk I saw moved a constraint: into the database, into a protocol, into a type, into a shared conversation, into evaluation. None of them made one disappear. The useful question about any new agent tool is not what it removes but where it puts the work, and whether that place is one I can see, test and own.
 
 <figure>
 <img src="/agentic-days-2026-zurich.avif" alt="Zurich main station at dusk, on the way home" width="1600" height="800" loading="lazy">

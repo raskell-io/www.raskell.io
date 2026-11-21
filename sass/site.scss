@@ -1,14 +1,18 @@
 // Site-specific additions on top of the seijaku theme. Keep this small:
 // anything a second site could use belongs in the theme instead.
 
-// Scientific names (binomials, taxa) in Computer Modern italic, the LaTeX look.
-// The webfonts are subsetted to Basic Latin (the upright one also has × · −); both are OFL, see fonts/CMUSerif-OFL-LICENSE.txt.
+// Italics in Computer Modern, the LaTeX look: scientific names (binomials, taxa), and every italic in
+// prose (foreign words, titles, in-text quotes), set against the sans body. Both webfonts are OFL, see
+// fonts/CMUSerif-OFL-LICENSE.txt. The italic is subsetted (no hinting) from CMU Serif 0.7.0 to Latin-1, Latin
+// Extended-A, dashes, curly quotes and guillemets, so German, French and the like keep their accents; text
+// outside that range (Chinese, Korean) falls through to the prose font.
 @font-face {
   font-family: "CMU Serif";
-  src: url("fonts/CMUSerif-Italic.woff2") format("woff2");
+  src: url("fonts/CMUSerif-Italic.woff2?v=2") format("woff2");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
+  unicode-range: U+0020-007E, U+00A0-017F, U+2013-2014, U+2018-201E, U+2026, U+2039-203A;
 }
 
 // Upright Computer Modern for math operators and equation numbers; subsetted to Basic Latin plus ×, ·, −.
@@ -26,6 +30,20 @@
   font-size: 1.06em;
   letter-spacing: 0.01em;
 }
+
+// Italics in prose: a serif italic against the sans body marks a foreign word, a title, or a quoted phrase
+// (written in Markdown as *"..."*). A touch larger so its x-height meets Geist's; bold italics keep the sans,
+// since Computer Modern has no bold italic here.
+.prose :is(em, i, cite, q):not(strong *, b *, code *) {
+  font-family: "CMU Serif", "Latin Modern Roman", var(--font-prose);
+  font-style: italic;
+  font-size: 1.06em;
+  letter-spacing: 0;
+  word-spacing: -0.09em;   // TeX's interword space is wide beside the narrow italic; this is about its shrunk width
+  line-height: 1;          // Computer Modern's tall ascenders would otherwise open up the lines they sit on
+  -webkit-text-stroke: 0.02em currentColor;   // Computer Modern's hairlines are thin beside Geist; a fine stroke adds weight
+}
+.prose q { quotes: "\201C" "\201D" "\2018" "\2019"; }
 
 // Display equations set like LaTeX math: Computer Modern italic for the identifiers, upright operators
 // with TeX's spacing (thick around relations, medium around binary operators), and a right-hand number.
