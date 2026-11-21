@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-20T18:51:46+00:00",
+ "generated": "2026-11-21T07:58:11+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -55,7 +55,7 @@
    "url": "https://raskell.io/articles/evaluation-closes-the-loop/",
    "meta": "2026-11-12 · 14 min",
    "description": "A trace shows what an agent did, not whether it was right. This part scores the agent against known cases and fails the build when a passing case breaks.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/articles/the-behavioural-turn/",
@@ -454,6 +454,15 @@
    "degree": 4
   },
   {
+   "id": "a:/notes/board-games-already-solved-agent-coordination/",
+   "kind": "note",
+   "label": "Board games already solved agent coordination",
+   "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/",
+   "meta": "2026-11-21",
+   "description": "Turn structures from German-style board games, read as agent architectures: role selection, worker placement, auctions, deck-building, automa.",
+   "degree": 7
+  },
+  {
    "id": "a:/notes/data-fusion-belongs-in-the-store/",
    "kind": "note",
    "label": "Data fusion belongs in the store",
@@ -478,7 +487,7 @@
    "url": "https://raskell.io/notes/plan-then-execute/",
    "meta": "2026-11-20",
    "description": "Wargames call it WEGO, agent builders call it plan-then-execute: commit to the whole plan, lock it in, then watch it run without touching it.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "a:/notes/testing-deltadb/",
@@ -845,9 +854,9 @@
    "kind": "tag",
    "label": "Agent harness",
    "url": "https://raskell.io/tags/agent-harness/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "The software around a model that turns it into an agent: the loop, the action surface, typed contracts, state, and how much of it is ordinary code.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "t:agent-protocols",
@@ -863,9 +872,9 @@
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 28 pages",
+   "meta": "Concept · 29 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 40
+   "degree": 41
   },
   {
    "id": "t:ai-alignment",
@@ -956,6 +965,15 @@
    "meta": "Technology · 1 page",
    "description": "The Basel Haskell Compiler, a clean-slate Haskell compiler written in Rust that checks everything it can, part of Arcanist.",
    "degree": 5
+  },
+  {
+   "id": "t:board-games",
+   "kind": "tag",
+   "label": "Board games",
+   "url": "https://raskell.io/tags/board-games/",
+   "meta": "Domain · 1 page",
+   "description": "Games on a table, especially the German-style designer games: scarce actions, indirect interaction, and the designer's name on the box.",
+   "degree": 2
   },
   {
    "id": "t:bureaucracy",
@@ -1295,9 +1313,18 @@
    "kind": "tag",
    "label": "Game design",
    "url": "https://raskell.io/tags/game-design/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "Making games: rules that are fun to play, worlds that reward attention, and games that model something larger than themselves.",
-   "degree": 9
+   "degree": 11
+  },
+  {
+   "id": "t:game-theory",
+   "kind": "tag",
+   "label": "Game theory",
+   "url": "https://raskell.io/tags/game-theory/",
+   "meta": "Concept · 1 page",
+   "description": "The mathematics of decisions that depend on other people's decisions: deterrence, incentives, payoffs, and who carries the risk.",
+   "degree": 6
   },
   {
    "id": "t:games",
@@ -2171,15 +2198,6 @@
    "meta": "Concept · no pages yet",
    "description": "Technologies that could end or permanently cripple civilisation, from nuclear weapons to misaligned AI, and how people have tried to contain them.",
    "degree": 11
-  },
-  {
-   "id": "t:game-theory",
-   "kind": "tag",
-   "label": "Game theory",
-   "url": "https://raskell.io/tags#game-theory",
-   "meta": "Concept · no pages yet",
-   "description": "The mathematics of decisions that depend on other people's decisions: deterrence, incentives, payoffs, and who carries the risk.",
-   "degree": 5
   },
   {
    "id": "t:geography",
@@ -4346,6 +4364,10 @@
    "target": "t:aerospace"
   },
   {
+   "source": "a:/notes/board-games-already-solved-agent-coordination/",
+   "target": "t:agent-harness"
+  },
+  {
    "source": "a:/articles/agentic-engineering-days-zurich-2026/",
    "target": "t:agent-harness"
   },
@@ -4384,6 +4406,10 @@
   {
    "source": "t:agent-protocols",
    "target": "t:open-standards"
+  },
+  {
+   "source": "a:/notes/board-games-already-solved-agent-coordination/",
+   "target": "t:agents"
   },
   {
    "source": "a:/articles/agentic-engineering-days-zurich-2026/",
@@ -4724,6 +4750,14 @@
   {
    "source": "t:bhc",
    "target": "t:basel"
+  },
+  {
+   "source": "a:/notes/board-games-already-solved-agent-coordination/",
+   "target": "t:board-games"
+  },
+  {
+   "source": "t:board-games",
+   "target": "t:game-design"
   },
   {
    "source": "a:/articles/review-empire-of-ai/",
@@ -5522,6 +5556,10 @@
    "target": "t:games"
   },
   {
+   "source": "a:/notes/board-games-already-solved-agent-coordination/",
+   "target": "t:game-design"
+  },
+  {
    "source": "a:/notes/plan-then-execute/",
    "target": "t:game-design"
   },
@@ -5536,6 +5574,18 @@
   {
    "source": "t:game-design",
    "target": "t:games"
+  },
+  {
+   "source": "a:/notes/board-games-already-solved-agent-coordination/",
+   "target": "t:game-theory"
+  },
+  {
+   "source": "t:game-theory",
+   "target": "t:mathematics"
+  },
+  {
+   "source": "t:game-theory",
+   "target": "t:strategy"
   },
   {
    "source": "a:/articles/three-parts-and-no-brain/",
@@ -7110,14 +7160,6 @@
    "target": "t:policy"
   },
   {
-   "source": "t:game-theory",
-   "target": "t:mathematics"
-  },
-  {
-   "source": "t:game-theory",
-   "target": "t:strategy"
-  },
-  {
    "source": "t:geopolitics",
    "target": "t:history"
   },
@@ -7900,6 +7942,14 @@
   {
    "source": "a:/articles/all-beginning-is-haskell/",
    "target": "a:/articles/mise-ate-my-makefile/"
+  },
+  {
+   "source": "a:/notes/board-games-already-solved-agent-coordination/",
+   "target": "a:/articles/evaluation-closes-the-loop/"
+  },
+  {
+   "source": "a:/notes/board-games-already-solved-agent-coordination/",
+   "target": "a:/notes/plan-then-execute/"
   },
   {
    "source": "a:/notes/data-fusion-belongs-in-the-store/",

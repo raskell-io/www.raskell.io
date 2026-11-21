@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Raskell - board-games</title>
+    <subtitle>Notes on agent platforms, platform automation, edge infrastructure, and applied security. Building automation-first platforms that survive production reality.</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/board-games/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://raskell.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-11-21T00:00:00+00:00</updated>
+    <id>https://raskell.io/tags/board-games/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Board games already solved agent coordination</title>
+        <published>2026-11-21T00:00:00+00:00</published>
+        <updated>2026-11-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/board-games-already-solved-agent-coordination/"/>
+        <id>https://raskell.io/notes/board-games-already-solved-agent-coordination/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/board-games-already-solved-agent-coordination/">&lt;p&gt;After &lt;a href=&quot;&#x2F;notes&#x2F;plan-then-execute&#x2F;&quot;&gt;Plan, then let go&lt;&#x2F;a&gt; I kept going down the list. WEGO is one turn structure among many, and most of the others have a counterpart in how we build agents. Most of the best ones come from the German-style board games that have always fascinated me, the &lt;em&gt;Autorenspiele&lt;&#x2F;em&gt;: games by a named author, whose name the &lt;em&gt;Spiele-Autoren-Zunft&lt;&#x2F;em&gt; wants &lt;em&gt;“zumindest auf der Coverseite der Verpackung sowie in der Spielanleitung”&lt;&#x2F;em&gt;, at least on the front of the box and in the rules.&lt;&#x2F;p&gt;
+&lt;p&gt;A Eurogame is, at its core, a carefully tuned answer to one question: who may act, when, and at what cost. That is also the question an agent harness has to answer.&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Turn structure&lt;&#x2F;th&gt;&lt;th&gt;A game that uses it&lt;&#x2F;th&gt;&lt;th&gt;The agent counterpart&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;I go, you go&lt;&#x2F;td&gt;&lt;td&gt;Chess&lt;&#x2F;td&gt;&lt;td&gt;the &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2210.03629&quot;&gt;ReAct&lt;&#x2F;a&gt; loop: act, observe, act again&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Everyone plans, then all resolves&lt;&#x2F;td&gt;&lt;td&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Diplomacy_(game)&quot;&gt;Diplomacy&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;notes&#x2F;plan-then-execute&#x2F;&quot;&gt;plan-then-execute&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Programmed actions&lt;&#x2F;td&gt;&lt;td&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;RoboRally&quot;&gt;RoboRally&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;a plan written as a queue of tool calls, where a small early mistake compounds&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Role selection&lt;&#x2F;td&gt;&lt;td&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Puerto_Rico_(board_game)&quot;&gt;Puerto Rico&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;an orchestrator that picks a task every worker then carries out&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Worker placement&lt;&#x2F;td&gt;&lt;td&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Caylus_(game)&quot;&gt;Caylus&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;parallel agents contending for shared resources: locks, rate limits, a single deploy slot&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Auctions&lt;&#x2F;td&gt;&lt;td&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Modern_Art_(game)&quot;&gt;Modern Art&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;market-based task allocation, the &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Contract_Net_Protocol&quot;&gt;contract net&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Deck-building&lt;&#x2F;td&gt;&lt;td&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Dominion_(card_game)&quot;&gt;Dominion&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;curating the tool set and the context&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Cooperation with limited talk&lt;&#x2F;td&gt;&lt;td&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hanabi_(card_game)&quot;&gt;Hanabi&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;agents that must infer what another agent knows&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Automa&lt;&#x2F;td&gt;&lt;td&gt;the solo modes of the Automa Factory&lt;&#x2F;td&gt;&lt;td&gt;simulated users for &lt;a href=&quot;&#x2F;articles&#x2F;evaluation-closes-the-loop&#x2F;&quot;&gt;evaluation&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Some of these are more than analogies. In Puerto Rico each player picks one role per round, every player then performs that role’s action, and the one who picked it gets a small privilege. That is a supervisor handing the same instruction to many workers, with the supervisor’s own share decided by the choice. Reid G. Smith’s &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;doi.org&#x2F;10.1109&#x2F;TC.1980.1675516&quot;&gt;contract net protocol&lt;&#x2F;a&gt; (1980) allocates tasks among autonomous nodes by announcement and bidding, which is an auction table with the art removed. And Hanabi is not only like an agent benchmark, it is one: &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1902.00506&quot;&gt;The Hanabi Challenge&lt;&#x2F;a&gt; (Bard and others, 2019) proposes it as a research domain because it &lt;em&gt;“elevates reasoning about the beliefs and intentions of other agents to the foreground.”&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The Automa is my favourite. An &lt;em&gt;automa&lt;&#x2F;em&gt; is a small deck of cards that plays the opponent in a solo game: draw a card, follow its icons. Morten Monrad Pedersen founded the Automa Factory to build them for other publishers. &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;punchboard.co.uk&#x2F;blog-solo-modes-in-board-games-part-two-automa&#x2F;&quot;&gt;Punchboard’s review of solo modes&lt;&#x2F;a&gt; lists the games that &lt;em&gt;“will never work for solo”&lt;&#x2F;em&gt;: &lt;em&gt;“Social deduction, auction games, take-that mechanics, party games.”&lt;&#x2F;em&gt; They are the games where the other player’s mind is the game. Replace “opponent” with “user” and that is the honest limit of every simulated user in an agent eval: a deck of cards can stand in for behaviour, not for intent.&lt;&#x2F;p&gt;
+&lt;p&gt;The general lessons come from what Eurogames value:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Few actions, each one costly.&lt;&#x2F;strong&gt; A Euro gives you two or three meaningful moves a round, not twenty. An agent with a small, typed action surface does better than one with fifty loose tools, which is also what &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2605.14290&quot;&gt;Piet and others&lt;&#x2F;a&gt; argue for web agents: typed site interfaces instead of clicks.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Indirect interaction.&lt;&#x2F;strong&gt; You rarely attack anyone in a Euro; you take the space they needed. Agents that coordinate through shared state are easier to reason about than agents that message each other.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Open information, little luck.&lt;&#x2F;strong&gt; The outcome follows from the decisions, so you can replay a game and see why you lost. That is what you want from a trace.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;A known end.&lt;&#x2F;strong&gt; Every Euro has a visible end trigger, and good players plan backwards from it. Agents are bad at knowing when to stop; a budget or an end condition does that job.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Playtesting.&lt;&#x2F;strong&gt; A Euro is played hundreds of times before its numbers are fixed. Evals are the same work.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;For Waterfront the table reads the other way round. The weekly order sheet already sits between WEGO and worker placement: lieutenants are workers, the city’s docks and warehouses are action spaces, and two gangs choosing the same pier on the same night is exactly the kind of coincidence the week should produce. Board games got there first, agent builders arrived later, and I am happy to borrow from both.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Spiele-Autoren-Zunft, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.spieleautorenzunft.de&#x2F;files&#x2F;public&#x2F;Dokumente-DE&#x2F;11-Punkte-Liste%20-%20V5.pdf&quot;&gt;11-Punkte-Liste&lt;&#x2F;a&gt;, on naming the author on the box.&lt;&#x2F;li&gt;
+&lt;li&gt;Reid G. Smith, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;doi.org&#x2F;10.1109&#x2F;TC.1980.1675516&quot;&gt;The Contract Net Protocol: High-Level Communication and Control in a Distributed Problem Solver&lt;&#x2F;a&gt;, IEEE Transactions on Computers, C-29(12), 1980.&lt;&#x2F;li&gt;
+&lt;li&gt;Nolan Bard and others, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;1902.00506&quot;&gt;The Hanabi Challenge: A New Frontier for AI Research&lt;&#x2F;a&gt;, arXiv:1902.00506, 2019; Artificial Intelligence 280, 2020.&lt;&#x2F;li&gt;
+&lt;li&gt;Julien Piet and others, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2605.14290&quot;&gt;Web Agents Should Adopt the Plan-Then-Execute Paradigm&lt;&#x2F;a&gt;, arXiv:2605.14290, 2026.&lt;&#x2F;li&gt;
+&lt;li&gt;Shunyu Yao and others, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2210.03629&quot;&gt;ReAct: Synergizing Reasoning and Acting in Language Models&lt;&#x2F;a&gt;, arXiv:2210.03629, 2022.&lt;&#x2F;li&gt;
+&lt;li&gt;Punchboard, &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;punchboard.co.uk&#x2F;blog-solo-modes-in-board-games-part-two-automa&#x2F;&quot;&gt;Solo Modes in Board Games, Part Two: Automa&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Puerto_Rico_(board_game)&quot;&gt;Puerto Rico&lt;&#x2F;a&gt; and &lt;a rel=&quot;noopener external&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Caylus_(game)&quot;&gt;Caylus&lt;&#x2F;a&gt;, Wikipedia.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

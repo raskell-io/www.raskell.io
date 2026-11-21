@@ -1,18 +1,18 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-20T18:51:46+00:00",
+ "generated": "2026-11-21T07:58:11+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "article": 46,
   "review": 4,
-  "note": 38,
+  "note": 39,
   "talk": 1,
   "dataset": 1,
   "work": 167,
   "project": 32,
-  "topic": 174,
-  "link": 649
+  "topic": 175,
+  "link": 660
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -865,6 +865,20 @@
     "open-web"
    ],
    "meta": "1 min"
+  },
+  {
+   "kind": "note",
+   "title": "Board games already solved agent coordination",
+   "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/",
+   "description": "Turn structures from German-style board games, read as agent architectures: role selection, worker placement, auctions, deck-building, automa.",
+   "date": "2026-11-21",
+   "topics": [
+    "agents",
+    "agent-harness",
+    "board-games",
+    "game-design",
+    "game-theory"
+   ]
   },
   {
    "kind": "note",
@@ -4334,6 +4348,13 @@
   },
   {
    "kind": "topic",
+   "title": "Board games",
+   "url": "https://raskell.io/tags/board-games/",
+   "description": "Games on a table, especially the German-style designer games: scarce actions, indirect interaction, and the designer's name on the box.",
+   "meta": "Domain"
+  },
+  {
+   "kind": "topic",
    "title": "Bureaucracy",
    "url": "https://raskell.io/tags/bureaucracy/",
    "description": "The work a group spends on holding itself together, which grows faster than the group: in public administration, corporations, and labs.",
@@ -4636,7 +4657,7 @@
   {
    "kind": "topic",
    "title": "Game theory",
-   "url": "https://raskell.io/tags#game-theory",
+   "url": "https://raskell.io/tags/game-theory/",
    "description": "The mathematics of decisions that depend on other people's decisions: deterrence, incentives, payoffs, and who carries the risk.",
    "meta": "Concept"
   },
@@ -5955,6 +5976,40 @@
   },
   {
    "kind": "link",
+   "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+   "url": "https://arxiv.org/abs/2210.03629",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
+    },
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Web Agents Should Adopt the Plan-Then-Execute Paradigm",
+   "url": "https://arxiv.org/abs/2605.14290",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
+    },
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "astral.sh",
    "url": "https://astral.sh",
    "domain": "astral.sh",
@@ -6069,6 +6124,23 @@
     {
      "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
      "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Diplomacy",
+   "url": "https://en.wikipedia.org/wiki/Diplomacy_(game)",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
+    },
+    {
+     "title": "Plan, then let go",
+     "url": "https://raskell.io/notes/plan-then-execute/"
     }
    ]
   },
@@ -7500,6 +7572,19 @@
   },
   {
    "kind": "link",
+   "title": "The Hanabi Challenge: A New Frontier for AI Research",
+   "url": "https://arxiv.org/abs/1902.00506",
+   "domain": "arxiv.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Scaling Laws for Neural Language Models",
    "url": "https://arxiv.org/abs/2001.08361",
    "domain": "arxiv.org",
@@ -7547,19 +7632,6 @@
     {
      "title": "Almost Irrelevant: Choosing a Language When Agents Write the Code",
      "url": "https://raskell.io/articles/almost-irrelevant/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
-   "url": "https://arxiv.org/abs/2210.03629",
-   "domain": "arxiv.org",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "Plan, then let go",
-     "url": "https://raskell.io/notes/plan-then-execute/"
     }
    ]
   },
@@ -7807,19 +7879,6 @@
     {
      "title": "The Behavioural Turn in Software Engineering",
      "url": "https://raskell.io/articles/the-behavioural-turn/"
-    }
-   ]
-  },
-  {
-   "kind": "link",
-   "title": "Web Agents Should Adopt the Plan-Then-Execute Paradigm",
-   "url": "https://arxiv.org/abs/2605.14290",
-   "domain": "arxiv.org",
-   "reference": true,
-   "cited_in": [
-    {
-     "title": "Plan, then let go",
-     "url": "https://raskell.io/notes/plan-then-execute/"
     }
    ]
   },
@@ -8826,6 +8885,19 @@
   },
   {
    "kind": "link",
+   "title": "The Contract Net Protocol: High-Level Communication and Control in a Distributed Problem Solver",
+   "url": "https://doi.org/10.1109/TC.1980.1675516",
+   "domain": "doi.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "doi:10.1145/365153.365168",
    "url": "https://doi.org/10.1145/365153.365168",
    "domain": "doi.org",
@@ -9086,6 +9158,19 @@
   },
   {
    "kind": "link",
+   "title": "Caylus",
+   "url": "https://en.wikipedia.org/wiki/Caylus_(game)",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "cellular automaton",
    "url": "https://en.wikipedia.org/wiki/Cellular_automaton",
    "domain": "en.wikipedia.org",
@@ -9151,6 +9236,19 @@
   },
   {
    "kind": "link",
+   "title": "contract net",
+   "url": "https://en.wikipedia.org/wiki/Contract_Net_Protocol",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Debt: The First 5,000 Years",
    "url": "https://en.wikipedia.org/wiki/Debt:_The_First_5000_Years",
    "domain": "en.wikipedia.org",
@@ -9177,14 +9275,14 @@
   },
   {
    "kind": "link",
-   "title": "Diplomacy",
-   "url": "https://en.wikipedia.org/wiki/Diplomacy_(game)",
+   "title": "Dominion",
+   "url": "https://en.wikipedia.org/wiki/Dominion_(card_game)",
    "domain": "en.wikipedia.org",
    "reference": false,
    "cited_in": [
     {
-     "title": "Plan, then let go",
-     "url": "https://raskell.io/notes/plan-then-execute/"
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
     }
    ]
   },
@@ -9380,6 +9478,19 @@
     {
      "title": "My GOAT games",
      "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Hanabi",
+   "url": "https://en.wikipedia.org/wiki/Hanabi_(card_game)",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
     }
    ]
   },
@@ -9606,6 +9717,19 @@
   },
   {
    "kind": "link",
+   "title": "Modern Art",
+   "url": "https://en.wikipedia.org/wiki/Modern_Art_(game)",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "Mole Mania",
    "url": "https://en.wikipedia.org/wiki/Mole_Mania",
    "domain": "en.wikipedia.org",
@@ -9697,6 +9821,19 @@
   },
   {
    "kind": "link",
+   "title": "Puerto Rico",
+   "url": "https://en.wikipedia.org/wiki/Puerto_Rico_(board_game)",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "a ratchet",
    "url": "https://en.wikipedia.org/wiki/Ratchet_effect",
    "domain": "en.wikipedia.org",
@@ -9744,6 +9881,19 @@
     {
      "title": "The Original Data Company",
      "url": "https://raskell.io/articles/the-original-data-company/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "RoboRally",
+   "url": "https://en.wikipedia.org/wiki/RoboRally",
+   "domain": "en.wikipedia.org",
+   "reference": false,
+   "cited_in": [
+    {
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
     }
    ]
   },
@@ -12115,6 +12265,19 @@
   },
   {
    "kind": "link",
+   "title": "Solo Modes in Board Games, Part Two: Automa",
+   "url": "https://punchboard.co.uk/blog-solo-modes-in-board-games-part-two-automa/",
+   "domain": "punchboard.co.uk",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
    "title": "A2A Java SDK",
    "url": "https://quarkus.io/blog/a2a-project-launches-java-sdk",
    "domain": "quarkus.io",
@@ -14112,6 +14275,19 @@
     {
      "title": "My OpenBSD journey: Getting it virtualized with libvirt (1)",
      "url": "https://raskell.io/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "11-Punkte-Liste",
+   "url": "https://www.spieleautorenzunft.de/files/public/Dokumente-DE/11-Punkte-Liste%20-%20V5.pdf",
+   "domain": "spieleautorenzunft.de",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "Board games already solved agent coordination",
+     "url": "https://raskell.io/notes/board-games-already-solved-agent-coordination/"
     }
    ]
   },

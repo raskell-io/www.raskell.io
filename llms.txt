@@ -114,6 +114,7 @@ Datasets, listed at https://raskell.io/data/. Each is one file under https://ras
 
 Short notes, a paragraph or a page each; some grow into articles.
 
+- [Board games already solved agent coordination](https://raskell.io/notes/board-games-already-solved-agent-coordination.md) (2026-11-21): Turn structures from German-style board games, read as agent architectures: role selection, worker placement, auctions, deck-building, automa.
 - [Data fusion belongs in the store](https://raskell.io/notes/data-fusion-belongs-in-the-store.md) (2026-11-20): An agent that joins five MCP servers by itself carries the integration burden on every call. The store could do that work once, for every agent.
 - [Testing DeltaDB](https://raskell.io/notes/testing-deltadb.md) (2026-11-20): Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?
 - [Plan, then let go](https://raskell.io/notes/plan-then-execute.md) (2026-11-20): Wargames call it WEGO, agent builders call it plan-then-execute: commit to the whole plan, lock it in, then watch it run without touching it.
@@ -341,7 +342,7 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ## Sources cited most
 
-External links cited on more than one page (all 627 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
+External links cited on more than one page (all 638 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
 
 - [Zentinel](https://zentinelproxy.io/): cited on 13 pages
 - [Archipelag.io](https://archipelag.io): cited on 9 pages
@@ -416,6 +417,7 @@ The topic vocabulary every page is filed under, with broader topics in brackets.
 - Cybernetics (`cybernetics`) [within Complex systems, History of technology]: The science of control and feedback in machines, organisms, and organisations, and the attempts to run economies and societies with it.
 - Simulation (`simulation`) [within Complex systems]: Interactive worlds that mimic real ones: societies, economies, neuron cultures, and agents left to evolve on their own.
 - Games (`games`): Games made with care: tactics, fishing, and the engines and fantasy consoles they run on.
+- Board games (`board-games`) [within Game design]: Games on a table, especially the German-style designer games: scarce actions, indirect interaction, and the designer's name on the box.
 
 ### Concepts
 

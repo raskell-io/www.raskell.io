@@ -1,6 +1,60 @@
 # Raskell: all writing in full
 
-> Every published article, review, note, talk, and dataset page on raskell.io by Raffael Schneider, newest first, then the reading log. Generated 2026-11-20. Index: https://raskell.io/llms.txt
+> Every published article, review, note, talk, and dataset page on raskell.io by Raffael Schneider, newest first, then the reading log. Generated 2026-11-21. Index: https://raskell.io/llms.txt
+
+
+================================================================================
+
+---
+title: "Board games already solved agent coordination"
+url: https://raskell.io/notes/board-games-already-solved-agent-coordination/
+author: Raffael Schneider
+date: 2026-11-21
+description: "Turn structures from German-style board games, read as agent architectures: role selection, worker placement, auctions, deck-building, automa."
+tags: [agents, agent-harness, board-games, game-design, game-theory]
+---
+
+# Board games already solved agent coordination
+
+After [Plan, then let go](https://raskell.io/notes/plan-then-execute/) I kept going down the list. WEGO is one turn structure among many, and most of the others have a counterpart in how we build agents. Most of the best ones come from the German-style board games that have always fascinated me, the *Autorenspiele*: games by a named author, whose name the *Spiele-Autoren-Zunft* wants *"zumindest auf der Coverseite der Verpackung sowie in der Spielanleitung"*, at least on the front of the box and in the rules.
+
+A Eurogame is, at its core, a carefully tuned answer to one question: who may act, when, and at what cost. That is also the question an agent harness has to answer.
+
+| Turn structure | A game that uses it | The agent counterpart |
+|---|---|---|
+| I go, you go | Chess | the [ReAct](https://arxiv.org/abs/2210.03629) loop: act, observe, act again |
+| Everyone plans, then all resolves | [Diplomacy](https://en.wikipedia.org/wiki/Diplomacy_(game)) | [plan-then-execute](https://raskell.io/notes/plan-then-execute/) |
+| Programmed actions | [RoboRally](https://en.wikipedia.org/wiki/RoboRally) | a plan written as a queue of tool calls, where a small early mistake compounds |
+| Role selection | [Puerto Rico](https://en.wikipedia.org/wiki/Puerto_Rico_(board_game)) | an orchestrator that picks a task every worker then carries out |
+| Worker placement | [Caylus](https://en.wikipedia.org/wiki/Caylus_(game)) | parallel agents contending for shared resources: locks, rate limits, a single deploy slot |
+| Auctions | [Modern Art](https://en.wikipedia.org/wiki/Modern_Art_(game)) | market-based task allocation, the [contract net](https://en.wikipedia.org/wiki/Contract_Net_Protocol) |
+| Deck-building | [Dominion](https://en.wikipedia.org/wiki/Dominion_(card_game)) | curating the tool set and the context |
+| Cooperation with limited talk | [Hanabi](https://en.wikipedia.org/wiki/Hanabi_(card_game)) | agents that must infer what another agent knows |
+| Automa | the solo modes of the Automa Factory | simulated users for [evaluation](https://raskell.io/articles/evaluation-closes-the-loop/) |
+
+Some of these are more than analogies. In Puerto Rico each player picks one role per round, every player then performs that role's action, and the one who picked it gets a small privilege. That is a supervisor handing the same instruction to many workers, with the supervisor's own share decided by the choice. Reid G. Smith's [contract net protocol](https://doi.org/10.1109/TC.1980.1675516) (1980) allocates tasks among autonomous nodes by announcement and bidding, which is an auction table with the art removed. And Hanabi is not only like an agent benchmark, it is one: [The Hanabi Challenge](https://arxiv.org/abs/1902.00506) (Bard and others, 2019) proposes it as a research domain because it *"elevates reasoning about the beliefs and intentions of other agents to the foreground."*
+
+The Automa is my favourite. An *automa* is a small deck of cards that plays the opponent in a solo game: draw a card, follow its icons. Morten Monrad Pedersen founded the Automa Factory to build them for other publishers. [Punchboard's review of solo modes](https://punchboard.co.uk/blog-solo-modes-in-board-games-part-two-automa/) lists the games that *"will never work for solo"*: *"Social deduction, auction games, take-that mechanics, party games."* They are the games where the other player's mind is the game. Replace "opponent" with "user" and that is the honest limit of every simulated user in an agent eval: a deck of cards can stand in for behaviour, not for intent.
+
+The general lessons come from what Eurogames value:
+
+- **Few actions, each one costly.** A Euro gives you two or three meaningful moves a round, not twenty. An agent with a small, typed action surface does better than one with fifty loose tools, which is also what [Piet and others](https://arxiv.org/abs/2605.14290) argue for web agents: typed site interfaces instead of clicks.
+- **Indirect interaction.** You rarely attack anyone in a Euro; you take the space they needed. Agents that coordinate through shared state are easier to reason about than agents that message each other.
+- **Open information, little luck.** The outcome follows from the decisions, so you can replay a game and see why you lost. That is what you want from a trace.
+- **A known end.** Every Euro has a visible end trigger, and good players plan backwards from it. Agents are bad at knowing when to stop; a budget or an end condition does that job.
+- **Playtesting.** A Euro is played hundreds of times before its numbers are fixed. Evals are the same work.
+
+For Waterfront the table reads the other way round. The weekly order sheet already sits between WEGO and worker placement: lieutenants are workers, the city's docks and warehouses are action spaces, and two gangs choosing the same pier on the same night is exactly the kind of coincidence the week should produce. Board games got there first, agent builders arrived later, and I am happy to borrow from both.
+
+## References
+
+- Spiele-Autoren-Zunft, [11-Punkte-Liste](https://www.spieleautorenzunft.de/files/public/Dokumente-DE/11-Punkte-Liste%20-%20V5.pdf), on naming the author on the box.
+- Reid G. Smith, [The Contract Net Protocol: High-Level Communication and Control in a Distributed Problem Solver](https://doi.org/10.1109/TC.1980.1675516), IEEE Transactions on Computers, C-29(12), 1980.
+- Nolan Bard and others, [The Hanabi Challenge: A New Frontier for AI Research](https://arxiv.org/abs/1902.00506), arXiv:1902.00506, 2019; Artificial Intelligence 280, 2020.
+- Julien Piet and others, [Web Agents Should Adopt the Plan-Then-Execute Paradigm](https://arxiv.org/abs/2605.14290), arXiv:2605.14290, 2026.
+- Shunyu Yao and others, [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629), arXiv:2210.03629, 2022.
+- Punchboard, [Solo Modes in Board Games, Part Two: Automa](https://punchboard.co.uk/blog-solo-modes-in-board-games-part-two-automa/).
+- [Puerto Rico](https://en.wikipedia.org/wiki/Puerto_Rico_(board_game)) and [Caylus](https://en.wikipedia.org/wiki/Caylus_(game)), Wikipedia.
 
 
 ================================================================================
@@ -22,7 +76,7 @@ Agentic Engineering Days Zurich 2026 was one sold-out day in a hotel by Zurich m
 
 On Friday I spent a day at [Agentic Engineering Days Zurich](https://www.agenticdays.com/) with a few colleagues. It ran for one day in the Marriott next to Zurich main station, organised by [letsboot.ch](https://www.letsboot.ch/), with 40 sessions picked from 344 submissions across five rooms, and it was sold out. Next year it moves to a bigger venue and two days, which tells you something about how the year went.
 
-Jonas and Barbara Felix and their team organised all of it, and for a first edition it was close to flawless: rooms on time, talks on time, good food, and an apéro long enough for the conversations the talks started. Thank you both.
+Jonas and Barbara Felix and their team organised all of it, and for a first edition it was close to flawless: rooms on time, talks on time, good food, and an *apéro* long enough for the conversations the talks started. Thank you both.
 
 <figure>
 <img src="/agentic-days-2026-foyer.avif" alt="The foyer of the Marriott before the first talk" width="1600" height="667" loading="lazy">
@@ -151,7 +205,7 @@ Her talk is also where Reznik's dark factory leads. The term comes from lights-o
 <figcaption>With my colleagues at the apéro, the part of a conference no talk replaces.</figcaption>
 </figure>
 
-The talks were good, and the day was better, mostly for the conversations between them and at the apéro with my colleagues. But if I keep one thing, it is the habit Reznik's sentence gave me. Every talk I saw moved a constraint: into the database, into a protocol, into a type, into a shared conversation, into evaluation. None of them made one disappear. The useful question about any new agent tool is not what it removes but where it puts the work, and whether that place is one I can see, test and own.
+The talks were good, and the day was better, mostly for the conversations between them and at the *apéro* with my colleagues. But if I keep one thing, it is the habit Reznik's sentence gave me. Every talk I saw moved a constraint: into the database, into a protocol, into a type, into a shared conversation, into evaluation. None of them made one disappear. The useful question about any new agent tool is not what it removes but where it puts the work, and whether that place is one I can see, test and own.
 
 <figure>
 <img src="/agentic-days-2026-zurich.avif" alt="Zurich main station at dusk, on the way home" width="1600" height="800" loading="lazy">
@@ -244,7 +298,7 @@ tags: [agents, agent-harness, game-design, simulation, emergence]
 
 # Plan, then let go
 
-While working on the design of Waterfront, the game I am sketching as a successor to [Gangsters: Organized Crime](https://raskell.io/notes/orders-for-the-week/), I went looking for the name of the rhythm I loved in it: give your orders with the clock stopped, then watch the week play out and do not touch it. Wargamers call it WEGO, "we go", as opposed to the alternating "I go, you go" of classic turns. Everyone plans in secret, everything resolves at once. [Diplomacy](https://en.wikipedia.org/wiki/Diplomacy_(game)) works this way on paper, [Combat Mission](https://en.wikipedia.org/wiki/Combat_Mission) and [Frozen Synapse](https://en.wikipedia.org/wiki/Frozen_Synapse) on screen.
+While working on the design of Waterfront, the game I am sketching as a successor to [Gangsters: Organized Crime](https://raskell.io/notes/orders-for-the-week/), I went looking for the name of the rhythm I loved in it: give your orders with the clock stopped, then watch the week play out and do not touch it. Wargamers call it WEGO, *"we go"*, as opposed to the alternating *"I go, you go"* of classic turns. Everyone plans in secret, everything resolves at once. [Diplomacy](https://en.wikipedia.org/wiki/Diplomacy_(game)) works this way on paper, [Combat Mission](https://en.wikipedia.org/wiki/Combat_Mission) and [Frozen Synapse](https://en.wikipedia.org/wiki/Frozen_Synapse) on screen.
 
 The same shape turned up, under a different name, in the work I do during the day. In agent architectures it is called plan-then-execute, and it is the counterpart to the [ReAct](https://arxiv.org/abs/2210.03629) loop, where the model reasons, calls a tool, reads the result, and decides the next step, over and over. A plan-then-execute agent drafts the whole sequence of tool calls first, and then ordinary code or smaller models run it without asking the planner again.
 
@@ -256,7 +310,7 @@ The three phases are the same in both worlds:
 | Lock in | the week starts; no orders change until it ends | control passes to the executor; the plan is fixed |
 | Execute | the city runs, schedules cross, you watch | the steps run; the planner sees the outcome at the end |
 
-The reason for the lock is different in each. In the game, the lock is where the fun comes from: you cannot rescue a bad plan mid-week, so planning carries the weight, and the week becomes a story you did not write. In the agent, the lock is a security property. [Design Patterns for Securing LLM Agents against Prompt Injections](https://arxiv.org/abs/2506.08837) (Beurer-Kellner and others, 2025) puts it plainly: "A prompt injection cannot force the LLM into executing a tool that is not part of the defined plan." Untrusted text read during execution can still bend the arguments of a planned call, the paper notes, but it cannot add a new one. This year a Berkeley group went further and argued in [Web Agents Should Adopt the Plan-Then-Execute Paradigm](https://arxiv.org/abs/2605.14290) (Piet and others, 2026) that web agents should fix their program before reading any live page, since pages mix in text from sellers, reviewers and advertisers.
+The reason for the lock is different in each. In the game, the lock is where the fun comes from: you cannot rescue a bad plan mid-week, so planning carries the weight, and the week becomes a story you did not write. In the agent, the lock is a security property. [Design Patterns for Securing LLM Agents against Prompt Injections](https://arxiv.org/abs/2506.08837) (Beurer-Kellner and others, 2025) puts it plainly: *"A prompt injection cannot force the LLM into executing a tool that is not part of the defined plan."* Untrusted text read during execution can still bend the arguments of a planned call, the paper notes, but it cannot add a new one. This year a Berkeley group went further and argued in [Web Agents Should Adopt the Plan-Then-Execute Paradigm](https://arxiv.org/abs/2605.14290) (Piet and others, 2026) that web agents should fix their program before reading any live page, since pages mix in text from sellers, reviewers and advertisers.
 
 The trade-off is also the same. Plan-then-execute suits work where the big picture matters more than the next step and where reacting to what you see is risky or expensive. It suits poorly work where you cannot know the next step until you see the result of this one. A player in Waterfront who wants to react to every event would be playing the wrong game, and an agent exploring an unknown codebase is better off in a loop.
 
@@ -5688,7 +5742,7 @@ A personal map published on the web is still, in one sense, just mine. I want it
 
 It has been quiet here since July. I was away for a good part of that time: in Greece, visiting family and swimming in the Ionian Sea, and then in Hong Kong and Okinawa, where I enjoyed the subtropical weather, sat through two typhoons, and went back to the coral reefs and beaches I wrote about in [Looking back on 2025](https://raskell.io/articles/looking-back-on-2025/). The redesign is what I did when I got back.
 
-The map arrived together with a new design for the whole site, a quieter theme called [seijaku](https://github.com/raskell-io/seijaku), from the Japanese word for stillness. The article index is denser and grouped by year, covers are cut automatically from each post's social banner, the tanuki in the corner blinks, and every old URL still works. Most of it was built in a long session with an AI coding agent, the way I described in [How I Work These Days](https://raskell.io/articles/how-i-work-these-days/).
+The map arrived together with a new design for the whole site, a quieter theme called [*seijaku*](https://github.com/raskell-io/seijaku), from the Japanese word for stillness. The article index is denser and grouped by year, covers are cut automatically from each post's social banner, the tanuki in the corner blinks, and every old URL still works. Most of it was built in a long session with an AI coding agent, the way I described in [How I Work These Days](https://raskell.io/articles/how-i-work-these-days/).
 
 The map's first version had one memorable bug. A single minus sign turned the repulsion between nodes into attraction, and every dot slid into the middle of the canvas until the whole graph was one bright point. It is the most honest picture of a blog I have seen: everything piled in one place, with no way to tell what connects to what.
 
