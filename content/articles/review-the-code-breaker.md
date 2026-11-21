@@ -11,6 +11,7 @@ categories = ["reviews"]
 [extra]
 author = "Raffael"
 review = "the-code-breaker"
+og_image = "review-the-code-breaker.png"   # hand-made social card, 1200x630
 +++
 
 <!-- A review of The Code Breaker by Walter Isaacson (book). Questions worth answering, in any order and not as headings:
