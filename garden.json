@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-21T10:16:02+00:00",
+ "generated": "2026-11-21T12:53:18+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
@@ -9,7 +9,7 @@
   "note": 40,
   "talk": 1,
   "dataset": 1,
-  "work": 167,
+  "work": 169,
   "project": 32,
   "topic": 175,
   "link": 663
@@ -3588,6 +3588,34 @@
     "probability"
    ],
    "meta": "Book · Ivar Ekeland · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "A City on Mars",
+   "url": "https://raskell.io/reading/#a-city-on-mars",
+   "description": "What it would really take to live on Mars, and why the answer is mostly not rockets.",
+   "topics": [
+    "space",
+    "cities",
+    "utopias",
+    "hubris",
+    "medicine"
+   ],
+   "meta": "Book · Kelly Weinersmith and Zach Weinersmith · Backlog"
+  },
+  {
+   "kind": "work",
+   "title": "The Technological Republic",
+   "url": "https://raskell.io/reading/#the-technological-republic",
+   "description": "Palantir's case that Silicon Valley should build for the state again.",
+   "topics": [
+    "technology-races",
+    "united-states",
+    "geopolitics",
+    "policy",
+    "entrepreneurship"
+   ],
+   "meta": "Book · Alexander C. Karp and Nicholas W. Zamiska · Backlog"
   },
   {
    "kind": "work",

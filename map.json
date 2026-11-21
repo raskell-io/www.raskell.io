@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-21T10:16:02+00:00",
+ "generated": "2026-11-21T12:53:18+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -1045,7 +1045,7 @@
    "url": "https://raskell.io/tags/cities/",
    "meta": "Concept · 1 page",
    "description": "How cities are planned and how they actually grow: Jerusalem over three thousand years, Brasilia drawn on paper, and the rational city the web was designed against.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "t:commons",
@@ -1225,7 +1225,7 @@
    "url": "https://raskell.io/tags/entrepreneurship/",
    "meta": "Concept · 6 pages",
    "description": "Finding something worth building and building it: ventures, side projects, and what changes when anyone can spot an opportunity and operate a business with AI.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:ethics",
@@ -1441,7 +1441,7 @@
    "url": "https://raskell.io/tags/hubris/",
    "meta": "Concept · 2 pages",
    "description": "When builders overestimate their control: an island of cloned dinosaurs, cities planned on paper, the bomb, and systems more capable than their makers understand.",
-   "degree": 16
+   "degree": 17
   },
   {
    "id": "t:hypertext",
@@ -1810,7 +1810,7 @@
    "url": "https://raskell.io/tags/policy/",
    "meta": "Domain · 3 pages",
    "description": "Where engineering meets regulation, public institutions, procurement, and national strategy.",
-   "degree": 20
+   "degree": 21
   },
   {
    "id": "t:post-scarcity",
@@ -1990,7 +1990,7 @@
    "url": "https://raskell.io/tags/space/",
    "meta": "Domain · 1 page",
    "description": "Astronomy, the cosmos and leaving the planet: interstellar visitors, other worlds, cosmology, and the plans to settle beyond Earth.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:starcraft",
@@ -2044,7 +2044,7 @@
    "url": "https://raskell.io/tags/technology-races/",
    "meta": "Concept · 7 pages",
    "description": "Powers racing to build a technology first, from the bomb and its deterrence to frontier AI and the data it needs.",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "t:training-data",
@@ -2098,7 +2098,7 @@
    "url": "https://raskell.io/tags/united-states/",
    "meta": "Concept · 3 pages",
    "description": "America's place in technology and power: where the frontier labs and chips are, its founding ideas, and its race with China.",
-   "degree": 14
+   "degree": 15
   },
   {
    "id": "t:waf",
@@ -2242,7 +2242,7 @@
    "url": "https://raskell.io/tags#geopolitics",
    "meta": "Concept · no pages yet",
    "description": "How geography, empires, and arms shape the balance of power between states and regions, as history.",
-   "degree": 24
+   "degree": 25
   },
   {
    "id": "t:high-modernism",
@@ -2296,7 +2296,7 @@
    "url": "https://raskell.io/tags#medicine",
    "meta": "Concept · no pages yet",
    "description": "How treatments are discovered, tested, and brought to patients, from antisepsis and sulfa drugs to modern drug design.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:middle-east",
@@ -2413,7 +2413,7 @@
    "url": "https://raskell.io/tags#utopias",
    "meta": "Concept · no pages yet",
    "description": "Designs for a better society, imagined or attempted: colonies, planned economies, post-scarcity civilisations, and what became of them.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "s:learning-to-play",
@@ -4106,6 +4106,24 @@
    "degree": 8
   },
   {
+   "id": "w:a-city-on-mars",
+   "kind": "work",
+   "label": "A City on Mars",
+   "url": "https://raskell.io/reading/#a-city-on-mars",
+   "meta": "Book · Kelly Weinersmith and Zach Weinersmith · in the backlog",
+   "description": "What it would really take to live on Mars, and why the answer is mostly not rockets.",
+   "degree": 6
+  },
+  {
+   "id": "w:the-technological-republic",
+   "kind": "work",
+   "label": "The Technological Republic",
+   "url": "https://raskell.io/reading/#the-technological-republic",
+   "meta": "Book · Alexander C. Karp and Nicholas W. Zamiska · in the backlog",
+   "description": "Palantir's case that Silicon Valley should build for the state again.",
+   "degree": 6
+  },
+  {
    "id": "w:sicp",
    "kind": "work",
    "label": "Structure and Interpretation of Computer Programs",
@@ -4245,7 +4263,7 @@
    "label": "Backlog",
    "url": "https://raskell.io/reading/#shelf-backlog",
    "meta": "Shelf",
-   "degree": 68
+   "degree": 70
   },
   {
    "id": "h:shelf-read",
@@ -12960,6 +12978,54 @@
   {
    "source": "w:mathematics-and-the-unexpected",
    "target": "t:probability"
+  },
+  {
+   "source": "w:a-city-on-mars",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:a-city-on-mars",
+   "target": "t:space"
+  },
+  {
+   "source": "w:a-city-on-mars",
+   "target": "t:cities"
+  },
+  {
+   "source": "w:a-city-on-mars",
+   "target": "t:utopias"
+  },
+  {
+   "source": "w:a-city-on-mars",
+   "target": "t:hubris"
+  },
+  {
+   "source": "w:a-city-on-mars",
+   "target": "t:medicine"
+  },
+  {
+   "source": "w:the-technological-republic",
+   "target": "h:shelf-backlog"
+  },
+  {
+   "source": "w:the-technological-republic",
+   "target": "t:technology-races"
+  },
+  {
+   "source": "w:the-technological-republic",
+   "target": "t:united-states"
+  },
+  {
+   "source": "w:the-technological-republic",
+   "target": "t:geopolitics"
+  },
+  {
+   "source": "w:the-technological-republic",
+   "target": "t:policy"
+  },
+  {
+   "source": "w:the-technological-republic",
+   "target": "t:entrepreneurship"
   },
   {
    "source": "w:sicp",
