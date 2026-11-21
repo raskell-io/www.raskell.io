@@ -6,6 +6,7 @@ logo_wide = true
 logo_mono = true
 featured = true
 links = [ { name = "Website", url = "https://arcanist.sh" }, { name = "GitHub", url = "https://github.com/arcanist-sh" } ]
+evidence = { name = "Read the benchmark", url = "https://arcanist.sh/hx/benchmarks/" }   # where the project shows itself working; a pill after the main action
 pitch = "@/pitch/arcanist.md"   # investor brief, linked from /invest/
 tagline = "Haskell tooling in Rust: hx and bhc"   # short line for support cards
 support = [ { name = "GitHub Sponsors", url = "https://github.com/sponsors/arcanist-sh" }, { name = "Ko-fi", url = "https://ko-fi.com/raskell" }, { name = "Support page", url = "https://arcanist.sh/support/" } ]   # funding links, shown on /invest/

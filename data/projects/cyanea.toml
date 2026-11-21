@@ -8,6 +8,7 @@ wordmark = "brands/cyanea-wordmark-light.svg"   # the brandtype, shown beside th
 wordmark_dark = "brands/cyanea-wordmark-dark.svg"
 featured = true
 links = [ { name = "Website", url = "https://cyanea.bio" }, { name = "Docs", url = "https://docs.cyanea.bio" }, { name = "GitHub", url = "https://github.com/cyanea-bio" } ]
+evidence = { name = "Open an example space", url = "https://cyanea.bio/spaces/scrna-pbmc-10x/" }   # where the project shows itself working; a pill after the main action
 pitch = "@/pitch/cyanea.md"   # investor brief, linked from /invest/
 topics = ["oss", "rust", "webassembly", "self-hosting", "life-sciences", "synthetic-biology"]
 accents = ["#B9A6FF", "#8BE4F5"]   # brand colours (lavender, jelly cyan), used for the card glow

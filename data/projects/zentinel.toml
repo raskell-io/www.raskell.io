@@ -6,6 +6,7 @@ wordmark = "brands/zentinel-wordmark-light.svg"   # the brandtype, shown beside 
 wordmark_dark = "brands/zentinel-wordmark-dark.svg"
 featured = true
 links = [ { name = "Website", url = "https://zentinelproxy.io" }, { name = "Docs", url = "https://docs.zentinelproxy.io/" }, { name = "GitHub", url = "https://github.com/zentinelproxy/zentinel" } ]
+evidence = { name = "Try the playground", url = "https://zentinelproxy.io/playground/" }   # where the project shows itself working; a pill after the main action
 tagline = "Security-first reverse proxy on Pingora"   # short line for support cards
 support = [ { name = "GitHub Sponsors", url = "https://github.com/sponsors/zentinelproxy" }, { name = "Open Collective", url = "https://opencollective.com/zentinelproxy" }, { name = "Ko-fi", url = "https://ko-fi.com/raskell" }, { name = "Support page", url = "https://zentinelproxy.io/support/" } ]   # funding links, shown on /invest/
 topics = ["applied-security", "edge-systems", "waf", "isolation", "observability", "pingora", "rust", "networking"]
