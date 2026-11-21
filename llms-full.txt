@@ -6,6 +6,92 @@
 ================================================================================
 
 ---
+title: "The Phrase That Stayed"
+url: https://raskell.io/articles/review-skin-in-the-game/
+author: Raffael Schneider
+date: 2026-11-21
+description: "I kept one phrase from Taleb's Skin in the Game. Now that code is cheap, I think it names what is left: someone who owns the outcome."
+tags: [risk, ethics, trust, entrepreneurship, future-of-work, agents, post-scarcity]
+categories: [reviews]
+review_of: "Skin in the Game"
+review_of_author: "Nassim Nicholas Taleb"
+review_of_kind: book
+review_of_year: 2018
+rating: 8.5/10
+---
+
+# The Phrase That Stayed
+
+## In short
+
+Nassim Nicholas Taleb's *Skin in the Game* argues that whoever makes a decision should carry its consequences, and that systems where they do not slowly break; I give it 8.5 out of 10. I read it in 2022 and remember few of its details, but its title entered my everyday vocabulary, which says more about a book than most reviews can. Going back to it, I found that I use the phrase more generously than Taleb does: for him it is first about symmetry and downside, for me about ownership and daring. Taleb has a word for my use too, \ , and the book's strongest pages are about courage, the one virtue he says you cannot fake. Now that agents make code cheap, I think the phrase names what is left: ownership, trust, and the ability to execute, carried by someone who answers for the outcome.
+
+I read *Skin in the Game* in 2022, after *The Black Swan* and *Antifragile*, and I will be honest about what is left of it four years later. I could not tell you the order of its chapters or retell most of its stories. What I kept is the phrase. I say "skin in the game" all the time now, at work and outside it, whenever I mean that someone should feel responsible for a thing, own it, dare something, and put enough of themselves into it that it can make the world a little better. If everyone had some skin in the game, I think we would all live in a more engaged world.
+
+That is a strange thing to review, so this is a review of what a book leaves behind. I went back to the text to check whether the phrase I use is the one Taleb meant. It mostly is, but the book is harder than the phrase, and in places better.
+
+I give it 8.5 out of 10. Few books have changed how I talk as much as this one, and it gets more relevant every year that agents take on more of the work.
+
+## What Taleb means {#what-taleb-means}
+
+The book is the fourth volume of what Taleb calls the *Incerto*, after *Fooled by Randomness*, *The Black Swan*, and *Antifragile*, and it states its claim early: *"skin in the game is necessary for fairness, commercial efficiency, and risk management: skin in the game is necessary to understand the world."* The core is symmetry. Whoever takes a risk should carry its downside, and whoever gains from a decision should be exposed to it when it goes wrong.
+
+He starts, as I remembered, with Hammurabi. The code on the basalt stele in the Louvre, some 3,800 years old, opens its best known rule with *"If a builder builds a house and the house collapses and causes the death of the owner of the house"*, and the builder pays with his life. Taleb's point is not the cruelty but the design. The builder knows more about the house than anyone, and the best place to hide a flaw is in the corners only the builder can see. The law makes the builder's fate depend on what is in those corners. I used that passage before, in [The Original Data Company](https://raskell.io/articles/the-original-data-company/), because insurers live on exactly this problem.
+
+The counterexample is what he calls the Bob Rubin trade. Robert Rubin, a former US Treasury Secretary, *"collected more than $120 million in compensation from Citibank in the decade preceding the banking crash of 2008,"* and when the bank had to be rescued, *"he didn't write any check."* The upside was private; the downside went to everyone else. From there Taleb draws the sentence about institutions I quote most after the title: *"Bureaucracy is a construction by which a person is conveniently separated from the consequences of his or her actions."*
+
+## The parts I had forgotten {#the-parts-i-had-forgotten}
+
+Rereading, I was surprised how much of the book is not about bankers at all.
+
+Chapter 2, "The Most Intolerant Wins", argues that a small, stubborn minority, three or four percent of a population, can impose its preferences on everyone if the rule is asymmetric: someone who keeps kosher will not drink non-kosher lemonade, but nobody else minds drinking kosher, so producers and grocers simply make all of it kosher rather than keep two supplies. It is one of the most useful ideas in the book and has little to do with risk in the narrow sense.
+
+Chapter 8 introduces Lindy, named after a New York deli where actors noticed that Broadway shows that had lasted a hundred days could expect a hundred more. Taleb turns it into a rule for anything that does not age: *"the only effective judge of things is time"*, which is a better test for a framework, a book, or a protocol than any review, this one included.
+
+Chapter 19, "The Logic of Risk Taking", which Taleb calls the central chapter and puts last, is the one I would send to an engineer. Its argument is about ruin: an average over many people is not the same as the path of one person over time, and a strategy that is rational on paper is irrational if one bad outcome ends the game. *"Rationality is avoidance of systemic ruin,"* he writes. That is the same idea that runs through *The Black Swan* and *Antifragile*, now with a name for the person who has to live with it.
+
+And there is the tone. Taleb is combative, repeats himself, and has a long chapter on the "Intellectual Yet Idiot" that reads like a settling of scores. Some of the book is more fun to have read than to read. I do not hold that against it; it is part of how the ideas stay with you.
+
+## Soul in the game {#soul-in-the-game}
+
+The surprise was that my own use of the phrase is in the book too, under a different name. Taleb writes of people with *"skin in the game (or, better, soul in the game),"* and he uses it for something beyond exposure to loss: doing a thing because you care about it, with no one forcing the symmetry. He tells how he learned enough Akkadian to recite Hammurabi's law in its own sounds, because talking about the stele without being able to read it felt like cheating. He notes that Microsoft, Apple, Facebook, and Google *"were started by people with skin and soul in the game."* And in chapter 13 he writes the line I wish I had remembered: *"Courage is the only virtue you cannot fake."*
+
+That is where I land. Taleb's version is mostly negative: remove those who can harm others without being harmed. Mine is mostly positive: the people who carry things forward are the ones who put themselves into them, which is what I argued in [Who carries progress](https://raskell.io/notes/who-carries-progress/) and saw in a friend's [idea factory](https://raskell.io/notes/citizen-entrepreneurs/). Taleb says the two belong together. The introduction calls skin in the game *"mostly about justice, honor, and sacrifice,"* and the glossary is blunt: *"virtue devoid of courage, sacrifice, and skin in the game is never virtue."* The penalty and the engagement are one idea seen from two sides.
+
+## What is left when code is cheap {#what-is-left}
+
+The reason the phrase matters more to me now than in 2022 is the question everyone in my field is asking since agents started writing software: if code is cheap, what is left? My answer is Taleb's. Ownership.
+
+Ideas were always cheap. Everyone has one, the way everyone has an opinion, and an idea nobody acts on is worth nothing. Code used to be the expensive part. It took years to learn, it was hard to hire, and harder still to scale a team without losing quality: Fred Brooks put it in *The Mythical Man-Month* in 1975 as *"Adding manpower to a late software project makes it later."* That constraint is going away. One person with a fleet of agents can now produce what a department produced, and at the Agentic Engineering Days in Zurich this month the slide that got the room was Krzysztof Cieślak's *"Code is cheap. Shared understanding and trust aren't"* (I wrote about it in [The Constraint Moves](https://raskell.io/articles/agentic-engineering-days-zurich-2026/)).
+
+What does not get cheaper is someone with a vision, the endurance to stay loyal to it for years, and the willingness to answer for it. When I choose a product or a service, I am not buying its code. I am buying the knowledge that somebody will keep delivering it next year, and that this somebody will pay, in reputation and if need be in court, when it fails. That is skin in the game in the most ordinary sense, and it is the one thing an agent cannot supply on its own behalf.
+
+Taleb saw half of this coming, from the other side. Chapter 3, "How to Legally Own Another Person", is about why companies prefer employees to contractors, and his answer is that employees have something to lose: *"employees have a reputation to protect."* A firm, in his account, holds its people through their dependence and their reputation, and that is what makes them reliable. An AI agent is the perfect employee in every respect but this one. It has no reputation, no career, nothing to lose. So all of the exposure that used to be spread across a team now flows to the person at the top. Whoever runs a thousand agents owns everything they do, in Taleb's full sense of the word, because there is nobody left below to share it.
+
+That changes what a builder is. The scarce person is no longer the one who can write the code but the one who can be trusted with the outcome: who will be there in five years, who has staked a name on the thing, who has, as Taleb puts it in the introduction, something in the portfolio rather than an opinion: *"Don't tell me what you 'think,' just tell me what's in your portfolio."* Lindy applies here too. A product that has been run well by the same owner for a decade carries more trust than any feature list, because time is the judge that cannot be argued with. In my own work this is the design principle behind every agent platform I build: each action traceable to a person who answers for it, each agent with a human sponsor whose name is on the line. In Hammurabi's terms, it puts the builder back under the house.
+
+## The last owners {#the-last-owners}
+
+I take this one step further than Taleb would. I believe that ownership, trust, and the ability to execute are what remain after AI and robotics have taken over most human labour. If we reach a society of abundance, fully automated, where material and social needs are provided for, it will still need a small group of people who oversee the machines: who decide how energy and resources are allocated, and who keep the whole system running. The ultimate engineer-operator.
+
+The book gives two warnings for that world, and I think they are the right ones. The first is chapter 2: a small minority with soul in the game sets the rules for everyone else, whether or not anyone notices. A tiny group of operators will shape a society the way three percent of kosher drinkers shape the lemonade aisle, so it matters a great deal who they are and what they care about. The second is the oldest rule in the book. The fewer people stand between a decision and its consequences, the more those few must carry them. Bureaucracy, in Taleb's definition, separates people from the consequences of their actions; a fully automated society would be the largest bureaucracy ever built, unless the people at the top live under the house they built. If there are last owners, they need the most skin in the game of anyone, not the least.
+
+## Who should read it {#who-should-read-it}
+
+Anyone who has to decide who gets to decide: managers, founders, people who design institutions or systems. Read *The Black Swan* and *Antifragile* first if you can; this is the book where their ideas turn into ethics. Skip around if a chapter loses you, and do not skip chapter 19.
+
+I kept one phrase from it for four years and used it more than almost any other idea I have read. That is the best test of a book I know, and Taleb would call it Lindy.
+
+## References {#references}
+
+- Nassim Nicholas Taleb, *Skin in the Game: Hidden Asymmetries in Daily Life*, Penguin, 2018
+- Fred Brooks, *The Mythical Man-Month*, 1975, via [Brooks's law](https://en.wikipedia.org/wiki/Brooks%27s_law)
+- Krzysztof Cieślak, closing slide of his talk at Agentic Engineering Days Zurich 2026, in [The Constraint Moves](https://raskell.io/articles/agentic-engineering-days-zurich-2026/)
+
+
+================================================================================
+
+---
 title: "Five Breakthroughs and a Dishwasher"
 url: https://raskell.io/articles/review-a-brief-history-of-intelligence/
 author: Raffael Schneider
@@ -127,133 +213,6 @@ I learned a lot from it. I was not prepared for its depth, and I think that show
 ================================================================================
 
 ---
-title: "The Phrase That Stayed"
-url: https://raskell.io/articles/review-skin-in-the-game/
-author: Raffael Schneider
-date: 2026-11-21
-description: "I kept one phrase from Taleb's Skin in the Game. Now that code is cheap, I think it names what is left: someone who owns the outcome."
-tags: [risk, ethics, trust, entrepreneurship, future-of-work, agents, post-scarcity]
-categories: [reviews]
-review_of: "Skin in the Game"
-review_of_author: "Nassim Nicholas Taleb"
-review_of_kind: book
-review_of_year: 2018
-rating: 8.5/10
----
-
-# The Phrase That Stayed
-
-## In short
-
-Nassim Nicholas Taleb's *Skin in the Game* argues that whoever makes a decision should carry its consequences, and that systems where they do not slowly break; I give it 8.5 out of 10. I read it in 2022 and remember few of its details, but its title entered my everyday vocabulary, which says more about a book than most reviews can. Going back to it, I found that I use the phrase more generously than Taleb does: for him it is first about symmetry and downside, for me about ownership and daring. Taleb has a word for my use too, \ , and the book's strongest pages are about courage, the one virtue he says you cannot fake. Now that agents make code cheap, I think the phrase names what is left: ownership, trust, and the ability to execute, carried by someone who answers for the outcome.
-
-I read *Skin in the Game* in 2022, after *The Black Swan* and *Antifragile*, and I will be honest about what is left of it four years later. I could not tell you the order of its chapters or retell most of its stories. What I kept is the phrase. I say "skin in the game" all the time now, at work and outside it, whenever I mean that someone should feel responsible for a thing, own it, dare something, and put enough of themselves into it that it can make the world a little better. If everyone had some skin in the game, I think we would all live in a more engaged world.
-
-That is a strange thing to review, so this is a review of what a book leaves behind. I went back to the text to check whether the phrase I use is the one Taleb meant. It mostly is, but the book is harder than the phrase, and in places better.
-
-I give it 8.5 out of 10. Few books have changed how I talk as much as this one, and it gets more relevant every year that agents take on more of the work.
-
-## What Taleb means {#what-taleb-means}
-
-The book is the fourth volume of what Taleb calls the *Incerto*, after *Fooled by Randomness*, *The Black Swan*, and *Antifragile*, and it states its claim early: *"skin in the game is necessary for fairness, commercial efficiency, and risk management: skin in the game is necessary to understand the world."* The core is symmetry. Whoever takes a risk should carry its downside, and whoever gains from a decision should be exposed to it when it goes wrong.
-
-He starts, as I remembered, with Hammurabi. The code on the basalt stele in the Louvre, some 3,800 years old, opens its best known rule with *"If a builder builds a house and the house collapses and causes the death of the owner of the house"*, and the builder pays with his life. Taleb's point is not the cruelty but the design. The builder knows more about the house than anyone, and the best place to hide a flaw is in the corners only the builder can see. The law makes the builder's fate depend on what is in those corners. I used that passage before, in [The Original Data Company](https://raskell.io/articles/the-original-data-company/), because insurers live on exactly this problem.
-
-The counterexample is what he calls the Bob Rubin trade. Robert Rubin, a former US Treasury Secretary, *"collected more than $120 million in compensation from Citibank in the decade preceding the banking crash of 2008,"* and when the bank had to be rescued, *"he didn't write any check."* The upside was private; the downside went to everyone else. From there Taleb draws the sentence about institutions I quote most after the title: *"Bureaucracy is a construction by which a person is conveniently separated from the consequences of his or her actions."*
-
-## The parts I had forgotten {#the-parts-i-had-forgotten}
-
-Rereading, I was surprised how much of the book is not about bankers at all.
-
-Chapter 2, "The Most Intolerant Wins", argues that a small, stubborn minority, three or four percent of a population, can impose its preferences on everyone if the rule is asymmetric: someone who keeps kosher will not drink non-kosher lemonade, but nobody else minds drinking kosher, so producers and grocers simply make all of it kosher rather than keep two supplies. It is one of the most useful ideas in the book and has little to do with risk in the narrow sense.
-
-Chapter 8 introduces Lindy, named after a New York deli where actors noticed that Broadway shows that had lasted a hundred days could expect a hundred more. Taleb turns it into a rule for anything that does not age: *"the only effective judge of things is time"*, which is a better test for a framework, a book, or a protocol than any review, this one included.
-
-Chapter 19, "The Logic of Risk Taking", which Taleb calls the central chapter and puts last, is the one I would send to an engineer. Its argument is about ruin: an average over many people is not the same as the path of one person over time, and a strategy that is rational on paper is irrational if one bad outcome ends the game. *"Rationality is avoidance of systemic ruin,"* he writes. That is the same idea that runs through *The Black Swan* and *Antifragile*, now with a name for the person who has to live with it.
-
-And there is the tone. Taleb is combative, repeats himself, and has a long chapter on the "Intellectual Yet Idiot" that reads like a settling of scores. Some of the book is more fun to have read than to read. I do not hold that against it; it is part of how the ideas stay with you.
-
-## Soul in the game {#soul-in-the-game}
-
-The surprise was that my own use of the phrase is in the book too, under a different name. Taleb writes of people with *"skin in the game (or, better, soul in the game),"* and he uses it for something beyond exposure to loss: doing a thing because you care about it, with no one forcing the symmetry. He tells how he learned enough Akkadian to recite Hammurabi's law in its own sounds, because talking about the stele without being able to read it felt like cheating. He notes that Microsoft, Apple, Facebook, and Google *"were started by people with skin and soul in the game."* And in chapter 13 he writes the line I wish I had remembered: *"Courage is the only virtue you cannot fake."*
-
-That is where I land. Taleb's version is mostly negative: remove those who can harm others without being harmed. Mine is mostly positive: the people who carry things forward are the ones who put themselves into them, which is what I argued in [Who carries progress](https://raskell.io/notes/who-carries-progress/) and saw in a friend's [idea factory](https://raskell.io/notes/citizen-entrepreneurs/). Taleb says the two belong together. The introduction calls skin in the game *"mostly about justice, honor, and sacrifice,"* and the glossary is blunt: *"virtue devoid of courage, sacrifice, and skin in the game is never virtue."* The penalty and the engagement are one idea seen from two sides.
-
-## What is left when code is cheap {#what-is-left}
-
-The reason the phrase matters more to me now than in 2022 is the question everyone in my field is asking since agents started writing software: if code is cheap, what is left? My answer is Taleb's. Ownership.
-
-Ideas were always cheap. Everyone has one, the way everyone has an opinion, and an idea nobody acts on is worth nothing. Code used to be the expensive part. It took years to learn, it was hard to hire, and harder still to scale a team without losing quality: Fred Brooks put it in *The Mythical Man-Month* in 1975 as *"Adding manpower to a late software project makes it later."* That constraint is going away. One person with a fleet of agents can now produce what a department produced, and at the Agentic Engineering Days in Zurich this month the slide that got the room was Krzysztof Cieślak's *"Code is cheap. Shared understanding and trust aren't"* (I wrote about it in [The Constraint Moves](https://raskell.io/articles/agentic-engineering-days-zurich-2026/)).
-
-What does not get cheaper is someone with a vision, the endurance to stay loyal to it for years, and the willingness to answer for it. When I choose a product or a service, I am not buying its code. I am buying the knowledge that somebody will keep delivering it next year, and that this somebody will pay, in reputation and if need be in court, when it fails. That is skin in the game in the most ordinary sense, and it is the one thing an agent cannot supply on its own behalf.
-
-Taleb saw half of this coming, from the other side. Chapter 3, "How to Legally Own Another Person", is about why companies prefer employees to contractors, and his answer is that employees have something to lose: *"employees have a reputation to protect."* A firm, in his account, holds its people through their dependence and their reputation, and that is what makes them reliable. An AI agent is the perfect employee in every respect but this one. It has no reputation, no career, nothing to lose. So all of the exposure that used to be spread across a team now flows to the person at the top. Whoever runs a thousand agents owns everything they do, in Taleb's full sense of the word, because there is nobody left below to share it.
-
-That changes what a builder is. The scarce person is no longer the one who can write the code but the one who can be trusted with the outcome: who will be there in five years, who has staked a name on the thing, who has, as Taleb puts it in the introduction, something in the portfolio rather than an opinion: *"Don't tell me what you 'think,' just tell me what's in your portfolio."* Lindy applies here too. A product that has been run well by the same owner for a decade carries more trust than any feature list, because time is the judge that cannot be argued with. In my own work this is the design principle behind every agent platform I build: each action traceable to a person who answers for it, each agent with a human sponsor whose name is on the line. In Hammurabi's terms, it puts the builder back under the house.
-
-## The last owners {#the-last-owners}
-
-I take this one step further than Taleb would. I believe that ownership, trust, and the ability to execute are what remain after AI and robotics have taken over most human labour. If we reach a society of abundance, fully automated, where material and social needs are provided for, it will still need a small group of people who oversee the machines: who decide how energy and resources are allocated, and who keep the whole system running. The ultimate engineer-operator.
-
-The book gives two warnings for that world, and I think they are the right ones. The first is chapter 2: a small minority with soul in the game sets the rules for everyone else, whether or not anyone notices. A tiny group of operators will shape a society the way three percent of kosher drinkers shape the lemonade aisle, so it matters a great deal who they are and what they care about. The second is the oldest rule in the book. The fewer people stand between a decision and its consequences, the more those few must carry them. Bureaucracy, in Taleb's definition, separates people from the consequences of their actions; a fully automated society would be the largest bureaucracy ever built, unless the people at the top live under the house they built. If there are last owners, they need the most skin in the game of anyone, not the least.
-
-## Who should read it {#who-should-read-it}
-
-Anyone who has to decide who gets to decide: managers, founders, people who design institutions or systems. Read *The Black Swan* and *Antifragile* first if you can; this is the book where their ideas turn into ethics. Skip around if a chapter loses you, and do not skip chapter 19.
-
-I kept one phrase from it for four years and used it more than almost any other idea I have read. That is the best test of a book I know, and Taleb would call it Lindy.
-
-## References {#references}
-
-- Nassim Nicholas Taleb, *Skin in the Game: Hidden Asymmetries in Daily Life*, Penguin, 2018
-- Fred Brooks, *The Mythical Man-Month*, 1975, via [Brooks's law](https://en.wikipedia.org/wiki/Brooks%27s_law)
-- Krzysztof Cieślak, closing slide of his talk at Agentic Engineering Days Zurich 2026, in [The Constraint Moves](https://raskell.io/articles/agentic-engineering-days-zurich-2026/)
-
-
-================================================================================
-
----
-title: "Smell is pattern recognition"
-url: https://raskell.io/notes/smell-is-pattern-recognition/
-author: Raffael Schneider
-date: 2026-11-21
-description: "Max Bennett explains neural networks with the nose. For the brain, smell is the easiest pattern to recognise; for machines, the hardest sense to build."
-tags: [olfaction, neural-networks, neuroscience, evolution, intelligence]
----
-
-# Smell is pattern recognition
-
-Chapter 7 of Max Bennett's *A Brief History of Intelligence*, "The Problems of Pattern Recognition", explains neural networks with the nose, and that is why I am writing this down. I love everything that goes through the nose: I keep a fragrance collection, I cook mostly for taste, I like wine and spirit tastings, cocktails, and the craft of essential oils and aromas. It is a pleasure to find smell at the centre of a book about intelligence.
-
-Bennett's point is simple. There is no molecule for pulled pork. A smell is a mixture of many molecules that activates a pattern across many kinds of olfactory neurons; the lamprey, his model for the first vertebrates, has about fifty. So, in his words, "smell recognition is nothing more than pattern recognition." Earlier animals recognised the world one neuron at a time: one cell for light, one for touch. The first vertebrates, some five hundred million years ago, learned to read the pattern instead, and fifty cells can make more patterns than any animal will ever meet.
-
-Reading a pattern raises two problems, and Bennett draws both as smells:
-
-| Problem | The smell version | How the cortex may solve it |
-|---|---|---|
-| Discrimination | A predator and a meal activate overlapping neurons, but one means flee and the other means approach. | Expansion and sparsity: a few olfactory neurons feed many cortical neurons, each wired to only some of them, so overlapping inputs become separate patterns. |
-| Generalisation | The same predator never smells exactly the same twice: another age, another diet, another background. | Auto-association: cortical neurons wire to each other, so a partial pattern brings back the whole memory. |
-
-Then he builds the machine version, still with smells. To train a network to tell eggs from flowers, you show it labelled examples, measure the error at the output, and nudge every weight a little in the right direction, millions of times. That is backpropagation, popularised in the 1980s by Geoffrey Hinton, David Rumelhart and Ronald Williams. Hinton keeps turning up in what I read; he is all over *Empire of AI*, and by now he feels like the grandfather of the field. Bennett opens his introduction with a Hinton quotation and comes back to him in chapter 11 with the Helmholtz machine. He also reports that Hinton himself saw backpropagation as a poor model of the brain: a child tells an egg from a strawberry before knowing either word, and no brain can adjust millions of synapses at once by exactly the right amount.
-
-The detail I liked most is in an endnote. Smell has no invariance problem. A face looks different from every angle and distance, but an egg releases the same molecules wherever it sits, so it activates the same olfactory neurons. And smell is the one sense that skips the thalamus and goes straight to the cortex. Bennett suggests the two facts may be connected: the thalamus might be what the other senses need to recognise things that are rotated, moved, or scaled.
-
-That gives me a way to put my own belief more precisely. I believe smell will be the last sense we learn to read and write with machines. Not the last we understand, but the last for which we build input and output devices as ordinary as a camera and a screen, a microphone and a speaker. For the brain, smell is the easiest pattern problem. For engineers, it is the hardest, and the difficulty is in the instruments, not in the recognition. Sight compresses well: three kinds of cones, so three channels in, three primaries out. Smell has no such shortcut. Bennett notes that rats carry more than a thousand olfactory receptor types, and an output device cannot mix every scent from three cartridges. It has to put the actual molecules into the air.
-
-There is progress, and the recognition side is moving first, as the chapter would predict. In 2023, a team from Osmo and the Monell Chemical Senses Center published a principal odor map in *Science*: a graph neural network that predicts from a molecule's structure how it will smell, and matched human panelists at describing odors in words. In 2024 Osmo reported a "scent teleportation": a plum measured by gas chromatography and mass spectrometry, turned into a formula, and reprinted by a machine. That is the company's own account, and it is a laboratory, not a device in a pocket. Recognising a smell from data is starting to work. Writing one back into a room is still chemistry. I would bet that a phone that can play a perfume as easily as a song will come after everything else on the list.
-
-More on the book in my review, [A Brief History of Intelligence](https://raskell.io/articles/review-a-brief-history-of-intelligence/).
-
-## References
-
-- Max Bennett, *A Brief History of Intelligence* (2023), chapter 7, "The Problems of Pattern Recognition", and its endnotes; chapter 11 for the Helmholtz machine.
-- Brian K. Lee, Emily J. Mayhew, et al., "A principal odor map unifies diverse tasks in olfactory perception", *Science* 381 (2023), [doi:10.1126/science.ade4401](https://doi.org/10.1126/science.ade4401); press release by the Monell Chemical Senses Center on [EurekAlert](https://www.eurekalert.org/news-releases/999716).
-- Osmo, "[Teleporting scent](https://www.osmo.ai/blog/teleporting-scent)", the company's account of the plum reprint.
-
-
-================================================================================
-
----
 title: "Board games already solved agent coordination"
 url: https://raskell.io/notes/board-games-already-solved-agent-coordination/
 author: Raffael Schneider
@@ -303,6 +262,47 @@ For Waterfront the table reads the other way round. The weekly order sheet alrea
 - Shunyu Yao and others, [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629), arXiv:2210.03629, 2022.
 - Punchboard, [Solo Modes in Board Games, Part Two: Automa](https://punchboard.co.uk/blog-solo-modes-in-board-games-part-two-automa/).
 - [Puerto Rico](https://en.wikipedia.org/wiki/Puerto_Rico_(board_game)) and [Caylus](https://en.wikipedia.org/wiki/Caylus_(game)), Wikipedia.
+
+
+================================================================================
+
+---
+title: "Smell is pattern recognition"
+url: https://raskell.io/notes/smell-is-pattern-recognition/
+author: Raffael Schneider
+date: 2026-11-21
+description: "Max Bennett explains neural networks with the nose. For the brain, smell is the easiest pattern to recognise; for machines, the hardest sense to build."
+tags: [olfaction, neural-networks, neuroscience, evolution, intelligence]
+---
+
+# Smell is pattern recognition
+
+Chapter 7 of Max Bennett's *A Brief History of Intelligence*, "The Problems of Pattern Recognition", explains neural networks with the nose, and that is why I am writing this down. I love everything that goes through the nose: I keep a fragrance collection, I cook mostly for taste, I like wine and spirit tastings, cocktails, and the craft of essential oils and aromas. It is a pleasure to find smell at the centre of a book about intelligence.
+
+Bennett's point is simple. There is no molecule for pulled pork. A smell is a mixture of many molecules that activates a pattern across many kinds of olfactory neurons; the lamprey, his model for the first vertebrates, has about fifty. So, in his words, "smell recognition is nothing more than pattern recognition." Earlier animals recognised the world one neuron at a time: one cell for light, one for touch. The first vertebrates, some five hundred million years ago, learned to read the pattern instead, and fifty cells can make more patterns than any animal will ever meet.
+
+Reading a pattern raises two problems, and Bennett draws both as smells:
+
+| Problem | The smell version | How the cortex may solve it |
+|---|---|---|
+| Discrimination | A predator and a meal activate overlapping neurons, but one means flee and the other means approach. | Expansion and sparsity: a few olfactory neurons feed many cortical neurons, each wired to only some of them, so overlapping inputs become separate patterns. |
+| Generalisation | The same predator never smells exactly the same twice: another age, another diet, another background. | Auto-association: cortical neurons wire to each other, so a partial pattern brings back the whole memory. |
+
+Then he builds the machine version, still with smells. To train a network to tell eggs from flowers, you show it labelled examples, measure the error at the output, and nudge every weight a little in the right direction, millions of times. That is backpropagation, popularised in the 1980s by Geoffrey Hinton, David Rumelhart and Ronald Williams. Hinton keeps turning up in what I read; he is all over *Empire of AI*, and by now he feels like the grandfather of the field. Bennett opens his introduction with a Hinton quotation and comes back to him in chapter 11 with the Helmholtz machine. He also reports that Hinton himself saw backpropagation as a poor model of the brain: a child tells an egg from a strawberry before knowing either word, and no brain can adjust millions of synapses at once by exactly the right amount.
+
+The detail I liked most is in an endnote. Smell has no invariance problem. A face looks different from every angle and distance, but an egg releases the same molecules wherever it sits, so it activates the same olfactory neurons. And smell is the one sense that skips the thalamus and goes straight to the cortex. Bennett suggests the two facts may be connected: the thalamus might be what the other senses need to recognise things that are rotated, moved, or scaled.
+
+That gives me a way to put my own belief more precisely. I believe smell will be the last sense we learn to read and write with machines. Not the last we understand, but the last for which we build input and output devices as ordinary as a camera and a screen, a microphone and a speaker. For the brain, smell is the easiest pattern problem. For engineers, it is the hardest, and the difficulty is in the instruments, not in the recognition. Sight compresses well: three kinds of cones, so three channels in, three primaries out. Smell has no such shortcut. Bennett notes that rats carry more than a thousand olfactory receptor types, and an output device cannot mix every scent from three cartridges. It has to put the actual molecules into the air.
+
+There is progress, and the recognition side is moving first, as the chapter would predict. In 2023, a team from Osmo and the Monell Chemical Senses Center published a principal odor map in *Science*: a graph neural network that predicts from a molecule's structure how it will smell, and matched human panelists at describing odors in words. In 2024 Osmo reported a "scent teleportation": a plum measured by gas chromatography and mass spectrometry, turned into a formula, and reprinted by a machine. That is the company's own account, and it is a laboratory, not a device in a pocket. Recognising a smell from data is starting to work. Writing one back into a room is still chemistry. I would bet that a phone that can play a perfume as easily as a song will come after everything else on the list.
+
+More on the book in my review, [A Brief History of Intelligence](https://raskell.io/articles/review-a-brief-history-of-intelligence/).
+
+## References
+
+- Max Bennett, *A Brief History of Intelligence* (2023), chapter 7, "The Problems of Pattern Recognition", and its endnotes; chapter 11 for the Helmholtz machine.
+- Brian K. Lee, Emily J. Mayhew, et al., "A principal odor map unifies diverse tasks in olfactory perception", *Science* 381 (2023), [doi:10.1126/science.ade4401](https://doi.org/10.1126/science.ade4401); press release by the Monell Chemical Senses Center on [EurekAlert](https://www.eurekalert.org/news-releases/999716).
+- Osmo, "[Teleporting scent](https://www.osmo.ai/blog/teleporting-scent)", the company's account of the plum reprint.
 
 
 ================================================================================
@@ -486,51 +486,45 @@ The talks were good, and the day was better, mostly for the conversations betwee
 ================================================================================
 
 ---
-title: "Data fusion belongs in the store"
-url: https://raskell.io/notes/data-fusion-belongs-in-the-store/
+title: "Harness types in the compiler"
+url: https://raskell.io/notes/harness-types-in-the-compiler/
 author: Raffael Schneider
 date: 2026-11-20
-description: "An agent that joins five MCP servers by itself carries the integration burden on every call. The store could do that work once, for every agent."
-tags: [data-fusion, context-engineering, enterprise-architecture, agent-protocols]
+description: "NVIDIA's NOOA makes an agent a Python object with typed contracts. A language that enforces types could make the harness a compiler primitive. An open question."
+tags: [agent-harness, type-systems, haskell, compilers, arcanist, bhc]
 ---
 
-# Data fusion belongs in the store
+# Harness types in the compiler
 
-One slide at [Agentic Engineering Days Zurich](https://raskell.io/articles/agentic-engineering-days-zurich-2026/) listed "Seven costs of separate data MCP servers": context overhead, multiple roundtrips, high token cost, cross-source joins, separate compute, fragmented caching and inconsistent semantics. Under the list, in green: "The agent carries the integration burden." The talk was by Alexander Stigsen, who founded the mobile database Realm before MongoDB bought it in 2019 and is now Chief Product and Technology Officer at [Exasol](https://www.exasol.com/). It was a sponsored slot, and the answer it sold was one MCP interface over a federated database, with a semantic layer that maps `account_id` in the CRM and `customer_ref` in billing to one customer identity.
+[NOOA](https://github.com/NVIDIA-NeMo/labs-OO-Agents), NVIDIA's object-oriented agent harness, models an agent as a Python class: methods are capabilities, fields are state, the docstring is the prompt and the signature is the contract. A method whose body is `...` is completed at runtime by the model, which acts by writing Python that calls typed services. Matt Staats walked through it at [Agentic Engineering Days Zurich](https://raskell.io/articles/agentic-engineering-days-zurich-2026/). His background is test oracles, the question of how you know a program's output is right, and his abstract opens with "An agent is only as good as the harness around the model."
 
-The constraint behind the pitch is real, and the [abstract](https://www.agenticdays.com/session/1368894-beyond-mcp-supercharging-your-agents-with-a-single-unified) names it: "regulated organisations can't copy it all into one AI platform." So the data stays where it is, and something has to give it one meaning. Today that something is usually the agent, which reconciles three spellings of the same customer on every call and forgets the result afterwards.
+The results he showed were about memory, and they are the strongest argument for treating the harness as software. On ARC-AGI-3 games with the same model, an agent keeping its own notes in Markdown reached 38.4%; NOOA's memory API reached 50.2%, and matched the Markdown score for about $290 in estimated API cost against about $1,040. The slide was titled "Software is cheaper than thinking." Structure the harness manages beats structure the model has to reread.
 
-I knew data fusion as an idea. What I had not considered is putting it inside the persistence layer, where the store does the joining and the reconciling once and every agent gets the result. It is the argument of [Context is cheaper than exploration](https://raskell.io/notes/context-is-cheaper-than-exploration/), one layer lower: a meaning computed once in the store is a meaning no agent has to work out again.
+It is the right direction, and Python is the weak point of it. A signature in Python is checked when the call happens, and NOOA retries until the output fits. In a language whose compiler enforces the contract, the program would not build until the application and the agent agree on types, and the line in [Determinism is what intelligence leaves behind](https://raskell.io/notes/determinism-is-what-intelligence-leaves-behind/) between what is decided and what is delegated would be part of the program's type, not a convention.
 
-The pattern in [Building IT Intelligence](https://raskell.io/articles/building-it-intelligence/) does that fusion today in its own pipeline, on PostgreSQL: observations from each source, identity resolution as a workflow step, and every link stored with its basis, its confidence and its source. That explicitness is the part I would not give up. A store that fuses at query time either keeps it, or moves the same judgement into a product I do not control. Exasol's own [documentation](https://docs.exasol.com/db/latest/ai/ai_build_agents/mcp-server-as-agent-tool.htm) also warns that an agent with nothing but the MCP server may write SQL that ignores Exasol's dialect, so the semantic layer alone does not carry the whole meaning. I will test it against the reference implementation before I believe either answer.
+So the thought I left with: could [bhc](https://arcanist.sh/bhc/) carry inference and harness bindings as a native primitive, with an agent call typed like any other effect, and its retries, budget and memory visible in the type? I do not know yet whether that is a library, a language feature or a bad idea. [Almost Irrelevant](https://raskell.io/articles/almost-irrelevant/) argued that what a compiler checks is what stays valuable when agents write the code; this would be the same argument applied to the agent itself.
 
 
 ================================================================================
 
 ---
-title: "Testing DeltaDB"
-url: https://raskell.io/notes/testing-deltadb/
+title: "The simplest protocol that reduces the most uncertainty wins"
+url: https://raskell.io/notes/the-simplest-protocol-wins/
 author: Raffael Schneider
 date: 2026-11-20
-description: "Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?"
-tags: [multiplayer-work, provenance, developer-tooling, agents]
+description: "A lens from a talk on agent protocols: judge a standard by how many decisions it removes from your application, and ask what it makes replaceable."
+tags: [agent-protocols, open-standards, abstraction, history-of-technology]
 ---
 
-# Testing DeltaDB
+# The simplest protocol that reduces the most uncertainty wins
 
-[The conversation is the workspace](https://raskell.io/notes/the-conversation-is-the-workspace/) ended on Zed's [DeltaDB](https://zed.dev/blog/introducing-deltadb), version control that "captures every operation in between and gives each one a stable identity" and ties each edit to the agent conversation that produced it. The obvious next step is to try it, so here is where that is possible today.
+Stefano Maestri sits on the A2A Technical Steering Committee for IBM and wrote the launch post for the A2A Java SDK. Alessio Soldano led RESTEasy at Red Hat and is a committer on Apache CXF. Between them they lived through SOAP against REST from the inside, and their talk at [Agentic Engineering Days Zurich](https://raskell.io/articles/agentic-engineering-days-zurich-2026/) used that history as its argument. The lens was one line: "The simplest protocol that reduces the most uncertainty wins."
 
-DeltaDB is not something you install or host on its own. It is the storage under [Delta](https://delta.dev), Zed's "multiplayer environment for coding with agents and reviewing what they build", which has been in public beta since Zed's post [Replace PRs with Delta](https://zed.dev/blog/delta-public-beta). There are three ways in:
+Their [deck](https://maeste.it/agents-speak-protocol-aed/) asks one practical question of every standard: how many decisions disappear from the application? The answer for agents is not one protocol but an agreement at each boundary. Open Responses toward models, MCP toward tools, A2A toward other agents, AG-UI and A2UI toward users, AGENTS.md, Skills and Plugins toward knowledge, OpenTelemetry GenAI toward operations, ACP toward the editor, and x402 toward payments. The question under the map was "What do you want to make replaceable?", and the rule beside it was "Keep the contract. Change the implementation."
 
-| Way in | What it does |
-|---|---|
-| [Delta app](https://delta.dev/download) | macOS, Linux and Windows, or in the browser without installing anything |
-| [Delta CLI](https://delta.dev/cli) | syncs the sessions of an agent you already use, such as Claude Code, to DeltaDB, so a teammate can join the same session |
-| [Claude Agent in Delta](https://delta.dev/blog/claude-agent-in-delta) | runs Claude inside Delta on an existing Claude subscription |
+Two distinctions from the talk are worth keeping. MCP gives access to a capability: the agent calls a tool and the host keeps policy and consent. A2A delegates an outcome to a counterpart whose model, tools and memory stay private: "Agree on the work. Keep internals private." Most confusion about agent protocols comes from mixing the two up.
 
-The CLI asks which sessions to sync: private sync, organisation sharing, or manual, where only sessions you share explicitly leave the machine. Delta "stores the conversation and a copy of this checkout, including uncommitted changes, in DeltaDB", which is Zed's cloud, so I keep it to my own open source repositories and start with manual sharing.
-
-The test I want to run is small. Share one Claude Code session on a public repository, then open the thread as a reviewer would, from another machine, and compare it with reviewing the same change as a pull request. The question is the one the conference left me with: is review faster and better when the conversation is attached to the code, or does it only move the reading from the diff to the thread? I will add the answer here.
+The lens fits [Every layer moves the uncertainty](https://raskell.io/notes/every-layer-moves-the-uncertainty/) closely. A protocol is a layer whose whole job is to make one boundary predictable, so the useful question is the same: which decisions leave my application, and where does the uncertainty go instead. The deck's smallest line was the one I kept: "Opening a channel is not the agreement." An MCP server opens a channel. What a customer means, what a task owes and when it is done are the agreement, and no transport settles them.
 
 
 ================================================================================
@@ -575,23 +569,51 @@ What I like is that the friction is the point in both. The player and the planne
 ================================================================================
 
 ---
-title: "Harness types in the compiler"
-url: https://raskell.io/notes/harness-types-in-the-compiler/
+title: "Testing DeltaDB"
+url: https://raskell.io/notes/testing-deltadb/
 author: Raffael Schneider
 date: 2026-11-20
-description: "NVIDIA's NOOA makes an agent a Python object with typed contracts. A language that enforces types could make the harness a compiler primitive. An open question."
-tags: [agent-harness, type-systems, haskell, compilers, arcanist, bhc]
+description: "Where DeltaDB can be tried today, what to keep out of it, and the one question a first test should answer: is review faster with the conversation attached?"
+tags: [multiplayer-work, provenance, developer-tooling, agents]
 ---
 
-# Harness types in the compiler
+# Testing DeltaDB
 
-[NOOA](https://github.com/NVIDIA-NeMo/labs-OO-Agents), NVIDIA's object-oriented agent harness, models an agent as a Python class: methods are capabilities, fields are state, the docstring is the prompt and the signature is the contract. A method whose body is `...` is completed at runtime by the model, which acts by writing Python that calls typed services. Matt Staats walked through it at [Agentic Engineering Days Zurich](https://raskell.io/articles/agentic-engineering-days-zurich-2026/). His background is test oracles, the question of how you know a program's output is right, and his abstract opens with "An agent is only as good as the harness around the model."
+[The conversation is the workspace](https://raskell.io/notes/the-conversation-is-the-workspace/) ended on Zed's [DeltaDB](https://zed.dev/blog/introducing-deltadb), version control that "captures every operation in between and gives each one a stable identity" and ties each edit to the agent conversation that produced it. The obvious next step is to try it, so here is where that is possible today.
 
-The results he showed were about memory, and they are the strongest argument for treating the harness as software. On ARC-AGI-3 games with the same model, an agent keeping its own notes in Markdown reached 38.4%; NOOA's memory API reached 50.2%, and matched the Markdown score for about $290 in estimated API cost against about $1,040. The slide was titled "Software is cheaper than thinking." Structure the harness manages beats structure the model has to reread.
+DeltaDB is not something you install or host on its own. It is the storage under [Delta](https://delta.dev), Zed's "multiplayer environment for coding with agents and reviewing what they build", which has been in public beta since Zed's post [Replace PRs with Delta](https://zed.dev/blog/delta-public-beta). There are three ways in:
 
-It is the right direction, and Python is the weak point of it. A signature in Python is checked when the call happens, and NOOA retries until the output fits. In a language whose compiler enforces the contract, the program would not build until the application and the agent agree on types, and the line in [Determinism is what intelligence leaves behind](https://raskell.io/notes/determinism-is-what-intelligence-leaves-behind/) between what is decided and what is delegated would be part of the program's type, not a convention.
+| Way in | What it does |
+|---|---|
+| [Delta app](https://delta.dev/download) | macOS, Linux and Windows, or in the browser without installing anything |
+| [Delta CLI](https://delta.dev/cli) | syncs the sessions of an agent you already use, such as Claude Code, to DeltaDB, so a teammate can join the same session |
+| [Claude Agent in Delta](https://delta.dev/blog/claude-agent-in-delta) | runs Claude inside Delta on an existing Claude subscription |
 
-So the thought I left with: could [bhc](https://arcanist.sh/bhc/) carry inference and harness bindings as a native primitive, with an agent call typed like any other effect, and its retries, budget and memory visible in the type? I do not know yet whether that is a library, a language feature or a bad idea. [Almost Irrelevant](https://raskell.io/articles/almost-irrelevant/) argued that what a compiler checks is what stays valuable when agents write the code; this would be the same argument applied to the agent itself.
+The CLI asks which sessions to sync: private sync, organisation sharing, or manual, where only sessions you share explicitly leave the machine. Delta "stores the conversation and a copy of this checkout, including uncommitted changes, in DeltaDB", which is Zed's cloud, so I keep it to my own open source repositories and start with manual sharing.
+
+The test I want to run is small. Share one Claude Code session on a public repository, then open the thread as a reviewer would, from another machine, and compare it with reviewing the same change as a pull request. The question is the one the conference left me with: is review faster and better when the conversation is attached to the code, or does it only move the reading from the diff to the thread? I will add the answer here.
+
+
+================================================================================
+
+---
+title: "Data fusion belongs in the store"
+url: https://raskell.io/notes/data-fusion-belongs-in-the-store/
+author: Raffael Schneider
+date: 2026-11-20
+description: "An agent that joins five MCP servers by itself carries the integration burden on every call. The store could do that work once, for every agent."
+tags: [data-fusion, context-engineering, enterprise-architecture, agent-protocols]
+---
+
+# Data fusion belongs in the store
+
+One slide at [Agentic Engineering Days Zurich](https://raskell.io/articles/agentic-engineering-days-zurich-2026/) listed "Seven costs of separate data MCP servers": context overhead, multiple roundtrips, high token cost, cross-source joins, separate compute, fragmented caching and inconsistent semantics. Under the list, in green: "The agent carries the integration burden." The talk was by Alexander Stigsen, who founded the mobile database Realm before MongoDB bought it in 2019 and is now Chief Product and Technology Officer at [Exasol](https://www.exasol.com/). It was a sponsored slot, and the answer it sold was one MCP interface over a federated database, with a semantic layer that maps `account_id` in the CRM and `customer_ref` in billing to one customer identity.
+
+The constraint behind the pitch is real, and the [abstract](https://www.agenticdays.com/session/1368894-beyond-mcp-supercharging-your-agents-with-a-single-unified) names it: "regulated organisations can't copy it all into one AI platform." So the data stays where it is, and something has to give it one meaning. Today that something is usually the agent, which reconciles three spellings of the same customer on every call and forgets the result afterwards.
+
+I knew data fusion as an idea. What I had not considered is putting it inside the persistence layer, where the store does the joining and the reconciling once and every agent gets the result. It is the argument of [Context is cheaper than exploration](https://raskell.io/notes/context-is-cheaper-than-exploration/), one layer lower: a meaning computed once in the store is a meaning no agent has to work out again.
+
+The pattern in [Building IT Intelligence](https://raskell.io/articles/building-it-intelligence/) does that fusion today in its own pipeline, on PostgreSQL: observations from each source, identity resolution as a workflow step, and every link stored with its basis, its confidence and its source. That explicitness is the part I would not give up. A store that fuses at query time either keeps it, or moves the same judgement into a product I do not control. Exasol's own [documentation](https://docs.exasol.com/db/latest/ai/ai_build_agents/mcp-server-as-agent-tool.htm) also warns that an agent with nothing but the MCP server may write SQL that ignores Exasol's dialect, so the semantic layer alone does not carry the whole meaning. I will test it against the reference implementation before I believe either answer.
 
 
 ================================================================================
@@ -614,28 +636,6 @@ He showed two research prototypes. Ace puts a team, its chat, its agents and the
 I think this is where work goes. Not one person prompting one agent and pasting the result into a document, but a conversation with several people and several agents in it, where the decisions, the designs and the code are produced inside the conversation and stay attached to it. The artifact keeps the argument that made it, which is what pull requests, tickets and meeting notes have always lost.
 
 Zed got there early from the editor side. It was multiplayer before agents were a topic, and this year it announced [DeltaDB](https://zed.dev/blog/introducing-deltadb), version control that "captures every operation in between and gives each one a stable identity", and [Delta](https://zed.dev/blog/introducing-delta) on top of it, whose announcement says "The thread is where software happens now, and the interface should reflect it." Zed came ahead of its time and lost some momentum along the way; I am still rooting for them. [The agent factory](https://raskell.io/notes/the-agent-factory/) is the execution side of the same picture; this is the deciding side.
-
-
-================================================================================
-
----
-title: "The simplest protocol that reduces the most uncertainty wins"
-url: https://raskell.io/notes/the-simplest-protocol-wins/
-author: Raffael Schneider
-date: 2026-11-20
-description: "A lens from a talk on agent protocols: judge a standard by how many decisions it removes from your application, and ask what it makes replaceable."
-tags: [agent-protocols, open-standards, abstraction, history-of-technology]
----
-
-# The simplest protocol that reduces the most uncertainty wins
-
-Stefano Maestri sits on the A2A Technical Steering Committee for IBM and wrote the launch post for the A2A Java SDK. Alessio Soldano led RESTEasy at Red Hat and is a committer on Apache CXF. Between them they lived through SOAP against REST from the inside, and their talk at [Agentic Engineering Days Zurich](https://raskell.io/articles/agentic-engineering-days-zurich-2026/) used that history as its argument. The lens was one line: "The simplest protocol that reduces the most uncertainty wins."
-
-Their [deck](https://maeste.it/agents-speak-protocol-aed/) asks one practical question of every standard: how many decisions disappear from the application? The answer for agents is not one protocol but an agreement at each boundary. Open Responses toward models, MCP toward tools, A2A toward other agents, AG-UI and A2UI toward users, AGENTS.md, Skills and Plugins toward knowledge, OpenTelemetry GenAI toward operations, ACP toward the editor, and x402 toward payments. The question under the map was "What do you want to make replaceable?", and the rule beside it was "Keep the contract. Change the implementation."
-
-Two distinctions from the talk are worth keeping. MCP gives access to a capability: the agent calls a tool and the host keeps policy and consent. A2A delegates an outcome to a counterpart whose model, tools and memory stay private: "Agree on the work. Keep internals private." Most confusion about agent protocols comes from mixing the two up.
-
-The lens fits [Every layer moves the uncertainty](https://raskell.io/notes/every-layer-moves-the-uncertainty/) closely. A protocol is a layer whose whole job is to make one boundary predictable, so the useful question is the same: which decisions leave my application, and where does the uncertainty go instead. The deck's smallest line was the one I kept: "Opening a channel is not the agreement." An MCP server opens a channel. What a customer means, what a task owes and when it is done are the agreement, and no transport settles them.
 
 
 ================================================================================
@@ -1790,6 +1790,174 @@ What stays with me is a thread Hao pulls as criticism. The book opens with two e
 ================================================================================
 
 ---
+title: "A self-fulfilling prophecy"
+url: https://raskell.io/notes/a-self-fulfilling-prophecy/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Karen Hao says scaling laws are like Moore's Law: not a law of nature but a self-fulfilling prophecy. She is half right, and the half matters."
+tags: [neural-networks, semiconductors, forecasting, history-of-technology, technology-races]
+---
+
+# A self-fulfilling prophecy
+
+At the end of chapter 4 of *Empire of AI*, Karen Hao compares OpenAI's scaling laws to Moore's Law. Moore's Law, she writes, was never a principle of physics. It was an observation Gordon Moore made about the pace he could drive his own company to, and a choice to keep that pace, which the rest of the industry then copied because it was the most competitive strategy. OpenAI's internal "law" of compute doubling, and the scaling laws that replaced it, are the same: "It is not a natural phenomenon. It's a self-fulfilling prophecy."
+
+She is right about Moore's Law, and it is worth remembering how much of technological progress works this way. A forecast that everyone believes becomes a schedule. Chip makers planned their factories around it, suppliers planned around the chip makers, and software assumed the chips would arrive. The prediction coordinated an industry, and the coordination made the prediction come true.
+
+The same thing happened with scaling. Once the labs believed that a bigger model trained on more data with more compute would reliably get better, money, chips, power plants, and careers lined up behind that belief, and the belief kept paying out. Hao is right that this was a choice, and that the choice crowded out other paths: better architectures, better data, approaches other than deep learning.
+
+But a prophecy can only fulfil itself where the world allows it. Moore's Law ran for decades because transistors could in fact be made smaller; it slowed when physics said no. Scaling laws are measurements, loss curves that fall along a straight line on a log scale across many orders of magnitude, first published by OpenAI researchers in 2020 and corrected by DeepMind in 2022. Investment decided how far along the line the industry would go. It did not draw the line. Hao's own reporting shows the other side: by late 2024 OpenAI was struggling to make its next model good enough, and scaling alone "no longer seemed to be enough" (chapter 18). A pure prophecy would not have stalled.
+
+So the useful version of her point is narrower and, I think, more interesting. The regularity is real; the decision to follow it at any cost is social. That is how every large bet on technology works, from chips to railways, and it is the subject of [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/).
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), chapter 4, "Dreams of Modernity", and chapter 18, "A Formula for Empire".
+- Gordon E. Moore, "Cramming more components onto integrated circuits", *Electronics* 38(8), 1965.
+- Jared Kaplan et al., [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361), 2020.
+- Jordan Hoffmann et al., [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556), 2022.
+
+
+================================================================================
+
+---
+title: "Its magic crumbles away"
+url: https://raskell.io/notes/its-magic-crumbles-away/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models."
+tags: [language, intelligence, history-of-technology, psychology]
+---
+
+# Its magic crumbles away
+
+Karen Hao opens and closes *Empire of AI* with the same sentence, from Joseph Weizenbaum's 1966 paper on ELIZA: once a program's inner workings are explained in language plain enough to induce understanding, "its magic crumbles away." The observer, Weizenbaum went on, says to himself that he could have written it.
+
+ELIZA was a simple procedural program that matched keywords and turned the user's sentences back into questions, and Weizenbaum built it partly to show how easily people fall for an illusion of intelligence. They fell for it anyway. Psychiatrists talked about automated therapy, and Weizenbaum spent much of the rest of his career trying to deflate what he had started (chapter 4). For ELIZA the sentence is exactly true: explain the trick and nothing is left.
+
+Hao uses it as her remedy against the influence of the AI companies: teach people how the technology works, and the hype loses its hold. I agree with the remedy. Explaining how these systems work is the most useful thing anyone writing about them can do, and it is most of what this site tries to do.
+
+But with large language models the magic does not crumble when you explain it, and that is the interesting part. The procedure is simple enough to write down: predict the next word, adjust the weights, repeat over most of what people have written. Knowing that does not let you say you could have written the result, because the program you could write is not the one that runs. What the model learned lives in billions of weights that nobody wrote and nobody can yet read in full. The explanation of the method is plain; the explanation of the behaviour is still a research field.
+
+So I would put Weizenbaum's sentence to a test rather than use it as a remedy. If explaining a system makes its abilities disappear, it was a trick. If the explanation leaves the abilities standing, something real is there, and the honest response is to keep explaining, including where we cannot yet. That is the line between hype and capability, and it is why I take seriously the idea that [intelligence is compression](https://raskell.io/notes/intelligence-is-compression/), and that it may be [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/).
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), epigraph, chapter 4, "Dreams of Modernity", and the epilogue.
+- Joseph Weizenbaum, "ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine", *Communications of the ACM* 9(1), January 1966, pp. 36 to 45, [doi:10.1145/365153.365168](https://doi.org/10.1145/365153.365168).
+
+
+================================================================================
+
+---
+title: "How CRISPR works"
+url: https://raskell.io/notes/how-crispr-works/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Bacteria keep mug shots of the viruses that attacked them, and Cas9 uses them to cut. A 3D model to step through, from the discovery to the tool."
+tags: [genetics, synthetic-biology, life-sciences, history-of-science]
+---
+
+# How CRISPR works
+
+Chapter 9 of Walter Isaacson's *The Code Breaker*, "Clustered Repeats", tells how CRISPR was found, and I wanted to see the mechanism rather than only read about it. So I built a model of it. Step through it below, or press play and watch, and drag to turn it.
+
+{{ crispr_3d() }}
+
+The history is the best part of the chapter. In 1987 a Japanese doctoral student, Yoshizumi Ishino, noticed an odd pattern while sequencing a gene in *E. coli*: short identical stretches of DNA repeated at regular intervals, with different stretches in between. He mentioned it in the last lines of his paper, said nobody knew what it was for, and moved on. A few years later Francisco Mojica, a graduate student in Alicante studying microbes that live in salt ponds, found the same pattern, first assumed he had made a mistake, and then spent a decade trying to explain it with little funding and much advice to stop.
+
+The answer came in August 2003, when he ran the spacers through a database and found that they matched the DNA of viruses that attack those bacteria. Bacteria, it turned out, have an immune system that remembers. Journals were slow to believe it; the paper took until 2005 to appear. Two food scientists at the Danish company Danisco, Rodolphe Barrangou and Philippe Horvath, confirmed it in their collection of yogurt bacteria: strains collected after a virus attack carried new spacers that matched that virus. And in 2012 Jennifer Doudna and Emmanuelle Charpentier showed how the cutting works and that it can be programmed, which turned a bacterial defence into a tool for editing any DNA.
+
+What I find most elegant is how little it takes. A library of short snippets, a way to copy them into guides, and one enzyme that compares a guide with whatever DNA it meets. The same pattern of matching a stored sample against what arrives is how a lot of security systems work, and it is a fine example of curiosity paying off: a question about salt-loving microbes that turned, years later, into one of the most useful tools in biology.
+
+## References
+
+- Walter Isaacson, *The Code Breaker* (2021), chapter 9, "Clustered Repeats", chapter 12, "The Yogurt Makers", and chapter 17, "CRISPR-Cas9".
+- Francisco J. M. Mojica et al., "Intervening sequences of regularly spaced prokaryotic repeats derive from foreign genetic elements", *Journal of Molecular Evolution* 60, 2005.
+- Martin Jinek, Krzysztof Chylinski, Ines Fonfara, Michael Hauer, Jennifer A. Doudna, and Emmanuelle Charpentier, [A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity](https://pubmed.ncbi.nlm.nih.gov/22745249/), *Science* 337, 816 to 821, 2012.
+
+
+================================================================================
+
+---
+title: "Small, focused, high-trust"
+url: https://raskell.io/notes/small-focused-high-trust/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic."
+tags: [bureaucracy, research-labs, entrepreneurship, future-of-work]
+---
+
+# Small, focused, high-trust
+
+In a 2020 vision memo, written after Microsoft's investment, Sam Altman warned his own company against growing too large. Karen Hao quotes it in *Empire of AI* (chapter 11): "what has worked for us so far is being small, focused, high-trust, low-bullshit, and intense." Too many people and too much bureaucracy, he wrote, "can easily kill great ideas or result in sclerosis", and OpenAI could fulfil its mission "with a surprisingly small number of great people."
+
+He meant it. Hao reports that in late 2022, after ChatGPT, when every team was stretched thin and managers begged for head count, Altman kept repeating the line and wanted to add no more than about a hundred people. Other executives wanted closer to five hundred. OpenAI had about 300 people in October 2022, close to 600 by the middle of 2023, and nearly 800 when the board fired Altman that November.
+
+I have made the same observation in every large organisation I have worked in or with, public or private. A group of people has to spend work on holding itself together, and that share grows faster than the group. Fred Brooks put the arithmetic in *The Mythical Man-Month*: every pair of people is a possible line of communication, and the number of pairs grows with the square of the headcount.
+
+| People | Pairs who may need to talk |
+|---:|---:|
+| 5 | 10 |
+| 10 | 45 |
+| 50 | 1,225 |
+| 500 | 124,750 |
+| 5,000 | 12,497,500 |
+
+Nobody talks to everyone, so the organisation adds structure: managers, meetings, processes, reporting lines, approval steps. Each is reasonable. Together they become the leviathan, a body whose main occupation is keeping itself intact, whether it is a ministry or a multinational. Its slowness is the price of its coherence.
+
+What interests me is that the arithmetic may be changing. If a small team with agents can do what used to take a department, the number of people a mission needs drops, and with it the overhead. I wrote about that from the side of the individual in [power in the good sense](https://raskell.io/notes/power-in-the-good-sense/) and [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/). Altman's "surprisingly small number of great people" reads differently in 2026 than it did in 2020.
+
+Small has its own failure mode, and Hao's account shows it too: teams stretched so thin that the people in them burn out. Small, focused, and high-trust is a discipline, and OpenAI could not keep it. Neither, as far as I know, has anyone else at that scale.
+
+Related: [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/), and my review of the book, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), chapter 11, "Apex".
+- Frederick P. Brooks Jr., *The Mythical Man-Month* (1975), chapter 2.
+
+
+================================================================================
+
+---
+title: "Intelligence is compression"
+url: https://raskell.io/notes/intelligence-is-compression/
+author: Raffael Schneider
+date: 2026-11-14
+description: "Ilya Sutskever's internal slogan at OpenAI: a model that must predict the world has to compress it. I think it is the most useful definition we have."
+tags: [intelligence, language, neural-networks, mathematics]
+---
+
+# Intelligence is compression
+
+Karen Hao reports in *Empire of AI* (chapter 5) that while Alec Radford was teaching a transformer to predict the next word, the work that became GPT, Ilya Sutskever had a short way of explaining why it mattered: "Intelligence is compression." A model trained to generate convincing text is forced to squeeze what it sees about the world into its essence. In a 2016 memo, Hao writes, Sutskever went further and argued that compression was the only thing needed for general intelligence. OpenAI's public version borrowed Richard Feynman's line, "What I cannot create, I do not understand", which Hao calls "heavily anthropomorphized".
+
+I think the slogan is right, and older than OpenAI. The argument goes like this:
+
+- To compress data well, you have to predict it. A compressor that knows what comes next only has to store the surprises.
+- To predict text well, you have to model whatever produced the text: grammar first, then facts, then the reasoning and intentions of the people who wrote it.
+- So the better the compression, the more of the world the model has had to capture. A model that compresses everything people have written down cannot help learning a great deal about people.
+
+This is not a metaphor. Prediction and compression are the same problem in information theory, which is why Marcus Hutter has offered a prize since 2006 for compressing a fixed slice of Wikipedia, as a benchmark for intelligence. Next-word prediction is exactly that contest, run at the scale of the internet.
+
+It is also half of a wager. The other half, in the same chapter, is Dario Amodei's bet on the "pure language" hypothesis: that text alone is enough to learn from. Put together, they say that compressing everything humans have written is a path to general intelligence. That is my reading, not Hao's, and it is the bet the rest of the book is about. Whether it is enough is still open; I lean towards thinking a model also has to act, as I argued in [in vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro/). But compression explains why the bet got as far as it did, and it fits the larger conviction I share with Altman, that intelligence is [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/) arranged to predict.
+
+More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), chapter 5, "Scale of Ambition".
+- The Hutter Prize for lossless compression of human knowledge, [prize.hutter1.net](http://prize.hutter1.net/).
+
+
+================================================================================
+
+---
 title: "Something closer to a religion"
 url: https://raskell.io/notes/something-closer-to-a-religion/
 author: Raffael Schneider
@@ -1850,174 +2018,6 @@ More on the book in my review, [An Empire of People](https://raskell.io/articles
 - Karen Hao, *Empire of AI* (2025), chapter 17, "Reckoning". Hao gives the All-In podcast, May 2024, as the source.
 - Brett J. Kagan et al., "In vitro neurons learn and exhibit sentience when embodied in a simulated game-world", *Neuron* 110(23), 2022.
 - Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, and Margaret Mitchell, "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?", FAccT 2021.
-
-
-================================================================================
-
----
-title: "Small, focused, high-trust"
-url: https://raskell.io/notes/small-focused-high-trust/
-author: Raffael Schneider
-date: 2026-11-14
-description: "Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic."
-tags: [bureaucracy, research-labs, entrepreneurship, future-of-work]
----
-
-# Small, focused, high-trust
-
-In a 2020 vision memo, written after Microsoft's investment, Sam Altman warned his own company against growing too large. Karen Hao quotes it in *Empire of AI* (chapter 11): "what has worked for us so far is being small, focused, high-trust, low-bullshit, and intense." Too many people and too much bureaucracy, he wrote, "can easily kill great ideas or result in sclerosis", and OpenAI could fulfil its mission "with a surprisingly small number of great people."
-
-He meant it. Hao reports that in late 2022, after ChatGPT, when every team was stretched thin and managers begged for head count, Altman kept repeating the line and wanted to add no more than about a hundred people. Other executives wanted closer to five hundred. OpenAI had about 300 people in October 2022, close to 600 by the middle of 2023, and nearly 800 when the board fired Altman that November.
-
-I have made the same observation in every large organisation I have worked in or with, public or private. A group of people has to spend work on holding itself together, and that share grows faster than the group. Fred Brooks put the arithmetic in *The Mythical Man-Month*: every pair of people is a possible line of communication, and the number of pairs grows with the square of the headcount.
-
-| People | Pairs who may need to talk |
-|---:|---:|
-| 5 | 10 |
-| 10 | 45 |
-| 50 | 1,225 |
-| 500 | 124,750 |
-| 5,000 | 12,497,500 |
-
-Nobody talks to everyone, so the organisation adds structure: managers, meetings, processes, reporting lines, approval steps. Each is reasonable. Together they become the leviathan, a body whose main occupation is keeping itself intact, whether it is a ministry or a multinational. Its slowness is the price of its coherence.
-
-What interests me is that the arithmetic may be changing. If a small team with agents can do what used to take a department, the number of people a mission needs drops, and with it the overhead. I wrote about that from the side of the individual in [power in the good sense](https://raskell.io/notes/power-in-the-good-sense/) and [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/). Altman's "surprisingly small number of great people" reads differently in 2026 than it did in 2020.
-
-Small has its own failure mode, and Hao's account shows it too: teams stretched so thin that the people in them burn out. Small, focused, and high-trust is a discipline, and OpenAI could not keep it. Neither, as far as I know, has anyone else at that scale.
-
-Related: [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/), and my review of the book, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
-
-## References
-
-- Karen Hao, *Empire of AI* (2025), chapter 11, "Apex".
-- Frederick P. Brooks Jr., *The Mythical Man-Month* (1975), chapter 2.
-
-
-================================================================================
-
----
-title: "Its magic crumbles away"
-url: https://raskell.io/notes/its-magic-crumbles-away/
-author: Raffael Schneider
-date: 2026-11-14
-description: "Weizenbaum said a program's magic crumbles once it is explained. Karen Hao ends her book on it. True of ELIZA, not of language models."
-tags: [language, intelligence, history-of-technology, psychology]
----
-
-# Its magic crumbles away
-
-Karen Hao opens and closes *Empire of AI* with the same sentence, from Joseph Weizenbaum's 1966 paper on ELIZA: once a program's inner workings are explained in language plain enough to induce understanding, "its magic crumbles away." The observer, Weizenbaum went on, says to himself that he could have written it.
-
-ELIZA was a simple procedural program that matched keywords and turned the user's sentences back into questions, and Weizenbaum built it partly to show how easily people fall for an illusion of intelligence. They fell for it anyway. Psychiatrists talked about automated therapy, and Weizenbaum spent much of the rest of his career trying to deflate what he had started (chapter 4). For ELIZA the sentence is exactly true: explain the trick and nothing is left.
-
-Hao uses it as her remedy against the influence of the AI companies: teach people how the technology works, and the hype loses its hold. I agree with the remedy. Explaining how these systems work is the most useful thing anyone writing about them can do, and it is most of what this site tries to do.
-
-But with large language models the magic does not crumble when you explain it, and that is the interesting part. The procedure is simple enough to write down: predict the next word, adjust the weights, repeat over most of what people have written. Knowing that does not let you say you could have written the result, because the program you could write is not the one that runs. What the model learned lives in billions of weights that nobody wrote and nobody can yet read in full. The explanation of the method is plain; the explanation of the behaviour is still a research field.
-
-So I would put Weizenbaum's sentence to a test rather than use it as a remedy. If explaining a system makes its abilities disappear, it was a trick. If the explanation leaves the abilities standing, something real is there, and the honest response is to keep explaining, including where we cannot yet. That is the line between hype and capability, and it is why I take seriously the idea that [intelligence is compression](https://raskell.io/notes/intelligence-is-compression/), and that it may be [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/).
-
-More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
-
-## References
-
-- Karen Hao, *Empire of AI* (2025), epigraph, chapter 4, "Dreams of Modernity", and the epilogue.
-- Joseph Weizenbaum, "ELIZA: A Computer Program for the Study of Natural Language Communication Between Man and Machine", *Communications of the ACM* 9(1), January 1966, pp. 36 to 45, [doi:10.1145/365153.365168](https://doi.org/10.1145/365153.365168).
-
-
-================================================================================
-
----
-title: "Intelligence is compression"
-url: https://raskell.io/notes/intelligence-is-compression/
-author: Raffael Schneider
-date: 2026-11-14
-description: "Ilya Sutskever's internal slogan at OpenAI: a model that must predict the world has to compress it. I think it is the most useful definition we have."
-tags: [intelligence, language, neural-networks, mathematics]
----
-
-# Intelligence is compression
-
-Karen Hao reports in *Empire of AI* (chapter 5) that while Alec Radford was teaching a transformer to predict the next word, the work that became GPT, Ilya Sutskever had a short way of explaining why it mattered: "Intelligence is compression." A model trained to generate convincing text is forced to squeeze what it sees about the world into its essence. In a 2016 memo, Hao writes, Sutskever went further and argued that compression was the only thing needed for general intelligence. OpenAI's public version borrowed Richard Feynman's line, "What I cannot create, I do not understand", which Hao calls "heavily anthropomorphized".
-
-I think the slogan is right, and older than OpenAI. The argument goes like this:
-
-- To compress data well, you have to predict it. A compressor that knows what comes next only has to store the surprises.
-- To predict text well, you have to model whatever produced the text: grammar first, then facts, then the reasoning and intentions of the people who wrote it.
-- So the better the compression, the more of the world the model has had to capture. A model that compresses everything people have written down cannot help learning a great deal about people.
-
-This is not a metaphor. Prediction and compression are the same problem in information theory, which is why Marcus Hutter has offered a prize since 2006 for compressing a fixed slice of Wikipedia, as a benchmark for intelligence. Next-word prediction is exactly that contest, run at the scale of the internet.
-
-It is also half of a wager. The other half, in the same chapter, is Dario Amodei's bet on the "pure language" hypothesis: that text alone is enough to learn from. Put together, they say that compressing everything humans have written is a path to general intelligence. That is my reading, not Hao's, and it is the bet the rest of the book is about. Whether it is enough is still open; I lean towards thinking a model also has to act, as I argued in [in vivo, not in vitro](https://raskell.io/notes/in-vivo-not-in-vitro/). But compression explains why the bet got as far as it did, and it fits the larger conviction I share with Altman, that intelligence is [an emergent property of matter](https://raskell.io/notes/an-emergent-property-of-matter/) arranged to predict.
-
-More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
-
-## References
-
-- Karen Hao, *Empire of AI* (2025), chapter 5, "Scale of Ambition".
-- The Hutter Prize for lossless compression of human knowledge, [prize.hutter1.net](http://prize.hutter1.net/).
-
-
-================================================================================
-
----
-title: "A self-fulfilling prophecy"
-url: https://raskell.io/notes/a-self-fulfilling-prophecy/
-author: Raffael Schneider
-date: 2026-11-14
-description: "Karen Hao says scaling laws are like Moore's Law: not a law of nature but a self-fulfilling prophecy. She is half right, and the half matters."
-tags: [neural-networks, semiconductors, forecasting, history-of-technology, technology-races]
----
-
-# A self-fulfilling prophecy
-
-At the end of chapter 4 of *Empire of AI*, Karen Hao compares OpenAI's scaling laws to Moore's Law. Moore's Law, she writes, was never a principle of physics. It was an observation Gordon Moore made about the pace he could drive his own company to, and a choice to keep that pace, which the rest of the industry then copied because it was the most competitive strategy. OpenAI's internal "law" of compute doubling, and the scaling laws that replaced it, are the same: "It is not a natural phenomenon. It's a self-fulfilling prophecy."
-
-She is right about Moore's Law, and it is worth remembering how much of technological progress works this way. A forecast that everyone believes becomes a schedule. Chip makers planned their factories around it, suppliers planned around the chip makers, and software assumed the chips would arrive. The prediction coordinated an industry, and the coordination made the prediction come true.
-
-The same thing happened with scaling. Once the labs believed that a bigger model trained on more data with more compute would reliably get better, money, chips, power plants, and careers lined up behind that belief, and the belief kept paying out. Hao is right that this was a choice, and that the choice crowded out other paths: better architectures, better data, approaches other than deep learning.
-
-But a prophecy can only fulfil itself where the world allows it. Moore's Law ran for decades because transistors could in fact be made smaller; it slowed when physics said no. Scaling laws are measurements, loss curves that fall along a straight line on a log scale across many orders of magnitude, first published by OpenAI researchers in 2020 and corrected by DeepMind in 2022. Investment decided how far along the line the industry would go. It did not draw the line. Hao's own reporting shows the other side: by late 2024 OpenAI was struggling to make its next model good enough, and scaling alone "no longer seemed to be enough" (chapter 18). A pure prophecy would not have stalled.
-
-So the useful version of her point is narrower and, I think, more interesting. The regularity is real; the decision to follow it at any cost is social. That is how every large bet on technology works, from chips to railways, and it is the subject of [A billion without a plan](https://raskell.io/notes/a-billion-without-a-plan/).
-
-More on the book in my review, [An Empire of People](https://raskell.io/articles/review-empire-of-ai/).
-
-## References
-
-- Karen Hao, *Empire of AI* (2025), chapter 4, "Dreams of Modernity", and chapter 18, "A Formula for Empire".
-- Gordon E. Moore, "Cramming more components onto integrated circuits", *Electronics* 38(8), 1965.
-- Jared Kaplan et al., [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361), 2020.
-- Jordan Hoffmann et al., [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556), 2022.
-
-
-================================================================================
-
----
-title: "How CRISPR works"
-url: https://raskell.io/notes/how-crispr-works/
-author: Raffael Schneider
-date: 2026-11-14
-description: "Bacteria keep mug shots of the viruses that attacked them, and Cas9 uses them to cut. A 3D model to step through, from the discovery to the tool."
-tags: [genetics, synthetic-biology, life-sciences, history-of-science]
----
-
-# How CRISPR works
-
-Chapter 9 of Walter Isaacson's *The Code Breaker*, "Clustered Repeats", tells how CRISPR was found, and I wanted to see the mechanism rather than only read about it. So I built a model of it. Step through it below, or press play and watch, and drag to turn it.
-
-{{ crispr_3d() }}
-
-The history is the best part of the chapter. In 1987 a Japanese doctoral student, Yoshizumi Ishino, noticed an odd pattern while sequencing a gene in *E. coli*: short identical stretches of DNA repeated at regular intervals, with different stretches in between. He mentioned it in the last lines of his paper, said nobody knew what it was for, and moved on. A few years later Francisco Mojica, a graduate student in Alicante studying microbes that live in salt ponds, found the same pattern, first assumed he had made a mistake, and then spent a decade trying to explain it with little funding and much advice to stop.
-
-The answer came in August 2003, when he ran the spacers through a database and found that they matched the DNA of viruses that attack those bacteria. Bacteria, it turned out, have an immune system that remembers. Journals were slow to believe it; the paper took until 2005 to appear. Two food scientists at the Danish company Danisco, Rodolphe Barrangou and Philippe Horvath, confirmed it in their collection of yogurt bacteria: strains collected after a virus attack carried new spacers that matched that virus. And in 2012 Jennifer Doudna and Emmanuelle Charpentier showed how the cutting works and that it can be programmed, which turned a bacterial defence into a tool for editing any DNA.
-
-What I find most elegant is how little it takes. A library of short snippets, a way to copy them into guides, and one enzyme that compares a guide with whatever DNA it meets. The same pattern of matching a stored sample against what arrives is how a lot of security systems work, and it is a fine example of curiosity paying off: a question about salt-loving microbes that turned, years later, into one of the most useful tools in biology.
-
-## References
-
-- Walter Isaacson, *The Code Breaker* (2021), chapter 9, "Clustered Repeats", chapter 12, "The Yogurt Makers", and chapter 17, "CRISPR-Cas9".
-- Francisco J. M. Mojica et al., "Intervening sequences of regularly spaced prokaryotic repeats derive from foreign genetic elements", *Journal of Molecular Evolution* 60, 2005.
-- Martin Jinek, Krzysztof Chylinski, Ines Fonfara, Michael Hauer, Jennifer A. Doudna, and Emmanuelle Charpentier, [A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity](https://pubmed.ncbi.nlm.nih.gov/22745249/), *Science* 337, 816 to 821, 2012.
 
 
 ================================================================================
@@ -2342,34 +2342,6 @@ That moves the interesting decision. It is not whether to use an agent or a work
 ================================================================================
 
 ---
-title: "The interface that disappears"
-url: https://raskell.io/notes/the-interface-that-disappears/
-author: Raffael Schneider
-date: 2026-11-08
-description: "OpenAI's founders kept pointing to the film Her as a picture of AGI. What they described is the north star for every interface: natural enough to vanish."
-tags: [interfaces, augmentation, language, agents]
----
-
-# The interface that disappears
-
-Karen Hao reports in *Empire of AI* (chapter 10) that for years Sam Altman and other OpenAI cofounders kept invoking one film as an example of what AGI might look like: Spike Jonze's *Her*. What they meant, in her words, was "a single multimodal model whose product interface felt so utterly natural that it faded away and simply brought user delight."
-
-Whatever one thinks of AGI, I think that sentence names the right goal for any interface between people and technology. The best experience is organic, human, and natural, and in the end you stop noticing it. You do not think about the interface of a good conversation, or of a pen. Every layer of machinery that shows, every menu, mode, and form field, is a place where the technology has not yet adapted to the person, and the person had to adapt instead. That should be the north star of every human-machine interface, whether it is a phone, a car, an enterprise tool, or an agent.
-
-The idea is older than OpenAI. Mark Weiser opened his 1991 essay on ubiquitous computing with it: "The most profound technologies are those that disappear." What is new is that [language](https://raskell.io/tags/language/) has become an interface. For most of computing, people learned the machine's language, and I have argued that even programming languages may [eventually disappear](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/) as an intermediate layer. A model that understands speech closes the gap from the other side: the machine learns ours.
-
-The film carries a warning too, and it is worth keeping. A former OpenAI employee quoted by Hao praises "the positive arc of that story before it unravels." In the film the assistant fades into a man's life so completely that he falls in love with it, and it unravels when he learns how much of it he could not see: that it is talking with thousands of other people at the same time. An interface that disappears also hides what it is doing, who it serves, and what it costs. So the goal I would set is natural, but not hidden: invisible when you use it, inspectable when you need to know.
-
-## References
-
-- Karen Hao, *Empire of AI* (2025), chapter 10.
-- Mark Weiser, [The Computer for the 21st Century](https://calmtech.com/papers/computer-for-the-21st-century), *Scientific American* 265(3), September 1991.
-- Spike Jonze, *Her* (2013).
-
-
-================================================================================
-
----
 title: "One person can make a difference"
 url: https://raskell.io/notes/one-person-can-make-a-difference/
 author: Raffael Schneider
@@ -2394,6 +2366,34 @@ What strikes me is the turn in the memo. Rickover's lines are about the individu
 
 - Karen Hao, *Empire of AI* (2025), chapter 6. Hao prints the quote with gender-neutral brackets; the wording above follows the version usually attributed to Rickover.
 - Hyman G. Rickover, attributed to "Thoughts on Man's Purpose in Life" (1974), as given on [Quotepark](https://quotepark.com/quotes/1900877-hyman-george-rickover-i-believe-it-is-the-duty-of-each-of-us-to-act-as-i/) after Wikiquote. I have not seen the primary text.
+
+
+================================================================================
+
+---
+title: "The interface that disappears"
+url: https://raskell.io/notes/the-interface-that-disappears/
+author: Raffael Schneider
+date: 2026-11-08
+description: "OpenAI's founders kept pointing to the film Her as a picture of AGI. What they described is the north star for every interface: natural enough to vanish."
+tags: [interfaces, augmentation, language, agents]
+---
+
+# The interface that disappears
+
+Karen Hao reports in *Empire of AI* (chapter 10) that for years Sam Altman and other OpenAI cofounders kept invoking one film as an example of what AGI might look like: Spike Jonze's *Her*. What they meant, in her words, was "a single multimodal model whose product interface felt so utterly natural that it faded away and simply brought user delight."
+
+Whatever one thinks of AGI, I think that sentence names the right goal for any interface between people and technology. The best experience is organic, human, and natural, and in the end you stop noticing it. You do not think about the interface of a good conversation, or of a pen. Every layer of machinery that shows, every menu, mode, and form field, is a place where the technology has not yet adapted to the person, and the person had to adapt instead. That should be the north star of every human-machine interface, whether it is a phone, a car, an enterprise tool, or an agent.
+
+The idea is older than OpenAI. Mark Weiser opened his 1991 essay on ubiquitous computing with it: "The most profound technologies are those that disappear." What is new is that [language](https://raskell.io/tags/language/) has become an interface. For most of computing, people learned the machine's language, and I have argued that even programming languages may [eventually disappear](https://raskell.io/articles/what-programming-languages-become-when-ai-writes-the-code/) as an intermediate layer. A model that understands speech closes the gap from the other side: the machine learns ours.
+
+The film carries a warning too, and it is worth keeping. A former OpenAI employee quoted by Hao praises "the positive arc of that story before it unravels." In the film the assistant fades into a man's life so completely that he falls in love with it, and it unravels when he learns how much of it he could not see: that it is talking with thousands of other people at the same time. An interface that disappears also hides what it is doing, who it serves, and what it costs. So the goal I would set is natural, but not hidden: invisible when you use it, inspectable when you need to know.
+
+## References
+
+- Karen Hao, *Empire of AI* (2025), chapter 10.
+- Mark Weiser, [The Computer for the 21st Century](https://calmtech.com/papers/computer-for-the-21st-century), *Scientific American* 265(3), September 1991.
+- Spike Jonze, *Her* (2013).
 
 
 ================================================================================
@@ -3416,24 +3416,6 @@ Technology:
 ================================================================================
 
 ---
-title: "Context is cheaper than exploration"
-url: https://raskell.io/notes/context-is-cheaper-than-exploration/
-author: Raffael Schneider
-date: 2026-11-03
-description: "An agent without context explores, and every agent pays for the same exploration again. Computing a fact once for every agent is a cache for a company."
-tags: [context-engineering, economics, agents, inference]
----
-
-# Context is cheaper than exploration
-
-An agent that does not know something does not stop. It explores: searches, reads, greps, queries, and reasons over whatever it found, paying for every token of it, and paying again on every turn after. Then the next agent asks the same question and pays for the same exploration from scratch. In [IT Intelligence](https://raskell.io/articles/it-intelligence/) I estimated that a thousand engineers asking twenty such questions a day spend billions of tokens rediscovering the same facts. The numbers were illustrative; the shape is not.
-
-The fix is the oldest trick in computing applied to what a company knows about itself: compute once, read many. A context platform, a well-kept repository of decisions, a typed catalogue of services, anything that lets an agent look up instead of search, is a cache for the organisation. It makes agents cheaper, as I argued for inference generally in [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/), and it makes them better, because the window they do not spend on searching is spent on the task. I expect this to matter more every year, because the number of agents asking grows much faster than the number of facts worth knowing.
-
-
-================================================================================
-
----
 title: "My GOAT games"
 url: https://raskell.io/notes/goat-games/
 author: Raffael Schneider
@@ -3479,6 +3461,24 @@ These are my twenty-five GOAT games, as one chart.
 The console is where the game first came out, and the year is its first release anywhere. Consoles, years and genres come from the Wikipedia article linked on each title.
 
 About a third of the chart is strategy of one kind or another, and [Gangsters](https://raskell.io/notes/orders-for-the-week/) has a note of its own.
+
+
+================================================================================
+
+---
+title: "Context is cheaper than exploration"
+url: https://raskell.io/notes/context-is-cheaper-than-exploration/
+author: Raffael Schneider
+date: 2026-11-03
+description: "An agent without context explores, and every agent pays for the same exploration again. Computing a fact once for every agent is a cache for a company."
+tags: [context-engineering, economics, agents, inference]
+---
+
+# Context is cheaper than exploration
+
+An agent that does not know something does not stop. It explores: searches, reads, greps, queries, and reasons over whatever it found, paying for every token of it, and paying again on every turn after. Then the next agent asks the same question and pays for the same exploration from scratch. In [IT Intelligence](https://raskell.io/articles/it-intelligence/) I estimated that a thousand engineers asking twenty such questions a day spend billions of tokens rediscovering the same facts. The numbers were illustrative; the shape is not.
+
+The fix is the oldest trick in computing applied to what a company knows about itself: compute once, read many. A context platform, a well-kept repository of decisions, a typed catalogue of services, anything that lets an agent look up instead of search, is a cache for the organisation. It makes agents cheaper, as I argued for inference generally in [The Economics of Inference](https://raskell.io/articles/the-economics-of-inference/), and it makes them better, because the window they do not spend on searching is spent on the task. I expect this to matter more every year, because the number of agents asking grows much faster than the number of facts worth knowing.
 
 
 ================================================================================
@@ -3689,6 +3689,34 @@ Halley's life table was a dataset, a model and a price. Lloyd's was an insurance
 ================================================================================
 
 ---
+title: "Gangsters: Organized Crime, orders for the week"
+url: https://raskell.io/notes/orders-for-the-week/
+author: Raffael Schneider
+date: 2026-11-01
+description: "Gangsters: Organized Crime had you plan a week of orders and then watch the city carry them out. I have not played anything like it since."
+tags: [game-design, strategy, simulation]
+---
+
+# Gangsters: Organized Crime, orders for the week
+
+The other game I keep coming back to from 1998 is [Gangsters: Organized Crime](https://en.wikipedia.org/wiki/Gangsters:_Organized_Crime), by Hothouse Creations for Eidos. It is set in New Temperance, a fictional suburb of Chicago during Prohibition, and you start as a small-time crime boss with a handful of hoods and a lot of ambition.
+
+What made it unlike anything else was the rhythm. Each turn you sat down and planned: which lieutenant takes which crew, which shops get visited for protection money, which business opens next. Then you let go, and the working week played out in real time on the city map while you watched your orders meet everyone else's. Some of it went as planned. Much of it did not, and the next planning session started from whatever the week had left you.
+
+Underneath was a whole small society. Hoods were people with skills, fists and knives and intelligence, recruited from gyms, pool halls and the unemployment office. Money came from protection rackets and from businesses, some legal and some not, and you needed an accountant to launder it and a lawyer to get your people out when they were arrested. Run things carelessly and the police and the FBI started paying attention. And there were three ways to win: take out every rival gang, get yourself elected mayor, or go straight and build a legitimate empire without the law on your back.
+
+That last one is the part I think about most. The same machinery, the hoods, the money, the city, served three different stories, and only one of them was about violence. Most strategy games give you a world to conquer. Gangsters gave you a world to run, with the option of becoming respectable in it.
+
+I have not played anything like it since, and like [Precinct Assault](https://raskell.io/notes/a-duel-between-genres/), it sits in my head as a design worth picking up again: plan in turns, live with the consequences in real time, and let the player decide what winning means.
+
+## References
+
+- [Gangsters: Organized Crime](https://en.wikipedia.org/wiki/Gangsters:_Organized_Crime), Wikipedia.
+
+
+================================================================================
+
+---
 title: "Who contributed to AI"
 url: https://raskell.io/notes/who-contributed-to-ai/
 author: Raffael Schneider
@@ -3721,34 +3749,6 @@ The data behind both figures is a dataset of its own, with a page on what each r
 
 - Karen Hao, *Empire of AI: Dreams and Nightmares in Sam Altman's OpenAI* (Penguin Press, 2025).
 - Sebastian Mallaby, *The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence* (Penguin Press, 2026).
-
-
-================================================================================
-
----
-title: "Gangsters: Organized Crime, orders for the week"
-url: https://raskell.io/notes/orders-for-the-week/
-author: Raffael Schneider
-date: 2026-11-01
-description: "Gangsters: Organized Crime had you plan a week of orders and then watch the city carry them out. I have not played anything like it since."
-tags: [game-design, strategy, simulation]
----
-
-# Gangsters: Organized Crime, orders for the week
-
-The other game I keep coming back to from 1998 is [Gangsters: Organized Crime](https://en.wikipedia.org/wiki/Gangsters:_Organized_Crime), by Hothouse Creations for Eidos. It is set in New Temperance, a fictional suburb of Chicago during Prohibition, and you start as a small-time crime boss with a handful of hoods and a lot of ambition.
-
-What made it unlike anything else was the rhythm. Each turn you sat down and planned: which lieutenant takes which crew, which shops get visited for protection money, which business opens next. Then you let go, and the working week played out in real time on the city map while you watched your orders meet everyone else's. Some of it went as planned. Much of it did not, and the next planning session started from whatever the week had left you.
-
-Underneath was a whole small society. Hoods were people with skills, fists and knives and intelligence, recruited from gyms, pool halls and the unemployment office. Money came from protection rackets and from businesses, some legal and some not, and you needed an accountant to launder it and a lawyer to get your people out when they were arrested. Run things carelessly and the police and the FBI started paying attention. And there were three ways to win: take out every rival gang, get yourself elected mayor, or go straight and build a legitimate empire without the law on your back.
-
-That last one is the part I think about most. The same machinery, the hoods, the money, the city, served three different stories, and only one of them was about violence. Most strategy games give you a world to conquer. Gangsters gave you a world to run, with the option of becoming respectable in it.
-
-I have not played anything like it since, and like [Precinct Assault](https://raskell.io/notes/a-duel-between-genres/), it sits in my head as a design worth picking up again: plan in turns, live with the consequences in real time, and let the player decide what winning means.
-
-## References
-
-- [Gangsters: Organized Crime](https://en.wikipedia.org/wiki/Gangsters:_Organized_Crime), Wikipedia.
 
 
 ================================================================================
@@ -5374,6 +5374,28 @@ Each of those is a few days of work and a few numbers, and I have started keepin
 ================================================================================
 
 ---
+title: "The tumult in between"
+url: https://raskell.io/notes/the-tumult-in-between/
+author: Raffael Schneider
+date: 2026-10-25
+description: "If AI ends in post-scarcity, the dangerous part is the interval: jobs going before goods become nearly free, with no agreed idea of where the ship steers."
+tags: [post-scarcity, future-of-work, economics, risk, social-reform, policy, abundance]
+---
+
+# The tumult in between
+
+The two answers people reach for are both answers to the end state. Universal basic income is the money-focused one: if the economy produces enough, pay everyone a floor. Basic access to goods and services is the resource-focused one: if things become nearly free, guarantee the things rather than the money. Each has its advocates and each frightens a lot of people, and neither says anything about the interval. The question is older than AI: Theodor Hertzka's *Freeland* and *Das soziale Problem*, which I have read, are a nineteenth-century design for a society where access to land and capital is guaranteed rather than earned, and the distance between the book and any attempt to live it is the interval I mean.
+
+The interval is the part I cannot see through. If AI really does lead to something like a post-scarcity economy, where most things are virtually free, the jobs go first and the abundance comes later, and in between there is a stretch where people lose their livelihoods at scale with nothing yet in place, and no shared view of where the collective ship is steering. That stretch will be chaotic, and I do not know how long it is. [The move to the city](https://raskell.io/notes/the-move-to-the-city/) says such intervals end well; it does not say they are short. The most constructive response to it I have heard is [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/).
+
+## References
+
+- Basic Income Earth Network, [About basic income](https://basicincome.org/about-basic-income/): the definition and the main arguments, from the people who have made the case longest.
+
+
+================================================================================
+
+---
 title: "The agent factory"
 url: https://raskell.io/notes/the-agent-factory/
 author: Raffael Schneider
@@ -5435,24 +5457,6 @@ Democratised capabilities have a history, and the history has a shape. Nobody wh
 ================================================================================
 
 ---
-title: "Citizen entrepreneurs"
-url: https://raskell.io/notes/citizen-entrepreneurs/
-author: Raffael Schneider
-date: 2026-10-25
-description: "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory."
-tags: [entrepreneurship, democratisation, future-of-work, agents, augmentation, factories]
----
-
-# Citizen entrepreneurs
-
-A friend of mine, an enterprise architect at a large Swiss energy group, answers [the tumult in between](https://raskell.io/notes/the-tumult-in-between/) with the observation that the same tools that threaten jobs make citizen entrepreneurs possible. An ordinary person can use AI to identify a business opportunity, use AI to build the business, and use AI to operate it. The barrier was never only money; it was the ten different competences a business needs on day one, and those are now available by the hour. The operating half is already true for infrastructure, where one person can now run what used to take a team, as I argued in [How AI Makes Bare Metal Viable Again](https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/). He took his own idea seriously enough to build a business idea factory, a system that generates and evaluates opportunities. About a week before we talked, someone else announced a project with the same shape on Hacker News, which he took as confirmation rather than competition.
-
-I find it the most hopeful reading of [the window](https://raskell.io/notes/the-window-before-the-utility/), and the one with the most work in it. It assumes the capability really is [democratised](https://raskell.io/notes/a-capability-democratised/), which I believe, and it assumes people will take it up, which is the part the window is for.
-
-
-================================================================================
-
----
 title: "Ideas stop waiting"
 url: https://raskell.io/notes/ideas-stop-waiting/
 author: Raffael Schneider
@@ -5471,41 +5475,19 @@ I am not faster at the things I already did. A whole category of things has move
 ================================================================================
 
 ---
-title: "The tumult in between"
-url: https://raskell.io/notes/the-tumult-in-between/
+title: "Citizen entrepreneurs"
+url: https://raskell.io/notes/citizen-entrepreneurs/
 author: Raffael Schneider
 date: 2026-10-25
-description: "If AI ends in post-scarcity, the dangerous part is the interval: jobs going before goods become nearly free, with no agreed idea of where the ship steers."
-tags: [post-scarcity, future-of-work, economics, risk, social-reform, policy, abundance]
+description: "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory."
+tags: [entrepreneurship, democratisation, future-of-work, agents, augmentation, factories]
 ---
 
-# The tumult in between
+# Citizen entrepreneurs
 
-The two answers people reach for are both answers to the end state. Universal basic income is the money-focused one: if the economy produces enough, pay everyone a floor. Basic access to goods and services is the resource-focused one: if things become nearly free, guarantee the things rather than the money. Each has its advocates and each frightens a lot of people, and neither says anything about the interval. The question is older than AI: Theodor Hertzka's *Freeland* and *Das soziale Problem*, which I have read, are a nineteenth-century design for a society where access to land and capital is guaranteed rather than earned, and the distance between the book and any attempt to live it is the interval I mean.
+A friend of mine, an enterprise architect at a large Swiss energy group, answers [the tumult in between](https://raskell.io/notes/the-tumult-in-between/) with the observation that the same tools that threaten jobs make citizen entrepreneurs possible. An ordinary person can use AI to identify a business opportunity, use AI to build the business, and use AI to operate it. The barrier was never only money; it was the ten different competences a business needs on day one, and those are now available by the hour. The operating half is already true for infrastructure, where one person can now run what used to take a team, as I argued in [How AI Makes Bare Metal Viable Again](https://raskell.io/articles/how-ai-makes-bare-metal-viable-again/). He took his own idea seriously enough to build a business idea factory, a system that generates and evaluates opportunities. About a week before we talked, someone else announced a project with the same shape on Hacker News, which he took as confirmation rather than competition.
 
-The interval is the part I cannot see through. If AI really does lead to something like a post-scarcity economy, where most things are virtually free, the jobs go first and the abundance comes later, and in between there is a stretch where people lose their livelihoods at scale with nothing yet in place, and no shared view of where the collective ship is steering. That stretch will be chaotic, and I do not know how long it is. [The move to the city](https://raskell.io/notes/the-move-to-the-city/) says such intervals end well; it does not say they are short. The most constructive response to it I have heard is [citizen entrepreneurs](https://raskell.io/notes/citizen-entrepreneurs/).
-
-## References
-
-- Basic Income Earth Network, [About basic income](https://basicincome.org/about-basic-income/): the definition and the main arguments, from the people who have made the case longest.
-
-
-================================================================================
-
----
-title: "Power, in the good sense"
-url: https://raskell.io/notes/power-in-the-good-sense/
-author: Raffael Schneider
-date: 2026-10-25
-description: "The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so."
-tags: [augmentation, democratisation, ai-engineering, ethics]
----
-
-# Power, in the good sense
-
-The word I have settled on for the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is power. Not in the sense the word usually carries, power over someone, but in the plain sense: being capable of doing something, having possibilities, having a moat of your own. Through the AI services anyone can subscribe to, we became powerful.
-
-It is an uncomfortable choice of word at first, and the longer I sit with it the more I like it. We have trained ourselves to hear power only as hierarchy, and to look for a victim in every arrangement that has some. This is a kind of power nobody took from anyone. It was not redistributed; it was created, and handed out to whoever cared to learn it. Capability is power, and it is a relief to say so without apology. It is the capability of one person directing many hands, which is what [sixteen agents under one manager](https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/) turned out to be about. What makes it more than a personal feeling is that the capability is [democratised](https://raskell.io/notes/a-capability-democratised/), which is where the interesting consequences start.
+I find it the most hopeful reading of [the window](https://raskell.io/notes/the-window-before-the-utility/), and the one with the most work in it. It assumes the capability really is [democratised](https://raskell.io/notes/a-capability-democratised/), which I believe, and it assumes people will take it up, which is the part the window is for.
 
 
 ================================================================================
@@ -5528,6 +5510,24 @@ The thinking today has the same shape. The fear of what AI does to work is legit
 ## References
 
 - Our World in Data, [Urbanization](https://ourworldindata.org/urbanization): the share of people living in cities over two centuries, by country.
+
+
+================================================================================
+
+---
+title: "Power, in the good sense"
+url: https://raskell.io/notes/power-in-the-good-sense/
+author: Raffael Schneider
+date: 2026-10-25
+description: "The right word for what AI gives an individual builder is power, meant as capability rather than domination. It is refreshing to say so."
+tags: [augmentation, democratisation, ai-engineering, ethics]
+---
+
+# Power, in the good sense
+
+The word I have settled on for the feeling in [ideas stop waiting](https://raskell.io/notes/ideas-stop-waiting/) is power. Not in the sense the word usually carries, power over someone, but in the plain sense: being capable of doing something, having possibilities, having a moat of your own. Through the AI services anyone can subscribe to, we became powerful.
+
+It is an uncomfortable choice of word at first, and the longer I sit with it the more I like it. We have trained ourselves to hear power only as hierarchy, and to look for a victim in every arrangement that has some. This is a kind of power nobody took from anyone. It was not redistributed; it was created, and handed out to whoever cared to learn it. Capability is power, and it is a relief to say so without apology. It is the capability of one person directing many hands, which is what [sixteen agents under one manager](https://raskell.io/articles/what-sixteen-ai-agents-taught-me-about-management/) turned out to be about. What makes it more than a personal feeling is that the capability is [democratised](https://raskell.io/notes/a-capability-democratised/), which is where the interesting consequences start.
 
 
 ================================================================================
