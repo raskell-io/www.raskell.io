@@ -1,10 +1,10 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-21T12:53:18+00:00",
+ "generated": "2026-11-21T13:48:09+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
-  "review": 5,
+  "review": 6,
   "article": 46,
   "note": 40,
   "talk": 1,
@@ -12,7 +12,7 @@
   "work": 169,
   "project": 32,
   "topic": 175,
-  "link": 663
+  "link": 664
  },
  "search_url": "https://raskell.io/search/?q={query}&type={kind}",
  "related": {
@@ -41,6 +41,26 @@
     "reviews"
    ],
    "meta": "20 min"
+  },
+  {
+   "kind": "review",
+   "title": "The Phrase That Stayed",
+   "url": "https://raskell.io/articles/review-skin-in-the-game/",
+   "description": "I kept one phrase from Taleb's Skin in the Game. Now that code is cheap, I think it names what is left: someone who owns the outcome.",
+   "date": "2026-11-21",
+   "topics": [
+    "risk",
+    "ethics",
+    "trust",
+    "entrepreneurship",
+    "future-of-work",
+    "agents",
+    "post-scarcity"
+   ],
+   "categories": [
+    "reviews"
+   ],
+   "meta": "11 min"
   },
   {
    "kind": "article",
@@ -1826,7 +1846,7 @@
   {
    "kind": "work",
    "title": "Skin in the Game",
-   "url": "https://raskell.io/reading/#skin-in-the-game",
+   "url": "https://raskell.io/articles/review-skin-in-the-game/",
    "description": "Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers.",
    "date": "2022",
    "topics": [
@@ -9214,6 +9234,19 @@
     {
      "title": "My GOAT games",
      "url": "https://raskell.io/notes/goat-games/"
+    }
+   ]
+  },
+  {
+   "kind": "link",
+   "title": "Brooks’s law",
+   "url": "https://en.wikipedia.org/wiki/Brooks%27s_law",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Phrase That Stayed",
+     "url": "https://raskell.io/articles/review-skin-in-the-game/"
     }
    ]
   },

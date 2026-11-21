@@ -554,6 +554,7 @@
    "isbn": "9780241247488",
    "status": "read",
    "finished": "2022",
+   "rating": 8.5,
    "topics": [
     "risk",
     "ethics",
@@ -563,7 +564,12 @@
    "about": "The fourth volume of Taleb's Incerto treats symmetry of risk as a condition for fairness, knowledge and functioning systems. Ranging across ethics, religion, economics and politics, it criticises advisers, academics and officials who gain from decisions without bearing their costs, and examines how small, stubborn minorities can impose their preferences on a majority.",
    "take": "Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers.",
    "cover": "https://raskell.io/covers/reading/skin-in-the-game.avif",
-   "page": "https://raskell.io/reading/#skin-in-the-game"
+   "page": "https://raskell.io/reading/#skin-in-the-game",
+   "review": {
+    "title": "The Phrase That Stayed",
+    "url": "https://raskell.io/articles/review-skin-in-the-game/",
+    "markdown": "https://raskell.io/articles/review-skin-in-the-game.md"
+   }
   },
   {
    "id": "geld-aus-dem-nichts",

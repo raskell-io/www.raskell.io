@@ -39,6 +39,7 @@ raskell.io is the personal site of Raffael Schneider, a Group AI Solutions Archi
 ## Articles
 
 - [Five Breakthroughs and a Dishwasher](https://raskell.io/articles/review-a-brief-history-of-intelligence.md) (2026-11-21): Max Bennett's A Brief History of Intelligence maps five steps in how brains work onto five ideas in AI. A deep book, and slow going on a first read.
+- [The Phrase That Stayed](https://raskell.io/articles/review-skin-in-the-game.md) (2026-11-21): I kept one phrase from Taleb's Skin in the Game. Now that code is cheap, I think it names what is left: someone who owns the outcome.
 - [The Constraint Moves: A Day at Agentic Engineering Days Zurich](https://raskell.io/articles/agentic-engineering-days-zurich-2026.md) (2026-11-20): Seven talks at Agentic Engineering Days Zurich 2026, and the thread through them: agents do not remove a constraint, they move it somewhere else.
 - [Almost Irrelevant: Choosing a Language When Agents Write the Code](https://raskell.io/articles/almost-irrelevant.md) (2026-11-19): When agents write most of the code, the language matters less than it did, but not nothing. What Rust, Go, Elixir and Haskell still buy you.
 - [Building IT Intelligence: A Reference Implementation in One Repository](https://raskell.io/articles/building-it-intelligence.md) (2026-11-16): How to build an Enterprise Context Platform from open source parts: ontology, connectors, workflows, store, API, MCP and UI, in one repository you can run.
@@ -95,6 +96,7 @@ raskell.io is the personal site of Raffael Schneider, a Group AI Solutions Archi
 Reviews of works from the reading log (category: reviews, feed https://raskell.io/categories/reviews/rss.xml). Each Markdown copy names the reviewed work and the rating in its front matter.
 
 - [Five Breakthroughs and a Dishwasher](https://raskell.io/articles/review-a-brief-history-of-intelligence.md) (2026-11-21): review of *A Brief History of Intelligence* by Max Bennett (book, 2023), rated 7.5/10. Max Bennett's A Brief History of Intelligence maps five steps in how brains work onto five ideas in AI. A deep book, and slow going on a first read.
+- [The Phrase That Stayed](https://raskell.io/articles/review-skin-in-the-game.md) (2026-11-21): review of *Skin in the Game* by Nassim Nicholas Taleb (book, 2018), rated 8.5/10. I kept one phrase from Taleb's Skin in the Game. Now that code is cheap, I think it names what is left: someone who owns the outcome.
 - [Its Own Metaphor](https://raskell.io/articles/review-how-life-works.md) (2026-11-14): review of *How Life Works* by Philip Ball (book, 2023), rated 9/10. Philip Ball's How Life Works is the popular science book I wish every other one were: deep, clear, and honest about how we came to know what we know.
 - [An Empire of People](https://raskell.io/articles/review-empire-of-ai.md) (2026-11-14): review of *Empire of AI* by Karen Hao (book, 2025), rated 7.5/10. Karen Hao's Empire of AI tells the story of OpenAI through its people. Gripping as reporting, and uneven where it argues.
 - [Win Everything, Control No One](https://raskell.io/articles/win-everything-control-no-one.md) (2026-10-29): review of *The Infinity Machine* by Sebastian Mallaby (book, 2026), rated 8.5/10. Sebastian Mallaby's biography of Demis Hassabis is the best history of modern AI I know, and an honest study of a man who hates control and exercises it.
@@ -277,7 +279,7 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 - Der Kult, Gunnar Kaiser (book, finished January 2022): The pandemic years read as a cult in the making, and how ordinary people are drawn into it.
 - Building a Second Brain, Tiago Forte (book, finished 2022): A method for keeping notes outside your head: capture, organise, distil, and express, with the PARA folders.
 - Rust Web Programming, Maxwell Flitton (book, finished 2022): Building web applications and services in Rust, from routing and databases to authentication and deployment.
-- Skin in the Game, Nassim Nicholas Taleb (book, finished 2022): Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers.
+- Skin in the Game, Nassim Nicholas Taleb (book, finished 2022, rated 8.5/10): Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers. Review: [The Phrase That Stayed](https://raskell.io/articles/review-skin-in-the-game.md)
 - The Phoenix Project, Gene Kim, Kevin Behr, and George Spafford (novel, finished 2022): A novel about an IT manager saving a failing project, and the DevOps ideas he learns along the way.
 - Die Angst der Eliten, Paul Schreyer (book, finished 2022): Who fears democracy, and how the rule of the people came to be kept within limits.
 - Maps of Meaning, Jordan B. Peterson (book, finished 2022): Myths as maps for action, between order and chaos, the dense groundwork for his later books.
@@ -344,7 +346,7 @@ The reading log at https://raskell.io/reading/ (as data: [reading.json](https://
 
 ## Sources cited most
 
-External links cited on more than one page (all 641 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
+External links cited on more than one page (all 642 are searchable at https://raskell.io/search/?type=link and listed in [links.json](https://raskell.io/links.json)).
 
 - [Zentinel](https://zentinelproxy.io/): cited on 13 pages
 - [Archipelag.io](https://archipelag.io): cited on 9 pages

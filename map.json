@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-21T12:53:18+00:00",
+ "generated": "2026-11-21T13:48:09+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -13,13 +13,22 @@
    "degree": 14
   },
   {
+   "id": "a:/articles/review-skin-in-the-game/",
+   "kind": "article",
+   "label": "The Phrase That Stayed",
+   "url": "https://raskell.io/articles/review-skin-in-the-game/",
+   "meta": "2026-11-21 · 11 min",
+   "description": "I kept one phrase from Taleb's Skin in the Game. Now that code is cheap, I think it names what is left: someone who owns the outcome.",
+   "degree": 13
+  },
+  {
    "id": "a:/articles/agentic-engineering-days-zurich-2026/",
    "kind": "article",
    "label": "The Constraint Moves: A Day at Agentic Engineering Days Zurich",
    "url": "https://raskell.io/articles/agentic-engineering-days-zurich-2026/",
    "meta": "2026-11-20 · 19 min",
    "description": "Seven talks at Agentic Engineering Days Zurich 2026, and the thread through them: agents do not remove a constraint, they move it somewhere else.",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "a:/articles/almost-irrelevant/",
@@ -100,7 +109,7 @@
    "url": "https://raskell.io/articles/the-original-data-company/",
    "meta": "2026-11-01 · 27 min",
    "description": "Insurers say they are not tech companies. Yet an insurer sells a prediction wrapped in a promise, and has since a 1693 life table: the original data company.",
-   "degree": 21
+   "degree": 22
   },
   {
    "id": "a:/articles/the-river-and-the-canal/",
@@ -676,7 +685,7 @@
    "url": "https://raskell.io/notes/who-carries-progress/",
    "meta": "2026-11-07",
    "description": "A colleague says the breakthroughs come from academia and the state. I think they come from people who have to make things work, and that what they learn spreads.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "a:/notes/context-is-cheaper-than-exploration/",
@@ -757,7 +766,7 @@
    "url": "https://raskell.io/notes/citizen-entrepreneurs/",
    "meta": "2026-10-25",
    "description": "My friend's answer to the transition: with AI, ordinary people can find a business opportunity, build the business, and run it. He built an idea factory.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "a:/notes/ideas-stop-waiting/",
@@ -890,9 +899,9 @@
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 29 pages",
+   "meta": "Concept · 30 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 41
+   "degree": 42
   },
   {
    "id": "t:ai-alignment",
@@ -1223,18 +1232,18 @@
    "kind": "tag",
    "label": "Entrepreneurship",
    "url": "https://raskell.io/tags/entrepreneurship/",
-   "meta": "Concept · 6 pages",
+   "meta": "Concept · 7 pages",
    "description": "Finding something worth building and building it: ventures, side projects, and what changes when anyone can spot an opportunity and operate a business with AI.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:ethics",
    "kind": "tag",
    "label": "Ethics",
    "url": "https://raskell.io/tags/ethics/",
-   "meta": "Concept · 3 pages",
+   "meta": "Concept · 4 pages",
    "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
-   "degree": 24
+   "degree": 25
   },
   {
    "id": "t:europe",
@@ -1322,9 +1331,9 @@
    "kind": "tag",
    "label": "Future of work",
    "url": "https://raskell.io/tags/future-of-work/",
-   "meta": "Concept · 8 pages",
+   "meta": "Concept · 9 pages",
    "description": "What AI does to jobs and livelihoods: the interval before any post-scarcity economy, basic income against basic access, and who gets through the middle.",
-   "degree": 17
+   "degree": 18
   },
   {
    "id": "t:game-ai",
@@ -1817,9 +1826,9 @@
    "kind": "tag",
    "label": "Post-scarcity",
    "url": "https://raskell.io/tags/post-scarcity/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "What changes when making things costs next to nothing: copied software, AI labour, mission-built machines, and the economies and societies that might follow.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "t:probability",
@@ -1898,9 +1907,9 @@
    "kind": "tag",
    "label": "Risk",
    "url": "https://raskell.io/tags/risk/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "t:rust",
@@ -2069,9 +2078,9 @@
    "kind": "tag",
    "label": "Trust",
    "url": "https://raskell.io/tags/trust/",
-   "meta": "Concept · 6 pages",
+   "meta": "Concept · 7 pages",
    "description": "Personal trust and system trust: why people rely on banks, procedures and software they cannot inspect, and how that reliance is earned.",
-   "degree": 11
+   "degree": 12
   },
   {
    "id": "t:type-systems",
@@ -2436,9 +2445,9 @@
    "kind": "category",
    "label": "Reviews",
    "url": "https://raskell.io/categories/reviews/",
-   "meta": "5 entries",
+   "meta": "6 entries",
    "description": "Reviews of books, papers, and long articles from the reading log: what the work argues, where I was persuaded, and what I made of it.",
-   "degree": 5
+   "degree": 6
   },
   {
    "id": "p:archipelag-io",
@@ -2966,10 +2975,10 @@
    "id": "w:skin-in-the-game",
    "kind": "work",
    "label": "Skin in the Game",
-   "url": "https://raskell.io/reading/#skin-in-the-game",
+   "url": "https://raskell.io/articles/review-skin-in-the-game/",
    "meta": "Book · Nassim Nicholas Taleb · read 2022",
    "description": "Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "w:geld-aus-dem-nichts",
@@ -4436,6 +4445,10 @@
    "target": "t:open-standards"
   },
   {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "t:agents"
+  },
+  {
    "source": "a:/notes/board-games-already-solved-agent-coordination/",
    "target": "t:agents"
   },
@@ -5328,6 +5341,10 @@
    "target": "t:enterprise-architecture"
   },
   {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "t:entrepreneurship"
+  },
+  {
    "source": "a:/notes/small-focused-high-trust/",
    "target": "t:entrepreneurship"
   },
@@ -5354,6 +5371,10 @@
   {
    "source": "t:entrepreneurship",
    "target": "t:economics"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "t:ethics"
   },
   {
    "source": "a:/notes/the-art-of-peace/",
@@ -5534,6 +5555,10 @@
   {
    "source": "t:fractals",
    "target": "t:chaos-theory"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "t:future-of-work"
   },
   {
    "source": "a:/notes/the-conversation-is-the-workspace/",
@@ -6464,6 +6489,10 @@
    "target": "t:policy"
   },
   {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "t:post-scarcity"
+  },
+  {
    "source": "a:/notes/who-carries-progress/",
    "target": "t:post-scarcity"
   },
@@ -6650,6 +6679,10 @@
   {
    "source": "t:research-labs",
    "target": "t:history-of-technology"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "t:risk"
   },
   {
    "source": "a:/notes/the-tumult-in-between/",
@@ -6982,6 +7015,10 @@
   {
    "source": "t:tree-search",
    "target": "t:game-ai"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "t:trust"
   },
   {
    "source": "a:/notes/the-art-of-peace/",
@@ -7424,6 +7461,10 @@
    "target": "c:reviews"
   },
   {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "c:reviews"
+  },
+  {
    "source": "a:/articles/review-empire-of-ai/",
    "target": "c:reviews"
   },
@@ -7462,6 +7503,22 @@
   {
    "source": "a:/articles/review-a-brief-history-of-intelligence/",
    "target": "a:/notes/determinism-is-what-intelligence-leaves-behind/"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "a:/articles/agentic-engineering-days-zurich-2026/"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "a:/articles/the-original-data-company/"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "a:/notes/who-carries-progress/"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "a:/notes/citizen-entrepreneurs/"
   },
   {
    "source": "a:/articles/agentic-engineering-days-zurich-2026/",
@@ -10154,6 +10211,10 @@
   {
    "source": "w:skin-in-the-game",
    "target": "t:game-theory"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "w:skin-in-the-game"
   },
   {
    "source": "a:/articles/the-original-data-company/",

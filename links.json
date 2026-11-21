@@ -1,8 +1,8 @@
 {
  "source": "https://raskell.io/search/?type=link",
- "generated": "2026-11-21T12:53:18+00:00",
+ "generated": "2026-11-21T13:48:09+00:00",
  "description": "Every external link cited on raskell.io, merged by URL, most-cited first: where it is cited, and whether it is listed as a reference.",
- "count": 663,
+ "count": 664,
  "links": [
   {
    "url": "https://zentinelproxy.io/",
@@ -3739,6 +3739,19 @@
     {
      "title": "My GOAT games",
      "url": "https://raskell.io/notes/goat-games/"
+    }
+   ],
+   "citations": 1
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Brooks%27s_law",
+   "title": "Brooks’s law",
+   "domain": "en.wikipedia.org",
+   "reference": true,
+   "cited_in": [
+    {
+     "title": "The Phrase That Stayed",
+     "url": "https://raskell.io/articles/review-skin-in-the-game/"
     }
    ],
    "citations": 1
