@@ -5,8 +5,32 @@
     <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/probability/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://raskell.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-11-05T00:00:00+00:00</updated>
+    <updated>2026-11-21T00:00:00+00:00</updated>
     <id>https://raskell.io/tags/probability/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Rationality is avoidance of ruin</title>
+        <published>2026-11-21T00:00:00+00:00</published>
+        <updated>2026-11-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/rationality-is-avoidance-of-ruin/"/>
+        <id>https://raskell.io/notes/rationality-is-avoidance-of-ruin/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/rationality-is-avoidance-of-ruin/">&lt;p&gt;The last chapter of Nassim Nicholas Taleb’s &lt;em&gt;Skin in the Game&lt;&#x2F;em&gt;, which he calls the central one, rests on a thought experiment. One hundred people go to a casino, each with a set amount, for one evening. A few lose everything, and that tells you nothing about the others; from the group you can work out whether the casino prices its odds fairly. Now one person, &lt;em&gt;“your cousin Theodorus Ibn Warqa,”&lt;&#x2F;em&gt; goes to the same casino a hundred days in a row. &lt;em&gt;“On day 28 cousin Theodorus Ibn Warqa is bust. Will there be day 29? No.”&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Taleb calls the first view ensemble probability and the second time probability, and his point is that they are not the same once there is a state you cannot come back from. He calls that state ruin, and draws the consequence plainly: &lt;em&gt;“if there is a possibility of ruin, cost-benefit analyses are no longer possible.”&lt;&#x2F;em&gt; A game of Russian roulette pays well five times out of six, and the expected value is meaningless, because if you keep playing &lt;em&gt;“you will end up in the cemetery.”&lt;&#x2F;em&gt; Hence the chapter’s definition: &lt;em&gt;“Rationality is avoidance of systemic ruin.”&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I find this the most useful rule for designing agent harnesses. An agent runs many steps, and most of them are like the hundred people: if one fails, you retry, roll back, or let the evaluation catch it, and the average is what matters. That is where an agent should be free to explore. A few steps are like cousin Theodorus on day 28: deleting data that has no backup, sending money, publishing, deploying to production, emailing a customer. One failure there ends the game, and no success rate on the other steps makes up for it.&lt;&#x2F;p&gt;
+&lt;p&gt;So the line I draw is not between easy and hard tasks, or between trusted and untrusted models. It is between reversible and irreversible actions. Reversible ones run on their own and are checked by &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;evaluation-closes-the-loop&#x2F;&quot;&gt;evaluation&lt;&#x2F;a&gt; afterwards. Irreversible ones go through a gate, a plan that is reviewed before it runs, as in &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;plan-then-execute&#x2F;&quot;&gt;Plan, then let go&lt;&#x2F;a&gt;, or a person who signs it off. The point of the gate is not that the agent is usually wrong. It is that “usually” is the wrong measure once ruin is possible.&lt;&#x2F;p&gt;
+&lt;p&gt;The idea runs through my &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-skin-in-the-game&#x2F;&quot;&gt;review of the book&lt;&#x2F;a&gt; as well: whoever can be ruined by a decision should be the one who makes it.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Three Parts and No Brain</title>
         <published>2026-11-05T00:00:00+00:00</published>

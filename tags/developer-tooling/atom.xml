@@ -5,8 +5,31 @@
     <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/developer-tooling/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://raskell.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-11-20T00:00:00+00:00</updated>
+    <updated>2026-11-21T00:00:00+00:00</updated>
     <id>https://raskell.io/tags/developer-tooling/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Lindy for software</title>
+        <published>2026-11-21T00:00:00+00:00</published>
+        <updated>2026-11-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/lindy-for-software/"/>
+        <id>https://raskell.io/notes/lindy-for-software/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/lindy-for-software/">&lt;p&gt;Chapter 8 of Nassim Nicholas Taleb’s &lt;em&gt;Skin in the Game&lt;&#x2F;em&gt; is called “An Expert Called Lindy”, after a deli in New York where actors gossiping about Broadway noticed that a show that had lasted a hundred days could expect a hundred more. Taleb turns it into a general rule for things that do not age the way bodies do: ideas, books, technologies. For them, the longer they have survived, the longer they are likely to survive. &lt;em&gt;“The only effective judge of things is time,”&lt;&#x2F;em&gt; he writes, and the reason is fragility: &lt;em&gt;“resistance to the ravages of time, that is, what we gloriously call survival, is the ability to handle disorder.”&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I use it as a rule for choosing technology, and it has rarely let me down. SQL is fifty years old and will outlive most databases that tried to replace it. Unix, the shell, plain text, HTTP, and email have all survived generations of better ideas. A framework released last year might be excellent, but it has not yet been tested by the disorder that kills software: changing maintainers, changing fashions, a security flaw in the wrong place, a company that loses interest.&lt;&#x2F;p&gt;
+&lt;p&gt;The rule does not say new things are bad. It says that the burden of proof is on them, and that the more of your system depends on a component, the more Lindy it should be. Use the new thing at the edge, where it is cheap to replace. Put the old thing in the middle, where replacing it would be a rewrite. That is the reasoning behind &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;a-blueprint-for-the-static-web&#x2F;&quot;&gt;A Blueprint for the Static Web&lt;&#x2F;a&gt;: HTML files on a server are about as Lindy as the web gets, and they have no code to break at request time.&lt;&#x2F;p&gt;
+&lt;p&gt;It applies to people and companies as well, and that is the part I care about most now that agents make code cheap. A product run well by the same owner for ten years has passed a test no feature list can, which is the argument of my &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-skin-in-the-game&#x2F;&quot;&gt;review of the book&lt;&#x2F;a&gt;. Taleb puts it more bluntly: &lt;em&gt;“You can’t fool Lindy.”&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Testing DeltaDB</title>
         <published>2026-11-20T00:00:00+00:00</published>

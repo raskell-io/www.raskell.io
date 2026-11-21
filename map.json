@@ -1,6 +1,6 @@
 {
  "source": "https://raskell.io/map/",
- "generated": "2026-11-21T14:18:15+00:00",
+ "generated": "2026-11-21T14:21:26+00:00",
  "description": "Articles, notes, topics, series, projects, and the reading log on raskell.io, and how they connect.",
  "nodes": [
   {
@@ -19,7 +19,7 @@
    "url": "https://raskell.io/articles/review-skin-in-the-game/",
    "meta": "2026-11-21 · 11 min",
    "description": "I kept one phrase from Taleb's Skin in the Game. Now that code is cheap, I think it names what is left: someone who owns the outcome.",
-   "degree": 13
+   "degree": 19
   },
   {
    "id": "a:/articles/agentic-engineering-days-zurich-2026/",
@@ -73,7 +73,7 @@
    "url": "https://raskell.io/articles/evaluation-closes-the-loop/",
    "meta": "2026-11-12 · 14 min",
    "description": "A trace shows what an agent did, not whether it was right. This part scores the agent against known cases and fails the build when a passing case breaks.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "a:/articles/the-behavioural-turn/",
@@ -145,7 +145,7 @@
    "url": "https://raskell.io/articles/a-blueprint-for-the-static-web/",
    "meta": "2026-10-26 · 27 min",
    "description": "Last week's PHP flaws reached every PHP installation serving web requests. My blueprint for sites and apps that run no code per request at all.",
-   "degree": 21
+   "degree": 22
   },
   {
    "id": "a:/articles/learning-to-play/",
@@ -481,6 +481,42 @@
    "degree": 7
   },
   {
+   "id": "a:/notes/bureaucracy-separates-people-from-consequences/",
+   "kind": "note",
+   "label": "Bureaucracy separates people from consequences",
+   "url": "https://raskell.io/notes/bureaucracy-separates-people-from-consequences/",
+   "meta": "2026-11-21",
+   "description": "Taleb's definition of bureaucracy, and why large organisations spread blame as much as work. Agents could shrink them, or hide the blame better.",
+   "degree": 7
+  },
+  {
+   "id": "a:/notes/courage-is-the-only-virtue-you-cannot-fake/",
+   "kind": "note",
+   "label": "Courage is the only virtue you cannot fake",
+   "url": "https://raskell.io/notes/courage-is-the-only-virtue-you-cannot-fake/",
+   "meta": "2026-11-21",
+   "description": "Taleb's advice to young people who want to save the world: do not signal virtue, put yourself on the line, start a business.",
+   "degree": 6
+  },
+  {
+   "id": "a:/notes/lindy-for-software/",
+   "kind": "note",
+   "label": "Lindy for software",
+   "url": "https://raskell.io/notes/lindy-for-software/",
+   "meta": "2026-11-21",
+   "description": "For things that do not age, time is the only judge that cannot be fooled. A rule for choosing software: bet on what has already lasted.",
+   "degree": 7
+  },
+  {
+   "id": "a:/notes/rationality-is-avoidance-of-ruin/",
+   "kind": "note",
+   "label": "Rationality is avoidance of ruin",
+   "url": "https://raskell.io/notes/rationality-is-avoidance-of-ruin/",
+   "meta": "2026-11-21",
+   "description": "One hundred people at a casino are not one person a hundred times. For agents, it means reversible actions can run free and irreversible ones need a gate.",
+   "degree": 8
+  },
+  {
    "id": "a:/notes/smell-is-pattern-recognition/",
    "kind": "note",
    "label": "Smell is pattern recognition",
@@ -488,6 +524,24 @@
    "meta": "2026-11-21",
    "description": "Max Bennett explains neural networks with the nose. For the brain, smell is the easiest pattern to recognise; for machines, the hardest sense to build.",
    "degree": 7
+  },
+  {
+   "id": "a:/notes/the-most-intolerant-wins/",
+   "kind": "note",
+   "label": "The most intolerant wins",
+   "url": "https://raskell.io/notes/the-most-intolerant-wins/",
+   "meta": "2026-11-21",
+   "description": "Taleb's minority rule: a strict few win when the flexible many do not mind. It is how formats, standards, and this site's files for agents spread.",
+   "degree": 7
+  },
+  {
+   "id": "a:/notes/the-perfect-employee-has-nothing-to-lose/",
+   "kind": "note",
+   "label": "The perfect employee has nothing to lose",
+   "url": "https://raskell.io/notes/the-perfect-employee-has-nothing-to-lose/",
+   "meta": "2026-11-21",
+   "description": "Taleb says firms hire employees because employees have a reputation to protect. An AI agent has none, so its owner carries all of it.",
+   "degree": 6
   },
   {
    "id": "a:/notes/data-fusion-belongs-in-the-store/",
@@ -514,7 +568,7 @@
    "url": "https://raskell.io/notes/plan-then-execute/",
    "meta": "2026-11-20",
    "description": "Wargames call it WEGO, agent builders call it plan-then-execute: commit to the whole plan, lock it in, then watch it run without touching it.",
-   "degree": 8
+   "degree": 9
   },
   {
    "id": "a:/notes/testing-deltadb/",
@@ -541,7 +595,7 @@
    "url": "https://raskell.io/notes/the-simplest-protocol-wins/",
    "meta": "2026-11-20",
    "description": "A lens from a talk on agent protocols: judge a standard by how many decisions it removes from your application, and ask what it makes replaceable.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "a:/notes/memory-that-dreams/",
@@ -604,7 +658,7 @@
    "url": "https://raskell.io/notes/small-focused-high-trust/",
    "meta": "2026-11-14",
    "description": "Altman wanted OpenAI to stay small. Every large group spends more of its work holding itself together, and AI may change that arithmetic.",
-   "degree": 9
+   "degree": 10
   },
   {
    "id": "a:/notes/something-closer-to-a-religion/",
@@ -685,7 +739,7 @@
    "url": "https://raskell.io/notes/who-carries-progress/",
    "meta": "2026-11-07",
    "description": "A colleague says the breakthroughs come from academia and the state. I think they come from people who have to make things work, and that what they learn spreads.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "a:/notes/context-is-cheaper-than-exploration/",
@@ -881,9 +935,9 @@
    "kind": "tag",
    "label": "Agent harness",
    "url": "https://raskell.io/tags/agent-harness/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "The software around a model that turns it into an agent: the loop, the action surface, typed contracts, state, and how much of it is ordinary code.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:agent-protocols",
@@ -899,9 +953,9 @@
    "kind": "tag",
    "label": "Agents",
    "url": "https://raskell.io/tags/agents/",
-   "meta": "Concept · 30 pages",
+   "meta": "Concept · 34 pages",
    "description": "LLM agents as software: the loop, tools, context, memory, sandboxes, and the platform underneath them.",
-   "degree": 42
+   "degree": 46
   },
   {
    "id": "t:ai-alignment",
@@ -1007,9 +1061,9 @@
    "kind": "tag",
    "label": "Bureaucracy",
    "url": "https://raskell.io/tags/bureaucracy/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "The work a group spends on holding itself together, which grows faster than the group: in public administration, corporations, and labs.",
-   "degree": 4
+   "degree": 5
   },
   {
    "id": "t:capital-allocation",
@@ -1151,9 +1205,9 @@
    "kind": "tag",
    "label": "Developer tooling",
    "url": "https://raskell.io/tags/developer-tooling/",
-   "meta": "Concept · 6 pages",
+   "meta": "Concept · 7 pages",
    "description": "Package managers, build tools, CLIs, and the daily toolchain an engineer actually touches.",
-   "degree": 15
+   "degree": 16
   },
   {
    "id": "t:distributed-systems",
@@ -1232,18 +1286,18 @@
    "kind": "tag",
    "label": "Entrepreneurship",
    "url": "https://raskell.io/tags/entrepreneurship/",
-   "meta": "Concept · 7 pages",
+   "meta": "Concept · 8 pages",
    "description": "Finding something worth building and building it: ventures, side projects, and what changes when anyone can spot an opportunity and operate a business with AI.",
-   "degree": 12
+   "degree": 13
   },
   {
    "id": "t:ethics",
    "kind": "tag",
    "label": "Ethics",
    "url": "https://raskell.io/tags/ethics/",
-   "meta": "Concept · 4 pages",
+   "meta": "Concept · 5 pages",
    "description": "Right and wrong under pressure: guilt and freedom in novels, the responsibility of scientists, and what we owe the systems we build and the people they affect.",
-   "degree": 25
+   "degree": 26
   },
   {
    "id": "t:europe",
@@ -1331,9 +1385,9 @@
    "kind": "tag",
    "label": "Future of work",
    "url": "https://raskell.io/tags/future-of-work/",
-   "meta": "Concept · 9 pages",
+   "meta": "Concept · 10 pages",
    "description": "What AI does to jobs and livelihoods: the interval before any post-scarcity economy, basic income against basic access, and who gets through the middle.",
-   "degree": 18
+   "degree": 19
   },
   {
    "id": "t:game-ai",
@@ -1358,9 +1412,9 @@
    "kind": "tag",
    "label": "Game theory",
    "url": "https://raskell.io/tags/game-theory/",
-   "meta": "Concept · 1 page",
+   "meta": "Concept · 2 pages",
    "description": "The mathematics of decisions that depend on other people's decisions: deterrence, incentives, payoffs, and who carries the risk.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:games",
@@ -1502,9 +1556,9 @@
    "kind": "tag",
    "label": "Interfaces",
    "url": "https://raskell.io/tags/interfaces/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Where people meet machines, from command lines to chat and voice, and the goal of an interface so natural that it disappears.",
-   "degree": 6
+   "degree": 7
   },
   {
    "id": "t:internet-culture",
@@ -1718,9 +1772,9 @@
    "kind": "tag",
    "label": "Open standards",
    "url": "https://raskell.io/tags/open-standards/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 4 pages",
    "description": "Protocols and formats agreed in the open and free to implement: HTTP, HTML, TCP/IP, RSS, and the consortia and working groups that keep them so.",
-   "degree": 4
+   "degree": 6
   },
   {
    "id": "t:open-web",
@@ -1763,9 +1817,9 @@
    "kind": "tag",
    "label": "Open source",
    "url": "https://raskell.io/tags/oss/",
-   "meta": "Concept · 5 pages",
+   "meta": "Concept · 6 pages",
    "description": "Open source as the point of the work, not just its licence.",
-   "degree": 10
+   "degree": 11
   },
   {
    "id": "t:philosophy",
@@ -1835,9 +1889,9 @@
    "kind": "tag",
    "label": "Probability",
    "url": "https://raskell.io/tags/probability/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 3 pages",
    "description": "Chance made countable: the law of large numbers behind insurance, error margins on a measurement, and tails that are fatter than they look.",
-   "degree": 7
+   "degree": 8
   },
   {
    "id": "t:programming-languages",
@@ -1907,9 +1961,9 @@
    "kind": "tag",
    "label": "Risk",
    "url": "https://raskell.io/tags/risk/",
-   "meta": "Concept · 2 pages",
+   "meta": "Concept · 7 pages",
    "description": "Uncertainty, fragility, and systems that fail in ways nobody planned for, from markets to theme parks to production.",
-   "degree": 19
+   "degree": 24
   },
   {
    "id": "t:rust",
@@ -2078,9 +2132,9 @@
    "kind": "tag",
    "label": "Trust",
    "url": "https://raskell.io/tags/trust/",
-   "meta": "Concept · 7 pages",
+   "meta": "Concept · 9 pages",
    "description": "Personal trust and system trust: why people rely on banks, procedures and software they cannot inspect, and how that reliance is earned.",
-   "degree": 12
+   "degree": 14
   },
   {
    "id": "t:type-systems",
@@ -2978,7 +3032,7 @@
    "url": "https://raskell.io/articles/review-skin-in-the-game/",
    "meta": "Book · Nassim Nicholas Taleb · read 2022",
    "description": "Why whoever takes risks for others should carry the consequences, from Hammurabi's builders to bankers and insurers.",
-   "degree": 7
+   "degree": 13
   },
   {
    "id": "w:geld-aus-dem-nichts",
@@ -4405,6 +4459,10 @@
    "target": "t:agent-harness"
   },
   {
+   "source": "a:/notes/rationality-is-avoidance-of-ruin/",
+   "target": "t:agent-harness"
+  },
+  {
    "source": "a:/articles/agentic-engineering-days-zurich-2026/",
    "target": "t:agent-harness"
   },
@@ -4450,6 +4508,22 @@
   },
   {
    "source": "a:/notes/board-games-already-solved-agent-coordination/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/notes/bureaucracy-separates-people-from-consequences/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/notes/rationality-is-avoidance-of-ruin/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/notes/the-most-intolerant-wins/",
+   "target": "t:agents"
+  },
+  {
+   "source": "a:/notes/the-perfect-employee-has-nothing-to-lose/",
    "target": "t:agents"
   },
   {
@@ -4801,6 +4875,10 @@
    "target": "t:game-design"
   },
   {
+   "source": "a:/notes/bureaucracy-separates-people-from-consequences/",
+   "target": "t:bureaucracy"
+  },
+  {
    "source": "a:/articles/review-empire-of-ai/",
    "target": "t:bureaucracy"
   },
@@ -5125,6 +5203,10 @@
    "target": "t:philosophy"
   },
   {
+   "source": "a:/notes/lindy-for-software/",
+   "target": "t:developer-tooling"
+  },
+  {
    "source": "a:/notes/testing-deltadb/",
    "target": "t:developer-tooling"
   },
@@ -5345,6 +5427,10 @@
    "target": "t:entrepreneurship"
   },
   {
+   "source": "a:/notes/courage-is-the-only-virtue-you-cannot-fake/",
+   "target": "t:entrepreneurship"
+  },
+  {
    "source": "a:/notes/small-focused-high-trust/",
    "target": "t:entrepreneurship"
   },
@@ -5374,6 +5460,10 @@
   },
   {
    "source": "a:/articles/review-skin-in-the-game/",
+   "target": "t:ethics"
+  },
+  {
+   "source": "a:/notes/courage-is-the-only-virtue-you-cannot-fake/",
    "target": "t:ethics"
   },
   {
@@ -5561,6 +5651,10 @@
    "target": "t:future-of-work"
   },
   {
+   "source": "a:/notes/the-perfect-employee-has-nothing-to-lose/",
+   "target": "t:future-of-work"
+  },
+  {
    "source": "a:/notes/the-conversation-is-the-workspace/",
    "target": "t:future-of-work"
   },
@@ -5642,6 +5736,10 @@
   },
   {
    "source": "a:/notes/board-games-already-solved-agent-coordination/",
+   "target": "t:game-theory"
+  },
+  {
+   "source": "a:/notes/the-most-intolerant-wins/",
    "target": "t:game-theory"
   },
   {
@@ -5983,6 +6081,10 @@
   {
    "source": "t:intelligence",
    "target": "t:neuroscience"
+  },
+  {
+   "source": "a:/notes/the-most-intolerant-wins/",
+   "target": "t:interfaces"
   },
   {
    "source": "a:/notes/the-conversation-is-the-workspace/",
@@ -6345,6 +6447,14 @@
    "target": "t:policy"
   },
   {
+   "source": "a:/notes/lindy-for-software/",
+   "target": "t:open-standards"
+  },
+  {
+   "source": "a:/notes/the-most-intolerant-wins/",
+   "target": "t:open-standards"
+  },
+  {
    "source": "a:/notes/the-simplest-protocol-wins/",
    "target": "t:open-standards"
   },
@@ -6395,6 +6505,10 @@
   {
    "source": "a:/articles/my-openbsd-journey-getting-it-virtualized-with-libvirt-1/",
    "target": "t:operating-systems"
+  },
+  {
+   "source": "a:/notes/lindy-for-software/",
+   "target": "t:oss"
   },
   {
    "source": "a:/articles/building-it-intelligence/",
@@ -6515,6 +6629,10 @@
   {
    "source": "t:post-scarcity",
    "target": "t:future-of-work"
+  },
+  {
+   "source": "a:/notes/rationality-is-avoidance-of-ruin/",
+   "target": "t:probability"
   },
   {
    "source": "a:/articles/three-parts-and-no-brain/",
@@ -6682,6 +6800,26 @@
   },
   {
    "source": "a:/articles/review-skin-in-the-game/",
+   "target": "t:risk"
+  },
+  {
+   "source": "a:/notes/bureaucracy-separates-people-from-consequences/",
+   "target": "t:risk"
+  },
+  {
+   "source": "a:/notes/courage-is-the-only-virtue-you-cannot-fake/",
+   "target": "t:risk"
+  },
+  {
+   "source": "a:/notes/lindy-for-software/",
+   "target": "t:risk"
+  },
+  {
+   "source": "a:/notes/rationality-is-avoidance-of-ruin/",
+   "target": "t:risk"
+  },
+  {
+   "source": "a:/notes/the-perfect-employee-has-nothing-to-lose/",
    "target": "t:risk"
   },
   {
@@ -7018,6 +7156,14 @@
   },
   {
    "source": "a:/articles/review-skin-in-the-game/",
+   "target": "t:trust"
+  },
+  {
+   "source": "a:/notes/bureaucracy-separates-people-from-consequences/",
+   "target": "t:trust"
+  },
+  {
+   "source": "a:/notes/the-perfect-employee-has-nothing-to-lose/",
    "target": "t:trust"
   },
   {
@@ -7511,6 +7657,30 @@
   {
    "source": "a:/articles/review-skin-in-the-game/",
    "target": "a:/articles/the-original-data-company/"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "a:/notes/bureaucracy-separates-people-from-consequences/"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "a:/notes/courage-is-the-only-virtue-you-cannot-fake/"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "a:/notes/lindy-for-software/"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "a:/notes/rationality-is-avoidance-of-ruin/"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "a:/notes/the-most-intolerant-wins/"
+  },
+  {
+   "source": "a:/articles/review-skin-in-the-game/",
+   "target": "a:/notes/the-perfect-employee-has-nothing-to-lose/"
   },
   {
    "source": "a:/articles/review-skin-in-the-game/",
@@ -8107,6 +8277,30 @@
   {
    "source": "a:/notes/board-games-already-solved-agent-coordination/",
    "target": "a:/notes/plan-then-execute/"
+  },
+  {
+   "source": "a:/notes/bureaucracy-separates-people-from-consequences/",
+   "target": "a:/notes/small-focused-high-trust/"
+  },
+  {
+   "source": "a:/notes/courage-is-the-only-virtue-you-cannot-fake/",
+   "target": "a:/notes/who-carries-progress/"
+  },
+  {
+   "source": "a:/notes/lindy-for-software/",
+   "target": "a:/articles/a-blueprint-for-the-static-web/"
+  },
+  {
+   "source": "a:/notes/rationality-is-avoidance-of-ruin/",
+   "target": "a:/articles/evaluation-closes-the-loop/"
+  },
+  {
+   "source": "a:/notes/rationality-is-avoidance-of-ruin/",
+   "target": "a:/notes/plan-then-execute/"
+  },
+  {
+   "source": "a:/notes/the-most-intolerant-wins/",
+   "target": "a:/notes/the-simplest-protocol-wins/"
   },
   {
    "source": "a:/notes/data-fusion-belongs-in-the-store/",
@@ -10218,6 +10412,30 @@
   },
   {
    "source": "a:/articles/the-original-data-company/",
+   "target": "w:skin-in-the-game"
+  },
+  {
+   "source": "a:/notes/bureaucracy-separates-people-from-consequences/",
+   "target": "w:skin-in-the-game"
+  },
+  {
+   "source": "a:/notes/courage-is-the-only-virtue-you-cannot-fake/",
+   "target": "w:skin-in-the-game"
+  },
+  {
+   "source": "a:/notes/lindy-for-software/",
+   "target": "w:skin-in-the-game"
+  },
+  {
+   "source": "a:/notes/rationality-is-avoidance-of-ruin/",
+   "target": "w:skin-in-the-game"
+  },
+  {
+   "source": "a:/notes/the-most-intolerant-wins/",
+   "target": "w:skin-in-the-game"
+  },
+  {
+   "source": "a:/notes/the-perfect-employee-has-nothing-to-lose/",
    "target": "w:skin-in-the-game"
   },
   {

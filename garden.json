@@ -1,12 +1,12 @@
 {
  "source": "https://raskell.io/search/",
- "generated": "2026-11-21T14:18:15+00:00",
+ "generated": "2026-11-21T14:21:26+00:00",
  "description": "Everything on raskell.io as one index: articles, reviews, notes, talks, datasets, works from the reading log, projects, topics, and every external link the writing cites. The same index the site's search uses.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "counts": {
   "review": 6,
   "article": 46,
-  "note": 40,
+  "note": 46,
   "talk": 1,
   "dataset": 1,
   "work": 169,
@@ -921,6 +921,57 @@
   },
   {
    "kind": "note",
+   "title": "Bureaucracy separates people from consequences",
+   "url": "https://raskell.io/notes/bureaucracy-separates-people-from-consequences/",
+   "description": "Taleb's definition of bureaucracy, and why large organisations spread blame as much as work. Agents could shrink them, or hide the blame better.",
+   "date": "2026-11-21",
+   "topics": [
+    "bureaucracy",
+    "risk",
+    "trust",
+    "agents"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Courage is the only virtue you cannot fake",
+   "url": "https://raskell.io/notes/courage-is-the-only-virtue-you-cannot-fake/",
+   "description": "Taleb's advice to young people who want to save the world: do not signal virtue, put yourself on the line, start a business.",
+   "date": "2026-11-21",
+   "topics": [
+    "ethics",
+    "entrepreneurship",
+    "risk"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Lindy for software",
+   "url": "https://raskell.io/notes/lindy-for-software/",
+   "description": "For things that do not age, time is the only judge that cannot be fooled. A rule for choosing software: bet on what has already lasted.",
+   "date": "2026-11-21",
+   "topics": [
+    "risk",
+    "developer-tooling",
+    "oss",
+    "open-standards"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "Rationality is avoidance of ruin",
+   "url": "https://raskell.io/notes/rationality-is-avoidance-of-ruin/",
+   "description": "One hundred people at a casino are not one person a hundred times. For agents, it means reversible actions can run free and irreversible ones need a gate.",
+   "date": "2026-11-21",
+   "topics": [
+    "risk",
+    "probability",
+    "agents",
+    "agent-harness"
+   ]
+  },
+  {
+   "kind": "note",
    "title": "Smell is pattern recognition",
    "url": "https://raskell.io/notes/smell-is-pattern-recognition/",
    "description": "Max Bennett explains neural networks with the nose. For the brain, smell is the easiest pattern to recognise; for machines, the hardest sense to build.",
@@ -931,6 +982,32 @@
     "neuroscience",
     "evolution",
     "intelligence"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "The most intolerant wins",
+   "url": "https://raskell.io/notes/the-most-intolerant-wins/",
+   "description": "Taleb's minority rule: a strict few win when the flexible many do not mind. It is how formats, standards, and this site's files for agents spread.",
+   "date": "2026-11-21",
+   "topics": [
+    "open-standards",
+    "game-theory",
+    "agents",
+    "interfaces"
+   ]
+  },
+  {
+   "kind": "note",
+   "title": "The perfect employee has nothing to lose",
+   "url": "https://raskell.io/notes/the-perfect-employee-has-nothing-to-lose/",
+   "description": "Taleb says firms hire employees because employees have a reputation to protect. An AI agent has none, so its owner carries all of it.",
+   "date": "2026-11-21",
+   "topics": [
+    "agents",
+    "trust",
+    "future-of-work",
+    "risk"
    ]
   },
   {

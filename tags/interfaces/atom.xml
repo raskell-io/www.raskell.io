@@ -5,8 +5,32 @@
     <link rel="self" type="application/atom+xml" href="https://raskell.io/tags/interfaces/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://raskell.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-11-20T00:00:00+00:00</updated>
+    <updated>2026-11-21T00:00:00+00:00</updated>
     <id>https://raskell.io/tags/interfaces/atom.xml</id>
+    <entry xml:lang="en">
+        <title>The most intolerant wins</title>
+        <published>2026-11-21T00:00:00+00:00</published>
+        <updated>2026-11-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://raskell.io/notes/the-most-intolerant-wins/"/>
+        <id>https://raskell.io/notes/the-most-intolerant-wins/</id>
+        
+        <content type="html" xml:base="https://raskell.io/notes/the-most-intolerant-wins/">&lt;p&gt;Chapter 2 of Nassim Nicholas Taleb’s &lt;em&gt;Skin in the Game&lt;&#x2F;em&gt; is called “The Most Intolerant Wins”, and it describes what he calls the minority rule, &lt;em&gt;“the mother of all asymmetries.”&lt;&#x2F;em&gt; A small, stubborn minority, &lt;em&gt;“say 3 or 4 percent of the total population,”&lt;&#x2F;em&gt; can make everyone follow its preferences, as long as the rule is asymmetric: the minority will not accept the majority’s choice, but the majority does not mind the minority’s.&lt;&#x2F;p&gt;
+&lt;p&gt;His first example is a drink. At a summer barbecue of the New England Complex Systems Institute, he offered a friend who keeps kosher a glass of lemonade, expecting a refusal, and the friend drank it: the container carried a kosher mark. Someone who keeps kosher will not drink a non-kosher drink, but nobody else cares whether theirs is kosher, so producers and grocers make all of it kosher instead of keeping two supplies, two aisles, and two inventories. A naive observer would think the majority chose it. The majority simply did not object.&lt;&#x2F;p&gt;
+&lt;p&gt;Software runs on this rule more than we admit. A protocol or format spreads less because most users want it than because a few refuse anything else and the rest do not mind. One strict client that rejects anything but valid UTF-8 or a signed request makes every producer clean up its output, because the other clients accept the clean version too. One large customer that requires single sign-on makes a vendor build it, and then every customer gets it.&lt;&#x2F;p&gt;
+&lt;p&gt;I have built this site on the same asymmetry. Most readers are people, and they never see &lt;code&gt;llms.txt&lt;&#x2F;code&gt;, the Markdown copies of every article, or the JSON files. A small and growing share of readers are agents, and they work far better with those files than with HTML. Humans do not mind that the files exist; agents need them. So the site serves both, and that is how a minority’s format becomes part of the default.&lt;&#x2F;p&gt;
+&lt;p&gt;The rule also explains why &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;the-simplest-protocol-wins&#x2F;&quot;&gt;the simplest protocol wins&lt;&#x2F;a&gt;: the cheaper it is for the majority to go along, the smaller the minority needs to be. Taleb adds one condition that matters for anyone designing a standard. It only works if the minority has skin in the game, if it really will refuse. A preference that gives way under pressure is not a rule, just a wish. I wrote more about the book in my &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-skin-in-the-game&#x2F;&quot;&gt;review&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>The conversation is the workspace</title>
         <published>2026-11-20T00:00:00+00:00</published>

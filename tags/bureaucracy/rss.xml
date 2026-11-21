@@ -7,7 +7,19 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://raskell.io/tags/bureaucracy/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Sat, 14 Nov 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Sat, 21 Nov 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Bureaucracy separates people from consequences</title>
+          <pubDate>Sat, 21 Nov 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://raskell.io/notes/bureaucracy-separates-people-from-consequences/</link>
+          <guid>https://raskell.io/notes/bureaucracy-separates-people-from-consequences/</guid>
+          <description xml:base="https://raskell.io/notes/bureaucracy-separates-people-from-consequences/">&lt;p&gt;The definition of bureaucracy I quote most comes from the prologue of Nassim Nicholas Taleb’s &lt;em&gt;Skin in the Game&lt;&#x2F;em&gt;: &lt;em&gt;“Bureaucracy is a construction by which a person is conveniently separated from the consequences of his or her actions.”&lt;&#x2F;em&gt; He follows it at once with the honest objection: &lt;em&gt;“what can we do since a centralized system will necessarily need people who are not directly exposed to the cost of errors?”&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Both sentences are true, and the second is why the first is so hard to fix. Every large organisation I have worked in or with, public or private, needs layers: approval steps, committees, sign-offs, reporting lines. Each one is reasonable on its own. Together they do something nobody designed. They spread a decision across so many people that no one of them owns it. When it goes well, everyone was involved. When it goes wrong, the process was followed.&lt;&#x2F;p&gt;
+&lt;p&gt;I wrote in &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;notes&#x2F;small-focused-high-trust&#x2F;&quot;&gt;Small, focused, high-trust&lt;&#x2F;a&gt; that a group spends more of its work holding itself together as it grows, because the number of people who may need to talk grows with the square of the headcount. Taleb adds the other half of the cost. The structure that holds a large group together is also the structure that lets its members avoid the consequences of what they decide. Overhead and the dilution of responsibility come from the same source.&lt;&#x2F;p&gt;
+&lt;p&gt;Agents could cut both, or make the second worse. If a small team with agents can do what used to take a department, there are fewer layers for responsibility to get lost in, and the person who decides is close to the person who pays. But an agent pipeline can also become the most convenient separation yet: the model chose, the workflow approved, the evaluation passed, and no human name is anywhere near the outcome. Which way it goes is a design decision, and it is the reason I argue, in my &lt;a href=&quot;https:&#x2F;&#x2F;raskell.io&#x2F;articles&#x2F;review-skin-in-the-game&#x2F;&quot;&gt;review of the book&lt;&#x2F;a&gt;, that every agent action should trace back to a person who answers for it.&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>An Empire of People</title>
           <pubDate>Sat, 14 Nov 2026 00:00:00 +0000</pubDate>
