@@ -78,7 +78,7 @@ help: consider cloning the value before moving it into the closure
 
 出于这个原因，我构建的大部分东西都用 Rust。[Zentinel](https://zentinelproxy.io/) 是一个反向代理，挡在别人的流量前面。Aqueduct 是一个持久化执行引擎，必须在崩溃之后把一次运行重放出同样的结果（[The River and the Canal](/articles/the-river-and-the-canal/) 解释了原因）。hx 和 bhc 是别人的构建所依赖的工具链（[Why We Built a Haskell Package Manager in Rust](/articles/why-we-built-a-haskell-package-manager-in-rust/) 讲了这个故事）。Shiioo 在我自己的机器上运行智能体，并记录它们做了什么（[Shiioo, Re-imagined](/articles/shiioo-reimagined-and-a-home-ai-lab/)）。这些东西一旦出错代价都很高，而且每一个都以单个静态二进制文件的形式发布。
 
-同样的推理，让 Rust 成为我在这类工作中最大的一项上的首选：替换银行、保险公司和公共管理机构仍在大型机上运行的核心系统，其中大多数是几十年前用 COBOL 写的。这些系统能用。它们可靠，十进制运算做得正确，而且挺过了每一次替换它们的尝试，主要是因为没有人能有把握地说出它们的全部代码都做了什么。智能体改变了这个问题的一半。它们耐心地阅读 COBOL，解释一个程序做了什么，并且不知疲倦地写出新版本。它们改变不了的，是新系统必须至少和旧系统一样可靠，而这正是语言起作用的地方。Rust 给你大型机的优点，却不需要大型机：没有未定义行为，没有垃圾回收器在一次记账运行中途停顿（Discord 在 2020 年正是因为这个原因把一个服务从 Go 迁到了 Rust，此前 Go 的垃圾回收器至少每两分钟运行一次，造成了[周期性的延迟尖峰](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)），有用于金额的精确十进制类型，比如 [rust_decimal](https://docs.rs/rust_decimal/)，还有一个在客户余额出错之前就拒绝程序的编译器。
+同样的推理，让 Rust 成为我在这类工作中最大的一项上的首选：替换银行、保险公司和公共管理机构仍在大型机上运行的核心系统，其中大多数是几十年前用 COBOL 写的。这些系统能用。它们可靠，十进制运算做得正确，而且挺过了每一次替换它们的尝试，主要是因为没有人能有把握地说出它们的全部代码都做了什么。智能体改变了这个问题的一半。它们耐心地阅读 COBOL，解释一个程序做了什么，并且不知疲倦地写出新版本。它们改变不了的，是新系统必须至少和旧系统一样可靠，而这正是语言起作用的地方。Rust 给你大型机的优点，却不需要大型机：没有未定义行为，没有垃圾回收器在一次记账运行中途停顿（Discord 在 2020 年正是因为这个原因把一个服务从 Go 迁到了 Rust，此前 Go 的垃圾回收器至少每两分钟运行一次，造成了[周期性的延迟尖峰](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)），有用于金额的精确十进制类型，比如 [rust_decimal](https://docs.rs/rust_decimal/)，还有一个在程序运行之前就拒绝整类错误的编译器。利息本身算得对不对，仍然要由需求和它的测试来判断，前面那个被克隆的账本已经说明了这一点。
 
 金额这部分很短。COBOL 程序把金额保存为定点十进制数，替换它的系统也必须这样做，绝不能用二进制浮点数，在那里 `0.1 + 0.2` 等于 `0.30000000000000004`：
 
